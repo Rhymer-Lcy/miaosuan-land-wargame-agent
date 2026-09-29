@@ -5,11 +5,12 @@ https://wargame.ia.ac.cn/.
 
 ## Status
 
-Platform boundary in place. The repository holds provenance records, a static audit of the
-platform's community SDK, a reproducible runtime environment, a persistent and guarded engine
-installation procedure, and the contract boundary through which project code reads engine data,
-with its observed, accepted and canonical layers documented and tested (`docs/CONTRACT.md`). No
-agent logic has been written.
+First baseline agent frozen. On top of the provenance records, the static SDK audit, the runtime
+environment, the guarded persistent engine installation and the contract boundary
+(`docs/CONTRACT.md`), the repository now holds `baseline-v0`: a deterministic, minimal agent that
+acts only through legal-action information and a final safety gate (`docs/BASELINE.md`), and a
+pre-registered evaluation of it on the real engine (`docs/EVALUATION.md`). The baseline is a
+reference point; nothing in it is tuned for winning.
 
 ## Third-party material is not in this repository
 
@@ -32,6 +33,9 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/ENGINE_SMOKE_TEST.md` | observed engine behaviour and interface contract from the first controlled run |
 | `docs/CONTRACT.md` | observed contract of SDK 4.1.0, accepted boundary, canonical representation, fixture policy |
 | `docs/ENGINE_INSTALL.md` | persistent engine installation: rules, session ledger, host clock |
+| `docs/BASELINE.md` | identity, decision pipeline, action semantics, safety gate and limitations of `baseline-v0` |
+| `docs/EVALUATION.md` | the registered evaluation protocol and its results |
+| `evaluation/baseline-v0/` | the registered manifest and the sanitized results |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy
@@ -76,6 +80,21 @@ stage and otherwise do nothing; every state passes through the contract boundary
 The default game is scenario `201033019601` on map `9601`: two units, at most 1000 steps. Scenario
 files do not name their map; this pairing is established by the scenario's 50 roadblock positions,
 which are exactly the 50 cells flagged as roadblocks in map 9601, the only map with such flags.
+
+## Baseline agent and evaluation
+
+`miaosuan_agent.agent.BaselineAgent` implements the platform's agent interface (`setup`, `step`,
+`reset`) around the policy in `miaosuan_agent.decision`. The evaluation plays the registered games
+on the real engine, one isolated process and recorded engine session per game:
+
+```
+python scripts/build_evaluation_manifest.py --check
+bash scripts/run_evaluation.sh --python PYTHON --sdk-archive local/source-archives/land_wargame_sdk.zip --plan gate1
+bash scripts/run_evaluation.sh --python PYTHON --sdk-archive local/source-archives/land_wargame_sdk.zip --plan suite
+```
+
+Game records stay under the git-ignored `local/evaluation/`; only sanitized aggregates are
+published (`evaluation/baseline-v0/results.json`).
 
 ## Constraints to know before development
 
