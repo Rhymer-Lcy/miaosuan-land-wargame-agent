@@ -3,8 +3,8 @@ from __future__ import annotations
 import unittest
 
 from miaosuan_agent.boundary import normalize_state
-from miaosuan_agent.boundary.profile import (DETAIL_VERIFIED_SLOTS, PROFILE_ID, check_deployment_transition,
-                                             check_state)
+from miaosuan_agent.boundary.profile import (DETAIL_VERIFIED_SLOTS, DIRECTOR_ACTION_TYPES, DIRECTOR_KEY, PROFILE_ID,
+                                             check_deployment_transition, check_state)
 from tests.fixtures import synthetic as syn
 
 
@@ -62,6 +62,28 @@ class RedDetailTest(unittest.TestCase):
     def test_scores_and_landmarks_key_sets(self) -> None:
         self.assertIn("state[0].scores", self.deviations_after(lambda o: o["scores"].pop("red_win")))
         self.assertIn("state[0].landmarks", self.deviations_after(lambda o: o["landmarks"].pop("fortifications")))
+
+    def test_player_valid_actions_are_keyed_by_the_views_units(self) -> None:
+        self.assertIn("state[0].valid_actions", self.deviations_after(
+            lambda o: o["valid_actions"].__setitem__(DIRECTOR_KEY, {401: None})))
+
+
+@unittest.skipUnless(-1 in DETAIL_VERIFIED_SLOTS, "all-seeing detail is part of the profile")
+class GlobalDetailTest(unittest.TestCase):
+    def deviations_after(self, mutate) -> list:
+        raw = syn.state()
+        mutate(raw[-1])
+        return paths(check_state(raw))
+
+    def test_director_options_are_expected(self) -> None:
+        director = f"state[-1].valid_actions[{DIRECTOR_KEY}]"
+        self.assertIn(director, self.deviations_after(lambda o: o["valid_actions"].pop(DIRECTOR_KEY)))
+        self.assertIn(director, self.deviations_after(lambda o: o["valid_actions"][DIRECTOR_KEY].pop(404)))
+        self.assertEqual(set(syn.state()[-1]["valid_actions"][DIRECTOR_KEY]), DIRECTOR_ACTION_TYPES)
+
+    def test_unknown_unit_key_deviates(self) -> None:
+        self.assertIn("state[-1].valid_actions",
+                      self.deviations_after(lambda o: o["valid_actions"].__setitem__(900999, {1: None})))
 
 
 class DeploymentTransitionTest(unittest.TestCase):

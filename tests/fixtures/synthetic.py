@@ -66,6 +66,7 @@ def observation(slot: int, stage: int = 1, cur_step: int = 0, *, end_deployment:
         "terrain_id": TERRAIN_ID,
     }
     if slot == -1:
+        obs["valid_actions"][-1] = {401: None, 402: None, 403: None, 404: None}  # director options
         obs["actions"] = []
     return obs
 

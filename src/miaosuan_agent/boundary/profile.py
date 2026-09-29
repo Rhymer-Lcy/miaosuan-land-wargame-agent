@@ -6,9 +6,10 @@ new engine build, scenario or platform shows up as a deviation. A deviation is a
 necessarily an error: the boundary may still accept the input.
 
 Evidence scope of ``local-sdk-4.1.0``: engine ``land_wargame_train_env`` 4.1.0, scenario
-201033019601 on map 9601, states at setup, after deployment and during play (see
-``docs/CONTRACT.md``). Facts that depend on the scenario (unit counts, positions, values) are not
-part of the profile.
+201033019601 on map 9601, two controlled runs on 2026-09-29 (a disposable first probe, then the
+first session of the persistent installation, which captured all three slots at setup, after
+deployment and during play; see ``docs/CONTRACT.md``). Facts that depend on the scenario (unit
+counts, positions, values) are not part of the profile.
 """
 
 from __future__ import annotations
@@ -41,8 +42,12 @@ SCORE_FIELDS = frozenset({
     "red_occupy", "red_remain", "red_remain_max", "red_attack", "red_total", "red_win",
     "blue_occupy", "blue_remain", "blue_remain_max", "blue_attack", "blue_total", "blue_win",
 })
+#: Key under which the all-seeing view lists the director's options instead of a unit's.
+DIRECTOR_KEY = -1
+#: Director action types observed under ``DIRECTOR_KEY`` (all with option value ``None``).
+DIRECTOR_ACTION_TYPES = frozenset({401, 402, 403, 404})
 #: Slots whose field contents (not only their key sets) are covered by the evidence.
-DETAIL_VERIFIED_SLOTS: Tuple[int, ...] = (0,)
+DETAIL_VERIFIED_SLOTS: Tuple[int, ...] = (0, 1, -1)
 
 
 @dataclass(frozen=True)
@@ -91,7 +96,16 @@ def _check_int_keys(mapping: Mapping[Any, Any], path: str, dev: _Recorder) -> No
             dev(f"{path}[{key!r}]", "an int key", key)
 
 
-def _check_detail(obs: Mapping[str, Any], path: str, dev: _Recorder) -> None:
+def _unit_ids(obs: Mapping[str, Any]) -> set:
+    ids = set()
+    for name in ("operators", "passengers"):
+        for unit in obs.get(name) or []:
+            if _exact(unit, dict) and "obj_id" in unit:
+                ids.add(unit["obj_id"])
+    return ids
+
+
+def _check_detail(obs: Mapping[str, Any], slot: int, path: str, dev: _Recorder) -> None:
     for name, kind in FIELD_TYPES.items():
         if name in obs and not _exact(obs[name], kind):
             dev(f"{path}.{name}", kind.__name__, obs[name])
@@ -108,6 +122,17 @@ def _check_detail(obs: Mapping[str, Any], path: str, dev: _Recorder) -> None:
     valid = obs.get("valid_actions")
     if _exact(valid, dict):
         _check_int_keys(valid, f"{path}.valid_actions", dev)
+        allowed = _unit_ids(obs) | ({DIRECTOR_KEY} if slot == -1 else set())
+        strangers = sorted(repr(key) for key in valid if key not in allowed)
+        if strangers:
+            dev(f"{path}.valid_actions", "keys that are unit ids" + (" or the director key" if slot == -1 else ""),
+                f"other keys {strangers[:5]}", as_text=True)
+        if slot == -1:
+            director = valid.get(DIRECTOR_KEY)
+            if not _exact(director, dict) or set(director) != DIRECTOR_ACTION_TYPES:
+                dev(f"{path}.valid_actions[{DIRECTOR_KEY}]", f"action types {sorted(DIRECTOR_ACTION_TYPES)}",
+                    str(sorted(map(repr, director))) if _exact(director, dict) else director,
+                    as_text=_exact(director, dict))
         for obj_id, per_unit in valid.items():
             unit_path = f"{path}.valid_actions[{obj_id!r}]"
             if not _exact(per_unit, dict):
@@ -173,7 +198,7 @@ def check_state(raw_state: Any) -> ProfileReport:
         expected = PLAYER_FIELDS | GLOBAL_ONLY_FIELDS if slot == -1 else PLAYER_FIELDS
         _key_set(obs, expected, path, dev)
         if slot in DETAIL_VERIFIED_SLOTS:
-            _check_detail(obs, path, dev)
+            _check_detail(obs, slot, path, dev)
     return dev.report()
 
 
