@@ -20,12 +20,14 @@ RED_UNIT, BLUE_UNIT = syn.RED_UNIT, syn.BLUE_UNIT
 
 class FakeEnv:
     """Options: ``play_steps`` before done, ``never_done``, ``fail_at`` (raise in that step),
-    ``noise_at`` (perturb the state from that step on), ``refuse_moves`` (echo an error, no effect)."""
+    ``noise_at`` (perturb the state from that step on), ``refuse_moves`` (echo an error, no effect),
+    ``red_wingmen`` (extra red units starting on the red tank's hex, so several red units reach the
+    objective together; an occupation of an objective the side already holds is refused with 1804)."""
 
     def __init__(self, play_steps: int = 30, never_done: bool = False, fail_at: Optional[int] = None,
-                 noise_at: Optional[int] = None, refuse_moves: bool = False) -> None:
+                 noise_at: Optional[int] = None, refuse_moves: bool = False, red_wingmen: int = 0) -> None:
         self.play_steps, self.never_done, self.fail_at = play_steps, never_done, fail_at
-        self.noise_at, self.refuse_moves = noise_at, refuse_moves
+        self.noise_at, self.refuse_moves, self.red_wingmen = noise_at, refuse_moves, red_wingmen
         self.units: Dict[int, Dict[str, Any]] = {}
         self.cities: List[Dict[str, Any]] = []
         self.ended = {0: False, 1: False}
@@ -37,6 +39,8 @@ class FakeEnv:
         seats = [player["seat"] for player in setup_info["player_info"]]
         assert seats == [SEATS[0], SEATS[1]], seats
         self.units = {RED_UNIT: syn.unit(RED_UNIT, 0, 102), BLUE_UNIT: syn.unit(BLUE_UNIT, 1, 807)}
+        for n in range(self.red_wingmen):
+            self.units[RED_UNIT + 1 + n] = syn.unit(RED_UNIT + 1 + n, 0, 102)
         self.cities = [syn.city(505)]
         return self.state()
 
@@ -59,8 +63,8 @@ class FakeEnv:
 
     def state(self) -> Dict[int, Any]:
         units = [copy.deepcopy(u) for _, u in sorted(self.units.items())]
-        seats = {SEATS[f]: syn.seat_record(SEATS[f], f, [RED_UNIT if f == 0 else BLUE_UNIT], self.ended[f])
-                 for f in (0, 1)}
+        seats = {SEATS[f]: syn.seat_record(SEATS[f], f, sorted(i for i, u in self.units.items() if u["color"] == f),
+                                           self.ended[f]) for f in (0, 1)}
         common = dict(units=units, seats=seats, stage=self.stage, cur_step=self.cur_step,
                       cities=copy.deepcopy(self.cities))
         red = syn.build_observation(valid_actions=self._valid(0), **common)
@@ -113,6 +117,8 @@ class FakeEnv:
             city = next((c for c in self.cities if c["coord"] == unit["cur_hex"]), None)
             if city is None:
                 return 51
+            if city["flag"] == faction:
+                return 1804
             city["flag"] = faction
             return None
         if action["type"] == 2:

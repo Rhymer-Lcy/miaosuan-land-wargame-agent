@@ -36,11 +36,25 @@ from miaosuan_agent.decision import BASELINE_ID, INERT_ID  # noqa: E402
 from miaosuan_agent.evaluation import manifest as mf  # noqa: E402
 from miaosuan_agent.evaluation import metrics, randomness  # noqa: E402
 from miaosuan_agent.evaluation.game import play  # noqa: E402
-from miaosuan_agent.evaluation.identity import policy_source_digest  # noqa: E402
+from miaosuan_agent.evaluation.identity import POLICY_SOURCES, digest_of_files, policy_source_files  # noqa: E402
+from miaosuan_agent.experiments.occupy_reservation import CANDIDATE_ID, ReservationAgent  # noqa: E402
 
 DEFAULT_MANIFEST = REPO_ROOT / "evaluation" / "baseline-v0" / "manifest.json"
-DEFAULT_RESULTS = REPO_ROOT / "evaluation" / "baseline-v0" / "results.json"
-FACTORIES = {BASELINE_ID: lambda: PolicyAgent(BASELINE_ID), INERT_ID: lambda: PolicyAgent(INERT_ID)}
+FACTORIES = {BASELINE_ID: lambda: PolicyAgent(BASELINE_ID), INERT_ID: lambda: PolicyAgent(INERT_ID),
+             CANDIDATE_ID: lambda: ReservationAgent()}
+
+
+def registered_policy_source(manifest: Dict[str, Any]) -> str:
+    """The digest of the policy source the manifest registered, recomputed from this checkout.
+
+    The files are the manifest's own list; they must also be exactly what its source set yields now,
+    so a file added to a covered directory is caught.
+    """
+    registered = manifest["policy_source"]
+    sources = tuple(registered.get("sources", POLICY_SOURCES))
+    if policy_source_files(sources=sources) != list(registered["files"]):
+        return "file list differs from the registered one"
+    return digest_of_files(registered["files"])
 
 
 def load_manifest(path: Path) -> Dict[str, Any]:
@@ -100,7 +114,7 @@ def cmd_game(args: argparse.Namespace) -> int:
     if spec is None:
         print(f"unknown game id {args.game_id}", file=sys.stderr)
         return 2
-    source, _ = policy_source_digest()
+    source = registered_policy_source(manifest)
     if source != manifest["policy_source"]["sha256"]:
         print("REFUSED: the policy source differs from the registered one; a policy change needs a new "
               "registration and a complete rerun", file=sys.stderr)
@@ -123,7 +137,8 @@ def cmd_game(args: argparse.Namespace) -> int:
     construct = engine_factory(install)
     try:
         with engine_install.session(install, args.purpose, harness) as handle:
-            record = play(construct, FACTORIES, spec, inputs, manifest["players"], rng_probe=randomness.fingerprint)
+            record = play(construct, FACTORIES, spec, inputs, manifest["players"], rng_probe=randomness.fingerprint,
+                          replay_policies={manifest["policy_under_test"]})
             record["session"] = handle.opened["session"]
             handle.outcome = {"status": record["status"], "steps": record.get("steps"), "game_id": spec.game_id}
         record["session_close"] = {k: handle.closed[k] for k in ("state_changed", "home_changed", "integrity")}
@@ -154,7 +169,11 @@ def cmd_summarize(args: argparse.Namespace) -> int:
     digest = mf.digest(manifest)
     gate_specs, suite_specs = mf.gate1_games(manifest), mf.games(manifest)
     gate_records = read_records(args.work, gate_specs)
-    gate = metrics.gate_check([gate_records[s.game_id] for s in gate_specs]) if len(gate_records) == len(gate_specs) else None
+    policy = manifest["policy_under_test"]
+    extra = tuple(manifest.get("registered_seat_metrics", ()))
+    extended = policy != BASELINE_ID
+    gate = (metrics.gate_check([gate_records[s.game_id] for s in gate_specs], policy, extra)
+            if len(gate_records) == len(gate_specs) else None)
     suite_records = read_records(args.work, suite_specs)
     summary: Dict[str, Any] = {"manifest_sha256": digest, "evaluation_id": manifest["evaluation_id"],
                                "policy_source_sha256": manifest["policy_source"]["sha256"],
@@ -180,14 +199,22 @@ def cmd_summarize(args: argparse.Namespace) -> int:
                                     **metrics.compare(others[0], others[1])})
         summary["suite"].update(
             games=[metrics.public_game(suite_records[s.game_id]) for s in suite_specs if s.game_id in suite_records],
-            conditions={c: metrics.condition_summary(r) for c, r in sorted(by_condition.items())},
+            conditions={c: metrics.condition_summary(r, policy, extended) for c, r in sorted(by_condition.items())},
             repetition_agreement=repetitions,
             criteria_by_configuration={
                 f"{s.scenario_id}.{s.condition}": metrics.gate_check(
-                    [suite_records[f"{s.scenario_id}.{s.condition}.r{r}"] for r in range(1, int(manifest["repetitions"]) + 1)])
+                    [suite_records[f"{s.scenario_id}.{s.condition}.r{r}"] for r in range(1, int(manifest["repetitions"]) + 1)],
+                    policy, extra)
                 for s in suite_specs if s.repetition == 1 and all(
                     f"{s.scenario_id}.{s.condition}.r{r}" in suite_records for r in range(1, int(manifest["repetitions"]) + 1))
             })
+    if "refusal_taxonomy" in manifest:
+        taxonomy = manifest["refusal_taxonomy"]["codes"]
+        summary["gate1"]["refusal_decomposition"] = metrics.refusal_decomposition(
+            list(gate_records.values()), policy, taxonomy)
+        if suite_records:
+            summary["suite"]["refusal_decomposition"] = metrics.refusal_decomposition(
+                list(suite_records.values()), policy, taxonomy)
     text = json.dumps(summary, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
     (args.work / "summary.json").write_text(text, encoding="utf-8")
     if args.public:
@@ -202,8 +229,10 @@ def cmd_summarize(args: argparse.Namespace) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
-    parser.add_argument("--work", type=Path, default=REPO_ROOT / "local" / "evaluation" / "baseline-v0")
+    parser.add_argument("--evaluation", default="baseline-v0",
+                        help="registered evaluation name: evaluation/NAME/manifest.json, work in local/evaluation/NAME")
+    parser.add_argument("--manifest", type=Path, help="override the manifest path")
+    parser.add_argument("--work", type=Path, help="override the work directory")
     sub = parser.add_subparsers(dest="command", required=True)
     stage = sub.add_parser("stage")
     stage.add_argument("--sdk-archive", type=Path, required=True)
@@ -220,6 +249,8 @@ def main() -> int:
     summarize.add_argument("--public", type=Path, help="also write the sanitized summary here")
     summarize.set_defaults(func=cmd_summarize)
     args = parser.parse_args()
+    args.manifest = args.manifest or REPO_ROOT / "evaluation" / args.evaluation / "manifest.json"
+    args.work = args.work or REPO_ROOT / "local" / "evaluation" / args.evaluation
     started = time.perf_counter()
     status = args.func(args)
     if args.command != "game":

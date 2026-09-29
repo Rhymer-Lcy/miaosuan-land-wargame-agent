@@ -33,7 +33,6 @@ for path in (REPO_ROOT / "src", REPO_ROOT / "scripts"):
 from miaosuan_agent import engine_install, sdk_data  # noqa: E402
 from miaosuan_agent.boundary import Origin, normalize_state  # noqa: E402
 from miaosuan_agent.evaluation import effects, randomness  # noqa: E402
-from miaosuan_agent.evaluation.identity import policy_source_digest  # noqa: E402
 
 import run_evaluation as rev  # noqa: E402
 
@@ -54,7 +53,7 @@ def main() -> int:
     if spec is None:
         print(f"unknown game id {args.game_id}", file=sys.stderr)
         return 2
-    if policy_source_digest()[0] != manifest["policy_source"]["sha256"]:
+    if rev.registered_policy_source(manifest) != manifest["policy_source"]["sha256"]:
         print("REFUSED: the policy source differs from the registered one", file=sys.stderr)
         return 2
     rev.verify_inputs(manifest, args.work, spec.scenario_id, spec.map_id)

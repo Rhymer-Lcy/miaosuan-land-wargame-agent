@@ -15,6 +15,11 @@ from .effects import NOT_OBSERVED
 from .game import sanitize
 
 PLAY_TYPES = {str(int(t)) for t in (ActionType.MOVE, ActionType.SHOOT, ActionType.OCCUPY)}
+#: Seat fields recorded by harness versions after the ``baseline-v0`` evaluation (absent from its records).
+LATER_SEAT_FIELDS = ("refusal_contexts", "suppressions", "steps_with_suppression", "duplicate_occupation_steps",
+                     "duplicate_occupation_commands")
+COUNTED_LATER_FIELDS = ("suppressions", "steps_with_suppression", "duplicate_occupation_steps",
+                        "duplicate_occupation_commands")
 RECORD_FIELDS = ("schema", "game_id", "status", "completion", "steps", "done", "stage_transitions", "final_scores",
                  "timings_seconds", "seats", "state_chain", "state_steps", "rng_probe", "deployment_ended")
 SEAT_FIELDS = ("decisions", "latency_us", "trace_chain", "trace_steps", "actions_by_type", "steps_with_action",
@@ -49,10 +54,11 @@ def first_divergence(a: Sequence[str], b: Sequence[str]) -> Optional[int]:
     return None if len(a) == len(b) else min(len(a), len(b))
 
 
-def missing_fields(record: Mapping[str, Any]) -> List[str]:
+def missing_fields(record: Mapping[str, Any], extra_seat_fields: Sequence[str] = ()) -> List[str]:
     missing = [name for name in RECORD_FIELDS if name not in record]
     for index, seat in enumerate(record.get("seats") or []):
-        missing += [f"seats[{index}].{name}" for name in SEAT_FIELDS if name not in seat]
+        missing += [f"seats[{index}].{name}" for name in tuple(SEAT_FIELDS) + tuple(extra_seat_fields)
+                    if name not in seat]
     if not record.get("seats"):
         missing.append("seats (empty)")
     return missing
@@ -72,16 +78,19 @@ def compare(a: Mapping[str, Any], b: Mapping[str, Any]) -> Dict[str, Any]:
             "final_scores_equal": a.get("final_scores") == b.get("final_scores"), "seats": seats}
 
 
-def _baseline_seats(record: Mapping[str, Any]) -> List[Mapping[str, Any]]:
-    return [seat for seat in record.get("seats", []) if seat["policy"] == BASELINE_ID]
+def _baseline_seats(record: Mapping[str, Any], policy: str = BASELINE_ID) -> List[Mapping[str, Any]]:
+    """Seats playing the policy under test (``baseline-v0`` unless a manifest names another)."""
+    return [seat for seat in record.get("seats", []) if seat["policy"] == policy]
 
 
-def gate_check(records: Sequence[Mapping[str, Any]]) -> Dict[str, Dict[str, Any]]:
+def gate_check(records: Sequence[Mapping[str, Any]], policy: str = BASELINE_ID,
+               extra_seat_fields: Sequence[str] = ()) -> Dict[str, Dict[str, Any]]:
     """The registered criteria G1-G6 for a set of repetitions of one configuration.
 
-    ``pass`` is ``None`` for a criterion about baseline seats in a configuration without one.
+    Criteria about "baseline seats" apply to the seats of ``policy``, the policy under test; their
+    definitions are unchanged. ``pass`` is ``None`` for such a criterion in a configuration without one.
     """
-    baseline = [seat for record in records for seat in _baseline_seats(record)]
+    baseline = [seat for record in records for seat in _baseline_seats(record, policy)]
 
     def criterion(passed: bool, detail: Any, about_baseline: bool = False) -> Dict[str, Any]:
         return {"pass": None if about_baseline and not baseline else bool(passed), "detail": detail}
@@ -100,7 +109,7 @@ def gate_check(records: Sequence[Mapping[str, Any]]) -> Dict[str, Dict[str, Any]
     comparisons = [compare(records[0], other) for other in records[1:]]
     replay = sum(s["replay_mismatches"] for s in baseline)
     determinism = all(seat["traces_equal_while_states_equal"] for c in comparisons for seat in c["seats"]
-                      if seat["policy"] == BASELINE_ID)
+                      if seat["policy"] == policy)
     return {
         "G1": criterion(all(status == "COMPLETED" and origin is None and errors == 0 for _, status, origin, errors in g1),
                         g1),
@@ -111,7 +120,8 @@ def gate_check(records: Sequence[Mapping[str, Any]]) -> Dict[str, Dict[str, Any]
                         legality, about_baseline=True),
         "G5": criterion(determinism and replay == 0 and len(records) >= 2,
                         {"replay_mismatches": replay, "comparisons": comparisons}, about_baseline=True),
-        "G6": criterion(all(not missing_fields(r) for r in records), {r["game_id"]: missing_fields(r) for r in records}),
+        "G6": criterion(all(not missing_fields(r, extra_seat_fields) for r in records),
+                        {r["game_id"]: missing_fields(r, extra_seat_fields) for r in records}),
     }
 
 
@@ -141,28 +151,84 @@ def public_game(record: Mapping[str, Any]) -> Dict[str, Any]:
             "replay_mismatches": s["replay_mismatches"], "effects_by_type": s["effects_by_type"],
             "feedback_entries": s["feedback_entries"], "feedback_errors_by_code": s["feedback_errors_by_code"],
             "feedback_errors_by_code_and_type": s.get("feedback_errors_by_code_and_type"),
+            **{name: s[name] for name in LATER_SEAT_FIELDS if name in s},
         } for s in record.get("seats", [])],
     }
 
 
-def condition_summary(records: Sequence[Mapping[str, Any]]) -> Dict[str, Any]:
-    """Aggregates over the games of one condition; latency percentiles over all baseline decisions."""
-    baseline = [seat for record in records for seat in _baseline_seats(record)]
+def _rates(seats: Sequence[Mapping[str, Any]]) -> Dict[str, Optional[float]]:
+    decisions = sum(s["decisions"] for s in seats)
+    no_ops = sum(sum(s["no_op_reasons"].values()) for s in seats)
+    unit_actions = sum(v for s in seats for k, v in s["actions_by_type"].items() if k != "333")
+    return {"active_step_rate": round(sum(s["steps_with_action"] for s in seats) / decisions, 6) if decisions else None,
+            "no_op_rate": round(no_ops / (no_ops + unit_actions), 6) if no_ops + unit_actions else None}
+
+
+def condition_summary(records: Sequence[Mapping[str, Any]], policy: str = BASELINE_ID,
+                      extended: bool = False) -> Dict[str, Any]:
+    """Aggregates over the games of one condition; latency percentiles over all decisions of the policy
+    under test. Keys start with ``baseline_`` for ``baseline-v0`` and ``tested_`` for another policy;
+    ``extended`` adds the fields registered after the ``baseline-v0`` evaluation."""
+    baseline = [seat for record in records for seat in _baseline_seats(record, policy)]
+    p = "baseline" if policy == BASELINE_ID else "tested"
     actions: Dict[str, int] = {}
     for seat in baseline:
         for kind, count in seat["actions_by_type"].items():
             actions[kind] = actions.get(kind, 0) + count
-    return {
+    summary = {
         "games": len(records), "completed": sum(1 for r in records if r.get("status") == "COMPLETED"),
         "failed": sum(1 for r in records if r.get("status") == "FAIL"),
         "capped": sum(1 for r in records if r.get("status") == "CAPPED"),
-        "baseline_decisions": sum(s["decisions"] for s in baseline),
-        "baseline_latency": latency([value for s in baseline for value in s["latency_us"]]),
-        "baseline_actions_by_type": dict(sorted(actions.items())),
-        "baseline_gate_rejections": sum(sum(s["gate_rejections"].values()) for s in baseline),
-        "baseline_feedback_errors": sum(sum(s["feedback_errors_by_code"].values()) for s in baseline),
-        "baseline_contract_errors": sum(s["contract_errors"] for s in baseline),
+        f"{p}_decisions": sum(s["decisions"] for s in baseline),
+        f"{p}_latency": latency([value for s in baseline for value in s["latency_us"]]),
+        f"{p}_actions_by_type": dict(sorted(actions.items())),
+        f"{p}_gate_rejections": sum(sum(s["gate_rejections"].values()) for s in baseline),
+        f"{p}_feedback_errors": sum(sum(s["feedback_errors_by_code"].values()) for s in baseline),
+        f"{p}_contract_errors": sum(s["contract_errors"] for s in baseline),
         "replay_mismatches": sum(s["replay_mismatches"] for s in baseline),
         "engine_seconds": round(sum((r.get("timings_seconds") or {}).get("engine_step", 0.0) for r in records), 3),
         "wall_seconds": round(sum((r.get("timings_seconds") or {}).get("wall", 0.0) for r in records), 3),
+    }
+    if extended:
+        codes: Dict[str, int] = {}
+        for seat in baseline:
+            for code, count in seat["feedback_errors_by_code"].items():
+                codes[code] = codes.get(code, 0) + count
+        summary.update({
+            "policy_under_test": policy,
+            f"{p}_feedback_errors_by_code": dict(sorted(codes.items())),
+            f"{p}_decision_seconds": round(sum(v for s in baseline for v in s["latency_us"]) / 1e6, 3),
+            **{f"{p}_{name}": sum(s.get(name, 0) for s in baseline) for name in COUNTED_LATER_FIELDS},
+            **{f"{p}_{name}": value for name, value in _rates(baseline).items()},
+        })
+    return summary
+
+
+def refusal_decomposition(records: Sequence[Mapping[str, Any]], policy: str,
+                          taxonomy: Mapping[str, Mapping[str, Any]]) -> Dict[str, Any]:
+    """Supplementary to G4, which it does not replace: engine refusals of the policy under test by code,
+    by the evidence-backed code category of ``taxonomy`` (unknown codes stay ``unclassified``) and, where
+    the records carry them, by start-of-step context class. Every refused action had been accepted by
+    the project gate against the start-of-step contract."""
+    seats = [seat for record in records for seat in _baseline_seats(record, policy)]
+    codes: Dict[str, int] = {}
+    contexts: Dict[str, int] = {}
+    with_contexts = bool(seats) and all("refusal_contexts" in s for s in seats)
+    for seat in seats:
+        for code, count in seat["feedback_errors_by_code"].items():
+            codes[code] = codes.get(code, 0) + count
+        for key, count in seat.get("refusal_contexts", {}).items():
+            contexts[key] = contexts.get(key, 0) + count
+    categories: Dict[str, int] = {}
+    for code, count in codes.items():
+        category = taxonomy.get(code, {}).get("category", "unclassified")
+        categories[category] = categories.get(category, 0) + count
+    refused = sum(codes.values())
+    return {
+        "project_gate_rejections": sum(sum(s["gate_rejections"].values()) for s in seats),
+        "engine_refusals": refused,
+        "engine_refusals_accepted_by_the_gate_at_decision_time": refused,
+        "by_code": dict(sorted(codes.items())),
+        "by_code_category": dict(sorted(categories.items())),
+        "by_start_of_step_context": dict(sorted(contexts.items())) if with_contexts else None,
     }

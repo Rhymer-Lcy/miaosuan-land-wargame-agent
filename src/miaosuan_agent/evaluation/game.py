@@ -18,7 +18,7 @@ import re
 import time
 import traceback
 from collections import Counter
-from typing import Any, Callable, Dict, List, Mapping, Optional, Sequence
+from typing import Any, Callable, Collection, Dict, List, Mapping, Optional, Sequence
 
 from ..boundary import ContractError, Origin, Stage, StateView, normalize_state
 from ..decision import BASELINE_ID, digest
@@ -60,6 +60,11 @@ class SeatLog:
         self.feedback_errors: Counter = Counter()
         self.feedback_errors_by_type: Counter = Counter()
         self.feedback_error_examples: Dict[str, List[Dict[str, Any]]] = {}
+        self.refusal_contexts: Counter = Counter()
+        self.suppressions = 0
+        self.steps_with_suppression = 0
+        self.duplicate_occupation_steps = 0
+        self.duplicate_occupation_commands = 0
 
     def record(self, step: int, trace, produced: Sequence[Mapping[str, Any]], latency: float) -> None:
         self.latency_us.append(round(latency * 1e6))
@@ -68,6 +73,9 @@ class SeatLog:
         self.trace_steps.append(trace_digest[:PREFIX])
         if trace.error is not None:
             self.contract_errors += 1
+        suppressed = getattr(trace, "suppressed", ())
+        self.suppressions += len(suppressed)
+        self.steps_with_suppression += bool(suppressed)
         self.diagnostics += len(trace.diagnostics)
         for _, _, reason in trace.rejected:
             self.rejections[sanitize(reason)] += 1
@@ -116,13 +124,21 @@ class SeatLog:
             "feedback_errors_by_code": {str(k): v for k, v in sorted(self.feedback_errors.items(), key=str)},
             "feedback_errors_by_code_and_type": dict(sorted(self.feedback_errors_by_type.items())),
             "feedback_error_examples": self.feedback_error_examples,
+            "refusal_contexts": dict(sorted(self.refusal_contexts.items())),
+            "suppressions": self.suppressions, "steps_with_suppression": self.steps_with_suppression,
+            "duplicate_occupation_steps": self.duplicate_occupation_steps,
+            "duplicate_occupation_commands": self.duplicate_occupation_commands,
         }
 
 
 def play(train_env_cls: Callable[[], Any], agent_factories: Mapping[str, Callable[[], Any]], spec: GameSpec,
          inputs: Any, players: Sequence[Mapping[str, Any]], rng_probe: Optional[Callable[[], Dict[str, str]]] = None,
-         wall_cap: float = WALL_CAP_SECONDS, clock: Callable[[], float] = time.perf_counter) -> Dict[str, Any]:
-    """Run ``spec`` to the engine's done flag or a cap. Never raises; failures are recorded."""
+         wall_cap: float = WALL_CAP_SECONDS, clock: Callable[[], float] = time.perf_counter,
+         replay_policies: Collection[str] = frozenset({BASELINE_ID})) -> Dict[str, Any]:
+    """Run ``spec`` to the engine's done flag or a cap. Never raises; failures are recorded.
+
+    Seats playing a policy in ``replay_policies`` (the policy under test) get in-game replay checks.
+    """
     policies = {0: spec.red, 1: spec.blue}
     record: Dict[str, Any] = {"schema": SCHEMA, "game_id": spec.game_id, "scenario_id": spec.scenario_id,
                               "map_id": spec.map_id, "condition": spec.condition, "repetition": spec.repetition,
@@ -205,11 +221,19 @@ def play(train_env_cls: Callable[[], Any], agent_factories: Mapping[str, Callabl
                 return fail(f"agent-{player['faction']}", exc)
             timings["decisions"] += elapsed
             log.record(steps, agent.last_trace, produced, elapsed)
-            if log.policy == BASELINE_ID and steps % REPLAY_CHECK_EVERY == 0:
+            if log.policy in replay_policies and steps % REPLAY_CHECK_EVERY == 0:
                 log.replay_checks += 1
                 if digest(agent.replay(observation, memory)) != digest(agent.last_trace):
                     log.replay_mismatches += 1
             emitted.extend((log, action) for action in produced)
+        start_hexes = {unit.obj_id: unit.cur_hex for unit in before.global_observation.operators()}
+        start_flags = {city.coord: city.flag for city in (before.global_observation.cities() or ())}
+        for log in logs:
+            per_objective = Counter(start_hexes.get(a.get("obj_id")) for owner, a in emitted
+                                    if owner is log and a.get("type") == 5)
+            extra = sum(count - 1 for count in per_objective.values() if count > 1)
+            log.duplicate_occupation_steps += bool(extra)
+            log.duplicate_occupation_commands += extra
         try:
             tick = clock()
             result = env.step([action for _, action in emitted])
@@ -239,6 +263,9 @@ def play(train_env_cls: Callable[[], Any], agent_factories: Mapping[str, Callabl
                     code = effects.feedback_error_code(entry)
                     if code is not None:
                         seats[actor].feedback_error(code, entry, steps)
+                        own = [a for owner, a in emitted if owner.seat == actor]
+                        seats[actor].refusal_contexts[effects.refusal_context(
+                            entry, code, seats[actor].faction, start_hexes, start_flags, own)] += 1
             decision_step = before.global_observation.time().cur_step
             for log, action in emitted:
                 outcome = effects.classify(action, log.faction, before.global_observation, everything, decision_step)
