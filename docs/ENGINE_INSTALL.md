@@ -67,6 +67,32 @@ bash scripts/run_engine_smoke_test.sh --python PYTHON --sdk-archive local/source
 `PYTHON` is the interpreter of the `miaosuan-runtime` environment (CPython 3.10); its pip performs
 the offline `--target` installation.
 
+## Installation in use
+
+One installation exists for engine 4.1.0, created on 2026-09-29 on the Linux host used for
+development. Its manifest fingerprints 153 package files before the first import. Session 0001
+(first use, with contract capture) and session 0002 (reuse) both passed. The state file was empty
+at installation, was written by the engine during session 0001, and was not changed by session
+0002; each session opened with exactly the state its predecessor closed with. `home/` stayed empty.
+
+## Host clock
+
+The authenticator's method names indicate a check of time since first use; which clock it reads
+was not verified. On the host used so far, the wall clock ran about 388 s ahead of external
+references (the HTTP `Date` headers of Cloudflare and Google, which agreed with the development
+workstation to within about one second; GitHub's header was about 8 s off and was not used). The
+host is not NTP-synchronised: its time service is active, reports the clock as unsynchronised, and
+times out contacting its NTP servers. The offset was stable while observed (388.36 s and then
+388.26 s against the workstation, about 48 minutes apart).
+
+Consequences:
+
+* ledger and report timestamps are host-clock labels and carry that offset; durations are measured
+  with monotonic clocks;
+* the clock is never changed to influence the engine, and nothing here changes it;
+* if the host's clock is later corrected, it will step back by the offset; how the authenticator
+  treats a first-use time that then lies in the future is unknown.
+
 ## History
 
 The first engine execution (2026-09-29, `ENGINE_SMOKE_TEST.md`) predates this policy: it installed

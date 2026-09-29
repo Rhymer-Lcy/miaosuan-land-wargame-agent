@@ -5,10 +5,11 @@ https://wargame.ia.ac.cn/.
 
 ## Status
 
-Bootstrap complete. The repository holds provenance records, a static audit of the platform's
-community SDK, tooling to verify a local copy of it, a reproducible runtime environment, and an
-isolated engine smoke test that passed on Linux (`docs/ENGINE_SMOKE_TEST.md`). No agent logic has
-been written.
+Platform boundary in place. The repository holds provenance records, a static audit of the
+platform's community SDK, a reproducible runtime environment, a persistent and guarded engine
+installation procedure, and the contract boundary through which project code reads engine data,
+with its observed, accepted and canonical layers documented and tested (`docs/CONTRACT.md`). No
+agent logic has been written.
 
 ## Third-party material is not in this repository
 
@@ -29,6 +30,8 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/PROVENANCE.md` | identity of the SDK and documentation inputs, licensing status, local archive layout |
 | `docs/COMPATIBILITY.md` | static audit of the SDK: engine requirements, inconsistencies, upload constraints |
 | `docs/ENGINE_SMOKE_TEST.md` | observed engine behaviour and interface contract from the first controlled run |
+| `docs/CONTRACT.md` | observed contract of SDK 4.1.0, accepted boundary, canonical representation, fixture policy |
+| `docs/ENGINE_INSTALL.md` | persistent engine installation: rules, session ledger, host clock |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy
@@ -47,6 +50,10 @@ status 1.
 python -m unittest discover -s tests -t .
 ```
 
+Tests that need private material (real contract fixtures, the persistent engine installation, POSIX
+file locking) skip with a stated reason when it is absent, so a public checkout passes without any
+SDK asset.
+
 ## Engine smoke test
 
 On an x86-64 Linux host with the `miaosuan-runtime` environment (`environments/README.md`), a local
@@ -61,7 +68,7 @@ from the persistent installation with an empty environment, the installation's p
 no user site-packages, no GPU and a hard timeout. The session ledger refuses to start if the
 installation or its state changed outside a recorded session. Two inert agents end the deployment
 stage and otherwise do nothing; every state passes through the contract boundary
-(`miaosuan_agent.boundary`). `--capture` also writes private contract fixtures under `local/`.
+(`docs/CONTRACT.md`). `--capture` also writes private contract fixtures under `local/`.
 `PYTHON` is the interpreter of `miaosuan-runtime`. Exit status:
 0 PASS, 1 FAIL, 2 invalid input, 3 BLOCKED (the engine reported an authentication failure),
 4 REFUSED (an installation guardrail stopped the run).
@@ -74,8 +81,9 @@ which are exactly the 50 cells flagged as roadblocks in map 9601, the only map w
 
 1. The engine (`land_wargame_train_env` 4.1.0) exists only as a
    `cp310-cp310-manylinux2014_x86_64` wheel: x86-64 Linux with CPython 3.10.
-2. The engine embeds a MAC-bound, time-since-first-use authenticator. It passed on first use and
-   keeps its state inside the installed package (`docs/ENGINE_SMOKE_TEST.md`, section 4).
+2. The engine embeds a MAC-bound, time-since-first-use authenticator that keeps its state inside
+   the installed package. It is used only through one persistent installation that is never
+   reinstalled or reset (`docs/ENGINE_INSTALL.md`).
 3. The SDK's demo runner does not run as shipped: the data paths it opens do not exist in the
    supplied `Data.zip` (section 3).
 4. The platform accepts an upload only as a zip holding a single top-level package `ai` that

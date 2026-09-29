@@ -12,7 +12,8 @@ This is the static audit written before anything from the SDK was executed. File
 those members are not part of this repository.
 
 The first controlled execution of the engine is recorded in `ENGINE_SMOKE_TEST.md`; its section 5
-states which items below the runtime evidence confirmed or corrected.
+states which items below the runtime evidence confirmed or corrected. The contract verified since
+then is maintained in `CONTRACT.md`.
 
 ## 1. Execution environment required by the engine
 

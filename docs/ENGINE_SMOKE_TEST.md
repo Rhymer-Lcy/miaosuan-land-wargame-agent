@@ -1,7 +1,9 @@
 # Engine smoke test: verified runtime behaviour
 
 First controlled execution of the SDK engine, 2026-09-29. This document records only what was
-observed in that run; the static audit it tests is `docs/COMPATIBILITY.md`.
+observed in that run; the static audit it tests is `docs/COMPATIBILITY.md`. Later sessions run on
+the persistent installation (`ENGINE_INSTALL.md`) and read every state through the contract
+boundary; the contract verified since then is maintained in `CONTRACT.md`.
 
 **Result: PASS.** The engine imported, reported successful authentication, set up the scenario,
 accepted the end-of-deployment action from both seats, and ran the game to its natural end.
@@ -66,9 +68,10 @@ installed package**: shipped empty, it held one 52-byte line after the run. `HOM
 and no `~/.engine_config` (or the FAQ's `~/.engin_config`) was created there. No file was deleted. The content was not decoded; it is kept only in the git-ignored run
 directory.
 
-Because the harness installs a fresh copy per run, each run starts with an empty state file. That
-is a side effect of isolating the first execution, not a way of using the engine: ongoing
-development should run one persistent installation and leave its state file alone.
+The harness of this first probe installed a fresh copy per run, so each run started with an empty
+state file. That was a side effect of isolating the first execution, not a way of using the engine,
+and the harness has since been replaced by one persistent installation whose state file is created
+once and never reset (`ENGINE_INSTALL.md`).
 
 ## 5. Comparison with the static audit
 
