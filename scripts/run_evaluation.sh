@@ -2,10 +2,13 @@
 # Play the registered evaluation plan: one isolated engine process (and session) per game.
 #
 # Usage: scripts/run_evaluation.sh --python PYTHON --sdk-archive ZIP --plan gate1|suite
-#                                  [--engine-install DIR]
+#                                  [--evaluation NAME] [--engine-install DIR]
 #
-#   --plan gate1  the two Gate 1 games (registered scenario, baseline mirror)
-#   --plan suite  every registered suite game, in registered order; refused until Gate 1 passed
+#   --plan gate1       the two Gate 1 games (registered scenario, mirror of the policy under test)
+#   --plan suite       every registered suite game, in registered order; refused until Gate 1 passed
+#   --evaluation NAME  the registered evaluation: evaluation/NAME/manifest.json, records under
+#                      local/evaluation/NAME (default baseline-v0). The baseline-v0 manifest is
+#                      re-derived before every run; a candidate evaluation also re-derives its own.
 #
 # Each game runs with the same isolation as scripts/run_engine_smoke_test.sh: an empty environment
 # (env -i), the persistent installation's home/ as HOME, no user site-packages, PYTHONHASHSEED=0,
@@ -18,6 +21,7 @@ PYTHON=""
 ARCHIVE=""
 INSTALL=""
 PLAN=""
+NAME=baseline-v0
 TIMEOUT_SECONDS=${EVALUATION_GAME_TIMEOUT_SECONDS:-2100}
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -25,11 +29,12 @@ while [[ $# -gt 0 ]]; do
         --sdk-archive) ARCHIVE=$2; shift 2 ;;
         --engine-install) INSTALL=$2; shift 2 ;;
         --plan) PLAN=$2; shift 2 ;;
+        --evaluation) NAME=$2; shift 2 ;;
         *) echo "unknown argument: $1" >&2; exit 2 ;;
     esac
 done
 if [[ -z $PYTHON || -z $ARCHIVE || ( $PLAN != gate1 && $PLAN != suite ) ]]; then
-    echo "usage: $0 --python PYTHON --sdk-archive ZIP --plan gate1|suite [--engine-install DIR]" >&2
+    echo "usage: $0 --python PYTHON --sdk-archive ZIP --plan gate1|suite [--evaluation NAME] [--engine-install DIR]" >&2
     exit 2
 fi
 if [[ $(id -u) -eq 0 ]]; then
@@ -45,13 +50,21 @@ if [[ ! -f $INSTALL/install-manifest.json ]]; then
 fi
 INSTALL=$(cd "$INSTALL" && pwd)
 ARCHIVE=$(cd "$(dirname "$ARCHIVE")" && pwd)/$(basename "$ARCHIVE")
-WORK="$REPO/local/evaluation/baseline-v0"
+WORK="$REPO/local/evaluation/$NAME"
+MANIFEST="$REPO/evaluation/$NAME/manifest.json"
+if [[ ! -f $MANIFEST ]]; then
+    echo "no registered manifest at $MANIFEST" >&2
+    exit 2
+fi
 mkdir -p "$WORK/games" "$WORK/started" "$WORK/logs" "$WORK/cwd/a/b"
 
-host() { PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/run_evaluation.py" "$@"; }
+host() { PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/run_evaluation.py" --evaluation "$NAME" "$@"; }
 
 archive_sha_before=$(sha256sum "$ARCHIVE" | cut -d' ' -f1)
 PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/build_evaluation_manifest.py" --sdk-archive "$ARCHIVE" --check
+if [[ $NAME != baseline-v0 ]]; then
+    PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/build_candidate_manifest.py" --check
+fi
 host stage --sdk-archive "$ARCHIVE" > "$WORK/logs/stage.log"
 
 if [[ $PLAN == suite ]]; then
@@ -64,7 +77,7 @@ if not criteria or not all(c["pass"] for c in criteria.values()):
 PY
 fi
 
-mapfile -t GAMES < <(PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$REPO/evaluation/baseline-v0/manifest.json" "$PLAN" <<'PY'
+mapfile -t GAMES < <(PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$PLAN" <<'PY'
 import json, sys
 from miaosuan_agent.evaluation import manifest as mf
 manifest = json.load(open(sys.argv[1], encoding="utf-8"))
@@ -103,7 +116,8 @@ for id in "${GAMES[@]}"; do
             CUDA_VISIBLE_DEVICES= \
             PYTHONPATH="$INSTALL/site:$REPO/src" \
             timeout --signal=TERM --kill-after=30 "$TIMEOUT_SECONDS" \
-            "$PYTHON" "$REPO/scripts/run_evaluation.py" game --game-id "$id" --engine-install "$INSTALL" \
+            "$PYTHON" "$REPO/scripts/run_evaluation.py" --evaluation "$NAME" game --game-id "$id" \
+                --engine-install "$INSTALL" \
                 --harness-commit "$COMMIT" "${DIRTY_ARGS[@]}" \
             > "$WORK/logs/$id.log" 2>&1
     )
