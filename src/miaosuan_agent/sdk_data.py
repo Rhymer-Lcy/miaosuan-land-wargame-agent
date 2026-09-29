@@ -124,6 +124,11 @@ def _read_verified_member(sdk_archive: Path, member: str) -> bytes:
     return blob
 
 
+def open_data_archive(sdk_archive: Path) -> zipfile.ZipFile:
+    """The SDK's nested ``Data.zip``, opened in memory after both digests were checked."""
+    return zipfile.ZipFile(io.BytesIO(_read_verified_member(sdk_archive, prov.DATA_ARCHIVE_MEMBER)))
+
+
 def stage_game_data(sdk_archive: Path, dest: Path, scenario_id: str, map_id: str) -> Path:
     """Copy one scenario and one map out of a verified SDK archive; return the ``Data/`` root.
 
