@@ -1,0 +1,42 @@
+# Store every text file with LF line endings and check it out with LF as well.
+# This overrides the machine-wide core.autocrlf=true set by Git for Windows.
+* text=auto eol=lf
+
+# Source and documentation
+*.py    text diff=python
+*.pyi   text diff=python
+*.md    text diff=markdown
+*.txt   text
+*.json  text
+*.toml  text
+*.cfg   text
+*.ini   text
+*.yml   text
+*.yaml  text
+*.csv   text
+*.sh    text eol=lf
+
+# Windows-only scripts keep CRLF in the working tree (still LF in the repository).
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.ps1   text eol=crlf
+
+# Binary formats. These are also excluded by .gitignore; declaring them binary
+# prevents line-ending conversion or textual diffs if one is ever force-added.
+*.zip     binary
+*.whl     binary
+*.npz     binary
+*.npy     binary
+*.pickle  binary
+*.pkl     binary
+*.so      binary
+*.pyd     binary
+*.dll     binary
+*.pyc     binary
+*.xls     binary
+*.xlsx    binary
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.pdf     binary

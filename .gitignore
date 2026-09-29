@@ -1,0 +1,88 @@
+# ---------------------------------------------------------------------------
+# Python bytecode, build output and tool caches
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# ---------------------------------------------------------------------------
+# Virtual environments
+# ---------------------------------------------------------------------------
+.venv/
+venv/
+.conda/
+
+# ---------------------------------------------------------------------------
+# Local-only material: SDK runtime assets, documentation snapshots, scratch.
+# Never committed; see docs/PROVENANCE.md for how each item is reproduced.
+# ---------------------------------------------------------------------------
+/local/
+
+# SDK map/scenario data (Data.zip extracts to Data/; the demo runner reads data/)
+Data/
+data/
+
+# Archives, wheels, compiled extensions and binary data formats
+*.zip
+*.whl
+*.tar
+*.tar.gz
+*.7z
+*.so
+*.pyd
+*.dll
+*.npz
+*.npy
+*.pickle
+*.pkl
+*.xls
+*.xlsx
+
+# ---------------------------------------------------------------------------
+# Runtime output
+# ---------------------------------------------------------------------------
+logs/
+replays/
+*.log
+
+# State file written by the SDK engine's authenticator (normally under $HOME;
+# listed here in case HOME is redirected into the working tree). The platform
+# FAQ spells it ".engin_config", the engine binary ".engine_config".
+.engine_config
+.engin_config
+
+# ---------------------------------------------------------------------------
+# Secrets and machine-local configuration
+# ---------------------------------------------------------------------------
+.env
+.env.*
+*.pem
+*.key
+secrets/
+
+# ---------------------------------------------------------------------------
+# Editor, OS and temporary files
+# ---------------------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+desktop.ini
