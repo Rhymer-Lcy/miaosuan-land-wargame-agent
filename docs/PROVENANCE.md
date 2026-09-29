@@ -18,8 +18,22 @@ Obtained 2026-09-29.
 | Input | Bytes | SHA-256 |
 |---|---:|---|
 | `land_wargame_sdk.zip` (community SDK) | 169,108,968 | `ed4c9fc03cb6eb1e64821d2efbc61024d90735e3dc489dc7ffe0515e653ea725` |
-| `庙算·陆战指挥官 平台文档.html` (saved documentation page) | 22,591 | `e9fba6373d68db33f22a929764a7ef4b91e185b1e2537cc3c4767694a7f0f32a` |
-| `庙算·陆战指挥官 平台文档_files/` (7 asset files of that page) | - | per file in `src/miaosuan_agent/sdk_provenance.py` |
+
+A saved copy of the documentation's welcome page was supplied with it: an HTML file and a folder of
+7 assets. It was removed from the local archive on 2026-09-30, because its whole visible content (a
+heading and two paragraphs) is contained verbatim in the welcome page of the complete live snapshot
+kept since 2026-09-29 (section 6.2). Its digests are kept for the record:
+
+| Retired input (was under `docs-saved-page/`) | Bytes | SHA-256 |
+|---|---:|---|
+| `庙算·陆战指挥官 平台文档.html` | 22,591 | `e9fba6373d68db33f22a929764a7ef4b91e185b1e2537cc3c4767694a7f0f32a` |
+| `庙算·陆战指挥官 平台文档_files/bundle.a7c05c9e.min.js.下载` | - | `87420f873fa72d4947835c0f326fdc1bcbd2dea40a23049d524544c476fda7e3` |
+| `庙算·陆战指挥官 平台文档_files/css` | - | `831d1cfa48507eb5cbc28b203bb587ae6af87d6c8dbf9f356d39f00b52fb015f` |
+| `庙算·陆战指挥官 平台文档_files/extra.css` | - | `290ede793e27415db9798d684b114090a06726a7944b9df619b200faed90af9f` |
+| `庙算·陆战指挥官 平台文档_files/main.66ac8b77.min.css` | - | `66ac8b7785c87019ca75bbf91927b3a3cd6691a7e52811a3b60fab4b5a91ef05` |
+| `庙算·陆战指挥官 平台文档_files/miaosuan_logo_no_words.png` | - | `3485640b85ccf85fbcca029001abe6c3491ed86de33c5d194fe23757eef6cd50` |
+| `庙算·陆战指挥官 平台文档_files/miaosuan_logo_words.png` | - | `b5003ac372cfcab541c617c12a9c6a98ed473ff73325e8b65b8f6bb1135136bf` |
+| `庙算·陆战指挥官 平台文档_files/palette.06af60db.min.css` | - | `06af60dbce60d47a167fcab982f7cfa8d2d654a2f2a13d68e5a5fe5ae66df6c0` |
 
 Nested archives inside the SDK ZIP:
 
@@ -84,24 +98,24 @@ Machines that hold the SDK keep it outside version control, under the git-ignore
 ```
 local/source-archives/
   land_wargame_sdk.zip
-  docs-saved-page/
-    庙算·陆战指挥官 平台文档.html
-    庙算·陆战指挥官 平台文档_files/        (7 files)
   docs-live-snapshot-20260929/             (raw HTML and text of the pages in section 6.2)
   SHA256SUMS
 ```
 
-The saved page and its asset folder keep their original names so that the page's relative links
-still resolve. `python scripts/verify_source_archives.py` checks whatever part of this layout is
-present against the digests above and reports absent files as skipped.
+`python scripts/verify_source_archives.py` checks the SDK archive, its nested archives and its text
+members against the digests above and reports absent files as skipped. `SHA256SUMS` lists the
+digest of every file in this directory, the live snapshot included; `sha256sum -c SHA256SUMS`
+checks them all.
 
 ## 6. Documentation sources
 
-### 6.1 Supplied saved page
+### 6.1 Supplied saved page (retired)
 
-The saved HTML is the **welcome page only** of an MkDocs site (generator `mkdocs-1.6.0,
-mkdocs-material-9.5.21`) saved from `https://wargame.ia.ac.cn/docs/`. Its content is two
-paragraphs describing the platform. Its navigation links 21 further pages, none of which was saved:
+The saved HTML was the **welcome page only** of an MkDocs site (generator `mkdocs-1.6.0,
+mkdocs-material-9.5.21`) saved from `https://wargame.ia.ac.cn/docs/`. Its content was a heading and
+two paragraphs describing the platform. Its navigation linked 21 further pages, none of which was
+saved with it; all of them were fetched later (section 6.2), and the saved page was removed from the
+local archive on 2026-09-30 (section 2):
 
 | Section | Pages (path under `https://wargame.ia.ac.cn/docs/`) |
 |---|---|
