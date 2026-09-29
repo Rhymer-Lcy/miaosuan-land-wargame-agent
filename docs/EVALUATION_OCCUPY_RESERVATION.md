@@ -39,12 +39,25 @@ hypothesis is registered.
 
 The candidate is promoted to `baseline-v1` only if all of A1 to A11 in the manifest hold (the
 `baseline-v0` identity still verifies; the counterfactual replay shows no unexplained delta; tests
-pass; Gate 1 passes; the suite completes; no project-gate rejection; no duplicate same-objective
+pass; Gate 1 passes its runtime criteria (amendment 1); the suite completes; no project-gate rejection; no duplicate same-objective
 occupation emitted; no code-1804 refusal whose start-of-step context is several own occupations;
 no scenario-specific identifier; determinism holds; repository checks pass). The original G4 is
 reported exactly as registered and is not a promotion criterion: it is expected to keep failing,
 because codes 516 and 203 are deliberately untouched. Scores are descriptive; latency is reported,
 not judged.
+
+## Amendment 1 (before any suite game)
+
+The first registration (commit `0b4c2cd`, manifest `aff71d57…`) copied `baseline-v0`'s Gate 1
+rule, "G1 to G6 all pass", into criterion A4. That contradicted its own statement that G4 is no
+criterion and is expected to fail, since codes 516 and 203 are untouched, and the experiment's
+specification, which defines Gate 1 as a runtime sanity check. Gate 1 under that registration
+(engine sessions 0086 and 0087) recorded one engine refusal, code 203 on a shot, failing G4. G1,
+G2, G3, G5 and G6 passed and no project-gate rejection occurred. The wrapper therefore refused to
+start the suite, as registered. The amendment changes only the Gate 1 rule and A4: Gate 1 now
+requires G1, G2, G3, G5 and G6 for both games and zero project-gate rejections, and G4 is reported.
+The candidate's policy source is unchanged. The first Gate 1 attempt is kept and reported but not
+reused: Gate 1 is played again under the amended registration, before the suite.
 
 ## 3. Counterfactual replay before registration
 

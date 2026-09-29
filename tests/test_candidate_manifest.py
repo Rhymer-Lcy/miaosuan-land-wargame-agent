@@ -73,5 +73,20 @@ class BuilderTest(unittest.TestCase):
         self.assertTrue(any(line.startswith("A8 ") for line in first["acceptance"]))
         self.assertNotRegex(mf.canonical_bytes(first).decode("utf-8"), r"20\d\d-\d\d-\d\dT")
 
+
+class AmendmentTest(unittest.TestCase):
+    def test_gate1_rule_excludes_only_g4(self) -> None:
+        import json
+
+        from miaosuan_agent.evaluation import candidate_manifest as cm
+
+        self.assertEqual(cm.GATE1_REQUIRED, ("G1", "G2", "G3", "G5", "G6"))
+        self.assertEqual(cm.AMENDMENT["number"], 1)
+        registered = json.loads((ROOT / "evaluation" / cm.EVALUATION_NAME / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(registered["gate1_required"], list(cm.GATE1_REQUIRED))
+        self.assertNotIn("gate1_required", json.loads((ROOT / "evaluation" / "baseline-v0" / "manifest.json")
+                                                        .read_text(encoding="utf-8")))
+        self.assertTrue(registered["acceptance"][3].startswith("A4 Gate 1 passes its runtime criteria"))
+
 if __name__ == "__main__":
     unittest.main()

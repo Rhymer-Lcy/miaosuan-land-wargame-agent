@@ -29,6 +29,22 @@ GOLDEN_TRACE_CHAIN = "11e12bf0475c04672701bcbb4daa6579c6c3b0238ac90fb8320b2384e6
 V0_GOLDEN_TRACE_CHAIN = "0743df89c0855d7673352ce16727c1c613264839659b157183f6a97fbaa7cff2"
 V0_REGISTRATION_COMMIT = "0a806f1"
 
+#: Gate 1 criteria that must pass (amendment 1). G4 is reported but, as ``NOT_CRITERIA`` states, not required.
+GATE1_REQUIRED = ("G1", "G2", "G3", "G5", "G6")
+AMENDMENT = {
+    "number": 1,
+    "supersedes_manifest_sha256": "aff71d579a506cec78d7049bc203520e266422912cbd8c340ec854b56a312537",
+    "supersedes_registration_commit": "0b4c2cd",
+    "change": "Gate 1 rule and criterion A4: from 'G1-G6 all pass' to 'G1, G2, G3, G5 and G6 pass with zero "
+              "project-gate rejections; G4 reported'. Nothing else changes; the candidate's policy source is the same.",
+    "reason": "The first registration copied baseline-v0's Gate 1 rule, which requires G4, while its own not_criteria "
+              "declare G4 no criterion and expect it to fail because codes 516 and 203 are untouched; the "
+              "experiment's specification defines Gate 1 as a runtime sanity check without an engine-refusal item.",
+    "trigger": "Gate 1 under the first registration (engine sessions 0086 and 0087) recorded one engine refusal, code "
+               "203 on a shot, which failed G4; G1, G2, G3, G5 and G6 passed and no project-gate rejection occurred. "
+               "That attempt is kept and reported, not reused; Gate 1 is played again under this amendment.",
+}
+
 SINGLE_VARIABLE = (
     "Within one decision step at most one occupation command is issued per objective (keyed by the hex the "
     "occupying unit stands on, the objective's coord). Units are processed in baseline-v0 order; the first unit "
@@ -49,7 +65,8 @@ ACCEPTANCE = (
     "A2 counterfactual replay of recorded real start-of-step inputs shows zero unexplained deltas (pinned below; "
     "run before registration)",
     "A3 the public and private tests pass on both machines",
-    "A4 Gate 1 passes G1-G6",
+    "A4 Gate 1 passes its runtime criteria: G1, G2, G3, G5 and G6 for its two games, with zero project-gate "
+    "rejections; G4 is reported (amendment 1)",
     "A5 the suite completes: every registered game reaches the engine's done flag",
     "A6 project-gate rejections of the policy under test: 0 over Gate 1 and the suite",
     "A7 duplicate same-objective occupation commands emitted by the policy under test, counted by the harness from "
@@ -146,7 +163,8 @@ def build(v0_manifest: Mapping[str, Any], v0_results_sha256: str, v0_diagnostics
         "acceptance": list(ACCEPTANCE),
         "not_criteria": list(NOT_CRITERIA),
         "gate_rules": [
-            "Gate 1 passes when G1-G6 all pass for its two games; the suite may not start before that",
+            "Gate 1 passes when G1, G2, G3, G5 and G6 pass for its two games and no project-gate rejection "
+            "occurs; G4 is reported, not required (amendment 1); the suite may not start before that",
             "in the suite, G1-G6 are evaluated for every configuration over its repetitions and reported; criteria "
             "about the seats of the policy under test are not applicable to C4",
             "G1-G6 keep their baseline-v0 definitions, with 'baseline seats' read as the seats of the policy under test",
@@ -159,6 +177,8 @@ def build(v0_manifest: Mapping[str, Any], v0_results_sha256: str, v0_diagnostics
                           "sources": list(OCCUPY_RESERVATION_SOURCES),
                           "rule": "sorted relative paths, CRLF normalized to LF; see evaluation/identity.py"},
         "golden_trace_chain": GOLDEN_TRACE_CHAIN,
+        "gate1_required": list(GATE1_REQUIRED),
+        "amendment": dict(AMENDMENT),
         "counterfactual_replay": {"file": f"evaluation/{EVALUATION_NAME}/counterfactual-replay.json",
                                   "sha256": replay_sha256,
                                   **{k: replay[k] for k in ("decision_states", "identical", "differing",
