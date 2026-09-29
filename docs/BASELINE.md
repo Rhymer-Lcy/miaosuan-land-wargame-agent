@@ -12,7 +12,7 @@ this name. Any behavioural change needs a new identity, a new registration and a
 | Identity | `baseline-v0`; control policy `inert-v0` |
 | Policy source | SHA-256 `8e209640534e0af597fdcf4c7911bdcce417c6f2b883671e5bbfc0d243e43a13` over `agent.py`, `boundary/` and `decision/` (rule in `src/miaosuan_agent/evaluation/identity.py`) |
 | Golden decisions | trace chain `0743df89c0855d7673352ce16727c1c613264839659b157183f6a97fbaa7cff2` (`tests/test_decision_determinism.py`) |
-| Registration | commit `0a806f1`, 2026-09-29T23:58:00+08:00; manifest canonical SHA-256 `01c1f88b064ace501e56018576426cea6291bbabdce0e35387f72bec2d0068e6` |
+| Registration | commit `0a806f1` (author date 2026-09-29T23:58:00+08:00), pushed to GitHub at about 2026-09-30T00:00+08:00, before the first baseline engine session (Gate 1, opened at about 00:01+08:00); manifest canonical SHA-256 `01c1f88b064ace501e56018576426cea6291bbabdce0e35387f72bec2d0068e6` |
 | Engine | `land_wargame_train_env` 4.1.0 from the persistent installation; SDK archive SHA-256 `ed4c9fc03cb6eb1e64821d2efbc61024d90735e3dc489dc7ffe0515e653ea725` |
 | Runtime | CPython 3.10.20 (`miaosuan-runtime`, CPU only); the public tests also pass on CPython 3.12 |
 | Configuration | none: the policy has no parameters, thresholds or weights |
