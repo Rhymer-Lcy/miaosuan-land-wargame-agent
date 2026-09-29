@@ -76,7 +76,7 @@ def cmd_run(args: argparse.Namespace) -> int:
     except sdk_data.SdkDataError as exc:
         print(f"input error: {exc}", file=sys.stderr)
         return 2
-    report["see_data"] = engine_smoke.describe(inputs.see)
+    report["see_data"] = {"dtype": str(inputs.see.dtype), "shape": list(inputs.see.shape)}
 
     started = time.perf_counter()
     try:

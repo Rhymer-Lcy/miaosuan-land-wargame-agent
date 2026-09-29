@@ -8,42 +8,41 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 from miaosuan_agent import engine_smoke
+from miaosuan_agent.boundary import END_DEPLOYMENT
 from miaosuan_agent.sdk_data import ScenarioInputs
-from miaosuan_agent.smoke_agent import END_DEPLOYMENT, SmokeAgent
+from miaosuan_agent.smoke_agent import SmokeAgent
+from tests.fixtures import synthetic as syn
 
 INPUTS = ScenarioInputs(scenario_id="1", map_id="2", scenario={}, basic={"map_data": [[{}]]}, cost=[], see=None)
 LIMITS = engine_smoke.SmokeLimits(max_steps=50, max_seconds=30.0)
 
 
 class FakeEnv:
-    """Minimal stand-in: deployment ends once both seats send END_DEPLOYMENT; the game lasts 5 steps."""
+    """Stand-in engine built from synthetic observations.
+
+    Deployment ends once both seats send END_DEPLOYMENT; the game ends after five steps.
+    """
 
     output: List[str] = []
-    include_stage = True
-    raise_in_setup = False
     print_on_setup = ""
+    raise_in_setup = False
 
     def __init__(self) -> None:
         self.ended = set()
         self.step_count = 0
+        self.seats = (0, 0)
 
-    def _obs(self, stage: int) -> Dict[str, Any]:
-        time_info: Dict[str, Any] = {"cur_step": self.step_count}
-        if self.include_stage:
-            time_info["stage"] = stage
-        return {"time": time_info, "valid_actions": {101: {1: None, 6: [{"target_state": 4}]}},
-                "operators": [{"obj_id": 101}], "passengers": [], "actions": [],
-                "role_and_grouping_info": {1: {"role": 1, "operators": [101]}}, "communication": []}
-
-    def _state(self) -> list:
+    def _state(self) -> Any:
         stage = 2 if len(self.ended) == 2 else 1
-        return [self._obs(stage), self._obs(stage), self._obs(stage)]
+        return syn.state(stage=stage, cur_step=max(0, self.step_count - 1),
+                         red_seat=self.seats[0], blue_seat=self.seats[1])
 
-    def setup(self, setup_info: Dict[str, Any]) -> list:
+    def setup(self, setup_info: Dict[str, Any]) -> Any:
         if self.print_on_setup:
             FakeEnv.output.append(self.print_on_setup)
         if self.raise_in_setup:
             raise ValueError("bad scenario")
+        self.seats = tuple(player["seat"] for player in setup_info["player_info"])
         return self._state()
 
     def step(self, actions: List[Dict[str, Any]]) -> tuple:
@@ -55,28 +54,45 @@ class FakeEnv:
         pass
 
 
-def _run(env_cls: type, limits: engine_smoke.SmokeLimits = LIMITS) -> dict:
+def _run(env_cls: type, limits: engine_smoke.SmokeLimits = LIMITS, capture=None) -> dict:
     FakeEnv.output = []
     with tempfile.TemporaryDirectory() as tmp:
         report = engine_smoke.run_smoke(env_cls, SmokeAgent, INPUTS, limits, Path(tmp),
-                                        captured_output=lambda: "".join(FakeEnv.output))
-        files = sorted(p.name for p in Path(tmp).iterdir())
-    report["_files"] = files
+                                        captured_output=lambda: "".join(FakeEnv.output), capture=capture)
+        report["_files"] = sorted(p.name for p in Path(tmp).iterdir())
     return report
 
 
 class RunSmokeTest(unittest.TestCase):
-    def test_pass_records_contract_and_stage_transition(self) -> None:
+    def test_pass_with_profile_and_stage_transition(self) -> None:
         report = _run(FakeEnv)
         self.assertEqual(report["status"], "PASS", report["reasons"])
-        self.assertEqual(report["completion"], "done")
-        self.assertEqual(report["steps"], 5)
+        self.assertEqual((report["completion"], report["steps"]), ("done", 5))
         self.assertEqual(report["stage_transitions"], [{"step": 0, "stage": 1}, {"step": 1, "stage": 2}])
-        valid = report["contract_initial_red"]["valid_actions"]
-        self.assertEqual(valid["operator_key_types"], ["int"])
-        self.assertEqual(valid["action_key_types"], ["int"])
+        self.assertEqual(report["state_form"], "mapping")
+        self.assertEqual(report["profile_deviation_count"], 0, report["profile_deviations"])
+        self.assertTrue(report["deployment_transition_matches_profile"])
+        self.assertEqual(set(report["fingerprints"]), {"setup", "after-deployment", "play-step"})
         self.assertEqual(len(report["issued_actions"]), 2)
         self.assertIn("observation-red-first-play.json", report["_files"])
+        self.assertIs(report["state_object_reused_by_step"], False)
+
+    def test_capture_receives_three_points(self) -> None:
+        seen: List[str] = []
+        report = _run(FakeEnv, capture=lambda point, state: seen.append(point))
+        self.assertEqual(seen, list(engine_smoke.CAPTURE_POINTS))
+        self.assertEqual(report["captured_points"], list(engine_smoke.CAPTURE_POINTS))
+
+    def test_sequence_form_passes_the_boundary_but_deviates_from_the_profile(self) -> None:
+        class ListEnv(FakeEnv):
+            def _state(self) -> Any:
+                state = FakeEnv._state(self)
+                return [state[0], state[1], state[-1]]
+
+        report = _run(ListEnv)
+        self.assertEqual(report["status"], "PASS", report["reasons"])
+        self.assertEqual(report["state_form"], "sequence")
+        self.assertGreater(report["profile_deviation_count"], 0)
 
     def test_authentication_failure_blocks_before_stepping(self) -> None:
         class AuthFailEnv(FakeEnv):
@@ -91,37 +107,28 @@ class RunSmokeTest(unittest.TestCase):
             raise_in_setup = True
 
         report = _run(BrokenEnv)
-        self.assertEqual(report["status"], "FAIL")
-        self.assertEqual(report["phase"], "setup")
+        self.assertEqual((report["status"], report["phase"]), ("FAIL", "setup"))
         self.assertIn("ValueError", report["reasons"][0])
 
-    def test_missing_stage_field_is_not_a_pass(self) -> None:
+    def test_contract_violation_fails_with_its_path(self) -> None:
         class NoStageEnv(FakeEnv):
-            include_stage = False
+            def _state(self) -> Any:
+                state = FakeEnv._state(self)
+                del state[0]["time"]["stage"]
+                return state
 
         report = _run(NoStageEnv)
-        self.assertEqual(report["status"], "FAIL")
-        self.assertIn("cannot be verified", report["reasons"][0])
+        self.assertEqual((report["status"], report["phase"]), ("FAIL", "setup-contract"))
+        self.assertIn("state[0].time.stage", report["reasons"][0])
 
     def test_deployment_that_never_ends_is_not_a_pass(self) -> None:
         class StuckEnv(FakeEnv):
             def step(self, actions: List[Dict[str, Any]]) -> tuple:
                 self.step_count += 1
-                return self._state_stuck(), False
-
-            def _state_stuck(self) -> list:
-                return [self._obs(1)] * 3
+                return syn.state(stage=1, red_seat=self.seats[0], blue_seat=self.seats[1]), False
 
         report = _run(StuckEnv, engine_smoke.SmokeLimits(max_steps=3, max_seconds=30.0))
-        self.assertEqual(report["status"], "FAIL")
-        self.assertEqual(report["completion"], "step_limit")
-
-
-class DescribeTest(unittest.TestCase):
-    def test_reports_key_types(self) -> None:
-        summary = engine_smoke.describe({1: {"a": [1, 2]}, "2": None})
-        self.assertEqual(summary["key_types"], ["int", "str"])
-        self.assertEqual(summary["values"]["1"]["values"]["'a'"]["element_types"], ["int"])
+        self.assertEqual((report["status"], report["completion"]), ("FAIL", "step_limit"))
 
 
 if __name__ == "__main__":
