@@ -1,4 +1,4 @@
-"""The registered evaluation of the baseline policy.
+"""The registered evaluation of the baseline policy (``docs/EVALUATION.md``).
 
 * :mod:`.selection` - the scenario eligibility and selection rule;
 * :mod:`.manifest` - the registered manifest, its canonical digest and the game plan;

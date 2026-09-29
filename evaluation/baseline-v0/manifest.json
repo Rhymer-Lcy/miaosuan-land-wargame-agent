@@ -1,0 +1,351 @@
+{
+ "analysis": [
+  "No composite quality score is computed.",
+  "Outcomes are reported per game and summarized descriptively per condition; with eight scenarios and two repetitions no claim that one policy is stronger than another is made.",
+  "Scenarios are never dropped, added or reordered after results are seen, except by rule R.",
+  "Any change to the policy under test invalidates every result: a new identity, registration and full rerun."
+ ],
+ "caps": {
+  "steps": "max_time + 1 + 100",
+  "wall_seconds": 1800
+ },
+ "conditions": [
+  {
+   "blue": "baseline-v0",
+   "description": "baseline mirror",
+   "id": "C1",
+   "red": "baseline-v0"
+  },
+  {
+   "blue": "inert-v0",
+   "description": "baseline (red) against the inert control (blue)",
+   "id": "C2",
+   "red": "baseline-v0"
+  },
+  {
+   "blue": "baseline-v0",
+   "description": "inert control (red) against the baseline (blue)",
+   "id": "C3",
+   "red": "inert-v0"
+  },
+  {
+   "blue": "inert-v0",
+   "description": "inert mirror: the engine's outcome when nobody acts",
+   "id": "C4",
+   "red": "inert-v0"
+  }
+ ],
+ "control_policy": "inert-v0",
+ "engine": {
+  "sdk_archive_sha256": "ed4c9fc03cb6eb1e64821d2efbc61024d90735e3dc489dc7ffe0515e653ea725",
+  "version": "4.1.0"
+ },
+ "evaluation_id": "baseline-v0-suite-1",
+ "gate1": {
+  "condition": "C1",
+  "map_id": "9601",
+  "repetitions": 2,
+  "scenario_id": "201033019601"
+ },
+ "gate_criteria": [
+  "G1 every game reaches the engine's done flag within the step cap, without an exception in the engine, the harness or an agent, and without a contract error",
+  "G2 both seats end deployment and the play stage begins",
+  "G3 every baseline seat emits at least one play-stage unit action (activity)",
+  "G4 no gate rejection, no engine-reported error for a baseline action, and every emitted move and deployment completion confirmed by the next observation; occupy and shoot confirmation is reported but not gating, because another action in the same step (such as a second shot at a target already destroyed) can legitimately remove its precondition (legality)",
+  "G5 for every step before the first divergence of the engine state between the two repetitions, the decision traces are identical, and every in-game replay check matches (determinism)",
+  "G6 every game record contains every registered metric (measurability)"
+ ],
+ "gate_rules": [
+  "Gate 1 passes when G1-G6 all pass for its two games; the suite may not start before that",
+  "in the suite, G1-G6 are evaluated for every configuration (scenario and condition) over its repetitions and reported; criteria about baseline seats are not applicable to C4"
+ ],
+ "metrics": {
+  "activity": "actions by type; steps with at least one action; units that acted / controllable units seen; first step of each action type; unit-step counts per no-op reason",
+  "determinism": "per-step canonical digest of the all-seeing state; per-seat chained trace digest; first divergence between repetitions; in-game replay mismatches; global RNG consumption probe",
+  "legality": "gate rejections by sanitized reason; engine-reported errors for the seat's actions by code; effect check per emitted action (confirmed / not observed / indeterminate) by action type",
+  "outcome": "the engine's final scores fields exactly as reported (no composite score)",
+  "performance": "per-decision latency (time.perf_counter) p50/p95/p99/max by nearest rank; total decision time; total engine step time; game wall time; harness time = wall - decisions - engine",
+  "reliability": "games completed / started; exceptions by origin; contract errors; step-cap and wall-cap hits"
+ },
+ "order": "for each repetition, for each scenario in the listed order, for each condition in the listed order",
+ "players": [
+  {
+   "faction": 0,
+   "role": 1,
+   "seat": 1,
+   "user_id": 0,
+   "user_name": "demo"
+  },
+  {
+   "faction": 1,
+   "role": 1,
+   "seat": 11,
+   "user_id": 0,
+   "user_name": "demo"
+  }
+ ],
+ "policy_source": {
+  "files": [
+   "agent.py",
+   "boundary/__init__.py",
+   "boundary/actions.py",
+   "boundary/checks.py",
+   "boundary/errors.py",
+   "boundary/keys.py",
+   "boundary/observation.py",
+   "boundary/profile.py",
+   "boundary/state.py",
+   "boundary/terrain.py",
+   "decision/__init__.py",
+   "decision/candidates.py",
+   "decision/context.py",
+   "decision/gate.py",
+   "decision/policy.py",
+   "decision/routing.py",
+   "decision/semantics.py",
+   "decision/trace.py"
+  ],
+  "rule": "sorted relative paths, CRLF normalized to LF; see evaluation/identity.py",
+  "sha256": "8e209640534e0af597fdcf4c7911bdcce417c6f2b883671e5bbfc0d243e43a13"
+ },
+ "policy_under_test": "baseline-v0",
+ "randomness": {
+  "global_seed": 20260929,
+  "procedure": "each game runs in a fresh process; the harness seeds Python's and NumPy's global generators with global_seed before the engine is constructed and records whether the engine consumes them; no undocumented engine interface is used",
+  "python_hash_seed": 0
+ },
+ "repetitions": 2,
+ "replay_check_every": 100,
+ "scenarios": [
+  {
+   "alternates": [
+    "2120511121",
+    "2130511421",
+    "2230531121",
+    "2230531221",
+    "2130511321",
+    "2130511121",
+    "2130511221"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+    "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+    "scenario": "a4536a361ac9dd879ad326d8c5f40583433c3299f5184b4af06ddb110ab297cf",
+    "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "operators": 54,
+   "red": 28,
+   "rule": "S2 fewest operators on map 21",
+   "scenario_id": "2120531121"
+  },
+  {
+   "alternates": [],
+   "blue": 5,
+   "cities": 2,
+   "inputs_sha256": {
+    "basic": "0f4e4d65ec6273a0747744d60a146f57c32cd505c53a8c4863043dec28548355",
+    "cost": "2a3fc75e9822eb2995dd9f3cab51dc049ec5748daecbd0fd894fea40217ddd27",
+    "scenario": "cbf9fc185b918cba3a2fb84c1edf420f59ebd7668c6acd6f30ffa66605d7e526",
+    "see": "5f456a93999d346eeb9784b711d0140423d5ec4c0e64c819911f90d8a13f6b38"
+   },
+   "map_id": "29",
+   "max_time": 1800,
+   "operators": 11,
+   "red": 6,
+   "rule": "S2 fewest operators on map 29",
+   "scenario_id": "2010211129"
+  },
+  {
+   "alternates": [
+    "2010441253",
+    "2110431153",
+    "2110431253",
+    "2110431353",
+    "2110431453",
+    "2110431553",
+    "2110431653",
+    "2110431753"
+   ],
+   "blue": 6,
+   "cities": 2,
+   "inputs_sha256": {
+    "basic": "9d81939421d31ab9d7a158008c0a85283a94cfc78f619336322ae3d3f15d2c4d",
+    "cost": "46f4d73bcb69ec2cb6d4accf6fa8109eb4a0c23042e0cb5a6c88b0b3168c9614",
+    "scenario": "fdf73f5fc7405cd55fd410255e3cd7268096c5548743deff5954e49b38e06554",
+    "see": "7aa1d041780747504a8a486b86169adac116b242262d725f4ad80539758d15f3"
+   },
+   "map_id": "53",
+   "max_time": 1800,
+   "operators": 12,
+   "red": 6,
+   "rule": "S2 fewest operators on map 53",
+   "scenario_id": "2010431153"
+  },
+  {
+   "alternates": [
+    "1930631192",
+    "2230631192"
+   ],
+   "blue": 6,
+   "cities": 2,
+   "inputs_sha256": {
+    "basic": "8d4bf628205d08abfcc87b0672142e0e1e0b86dd205a6611fc1034de4c12f27a",
+    "cost": "b7a6ffb937be31a76ad61426a64212c90ee8c3b378eb04658162ee5825310c3c",
+    "scenario": "4a44b94fba790b4535e03c1991bcc81253d0d61a228214c0c6b00caf0b0d8022",
+    "see": "c8e346d02bcc338a96894b9e4e1ed8d09eed4b15a9baeca96d17c2edcc3eaa19"
+   },
+   "map_id": "92",
+   "max_time": 1800,
+   "operators": 12,
+   "red": 6,
+   "rule": "S2 fewest operators on map 92",
+   "scenario_id": "1910631192"
+  },
+  {
+   "alternates": [
+    "2010141294",
+    "2120131194",
+    "2120131294",
+    "2030111194",
+    "2140131194"
+   ],
+   "blue": 2,
+   "cities": 1,
+   "inputs_sha256": {
+    "basic": "dde30d0a9ffc77ee5a8ad301692d929126b34c581ecb64dde96ffcb2b3cbcc03",
+    "cost": "c447e2b130c25aa2595e80cdd5dbe8e8f117196d544507f1897f776a88d4cfbb",
+    "scenario": "103954f4ca5032150de1c124ea04fe4d47c7a0f72a290ace82bd6fb5b669bbec",
+    "see": "a01d2ab2095ecdd2841651c90c757db6c12bae72d6759526914ad2220f7d975c"
+   },
+   "map_id": "94",
+   "max_time": 1800,
+   "operators": 4,
+   "red": 2,
+   "rule": "S2 fewest operators on map 94",
+   "scenario_id": "2010131194"
+  },
+  {
+   "alternates": [
+    "2020331196",
+    "2120331196",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2140331196"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "206c437995216aed6dd14a310d3a2ada0f7148dd8d40e4ec52c900b224d06f15",
+    "cost": "b136cc86cae77d53482f2b2ff3df0087278d51628e1a4cf453307d8da008997f",
+    "scenario": "a15d3b3bf499694d93a981511c16b5c1c9247487ac1cf1d88b2bf1bd2c75c1b1",
+    "see": "e69b9e85d77cc8de4600c42b48939ea625236a7a3b705090fa9b3745775009e2"
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "operators": 52,
+   "red": 26,
+   "rule": "S2 fewest operators on map 96",
+   "scenario_id": "1930331196"
+  },
+  {
+   "alternates": [
+    "201033029601",
+    "201033039601",
+    "211033019601"
+   ],
+   "blue": 1,
+   "cities": 1,
+   "inputs_sha256": {
+    "basic": "62a5645d213ca6927e527761a2dc077ddf56bc400d7a9018e9180fff6adc2354",
+    "cost": "c187131021173b63088dd655c661809b60980c0e2159374c9f32d3d749d0b865",
+    "scenario": "e24d43d94233ac4c87eccbb47f5f88a4e37ac8e0d5a00f461a2280efcd2b59df",
+    "see": "549a763b0d90c699455f4534e0586d67dae62407357353edc6edd6ad90459d7d"
+   },
+   "map_id": "9601",
+   "max_time": 1000,
+   "operators": 2,
+   "red": 1,
+   "rule": "S2 fewest operators on map 9601",
+   "scenario_id": "201033019601"
+  },
+  {
+   "alternates": [
+    "2130511221",
+    "2140131194",
+    "2140331196",
+    "2130511321",
+    "1930631192",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2230531221",
+    "2230631192",
+    "2030111194",
+    "2130511421",
+    "2230531121",
+    "2120131294",
+    "2120511121",
+    "2120131194",
+    "2120331196",
+    "2020331196",
+    "2110431753",
+    "2010441253",
+    "2110431153",
+    "2110431253",
+    "2110431353",
+    "2110431453",
+    "2110431553",
+    "2110431653",
+    "201033029601",
+    "201033039601",
+    "211033019601",
+    "2010141294"
+   ],
+   "blue": 44,
+   "cities": 7,
+   "inputs_sha256": {
+    "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+    "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+    "scenario": "9611e334d4fd6f2eda5957a26116bf8ec21c3e04754ed349d9a0fa0e9dc68070",
+    "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "operators": 89,
+   "red": 45,
+   "rule": "S3 largest force",
+   "scenario_id": "2130511121"
+  }
+ ],
+ "schema": "miaosuan-evaluation-manifest/1",
+ "selection": {
+  "eligibility": [
+   "E1 the scenario id names a supplied map by the naming rule",
+   "E2 every operator and objective hex lies inside that map",
+   "E3 every operator that starts on the map (not on board) with a documented movement mode (types 1-3) has at least one traversable neighbour for that mode at its start hex",
+   "E4 on a map whose cells carry roadblock flags, the scenario's roadblocks are exactly those cells"
+  ],
+  "eligible": 40,
+  "ineligible_by_reason": {
+   "E1 no supplied map named by the scenario id": 10
+  },
+  "naming_rule": "map id = the last four digits of the scenario id when they are 9601, otherwise the last two digits",
+  "pool": 50,
+  "rule_id": "miaosuan-scenario-selection/1",
+  "selection": [
+   "S1 strata are the maps of the eligible scenarios",
+   "S2 from each stratum, the scenario with the fewest operators; ties by smaller max_time, then smaller numeric id",
+   "S3 in addition, the eligible scenario with the most operators overall (ties by smaller numeric id), or the next in that order if S2 already picked it",
+   "R  replacement only after a documented objective failure (the engine raises during setup, before any decision): the next alternate of the same pick, in the listed order"
+  ]
+ }
+}
