@@ -1,0 +1,262 @@
+{
+ "earlier_scratch_runs": {
+  "games": [
+   {
+    "game_id": "1930331196.C1.r1",
+    "not_own_at_step_start_and_several_occupations_same_hex": 15,
+    "objective_already_own_at_step_start": 0,
+    "other": 0,
+    "refusals_1804": 15,
+    "session": "0073",
+    "steps": 2881
+   },
+   {
+    "game_id": "1930331196.C1.r2",
+    "not_own_at_step_start_and_several_occupations_same_hex": 21,
+    "objective_already_own_at_step_start": 0,
+    "other": 0,
+    "refusals_1804": 21,
+    "session": "0074",
+    "steps": 2881
+   }
+  ],
+  "method": "an earlier, occupation-only version of the refusal-context check, run from a scratch script before scripts/diagnose_engine_refusals.py was committed; kept for completeness"
+ },
+ "engine_messages": {
+  "codes": {
+   "1804": [
+    {
+     "action_type": 5,
+     "engine_message": "CantOccupyCauseAlreadyMy"
+    }
+   ],
+   "203": [
+    {
+     "action_type": 2,
+     "engine_message": "CantControlDiedOperator"
+    }
+   ],
+   "516": [
+    {
+     "action_type": 2,
+     "engine_message": "CantShootToDiedBop"
+    }
+   ]
+  },
+  "games": [
+   {
+    "game_id": "1910631192.C1.r1",
+    "harness_commit": "0118e569aed4529be3f788bd0d26d1733f9a46b8",
+    "seats": [
+     {
+      "actions_by_type": {
+       "1": 8,
+       "2": 2,
+       "333": 1,
+       "5": 2
+      },
+      "feedback_errors_by_code_and_type": {},
+      "policy": "baseline-v0",
+      "seat": 1
+     },
+     {
+      "actions_by_type": {
+       "1": 14,
+       "2": 7,
+       "333": 1,
+       "5": 5
+      },
+      "feedback_errors_by_code_and_type": {
+       "1804/5": 2,
+       "203/2": 1
+      },
+      "policy": "baseline-v0",
+      "seat": 11
+     }
+    ],
+    "session": "0072",
+    "status": "COMPLETED",
+    "steps": 1801
+   },
+   {
+    "game_id": "1930331196.C1.r1",
+    "harness_commit": "0118e569aed4529be3f788bd0d26d1733f9a46b8",
+    "seats": [
+     {
+      "actions_by_type": {
+       "1": 61,
+       "2": 24,
+       "333": 1,
+       "5": 25
+      },
+      "feedback_errors_by_code_and_type": {
+       "1804/5": 14
+      },
+      "policy": "baseline-v0",
+      "seat": 1
+     },
+     {
+      "actions_by_type": {
+       "1": 84,
+       "2": 54,
+       "333": 1,
+       "5": 29
+      },
+      "feedback_errors_by_code_and_type": {
+       "1804/5": 17,
+       "516/2": 3
+      },
+      "policy": "baseline-v0",
+      "seat": 11
+     }
+    ],
+    "session": "0069",
+    "status": "COMPLETED",
+    "steps": 2881
+   },
+   {
+    "game_id": "1930331196.C1.r2",
+    "harness_commit": "0118e569aed4529be3f788bd0d26d1733f9a46b8",
+    "seats": [
+     {
+      "actions_by_type": {
+       "1": 59,
+       "2": 27,
+       "333": 1,
+       "5": 21
+      },
+      "feedback_errors_by_code_and_type": {
+       "1804/5": 12
+      },
+      "policy": "baseline-v0",
+      "seat": 1
+     },
+     {
+      "actions_by_type": {
+       "1": 78,
+       "2": 51,
+       "333": 1,
+       "5": 30
+      },
+      "feedback_errors_by_code_and_type": {
+       "1804/5": 19,
+       "203/2": 1,
+       "516/2": 1
+      },
+      "policy": "baseline-v0",
+      "seat": 11
+     }
+    ],
+    "session": "0071",
+    "status": "COMPLETED",
+    "steps": 2881
+   },
+   {
+    "game_id": "2130511121.C1.r1",
+    "harness_commit": "0118e569aed4529be3f788bd0d26d1733f9a46b8",
+    "seats": [
+     {
+      "actions_by_type": {
+       "1": 95,
+       "2": 69,
+       "333": 1,
+       "5": 14
+      },
+      "feedback_errors_by_code_and_type": {
+       "1804/5": 6,
+       "516/2": 1
+      },
+      "policy": "baseline-v0",
+      "seat": 1
+     },
+     {
+      "actions_by_type": {
+       "1": 154,
+       "2": 75,
+       "333": 1,
+       "5": 20
+      },
+      "feedback_errors_by_code_and_type": {
+       "1804/5": 6,
+       "516/2": 2
+      },
+      "policy": "baseline-v0",
+      "seat": 11
+     }
+    ],
+    "session": "0070",
+    "status": "COMPLETED",
+    "steps": 2881
+   }
+  ],
+  "method": "scripts/run_evaluation.py game --purpose diagnostic with its own work directory; the harness records each engine error's code, action type and message"
+ },
+ "purpose": "Diagnostics run after the registered suite to explain the engine-reported errors it recorded. Not part of the registered results; every game here is an extra engine session with purpose 'diagnostic'.",
+ "refusal_context": {
+  "classes": [
+   {
+    "action": "occupy",
+    "code": 1804,
+    "context": [
+     "not own at step start",
+     "several same hex"
+    ],
+    "count": 45
+   },
+   {
+    "action": "shoot",
+    "code": 203,
+    "context": [
+     "target on map at start",
+     "shooter on map at start",
+     "several shots at target"
+    ],
+    "count": 1
+   },
+   {
+    "action": "shoot",
+    "code": 516,
+    "context": [
+     "target on map at start",
+     "shooter on map at start",
+     "several shots at target"
+    ],
+    "count": 7
+   }
+  ],
+  "games": [
+   {
+    "done": true,
+    "game_id": "1930331196.C1.r1",
+    "refusals_by_code_and_type": {
+     "1804/5": 14,
+     "516/2": 2
+    },
+    "session": "0075",
+    "steps": 2881
+   },
+   {
+    "done": true,
+    "game_id": "1930331196.C1.r2",
+    "refusals_by_code_and_type": {
+     "1804/5": 24,
+     "203/2": 1,
+     "516/2": 1
+    },
+    "session": "0076",
+    "steps": 2881
+   },
+   {
+    "done": true,
+    "game_id": "2130511121.C1.r1",
+    "refusals_by_code_and_type": {
+     "1804/5": 7,
+     "516/2": 4
+    },
+    "session": "0077",
+    "steps": 2881
+   }
+  ],
+  "method": "scripts/diagnose_engine_refusals.py: for every refused action, the state at the start of that step"
+ }
+}

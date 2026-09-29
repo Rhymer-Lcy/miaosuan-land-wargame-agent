@@ -168,4 +168,155 @@ SDK archive; the engine runs only on Linux, from the persistent installation
 
 ## Results
 
-None at registration.
+Gate 1 and the suite were played on 2026-09-30 (UTC+8) on the Linux host of the persistent engine installation, harness commit `0a806f1`, one recorded engine session per game (ledger sessions 0003 to 0068; Gate 1 is 0003 and 0004). The engine's persistent state did not change in any of them.
+
+Manifest `01c1f88b064ace501e56018576426cea6291bbabdce0e35387f72bec2d0068e6`; every record carries the registered policy source (`policy_source_consistent`: true). All figures below are computed from `evaluation/baseline-v0/results.json`.
+
+### Summary
+
+* **Reliable.** 64 of 64 suite games and 2 of 2 Gate 1 games reached the engine's done flag within the caps, without an exception or a contract error.
+* **Active.** Every baseline seat emitted play-stage unit actions (G3 passed in 24 of 24 applicable configurations).
+* **Deterministic where the engine is.** Decision traces were identical at every step at which the engine states of two repetitions agreed, and every in-game replay check matched (G5 passed in 24 of 24). The engine repeated exactly in all 16 configurations in which no shot was fired and diverged in all 16 in which one was, each time exactly one step after the first shot and never earlier: its randomness shows in combat adjudication.
+* **Not fully legal by the registered criterion.** G4 failed in 14 of 24 applicable configurations. The gate rejected nothing and every move and deployment completion took effect, but the engine refused 187 of the baseline's 3,383 unit actions (5.5%). All three refusal codes are same-step conflicts: the refused action was listed as legal at the start of the step, and an action resolved earlier in the same step removed its precondition. Code 1804 is pure redundancy (several own units occupying one objective in the same step) and a policy can avoid it; 516 (a shot at a target destroyed earlier in the step) can be avoided only by giving up follow-up shots whose predecessor may leave the target alive; 203 (a shot by a unit destroyed earlier in the step) cannot be foreseen from start-of-step information. The criterion counts all three and is reported as registered.
+  In 3 further diagnostic games every refusal fitted this reading: all 45 refusals with code 1804 concerned an objective not held at the start of the step for which several occupations were issued in that step; all 7 with code 516 concerned a target present at the start of the step and fired at more than once in it; and the single refusal with code 203 concerned a shooter present at the start of the step.
+* **Outcomes, descriptively.** Against the inert control the baseline side's engine total was higher in 32 of 32 games. As registered, no claim of relative strength is drawn from this.
+* **Fast, with rare slow steps.** The 99th percentile of decision latency was at most 1.205 ms in every condition; the slowest single decision took 1304.309 ms. What made the rare slow steps slow was not measured.
+
+### Gate 1
+
+| Game | Status | Steps | red_total | blue_total | Baseline actions (red / blue) |
+|---|---|---|---|---|---|
+| gate1.201033019601.C1.r1 | COMPLETED | 1001 | 140 | 0 | 6 / 5 |
+| gate1.201033019601.C1.r2 | COMPLETED | 1001 | 120 | 20 | 6 / 5 |
+
+Criteria: G1 pass, G2 pass, G3 pass, G4 pass, G5 pass, G6 pass.
+The engine states of the two games first differ at step 102, and their final scores differ; the decision traces are identical at every step before the divergence.
+
+### Suite
+
+64 of 64 registered games recorded.
+
+Reliability and legality (baseline seats; effect checks as confirmed / not observed / indeterminate):
+
+| Condition | Games | Completed | Failed | Capped | Gate rejections | Engine errors | Contract errors | Moves | Shots | Occupations | Deployment |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| C1 | 16 | 16 | 0 | 0 | 0 | 112 | 0 | 1024 / 0 / 3 | 874 / 17 / 12 | 209 / 0 / 0 | 32 / 0 / 0 |
+| C2 | 16 | 16 | 0 | 0 | 0 | 41 | 0 | 404 / 0 / 0 | 109 / 4 / 0 | 87 / 0 / 0 | 16 / 0 / 0 |
+| C3 | 16 | 16 | 0 | 0 | 0 | 34 | 0 | 458 / 0 / 0 | 98 / 2 / 0 | 82 / 0 / 0 | 16 / 0 / 0 |
+| C4 | 16 | 16 | 0 | 0 | 0 | 0 | 0 | n/a | n/a | n/a | n/a |
+
+Engine-reported errors: 187 of 3,383 baseline unit actions (5.5%) were refused by the engine. Their meaning was identified afterwards from the engine's own error messages in 4 separate diagnostic games (`evaluation/baseline-v0/diagnostics.json`; not part of the registered results):
+
+| Code | Action | Engine message | C1 | C2 | C3 | Total |
+|---|---|---|---|---|---|---|
+| 1804 | occupy | `CantOccupyCauseAlreadyMy` | 88 | 37 | 32 | 157 |
+| 516 | shoot | `CantShootToDiedBop` | 17 | 4 | 2 | 23 |
+| 203 | shoot | `CantControlDiedOperator` | 7 | 0 | 0 | 7 |
+
+Activity (baseline actions emitted, summed over the condition's games):
+
+| Condition | Moves | Shots | Occupations | Deployment | Seats with a play-stage action |
+|---|---|---|---|---|---|
+| C1 | 1027 | 903 | 209 | 32 | 32 of 32 |
+| C2 | 404 | 113 | 87 | 16 | 16 of 16 |
+| C3 | 458 | 100 | 82 | 16 | 16 of 16 |
+| C4 | 0 | 0 | 0 | 0 | 0 of 0 |
+
+Criteria over the 32 configurations (pass / fail / not applicable):
+
+| Criterion | Pass | Fail | Not applicable | Failing configurations |
+|---|---|---|---|---|
+| G1 | 32 | 0 | 0 | none |
+| G2 | 32 | 0 | 0 | none |
+| G3 | 24 | 0 | 8 | none |
+| G4 | 10 | 14 | 8 | 1910631192.C1, 1910631192.C3, 1930331196.C1, 1930331196.C3, 2010131194.C1, 2010211129.C2, 2010431153.C1, 2010431153.C3, 2120531121.C1, 2120531121.C2, 2120531121.C3, 2130511121.C1, 2130511121.C2, 2130511121.C3 |
+| G5 | 24 | 0 | 8 | none |
+| G6 | 32 | 0 | 0 | none |
+
+Determinism: engine state and decision traces across the two repetitions of each configuration.
+
+| Configuration | Engine states identical | First divergence (step) | Final scores equal | Traces identical while states agreed |
+|---|---|---|---|---|
+| 2120531121.C1 | false | 137 | false | true |
+| 2120531121.C2 | false | 370 | false | true |
+| 2120531121.C3 | false | 169 | false | true |
+| 2120531121.C4 | true | n/a | true | true |
+| 2010211129.C1 | false | 322 | false | true |
+| 2010211129.C2 | false | 583 | true | true |
+| 2010211129.C3 | true | n/a | true | true |
+| 2010211129.C4 | true | n/a | true | true |
+| 2010431153.C1 | false | 142 | false | true |
+| 2010431153.C2 | true | n/a | true | true |
+| 2010431153.C3 | true | n/a | true | true |
+| 2010431153.C4 | true | n/a | true | true |
+| 1910631192.C1 | false | 523 | false | true |
+| 1910631192.C2 | true | n/a | true | true |
+| 1910631192.C3 | true | n/a | true | true |
+| 1910631192.C4 | true | n/a | true | true |
+| 2010131194.C1 | false | 102 | false | true |
+| 2010131194.C2 | true | n/a | true | true |
+| 2010131194.C3 | false | 222 | true | true |
+| 2010131194.C4 | true | n/a | true | true |
+| 1930331196.C1 | false | 189 | false | true |
+| 1930331196.C2 | false | 612 | true | true |
+| 1930331196.C3 | false | 213 | true | true |
+| 1930331196.C4 | true | n/a | true | true |
+| 201033019601.C1 | false | 102 | false | true |
+| 201033019601.C2 | true | n/a | true | true |
+| 201033019601.C3 | true | n/a | true | true |
+| 201033019601.C4 | true | n/a | true | true |
+| 2130511121.C1 | false | 102 | false | true |
+| 2130511121.C2 | false | 102 | false | true |
+| 2130511121.C3 | false | 526 | false | true |
+| 2130511121.C4 | true | n/a | true | true |
+
+Identical engine states in both repetitions: 16 of 32 configurations. In-game replay checks: 1392, mismatches: 0.
+The global generators were changed by the engine in 0 of 66 games (Gate 1 and suite).
+
+Outcomes: the engine's final `red_total` / `blue_total`, per game.
+
+| Scenario | Condition | Repetition 1 | Repetition 2 |
+|---|---|---|---|
+| 2120531121 | C1 | 170 / 881 | 100 / 951 |
+| 2120531121 | C2 | 744 / 307 | 674 / 377 |
+| 2120531121 | C3 | 231 / 820 | 226 / 825 |
+| 2120531121 | C4 | 334 / 407 | 334 / 407 |
+| 2010211129 | C1 | 26 / 310 | 36 / 300 |
+| 2010211129 | C2 | 300 / 36 | 300 / 36 |
+| 2010211129 | C3 | 104 / 232 | 104 / 232 |
+| 2010211129 | C4 | 104 / 102 | 104 / 102 |
+| 2010431153 | C1 | 28 / 338 | 26 / 340 |
+| 2010431153 | C2 | 234 / 132 | 234 / 132 |
+| 2010431153 | C3 | 104 / 262 | 104 / 262 |
+| 2010431153 | C4 | 104 / 132 | 104 / 132 |
+| 1910631192 | C1 | 46 / 320 | 26 / 340 |
+| 1910631192 | C2 | 234 / 132 | 234 / 132 |
+| 1910631192 | C3 | 104 / 262 | 104 / 262 |
+| 1910631192 | C4 | 104 / 132 | 104 / 132 |
+| 2010131194 | C1 | 200 / 10 | 60 / 150 |
+| 2010131194 | C2 | 130 / 80 | 130 / 80 |
+| 2010131194 | C3 | 0 / 210 | 0 / 210 |
+| 2010131194 | C4 | 80 / 80 | 80 / 80 |
+| 1930331196 | C1 | 897 / 143 | 530 / 510 |
+| 1930331196 | C2 | 657 / 383 | 657 / 383 |
+| 1930331196 | C3 | 235 / 805 | 235 / 805 |
+| 1930331196 | C4 | 323 / 407 | 323 / 407 |
+| 201033019601 | C1 | 10 / 130 | 130 / 10 |
+| 201033019601 | C2 | 110 / 30 | 110 / 30 |
+| 201033019601 | C3 | 30 / 110 | 30 / 110 |
+| 201033019601 | C4 | 30 / 30 | 30 / 30 |
+| 2130511121 | C1 | 276 / 1327 | 334 / 1269 |
+| 2130511121 | C2 | 1198 / 405 | 1180 / 423 |
+| 2130511121 | C3 | 472 / 1131 | 520 / 1083 |
+| 2130511121 | C4 | 560 / 603 | 560 / 603 |
+
+Descriptively, in C2 and C3 the baseline side's total was ahead of the inert side's in 32, level in 0 and behind in 0 of 32 games. As registered, no claim of relative strength is drawn from this.
+
+Performance (baseline decisions; latency by nearest rank):
+
+| Condition | Decisions | p50 ms | p95 ms | p99 ms | max ms | Engine s | Wall s |
+|---|---|---|---|---|---|---|---|
+| C1 | 67392 | 0.303 | 0.912 | 1.182 | 507.089 | 249.967 | 643.27 |
+| C2 | 33696 | 0.599 | 1.019 | 1.162 | 424.725 | 346.32 | 900.644 |
+| C3 | 33696 | 0.701 | 1.175 | 1.205 | 1304.309 | 339.742 | 895.437 |
+| C4 | 0 | n/a | n/a | n/a | n/a | 324.861 | 913.93 |
