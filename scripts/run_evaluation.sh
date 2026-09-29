@@ -69,10 +69,13 @@ host stage --sdk-archive "$ARCHIVE" > "$WORK/logs/stage.log"
 
 if [[ $PLAN == suite ]]; then
     host summarize > /dev/null
-    PYTHONNOUSERSITE=1 "$PYTHON" - "$WORK/summary.json" <<'PY'
+    PYTHONNOUSERSITE=1 "$PYTHON" - "$WORK/summary.json" "$MANIFEST" <<'PY'
 import json, sys
 criteria = (json.load(open(sys.argv[1], encoding="utf-8"))["gate1"] or {}).get("criteria")
-if not criteria or not all(c["pass"] for c in criteria.values()):
+required = json.load(open(sys.argv[2], encoding="utf-8")).get("gate1_required") or sorted(criteria or {})
+decomposition = json.load(open(sys.argv[1], encoding="utf-8"))["gate1"].get("refusal_decomposition") or {}
+passed = bool(criteria) and all(criteria[name]["pass"] for name in required)
+if not passed or decomposition.get("project_gate_rejections", 0):
     sys.exit("REFUSED: Gate 1 has not passed; the suite may not start")
 PY
 fi
