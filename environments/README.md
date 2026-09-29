@@ -32,9 +32,9 @@ scipy and scikit-learn are to be added at the documented versions when agent cod
 ray, tensorflow and torch belong to research work and are excluded. `getmac` (0.9.5) is not on the
 platform list: it is a dependency the engine wheel declares without a version.
 
-The SDK engine wheel itself is **not** installed into the environment. The smoke-test harness
-installs it with `pip --target` into a disposable run directory under `local/runtime/` (see the
-top-level README and `docs/ENGINE_SMOKE_TEST.md`).
+The SDK engine wheel itself is **not** installed into the environment. It is installed once, with
+this environment's pip, into a persistent git-ignored installation under `local/engines/`, which
+every engine run reuses (`docs/ENGINE_INSTALL.md`).
 
 ### Files
 

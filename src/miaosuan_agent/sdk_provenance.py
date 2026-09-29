@@ -44,6 +44,8 @@ DATA_ARCHIVE_MEMBER = "Data.zip"
 ENGINE_WHEEL_MEMBER = (
     "land_wargame_train_env-4.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
 )
+#: Version of the engine distribution in ``ENGINE_WHEEL_MEMBER`` (from its wheel file name).
+ENGINE_VERSION = ENGINE_WHEEL_MEMBER.split("-")[1]
 
 #: Archives nested inside the SDK ZIP: member name -> SHA-256.
 NESTED_ARCHIVES: Mapping[str, str] = {

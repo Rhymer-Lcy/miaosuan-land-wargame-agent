@@ -107,34 +107,41 @@ def _write_new(path: Path, data: bytes) -> None:
     path.write_bytes(data)
 
 
-def stage_runtime_assets(sdk_archive: Path, dest: Path, scenario_id: str, map_id: str) -> Dict[str, Path]:
-    """Copy one scenario, one map and the engine wheel out of a verified SDK archive.
-
-    The archive, its nested ``Data.zip`` and the wheel are each checked against the digests in
-    :mod:`miaosuan_agent.sdk_provenance` before anything is written. Nothing is overwritten.
-    Returns the staged ``data_root`` (an extracted ``Data/`` subset) and ``wheel`` paths.
-    """
+def _read_verified_member(sdk_archive: Path, member: str) -> bytes:
+    """Read one nested member of the SDK archive after checking the archive and the member digests."""
     sdk_archive = Path(sdk_archive)
     if prov.sha256_file(sdk_archive) != prov.SDK_ARCHIVE_SHA256:
         raise SdkDataError(f"{sdk_archive} does not match the recorded SDK archive digest")
-    dest = Path(dest)
     with zipfile.ZipFile(sdk_archive) as outer:
-        data_bytes = outer.read(prov.DATA_ARCHIVE_MEMBER)
-        wheel_bytes = outer.read(prov.ENGINE_WHEEL_MEMBER)
-    for member, blob in ((prov.DATA_ARCHIVE_MEMBER, data_bytes), (prov.ENGINE_WHEEL_MEMBER, wheel_bytes)):
-        if prov.sha256_stream(io.BytesIO(blob)) != prov.NESTED_ARCHIVES[member]:
-            raise SdkDataError(f"nested member {member} does not match its recorded digest")
+        blob = outer.read(member)
+    if prov.sha256_stream(io.BytesIO(blob)) != prov.NESTED_ARCHIVES[member]:
+        raise SdkDataError(f"nested member {member} does not match its recorded digest")
+    return blob
 
-    data_root = dest / "Data"
+
+def stage_game_data(sdk_archive: Path, dest: Path, scenario_id: str, map_id: str) -> Path:
+    """Copy one scenario and one map out of a verified SDK archive; return the ``Data/`` root.
+
+    Only the four files one game needs are written, under ``dest/Data/``. Nothing is overwritten.
+    """
+    dest = Path(dest)
     members = {"scenario": f"Data/scenarios/{scenario_id}.json"}
     members.update({key: f"Data/maps/map_{map_id}/{path.name}" for key, path in map_paths(Path("."), map_id).items()})
-    with zipfile.ZipFile(io.BytesIO(data_bytes)) as inner:
+    with zipfile.ZipFile(io.BytesIO(_read_verified_member(sdk_archive, prov.DATA_ARCHIVE_MEMBER))) as inner:
         names = set(inner.namelist())
         absent = [name for name in members.values() if name not in names]
         if absent:
             raise SdkDataError(f"Data.zip lacks {absent}")
         for name in members.values():
             _write_new(dest / name, inner.read(name))
-    wheel_path = dest / "wheels" / prov.ENGINE_WHEEL_MEMBER
-    _write_new(wheel_path, wheel_bytes)
-    return {"data_root": data_root, "wheel": wheel_path}
+    return dest / "Data"
+
+
+def extract_engine_wheel(sdk_archive: Path, dest_dir: Path) -> Path:
+    """Write the verified engine wheel into ``dest_dir`` and return its path. Nothing is overwritten.
+
+    Used only to create the persistent engine installation (:mod:`miaosuan_agent.engine_install`).
+    """
+    path = Path(dest_dir) / prov.ENGINE_WHEEL_MEMBER
+    _write_new(path, _read_verified_member(sdk_archive, prov.ENGINE_WHEEL_MEMBER))
+    return path

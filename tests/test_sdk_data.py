@@ -78,8 +78,10 @@ class LoadInputsTest(unittest.TestCase):
                 sdk_data.load_inputs(Path(tmp), "42", "7")
 
 
-class StageRuntimeAssetsTest(unittest.TestCase):
-    def _build(self, root: Path) -> Path:
+class StagingTest(unittest.TestCase):
+    def setUp(self) -> None:
+        self._tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self._tmp.name)
         inner = io.BytesIO()
         with zipfile.ZipFile(inner, "w") as data:
             data.writestr("Data/scenarios/42.json", "{}")
@@ -88,48 +90,58 @@ class StageRuntimeAssetsTest(unittest.TestCase):
             data.writestr("Data/maps/map_8/basic.json", "not staged")
         self.data_bytes = inner.getvalue()
         self.wheel_bytes = b"wheel"
-        outer = root / "sdk.zip"
-        with zipfile.ZipFile(outer, "w") as archive:
+        self.outer = self.root / "sdk.zip"
+        with zipfile.ZipFile(self.outer, "w") as archive:
             archive.writestr("Data.zip", self.data_bytes)
             archive.writestr("engine.whl", self.wheel_bytes)
-        return outer
-
-    def _patches(self, outer: Path) -> list:
         sha = lambda b: hashlib.sha256(b).hexdigest()  # noqa: E731
-        return [
-            mock.patch.object(prov, "SDK_ARCHIVE_SHA256", sha(outer.read_bytes())),
+        self.patches = [
+            mock.patch.object(prov, "SDK_ARCHIVE_SHA256", sha(self.outer.read_bytes())),
             mock.patch.object(prov, "DATA_ARCHIVE_MEMBER", "Data.zip"),
             mock.patch.object(prov, "ENGINE_WHEEL_MEMBER", "engine.whl"),
             mock.patch.object(prov, "NESTED_ARCHIVES", {"Data.zip": sha(self.data_bytes),
                                                         "engine.whl": sha(self.wheel_bytes)}),
         ]
 
-    def test_stages_only_the_requested_game(self) -> None:
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            outer = self._build(root)
-            patches = self._patches(outer)
-            for patch in patches:
-                patch.start()
-            try:
-                staged = sdk_data.stage_runtime_assets(outer, root / "run", "42", "7")
-                files = sorted(p.relative_to(root / "run").as_posix() for p in (root / "run").rglob("*") if p.is_file())
-                with self.assertRaises(sdk_data.SdkDataError):  # never overwrites
-                    sdk_data.stage_runtime_assets(outer, root / "run", "42", "7")
-            finally:
-                for patch in reversed(patches):
+    def tearDown(self) -> None:
+        self._tmp.cleanup()
+
+    def _patched(self):
+        class Patched:
+            def __enter__(inner):
+                for patch in self.patches:
+                    patch.start()
+
+            def __exit__(inner, *exc):
+                for patch in reversed(self.patches):
                     patch.stop()
-        self.assertEqual(files, ["Data/maps/map_7/7see.npz", "Data/maps/map_7/basic.json",
-                                 "Data/maps/map_7/cost.pickle", "Data/scenarios/42.json", "wheels/engine.whl"])
-        self.assertEqual(staged["data_root"], root / "run" / "Data")
+        return Patched()
+
+    def files(self, directory: Path) -> list:
+        return sorted(p.relative_to(directory).as_posix() for p in directory.rglob("*") if p.is_file())
+
+    def test_stages_only_the_requested_game_data(self) -> None:
+        with self._patched():
+            data_root = sdk_data.stage_game_data(self.outer, self.root / "run", "42", "7")
+            with self.assertRaises(sdk_data.SdkDataError):  # never overwrites
+                sdk_data.stage_game_data(self.outer, self.root / "run", "42", "7")
+        self.assertEqual(self.files(self.root / "run"), ["Data/maps/map_7/7see.npz", "Data/maps/map_7/basic.json",
+                                                         "Data/maps/map_7/cost.pickle", "Data/scenarios/42.json"])
+        self.assertEqual(data_root, self.root / "run" / "Data")
+
+    def test_extracts_the_verified_wheel_once(self) -> None:
+        with self._patched():
+            wheel = sdk_data.extract_engine_wheel(self.outer, self.root / "wheels")
+            with self.assertRaises(sdk_data.SdkDataError):
+                sdk_data.extract_engine_wheel(self.outer, self.root / "wheels")
+        self.assertEqual(wheel.read_bytes(), self.wheel_bytes)
 
     def test_unverified_archive_is_refused(self) -> None:
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            outer = self._build(root)
-            with self.assertRaises(sdk_data.SdkDataError):
-                sdk_data.stage_runtime_assets(outer, root / "run", "42", "7")
-            self.assertFalse((root / "run").exists())
+        with self.assertRaises(sdk_data.SdkDataError):
+            sdk_data.stage_game_data(self.outer, self.root / "run", "42", "7")
+        with self.assertRaises(sdk_data.SdkDataError):
+            sdk_data.extract_engine_wheel(self.outer, self.root / "wheels")
+        self.assertFalse((self.root / "run").exists() or (self.root / "wheels").exists())
 
 
 if __name__ == "__main__":
