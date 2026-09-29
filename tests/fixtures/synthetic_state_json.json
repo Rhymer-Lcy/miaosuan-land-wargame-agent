@@ -1,0 +1,245 @@
+{
+ "synthetic": true,
+ "description": "Project-authored synthetic engine state at the deployment stage, after a JSON round trip: integer mapping keys have become strings. Generated from tests/fixtures/synthetic.py; no value is taken from SDK data.",
+ "state": {
+  "0": {
+   "operators": [
+    {
+     "obj_id": 900101,
+     "color": 0,
+     "type": 2,
+     "sub_type": 0,
+     "cur_hex": 1203,
+     "synthetic_field": "preserved"
+    }
+   ],
+   "passengers": [],
+   "time": {
+    "cur_step": 0,
+    "tick": 1.0,
+    "max_time": 50,
+    "max_step": 50,
+    "stage": 1
+   },
+   "jm_points": [],
+   "cities": [
+    {
+     "coord": 1305,
+     "value": 7,
+     "flag": -1,
+     "name": "synthetic objective"
+    }
+   ],
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 0,
+    "blue_remain_max": 0,
+    "blue_total": 0,
+    "blue_win": 0,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 0,
+    "red_remain_max": 0,
+    "red_total": 0,
+    "red_win": 0
+   },
+   "judge_info": [],
+   "valid_actions": {
+    "900101": {
+     "1": null,
+     "6": [
+      {
+       "target_state": 2
+      }
+     ]
+    }
+   },
+   "role_and_grouping_info": {
+    "7": {
+     "faction": 0,
+     "role": 1,
+     "operators": [
+      900101
+     ],
+     "user_id": 900007,
+     "user_name": "synthetic-red",
+     "end_deployment": false
+    }
+   },
+   "communication": [],
+   "landmarks": {
+    "roadblocks": [],
+    "minefields": [],
+    "fortifications": []
+   },
+   "scenario_id": 900000001,
+   "terrain_id": 9000
+  },
+  "1": {
+   "operators": [
+    {
+     "obj_id": 900201,
+     "color": 1,
+     "type": 2,
+     "sub_type": 0,
+     "cur_hex": 1407,
+     "synthetic_field": "preserved"
+    }
+   ],
+   "passengers": [],
+   "time": {
+    "cur_step": 0,
+    "tick": 1.0,
+    "max_time": 50,
+    "max_step": 50,
+    "stage": 1
+   },
+   "jm_points": [],
+   "cities": [
+    {
+     "coord": 1305,
+     "value": 7,
+     "flag": -1,
+     "name": "synthetic objective"
+    }
+   ],
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 0,
+    "blue_remain_max": 0,
+    "blue_total": 0,
+    "blue_win": 0,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 0,
+    "red_remain_max": 0,
+    "red_total": 0,
+    "red_win": 0
+   },
+   "judge_info": [],
+   "valid_actions": {
+    "900201": {
+     "1": null
+    }
+   },
+   "role_and_grouping_info": {
+    "17": {
+     "faction": 1,
+     "role": 1,
+     "operators": [
+      900201
+     ],
+     "user_id": 900017,
+     "user_name": "synthetic-blue",
+     "end_deployment": false
+    }
+   },
+   "communication": [],
+   "landmarks": {
+    "roadblocks": [],
+    "minefields": [],
+    "fortifications": []
+   },
+   "scenario_id": 900000001,
+   "terrain_id": 9000
+  },
+  "-1": {
+   "operators": [
+    {
+     "obj_id": 900101,
+     "color": 0,
+     "type": 2,
+     "sub_type": 0,
+     "cur_hex": 1203,
+     "synthetic_field": "preserved"
+    },
+    {
+     "obj_id": 900201,
+     "color": 1,
+     "type": 2,
+     "sub_type": 0,
+     "cur_hex": 1407,
+     "synthetic_field": "preserved"
+    }
+   ],
+   "passengers": [],
+   "time": {
+    "cur_step": 0,
+    "tick": 1.0,
+    "max_time": 50,
+    "max_step": 50,
+    "stage": 1
+   },
+   "jm_points": [],
+   "cities": [
+    {
+     "coord": 1305,
+     "value": 7,
+     "flag": -1,
+     "name": "synthetic objective"
+    }
+   ],
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 0,
+    "blue_remain_max": 0,
+    "blue_total": 0,
+    "blue_win": 0,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 0,
+    "red_remain_max": 0,
+    "red_total": 0,
+    "red_win": 0
+   },
+   "judge_info": [],
+   "valid_actions": {
+    "900101": {
+     "1": null,
+     "6": [
+      {
+       "target_state": 2
+      }
+     ]
+    },
+    "900201": {
+     "1": null
+    }
+   },
+   "role_and_grouping_info": {
+    "7": {
+     "faction": 0,
+     "role": 1,
+     "operators": [
+      900101
+     ],
+     "user_id": 900007,
+     "user_name": "synthetic-red",
+     "end_deployment": false
+    },
+    "17": {
+     "faction": 1,
+     "role": 1,
+     "operators": [
+      900201
+     ],
+     "user_id": 900017,
+     "user_name": "synthetic-blue",
+     "end_deployment": false
+    }
+   },
+   "communication": [],
+   "landmarks": {
+    "roadblocks": [],
+    "minefields": [],
+    "fortifications": []
+   },
+   "scenario_id": 900000001,
+   "terrain_id": 9000,
+   "actions": []
+  }
+ }
+}
