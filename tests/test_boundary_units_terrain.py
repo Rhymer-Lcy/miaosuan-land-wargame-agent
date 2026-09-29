@@ -117,6 +117,8 @@ class MoveCostsTest(unittest.TestCase):
             "cell not a mapping": (mutated(lambda d: d[0][0].__setitem__(0, [1])), "cost_data[0][0][0]"),
             "zero cost": (mutated(lambda d: d[0][0][0].__setitem__(1, 0)), "cost_data[0][0][0][1]"),
             "bool cost": (mutated(lambda d: d[0][0][0].__setitem__(1, True)), "cost_data[0][0][0][1]"),
+            "infinite cost": (mutated(lambda d: d[0][0][0].__setitem__(1, float("inf"))), "cost_data[0][0][0][1]"),
+            "nan cost": (mutated(lambda d: d[0][0][0].__setitem__(1, float("nan"))), "cost_data[0][0][0][1]"),
             "neighbour outside": (mutated(lambda d: d[0][0][0].__setitem__(303, 1)), "cost_data[0][0][0][303]"),
         }
         for name, (data, path) in cases.items():

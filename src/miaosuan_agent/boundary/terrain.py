@@ -14,6 +14,7 @@ contains edges into roadblock cells, which the rules make impassable to vehicles
 from __future__ import annotations
 
 import enum
+import math
 from dataclasses import dataclass
 from types import MappingProxyType
 from typing import Any, Dict, Mapping, Tuple
@@ -73,8 +74,8 @@ class MoveCosts:
                         if not (0 <= neighbour // 100 < rows and 0 <= neighbour % 100 < cols) or neighbour < 0:
                             raise ContractError(f"{cell_path}[{neighbour}]", "a neighbour hex inside the map", neighbour)
                         value = require_number(cost, f"{cell_path}[{neighbour}]")
-                        if not value > 0:
-                            raise ContractError(f"{cell_path}[{neighbour}]", "a positive cost", cost)
+                        if not (value > 0 and math.isfinite(value)):
+                            raise ContractError(f"{cell_path}[{neighbour}]", "a positive finite cost", cost)
                         neighbours[neighbour] = value
                     mode_edges[hex_of(row_index, col_index)] = MappingProxyType(neighbours)
             edges.append(MappingProxyType(mode_edges))
