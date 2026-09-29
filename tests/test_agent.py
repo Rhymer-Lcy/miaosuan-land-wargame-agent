@@ -6,7 +6,7 @@ import unittest
 
 from miaosuan_agent.agent import BaselineAgent, InertAgent, PolicyAgent
 from miaosuan_agent.boundary import ContractError, Origin
-from miaosuan_agent.decision import BASELINE_ID, INERT_ID, digest
+from miaosuan_agent.decision import BASELINE_ID, INERT_ID, Memory, digest
 
 from tests.fixtures import decision_scenarios as ds
 from tests.fixtures import synthetic as syn
@@ -69,6 +69,34 @@ class LifecycleTest(unittest.TestCase):
         actions = agent.step(ds.rich_observation())
         self.assertEqual([(a["type"], a.get("obj_id")) for a in actions], list(agent.last_trace.emitted))
         self.assertEqual(agent.last_trace.policy, BASELINE_ID)
+
+
+class ReplayTest(unittest.TestCase):
+    def test_replay_reproduces_the_step_without_side_effects(self) -> None:
+        agent = BaselineAgent(strict=True)
+        agent.setup(setup_info())
+        memory = agent.memory
+        agent.step(deploy_observation())
+        after_deploy = (agent.memory, agent.last_trace)
+        replayed = agent.replay(deploy_observation(), memory)
+        self.assertEqual(digest(replayed), digest(after_deploy[1]))
+        self.assertEqual((agent.memory, agent.last_trace), after_deploy)
+        self.assertEqual(agent.replay(deploy_observation(), agent.memory).deployment, "already sent")
+        agent.step(ds.rich_observation())
+        self.assertEqual(digest(agent.replay(ds.rich_observation(), agent.memory)), digest(agent.last_trace))
+
+    def test_replay_of_a_malformed_observation(self) -> None:
+        agent = BaselineAgent()
+        agent.setup(setup_info())
+        self.assertIsNotNone(agent.replay({"operators": []}, agent.memory).error)
+        strict = BaselineAgent(strict=True)
+        strict.setup(setup_info())
+        with self.assertRaises(ContractError):
+            strict.replay({"operators": []}, strict.memory)
+
+    def test_replay_before_setup(self) -> None:
+        with self.assertRaises(RuntimeError):
+            BaselineAgent().replay(deploy_observation(), Memory())
 
 
 class FailClosedTest(unittest.TestCase):

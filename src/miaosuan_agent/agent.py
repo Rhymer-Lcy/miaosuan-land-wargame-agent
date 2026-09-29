@@ -31,6 +31,7 @@ class PolicyAgent:
         self.strict = strict
         self.seat: Optional[int] = None
         self.faction: Optional[int] = None
+        self.costs: Optional[MoveCosts] = None
         self.policy: Optional[BaselinePolicy] = None
         self.memory = Memory()
         self.last_trace: Optional[StepTrace] = None
@@ -39,8 +40,8 @@ class PolicyAgent:
         self.seat = require_int(setup_info["seat"], "setup_info.seat")
         self.faction = require_int(setup_info["faction"], "setup_info.faction")
         raw_costs = setup_info.get("cost_data")
-        costs = None if raw_costs is None else MoveCosts.from_raw(raw_costs, self.origin, "setup_info.cost_data")
-        self.policy = POLICIES[self.policy_id](costs)
+        self.costs = None if raw_costs is None else MoveCosts.from_raw(raw_costs, self.origin, "setup_info.cost_data")
+        self.policy = POLICIES[self.policy_id](self.costs)
         self.memory = Memory()
         self.last_trace = None
 
@@ -59,8 +60,24 @@ class PolicyAgent:
         self.last_trace = decision.trace
         return [dict(action) for action in decision.actions]
 
+    def replay(self, observation: Any, memory: Memory) -> StepTrace:
+        """The trace a fresh policy instance produces for ``observation`` and ``memory``.
+
+        Used to check in the middle of a game that decisions depend on nothing but their inputs.
+        The agent's own state (memory, last trace, route memo) is not touched.
+        """
+        if self.policy is None or self.seat is None or self.faction is None:
+            raise RuntimeError("replay() called before setup()")
+        fresh = POLICIES[self.policy_id](self.costs)
+        try:
+            return fresh.decide(Observation.from_raw(observation, self.origin), self.seat, self.faction, memory).trace
+        except ContractError as exc:
+            if self.strict:
+                raise
+            return failed(fresh.identity, self.seat, self.faction, exc)
+
     def reset(self) -> None:
-        self.seat = self.faction = self.policy = self.last_trace = None
+        self.seat = self.faction = self.policy = self.last_trace = self.costs = None
         self.memory = Memory()
 
 
