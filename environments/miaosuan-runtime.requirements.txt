@@ -1,0 +1,17 @@
+# Third-party packages of the miaosuan-runtime environment (CPython 3.10, Linux x86-64).
+# numpy and pandas are pinned to the platform's documented online runtime; getmac is a
+# dependency declared (unpinned) by the SDK engine wheel; the others are their dependencies
+# as resolved on 2026-09-29. Hashes are those of the manylinux2014 x86-64 and universal wheels.
+# See environments/README.md for the full procedure.
+getmac==0.9.5 \
+    --hash=sha256:22b8a3e15bc0c6bfa94651a3f7f6cd91b59432e1d8199411d4fe12804423e0aa
+numpy==1.26.2 \
+    --hash=sha256:bcc008217145b3d77abd3e4d5ef586e3bdfba8fe17940769f8aa09b99e856c00
+pandas==1.5.3 \
+    --hash=sha256:7a0a56cef15fd1586726dace5616db75ebcfec9179a3a55e78f72c5639fa2a23
+python-dateutil==2.9.0.post0 \
+    --hash=sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427
+pytz==2026.4 \
+    --hash=sha256:9d514388fbc89ca0833203464272ac485b8828568ab73532f5020f17e892a0ff
+six==1.17.0 \
+    --hash=sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274

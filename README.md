@@ -23,6 +23,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `src/miaosuan_agent/` | the project's Python package |
 | `scripts/` | command-line tools |
 | `tests/` | unit tests (standard library `unittest`; no SDK needed) |
+| `environments/` | reproducible definition of the platform-compatible runtime environment |
 | `docs/PROVENANCE.md` | identity of the SDK and documentation inputs, licensing status, local archive layout |
 | `docs/COMPATIBILITY.md` | static audit of the SDK: engine requirements, inconsistencies, upload constraints |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
@@ -45,7 +46,8 @@ python -m unittest discover -s tests -t .
 
 ## Engine smoke test
 
-On an x86-64 Linux host with the platform runtime environment and a local SDK copy:
+On an x86-64 Linux host with the `miaosuan-runtime` environment (`environments/README.md`) and a
+local SDK copy:
 
 ```
 bash scripts/run_engine_smoke_test.sh <runtime-python> local/source-archives/land_wargame_sdk.zip
