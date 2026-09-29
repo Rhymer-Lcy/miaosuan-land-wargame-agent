@@ -51,6 +51,11 @@ def load_cost(path: Path) -> Any:
         return _PrimitiveUnpickler(handle).load()
 
 
+def load_cost_bytes(data: bytes) -> Any:
+    """Like :func:`load_cost`, for the bytes of a ``cost.pickle`` already in memory."""
+    return _PrimitiveUnpickler(io.BytesIO(data)).load()
+
+
 def load_see(path: Path) -> Any:
     """Load the line-of-sight array stored under key ``data`` in a ``see.npz`` file."""
     import numpy  # imported lazily: the rest of the package does not need numpy

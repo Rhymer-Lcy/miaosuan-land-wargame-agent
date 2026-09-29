@@ -13,12 +13,14 @@ from .actions import (END_DEPLOYMENT, deployment_completion_available, end_deplo
                       validate_end_deployment_action)
 from .errors import ContractError
 from .keys import Origin, normalize_int_key, normalize_int_keyed
-from .observation import KNOWN_FIELDS, REQUIRED_FIELDS, Observation, Operator, SeatInfo, Stage, TimeInfo
+from .observation import KNOWN_FIELDS, REQUIRED_FIELDS, City, Observation, Operator, SeatInfo, Stage, TimeInfo
 from .state import Slot, StateForm, StateView, normalize_state
+from .terrain import MoveCosts, MoveMode, hex_of
 
 __all__ = [
-    "END_DEPLOYMENT", "KNOWN_FIELDS", "REQUIRED_FIELDS", "ContractError", "Observation", "Operator",
-    "Origin", "SeatInfo", "Slot", "Stage", "StateForm", "StateView", "TimeInfo",
+    "END_DEPLOYMENT", "KNOWN_FIELDS", "REQUIRED_FIELDS", "City", "ContractError", "MoveCosts", "MoveMode",
+    "Observation", "Operator", "Origin", "SeatInfo", "Slot", "Stage", "StateForm", "StateView", "TimeInfo",
+    "hex_of",
     "deployment_completion_available", "end_deployment_action", "normalize_int_key", "normalize_int_keyed",
     "normalize_state", "validate_end_deployment_action",
 ]

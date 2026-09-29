@@ -69,10 +69,67 @@ class TimeInfo:
 
 @dataclass(frozen=True)
 class Operator:
-    """One unit record: its id, and every field exactly as delivered (read-only)."""
+    """One unit record: its id, and every field exactly as delivered (read-only).
+
+    The typed accessors validate one field each when called and raise :class:`ContractError`
+    naming the field's path. Fields the boundary does not interpret stay untouched in ``fields``.
+    """
 
     obj_id: int
     fields: Mapping[str, Any]
+    path: str = "operator"
+
+    def _get(self, name: str, required: bool) -> Any:
+        if name not in self.fields:
+            if required:
+                raise ContractError(f"{self.path}.{name}", "a present field", MISSING)
+            return None
+        return self.fields[name]
+
+    @property
+    def color(self) -> int:
+        """Faction: 0 red, 1 blue."""
+        return require_int(self._get("color", True), f"{self.path}.color")
+
+    @property
+    def unit_type(self) -> int:
+        """The ``type`` field: 1 infantry, 2 vehicle, 3 aircraft (4 and 5 per later documentation)."""
+        return require_int(self._get("type", True), f"{self.path}.type")
+
+    @property
+    def sub_type(self) -> Optional[int]:
+        value = self._get("sub_type", False)
+        return None if value is None else require_int(value, f"{self.path}.sub_type")
+
+    @property
+    def cur_hex(self) -> int:
+        """Current position as a four-digit hex index (row * 100 + column)."""
+        return require_int(self._get("cur_hex", True), f"{self.path}.cur_hex")
+
+    @property
+    def move_state(self) -> Optional[int]:
+        value = self._get("move_state", False)
+        return None if value is None else require_int(value, f"{self.path}.move_state")
+
+    @property
+    def move_path(self) -> Optional[Tuple[int, ...]]:
+        """The planned path (first element: next hex), ``()`` when stationary, ``None`` if absent."""
+        value = self._get("move_path", False)
+        if value is None:
+            return None
+        path = f"{self.path}.move_path"
+        return tuple(require_int(item, f"{path}[{index}]") for index, item in enumerate(require_sequence(value, path)))
+
+
+@dataclass(frozen=True)
+class City:
+    """One objective (夺控点). ``flag``: -1 unoccupied, 0 red, 1 blue."""
+
+    coord: int
+    value: Optional[int]
+    flag: Optional[int]
+    name: Optional[str]
+    extra: Mapping[str, Any]
 
 
 @dataclass(frozen=True)
@@ -175,7 +232,7 @@ class Observation:
             if obj_id in seen:
                 raise ContractError(id_path, "an obj_id unique within the list", obj_id)
             seen.add(obj_id)
-            units.append(Operator(obj_id=obj_id, fields=record))
+            units.append(Operator(obj_id=obj_id, fields=record, path=f"{path}[{index}]"))
         return tuple(units)
 
     def valid_actions(self) -> Mapping[int, Mapping[int, ActionOptions]]:
@@ -249,6 +306,50 @@ class Observation:
             return None
         return self._memo("actions", lambda: _records(self.fields["actions"], f"{self.path}.actions"))
 
+    def cities(self) -> Optional[Tuple[City, ...]]:
+        """The objectives, or ``None`` if the field is absent."""
+        if "cities" not in self.fields:
+            return None
+        return self._memo("cities", self._build_cities)
+
+    def _build_cities(self) -> Tuple[City, ...]:
+        path = f"{self.path}.cities"
+        result = []
+        for index, record in enumerate(_records(self.fields["cities"], path)):
+            item_path = f"{path}[{index}]"
+
+            def member(name: str, check: Callable[[Any, str], Any], required: bool) -> Any:
+                if name not in record:
+                    if required:
+                        raise ContractError(f"{item_path}.{name}", "a present field", MISSING)
+                    return None
+                return check(record[name], f"{item_path}.{name}")
+
+            result.append(City(coord=member("coord", require_int, True), value=member("value", require_int, False),
+                               flag=member("flag", require_int, False), name=member("name", require_str, False),
+                               extra=_readonly({k: v for k, v in record.items()
+                                                if k not in ("coord", "value", "flag", "name")})))
+        return tuple(result)
+
+    def roadblocks(self) -> Optional[Tuple[int, ...]]:
+        """Hexes of the roadblocks in ``landmarks``: ``None`` if ``landmarks`` is absent."""
+        if "landmarks" not in self.fields:
+            return None
+        return self._memo("roadblocks", self._build_roadblocks)
+
+    def _build_roadblocks(self) -> Tuple[int, ...]:
+        path = f"{self.path}.landmarks"
+        landmarks = require_mapping(self.fields["landmarks"], path)
+        if "roadblocks" not in landmarks:
+            return ()
+        hexes = []
+        for index, record in enumerate(_records(landmarks["roadblocks"], f"{path}.roadblocks")):
+            hex_path = f"{path}.roadblocks[{index}].hex"
+            if "hex" not in record:
+                raise ContractError(hex_path, "a present field", MISSING)
+            hexes.append(require_int(record["hex"], hex_path))
+        return tuple(hexes)
+
     def scenario_id(self) -> Optional[int]:
         """The scenario id, or ``None`` if absent.
 
@@ -285,6 +386,8 @@ class Observation:
         self.role_and_grouping()
         self.communication()
         self.action_feedback()
+        self.cities()
+        self.roadblocks()
         self.scenario_id()
         self.terrain_id()
         return self

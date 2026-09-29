@@ -35,7 +35,7 @@ class PrivacyTest(unittest.TestCase):
             text = json.dumps(fingerprint(syn.observation(-1), detail))
             with self.subTest(detail=detail.value):
                 for secret in (syn.RED_UNIT, syn.BLUE_UNIT, 900000 + syn.RED_SEAT, 900000 + syn.BLUE_SEAT, syn.SCENARIO_ID,
-                               syn.TERRAIN_ID, 1203, 1407, 1305):
+                               syn.TERRAIN_ID, syn.RED_HEX, syn.BLUE_HEX, syn.CITY_HEX):
                     self.assertNotIn(str(secret), text)
                 self.assertNotIn("synthetic-red", text)
                 self.assertNotIn("synthetic objective", text)

@@ -9,7 +9,9 @@
      "color": 0,
      "type": 2,
      "sub_type": 0,
-     "cur_hex": 1203,
+     "cur_hex": 102,
+     "move_state": 0,
+     "move_path": [],
      "synthetic_field": "preserved"
     }
    ],
@@ -24,7 +26,7 @@
    "jm_points": [],
    "cities": [
     {
-     "coord": 1305,
+     "coord": 505,
      "value": 7,
      "flag": -1,
      "name": "synthetic objective"
@@ -83,7 +85,9 @@
      "color": 1,
      "type": 2,
      "sub_type": 0,
-     "cur_hex": 1407,
+     "cur_hex": 807,
+     "move_state": 0,
+     "move_path": [],
      "synthetic_field": "preserved"
     }
    ],
@@ -98,7 +102,7 @@
    "jm_points": [],
    "cities": [
     {
-     "coord": 1305,
+     "coord": 505,
      "value": 7,
      "flag": -1,
      "name": "synthetic objective"
@@ -152,7 +156,9 @@
      "color": 0,
      "type": 2,
      "sub_type": 0,
-     "cur_hex": 1203,
+     "cur_hex": 102,
+     "move_state": 0,
+     "move_path": [],
      "synthetic_field": "preserved"
     },
     {
@@ -160,7 +166,9 @@
      "color": 1,
      "type": 2,
      "sub_type": 0,
-     "cur_hex": 1407,
+     "cur_hex": 807,
+     "move_state": 0,
+     "move_path": [],
      "synthetic_field": "preserved"
     }
    ],
@@ -175,7 +183,7 @@
    "jm_points": [],
    "cities": [
     {
-     "coord": 1305,
+     "coord": 505,
      "value": 7,
      "flag": -1,
      "name": "synthetic objective"

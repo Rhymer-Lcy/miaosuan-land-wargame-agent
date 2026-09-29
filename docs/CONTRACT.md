@@ -77,10 +77,21 @@ normalize_state(raw, origin)          -> StateView(form, red, blue, global_obser
 Observation.from_raw(raw, origin)     -> Observation
 Observation.time()                    -> TimeInfo(cur_step, stage, tick, max_time, max_step, extra)
 Observation.operators(), passengers() -> tuple of Operator(obj_id, fields)
+Operator.color, unit_type, cur_hex    -> int (required when read)
+Operator.sub_type, move_state         -> int or None;  Operator.move_path -> tuple of int or None
 Observation.valid_actions()           -> {unit id: {action type: None | tuple of option mappings}}
 Observation.role_and_grouping()       -> {seat: SeatInfo(...)};  Observation.seat(seat)
+Observation.cities()                  -> tuple of City(coord, value, flag, name, extra) or None
+Observation.roadblocks()              -> tuple of roadblock hexes or None
 Observation.communication(), action_feedback(), scenario_id(), terrain_id()  -> value or None
+MoveCosts.from_raw(cost_data, origin) -> MoveCosts;  MoveCosts.neighbours(mode, hex) -> {hex: cost}
 ```
+
+`MoveCosts` normalizes the setup-supplied movement costs: exactly four modes (documented as
+0 vehicle maneuver, 1 vehicle march, 2 infantry, 3 air), equal grid sizes, neighbour keys inside
+the map, positive int or float costs. Observed: the cost graph of map 9601 still contains edges
+into its roadblock cells, which the rules make impassable to vehicles, so movement code must also
+consult `Observation.roadblocks()`.
 
 Validation is lazy per accessor and cached; `normalize_state(..., validate=True)` and
 `Observation.validate()` validate everything at once. Returned containers are read-only copies of
