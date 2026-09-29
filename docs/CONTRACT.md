@@ -40,7 +40,7 @@ every one of its 1,002 states against the full profile without a deviation.
 | `role_and_grouping_info` | keyed by seat (`int`); each entry has exactly `faction` (`int`), `role` (`int`), `operators` (`list` of `int`), `user_id` (`int`), `user_name` (`str`), `end_deployment` (`bool`) |
 | Deployment completion | `{"actor": <seat>, "type": 333}` from each seat, sent in the same step, was accepted: `stage` became 2 and both seats' `end_deployment` became `True`. 333 appeared in no captured `valid_actions` |
 | `communication` | a `list`; empty in every captured state (a populated form was not observed) |
-| `actions` (all-seeing only) | a `list`; empty in every captured state, including the one after the step that carried both 333 actions |
+| `actions` (all-seeing only) | a `list`; empty in every captured state, including the one after the step that carried both 333 actions. In the baseline evaluation (`docs/EVALUATION.md`) it held one entry per unit action of the previous step, with `cur_step`, `message` (the action) and, when the engine refused it, `error` with `code` and `message`; deployment completion was never echoed |
 | `scenario_id`, `terrain_id` | `int` (`terrain_id` equalled the map id) |
 | `scores` | 12 `int` fields: `red_` and `blue_` `occupy`, `remain`, `remain_max`, `attack`, `total`, `win` |
 | `landmarks` | exactly `roadblocks`, `minefields`, `fortifications`, each a `list` |
@@ -133,7 +133,8 @@ observation's distinctive values.
 
 * how the online platform delivers observations (in-process objects or JSON), and which engine
   version it runs;
-* any behaviour of SDK 5.0.0 and later, and of other scenarios, multi-agent seating, passengers,
-  populated `communication`, or `actions` feedback;
+* any behaviour of SDK 5.0.0 and later, and of multi-agent seating, passengers or populated
+  `communication` (seven further scenarios and populated `actions` feedback were observed in the
+  baseline evaluation, `docs/EVALUATION.md`);
 * how the engine reports a rejected action to the player views, which lack `actions`;
 * what the engine does when its time-since-first-use limit is reached.
