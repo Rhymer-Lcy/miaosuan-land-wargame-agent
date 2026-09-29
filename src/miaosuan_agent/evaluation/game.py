@@ -28,6 +28,7 @@ from .manifest import REPLAY_CHECK_EVERY, WALL_CAP_SECONDS, GameSpec
 
 SCHEMA = "miaosuan-game-record/1"
 PREFIX = 16  # hex characters kept per step digest (64 bits): enough to locate a divergence
+EXAMPLES_PER_CODE = 5  # private examples kept per engine error code and seat
 
 
 def sanitize(reason: str) -> str:
@@ -57,6 +58,8 @@ class SeatLog:
         self.effects: Dict[int, Counter] = {}
         self.feedback_entries = 0
         self.feedback_errors: Counter = Counter()
+        self.feedback_errors_by_type: Counter = Counter()
+        self.feedback_error_examples: Dict[str, List[Dict[str, Any]]] = {}
 
     def record(self, step: int, trace, produced: Sequence[Mapping[str, Any]], latency: float) -> None:
         self.latency_us.append(round(latency * 1e6))
@@ -81,6 +84,17 @@ class SeatLog:
             if "obj_id" in action:
                 self.units_acted.add(action["obj_id"])
 
+    def feedback_error(self, code: Any, entry: Mapping[str, Any], step: int) -> None:
+        """Count an engine-reported error by code and by action type; keep a few private examples."""
+        message = entry.get("message") if isinstance(entry.get("message"), Mapping) else {}
+        error = entry.get("error") if isinstance(entry.get("error"), Mapping) else {}
+        self.feedback_errors[code] += 1
+        self.feedback_errors_by_type[f"{code}/{message.get('type')}"] += 1
+        examples = self.feedback_error_examples.setdefault(str(code), [])
+        if len(examples) < EXAMPLES_PER_CODE:
+            examples.append({"step": step, "action": dict(message),
+                             "error_message": str(error.get("message"))[:200]})
+
     def effect(self, kind: int, outcome: str) -> None:
         self.effects.setdefault(kind, Counter())[outcome] += 1
 
@@ -100,6 +114,8 @@ class SeatLog:
             "effects_by_type": {str(k): dict(sorted(v.items())) for k, v in sorted(self.effects.items())},
             "feedback_entries": self.feedback_entries,
             "feedback_errors_by_code": {str(k): v for k, v in sorted(self.feedback_errors.items(), key=str)},
+            "feedback_errors_by_code_and_type": dict(sorted(self.feedback_errors_by_type.items())),
+            "feedback_error_examples": self.feedback_error_examples,
         }
 
 
@@ -222,7 +238,7 @@ def play(train_env_cls: Callable[[], Any], agent_factories: Mapping[str, Callabl
                     seats[actor].feedback_entries += 1
                     code = effects.feedback_error_code(entry)
                     if code is not None:
-                        seats[actor].feedback_errors[code] += 1
+                        seats[actor].feedback_error(code, entry, steps)
             decision_step = before.global_observation.time().cur_step
             for log, action in emitted:
                 outcome = effects.classify(action, log.faction, before.global_observation, everything, decision_step)

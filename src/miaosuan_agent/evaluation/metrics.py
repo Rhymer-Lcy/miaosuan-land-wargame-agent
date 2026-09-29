@@ -140,6 +140,7 @@ def public_game(record: Mapping[str, Any]) -> Dict[str, Any]:
             "diagnostics": s["diagnostics"], "replay_checks": s["replay_checks"],
             "replay_mismatches": s["replay_mismatches"], "effects_by_type": s["effects_by_type"],
             "feedback_entries": s["feedback_entries"], "feedback_errors_by_code": s["feedback_errors_by_code"],
+            "feedback_errors_by_code_and_type": s.get("feedback_errors_by_code_and_type"),
         } for s in record.get("seats", [])],
     }
 

@@ -122,7 +122,7 @@ def cmd_game(args: argparse.Namespace) -> int:
     install = engine_install.EngineInstall(args.engine_install.resolve())
     construct = engine_factory(install)
     try:
-        with engine_install.session(install, "evaluation", harness) as handle:
+        with engine_install.session(install, args.purpose, harness) as handle:
             record = play(construct, FACTORIES, spec, inputs, manifest["players"], rng_probe=randomness.fingerprint)
             record["session"] = handle.opened["session"]
             handle.outcome = {"status": record["status"], "steps": record.get("steps"), "game_id": spec.game_id}
@@ -213,6 +213,8 @@ def main() -> int:
     game.add_argument("--engine-install", type=Path, required=True)
     game.add_argument("--harness-commit", default="unknown")
     game.add_argument("--harness-dirty", action="store_true")
+    game.add_argument("--purpose", default="evaluation", choices=("evaluation", "diagnostic"),
+                      help="session purpose recorded in the engine ledger; a diagnostic run uses its own --work")
     game.set_defaults(func=cmd_game)
     summarize = sub.add_parser("summarize")
     summarize.add_argument("--public", type=Path, help="also write the sanitized summary here")

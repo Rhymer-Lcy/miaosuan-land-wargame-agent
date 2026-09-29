@@ -106,6 +106,21 @@ class GameTest(unittest.TestCase):
         self.assertFalse(gate["G4"]["pass"])
         self.assertTrue(gate["G1"]["pass"])
 
+    def test_engine_error_details(self) -> None:
+        record = run(lambda: fake_engine.FakeEnv(refuse_moves=True))
+        seat = record["seats"][0]
+        refused = seat["feedback_errors_by_code"]["21"]
+        self.assertEqual(seat["feedback_errors_by_code_and_type"], {"21/1": refused})
+        examples = seat["feedback_error_examples"]["21"]
+        self.assertEqual(len(examples), min(refused, 5))
+        self.assertEqual({e["error_message"] for e in examples}, {"synthetic refusal"})
+        self.assertEqual({e["action"]["type"] for e in examples}, {1})
+        public = metrics.public_game(record)["seats"][0]
+        self.assertEqual(public["feedback_errors_by_code_and_type"], {"21/1": refused})
+        self.assertNotIn("feedback_error_examples", public)
+        clean = run()["seats"][0]
+        self.assertEqual((clean["feedback_errors_by_code_and_type"], clean["feedback_error_examples"]), ({}, {}))
+
     def test_inert_control(self) -> None:
         record = run(game=spec(red=BASELINE_ID, blue=INERT_ID))
         red, blue = record["seats"]
