@@ -5,8 +5,10 @@ https://wargame.ia.ac.cn/.
 
 ## Status
 
-Bootstrap. The repository holds provenance records, a static audit of the platform's community SDK,
-and tooling to verify a local copy of that SDK. No agent logic has been written.
+Bootstrap complete. The repository holds provenance records, a static audit of the platform's
+community SDK, tooling to verify a local copy of it, a reproducible runtime environment, and an
+isolated engine smoke test that passed on Linux (`docs/ENGINE_SMOKE_TEST.md`). No agent logic has
+been written.
 
 ## Third-party material is not in this repository
 
@@ -26,6 +28,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `environments/` | reproducible definition of the platform-compatible runtime environment |
 | `docs/PROVENANCE.md` | identity of the SDK and documentation inputs, licensing status, local archive layout |
 | `docs/COMPATIBILITY.md` | static audit of the SDK: engine requirements, inconsistencies, upload constraints |
+| `docs/ENGINE_SMOKE_TEST.md` | observed engine behaviour and interface contract from the first controlled run |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy
@@ -68,8 +71,8 @@ which are exactly the 50 cells flagged as roadblocks in map 9601, the only map w
 
 1. The engine (`land_wargame_train_env` 4.1.0) exists only as a
    `cp310-cp310-manylinux2014_x86_64` wheel: x86-64 Linux with CPython 3.10.
-2. The engine embeds a MAC-bound, time-since-first-use authenticator and may refuse to run; its
-   first execution belongs in a disposable environment (`docs/COMPATIBILITY.md`, section 2).
+2. The engine embeds a MAC-bound, time-since-first-use authenticator. It passed on first use and
+   keeps its state inside the installed package (`docs/ENGINE_SMOKE_TEST.md`, section 4).
 3. The SDK's demo runner does not run as shipped: the data paths it opens do not exist in the
    supplied `Data.zip` (section 3).
 4. The platform accepts an upload only as a zip holding a single top-level package `ai` that

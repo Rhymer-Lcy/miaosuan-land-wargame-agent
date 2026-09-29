@@ -11,6 +11,9 @@ This is the static audit written before anything from the SDK was executed. File
 `ai/agent.py:334` name members of `land_wargame_sdk.zip` (digests in `PROVENANCE.md` section 3);
 those members are not part of this repository.
 
+The first controlled execution of the engine is recorded in `ENGINE_SMOKE_TEST.md`; its section 5
+states which items below the runtime evidence confirmed or corrected.
+
 ## 1. Execution environment required by the engine
 
 | Item | Finding | Tag |
@@ -59,10 +62,10 @@ have to be obtained from `http://wargame.ia.ac.cn/aidevelopment` [L] (not attemp
 | 3.1 | `run_offline_games.py:45-51` and `:163-169` read `data/scenarios/333.json`, `data/maps/333/333_basic.json`, `data/maps/333/333_cost.pickle` and `data/maps/333/333_see.npz` | [V] |
 | 3.2 | `Data.zip` provides `Data/scenarios/<id>.json` and `Data/maps/map_<id>/{basic.json, cost.pickle, <id>see.npz}`; neither scenario 333 nor map 333 exists, and the directory case differs (`data` against `Data`), which matters on Linux, the only supported platform | [V] |
 | 3.3 | Hence the runner cannot run as shipped on any platform; the install page's claim that `python run_offline_games.py` completes within a minute after `unzip Data.zip` [L] cannot hold without editing the paths | [I] |
-| 3.4 | Scenario files do not record their map. Keys are `scenario_id`, `operators`, `time`, `cities` and, in 27 of 50, `annual_version` | [V] |
+| 3.4 | Scenario files do not record their map. All 50 have `scenario_id`, `operators`, `time` and `cities`; 27 also have `annual_version`, 13 have `landmarks`, and 5 of those 13 also have `blueprints` (corrected 2026-09-29: an earlier version omitted `landmarks` and `blueprints` because its key survey printed only scalar-valued keys) | [V] |
 | 3.5 | Reading the map id as the last two digits of the scenario id (the last four for 9601): 40 of 50 scenarios name a supplied map and all their operator and city hexes fall inside it; 10 name none (1231, 1531, 1631, 3231, 3531, 3631, 2201010101, 2201010105, 2201010109, 2201010110), so their map is not identifiable from the supplied data; maps 19, 43, 82, 83, 84, 86, 123, 212 and 221 are named by no scenario | [I] |
 | 3.6 | `scenario_id` is an integer in 46 files and a string in the four `22010101xx` files | [V] |
-| 3.7 | The live scenario page describes keys absent from every supplied scenario (`landmarks`, `blueprints`, `config`, `launch_sites`, `com_graph`); whether engine 4.1.0 accepts the older files is unknown | [L] / [U] |
+| 3.7 | The live scenario page describes `landmarks`, `blueprints`, `config`, `launch_sites` and `com_graph`; the first two occur in 13 and 5 supplied scenarios respectively (3.4), the other three in none; whether engine 4.1.0 accepts every older file is unknown | [V] / [L] / [U] |
 | 3.8 | The bundled `docs/observation_example.json` matches scenario 3231: the same five city hexes, and its 22 operators plus 12 passengers carry exactly the 34 unit ids of red in that scenario. It is therefore red's view of 3231 at step 0 | [V] / [I] |
 | 3.9 | Replays go to `logs/replays/replay_<epoch>.zip` (`run_offline_games.py:134-140`); the engine's `wgwriter/saver` module embeds a developer path `../../logs/replay/s12281011_3531_0.json` | [V] |
 
