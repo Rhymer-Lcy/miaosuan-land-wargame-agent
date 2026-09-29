@@ -1,0 +1,41 @@
+{
+ "candidate_policy_source_sha256": "1d01e48a245273ded0b413ec6248e6aa54bba313ba8d6abbae2a20575544e2e9",
+ "changed_v0_action_types": {
+  "5": 35
+ },
+ "corpus": {
+  "capture_sessions": [
+   "0081",
+   "0083",
+   "0082",
+   "0079",
+   "0084",
+   "0080",
+   "0078",
+   "0085"
+  ],
+  "decision_states_from_fixtures": 6,
+  "decision_states_from_games": 33696,
+  "games": [
+   "1910631192.C1.r1",
+   "1930331196.C1.r1",
+   "2010131194.C1.r1",
+   "2010211129.C1.r1",
+   "201033019601.C1.r1",
+   "2010431153.C1.r1",
+   "2120531121.C1.r1",
+   "2130511121.C1.r1"
+  ]
+ },
+ "decision_states": 33702,
+ "differing": 35,
+ "fidelity_checked": 33696,
+ "fidelity_mismatches": 0,
+ "identical": 33667,
+ "schema": "miaosuan-counterfactual-replay/1",
+ "states_with_suppression": 35,
+ "suppressed_occupations": 55,
+ "unexplained": 0,
+ "v0_duplicate_occupation_commands": 55,
+ "v0_policy_source_sha256": "8e209640534e0af597fdcf4c7911bdcce417c6f2b883671e5bbfc0d243e43a13"
+}
