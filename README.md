@@ -14,7 +14,12 @@ experiment: at most one occupation command per objective in a decision step
 (`docs/EVALUATION_OCCUPY_RESERVATION.md`). Both are reference points; nothing in them is tuned for
 winning, and `baseline-v0` stays reproducible under its original identity. The repeated-run variance of
 `baseline-v1` was measured in a registered study with ten repetitions per configuration
-(`docs/VARIANCE_STUDY.md`), which also sizes future single-variable experiments.
+(`docs/VARIANCE_STUDY.md`), which also sizes future single-variable experiments. `baseline-v1-runtime-r1`
+(`docs/BASELINE_V1_RUNTIME_R1.md`) makes the same decisions as `baseline-v1` with a shortest-path search
+bounded by the objectives, which shortens the first play decision on the largest scenario from 0.4-0.5 s
+to under 0.2 s; it was promoted
+after a registered behaviour-preserving remediation (`docs/ROUTING_REMEDIATION.md`), and tactical
+experiments on top of `baseline-v1` run on it.
 
 ## Third-party material is not in this repository
 
@@ -43,9 +48,12 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/EVALUATION_OCCUPY_RESERVATION.md` | the registered single-variable experiment that produced `baseline-v1`, and its results |
 | `docs/VARIANCE_STUDY.md` | the registered repeated-run variance study of `baseline-v1`: design, statistics, planning method, results |
 | `docs/LATENCY_DIAGNOSTIC.md` | the measured causes of the rare decision-latency tail of `baseline-v1`, and the remediation decision |
+| `docs/ROUTING_REMEDIATION.md` | the registered behaviour-preserving routing remediation of `baseline-v1`: contract, equivalence argument, criteria, results |
+| `docs/BASELINE_V1_RUNTIME_R1.md` | identity of `baseline-v1-runtime-r1`, the runtime of `baseline-v1` with target-bounded routing |
 | `docs/REFUSAL_TAXONOMY.md` | how engine refusals are recorded (facts) and attributed (versioned rules); the code-203 correction |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
+| `evaluation/routing-remediation-1/` | the routing remediation's registration, pinned corpus and privacy-safe results |
 | `evaluation/refusal-taxonomy-correction/` | historical refusal facts derived from the unchanged records |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
