@@ -12,7 +12,9 @@ acts only through legal-action information and a final safety gate (`docs/BASELI
 `docs/EVALUATION.md`), and `baseline-v1`, which adds one change tested in a registered single-variable
 experiment: at most one occupation command per objective in a decision step
 (`docs/EVALUATION_OCCUPY_RESERVATION.md`). Both are reference points; nothing in them is tuned for
-winning, and `baseline-v0` stays reproducible under its original identity.
+winning, and `baseline-v0` stays reproducible under its original identity. The repeated-run variance of
+`baseline-v1` was measured in a registered study with ten repetitions per configuration
+(`docs/VARIANCE_STUDY.md`), which also sizes future single-variable experiments.
 
 ## Third-party material is not in this repository
 

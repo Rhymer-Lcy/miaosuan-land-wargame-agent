@@ -57,4 +57,5 @@ Carried over from `baseline-v0` except where the change removed them; material n
   cause was not measured.
 * Outcomes are stochastic once shots are fired, and two repetitions per configuration cannot
   estimate their variance, so no outcome comparison between `baseline-v0` and `baseline-v1` is
-  possible from these suites.
+  possible from these suites. The variance study (`docs/VARIANCE_STUDY.md`) has since measured
+  the variance with ten repetitions per configuration.
