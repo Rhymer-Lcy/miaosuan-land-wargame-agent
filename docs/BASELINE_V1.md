@@ -53,8 +53,10 @@ Carried over from `baseline-v0` except where the change removed them; material n
   objective is held, all units idle. The no-op rate of unit-steps stays above 0.99.
 * Movement ignores enemy positions, minefields and line of sight, never changes movement state and
   cannot be redirected once issued; passengers are never unloaded.
-* Rare decisions take 0.4 to 1.1 s in the candidate suite (up to 1.3 s in the `baseline-v0` suite); the
-  cause was not measured.
+* Rare decisions take 0.4 to 1.1 s in the candidate suite (up to 1.3 s in the `baseline-v0` suite). The
+  cause was measured afterwards (`docs/LATENCY_DIAGNOSTIC.md`): route planning at the first play
+  decision, and late-game collection pauses of the shared engine process. The routing part is removed,
+  with identical decisions, in the runtime `baseline-v1-runtime-r1` (`docs/BASELINE_V1_RUNTIME_R1.md`).
 * Outcomes are stochastic once shots are fired, and two repetitions per configuration cannot
   estimate their variance, so no outcome comparison between `baseline-v0` and `baseline-v1` is
   possible from these suites. The variance study (`docs/VARIANCE_STUDY.md`) has since measured
