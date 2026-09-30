@@ -1,0 +1,138 @@
+{
+ "decisions_total": 33802,
+ "files": [
+  {
+   "decisions": 3602,
+   "path": "local/replay-corpus/1910631192.C1.r1.jsonl.gz",
+   "role": "replay corpus game",
+   "sha256": "e3a726e67080427106c84bfa5a6b2032fa2fb1c2d5fc9573cff974fab565d967"
+  },
+  {
+   "decisions": 5762,
+   "path": "local/replay-corpus/1930331196.C1.r1.jsonl.gz",
+   "role": "replay corpus game",
+   "sha256": "3b849c3b68487946b07929d7aaa01335b8fbb0c4e66fe01b00737804273b9b9e"
+  },
+  {
+   "decisions": 3602,
+   "path": "local/replay-corpus/2010131194.C1.r1.jsonl.gz",
+   "role": "replay corpus game",
+   "sha256": "84494aedadab8ed8dddccfea820eea4fccef793e5f92446ac51fe928cdbff8c0"
+  },
+  {
+   "decisions": 3602,
+   "path": "local/replay-corpus/2010211129.C1.r1.jsonl.gz",
+   "role": "replay corpus game",
+   "sha256": "8eef32e046e4004327799548267ed619282aa41f6617d36c7476d780b6a5633f"
+  },
+  {
+   "decisions": 2002,
+   "path": "local/replay-corpus/201033019601.C1.r1.jsonl.gz",
+   "role": "replay corpus game",
+   "sha256": "fee4eadc751d41f2bf58099b7383a63ec650fa0cc50d971b55622cd89797da37"
+  },
+  {
+   "decisions": 3602,
+   "path": "local/replay-corpus/2010431153.C1.r1.jsonl.gz",
+   "role": "replay corpus game",
+   "sha256": "6f8e30e608398811beadfdbb0d35a3b1e23e72fcf7ad803bd40097a73eedc322"
+  },
+  {
+   "decisions": 5762,
+   "path": "local/replay-corpus/2120531121.C1.r1.jsonl.gz",
+   "role": "replay corpus game",
+   "sha256": "9f38cd844e5fec2ab660c98090f62d8cea8fac1078f8374bea3bce3d47e5def0"
+  },
+  {
+   "decisions": 5762,
+   "path": "local/replay-corpus/2130511121.C1.r1.jsonl.gz",
+   "role": "replay corpus game",
+   "sha256": "e25562afc5ba0a545e045ed0db79dbba0b7fdd98962cb517eb8f722448420f3c"
+  },
+  {
+   "decisions": 1,
+   "path": "local/diagnostics/latency/states/2010131194-seat11-decision1.json",
+   "role": "latency diagnostic state",
+   "sha256": "c4239af721c0fe1bd4ea8ece48d23006c05bd6ca6944690501a64088144fd7b5"
+  },
+  {
+   "decisions": 1,
+   "path": "local/diagnostics/latency/states/2010131194-seat11-decision900.json",
+   "role": "latency diagnostic state",
+   "sha256": "85970389ce19970751d0b8b2252ba96c4704706845797c6e381fdfcf6683acf0"
+  },
+  {
+   "decisions": 1,
+   "path": "local/diagnostics/latency/states/2130511121-seat11-decision1.json",
+   "role": "latency diagnostic state",
+   "sha256": "042d4d1dad59b1873ad6ba6f1e22a2e8f901fa059558e9d068bc8e84a5fbd03e"
+  },
+  {
+   "decisions": 1,
+   "path": "local/diagnostics/latency/states/2130511121-seat11-decision1000.json",
+   "role": "latency diagnostic state",
+   "sha256": "5fc53885394d5d419a0131bfcf855a3ca15013fe90a1a38bee557d857acb103f"
+  },
+  {
+   "decisions": 1,
+   "path": "local/diagnostics/latency/states-engine/2130511121-seat11-decision1-latdiag-1.json",
+   "role": "latency diagnostic captured slow state",
+   "sha256": "9f3b3b2b0d0ff40280976773808b9848fcdd661d7dcb0fa8033ee2f556b5a13f"
+  },
+  {
+   "decisions": 1,
+   "path": "local/diagnostics/latency/states-engine/2130511121-seat11-decision1177-latdiag-1.json",
+   "role": "latency diagnostic captured slow state",
+   "sha256": "f5233ea3b7b353c8a08aea2787abcff87e7718b8ab6e7b47bb6df8f20d4afcdb"
+  },
+  {
+   "decisions": 1,
+   "path": "local/diagnostics/latency/states-engine/2130511121-seat11-decision211-latdiag-1.json",
+   "role": "latency diagnostic captured slow state",
+   "sha256": "e7bf8f6826ce04fe9d578f0ef100f97e0572ffae1eae8ade768abdd4e71d5c7e"
+  },
+  {
+   "decisions": 1,
+   "path": "local/diagnostics/latency/states-engine/2130511121-seat11-decision2163-latdiag-1.json",
+   "role": "latency diagnostic captured slow state",
+   "sha256": "ec7cff4714dcfa2c79230d3bf88e0a51b836d19e07c740048db4fc6d1461f951"
+  },
+  {
+   "decisions": 1,
+   "path": "local/diagnostics/latency/states-engine/2130511121-seat11-decision2714-latdiag-1.json",
+   "role": "latency diagnostic captured slow state",
+   "sha256": "f8a190f1ec1f2f019a35b53738205bc746fd4c847bf0fde849040269e1bdb30d"
+  },
+  {
+   "decisions": 22,
+   "path": "local/diagnostics/latency/engine/latdiag-1.captures.jsonl.gz",
+   "role": "latency diagnostic captures",
+   "sha256": "a07af0ba84f991d1ad73cff223a4c1921763b587107115c9b1090ec744f4fa08"
+  },
+  {
+   "decisions": 22,
+   "path": "local/diagnostics/latency/engine/latdiag-2.captures.jsonl.gz",
+   "role": "latency diagnostic captures",
+   "sha256": "130f153f74ad779d518a820dd73a904ff23f1ee69bed649d49737e9fd648677e"
+  },
+  {
+   "decisions": 21,
+   "path": "local/diagnostics/latency/engine/latdiag-3.captures.jsonl.gz",
+   "role": "latency diagnostic captures",
+   "sha256": "362bbdd9934329ca6cb6d5581ab66674c46710ee49e8ef84a4c07aa582c2ced6"
+  },
+  {
+   "decisions": 14,
+   "path": "local/diagnostics/latency/engine/latdiag-4.captures.jsonl.gz",
+   "role": "latency diagnostic captures",
+   "sha256": "599670f381a70e1ffa5c43b25a5cee376208548650e011ce2584fd549e2cce37"
+  },
+  {
+   "decisions": 18,
+   "path": "local/diagnostics/latency/engine/latdiag-5.captures.jsonl.gz",
+   "role": "latency diagnostic captures",
+   "sha256": "bcbba1dbafadc9670ff21de031faa5d8105269bff5e30a43bde3dcdb8202922e"
+  }
+ ],
+ "rule": "SHA-256 of each private file; decisions = lines holding one recorded decision"
+}

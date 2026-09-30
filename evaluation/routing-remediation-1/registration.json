@@ -1,0 +1,251 @@
+{
+ "allowed_delta": [
+  "the candidate's policy sources are baseline-v1's sources, byte-identical, plus the single added file src/miaosuan_agent/experiments/routing_bounded.py; no file of baseline-v1's source set may change",
+  "the added file may define only: a router subclass whose shortest-path search stops once every target hex is settled (or the reachable frontier is exhausted) and whose memo key adds the target set; a policy subclass of baseline-v1's that uses that router and passes it, once per play-stage decision, the hexes of the objectives the unchanged tactical context lists; and the matching agent class",
+  "the decision trace keeps baseline-v1's content; only its 'policy' field names the candidate"
+ ],
+ "candidate": {
+  "added_file": "src/miaosuan_agent/experiments/routing_bounded.py",
+  "identity": "baseline-v1-routing-bounded-candidate",
+  "promoted_name": "baseline-v1-runtime-r1",
+  "sources": [
+   "agent.py",
+   "boundary",
+   "decision",
+   "experiments/__init__.py",
+   "experiments/occupy_reservation.py",
+   "experiments/routing_bounded.py"
+  ]
+ },
+ "contract": [
+  "move candidates are computed for every controllable unit that lists movement, is not executing a move, has a documented movement mode, and does not stand on an objective not held by its side; they read the shortest-path cost and path of exactly the objectives not held by the side (context.objectives), and nothing else",
+  "the search is Dijkstra from the unit's hex over the setup-supplied costs of the unit's movement mode (vehicle, vehicle in march state, infantry, air), with roadblock hexes excluded as neighbours for the two vehicle modes only; the start hex itself is never checked against roadblocks",
+  "entry costs are positive and finite (the boundary rejects anything else); the frontier is a heap of (cost, hex) pairs, so equal costs pop in ascending hex order; a settled or blocked neighbour is skipped; a neighbour's cost and predecessor change only on a strictly lower cost; neighbour order is irrelevant",
+  "a path is the predecessor chain from the objective back to the start, excluding the start; an objective absent from the result is unreachable and yields no candidate; if no objective is reachable the unit gets none",
+  "the objective chosen is the candidate with the smallest (cost, objective hex), i.e. the cheapest, ties by the lower hex",
+  "results are shared through a first-in-first-out memo of 32 entries keyed by (start hex, mode, roadblock set); no result depends on the memo"
+ ],
+ "corpus": {
+  "decisions_total": 33802,
+  "files": [
+   {
+    "decisions": 3602,
+    "path": "local/replay-corpus/1910631192.C1.r1.jsonl.gz",
+    "role": "replay corpus game",
+    "sha256": "e3a726e67080427106c84bfa5a6b2032fa2fb1c2d5fc9573cff974fab565d967"
+   },
+   {
+    "decisions": 5762,
+    "path": "local/replay-corpus/1930331196.C1.r1.jsonl.gz",
+    "role": "replay corpus game",
+    "sha256": "3b849c3b68487946b07929d7aaa01335b8fbb0c4e66fe01b00737804273b9b9e"
+   },
+   {
+    "decisions": 3602,
+    "path": "local/replay-corpus/2010131194.C1.r1.jsonl.gz",
+    "role": "replay corpus game",
+    "sha256": "84494aedadab8ed8dddccfea820eea4fccef793e5f92446ac51fe928cdbff8c0"
+   },
+   {
+    "decisions": 3602,
+    "path": "local/replay-corpus/2010211129.C1.r1.jsonl.gz",
+    "role": "replay corpus game",
+    "sha256": "8eef32e046e4004327799548267ed619282aa41f6617d36c7476d780b6a5633f"
+   },
+   {
+    "decisions": 2002,
+    "path": "local/replay-corpus/201033019601.C1.r1.jsonl.gz",
+    "role": "replay corpus game",
+    "sha256": "fee4eadc751d41f2bf58099b7383a63ec650fa0cc50d971b55622cd89797da37"
+   },
+   {
+    "decisions": 3602,
+    "path": "local/replay-corpus/2010431153.C1.r1.jsonl.gz",
+    "role": "replay corpus game",
+    "sha256": "6f8e30e608398811beadfdbb0d35a3b1e23e72fcf7ad803bd40097a73eedc322"
+   },
+   {
+    "decisions": 5762,
+    "path": "local/replay-corpus/2120531121.C1.r1.jsonl.gz",
+    "role": "replay corpus game",
+    "sha256": "9f38cd844e5fec2ab660c98090f62d8cea8fac1078f8374bea3bce3d47e5def0"
+   },
+   {
+    "decisions": 5762,
+    "path": "local/replay-corpus/2130511121.C1.r1.jsonl.gz",
+    "role": "replay corpus game",
+    "sha256": "e25562afc5ba0a545e045ed0db79dbba0b7fdd98962cb517eb8f722448420f3c"
+   },
+   {
+    "decisions": 1,
+    "path": "local/diagnostics/latency/states/2010131194-seat11-decision1.json",
+    "role": "latency diagnostic state",
+    "sha256": "c4239af721c0fe1bd4ea8ece48d23006c05bd6ca6944690501a64088144fd7b5"
+   },
+   {
+    "decisions": 1,
+    "path": "local/diagnostics/latency/states/2010131194-seat11-decision900.json",
+    "role": "latency diagnostic state",
+    "sha256": "85970389ce19970751d0b8b2252ba96c4704706845797c6e381fdfcf6683acf0"
+   },
+   {
+    "decisions": 1,
+    "path": "local/diagnostics/latency/states/2130511121-seat11-decision1.json",
+    "role": "latency diagnostic state",
+    "sha256": "042d4d1dad59b1873ad6ba6f1e22a2e8f901fa059558e9d068bc8e84a5fbd03e"
+   },
+   {
+    "decisions": 1,
+    "path": "local/diagnostics/latency/states/2130511121-seat11-decision1000.json",
+    "role": "latency diagnostic state",
+    "sha256": "5fc53885394d5d419a0131bfcf855a3ca15013fe90a1a38bee557d857acb103f"
+   },
+   {
+    "decisions": 1,
+    "path": "local/diagnostics/latency/states-engine/2130511121-seat11-decision1-latdiag-1.json",
+    "role": "latency diagnostic captured slow state",
+    "sha256": "9f3b3b2b0d0ff40280976773808b9848fcdd661d7dcb0fa8033ee2f556b5a13f"
+   },
+   {
+    "decisions": 1,
+    "path": "local/diagnostics/latency/states-engine/2130511121-seat11-decision1177-latdiag-1.json",
+    "role": "latency diagnostic captured slow state",
+    "sha256": "f5233ea3b7b353c8a08aea2787abcff87e7718b8ab6e7b47bb6df8f20d4afcdb"
+   },
+   {
+    "decisions": 1,
+    "path": "local/diagnostics/latency/states-engine/2130511121-seat11-decision211-latdiag-1.json",
+    "role": "latency diagnostic captured slow state",
+    "sha256": "e7bf8f6826ce04fe9d578f0ef100f97e0572ffae1eae8ade768abdd4e71d5c7e"
+   },
+   {
+    "decisions": 1,
+    "path": "local/diagnostics/latency/states-engine/2130511121-seat11-decision2163-latdiag-1.json",
+    "role": "latency diagnostic captured slow state",
+    "sha256": "ec7cff4714dcfa2c79230d3bf88e0a51b836d19e07c740048db4fc6d1461f951"
+   },
+   {
+    "decisions": 1,
+    "path": "local/diagnostics/latency/states-engine/2130511121-seat11-decision2714-latdiag-1.json",
+    "role": "latency diagnostic captured slow state",
+    "sha256": "f8a190f1ec1f2f019a35b53738205bc746fd4c847bf0fde849040269e1bdb30d"
+   },
+   {
+    "decisions": 22,
+    "path": "local/diagnostics/latency/engine/latdiag-1.captures.jsonl.gz",
+    "role": "latency diagnostic captures",
+    "sha256": "a07af0ba84f991d1ad73cff223a4c1921763b587107115c9b1090ec744f4fa08"
+   },
+   {
+    "decisions": 22,
+    "path": "local/diagnostics/latency/engine/latdiag-2.captures.jsonl.gz",
+    "role": "latency diagnostic captures",
+    "sha256": "130f153f74ad779d518a820dd73a904ff23f1ee69bed649d49737e9fd648677e"
+   },
+   {
+    "decisions": 21,
+    "path": "local/diagnostics/latency/engine/latdiag-3.captures.jsonl.gz",
+    "role": "latency diagnostic captures",
+    "sha256": "362bbdd9934329ca6cb6d5581ab66674c46710ee49e8ef84a4c07aa582c2ced6"
+   },
+   {
+    "decisions": 14,
+    "path": "local/diagnostics/latency/engine/latdiag-4.captures.jsonl.gz",
+    "role": "latency diagnostic captures",
+    "sha256": "599670f381a70e1ffa5c43b25a5cee376208548650e011ce2584fd549e2cce37"
+   },
+   {
+    "decisions": 18,
+    "path": "local/diagnostics/latency/engine/latdiag-5.captures.jsonl.gz",
+    "role": "latency diagnostic captures",
+    "sha256": "bcbba1dbafadc9670ff21de031faa5d8105269bff5e30a43bde3dcdb8202922e"
+   }
+  ],
+  "rule": "SHA-256 of each private file; decisions = lines holding one recorded decision"
+ },
+ "corpus_sha256": "2fb5470b87bf55c3809ee7476e3afe5faf17a4ab96523340214ea405ef7f6588",
+ "engine_diagnostic": {
+  "games": [
+   {
+    "condition": "C1",
+    "id": "rr-1",
+    "purpose": "both seats run the candidate",
+    "scenario_id": "2130511121"
+   },
+   {
+    "condition": "C3",
+    "id": "rr-2",
+    "purpose": "the configuration of the old tail",
+    "scenario_id": "2130511121"
+   },
+   {
+    "condition": "C3",
+    "id": "rr-3",
+    "purpose": "small control scenario",
+    "scenario_id": "2010131194"
+   }
+  ],
+  "not": "no outcome or score is compared or reported as evidence; no GC setting is changed",
+  "procedure": "diagnostic sessions of the persistent engine (ledger purpose 'diagnostic'), same isolation as the evaluations; every policy seat runs the candidate, and a shadow baseline-v1 agent of the same seat decides on the same observation after each decision, outside the candidate's measured window; actions and semantic traces are compared for every decision and both decision times recorded"
+ },
+ "equivalence_argument": [
+  "the bounded search executes exactly the full search's sequence of heap pops and relaxations and stops at a point of that sequence, so it is a prefix of the full run",
+  "once a hex is settled its cost and predecessor never change in the full run (settled neighbours are skipped), and every hex on its predecessor chain was settled before it; hence costs and paths of settled hexes are equal",
+  "the search stops only when every target is settled, so every reachable objective has its final cost and path; an unreachable objective keeps the search running until the frontier is exhausted, i.e. the full run, so it is absent in both",
+  "the policy reads only objectives, so its candidates, ranks, choices, actions and trace content are equal; the bounded result exposes settled hexes only, so no tentative value can be read by accident"
+ ],
+ "equivalence_criteria": [
+  "E1 baseline-v1 still verifies: policy source digest, golden decision chain, manifests, and byte-identical regeneration of its results and of the variance study's results",
+  "E2 the candidate's source set is baseline-v1's byte-identical plus exactly the registered added file",
+  "E3 the public routing tests pass: the characterization of the frozen router, and the candidate against the frozen full search on hand-made and on generated graphs (fixed seeds)",
+  "E4 every non-equivalent mutant of the candidate's search or memo key is killed by the tests; equivalent mutants are identified, not counted",
+  "E5 over every registered replay input, for both agents given the same observation and memory: the emitted action lists are equal (content and order), the semantic traces are equal, contract errors are equal, and the observation is left unmodified; unexplained differences: 0",
+  "E6 move paths are equal wherever either implementation produces one (reported from E5)",
+  "E7 the semantic trace chain of the candidate over the golden decision sequence equals baseline-v1's, and baseline-v1's own golden chain is unchanged",
+  "E8 the registered performance criterion holds",
+  "E9 the engine diagnostic: every decision of every diagnostic game compared live with a shadow baseline-v1 agent on the same observation shows equal actions and semantic traces; no project-gate rejection or contract error appears that the shadow does not share; the engine's authentication state is unchanged",
+  "E10 no tactical rule changed (E2 and E5)",
+  "E11 no new legality or contract issue appears (E5 and E9)"
+ ],
+ "failure": [
+  "any unexplained difference in E5 or E9",
+  "any surviving non-equivalent mutant (E4)",
+  "the performance criterion missed (E8)",
+  "any change to a baseline-v1 source file (E2)"
+ ],
+ "out_of_scope": [
+  "garbage collection: the late-game pauses of the shared engine process are a separate runtime issue; no collection setting, call or threshold is changed",
+  "tactics: no rule, order, priority, filter or legality check changes",
+  "the shooting-conflict experiment"
+ ],
+ "parent": {
+  "code_identity": "baseline-v1-candidate-occupy-reservation",
+  "evaluation_manifest_sha256": "38526b9250d8bce7facdb0f5c6303b5f2040e3939bd2bcedfe1fc2fdb14f103f",
+  "evaluation_results_sha256": "ea0ec674e8e51e546684fb75696673e5c81d32d6c9dd7a0d11796a91aeaeda07",
+  "golden_trace_chain": "11e12bf0475c04672701bcbb4daa6579c6c3b0238ac90fb8320b2384e61acc66",
+  "identity": "baseline-v1",
+  "policy_source_sha256": "1d01e48a245273ded0b413ec6248e6aa54bba313ba8d6abbae2a20575544e2e9",
+  "variance_study_manifest_sha256": "78109fca78dc8b044b63dcf475c163ca91a6f7f60fe1454a4b126d7ada10f48e"
+ },
+ "performance": {
+  "basis": "the latency diagnostic measured about 500 ms, 99% in Dijkstra, and estimated that 15.8% of the settled nodes are needed; the threshold leaves room for the bounded search's own overhead and for relaxations that a node count does not show; no platform deadline is assumed",
+  "criterion": "candidate median <= 0.50 x baseline-v1 median on the worst input (and on its captured twin)",
+  "engine": "in the 2130511121 diagnostic games the candidate's first play decision takes <= 0.50 x the shadow baseline-v1's time for the same observation in the same process",
+  "metric": "median wall time of agent.step with a fresh agent (empty memo), repetitions interleaved between baseline-v1 and the candidate in the same benchmark invocation",
+  "no_regression": "on every other registered state the candidate median <= baseline-v1 median x 1.10 + 0.20 ms",
+  "repetitions": {
+   "cold_process": 10,
+   "fresh_agent": 200,
+   "memo_warm": 200
+  },
+  "reported": "cold first call, median, p95, p99, max, thread CPU time, wall time, shortest-path requests, searches, settled nodes, examined edges, retained-work fraction, speedup",
+  "worst_input": "2130511121-seat11-decision1 (the first play decision of the largest scenario; also as captured in latdiag-1)"
+ },
+ "promotion": [
+  "promote the candidate to the runtime identity baseline-v1-runtime-r1 only if E1-E11 all hold; it is then behaviourally equivalent to the tactical baseline-v1 and is not a new tactical baseline",
+  "otherwise it is retained as a failed or partial candidate and baseline-v1's runtime stays in use"
+ ],
+ "remediation_id": "routing-remediation-1",
+ "schema": "miaosuan-runtime-remediation-registration/1",
+ "semantic_trace": "the decision trace as a dictionary (to_dict) with the key 'policy' removed; every other key, including schema, stage, step, seat, units with their candidate counts, rules, ranks, details, no-op reasons and validations, excluded units, emitted, rejected, diagnostics and suppressed, must be equal"
+}
