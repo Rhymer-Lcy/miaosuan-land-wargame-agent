@@ -65,6 +65,13 @@ class SeatLog:
         self.steps_with_suppression = 0
         self.duplicate_occupation_steps = 0
         self.duplicate_occupation_commands = 0
+        self.duplicate_shoot_target_steps = 0
+        self.duplicate_shoot_target_commands = 0
+        self.shoot_targets_engaged = 0
+        self.steps_with_shot = 0
+        self.shoot_reservation_effects: Counter = Counter()
+        self.shoot_excluded_options = 0
+        self.steps_with_shoot_exclusion = 0
         self.refusals: List[Dict[str, Any]] = []
 
     def record(self, step: int, trace, produced: Sequence[Mapping[str, Any]], latency: float) -> None:
@@ -77,6 +84,11 @@ class SeatLog:
         suppressed = getattr(trace, "suppressed", ())
         self.suppressions += len(suppressed)
         self.steps_with_suppression += bool(suppressed)
+        shoot_reserved = getattr(trace, "shoot_reserved", ())
+        for _, excluded, effect, _ in shoot_reserved:
+            self.shoot_reservation_effects[effect] += 1
+            self.shoot_excluded_options += len(excluded)
+        self.steps_with_shoot_exclusion += bool(shoot_reserved)
         self.diagnostics += len(trace.diagnostics)
         for _, _, reason in trace.rejected:
             self.rejections[sanitize(reason)] += 1
@@ -133,6 +145,13 @@ class SeatLog:
             "suppressions": self.suppressions, "steps_with_suppression": self.steps_with_suppression,
             "duplicate_occupation_steps": self.duplicate_occupation_steps,
             "duplicate_occupation_commands": self.duplicate_occupation_commands,
+            "duplicate_shoot_target_steps": self.duplicate_shoot_target_steps,
+            "duplicate_shoot_target_commands": self.duplicate_shoot_target_commands,
+            "shoot_targets_engaged": self.shoot_targets_engaged,
+            "steps_with_shot": self.steps_with_shot,
+            "shoot_reservation_effects": dict(sorted(self.shoot_reservation_effects.items())),
+            "shoot_excluded_options": self.shoot_excluded_options,
+            "steps_with_shoot_exclusion": self.steps_with_shoot_exclusion,
             "refusals": self.refusals,
             "refusal_facts": refusals.fact_counts(self.refusals),
             "refusal_attributions": refusals.attribution_counts(self.refusals),
@@ -244,6 +263,12 @@ def play(train_env_cls: Callable[[], Any], agent_factories: Mapping[str, Callabl
             extra = sum(count - 1 for count in per_objective.values() if count > 1)
             log.duplicate_occupation_steps += bool(extra)
             log.duplicate_occupation_commands += extra
+            per_target = Counter(a.get("target_obj_id") for owner, a in emitted if owner is log and a.get("type") == 2)
+            repeated = sum(count - 1 for count in per_target.values() if count > 1)
+            log.duplicate_shoot_target_steps += bool(repeated)
+            log.duplicate_shoot_target_commands += repeated
+            log.shoot_targets_engaged += len(per_target)
+            log.steps_with_shot += bool(per_target)
         try:
             tick = clock()
             result = env.step([action for _, action in emitted])
