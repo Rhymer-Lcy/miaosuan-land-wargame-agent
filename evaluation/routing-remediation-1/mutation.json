@@ -1,0 +1,146 @@
+{
+ "equivalent": {
+  "survived": 5,
+  "total": 5
+ },
+ "mutants": [
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "stop one target too early",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "omit one target from the stop condition",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "relaxation < becomes <=",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "predecessor kept from the first relaxation",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "movement mode ignored",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "roadblocks dropped from the key",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "targets dropped from the key",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "mode dropped from the key",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "roadblocks ignored in the search",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "stop before settling the last target",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "tentative costs exposed",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "tentative predecessors exposed",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "policy never sets targets",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "targets from the first objective only",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "candidate keeps the frozen router",
+   "outcome": "killed"
+  },
+  {
+   "argument": "a stale heap entry has a larger distance than the hex's settled cost; re-expanding it can offer no neighbour a strictly lower cost (entry costs are positive and float addition is monotone), and the stop test is unaffected",
+   "class": "equivalent",
+   "expected": "survived",
+   "mutant": "duplicate-pop guard removed",
+   "outcome": "survived"
+  },
+  {
+   "argument": "two independent operations on different sets, with nothing between them",
+   "class": "equivalent",
+   "expected": "survived",
+   "mutant": "settle and discard swapped",
+   "outcome": "survived"
+  },
+  {
+   "argument": "every memo entry is a pure function of its full key, so recomputation returns an equal result; only work changes",
+   "class": "equivalent",
+   "expected": "survived",
+   "mutant": "memo capacity 1",
+   "outcome": "survived"
+  },
+  {
+   "argument": "MoveMode is an IntEnum: each member hashes and compares equal to its integer value",
+   "class": "equivalent",
+   "expected": "survived",
+   "mutant": "mode kept as an enum in the key",
+   "outcome": "survived"
+  },
+  {
+   "argument": "a settled neighbour's cost is at most the current distance, so distance plus a positive entry cost is never strictly lower; the relaxation never fires",
+   "class": "equivalent",
+   "expected": "survived",
+   "mutant": "settled neighbours not skipped",
+   "outcome": "survived"
+  }
+ ],
+ "non_equivalent": {
+  "killed": 15,
+  "total": 15
+ },
+ "pass": true,
+ "schema": "miaosuan-routing-mutation/1",
+ "target": "src/miaosuan_agent/experiments/routing_bounded.py",
+ "target_sha256": "a624ef9daa2e469c5c5787841e5af209cff15a8504801dd2ca9ec90640bbe1d6",
+ "tests": [
+  "tests.test_routing_bounded",
+  "tests.test_routing_contract"
+ ],
+ "unexpected": []
+}
