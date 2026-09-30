@@ -1,0 +1,35 @@
+{
+ "classification": {
+  "computation": "thread CPU >= 80% of wall and in-decision garbage collection < 50% of wall",
+  "garbage collection": "in-decision garbage collection >= 50% of wall (thread CPU >= 50%)",
+  "mixed": "anything between",
+  "scheduling or waiting": "thread CPU < 50% of wall",
+  "source": "src/miaosuan_agent/diagnostics/latency.py classify"
+ },
+ "comparison_rule": "gc_in_decision 'paused' disables collection only for the duration of each agent step; decisions cannot change (the probe verifies trace digests against the unpaused games up to the first shot). It is a labelled diagnostic comparison, not a remedy, and none of its figures is reported as the policy's latency.",
+ "games": [
+  {"condition": "C3", "gc_in_decision": "enabled", "id": "latdiag-1", "purpose": "the configuration of every decision over 1 s", "scenario_id": "2130511121"},
+  {"condition": "C3", "gc_in_decision": "enabled", "id": "latdiag-2", "purpose": "repeat of latdiag-1: reproducibility", "scenario_id": "2130511121"},
+  {"condition": "C2", "gc_in_decision": "enabled", "id": "latdiag-3", "purpose": "the configuration whose inert seat showed decisions over 100 ms", "scenario_id": "2130511121"},
+  {"condition": "C3", "gc_in_decision": "enabled", "id": "latdiag-4", "purpose": "small control scenario", "scenario_id": "2010131194"},
+  {"condition": "C3", "gc_in_decision": "paused", "id": "latdiag-5", "purpose": "labelled diagnostic comparison: collection paused inside agent steps", "scenario_id": "2130511121"}
+ ],
+ "measurements": [
+  "per decision of every seat: wall (time.perf_counter), thread and process CPU time, components by the external probe, routing requests, Dijkstra runs, nodes settled, distinct start keys, per-unit routing, garbage collections overlapping the decision by generation and duration, resource-usage deltas (page faults, voluntary and involuntary context switches), resident set size",
+  "every collection of the oldest generation, with its duration and the decision it fell in, if any",
+  "tracked Python objects every 500 decisions (outside the probe window)",
+  "load average at the start and end of each game",
+  "captured observations: decisions 0-3, every 500th, and every decision slower than 100 ms, for offline replay"
+ ],
+ "not": [
+  "not an evaluation: no outcome is reported and no game joins an evaluation dataset",
+  "no policy, routing, ordering or runtime setting is changed, except the labelled comparison in latdiag-5",
+  "no other process on the host is touched, reniced, pinned or suspended"
+ ],
+ "plan_id": "latency-diagnostic-1",
+ "policy_source_sha256": "1d01e48a245273ded0b413ec6248e6aa54bba313ba8d6abbae2a20575544e2e9",
+ "purpose": "attribute the rare decision-latency tail of the frozen baseline-v1 observed in baseline-v1-variance-study-1",
+ "schema": "miaosuan-latency-diagnostic-plan/1",
+ "sessions": "one persistent-engine session per game, ledger purpose 'diagnostic'; 5 sessions in total; a failed game is kept and not rerun",
+ "study_manifest_sha256": "78109fca78dc8b044b63dcf475c163ca91a6f7f60fe1454a4b126d7ada10f48e"
+}
