@@ -4,6 +4,8 @@
     python scripts/replay_latency_benchmark.py extract --out-dir DIR [--corpus DIR]
     python scripts/replay_latency_benchmark.py states --states DIR --out PRIVATE.json [--repetitions N]
     python scripts/replay_latency_benchmark.py cold --state FILE      (one first call; used by ``states``)
+    python scripts/replay_latency_benchmark.py bound --states DIR --out PRIVATE.json
+    python scripts/replay_latency_benchmark.py import-captures --game ID --out-dir DIR [--min-wall S]
 
 No engine is involved. The observations are those an agent received in recorded games (the
 replay corpus, or states captured by scripts/diagnose_latency_engine.py); every file read and
@@ -16,7 +18,10 @@ memo evolves as in a game) under the instrumentation probe and writes one privat
 wall, CPU and GC time, components, routing workload and decision workload. ``extract`` writes the
 representative states. ``states`` benchmarks each state: a fixed number of cold first calls, each in
 a fresh interpreter; warm calls with a fresh agent per call (empty routing memo); warm calls on one
-agent (memo warm); every call's decision-trace digest must equal the expected one.
+agent (memo warm); every call's decision-trace digest must equal the expected one. ``bound`` estimates,
+for each state, the share of the router's work done before every objective hex is settled
+(:mod:`miaosuan_agent.diagnostics.routing_estimate`), for the units whose move candidates request a
+path (the same filter as the policy's ``move_candidates``); it changes nothing.
 """
 
 from __future__ import annotations
@@ -37,6 +42,11 @@ if str(REPO_ROOT / "src") not in sys.path:
     sys.path.insert(0, str(REPO_ROOT / "src"))
 
 from miaosuan_agent import sdk_data, typed_json  # noqa: E402
+from miaosuan_agent.boundary import MoveCosts, Observation, Origin  # noqa: E402
+from miaosuan_agent.decision.context import build_context  # noqa: E402
+from miaosuan_agent.decision.routing import ROADBLOCKED_MODES, move_mode  # noqa: E402
+from miaosuan_agent.decision.semantics import ActionType  # noqa: E402
+from miaosuan_agent.diagnostics import routing_estimate  # noqa: E402
 from miaosuan_agent.decision import digest  # noqa: E402
 from miaosuan_agent.decision.policy import Memory  # noqa: E402
 from miaosuan_agent.diagnostics import instrument  # noqa: E402
@@ -93,7 +103,7 @@ def workload(agent: ReservationAgent, actions: List[Any]) -> Dict[str, Any]:
 def sequence(args: argparse.Namespace) -> int:
     frozen_or_exit()
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    probe = instrument.Probe()
+    probe = instrument.Probe(keep=False)  # rows go to the file; the probe must not grow the heap
     written = 0
     with probe.installed(), gzip.open(args.out, "wt", encoding="utf-8") as out:
         for path in sorted(args.corpus.glob("*.jsonl.gz")):
@@ -116,6 +126,8 @@ def sequence(args: argparse.Namespace) -> int:
                 row = dict(measured, workload=work, trace_digest=digest(agent.last_trace),
                            routing_for_units_not_moving=wasted,
                            routing_units=sum(1 for u in per_unit if u["requests"]))
+                if record["step"] % 500 == 0:
+                    row["tracked_objects_after"] = len(gc.get_objects())
                 out.write(json.dumps(row, sort_keys=True) + "\n")
                 written += 1
     print(f"wrote {written} decisions to {args.out}")
@@ -226,6 +238,7 @@ def states(args: argparse.Namespace) -> int:
             digests.add(digest(agent.last_trace))
         results[state["name"]] = {
             "decision": state["decision"], "scenario_id": state["scenario_id"], "source": state["source"],
+            "in_engine_wall_ms": None if "in_engine_wall" not in state else state["in_engine_wall"] * 1000,
             "cold_process_first_call": distribution(cold_runs),
             "warm_fresh_agent_probed": distribution(fresh),
             "warm_fresh_agent_unprobed": distribution(unprobed),
@@ -241,6 +254,66 @@ def states(args: argparse.Namespace) -> int:
     args.out.write_text(json.dumps({"repetitions": args.repetitions, "cold_runs": COLD_RUNS, "states": results},
                                    indent=1, sort_keys=True) + "\n", encoding="utf-8")
     return 0 if all(r["trace_equal"] for r in results.values()) else 1
+
+
+def import_captures(args: argparse.Namespace) -> int:
+    """State files from a diagnostic game's captured observations of the policy seat slower than ``--min-wall``."""
+    plan = json.loads((REPO_ROOT / "evaluation" / "latency-diagnostic-1" / "plan.json").read_text(encoding="utf-8"))
+    entry = next(g for g in plan["games"] if g["id"] == args.game)
+    study = json.loads((REPO_ROOT / "evaluation" / "baseline-v1-variance-study-1" / "manifest.json").read_text(encoding="utf-8"))
+    map_id = next(s["map_id"] for s in study["scenarios"] if s["scenario_id"] == entry["scenario_id"])
+    condition = next(c for c in study["conditions"] if c["id"] == entry["condition"])
+    policy_faction = 0 if condition["red"] == study["policy_under_test"] else 1
+    args.out_dir.mkdir(parents=True, exist_ok=True)
+    engine = REPO_ROOT / "local" / "diagnostics" / "latency" / "engine"
+    count = 0
+    with gzip.open(engine / f"{args.game}.captures.jsonl.gz", "rt", encoding="utf-8") as handle:
+        for line in handle:
+            capture = json.loads(line)
+            if capture["faction"] != policy_faction or capture["wall"] <= args.min_wall:
+                continue
+            name = f"{entry['scenario_id']}-seat{capture['seat']}-decision{capture['decision']}-{args.game}"
+            state = {"name": name, "source": f"diagnostic game {args.game} (in-engine wall {capture['wall']:.3f} s)",
+                     "scenario_id": entry["scenario_id"], "map_id": map_id, "seat": capture["seat"],
+                     "faction": capture["faction"], "decision": capture["decision"], "memory": capture["memory"],
+                     "observation": capture["observation"], "expected_trace_digest": capture["expected_trace_digest"],
+                     "in_engine_wall": capture["wall"]}
+            (args.out_dir / f"{name}.json").write_text(json.dumps(state, sort_keys=True), encoding="utf-8")
+            count += 1
+    print(f"imported {count} states")
+    return 0
+
+
+def bound(args: argparse.Namespace) -> int:
+    results = {}
+    for path in sorted(args.states.glob("*.json")):
+        state, observation, cost = load_state(path)
+        costs = MoveCosts.from_raw(cost)
+        context = build_context(Observation.from_raw(observation, Origin.ENGINE), state["seat"], state["faction"])
+        targets = {city.coord for city in context.objectives}
+        seen, total, needed, unreachable = set(), 0, 0, 0
+        for unit in context.units:
+            mode = move_mode(unit.unit_type, unit.move_state)
+            if (ActionType.MOVE not in unit.actions or unit.move_path or mode is None or not targets
+                    or unit.cur_hex in targets):
+                continue
+            blocked = context.roadblocks if mode in ROADBLOCKED_MODES else frozenset()
+            key = (unit.cur_hex, int(mode), blocked)
+            if key in seen:
+                continue
+            seen.add(key)
+            result = routing_estimate.settled_until_targets(costs, unit.cur_hex, mode, blocked, targets)
+            total += result["settled"]
+            needed += result["settled_until_targets"]
+            unreachable += result["unreachable_targets"]
+        results[state["name"]] = {"decision": state["decision"], "scenario_id": state["scenario_id"],
+                                  "objectives": len(targets), "searches": len(seen), "settled": total,
+                                  "settled_until_targets": needed, "unreachable_target_instances": unreachable,
+                                  "share_needed": needed / total if total else None}
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+    args.out.write_text(json.dumps(results, indent=1, sort_keys=True) + chr(10), encoding="utf-8")
+    print(json.dumps(results, sort_keys=True))
+    return 0
 
 
 def main() -> int:
@@ -259,6 +332,15 @@ def main() -> int:
     p.add_argument("--out", type=Path, required=True)
     p.add_argument("--repetitions", type=int, default=REPETITIONS)
     p.set_defaults(func=states)
+    p = sub.add_parser("import-captures")
+    p.add_argument("--game", required=True)
+    p.add_argument("--out-dir", type=Path, required=True)
+    p.add_argument("--min-wall", type=float, default=0.1)
+    p.set_defaults(func=import_captures)
+    p = sub.add_parser("bound")
+    p.add_argument("--states", type=Path, required=True)
+    p.add_argument("--out", type=Path, required=True)
+    p.set_defaults(func=bound)
     p = sub.add_parser("cold")
     p.add_argument("--state", type=Path, required=True)
     p.set_defaults(func=cold)
