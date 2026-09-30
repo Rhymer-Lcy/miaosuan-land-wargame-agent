@@ -47,8 +47,10 @@ def compare_routes(test, costs, start, mode, blocked, targets):
         test.assertEqual(bounded.cost.get(target), full.cost.get(target), (start, target))
         test.assertEqual(bounded.path_to(target), full.path_to(target), (start, target))
     test.assertTrue(set(bounded.cost) <= set(full.cost))
+    test.assertTrue(set(bounded.previous) <= set(bounded.cost))
     for node, value in bounded.cost.items():  # only settled hexes, with final values
         test.assertEqual(value, full.cost[node])
+        test.assertEqual(bounded.previous.get(node), full.previous.get(node))
         test.assertEqual(bounded.path_to(node), full.path_to(node))
     return full, bounded
 
