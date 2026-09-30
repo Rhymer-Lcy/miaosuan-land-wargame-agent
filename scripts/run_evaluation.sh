@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 # Play the registered evaluation plan: one isolated engine process (and session) per game.
 #
-# Usage: scripts/run_evaluation.sh --python PYTHON --sdk-archive ZIP --plan gate1|suite
+# Usage: scripts/run_evaluation.sh --python PYTHON --sdk-archive ZIP --plan gate1|suite|study
 #                                  [--evaluation NAME] [--engine-install DIR]
 #
 #   --plan gate1       the two Gate 1 games (registered scenario, mirror of the policy under test)
 #   --plan suite       every registered suite game, in registered order; refused until Gate 1 passed
+#   --plan study       every game of a registered variance study, in its registered schedule; the
+#                      study's own manifest is re-derived as well, every game re-checks the pinned
+#                      baseline-v1 digest, and the run stops after 3 consecutive games that did not
+#                      complete (records are analysed by scripts/analyze_variance_study.py)
 #   --evaluation NAME  the registered evaluation: evaluation/NAME/manifest.json, records under
 #                      local/evaluation/NAME (default baseline-v0). The baseline-v0 manifest is
 #                      re-derived before every run; a candidate evaluation also re-derives its own.
@@ -33,8 +37,8 @@ while [[ $# -gt 0 ]]; do
         *) echo "unknown argument: $1" >&2; exit 2 ;;
     esac
 done
-if [[ -z $PYTHON || -z $ARCHIVE || ( $PLAN != gate1 && $PLAN != suite ) ]]; then
-    echo "usage: $0 --python PYTHON --sdk-archive ZIP --plan gate1|suite [--evaluation NAME] [--engine-install DIR]" >&2
+if [[ -z $PYTHON || -z $ARCHIVE || ( $PLAN != gate1 && $PLAN != suite && $PLAN != study ) ]]; then
+    echo "usage: $0 --python PYTHON --sdk-archive ZIP --plan gate1|suite|study [--evaluation NAME] [--engine-install DIR]" >&2
     exit 2
 fi
 if [[ $(id -u) -eq 0 ]]; then
@@ -65,6 +69,29 @@ PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/build_evaluation_manifest.py" --sdk-
 if [[ $NAME != baseline-v0 ]]; then
     PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/build_candidate_manifest.py" --check
 fi
+if [[ $PLAN == study ]]; then
+    PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/build_variance_study_manifest.py" --check
+fi
+study_digest_check() {
+    PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$1" <<'PY'
+import importlib.util, json, sys
+from pathlib import Path
+from miaosuan_agent.evaluation import variance_study as vs
+spec = importlib.util.spec_from_file_location("rev", Path(sys.argv[1]).parents[2] / "scripts" / "run_evaluation.py")
+rev = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(rev)
+manifest = json.load(open(sys.argv[1], encoding="utf-8"))
+if not vs.is_study(manifest):
+    sys.exit("REFUSED: --plan study needs a variance-study manifest")
+source = rev.registered_policy_source(manifest)
+if source != vs.BASELINE_V1_SOURCE_SHA256 or manifest["policy_source"]["sha256"] != vs.BASELINE_V1_SOURCE_SHA256:
+    sys.exit(f"REFUSED at {sys.argv[2]}: the policy source is not baseline-v1 ({source})")
+print(f"policy source at {sys.argv[2]}: {source} (baseline-v1)")
+PY
+}
+if [[ $PLAN == study ]]; then
+    study_digest_check start
+fi
 host stage --sdk-archive "$ARCHIVE" > "$WORK/logs/stage.log"
 
 if [[ $PLAN == suite ]]; then
@@ -83,8 +110,13 @@ fi
 mapfile -t GAMES < <(PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$PLAN" <<'PY'
 import json, sys
 from miaosuan_agent.evaluation import manifest as mf
+from miaosuan_agent.evaluation import variance_study as vs
 manifest = json.load(open(sys.argv[1], encoding="utf-8"))
-for spec in (mf.gate1_games(manifest) if sys.argv[2] == "gate1" else mf.games(manifest)):
+if sys.argv[2] == "study":
+    specs = vs.scheduled_games(manifest)
+else:
+    specs = mf.gate1_games(manifest) if sys.argv[2] == "gate1" else mf.games(manifest)
+for spec in specs:
     print(spec.game_id)
 PY
 )
@@ -96,6 +128,7 @@ fi
 echo "plan $PLAN: ${#GAMES[@]} games, harness $COMMIT${DIRTY_ARGS:+ (dirty)}"
 
 failures=0
+consecutive=0
 for id in "${GAMES[@]}"; do
     if [[ -f $WORK/games/$id.json ]]; then
         echo "recorded already: $id"
@@ -129,14 +162,25 @@ for id in "${GAMES[@]}"; do
     tail -n 1 "$WORK/logs/$id.log"
     if [[ $status -ne 0 ]]; then
         failures=$((failures + 1))
+        consecutive=$((consecutive + 1))
         echo "game $id exited with status $status" >&2
         if [[ $status -ne 1 ]]; then
             exit "$status"
         fi
+        if [[ $PLAN == study && $consecutive -ge 3 ]]; then
+            echo "STOP: 3 consecutive games did not complete; the study stops as registered" >&2
+            exit 1
+        fi
+    else
+        consecutive=0
     fi
 done
 
-host summarize
+if [[ $PLAN == study ]]; then
+    study_digest_check end
+else
+    host summarize
+fi
 archive_sha_after=$(sha256sum "$ARCHIVE" | cut -d' ' -f1)
 if [[ $archive_sha_before != "$archive_sha_after" ]]; then
     echo "SDK archive digest changed during the run" >&2

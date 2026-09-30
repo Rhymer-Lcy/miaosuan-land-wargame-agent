@@ -7,7 +7,9 @@
 
 ``game`` must run inside the isolation prepared by ``scripts/run_evaluation.sh`` (persistent engine
 installation on PYTHONPATH, empty environment). It refuses to play when the policy source differs
-from the one recorded in the manifest, so the registered policy cannot change silently. Records
+from the one recorded in the manifest, so the registered policy cannot change silently; a game of
+the variance study also refuses unless that digest is the frozen baseline-v1 digest. The study's
+games are its registered schedule; its analysis is ``scripts/analyze_variance_study.py``. Records
 and summaries live under the git-ignored ``local/evaluation/``; only the sanitized public results
 file is meant for version control.
 
@@ -35,6 +37,7 @@ from miaosuan_agent.agent import PolicyAgent  # noqa: E402
 from miaosuan_agent.decision import BASELINE_ID, INERT_ID  # noqa: E402
 from miaosuan_agent.evaluation import manifest as mf  # noqa: E402
 from miaosuan_agent.evaluation import metrics, randomness  # noqa: E402
+from miaosuan_agent.evaluation import variance_study as vs  # noqa: E402
 from miaosuan_agent.evaluation.game import play  # noqa: E402
 from miaosuan_agent.evaluation.identity import POLICY_SOURCES, digest_of_files, policy_source_files  # noqa: E402
 from miaosuan_agent.experiments.occupy_reservation import CANDIDATE_ID, ReservationAgent  # noqa: E402
@@ -62,6 +65,8 @@ def load_manifest(path: Path) -> Dict[str, Any]:
 
 
 def all_games(manifest: Dict[str, Any]) -> Dict[str, mf.GameSpec]:
+    if vs.is_study(manifest):
+        return {spec.game_id: spec for spec in vs.scheduled_games(manifest)}
     return {spec.game_id: spec for spec in mf.gate1_games(manifest) + mf.games(manifest)}
 
 
@@ -119,6 +124,10 @@ def cmd_game(args: argparse.Namespace) -> int:
         print("REFUSED: the policy source differs from the registered one; a policy change needs a new "
               "registration and a complete rerun", file=sys.stderr)
         return 2
+    if vs.is_study(manifest) and source != vs.BASELINE_V1_SOURCE_SHA256:
+        print("REFUSED: the variance study runs baseline-v1 only; the policy source digest differs from it",
+              file=sys.stderr)
+        return 2
     out = args.work / "games" / f"{spec.game_id}.json"
     if out.exists():
         print(f"REFUSED: {out} exists; records are never overwritten", file=sys.stderr)
@@ -166,6 +175,9 @@ def read_records(work: Path, specs: List[mf.GameSpec]) -> Dict[str, Dict[str, An
 
 def cmd_summarize(args: argparse.Namespace) -> int:
     manifest = load_manifest(args.manifest)
+    if vs.is_study(manifest):
+        print("the variance study is analysed by scripts/analyze_variance_study.py", file=sys.stderr)
+        return 2
     digest = mf.digest(manifest)
     gate_specs, suite_specs = mf.gate1_games(manifest), mf.games(manifest)
     gate_records = read_records(args.work, gate_specs)
