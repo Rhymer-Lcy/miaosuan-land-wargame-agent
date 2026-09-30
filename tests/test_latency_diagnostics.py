@@ -204,6 +204,106 @@ class ScriptHelpersTest(unittest.TestCase):
         self.assertEqual(digest(agent.last_trace), digest(agent.last_trace))
 
 
+class RoutingEstimateTest(unittest.TestCase):
+    def setUp(self) -> None:
+        from miaosuan_agent.boundary import MoveCosts, MoveMode
+        self.mode = MoveMode.VEHICLE
+        self.costs = MoveCosts.from_raw(Inputs.cost)
+
+    def test_counts_match_the_router_and_targets_bound_the_work(self) -> None:
+        from miaosuan_agent.diagnostics import routing_estimate as est
+        full = routing.Router(self.costs)._dijkstra(102, self.mode, frozenset())
+        near = est.settled_until_targets(self.costs, 102, self.mode, frozenset(), {103})
+        far = est.settled_until_targets(self.costs, 102, self.mode, frozenset(), {103, 909})
+        self.assertEqual(near["settled"], len(full.cost))
+        self.assertLess(near["settled_until_targets"], far["settled_until_targets"])
+        self.assertLessEqual(far["settled_until_targets"], far["settled"])
+        self.assertEqual(est.settled_until_targets(self.costs, 102, self.mode, frozenset(), {102})["settled_until_targets"], 1)
+        self.assertEqual(near["unreachable_targets"], 0)
+
+    def test_blocked_and_unreachable_targets(self) -> None:
+        from miaosuan_agent.diagnostics import routing_estimate as est
+        blocked = frozenset(self.costs.neighbours(self.mode, 505))
+        result = est.settled_until_targets(self.costs, 102, self.mode, blocked, {505})
+        self.assertEqual(result["unreachable_targets"], 1)
+        self.assertEqual(result["settled_until_targets"], result["settled"])
+        unblocked = est.settled_until_targets(self.costs, 102, self.mode, frozenset(), {505})
+        self.assertGreater(unblocked["settled"], result["settled"])
+
+
+class AnalysisHelpersTest(unittest.TestCase):
+    def test_dominant_component_and_distributions(self) -> None:
+        loader = importlib.util.spec_from_file_location("analysis", ROOT / "scripts" / "analyze_latency_diagnostic.py")
+        analysis = importlib.util.module_from_spec(loader)
+        loader.loader.exec_module(analysis)  # type: ignore[union-attr]
+        record = {"wall": 1.0, "gc": {"seconds": 0.6}, "components": {"dijkstra": 0.3, "other": 0.7}}
+        self.assertEqual(analysis.dominant(record), "garbage collection")
+        record["gc"]["seconds"] = 0.1
+        self.assertEqual(analysis.dominant(record), "other")
+        self.assertEqual(analysis.distribution([]), {"n": 0})
+        spread = analysis.distribution([3.0, 1.0, 2.0])
+        self.assertEqual((spread["n"], spread["min"], spread["p50"], spread["max"]), (3, 1.0, 2.0, 3.0))
+        self.assertEqual(analysis._count(iter(["b", "a", "b"])), {"a": 1, "b": 2})
+        self.assertEqual(analysis.ms(0.0015), 1.5)
+
+
+class FindingsConsistencyTest(unittest.TestCase):
+    """The committed aggregates agree with themselves and with the plan."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        base = ROOT / "evaluation" / "latency-diagnostic-1"
+        cls.tail = json.loads((base / "record-tail.json").read_text(encoding="utf-8"))
+        cls.findings = json.loads((base / "findings.json").read_text(encoding="utf-8"))
+        cls.plan = json.loads((base / "plan.json").read_text(encoding="utf-8"))
+
+    def test_record_tail_adds_up(self) -> None:
+        tail = self.tail
+        counts = [tail["policy_tail"][f">{t}ms"] for t in lat.THRESHOLDS_MS]
+        self.assertEqual(counts, sorted(counts, reverse=True))
+        for t in lat.THRESHOLDS_MS:
+            key = f">{t}ms"
+            self.assertEqual(tail["by_first_play"]["True"][key] + tail["by_first_play"]["False"][key], tail["policy_tail"][key])
+            self.assertEqual(sum(v[key] for v in tail["by_scenario_condition"].values()), tail["policy_tail"][key])
+        for groups in tail["concentration"].values():
+            for by in groups.values():
+                if by["above"]:
+                    self.assertAlmostEqual(sum(g["share"] for g in by["groups"].values()), 1.0)
+        self.assertEqual(sum(v["decisions"] for v in tail["by_scenario_condition"].values()), tail["decisions"]["policy"])
+
+    def test_engine_games_match_the_plan_and_left_the_engine_state_alone(self) -> None:
+        games = self.findings["engine_games"]
+        self.assertEqual(sorted(games), sorted(g["id"] for g in self.plan["games"]))
+        sessions = sorted(int(g["session"]) for g in games.values())
+        self.assertEqual(sessions, list(range(sessions[0], sessions[0] + len(sessions))))
+        for game in games.values():
+            self.assertEqual((game["status"], game["session_state_changed"]), ("COMPLETED", False))
+        self.assertTrue(all(c["traces_equal_while_states_equal"] for c in self.findings["trace_comparisons"].values()))
+        self.assertTrue(all(s["trace_equal"] for s in self.findings["offline_states"]["states"].values()))
+
+    def test_classified_outliers_are_consistent(self) -> None:
+        for game in self.findings["engine_games"].values():
+            for seat in game["seats"].values():
+                slow = seat["over_100ms"]
+                self.assertEqual(len(slow), seat["threshold_counts"][">100ms"])
+                self.assertEqual(sum(seat["classes_over_100ms"].values()), len(slow))
+                for decision in slow:
+                    self.assertEqual(decision["class"], lat.classify(decision["wall_ms"], decision["thread_cpu_ms"],
+                                                                     decision["gc_ms"]))
+
+
+@unittest.skipUnless((ROOT / "local" / "diagnostics" / "latency" / "engine").is_dir(),
+                     "private: needs the diagnostic records")
+class PrivateRegenerationTest(unittest.TestCase):
+    def test_aggregates_rebuild_from_the_private_records(self) -> None:
+        import subprocess
+        import sys
+        for script in ("latency_from_records.py", "analyze_latency_diagnostic.py"):
+            result = subprocess.run([sys.executable, str(ROOT / "scripts" / script), "--check"], capture_output=True,
+                                    text=True, timeout=900, cwd=str(ROOT))
+            self.assertEqual(result.returncode, 0, script + result.stdout + result.stderr)
+
+
 class PlanTest(unittest.TestCase):
     def test_plan_pins_the_frozen_policy_and_the_study(self) -> None:
         plan = json.loads((ROOT / "evaluation" / "latency-diagnostic-1" / "plan.json").read_text(encoding="utf-8"))
