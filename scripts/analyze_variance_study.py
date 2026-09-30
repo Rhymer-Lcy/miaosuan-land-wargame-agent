@@ -103,12 +103,15 @@ def validate(manifest: Mapping[str, Any], history: List[Dict[str, Any]], new: Di
                 identity[name] += 1
     if identity:
         problems.append(f"new records failing identity checks: {dict(identity)}")
-    sessions = ledger_sessions()
+    study_sessions = sorted(record["session"] for record in new.values())
+    # The ledger keeps growing after the study (later diagnostic or evaluation sessions); its facts are read up to
+    # the study's last session, so the results stay regenerable. Later sessions are checked by their own work.
+    last = max((int(s) for s in study_sessions), default=None)
+    sessions = {s: e for s, e in ledger_sessions().items() if last is None or int(s) <= last}
     numbers = sorted(int(s) for s in sessions)
     continuous = numbers == list(range(1, len(numbers) + 1))
     unclosed = sorted(s for s, e in sessions.items() if "session-close" not in e)
     changed = sorted(s for s, e in sessions.items() if e.get("session-close", {}).get("state_changed"))
-    study_sessions = sorted(record["session"] for record in new.values())
     opened = {s: e["session-open"]["harness"] for s, e in sessions.items()
               if e.get("session-open", {}).get("harness", {}).get("manifest_sha256") == digest}
     by_game = Counter(harness.get("game_id") for harness in opened.values())

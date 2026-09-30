@@ -443,6 +443,21 @@ class ValidationTest(unittest.TestCase):
         self.write(records)
         self.assertEqual(self.validate(records)["identity_failures"], {"policy digest": 1})
 
+    def test_later_sessions_do_not_change_the_study_ledger_facts(self) -> None:
+        records = self.three()
+        self.write(records)
+        before = self.validate(records)
+        with self.analysis.LEDGER.open("a", encoding="utf-8") as handle:
+            for number in (5, 6):
+                for event in ({"session": f"{number:04d}", "event": "session-open", "harness": {"game_id": "later"}},
+                              {"session": f"{number:04d}", "event": "session-close", "state_changed": False,
+                               "outcome": {"game_id": "later"}}):
+                    handle.write(json.dumps(event) + "\n")
+        after = self.validate(records)
+        self.assertEqual(after["ledger"], before["ledger"])
+        self.assertEqual(after["ledger"]["sessions"], 4)
+        self.assertEqual(after["problems"], [])
+
     def test_failed_attempts_are_kept_and_reported(self) -> None:
         records = self.three()
         records[1]["status"] = "FAIL"
