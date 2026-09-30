@@ -1,0 +1,137 @@
+{
+ "killed": 24,
+ "mutants": [
+  {
+   "mutant": "primary: an interval touching zero passes",
+   "outcome": "killed",
+   "target": "src/miaosuan_agent/evaluation/shoot_experiment.py"
+  },
+  {
+   "mutant": "primary: the minimum reduction ignored",
+   "outcome": "killed",
+   "target": "src/miaosuan_agent/evaluation/shoot_experiment.py"
+  },
+  {
+   "mutant": "non-inferiority: a lower limit at the margin passes",
+   "outcome": "killed",
+   "target": "src/miaosuan_agent/evaluation/shoot_experiment.py"
+  },
+  {
+   "mutant": "contrast: sign reversed",
+   "outcome": "killed",
+   "target": "src/miaosuan_agent/evaluation/shoot_experiment.py"
+  },
+  {
+   "mutant": "contrast: games pooled instead of configurations weighted equally",
+   "outcome": "killed",
+   "target": "src/miaosuan_agent/evaluation/shoot_experiment.py"
+  },
+  {
+   "mutant": "bootstrap: candidate drawn before baseline",
+   "outcome": "killed",
+   "target": "src/miaosuan_agent/evaluation/shoot_experiment.py"
+  },
+  {
+   "mutant": "exclusions count unchanged selections",
+   "outcome": "killed",
+   "target": "src/miaosuan_agent/evaluation/shoot_experiment.py"
+  },
+  {
+   "mutant": "per-shot rate over unit actions",
+   "outcome": "killed",
+   "target": "src/miaosuan_agent/evaluation/shoot_experiment.py"
+  },
+  {
+   "mutant": "repeat fire counted from one shot",
+   "outcome": "killed",
+   "target": "src/miaosuan_agent/evaluation/shoot_experiment.py"
+  },
+  {
+   "mutant": "schedule: groups not alternated between rounds",
+   "outcome": "killed",
+   "target": "src/miaosuan_agent/evaluation/shoot_experiment.py"
+  },
+  {
+   "mutant": "schedule: boundary swap removed",
+   "outcome": "killed",
+   "target": "src/miaosuan_agent/evaluation/shoot_experiment.py"
+  },
+  {
+   "mutant": "promotion on any criterion",
+   "outcome": "killed",
+   "target": "src/miaosuan_agent/evaluation/shoot_experiment.py"
+  },
+  {
+   "mutant": "fourteen repetitions",
+   "outcome": "killed",
+   "target": "src/miaosuan_agent/evaluation/shoot_experiment.py"
+  },
+  {
+   "mutant": "missing seat fields tolerated",
+   "outcome": "killed",
+   "target": "src/miaosuan_agent/evaluation/shoot_experiment.py"
+  },
+  {
+   "mutant": "P2 reads group B",
+   "outcome": "killed",
+   "target": "scripts/analyze_shoot_experiment.py"
+  },
+  {
+   "mutant": "P3 ignores missing games",
+   "outcome": "killed",
+   "target": "scripts/analyze_shoot_experiment.py"
+  },
+  {
+   "mutant": "P4 reads group B",
+   "outcome": "killed",
+   "target": "scripts/analyze_shoot_experiment.py"
+  },
+  {
+   "mutant": "P5 reads group B",
+   "outcome": "killed",
+   "target": "scripts/analyze_shoot_experiment.py"
+  },
+  {
+   "mutant": "P8 never finds a new class",
+   "outcome": "killed",
+   "target": "scripts/analyze_shoot_experiment.py"
+  },
+  {
+   "mutant": "host clock offset applied with the wrong sign",
+   "outcome": "killed",
+   "target": "scripts/analyze_shoot_experiment.py"
+  },
+  {
+   "mutant": "group of a record not checked",
+   "outcome": "killed",
+   "target": "scripts/analyze_shoot_experiment.py"
+  },
+  {
+   "mutant": "engine state changes tolerated",
+   "outcome": "killed",
+   "target": "scripts/analyze_shoot_experiment.py"
+  },
+  {
+   "mutant": "primary contrast on all refusals",
+   "outcome": "killed",
+   "target": "scripts/analyze_shoot_experiment.py"
+  },
+  {
+   "mutant": "non-inferiority over C1 too",
+   "outcome": "killed",
+   "target": "scripts/analyze_shoot_experiment.py"
+  }
+ ],
+ "pass": true,
+ "schema": "miaosuan-shoot-analysis-mutation/1",
+ "survivors": [],
+ "targets": {
+  "scripts/analyze_shoot_experiment.py": "ea5095a5ec4ee62d77c8457eb09880701a440fad9518d7c01fc755b1977d1953",
+  "src/miaosuan_agent/evaluation/shoot_experiment.py": "cc1182a472bac78dee4348bf5e6d64092cfff7350dd218644040ed67a5b45a3b"
+ },
+ "tests": [
+  "tests.test_shoot_experiment"
+ ],
+ "tests_sha256": "e34d0ba6f86121789b26db938813501b2f827ab6cfedb7742ccfb5d5472fa145",
+ "total": 24
+}
