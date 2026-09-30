@@ -100,8 +100,8 @@ EFFECT_GRID = {
     "active_step_rate": {"configurations": list(ACTIVE_CONDITIONS), "relative_change": [0.05, 0.10, 0.20]},
 }
 EFFECT_RATIONALE = (
-    "Score effects are in engine value points. The absolute grid runs from a fraction of the smallest "
-    "scenario's combined start force value to about the combined force value of a mid-sized scenario "
+    "Score effects are in engine value points. The smallest absolute effect is below the smallest scenario's "
+    "combined start force value and the largest is below half the median scenario's combined value "
     "(force_value_by_scenario, read from the frozen results before any new game); the relative grid scales "
     "with each scenario's own force value, so large scenarios are not favoured.",
     "The margin is sized over C2 and C3 only: in the C1 mirror both sides change with the policy, so its margin "
