@@ -9,8 +9,9 @@ with counts, durations and step indices only (no observation, unit, hex or trace
 ``--check`` rebuilds it and compares with the committed file.
 
 For each game: the live comparison with the shadow baseline-v1 agent (every decision of every
-candidate seat), the candidate's and the shadow's decision times, the first play decision, the
-harness's replay checks, the session record (engine state and home unchanged, package integrity) and
+candidate seat), the candidate's and the shadow's decision times, the first play decision, every
+decision above 100 ms in either arm with the collection time inside it, the engine's refusal codes,
+the harness's replay checks, the session record (engine state and home unchanged, package integrity) and
 the first step at which the game's observed state differs from each same-configuration baseline-v1
 game, beside the same quantity between those baseline-v1 games themselves.
 """
@@ -114,6 +115,12 @@ def game(entry: Mapping[str, Any]) -> Optional[Dict[str, Any]]:
             "replay_checks": seat["replay_checks"], "replay_mismatches": seat["replay_mismatches"],
             "gate_rejections": sum(seat["gate_rejections"].values()),
             "engine_feedback_errors": sum(seat["feedback_errors_by_code"].values()),
+            "engine_feedback_errors_by_code": seat["feedback_errors_by_code"],
+            "over_100ms_decisions": [
+                {"decision": d["decision"], "stage": d["stage"], "candidate_ms": ms(d["candidate"]["wall"]),
+                 "candidate_gc_ms": ms(d["candidate"]["gc"]), "shadow_ms": ms(d["shadow"]["wall"]),
+                 "shadow_gc_ms": ms(d["shadow"]["gc"])}
+                for d in mine if d["candidate"]["wall"] > 0.1 or d["shadow"]["wall"] > 0.1],
         }
     others = references(entry["scenario_id"], entry["condition"])
     against = {name: first_divergence(record["state_steps"], other["state_steps"]) for name, other in others.items()}
