@@ -42,8 +42,10 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/BASELINE_V1.md` | identity of `baseline-v1`: the one change, its digests and its limitations |
 | `docs/EVALUATION_OCCUPY_RESERVATION.md` | the registered single-variable experiment that produced `baseline-v1`, and its results |
 | `docs/VARIANCE_STUDY.md` | the registered repeated-run variance study of `baseline-v1`: design, statistics, planning method, results |
+| `docs/LATENCY_DIAGNOSTIC.md` | the measured causes of the rare decision-latency tail of `baseline-v1`, and the remediation decision |
 | `docs/REFUSAL_TAXONOMY.md` | how engine refusals are recorded (facts) and attributed (versioned rules); the code-203 correction |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
+| `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
 | `evaluation/refusal-taxonomy-correction/` | historical refusal facts derived from the unchanged records |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
