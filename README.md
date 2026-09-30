@@ -5,12 +5,14 @@ https://wargame.ia.ac.cn/.
 
 ## Status
 
-First baseline agent frozen. On top of the provenance records, the static SDK audit, the runtime
-environment, the guarded persistent engine installation and the contract boundary
-(`docs/CONTRACT.md`), the repository now holds `baseline-v0`: a deterministic, minimal agent that
-acts only through legal-action information and a final safety gate (`docs/BASELINE.md`), and a
-pre-registered evaluation of it on the real engine (`docs/EVALUATION.md`). The baseline is a
-reference point; nothing in it is tuned for winning.
+Current baseline: `baseline-v1` (`docs/BASELINE_V1.md`). On top of the provenance records, the static
+SDK audit, the runtime environment, the guarded persistent engine installation and the contract
+boundary (`docs/CONTRACT.md`), the repository holds `baseline-v0`, a deterministic, minimal agent that
+acts only through legal-action information and a final safety gate (`docs/BASELINE.md`,
+`docs/EVALUATION.md`), and `baseline-v1`, which adds one change tested in a registered single-variable
+experiment: at most one occupation command per objective in a decision step
+(`docs/EVALUATION_OCCUPY_RESERVATION.md`). Both are reference points; nothing in them is tuned for
+winning, and `baseline-v0` stays reproducible under its original identity.
 
 ## Third-party material is not in this repository
 
@@ -34,8 +36,10 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/CONTRACT.md` | observed contract of SDK 4.1.0, accepted boundary, canonical representation, fixture policy |
 | `docs/ENGINE_INSTALL.md` | persistent engine installation: rules, session ledger, host clock |
 | `docs/BASELINE.md` | identity, decision pipeline, action semantics, safety gate and limitations of `baseline-v0` |
-| `docs/EVALUATION.md` | the registered evaluation protocol and its results |
-| `evaluation/baseline-v0/` | the registered manifest and the sanitized results |
+| `docs/EVALUATION.md` | the registered evaluation protocol of `baseline-v0` and its results |
+| `docs/BASELINE_V1.md` | identity of `baseline-v1`: the one change, its digests and its limitations |
+| `docs/EVALUATION_OCCUPY_RESERVATION.md` | the registered single-variable experiment that produced `baseline-v1`, and its results |
+| `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy
