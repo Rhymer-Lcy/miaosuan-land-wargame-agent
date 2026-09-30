@@ -11,8 +11,10 @@ Nothing here is imported by a policy.
 from __future__ import annotations
 
 import copy
+import hashlib
 from typing import Any, Dict, Mapping
 
+from ..decision.trace import canonical_json
 from . import manifest as mf
 from .identity import OCCUPY_RESERVATION_SOURCES
 
@@ -146,3 +148,14 @@ def build(corpus: Mapping[str, Any]) -> Dict[str, Any]:
     }
     registration["corpus_sha256"] = mf.digest(registration["corpus"])
     return registration
+
+
+def semantic_trace(trace: Any) -> Dict[str, Any]:
+    """The registered semantic content of a decision trace: its dictionary without the ``policy`` field."""
+    content = trace.to_dict()
+    content.pop("policy", None)
+    return content
+
+
+def semantic_digest(trace: Any) -> str:
+    return hashlib.sha256(canonical_json(semantic_trace(trace)).encode("utf-8")).hexdigest()
