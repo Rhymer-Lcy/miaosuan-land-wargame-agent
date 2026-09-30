@@ -1,0 +1,442 @@
+{
+ "evaluation_id": "baseline-v1-candidate-occupy-reservation-suite-1",
+ "gate1": {
+  "criteria": {
+   "G1": {
+    "detail": [
+     [
+      "gate1.201033019601.C1.r1",
+      "COMPLETED",
+      null,
+      0
+     ],
+     [
+      "gate1.201033019601.C1.r2",
+      "COMPLETED",
+      null,
+      0
+     ]
+    ],
+    "pass": true
+   },
+   "G2": {
+    "detail": [
+     true,
+     true
+    ],
+    "pass": true
+   },
+   "G3": {
+    "detail": [
+     {
+      "1": 1,
+      "2": 3,
+      "333": 1,
+      "5": 1
+     },
+     {
+      "1": 1,
+      "2": 3,
+      "333": 1
+     },
+     {
+      "1": 1,
+      "2": 3,
+      "333": 1,
+      "5": 1
+     },
+     {
+      "1": 1,
+      "2": 3,
+      "333": 1
+     }
+    ],
+    "pass": true
+   },
+   "G4": {
+    "detail": {
+     "feedback_errors": 1,
+     "gate_rejections": 0,
+     "unconfirmed_moves_or_deployment": {}
+    },
+    "pass": false
+   },
+   "G5": {
+    "detail": {
+     "comparisons": [
+      {
+       "final_scores_equal": false,
+       "seats": [
+        {
+         "policy": "baseline-v1-candidate-occupy-reservation",
+         "seat": 1,
+         "trace_chain_equal": true,
+         "trace_first_divergence": null,
+         "traces_equal_while_states_equal": true
+        },
+        {
+         "policy": "baseline-v1-candidate-occupy-reservation",
+         "seat": 11,
+         "trace_chain_equal": false,
+         "trace_first_divergence": 357,
+         "traces_equal_while_states_equal": true
+        }
+       ],
+       "state_chain_equal": false,
+       "state_first_divergence": 102
+      }
+     ],
+     "replay_mismatches": 0
+    },
+    "pass": true
+   },
+   "G6": {
+    "detail": {
+     "gate1.201033019601.C1.r1": [],
+     "gate1.201033019601.C1.r2": []
+    },
+    "pass": true
+   }
+  },
+  "games": [
+   {
+    "completion": "done",
+    "condition": "C1",
+    "failure": null,
+    "final_scores": {
+     "blue_attack": 0,
+     "blue_occupy": 0,
+     "blue_remain": 0,
+     "blue_remain_max": 30,
+     "blue_total": 0,
+     "blue_win": -140,
+     "red_attack": 30,
+     "red_occupy": 80,
+     "red_remain": 30,
+     "red_remain_max": 30,
+     "red_total": 140,
+     "red_win": 140
+    },
+    "game_id": "gate1.201033019601.C1.r1",
+    "global_rng_changed_by_engine": {
+     "numpy": false,
+     "python": false
+    },
+    "map_id": "9601",
+    "policies": {
+     "blue": "baseline-v1-candidate-occupy-reservation",
+     "red": "baseline-v1-candidate-occupy-reservation"
+    },
+    "repetition": 1,
+    "scenario_id": "201033019601",
+    "seats": [
+     {
+      "actions_by_type": {
+       "1": 1,
+       "2": 3,
+       "333": 1,
+       "5": 1
+      },
+      "contract_errors": 0,
+      "decisions": 1001,
+      "diagnostics": 0,
+      "duplicate_occupation_commands": 0,
+      "duplicate_occupation_steps": 0,
+      "effects_by_type": {
+       "1": {
+        "confirmed": 1
+       },
+       "2": {
+        "confirmed": 3
+       },
+       "333": {
+        "confirmed": 1
+       },
+       "5": {
+        "confirmed": 1
+       }
+      },
+      "faction": 0,
+      "feedback_entries": 5,
+      "feedback_errors_by_code": {},
+      "feedback_errors_by_code_and_type": {},
+      "first_step_by_type": {
+       "1": 1,
+       "2": 101,
+       "333": 0,
+       "5": 282
+      },
+      "gate_rejections": {},
+      "latency": {
+       "count": 1001,
+       "max_ms": 1.029,
+       "p50_ms": 0.215,
+       "p95_ms": 0.224,
+       "p99_ms": 0.239,
+       "total_ms": 217.505
+      },
+      "no_op_reasons": {
+       "no candidate; move: movement not listed": 278,
+       "no candidate; move: no objective outside own control": 717
+      },
+      "policy": "baseline-v1-candidate-occupy-reservation",
+      "refusal_contexts": {},
+      "replay_checks": 11,
+      "replay_mismatches": 0,
+      "seat": 1,
+      "steps_with_action": 6,
+      "steps_with_suppression": 0,
+      "suppressions": 0,
+      "units_acted": 1,
+      "units_seen": 1
+     },
+     {
+      "actions_by_type": {
+       "1": 1,
+       "2": 3,
+       "333": 1
+      },
+      "contract_errors": 0,
+      "decisions": 1001,
+      "diagnostics": 0,
+      "duplicate_occupation_commands": 0,
+      "duplicate_occupation_steps": 0,
+      "effects_by_type": {
+       "1": {
+        "confirmed": 1
+       },
+       "2": {
+        "confirmed": 3
+       },
+       "333": {
+        "confirmed": 1
+       }
+      },
+      "faction": 1,
+      "feedback_entries": 4,
+      "feedback_errors_by_code": {},
+      "feedback_errors_by_code_and_type": {},
+      "first_step_by_type": {
+       "1": 1,
+       "2": 101,
+       "333": 0
+      },
+      "gate_rejections": {},
+      "latency": {
+       "count": 1001,
+       "max_ms": 1.037,
+       "p50_ms": 0.16,
+       "p95_ms": 0.2,
+       "p99_ms": 0.205,
+       "total_ms": 173.796
+      },
+      "no_op_reasons": {
+       "no candidate; move: movement not listed": 356
+      },
+      "policy": "baseline-v1-candidate-occupy-reservation",
+      "refusal_contexts": {},
+      "replay_checks": 11,
+      "replay_mismatches": 0,
+      "seat": 11,
+      "steps_with_action": 5,
+      "steps_with_suppression": 0,
+      "suppressions": 0,
+      "units_acted": 1,
+      "units_seen": 1
+     }
+    ],
+    "status": "COMPLETED",
+    "steps": 1001,
+    "timings_seconds": {
+     "decisions": 0.391,
+     "engine_step": 1.576,
+     "harness": 2.641,
+     "wall": 4.608
+    }
+   },
+   {
+    "completion": "done",
+    "condition": "C1",
+    "failure": null,
+    "final_scores": {
+     "blue_attack": 10,
+     "blue_occupy": 0,
+     "blue_remain": 0,
+     "blue_remain_max": 30,
+     "blue_total": 10,
+     "blue_win": -120,
+     "red_attack": 30,
+     "red_occupy": 80,
+     "red_remain": 20,
+     "red_remain_max": 30,
+     "red_total": 130,
+     "red_win": 120
+    },
+    "game_id": "gate1.201033019601.C1.r2",
+    "global_rng_changed_by_engine": {
+     "numpy": false,
+     "python": false
+    },
+    "map_id": "9601",
+    "policies": {
+     "blue": "baseline-v1-candidate-occupy-reservation",
+     "red": "baseline-v1-candidate-occupy-reservation"
+    },
+    "repetition": 2,
+    "scenario_id": "201033019601",
+    "seats": [
+     {
+      "actions_by_type": {
+       "1": 1,
+       "2": 3,
+       "333": 1,
+       "5": 1
+      },
+      "contract_errors": 0,
+      "decisions": 1001,
+      "diagnostics": 0,
+      "duplicate_occupation_commands": 0,
+      "duplicate_occupation_steps": 0,
+      "effects_by_type": {
+       "1": {
+        "confirmed": 1
+       },
+       "2": {
+        "confirmed": 3
+       },
+       "333": {
+        "confirmed": 1
+       },
+       "5": {
+        "confirmed": 1
+       }
+      },
+      "faction": 0,
+      "feedback_entries": 5,
+      "feedback_errors_by_code": {},
+      "feedback_errors_by_code_and_type": {},
+      "first_step_by_type": {
+       "1": 1,
+       "2": 101,
+       "333": 0,
+       "5": 282
+      },
+      "gate_rejections": {},
+      "latency": {
+       "count": 1001,
+       "max_ms": 1.034,
+       "p50_ms": 0.216,
+       "p95_ms": 0.224,
+       "p99_ms": 0.268,
+       "total_ms": 218.689
+      },
+      "no_op_reasons": {
+       "no candidate; move: movement not listed": 278,
+       "no candidate; move: no objective outside own control": 717
+      },
+      "policy": "baseline-v1-candidate-occupy-reservation",
+      "refusal_contexts": {},
+      "replay_checks": 11,
+      "replay_mismatches": 0,
+      "seat": 1,
+      "steps_with_action": 6,
+      "steps_with_suppression": 0,
+      "suppressions": 0,
+      "units_acted": 1,
+      "units_seen": 1
+     },
+     {
+      "actions_by_type": {
+       "1": 1,
+       "2": 3,
+       "333": 1
+      },
+      "contract_errors": 0,
+      "decisions": 1001,
+      "diagnostics": 0,
+      "duplicate_occupation_commands": 0,
+      "duplicate_occupation_steps": 0,
+      "effects_by_type": {
+       "1": {
+        "confirmed": 1
+       },
+       "2": {
+        "confirmed": 2,
+        "indeterminate": 1
+       },
+       "333": {
+        "confirmed": 1
+       }
+      },
+      "faction": 1,
+      "feedback_entries": 4,
+      "feedback_errors_by_code": {
+       "203": 1
+      },
+      "feedback_errors_by_code_and_type": {
+       "203/2": 1
+      },
+      "first_step_by_type": {
+       "1": 1,
+       "2": 101,
+       "333": 0
+      },
+      "gate_rejections": {},
+      "latency": {
+       "count": 1001,
+       "max_ms": 2.458,
+       "p50_ms": 0.16,
+       "p95_ms": 0.199,
+       "p99_ms": 0.221,
+       "total_ms": 176.584
+      },
+      "no_op_reasons": {
+       "no candidate; move: movement not listed": 352
+      },
+      "policy": "baseline-v1-candidate-occupy-reservation",
+      "refusal_contexts": {
+       "203/2/same-step: shooter present at step start": 1
+      },
+      "replay_checks": 11,
+      "replay_mismatches": 0,
+      "seat": 11,
+      "steps_with_action": 5,
+      "steps_with_suppression": 0,
+      "suppressions": 0,
+      "units_acted": 1,
+      "units_seen": 1
+     }
+    ],
+    "status": "COMPLETED",
+    "steps": 1001,
+    "timings_seconds": {
+     "decisions": 0.395,
+     "engine_step": 1.588,
+     "harness": 2.666,
+     "wall": 4.65
+    }
+   }
+  ],
+  "refusal_decomposition": {
+   "by_code": {
+    "203": 1
+   },
+   "by_code_category": {
+    "same-step conflict: shooter destroyed earlier in the step": 1
+   },
+   "by_start_of_step_context": {
+    "203/2/same-step: shooter present at step start": 1
+   },
+   "engine_refusals": 1,
+   "engine_refusals_accepted_by_the_gate_at_decision_time": 1,
+   "project_gate_rejections": 0
+  }
+ },
+ "manifest_sha256": "aff71d579a506cec78d7049bc203520e266422912cbd8c340ec854b56a312537",
+ "policy_source_consistent": true,
+ "policy_source_sha256": "1d01e48a245273ded0b413ec6248e6aa54bba313ba8d6abbae2a20575544e2e9",
+ "suite": {
+  "recorded_games": 0,
+  "registered_games": 64
+ }
+}

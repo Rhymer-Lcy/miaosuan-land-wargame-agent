@@ -117,4 +117,92 @@ bash scripts/run_evaluation.sh --python PYTHON --sdk-archive ZIP --evaluation ba
 
 ## Results
 
-None at registration.
+Gate 1 and the suite were played on 2026-09-30 (UTC+8) on the Linux host of the persistent engine installation, harness commit `1376ca6`, one recorded engine session per game. Every figure below is computed from `evaluation/baseline-v1-candidate-occupy-reservation/results.json` (and, for the first Gate 1 attempt, `results-gate1-attempt-1.json`); the `baseline-v0` figures come from `evaluation/baseline-v0/results.json`.
+
+### Gate 1
+
+* First attempt, under the first registration (manifest `aff71d57…`, sessions 0086 and 0087): G1 pass, G2 pass, G3 pass, G4 FAIL, G5 pass, G6 pass; engine refusals: 1 of code 203, project-gate rejections 0. Kept and reported, not reused (amendment 1).
+* Under amendment 1 (manifest `38526b92…`): G1 pass, G2 pass, G3 pass, G4 FAIL, G5 pass, G6 pass; engine refusals: 1 of code 203, project-gate rejections 0; the required criteria (G1, G2, G3, G5, G6) passed, so the suite started.
+
+### Suite
+
+64 of 64 games reached the engine's done flag; none failed or hit a cap. Criteria per configuration (pass / fail / not applicable):
+
+| Criterion | baseline-v0 | candidate |
+|---|---|---|
+| G1 | 32 / 0 / 0 | 32 / 0 / 0 |
+| G2 | 32 / 0 / 0 | 32 / 0 / 0 |
+| G3 | 24 / 0 / 8 | 24 / 0 / 8 |
+| G4 | 10 / 14 / 8 | 12 / 12 / 8 |
+| G5 | 24 / 0 / 8 | 24 / 0 / 8 |
+| G6 | 32 / 0 / 0 | 32 / 0 / 0 |
+
+The candidate emitted no duplicate same-objective occupation command (harness count over Gate 1 and the suite: 0). The reservation suppressed 188 occupations in 131 steps; every suppressed unit then did nothing that step (188 no-op unit-steps carry the suppression reason). No code-1804 refusal occurred. The engine refused 28 of the candidate's 3,278 unit actions, all shots or occupations whose unit or target was lost earlier in the same step:
+
+| Refusal (code / action / start-of-step context) | Count |
+|---|---|
+| 203/2/same-step: shooter present at step start | 9 |
+| 203/5/unclassified | 1 |
+| 516/2/same-step: target fired at more than once by own side | 18 |
+
+One code-203 refusal was on an occupation, not a shot (engine message `CantControlDiedOperator`: the occupying unit, which the policy only orders when it is on the map at the start of the step, was destroyed during the step). The registered instance classifier defines 203 for shots only and left it unclassified, as reported above; the code-level category of the taxonomy, whose evidence came from shots, calls every 203 "shooter destroyed" and so mislabels this one occurrence.
+
+### Direct comparison with baseline-v0
+
+Suite games only, seats of the policy under test. **D** marks a deterministic property of the policy; **S** marks a count that also depends on the stochastic engine trajectory (the two suites diverged after their first shots), so its difference is descriptive.
+
+| Metric | baseline-v0 | candidate | Kind |
+|---|---|---|---|
+| Games completed | 64 / 64 | 64 / 64 | D |
+| Project-gate rejections | 0 | 0 | D |
+| Duplicate same-objective occupations emitted | not counted by its harness (counterfactual corpus: 55 in the 8 recorded C1 games) | 0 | D |
+| Occupations suppressed by the reservation | none (no reservation) | 188 in 131 steps | S |
+| Code 1804 refusals | 157 | 0 | S (0 with a duplicate context is D) |
+| Code 516 refusals | 23 | 18 | S |
+| Code 203 refusals | 7 | 10 | S |
+| Total engine refusals | 187 | 28 | S |
+| Occupation actions emitted | 378 | 246 | S |
+| Active-step rate | 0.0122 | 0.0127 | S |
+| No-op rate (no-op unit-steps / all unit-steps) | 0.9983 | 0.9983 | S |
+| G4 failures | 14 of 24 | 12 of 24 | S |
+
+Decision latency in milliseconds, by condition (nearest rank; **S**, and measured on a shared host):
+
+| Condition | baseline-v0 p50 / p95 / p99 / max | candidate p50 / p95 / p99 / max |
+|---|---|---|
+| C1 | 0.303 / 0.912 / 1.182 / 507.089 | 0.318 / 0.906 / 1.2 / 524.579 |
+| C2 | 0.599 / 1.019 / 1.162 / 424.725 | 0.612 / 1.022 / 1.168 / 421.882 |
+| C3 | 0.701 / 1.175 / 1.205 / 1304.309 | 0.714 / 1.172 / 1.215 / 1103.604 |
+
+The p50, p95 and p99 of the two policies differ by at most 0.018 ms in any condition. Both show rare slow decisions between 0.4 and 1.3 s; their cause was not measured and is listed as a limitation in `docs/BASELINE_V1.md`. No material latency difference was observed.
+
+### Determinism
+
+Decision traces were identical at every step at which the engine states of two repetitions agreed (G5 passed in 24 of 24 applicable configurations), and all 1,436 in-game replay checks matched. As for baseline-v0, the engine repeated exactly in all 16 configurations without a shot and diverged in all 16 with one, each time exactly one step after the first shot.
+
+### Outcomes (descriptive)
+
+Against the inert control the candidate side's engine total was higher in 32 of 32 games. Per-game scores are in the results file. As registered, no claim of tactical strength is made.
+
+### Acceptance
+
+* A1: **pass**. baseline-v0 still verifies: its policy source digest, golden decision chain, manifest re-derivation, and byte-identical regeneration of its committed results from its game records
+* A2: **pass**. counterfactual replay of recorded real start-of-step inputs shows zero unexplained deltas (pinned below; run before registration)
+* A3: **pass**. the public and private tests pass on both machines
+* A4: **pass**. Gate 1 passes its runtime criteria: G1, G2, G3, G5 and G6 for its two games, with zero project-gate rejections; G4 is reported (amendment 1)
+* A5: **pass**. the suite completes: every registered game reaches the engine's done flag
+* A6: **pass**. project-gate rejections of the policy under test: 0 over Gate 1 and the suite
+* A7: **pass**. duplicate same-objective occupation commands emitted by the policy under test, counted by the harness from the emitted actions: 0
+* A8: **pass**. engine refusals 1804 whose start-of-step context is several own occupations of the objective: 0
+* A9: **pass**. no scenario, map or terrain identifier in the candidate's policy sources
+* A10: **pass**. determinism: G5 passes in every applicable configuration and every in-game replay check matches
+* A11: **pass**. repository and privacy checks pass
+
+### Disposition
+
+**PROMOTED AS baseline-v1.** All eleven registered acceptance criteria hold (A1, A3 and A11 were verified on the
+final repository state on both machines). The promotion changes no code: `baseline-v1` is the name given to the
+executed candidate, whose identity string in the code and in every trace remains
+`baseline-v1-candidate-occupy-reservation`, so every result stays attributed to the policy source digest that was
+actually run. The identity record is `docs/BASELINE_V1.md`; `baseline-v0` is preserved unchanged
+(`docs/BASELINE.md`).
