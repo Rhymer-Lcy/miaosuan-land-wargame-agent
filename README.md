@@ -19,7 +19,9 @@ winning, and `baseline-v0` stays reproducible under its original identity. The r
 bounded by the objectives, which shortens the first play decision on the largest scenario from 0.4-0.5 s
 to under 0.2 s; it was promoted
 after a registered behaviour-preserving remediation (`docs/ROUTING_REMEDIATION.md`), and tactical
-experiments on top of `baseline-v1` run on it.
+experiments on top of `baseline-v1` run on it. The registered experiment of same-step shoot-target
+reservation (`docs/EVALUATION_SHOOT_RESERVATION.md`) compares that change with `baseline-v1`, both on
+`baseline-v1-runtime-r1`.
 
 ## Third-party material is not in this repository
 
@@ -50,10 +52,12 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/LATENCY_DIAGNOSTIC.md` | the measured causes of the rare decision-latency tail of `baseline-v1`, and the remediation decision |
 | `docs/ROUTING_REMEDIATION.md` | the registered behaviour-preserving routing remediation of `baseline-v1`: contract, equivalence argument, criteria, results |
 | `docs/BASELINE_V1_RUNTIME_R1.md` | identity of `baseline-v1-runtime-r1`, the runtime of `baseline-v1` with target-bounded routing |
+| `docs/EVALUATION_SHOOT_RESERVATION.md` | the registered two-group experiment of same-step shoot-target reservation: design, criteria, results |
 | `docs/REFUSAL_TAXONOMY.md` | how engine refusals are recorded (facts) and attributed (versioned rules); the code-203 correction |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
 | `evaluation/routing-remediation-1/` | the routing remediation's registration, pinned corpus and privacy-safe results |
+| `evaluation/baseline-v2-candidate-shoot-target-reservation/` | the shoot-reservation experiment's manifest, its counterfactual and mutation aggregates, and its results |
 | `evaluation/refusal-taxonomy-correction/` | historical refusal facts derived from the unchanged records |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 

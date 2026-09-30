@@ -1,0 +1,7875 @@
+{
+ "active_conditions": [
+  "C1",
+  "C2",
+  "C3"
+ ],
+ "artifact_schema": {
+  "decision_trace": "miaosuan-decision-trace/1+occupy-reservation+shoot-reservation",
+  "game_record": "miaosuan-game-record/1 with seat fields duplicate_shoot_target_steps, duplicate_shoot_target_commands, shoot_targets_engaged, steps_with_shot, shoot_reservation_effects, shoot_excluded_options, steps_with_shoot_exclusion"
+ },
+ "artifacts": {
+  "private (git-ignored local/)": "game records, per-step digests, factual refusal instances, traces, logs, the engine installation and its ledger, scenario and map data",
+  "public": "this manifest, the counterfactual replay and mutation aggregates, results.json with aggregates and sanitized per-game metrics, documentation"
+ },
+ "bootstrap": {
+  "resamples": 10000,
+  "seed": 20261001
+ },
+ "caps": {
+  "steps": "max_time + 1 + 100",
+  "wall_seconds": 1800
+ },
+ "control_condition": "C4 (inert mirror) contains no decision of either policy and is not played",
+ "control_policy": "inert-v0",
+ "counterfactual_replay": {
+  "baseline_duplicate_shots": 105,
+  "candidate_duplicate_shots": 0,
+  "changed": 95,
+  "class_A": 79,
+  "class_B": 0,
+  "class_C": 0,
+  "class_D": 26,
+  "class_E": 0,
+  "class_I": 0,
+  "corpus_sha256": "538b6df60e3c4467fa26a9c95f1a4804086a0ab4d837446262870c6fb9a7e0a8",
+  "displaced_units": 105,
+  "file": "evaluation/baseline-v2-candidate-shoot-target-reservation/counterfactual-replay.json",
+  "identical": 33707,
+  "sha256": "323787b5ea97f205c0bde6ea78dd2575245df9dd99c50f6f7cb9a7e0bee7d652",
+  "states": 33802,
+  "unexplained_states": 0
+ },
+ "design_sha256": "4aed3deaa5e4e6e1ca34dbfd6fc40f4cdd8bfbaa1d56806d7a77585c78211d01",
+ "effect_grid": {
+  "metric": "code_516_per_1000",
+  "practically_important": "a 50% relative reduction, the effect of the variance study's default repetition rule",
+  "relative_change": [
+   -0.25,
+   -0.5,
+   -1.0
+  ]
+ },
+ "engine": {
+  "sdk_archive_sha256": "ed4c9fc03cb6eb1e64821d2efbc61024d90735e3dc489dc7ffe0515e653ea725",
+  "version": "4.1.0"
+ },
+ "evaluation_id": "baseline-v2-candidate-shoot-target-reservation-ab-1",
+ "experiment_id": "baseline-v2-candidate-shoot-target-reservation-ab-1",
+ "failure_rules": [
+  "every registered game recomputes its group's policy source digest before touching the engine and refuses on a mismatch; the runner then stops",
+  "a record is never overwritten; a game that was started and left no record stops the runner",
+  "a game that writes a record with status FAIL or CAPPED is kept and reported; the runner continues, and stops after 3 consecutive games that did not complete (the only safety stop)",
+  "any other exit (input error, installation guardrail, timeout, crash) stops the runner",
+  "no stop, addition or repetition is ever decided from scores, refusal counts or any other outcome",
+  "no replacement is scheduled by this registration; a replacement needs a registered amendment first, runs under a distinct attempt identity (game id suffix .a2) and is reported beside the attempt it replaces, both kept",
+  "a missing or failed game reduces its cell's n and is reported; nothing is imputed or replaced silently",
+  "no valid observation is excluded, however extreme its score, refusal count or latency",
+  "if execution-affecting code must change after registration, the experiment stops; collected attempts are kept, and a new experiment version with its own registration is created; results are never merged across versions"
+ ],
+ "games": 720,
+ "groups": {
+  "B": {
+   "conditions": {
+    "C1": {
+     "blue": "baseline-v1-routing-bounded-candidate",
+     "red": "baseline-v1-routing-bounded-candidate"
+    },
+    "C2": {
+     "blue": "inert-v0",
+     "red": "baseline-v1-routing-bounded-candidate"
+    },
+    "C3": {
+     "blue": "baseline-v1-routing-bounded-candidate",
+     "red": "inert-v0"
+    }
+   },
+   "label": "baseline-v1 on baseline-v1-runtime-r1",
+   "policy": "baseline-v1-routing-bounded-candidate",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py"
+    ],
+    "sha256": "f9e50a538f1f530e9e485f75ce3d457435cfb9bcc2eb039ecdfa9374d54398ad",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py"
+    ]
+   }
+  },
+  "C": {
+   "conditions": {
+    "C1": {
+     "blue": "baseline-v2-candidate-shoot-target-reservation",
+     "red": "baseline-v2-candidate-shoot-target-reservation"
+    },
+    "C2": {
+     "blue": "inert-v0",
+     "red": "baseline-v2-candidate-shoot-target-reservation"
+    },
+    "C3": {
+     "blue": "baseline-v2-candidate-shoot-target-reservation",
+     "red": "inert-v0"
+    }
+   },
+   "golden_trace_chain": "0d16c814c03909ed89303a776b276b4cc441cd047450a063329009458654910f",
+   "label": "candidate on baseline-v1-runtime-r1",
+   "policy": "baseline-v2-candidate-shoot-target-reservation",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ],
+    "sha256": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ]
+   },
+   "trace_schema": "miaosuan-decision-trace/1+occupy-reservation+shoot-reservation"
+  }
+ },
+ "hypothesis": {
+  "direction": "reduction (candidate minus baseline < 0)",
+  "not_claimed": "No claim that unique-target fire is tactically superior: removing follow-up fire can lose damage when the first shot does not destroy the target. Outcomes are guarded by the non-inferiority criterion and otherwise reported descriptively.",
+  "primary": "Adding per-seat, per-step shoot-target reservation reduces the registered code-516 refusal rate (code-516 refusals per 1,000 emitted unit actions) relative to baseline-v1 on baseline-v1-runtime-r1."
+ },
+ "known_refusal_classes": [
+  [
+   1,
+   404,
+   "CantMoveKeptPeople"
+  ],
+  [
+   2,
+   203,
+   "CantControlDiedOperator"
+  ],
+  [
+   2,
+   516,
+   "CantShootToDiedBop"
+  ],
+  [
+   5,
+   203,
+   "CantControlDiedOperator"
+  ]
+ ],
+ "level": 0.95,
+ "minimum_relative_reduction": 0.25,
+ "mutation": {
+  "equivalent": {
+   "survived": 2,
+   "total": 2
+  },
+  "file": "evaluation/baseline-v2-candidate-shoot-target-reservation/mutation.json",
+  "non_equivalent": {
+   "killed": 17,
+   "total": 17
+  },
+  "sha256": "8a85954b2059bfdab37d73d853a63f4c48bb24efae26a0744b0f438fcae0e4e5"
+ },
+ "non_inferiority": {
+  "configurations": "the 16 configurations of C2 and C3",
+  "contrast": "delta_margin = (1/16) * sum over configurations of (mean_C - mean_B)",
+  "definition": "score margin from the active side: red_total - blue_total in C2 (policy red), blue_total - red_total in C3 (policy blue); the C1 mirror margin measures side asymmetry and is not used",
+  "interval": "the same stratified bootstrap (seed metric name 'margin'), 95% percentile interval",
+  "margin": "-10 engine score points: the smallest absolute margin effect of the variance study's planning grid, fixed from game semantics before any baseline-v1 game of that study",
+  "metric": "margin",
+  "rule": "P7 passes when the lower limit of the interval of delta_margin is above -10"
+ },
+ "non_inferiority_margin": 10.0,
+ "not_criteria": [
+  "engine scores other than the registered C2/C3 non-inferiority contrast are descriptive",
+  "code 203 is not a target of the candidate: a change in its count arises from different engine trajectories and is reported, not credited",
+  "latency is reported, not judged; the late collection pauses of the shared engine process are a known runtime risk"
+ ],
+ "parent": {
+  "evaluation_manifest_sha256": "38526b9250d8bce7facdb0f5c6303b5f2040e3939bd2bcedfe1fc2fdb14f103f",
+  "evaluation_results_sha256": "ea0ec674e8e51e546684fb75696673e5c81d32d6c9dd7a0d11796a91aeaeda07",
+  "golden_trace_chain": "11e12bf0475c04672701bcbb4daa6579c6c3b0238ac90fb8320b2384e61acc66",
+  "identity": "baseline-v1",
+  "policy_source_sha256": "1d01e48a245273ded0b413ec6248e6aa54bba313ba8d6abbae2a20575544e2e9"
+ },
+ "planning": {
+  "code_516_per_1000": {
+   "effects": [
+    {
+     "kind": "relative_change",
+     "macro_effect": -0.989189,
+     "power": 0.369876,
+     "power_conservative": 0.198047,
+     "power_monte_carlo": 0.479,
+     "value": -0.25
+    },
+    {
+     "kind": "relative_change",
+     "macro_effect": -1.978378,
+     "power": 0.902291,
+     "power_conservative": 0.600638,
+     "power_monte_carlo": 0.995,
+     "value": -0.5
+    },
+    {
+     "kind": "relative_change",
+     "macro_effect": -3.956756,
+     "power": 0.999997,
+     "power_conservative": 0.993242,
+     "power_monte_carlo": 1.0,
+     "value": -1.0
+    }
+   ],
+   "mde": 1.702963,
+   "mde_conservative": 2.502386,
+   "repetitions": 15,
+   "se": 0.607857,
+   "se_conservative": 0.893203
+  },
+  "cost": {
+   "games_both_arms": 720,
+   "games_per_arm": 360,
+   "hours_both_arms": 10.082482,
+   "hours_per_arm": 5.041241,
+   "repetitions": 15
+  },
+  "default_repetitions": 15,
+  "default_rule": "the smallest n at which the conservative power for a 50% reduction of all engine refusals per 1,000 unit actions reaches 0.8 (the variance study's registered rule)",
+  "margin": {
+   "effects": [
+    {
+     "kind": "absolute_points",
+     "macro_effect": 10.0,
+     "power": 0.999972,
+     "power_conservative": 0.982783,
+     "power_monte_carlo": 1.0,
+     "value": 10
+    },
+    {
+     "kind": "absolute_points",
+     "macro_effect": 25.0,
+     "power": 1.0,
+     "power_conservative": 1.0,
+     "power_monte_carlo": 1.0,
+     "value": 25
+    },
+    {
+     "kind": "absolute_points",
+     "macro_effect": 50.0,
+     "power": 1.0,
+     "power_conservative": 1.0,
+     "power_monte_carlo": 1.0,
+     "value": 50
+    },
+    {
+     "kind": "absolute_points",
+     "macro_effect": 100.0,
+     "power": 1.0,
+     "power_conservative": 1.0,
+     "power_monte_carlo": 1.0,
+     "value": 100
+    }
+   ],
+   "mde": 4.678813,
+   "mde_conservative": 6.875191,
+   "repetitions": 15,
+   "se": 1.670059,
+   "se_conservative": 2.454036
+  },
+  "note": "n = 15 is the variance study's default. For the code-516 rate it gives analytic power 0.90 and conservative power 0.60 for a 50% reduction, and 1.00 / 0.99 for a 100% reduction; the power figures assume the candidate keeps baseline-v1's within-configuration SDs",
+  "source": {
+   "file": "evaluation/baseline-v1-variance-study-1/results.json",
+   "sha256": "cfde7086ea94cdd95091b2054a5bd090ff4f43ed146e4f8d835a43e6d4804aa2"
+  }
+ },
+ "players": [
+  {
+   "faction": 0,
+   "role": 1,
+   "seat": 1,
+   "user_id": 0,
+   "user_name": "demo"
+  },
+  {
+   "faction": 1,
+   "role": 1,
+   "seat": 11,
+   "user_id": 0,
+   "user_name": "demo"
+  }
+ ],
+ "policy_source_rule": "sorted relative paths, CRLF normalized to LF; see evaluation/identity.py",
+ "primary_analysis": {
+  "bootstrap": "10000 resamples; one random.Random with seed int(first 12 hex digits of SHA-256('20261001:<metric>'), 16); configurations in sorted order, within each the baseline group's games are drawn before the candidate's; indices int(random() * n); limits are the exact nearest-rank 2.5th and 97.5th percentiles",
+  "criterion": "P6 passes when the upper limit of the bootstrap interval of delta is below 0 and the point estimate of the relative reduction is at least 25% (the smallest effect of the registered planning grid)",
+  "estimand": "delta = (1/24) * sum over configurations of (mean_C - mean_B); relative change = delta / ((1/24) * sum of mean_B)",
+  "interval": "95% percentile interval of a stratified bootstrap: games resampled with replacement within each configuration and group independently; the groups are independent samples, repetitions are not paired",
+  "sensitivity": "the analytic interval of the planning method: SE = sqrt(sum_k (s_Ck^2 / n_Ck + s_Bk^2 / n_Bk)) / K with Student t at df = sum_k (n_Ck + n_Bk - 2); reported, not decisive"
+ },
+ "primary_metric": {
+  "denominator": "emitted unit actions of the same seats: every action type except deployment completion (333)",
+  "games": "every recorded game of the group in the 24 active configurations",
+  "metric": "code_516_per_1000",
+  "numerator": "engine refusals with code 516 of the seats of the group's policy in the game (both seats in C1)",
+  "scaling": "per 1,000 emitted unit actions",
+  "source": "the metric code_516_per_1000 of variance_study.game_metrics, the definition the variance study planned with; identical code computes it here",
+  "undefined": "a game with no emitted unit action has no rate and is left out of its configuration's mean",
+  "weighting": "configuration mean over games, then the equal-weighted mean over the 24 configurations"
+ },
+ "promotion": {
+  "P1": "implementation integrity: the candidate's sources are baseline-v1-runtime-r1's byte-identical plus exactly experiments/shoot_reservation.py, and the pinned counterfactual replay has zero unexplained states and zero class-E units",
+  "P10": "privacy and reproducibility: the results regenerate byte-identically from the records, the public artifacts hold aggregates only, and the registration was on the public remote before the first game",
+  "P2": "deterministic mechanism: group C emitted no shoot action at a target another shoot action of the same seat had in the same step (harness count from emitted actions), and every in-game replay check of group C matched",
+  "P3": "execution reliability: every registered game has a record, group C has no more games that did not complete (FAIL or CAPPED) than group B, and group C has no contract error",
+  "P4": "project legality: project safety-gate rejections of group C = 0",
+  "P5": "solved-feature regression: code-1804 refusals of group C = 0 and duplicate same-objective occupation commands of group C = 0",
+  "P6": "primary effect: P6 passes when the upper limit of the bootstrap interval of delta is below 0 and the point estimate of the relative reduction is at least 25% (the smallest effect of the registered planning grid)",
+  "P7": "tactical non-inferiority: P7 passes when the lower limit of the interval of delta_margin is above -10",
+  "P8": "no unexplained new refusal mechanism: every factual refusal class of group C is a known baseline-v1 class (KNOWN_CLASSES) or also occurs in group B of this experiment",
+  "P9": "runtime comparability: every group-B record carries the runtime-r1 policy digest and every group-C record the registered candidate digest, both under this manifest and a clean harness at one commit"
+ },
+ "promotion_rules": [
+  "The candidate is promoted to baseline-v2 only if P1-P10 all pass; otherwise it is retained as a partial or negative candidate under its own identity, and baseline-v1 on baseline-v1-runtime-r1 stays the baseline.",
+  "Neither a higher score nor zero code-516 refusals is required or sufficient.",
+  "A promoted baseline-v2 keeps running on baseline-v1-runtime-r1; the runtime is not renamed."
+ ],
+ "purpose": "preregistered single-variable tactical experiment: same-step shoot-target reservation against baseline-v1, both on baseline-v1-runtime-r1",
+ "randomness": {
+  "global_seed": 20260929,
+  "procedure": "each game runs in a fresh process; the harness seeds Python's and NumPy's global generators with global_seed before the engine is constructed and records whether the engine consumes them; no undocumented engine interface is used",
+  "python_hash_seed": 0
+ },
+ "refusal_taxonomy": {
+  "attribution": "refusal-attribution/2",
+  "document": "docs/REFUSAL_TAXONOMY.md",
+  "fact": "miaosuan-refusal-fact/1"
+ },
+ "repetitions": 15,
+ "replay_check_every": 100,
+ "runtime": {
+  "code_identity": "baseline-v1-routing-bounded-candidate",
+  "files": [
+   "agent.py",
+   "boundary/__init__.py",
+   "boundary/actions.py",
+   "boundary/checks.py",
+   "boundary/errors.py",
+   "boundary/keys.py",
+   "boundary/observation.py",
+   "boundary/profile.py",
+   "boundary/state.py",
+   "boundary/terrain.py",
+   "decision/__init__.py",
+   "decision/candidates.py",
+   "decision/context.py",
+   "decision/gate.py",
+   "decision/policy.py",
+   "decision/routing.py",
+   "decision/semantics.py",
+   "decision/trace.py",
+   "experiments/__init__.py",
+   "experiments/occupy_reservation.py",
+   "experiments/routing_bounded.py"
+  ],
+  "identity": "baseline-v1-runtime-r1",
+  "identity_document": "docs/BASELINE_V1_RUNTIME_R1.md",
+  "policy_source_sha256": "f9e50a538f1f530e9e485f75ce3d457435cfb9bcc2eb039ecdfa9374d54398ad",
+  "remediation": {
+   "benchmark_sha256": "0898a29fa65ca96eac65a2ac0e6850aa145ca7594481455d2493665046d5f56f",
+   "engine_sha256": "e68883d6e401b07c61a37832b37ea978e33befde2d9ac3b0e8d348c0be283b3c",
+   "equivalence_sha256": "f44417d4cd0df076f021d209126428368f5dc42b2ce7a28262e2bfaf9eabb8ee",
+   "mutation_sha256": "ac289f45706d778d6ec385e4639998b5b7995639c37c7dd7992ae9c58161cae4",
+   "registration_sha256": "ffe4539d505dc53bc7b3875d9f9e451fc14ead6a4dd89bffe060bac028e87184"
+  },
+  "sources": [
+   "agent.py",
+   "boundary",
+   "decision",
+   "experiments/__init__.py",
+   "experiments/occupy_reservation.py",
+   "experiments/routing_bounded.py"
+  ]
+ },
+ "scenario_source": {
+  "manifest": "evaluation/baseline-v1-variance-study-1/manifest.json",
+  "manifest_sha256": "78109fca78dc8b044b63dcf475c163ca91a6f7f60fe1454a4b126d7ada10f48e",
+  "note": "the eight scenarios, players, caps and randomness procedure are copied unchanged"
+ },
+ "scenarios": [
+  {
+   "alternates": [
+    "2120511121",
+    "2130511421",
+    "2230531121",
+    "2230531221",
+    "2130511321",
+    "2130511121",
+    "2130511221"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+    "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+    "scenario": "a4536a361ac9dd879ad326d8c5f40583433c3299f5184b4af06ddb110ab297cf",
+    "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "operators": 54,
+   "red": 28,
+   "rule": "S2 fewest operators on map 21",
+   "scenario_id": "2120531121"
+  },
+  {
+   "alternates": [],
+   "blue": 5,
+   "cities": 2,
+   "inputs_sha256": {
+    "basic": "0f4e4d65ec6273a0747744d60a146f57c32cd505c53a8c4863043dec28548355",
+    "cost": "2a3fc75e9822eb2995dd9f3cab51dc049ec5748daecbd0fd894fea40217ddd27",
+    "scenario": "cbf9fc185b918cba3a2fb84c1edf420f59ebd7668c6acd6f30ffa66605d7e526",
+    "see": "5f456a93999d346eeb9784b711d0140423d5ec4c0e64c819911f90d8a13f6b38"
+   },
+   "map_id": "29",
+   "max_time": 1800,
+   "operators": 11,
+   "red": 6,
+   "rule": "S2 fewest operators on map 29",
+   "scenario_id": "2010211129"
+  },
+  {
+   "alternates": [
+    "2010441253",
+    "2110431153",
+    "2110431253",
+    "2110431353",
+    "2110431453",
+    "2110431553",
+    "2110431653",
+    "2110431753"
+   ],
+   "blue": 6,
+   "cities": 2,
+   "inputs_sha256": {
+    "basic": "9d81939421d31ab9d7a158008c0a85283a94cfc78f619336322ae3d3f15d2c4d",
+    "cost": "46f4d73bcb69ec2cb6d4accf6fa8109eb4a0c23042e0cb5a6c88b0b3168c9614",
+    "scenario": "fdf73f5fc7405cd55fd410255e3cd7268096c5548743deff5954e49b38e06554",
+    "see": "7aa1d041780747504a8a486b86169adac116b242262d725f4ad80539758d15f3"
+   },
+   "map_id": "53",
+   "max_time": 1800,
+   "operators": 12,
+   "red": 6,
+   "rule": "S2 fewest operators on map 53",
+   "scenario_id": "2010431153"
+  },
+  {
+   "alternates": [
+    "1930631192",
+    "2230631192"
+   ],
+   "blue": 6,
+   "cities": 2,
+   "inputs_sha256": {
+    "basic": "8d4bf628205d08abfcc87b0672142e0e1e0b86dd205a6611fc1034de4c12f27a",
+    "cost": "b7a6ffb937be31a76ad61426a64212c90ee8c3b378eb04658162ee5825310c3c",
+    "scenario": "4a44b94fba790b4535e03c1991bcc81253d0d61a228214c0c6b00caf0b0d8022",
+    "see": "c8e346d02bcc338a96894b9e4e1ed8d09eed4b15a9baeca96d17c2edcc3eaa19"
+   },
+   "map_id": "92",
+   "max_time": 1800,
+   "operators": 12,
+   "red": 6,
+   "rule": "S2 fewest operators on map 92",
+   "scenario_id": "1910631192"
+  },
+  {
+   "alternates": [
+    "2010141294",
+    "2120131194",
+    "2120131294",
+    "2030111194",
+    "2140131194"
+   ],
+   "blue": 2,
+   "cities": 1,
+   "inputs_sha256": {
+    "basic": "dde30d0a9ffc77ee5a8ad301692d929126b34c581ecb64dde96ffcb2b3cbcc03",
+    "cost": "c447e2b130c25aa2595e80cdd5dbe8e8f117196d544507f1897f776a88d4cfbb",
+    "scenario": "103954f4ca5032150de1c124ea04fe4d47c7a0f72a290ace82bd6fb5b669bbec",
+    "see": "a01d2ab2095ecdd2841651c90c757db6c12bae72d6759526914ad2220f7d975c"
+   },
+   "map_id": "94",
+   "max_time": 1800,
+   "operators": 4,
+   "red": 2,
+   "rule": "S2 fewest operators on map 94",
+   "scenario_id": "2010131194"
+  },
+  {
+   "alternates": [
+    "2020331196",
+    "2120331196",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2140331196"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "206c437995216aed6dd14a310d3a2ada0f7148dd8d40e4ec52c900b224d06f15",
+    "cost": "b136cc86cae77d53482f2b2ff3df0087278d51628e1a4cf453307d8da008997f",
+    "scenario": "a15d3b3bf499694d93a981511c16b5c1c9247487ac1cf1d88b2bf1bd2c75c1b1",
+    "see": "e69b9e85d77cc8de4600c42b48939ea625236a7a3b705090fa9b3745775009e2"
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "operators": 52,
+   "red": 26,
+   "rule": "S2 fewest operators on map 96",
+   "scenario_id": "1930331196"
+  },
+  {
+   "alternates": [
+    "201033029601",
+    "201033039601",
+    "211033019601"
+   ],
+   "blue": 1,
+   "cities": 1,
+   "inputs_sha256": {
+    "basic": "62a5645d213ca6927e527761a2dc077ddf56bc400d7a9018e9180fff6adc2354",
+    "cost": "c187131021173b63088dd655c661809b60980c0e2159374c9f32d3d749d0b865",
+    "scenario": "e24d43d94233ac4c87eccbb47f5f88a4e37ac8e0d5a00f461a2280efcd2b59df",
+    "see": "549a763b0d90c699455f4534e0586d67dae62407357353edc6edd6ad90459d7d"
+   },
+   "map_id": "9601",
+   "max_time": 1000,
+   "operators": 2,
+   "red": 1,
+   "rule": "S2 fewest operators on map 9601",
+   "scenario_id": "201033019601"
+  },
+  {
+   "alternates": [
+    "2130511221",
+    "2140131194",
+    "2140331196",
+    "2130511321",
+    "1930631192",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2230531221",
+    "2230631192",
+    "2030111194",
+    "2130511421",
+    "2230531121",
+    "2120131294",
+    "2120511121",
+    "2120131194",
+    "2120331196",
+    "2020331196",
+    "2110431753",
+    "2010441253",
+    "2110431153",
+    "2110431253",
+    "2110431353",
+    "2110431453",
+    "2110431553",
+    "2110431653",
+    "201033029601",
+    "201033039601",
+    "211033019601",
+    "2010141294"
+   ],
+   "blue": 44,
+   "cities": 7,
+   "inputs_sha256": {
+    "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+    "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+    "scenario": "9611e334d4fd6f2eda5957a26116bf8ec21c3e04754ed349d9a0fa0e9dc68070",
+    "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "operators": 89,
+   "red": 45,
+   "rule": "S3 largest force",
+   "scenario_id": "2130511121"
+  }
+ ],
+ "schedule": [
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.B.r1",
+   "group": "B",
+   "position": 1,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.C.r1",
+   "group": "C",
+   "position": 2,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.B.r1",
+   "group": "B",
+   "position": 3,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.C.r1",
+   "group": "C",
+   "position": 4,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.B.r1",
+   "group": "B",
+   "position": 5,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.C.r1",
+   "group": "C",
+   "position": 6,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.B.r1",
+   "group": "B",
+   "position": 7,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.C.r1",
+   "group": "C",
+   "position": 8,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.B.r1",
+   "group": "B",
+   "position": 9,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.C.r1",
+   "group": "C",
+   "position": 10,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.B.r1",
+   "group": "B",
+   "position": 11,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.C.r1",
+   "group": "C",
+   "position": 12,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.B.r1",
+   "group": "B",
+   "position": 13,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.C.r1",
+   "group": "C",
+   "position": 14,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.B.r1",
+   "group": "B",
+   "position": 15,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.C.r1",
+   "group": "C",
+   "position": 16,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.B.r1",
+   "group": "B",
+   "position": 17,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.C.r1",
+   "group": "C",
+   "position": 18,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.B.r1",
+   "group": "B",
+   "position": 19,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.C.r1",
+   "group": "C",
+   "position": 20,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.B.r1",
+   "group": "B",
+   "position": 21,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.C.r1",
+   "group": "C",
+   "position": 22,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.B.r1",
+   "group": "B",
+   "position": 23,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.C.r1",
+   "group": "C",
+   "position": 24,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.B.r1",
+   "group": "B",
+   "position": 25,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.C.r1",
+   "group": "C",
+   "position": 26,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.B.r1",
+   "group": "B",
+   "position": 27,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.C.r1",
+   "group": "C",
+   "position": 28,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.B.r1",
+   "group": "B",
+   "position": 29,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.C.r1",
+   "group": "C",
+   "position": 30,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.B.r1",
+   "group": "B",
+   "position": 31,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.C.r1",
+   "group": "C",
+   "position": 32,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.B.r1",
+   "group": "B",
+   "position": 33,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.C.r1",
+   "group": "C",
+   "position": 34,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.B.r1",
+   "group": "B",
+   "position": 35,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.C.r1",
+   "group": "C",
+   "position": 36,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.B.r1",
+   "group": "B",
+   "position": 37,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.C.r1",
+   "group": "C",
+   "position": 38,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.B.r1",
+   "group": "B",
+   "position": 39,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.C.r1",
+   "group": "C",
+   "position": 40,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.B.r1",
+   "group": "B",
+   "position": 41,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.C.r1",
+   "group": "C",
+   "position": 42,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.B.r1",
+   "group": "B",
+   "position": 43,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.C.r1",
+   "group": "C",
+   "position": 44,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.B.r1",
+   "group": "B",
+   "position": 45,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.C.r1",
+   "group": "C",
+   "position": 46,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.B.r1",
+   "group": "B",
+   "position": 47,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.C.r1",
+   "group": "C",
+   "position": 48,
+   "repetition": 1,
+   "round": 1,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.C.r2",
+   "group": "C",
+   "position": 49,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.B.r2",
+   "group": "B",
+   "position": 50,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.C.r2",
+   "group": "C",
+   "position": 51,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.B.r2",
+   "group": "B",
+   "position": 52,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.C.r2",
+   "group": "C",
+   "position": 53,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.B.r2",
+   "group": "B",
+   "position": 54,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.C.r2",
+   "group": "C",
+   "position": 55,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.B.r2",
+   "group": "B",
+   "position": 56,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.C.r2",
+   "group": "C",
+   "position": 57,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.B.r2",
+   "group": "B",
+   "position": 58,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.C.r2",
+   "group": "C",
+   "position": 59,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.B.r2",
+   "group": "B",
+   "position": 60,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.C.r2",
+   "group": "C",
+   "position": 61,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.B.r2",
+   "group": "B",
+   "position": 62,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.C.r2",
+   "group": "C",
+   "position": 63,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.B.r2",
+   "group": "B",
+   "position": 64,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.C.r2",
+   "group": "C",
+   "position": 65,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.B.r2",
+   "group": "B",
+   "position": 66,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.C.r2",
+   "group": "C",
+   "position": 67,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.B.r2",
+   "group": "B",
+   "position": 68,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.C.r2",
+   "group": "C",
+   "position": 69,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.B.r2",
+   "group": "B",
+   "position": 70,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.C.r2",
+   "group": "C",
+   "position": 71,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.B.r2",
+   "group": "B",
+   "position": 72,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.C.r2",
+   "group": "C",
+   "position": 73,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.B.r2",
+   "group": "B",
+   "position": 74,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.C.r2",
+   "group": "C",
+   "position": 75,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.B.r2",
+   "group": "B",
+   "position": 76,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.C.r2",
+   "group": "C",
+   "position": 77,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.B.r2",
+   "group": "B",
+   "position": 78,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.C.r2",
+   "group": "C",
+   "position": 79,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.B.r2",
+   "group": "B",
+   "position": 80,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.C.r2",
+   "group": "C",
+   "position": 81,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.B.r2",
+   "group": "B",
+   "position": 82,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.C.r2",
+   "group": "C",
+   "position": 83,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.B.r2",
+   "group": "B",
+   "position": 84,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.C.r2",
+   "group": "C",
+   "position": 85,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.B.r2",
+   "group": "B",
+   "position": 86,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.C.r2",
+   "group": "C",
+   "position": 87,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.B.r2",
+   "group": "B",
+   "position": 88,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.C.r2",
+   "group": "C",
+   "position": 89,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.B.r2",
+   "group": "B",
+   "position": 90,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.C.r2",
+   "group": "C",
+   "position": 91,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.B.r2",
+   "group": "B",
+   "position": 92,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.C.r2",
+   "group": "C",
+   "position": 93,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.B.r2",
+   "group": "B",
+   "position": 94,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.C.r2",
+   "group": "C",
+   "position": 95,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.B.r2",
+   "group": "B",
+   "position": 96,
+   "repetition": 2,
+   "round": 2,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.B.r3",
+   "group": "B",
+   "position": 97,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.C.r3",
+   "group": "C",
+   "position": 98,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.B.r3",
+   "group": "B",
+   "position": 99,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.C.r3",
+   "group": "C",
+   "position": 100,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.B.r3",
+   "group": "B",
+   "position": 101,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.C.r3",
+   "group": "C",
+   "position": 102,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.B.r3",
+   "group": "B",
+   "position": 103,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.C.r3",
+   "group": "C",
+   "position": 104,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.B.r3",
+   "group": "B",
+   "position": 105,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.C.r3",
+   "group": "C",
+   "position": 106,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.B.r3",
+   "group": "B",
+   "position": 107,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.C.r3",
+   "group": "C",
+   "position": 108,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.B.r3",
+   "group": "B",
+   "position": 109,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.C.r3",
+   "group": "C",
+   "position": 110,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.B.r3",
+   "group": "B",
+   "position": 111,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.C.r3",
+   "group": "C",
+   "position": 112,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.B.r3",
+   "group": "B",
+   "position": 113,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.C.r3",
+   "group": "C",
+   "position": 114,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.B.r3",
+   "group": "B",
+   "position": 115,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.C.r3",
+   "group": "C",
+   "position": 116,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.B.r3",
+   "group": "B",
+   "position": 117,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.C.r3",
+   "group": "C",
+   "position": 118,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.B.r3",
+   "group": "B",
+   "position": 119,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.C.r3",
+   "group": "C",
+   "position": 120,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.B.r3",
+   "group": "B",
+   "position": 121,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.C.r3",
+   "group": "C",
+   "position": 122,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.B.r3",
+   "group": "B",
+   "position": 123,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.C.r3",
+   "group": "C",
+   "position": 124,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.B.r3",
+   "group": "B",
+   "position": 125,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.C.r3",
+   "group": "C",
+   "position": 126,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.B.r3",
+   "group": "B",
+   "position": 127,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.C.r3",
+   "group": "C",
+   "position": 128,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.B.r3",
+   "group": "B",
+   "position": 129,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.C.r3",
+   "group": "C",
+   "position": 130,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.B.r3",
+   "group": "B",
+   "position": 131,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.C.r3",
+   "group": "C",
+   "position": 132,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.B.r3",
+   "group": "B",
+   "position": 133,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.C.r3",
+   "group": "C",
+   "position": 134,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.B.r3",
+   "group": "B",
+   "position": 135,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.C.r3",
+   "group": "C",
+   "position": 136,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.B.r3",
+   "group": "B",
+   "position": 137,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.C.r3",
+   "group": "C",
+   "position": 138,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.B.r3",
+   "group": "B",
+   "position": 139,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.C.r3",
+   "group": "C",
+   "position": 140,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.B.r3",
+   "group": "B",
+   "position": 141,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.C.r3",
+   "group": "C",
+   "position": 142,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.B.r3",
+   "group": "B",
+   "position": 143,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.C.r3",
+   "group": "C",
+   "position": 144,
+   "repetition": 3,
+   "round": 3,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.C.r4",
+   "group": "C",
+   "position": 145,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.B.r4",
+   "group": "B",
+   "position": 146,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.C.r4",
+   "group": "C",
+   "position": 147,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.B.r4",
+   "group": "B",
+   "position": 148,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.C.r4",
+   "group": "C",
+   "position": 149,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.B.r4",
+   "group": "B",
+   "position": 150,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.C.r4",
+   "group": "C",
+   "position": 151,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.B.r4",
+   "group": "B",
+   "position": 152,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.C.r4",
+   "group": "C",
+   "position": 153,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.B.r4",
+   "group": "B",
+   "position": 154,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.C.r4",
+   "group": "C",
+   "position": 155,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.B.r4",
+   "group": "B",
+   "position": 156,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.C.r4",
+   "group": "C",
+   "position": 157,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.B.r4",
+   "group": "B",
+   "position": 158,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.C.r4",
+   "group": "C",
+   "position": 159,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.B.r4",
+   "group": "B",
+   "position": 160,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.C.r4",
+   "group": "C",
+   "position": 161,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.B.r4",
+   "group": "B",
+   "position": 162,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.C.r4",
+   "group": "C",
+   "position": 163,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.B.r4",
+   "group": "B",
+   "position": 164,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.C.r4",
+   "group": "C",
+   "position": 165,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.B.r4",
+   "group": "B",
+   "position": 166,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.C.r4",
+   "group": "C",
+   "position": 167,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.B.r4",
+   "group": "B",
+   "position": 168,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.C.r4",
+   "group": "C",
+   "position": 169,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.B.r4",
+   "group": "B",
+   "position": 170,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.C.r4",
+   "group": "C",
+   "position": 171,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.B.r4",
+   "group": "B",
+   "position": 172,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.C.r4",
+   "group": "C",
+   "position": 173,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.B.r4",
+   "group": "B",
+   "position": 174,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.C.r4",
+   "group": "C",
+   "position": 175,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.B.r4",
+   "group": "B",
+   "position": 176,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.C.r4",
+   "group": "C",
+   "position": 177,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.B.r4",
+   "group": "B",
+   "position": 178,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.C.r4",
+   "group": "C",
+   "position": 179,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.B.r4",
+   "group": "B",
+   "position": 180,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.C.r4",
+   "group": "C",
+   "position": 181,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.B.r4",
+   "group": "B",
+   "position": 182,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.C.r4",
+   "group": "C",
+   "position": 183,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.B.r4",
+   "group": "B",
+   "position": 184,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.C.r4",
+   "group": "C",
+   "position": 185,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.B.r4",
+   "group": "B",
+   "position": 186,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.C.r4",
+   "group": "C",
+   "position": 187,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.B.r4",
+   "group": "B",
+   "position": 188,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.C.r4",
+   "group": "C",
+   "position": 189,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.B.r4",
+   "group": "B",
+   "position": 190,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.C.r4",
+   "group": "C",
+   "position": 191,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.B.r4",
+   "group": "B",
+   "position": 192,
+   "repetition": 4,
+   "round": 4,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.B.r5",
+   "group": "B",
+   "position": 193,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.C.r5",
+   "group": "C",
+   "position": 194,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.B.r5",
+   "group": "B",
+   "position": 195,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.C.r5",
+   "group": "C",
+   "position": 196,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.B.r5",
+   "group": "B",
+   "position": 197,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.C.r5",
+   "group": "C",
+   "position": 198,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.B.r5",
+   "group": "B",
+   "position": 199,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.C.r5",
+   "group": "C",
+   "position": 200,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.B.r5",
+   "group": "B",
+   "position": 201,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.C.r5",
+   "group": "C",
+   "position": 202,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.B.r5",
+   "group": "B",
+   "position": 203,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.C.r5",
+   "group": "C",
+   "position": 204,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.B.r5",
+   "group": "B",
+   "position": 205,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.C.r5",
+   "group": "C",
+   "position": 206,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.B.r5",
+   "group": "B",
+   "position": 207,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.C.r5",
+   "group": "C",
+   "position": 208,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.B.r5",
+   "group": "B",
+   "position": 209,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.C.r5",
+   "group": "C",
+   "position": 210,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.B.r5",
+   "group": "B",
+   "position": 211,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.C.r5",
+   "group": "C",
+   "position": 212,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.B.r5",
+   "group": "B",
+   "position": 213,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.C.r5",
+   "group": "C",
+   "position": 214,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.B.r5",
+   "group": "B",
+   "position": 215,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.C.r5",
+   "group": "C",
+   "position": 216,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.B.r5",
+   "group": "B",
+   "position": 217,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.C.r5",
+   "group": "C",
+   "position": 218,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.B.r5",
+   "group": "B",
+   "position": 219,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.C.r5",
+   "group": "C",
+   "position": 220,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.B.r5",
+   "group": "B",
+   "position": 221,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.C.r5",
+   "group": "C",
+   "position": 222,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.B.r5",
+   "group": "B",
+   "position": 223,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.C.r5",
+   "group": "C",
+   "position": 224,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.B.r5",
+   "group": "B",
+   "position": 225,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.C.r5",
+   "group": "C",
+   "position": 226,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.B.r5",
+   "group": "B",
+   "position": 227,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.C.r5",
+   "group": "C",
+   "position": 228,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.B.r5",
+   "group": "B",
+   "position": 229,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.C.r5",
+   "group": "C",
+   "position": 230,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.B.r5",
+   "group": "B",
+   "position": 231,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.C.r5",
+   "group": "C",
+   "position": 232,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.B.r5",
+   "group": "B",
+   "position": 233,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.C.r5",
+   "group": "C",
+   "position": 234,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.B.r5",
+   "group": "B",
+   "position": 235,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.C.r5",
+   "group": "C",
+   "position": 236,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.B.r5",
+   "group": "B",
+   "position": 237,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.C.r5",
+   "group": "C",
+   "position": 238,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.B.r5",
+   "group": "B",
+   "position": 239,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.C.r5",
+   "group": "C",
+   "position": 240,
+   "repetition": 5,
+   "round": 5,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.C.r6",
+   "group": "C",
+   "position": 241,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.B.r6",
+   "group": "B",
+   "position": 242,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.C.r6",
+   "group": "C",
+   "position": 243,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.B.r6",
+   "group": "B",
+   "position": 244,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.C.r6",
+   "group": "C",
+   "position": 245,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.B.r6",
+   "group": "B",
+   "position": 246,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.C.r6",
+   "group": "C",
+   "position": 247,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.B.r6",
+   "group": "B",
+   "position": 248,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.C.r6",
+   "group": "C",
+   "position": 249,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.B.r6",
+   "group": "B",
+   "position": 250,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.C.r6",
+   "group": "C",
+   "position": 251,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.B.r6",
+   "group": "B",
+   "position": 252,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.C.r6",
+   "group": "C",
+   "position": 253,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.B.r6",
+   "group": "B",
+   "position": 254,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.C.r6",
+   "group": "C",
+   "position": 255,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.B.r6",
+   "group": "B",
+   "position": 256,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.C.r6",
+   "group": "C",
+   "position": 257,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.B.r6",
+   "group": "B",
+   "position": 258,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.C.r6",
+   "group": "C",
+   "position": 259,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.B.r6",
+   "group": "B",
+   "position": 260,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.C.r6",
+   "group": "C",
+   "position": 261,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.B.r6",
+   "group": "B",
+   "position": 262,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.C.r6",
+   "group": "C",
+   "position": 263,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.B.r6",
+   "group": "B",
+   "position": 264,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.C.r6",
+   "group": "C",
+   "position": 265,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.B.r6",
+   "group": "B",
+   "position": 266,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.C.r6",
+   "group": "C",
+   "position": 267,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.B.r6",
+   "group": "B",
+   "position": 268,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.C.r6",
+   "group": "C",
+   "position": 269,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.B.r6",
+   "group": "B",
+   "position": 270,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.C.r6",
+   "group": "C",
+   "position": 271,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.B.r6",
+   "group": "B",
+   "position": 272,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.C.r6",
+   "group": "C",
+   "position": 273,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.B.r6",
+   "group": "B",
+   "position": 274,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.C.r6",
+   "group": "C",
+   "position": 275,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.B.r6",
+   "group": "B",
+   "position": 276,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.C.r6",
+   "group": "C",
+   "position": 277,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.B.r6",
+   "group": "B",
+   "position": 278,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.C.r6",
+   "group": "C",
+   "position": 279,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.B.r6",
+   "group": "B",
+   "position": 280,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.C.r6",
+   "group": "C",
+   "position": 281,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.B.r6",
+   "group": "B",
+   "position": 282,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.C.r6",
+   "group": "C",
+   "position": 283,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.B.r6",
+   "group": "B",
+   "position": 284,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.C.r6",
+   "group": "C",
+   "position": 285,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.B.r6",
+   "group": "B",
+   "position": 286,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.C.r6",
+   "group": "C",
+   "position": 287,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.B.r6",
+   "group": "B",
+   "position": 288,
+   "repetition": 6,
+   "round": 6,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.B.r7",
+   "group": "B",
+   "position": 289,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.C.r7",
+   "group": "C",
+   "position": 290,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.B.r7",
+   "group": "B",
+   "position": 291,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.C.r7",
+   "group": "C",
+   "position": 292,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.B.r7",
+   "group": "B",
+   "position": 293,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.C.r7",
+   "group": "C",
+   "position": 294,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.B.r7",
+   "group": "B",
+   "position": 295,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.C.r7",
+   "group": "C",
+   "position": 296,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.B.r7",
+   "group": "B",
+   "position": 297,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.C.r7",
+   "group": "C",
+   "position": 298,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.B.r7",
+   "group": "B",
+   "position": 299,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.C.r7",
+   "group": "C",
+   "position": 300,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.B.r7",
+   "group": "B",
+   "position": 301,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.C.r7",
+   "group": "C",
+   "position": 302,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.B.r7",
+   "group": "B",
+   "position": 303,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.C.r7",
+   "group": "C",
+   "position": 304,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.B.r7",
+   "group": "B",
+   "position": 305,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.C.r7",
+   "group": "C",
+   "position": 306,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.B.r7",
+   "group": "B",
+   "position": 307,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.C.r7",
+   "group": "C",
+   "position": 308,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.B.r7",
+   "group": "B",
+   "position": 309,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.C.r7",
+   "group": "C",
+   "position": 310,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.B.r7",
+   "group": "B",
+   "position": 311,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.C.r7",
+   "group": "C",
+   "position": 312,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.B.r7",
+   "group": "B",
+   "position": 313,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.C.r7",
+   "group": "C",
+   "position": 314,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.B.r7",
+   "group": "B",
+   "position": 315,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.C.r7",
+   "group": "C",
+   "position": 316,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.B.r7",
+   "group": "B",
+   "position": 317,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.C.r7",
+   "group": "C",
+   "position": 318,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.B.r7",
+   "group": "B",
+   "position": 319,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.C.r7",
+   "group": "C",
+   "position": 320,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.B.r7",
+   "group": "B",
+   "position": 321,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.C.r7",
+   "group": "C",
+   "position": 322,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.B.r7",
+   "group": "B",
+   "position": 323,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.C.r7",
+   "group": "C",
+   "position": 324,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.B.r7",
+   "group": "B",
+   "position": 325,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.C.r7",
+   "group": "C",
+   "position": 326,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.B.r7",
+   "group": "B",
+   "position": 327,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.C.r7",
+   "group": "C",
+   "position": 328,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.B.r7",
+   "group": "B",
+   "position": 329,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.C.r7",
+   "group": "C",
+   "position": 330,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.B.r7",
+   "group": "B",
+   "position": 331,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.C.r7",
+   "group": "C",
+   "position": 332,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.B.r7",
+   "group": "B",
+   "position": 333,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.C.r7",
+   "group": "C",
+   "position": 334,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.B.r7",
+   "group": "B",
+   "position": 335,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.C.r7",
+   "group": "C",
+   "position": 336,
+   "repetition": 7,
+   "round": 7,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.C.r8",
+   "group": "C",
+   "position": 337,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.B.r8",
+   "group": "B",
+   "position": 338,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.C.r8",
+   "group": "C",
+   "position": 339,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.B.r8",
+   "group": "B",
+   "position": 340,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.C.r8",
+   "group": "C",
+   "position": 341,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.B.r8",
+   "group": "B",
+   "position": 342,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.C.r8",
+   "group": "C",
+   "position": 343,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.B.r8",
+   "group": "B",
+   "position": 344,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.C.r8",
+   "group": "C",
+   "position": 345,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.B.r8",
+   "group": "B",
+   "position": 346,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.C.r8",
+   "group": "C",
+   "position": 347,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.B.r8",
+   "group": "B",
+   "position": 348,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.C.r8",
+   "group": "C",
+   "position": 349,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.B.r8",
+   "group": "B",
+   "position": 350,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.C.r8",
+   "group": "C",
+   "position": 351,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.B.r8",
+   "group": "B",
+   "position": 352,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.C.r8",
+   "group": "C",
+   "position": 353,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.B.r8",
+   "group": "B",
+   "position": 354,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.C.r8",
+   "group": "C",
+   "position": 355,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.B.r8",
+   "group": "B",
+   "position": 356,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.C.r8",
+   "group": "C",
+   "position": 357,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.B.r8",
+   "group": "B",
+   "position": 358,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.C.r8",
+   "group": "C",
+   "position": 359,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.B.r8",
+   "group": "B",
+   "position": 360,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.C.r8",
+   "group": "C",
+   "position": 361,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.B.r8",
+   "group": "B",
+   "position": 362,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.C.r8",
+   "group": "C",
+   "position": 363,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.B.r8",
+   "group": "B",
+   "position": 364,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.C.r8",
+   "group": "C",
+   "position": 365,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.B.r8",
+   "group": "B",
+   "position": 366,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.C.r8",
+   "group": "C",
+   "position": 367,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.B.r8",
+   "group": "B",
+   "position": 368,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.C.r8",
+   "group": "C",
+   "position": 369,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.B.r8",
+   "group": "B",
+   "position": 370,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.C.r8",
+   "group": "C",
+   "position": 371,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.B.r8",
+   "group": "B",
+   "position": 372,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.C.r8",
+   "group": "C",
+   "position": 373,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.B.r8",
+   "group": "B",
+   "position": 374,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.C.r8",
+   "group": "C",
+   "position": 375,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.B.r8",
+   "group": "B",
+   "position": 376,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.C.r8",
+   "group": "C",
+   "position": 377,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.B.r8",
+   "group": "B",
+   "position": 378,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.C.r8",
+   "group": "C",
+   "position": 379,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.B.r8",
+   "group": "B",
+   "position": 380,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.C.r8",
+   "group": "C",
+   "position": 381,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.B.r8",
+   "group": "B",
+   "position": 382,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.C.r8",
+   "group": "C",
+   "position": 383,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.B.r8",
+   "group": "B",
+   "position": 384,
+   "repetition": 8,
+   "round": 8,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.B.r9",
+   "group": "B",
+   "position": 385,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.C.r9",
+   "group": "C",
+   "position": 386,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.B.r9",
+   "group": "B",
+   "position": 387,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.C.r9",
+   "group": "C",
+   "position": 388,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.B.r9",
+   "group": "B",
+   "position": 389,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.C.r9",
+   "group": "C",
+   "position": 390,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.B.r9",
+   "group": "B",
+   "position": 391,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.C.r9",
+   "group": "C",
+   "position": 392,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.B.r9",
+   "group": "B",
+   "position": 393,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.C.r9",
+   "group": "C",
+   "position": 394,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.B.r9",
+   "group": "B",
+   "position": 395,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.C.r9",
+   "group": "C",
+   "position": 396,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.B.r9",
+   "group": "B",
+   "position": 397,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.C.r9",
+   "group": "C",
+   "position": 398,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.B.r9",
+   "group": "B",
+   "position": 399,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.C.r9",
+   "group": "C",
+   "position": 400,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.B.r9",
+   "group": "B",
+   "position": 401,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.C.r9",
+   "group": "C",
+   "position": 402,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.B.r9",
+   "group": "B",
+   "position": 403,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.C.r9",
+   "group": "C",
+   "position": 404,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.B.r9",
+   "group": "B",
+   "position": 405,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.C.r9",
+   "group": "C",
+   "position": 406,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.B.r9",
+   "group": "B",
+   "position": 407,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.C.r9",
+   "group": "C",
+   "position": 408,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.B.r9",
+   "group": "B",
+   "position": 409,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.C.r9",
+   "group": "C",
+   "position": 410,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.B.r9",
+   "group": "B",
+   "position": 411,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.C.r9",
+   "group": "C",
+   "position": 412,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.B.r9",
+   "group": "B",
+   "position": 413,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.C.r9",
+   "group": "C",
+   "position": 414,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.B.r9",
+   "group": "B",
+   "position": 415,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.C.r9",
+   "group": "C",
+   "position": 416,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.B.r9",
+   "group": "B",
+   "position": 417,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.C.r9",
+   "group": "C",
+   "position": 418,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.B.r9",
+   "group": "B",
+   "position": 419,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.C.r9",
+   "group": "C",
+   "position": 420,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.B.r9",
+   "group": "B",
+   "position": 421,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.C.r9",
+   "group": "C",
+   "position": 422,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.B.r9",
+   "group": "B",
+   "position": 423,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.C.r9",
+   "group": "C",
+   "position": 424,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.B.r9",
+   "group": "B",
+   "position": 425,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.C.r9",
+   "group": "C",
+   "position": 426,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.B.r9",
+   "group": "B",
+   "position": 427,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.C.r9",
+   "group": "C",
+   "position": 428,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.B.r9",
+   "group": "B",
+   "position": 429,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.C.r9",
+   "group": "C",
+   "position": 430,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.B.r9",
+   "group": "B",
+   "position": 431,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.C.r9",
+   "group": "C",
+   "position": 432,
+   "repetition": 9,
+   "round": 9,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.C.r10",
+   "group": "C",
+   "position": 433,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.B.r10",
+   "group": "B",
+   "position": 434,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.C.r10",
+   "group": "C",
+   "position": 435,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.B.r10",
+   "group": "B",
+   "position": 436,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.C.r10",
+   "group": "C",
+   "position": 437,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.B.r10",
+   "group": "B",
+   "position": 438,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.C.r10",
+   "group": "C",
+   "position": 439,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.B.r10",
+   "group": "B",
+   "position": 440,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.C.r10",
+   "group": "C",
+   "position": 441,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.B.r10",
+   "group": "B",
+   "position": 442,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.C.r10",
+   "group": "C",
+   "position": 443,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.B.r10",
+   "group": "B",
+   "position": 444,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.C.r10",
+   "group": "C",
+   "position": 445,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.B.r10",
+   "group": "B",
+   "position": 446,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.C.r10",
+   "group": "C",
+   "position": 447,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.B.r10",
+   "group": "B",
+   "position": 448,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.C.r10",
+   "group": "C",
+   "position": 449,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.B.r10",
+   "group": "B",
+   "position": 450,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.C.r10",
+   "group": "C",
+   "position": 451,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.B.r10",
+   "group": "B",
+   "position": 452,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.C.r10",
+   "group": "C",
+   "position": 453,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.B.r10",
+   "group": "B",
+   "position": 454,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.C.r10",
+   "group": "C",
+   "position": 455,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.B.r10",
+   "group": "B",
+   "position": 456,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.C.r10",
+   "group": "C",
+   "position": 457,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.B.r10",
+   "group": "B",
+   "position": 458,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.C.r10",
+   "group": "C",
+   "position": 459,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.B.r10",
+   "group": "B",
+   "position": 460,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.C.r10",
+   "group": "C",
+   "position": 461,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.B.r10",
+   "group": "B",
+   "position": 462,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.C.r10",
+   "group": "C",
+   "position": 463,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.B.r10",
+   "group": "B",
+   "position": 464,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.C.r10",
+   "group": "C",
+   "position": 465,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.B.r10",
+   "group": "B",
+   "position": 466,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.C.r10",
+   "group": "C",
+   "position": 467,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.B.r10",
+   "group": "B",
+   "position": 468,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.C.r10",
+   "group": "C",
+   "position": 469,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.B.r10",
+   "group": "B",
+   "position": 470,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.C.r10",
+   "group": "C",
+   "position": 471,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.B.r10",
+   "group": "B",
+   "position": 472,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.C.r10",
+   "group": "C",
+   "position": 473,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.B.r10",
+   "group": "B",
+   "position": 474,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.C.r10",
+   "group": "C",
+   "position": 475,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.B.r10",
+   "group": "B",
+   "position": 476,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.C.r10",
+   "group": "C",
+   "position": 477,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.B.r10",
+   "group": "B",
+   "position": 478,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.C.r10",
+   "group": "C",
+   "position": 479,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.B.r10",
+   "group": "B",
+   "position": 480,
+   "repetition": 10,
+   "round": 10,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.B.r11",
+   "group": "B",
+   "position": 481,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.C.r11",
+   "group": "C",
+   "position": 482,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.B.r11",
+   "group": "B",
+   "position": 483,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.C.r11",
+   "group": "C",
+   "position": 484,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.B.r11",
+   "group": "B",
+   "position": 485,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.C.r11",
+   "group": "C",
+   "position": 486,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.B.r11",
+   "group": "B",
+   "position": 487,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.C.r11",
+   "group": "C",
+   "position": 488,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.B.r11",
+   "group": "B",
+   "position": 489,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.C.r11",
+   "group": "C",
+   "position": 490,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.B.r11",
+   "group": "B",
+   "position": 491,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.C.r11",
+   "group": "C",
+   "position": 492,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.B.r11",
+   "group": "B",
+   "position": 493,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.C.r11",
+   "group": "C",
+   "position": 494,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.B.r11",
+   "group": "B",
+   "position": 495,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.C.r11",
+   "group": "C",
+   "position": 496,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.B.r11",
+   "group": "B",
+   "position": 497,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.C.r11",
+   "group": "C",
+   "position": 498,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.B.r11",
+   "group": "B",
+   "position": 499,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.C.r11",
+   "group": "C",
+   "position": 500,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.B.r11",
+   "group": "B",
+   "position": 501,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.C.r11",
+   "group": "C",
+   "position": 502,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.B.r11",
+   "group": "B",
+   "position": 503,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.C.r11",
+   "group": "C",
+   "position": 504,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.B.r11",
+   "group": "B",
+   "position": 505,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.C.r11",
+   "group": "C",
+   "position": 506,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.B.r11",
+   "group": "B",
+   "position": 507,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.C.r11",
+   "group": "C",
+   "position": 508,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.B.r11",
+   "group": "B",
+   "position": 509,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.C.r11",
+   "group": "C",
+   "position": 510,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.B.r11",
+   "group": "B",
+   "position": 511,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.C.r11",
+   "group": "C",
+   "position": 512,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.B.r11",
+   "group": "B",
+   "position": 513,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.C.r11",
+   "group": "C",
+   "position": 514,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.B.r11",
+   "group": "B",
+   "position": 515,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.C.r11",
+   "group": "C",
+   "position": 516,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.B.r11",
+   "group": "B",
+   "position": 517,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.C.r11",
+   "group": "C",
+   "position": 518,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.B.r11",
+   "group": "B",
+   "position": 519,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.C.r11",
+   "group": "C",
+   "position": 520,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.B.r11",
+   "group": "B",
+   "position": 521,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.C.r11",
+   "group": "C",
+   "position": 522,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.B.r11",
+   "group": "B",
+   "position": 523,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.C.r11",
+   "group": "C",
+   "position": 524,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.B.r11",
+   "group": "B",
+   "position": 525,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.C.r11",
+   "group": "C",
+   "position": 526,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.B.r11",
+   "group": "B",
+   "position": 527,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.C.r11",
+   "group": "C",
+   "position": 528,
+   "repetition": 11,
+   "round": 11,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.C.r12",
+   "group": "C",
+   "position": 529,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.B.r12",
+   "group": "B",
+   "position": 530,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.C.r12",
+   "group": "C",
+   "position": 531,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.B.r12",
+   "group": "B",
+   "position": 532,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.C.r12",
+   "group": "C",
+   "position": 533,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.B.r12",
+   "group": "B",
+   "position": 534,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.C.r12",
+   "group": "C",
+   "position": 535,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.B.r12",
+   "group": "B",
+   "position": 536,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.C.r12",
+   "group": "C",
+   "position": 537,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.B.r12",
+   "group": "B",
+   "position": 538,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.C.r12",
+   "group": "C",
+   "position": 539,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.B.r12",
+   "group": "B",
+   "position": 540,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.C.r12",
+   "group": "C",
+   "position": 541,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.B.r12",
+   "group": "B",
+   "position": 542,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.C.r12",
+   "group": "C",
+   "position": 543,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.B.r12",
+   "group": "B",
+   "position": 544,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.C.r12",
+   "group": "C",
+   "position": 545,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.B.r12",
+   "group": "B",
+   "position": 546,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.C.r12",
+   "group": "C",
+   "position": 547,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.B.r12",
+   "group": "B",
+   "position": 548,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.C.r12",
+   "group": "C",
+   "position": 549,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.B.r12",
+   "group": "B",
+   "position": 550,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.C.r12",
+   "group": "C",
+   "position": 551,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.B.r12",
+   "group": "B",
+   "position": 552,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.C.r12",
+   "group": "C",
+   "position": 553,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.B.r12",
+   "group": "B",
+   "position": 554,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.C.r12",
+   "group": "C",
+   "position": 555,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.B.r12",
+   "group": "B",
+   "position": 556,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.C.r12",
+   "group": "C",
+   "position": 557,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.B.r12",
+   "group": "B",
+   "position": 558,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.C.r12",
+   "group": "C",
+   "position": 559,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.B.r12",
+   "group": "B",
+   "position": 560,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.C.r12",
+   "group": "C",
+   "position": 561,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.B.r12",
+   "group": "B",
+   "position": 562,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.C.r12",
+   "group": "C",
+   "position": 563,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.B.r12",
+   "group": "B",
+   "position": 564,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.C.r12",
+   "group": "C",
+   "position": 565,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.B.r12",
+   "group": "B",
+   "position": 566,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.C.r12",
+   "group": "C",
+   "position": 567,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.B.r12",
+   "group": "B",
+   "position": 568,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.C.r12",
+   "group": "C",
+   "position": 569,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.B.r12",
+   "group": "B",
+   "position": 570,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.C.r12",
+   "group": "C",
+   "position": 571,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.B.r12",
+   "group": "B",
+   "position": 572,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.C.r12",
+   "group": "C",
+   "position": 573,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.B.r12",
+   "group": "B",
+   "position": 574,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.C.r12",
+   "group": "C",
+   "position": 575,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.B.r12",
+   "group": "B",
+   "position": 576,
+   "repetition": 12,
+   "round": 12,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.B.r13",
+   "group": "B",
+   "position": 577,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.C.r13",
+   "group": "C",
+   "position": 578,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.B.r13",
+   "group": "B",
+   "position": 579,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.C.r13",
+   "group": "C",
+   "position": 580,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.B.r13",
+   "group": "B",
+   "position": 581,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.C.r13",
+   "group": "C",
+   "position": 582,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.B.r13",
+   "group": "B",
+   "position": 583,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.C.r13",
+   "group": "C",
+   "position": 584,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.B.r13",
+   "group": "B",
+   "position": 585,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.C.r13",
+   "group": "C",
+   "position": 586,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.B.r13",
+   "group": "B",
+   "position": 587,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.C.r13",
+   "group": "C",
+   "position": 588,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.B.r13",
+   "group": "B",
+   "position": 589,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.C.r13",
+   "group": "C",
+   "position": 590,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.B.r13",
+   "group": "B",
+   "position": 591,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.C.r13",
+   "group": "C",
+   "position": 592,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.B.r13",
+   "group": "B",
+   "position": 593,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.C.r13",
+   "group": "C",
+   "position": 594,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.B.r13",
+   "group": "B",
+   "position": 595,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.C.r13",
+   "group": "C",
+   "position": 596,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.B.r13",
+   "group": "B",
+   "position": 597,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.C.r13",
+   "group": "C",
+   "position": 598,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.B.r13",
+   "group": "B",
+   "position": 599,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.C.r13",
+   "group": "C",
+   "position": 600,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.B.r13",
+   "group": "B",
+   "position": 601,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.C.r13",
+   "group": "C",
+   "position": 602,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.B.r13",
+   "group": "B",
+   "position": 603,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.C.r13",
+   "group": "C",
+   "position": 604,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.B.r13",
+   "group": "B",
+   "position": 605,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.C.r13",
+   "group": "C",
+   "position": 606,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.B.r13",
+   "group": "B",
+   "position": 607,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.C.r13",
+   "group": "C",
+   "position": 608,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.B.r13",
+   "group": "B",
+   "position": 609,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.C.r13",
+   "group": "C",
+   "position": 610,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.B.r13",
+   "group": "B",
+   "position": 611,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.C.r13",
+   "group": "C",
+   "position": 612,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.B.r13",
+   "group": "B",
+   "position": 613,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.C.r13",
+   "group": "C",
+   "position": 614,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.B.r13",
+   "group": "B",
+   "position": 615,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.C.r13",
+   "group": "C",
+   "position": 616,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.B.r13",
+   "group": "B",
+   "position": 617,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.C.r13",
+   "group": "C",
+   "position": 618,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.B.r13",
+   "group": "B",
+   "position": 619,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.C.r13",
+   "group": "C",
+   "position": 620,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.B.r13",
+   "group": "B",
+   "position": 621,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.C.r13",
+   "group": "C",
+   "position": 622,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.B.r13",
+   "group": "B",
+   "position": 623,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.C.r13",
+   "group": "C",
+   "position": 624,
+   "repetition": 13,
+   "round": 13,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.C.r14",
+   "group": "C",
+   "position": 625,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.B.r14",
+   "group": "B",
+   "position": 626,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.C.r14",
+   "group": "C",
+   "position": 627,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.B.r14",
+   "group": "B",
+   "position": 628,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.C.r14",
+   "group": "C",
+   "position": 629,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.B.r14",
+   "group": "B",
+   "position": 630,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.C.r14",
+   "group": "C",
+   "position": 631,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.B.r14",
+   "group": "B",
+   "position": 632,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.C.r14",
+   "group": "C",
+   "position": 633,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.B.r14",
+   "group": "B",
+   "position": 634,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.C.r14",
+   "group": "C",
+   "position": 635,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.B.r14",
+   "group": "B",
+   "position": 636,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.C.r14",
+   "group": "C",
+   "position": 637,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.B.r14",
+   "group": "B",
+   "position": 638,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.C.r14",
+   "group": "C",
+   "position": 639,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.B.r14",
+   "group": "B",
+   "position": 640,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.C.r14",
+   "group": "C",
+   "position": 641,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.B.r14",
+   "group": "B",
+   "position": 642,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.C.r14",
+   "group": "C",
+   "position": 643,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.B.r14",
+   "group": "B",
+   "position": 644,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.C.r14",
+   "group": "C",
+   "position": 645,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.B.r14",
+   "group": "B",
+   "position": 646,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.C.r14",
+   "group": "C",
+   "position": 647,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.B.r14",
+   "group": "B",
+   "position": 648,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.C.r14",
+   "group": "C",
+   "position": 649,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.B.r14",
+   "group": "B",
+   "position": 650,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.C.r14",
+   "group": "C",
+   "position": 651,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.B.r14",
+   "group": "B",
+   "position": 652,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.C.r14",
+   "group": "C",
+   "position": 653,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.B.r14",
+   "group": "B",
+   "position": 654,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.C.r14",
+   "group": "C",
+   "position": 655,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.B.r14",
+   "group": "B",
+   "position": 656,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.C.r14",
+   "group": "C",
+   "position": 657,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.B.r14",
+   "group": "B",
+   "position": 658,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.C.r14",
+   "group": "C",
+   "position": 659,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.B.r14",
+   "group": "B",
+   "position": 660,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.C.r14",
+   "group": "C",
+   "position": 661,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.B.r14",
+   "group": "B",
+   "position": 662,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.C.r14",
+   "group": "C",
+   "position": 663,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.B.r14",
+   "group": "B",
+   "position": 664,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.C.r14",
+   "group": "C",
+   "position": 665,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.B.r14",
+   "group": "B",
+   "position": 666,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.C.r14",
+   "group": "C",
+   "position": 667,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.B.r14",
+   "group": "B",
+   "position": 668,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.C.r14",
+   "group": "C",
+   "position": 669,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.B.r14",
+   "group": "B",
+   "position": 670,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.C.r14",
+   "group": "C",
+   "position": 671,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.B.r14",
+   "group": "B",
+   "position": 672,
+   "repetition": 14,
+   "round": 14,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.B.r15",
+   "group": "B",
+   "position": 673,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.C.r15",
+   "group": "C",
+   "position": 674,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.B.r15",
+   "group": "B",
+   "position": 675,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.C.r15",
+   "group": "C",
+   "position": 676,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.B.r15",
+   "group": "B",
+   "position": 677,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.C.r15",
+   "group": "C",
+   "position": 678,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.B.r15",
+   "group": "B",
+   "position": 679,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.C.r15",
+   "group": "C",
+   "position": 680,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.B.r15",
+   "group": "B",
+   "position": 681,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.C.r15",
+   "group": "C",
+   "position": 682,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.B.r15",
+   "group": "B",
+   "position": 683,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.C.r15",
+   "group": "C",
+   "position": 684,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.B.r15",
+   "group": "B",
+   "position": 685,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.C.r15",
+   "group": "C",
+   "position": 686,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.B.r15",
+   "group": "B",
+   "position": 687,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.C.r15",
+   "group": "C",
+   "position": 688,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.B.r15",
+   "group": "B",
+   "position": 689,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.C.r15",
+   "group": "C",
+   "position": 690,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.B.r15",
+   "group": "B",
+   "position": 691,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.C.r15",
+   "group": "C",
+   "position": 692,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.B.r15",
+   "group": "B",
+   "position": 693,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.C.r15",
+   "group": "C",
+   "position": 694,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.B.r15",
+   "group": "B",
+   "position": 695,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.C.r15",
+   "group": "C",
+   "position": 696,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.B.r15",
+   "group": "B",
+   "position": 697,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.C.r15",
+   "group": "C",
+   "position": 698,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.B.r15",
+   "group": "B",
+   "position": 699,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.C.r15",
+   "group": "C",
+   "position": 700,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.B.r15",
+   "group": "B",
+   "position": 701,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.C.r15",
+   "group": "C",
+   "position": 702,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.B.r15",
+   "group": "B",
+   "position": 703,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.C.r15",
+   "group": "C",
+   "position": 704,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.B.r15",
+   "group": "B",
+   "position": 705,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.C.r15",
+   "group": "C",
+   "position": 706,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.B.r15",
+   "group": "B",
+   "position": 707,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.C.r15",
+   "group": "C",
+   "position": 708,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.B.r15",
+   "group": "B",
+   "position": 709,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.C.r15",
+   "group": "C",
+   "position": 710,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.B.r15",
+   "group": "B",
+   "position": 711,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.C.r15",
+   "group": "C",
+   "position": 712,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.B.r15",
+   "group": "B",
+   "position": 713,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.C.r15",
+   "group": "C",
+   "position": 714,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.B.r15",
+   "group": "B",
+   "position": 715,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.C.r15",
+   "group": "C",
+   "position": 716,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.B.r15",
+   "group": "B",
+   "position": 717,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.C.r15",
+   "group": "C",
+   "position": 718,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.B.r15",
+   "group": "B",
+   "position": 719,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.C.r15",
+   "group": "C",
+   "position": 720,
+   "repetition": 15,
+   "round": 15,
+   "scenario_id": "1930331196"
+  }
+ ],
+ "schedule_rule": [
+  "design_sha256 is the SHA-256 of the canonical manifest without the schedule and without design_sha256",
+  "round r (r = 1..15) plays repetition r of every configuration in both groups exactly once (48 games)",
+  "within round r the games alternate between the groups: B first in odd rounds, C first in even rounds",
+  "each group's 24 configurations are ordered by the ascending hex SHA-256 of the UTF-8 string '<design_sha256>:<r>:<group>:<scenario_id>.<condition>'",
+  "if the first game of a round repeats the configuration and group of the previous round's last game, the round's first two games of that group exchange places",
+  "positions 1..720 number the games in play order; the two groups' games of one configuration may follow each other, one configuration and group never plays twice in a row, and no game is added, removed or reordered after registration"
+ ],
+ "schema": "miaosuan-ab-experiment-manifest/1",
+ "secondary_metrics": {
+  "descriptive": "scores and margins in every condition, active-step rate, no-op rate, moves, occupations, shots, decision latency p50/p95/p99/max, decisions slower than 100 ms, 400 ms and 1 s",
+  "mechanism (deterministic within a state)": "duplicate same-target shoot commands per seat and step (harness count from emitted actions); reserved-target exclusions (units whose best shoot option was excluded); alternate-target redirections; fallbacks to occupation, movement and no action; excluded options; shots; unique targets engaged (sum over steps of distinct shoot targets); unique targets per step with a shot; code-516 refusals per 1,000 shoot actions",
+  "refusals (stochastic engine outcome)": "code 516 with its step evidence (own shots at the target in the step: 1 or at least 2), code 203, code 404, total engine refusals, factual classes",
+  "safety and regression": "project-gate rejections, contract errors, replay mismatches, code 1804, duplicate occupation commands, games that did not complete, deployment completion, new factual classes, policy and runtime digests"
+ },
+ "single_variable": "Within one seat's decision step at most one emitted shoot action targets the same enemy object. Units are processed in baseline-v1 order; when a unit's selected shoot action passes the final safety gate its target_obj_id is reserved for the rest of that seat's step; a later unit's shoot options on a reserved target are excluded before selection, and the unit selects exactly as baseline-v1 among what remains (the next shoot option in baseline order, else occupation, movement or nothing). A gate-rejected shot reserves nothing. Reservations never cross seats or steps. Everything else is baseline-v1 on baseline-v1-runtime-r1: context, candidates, priorities, rankings and tie-breaks, the occupation reservation, the target-bounded router, deployment and the safety gate, reused unchanged by import."
+}
