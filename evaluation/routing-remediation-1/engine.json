@@ -1,0 +1,448 @@
+{
+ "games": {
+  "rr-1": {
+   "comparison": {
+    "contract_errors": 0,
+    "decisions": 5762,
+    "different": 0,
+    "rejected_decisions": 0,
+    "shadow_contract_errors": 0,
+    "shadow_rejected_decisions": 0
+   },
+   "condition": "C1",
+   "engine_criterion": {
+    "pass": true,
+    "ratios": [
+     0.4134,
+     0.1737
+    ],
+    "rule": "first play decision <= 0.5 x the shadow's time"
+   },
+   "every_decision_compared": true,
+   "gc_thresholds": [
+    700,
+    10,
+    10
+   ],
+   "purpose": "both seats run the candidate",
+   "python": "3.10.20",
+   "scenario_id": "2130511121",
+   "seats": {
+    "1": {
+     "candidate_gc_max_ms": 0.083,
+     "candidate_ms": {
+      "max": 174.912,
+      "n": 2881,
+      "p50": 0.665,
+      "p95": 1.181,
+      "p99": 1.38
+     },
+     "contract_errors": {
+      "candidate": 0,
+      "shadow": 0
+     },
+     "decisions_compared": 2881,
+     "decisions_played": 2881,
+     "different": 0,
+     "engine_feedback_errors": 0,
+     "engine_feedback_errors_by_code": {},
+     "first_play": {
+      "candidate_cpu_ms": 174.916,
+      "candidate_ms": 174.912,
+      "decision": 1,
+      "ratio": 0.4134,
+      "shadow_cpu_ms": 423.099,
+      "shadow_ms": 423.109
+     },
+     "gate_rejections": 0,
+     "over_100ms": {
+      "candidate": 1,
+      "shadow": 1
+     },
+     "over_100ms_decisions": [
+      {
+       "candidate_gc_ms": 0.056,
+       "candidate_ms": 174.912,
+       "decision": 1,
+       "shadow_gc_ms": 0.068,
+       "shadow_ms": 423.109,
+       "stage": 2
+      }
+     ],
+     "rejected_decisions": {
+      "candidate": 0,
+      "shadow": 0
+     },
+     "replay_checks": 29,
+     "replay_mismatches": 0,
+     "shadow_ms": {
+      "max": 423.109,
+      "n": 2881,
+      "p50": 0.657,
+      "p95": 1.166,
+      "p99": 1.398
+     }
+    },
+    "11": {
+     "candidate_gc_max_ms": 0.11,
+     "candidate_ms": {
+      "max": 88.082,
+      "n": 2881,
+      "p50": 0.9,
+      "p95": 1.217,
+      "p99": 1.362
+     },
+     "contract_errors": {
+      "candidate": 0,
+      "shadow": 0
+     },
+     "decisions_compared": 2881,
+     "decisions_played": 2881,
+     "different": 0,
+     "engine_feedback_errors": 3,
+     "engine_feedback_errors_by_code": {
+      "516": 3
+     },
+     "first_play": {
+      "candidate_cpu_ms": 88.084,
+      "candidate_ms": 88.082,
+      "decision": 1,
+      "ratio": 0.1737,
+      "shadow_cpu_ms": 507.117,
+      "shadow_ms": 507.153
+     },
+     "gate_rejections": 0,
+     "over_100ms": {
+      "candidate": 0,
+      "shadow": 2
+     },
+     "over_100ms_decisions": [
+      {
+       "candidate_gc_ms": 0.11,
+       "candidate_ms": 88.082,
+       "decision": 1,
+       "shadow_gc_ms": 0.162,
+       "shadow_ms": 507.153,
+       "stage": 2
+      },
+      {
+       "candidate_gc_ms": 0.07,
+       "candidate_ms": 1.214,
+       "decision": 250,
+       "shadow_gc_ms": 140.021,
+       "shadow_ms": 141.296,
+       "stage": 2
+      }
+     ],
+     "rejected_decisions": {
+      "candidate": 0,
+      "shadow": 0
+     },
+     "replay_checks": 29,
+     "replay_mismatches": 0,
+     "shadow_ms": {
+      "max": 507.153,
+      "n": 2881,
+      "p50": 0.897,
+      "p95": 1.2,
+      "p99": 1.311
+     }
+    }
+   },
+   "session": "0351",
+   "session_close": {
+    "home_changed": false,
+    "integrity_changed": 0,
+    "integrity_missing": 0,
+    "integrity_ok": true,
+    "state_changed": false
+   },
+   "status": "COMPLETED",
+   "steps": 2881,
+   "trajectory": {
+    "baseline_v1_games": 8,
+    "first_shot_step": 101,
+    "first_shot_steps_of_baseline_v1": [
+     101
+    ],
+    "first_state_divergence_among_baseline_v1": [
+     102
+    ],
+    "first_state_divergence_from_baseline_v1": {
+     "2130511121.C1.r10": 102,
+     "2130511121.C1.r3": 102,
+     "2130511121.C1.r4": 102,
+     "2130511121.C1.r5": 102,
+     "2130511121.C1.r6": 102,
+     "2130511121.C1.r7": 102,
+     "2130511121.C1.r8": 102,
+     "2130511121.C1.r9": 102
+    }
+   }
+  },
+  "rr-2": {
+   "comparison": {
+    "contract_errors": 0,
+    "decisions": 2881,
+    "different": 0,
+    "rejected_decisions": 0,
+    "shadow_contract_errors": 0,
+    "shadow_rejected_decisions": 0
+   },
+   "condition": "C3",
+   "engine_criterion": {
+    "pass": true,
+    "ratios": [
+     0.174
+    ],
+    "rule": "first play decision <= 0.5 x the shadow's time"
+   },
+   "every_decision_compared": true,
+   "gc_thresholds": [
+    700,
+    10,
+    10
+   ],
+   "purpose": "the configuration of the old tail",
+   "python": "3.10.20",
+   "scenario_id": "2130511121",
+   "seats": {
+    "11": {
+     "candidate_gc_max_ms": 1132.391,
+     "candidate_ms": {
+      "max": 1133.74,
+      "n": 2881,
+      "p50": 1.205,
+      "p95": 1.239,
+      "p99": 1.363
+     },
+     "contract_errors": {
+      "candidate": 0,
+      "shadow": 0
+     },
+     "decisions_compared": 2881,
+     "decisions_played": 2881,
+     "different": 0,
+     "engine_feedback_errors": 0,
+     "engine_feedback_errors_by_code": {},
+     "first_play": {
+      "candidate_cpu_ms": 91.039,
+      "candidate_ms": 91.036,
+      "decision": 1,
+      "ratio": 0.174,
+      "shadow_cpu_ms": 523.155,
+      "shadow_ms": 523.174
+     },
+     "gate_rejections": 0,
+     "over_100ms": {
+      "candidate": 3,
+      "shadow": 2
+     },
+     "over_100ms_decisions": [
+      {
+       "candidate_gc_ms": 0.065,
+       "candidate_ms": 91.036,
+       "decision": 1,
+       "shadow_gc_ms": 0.158,
+       "shadow_ms": 523.174,
+       "stage": 2
+      },
+      {
+       "candidate_gc_ms": 643.565,
+       "candidate_ms": 644.907,
+       "decision": 1183,
+       "shadow_gc_ms": 0.067,
+       "shadow_ms": 1.333,
+       "stage": 2
+      },
+      {
+       "candidate_gc_ms": 0.065,
+       "candidate_ms": 1.222,
+       "decision": 1594,
+       "shadow_gc_ms": 806.998,
+       "shadow_ms": 808.342,
+       "stage": 2
+      },
+      {
+       "candidate_gc_ms": 848.781,
+       "candidate_ms": 850.143,
+       "decision": 1678,
+       "shadow_gc_ms": 0.071,
+       "shadow_ms": 1.364,
+       "stage": 2
+      },
+      {
+       "candidate_gc_ms": 1132.391,
+       "candidate_ms": 1133.74,
+       "decision": 2172,
+       "shadow_gc_ms": 0.07,
+       "shadow_ms": 1.362,
+       "stage": 2
+      }
+     ],
+     "rejected_decisions": {
+      "candidate": 0,
+      "shadow": 0
+     },
+     "replay_checks": 29,
+     "replay_mismatches": 0,
+     "shadow_ms": {
+      "max": 808.342,
+      "n": 2881,
+      "p50": 1.196,
+      "p95": 1.23,
+      "p99": 1.334
+     }
+    }
+   },
+   "session": "0352",
+   "session_close": {
+    "home_changed": false,
+    "integrity_changed": 0,
+    "integrity_missing": 0,
+    "integrity_ok": true,
+    "state_changed": false
+   },
+   "status": "COMPLETED",
+   "steps": 2881,
+   "trajectory": {
+    "baseline_v1_games": 11,
+    "first_shot_step": 525,
+    "first_shot_steps_of_baseline_v1": [
+     525
+    ],
+    "first_state_divergence_among_baseline_v1": [
+     526
+    ],
+    "first_state_divergence_from_baseline_v1": {
+     "2130511121.C3.r10": 526,
+     "2130511121.C3.r3": 526,
+     "2130511121.C3.r4": 526,
+     "2130511121.C3.r5": 526,
+     "2130511121.C3.r6": 526,
+     "2130511121.C3.r7": 526,
+     "2130511121.C3.r8": 526,
+     "2130511121.C3.r9": 526,
+     "latdiag-1": 526,
+     "latdiag-2": 526,
+     "latdiag-5": 526
+    }
+   }
+  },
+  "rr-3": {
+   "comparison": {
+    "contract_errors": 0,
+    "decisions": 1801,
+    "different": 0,
+    "rejected_decisions": 0,
+    "shadow_contract_errors": 0,
+    "shadow_rejected_decisions": 0
+   },
+   "condition": "C3",
+   "every_decision_compared": true,
+   "gc_thresholds": [
+    700,
+    10,
+    10
+   ],
+   "purpose": "small control scenario",
+   "python": "3.10.20",
+   "scenario_id": "2010131194",
+   "seats": {
+    "11": {
+     "candidate_gc_max_ms": 0.0,
+     "candidate_ms": {
+      "max": 1.94,
+      "n": 1801,
+      "p50": 0.16,
+      "p95": 0.171,
+      "p99": 0.193
+     },
+     "contract_errors": {
+      "candidate": 0,
+      "shadow": 0
+     },
+     "decisions_compared": 1801,
+     "decisions_played": 1801,
+     "different": 0,
+     "engine_feedback_errors": 0,
+     "engine_feedback_errors_by_code": {},
+     "first_play": {
+      "candidate_cpu_ms": 1.943,
+      "candidate_ms": 1.94,
+      "decision": 1,
+      "ratio": 0.058,
+      "shadow_cpu_ms": 33.477,
+      "shadow_ms": 33.475
+     },
+     "gate_rejections": 0,
+     "over_100ms": {
+      "candidate": 0,
+      "shadow": 0
+     },
+     "over_100ms_decisions": [],
+     "rejected_decisions": {
+      "candidate": 0,
+      "shadow": 0
+     },
+     "replay_checks": 19,
+     "replay_mismatches": 0,
+     "shadow_ms": {
+      "max": 33.475,
+      "n": 1801,
+      "p50": 0.146,
+      "p95": 0.158,
+      "p99": 0.163
+     }
+    }
+   },
+   "session": "0353",
+   "session_close": {
+    "home_changed": false,
+    "integrity_changed": 0,
+    "integrity_missing": 0,
+    "integrity_ok": true,
+    "state_changed": false
+   },
+   "status": "COMPLETED",
+   "steps": 1801,
+   "trajectory": {
+    "baseline_v1_games": 9,
+    "first_shot_step": 221,
+    "first_shot_steps_of_baseline_v1": [
+     221
+    ],
+    "first_state_divergence_among_baseline_v1": [
+     222,
+     242
+    ],
+    "first_state_divergence_from_baseline_v1": {
+     "2010131194.C3.r10": 222,
+     "2010131194.C3.r3": 222,
+     "2010131194.C3.r4": 222,
+     "2010131194.C3.r5": 222,
+     "2010131194.C3.r6": 222,
+     "2010131194.C3.r7": 222,
+     "2010131194.C3.r8": 222,
+     "2010131194.C3.r9": 222,
+     "latdiag-4": 222
+    }
+   }
+  }
+ },
+ "remediation_id": "routing-remediation-1",
+ "schema": "miaosuan-routing-engine-diagnostic/1",
+ "verdict": {
+  "all_completed": true,
+  "candidate_only_rejections_or_errors": 0,
+  "decisions_compared": 10444,
+  "different": 0,
+  "engine_criterion_pass": true,
+  "every_decision_compared": true,
+  "games_played": 3,
+  "games_registered": 3,
+  "pass": true,
+  "replay_mismatches": 0,
+  "sessions_left_state_unchanged": true
+ }
+}
