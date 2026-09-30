@@ -1,0 +1,136 @@
+{
+ "equivalent": {
+  "survived": 2,
+  "total": 2
+ },
+ "mutants": [
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "reserve before gate acceptance",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "gate verdict over the step's proposals so far",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "reservations not cleared per step",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "reservations shared across seats within a step",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "weapon reserved instead of target",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "next-best shoot option skipped",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "unit order reversed",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "shoot ranking changed (higher target id first)",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "all shooting suppressed after the first shot",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "two shots allowed per target",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "no reservation at all",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "unchanged selections labelled as displaced",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "exclusion names the excluded unit as the reserver",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "inherited occupation reservation dropped",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "reservation reason missing from the no-op reason",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "displaced unit's markers dropped",
+   "outcome": "killed"
+  },
+  {
+   "class": "non-equivalent",
+   "expected": "killed",
+   "mutant": "exclusions not recorded",
+   "outcome": "killed"
+  },
+  {
+   "argument": "without targets the bounded router runs the frozen full search, whose costs and paths for every objective are the bounded search's (routing-remediation-1, E3-E5); only work changes",
+   "class": "equivalent",
+   "expected": "survived",
+   "mutant": "runtime r1 targets not set",
+   "outcome": "survived"
+  },
+  {
+   "argument": "best(engage) is in excluded exactly when its target is reserved, since excluded holds every option with a reserved target",
+   "class": "equivalent",
+   "expected": "survived",
+   "mutant": "exclusion test on the filtered list",
+   "outcome": "survived"
+  }
+ ],
+ "non_equivalent": {
+  "killed": 17,
+  "total": 17
+ },
+ "pass": true,
+ "schema": "miaosuan-shoot-mutation/1",
+ "target": "src/miaosuan_agent/experiments/shoot_reservation.py",
+ "target_sha256": "07ae9b0b367a0d86aa1b9cb80c65c09718ab9fc073a53b7f06dbddd6ce47903d",
+ "tests": [
+  "tests.test_shoot_reservation"
+ ],
+ "unexpected": []
+}
