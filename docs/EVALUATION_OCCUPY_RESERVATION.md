@@ -147,6 +147,11 @@ The candidate emitted no duplicate same-objective occupation command (harness co
 
 One code-203 refusal was on an occupation, not a shot (engine message `CantControlDiedOperator`: the occupying unit, which the policy only orders when it is on the map at the start of the step, was destroyed during the step). The registered instance classifier defines 203 for shots only and left it unclassified, as reported above; the code-level category of the taxonomy, whose evidence came from shots, calls every 203 "shooter destroyed" and so mislabels this one occurrence.
 
+> Correction (2026-09-30; analysis only, the registered files and counts are unchanged): the
+> code-level categories of this experiment's refusal taxonomy interpret a code alone and are
+> superseded by factual classes (action type, code, engine message) and an evidence-backed
+> attribution; see `docs/REFUSAL_TAXONOMY.md`.
+
 ### Direct comparison with baseline-v0
 
 Suite games only, seats of the policy under test. **D** marks a deterministic property of the policy; **S** marks a count that also depends on the stochastic engine trajectory (the two suites diverged after their first shots), so its difference is descriptive.

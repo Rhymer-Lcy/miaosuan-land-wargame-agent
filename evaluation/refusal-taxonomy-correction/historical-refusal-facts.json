@@ -1,0 +1,233 @@
+{
+ "derived_by": "scripts/derive_historical_refusal_facts.py from the private game records, unchanged",
+ "fact": "(action type, error code, normalized engine message); see evaluation/refusals.py",
+ "schema": "miaosuan-historical-refusal-facts/1",
+ "sets": [
+  {
+   "by_code": {},
+   "by_code_and_type": null,
+   "complete": true,
+   "evaluation": "baseline-v0",
+   "facts": [],
+   "games": 2,
+   "part": "gate1",
+   "policy": "baseline-v0",
+   "public_file": "evaluation/baseline-v0/results.json",
+   "public_part": "gate1",
+   "public_sha256": "13dad290a452e953d50e9043321258038fce19ae0257592509e14bb5ccb77fbe",
+   "seats_of_policy": 4
+  },
+  {
+   "by_code": {
+    "1804": 157,
+    "203": 7,
+    "516": 23
+   },
+   "by_code_and_type": null,
+   "complete": false,
+   "evaluation": "baseline-v0",
+   "facts": [
+    {
+     "action_type": null,
+     "code": 203,
+     "count": 7,
+     "message_not_retained": 7,
+     "messages": {}
+    },
+    {
+     "action_type": null,
+     "code": 516,
+     "count": 23,
+     "message_not_retained": 23,
+     "messages": {}
+    },
+    {
+     "action_type": null,
+     "code": 1804,
+     "count": 157,
+     "message_not_retained": 157,
+     "messages": {}
+    }
+   ],
+   "games": 64,
+   "part": "suite",
+   "policy": "baseline-v0",
+   "public_file": "evaluation/baseline-v0/results.json",
+   "public_part": "suite",
+   "public_sha256": "13dad290a452e953d50e9043321258038fce19ae0257592509e14bb5ccb77fbe",
+   "seats_of_policy": 64
+  },
+  {
+   "by_code": {
+    "1804": 76,
+    "203": 2,
+    "516": 7
+   },
+   "by_code_and_type": {
+    "1804/5": 76,
+    "203/2": 2,
+    "516/2": 7
+   },
+   "complete": false,
+   "evaluation": "baseline-v0",
+   "facts": [
+    {
+     "action_type": 2,
+     "code": 203,
+     "count": 2,
+     "message_not_retained": 0,
+     "messages": {
+      "CantControlDiedOperator": 2
+     }
+    },
+    {
+     "action_type": 2,
+     "code": 516,
+     "count": 7,
+     "message_not_retained": 0,
+     "messages": {
+      "CantShootToDiedBop": 7
+     }
+    },
+    {
+     "action_type": 5,
+     "code": 1804,
+     "count": 76,
+     "message_not_retained": 44,
+     "messages": {
+      "CantOccupyCauseAlreadyMy": 32
+     }
+    }
+   ],
+   "games": 4,
+   "part": "diagnostics",
+   "policy": "baseline-v0",
+   "public_file": "evaluation/baseline-v0/diagnostics.json",
+   "public_part": "engine_messages",
+   "public_sha256": "5d08e21e583dd42585f4d9edda79f7f47344a4a71a8db671ea9560d7154c8408",
+   "seats_of_policy": 8
+  },
+  {
+   "by_code": {
+    "203": 1
+   },
+   "by_code_and_type": {
+    "203/2": 1
+   },
+   "complete": true,
+   "evaluation": "baseline-v1-candidate-occupy-reservation",
+   "facts": [
+    {
+     "action_type": 2,
+     "code": 203,
+     "count": 1,
+     "message_not_retained": 0,
+     "messages": {
+      "CantControlDiedOperator": 1
+     }
+    }
+   ],
+   "games": 2,
+   "part": "gate1-attempt-1",
+   "policy": "baseline-v1-candidate-occupy-reservation",
+   "public_file": "evaluation/baseline-v1-candidate-occupy-reservation/results-gate1-attempt-1.json",
+   "public_part": "gate1",
+   "public_sha256": "b8578841b813492e64e702c4f73ca7b7ed61ede9088f19063fe91f6c251bedc1",
+   "seats_of_policy": 4
+  },
+  {
+   "by_code": {
+    "203": 1
+   },
+   "by_code_and_type": {
+    "203/2": 1
+   },
+   "complete": true,
+   "evaluation": "baseline-v1-candidate-occupy-reservation",
+   "facts": [
+    {
+     "action_type": 2,
+     "code": 203,
+     "count": 1,
+     "message_not_retained": 0,
+     "messages": {
+      "CantControlDiedOperator": 1
+     }
+    }
+   ],
+   "games": 2,
+   "part": "gate1",
+   "policy": "baseline-v1-candidate-occupy-reservation",
+   "public_file": "evaluation/baseline-v1-candidate-occupy-reservation/results.json",
+   "public_part": "gate1",
+   "public_sha256": "ea0ec674e8e51e546684fb75696673e5c81d32d6c9dd7a0d11796a91aeaeda07",
+   "seats_of_policy": 4
+  },
+  {
+   "by_code": {
+    "203": 10,
+    "516": 18
+   },
+   "by_code_and_type": {
+    "203/2": 9,
+    "203/5": 1,
+    "516/2": 18
+   },
+   "complete": true,
+   "evaluation": "baseline-v1-candidate-occupy-reservation",
+   "facts": [
+    {
+     "action_type": 2,
+     "code": 203,
+     "count": 9,
+     "message_not_retained": 0,
+     "messages": {
+      "CantControlDiedOperator": 9
+     }
+    },
+    {
+     "action_type": 5,
+     "code": 203,
+     "count": 1,
+     "message_not_retained": 0,
+     "messages": {
+      "CantControlDiedOperator": 1
+     }
+    },
+    {
+     "action_type": 2,
+     "code": 516,
+     "count": 18,
+     "message_not_retained": 0,
+     "messages": {
+      "CantShootToDiedBop": 18
+     }
+    }
+   ],
+   "games": 64,
+   "part": "suite",
+   "policy": "baseline-v1-candidate-occupy-reservation",
+   "public_file": "evaluation/baseline-v1-candidate-occupy-reservation/results.json",
+   "public_part": "suite",
+   "public_sha256": "ea0ec674e8e51e546684fb75696673e5c81d32d6c9dd7a0d11796a91aeaeda07",
+   "seats_of_policy": 64
+  }
+ ],
+ "superseded": [
+  {
+   "correction": "The category was assigned to every code 203 from the code alone. The candidate suite recorded code 203 with the message CantControlDiedOperator on shots and on an occupation (see the facts of its suite set), so the category misnames the occupation. The registered files are left unchanged; the factual classes in this file supersede the category.",
+   "said": "code 203: action type shoot; category 'same-step conflict: shooter destroyed earlier in the step'",
+   "where": "evaluation/baseline-v1-candidate-occupy-reservation/manifest.json (refusal_taxonomy.codes.203) and evaluation/baseline-v1-candidate-occupy-reservation/results.json (refusal_decomposition.by_code_category)"
+  },
+  {
+   "correction": "The baseline-v0 suite records hold the code only: the action type and the message in that table were taken from separate diagnostic games, where every code-203 refusal was a shot. The action type and the message of the suite refusals with code 203 were not recorded and are unknown.",
+   "said": "code 203 is a shot by a unit destroyed earlier in the step; the table gives action 'shoot' and a message for the suite refusals with code 203",
+   "where": "docs/EVALUATION.md (engine-reported errors table and summary) and docs/BASELINE.md (limitations)"
+  },
+  {
+   "correction": "It left the occupation unclassified, which was correct, but read the code as shooting-specific. Attribution 2 (src/miaosuan_agent/evaluation/refusals.py) applies the code-203 rule to any action type and requires the actor's absence after the step as evidence.",
+   "said": "a code-203 refusal is classified only for shots ('shooter present at step start')",
+   "where": "attribution 1 (src/miaosuan_agent/evaluation/effects.py, refusal_context), used for the candidate results"
+  }
+ ]
+}

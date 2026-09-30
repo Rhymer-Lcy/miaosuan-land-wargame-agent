@@ -90,7 +90,9 @@ def feedback_error_code(entry: Mapping[str, Any]) -> Optional[Any]:
     return code if code is not None else "unspecified"
 
 
-#: Start-of-step context classes of a refused action (instance level). Anything not matched is
+#: Start-of-step context classes of a refused action (instance level): attribution 1, recorded since
+#: the occupation-reservation experiment and kept unchanged for its results. It classifies code 203 on
+#: shots only; attribution 2 in evaluation/refusals.py supersedes it. Anything not matched is
 #: reported as unexplained or unclassified, never assigned a benign cause by default.
 DUPLICATE_OCCUPATION = "same-step: several own occupations of the objective"
 OBJECTIVE_ALREADY_OWN = "objective held by own side at step start"

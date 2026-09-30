@@ -39,7 +39,9 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/EVALUATION.md` | the registered evaluation protocol of `baseline-v0` and its results |
 | `docs/BASELINE_V1.md` | identity of `baseline-v1`: the one change, its digests and its limitations |
 | `docs/EVALUATION_OCCUPY_RESERVATION.md` | the registered single-variable experiment that produced `baseline-v1`, and its results |
+| `docs/REFUSAL_TAXONOMY.md` | how engine refusals are recorded (facts) and attributed (versioned rules); the code-203 correction |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
+| `evaluation/refusal-taxonomy-correction/` | historical refusal facts derived from the unchanged records |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy

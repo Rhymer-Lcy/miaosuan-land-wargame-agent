@@ -18,6 +18,9 @@ PLAY_TYPES = {str(int(t)) for t in (ActionType.MOVE, ActionType.SHOOT, ActionTyp
 #: Seat fields recorded by harness versions after the ``baseline-v0`` evaluation (absent from its records).
 LATER_SEAT_FIELDS = ("refusal_contexts", "suppressions", "steps_with_suppression", "duplicate_occupation_steps",
                      "duplicate_occupation_commands")
+#: Seat fields of the factual refusal record (evaluation/refusals.py); only the counts are public.
+PUBLIC_REFUSAL_FIELDS = ("refusal_facts", "refusal_attributions")
+REFUSAL_FIELDS = ("refusals",) + PUBLIC_REFUSAL_FIELDS
 COUNTED_LATER_FIELDS = ("suppressions", "steps_with_suppression", "duplicate_occupation_steps",
                         "duplicate_occupation_commands")
 RECORD_FIELDS = ("schema", "game_id", "status", "completion", "steps", "done", "stage_transitions", "final_scores",
@@ -152,6 +155,7 @@ def public_game(record: Mapping[str, Any]) -> Dict[str, Any]:
             "feedback_entries": s["feedback_entries"], "feedback_errors_by_code": s["feedback_errors_by_code"],
             "feedback_errors_by_code_and_type": s.get("feedback_errors_by_code_and_type"),
             **{name: s[name] for name in LATER_SEAT_FIELDS if name in s},
+            **{name: s[name] for name in PUBLIC_REFUSAL_FIELDS if name in s},
         } for s in record.get("seats", [])],
     }
 
@@ -207,9 +211,14 @@ def condition_summary(records: Sequence[Mapping[str, Any]], policy: str = BASELI
 def refusal_decomposition(records: Sequence[Mapping[str, Any]], policy: str,
                           taxonomy: Mapping[str, Mapping[str, Any]]) -> Dict[str, Any]:
     """Supplementary to G4, which it does not replace: engine refusals of the policy under test by code,
-    by the evidence-backed code category of ``taxonomy`` (unknown codes stay ``unclassified``) and, where
-    the records carry them, by start-of-step context class. Every refused action had been accepted by
-    the project gate against the start-of-step contract."""
+    by the code category of ``taxonomy`` (unknown codes stay ``unclassified``) and, where the records
+    carry them, by start-of-step context class. Every refused action had been accepted by the project
+    gate against the start-of-step contract.
+
+    Kept unchanged so that registered results regenerate. A code-level category is an interpretation
+    of the code alone; the registered taxonomy of the occupation-reservation experiment calls every
+    code 203 a destroyed shooter, although 203 also occurs on occupations. The factual classes and the
+    attribution of ``evaluation/refusals.py`` supersede it (docs/REFUSAL_TAXONOMY.md)."""
     seats = [seat for record in records for seat in _baseline_seats(record, policy)]
     codes: Dict[str, int] = {}
     contexts: Dict[str, int] = {}

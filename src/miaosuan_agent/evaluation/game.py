@@ -22,7 +22,7 @@ from typing import Any, Callable, Collection, Dict, List, Mapping, Optional, Seq
 
 from ..boundary import ContractError, Origin, Stage, StateView, normalize_state
 from ..decision import BASELINE_ID, digest
-from . import effects
+from . import effects, refusals
 from .canonical import value_digest
 from .manifest import REPLAY_CHECK_EVERY, WALL_CAP_SECONDS, GameSpec
 
@@ -65,6 +65,7 @@ class SeatLog:
         self.steps_with_suppression = 0
         self.duplicate_occupation_steps = 0
         self.duplicate_occupation_commands = 0
+        self.refusals: List[Dict[str, Any]] = []
 
     def record(self, step: int, trace, produced: Sequence[Mapping[str, Any]], latency: float) -> None:
         self.latency_us.append(round(latency * 1e6))
@@ -103,6 +104,10 @@ class SeatLog:
             examples.append({"step": step, "action": dict(message),
                              "error_message": str(error.get("message"))[:200]})
 
+    def refusal(self, record: Mapping[str, Any]) -> None:
+        """Keep the factual record of one refused action (private: it names units and steps)."""
+        self.refusals.append(dict(record))
+
     def effect(self, kind: int, outcome: str) -> None:
         self.effects.setdefault(kind, Counter())[outcome] += 1
 
@@ -128,6 +133,9 @@ class SeatLog:
             "suppressions": self.suppressions, "steps_with_suppression": self.steps_with_suppression,
             "duplicate_occupation_steps": self.duplicate_occupation_steps,
             "duplicate_occupation_commands": self.duplicate_occupation_commands,
+            "refusals": self.refusals,
+            "refusal_facts": refusals.fact_counts(self.refusals),
+            "refusal_attributions": refusals.attribution_counts(self.refusals),
         }
 
 
@@ -144,7 +152,9 @@ def play(train_env_cls: Callable[[], Any], agent_factories: Mapping[str, Callabl
                               "map_id": spec.map_id, "condition": spec.condition, "repetition": spec.repetition,
                               "policies": {"red": spec.red, "blue": spec.blue}, "step_cap": spec.step_cap,
                               "wall_cap_seconds": wall_cap, "status": "FAIL", "phase": "construct",
-                              "failure": None, "rng_probe": {}}
+                              "failure": None, "rng_probe": {},
+                              "refusal_schema": {"fact": refusals.FACT_SCHEMA,
+                                                 "attribution": refusals.ATTRIBUTION_VERSION}}
     probe = (lambda point: record["rng_probe"].__setitem__(point, rng_probe())) if rng_probe else (lambda point: None)
     timings = {"engine_step": 0.0, "decisions": 0.0}
     logs: List[SeatLog] = []
@@ -266,6 +276,8 @@ def play(train_env_cls: Callable[[], Any], agent_factories: Mapping[str, Callabl
                         own = [a for owner, a in emitted if owner.seat == actor]
                         seats[actor].refusal_contexts[effects.refusal_context(
                             entry, code, seats[actor].faction, start_hexes, start_flags, own)] += 1
+                        seats[actor].refusal(refusals.describe(entry, code, seats[actor].faction, steps - 1,
+                                                               before, everything, own))
             decision_step = before.global_observation.time().cur_step
             for log, action in emitted:
                 outcome = effects.classify(action, log.faction, before.global_observation, everything, decision_step)

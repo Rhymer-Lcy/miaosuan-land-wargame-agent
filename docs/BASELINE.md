@@ -94,7 +94,9 @@ the start hex and never a roadblock for vehicles. Rejections are recorded in the
   neither of the process's global generators, and no seed is documented.
 * `valid_actions` describes the start of a step, and actions resolved earlier in the same step can
   invalidate later ones (refusal codes 1804, 516 and 203). A shot by a unit destroyed earlier in the
-  step (203) cannot be foreseen from start-of-step information by any policy.
+  step (203) cannot be foreseen from start-of-step information by any policy. (Correction
+  2026-09-30: code 203, engine message `CantControlDiedOperator`, has also been recorded on an
+  occupation, so it is not a shooting code; see `docs/REFUSAL_TAXONOMY.md`.)
 * The `actions` feedback echoes unit actions but not deployment completion (observed on 4.1.0).
 * Only the SDK's engine 4.1.0 (Linux, CPython 3.10) was used. The online platform documents SDK
   5.0.0 or later, so its behaviour may differ.

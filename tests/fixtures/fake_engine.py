@@ -10,24 +10,32 @@ received action is echoed in the all-seeing ``actions`` field, with an error whe
 from __future__ import annotations
 
 import copy
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 from . import synthetic as syn
 
 SEATS = {0: 1, 1: 11}
 RED_UNIT, BLUE_UNIT = syn.RED_UNIT, syn.BLUE_UNIT
+#: Messages borrowed from engine 4.1.0 for the codes this stand-in can return with ``engine_messages``.
+ENGINE_MESSAGES = {1804: "CantOccupyCauseAlreadyMy", 516: "CantShootToDiedBop", 203: "CantControlDiedOperator"}
 
 
 class FakeEnv:
     """Options: ``play_steps`` before done, ``never_done``, ``fail_at`` (raise in that step),
     ``noise_at`` (perturb the state from that step on), ``refuse_moves`` (echo an error, no effect),
     ``red_wingmen`` (extra red units starting on the red tank's hex, so several red units reach the
-    objective together; an occupation of an objective the side already holds is refused with 1804)."""
+    objective together; an occupation of an objective the side already holds is refused with 1804),
+    ``doomed`` ((call, obj_id): that unit is removed before the actions of that ``step`` call are
+    applied, so its own action is refused with 203 and a shot at it with 516, whatever the action type)
+    and ``engine_messages`` (refusals carry the engine's message for the code instead of a synthetic one)."""
 
     def __init__(self, play_steps: int = 30, never_done: bool = False, fail_at: Optional[int] = None,
-                 noise_at: Optional[int] = None, refuse_moves: bool = False, red_wingmen: int = 0) -> None:
+                 noise_at: Optional[int] = None, refuse_moves: bool = False, red_wingmen: int = 0,
+                 doomed: Optional[Tuple[int, int]] = None, engine_messages: bool = False) -> None:
         self.play_steps, self.never_done, self.fail_at = play_steps, never_done, fail_at
         self.noise_at, self.refuse_moves, self.red_wingmen = noise_at, refuse_moves, red_wingmen
+        self.doomed, self.engine_messages = doomed, engine_messages
+        self.destroyed: set = set()
         self.units: Dict[int, Dict[str, Any]] = {}
         self.cities: List[Dict[str, Any]] = []
         self.ended = {0: False, 1: False}
@@ -55,8 +63,9 @@ class FakeEnv:
             city = next((c for c in self.cities if c["coord"] == unit["cur_hex"]), None)
             if city is not None and city["flag"] != faction:
                 actions[5] = None
-            enemy = next(u for u in self.units.values() if u["color"] != faction)
-            if abs(enemy["cur_hex"] // 100 - unit["cur_hex"] // 100) + abs(enemy["cur_hex"] % 100 - unit["cur_hex"] % 100) <= 2:
+            enemy = next((u for u in self.units.values() if u["color"] != faction), None)
+            if enemy is not None and abs(enemy["cur_hex"] // 100 - unit["cur_hex"] // 100) + abs(
+                    enemy["cur_hex"] % 100 - unit["cur_hex"] % 100) <= 2:
                 actions[2] = [{"target_obj_id": enemy["obj_id"], "weapon_id": 43, "attack_level": 2}]
             valid[obj_id] = actions
         return valid
@@ -84,11 +93,15 @@ class FakeEnv:
         if self.fail_at is not None and self.calls == self.fail_at:
             raise RuntimeError("synthetic engine failure")
         self.echo, self.judge = [], []
+        if self.doomed is not None and self.calls == self.doomed[0] and self.doomed[1] in self.units:
+            del self.units[self.doomed[1]]
+            self.destroyed.add(self.doomed[1])
         for action in actions:
             error = self._apply(action)
             entry = {"cur_step": self.cur_step, "message": dict(action)}
             if error:
-                entry["error"] = {"code": error, "message": "synthetic refusal"}
+                message = ENGINE_MESSAGES.get(error, "synthetic refusal") if self.engine_messages else "synthetic refusal"
+                entry["error"] = {"code": error, "message": message}
             self.echo.append(entry)
         if self.stage == 1 and all(self.ended.values()):
             self.stage = 2
@@ -106,6 +119,8 @@ class FakeEnv:
             self.ended[faction] = True
             return None
         unit = self.units.get(action.get("obj_id"))
+        if unit is None and action.get("obj_id") in self.destroyed:
+            return 203
         if unit is None or unit["color"] != faction:
             return 11
         if action["type"] == 1:
@@ -122,6 +137,8 @@ class FakeEnv:
             city["flag"] = faction
             return None
         if action["type"] == 2:
+            if action.get("target_obj_id") in self.destroyed:
+                return 516
             self.judge.append({"att_obj_id": unit["obj_id"], "target_obj_id": action["target_obj_id"],
                                "cur_step": self.cur_step, "wp_id": action["weapon_id"], "damage": 0})
             return None

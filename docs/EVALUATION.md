@@ -177,7 +177,7 @@ Manifest `01c1f88b064ace501e56018576426cea6291bbabdce0e35387f72bec2d0068e6`; eve
 * **Reliable.** 64 of 64 suite games and 2 of 2 Gate 1 games reached the engine's done flag within the caps, without an exception or a contract error.
 * **Active.** Every baseline seat emitted play-stage unit actions (G3 passed in 24 of 24 applicable configurations).
 * **Deterministic where the engine is.** Decision traces were identical at every step at which the engine states of two repetitions agreed, and every in-game replay check matched (G5 passed in 24 of 24). The engine repeated exactly in all 16 configurations in which no shot was fired and diverged in all 16 in which one was, each time exactly one step after the first shot and never earlier: its randomness shows in combat adjudication.
-* **Not fully legal by the registered criterion.** G4 failed in 14 of 24 applicable configurations. The gate rejected nothing and every move and deployment completion took effect, but the engine refused 187 of the baseline's 3,383 unit actions (5.5%). All three refusal codes are same-step conflicts: the refused action was listed as legal at the start of the step, and an action resolved earlier in the same step removed its precondition. Code 1804 is pure redundancy (several own units occupying one objective in the same step) and a policy can avoid it; 516 (a shot at a target destroyed earlier in the step) can be avoided only by giving up follow-up shots whose predecessor may leave the target alive; 203 (a shot by a unit destroyed earlier in the step) cannot be foreseen from start-of-step information. The criterion counts all three and is reported as registered.
+* **Not fully legal by the registered criterion.** G4 failed in 14 of 24 applicable configurations. The gate rejected nothing and every move and deployment completion took effect, but the engine refused 187 of the baseline's 3,383 unit actions (5.5%). All three refusal codes are same-step conflicts: the refused action was listed as legal at the start of the step, and an action resolved earlier in the same step removed its precondition. Code 1804 is pure redundancy (several own units occupying one objective in the same step) and a policy can avoid it; 516 (a shot at a target destroyed earlier in the step) can be avoided only by giving up follow-up shots whose predecessor may leave the target alive; 203 (a shot by a unit destroyed earlier in the step) cannot be foreseen from start-of-step information. The criterion counts all three and is reported as registered. (Correction 2026-09-30: code 203 is not specific to shots; see the note under the engine-reported errors table.)
   In 3 further diagnostic games every refusal fitted this reading: all 45 refusals with code 1804 concerned an objective not held at the start of the step for which several occupations were issued in that step; all 7 with code 516 concerned a target present at the start of the step and fired at more than once in it; and the single refusal with code 203 concerned a shooter present at the start of the step.
 * **Outcomes, descriptively.** Against the inert control the baseline side's engine total was higher in 32 of 32 games. As registered, no claim of relative strength is drawn from this.
 * **Fast, with rare slow steps.** The 99th percentile of decision latency was at most 1.205 ms in every condition; the slowest single decision took 1304.309 ms. What made the rare slow steps slow was not measured.
@@ -212,6 +212,12 @@ Engine-reported errors: 187 of 3,383 baseline unit actions (5.5%) were refused b
 | 1804 | occupy | `CantOccupyCauseAlreadyMy` | 88 | 37 | 32 | 157 |
 | 516 | shoot | `CantShootToDiedBop` | 17 | 4 | 2 | 23 |
 | 203 | shoot | `CantControlDiedOperator` | 7 | 0 | 0 | 7 |
+
+> Correction (2026-09-30; analysis only, counts unchanged): the suite records of this evaluation hold
+> the refusal code only. The Action and Engine message columns come from the diagnostic games, in
+> which every code-203 refusal was a shot; the action type of the suite refusals with code 203 is
+> unknown, and a later evaluation recorded code 203, with the same message, on an occupation. Code
+> 203 does not identify a shot. See `docs/REFUSAL_TAXONOMY.md`.
 
 Activity (baseline actions emitted, summed over the condition's games):
 

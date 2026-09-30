@@ -47,7 +47,8 @@ Carried over from `baseline-v0` except where the change removed them; material n
 
 * Shooting is uncoordinated: several units may fire at one target in a step (code 516, 18 in the
   suite), and a shot or an occupation by a unit destroyed earlier in the step is refused (code 203,
-  10 in the suite). Fire still concentrates on the lowest-id target among equal attack levels.
+  10 in the suite; 9 shots and 1 occupation, see `docs/REFUSAL_TAXONOMY.md`). Fire still
+  concentrates on the lowest-id target among equal attack levels.
 * A suppressed unit, like any unit standing on an unheld objective, waits there; once every
   objective is held, all units idle. The no-op rate of unit-steps stays above 0.99.
 * Movement ignores enemy positions, minefields and line of sight, never changes movement state and
