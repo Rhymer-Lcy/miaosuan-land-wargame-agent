@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Play the registered evaluation plan: one isolated engine process (and session) per game.
 #
-# Usage: scripts/run_evaluation.sh --python PYTHON --sdk-archive ZIP --plan gate1|suite|study
+# Usage: scripts/run_evaluation.sh --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab
 #                                  [--evaluation NAME] [--engine-install DIR]
 #
 #   --plan gate1       the two Gate 1 games (registered scenario, mirror of the policy under test)
@@ -10,6 +10,11 @@
 #                      study's own manifest is re-derived as well, every game re-checks the pinned
 #                      baseline-v1 digest, and the run stops after 3 consecutive games that did not
 #                      complete (records are analysed by scripts/analyze_variance_study.py)
+#   --plan ab          every game of the registered shoot-reservation experiment, both groups, in its
+#                      registered schedule; its manifest is re-derived, both groups' digests are checked
+#                      before the first and after the last game (group B must be baseline-v1-runtime-r1),
+#                      every game re-checks its group's digest, and the run stops after 3 consecutive
+#                      games that did not complete (records: scripts/analyze_shoot_experiment.py)
 #   --evaluation NAME  the registered evaluation: evaluation/NAME/manifest.json, records under
 #                      local/evaluation/NAME (default baseline-v0). The baseline-v0 manifest is
 #                      re-derived before every run; a candidate evaluation also re-derives its own.
@@ -37,8 +42,8 @@ while [[ $# -gt 0 ]]; do
         *) echo "unknown argument: $1" >&2; exit 2 ;;
     esac
 done
-if [[ -z $PYTHON || -z $ARCHIVE || ( $PLAN != gate1 && $PLAN != suite && $PLAN != study ) ]]; then
-    echo "usage: $0 --python PYTHON --sdk-archive ZIP --plan gate1|suite|study [--evaluation NAME] [--engine-install DIR]" >&2
+if [[ -z $PYTHON || -z $ARCHIVE || ( $PLAN != gate1 && $PLAN != suite && $PLAN != study && $PLAN != ab ) ]]; then
+    echo "usage: $0 --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab [--evaluation NAME] [--engine-install DIR]" >&2
     exit 2
 fi
 if [[ $(id -u) -eq 0 ]]; then
@@ -71,6 +76,33 @@ if [[ $NAME != baseline-v0 ]]; then
 fi
 if [[ $PLAN == study ]]; then
     PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/build_variance_study_manifest.py" --check
+fi
+if [[ $PLAN == ab ]]; then
+    PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/build_shoot_experiment_manifest.py" --check
+fi
+experiment_digest_check() {
+    PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$1" <<'PY'
+import importlib.util, json, sys
+from pathlib import Path
+from miaosuan_agent.evaluation import shoot_experiment as sx
+spec = importlib.util.spec_from_file_location("rev", Path(sys.argv[1]).parents[2] / "scripts" / "run_evaluation.py")
+rev = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(rev)
+manifest = json.load(open(sys.argv[1], encoding="utf-8"))
+if not sx.is_experiment(manifest):
+    sys.exit("REFUSED: --plan ab needs the shoot-reservation experiment manifest")
+for group in sx.GROUPS:
+    registered = manifest["groups"][group]["policy_source"]
+    source = rev.registered_source_digest(registered)
+    if source != registered["sha256"]:
+        sys.exit(f"REFUSED at {sys.argv[2]}: group {group}'s policy source is not the registered one ({source})")
+    if group == "B" and source != sx.RUNTIME_R1_SOURCE_SHA256:
+        sys.exit(f"REFUSED at {sys.argv[2]}: group B is not baseline-v1-runtime-r1 ({source})")
+    print(f"group {group} policy source at {sys.argv[2]}: {source}")
+PY
+}
+if [[ $PLAN == ab ]]; then
+    experiment_digest_check start
 fi
 study_digest_check() {
     PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$1" <<'PY'
@@ -110,10 +142,13 @@ fi
 mapfile -t GAMES < <(PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$PLAN" <<'PY'
 import json, sys
 from miaosuan_agent.evaluation import manifest as mf
+from miaosuan_agent.evaluation import shoot_experiment as sx
 from miaosuan_agent.evaluation import variance_study as vs
 manifest = json.load(open(sys.argv[1], encoding="utf-8"))
 if sys.argv[2] == "study":
     specs = vs.scheduled_games(manifest)
+elif sys.argv[2] == "ab":
+    specs = sx.scheduled_games(manifest)
 else:
     specs = mf.gate1_games(manifest) if sys.argv[2] == "gate1" else mf.games(manifest)
 for spec in specs:
@@ -167,8 +202,8 @@ for id in "${GAMES[@]}"; do
         if [[ $status -ne 1 ]]; then
             exit "$status"
         fi
-        if [[ $PLAN == study && $consecutive -ge 3 ]]; then
-            echo "STOP: 3 consecutive games did not complete; the study stops as registered" >&2
+        if [[ ( $PLAN == study || $PLAN == ab ) && $consecutive -ge 3 ]]; then
+            echo "STOP: 3 consecutive games did not complete; the run stops as registered" >&2
             exit 1
         fi
     else
@@ -178,6 +213,8 @@ done
 
 if [[ $PLAN == study ]]; then
     study_digest_check end
+elif [[ $PLAN == ab ]]; then
+    experiment_digest_check end
 else
     host summarize
 fi

@@ -9,7 +9,9 @@
 installation on PYTHONPATH, empty environment). It refuses to play when the policy source differs
 from the one recorded in the manifest, so the registered policy cannot change silently; a game of
 the variance study also refuses unless that digest is the frozen baseline-v1 digest. The study's
-games are its registered schedule; its analysis is ``scripts/analyze_variance_study.py``. Records
+games are its registered schedule; its analysis is ``scripts/analyze_variance_study.py``. A game of
+the shoot-reservation experiment checks the registered digest of its own group, and group B's must
+be the baseline-v1-runtime-r1 digest; its analysis is ``scripts/analyze_shoot_experiment.py``. Records
 and summaries live under the git-ignored ``local/evaluation/``; only the sanitized public results
 file is meant for version control.
 
@@ -37,27 +39,35 @@ from miaosuan_agent.agent import PolicyAgent  # noqa: E402
 from miaosuan_agent.decision import BASELINE_ID, INERT_ID  # noqa: E402
 from miaosuan_agent.evaluation import manifest as mf  # noqa: E402
 from miaosuan_agent.evaluation import metrics, randomness  # noqa: E402
+from miaosuan_agent.evaluation import shoot_experiment as sx  # noqa: E402
 from miaosuan_agent.evaluation import variance_study as vs  # noqa: E402
 from miaosuan_agent.evaluation.game import play  # noqa: E402
 from miaosuan_agent.evaluation.identity import POLICY_SOURCES, digest_of_files, policy_source_files  # noqa: E402
 from miaosuan_agent.experiments.occupy_reservation import CANDIDATE_ID, ReservationAgent  # noqa: E402
+from miaosuan_agent.experiments.routing_bounded import BoundedRoutingAgent  # noqa: E402
+from miaosuan_agent.experiments.shoot_reservation import ShootReservationAgent  # noqa: E402
 
 DEFAULT_MANIFEST = REPO_ROOT / "evaluation" / "baseline-v0" / "manifest.json"
 FACTORIES = {BASELINE_ID: lambda: PolicyAgent(BASELINE_ID), INERT_ID: lambda: PolicyAgent(INERT_ID),
-             CANDIDATE_ID: lambda: ReservationAgent()}
+             CANDIDATE_ID: lambda: ReservationAgent(), sx.RUNTIME_R1_CODE_ID: lambda: BoundedRoutingAgent(),
+             sx.CANDIDATE_ID: lambda: ShootReservationAgent()}
 
 
-def registered_policy_source(manifest: Dict[str, Any]) -> str:
-    """The digest of the policy source the manifest registered, recomputed from this checkout.
+def registered_source_digest(registered: Dict[str, Any]) -> str:
+    """The digest of a registered policy source, recomputed from this checkout.
 
-    The files are the manifest's own list; they must also be exactly what its source set yields now,
+    The files are the registration's own list; they must also be exactly what its source set yields now,
     so a file added to a covered directory is caught.
     """
-    registered = manifest["policy_source"]
     sources = tuple(registered.get("sources", POLICY_SOURCES))
     if policy_source_files(sources=sources) != list(registered["files"]):
         return "file list differs from the registered one"
     return digest_of_files(registered["files"])
+
+
+def registered_policy_source(manifest: Dict[str, Any]) -> str:
+    """The digest of the policy source the manifest registered, recomputed from this checkout."""
+    return registered_source_digest(manifest["policy_source"])
 
 
 def load_manifest(path: Path) -> Dict[str, Any]:
@@ -67,6 +77,8 @@ def load_manifest(path: Path) -> Dict[str, Any]:
 def all_games(manifest: Dict[str, Any]) -> Dict[str, mf.GameSpec]:
     if vs.is_study(manifest):
         return {spec.game_id: spec for spec in vs.scheduled_games(manifest)}
+    if sx.is_experiment(manifest):
+        return {spec.game_id: spec for spec in sx.scheduled_games(manifest)}
     return {spec.game_id: spec for spec in mf.gate1_games(manifest) + mf.games(manifest)}
 
 
@@ -119,13 +131,20 @@ def cmd_game(args: argparse.Namespace) -> int:
     if spec is None:
         print(f"unknown game id {args.game_id}", file=sys.stderr)
         return 2
-    source = registered_policy_source(manifest)
-    if source != manifest["policy_source"]["sha256"]:
+    group = sx.group_of(manifest, spec.game_id) if sx.is_experiment(manifest) else None
+    registered = manifest["groups"][group]["policy_source"] if group else manifest["policy_source"]
+    policy_under_test = manifest["groups"][group]["policy"] if group else manifest["policy_under_test"]
+    source = registered_source_digest(registered)
+    if source != registered["sha256"]:
         print("REFUSED: the policy source differs from the registered one; a policy change needs a new "
               "registration and a complete rerun", file=sys.stderr)
         return 2
     if vs.is_study(manifest) and source != vs.BASELINE_V1_SOURCE_SHA256:
         print("REFUSED: the variance study runs baseline-v1 only; the policy source digest differs from it",
+              file=sys.stderr)
+        return 2
+    if group == "B" and source != sx.RUNTIME_R1_SOURCE_SHA256:
+        print("REFUSED: group B runs baseline-v1 on baseline-v1-runtime-r1 only; the digest differs from it",
               file=sys.stderr)
         return 2
     out = args.work / "games" / f"{spec.game_id}.json"
@@ -142,12 +161,14 @@ def cmd_game(args: argparse.Namespace) -> int:
     randomness.seed_globals(int(manifest["randomness"]["global_seed"]))
     harness = {"commit": args.harness_commit, "dirty": args.harness_dirty, "game_id": spec.game_id,
                "manifest_sha256": mf.digest(manifest), "policy_source_sha256": source}
+    if group:
+        harness["group"] = group
     install = engine_install.EngineInstall(args.engine_install.resolve())
     construct = engine_factory(install)
     try:
         with engine_install.session(install, args.purpose, harness) as handle:
             record = play(construct, FACTORIES, spec, inputs, manifest["players"], rng_probe=randomness.fingerprint,
-                          replay_policies={manifest["policy_under_test"]})
+                          replay_policies={policy_under_test})
             record["session"] = handle.opened["session"]
             handle.outcome = {"status": record["status"], "steps": record.get("steps"), "game_id": spec.game_id}
         record["session_close"] = {k: handle.closed[k] for k in ("state_changed", "home_changed", "integrity")}
@@ -177,6 +198,9 @@ def cmd_summarize(args: argparse.Namespace) -> int:
     manifest = load_manifest(args.manifest)
     if vs.is_study(manifest):
         print("the variance study is analysed by scripts/analyze_variance_study.py", file=sys.stderr)
+        return 2
+    if sx.is_experiment(manifest):
+        print("the shoot-reservation experiment is analysed by scripts/analyze_shoot_experiment.py", file=sys.stderr)
         return 2
     digest = mf.digest(manifest)
     gate_specs, suite_specs = mf.gate1_games(manifest), mf.games(manifest)
