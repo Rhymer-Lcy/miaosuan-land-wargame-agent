@@ -1,0 +1,2929 @@
+{
+ "alpha": 0.05,
+ "analysis": [
+  "No composite score is computed and no claim of tactical strength is made; baseline-v1 stays the frozen baseline.",
+  "Scenario heterogeneity is kept: nothing is pooled across configurations into one SD, and aggregates weight configurations equally.",
+  "Thousands of decision steps are not independent outcome samples; the game is the unit of every interval.",
+  "Deterministic properties (a configuration whose ten values are all equal) are reported as such and not given an interval of uncertainty."
+ ],
+ "artifacts": {
+  "private (git-ignored local/)": "game records, per-step digests, factual refusal instances, logs, the engine installation and its ledger, scenario and map data",
+  "public": "this manifest, the historical record digests, aggregate statistics and sanitized per-game metrics, sizing tables, documentation"
+ },
+ "baseline": {
+  "code_identity": "baseline-v1-candidate-occupy-reservation",
+  "evaluation_manifest_sha256": "38526b9250d8bce7facdb0f5c6303b5f2040e3939bd2bcedfe1fc2fdb14f103f",
+  "evaluation_results_sha256": "ea0ec674e8e51e546684fb75696673e5c81d32d6c9dd7a0d11796a91aeaeda07",
+  "executed_commit": "1376ca6",
+  "golden_trace_chain": "11e12bf0475c04672701bcbb4daa6579c6c3b0238ac90fb8320b2384e61acc66",
+  "identity": "baseline-v1",
+  "policy_source_sha256": "1d01e48a245273ded0b413ec6248e6aa54bba313ba8d6abbae2a20575544e2e9",
+  "promotion_commit": "d315664"
+ },
+ "bootstrap": {
+  "resamples": 10000,
+  "seed": 20260930
+ },
+ "caps": {
+  "steps": "max_time + 1 + 100",
+  "wall_seconds": 1800
+ },
+ "conditions": [
+  {
+   "blue": "baseline-v1-candidate-occupy-reservation",
+   "description": "candidate mirror",
+   "id": "C1",
+   "red": "baseline-v1-candidate-occupy-reservation"
+  },
+  {
+   "blue": "inert-v0",
+   "description": "candidate (red) against the inert control (blue)",
+   "id": "C2",
+   "red": "baseline-v1-candidate-occupy-reservation"
+  },
+  {
+   "blue": "baseline-v1-candidate-occupy-reservation",
+   "description": "inert control (red) against the candidate (blue)",
+   "id": "C3",
+   "red": "inert-v0"
+  }
+ ],
+ "conservative_level": 0.9,
+ "control_condition": {
+  "id": "C4",
+  "treatment": "not replayed; its historical repetitions 1-2 are kept as the deterministic control"
+ },
+ "control_policy": "inert-v0",
+ "design_sha256": "80e19e7d5c33bac8fa5bf82ed1c2306d422e5c4e96c6fe94580a8294b829ed24",
+ "effect_grid": {
+  "active_step_rate": {
+   "configurations": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "relative_change": [
+    0.05,
+    0.1,
+    0.2
+   ]
+  },
+  "code_516_per_1000": {
+   "configurations": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "relative_change": [
+    -0.25,
+    -0.5,
+    -1.0
+   ]
+  },
+  "margin": {
+   "absolute_points": [
+    10,
+    25,
+    50,
+    100
+   ],
+   "configurations": [
+    "C2",
+    "C3"
+   ],
+   "relative_to_force_value": [
+    0.025,
+    0.05,
+    0.1
+   ]
+  },
+  "refusals_per_1000": {
+   "configurations": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "relative_change": [
+    -0.25,
+    -0.5,
+    -1.0
+   ]
+  }
+ },
+ "effect_rationale": [
+  "Score effects are in engine value points. The smallest absolute effect is below the smallest scenario's combined start force value and the largest is below half the median scenario's combined value (force_value_by_scenario, read from the frozen results before any new game); the relative grid scales with each scenario's own force value, so large scenarios are not favoured.",
+  "The margin is sized over C2 and C3 only: in the C1 mirror both sides change with the policy, so its margin measures side asymmetry, not a policy effect.",
+  "Rate effects are relative to each configuration's own mean under baseline-v1: a quarter, a half and all of a refusal rate removed; a 5, 10 and 20 percent change of the active-step rate.",
+  "No value of the grid depends on an effect observed for baseline-v1."
+ ],
+ "engine": {
+  "sdk_archive_sha256": "ed4c9fc03cb6eb1e64821d2efbc61024d90735e3dc489dc7ffe0515e653ea725",
+  "version": "4.1.0"
+ },
+ "evaluation_id": "baseline-v1-variance-study-1",
+ "failure_rules": [
+  "every registered game checks the pinned baseline-v1 policy source digest before touching the engine and refuses on a mismatch; the runner then stops the study",
+  "a record is never overwritten; a game that was started and left no record stops the runner",
+  "a game that writes a record with status FAIL or CAPPED is kept and reported; the runner continues, and stops after 3 consecutive games that did not complete",
+  "any other exit (input error, installation guardrail, timeout, crash) stops the runner",
+  "no replacement attempt is scheduled by this registration; a replacement needs a registered amendment first, runs under a distinct attempt identity (game id suffix .a2) and is reported beside the attempt it replaces",
+  "a missing or failed game reduces its configuration's n and is reported; nothing is imputed or replaced silently",
+  "no valid observation is excluded, however extreme its score, refusal count or latency",
+  "if execution-affecting code must change after registration, the study stops; collected attempts are kept, and a new study version with its own registration is created; incompatible results are never merged"
+ ],
+ "force_value_by_scenario": {
+  "1910631192": 236,
+  "1930331196": 730,
+  "2010131194": 160,
+  "2010211129": 206,
+  "201033019601": 60,
+  "2010431153": 236,
+  "2120531121": 741,
+  "2130511121": 1163
+ },
+ "historical_records": {
+  "records": [
+   {
+    "condition": "C1",
+    "game_id": "1910631192.C1.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "806df7b3f53a1cf710088688f431c26efa6191264775fccc93877b1843ce06aa",
+    "repetition": 1,
+    "scenario_id": "1910631192",
+    "session": "0102",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C1",
+    "game_id": "1910631192.C1.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "9598f47998b3160742bc8a9a34f51b9e72060910f45d261fedc36ea76e98d7cc",
+    "repetition": 2,
+    "scenario_id": "1910631192",
+    "session": "0134",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C2",
+    "game_id": "1910631192.C2.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "5b829928d32bdbd1bab72d9686a1ff1f9166763a2058e05cbeeca10b660054d8",
+    "repetition": 1,
+    "scenario_id": "1910631192",
+    "session": "0103",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C2",
+    "game_id": "1910631192.C2.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "21511a2133f8c481f46b441491bdf2a1f915f55939a9a16b6eaba9734efa3b5c",
+    "repetition": 2,
+    "scenario_id": "1910631192",
+    "session": "0135",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C3",
+    "game_id": "1910631192.C3.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "e8b78daae8fbc97d963f410ec5c65baba5fb8619c599725b6720a6b91d02c72c",
+    "repetition": 1,
+    "scenario_id": "1910631192",
+    "session": "0104",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C3",
+    "game_id": "1910631192.C3.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "554bec78ce9b4f5aa586cb0b9555e466975c5551dc08aa085c02b634feaa8719",
+    "repetition": 2,
+    "scenario_id": "1910631192",
+    "session": "0136",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C4",
+    "game_id": "1910631192.C4.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "37f7bc329f96268ec5692efa91a919f1ceaf05e69d5e7dcd3322151897c8f13e",
+    "repetition": 1,
+    "scenario_id": "1910631192",
+    "session": "0105",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C4",
+    "game_id": "1910631192.C4.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "1943f3ef5bd29adc440a68ac5c24f2940915d1db55f88cb415a06a1e3e957010",
+    "repetition": 2,
+    "scenario_id": "1910631192",
+    "session": "0137",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C1",
+    "game_id": "1930331196.C1.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "0b6884a91e5b8542e884c6a1c4a70c1999e4c71e30992b03696b2229d298122a",
+    "repetition": 1,
+    "scenario_id": "1930331196",
+    "session": "0110",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C1",
+    "game_id": "1930331196.C1.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "7eebd1578010218a969378d54b5200c50d7ef47768cbe63c0e8a4ee6a25ee3df",
+    "repetition": 2,
+    "scenario_id": "1930331196",
+    "session": "0142",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C2",
+    "game_id": "1930331196.C2.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "c6431564081dd3c98bfcf0e138d5f2e49798488a1467641177ba801a254878a8",
+    "repetition": 1,
+    "scenario_id": "1930331196",
+    "session": "0111",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C2",
+    "game_id": "1930331196.C2.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "b6098e2c16817992ce989cf537852d291094784e7f7b00e2294d1ecb8f028b3a",
+    "repetition": 2,
+    "scenario_id": "1930331196",
+    "session": "0143",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C3",
+    "game_id": "1930331196.C3.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "c852ef495559b090a6587b18d20564ef102cec59e36dd545b9d7b6225defdd46",
+    "repetition": 1,
+    "scenario_id": "1930331196",
+    "session": "0112",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C3",
+    "game_id": "1930331196.C3.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "eb18ef3480658813fb6808fc0ca2a1e45f4fe526c882b2a42f173a2d5fe4e8f7",
+    "repetition": 2,
+    "scenario_id": "1930331196",
+    "session": "0144",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C4",
+    "game_id": "1930331196.C4.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "ec379571d866c66e0769af9a91ddb6a084deef90c47c89795938cadb77e88e2e",
+    "repetition": 1,
+    "scenario_id": "1930331196",
+    "session": "0113",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C4",
+    "game_id": "1930331196.C4.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "9ca06d5ea0153debb21323caaa26b39b34c40c69604dd728d56ae4b48343dc83",
+    "repetition": 2,
+    "scenario_id": "1930331196",
+    "session": "0145",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C1",
+    "game_id": "2010131194.C1.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "72877041f15b1182a909166066fbc32f157b16cf32d26cada85393ccd7d9be8d",
+    "repetition": 1,
+    "scenario_id": "2010131194",
+    "session": "0106",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C1",
+    "game_id": "2010131194.C1.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "4e9922a90842b64734e4bf92f8f56802b4e960b563845139b213998514aeecdb",
+    "repetition": 2,
+    "scenario_id": "2010131194",
+    "session": "0138",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C2",
+    "game_id": "2010131194.C2.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "9ea280a2adddc6496eaa2281b9a24e435bba9bac2912fd85e2329045c72a98cc",
+    "repetition": 1,
+    "scenario_id": "2010131194",
+    "session": "0107",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C2",
+    "game_id": "2010131194.C2.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "da0f3d0b36b82da38d58b4942935d654b062bf52cb68f4d284487cec8e640046",
+    "repetition": 2,
+    "scenario_id": "2010131194",
+    "session": "0139",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C3",
+    "game_id": "2010131194.C3.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "014a4581be5585cdb9fd30d230c1afb8a21cbb6d12ef983bf2b7ba613149c50c",
+    "repetition": 1,
+    "scenario_id": "2010131194",
+    "session": "0108",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C3",
+    "game_id": "2010131194.C3.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "96101915c1d3412f7056dac7119351a25eb3308279ca2c7a7c41178daeb81fa1",
+    "repetition": 2,
+    "scenario_id": "2010131194",
+    "session": "0140",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C4",
+    "game_id": "2010131194.C4.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "3ad03c3cd465e2729504c9d1a853af6c6b04718a3c7316e5308c9b570b91c133",
+    "repetition": 1,
+    "scenario_id": "2010131194",
+    "session": "0109",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C4",
+    "game_id": "2010131194.C4.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "e1d2c205ae5c5ab364ca3abe7bdce876cef097797a3d601c17db85a1ac63a349",
+    "repetition": 2,
+    "scenario_id": "2010131194",
+    "session": "0141",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C1",
+    "game_id": "2010211129.C1.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "6bfcbdcd69e963d56be2a67a9c922e3b89d4cf8c6c960ea20c6f451afb4ba958",
+    "repetition": 1,
+    "scenario_id": "2010211129",
+    "session": "0094",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C1",
+    "game_id": "2010211129.C1.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "d56b628def1202c7c6ffb7a8c6e6a676e88fcebccbb2c6444fd18918ca276766",
+    "repetition": 2,
+    "scenario_id": "2010211129",
+    "session": "0126",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C2",
+    "game_id": "2010211129.C2.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "dc7713dd1d757848f631f94d9a6319bfd8a15b4c780decf88e2b31da0e3badc0",
+    "repetition": 1,
+    "scenario_id": "2010211129",
+    "session": "0095",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C2",
+    "game_id": "2010211129.C2.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "9b9775883bdf90c620554fb4c98cadcf5aae2abc2fbf7c6da815b3679e3bc194",
+    "repetition": 2,
+    "scenario_id": "2010211129",
+    "session": "0127",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C3",
+    "game_id": "2010211129.C3.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "5251e4d76c261a8b57a810fd1cf2dab2e175496475011f4befca28b381c4e4f7",
+    "repetition": 1,
+    "scenario_id": "2010211129",
+    "session": "0096",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C3",
+    "game_id": "2010211129.C3.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "71cee15465d47807190347fdaf125c8de3c2076c2dde512a8ea10d5422a3fb04",
+    "repetition": 2,
+    "scenario_id": "2010211129",
+    "session": "0128",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C4",
+    "game_id": "2010211129.C4.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "f0fd2208ef189f817cb1fe1af76eba1394879ef1872581c57c9b6f1630e4efd5",
+    "repetition": 1,
+    "scenario_id": "2010211129",
+    "session": "0097",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C4",
+    "game_id": "2010211129.C4.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "9d2325a2585166ce8fd927dbc8618609405ea9b43ee7969c4bc4cc3d273ac638",
+    "repetition": 2,
+    "scenario_id": "2010211129",
+    "session": "0129",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C1",
+    "game_id": "201033019601.C1.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "f9e36b5f378ebf7fd306a25c984751b58614b62d0cd2232a4789218f724f94e5",
+    "repetition": 1,
+    "scenario_id": "201033019601",
+    "session": "0114",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C1",
+    "game_id": "201033019601.C1.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "538f89935f9df8152247bb222e13244d18cfb7dbd4dc5a650c5fe665a395cbc1",
+    "repetition": 2,
+    "scenario_id": "201033019601",
+    "session": "0146",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C2",
+    "game_id": "201033019601.C2.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "50915d382cc08929df567a59092999531acb34e073e3c3f31f1bca8308ff1bc1",
+    "repetition": 1,
+    "scenario_id": "201033019601",
+    "session": "0115",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C2",
+    "game_id": "201033019601.C2.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "575380190ccf7871152da5baa573124ea72872c12b1f61a18642c34eb02427e4",
+    "repetition": 2,
+    "scenario_id": "201033019601",
+    "session": "0147",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C3",
+    "game_id": "201033019601.C3.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "06ba0336944a69c0cf68a5fd9170f401a6a3e0671c92d979e7ad912637807cfa",
+    "repetition": 1,
+    "scenario_id": "201033019601",
+    "session": "0116",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C3",
+    "game_id": "201033019601.C3.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "61759c35e9fd1c1d52eeb398c698ff9cff425269bb8dc785608a3b300cd00ebf",
+    "repetition": 2,
+    "scenario_id": "201033019601",
+    "session": "0148",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C4",
+    "game_id": "201033019601.C4.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "c498311d911005a399001079b03df205a888b55fa7bb59ba7f06c7f8879d76d1",
+    "repetition": 1,
+    "scenario_id": "201033019601",
+    "session": "0117",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C4",
+    "game_id": "201033019601.C4.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "cf6113b4064c6abc725db7f8d3825e4277e5d845c5460a284279454e58c56164",
+    "repetition": 2,
+    "scenario_id": "201033019601",
+    "session": "0149",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C1",
+    "game_id": "2010431153.C1.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "3aa8d41ca4aaebafe99f2fab45930979e60f0f5f6c8b25a5c1cdfb455878421f",
+    "repetition": 1,
+    "scenario_id": "2010431153",
+    "session": "0098",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C1",
+    "game_id": "2010431153.C1.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "a558913df23c0b43b39e05d5e862ce78922c44223635b1b86f35783a2123b1ba",
+    "repetition": 2,
+    "scenario_id": "2010431153",
+    "session": "0130",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C2",
+    "game_id": "2010431153.C2.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "285c775facce798f70529f444a508b1345aa25608c0906a35a3d65e2ba4f4fcd",
+    "repetition": 1,
+    "scenario_id": "2010431153",
+    "session": "0099",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C2",
+    "game_id": "2010431153.C2.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "5905ece29fac78ed021f164c117057b46599e7cd69a19adc155cf6273b1e4f52",
+    "repetition": 2,
+    "scenario_id": "2010431153",
+    "session": "0131",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C3",
+    "game_id": "2010431153.C3.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "3b7c461f85f8cd2dd6c7c90af086188eec4f00bb5605b8217216527c98db4e80",
+    "repetition": 1,
+    "scenario_id": "2010431153",
+    "session": "0100",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C3",
+    "game_id": "2010431153.C3.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "b1a9564681a2fb4f9b8d00154587141ab4a6160747863294c371407d997da709",
+    "repetition": 2,
+    "scenario_id": "2010431153",
+    "session": "0132",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C4",
+    "game_id": "2010431153.C4.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "b364959d1e44bfc2db01daa72930080193d979a6f82ad7167e48b0f69eb4d1a1",
+    "repetition": 1,
+    "scenario_id": "2010431153",
+    "session": "0101",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C4",
+    "game_id": "2010431153.C4.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "bfb72c7789b26e8b4af8675d426ae4e4a860a1a0ab1b0b1b7a1b280d044bd0eb",
+    "repetition": 2,
+    "scenario_id": "2010431153",
+    "session": "0133",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C1",
+    "game_id": "2120531121.C1.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "b1cd5a25dcf281f28b6af051a351c86529fee794ad17608bcb67b2e563c8596b",
+    "repetition": 1,
+    "scenario_id": "2120531121",
+    "session": "0090",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C1",
+    "game_id": "2120531121.C1.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "6664d29022961675950c0ee3c6a0f41c99bb70689e2f8c5efadce164173dd4b8",
+    "repetition": 2,
+    "scenario_id": "2120531121",
+    "session": "0122",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C2",
+    "game_id": "2120531121.C2.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "e0d0a5a3bac8b787b2455bdf67e842427c1fd65155e95277dadd21b44a5542a8",
+    "repetition": 1,
+    "scenario_id": "2120531121",
+    "session": "0091",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C2",
+    "game_id": "2120531121.C2.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "6748404884e67c324a013da91b26142d11c3431b3cd94be1174172415c13567e",
+    "repetition": 2,
+    "scenario_id": "2120531121",
+    "session": "0123",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C3",
+    "game_id": "2120531121.C3.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "aac590ee5e1e50524d3cd1a7d17a520810cc4aee18d7b2597a348a07d59a54d1",
+    "repetition": 1,
+    "scenario_id": "2120531121",
+    "session": "0092",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C3",
+    "game_id": "2120531121.C3.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "bbe4a7b38cc497be4d663c3d5034db3c0a2599f849b195eabf5e75acf5c78494",
+    "repetition": 2,
+    "scenario_id": "2120531121",
+    "session": "0124",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C4",
+    "game_id": "2120531121.C4.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "ae1ec484e4cba7c96633c751f9773961282b11fc8cd2d1da40a9a93317a27887",
+    "repetition": 1,
+    "scenario_id": "2120531121",
+    "session": "0093",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C4",
+    "game_id": "2120531121.C4.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "11ad95ab6d020115120f8f241e5dffff06c2519deca14996f8db4b21e3315ade",
+    "repetition": 2,
+    "scenario_id": "2120531121",
+    "session": "0125",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C1",
+    "game_id": "2130511121.C1.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "3a5db53993fc01b3c52217816760a9e11630c0b45eaecf57a06630f3536bf1b2",
+    "repetition": 1,
+    "scenario_id": "2130511121",
+    "session": "0118",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C1",
+    "game_id": "2130511121.C1.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "ddcfea8c694b9f7577c6758a48d72c039e1fe7fe68047043a4a701cceb0dc135",
+    "repetition": 2,
+    "scenario_id": "2130511121",
+    "session": "0150",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C2",
+    "game_id": "2130511121.C2.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "a5329001331cc42915e0ca1e2b43fb5602909039b771b2a361b7746a64952b9e",
+    "repetition": 1,
+    "scenario_id": "2130511121",
+    "session": "0119",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C2",
+    "game_id": "2130511121.C2.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "ee8d9706471019c4152e351ff0b3685b0e770f5a3cdfc988f1b914e618ed7dc8",
+    "repetition": 2,
+    "scenario_id": "2130511121",
+    "session": "0151",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C3",
+    "game_id": "2130511121.C3.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "b0c3bd1cebe84ab9982e587f99ffcd91ffae420fb75c127cb9cafe6768f577bf",
+    "repetition": 1,
+    "scenario_id": "2130511121",
+    "session": "0120",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C3",
+    "game_id": "2130511121.C3.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "c348dba6b6150052c0794531a521da813b7c4c4de404996af75ac46bfd8cfd2c",
+    "repetition": 2,
+    "scenario_id": "2130511121",
+    "session": "0152",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C4",
+    "game_id": "2130511121.C4.r1",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "7b5378a0367db4233e4b4c32aee9a51a0ec849c63c4672780fb27114e7b13086",
+    "repetition": 1,
+    "scenario_id": "2130511121",
+    "session": "0121",
+    "status": "COMPLETED"
+   },
+   {
+    "condition": "C4",
+    "game_id": "2130511121.C4.r2",
+    "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+    "record_sha256": "03313aeece114acdf6efba15d777478e30707fcc8b513f76b38d7e9b705e9812",
+    "repetition": 2,
+    "scenario_id": "2130511121",
+    "session": "0153",
+    "status": "COMPLETED"
+   }
+  ],
+  "rule": "SHA-256 of the private record file bytes under local/evaluation/<source_evaluation>/games/",
+  "source_evaluation": "baseline-v1-candidate-occupy-reservation",
+  "source_results_sha256": "ea0ec674e8e51e546684fb75696673e5c81d32d6c9dd7a0d11796a91aeaeda07"
+ },
+ "historical_repetitions": [
+  1,
+  2
+ ],
+ "level": 0.95,
+ "major_metrics": [
+  "margin",
+  "refusals_per_1000",
+  "code_516_per_1000",
+  "code_203_per_1000",
+  "active_step_rate",
+  "no_op_rate",
+  "shots",
+  "moves",
+  "occupations",
+  "latency_p99_ms",
+  "decision_seconds",
+  "wall_seconds"
+ ],
+ "material_trend": {
+  "spearman": 0.3,
+  "standardized_difference": 0.5
+ },
+ "metrics": {
+  "active_step_rate": "steps with at least one emitted action / decisions, pooled over the seats",
+  "blue_total": "engine final score blue_total",
+  "code_1804": "refusals with code 1804 (regression metric; 0 in the frozen evaluation)",
+  "code_1804_per_1000": "code-1804 refusals per 1,000 emitted unit actions",
+  "code_203": "refusals with code 203",
+  "code_203_per_1000": "code-203 refusals per 1,000 emitted unit actions",
+  "code_516": "refusals with code 516",
+  "code_516_per_1000": "code-516 refusals per 1,000 emitted unit actions",
+  "decision_seconds": "total policy decision time",
+  "decisions_over_100ms": "decisions slower than 100 ms",
+  "decisions_over_400ms": "decisions slower than 400 ms",
+  "engine_seconds": "total engine step time",
+  "gate_rejections": "project safety-gate rejections",
+  "harness_seconds": "wall - decisions - engine",
+  "latency_max_ms": "slowest decision",
+  "latency_p50_ms": "per-decision latency (time.perf_counter) p50 over the game's decisions, nearest rank",
+  "latency_p95_ms": "per-decision latency p95",
+  "latency_p99_ms": "per-decision latency p99",
+  "margin": "score margin from the policy's side: red_total - blue_total in C1 (red seat) and C2, blue_total - red_total in C3",
+  "moves": "emitted moves (type 1)",
+  "no_op_rate": "no-op unit-steps / (no-op unit-steps + emitted unit actions), pooled over the seats",
+  "occupations": "emitted occupations (type 5)",
+  "red_total": "engine final score red_total",
+  "refusals": "engine refusals (feedback entries with an error)",
+  "refusals_per_1000": "engine refusals per 1,000 emitted unit actions",
+  "shots": "emitted shots (type 2): the engagement count",
+  "steps": "engine steps played",
+  "suppressions": "occupations suppressed by the reservation",
+  "unit_actions": "emitted unit actions (every action type except deployment completion 333)",
+  "units_acted": "units that emitted at least one action",
+  "wall_seconds": "game wall time"
+ },
+ "missing_data": [
+  "a metric a historical record cannot provide is reported as missing for that record, never substituted",
+  "historical factual refusal classes come from the retained examples; a seat whose examples do not cover all its refusals marks that game's classes incomplete",
+  "attribution-2 labels need step evidence that only new records carry; historical refusals have none"
+ ],
+ "monte_carlo": {
+  "seed": 20260932,
+  "simulations": 1000
+ },
+ "new_games": 192,
+ "new_repetitions": [
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10
+ ],
+ "players": [
+  {
+   "faction": 0,
+   "role": 1,
+   "seat": 1,
+   "user_id": 0,
+   "user_name": "demo"
+  },
+  {
+   "faction": 1,
+   "role": 1,
+   "seat": 11,
+   "user_id": 0,
+   "user_name": "demo"
+  }
+ ],
+ "policy_source": {
+  "files": [
+   "agent.py",
+   "boundary/__init__.py",
+   "boundary/actions.py",
+   "boundary/checks.py",
+   "boundary/errors.py",
+   "boundary/keys.py",
+   "boundary/observation.py",
+   "boundary/profile.py",
+   "boundary/state.py",
+   "boundary/terrain.py",
+   "decision/__init__.py",
+   "decision/candidates.py",
+   "decision/context.py",
+   "decision/gate.py",
+   "decision/policy.py",
+   "decision/routing.py",
+   "decision/semantics.py",
+   "decision/trace.py",
+   "experiments/__init__.py",
+   "experiments/occupy_reservation.py"
+  ],
+  "rule": "sorted relative paths, CRLF normalized to LF; see evaluation/identity.py",
+  "sha256": "1d01e48a245273ded0b413ec6248e6aa54bba313ba8d6abbae2a20575544e2e9",
+  "sources": [
+   "agent.py",
+   "boundary",
+   "decision",
+   "experiments/__init__.py",
+   "experiments/occupy_reservation.py"
+  ]
+ },
+ "policy_under_test": "baseline-v1-candidate-occupy-reservation",
+ "power": 0.8,
+ "purpose": "repeated-run variance of the unchanged baseline-v1: within-configuration variability, scenario heterogeneity, run-order effects and repetition counts for future experiments",
+ "randomness": {
+  "global_seed": 20260929,
+  "procedure": "each game runs in a fresh process; the harness seeds Python's and NumPy's global generators with global_seed before the engine is constructed and records whether the engine consumes them; no undocumented engine interface is used",
+  "python_hash_seed": 0
+ },
+ "refusal_taxonomy": {
+  "attribution": "refusal-attribution/2",
+  "document": "docs/REFUSAL_TAXONOMY.md",
+  "fact": "miaosuan-refusal-fact/1"
+ },
+ "registered_seat_metrics": [
+  "refusal_contexts",
+  "suppressions",
+  "steps_with_suppression",
+  "duplicate_occupation_steps",
+  "duplicate_occupation_commands",
+  "refusals",
+  "refusal_facts",
+  "refusal_attributions"
+ ],
+ "repetition_target": 10,
+ "replay_check_every": 100,
+ "runtime": {
+  "device": "CPU only",
+  "environment": "miaosuan-runtime",
+  "python": "3.10.20"
+ },
+ "scenario_manifest_sha256": "38526b9250d8bce7facdb0f5c6303b5f2040e3939bd2bcedfe1fc2fdb14f103f",
+ "scenarios": [
+  {
+   "alternates": [
+    "2120511121",
+    "2130511421",
+    "2230531121",
+    "2230531221",
+    "2130511321",
+    "2130511121",
+    "2130511221"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+    "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+    "scenario": "a4536a361ac9dd879ad326d8c5f40583433c3299f5184b4af06ddb110ab297cf",
+    "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "operators": 54,
+   "red": 28,
+   "rule": "S2 fewest operators on map 21",
+   "scenario_id": "2120531121"
+  },
+  {
+   "alternates": [],
+   "blue": 5,
+   "cities": 2,
+   "inputs_sha256": {
+    "basic": "0f4e4d65ec6273a0747744d60a146f57c32cd505c53a8c4863043dec28548355",
+    "cost": "2a3fc75e9822eb2995dd9f3cab51dc049ec5748daecbd0fd894fea40217ddd27",
+    "scenario": "cbf9fc185b918cba3a2fb84c1edf420f59ebd7668c6acd6f30ffa66605d7e526",
+    "see": "5f456a93999d346eeb9784b711d0140423d5ec4c0e64c819911f90d8a13f6b38"
+   },
+   "map_id": "29",
+   "max_time": 1800,
+   "operators": 11,
+   "red": 6,
+   "rule": "S2 fewest operators on map 29",
+   "scenario_id": "2010211129"
+  },
+  {
+   "alternates": [
+    "2010441253",
+    "2110431153",
+    "2110431253",
+    "2110431353",
+    "2110431453",
+    "2110431553",
+    "2110431653",
+    "2110431753"
+   ],
+   "blue": 6,
+   "cities": 2,
+   "inputs_sha256": {
+    "basic": "9d81939421d31ab9d7a158008c0a85283a94cfc78f619336322ae3d3f15d2c4d",
+    "cost": "46f4d73bcb69ec2cb6d4accf6fa8109eb4a0c23042e0cb5a6c88b0b3168c9614",
+    "scenario": "fdf73f5fc7405cd55fd410255e3cd7268096c5548743deff5954e49b38e06554",
+    "see": "7aa1d041780747504a8a486b86169adac116b242262d725f4ad80539758d15f3"
+   },
+   "map_id": "53",
+   "max_time": 1800,
+   "operators": 12,
+   "red": 6,
+   "rule": "S2 fewest operators on map 53",
+   "scenario_id": "2010431153"
+  },
+  {
+   "alternates": [
+    "1930631192",
+    "2230631192"
+   ],
+   "blue": 6,
+   "cities": 2,
+   "inputs_sha256": {
+    "basic": "8d4bf628205d08abfcc87b0672142e0e1e0b86dd205a6611fc1034de4c12f27a",
+    "cost": "b7a6ffb937be31a76ad61426a64212c90ee8c3b378eb04658162ee5825310c3c",
+    "scenario": "4a44b94fba790b4535e03c1991bcc81253d0d61a228214c0c6b00caf0b0d8022",
+    "see": "c8e346d02bcc338a96894b9e4e1ed8d09eed4b15a9baeca96d17c2edcc3eaa19"
+   },
+   "map_id": "92",
+   "max_time": 1800,
+   "operators": 12,
+   "red": 6,
+   "rule": "S2 fewest operators on map 92",
+   "scenario_id": "1910631192"
+  },
+  {
+   "alternates": [
+    "2010141294",
+    "2120131194",
+    "2120131294",
+    "2030111194",
+    "2140131194"
+   ],
+   "blue": 2,
+   "cities": 1,
+   "inputs_sha256": {
+    "basic": "dde30d0a9ffc77ee5a8ad301692d929126b34c581ecb64dde96ffcb2b3cbcc03",
+    "cost": "c447e2b130c25aa2595e80cdd5dbe8e8f117196d544507f1897f776a88d4cfbb",
+    "scenario": "103954f4ca5032150de1c124ea04fe4d47c7a0f72a290ace82bd6fb5b669bbec",
+    "see": "a01d2ab2095ecdd2841651c90c757db6c12bae72d6759526914ad2220f7d975c"
+   },
+   "map_id": "94",
+   "max_time": 1800,
+   "operators": 4,
+   "red": 2,
+   "rule": "S2 fewest operators on map 94",
+   "scenario_id": "2010131194"
+  },
+  {
+   "alternates": [
+    "2020331196",
+    "2120331196",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2140331196"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "206c437995216aed6dd14a310d3a2ada0f7148dd8d40e4ec52c900b224d06f15",
+    "cost": "b136cc86cae77d53482f2b2ff3df0087278d51628e1a4cf453307d8da008997f",
+    "scenario": "a15d3b3bf499694d93a981511c16b5c1c9247487ac1cf1d88b2bf1bd2c75c1b1",
+    "see": "e69b9e85d77cc8de4600c42b48939ea625236a7a3b705090fa9b3745775009e2"
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "operators": 52,
+   "red": 26,
+   "rule": "S2 fewest operators on map 96",
+   "scenario_id": "1930331196"
+  },
+  {
+   "alternates": [
+    "201033029601",
+    "201033039601",
+    "211033019601"
+   ],
+   "blue": 1,
+   "cities": 1,
+   "inputs_sha256": {
+    "basic": "62a5645d213ca6927e527761a2dc077ddf56bc400d7a9018e9180fff6adc2354",
+    "cost": "c187131021173b63088dd655c661809b60980c0e2159374c9f32d3d749d0b865",
+    "scenario": "e24d43d94233ac4c87eccbb47f5f88a4e37ac8e0d5a00f461a2280efcd2b59df",
+    "see": "549a763b0d90c699455f4534e0586d67dae62407357353edc6edd6ad90459d7d"
+   },
+   "map_id": "9601",
+   "max_time": 1000,
+   "operators": 2,
+   "red": 1,
+   "rule": "S2 fewest operators on map 9601",
+   "scenario_id": "201033019601"
+  },
+  {
+   "alternates": [
+    "2130511221",
+    "2140131194",
+    "2140331196",
+    "2130511321",
+    "1930631192",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2230531221",
+    "2230631192",
+    "2030111194",
+    "2130511421",
+    "2230531121",
+    "2120131294",
+    "2120511121",
+    "2120131194",
+    "2120331196",
+    "2020331196",
+    "2110431753",
+    "2010441253",
+    "2110431153",
+    "2110431253",
+    "2110431353",
+    "2110431453",
+    "2110431553",
+    "2110431653",
+    "201033029601",
+    "201033039601",
+    "211033019601",
+    "2010141294"
+   ],
+   "blue": 44,
+   "cities": 7,
+   "inputs_sha256": {
+    "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+    "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+    "scenario": "9611e334d4fd6f2eda5957a26116bf8ec21c3e04754ed349d9a0fa0e9dc68070",
+    "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "operators": 89,
+   "red": 45,
+   "rule": "S3 largest force",
+   "scenario_id": "2130511121"
+  }
+ ],
+ "schedule": [
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.r3",
+   "position": 1,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.r3",
+   "position": 2,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.r3",
+   "position": 3,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.r3",
+   "position": 4,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.r3",
+   "position": 5,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.r3",
+   "position": 6,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.r3",
+   "position": 7,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.r3",
+   "position": 8,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.r3",
+   "position": 9,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.r3",
+   "position": 10,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.r3",
+   "position": 11,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.r3",
+   "position": 12,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.r3",
+   "position": 13,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.r3",
+   "position": 14,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.r3",
+   "position": 15,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.r3",
+   "position": 16,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.r3",
+   "position": 17,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.r3",
+   "position": 18,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.r3",
+   "position": 19,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.r3",
+   "position": 20,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.r3",
+   "position": 21,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.r3",
+   "position": 22,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.r3",
+   "position": 23,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.r3",
+   "position": 24,
+   "repetition": 3,
+   "round": 1,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.r4",
+   "position": 25,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.r4",
+   "position": 26,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.r4",
+   "position": 27,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.r4",
+   "position": 28,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.r4",
+   "position": 29,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.r4",
+   "position": 30,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.r4",
+   "position": 31,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.r4",
+   "position": 32,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.r4",
+   "position": 33,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.r4",
+   "position": 34,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.r4",
+   "position": 35,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.r4",
+   "position": 36,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.r4",
+   "position": 37,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.r4",
+   "position": 38,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.r4",
+   "position": 39,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.r4",
+   "position": 40,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.r4",
+   "position": 41,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.r4",
+   "position": 42,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.r4",
+   "position": 43,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.r4",
+   "position": 44,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.r4",
+   "position": 45,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.r4",
+   "position": 46,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.r4",
+   "position": 47,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.r4",
+   "position": 48,
+   "repetition": 4,
+   "round": 2,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.r5",
+   "position": 49,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.r5",
+   "position": 50,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.r5",
+   "position": 51,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.r5",
+   "position": 52,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.r5",
+   "position": 53,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.r5",
+   "position": 54,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.r5",
+   "position": 55,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.r5",
+   "position": 56,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.r5",
+   "position": 57,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.r5",
+   "position": 58,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.r5",
+   "position": 59,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.r5",
+   "position": 60,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.r5",
+   "position": 61,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.r5",
+   "position": 62,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.r5",
+   "position": 63,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.r5",
+   "position": 64,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.r5",
+   "position": 65,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.r5",
+   "position": 66,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.r5",
+   "position": 67,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.r5",
+   "position": 68,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.r5",
+   "position": 69,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.r5",
+   "position": 70,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.r5",
+   "position": 71,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.r5",
+   "position": 72,
+   "repetition": 5,
+   "round": 3,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.r6",
+   "position": 73,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.r6",
+   "position": 74,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.r6",
+   "position": 75,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.r6",
+   "position": 76,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.r6",
+   "position": 77,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.r6",
+   "position": 78,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.r6",
+   "position": 79,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.r6",
+   "position": 80,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.r6",
+   "position": 81,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.r6",
+   "position": 82,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.r6",
+   "position": 83,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.r6",
+   "position": 84,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.r6",
+   "position": 85,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.r6",
+   "position": 86,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.r6",
+   "position": 87,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.r6",
+   "position": 88,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.r6",
+   "position": 89,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.r6",
+   "position": 90,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.r6",
+   "position": 91,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.r6",
+   "position": 92,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.r6",
+   "position": 93,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.r6",
+   "position": 94,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.r6",
+   "position": 95,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.r6",
+   "position": 96,
+   "repetition": 6,
+   "round": 4,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.r7",
+   "position": 97,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.r7",
+   "position": 98,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.r7",
+   "position": 99,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.r7",
+   "position": 100,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.r7",
+   "position": 101,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.r7",
+   "position": 102,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.r7",
+   "position": 103,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.r7",
+   "position": 104,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.r7",
+   "position": 105,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.r7",
+   "position": 106,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.r7",
+   "position": 107,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.r7",
+   "position": 108,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.r7",
+   "position": 109,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.r7",
+   "position": 110,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.r7",
+   "position": 111,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.r7",
+   "position": 112,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.r7",
+   "position": 113,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.r7",
+   "position": 114,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.r7",
+   "position": 115,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.r7",
+   "position": 116,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.r7",
+   "position": 117,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.r7",
+   "position": 118,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.r7",
+   "position": 119,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.r7",
+   "position": 120,
+   "repetition": 7,
+   "round": 5,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.r8",
+   "position": 121,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.r8",
+   "position": 122,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.r8",
+   "position": 123,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.r8",
+   "position": 124,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.r8",
+   "position": 125,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.r8",
+   "position": 126,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.r8",
+   "position": 127,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.r8",
+   "position": 128,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.r8",
+   "position": 129,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.r8",
+   "position": 130,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.r8",
+   "position": 131,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.r8",
+   "position": 132,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.r8",
+   "position": 133,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.r8",
+   "position": 134,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.r8",
+   "position": 135,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.r8",
+   "position": 136,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.r8",
+   "position": 137,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.r8",
+   "position": 138,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.r8",
+   "position": 139,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.r8",
+   "position": 140,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.r8",
+   "position": 141,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.r8",
+   "position": 142,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.r8",
+   "position": 143,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.r8",
+   "position": 144,
+   "repetition": 8,
+   "round": 6,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.r9",
+   "position": 145,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.r9",
+   "position": 146,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.r9",
+   "position": 147,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.r9",
+   "position": 148,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.r9",
+   "position": 149,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.r9",
+   "position": 150,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.r9",
+   "position": 151,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.r9",
+   "position": 152,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.r9",
+   "position": 153,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.r9",
+   "position": 154,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.r9",
+   "position": 155,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.r9",
+   "position": 156,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.r9",
+   "position": 157,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.r9",
+   "position": 158,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.r9",
+   "position": 159,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.r9",
+   "position": 160,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.r9",
+   "position": 161,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.r9",
+   "position": 162,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.r9",
+   "position": 163,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.r9",
+   "position": 164,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.r9",
+   "position": 165,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.r9",
+   "position": 166,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.r9",
+   "position": 167,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.r9",
+   "position": 168,
+   "repetition": 9,
+   "round": 7,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2130511121.C2.r10",
+   "position": 169,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1910631192.C2.r10",
+   "position": 170,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1930331196.C1.r10",
+   "position": 171,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2130511121.C3.r10",
+   "position": 172,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010431153.C3.r10",
+   "position": 173,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2120531121.C2.r10",
+   "position": 174,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "1930331196.C2.r10",
+   "position": 175,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2120531121.C1.r10",
+   "position": 176,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2120531121.C3.r10",
+   "position": 177,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "2120531121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010131194.C1.r10",
+   "position": 178,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1930331196.C3.r10",
+   "position": 179,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "1930331196"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010211129.C1.r10",
+   "position": 180,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "1910631192.C3.r10",
+   "position": 181,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010131194.C3.r10",
+   "position": 182,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2130511121.C1.r10",
+   "position": 183,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "2130511121"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "1910631192.C1.r10",
+   "position": 184,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "1910631192"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "201033019601.C2.r10",
+   "position": 185,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "2010431153.C1.r10",
+   "position": 186,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "2010211129.C3.r10",
+   "position": 187,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010431153.C2.r10",
+   "position": 188,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "2010431153"
+  },
+  {
+   "attempt": 1,
+   "condition": "C3",
+   "game_id": "201033019601.C3.r10",
+   "position": 189,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "201033019601"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010131194.C2.r10",
+   "position": 190,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "2010131194"
+  },
+  {
+   "attempt": 1,
+   "condition": "C2",
+   "game_id": "2010211129.C2.r10",
+   "position": 191,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "2010211129"
+  },
+  {
+   "attempt": 1,
+   "condition": "C1",
+   "game_id": "201033019601.C1.r10",
+   "position": 192,
+   "repetition": 10,
+   "round": 8,
+   "scenario_id": "201033019601"
+  }
+ ],
+ "schedule_rule": [
+  "design_sha256 is the SHA-256 of the canonical manifest without the schedule and without design_sha256",
+  "round r (r = 1..8) plays repetition r + 2 of every active configuration exactly once",
+  "within round r the configurations are ordered by the ascending hex SHA-256 of the UTF-8 string '<design_sha256>:<r>:<scenario_id>.<condition>'",
+  "if the first configuration of a round is the last of the previous round, it is swapped with the second",
+  "positions 1..192 number the games in play order; no game is added, removed or reordered after registration"
+ ],
+ "schema": "miaosuan-variance-study-manifest/1",
+ "sizing_repetitions": [
+  2,
+  5,
+  10,
+  15,
+  20
+ ],
+ "statistics": {
+  "bootstrap": "10000 resamples; indices int(random() * n) from random.Random(seed), seed = int(first 12 hex digits of SHA-256('20260930:<metric>'), 16); never resamples steps; interval limits are the nearest-rank 2.5th and 97.5th percentiles, ranks computed exactly",
+  "condition and suite": "equal-weighted mean of configuration means (8 per condition, 24 for the suite); pooled within-configuration SD = sqrt(mean of configuration variances); between-scenario SD of configuration means; method-of-moments between-scenario variance component max(0, var(means) - mean(variances) / n); 95% percentile interval of a stratified bootstrap that resamples games with replacement within each configuration",
+  "configuration": "n, mean, SD (n - 1), nearest-rank median and quartiles, min, max, and a 95% Student-t interval for the mean (df n - 1; descriptive: n = 10 and outcomes need not be normal); zero variance gives a zero-width interval",
+  "default repetition count": "the smallest n in [2, 5, 10, 15, 20] at which the conservative analytic power for a 50% relative reduction of refusals_per_1000 over the 24 active configurations reaches 0.8; reported with the n each other metric and effect of the grid needs",
+  "n2 versus n10": "per configuration and equal-weighted: the estimate from repetitions 1-2 and from 1-10, their difference, and 95% interval widths (Student-t per configuration; for the equal-weighted mean t with df = sum(n - 1) on SE = sqrt(sum(s^2 / n)) / K)",
+  "sizing": "independent candidate and baseline samples (no pairing by repetition: the engine has no seed control), n games per arm and configuration, analysed as the equal-weighted difference of configuration means over the metric's declared configurations, with the configurations as fixed blocks. SE = sqrt(sum_k 2 s_k^2 / n) / K; two-sided alpha 0.05; normal-approximation power; minimum detectable effect at power 0.8. Assumes the candidate's within-configuration SD equals baseline-v1's. Conservative variant: each s_k replaced by its one-sided 90% upper confidence bound s_k * sqrt((n_k - 1) / chi2_{0.10, n_k - 1}). Check: deterministic Monte Carlo (1000 simulations per cell) resampling each configuration's observed values, the effect added (absolute) or applied as a factor (relative), rejecting when |difference / estimated SE| exceeds t_{0.975, 2K(n - 1)}. Cost from the observed mean wall time per configuration",
+  "temporal": "new games only, in play order. Standardized residual z = (x - configuration mean) / configuration SD over repetitions 3-10 (configurations with zero SD excluded and counted). Spearman correlation of play position with z; first half (repetitions 3-6) versus second half (7-10) as the equal-weighted mean over configurations of (mean second - mean first) / SD; historical repetitions 1-2 versus new 3-10 likewise. 95% percentile intervals from 2000 stratified bootstrap resamples (within configuration and, for halves, within half). A trend is called material when its interval excludes 0 and |standardized difference| >= 0.5 or |Spearman| >= 0.3; otherwise the magnitude and interval are reported and no absence of drift is claimed"
+ },
+ "study_id": "baseline-v1-variance-study-1",
+ "temporal_bootstrap": {
+  "resamples": 2000,
+  "seed": 20260931
+ },
+ "temporal_metrics": [
+  "margin",
+  "refusals_per_1000",
+  "unit_actions",
+  "shots",
+  "moves",
+  "occupations",
+  "latency_p99_ms",
+  "latency_max_ms",
+  "decision_seconds",
+  "engine_seconds",
+  "wall_seconds"
+ ]
+}

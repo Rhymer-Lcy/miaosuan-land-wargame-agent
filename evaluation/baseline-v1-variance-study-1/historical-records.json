@@ -1,0 +1,647 @@
+{
+ "records": [
+  {
+   "condition": "C1",
+   "game_id": "1910631192.C1.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "806df7b3f53a1cf710088688f431c26efa6191264775fccc93877b1843ce06aa",
+   "repetition": 1,
+   "scenario_id": "1910631192",
+   "session": "0102",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C1",
+   "game_id": "1910631192.C1.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "9598f47998b3160742bc8a9a34f51b9e72060910f45d261fedc36ea76e98d7cc",
+   "repetition": 2,
+   "scenario_id": "1910631192",
+   "session": "0134",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C2",
+   "game_id": "1910631192.C2.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "5b829928d32bdbd1bab72d9686a1ff1f9166763a2058e05cbeeca10b660054d8",
+   "repetition": 1,
+   "scenario_id": "1910631192",
+   "session": "0103",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C2",
+   "game_id": "1910631192.C2.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "21511a2133f8c481f46b441491bdf2a1f915f55939a9a16b6eaba9734efa3b5c",
+   "repetition": 2,
+   "scenario_id": "1910631192",
+   "session": "0135",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C3",
+   "game_id": "1910631192.C3.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "e8b78daae8fbc97d963f410ec5c65baba5fb8619c599725b6720a6b91d02c72c",
+   "repetition": 1,
+   "scenario_id": "1910631192",
+   "session": "0104",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C3",
+   "game_id": "1910631192.C3.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "554bec78ce9b4f5aa586cb0b9555e466975c5551dc08aa085c02b634feaa8719",
+   "repetition": 2,
+   "scenario_id": "1910631192",
+   "session": "0136",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C4",
+   "game_id": "1910631192.C4.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "37f7bc329f96268ec5692efa91a919f1ceaf05e69d5e7dcd3322151897c8f13e",
+   "repetition": 1,
+   "scenario_id": "1910631192",
+   "session": "0105",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C4",
+   "game_id": "1910631192.C4.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "1943f3ef5bd29adc440a68ac5c24f2940915d1db55f88cb415a06a1e3e957010",
+   "repetition": 2,
+   "scenario_id": "1910631192",
+   "session": "0137",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C1",
+   "game_id": "1930331196.C1.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "0b6884a91e5b8542e884c6a1c4a70c1999e4c71e30992b03696b2229d298122a",
+   "repetition": 1,
+   "scenario_id": "1930331196",
+   "session": "0110",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C1",
+   "game_id": "1930331196.C1.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "7eebd1578010218a969378d54b5200c50d7ef47768cbe63c0e8a4ee6a25ee3df",
+   "repetition": 2,
+   "scenario_id": "1930331196",
+   "session": "0142",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C2",
+   "game_id": "1930331196.C2.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "c6431564081dd3c98bfcf0e138d5f2e49798488a1467641177ba801a254878a8",
+   "repetition": 1,
+   "scenario_id": "1930331196",
+   "session": "0111",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C2",
+   "game_id": "1930331196.C2.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "b6098e2c16817992ce989cf537852d291094784e7f7b00e2294d1ecb8f028b3a",
+   "repetition": 2,
+   "scenario_id": "1930331196",
+   "session": "0143",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C3",
+   "game_id": "1930331196.C3.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "c852ef495559b090a6587b18d20564ef102cec59e36dd545b9d7b6225defdd46",
+   "repetition": 1,
+   "scenario_id": "1930331196",
+   "session": "0112",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C3",
+   "game_id": "1930331196.C3.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "eb18ef3480658813fb6808fc0ca2a1e45f4fe526c882b2a42f173a2d5fe4e8f7",
+   "repetition": 2,
+   "scenario_id": "1930331196",
+   "session": "0144",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C4",
+   "game_id": "1930331196.C4.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "ec379571d866c66e0769af9a91ddb6a084deef90c47c89795938cadb77e88e2e",
+   "repetition": 1,
+   "scenario_id": "1930331196",
+   "session": "0113",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C4",
+   "game_id": "1930331196.C4.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "9ca06d5ea0153debb21323caaa26b39b34c40c69604dd728d56ae4b48343dc83",
+   "repetition": 2,
+   "scenario_id": "1930331196",
+   "session": "0145",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C1",
+   "game_id": "2010131194.C1.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "72877041f15b1182a909166066fbc32f157b16cf32d26cada85393ccd7d9be8d",
+   "repetition": 1,
+   "scenario_id": "2010131194",
+   "session": "0106",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C1",
+   "game_id": "2010131194.C1.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "4e9922a90842b64734e4bf92f8f56802b4e960b563845139b213998514aeecdb",
+   "repetition": 2,
+   "scenario_id": "2010131194",
+   "session": "0138",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C2",
+   "game_id": "2010131194.C2.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "9ea280a2adddc6496eaa2281b9a24e435bba9bac2912fd85e2329045c72a98cc",
+   "repetition": 1,
+   "scenario_id": "2010131194",
+   "session": "0107",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C2",
+   "game_id": "2010131194.C2.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "da0f3d0b36b82da38d58b4942935d654b062bf52cb68f4d284487cec8e640046",
+   "repetition": 2,
+   "scenario_id": "2010131194",
+   "session": "0139",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C3",
+   "game_id": "2010131194.C3.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "014a4581be5585cdb9fd30d230c1afb8a21cbb6d12ef983bf2b7ba613149c50c",
+   "repetition": 1,
+   "scenario_id": "2010131194",
+   "session": "0108",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C3",
+   "game_id": "2010131194.C3.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "96101915c1d3412f7056dac7119351a25eb3308279ca2c7a7c41178daeb81fa1",
+   "repetition": 2,
+   "scenario_id": "2010131194",
+   "session": "0140",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C4",
+   "game_id": "2010131194.C4.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "3ad03c3cd465e2729504c9d1a853af6c6b04718a3c7316e5308c9b570b91c133",
+   "repetition": 1,
+   "scenario_id": "2010131194",
+   "session": "0109",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C4",
+   "game_id": "2010131194.C4.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "e1d2c205ae5c5ab364ca3abe7bdce876cef097797a3d601c17db85a1ac63a349",
+   "repetition": 2,
+   "scenario_id": "2010131194",
+   "session": "0141",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C1",
+   "game_id": "2010211129.C1.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "6bfcbdcd69e963d56be2a67a9c922e3b89d4cf8c6c960ea20c6f451afb4ba958",
+   "repetition": 1,
+   "scenario_id": "2010211129",
+   "session": "0094",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C1",
+   "game_id": "2010211129.C1.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "d56b628def1202c7c6ffb7a8c6e6a676e88fcebccbb2c6444fd18918ca276766",
+   "repetition": 2,
+   "scenario_id": "2010211129",
+   "session": "0126",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C2",
+   "game_id": "2010211129.C2.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "dc7713dd1d757848f631f94d9a6319bfd8a15b4c780decf88e2b31da0e3badc0",
+   "repetition": 1,
+   "scenario_id": "2010211129",
+   "session": "0095",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C2",
+   "game_id": "2010211129.C2.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "9b9775883bdf90c620554fb4c98cadcf5aae2abc2fbf7c6da815b3679e3bc194",
+   "repetition": 2,
+   "scenario_id": "2010211129",
+   "session": "0127",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C3",
+   "game_id": "2010211129.C3.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "5251e4d76c261a8b57a810fd1cf2dab2e175496475011f4befca28b381c4e4f7",
+   "repetition": 1,
+   "scenario_id": "2010211129",
+   "session": "0096",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C3",
+   "game_id": "2010211129.C3.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "71cee15465d47807190347fdaf125c8de3c2076c2dde512a8ea10d5422a3fb04",
+   "repetition": 2,
+   "scenario_id": "2010211129",
+   "session": "0128",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C4",
+   "game_id": "2010211129.C4.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "f0fd2208ef189f817cb1fe1af76eba1394879ef1872581c57c9b6f1630e4efd5",
+   "repetition": 1,
+   "scenario_id": "2010211129",
+   "session": "0097",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C4",
+   "game_id": "2010211129.C4.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "9d2325a2585166ce8fd927dbc8618609405ea9b43ee7969c4bc4cc3d273ac638",
+   "repetition": 2,
+   "scenario_id": "2010211129",
+   "session": "0129",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C1",
+   "game_id": "201033019601.C1.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "f9e36b5f378ebf7fd306a25c984751b58614b62d0cd2232a4789218f724f94e5",
+   "repetition": 1,
+   "scenario_id": "201033019601",
+   "session": "0114",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C1",
+   "game_id": "201033019601.C1.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "538f89935f9df8152247bb222e13244d18cfb7dbd4dc5a650c5fe665a395cbc1",
+   "repetition": 2,
+   "scenario_id": "201033019601",
+   "session": "0146",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C2",
+   "game_id": "201033019601.C2.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "50915d382cc08929df567a59092999531acb34e073e3c3f31f1bca8308ff1bc1",
+   "repetition": 1,
+   "scenario_id": "201033019601",
+   "session": "0115",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C2",
+   "game_id": "201033019601.C2.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "575380190ccf7871152da5baa573124ea72872c12b1f61a18642c34eb02427e4",
+   "repetition": 2,
+   "scenario_id": "201033019601",
+   "session": "0147",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C3",
+   "game_id": "201033019601.C3.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "06ba0336944a69c0cf68a5fd9170f401a6a3e0671c92d979e7ad912637807cfa",
+   "repetition": 1,
+   "scenario_id": "201033019601",
+   "session": "0116",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C3",
+   "game_id": "201033019601.C3.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "61759c35e9fd1c1d52eeb398c698ff9cff425269bb8dc785608a3b300cd00ebf",
+   "repetition": 2,
+   "scenario_id": "201033019601",
+   "session": "0148",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C4",
+   "game_id": "201033019601.C4.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "c498311d911005a399001079b03df205a888b55fa7bb59ba7f06c7f8879d76d1",
+   "repetition": 1,
+   "scenario_id": "201033019601",
+   "session": "0117",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C4",
+   "game_id": "201033019601.C4.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "cf6113b4064c6abc725db7f8d3825e4277e5d845c5460a284279454e58c56164",
+   "repetition": 2,
+   "scenario_id": "201033019601",
+   "session": "0149",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C1",
+   "game_id": "2010431153.C1.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "3aa8d41ca4aaebafe99f2fab45930979e60f0f5f6c8b25a5c1cdfb455878421f",
+   "repetition": 1,
+   "scenario_id": "2010431153",
+   "session": "0098",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C1",
+   "game_id": "2010431153.C1.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "a558913df23c0b43b39e05d5e862ce78922c44223635b1b86f35783a2123b1ba",
+   "repetition": 2,
+   "scenario_id": "2010431153",
+   "session": "0130",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C2",
+   "game_id": "2010431153.C2.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "285c775facce798f70529f444a508b1345aa25608c0906a35a3d65e2ba4f4fcd",
+   "repetition": 1,
+   "scenario_id": "2010431153",
+   "session": "0099",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C2",
+   "game_id": "2010431153.C2.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "5905ece29fac78ed021f164c117057b46599e7cd69a19adc155cf6273b1e4f52",
+   "repetition": 2,
+   "scenario_id": "2010431153",
+   "session": "0131",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C3",
+   "game_id": "2010431153.C3.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "3b7c461f85f8cd2dd6c7c90af086188eec4f00bb5605b8217216527c98db4e80",
+   "repetition": 1,
+   "scenario_id": "2010431153",
+   "session": "0100",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C3",
+   "game_id": "2010431153.C3.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "b1a9564681a2fb4f9b8d00154587141ab4a6160747863294c371407d997da709",
+   "repetition": 2,
+   "scenario_id": "2010431153",
+   "session": "0132",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C4",
+   "game_id": "2010431153.C4.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "b364959d1e44bfc2db01daa72930080193d979a6f82ad7167e48b0f69eb4d1a1",
+   "repetition": 1,
+   "scenario_id": "2010431153",
+   "session": "0101",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C4",
+   "game_id": "2010431153.C4.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "bfb72c7789b26e8b4af8675d426ae4e4a860a1a0ab1b0b1b7a1b280d044bd0eb",
+   "repetition": 2,
+   "scenario_id": "2010431153",
+   "session": "0133",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C1",
+   "game_id": "2120531121.C1.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "b1cd5a25dcf281f28b6af051a351c86529fee794ad17608bcb67b2e563c8596b",
+   "repetition": 1,
+   "scenario_id": "2120531121",
+   "session": "0090",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C1",
+   "game_id": "2120531121.C1.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "6664d29022961675950c0ee3c6a0f41c99bb70689e2f8c5efadce164173dd4b8",
+   "repetition": 2,
+   "scenario_id": "2120531121",
+   "session": "0122",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C2",
+   "game_id": "2120531121.C2.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "e0d0a5a3bac8b787b2455bdf67e842427c1fd65155e95277dadd21b44a5542a8",
+   "repetition": 1,
+   "scenario_id": "2120531121",
+   "session": "0091",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C2",
+   "game_id": "2120531121.C2.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "6748404884e67c324a013da91b26142d11c3431b3cd94be1174172415c13567e",
+   "repetition": 2,
+   "scenario_id": "2120531121",
+   "session": "0123",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C3",
+   "game_id": "2120531121.C3.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "aac590ee5e1e50524d3cd1a7d17a520810cc4aee18d7b2597a348a07d59a54d1",
+   "repetition": 1,
+   "scenario_id": "2120531121",
+   "session": "0092",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C3",
+   "game_id": "2120531121.C3.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "bbe4a7b38cc497be4d663c3d5034db3c0a2599f849b195eabf5e75acf5c78494",
+   "repetition": 2,
+   "scenario_id": "2120531121",
+   "session": "0124",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C4",
+   "game_id": "2120531121.C4.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "ae1ec484e4cba7c96633c751f9773961282b11fc8cd2d1da40a9a93317a27887",
+   "repetition": 1,
+   "scenario_id": "2120531121",
+   "session": "0093",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C4",
+   "game_id": "2120531121.C4.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "11ad95ab6d020115120f8f241e5dffff06c2519deca14996f8db4b21e3315ade",
+   "repetition": 2,
+   "scenario_id": "2120531121",
+   "session": "0125",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C1",
+   "game_id": "2130511121.C1.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "3a5db53993fc01b3c52217816760a9e11630c0b45eaecf57a06630f3536bf1b2",
+   "repetition": 1,
+   "scenario_id": "2130511121",
+   "session": "0118",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C1",
+   "game_id": "2130511121.C1.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "ddcfea8c694b9f7577c6758a48d72c039e1fe7fe68047043a4a701cceb0dc135",
+   "repetition": 2,
+   "scenario_id": "2130511121",
+   "session": "0150",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C2",
+   "game_id": "2130511121.C2.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "a5329001331cc42915e0ca1e2b43fb5602909039b771b2a361b7746a64952b9e",
+   "repetition": 1,
+   "scenario_id": "2130511121",
+   "session": "0119",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C2",
+   "game_id": "2130511121.C2.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "ee8d9706471019c4152e351ff0b3685b0e770f5a3cdfc988f1b914e618ed7dc8",
+   "repetition": 2,
+   "scenario_id": "2130511121",
+   "session": "0151",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C3",
+   "game_id": "2130511121.C3.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "b0c3bd1cebe84ab9982e587f99ffcd91ffae420fb75c127cb9cafe6768f577bf",
+   "repetition": 1,
+   "scenario_id": "2130511121",
+   "session": "0120",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C3",
+   "game_id": "2130511121.C3.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "c348dba6b6150052c0794531a521da813b7c4c4de404996af75ac46bfd8cfd2c",
+   "repetition": 2,
+   "scenario_id": "2130511121",
+   "session": "0152",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C4",
+   "game_id": "2130511121.C4.r1",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "7b5378a0367db4233e4b4c32aee9a51a0ec849c63c4672780fb27114e7b13086",
+   "repetition": 1,
+   "scenario_id": "2130511121",
+   "session": "0121",
+   "status": "COMPLETED"
+  },
+  {
+   "condition": "C4",
+   "game_id": "2130511121.C4.r2",
+   "harness_commit": "1376ca60dc61eb9b79257a4b7f94aa2965dce772",
+   "record_sha256": "03313aeece114acdf6efba15d777478e30707fcc8b513f76b38d7e9b705e9812",
+   "repetition": 2,
+   "scenario_id": "2130511121",
+   "session": "0153",
+   "status": "COMPLETED"
+  }
+ ],
+ "rule": "SHA-256 of the private record file bytes under local/evaluation/<source_evaluation>/games/",
+ "source_evaluation": "baseline-v1-candidate-occupy-reservation",
+ "source_results_sha256": "ea0ec674e8e51e546684fb75696673e5c81d32d6c9dd7a0d11796a91aeaeda07"
+}
