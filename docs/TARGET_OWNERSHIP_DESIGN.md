@@ -246,6 +246,117 @@ need for 30 affected games.
   this condition is known not to hold; it is stated so that the rule is complete.
 * Otherwise `RUN PROSPECTIVE V2 PREVALENCE DIAGNOSTIC`.
 
+## Results
+
+Run on the server on 2026-10-01 (UTC+8), offline, without the engine: driver commit `dd3cb91`, Python 3.10,
+`OPENBLAS_NUM_THREADS=1`, 221 s. The first run (plan commit `61c9e18`) was followed by three driver corrections found
+in review, each rerun reproducing every other figure unchanged: the processing-order check now applies only where the
+trace lists units (the first run's 21 "problems" were all deployment decisions, which carry no unit decisions and no
+shoot edge); the exact game interval is given only for a corpus of complete games; and the fingerprint table is
+published, as the design states. Figures: `evaluation/target-ownership-design-1/analysis.json` and `sensitivity.json`.
+
+### Fidelity
+
+The audit's population, reproduced: D1 506 of 506 snapshots exact; D2 33,696 of 33,696 exact under `baseline-v0` with
+every `baseline-v2` difference explained; D3 51 of 97 (the other 46 are the inert seat's). 2,273 decisions carry no
+unit decisions (deployment, or no controllable unit) and none has a shoot edge. Consistency problems: 0; every S1
+shooter after the first is displaced by the first, as the model states; repeated S1 oracle runs that differ: 0.
+
+### Formal model on the audit corpus
+
+| Component kind | Components | Decisions containing one | With a collision |
+|---|---|---|---|
+| S1 isolated single-target | 18 | 18 | 18 |
+| S2 coupled multi-target | 84 | 84 | 84 |
+| S3 non-collision | 264 | 261 | 0 |
+
+* Every collision decision has exactly one collision component: 18 S1 and 84 S2 decisions, 102 in all.
+* All 18 S1 components are in D2 (13 with two shooters, 5 with three). All 12 D1 collisions are S2: the H4 shooters
+  had other targets, which is why they were redirected.
+* S2 is the common collision structure: 75 of the 84 S2 components have two shooters, with up to 18 targets; each
+  falls back to `baseline-v2`.
+
+### Situation-level evidence
+
+The 110 collision groups are 102 collision components, 72 identity situations at component level (64 at the audit's
+group level) and 66 structural fingerprints (75 fingerprint-game pairs). Multiplicity of fingerprints: once 51, and 15
+repeated (up to 7 times). 2 fingerprints span several games, both in D1, where the same H4 structure recurs in 6 and 5
+of the captured games.
+
+**The ownership mismatch is 14 groups, 6 identity situations, 7 fingerprints (3 S1, 4 S2) and 4 games. Repeats within
+a game are not independent evidence, and none of these counts is a sample size.**
+
+| Level | D2 (baseline-v0 C1 trajectories, complete games) | D1 (baseline-v2, captured decisions only) |
+|---|---|---|
+| raw collision groups | 14 of 98 | 0 of 12 |
+| identity situations | 6 of 52 | 0 of 12 |
+| structural fingerprints | 7 of 63 | 0 of 3 |
+| games | 4 of 8 (6 with a collision) | 0 of 32 (12 with a captured collision) |
+| configurations | 4 of the 6 with a collision | 0 of 1 |
+| mismatch groups per affected game | 7, 4, 2, 1 | none |
+
+* D2 game prevalence, exact 95% over its 8 independent games: 15.7% to 84.3%, for `baseline-v0` trajectories in C1
+  only. Its width is the finding: the current data support no stable incidence estimate.
+* D1 holds 506 of the 92,192 policy-seat decisions of its games (0.55%), chosen around code-516 refusals and every
+  200th step, so no interval is given and its zero says nothing about how often `baseline-v2` meets the condition.
+
+### Oracle under strict scope
+
+* S1: 18 components. The designated owner equals the first shooter in 9; it changes in 9, always for a higher attack
+  level (the weapon key never decided one) and never blocked by the gate precheck.
+* In all 9 changes only the former and the new owner changed action, the designated owner shot the target, the former
+  owner then did nothing, the designated owner had done nothing before, the number of emitted shots and every
+  non-shoot action stayed the same. Attack-level difference: 2 in 6, 4 in 3.
+* Trace implications: one designation record per earlier non-owner (one in every change); in the 5 changes with a
+  later non-owner, that unit's `baseline-v2` record names the new owner as reserver, with its action unchanged.
+* Clustering: the 9 changes are 9 decisions, 3 identity situations, 3 fingerprints and 2 games, all in D2.
+* S2: all 84 collision components: fallback to `baseline-v2`.
+
+### The audit's 14 mismatch groups under the strict scope
+
+| | Groups | Identity situations | Games |
+|---|---|---|---|
+| retained (S1) | 9 | 3 | 2 |
+| excluded (S2, fallback) | 5 | 3 | 3 |
+
+One game holds both kinds, so 2 + 3 exceeds the 4 affected games. The excluded groups are the audit's swaps in which
+the claimants had other targets (the former owner redirected rather than idled) and the one coupled swap. The
+definition was not adjusted to recover them.
+
+### Planning sensitivity
+
+q is the share of games with at least one S1 lower-attack-level owner. Inputs: the registered layout (15 games per
+configuration, 24 configurations; 16 active C2/C3 configurations), its C2/C3 margin standard error 1.487941 as a
+planning assumption, assurance 0.9.
+
+| q | diagnostic games for 5 / 10 / 20 affected | 360-game diagnostic: expected affected | P(at least 10) | exact 95% if that count is seen | A/B active affected games per arm | per-affected-game effect for 80% | per-affected-game loss hidden by the 10-point margin | targeted games per arm for 30 affected |
+|---|---|---|---|---|---|---|---|---|
+| 1% | 798 / 1,418 / 2,587 | 3.6 | 0.004 | 0.3%-2.8% | 2.4 | 416.9 | 1000 | 3,000 |
+| 2.5% | 318 / 566 / 1,033 | 9 | 0.413 | 1.1%-4.7% | 6 | 166.7 | 400 | 1,200 |
+| 5% | 158 / 282 / 515 | 18 | 0.986 | 3.0%-7.8% | 12 | 83.4 | 200 | 600 |
+| 10% | 78 / 140 / 256 | 36 | 1.000 | 7.1%-13.6% | 24 | 41.7 | 100 | 300 |
+| 20% | 38 / 69 / 126 | 72 | 1.000 | 16.0%-24.5% | 48 | 20.8 | 50 | 150 |
+
+* A 360-game diagnostic of the registered layout shows at least 10 affected games with high probability when q is 5%
+  or more (0.986 at 5%), and bounds q from above when q is small; either outcome decides whether an A/B can be
+  informative.
+* In a 720-game A/B of the registered layout, a suite-level C2/C3 comparison resolves only per-affected-game effects
+  of 20.8 points or more even at q = 20%, and a per-affected-game loss of 1,000 points at q = 1% would average to no
+  more than its 10-point non-inferiority margin over the suite. A suite-level test is therefore uninformative unless q
+  is large; a mechanism-targeted design (configurations where the diagnostic finds the condition, and analysis over
+  affected games identified in both arms) would be needed.
+* The registered arm displaced 1,143 units in C1 against 57 in C2 and 129 in C3: displacement concentrates in the
+  mirror, where the score margin is not used, so the active-configuration counts in the table are optimistic if q
+  follows displacement.
+* Limitations: the standard error is borrowed from the registered experiment; the variance of outcomes in affected
+  games is unknown; this is planning sensitivity, not power.
+
+### Decision
+
+By the rule declared before the analysis: the strict S1 scope retains 3 of the 6 mismatch situations (so the line is
+not abandoned), the designated owner shot its target in all 9 changes, and D1 contains no S1 mismatch. **Decision:
+`RUN PROSPECTIVE V2 PREVALENCE DIAGNOSTIC`.**
+
 ## Reproduce
 
 ```
