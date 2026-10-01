@@ -24,10 +24,15 @@
 #                      sessions, a working directory per game, worker and batch recorded with every game.
 #                      A registered evaluation must run with the worker count its manifest registers
 #                      (execution.workers; a manifest without it registers 1).
-#   --purpose diagnostic --work DIR [--games FILE]
+#   --purpose diagnostic --work DIR [--games FILE] [--runtime ID]
 #                      a diagnostic run: its own work directory, optionally only the registered games
-#                      listed in FILE (kept in registered order), any worker count; the engine ledger
-#                      records the sessions as diagnostic.
+#                      listed in FILE (kept in registered order), any worker count and any runtime
+#                      identity; the engine ledger records the sessions as diagnostic.
+#
+# Every game runs on a runtime identity (src/miaosuan_agent/evaluation/execution.py): the manifest's
+# execution.runtime (default baseline-v1-runtime-r1, which sets no numerical-thread variable), or for a
+# diagnostic run --runtime. Its variables, and no others, are added to each game's empty environment,
+# and a registered scheduler identity (execution.scheduler) must match the pool's.
 #
 # Each game runs with the same isolation as scripts/run_engine_smoke_test.sh: an empty environment
 # (env -i), the persistent installation's home/ as HOME, no user site-packages, PYTHONHASHSEED=0,
@@ -45,6 +50,7 @@ WORKERS=1
 PURPOSE=evaluation
 WORK=""
 GAMES_FILE=""
+RUNTIME=""
 TIMEOUT_SECONDS=${EVALUATION_GAME_TIMEOUT_SECONDS:-2100}
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -57,6 +63,7 @@ while [[ $# -gt 0 ]]; do
         --purpose) PURPOSE=$2; shift 2 ;;
         --work) WORK=$2; shift 2 ;;
         --games) GAMES_FILE=$2; shift 2 ;;
+        --runtime) RUNTIME=$2; shift 2 ;;
         *) echo "unknown argument: $1" >&2; exit 2 ;;
     esac
 done
@@ -72,8 +79,8 @@ if [[ $PURPOSE != evaluation && $PURPOSE != diagnostic ]]; then
     echo "--purpose must be evaluation or diagnostic" >&2
     exit 2
 fi
-if [[ $PURPOSE == evaluation && ( -n $WORK || -n $GAMES_FILE ) ]]; then
-    echo "--work and --games are for diagnostic runs (--purpose diagnostic)" >&2
+if [[ $PURPOSE == evaluation && ( -n $WORK || -n $GAMES_FILE || -n $RUNTIME ) ]]; then
+    echo "--work, --games and --runtime are for diagnostic runs (--purpose diagnostic)" >&2
     exit 2
 fi
 if [[ $PURPOSE == diagnostic && -z $WORK ]]; then
@@ -104,13 +111,32 @@ if [[ ! -f $MANIFEST ]]; then
 fi
 mkdir -p "$WORK/games" "$WORK/started" "$WORK/logs" "$WORK/cwd/a/b"
 WORK=$(cd "$WORK" && pwd)
-REGISTERED_WORKERS=$(PYTHONNOUSERSITE=1 "$PYTHON" - "$MANIFEST" <<'PY'
+mapfile -t REGISTERED < <(PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$RUNTIME" <<'PY'
 import json, sys
-print(int(json.load(open(sys.argv[1], encoding="utf-8")).get("execution", {}).get("workers", 1)))
+from miaosuan_agent.evaluation import execution as ex
+registered = ex.registered(json.load(open(sys.argv[1], encoding="utf-8")))
+runtime = sys.argv[2] or registered["runtime"]
+variables = ex.runtime_env(runtime)
+print(registered["workers"]); print(registered["runtime"]); print(registered["scheduler"] or ""); print(runtime)
+for name, value in sorted(variables.items()):
+    print(f"{name}={value}")
 PY
 )
+if [[ ${#REGISTERED[@]} -lt 4 ]]; then
+    echo "REFUSED: the manifest's execution settings or the runtime '$RUNTIME' are not valid" >&2
+    exit 2
+fi
+REGISTERED_WORKERS=${REGISTERED[0]}
+REGISTERED_RUNTIME=${REGISTERED[1]}
+REGISTERED_SCHEDULER=${REGISTERED[2]}
+RUNTIME=${REGISTERED[3]}
+THREAD_ENV=("${REGISTERED[@]:4}")
 if [[ $PURPOSE == evaluation && $WORKERS != "$REGISTERED_WORKERS" ]]; then
     echo "REFUSED: the manifest registers $REGISTERED_WORKERS worker(s); a registered run cannot use --workers $WORKERS" >&2
+    exit 2
+fi
+if [[ $PURPOSE == evaluation && $RUNTIME != "$REGISTERED_RUNTIME" ]]; then
+    echo "REFUSED: the manifest registers runtime $REGISTERED_RUNTIME; a registered run cannot use $RUNTIME" >&2
     exit 2
 fi
 
@@ -218,7 +244,7 @@ DIRTY_ARGS=()
 if [[ -n $(git -C "$REPO" status --porcelain) ]]; then
     DIRTY_ARGS=(--harness-dirty)
 fi
-echo "plan $PLAN: ${#GAMES[@]} games, harness $COMMIT${DIRTY_ARGS:+ (dirty)}, $WORKERS worker(s), purpose $PURPOSE"
+echo "plan $PLAN: ${#GAMES[@]} games, harness $COMMIT${DIRTY_ARGS:+ (dirty)}, $WORKERS worker(s), purpose $PURPOSE, runtime $RUNTIME ${THREAD_ENV[*]}"
 
 PLANNED=${#GAMES[@]}
 failures=0
@@ -230,11 +256,15 @@ if [[ $WORKERS -gt 1 ]]; then
     fi
     QUEUE="$WORK/logs/queue-$(date -u +%Y%m%dT%H%M%SZ).txt"
     printf '%s\n' "${GAMES[@]}" > "$QUEUE"
+    SCHEDULER_ARGS=()
+    if [[ $PURPOSE == evaluation && -n $REGISTERED_SCHEDULER ]]; then
+        SCHEDULER_ARGS=(--expected-scheduler "$REGISTERED_SCHEDULER")
+    fi
     set +e
     PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/run_game_pool.py" --evaluation "$NAME" --work "$WORK" \
         --engine-install "$INSTALL" --python "$PYTHON" --workers "$WORKERS" --games-file "$QUEUE" \
         --harness-commit "$COMMIT" "${DIRTY_ARGS[@]}" --purpose "$PURPOSE" --timeout "$TIMEOUT_SECONDS" \
-        --stop-after-failures "$STOP_AFTER"
+        --stop-after-failures "$STOP_AFTER" --runtime "$RUNTIME" "${SCHEDULER_ARGS[@]}"
     status=$?
     set -e
     if [[ $status -ne 0 ]]; then
@@ -265,9 +295,10 @@ for id in "${GAMES[@]}"; do
             PYTHONHASHSEED=0 \
             CUDA_VISIBLE_DEVICES= \
             PYTHONPATH="$INSTALL/site:$REPO/src" \
+            "${THREAD_ENV[@]}" \
             timeout --signal=TERM --kill-after=30 "$TIMEOUT_SECONDS" \
             "$PYTHON" "$REPO/scripts/run_evaluation.py" --evaluation "$NAME" --work "$WORK" game --game-id "$id" \
-                --engine-install "$INSTALL" --purpose "$PURPOSE" \
+                --engine-install "$INSTALL" --purpose "$PURPOSE" --runtime "$RUNTIME" \
                 --harness-commit "$COMMIT" "${DIRTY_ARGS[@]}" \
             > "$WORK/logs/$id.log" 2>&1
     )
