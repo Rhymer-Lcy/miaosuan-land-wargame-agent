@@ -62,12 +62,35 @@ R risk (reversed) 0.10, P opportunity 0.10. The family with the highest weighted
 R); the sensitivity checks (equal weights, each weight plus or minus 0.05, each criterion left out, leverage 0.40)
 are declared with it. The rubric prioritises research; it is not evidence that any tactic works.
 
+## Scores and selection
+
+`evaluation/tactical-frontier-1/scores.json` (each score with its reason) and `selection.json`
+(`scripts/tactical_rubric.py`), scored after the rubric was public:
+
+| Family | G | L | O | I | M | R | P | Weighted |
+|---|---|---|---|---|---|---|---|---|
+| T1 deployment disaggregation | 5 | 4 | 5 | 5 | 5 | 3 | 5 | **4.55** |
+| T7 movement-state micro | 5 | 3 | 5 | 3 | 4 | 4 | 5 | 4.10 |
+| T9 intent and task allocation | 5 | 5 | 4 | 1 | 2 | 3 | 5 | 3.95 |
+| T2 transport and infantry defence | 4 | 3 | 5 | 3 | 3 | 4 | 3 | 3.60 |
+| T4 indirect artillery fire | 3 | 4 | 4 | 5 | 4 | 3 | 2 | 3.60 |
+| T6 threat-aware movement | 5 | 3 | 3 | 2 | 2 | 4 | 5 | 3.50 |
+| T3 reconnaissance and belief | 4 | 3 | 3 | 2 | 2 | 4 | 4 | 3.20 |
+| T8 specialised assets | 2 | 2 | 4 | 4 | 3 | 2 | 2 | 2.60 |
+| T5 guided fire and correction | 1 | 3 | 4 | 4 | 3 | 2 | 1 | 2.55 |
+
+**Selected: T1**, 0.45 ahead of T7. It stays first in all 23 declared weight variants (equal weights, each weight
+plus or minus 0.05, each criterion left out, leverage 0.40); the runner-up is T7, or T9 when leverage, isolation,
+measurability or observability is reweighted. Its two judgement scores are not decisive either: with L 3 and R 2,
+T1 would score 4.20, still above T7. This is a research priority, not evidence that the tactic works.
+
 ## Hypothesis register
 
 | Id | Hypothesis | State |
 |---|---|---|
 | TO-1 | target ownership by the highest attack level in isolated single-target collisions | `BLOCKED` (prevalence-1 stopped before interpretation); backlogged |
-| T1 to T9 | the families above | `IDEA` |
+| T1 | deployment disaggregation: split eligible ground operators during deployment | `IDEA`, selected for Sprint 1 |
+| T2 to T9 | the other families above | `IDEA` |
 
 ## Platform canary and feedback loop
 
