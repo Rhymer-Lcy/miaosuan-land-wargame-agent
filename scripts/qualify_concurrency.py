@@ -532,6 +532,122 @@ def summarize(plan: Mapping[str, Any], collected: Mapping[str, Any], folder: Pat
 
 
 # ----------------------------------------------------------------------------------------------
+# scheduler equivalence (production path)
+
+
+def run_records(work: Path, corpus: List[str]) -> Dict[str, Dict[str, Any]]:
+    records = {}
+    for game in corpus:
+        path = work / "games" / f"{game}.json"
+        if path.exists():
+            records[game] = json.loads(path.read_text(encoding="utf-8"))
+    return records
+
+
+def check_run(plan: Mapping[str, Any], manifest: Mapping[str, Any], work: Path, ledger: List[Dict[str, Any]],
+              mode: str, workers: int) -> Dict[str, Any]:
+    corpus = plan["equivalence"]["corpus"]
+    refs = plan["equivalence"]["references"]
+    records = run_records(work, corpus)
+    problems = []
+    if sorted(records) != sorted(corpus):
+        problems.append(f"records for {len(records)} of {len(corpus)} planned games")
+    markers = sorted(p.name for p in (work / "started").iterdir()) if (work / "started").exists() else []
+    if markers != sorted(corpus):
+        problems.append(f"start markers {len(markers)} for {len(corpus)} games")
+    for game in corpus:
+        if not (work / "logs" / f"{game}.log").exists():
+            problems.append(f"{game}: no log")
+    events: Dict[str, Dict[str, List[Dict[str, Any]]]] = {}
+    for event in ledger:
+        events.setdefault(event["session"], {}).setdefault(event["event"], []).append(event)
+    comparisons, states, batches = {}, set(), {}
+    digest = mf.digest(manifest)
+    for game, record in records.items():
+        group = game.split(".")[2]
+        harness = record["harness"]
+        if record["status"] != "COMPLETED":
+            problems.append(f"{game}: {record['status']}")
+        if (harness["manifest_sha256"], harness["policy_source_sha256"], harness.get("group")) != (
+                digest, manifest["groups"][group]["policy_source"]["sha256"], group):
+            problems.append(f"{game}: harness digests differ from the registration")
+        execution = harness.get("execution")
+        if mode == "exclusive" and execution is not None:
+            problems.append(f"{game}: a serial record names an execution block")
+        if mode == "shared":
+            if not execution or execution.get("mode") != "shared" or execution.get("workers") != workers:
+                problems.append(f"{game}: execution {execution}")
+            else:
+                batches.setdefault(execution["batch"], []).append(group)
+        session = events.get(record["session"], {})
+        opens, closes = session.get("session-open", []), session.get("session-close", [])
+        if len(opens) != 1 or len(closes) != 1 or session.get("session-recovered"):
+            problems.append(f"{game}: session {record['session']} is not opened and closed exactly once")
+        else:
+            opened = opens[0]
+            if opened["harness"].get("game_id") != game or opened.get("purpose") != cq.PURPOSE:
+                problems.append(f"{game}: session {record['session']} names {opened['harness'].get('game_id')}")
+            if opened.get("concurrency", {}).get("mode", "exclusive") != mode:
+                problems.append(f"{game}: session mode differs from {mode}")
+            if closes[0].get("state_changed") or closes[0].get("home_changed") or not closes[0]["integrity"]["ok"]:
+                problems.append(f"{game}: state, home or integrity changed in its session")
+            states.add(json.dumps(opened["state"], sort_keys=True))
+            states.add(json.dumps(closes[0]["state"], sort_keys=True))
+        comparisons[game] = cq.compare(record, refs[game])
+        if not comparisons[game]["pass"]:
+            problems.append(f"{game}: independence comparison failed {comparisons[game]}")
+    sessions = sorted(int(r["session"]) for r in records.values())
+    if sessions and sessions != list(range(sessions[0], sessions[0] + len(sessions))):
+        problems.append(f"sessions are not consecutive: {sessions}")
+    if len(states) > 1:
+        problems.append("the engine state differs between sessions")
+    return {"pass": not problems, "problems": problems, "records": len(records), "sessions": sessions,
+            "comparisons": comparisons, "batches": {str(b): sorted(g) for b, g in sorted(batches.items())},
+            "states": len(states)}
+
+
+def cmd_equivalence(args: argparse.Namespace) -> int:
+    plan = load_plan()
+    manifest = load_manifest(plan)
+    install = ei.EngineInstall(INSTALL.resolve())
+    with ei.exclusive_window(install):
+        ledger = ei.read_ledger(install)
+        unclosed = ei.unclosed_sessions(ledger)
+    base = WORK / "equivalence"
+    serial = check_run(plan, manifest, base / "serial", ledger, "exclusive", 1)
+    parallel = check_run(plan, manifest, base / "parallel", ledger, "shared", args.workers)
+    problems = serial["problems"] + parallel["problems"]
+    if unclosed:
+        problems.append(f"unclosed sessions: {unclosed}")
+    identical, deterministic = 0, 0
+    for game in plan["equivalence"]["corpus"]:
+        if plan["equivalence"]["references"][game]["class"] != "deterministic":
+            continue
+        deterministic += 1
+        a = run_records(base / "serial", [game]).get(game)
+        b = run_records(base / "parallel", [game]).get(game)
+        if a and b and a["state_chain"] == b["state_chain"] and [s["trace_chain"] for s in a["seats"]] == [
+                s["trace_chain"] for s in b["seats"]]:
+            identical += 1
+        else:
+            problems.append(f"{game}: deterministic game differs between the serial and the parallel run")
+    pool_runs = sorted((base / "parallel" / "pool").glob("run-*.json"))
+    scheduler_ids = sorted({json.loads(p.read_text(encoding="utf-8"))["scheduler"] for p in pool_runs})
+    result = {"pass": not problems, "problems": problems, "workers": args.workers,
+              "serial": {k: serial[k] for k in ("pass", "records", "sessions", "states")},
+              "parallel": {k: parallel[k] for k in ("pass", "records", "sessions", "states", "batches")},
+              "deterministic_identical_between_runs": identical, "deterministic_games": deterministic,
+              "independence": {"serial": sum(1 for v in serial["comparisons"].values() if v["pass"]),
+                               "parallel": sum(1 for v in parallel["comparisons"].values() if v["pass"]),
+                               "games": len(plan["equivalence"]["corpus"])},
+              "scheduler": scheduler_ids, "pool_runs": len(pool_runs)}
+    (base / "equivalence.json").write_text(json.dumps({**result, "serial_detail": serial, "parallel_detail": parallel},
+                                                      indent=1, sort_keys=True) + "\n", encoding="utf-8")
+    print(json.dumps(result, indent=1, sort_keys=True))
+    return 0 if result["pass"] else 5
+
+
+# ----------------------------------------------------------------------------------------------
 # analyze
 
 
@@ -561,6 +677,10 @@ def cmd_analyze(args: argparse.Namespace) -> int:
     results = {"schema": "miaosuan-concurrency-qualification-results/1", "plan_id": cq.PLAN_ID,
                "plan_sha256": cq.digest(plan), "commits": sorted({s["commit"] for s in done.values()}),
                "tiers": analysis["tiers"], "recommendation": analysis["recommendation"]}
+    equivalence = WORK / "equivalence" / "equivalence.json"
+    if equivalence.exists():
+        detail = json.loads(equivalence.read_text(encoding="utf-8"))
+        results["equivalence"] = {k: v for k, v in detail.items() if not k.endswith("_detail")}
     text = json.dumps(results, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
     if args.check:
         if not RESULTS.is_file() or RESULTS.read_text(encoding="utf-8") != text:
@@ -597,6 +717,9 @@ def main() -> int:
     resummarize.add_argument("--tier", required=True, choices=SEQUENCE)
     resummarize.add_argument("--attempt")
     resummarize.set_defaults(func=lambda a: write_summary(load_plan(), tier_folder(a.tier, a.attempt)))
+    equivalence = sub.add_parser("equivalence", help="compare the serial and parallel production runs of the corpus")
+    equivalence.add_argument("--workers", type=int, required=True, help="the parallel run's worker count")
+    equivalence.set_defaults(func=cmd_equivalence)
     analyze = sub.add_parser("analyze")
     analyze.add_argument("--check", action="store_true")
     analyze.set_defaults(func=cmd_analyze)
