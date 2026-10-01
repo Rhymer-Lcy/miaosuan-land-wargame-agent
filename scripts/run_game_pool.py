@@ -8,7 +8,10 @@
 order. Each game is the serial loop's command in the serial loop's isolation, with two differences: its own
 working directory (``WORK/cwd/<game>/a/b``) and a shared engine session whose record names the worker count,
 the worker, the batch (dispatch wave) and the scheduler identity. Games are dispatched in queue order, at
-most N at a time, by ``src/miaosuan_agent/evaluation/scheduler.py``.
+most N at a time, by ``src/miaosuan_agent/evaluation/scheduler.py``. ``--runtime`` names the runtime identity;
+its numerical-thread variables (``src/miaosuan_agent/evaluation/execution.py``) are added to every game's
+environment, and the game checks them. ``--expected-scheduler`` refuses the run unless this scheduler's identity
+is the registered one.
 
 A game with a record is skipped. A game that was started earlier and left no record stops the run before
 any game starts, as in the serial loop, because rerunning it would select among outcomes. Nothing is retried
@@ -37,6 +40,7 @@ if str(REPO_ROOT / "src") not in sys.path:
     sys.path.insert(0, str(REPO_ROOT / "src"))
 
 from miaosuan_agent import engine_install as ei  # noqa: E402
+from miaosuan_agent.evaluation import execution as ex  # noqa: E402
 from miaosuan_agent.evaluation import scheduler  # noqa: E402
 
 SCHEDULER_SOURCES = ("src/miaosuan_agent/evaluation/scheduler.py", "scripts/run_game_pool.py")
@@ -53,11 +57,11 @@ def scheduler_identity(root: Path = REPO_ROOT) -> str:
     return f"{scheduler.SCHEDULER_ID}@{digest.hexdigest()}"
 
 
-def isolation_env(install: ei.EngineInstall) -> Dict[str, str]:
-    """The serial loop's ``env -i`` environment, unchanged."""
+def isolation_env(install: ei.EngineInstall, runtime: str = ex.DEFAULT_RUNTIME) -> Dict[str, str]:
+    """The serial loop's ``env -i`` environment plus the runtime's numerical-thread variables (none for r1)."""
     return {"HOME": str(install.home), "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin", "LANG": "C.UTF-8",
             "PYTHONNOUSERSITE": "1", "PYTHONDONTWRITEBYTECODE": "1", "PYTHONHASHSEED": "0",
-            "CUDA_VISIBLE_DEVICES": "", "PYTHONPATH": f"{install.site}:{REPO_ROOT / 'src'}"}
+            "CUDA_VISIBLE_DEVICES": "", "PYTHONPATH": f"{install.site}:{REPO_ROOT / 'src'}", **ex.runtime_env(runtime)}
 
 
 def plan_queue(games: Sequence[str], work: Path) -> Tuple[List[str], List[str], List[str]]:
@@ -86,11 +90,12 @@ def stop_rule(consecutive: int) -> scheduler.StopRule:
 
 
 def game_argv(python: str, game_script: Path, evaluation: str, work: Path, game: str, install: ei.EngineInstall,
-              commit: str, dirty: bool, purpose: str, workers: int, worker: int, batch: int, identity: str) -> List[str]:
+              commit: str, dirty: bool, purpose: str, workers: int, worker: int, batch: int, identity: str,
+              runtime: str = ex.DEFAULT_RUNTIME) -> List[str]:
     return ([python, str(game_script), "--evaluation", evaluation, "--work", str(work), "game", "--game-id", game,
              "--engine-install", str(install.root), "--harness-commit", commit] + (["--harness-dirty"] if dirty else [])
             + ["--purpose", purpose, "--session-mode", "shared", "--workers", str(workers), "--worker", str(worker),
-               "--batch", str(batch), "--scheduler", identity])
+               "--batch", str(batch), "--scheduler", identity, "--runtime", runtime])
 
 
 def exit_status(report: scheduler.PoolReport, signum: Optional[int]) -> int:
@@ -131,10 +136,19 @@ def run(args: argparse.Namespace, game_script: Path = GAME_SCRIPT,
         print(f"REFUSED: the ledger shows unclosed sessions {unclosed}; investigate before a parallel run",
               file=sys.stderr)
         return 4
+    identity = scheduler_identity()
+    expected = getattr(args, "expected_scheduler", None)
+    if expected and expected != identity:
+        print(f"REFUSED: the manifest registers scheduler {expected}; this scheduler is {identity}", file=sys.stderr)
+        return 2
+    runtime = getattr(args, "runtime", None) or ex.DEFAULT_RUNTIME
+    try:
+        env = isolation_env(install, runtime)
+    except ValueError as exc:
+        print(f"REFUSED: {exc}", file=sys.stderr)
+        return 2
     for sub in ("games", "started", "logs", "cwd", "pool"):
         (work / sub).mkdir(parents=True, exist_ok=True)
-    identity = scheduler_identity()
-    env = isolation_env(install)
 
     def start(job: scheduler.Job, worker: int, batch: int) -> scheduler.Handle:
         with open(work / "started" / job.game_id, "x", encoding="utf-8") as marker:
@@ -142,7 +156,7 @@ def run(args: argparse.Namespace, game_script: Path = GAME_SCRIPT,
         cwd = work / "cwd" / job.game_id / "a" / "b"
         cwd.mkdir(parents=True)
         argv = game_argv(args.python, game_script, args.evaluation, work, job.game_id, install, args.harness_commit,
-                         args.harness_dirty, args.purpose, args.workers, worker, batch, identity)
+                         args.harness_dirty, args.purpose, args.workers, worker, batch, identity, runtime)
         return launcher(argv, env, cwd, work / "logs" / f"{job.game_id}.log")
 
     def finished(result: scheduler.Result) -> None:
@@ -164,11 +178,13 @@ def run(args: argparse.Namespace, game_script: Path = GAME_SCRIPT,
 
     signal.signal(signal.SIGINT, cancel)
     signal.signal(signal.SIGTERM, cancel)
-    print(f"pool: {len(queue)} games, {args.workers} workers, scheduler {identity}", flush=True)
+    print(f"pool: {len(queue)} games, {args.workers} workers, runtime {runtime} {ex.runtime_env(runtime)}, "
+          f"scheduler {identity}", flush=True)
     report = pool.run()
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     with open(work / "pool" / f"run-{stamp}.json", "x", encoding="utf-8") as handle:
-        handle.write(json.dumps({"scheduler": identity, "workers": args.workers, "queue": queue,
+        handle.write(json.dumps({"scheduler": identity, "workers": args.workers, "runtime": runtime,
+                                 "thread_env": ex.runtime_env(runtime), "queue": queue,
                                  "not_started": [j.game_id for j in report.not_started],
                                  "stopped_by_rule": report.stopped_by_rule, "cancelled": report.cancelled,
                                  "wall_seconds": report.wall_seconds,
@@ -206,6 +222,9 @@ def main() -> int:
     parser.add_argument("--purpose", default="evaluation", choices=("evaluation", "diagnostic"))
     parser.add_argument("--timeout", type=float, default=2100.0)
     parser.add_argument("--stop-after-failures", type=int, default=0)
+    parser.add_argument("--runtime", default=ex.DEFAULT_RUNTIME,
+                        help="runtime identity; its numerical-thread variables are added to every game's environment")
+    parser.add_argument("--expected-scheduler", help="refuse unless this scheduler's identity equals the registered one")
     args = parser.parse_args()
     if args.workers < 2:
         print("the pool is for two or more workers; one worker is the serial loop of run_evaluation.sh",
