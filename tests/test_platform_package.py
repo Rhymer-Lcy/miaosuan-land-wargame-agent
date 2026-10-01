@@ -60,7 +60,8 @@ class PackageTest(unittest.TestCase):
     def test_forbidden_content_is_refused(self) -> None:
         for name, content in (("ai/tests/test_x.py", b""), ("ai/x.pyc", b""), ("ai/data.json", b"{}"),
                               ("ai/__pycache__/x.py", b""), ("ai/local/x.py", b""), ("other/agent.py", b""),
-                              ("ai/x.py", b"path = '/home/user/x'"), ("ai/y.py", b"import train_env"),
+                              ("ai/x.py", ("path = '/" + "home/user/x'").encode()), ("ai/y.py", b"import train_env"),
+                              ("ai/z.py", ("path = 'C" + ":/data/x'").encode()), ("ai/w.py", ("host = '192." + "168.0.1'").encode()),
                               ("ai/.engine_config", b"")):
             self.assertTrue(self.b.forbidden(name, content), name)
         self.assertEqual(self.b.forbidden("ai/agent.py", self.payload["ai/agent.py"]), [])
