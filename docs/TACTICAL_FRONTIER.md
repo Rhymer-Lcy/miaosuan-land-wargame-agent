@@ -54,6 +54,10 @@ for what `valid_actions` lists on engine 4.1.0. Aggregates only.
 | T8 specialised assets | mines (sub_type 13, 7 of 50), fortifications (type 4, 2 to 4 of 50), altitude (helicopters), air defence | low | lay mine listed in 1 play decision; altitude in 6,957 | rare, scenario-dependent | local |
 | T9 intent and task allocation | the whole force | high | every game | architectural change across all behaviour | potentially largest, hardest to isolate |
 
+T1's open risks were then measured by its screen (`docs/SCREEN_DEPLOYMENT_SPLIT.md`): on engine 4.1.0 deployment
+splits were accepted in 3 of the 8 frozen scenarios and refused with code 103 in the other 5; the new operators are
+the seat's own and obey orders; the stacking limit voids a split silently.
+
 ## Selection rubric (committed before scoring)
 
 `evaluation/tactical-frontier-1/rubric.json` fixes the criteria, their 0 to 5 anchors and the weights before any
@@ -89,8 +93,28 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
 | Id | Hypothesis | State |
 |---|---|---|
 | TO-1 | target ownership by the highest attack level in isolated single-target collisions | `BLOCKED` (prevalence-1 stopped before interpretation); backlogged |
-| T1 | deployment disaggregation: split eligible ground operators during deployment | `IDEA`, selected for Sprint 1 |
+| T1 | deployment disaggregation: split eligible ground operators during deployment | `EXPLORATORY`: screen 1 disposition REVISE BEFORE CONFIRMATION ([issue #1](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/1), `docs/SCREEN_DEPLOYMENT_SPLIT.md`) |
+| T1-r | T1 revised: probe once and stop on code 103, skip splits the stacking limit voids, keep the play stage's objectives after splitting; disaggregation pays when the force is large | `IDEA`, next |
 | T2 to T9 | the other families above | `IDEA` |
+
+## Roadmap
+
+1. **T1-r**: first diagnose the one deterministic loss of screen 1 (as blue against the inert control in 1910631192 the
+   candidate scores 78 where `baseline-v2` scores 158) with two captured diagnostic games, then register the revised
+   candidate for a fresh exploratory screen whose analysis keeps only games in which the engine accepted splits.
+2. **T7 movement-state micro**, the rubric's runner-up: change state, stop and weapon lock appear in most decisions.
+3. **T9 intent and task allocation**, the largest lever and the hardest to isolate; T4 (the idle artillery) follows
+   by the rubric.
+
+A tactic that earns ADVANCE gets a confirmatory design sized from its screen's noise; one that does not is recorded
+with its disposition and left. Platform evidence runs alongside: the canary first, then each candidate that a local
+screen supports.
+
+## Process deviations
+
+| Date (UTC+8) | Where | What happened | Consequence |
+|---|---|---|---|
+| 2026-10-02 | screen 1 smoke analysis | the first run read zero splits because the engine rewrites a deployment split's type from 314 to 14 in place before the capture serialises it; the records contradicted it | fixed, tested and pushed before the A/B; the analysis now refuses to run when capture and record disagree; the registered rule and the verdict on these data are unchanged (`docs/SCREEN_DEPLOYMENT_SPLIT.md`) |
 
 ## Platform canary and feedback loop
 
@@ -98,16 +122,27 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
   modules vendored byte for byte (standard library only), a generated `Agent`, a deterministic stored archive, a
   forbidden-content scan, and an isolated-interpreter smoke against the repository agent. The archive is never
   committed.
+* Canary status: **READY FOR PLATFORM CANARY**. `miaosuan-baseline-v2-canary.zip`, 107,646 bytes, SHA-256
+  `a3d3b0229118c0a389d379b315a620465624222f93fcf39de115e8e9dde59511`, byte-identical when built on the workstation and
+  on the server; the packaged agent's actions equal the repository agent's on synthetic games and on all 33,696 steps
+  of the 8-game replay corpus under CPython 3.10.20 with NumPy 1.26.2. The upload is a manual step on the platform;
+  nothing is uploaded from this repository.
 * For each meaningful platform loss, a failure ledger entry: deployment, reconnaissance, movement, fire allocation,
   indirect fire, transport, objective timing, survival, special equipment, or unknown. Repeated patterns become
   preregistered hypotheses; nothing is patched silently after a loss.
+
+| Date | Platform game | Opponent | Result | Category | Observation | Hypothesis |
+|---|---|---|---|---|---|---|
+| (none yet) | | | | | | |
 
 ## BOKE-2026 holdout
 
 The Fifth Miaosuan Cup scenario (user-supplied: "城镇居民26-波克 / 波克的阵线") is not in the local SDK data: the
 archive's nested `Data.zip` holds 50 scenarios and 16 map folders, none named `map_26`, and no file mentions the
-scenario. When its assets become available: audit compatibility; do not tune; first run the frozen generalist agent
-and record its external performance; only then begin profile-specific work, behind a competition profile.
+scenario (checked 2026-10-02 against the archive whose digest the local checksum list pins, entry names and file
+contents in UTF-8, GBK and UTF-16; a name search of the development workstation found no competition asset either).
+When its assets become available: audit compatibility; do not tune; first run the frozen generalist agent and record
+its external performance; only then begin profile-specific work, behind a competition profile.
 
 ## Not now
 
