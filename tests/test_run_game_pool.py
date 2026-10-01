@@ -161,13 +161,14 @@ class EndToEndTest(unittest.TestCase):
     def tearDown(self) -> None:
         self._tmp.cleanup()
 
-    def run_pool(self, games, codes=None, workers=3, stop_after=0):
+    def run_pool(self, games, codes=None, workers=3, stop_after=0, **extra):
         (self.work / "codes.json").write_text(json.dumps(codes or {}), encoding="utf-8")
         games_file = self.tmp / f"games-{len(list(self.tmp.glob('games-*')))}.txt"
         games_file.write_text("\n".join(games) + "\n", encoding="utf-8")
         args = argparse.Namespace(work=str(self.work), games_file=str(games_file), engine_install=str(self.install.root),
                                   python=sys.executable, evaluation="E", harness_commit="c", harness_dirty=False,
-                                  purpose="diagnostic", workers=workers, timeout=60.0, stop_after_failures=stop_after)
+                                  purpose="diagnostic", workers=workers, timeout=60.0, stop_after_failures=stop_after,
+                                  **extra)
         with contextlib.redirect_stdout(io.StringIO()) as out, contextlib.redirect_stderr(io.StringIO()):
             status = pool.run(args, game_script=self.script)
         return status, out.getvalue()
@@ -192,6 +193,27 @@ class EndToEndTest(unittest.TestCase):
         self.assertEqual(again, 0)
         self.assertEqual(sum(1 for line in out.splitlines() if line.startswith("recorded already: ")), 7)
         self.assertIn("pool finished: 0 started", out)
+
+    def test_runtime_r2_reaches_every_game_environment(self) -> None:
+        status, out = self.run_pool(["g0", "g1"], runtime="baseline-v1-runtime-r2")
+        self.assertEqual(status, 0, out)
+        record = json.loads((self.work / "games" / "g1.json").read_text(encoding="utf-8"))
+        self.assertIn("OPENBLAS_NUM_THREADS", record["env"])
+        self.assertEqual(sorted(record["env"]), sorted(pool.isolation_env(self.install, "baseline-v1-runtime-r2")))
+        self.assertEqual(record["argv"][-2:], ["--runtime", "baseline-v1-runtime-r2"])
+        run = json.loads(next((self.work / "pool").glob("run-*.json")).read_text(encoding="utf-8"))
+        self.assertEqual((run["runtime"], run["thread_env"]), ("baseline-v1-runtime-r2", {"OPENBLAS_NUM_THREADS": "1"}))
+
+    def test_a_registered_scheduler_must_match(self) -> None:
+        status, _ = self.run_pool(["g0"], expected_scheduler="miaosuan-game-pool/1@" + "0" * 64)
+        self.assertEqual(status, 2)
+        self.assertFalse((self.work / "started").exists() and any((self.work / "started").iterdir()))
+        status, _ = self.run_pool(["g0"], expected_scheduler=pool.scheduler_identity())
+        self.assertEqual(status, 0)
+
+    def test_an_unknown_runtime_is_refused(self) -> None:
+        status, _ = self.run_pool(["g0"], runtime="baseline-v1-runtime-r9")
+        self.assertEqual(status, 2)
 
     def test_a_stale_start_stops_before_any_game(self) -> None:
         (self.work / "started").mkdir()
