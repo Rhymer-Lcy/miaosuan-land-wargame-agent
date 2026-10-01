@@ -1,0 +1,311 @@
+{
+ "components": {
+  "head_to_head_candidate_minus_opponent": {
+   "attack": 8.98,
+   "occupy": -12.08,
+   "remain": 8.98
+  },
+  "vs_inert_b": {
+   "attack": 41.38,
+   "occupy": 197.5,
+   "remain": 220.75
+  },
+  "vs_inert_c": {
+   "attack": 42.62,
+   "occupy": 192.5,
+   "remain": 220.75
+  }
+ },
+ "disposition": "REVISE BEFORE CONFIRMATION",
+ "failed_games": {
+  "involving_the_candidate": 0,
+  "total": 0
+ },
+ "head_to_head": {
+  "games": 48,
+  "per_scenario_mean_margin": {
+   "1910631192": 4.67,
+   "1930331196": -190.33,
+   "2010131194": 60,
+   "2010211129": 3.33,
+   "201033019601": 40,
+   "2010431153": -8.67,
+   "2120531121": -143.33,
+   "2130511121": 281.33
+  },
+  "pooled_mean_95_scenario_bootstrap": [
+   -78.58,
+   97.71
+  ],
+  "pooled_mean_margin": 5.88,
+  "range_per_scenario": [
+   -190.33,
+   281.33
+  ],
+  "scenarios_negative": 3,
+  "scenarios_positive": 5,
+  "wins_draws_losses": {
+   "draw": 0,
+   "loss": 24,
+   "win": 24
+  }
+ },
+ "integrity": {
+  "pass": true,
+  "problems": [],
+  "records": 192,
+  "sessions": [
+   2266,
+   2457
+  ]
+ },
+ "latency": {
+  "b": {
+   "max_ms": 1508.851,
+   "p50_ms": 0.517,
+   "p95_ms": 1.398
+  },
+  "c": {
+   "max_ms": 1697.174,
+   "p50_ms": 0.661,
+   "p95_ms": 2.781
+  }
+ },
+ "manifest_sha256": "7ef883b7daa6f4272655cd2f8716cd84dcf0d369aff68f6122adec2357c77dcd",
+ "mechanism": {
+  "candidate_seat_games": 144,
+  "cells": 32,
+  "cells_with_more_operators": 12,
+  "controllable_operators_seen": {
+   "1910631192.C1.blue": {
+    "baseline": 6,
+    "candidate": 14
+   },
+   "1910631192.C1.red": {
+    "baseline": 4,
+    "candidate": 8
+   },
+   "1910631192.C2.red": {
+    "baseline": 4,
+    "candidate": 8
+   },
+   "1910631192.C3.blue": {
+    "baseline": 6,
+    "candidate": 14
+   },
+   "1930331196.C1.blue": {
+    "baseline": 26,
+    "candidate": 44
+   },
+   "1930331196.C1.red": {
+    "baseline": 20,
+    "candidate": 32
+   },
+   "1930331196.C2.red": {
+    "baseline": 20,
+    "candidate": 32
+   },
+   "1930331196.C3.blue": {
+    "baseline": 26,
+    "candidate": 44
+   },
+   "2010131194.C1.blue": {
+    "baseline": 2,
+    "candidate": 2
+   },
+   "2010131194.C1.red": {
+    "baseline": 2,
+    "candidate": 2
+   },
+   "2010131194.C2.red": {
+    "baseline": 2,
+    "candidate": 2
+   },
+   "2010131194.C3.blue": {
+    "baseline": 2,
+    "candidate": 2
+   },
+   "2010211129.C1.blue": {
+    "baseline": 5,
+    "candidate": 5
+   },
+   "2010211129.C1.red": {
+    "baseline": 4,
+    "candidate": 4
+   },
+   "2010211129.C2.red": {
+    "baseline": 4,
+    "candidate": 4
+   },
+   "2010211129.C3.blue": {
+    "baseline": 5,
+    "candidate": 5
+   },
+   "201033019601.C1.blue": {
+    "baseline": 1,
+    "candidate": 1
+   },
+   "201033019601.C1.red": {
+    "baseline": 1,
+    "candidate": 1
+   },
+   "201033019601.C2.red": {
+    "baseline": 1,
+    "candidate": 1
+   },
+   "201033019601.C3.blue": {
+    "baseline": 1,
+    "candidate": 1
+   },
+   "2010431153.C1.blue": {
+    "baseline": 6,
+    "candidate": 6
+   },
+   "2010431153.C1.red": {
+    "baseline": 4,
+    "candidate": 4
+   },
+   "2010431153.C2.red": {
+    "baseline": 4,
+    "candidate": 4
+   },
+   "2010431153.C3.blue": {
+    "baseline": 6,
+    "candidate": 6
+   },
+   "2120531121.C1.blue": {
+    "baseline": 26,
+    "candidate": 26
+   },
+   "2120531121.C1.red": {
+    "baseline": 22,
+    "candidate": 22
+   },
+   "2120531121.C2.red": {
+    "baseline": 22,
+    "candidate": 22
+   },
+   "2120531121.C3.blue": {
+    "baseline": 26,
+    "candidate": 26
+   },
+   "2130511121.C1.blue": {
+    "baseline": 44,
+    "candidate": 80
+   },
+   "2130511121.C1.red": {
+    "baseline": 37,
+    "candidate": 65
+   },
+   "2130511121.C2.red": {
+    "baseline": 37,
+    "candidate": 65
+   },
+   "2130511121.C3.blue": {
+    "baseline": 44,
+    "candidate": 80
+   }
+  },
+  "deployment_splits_per_candidate_seat": {
+   "10": 18,
+   "12": 18,
+   "2": 18,
+   "24": 9,
+   "30": 9,
+   "36": 18,
+   "4": 18,
+   "52": 18,
+   "8": 18
+  }
+ },
+ "mirror_margin_means": {
+  "1910631192.b": -64.67,
+  "1910631192.c": -28.67,
+  "1930331196.b": 618.67,
+  "1930331196.c": -208.67,
+  "2010131194.b": -170,
+  "2010131194.c": -10,
+  "2010211129.b": -161.33,
+  "2010211129.c": -277.33,
+  "201033019601.b": 40,
+  "201033019601.c": 46.67,
+  "2010431153.b": -271.33,
+  "2010431153.c": -236.67,
+  "2120531121.b": -657.67,
+  "2120531121.c": -308.33,
+  "2130511121.b": -998.33,
+  "2130511121.c": -781.67
+ },
+ "refusal_class_seat_games": {
+  "b": {
+   "203/2": 13,
+   "516/2": 5
+  },
+  "c": {
+   "103/14": 90,
+   "203/2": 10,
+   "203/5": 4,
+   "516/2": 7
+  }
+ },
+ "refusal_classes": {
+  "b": {
+   "203/2": 16,
+   "516/2": 5
+  },
+  "c": {
+   "103/14": 3465,
+   "203/2": 15,
+   "203/5": 4,
+   "516/2": 8
+  }
+ },
+ "refusal_classes_new_in_candidate": [
+  "103/14",
+  "203/5"
+ ],
+ "refusal_counting_note": "refusal counts are as the harness records them: while the engine clock stands still (deployment) the engine re-reports earlier feedback at every step, so a deployment refusal is counted once per step until play starts; seat-games per class are not affected",
+ "safety": {
+  "b": {
+   "contract errors": 0,
+   "duplicate same-target shots": 0,
+   "gate rejections": 0,
+   "policy seat-games": 144,
+   "replay mismatches": 0
+  },
+  "c": {
+   "contract errors": 0,
+   "duplicate same-target shots": 0,
+   "gate rejections": 0,
+   "policy seat-games": 144,
+   "replay mismatches": 0
+  }
+ },
+ "schema": "miaosuan-tactical-screen-results/1",
+ "screen_id": "tactical-screen-deployment-split-1",
+ "status": "EXPLORATORY - NOT ELIGIBLE FOR BASELINE PROMOTION",
+ "vs_inert": {
+  "candidate_minus_baseline_active_margin": {
+   "1910631192.C2": 0,
+   "1910631192.C3": -80,
+   "1930331196.C2": 0,
+   "1930331196.C3": -14,
+   "2010131194.C2": 0,
+   "2010131194.C3": 0,
+   "2010211129.C2": 0,
+   "2010211129.C3": 0,
+   "201033019601.C2": 0,
+   "201033019601.C3": 0,
+   "2010431153.C2": 0,
+   "2010431153.C3": 0,
+   "2120531121.C2": 46.67,
+   "2120531121.C3": 10,
+   "2130511121.C2": -9.33,
+   "2130511121.C3": 6.67
+  },
+  "configurations": 16,
+  "configurations_better": 3,
+  "configurations_not_worse": 13,
+  "configurations_worse": 3
+ }
+}
