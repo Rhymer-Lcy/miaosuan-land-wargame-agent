@@ -1,0 +1,7 @@
+{
+ "host_clock_ahead_seconds": 387.68,
+ "offset_measurement": "median of three round trips (about 1.0 s each) comparing the engine host's clock with the workstation's operating-system clock",
+ "registration_commit": "e7ed8925b31e930ca7095e17291267ebafd009de",
+ "verification": "git push to the public remote, then git ls-remote origin refs/heads/main returned the registration commit",
+ "verified_on_remote_utc": "2026-09-30T13:58:11+00:00"
+}
