@@ -610,6 +610,45 @@ def summarize(plan: Mapping[str, Any], collected: Mapping[str, Any], folder: Pat
 
 
 # ----------------------------------------------------------------------------------------------
+# production-path check (after integration; not a registered criterion)
+
+
+def cmd_production_check(args: argparse.Namespace) -> int:
+    """Check a run of the corpus through ``run_evaluation.sh --runtime baseline-v1-runtime-r2 --workers N``."""
+    qc = load_script("qualify_concurrency")
+    plan = load_plan()
+    manifest = load_manifest(plan)
+    install = ei.EngineInstall(INSTALL.resolve())
+    with ei.exclusive_window(install):
+        ledger = ei.read_ledger(install)
+        unclosed = ei.unclosed_sessions(ledger)
+    work = WORK / "production"
+    result = qc.check_run(plan, manifest, work, ledger, "shared", args.workers)
+    problems = list(result["problems"])
+    if unclosed:
+        problems.append(f"unclosed sessions: {unclosed}")
+    expected = plan["environments"]["B"]
+    for game in plan["equivalence"]["corpus"]:
+        path = work / "games" / f"{game}.json"
+        if path.exists():
+            harness = json.loads(path.read_text(encoding="utf-8"))["harness"]
+            if harness.get("runtime") != rt.RUNTIME_CANDIDATE or harness.get("thread_env") != expected:
+                problems.append(f"{game}: harness runtime {harness.get('runtime')} {harness.get('thread_env')}")
+    runs = sorted((work / "pool").glob("run-*.json"))
+    pool_runs = [json.loads(p.read_text(encoding="utf-8")) for p in runs]
+    if [r.get("runtime") for r in pool_runs] != [rt.RUNTIME_CANDIDATE] * len(pool_runs) or not pool_runs:
+        problems.append("the pool run does not name runtime-r2")
+    summary = {"pass": not problems, "problems": problems, "workers": args.workers, "records": result["records"],
+               "sessions": result["sessions"], "states": result["states"], "batches": result["batches"],
+               "independence": sum(1 for v in result["comparisons"].values() if v["pass"]),
+               "games": len(plan["equivalence"]["corpus"]), "runtime": rt.RUNTIME_CANDIDATE, "thread_env": expected,
+               "scheduler": sorted({r["scheduler"] for r in pool_runs})}
+    (work / "production.json").write_text(json.dumps(summary, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+    print(json.dumps(summary, indent=1, sort_keys=True))
+    return 0 if summary["pass"] else 5
+
+
+# ----------------------------------------------------------------------------------------------
 # process-level check (no engine)
 
 CHILD = '''
@@ -759,8 +798,12 @@ def analyse(plan: Mapping[str, Any]) -> Dict[str, Any]:
             }
     process_files = sorted((WORK / "process").glob("process-*.json"))
     process = process_summary(json.loads(process_files[-1].read_text(encoding="utf-8"))) if process_files else None
-    return {"tiers": tiers, "comparison": comparison, "disposition": rt.disposition(tiers), "process_level": process,
-            "commits": sorted({s["commit"] for s in done.values()})}
+    production = WORK / "production" / "production.json"
+    result = {"tiers": tiers, "comparison": comparison, "disposition": rt.disposition(tiers), "process_level": process,
+              "commits": sorted({s["commit"] for s in done.values()})}
+    if production.exists():
+        result["production_path"] = json.loads(production.read_text(encoding="utf-8"))
+    return result
 
 
 def cmd_analyze(args: argparse.Namespace) -> int:
@@ -788,6 +831,9 @@ def main() -> int:
     stage.set_defaults(func=cmd_stage)
     probe = sub.add_parser("build-probe")
     probe.set_defaults(func=cmd_build_probe)
+    production = sub.add_parser("production-check", help="check the corpus run through the production path on r2")
+    production.add_argument("--workers", type=int, required=True)
+    production.set_defaults(func=cmd_production_check)
     process = sub.add_parser("process", help="the registered process-level check, without the engine")
     process.add_argument("--python", default=sys.executable)
     process.set_defaults(func=cmd_process)
