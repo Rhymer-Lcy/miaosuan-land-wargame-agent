@@ -14,7 +14,9 @@ the shoot-reservation experiment checks the registered digest of its own group, 
 be the baseline-v1-runtime-r1 digest; its analysis is ``scripts/analyze_shoot_experiment.py``. A game of
 the residual-516 diagnostic must run the frozen baseline-v2 digest and plays with the diagnostic's read-only
 observer, whose capture files it writes beside the record (``capture/``); its analysis is
-``scripts/residual516_diagnostic.py``. Records
+``scripts/residual516_diagnostic.py``. A game of the target-ownership prevalence diagnostic must run the frozen
+baseline-v2 digest and plays with that study's read-only observer (capture files beside the record); its analysis
+is ``scripts/ownership_prevalence.py``. Records
 and summaries live under the git-ignored ``local/evaluation/``; only the sanitized public results
 file is meant for version control.
 
@@ -54,6 +56,7 @@ from miaosuan_agent.decision import BASELINE_ID, INERT_ID  # noqa: E402
 from miaosuan_agent.evaluation import manifest as mf  # noqa: E402
 from miaosuan_agent.evaluation import execution as ex  # noqa: E402
 from miaosuan_agent.evaluation import metrics, randomness  # noqa: E402
+from miaosuan_agent.evaluation import ownership_prevalence as op  # noqa: E402
 from miaosuan_agent.evaluation import residual516 as rd  # noqa: E402
 from miaosuan_agent.evaluation import shoot_experiment as sx  # noqa: E402
 from miaosuan_agent.evaluation import variance_study as vs  # noqa: E402
@@ -97,6 +100,8 @@ def all_games(manifest: Dict[str, Any]) -> Dict[str, mf.GameSpec]:
         return {spec.game_id: spec for spec in sx.scheduled_games(manifest)}
     if rd.is_diagnostic(manifest):
         return {spec.game_id: spec for spec in rd.scheduled_games(manifest)}
+    if op.is_study(manifest):
+        return {spec.game_id: spec for spec in op.scheduled_games(manifest)}
     return {spec.game_id: spec for spec in mf.gate1_games(manifest) + mf.games(manifest)}
 
 
@@ -176,12 +181,20 @@ def cmd_game(args: argparse.Namespace) -> int:
         print("REFUSED: the residual-516 diagnostic runs baseline-v2 only; the policy source digest differs from it",
               file=sys.stderr)
         return 2
+    prevalence = op.is_study(manifest)
+    if prevalence and source != op.BASELINE_V2_SOURCE_SHA256:
+        print("REFUSED: the ownership prevalence diagnostic runs baseline-v2 only; the policy source digest differs "
+              "from it", file=sys.stderr)
+        return 2
     out = args.work / "games" / f"{spec.game_id}.json"
     if out.exists():
         print(f"REFUSED: {out} exists; records are never overwritten", file=sys.stderr)
         return 2
     captures = (args.work / "capture" / f"{spec.game_id}.capture.json", args.work / "capture" / f"{spec.game_id}.windows.pkl")
-    if diagnostic and any(path.exists() for path in captures):
+    if prevalence:
+        captures = (args.work / "capture" / f"{spec.game_id}.ownership.json",
+                    args.work / "capture" / f"{spec.game_id}.snapshots.pkl")
+    if (diagnostic or prevalence) and any(path.exists() for path in captures):
         print(f"REFUSED: capture files of {spec.game_id} exist; captures are never overwritten", file=sys.stderr)
         return 2
     registered_runtime = ex.registered(manifest)["runtime"]
@@ -219,6 +232,8 @@ def cmd_game(args: argparse.Namespace) -> int:
     opener = (engine_install.session(install, args.purpose, harness) if mode == "exclusive"
               else engine_install.shared_session(install, args.purpose, harness, str(execution["worker"])))
     observer = rd.Capture((policy_under_test,)) if diagnostic else None
+    if prevalence:
+        observer = op.Observer(f"{spec.scenario_id} {spec.condition}", (policy_under_test,))
     try:
         with opener as handle:
             record = play(construct, FACTORIES, spec, inputs, manifest["players"], rng_probe=randomness.fingerprint,
@@ -265,6 +280,9 @@ def cmd_summarize(args: argparse.Namespace) -> int:
         return 2
     if rd.is_diagnostic(manifest):
         print("the residual-516 diagnostic is analysed by scripts/residual516_diagnostic.py", file=sys.stderr)
+        return 2
+    if op.is_study(manifest):
+        print("the ownership prevalence diagnostic is analysed by scripts/ownership_prevalence.py", file=sys.stderr)
         return 2
     digest = mf.digest(manifest)
     gate_specs, suite_specs = mf.gate1_games(manifest), mf.games(manifest)
