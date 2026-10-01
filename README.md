@@ -67,6 +67,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/REFUSAL_TAXONOMY.md` | how engine refusals are recorded (facts) and attributed (versioned rules); the code-203 correction |
 | `docs/CONCURRENCY_QUALIFICATION.md` | the registered diagnostic of running several engine games at once: shared sessions, plan, criteria, results |
 | `docs/RUNTIME_THREAD_QUALIFICATION.md` | the registered diagnostic of constraining NumPy's OpenBLAS thread pool: evidence, plan, criteria, results |
+| `docs/RESIDUAL_516_DIAGNOSTIC.md` | the registered read-only diagnostic of what removes the targets of `baseline-v2`'s residual code-516 refusals |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
 | `evaluation/routing-remediation-1/` | the routing remediation's registration, pinned corpus and privacy-safe results |
@@ -74,6 +75,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `evaluation/refusal-taxonomy-correction/` | historical refusal facts derived from the unchanged records |
 | `evaluation/concurrency-qualification-1/` | the concurrency qualification's plan and its privacy-safe results |
 | `evaluation/runtime-thread-qualification-1/` | the runtime thread-pool qualification's plan and its privacy-safe results |
+| `evaluation/baseline-v2-residual-516-diagnostic-1/` | the residual-516 diagnostic's manifest and its privacy-safe results |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy

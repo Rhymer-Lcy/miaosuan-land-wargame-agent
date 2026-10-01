@@ -1,0 +1,423 @@
+{
+ "artifacts": {
+  "private": "game records, capture logs, snapshot windows and the factual records, under the git-ignored local/evaluation/baseline-v2-residual-516-diagnostic-1/",
+  "public": "this module, the manifest, the analysis script, the diagnostic document, and results.json with sanitized counts only (no unit, seat-internal or step identifiers, no observation content, no judge_info payload)"
+ },
+ "caps": {
+  "steps": "max_time + 1 + 100",
+  "wall_seconds": 1800
+ },
+ "capture": {
+  "per_step": "decision index and engine step; the complete submitted batch in engine order (seat, faction, batch position, position in the seat's output, the action); each seat's decision-trace digest and gate rejections; the engine's action feedback after the step; judge_info records new in the step and whether the previous list was a prefix of the new one; indirect-fire points; units gone, appeared, boarded or landed in the step; watched-field changes",
+  "samples": "the policy seat's pre-step snapshot every 200 decisions, for the replay check",
+  "schema": "miaosuan-residual516-capture/1",
+  "setup": "seats of role_and_grouping_info with faction, role and operator count; players and their policies",
+  "storage": "local/evaluation/<name>/capture/<game>.capture.json (compact log) and <game>.windows.pkl (snapshots), created exclusively, git-ignored",
+  "window": "the 5 most recent pre-step snapshots (all-seeing observation, and each policy seat's observation, memory, actions and trace digest), written with the post-step all-seeing observation only for a step whose feedback carries code 516"
+ },
+ "classification_rules": [
+  "Only code-516 refusals of the policy seat count; each is classified once. A positive damage record is a judge_info record new in the refusal's step whose target_obj_id is the target and whose damage field is a number greater than 0.",
+  "Each rule H1 to H6 is evaluated independently on the factual record. Exactly one matching rule gives the category; none, or two or more, give H7 with the matching rules listed.",
+  "Evidence strength: H1, H2, H3 strong when the attributed damage records sum to at least the target's blood at step start and no positive damage record on the target is left unattributed, otherwise moderate; H4 strong when the linked object has a positive damage record in the step and the target has no judge_info record at all in it, otherwise moderate; H5 strong when the target is a passenger after the step, otherwise moderate; H6 strong when the target is on the map after the step, otherwise moderate; H7 none.",
+  "Batch position is reported but never used as evidence of resolution order; ordering is inferred only from engine evidence (judge_info, action feedback)."
+ ],
+ "conclusion_rule": "EXPLAINED when every instrumentation check passes, at least one residual code-516 refusal occurs and every one is classified in H1 to H6 with strong evidence; PARTIALLY EXPLAINED when the checks pass and at least one residual refusal is classified in H1 to H6 but not every one is, or not every one with strong evidence; UNRESOLVED otherwise, including when no residual refusal occurs or an instrumentation check fails.",
+ "configuration": {
+  "blue": "baseline-v2-candidate-shoot-target-reservation",
+  "condition": "C3",
+  "red": "inert-v0",
+  "scenario_id": "1930331196"
+ },
+ "control_policy": "inert-v0",
+ "cross_seat": [
+  "Over every captured step: a target is shot by a seat when the batch holds a shoot or guided-shoot action of that seat at it. A cross-seat collision is a (step, target) shot by two or more seats of one faction. Collisions are counted with the steps holding them, and split by whether the step's feedback carries a code-516 refusal of a shot at that target.",
+  "Same-seat repeated fire (two or more shots of one seat at one target in one step) is counted as well; under baseline-v2 it must be 0.",
+  "Unit actions of the inert seat are counted; under the control they must be 0."
+ ],
+ "diagnostic_id": "baseline-v2-residual-516-diagnostic-1",
+ "evaluation_id": "baseline-v2-residual-516-diagnostic-1",
+ "execution": {
+  "runtime": "baseline-v1-runtime-r2",
+  "scheduler": "miaosuan-game-pool/1@e717be37ab01d6c6018610bfc0af4df5f247a4599bc4c760c69499f04ed8ae90",
+  "workers": 32
+ },
+ "facts": [
+  "action type, error code, the engine message and its normalized class, seat and faction",
+  "actor, target and weapon (private identifiers)",
+  "whether the target was on the map at step start, and its class and watched fields then",
+  "whether the shot was listed in the seat's start-of-step valid_actions and passed the project gate",
+  "every action of the complete submitted batch that names the target, with seat, faction, batch position, position in its seat's output and the engine's feedback for it",
+  "shots at the target from the refused seat, from other seats of its faction, from the other faction, in total",
+  "whether target and actor are present after the step, and whether the target is then a passenger",
+  "judge_info records new in the step: those on the target (attacker, its faction, whether the attacker shot the target in this batch or in an earlier step), and those of the refused shot's actor",
+  "objects linked to the target at step start (launcher, carrying vehicle, vehicles listing it) and whether each was present after the step, with its damage records in the step",
+  "indirect-fire points at the target's hex, the target's watched-field changes, and the action feedback naming it",
+  "accepted shots at the target and judge_info records on it in the preceding steps of the compact log"
+ ],
+ "games": [
+  {
+   "game_id": "1930331196.C3.d01",
+   "repetition": 1
+  },
+  {
+   "game_id": "1930331196.C3.d02",
+   "repetition": 2
+  },
+  {
+   "game_id": "1930331196.C3.d03",
+   "repetition": 3
+  },
+  {
+   "game_id": "1930331196.C3.d04",
+   "repetition": 4
+  },
+  {
+   "game_id": "1930331196.C3.d05",
+   "repetition": 5
+  },
+  {
+   "game_id": "1930331196.C3.d06",
+   "repetition": 6
+  },
+  {
+   "game_id": "1930331196.C3.d07",
+   "repetition": 7
+  },
+  {
+   "game_id": "1930331196.C3.d08",
+   "repetition": 8
+  },
+  {
+   "game_id": "1930331196.C3.d09",
+   "repetition": 9
+  },
+  {
+   "game_id": "1930331196.C3.d10",
+   "repetition": 10
+  },
+  {
+   "game_id": "1930331196.C3.d11",
+   "repetition": 11
+  },
+  {
+   "game_id": "1930331196.C3.d12",
+   "repetition": 12
+  },
+  {
+   "game_id": "1930331196.C3.d13",
+   "repetition": 13
+  },
+  {
+   "game_id": "1930331196.C3.d14",
+   "repetition": 14
+  },
+  {
+   "game_id": "1930331196.C3.d15",
+   "repetition": 15
+  },
+  {
+   "game_id": "1930331196.C3.d16",
+   "repetition": 16
+  },
+  {
+   "game_id": "1930331196.C3.d17",
+   "repetition": 17
+  },
+  {
+   "game_id": "1930331196.C3.d18",
+   "repetition": 18
+  },
+  {
+   "game_id": "1930331196.C3.d19",
+   "repetition": 19
+  },
+  {
+   "game_id": "1930331196.C3.d20",
+   "repetition": 20
+  },
+  {
+   "game_id": "1930331196.C3.d21",
+   "repetition": 21
+  },
+  {
+   "game_id": "1930331196.C3.d22",
+   "repetition": 22
+  },
+  {
+   "game_id": "1930331196.C3.d23",
+   "repetition": 23
+  },
+  {
+   "game_id": "1930331196.C3.d24",
+   "repetition": 24
+  },
+  {
+   "game_id": "1930331196.C3.d25",
+   "repetition": 25
+  },
+  {
+   "game_id": "1930331196.C3.d26",
+   "repetition": 26
+  },
+  {
+   "game_id": "1930331196.C3.d27",
+   "repetition": 27
+  },
+  {
+   "game_id": "1930331196.C3.d28",
+   "repetition": 28
+  },
+  {
+   "game_id": "1930331196.C3.d29",
+   "repetition": 29
+  },
+  {
+   "game_id": "1930331196.C3.d30",
+   "repetition": 30
+  },
+  {
+   "game_id": "1930331196.C3.d31",
+   "repetition": 31
+  },
+  {
+   "game_id": "1930331196.C3.d32",
+   "repetition": 32
+  }
+ ],
+ "golden_trace_chain": "0d16c814c03909ed89303a776b276b4cc441cd047450a063329009458654910f",
+ "identities": {
+  "code_identity": "baseline-v2-candidate-shoot-target-reservation",
+  "policy_source_sha256": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
+  "runtime": "baseline-v1-runtime-r2",
+  "runtime_environment": {
+   "OPENBLAS_NUM_THREADS": "1"
+  },
+  "scheduler": "miaosuan-game-pool/1@e717be37ab01d6c6018610bfc0af4df5f247a4599bc4c760c69499f04ed8ae90",
+  "tactical": "baseline-v2"
+ },
+ "inputs": {
+  "concurrency_plan_sha256": "f6d0f1b1adf2f7b5e41e67513304528d50d415f17a3aae7a281f7f1c831c304c",
+  "runtime_results_sha256": "39a6cefc0b634bb86325af2298272671046841ef3b5ca066799b898431c3a798",
+  "shoot_manifest_sha256": "01c9c9675af4b0859fc55e54a5dc86513b624208bf13131e7b510b87a3122afd"
+ },
+ "instrumentation": [
+  "The observer is called after every seat has decided and after the engine step; it reads, serializes and never returns anything to the policy or the engine. Without an observer the game loop and its record are unchanged.",
+  "Every game must pass the independence comparison with the serial reference of 1930331196 C3 under baseline-v2 (state and trace digests up to the common prefix of the 15 serial games, not equal to a serial chain).",
+  "Every in-game replay check (a fresh policy instance recomputes the decision every 100 steps) must agree.",
+  "Offline, in a separate process, a fresh baseline-v2 policy recomputes the decision of every captured snapshot (event windows and samples) from the captured observation and memory; actions and trace digest must equal the captured ones.",
+  "Observer time is measured per game; no observer error may occur.",
+  "If any of these fails, the diagnostic stops at analysis: no classification is reported as valid."
+ ],
+ "known_refusal_classes": [
+  [
+   1,
+   404,
+   "CantMoveKeptPeople"
+  ],
+  [
+   2,
+   203,
+   "CantControlDiedOperator"
+  ],
+  [
+   2,
+   516,
+   "CantShootToDiedBop"
+  ],
+  [
+   5,
+   203,
+   "CantControlDiedOperator"
+  ]
+ ],
+ "not_claimed": [
+  "No rate is estimated: 32 games are for mechanism capture, not statistical estimation, and they are not a tactical evaluation dataset.",
+  "No policy is changed or promoted; any remediation needs its own registration."
+ ],
+ "parameters": {
+  "prior_steps": 30,
+  "sample_every": 200,
+  "trigger_code": 516,
+  "watched_fields": [
+   "blood",
+   "lose_control",
+   "launcher",
+   "car",
+   "on_board",
+   "alive_remain_time",
+   "keep"
+  ],
+  "window": 5
+ },
+ "players": [
+  {
+   "faction": 0,
+   "role": 1,
+   "seat": 1,
+   "user_id": 0,
+   "user_name": "demo"
+  },
+  {
+   "faction": 1,
+   "role": 1,
+   "seat": 11,
+   "user_id": 0,
+   "user_name": "demo"
+  }
+ ],
+ "policy_source": {
+  "files": [
+   "agent.py",
+   "boundary/__init__.py",
+   "boundary/actions.py",
+   "boundary/checks.py",
+   "boundary/errors.py",
+   "boundary/keys.py",
+   "boundary/observation.py",
+   "boundary/profile.py",
+   "boundary/state.py",
+   "boundary/terrain.py",
+   "decision/__init__.py",
+   "decision/candidates.py",
+   "decision/context.py",
+   "decision/gate.py",
+   "decision/policy.py",
+   "decision/routing.py",
+   "decision/semantics.py",
+   "decision/trace.py",
+   "experiments/__init__.py",
+   "experiments/occupy_reservation.py",
+   "experiments/routing_bounded.py",
+   "experiments/shoot_reservation.py"
+  ],
+  "sha256": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
+  "sources": [
+   "agent.py",
+   "boundary",
+   "decision",
+   "experiments/__init__.py",
+   "experiments/occupy_reservation.py",
+   "experiments/routing_bounded.py",
+   "experiments/shoot_reservation.py"
+  ]
+ },
+ "policy_under_test": "baseline-v2-candidate-shoot-target-reservation",
+ "prior_evidence": [
+  "Before registration, the existing private records of the shoot-reservation experiment were inspected for the unit class of each residual target: all 10 residual code-516 targets in scenario 1930331196 (8 in C3, 2 in C1) were of one unit class, an unmanned ground vehicle whose record names a launching vehicle. This informed the watched fields and the linked-object facts; the taxonomy and its rules do not depend on it."
+ ],
+ "purpose": "diagnostic",
+ "question": "What removes the target of baseline-v2's residual single-shot code-516 refusals, which remained after same-seat, same-step repeated fire was eliminated?",
+ "randomness": {
+  "global_seed": 20260929,
+  "procedure": "each game runs in a fresh process; the harness seeds Python's and NumPy's global generators with global_seed before the engine is constructed and records whether the engine consumes them; no undocumented engine interface is used",
+  "python_hash_seed": 0
+ },
+ "reference": {
+  "class": "stochastic",
+  "expected_wall_seconds": 93.419,
+  "repetitions": 15,
+  "seats": {
+   "1": {
+    "trace_chains": [
+     "0d3fbada32ffebe121d9c7d5a9a285524403bbf78b0e5d95f295f26875e8614a",
+     "0f774a3370ab73b9dd94584c47a238d93c396945d8f18076e01d941a93cafda5",
+     "148c599775a455c2637de5068a9d21daff77aa61aae870b72b995d1923efc7bc",
+     "97b4df9804bf2b4c8ebe96e6ccab6d914cb6fb4994b239427e5afe70b6220faf",
+     "9b94aef0fd9a714c4b5afb149f49076c55ba376ab71677cf0144af156f16280c",
+     "a97f5da4b2a7535cbc24f468702a6b7943e30e45ce15d34e23e6f4f158c770c6",
+     "b65fd6cba6ec36d334dc6400c5c190bfe80b4c28bddd03b02ef3a6d4c33f88cc",
+     "d0553fcfffa0849b15da72220c7c8d6da01d54562045c0af4b27ca1832235448",
+     "db76f65adc1b35fcb570173f83c012472a8ee6272d8ae62b306a0cec9f4cbd20",
+     "e8454baa478034eec9c05283205853610cf1ced8d9aa2ba9ca62b6c438071132",
+     "ed53b4b48444d8e3085d021083345be2afa8a9e804c16d16a8bd277035cfaef6",
+     "ed5912e9355a1d8aaca333bc55684203126f95f7f05d020b7f4c64670bef3159",
+     "f429fbdd4f8673038c68aee3c48555c79a243f0113d942eb54a140a1acac9ff8"
+    ],
+    "trace_prefix_digest": "532cb2f79ff2e379b09b3dd97da51b07445318bbdc5f0104c21e984a82f50155",
+    "trace_prefix_steps": 288
+   },
+   "11": {
+    "trace_chains": [
+     "103caf0869557a8c3944e0ad831bfd8807c879e34c60da15d318f5fe7e196a52",
+     "15559517345961d7445ab17808e457cc5b0d70b0a04c379abaafe0fc61a7642c",
+     "175a61d9a69bb0bd3f085bc094440d6d41abdc4252ba8384e69012bac557c9f7",
+     "5c12ebc6fbcb4af1fa496a38321bc2099e7fa5126a1cc2d7e4d9b6b8e78e9465",
+     "658d8e6e30a39e157bf4c6f0f46fc7d6b6b6f355c4817ba012b93961ef5427c3",
+     "77328d8954252c6ce961a740be1b726d3b588fd2379141bc916ff14d9dbe631b",
+     "7878933fa35dd6c981d70e1bf3f7b0927402b1a8dab85b4fbade42fa8ce7a571",
+     "7b20b49db3ea1d83ee9898c9d467b33a757a46b993c725860eee3ca1ae8162a1",
+     "ac29285b4c7f743c06427b9c9c2a0934e0c92be309d4bf0da7a883e128fb3f0d",
+     "b6b0f5872ae1622763a81ce915349ec87e5de792ca69b63416480d57cac273cf",
+     "cee2205f46ebf9bcc158b2c002f55636667ba57644717584e32111b4562387f3",
+     "df8315270fa338c05bb276dccfaa82fb697ba7a4f79b9fb385d907e0de9975c6",
+     "fbe256acb4b068cb7a8af9a288b69c5ec9c55d61b807d7a7e71037d7d37d6436"
+    ],
+    "trace_prefix_digest": "8bebccc2d031322b44b55ae1ff3ff485ba5eb4bcf92bc68d276dcc5bb99fdfcc",
+    "trace_prefix_steps": 362
+   }
+  },
+  "state_chains": [
+   "00ee24b616a4d633b307f77d8fd05e9315c339c18b9b0ba6b77e711494cf95d6",
+   "2838ed0bf9d79b30f8d086b89fa6590ca89ff66bbc29a2cce0de0155f3377a13",
+   "29cdf54c03fe5b3168c5845d65c7d92ad443441029db4fa5b7e2ddacf9dcd8d2",
+   "5b1008051142dfc970fe8ecd0602fe650e6b5ecad7041c21bdad0684054e6769",
+   "68475c1f711b0418d23ca0cc6ebbee2017d9dcad2fed80934194d4fea2e7945c",
+   "702e613ced1137abc999b282c01bd3d260cc4420adebd58d9a4659f7da50b87a",
+   "72da742d145173de6a7162b44d393897d04fc51a576990015f25780f2c76b7b6",
+   "962ac06b4da51d1cbeb09bdac0851547daa247e207714efaa86bbdb25196d313",
+   "a8645c474bfafe28d19112c59135b360867820da7c6a525228c0cdf6f49a5a33",
+   "c55f54b17bb59dd6947fc087aceea7295d097aa445fd52d538bf13c6d97bc62b",
+   "c8ae974de4f030d7c7f49aaa0f1ab5951b730d944e624eeebbaf2ebe2e889145",
+   "d1e7d3970338f67a77ae191a975a3755e251c8c9b027be3667cd1c0ab7421269",
+   "d936901bd75929ca326e505afa343316ae3c504443268a85488c4fadf46c7710",
+   "d961b0351c746587dc778cf7a2ced580fe1f4e680fc02538df339f7e9f2bc282",
+   "fd2f4b360d66bf1e92e071f32ebaa2f257c221912ec311357130d39726619095"
+  ],
+  "state_prefix_digest": "df4cf52a8ccc74b1f3cd67d45b4de13037458fe3f3b3cbab646063efcdf8fd7c",
+  "state_prefix_steps": 213,
+  "state_steps": 2882
+ },
+ "scenarios": [
+  {
+   "alternates": [
+    "2020331196",
+    "2120331196",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2140331196"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "206c437995216aed6dd14a310d3a2ada0f7148dd8d40e4ec52c900b224d06f15",
+    "cost": "b136cc86cae77d53482f2b2ff3df0087278d51628e1a4cf453307d8da008997f",
+    "scenario": "a15d3b3bf499694d93a981511c16b5c1c9247487ac1cf1d88b2bf1bd2c75c1b1",
+    "see": "e69b9e85d77cc8de4600c42b48939ea625236a7a3b705090fa9b3745775009e2"
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "operators": 52,
+   "red": 26,
+   "rule": "S2 fewest operators on map 96",
+   "scenario_id": "1930331196"
+  }
+ ],
+ "schema": "miaosuan-residual516-diagnostic/1",
+ "stop_rules": [
+  "Before the first game: the shared-server courtesy check of the concurrency qualification (other activity at most 16 logical CPUs over 30 s and at least 16 logical CPUs idle beside the 32 workers), rechecked every 300 s up to 6 times; if the host stays busy, the run waits and the registered worker count is not changed.",
+  "During the run: dispatch stops after 3 consecutive games that did not complete and on any other exit status; no game is retried or replaced, and a failed game is preserved and reported.",
+  "No policy, routing, collection, runtime or engine change is made during or because of the diagnostic."
+ ],
+ "taxonomy": {
+  "H1": "friendly cross-seat same-step fire: another seat of the refused seat's faction shot the same target in the same engine step, and a judge_info record of that shot shows damage to the target in that step",
+  "H2": "opposing-seat same-step action: a judge_info record new in the step shows damage to the target from a unit of the other faction, or an action of the other faction accepted in the step names the target as its target, or boards or unloads it (action type 3 or 4 with the target as actor or target)",
+  "H3": "delayed or prior-step effect: a judge_info record new in the step shows damage to the target from a unit that did not shoot it in the step's batch but issued an accepted shot at it in an earlier step, or an indirect-fire point at the target's hex resolved in the step",
+  "H4": "indirect, area or automatic engine effect: no judge_info record shows damage to the target in the step, and an object the target is linked to at step start (its launcher or carrying vehicle, or a vehicle listing it as passenger or launched unit) was on the map at step start and absent after it",
+  "H5": "non-combat removal or state transition: no damage record, no linked removal and no opposing action on the target, and the target is listed as a passenger after the step or one of its watched fields records a transition (on_board to 1, lose_control to 1, alive_remain_time to 0)",
+  "H6": "engine ordering or adjudication artifact: the target is still on the map after the step although the shot was refused as fired at a destroyed unit, or a judge_info record of the refused shot itself appears (one the actor's own earlier accepted shot at the target does not explain)",
+  "H7": "unresolved: no rule matches, or more than one does"
+ }
+}
