@@ -1,0 +1,59 @@
+{
+ "decision": null,
+ "instrumentation": {
+  "checks": {
+   "consistency": true,
+   "in_game_replay": true,
+   "observation_unchanged": true,
+   "observer_errors": true,
+   "offline_replay": true,
+   "prefix": false
+  },
+  "consistency_problems": 0,
+  "game_wall_seconds": {
+   "max": 231.29404308274388,
+   "median": 18.73252491466701
+  },
+  "games": 360,
+  "in_game_replay_checks": 10440,
+  "in_game_replay_mismatches": 0,
+  "observation_mutations": 0,
+  "observer_errors": 0,
+  "observer_seconds": {
+   "max": 2.7222716631367803,
+   "median": 0.06374952103942633,
+   "total": 83.99545862153172
+  },
+  "observer_share_of_wall": {
+   "max": 0.019574297985438898,
+   "median": 0.0031348294092559278
+  },
+  "offline_decisions": 5335,
+  "offline_mismatches": 0,
+  "pass": false,
+  "prefix_equal": 351,
+  "prefix_games_by_reference_class": {
+   "deterministic": 120,
+   "stochastic": 240
+  }
+ },
+ "integrity": {
+  "harness_commits": [
+   "c8635dda4df66f2324f5703ede800598153b9526"
+  ],
+  "leftover_processes": 0,
+  "pass": true,
+  "pool_runs": 1,
+  "problems": [],
+  "records": 360,
+  "sessions": [
+   1898,
+   2257
+  ],
+  "states": 1
+ },
+ "manifest_sha256": "d88c2416633a1b3d7929316a4f15d80080c1a589047bd473e21a458231f31bec",
+ "schema": "miaosuan-ownership-prevalence-results/1",
+ "study_id": "baseline-v2-target-ownership-prevalence-1",
+ "valid": false
+}
