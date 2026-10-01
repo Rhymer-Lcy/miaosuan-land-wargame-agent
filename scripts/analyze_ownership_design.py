@@ -37,6 +37,9 @@ STUDY_ID = "target-ownership-design-1"
 OUT = REPO_ROOT / "evaluation" / STUDY_ID / "analysis.json"
 PRIVATE = REPO_ROOT / "local" / "diagnostics" / "ownership" / "analysis-private.json"
 SCHEMA = "miaosuan-target-ownership-design-analysis/1"
+#: Corpora holding every decision of their games (the replay corpus). D1 and D3 hold captured decisions only, so a
+#: game-level interval over them would describe the captures, not the games.
+COMPLETE_GAMES = ("D2",)
 
 
 def load_audit() -> Any:
@@ -162,8 +165,9 @@ def level_summary(collector: Collector) -> Dict[str, Any]:
             "games_with_a_mismatch": len(games_mis),
             "configurations_with_a_collision": len(configs), "configurations_with_a_mismatch": len(configs_mis),
             "mismatch_groups_per_affected_game": sorted(per_game.values(), reverse=True),
+            "complete_games": corpus in COMPLETE_GAMES,
             "game_prevalence_exact_95": clopper_pearson(len(games_mis), len(games_all[corpus]))
-            if games_all[corpus] else None,
+            if corpus in COMPLETE_GAMES and games_all[corpus] else None,
         }
     return out
 
