@@ -59,6 +59,12 @@ Carried over from `baseline-v1` except where the change removed them; material n
   and did nothing in that step.
 * 16 code-516 refusals remained, each in a step with a single own shot at the target; what destroyed the target
   first was not established.
+
+  > Later finding (2026-10-01; the identity and every result are unchanged): in scenario 1930331196 under C3 the
+  > registered residual-516 diagnostic (`docs/RESIDUAL_516_DIAGNOSTIC.md`) established the cause of all 12
+  > refusals it captured. The seat's own accepted shot earlier in the same step destroyed the vehicle that had
+  > launched the target, an unmanned ground vehicle, and the engine removed the target with it. The other
+  > residual refusals of the experiment were not captured, and their cause is not established.
 * Code 203, a shot or occupation by a unit destroyed earlier in the step, is not addressed: 63 in the experiment,
   all in the C1 mirror. `move / 404 / CantMoveKeptPeople` occurred 3 times and stays unclassified.
 * A unit standing on an unheld objective waits there, and once every objective is held no unit moves. The no-op

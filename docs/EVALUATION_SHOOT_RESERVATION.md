@@ -298,6 +298,13 @@ Score margin from the active side over the 16 C2 and C3 configurations, all play
   of the 16 steps and absent after it. Own fire ordered in an earlier step and resolving in this one would fit,
   but the records hold no per-step action log to establish what destroyed the target.
 
+  > Later finding (2026-10-01; analysis only, the registered files and counts are unchanged): the registered
+  > residual-516 diagnostic (`docs/RESIDUAL_516_DIAGNOSTIC.md`) captured 32 new games of 1930331196 under C3. All 12
+  > residual refusals in them came in a step in which the seat's own accepted shot, earlier in the same batch,
+  > destroyed the vehicle that had launched the target (an unmanned ground vehicle); the engine removed the target
+  > with it, without a damage record of its own. No shot had been aimed at the target in the 30 preceding steps. The
+  > refusals of this experiment in other configurations were not captured.
+
 ### Safety and regression
 
 | Metric | Group B | Group C |

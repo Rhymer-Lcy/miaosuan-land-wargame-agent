@@ -30,7 +30,10 @@ registered runtime thread-pool qualification (`docs/RUNTIME_THREAD_QUALIFICATION
 `baseline-v1-runtime-r2` (`docs/BASELINE_V1_RUNTIME_R2.md`): runtime-r1's code with NumPy's OpenBLAS pool limited to
 one thread, which makes the same decisions with about 23% less CPU per game. On it 32 workers are acceptable (about
 27 times the serial throughput); on runtime-r1 the recommendation stays 16. A manifest registers its runtime and worker
-count; without them a plan runs serially on runtime-r1.
+count; without them a plan runs serially on runtime-r1. A registered read-only diagnostic
+(`docs/RESIDUAL_516_DIAGNOSTIC.md`) traced the residual code-516 refusals of `baseline-v2` in scenario 1930331196 to the
+engine removing an unmanned ground vehicle together with the vehicle that launched it, destroyed by the same seat's
+earlier shot in the step.
 
 ## Third-party material is not in this repository
 
