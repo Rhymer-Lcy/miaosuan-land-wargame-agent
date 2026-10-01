@@ -1,0 +1,36 @@
+{
+ "agrees_with_design_study": true,
+ "counts": {
+  "E0": 102,
+  "E1": 18,
+  "E2": 9,
+  "E3": 9,
+  "components S1": 18,
+  "components S2": 84,
+  "decisions": 34253,
+  "decisions classified": 105,
+  "decisions skipped by the pre-filter": 34148
+ },
+ "design_study_expected": {
+  "E0": 102,
+  "E1": 18,
+  "E2": 9,
+  "E3": 9
+ },
+ "observer_source_sha256": "e53e5bac617bd9c8e0bc915b34d27b4b7bad0cc8095d7779bc5ac97d51c881f6",
+ "pass": true,
+ "population": {
+  "D1 baseline-v2 exact": 506,
+  "D1 decisions": 506,
+  "D2 baseline-v0 exact": 33696,
+  "D2 baseline-v2 explained": 33696,
+  "D2 decisions": 33696,
+  "D3 baseline-v1 exact": 51,
+  "D3 baseline-v2 explained": 51,
+  "D3 decisions": 97,
+  "D3 excluded: baseline-v1 not reproduced": 46
+ },
+ "problems": 0,
+ "schema": "miaosuan-ownership-prevalence-observer-check/1",
+ "study_id": "baseline-v2-target-ownership-prevalence-1"
+}
