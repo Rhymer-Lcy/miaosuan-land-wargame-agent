@@ -17,6 +17,11 @@ file is meant for version control.
 
 Exit status of ``game``: 0 the game completed, 1 it failed or hit a cap, 2 invalid input before the
 engine was touched, 4 an installation guardrail refused the session.
+
+``game --session-mode shared`` is how ``scripts/run_game_pool.py`` (``run_evaluation.sh --workers N``)
+starts a game: a shared engine session instead of the exclusive one, and the record's harness names the
+worker count, the worker, the batch and the scheduler identity. Without it the game, its session and its
+record are exactly the serial ones.
 """
 
 from __future__ import annotations
@@ -126,6 +131,12 @@ def engine_factory(install: engine_install.EngineInstall) -> Any:
 
 def cmd_game(args: argparse.Namespace) -> int:
     signal.signal(signal.SIGTERM, _terminate)
+    mode = getattr(args, "session_mode", "exclusive")
+    execution = {"workers": getattr(args, "workers", None), "worker": getattr(args, "worker", None),
+                 "batch": getattr(args, "batch", None), "scheduler": getattr(args, "scheduler", None)}
+    if mode == "shared" and None in execution.values():
+        print("a shared session needs --workers, --worker, --batch and --scheduler", file=sys.stderr)
+        return 2
     manifest = load_manifest(args.manifest)
     spec = all_games(manifest).get(args.game_id)
     if spec is None:
@@ -163,10 +174,14 @@ def cmd_game(args: argparse.Namespace) -> int:
                "manifest_sha256": mf.digest(manifest), "policy_source_sha256": source}
     if group:
         harness["group"] = group
+    if mode == "shared":
+        harness["execution"] = {"mode": mode, **execution}
     install = engine_install.EngineInstall(args.engine_install.resolve())
     construct = engine_factory(install)
+    opener = (engine_install.session(install, args.purpose, harness) if mode == "exclusive"
+              else engine_install.shared_session(install, args.purpose, harness, str(execution["worker"])))
     try:
-        with engine_install.session(install, args.purpose, harness) as handle:
+        with opener as handle:
             record = play(construct, FACTORIES, spec, inputs, manifest["players"], rng_probe=randomness.fingerprint,
                           replay_policies={policy_under_test})
             record["session"] = handle.opened["session"]
@@ -280,6 +295,12 @@ def main() -> int:
     game.add_argument("--harness-dirty", action="store_true")
     game.add_argument("--purpose", default="evaluation", choices=("evaluation", "diagnostic"),
                       help="session purpose recorded in the engine ledger; a diagnostic run uses its own --work")
+    game.add_argument("--session-mode", default="exclusive", choices=("exclusive", "shared"),
+                      help="shared: one of several concurrent games started by scripts/run_game_pool.py")
+    game.add_argument("--workers", type=int, help="shared mode: the run's worker count")
+    game.add_argument("--worker", type=int, help="shared mode: this game's worker slot")
+    game.add_argument("--batch", type=int, help="shared mode: this game's dispatch wave")
+    game.add_argument("--scheduler", help="shared mode: the scheduler identity (id@sha256 of its sources)")
     game.set_defaults(func=cmd_game)
     summarize = sub.add_parser("summarize")
     summarize.add_argument("--public", type=Path, help="also write the sanitized summary here")
