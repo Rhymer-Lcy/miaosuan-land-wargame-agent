@@ -243,7 +243,12 @@ def d1_exposure() -> Dict[str, Any]:
             values[value].add(o_class)
         overlap[name] = {"values": len(values), "values_with_both_outcomes": sum(1 for v in values.values() if len(v) > 1),
                          "values_with_one_outcome": sum(1 for v in values.values() if len(v) == 1)}
-    return {**dict(sorted(counts.items())), "signal_overlap": overlap}
+    by_blood: Dict[str, Dict[str, int]] = collections.defaultdict(dict)
+    for key, n in signals["launcher blood at step start"].items():
+        value, o_class = key.split(" -> ")
+        by_blood[value][o_class] = n
+    return {**dict(sorted(counts.items())), "signal_overlap": overlap,
+            "launcher_blood_at_step_start": {v: dict(sorted(c.items())) for v, c in sorted(by_blood.items())}}
 
 
 # ----------------------------------------------------------------------------------------------
