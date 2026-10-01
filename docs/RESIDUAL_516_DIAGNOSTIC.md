@@ -186,4 +186,149 @@ PYTHON scripts/residual516_diagnostic.py analyze
 
 ## Results
 
-None at registration.
+All 32 registered games completed, in engine sessions 1866 to 1897, and every integrity and
+instrumentation check passed. 12 residual code-516 refusals occurred, one in each of 12 games, and all 12 are
+classified H4 with strong evidence. Every figure below comes from
+`evaluation/baseline-v2-residual-516-diagnostic-1/results.json` unless a source is named;
+`scripts/residual516_diagnostic.py analyze --check` regenerates it from the private records and captures, and
+`tests/test_residual516_results.py` checks its counts and its conclusion against the registered rules.
+
+### Execution
+
+* The registration commit `69213fe` was on the public remote, verified at 2026-10-01T17:36:13+08:00, before
+  the courtesy check and the first diagnostic session. All games ran at `73441a3` from a clean tree.
+* The courtesy check passed at its first attempt: other activity used 0.18 logical CPUs over 30 s, leaving
+  31.8 idle beside the 32 workers.
+* The 32 games ran in one wave of 32 workers in 127.6 s; each took a median of 116.9 s and at most
+  123.9 s. No game failed, was retried or was replaced. The plan was followed without deviation; the
+  supplementary checks below were added after the results and are labelled as such.
+
+### Integrity and instrumentation
+
+| Check | Result |
+|---|---|
+| records, start markers, logs, capture pairs | 32 of 32, none overwritten; each capture matches the digests in its record, and its per-step trace digests chain to each seat's recorded trace chain |
+| engine sessions | 32, consecutive, each opened and closed once; engine state, `home/` and package unchanged; 1 engine state throughout |
+| execution | every record names `baseline-v1-runtime-r2` with `OPENBLAS_NUM_THREADS=1`, 32 workers and the registered scheduler; 0 leftover processes |
+| independence prefix | 32 of 32 games equal the serial reference over the 213-step common prefix |
+| in-game replay checks | 928, 0 mismatches |
+| offline uninstrumented re-decisions | 506 captured decisions recomputed by a fresh policy, 0 mismatches in actions or trace digest |
+| observer errors | 0 |
+
+* The observer took a median of 5.29 s per game (at most 5.48 s), 4.5% of the game's
+  wall time (at most 4.6%). The games' median wall time, 116.9 s, compares with 114.7 s for the same
+  configuration, runtime and worker count without the observer in the runtime qualification's tier B-w32, a different
+  run, so the difference is indicative only.
+
+### Engine step and action architecture
+
+* Each faction has 1 seat in `role_and_grouping_info` and 1 playing seat; all 26 units of each faction are listed
+  under its playing seat, identically in every game. Blue's seat 11 plays `baseline-v2`; red's seat 1 the inert control,
+  which issued 0 unit actions. Every play-stage batch therefore held seat 11's actions only, in its policy's
+  output order.
+* Feedback: in all 469 steps with two or more actions the engine's echoes came in batch order. Every action
+  was echoed except in the 32 deployment steps, whose actions (deployment completion) are never echoed.
+* `judge_info` holds the step's records only. Over the 92,192 engine steps of the 32 games the list was empty after
+  91,968, became non-empty 221 times and was replaced by a different non-empty list 3 times; it never
+  accumulated. All 297 records carried a `cur_step` equal to the observation's `time.cur_step` before the step.
+* In each of the 224 steps with an accepted shot or a record, the records were exactly the accepted shots, by
+  shooter and target (297 shots, 297 records; supplementary check). A refused shot left no record.
+* Resolution order: the engine exposes no ordering field. Each refusal shows that its target had already been removed
+  when the engine evaluated the shot; batch order matched echo order throughout, which is consistent with sequential
+  processing in submission order but does not establish it (see the supplementary checks).
+
+### Residual code-516 observations
+
+* 12 refusals, all of the class `shoot / 516 / CantShootToDiedBop`, one in each of 12 of the 32 games. In the shoot
+  experiment, 15 games of this configuration produced 8.
+* Each was the seat's only shot at its target in its step (12 of 12), listed in the seat's start-of-step `valid_actions`
+  (12) and passed by the project gate (12).
+* Each target was on the map at step start (12) and in neither unit list after the step (12);
+  each shooter was still present (12). Every target was a red unmanned ground vehicle.
+
+### Cross-seat fire
+
+| Measure | Count |
+|---|---:|
+| residual refusals with another friendly seat shooting the same target in the step | 0 |
+| residual refusals without such fire | 12 |
+| cross-seat same-target collisions (steps) | 0 (0) |
+| collisions with a code-516 refusal / without | 0 / 0 |
+| residual refusals with an opposing action on the target | 0 |
+| unit actions of the inert seat | 0 |
+| same-seat repeated fire | 0 |
+| shots of the policy seat | 309 |
+
+No second friendly seat exists in this configuration, so the zero collisions are structural; they say nothing about
+play with several seats per faction.
+
+### `judge_info` evidence
+
+* No `judge_info` record named any refused target in its step (0 of 12); none named it, and no shot
+  was aimed at it, in the 30 preceding steps (0 and 0); its watched fields did not change (0) and no
+  indirect fire was involved (0).
+* Every target named a launcher at step start, a red infantry fighting vehicle (12 of 12). In each step that
+  vehicle received a positive damage record from an accepted shot of the same seat (12), was in neither unit list
+  after the step (12), and that shot preceded the refused shot in the batch (12; the opposite order 0).
+* No `judge_info` field names a removal, so kill attribution is indirect: the launcher's destruction is evidenced by its
+  record and its absence; the target's removal, by its absence with no record of its own. `judge_info` was sufficient to
+  exclude direct damage to the target, not to state the removal rule itself.
+
+### Mechanism classification
+
+| Mechanism | Count | Evidence strength | Notes |
+|---|---:|---|---|
+| H1 | 0 | n/a | no second friendly seat in this configuration |
+| H2 | 0 | n/a | the inert control issued no unit action |
+| H3 | 0 | n/a | no earlier shot at or record on any target |
+| H4 | 12 | strong 12, moderate 0 | the target's launcher destroyed by the seat's own shot earlier in the batch |
+| H5 | 0 | n/a | no state transition or boarding |
+| H6 | 0 | n/a | no target on the map after its step |
+| H7 | 0 | n/a | none |
+
+### Supplementary checks (after the results; not preregistered)
+
+They change no category and no conclusion. Counts are per game and launching vehicle.
+
+* Each game lost exactly one red infantry fighting vehicle that had launched units (32, each with a positive damage
+  record); the other two in each game survived (64).
+* When such a vehicle was destroyed, the unmanned ground vehicle it had launched was removed in the same step without a
+  record of its own 28 times and had been destroyed earlier, with its own record, 4 times; the infantry it had
+  launched survived all 32 times. While it survived, every unit it had launched survived.
+* At each of the 12 refusals the target stood in its launcher's hex together with one red infantry unit, which survived
+  each time (12), so the removal is not a hex-wide effect.
+* Of the 28 steps in which a destroyed vehicle took its unmanned vehicle with it, the seat shot at the unmanned vehicle after
+  the shot at its launcher in 12 (each refused with code 516) and not at all in 16. No step held the opposite order, so whether
+  the outcome depends on batch order was not tested.
+
+### Representative timeline (H4)
+
+Relative to the refused step, without identifiers:
+
+| Step | Event | Engine |
+|---:|---|---|
+| 0 | another own unit shot at the target's launcher (batch position 1 of 2) | accepted |
+| 0 | judge_info records on the target's launcher | 1 new, 1 with positive damage |
+| 0 | the target's launcher after the step | absent |
+| 0 | the refused shot at the target (batch position 2 of 2) | refused (516 CantShootToDiedBop) |
+| 0 | the target after the step | absent |
+
+### Conclusion
+
+**RESIDUAL 516 MECHANISM EXPLAINED.** Every instrumentation check passed and all 12 residual refusals are classified H4 with strong
+evidence: in the same step, and earlier in the same seat's batch, the seat's own accepted shot destroyed the vehicle that
+had launched the target, an unmanned ground vehicle; the engine removed that vehicle with no record of damage to it, and
+the seat's later shot at it was refused as fired at a destroyed unit. No other seat, no opposing action and no earlier
+step was involved.
+
+The finding covers scenario 1930331196 under C3. The other 8 residual refusals of the shoot experiment, 2 in this scenario
+under C1 and 6 in other scenarios, were not captured here. The 2 under C1 also targeted unmanned ground
+vehicles (the inspection before registration); for none of the 8 is the mechanism established.
+
+### Limitations
+
+* One configuration and 32 games: the diagnostic captures a mechanism; it estimates no rate.
+* The removal rule (a launched unmanned vehicle goes with its launcher) is read from co-occurrence; the engine documents
+  no such rule, and `judge_info` names no removal.
+* Batch-order dependence was not tested, and one seat per faction excludes cross-seat fire by construction.
+* `judge_info` semantics were observed on engine 4.1.0 only.
