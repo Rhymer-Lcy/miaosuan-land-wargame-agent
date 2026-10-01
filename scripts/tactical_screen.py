@@ -226,6 +226,7 @@ def analyse(screen: str) -> Dict[str, Any]:
     splits: List[int] = []
     safety: Dict[str, collections.Counter] = {"b": collections.Counter(), "c": collections.Counter()}
     refusal_classes: Dict[str, collections.Counter] = {"b": collections.Counter(), "c": collections.Counter()}
+    refusal_seat_games: Dict[str, collections.Counter] = {"b": collections.Counter(), "c": collections.Counter()}
     lat: Dict[str, List[int]] = {"b": [], "c": []}
     for game, record in sorted(records.items()):
         g, scores = by[game], record["final_scores"]
@@ -242,6 +243,7 @@ def analyse(screen: str) -> Dict[str, Any]:
             safety[arm]["replay mismatches"] += seat["replay_mismatches"]
             for key, n in seat["feedback_errors_by_code_and_type"].items():
                 refusal_classes[arm][key] += n
+                refusal_seat_games[arm][key] += 1
                 if key.startswith("1804/"):
                     safety[arm]["code 1804"] += n
             lat[arm].extend(seat["latency_us"])
@@ -297,6 +299,11 @@ def analyse(screen: str) -> Dict[str, Any]:
                       "controllable_operators_seen": cells, "cells_with_more_operators": activated, "cells": len(cells)},
         "safety": {arm: dict(sorted(c.items())) for arm, c in safety.items()},
         "refusal_classes": {arm: dict(sorted(c.items())) for arm, c in refusal_classes.items()},
+        "refusal_class_seat_games": {arm: dict(sorted(c.items())) for arm, c in refusal_seat_games.items()},
+        "refusal_counting_note": ("refusal counts are as the harness records them: while the engine clock stands "
+                                  "still (deployment) the engine re-reports earlier feedback at every step, so a "
+                                  "deployment refusal is counted once per step until play starts; seat-games per "
+                                  "class are not affected"),
         "refusal_classes_new_in_candidate": new_classes,
         "latency": {arm: latency(v) for arm, v in lat.items()},
         "disposition": disposition,
