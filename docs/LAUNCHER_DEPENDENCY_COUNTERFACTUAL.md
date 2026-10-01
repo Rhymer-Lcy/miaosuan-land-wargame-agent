@@ -129,4 +129,119 @@ PYTHON scripts/replay_launcher_counterfactual.py [--check]   # private inputs un
 
 ## Results
 
-None at commit.
+The replay ran after the plan's commit `76e2b8b` was verified on the public remote at 2026-10-01T18:36:54+08:00. No
+engine session was opened. **DO NOT PREREGISTER**: the faithful candidate changed none of 34,202 decisions and suppressed
+none of the 12 replayable H4 refusals, so gates G3 and G7 fail. Every figure below comes from
+`evaluation/launcher-dependency-counterfactual-1/counterfactual.json`; `scripts/replay_launcher_counterfactual.py --check`
+regenerates it from the private corpora, and `tests/test_launcher_counterfactual_results.py` checks its counts and
+its disposition against the declared gate.
+
+### Corpus and fidelity
+
+| Corpus | Decisions | Reproduced | Excluded |
+|---|---:|---|---:|
+| D1, diagnostic snapshots (baseline-v2, runtime-r2) | 506 | baseline-v2 exact (actions, trace digest, memory): 506 | 0 |
+| D2, replay corpus (8 baseline-v0 games, C1) | 33,696 | baseline-v0 exact: 33,696; baseline-v2 explained against it: 33,696 | 0 |
+| D1, compact logs of every step | 92,192 steps | the submitted batch and its outcome | 0 |
+
+Baseline-v2's decisions were the same on the augmented observations in every decision of both corpora, as they must
+be, since baseline-v2 does not read the relation. The trace-level comparison with the oracle explained every
+decision of both replays; no state was unreconstructable.
+
+### Faithful candidate
+
+| Metric | Count |
+|---|---:|
+| decisions replayed | 34,202 |
+| changed decisions | 0 |
+| affected units | 0 |
+| excluded options | 0 |
+| suppressed emitted shots | 0 |
+| alternate-target | 0 |
+| fallback-occupy | 0 |
+| fallback-move | 0 |
+| fallback-none | 0 |
+| C6 | 0 |
+| C7 | 0 |
+| contract errors | 0 |
+| gate rejections | 0 |
+
+The candidate never fires on real states: no enemy unit in any seat view names a launcher, so no option can be
+excluded. It is baseline-v2 on every replayed decision, which is the expectation stated before the replay.
+
+### Known H4 coverage
+
+* All 12 diagnostic H4 refusals are replayable from their event snapshots. The faithful candidate suppresses
+  0 of them; the information-augmented reference suppresses 12.
+* The 16 residual refusals of the shoot experiment have no captured states and are not evaluable; outside the
+  diagnostic's configuration their mechanism is not established, and nothing here claims to fix them.
+
+### Information-augmented reference (not a candidate)
+
+The same rule given the enemy relations the seat cannot see measures what the rule would trade if they were
+observable.
+
+| Corpus | Changed decisions | Categories | Suppressed shots | Fallback | Launcher's fate |
+|---|---:|---|---:|---|---|
+| D1 snapshots | 12 | C4 12 | 12 | none 12 | O1 12 |
+| D2 replay corpus | 4 | C1 1, C4 3 | 4 | alternate target 1, none 3 | O3 4 |
+
+* In D1 the 12 changed decisions are the 12 H4 steps; in each the dependent shot is removed and the unit does
+  nothing (24 shots in those decisions become 12).
+* In D2 every suppression is O3: in those decisions baseline-v0's recorded actions differ from baseline-v2's or no next
+  state exists, so the recorded trajectory says nothing about the launcher. 3 more units had a dependent option
+  excluded without a change of selection.
+
+### Opportunity cost
+
+Over every step of the 32 diagnostic games, baseline-v2 emitted 26 shots that the reference rule would meet,
+each the first such shot of its step:
+
+| Class | Count | Fraction | Interpretation |
+|---|---:|---:|---|
+| O1 launcher removed in the step | 12 | 46% | every dependent shot was refused with code 516; the dependent was removed |
+| O2 launcher survived the step | 14 | 54% | every dependent shot was accepted with a judge_info record; the dependent was removed in 4 and survived in 10 |
+| O3 unavailable | 0 | 0% | the all-seeing log covers every step |
+
+For the faithful candidate every class is 0: it suppresses nothing. The O2 row describes the recorded trajectory,
+not what the candidate's trajectory would have been.
+
+### Trade-off
+
+* Faithful candidate: no benefit and no cost on real states; a registered A/B would compare baseline-v2 with itself.
+* Reference: in 32 games it would remove 26 shots. The 12 that were refused anyway left no judge_info record and
+  removed nothing, and each would become no action (the fallback of 12 of the 12 replayable cases), so only the refusal record would
+  change. The 14 that were accepted, each with a judge_info record (the target was removed in that step in 4), would be replaced by
+  whatever the unit's remaining options allow, which the logs cannot replay. No tactical strength is inferred.
+
+### Narrower rule
+
+* No seat-visible field reveals the relation: both the dependent's `launcher` and the vehicle's `launch_ids` and
+  `passenger_ids` are masked for enemy units, so no narrowing can make the faithful rule act.
+* Among signals of the launcher's fate, its strength (`blood`) at step start is visible to the seat. By value, over
+  the reference's 26 exposures: 1, O1 7; 2, O1 5 and O2 5; 3, O2 2; 4, O2 7. The weapon of the launcher
+  shot had 2 values, 1 of them with both outcomes. Neither signal determines the outcome, and engine adjudication draws
+  random numbers (the documented `random1` and `random2` fields). A threshold read off these 26 outcomes would be a
+  new, outcome-fitted candidate; none is adopted.
+
+### Design gate
+
+| Gate | Holds | Evidence |
+|---|---|---|
+| G1 no secondary interaction (C6) | yes | 0 C6 decisions |
+| G2 nothing unexplained (C7) | yes | 0 C7 decisions, 0 unexplained states |
+| G3 every replayable diagnostic H4 refusal suppressed | no | 0 of 12 |
+| G4 no contract or gate regression | yes | 0 contract errors, 0 gate rejections |
+| G5 seat-local observation only | yes | by construction; tested |
+| G6 opportunity cost measured | yes | O1, O2, O3 reported above |
+| G7 a meaningful A/B question remains | no | 0 changed decisions of 34,202 |
+
+**DO NOT PREREGISTER.** The candidate is implemented and tested (12 of 12 mutations killed), but under the
+engine's seat views it is identical to baseline-v2, so there is no experiment to register. No candidate source
+digest or golden chain is pinned.
+
+### Limitations
+
+* The masking was observed in engine 4.1.0's seat views; whether the online platform masks the relation is unknown.
+* The reference's trade-off comes from one configuration; the replay corpus could classify none of its suppressions.
+* D2's trajectories are baseline-v0's.
