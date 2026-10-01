@@ -22,7 +22,11 @@ of `baseline-v1` run on it. `baseline-v2` adds one more change, tested in a regi
 that runtime (`docs/EVALUATION_SHOOT_RESERVATION.md`): at most one shoot action per enemy target in a seat's
 decision step. It lowered code-516 refusals from 5.63 to 0.63 per 1,000 unit actions without a safety
 regression, and its interval excludes a loss of 10 score points or more against the inert control. Like its
-predecessors it is a reference point, and `baseline-v1` stays reproducible under its own identity.
+predecessors it is a reference point, and `baseline-v1` stays reproducible under its own identity. A
+registered concurrency qualification (`docs/CONCURRENCY_QUALIFICATION.md`) found that games can share the one
+persistent engine installation without integrity, independence or accounting effects; `scripts/run_evaluation.sh
+--workers N` runs a registered plan with the worker count its manifest registers (16 recommended, about 14 times the
+serial throughput), and the default stays serial.
 
 ## Third-party material is not in this repository
 

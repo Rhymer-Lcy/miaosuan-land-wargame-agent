@@ -61,8 +61,10 @@ shared sessions may overlap each other but never an exclusive one. It allocates 
 state with the latest ledger record and appends under `.ledger.lock`, and its records name the session
 mode and the worker. It never performs the first use and never recovers another session: recovery needs
 the exclusive lock (`recover_unclosed`, or an exclusive opening). Shared sessions share the one
-installation and its state; nothing is copied. They are used only by the registered concurrency
-qualification (`CONCURRENCY_QUALIFICATION.md`); the evaluator's sessions are exclusive.
+installation and its state; nothing is copied. The registered concurrency qualification
+(`CONCURRENCY_QUALIFICATION.md`) found no effect of concurrent shared sessions on the state, the package, the
+ledger or the games. The evaluator uses them only when run with `--workers N` greater than 1
+(`scripts/run_game_pool.py`); its default serial sessions are exclusive.
 
 `python scripts/engine_install.py verify` prints the same checks without writing anything.
 
