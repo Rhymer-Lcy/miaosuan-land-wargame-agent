@@ -47,6 +47,14 @@ prevalence diagnostic of unchanged `baseline-v2`; nothing was implemented or reg
 check failed for 9 stochastic games (a supplementary check found no decision differing on identical observed states),
 so it stopped before interpretation: no prevalence is reported and no next-step decision was taken.
 
+Tactical Frontier Sprint 1 (`docs/TACTICAL_FRONTIER.md`) moved the project to tactics-first research: a deterministic
+platform upload package of `baseline-v2` (`scripts/build_platform_package.py`, ready for a platform canary), a
+capability census, and a rubric committed before scoring that selected deployment disaggregation. Its exploratory
+screen (`docs/SCREEN_DEPLOYMENT_SPLIT.md`, preregistered in issue #1) found that engine 4.1.0 accepts deployment splits
+in 3 of the 8 frozen scenarios and refuses them in the other 5; its 192 games showed no reliable gain or loss (pooled
+head-to-head margin +5.88, 95% interval -78.58 to 97.71), and the registered disposition is REVISE BEFORE
+CONFIRMATION. Nothing was promoted.
+
 ## Third-party material is not in this repository
 
 The platform's community SDK (engine wheel, map and scenario data, demo code, documentation) carries
@@ -87,6 +95,8 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/TARGET_ALLOCATION_AUDIT.md` | the read-only audit of `baseline-v2`'s first-come shoot-target ownership: population, definitions, oracle, gate, results |
 | `docs/TARGET_OWNERSHIP_DESIGN.md` | the design study of one target-ownership candidate: formal model, semantics, isolation, evidence boundaries, diagnostic and A/B design, contract, results |
 | `docs/OWNERSHIP_PREVALENCE_DIAGNOSTIC.md` | the registered prospective diagnostic of how often `baseline-v2` meets an actionable target-ownership mismatch: events, observer, plan, rules, results |
+| `docs/TACTICAL_FRONTIER.md` | the tactics-first roadmap: architecture, research states, capability census, selection rubric, hypothesis register, roadmap, platform canary and failure ledger, BOKE-2026 holdout |
+| `docs/SCREEN_DEPLOYMENT_SPLIT.md` | the exploratory screen of deployment disaggregation: registration, mechanism smoke and engine semantics, A/B, reading, disposition |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
 | `evaluation/routing-remediation-1/` | the routing remediation's registration, pinned corpus and privacy-safe results |
@@ -99,6 +109,8 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `evaluation/target-allocation-audit-1/` | the target-allocation audit's privacy-safe aggregates |
 | `evaluation/target-ownership-design-1/` | the ownership design study's structural analysis and planning sensitivity |
 | `evaluation/baseline-v2-target-ownership-prevalence-1/` | the prevalence diagnostic's manifest, references, observer check, results and prefix diagnosis |
+| `evaluation/tactical-frontier-1/` | the capability census, the selection rubric (committed before scoring), the scores and the selection |
+| `evaluation/tactical-screen-deployment-split-1/` | the deployment-split screen's manifest, mechanism-smoke facts and exploratory results |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy
