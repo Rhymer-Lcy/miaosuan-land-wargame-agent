@@ -1,0 +1,178 @@
+{
+ "margin_over_second": 0.45,
+ "ranking": [
+  "T1",
+  "T7",
+  "T9",
+  "T4",
+  "T2",
+  "T6",
+  "T3",
+  "T8",
+  "T5"
+ ],
+ "schema": "miaosuan-tactical-selection/1",
+ "selected": "T1",
+ "sensitivity": {
+  "G +0.05": {
+   "first": "T1",
+   "score": 4.5781,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "G -0.05": {
+   "first": "T1",
+   "score": 4.5219,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "I +0.05": {
+   "first": "T1",
+   "score": 4.575,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "I -0.05": {
+   "first": "T1",
+   "score": 4.525,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "L +0.05": {
+   "first": "T1",
+   "score": 4.5133,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "L -0.05": {
+   "first": "T1",
+   "score": 4.5867,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "M +0.05": {
+   "first": "T1",
+   "score": 4.575,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "M -0.05": {
+   "first": "T1",
+   "score": 4.525,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "O +0.05": {
+   "first": "T1",
+   "score": 4.5765,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "O -0.05": {
+   "first": "T1",
+   "score": 4.5235,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "P +0.05": {
+   "first": "T1",
+   "score": 4.575,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "P -0.05": {
+   "first": "T1",
+   "score": 4.525,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "R +0.05": {
+   "first": "T1",
+   "score": 4.4639,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "R -0.05": {
+   "first": "T1",
+   "score": 4.6361,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "equal weights": {
+   "first": "T1",
+   "score": 4.5714,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "leverage 0.40": {
+   "first": "T1",
+   "score": 4.44,
+   "second": "T9",
+   "selected_stays_first": true
+  },
+  "without G": {
+   "first": "T1",
+   "score": 4.4375,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "without I": {
+   "first": "T1",
+   "score": 4.5,
+   "second": "T9",
+   "selected_stays_first": true
+  },
+  "without L": {
+   "first": "T1",
+   "score": 4.7333,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "without M": {
+   "first": "T1",
+   "score": 4.5,
+   "second": "T9",
+   "selected_stays_first": true
+  },
+  "without O": {
+   "first": "T1",
+   "score": 4.4706,
+   "second": "T9",
+   "selected_stays_first": true
+  },
+  "without P": {
+   "first": "T1",
+   "score": 4.5,
+   "second": "T7",
+   "selected_stays_first": true
+  },
+  "without R": {
+   "first": "T1",
+   "score": 4.7222,
+   "second": "T7",
+   "selected_stays_first": true
+  }
+ },
+ "study_id": "tactical-frontier-1",
+ "variants_where_selection_changes": [],
+ "weighted": {
+  "T1": 4.55,
+  "T2": 3.6,
+  "T3": 3.2,
+  "T4": 3.6,
+  "T5": 2.55,
+  "T6": 3.5,
+  "T7": 4.1,
+  "T8": 2.6,
+  "T9": 3.95
+ },
+ "weights": {
+  "G": 0.2,
+  "I": 0.1,
+  "L": 0.25,
+  "M": 0.1,
+  "O": 0.15,
+  "P": 0.1,
+  "R": 0.1
+ }
+}
