@@ -1,0 +1,948 @@
+{
+ "baseline": {
+  "identity": "baseline-v2",
+  "policy_source_sha256": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae"
+ },
+ "d1_coverage": {
+  "captured_decisions": 506,
+  "policy_seat_steps": 92192
+ },
+ "decisions": {
+  "D1": 506,
+  "D2": 33696,
+  "D3": 51
+ },
+ "fidelity": {
+  "D1 baseline-v2 exact": 506,
+  "D1 decisions": 506,
+  "D2 baseline-v0 exact": 33696,
+  "D2 baseline-v2 explained": 33696,
+  "D2 decisions": 33696,
+  "D3 baseline-v1 exact": 51,
+  "D3 baseline-v2 explained": 51,
+  "D3 decisions": 97,
+  "D3 excluded: baseline-v1 not reproduced": 46,
+  "S1 oracle repeated runs differing": 0,
+  "consistency problems": 0,
+  "decisions without unit decisions": 2273
+ },
+ "graph": {
+  "collision_components_by_kind": {
+   "S1": 18,
+   "S2": 84
+  },
+  "components_by_kind": {
+   "S1": 18,
+   "S2": 84,
+   "S3": 264
+  },
+  "components_by_kind_and_corpus": {
+   "D1 S2": 12,
+   "D2 S1": 18,
+   "D2 S2": 72,
+   "D2 S3": 264
+  },
+  "decisions_with_kind": {
+   "S1": 18,
+   "S2": 84,
+   "S3": 261
+  },
+  "s1_shooters": {
+   "2": 13,
+   "3": 5
+  },
+  "s2_shape": {
+   "2 shooters, 10 targets": 1,
+   "2 shooters, 11 targets": 2,
+   "2 shooters, 12 targets": 2,
+   "2 shooters, 13 targets": 2,
+   "2 shooters, 14 targets": 2,
+   "2 shooters, 15 targets": 2,
+   "2 shooters, 16 targets": 2,
+   "2 shooters, 17 targets": 3,
+   "2 shooters, 18 targets": 2,
+   "2 shooters, 2 targets": 20,
+   "2 shooters, 3 targets": 11,
+   "2 shooters, 4 targets": 15,
+   "2 shooters, 6 targets": 1,
+   "2 shooters, 7 targets": 2,
+   "2 shooters, 8 targets": 5,
+   "2 shooters, 9 targets": 3,
+   "3 shooters, 2 targets": 3,
+   "3 shooters, 3 targets": 3,
+   "3 shooters, 4 targets": 2,
+   "3 shooters, 5 targets": 1
+  },
+  "s2_with_a_collision": 84
+ },
+ "historical_mismatch_groups": {
+  "by_kind": {
+   "S1": 9,
+   "S2": 5
+  },
+  "excluded_games": 3,
+  "excluded_identity_situations": 3,
+  "groups": 14,
+  "retained_games": 2,
+  "retained_identity_situations": 3
+ },
+ "levels": {
+  "D1": {
+   "complete_games": false,
+   "configurations_with_a_collision": 1,
+   "configurations_with_a_mismatch": 0,
+   "fingerprints": 3,
+   "fingerprints_with_mismatch": 0,
+   "game_prevalence_exact_95": null,
+   "games_in_corpus": 32,
+   "games_with_a_collision": 12,
+   "games_with_a_mismatch": 0,
+   "groups": 12,
+   "identity_situations": 12,
+   "identity_situations_with_mismatch": 0,
+   "mismatch_groups": 0,
+   "mismatch_groups_per_affected_game": []
+  },
+  "D2": {
+   "complete_games": true,
+   "configurations_with_a_collision": 6,
+   "configurations_with_a_mismatch": 4,
+   "fingerprints": 63,
+   "fingerprints_with_mismatch": 7,
+   "game_prevalence_exact_95": [
+    0.157,
+    0.843
+   ],
+   "games_in_corpus": 8,
+   "games_with_a_collision": 6,
+   "games_with_a_mismatch": 4,
+   "groups": 98,
+   "identity_situations": 52,
+   "identity_situations_with_mismatch": 6,
+   "mismatch_groups": 14,
+   "mismatch_groups_per_affected_game": [
+    7,
+    4,
+    2,
+    1
+   ]
+  },
+  "D3": {
+   "complete_games": false,
+   "configurations_with_a_collision": 0,
+   "configurations_with_a_mismatch": 0,
+   "fingerprints": 0,
+   "fingerprints_with_mismatch": 0,
+   "game_prevalence_exact_95": null,
+   "games_in_corpus": 5,
+   "games_with_a_collision": 0,
+   "games_with_a_mismatch": 0,
+   "groups": 0,
+   "identity_situations": 0,
+   "identity_situations_with_mismatch": 0,
+   "mismatch_groups": 0,
+   "mismatch_groups_per_affected_game": []
+  }
+ },
+ "s1": {
+  "by_corpus": {
+   "D2": 9
+  },
+  "changed_units": {
+   "2": 9
+  },
+  "components": 18,
+  "decisions_changed": 9,
+  "designated_owner_before": {
+   "none": 9
+  },
+  "designated_owner_shoots_target": 9,
+  "earlier_non_owners": {
+   "1": 9
+  },
+  "fingerprints_changed": 3,
+  "former_owner_then": {
+   "none": 9
+  },
+  "games_changed": 2,
+  "gate_precheck_failures": 0,
+  "identity_situations_changed": 3,
+  "key": {
+   "higher attack level": 9,
+   "unchanged": 9
+  },
+  "later_non_owners": {
+   "0": 4,
+   "1": 5
+  },
+  "level_gain": {
+   "2": 6,
+   "4": 3
+  },
+  "lower_attack_level_owner": 9,
+  "non_shoot_changes": 0,
+  "owner_changed": 9,
+  "shot_delta": {
+   "0": 9
+  },
+  "simple": 9
+ },
+ "schema": "miaosuan-target-ownership-design-analysis/1",
+ "situations": {
+  "collision_components": 102,
+  "collision_groups": 110,
+  "fingerprint_game_pairs": 75,
+  "fingerprint_multiplicity": {
+   "1": 51,
+   "2": 7,
+   "3": 3,
+   "4": 1,
+   "5": 1,
+   "6": 2,
+   "7": 1
+  },
+  "fingerprints": 66,
+  "fingerprints_by_kind": {
+   "S1": 9,
+   "S2": 57
+  },
+  "fingerprints_spanning_games": 2,
+  "fingerprints_with_a_lower_attack_reserver": 7,
+  "games_with_a_lower_attack_reserver": 4,
+  "identity_situations": 72,
+  "mismatch_fingerprints_by_kind": {
+   "S1": 3,
+   "S2": 4
+  },
+  "repeated_fingerprints": 15,
+  "table": [
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "016774204e0f4dbf",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "023bd075ade054d3",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": true,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "027a3d9ef5701ec5",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "03c45108e0a0b6f8",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "0906d256211e18b3",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 3,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "0cef3ef975a46ce1",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "174769d17c1180aa",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "1e187ebea801a285",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "1ef48fc869ae185b",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "20419aba7fae12b4",
+    "games": 1,
+    "kind": "S1",
+    "lower_attack_reserver": true,
+    "occurrences": 3,
+    "s1_owner_changed": true
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "22488b1a4b5bd4b6",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "268c370414890a46",
+    "games": 1,
+    "kind": "S1",
+    "lower_attack_reserver": true,
+    "occurrences": 2,
+    "s1_owner_changed": true
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "30332b069d0a8ca9",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 7,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "30bcfd55f695304e",
+    "games": 1,
+    "kind": "S1",
+    "lower_attack_reserver": false,
+    "occurrences": 2,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "30c8cad3ca95bf1e",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "39806612a8267b63",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "3d2edacb3b189725",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "40f9bb41c2e48b71",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 2,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "4535a3ad557f5357",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": true,
+    "occurrences": 2,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "50a90e7d392d335f",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D1"
+    ],
+    "fingerprint": "58ee89afbcd5c39e",
+    "games": 6,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 6,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "62795188c23d4d41",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "6446f3988bc0c9f3",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "6496e0df19d5502c",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "65743d027f28d64c",
+    "games": 1,
+    "kind": "S1",
+    "lower_attack_reserver": true,
+    "occurrences": 4,
+    "s1_owner_changed": true
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "65937fbaf0579e15",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "6b8c75f237926428",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "6c7eb09c2f1cb668",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "6f160a4f515b80b5",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "72700b4bd9c93d41",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "77627c7ad767ef7c",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "809af466cf2bcac0",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "80ef4cada6e2a04a",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 3,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "83f7c0f3cfc60c66",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "865d059072666234",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": true,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "8d2f175f00f267e3",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "8ea98e17e63d2b54",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "91d24bb99745d102",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D1"
+    ],
+    "fingerprint": "9755505f3d110243",
+    "games": 5,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 5,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "9a55411808e1334a",
+    "games": 1,
+    "kind": "S1",
+    "lower_attack_reserver": false,
+    "occurrences": 2,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "9a9168bce734274d",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "9bb623d8ec06f5cd",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "a0898e43e3dd1923",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "a1bad045a44725d5",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "a34753b9c5078c2a",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "a4eccbc67d5257a8",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": true,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "a85aaa6cdbd485d6",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 6,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "b57efc692c72477f",
+    "games": 1,
+    "kind": "S1",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "c0701a2cae259d79",
+    "games": 1,
+    "kind": "S1",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "c3ff4f5c15301998",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "cae137bc88b0a041",
+    "games": 1,
+    "kind": "S1",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "d15f00ac85430927",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "d5bd560397e2906d",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "d74de3bda3a782b2",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "dd3be55308476501",
+    "games": 1,
+    "kind": "S1",
+    "lower_attack_reserver": false,
+    "occurrences": 2,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D1"
+    ],
+    "fingerprint": "de3cb39ec3f99ab8",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "de480a13a4a895e0",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "e3c0c134f2f1fbec",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "e9ce7c55813b0acf",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "ed9673079f37dd9d",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "efdb96c9a2430962",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "f391a1a3aab0e013",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "f43ec0a4fc344c7f",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "f4fcf5d7b4c0acf7",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "f9015d4126c99f6b",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 2,
+    "s1_owner_changed": false
+   },
+   {
+    "corpora": [
+     "D2"
+    ],
+    "fingerprint": "fe6d114e2fec4390",
+    "games": 1,
+    "kind": "S2",
+    "lower_attack_reserver": false,
+    "occurrences": 1,
+    "s1_owner_changed": false
+   }
+  ]
+ },
+ "study_id": "target-ownership-design-1"
+}
