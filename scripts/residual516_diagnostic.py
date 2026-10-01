@@ -340,6 +340,99 @@ def timeline(facts: Mapping[str, Any]) -> List[Dict[str, Any]]:
     return sorted(rows, key=lambda r: r["dt"])
 
 
+def supplementary(manifest: Mapping[str, Any], captures: Mapping[str, Dict[str, Any]],
+                  windows: Mapping[str, Dict[str, Any]]) -> Dict[str, Any]:
+    """Checks added after the results (not preregistered; they change no category and no conclusion): what follows
+    the destruction of a unit that launched others, the units sharing its hex at each refusal, the batch order of the
+    shots at a co-removed unit, and judge_info against accepted shots."""
+    scenario_id = manifest["scenarios"][0]["scenario_id"]
+    units = load(WORK / "data" / scenario_id / "Data" / "scenarios" / f"{scenario_id}.json")["operators"]
+    classes = {u["obj_id"]: [u.get("color"), u.get("type"), u.get("sub_type")] for u in units}
+    launcher_of = {u["obj_id"]: u["launcher"] for u in units if u.get("launcher") not in (None, 0, -1)}
+    launches = collections.defaultdict(list)
+    for unit, launcher in launcher_of.items():
+        launches[launcher].append(unit)
+    removal, order, colocated, judge = (collections.Counter() for _ in range(4))
+    for game in sorted(captures):
+        steps = captures[game]["compact"]["steps"]
+        gone_at = {u: e["k"] for e in steps for u in e["gone"]}
+        damaged = collections.defaultdict(set)
+        for entry in steps:
+            for record in entry["judge_new"]:
+                if isinstance(record.get("damage"), (int, float)) and record["damage"] > 0:
+                    damaged[record.get("target_obj_id")].add(entry["k"])
+            accepted = collections.Counter()
+            for item in entry["batch"]:
+                action = item["action"]
+                if action.get("type") in rd.SHOT_TYPES:
+                    codes = [rd.feedback_code(f) for f in entry["feedback"]
+                             if rd.refusals.same_action(f.get("message") or {}, action)]
+                    if codes and codes[0] is None:
+                        accepted[(action.get("obj_id"), action.get("target_obj_id"))] += 1
+            records = collections.Counter((r.get("att_obj_id"), r.get("target_obj_id")) for r in entry["judge_new"])
+            if accepted or records:
+                judge["steps with an accepted shot or a record"] += 1
+                judge["steps whose records equal their accepted shots"] += accepted == records
+            judge["accepted shots"] += sum(accepted.values())
+            judge["records"] += sum(records.values())
+        for launcher, launched in sorted(launches.items()):
+            if launcher not in gone_at:
+                removal["launcher survives the game"] += 1
+                for unit in launched:
+                    removal[f"launcher survives: launched {label(classes[unit])} " +
+                            ("removed" if unit in gone_at else "survives")] += 1
+                continue
+            k = gone_at[launcher]
+            removal[f"launcher ({label(classes[launcher])}) removed, " +
+                    ("with" if k in damaged[launcher] else "without") + " a positive damage record"] += 1
+            for unit in launched:
+                if unit not in gone_at:
+                    state = "survives"
+                elif gone_at[unit] == k:
+                    state = "removed in the same step, " + ("with" if k in damaged[unit] else "without") + \
+                            " a positive damage record of its own"
+                    entry = steps[k]
+                    first = min((i["i"] for i in entry["batch"] if i["action"].get("type") in rd.SHOT_TYPES
+                                 and i["action"].get("target_obj_id") == launcher), default=None)
+                    at_unit = [i for i in entry["batch"] if i["action"].get("type") in rd.SHOT_TYPES
+                               and i["action"].get("target_obj_id") == unit]
+                    if not at_unit:
+                        order["co-removal steps without a shot at the launched unit"] += 1
+                    for shot in at_unit:
+                        codes = [rd.feedback_code(f) for f in entry["feedback"]
+                                 if rd.refusals.same_action(f.get("message") or {}, shot["action"])]
+                        where = "after" if first is not None and first < shot["i"] else "before" if first is not None \
+                            else "without"
+                        order[f"shot at the launched unit {where} the shot at its launcher: "
+                              f"{'accepted' if codes and codes[0] is None else 'refused ' + str(codes[0] if codes else 'absent')}"] += 1
+                elif gone_at[unit] < k:
+                    state = "removed before its launcher, " + ("with" if gone_at[unit] in damaged[unit] else "without") + \
+                            " a positive damage record of its own"
+                else:
+                    state = "removed after its launcher"
+                removal[f"launcher removed: launched {label(classes[unit])} {state}"] += 1
+        for event in windows[game]["events"]:
+            snap = next(s for s in event["window"] if s["k"] == event["k"])
+            table = rd.unit_table(pickle.loads(snap["global"]))
+            entry = steps[event["k"]]
+            for f in entry["feedback"]:
+                if rd.feedback_code(f) != rd.TRIGGER_CODE:
+                    continue
+                target = (f.get("message") or {}).get("target_obj_id")
+                launcher = table.get(target, {}).get("launcher")
+                here = table.get(launcher, {}).get("hex")
+                colocated["refused target in its launcher's hex" if table.get(target, {}).get("hex") == here
+                          else "refused target outside its launcher's hex"] += 1
+                for unit, row in table.items():
+                    if unit not in (target, launcher) and row["where"] == "operators" and row["hex"] == here:
+                        colocated[f"other unit in the launcher's hex ({label(row['class'])}): " +
+                                  ("removed" if unit in entry["gone"] else "survives")] += 1
+    return {"note": ("computed after the results; not preregistered; changes no category and no conclusion; counts "
+                     "per (game, launcher) over the 32 games"),
+            "launcher_removal": dict(sorted(removal.items())), "batch_order": dict(sorted(order.items())),
+            "colocated_at_refusals": dict(sorted(colocated.items())), "judge_info_against_shots": dict(sorted(judge.items()))}
+
+
 def analyse() -> Dict[str, Any]:
     manifest = load(MANIFEST)
     games = [g["game_id"] for g in manifest["games"]]
@@ -480,6 +573,7 @@ def analyse() -> Dict[str, Any]:
         },
         "classification": categories, "h7_matches": dict(sorted(h7_matches.items())),
         "timelines": representative, "conclusion": verdict,
+        "supplementary": supplementary(manifest, captures, windows) if captures else None,
         "validity": {"instrumentation": instr["pass"], "integrity": checks["pass"], "complete": all(completeness)},
         "uninstrumented_reference": {
             "source": f"evaluation/{rt.PLAN_ID}/results.json, tier B-w32, configuration {rd.SCENARIO_ID}.{rd.CONDITION}",
