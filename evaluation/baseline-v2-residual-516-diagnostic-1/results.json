@@ -1,0 +1,252 @@
+{
+ "architecture": {
+  "feedback_order": {
+   "echo_in_batch_order": 469,
+   "every_action_echoed": 437,
+   "not_every_action_echoed": 32,
+   "steps": 469
+  },
+  "judge_record_steps": {
+   "record cur_step = step": 297
+  },
+  "judge_relations": {
+   "empty": 91968,
+   "first": 221,
+   "replaced": 3
+  },
+  "playing_seats_by_faction": {
+   "0": 1,
+   "1": 1
+  },
+  "seats_by_faction": {
+   "0": 1,
+   "1": 1
+  },
+  "setups_identical": true,
+  "units_by_faction": {
+   "0": 26,
+   "1": 26
+  },
+  "units_listed_for_a_playing_seat": {
+   "0": 26,
+   "1": 26
+  }
+ },
+ "classification": {
+  "H1": {
+   "count": 0,
+   "moderate": 0,
+   "strong": 0
+  },
+  "H2": {
+   "count": 0,
+   "moderate": 0,
+   "strong": 0
+  },
+  "H3": {
+   "count": 0,
+   "moderate": 0,
+   "strong": 0
+  },
+  "H4": {
+   "count": 12,
+   "moderate": 0,
+   "strong": 12
+  },
+  "H5": {
+   "count": 0,
+   "moderate": 0,
+   "strong": 0
+  },
+  "H6": {
+   "count": 0,
+   "moderate": 0,
+   "strong": 0
+  },
+  "H7": {
+   "count": 0,
+   "moderate": 0,
+   "strong": 0
+  }
+ },
+ "conclusion": "RESIDUAL 516 MECHANISM EXPLAINED",
+ "cross_seat": {
+  "collision_steps": 0,
+  "collisions": 0,
+  "collisions_with_516": 0,
+  "collisions_without_516": 0,
+  "events_with_friendly_other_seat_fire": 0,
+  "events_with_opposing_action_on_target": 0,
+  "events_without_friendly_other_seat_fire": 12,
+  "opposing_unit_actions": 0,
+  "same_seat_repeats": 0,
+  "shots": 309
+ },
+ "diagnostic_id": "baseline-v2-residual-516-diagnostic-1",
+ "evidence": {
+  "events_with_a_linked_object": 12,
+  "events_with_a_linked_object_removed": 12,
+  "events_with_any_judge_record_on_target": 0,
+  "events_with_indirect_fire_at_target_hex": 0,
+  "events_with_positive_damage_on_target": 0,
+  "events_with_prior_accepted_shot_at_target": 0,
+  "events_with_prior_judge_record_on_target": 0,
+  "events_with_target_state_change": 0,
+  "linked_classes_removed": {
+   "red infantry fighting vehicle": 12
+  },
+  "linked_relations_removed": {
+   "launcher": 12
+  },
+  "linked_removed_with_accepted_same_step_shot_of_the_seat": 12,
+  "linked_removed_with_positive_damage": 12,
+  "refused_shot_after_the_linked_shot_in_batch": 12,
+  "refused_shot_before_the_linked_shot_in_batch": 0
+ },
+ "games": {
+  "completed": 32,
+  "missing": [],
+  "not_completed": [],
+  "recorded": 32,
+  "registered": 32
+ },
+ "h7_matches": {},
+ "harness_commits": [
+  "73441a3b90686eeaf216721416fb45586af63328"
+ ],
+ "instrumentation": {
+  "checks": {
+   "in_game_replay": true,
+   "observer_errors": true,
+   "offline_replay": true,
+   "prefix": true
+  },
+  "game_wall_seconds": {
+   "max": 123.92178639955819,
+   "median": 116.94227351620793
+  },
+  "games": 32,
+  "in_game_replay_checks": 928,
+  "in_game_replay_mismatches": 0,
+  "observer_errors": 0,
+  "observer_seconds": {
+   "max": 5.484038037247956,
+   "median": 5.29177310410887,
+   "total": 169.6505709560588
+  },
+  "observer_share_of_wall": {
+   "max": 0.04614723238195646,
+   "median": 0.04546076375457218
+  },
+  "offline_decisions": 506,
+  "offline_mismatches": 0,
+  "pass": true,
+  "prefix_equal": 32,
+  "prefix_steps": 213
+ },
+ "integrity": {
+  "consecutive_sessions": true,
+  "leftover_processes": 0,
+  "pass": true,
+  "pool_runs": 1,
+  "problems": 0,
+  "records": 32,
+  "runtime": "baseline-v1-runtime-r2",
+  "scheduler": "miaosuan-game-pool/1@e717be37ab01d6c6018610bfc0af4df5f247a4599bc4c760c69499f04ed8ae90",
+  "sessions": 32,
+  "states": 1,
+  "thread_env": {
+   "OPENBLAS_NUM_THREADS": "1"
+  },
+  "workers": 32
+ },
+ "manifest_sha256": "4811f1e891b2186f2f7409173e12d4521b6c1e80696f38e52fa76deaa7b0df19",
+ "refusals": {
+  "actor_present_after": 12,
+  "by_class": [
+   {
+    "action_type": 2,
+    "code": 516,
+    "count": 12,
+    "message_class": "CantShootToDiedBop"
+   }
+  ],
+  "complete_against_records": true,
+  "games_with_a_residual_516": 12,
+  "legal_at_start": 12,
+  "passed_project_gate": 12,
+  "residual_516": 12,
+  "single_own_shot": 12,
+  "target_absent_after": 12,
+  "target_classes": {
+   "red unmanned ground vehicle": 12
+  },
+  "target_on_map_at_start": 12
+ },
+ "schema": "miaosuan-residual516-results/1",
+ "supplementary": {
+  "batch_order": {
+   "co-removal steps without a shot at the launched unit": 16,
+   "shot at the launched unit after the shot at its launcher: refused 516": 12
+  },
+  "colocated_at_refusals": {
+   "other unit in the launcher's hex (red infantry): survives": 12,
+   "refused target in its launcher's hex": 12
+  },
+  "judge_info_against_shots": {
+   "accepted shots": 297,
+   "records": 297,
+   "steps whose records equal their accepted shots": 224,
+   "steps with an accepted shot or a record": 224
+  },
+  "launcher_removal": {
+   "launcher (red infantry fighting vehicle) removed, with a positive damage record": 32,
+   "launcher removed: launched red infantry survives": 32,
+   "launcher removed: launched red unmanned ground vehicle removed before its launcher, with a positive damage record of its own": 4,
+   "launcher removed: launched red unmanned ground vehicle removed in the same step, without a positive damage record of its own": 28,
+   "launcher survives the game": 256,
+   "launcher survives: launched blue infantry survives": 192,
+   "launcher survives: launched red infantry survives": 64,
+   "launcher survives: launched red unmanned ground vehicle survives": 64
+  },
+  "note": "computed after the results; not preregistered; changes no category and no conclusion; counts per (game, launcher) over the 32 games"
+ },
+ "timelines": {
+  "H4": [
+   {
+    "dt": 0,
+    "engine": "accepted",
+    "event": "another own unit shot at the target's launcher (batch position 1 of 2)"
+   },
+   {
+    "dt": 0,
+    "engine": "1 new, 1 with positive damage",
+    "event": "judge_info records on the target's launcher"
+   },
+   {
+    "dt": 0,
+    "engine": "absent",
+    "event": "the target's launcher after the step"
+   },
+   {
+    "dt": 0,
+    "engine": "refused (516 CantShootToDiedBop)",
+    "event": "the refused shot at the target (batch position 2 of 2)"
+   },
+   {
+    "dt": 0,
+    "engine": "absent",
+    "event": "the target after the step"
+   }
+  ]
+ },
+ "uninstrumented_reference": {
+  "process_wall_median_seconds": 114.72940190229565,
+  "source": "evaluation/runtime-thread-qualification-1/results.json, tier B-w32, configuration 1930331196.C3"
+ },
+ "validity": {
+  "complete": true,
+  "instrumentation": true,
+  "integrity": true
+ }
+}
