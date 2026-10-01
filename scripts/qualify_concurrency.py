@@ -422,7 +422,9 @@ def summarize(plan: Mapping[str, Any], collected: Mapping[str, Any], folder: Pat
     # descriptors and resources from the samples
     samples = [json.loads(line) for line in (folder / "samples.jsonl").read_text(encoding="utf-8").splitlines() if line]
     root = str(INSTALL.resolve())
+    # /dev/null is the game's stdin: subprocess opens it read-write for stdin=DEVNULL, and it holds no state.
     allowed = lambda path: (path.startswith(str(folder / "games")) or path.startswith(str(folder / "logs"))
+                            or path == "/dev/null"
                             or path in {f"{root}/{name}" for name in plan["expected_writable"]})
     resources = procstat.summarize_samples(samples, allowed)
     if resources["unexpected_writable_files"]:
