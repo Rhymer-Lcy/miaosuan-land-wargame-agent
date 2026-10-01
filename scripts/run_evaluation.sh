@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Play the registered evaluation plan: one isolated engine process (and session) per game.
 #
-# Usage: scripts/run_evaluation.sh --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab
+# Usage: scripts/run_evaluation.sh --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab|residual516
 #                                  [--evaluation NAME] [--engine-install DIR] [--workers N]
 #                                  [--purpose diagnostic --work DIR [--games FILE]]
 #
@@ -16,6 +16,11 @@
 #                      before the first and after the last game (group B must be baseline-v1-runtime-r1),
 #                      every game re-checks its group's digest, and the run stops after 3 consecutive
 #                      games that did not complete (records: scripts/analyze_shoot_experiment.py)
+#   --plan residual516 every game of the registered residual-516 diagnostic, in registered order; its manifest
+#                      is re-derived, the frozen baseline-v2 digest is checked before the first and after the
+#                      last game and by every game, each game writes its private capture beside its record,
+#                      and the run stops after 3 consecutive games that did not complete (records and
+#                      captures: scripts/residual516_diagnostic.py)
 #   --evaluation NAME  the registered evaluation: evaluation/NAME/manifest.json, records under
 #                      local/evaluation/NAME (default baseline-v0). The baseline-v0 manifest is
 #                      re-derived before every run; a candidate evaluation also re-derives its own.
@@ -67,8 +72,8 @@ while [[ $# -gt 0 ]]; do
         *) echo "unknown argument: $1" >&2; exit 2 ;;
     esac
 done
-if [[ -z $PYTHON || -z $ARCHIVE || ( $PLAN != gate1 && $PLAN != suite && $PLAN != study && $PLAN != ab ) ]]; then
-    echo "usage: $0 --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab [--evaluation NAME] [--engine-install DIR] [--workers N] [--purpose diagnostic --work DIR [--games FILE]]" >&2
+if [[ -z $PYTHON || -z $ARCHIVE || ( $PLAN != gate1 && $PLAN != suite && $PLAN != study && $PLAN != ab && $PLAN != residual516 ) ]]; then
+    echo "usage: $0 --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab|residual516 [--evaluation NAME] [--engine-install DIR] [--workers N] [--purpose diagnostic --work DIR [--games FILE]]" >&2
     exit 2
 fi
 if ! [[ $WORKERS =~ ^[1-9][0-9]*$ ]]; then
@@ -153,6 +158,29 @@ fi
 if [[ $PLAN == ab ]]; then
     PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/build_shoot_experiment_manifest.py" --check
 fi
+if [[ $PLAN == residual516 ]]; then
+    PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/build_residual516_manifest.py" --check
+fi
+diagnostic_digest_check() {
+    PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$1" <<'PY'
+import importlib.util, json, sys
+from pathlib import Path
+from miaosuan_agent.evaluation import residual516 as rd
+spec = importlib.util.spec_from_file_location("rev", Path(sys.argv[1]).parents[2] / "scripts" / "run_evaluation.py")
+rev = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(rev)
+manifest = json.load(open(sys.argv[1], encoding="utf-8"))
+if not rd.is_diagnostic(manifest):
+    sys.exit("REFUSED: --plan residual516 needs the residual-516 diagnostic manifest")
+source = rev.registered_policy_source(manifest)
+if source != rd.BASELINE_V2_SOURCE_SHA256 or manifest["policy_source"]["sha256"] != rd.BASELINE_V2_SOURCE_SHA256:
+    sys.exit(f"REFUSED at {sys.argv[2]}: the policy source is not baseline-v2 ({source})")
+print(f"policy source at {sys.argv[2]}: {source} (baseline-v2)")
+PY
+}
+if [[ $PLAN == residual516 ]]; then
+    diagnostic_digest_check start
+fi
 experiment_digest_check() {
     PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$1" <<'PY'
 import importlib.util, json, sys
@@ -215,6 +243,7 @@ fi
 mapfile -t GAMES < <(PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$PLAN" "$GAMES_FILE" <<'PY'
 import json, sys
 from miaosuan_agent.evaluation import manifest as mf
+from miaosuan_agent.evaluation import residual516 as rd
 from miaosuan_agent.evaluation import shoot_experiment as sx
 from miaosuan_agent.evaluation import variance_study as vs
 manifest = json.load(open(sys.argv[1], encoding="utf-8"))
@@ -222,6 +251,8 @@ if sys.argv[2] == "study":
     specs = vs.scheduled_games(manifest)
 elif sys.argv[2] == "ab":
     specs = sx.scheduled_games(manifest)
+elif sys.argv[2] == "residual516":
+    specs = rd.scheduled_games(manifest)
 else:
     specs = mf.gate1_games(manifest) if sys.argv[2] == "gate1" else mf.games(manifest)
 ids = [spec.game_id for spec in specs]
@@ -251,7 +282,7 @@ failures=0
 consecutive=0
 if [[ $WORKERS -gt 1 ]]; then
     STOP_AFTER=0
-    if [[ $PLAN == study || $PLAN == ab ]]; then
+    if [[ $PLAN == study || $PLAN == ab || $PLAN == residual516 ]]; then
         STOP_AFTER=3
     fi
     QUEUE="$WORK/logs/queue-$(date -u +%Y%m%dT%H%M%SZ).txt"
@@ -312,7 +343,7 @@ for id in "${GAMES[@]}"; do
         if [[ $status -ne 1 ]]; then
             exit "$status"
         fi
-        if [[ ( $PLAN == study || $PLAN == ab ) && $consecutive -ge 3 ]]; then
+        if [[ ( $PLAN == study || $PLAN == ab || $PLAN == residual516 ) && $consecutive -ge 3 ]]; then
             echo "STOP: 3 consecutive games did not complete; the run stops as registered" >&2
             exit 1
         fi
@@ -325,6 +356,8 @@ if [[ $PLAN == study ]]; then
     study_digest_check end
 elif [[ $PLAN == ab ]]; then
     experiment_digest_check end
+elif [[ $PLAN == residual516 ]]; then
+    diagnostic_digest_check end
 else
     host summarize
 fi
