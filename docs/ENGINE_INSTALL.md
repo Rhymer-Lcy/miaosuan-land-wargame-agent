@@ -31,6 +31,7 @@ local/engines/sdk-4.1.0/
   home/                   persistent HOME for engine processes
   usage-ledger.jsonl      append-only record of every engine session
   .session.lock           advisory lock held while a session runs
+  .ledger.lock            advisory lock held while a shared session reads and appends the ledger
 ```
 
 The manifest records the engine version, the SDK archive and wheel digests, the Python version and
@@ -52,7 +53,16 @@ Opening a session (`miaosuan_agent.engine_install.session`) takes the lock, then
 Closing appends a `session-close` record with the state hash after the run, whether it changed,
 the `home/` contents, the integrity result and the run outcome. A session that was never closed
 (killed or crashed) is closed as `session-recovered` by the next opening, recording the state as
-found. The chain of state hashes across records is the evidence that the state was never reset.
+found; an exclusive opening recovers every session the ledger shows as open. The chain of state hashes
+across records is the evidence that the state was never reset.
+
+A shared session (`miaosuan_agent.engine_install.shared_session`) holds the lock in shared mode, so
+shared sessions may overlap each other but never an exclusive one. It allocates its number, compares the
+state with the latest ledger record and appends under `.ledger.lock`, and its records name the session
+mode and the worker. It never performs the first use and never recovers another session: recovery needs
+the exclusive lock (`recover_unclosed`, or an exclusive opening). Shared sessions share the one
+installation and its state; nothing is copied. They are used only by the registered concurrency
+qualification (`CONCURRENCY_QUALIFICATION.md`); the evaluator's sessions are exclusive.
 
 `python scripts/engine_install.py verify` prints the same checks without writing anything.
 
