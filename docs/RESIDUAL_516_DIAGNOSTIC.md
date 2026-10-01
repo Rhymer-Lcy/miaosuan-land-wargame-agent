@@ -172,6 +172,12 @@ Relevant if friendly cross-seat fire is observed; recorded here before any evide
 | Is there a documented coordination channel? | the SDK documents a role-1 seat's grouping, task and direction commands (types 100, 200, 201) and a custom message to teammates or all (type 204), which reach observations through `communication` | documented in the SDK notes; delivery timing and online availability are not verified |
 | Would shared project memory work? | yes, between agent instances in one process | invalid if seats run in separate processes; not established either way |
 
+> Correction (2026-10-01; text only, every result is unchanged): the second row is inaccurate. In engine 4.1.0 a
+> seat's own observation lists only its own seat in `role_and_grouping_info` (16,848 views of each seat in the replay
+> corpus and 448 diagnostic views; the all-seeing view lists both seats), as `docs/CONTRACT.md` records. Whether a
+> seat would see other friendly seats in multi-seat play was not observed. A seat's view does not show enemy units'
+> launcher relations either (`docs/LAUNCHER_DEPENDENCY_COUNTERFACTUAL.md`).
+
 ## Running
 
 ```bash
