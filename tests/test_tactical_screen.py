@@ -17,6 +17,7 @@ import tempfile
 import unittest
 from argparse import Namespace
 from pathlib import Path
+from unittest import mock
 
 from miaosuan_agent.decision import INERT_ID
 from miaosuan_agent.evaluation import shoot_experiment as sx
@@ -176,6 +177,163 @@ class SmokeTest(unittest.TestCase):
         self.assertEqual(ts.smoke_verdict(split_over_two_games), "BLOCKED BY ENGINE SEMANTICS")
         self.assertEqual(ts.smoke_verdict([good, dict(good, contract_errors=1)]), "FAIL: a game was not healthy")
         self.assertEqual(ts.smoke_verdict([good, dict(good, deployment_ended=False)]), "FAIL: a game was not healthy")
+
+
+@unittest.skipUnless(MANIFEST.exists(), "the screen manifest is registered by its own commit")
+class AnalysisTest(unittest.TestCase):
+    """The A/B analysis over synthetic records of every registered game with planted values: integrity first, then
+    the metrics and the registered disposition; every planted integrity defect must stop the analysis."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.script = load_script("tactical_screen")
+        cls.m = json.loads(MANIFEST.read_text(encoding="utf-8"))
+        cls.index = {s["scenario_id"]: i for i, s in enumerate(cls.m["scenarios"])}
+
+    def records(self):
+        """Head-to-head candidate margin +12 in five scenarios and -4 in three; vs-inert candidate-minus-baseline
+        active margin +6 in nine of the sixteen C2/C3 configurations, 0 in one and -2 in six; candidate seats see 14
+        operators (baseline seats 10) in six scenarios and record a deployment refusal class in the other two."""
+        pins = {p: v["policy_source"]["sha256"] for p, v in self.m["policies"].items()}
+        out = {}
+        for k, g in enumerate(self.m["games"]):
+            i, cond = self.index[g["scenario_id"]], g["condition"]
+            total = {"red": 100, "blue": 100}
+            if cond in ts.HEAD_TO_HEAD:
+                total["red" if cond == "H1" else "blue"] += 12 if i < 5 else -4
+            elif cond in ("C2", "C3"):
+                position = 2 * i + (cond == "C3")
+                gain = (6 if position < 9 else 0 if position == 9 else -2) if g["arm"] == "c" else 0
+                total["red" if cond == "C2" else "blue"] += 50 + gain
+            seats = []
+            for faction, policy in ((0, g["red"]), (1, g["blue"])):
+                mine = policy == CANDIDATE_ID
+                seats.append({"seat": 1 + 10 * faction, "faction": faction, "policy": policy, "contract_errors": 0,
+                              "gate_rejections": {}, "duplicate_shoot_target_commands": 0, "replay_mismatches": 0,
+                              "feedback_errors_by_code_and_type": {"103/14": 3} if mine and i >= 6 else {},
+                              "latency_us": [1000, 3000], "actions_by_type": {"314": 4} if mine else {},
+                              "units_seen": 14 if mine and i < 6 else 10})
+            scores = {f"{side}_{part}": 0 for side in ("red", "blue") for part in ("attack", "remain")}
+            scores.update({f"{side}_total": v for side, v in total.items()})
+            scores.update({f"{side}_occupy": v for side, v in total.items()})
+            out[g["game_id"]] = {
+                "game_id": g["game_id"], "status": "COMPLETED", "session": f"{3000 + k:04d}", "final_scores": scores,
+                "seats": seats,
+                "harness": {"manifest_sha256": ts.digest(self.m), "dirty": False,
+                            "policy_sources": {p: pins[p] for p in {g["red"], g["blue"]} - {INERT_ID}},
+                            "runtime": self.m["execution"]["runtime"], "thread_env": dict(self.m["runtime_environment"]),
+                            "execution": {"mode": "shared", "workers": 32, "scheduler": self.m["execution"]["scheduler"]}}}
+        return out
+
+    @staticmethod
+    def ledger(records):
+        events = []
+        for record in records.values():
+            events.append({"session": record["session"], "event": "session-open"})
+            events.append({"session": record["session"], "event": "session-close", "state_changed": False,
+                           "integrity": {"ok": True}})
+        return events
+
+    def analyse(self, records, events=None, queue=None):
+        order = queue if queue is not None else [g["game_id"] for g in self.m["games"]]
+        events = self.ledger(records) if events is None else events
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "evaluation" / SCREEN).mkdir(parents=True)
+            (root / "evaluation" / SCREEN / "manifest.json").write_text(MANIFEST.read_text(encoding="utf-8"),
+                                                                       encoding="utf-8")
+            work = root / "local" / "evaluation" / SCREEN
+            (work / "games").mkdir(parents=True)
+            (work / "logs").mkdir()
+            for game, record in records.items():
+                (work / "games" / f"{game}.json").write_text(json.dumps(record), encoding="utf-8")
+            (work / "logs" / "queue-1.txt").write_text(chr(10).join(order) + chr(10), encoding="utf-8")
+            with mock.patch.object(self.script, "REPO_ROOT", root), \
+                    mock.patch.object(self.script.ei, "EngineInstall", lambda path: None), \
+                    mock.patch.object(self.script.ei, "read_ledger", lambda install: events):
+                return self.script.analyse(SCREEN)
+
+    def candidate_game(self, condition="H1"):
+        return next(g["game_id"] for g in self.m["games"] if g["condition"] == condition)
+
+    def test_planted_values_and_disposition(self) -> None:
+        out = self.analyse(self.records())
+        self.assertTrue(out["integrity"]["pass"], out["integrity"]["problems"])
+        self.assertEqual((out["integrity"]["records"], out["integrity"]["sessions"]), (192, [3000, 3191]))
+        h = out["head_to_head"]
+        self.assertEqual((h["games"], h["pooled_mean_margin"], h["scenarios_positive"], h["scenarios_negative"]),
+                         (48, 6.0, 5, 3))
+        self.assertEqual(h["wins_draws_losses"], {"win": 30, "draw": 0, "loss": 18})
+        self.assertEqual((sorted(set(h["per_scenario_mean_margin"].values())), h["range_per_scenario"]), ([-4, 12], [-4, 12]))
+        v = out["vs_inert"]
+        self.assertEqual((v["configurations"], v["configurations_not_worse"], v["configurations_better"],
+                          v["configurations_worse"]), (16, 10, 9, 6))
+        self.assertEqual(sorted(set(v["candidate_minus_baseline_active_margin"].values())), [-2, 0, 6])
+        self.assertEqual(set(out["mirror_margin_means"].values()), {0})
+        self.assertEqual(out["components"]["head_to_head_candidate_minus_opponent"]["occupy"], 6.0)
+        mech = out["mechanism"]
+        self.assertEqual((mech["cells"], mech["cells_with_more_operators"], mech["candidate_seat_games"]), (32, 24, 144))
+        self.assertEqual(mech["deployment_splits_per_candidate_seat"], {"4": 144})
+        self.assertEqual((out["safety"]["b"]["policy seat-games"], out["safety"]["c"]["policy seat-games"]), (144, 144))
+        self.assertEqual(out["refusal_classes"]["c"], {"103/14": 108})
+        self.assertEqual(out["refusal_class_seat_games"], {"b": {}, "c": {"103/14": 36}})
+        self.assertEqual(out["refusal_classes_new_in_candidate"], ["103/14"])
+        self.assertEqual(out["failed_games"], {"total": 0, "involving_the_candidate": 0})
+        self.assertEqual(out["disposition"], "ADVANCE TO CONFIRMATION")
+
+    def test_dispositions_follow_the_planted_changes(self) -> None:
+        records = self.records()
+        records[self.candidate_game("H1")]["status"] = "FAILED"
+        out = self.analyse(records)
+        self.assertEqual((out["failed_games"], out["disposition"], out["head_to_head"]["games"]),
+                         ({"total": 1, "involving_the_candidate": 1}, "REJECT TACTIC", 47))
+        records = self.records()
+        next(s for s in records[self.candidate_game("H2")]["seats"] if s["policy"] == CANDIDATE_ID)["contract_errors"] = 1
+        self.assertEqual(self.analyse(records)["disposition"], "REJECT TACTIC")
+        records = self.records()
+        for game, g in ((g["game_id"], g) for g in self.m["games"]):
+            if self.index[g["scenario_id"]] == 5:
+                for seat in records[game]["seats"]:
+                    if seat["policy"] == CANDIDATE_ID:
+                        seat["units_seen"] = 10
+        out = self.analyse(records)
+        self.assertEqual((out["mechanism"]["cells_with_more_operators"], out["disposition"]),
+                         (20, "REVISE BEFORE CONFIRMATION"))
+
+    def test_integrity_defects_stop_the_analysis(self) -> None:
+        def broken(change):
+            records = self.records()
+            change(records)
+            return records
+
+        game = self.candidate_game("H1")
+        plants = {
+            "a missing record": (broken(lambda r: r.pop(game)), None, None, "records for 191 of 192"),
+            "a dirty harness": (broken(lambda r: r[game]["harness"].update(dirty=True)), None, None, "dirty harness"),
+            "another manifest": (broken(lambda r: r[game]["harness"].update(manifest_sha256="0" * 64)), None, None,
+                                 "manifest digest"),
+            "another candidate": (broken(lambda r: r[game]["harness"]["policy_sources"].update({CANDIDATE_ID: "0" * 64})),
+                                  None, None, "policy sources"),
+            "another runtime": (broken(lambda r: r[game]["harness"].update(thread_env={})), None, None, "runtime"),
+            "other workers": (broken(lambda r: r[game]["harness"]["execution"].update(workers=8)), None, None,
+                              "execution"),
+            "a session gap": (broken(lambda r: r[game].update(session="9999")), None, None, "not consecutive"),
+        }
+        records = self.records()
+        twice = self.ledger(records) + [{"session": records[game]["session"], "event": "session-open"}]
+        plants["a session opened twice"] = (records, twice, None, "exactly once")
+        changed = [dict(e, state_changed=True) if e["session"] == records[game]["session"] and e["event"] == "session-close"
+                   else e for e in self.ledger(records)]
+        plants["engine state changed"] = (records, changed, None, "state or integrity changed")
+        order = [g["game_id"] for g in self.m["games"]]
+        order[0], order[1] = order[1], order[0]
+        plants["another queue order"] = (records, None, order, "registered order")
+        self.assertEqual(len(plants), 10)
+        for label, (planted, events, queue, needle) in plants.items():
+            out = self.analyse(planted, events, queue)
+            self.assertFalse(out["integrity"]["pass"], label)
+            self.assertIsNone(out["disposition"], label)
+            self.assertTrue(any(needle in p for p in out["integrity"]["problems"]), (label, out["integrity"]["problems"]))
 
 
 class DispositionTest(unittest.TestCase):
