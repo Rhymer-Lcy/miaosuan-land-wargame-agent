@@ -38,7 +38,11 @@ found that engine 4.1.0 hides enemy units' launcher relations from a seat's own 
 changes no decision; it was not preregistered. A read-only audit of `baseline-v2`'s first-come target ownership
 (`docs/TARGET_ALLOCATION_AUDIT.md`) found, on replayable states, the target given to a strictly weaker shooter in 14
 of 110 collision groups (6 recurring situations) and no no-op that left a supported action unused; its declared gate
-authorises designing one target-allocation candidate, and nothing was implemented or registered.
+authorises designing one target-allocation candidate, and nothing was implemented or registered. The design study
+(`docs/TARGET_OWNERSHIP_DESIGN.md`) specified that one candidate, `highest-attack-claimant reservation`, for isolated
+single-target collisions only; within that scope 9 of the 14 mismatch groups remain (3 situations in 2 games, all on
+replayed `baseline-v0` states), so on-policy incidence is the missing fact and the next step is a prospective
+prevalence diagnostic of unchanged `baseline-v2`; nothing was implemented or registered.
 
 ## Third-party material is not in this repository
 
@@ -78,6 +82,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/RESIDUAL_516_DIAGNOSTIC.md` | the registered read-only diagnostic of what removes the targets of `baseline-v2`'s residual code-516 refusals |
 | `docs/LAUNCHER_DEPENDENCY_COUNTERFACTUAL.md` | the counterfactual design of a launcher-dependent shooting rule: relation semantics, candidate, replay, gate, results |
 | `docs/TARGET_ALLOCATION_AUDIT.md` | the read-only audit of `baseline-v2`'s first-come shoot-target ownership: population, definitions, oracle, gate, results |
+| `docs/TARGET_OWNERSHIP_DESIGN.md` | the design study of one target-ownership candidate: formal model, semantics, isolation, evidence boundaries, diagnostic and A/B design, contract, results |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
 | `evaluation/routing-remediation-1/` | the routing remediation's registration, pinned corpus and privacy-safe results |
@@ -88,6 +93,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `evaluation/baseline-v2-residual-516-diagnostic-1/` | the residual-516 diagnostic's manifest and its privacy-safe results |
 | `evaluation/launcher-dependency-counterfactual-1/` | the launcher-dependency candidate's mutation results and counterfactual aggregates |
 | `evaluation/target-allocation-audit-1/` | the target-allocation audit's privacy-safe aggregates |
+| `evaluation/target-ownership-design-1/` | the ownership design study's structural analysis and planning sensitivity |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy
