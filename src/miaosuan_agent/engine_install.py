@@ -11,6 +11,7 @@ Layout of an installation root (git-ignored, for example ``local/engines/sdk-4.1
     home/                   persistent HOME for engine processes; never cleared
     usage-ledger.jsonl      append-only record of every engine session
     .session.lock           advisory lock held while a session runs (POSIX)
+    .ledger.lock            advisory lock held while a shared session reads and appends the ledger
 
 Guardrails:
 
@@ -23,6 +24,11 @@ Guardrails:
 * A session that was opened but never closed (killed or crashed) is closed as ``recovered`` by the
   next :func:`open_session`, with the state recorded as found: the engine may legitimately have
   changed it while that session ran.
+* :func:`session` holds the installation lock exclusively for the whole session. :func:`shared_session`
+  holds it in shared mode, so shared sessions may overlap each other but never an exclusive one, and
+  serialises every ledger read and append through a second lock. A shared session never performs the
+  first use and never recovers another session: recovery needs the exclusive lock
+  (:func:`open_session` or :func:`recover_unclosed`), because only then is no session running.
 """
 
 from __future__ import annotations
@@ -47,6 +53,8 @@ LEDGER = "usage-ledger.jsonl"
 SITE = "site"
 HOME = "home"
 LOCK = ".session.lock"
+LEDGER_LOCK = ".ledger.lock"
+SHARED = "shared"
 #: Engine-owned mutable state, relative to ``site/``. Hashed, never touched.
 DEFAULT_STATE_FILES = ("train_env/env/authenticate/.engine_config",)
 
@@ -215,9 +223,26 @@ def _append(install: EngineInstall, record: Mapping[str, Any]) -> None:
         os.fsync(handle.fileno())
 
 
+def unclosed_sessions(ledger: Sequence[Mapping[str, Any]]) -> List[str]:
+    """Sessions with a ``session-open`` record but neither a ``session-close`` nor a ``session-recovered`` one."""
+    ended = {r["session"] for r in ledger if r.get("event") in ("session-close", "session-recovered")}
+    return [r["session"] for r in ledger if r.get("event") == "session-open" and r["session"] not in ended]
+
+
+def _recovered(session_id: str, clock: Callable[[], Mapping[str, str]], state: Mapping[str, Optional[str]],
+               home: Mapping[str, str], integrity: Integrity) -> Dict[str, Any]:
+    return {"event": "session-recovered", "session": session_id, "at": dict(clock()), "state": dict(state),
+            "home": dict(home), "integrity": integrity.as_dict(),
+            "note": "the previous session was never closed (killed or crashed); state recorded as found"}
+
+
 def open_session(install: EngineInstall, purpose: str, harness: Mapping[str, Any],
                  clock: Callable[[], Mapping[str, str]] = now) -> Dict[str, Any]:
-    """Check the installation and append a ``session-open`` record; raise InstallRefused otherwise."""
+    """Check the installation and append a ``session-open`` record; raise InstallRefused otherwise.
+
+    Every session the ledger shows as open is first closed as recovered. With exclusive sessions only,
+    that can be at most the latest one; shared sessions that were killed can leave earlier ones.
+    """
     manifest = load_manifest(install)
     integrity = check_integrity(install, manifest)
     if not integrity.ok:
@@ -227,10 +252,8 @@ def open_session(install: EngineInstall, purpose: str, harness: Mapping[str, Any
     home = tree_files(install.home)
     ledger = read_ledger(install)
     last = ledger[-1] if ledger else None
-    if last is not None and last.get("event") == "session-open":
-        last = {"event": "session-recovered", "session": last["session"], "at": dict(clock()), "state": state,
-                "home": home, "integrity": integrity.as_dict(),
-                "note": "the previous session was never closed (killed or crashed); state recorded as found"}
+    for number in unclosed_sessions(ledger):
+        last = _recovered(number, clock, state, home, integrity)
         _append(install, last)
     expected, basis = ((manifest["state_at_install"], "installation") if last is None
                        else (last["state"], f"the end of session {last['session']}"))
@@ -266,13 +289,126 @@ class Session:
     closed: Optional[Dict[str, Any]] = None
 
 
-@contextmanager
-def session(install: EngineInstall, purpose: str, harness: Mapping[str, Any]) -> Iterator[Session]:
-    """Hold the installation lock, open a session, and always close it. POSIX only."""
+def _fcntl() -> Any:
     try:
         import fcntl
     except ImportError as exc:  # pragma: no cover - the engine exists only for Linux
         raise InstallError("engine sessions need POSIX file locking; the SDK engine runs only on Linux") from exc
+    return fcntl
+
+
+@contextmanager
+def _ledger_lock(install: EngineInstall) -> Iterator[None]:
+    fcntl = _fcntl()
+    with open(install.root / LEDGER_LOCK, "a", encoding="utf-8") as handle:
+        fcntl.flock(handle.fileno(), fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
+
+
+def open_shared_session(install: EngineInstall, purpose: str, harness: Mapping[str, Any], worker: str,
+                        clock: Callable[[], Mapping[str, str]] = now) -> Dict[str, Any]:
+    """Append the ``session-open`` record of a shared session; the caller holds the installation lock shared.
+
+    The number is allocated and the state compared with the latest ledger record under the ledger lock, so
+    concurrent openings get distinct consecutive numbers. A state that differs from the latest record refuses
+    the session: the engine state may only change inside a session, and the next close records it.
+    """
+    manifest = load_manifest(install)
+    integrity = check_integrity(install, manifest)
+    if not integrity.ok:
+        raise InstallRefused(f"package files differ from the installation manifest (changed {integrity.changed}, "
+                             f"missing {integrity.missing}); investigate before using this installation")
+    home = tree_files(install.home)
+    with _ledger_lock(install):
+        state = state_hashes(install, manifest)
+        ledger = read_ledger(install)
+        opened = [record for record in ledger if record.get("event") == "session-open"]
+        if not opened:
+            raise InstallRefused("the first use of an installation is never a shared session; open it with session()")
+        if state != ledger[-1].get("state"):
+            raise InstallRefused(
+                f"the engine state file differs from the latest ledger record (session {ledger[-1]['session']}). "
+                "Investigate; never restore, reset or replace the state file to make this check pass.")
+        record = {"event": "session-open", "session": f"{len(opened) + 1:04d}", "kind": "reuse", "purpose": purpose,
+                  "at": dict(clock()), "state": state, "home": home, "integrity": integrity.as_dict(),
+                  "harness": dict(harness), "concurrency": {"mode": SHARED, "worker": worker}}
+        _append(install, record)
+    return record
+
+
+def close_shared_session(install: EngineInstall, opened: Mapping[str, Any], outcome: Mapping[str, Any],
+                         clock: Callable[[], Mapping[str, str]] = now) -> Dict[str, Any]:
+    """Append the ``session-close`` record of a shared session under the ledger lock."""
+    manifest = load_manifest(install)
+    integrity = check_integrity(install, manifest)
+    home = tree_files(install.home)
+    with _ledger_lock(install):
+        state = state_hashes(install, manifest)
+        record = {"event": "session-close", "session": opened["session"], "at": dict(clock()), "state": state,
+                  "state_changed": state != opened["state"], "home": home, "home_changed": home != opened["home"],
+                  "integrity": integrity.as_dict(), "outcome": dict(outcome),
+                  "concurrency": dict(opened.get("concurrency", {}))}
+        _append(install, record)
+    return record
+
+
+@contextmanager
+def shared_session(install: EngineInstall, purpose: str, harness: Mapping[str, Any], worker: str) -> Iterator[Session]:
+    """Hold the installation lock shared, open a shared session, and always close it. POSIX only."""
+    fcntl = _fcntl()
+    install.root.mkdir(parents=True, exist_ok=True)
+    with open(install.root / LOCK, "a", encoding="utf-8") as lock:
+        try:
+            fcntl.flock(lock.fileno(), fcntl.LOCK_SH | fcntl.LOCK_NB)
+        except BlockingIOError as exc:
+            raise InstallRefused(f"an exclusive engine session or window holds {install.root / LOCK}") from exc
+        handle = Session(opened=open_shared_session(install, purpose, harness, worker))
+        try:
+            yield handle
+        except BaseException as exc:
+            handle.outcome.setdefault("exception", f"{type(exc).__name__}: {exc}")
+            raise
+        finally:
+            handle.closed = close_shared_session(install, handle.opened, handle.outcome)
+
+
+@contextmanager
+def exclusive_window(install: EngineInstall) -> Iterator[None]:
+    """Hold the installation lock exclusively without opening a session: no session can run meanwhile."""
+    fcntl = _fcntl()
+    install.root.mkdir(parents=True, exist_ok=True)
+    with open(install.root / LOCK, "a", encoding="utf-8") as lock:
+        try:
+            fcntl.flock(lock.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError as exc:
+            raise InstallRefused(f"an engine session holds {install.root / LOCK}") from exc
+        yield
+
+
+def recover_unclosed(install: EngineInstall, clock: Callable[[], Mapping[str, str]] = now) -> List[Dict[str, Any]]:
+    """Close every session the ledger shows as open, as recovered with the state as found.
+
+    Holds the installation lock exclusively, so it refuses while any session runs.
+    """
+    manifest = load_manifest(install)
+    with exclusive_window(install):
+        integrity = check_integrity(install, manifest)
+        state = state_hashes(install, manifest)
+        home = tree_files(install.home)
+        records = []
+        for number in unclosed_sessions(read_ledger(install)):
+            records.append(_recovered(number, clock, state, home, integrity))
+            _append(install, records[-1])
+        return records
+
+
+@contextmanager
+def session(install: EngineInstall, purpose: str, harness: Mapping[str, Any]) -> Iterator[Session]:
+    """Hold the installation lock, open a session, and always close it. POSIX only."""
+    fcntl = _fcntl()
     install.root.mkdir(parents=True, exist_ok=True)
     with open(install.root / LOCK, "a", encoding="utf-8") as lock:
         try:
@@ -298,6 +434,7 @@ def verify(install: EngineInstall) -> Dict[str, Any]:
     last = ledger[-1] if ledger else None
     expected = manifest["state_at_install"] if last is None else last.get("state")
     opened = [record for record in ledger if record.get("event") == "session-open"]
+    unclosed = unclosed_sessions(ledger)
     return {
         "root": str(install.root),
         "engine_version": manifest["engine"]["version"],
@@ -310,5 +447,7 @@ def verify(install: EngineInstall) -> Dict[str, Any]:
         "sessions_opened": len(opened),
         "first_use_session": opened[0]["session"] if opened else None,
         "last_event": None if last is None else {k: last.get(k) for k in ("event", "session", "at")},
-        "unclosed_session": bool(last and last.get("event") == "session-open"),
+        "unclosed_session": bool(unclosed),
+        "unclosed_sessions": unclosed,
+        "shared_sessions": sum(1 for record in opened if record.get("concurrency", {}).get("mode") == SHARED),
     }
