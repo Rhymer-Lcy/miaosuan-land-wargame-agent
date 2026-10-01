@@ -155,5 +155,111 @@ class SessionContextTest(InstallTestCase):
         self.assertIn("engine crashed", close["outcome"]["exception"])
 
 
+def _shared_worker(root: str, worker: int, count: int) -> None:
+    install = ei.EngineInstall(Path(root))
+    for k in range(count):
+        with ei.shared_session(install, "diagnostic", {"game_id": f"w{worker}.g{k}"}, str(worker)) as handle:
+            handle.outcome = {"status": "COMPLETED", "game_id": f"w{worker}.g{k}"}
+
+
+@unittest.skipUnless(importlib.util.find_spec("fcntl"), "sessions use POSIX file locking (fcntl)")
+class SharedSessionTest(InstallTestCase):
+    def setUp(self) -> None:
+        super().setUp()
+        self.create()
+        with ei.session(self.install, "smoke", {}) as handle:
+            handle.outcome = {"status": "PASS"}
+
+    def test_shared_sessions_overlap_and_number_consecutively(self) -> None:
+        with ei.shared_session(self.install, "diagnostic", {"game_id": "a"}, "0") as a:
+            with ei.shared_session(self.install, "diagnostic", {"game_id": "b"}, "1") as b:
+                self.assertEqual((a.opened["session"], b.opened["session"]), ("0002", "0003"))
+                self.assertEqual(ei.verify(self.install)["unclosed_sessions"], ["0002", "0003"])
+        events = [(r["event"], r["session"]) for r in ei.read_ledger(self.install)[2:]]
+        self.assertEqual(events, [("session-open", "0002"), ("session-open", "0003"),
+                                  ("session-close", "0003"), ("session-close", "0002")])
+        report = ei.verify(self.install)
+        self.assertEqual((report["unclosed_sessions"], report["unclosed_session"], report["shared_sessions"]),
+                         ([], False, 2))
+        self.assertEqual(a.closed["concurrency"], {"mode": "shared", "worker": "0"})
+
+    def test_exclusive_and_shared_exclude_each_other(self) -> None:
+        with ei.shared_session(self.install, "diagnostic", {}, "0"):
+            with self.assertRaises(ei.InstallRefused):
+                with ei.session(self.install, "smoke", {}):
+                    pass
+            with self.assertRaises(ei.InstallRefused):
+                with ei.exclusive_window(self.install):
+                    pass
+        with ei.session(self.install, "smoke", {}):
+            with self.assertRaises(ei.InstallRefused):
+                with ei.shared_session(self.install, "diagnostic", {}, "0"):
+                    pass
+        self.assertEqual(ei.unclosed_sessions(ei.read_ledger(self.install)), [])
+
+    def test_first_use_is_never_shared(self) -> None:
+        other = ei.EngineInstall(self.tmp / "engines" / "other")
+        ei.create_install(other.root, self.wheel, wheel_sha256=self.sha, engine_version="0.0.0", state_files=(STATE,),
+                          installer=fake_installer)
+        with self.assertRaises(ei.InstallRefused):
+            with ei.shared_session(other, "diagnostic", {}, "0"):
+                pass
+        self.assertEqual(ei.read_ledger(other), [])
+
+    def test_state_change_outside_a_session_refuses_a_shared_session(self) -> None:
+        self.engine_writes_state(b"outside any session")
+        with self.assertRaises(ei.InstallRefused):
+            with ei.shared_session(self.install, "diagnostic", {}, "0"):
+                pass
+
+    def test_concurrent_processes_get_unique_consecutive_numbers(self) -> None:
+        import multiprocessing
+        context = multiprocessing.get_context("fork")
+        workers = [context.Process(target=_shared_worker, args=(str(self.install.root), w, 6)) for w in range(8)]
+        for process in workers:
+            process.start()
+        for process in workers:
+            process.join(60)
+            self.assertEqual(process.exitcode, 0)
+        ledger = ei.read_ledger(self.install)
+        opens = [r["session"] for r in ledger if r["event"] == "session-open"]
+        closes = sorted(r["session"] for r in ledger if r["event"] == "session-close")
+        self.assertEqual(sorted(opens), [f"{n:04d}" for n in range(1, 50)])
+        self.assertEqual(closes, sorted(opens))
+        self.assertEqual(ei.unclosed_sessions(ledger), [])
+        games = sorted(r["harness"]["game_id"] for r in ledger if r["event"] == "session-open" and "game_id" in r["harness"])
+        self.assertEqual(len(games), 48)
+        self.assertEqual(len(set(games)), 48)
+
+    def test_killed_shared_sessions_are_recovered_only_exclusively(self) -> None:
+        lost = ei.open_shared_session(self.install, "diagnostic", {}, "0")
+        with ei.shared_session(self.install, "diagnostic", {}, "1") as live:
+            with self.assertRaises(ei.InstallRefused):
+                ei.recover_unclosed(self.install)
+        self.assertEqual(ei.unclosed_sessions(ei.read_ledger(self.install)), [lost["session"]])
+        recovered = ei.recover_unclosed(self.install)
+        self.assertEqual([r["session"] for r in recovered], [lost["session"]])
+        self.assertEqual(ei.unclosed_sessions(ei.read_ledger(self.install)), [])
+        self.assertNotEqual(live.opened["session"], lost["session"])
+
+    def test_exclusive_open_recovers_every_unclosed_session(self) -> None:
+        first = ei.open_shared_session(self.install, "diagnostic", {}, "0")
+        second = ei.open_shared_session(self.install, "diagnostic", {}, "1")
+        opened = ei.open_session(self.install, "smoke", {})
+        events = [(r["event"], r["session"]) for r in ei.read_ledger(self.install)[-3:]]
+        self.assertEqual(events, [("session-recovered", first["session"]), ("session-recovered", second["session"]),
+                                  ("session-open", opened["session"])])
+
+
+class UnclosedSessionsTest(unittest.TestCase):
+    def test_pairs_opens_with_closes_and_recoveries(self) -> None:
+        ledger = [{"event": "session-open", "session": "0001"}, {"event": "session-open", "session": "0002"},
+                  {"event": "session-close", "session": "0001"}, {"event": "session-open", "session": "0003"},
+                  {"event": "session-recovered", "session": "0003"}]
+        self.assertEqual(ei.unclosed_sessions(ledger), ["0002"])
+        self.assertEqual(ei.unclosed_sessions(ledger[:1]), ["0001"])
+        self.assertEqual(ei.unclosed_sessions([]), [])
+
+
 if __name__ == "__main__":
     unittest.main()
