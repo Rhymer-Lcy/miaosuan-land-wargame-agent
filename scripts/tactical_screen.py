@@ -33,7 +33,7 @@ from miaosuan_agent.evaluation.execution import RUNTIMES  # noqa: E402
 
 INSTALL = REPO_ROOT / "local" / "engines" / "sdk-4.1.0"
 DEPLOY_SPLIT = "314"
-SPLIT_TYPE = 314
+SPLIT_TYPES = (314, 14)  # as emitted, and as the engine rewrites it in place during the step
 END_DEPLOYMENT = 333
 BOOTSTRAP = 2000
 SEED = 20261002
@@ -59,32 +59,63 @@ def seat_of(record: Mapping[str, Any], faction: int) -> Mapping[str, Any]:
 # mechanism smoke
 
 
+def fresh_feedback(steps: List[Mapping[str, Any]]) -> List[List[Mapping[str, Any]]]:
+    """Each step's feedback entries not reported before: while the engine clock stands still (deployment), its
+    feedback list accumulates, so a step first repeats the entries already reported at the same ``cur_step``."""
+    out: List[List[Mapping[str, Any]]] = []
+    previous: List[Mapping[str, Any]] = []
+    clock = None
+    for step in steps:
+        entries = list(step["feedback"])
+        repeated = step.get("cur_step") == clock and entries[:len(previous)] == previous
+        out.append(entries[len(previous):] if repeated else entries)
+        previous, clock = entries, step.get("cur_step")
+    return out
+
+
 def smoke_game(manifest: Mapping[str, Any], record: Mapping[str, Any], capture: Mapping[str, Any]) -> Dict[str, Any]:
+    """One smoke game's facts. The engine rewrites a deployment split's type from 314 to 14 in place and the capture
+    serialises the batch after the engine step, so a captured deployment split carries either type; the record counts
+    the policy's own actions before the step, and the two counts must agree."""
     candidate = manifest["candidate"]
     seat = seat_of(record, 0)
     steps = capture["steps"]
-    deployment = [s for s in steps if s.get("stage") == 1]
-    splits = [i for s in deployment for i in s["batch"] if i["action"].get("type") == SPLIT_TYPE]
-    errors = collections.Counter()
-    for s in deployment:
-        for entry in s["feedback"]:
-            message = entry.get("message") or {}
-            if message.get("type") == SPLIT_TYPE and isinstance(entry.get("error"), Mapping):
-                errors[str(entry["error"].get("code"))] += 1
-    appeared = {u for s in deployment for u in s["appeared"]}
-    split_ids = {i["action"]["obj_id"] for i in splits}
-    blood_changes = collections.Counter()
-    for s in deployment:
-        for unit, diff in s["changed"].items():
-            if "blood" in diff and int(unit) in split_ids:
-                blood_changes[f"{diff['blood'][0]}->{diff['blood'][1]}"] += 1
-    commanded = {i["action"].get("obj_id") for s in steps for i in s["batch"] if i["seat"] == seat["seat"]} & appeared
+    news = fresh_feedback(steps)
+    deployment = [k for k, s in enumerate(steps) if s.get("stage") == 1]
+    splits = [(k, i) for k in deployment for i in steps[k]["batch"]
+              if i["seat"] == seat["seat"] and i["action"].get("type") in SPLIT_TYPES]
+    emitted = seat["actions_by_type"].get(DEPLOY_SPLIT, 0)
+    if len(splits) != emitted:
+        raise SystemExit(f"REFUSED: {record['game_id']}: {len(splits)} captured deployment splits but the record "
+                         f"counts {emitted} emitted; the capture is not being read correctly")
+    errors, outcomes, blood_changes = collections.Counter(), collections.Counter(), collections.Counter()
+    for k, item in splits:
+        unit = item["action"]["obj_id"]
+        refused = [e for e in news[k] if isinstance(e.get("error"), Mapping)
+                   and (e.get("message") or {}).get("obj_id") == unit
+                   and (e.get("message") or {}).get("type") in SPLIT_TYPES]
+        diff = steps[k]["changed"].get(str(unit), {})
+        if "blood" in diff:
+            outcomes["took effect"] += 1
+            blood_changes[f"{diff['blood'][0]}->{diff['blood'][1]}"] += 1
+        elif refused:
+            outcomes["refused"] += 1
+            errors[str(refused[0]["error"].get("code"))] += 1
+        else:
+            outcomes["no effect, no error"] += 1
+    appeared = {u for k in deployment for u in steps[k]["appeared"]}
+    play = [k for k, s in enumerate(steps) if s.get("stage") != 1]
+    commanded = {i["action"].get("obj_id") for k in play for i in steps[k]["batch"] if i["seat"] == seat["seat"]} & appeared
+    refused_orders = sum(1 for k in play for e in news[k]
+                         if isinstance(e.get("error"), Mapping) and (e.get("message") or {}).get("obj_id") in appeared)
     ended = any(i["action"].get("type") == END_DEPLOYMENT and i["seat"] == seat["seat"] for s in steps for i in s["batch"])
     setup = next(s for s in capture["setup"]["seats"] if s["seat"] == seat["seat"])
     return {"game": record["game_id"], "status": record["status"], "policy": record["policies"]["red"] == candidate,
             "deployment_steps": len(deployment), "splits_emitted": len(splits),
-            "split_errors_by_code": dict(sorted(errors.items())), "operators_appearing_in_deployment": len(appeared),
-            "appearing_operators_commanded": len(commanded), "split_blood_changes": dict(sorted(blood_changes.items())),
+            "split_outcomes": dict(sorted(outcomes.items())), "split_errors_by_code": dict(sorted(errors.items())),
+            "operators_appearing_in_deployment": len(appeared), "appearing_operators_commanded": len(commanded),
+            "refused_orders_to_appearing_operators": refused_orders,
+            "split_blood_changes": dict(sorted(blood_changes.items())),
             "operators_at_setup": setup["operators"], "controllable_operators_seen": seat["units_seen"],
             "operators_that_acted": seat["units_acted"], "deployment_ended": ended,
             "contract_errors": seat["contract_errors"], "gate_rejections": sum(seat["gate_rejections"].values())}
@@ -99,7 +130,7 @@ def smoke(screen: str) -> Dict[str, Any]:
         capture = load(work / "capture" / f"{entry['game_id']}.capture.json")
         games.append(smoke_game(manifest, record, capture))
     took_effect = [g for g in games if g["splits_emitted"] and g["operators_appearing_in_deployment"]]
-    commanded = [g for g in games if g["appearing_operators_commanded"]]
+    commanded = [g for g in took_effect if g["appearing_operators_commanded"]]
     healthy = all(g["status"] == "COMPLETED" and not g["contract_errors"] and g["deployment_ended"] for g in games)
     verdict = ts.smoke_verdict(games)
     return {"schema": "miaosuan-tactical-smoke/1", "screen_id": screen, "manifest_sha256": mf.digest(manifest),

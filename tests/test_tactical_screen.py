@@ -106,30 +106,65 @@ class RegistrationTest(unittest.TestCase):
 
 
 class SmokeTest(unittest.TestCase):
-    def capture(self):
-        return {"setup": {"seats": [{"seat": 1, "faction": 0, "operators": 5}]},
-                "steps": [{"k": 0, "stage": 1, "batch": [{"seat": 1, "action": {"type": 314, "obj_id": 11}},
-                                                         {"seat": 1, "action": {"type": 314, "obj_id": 12}}],
-                           "feedback": [{"message": {"type": 314, "obj_id": 12}, "error": {"code": 999}}],
-                           "appeared": [21], "changed": {"11": {"blood": [4, 2]}}},
-                          {"k": 1, "stage": 1, "batch": [{"seat": 1, "action": {"type": 333}}], "feedback": [],
-                           "appeared": [], "changed": {}},
-                          {"k": 2, "stage": 2, "batch": [{"seat": 1, "action": {"type": 1, "obj_id": 21}},
-                                                         {"seat": 11, "action": {"type": 1, "obj_id": 31}}],
-                           "feedback": [], "appeared": [31], "changed": {}}]}
+    """The capture as the real engine leaves it: a deployment split's type rewritten from 314 to 14 in place before
+    the batch is serialised, and deployment feedback re-reported at every step while the engine clock stands still."""
 
-    def record(self):
+    def capture(self, split_type=14):
+        def split(unit):
+            return {"type": split_type, "obj_id": unit, "actor": 1}
+
+        round1 = [{"cur_step": 0, "message": split(11)}, {"cur_step": 0, "message": split(12), "error": {"code": 999}}]
+        round2 = round1 + [{"cur_step": 0, "message": split(11)},
+                           {"cur_step": 0, "message": split(22), "error": {"code": 999}}]
+        return {"setup": {"seats": [{"seat": 1, "faction": 0, "operators": 5}]},
+                "steps": [{"k": 0, "stage": 1, "cur_step": 0,
+                           "batch": [{"seat": 1, "action": split(11)}, {"seat": 1, "action": split(12)},
+                                     {"seat": 11, "action": dict(split(31), actor=11)},
+                                     {"seat": 11, "action": {"type": 333}}],
+                           "feedback": round1, "appeared": [21, 22], "changed": {"11": {"blood": [4, 2]}}},
+                          {"k": 1, "stage": 1, "cur_step": 0,
+                           "batch": [{"seat": 1, "action": split(11)}, {"seat": 1, "action": split(22)}],
+                           "feedback": round2, "appeared": [], "changed": {}},
+                          {"k": 2, "stage": 1, "cur_step": 0, "batch": [{"seat": 1, "action": {"type": 333}}],
+                           "feedback": list(round2), "appeared": [], "changed": {}},
+                          {"k": 3, "stage": 2, "cur_step": 0,
+                           "batch": [{"seat": 1, "action": {"type": 1, "obj_id": 21}},
+                                     {"seat": 11, "action": {"type": 1, "obj_id": 31}}],
+                           "feedback": list(round2), "appeared": [31], "changed": {}},
+                          {"k": 4, "stage": 2, "cur_step": 1, "batch": [{"seat": 1, "action": {"type": 2, "obj_id": 21}}],
+                           "feedback": [{"cur_step": 1, "message": {"type": 2, "obj_id": 21}, "error": {"code": 7}}],
+                           "appeared": [], "changed": {}}]}
+
+    def record(self, emitted=4):
         return {"game_id": "s.C2.c.s01", "status": "COMPLETED", "policies": {"red": CANDIDATE_ID, "blue": INERT_ID},
                 "seats": [{"seat": 1, "faction": 0, "units_seen": 6, "units_acted": 4, "contract_errors": 0,
-                           "gate_rejections": {}}]}
+                           "gate_rejections": {}, "actions_by_type": {"1": 1, "2": 1, "314": emitted, "333": 1}}]}
 
     def test_smoke_facts(self) -> None:
         script = load_script("tactical_screen")
-        facts = script.smoke_game({"candidate": CANDIDATE_ID}, self.record(), self.capture())
-        self.assertEqual((facts["deployment_steps"], facts["splits_emitted"], facts["split_errors_by_code"]), (2, 2, {"999": 1}))
-        self.assertEqual((facts["operators_appearing_in_deployment"], facts["appearing_operators_commanded"]), (1, 1))
-        self.assertEqual((facts["split_blood_changes"], facts["deployment_ended"], facts["operators_at_setup"]),
-                         ({"4->2": 1}, True, 5))
+        for split_type in (14, 314):
+            facts = script.smoke_game({"candidate": CANDIDATE_ID}, self.record(), self.capture(split_type))
+            self.assertEqual((facts["deployment_steps"], facts["splits_emitted"]), (3, 4))
+            self.assertEqual(facts["split_outcomes"], {"no effect, no error": 1, "refused": 2, "took effect": 1})
+            self.assertEqual(facts["split_errors_by_code"], {"999": 2})
+            self.assertEqual((facts["operators_appearing_in_deployment"], facts["appearing_operators_commanded"]), (2, 1))
+            self.assertEqual(facts["refused_orders_to_appearing_operators"], 1)
+            self.assertEqual((facts["split_blood_changes"], facts["deployment_ended"], facts["operators_at_setup"]),
+                             ({"4->2": 1}, True, 5))
+
+    def test_a_capture_that_disagrees_with_the_record_is_refused(self) -> None:
+        script = load_script("tactical_screen")
+        with self.assertRaises(SystemExit) as raised:
+            script.smoke_game({"candidate": CANDIDATE_ID}, self.record(emitted=5), self.capture())
+        self.assertIn("not being read correctly", str(raised.exception))
+
+    def test_fresh_feedback(self) -> None:
+        script = load_script("tactical_screen")
+        news = script.fresh_feedback(self.capture()["steps"])
+        self.assertEqual([len(n) for n in news], [2, 2, 0, 0, 1])
+        steps = [{"cur_step": 0, "feedback": [{"m": 1}]}, {"cur_step": 0, "feedback": [{"m": 2}]},
+                 {"cur_step": 1, "feedback": [{"m": 2}]}]
+        self.assertEqual(script.fresh_feedback(steps), [[{"m": 1}], [{"m": 2}], [{"m": 2}]])
 
     def test_verdict(self) -> None:
         good = {"splits_emitted": 2, "operators_appearing_in_deployment": 1, "appearing_operators_commanded": 1,
