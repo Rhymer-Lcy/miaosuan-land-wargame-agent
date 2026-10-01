@@ -4,6 +4,7 @@
     PYTHON scripts/ownership_prevalence.py preflight                  the shared-server courtesy check
     PYTHON scripts/ownership_prevalence.py snapshot --label before|after
     PYTHON scripts/ownership_prevalence.py analyze [--check]
+    PYTHON scripts/ownership_prevalence.py prefix-diagnosis [--check]   supplementary, added after the run
 
 ``check-observer`` runs the study's classifier on every verified decision of the target-allocation audit's private
 corpora (the residual-516 snapshots and the replay corpus) and proves, without an engine, that it leaves the
@@ -48,6 +49,8 @@ PUBLIC = REPO_ROOT / "evaluation" / op.STUDY_ID
 MANIFEST = PUBLIC / "manifest.json"
 RESULTS = PUBLIC / "results.json"
 OBSERVER_CHECK = PUBLIC / "observer-check.json"
+PREFIX_DIAGNOSIS = PUBLIC / "prefix-diagnosis.json"
+SERIAL = REPO_ROOT / "local" / "evaluation" / "baseline-v2-candidate-shoot-target-reservation" / "games"
 WORK = REPO_ROOT / "local" / "evaluation" / op.STUDY_ID
 INSTALL = REPO_ROOT / "local" / "engines" / "sdk-4.1.0"
 DESIGN = REPO_ROOT / "evaluation" / "target-ownership-design-1" / "analysis.json"
@@ -535,6 +538,70 @@ def cmd_analyze(args: argparse.Namespace) -> int:
     return 0
 
 
+# ----------------------------------------------------------------------------------------------
+# supplementary (not registered; added after the registered prefix check failed)
+
+
+def _common(a: List[str], b: List[str]) -> int:
+    n = 0
+    for x, y in zip(a, b):
+        if x != y:
+            break
+        n += 1
+    return n
+
+
+def prefix_diagnosis() -> Dict[str, Any]:
+    """Did any baseline-v2 decision differ from a serial group-C game while the states it observed were identical?
+
+    state_steps[k] is the state before decision k (state_steps[0] the setup), so decision k observed identical input
+    when the first k + 1 state digests agree. Reads records only; no capture and no prevalence figure."""
+    manifest = load(MANIFEST)
+    private = load(WORK / "analysis" / "private.json")["comparisons"]["comparisons"]
+    differing, failing = 0, []
+    for entry in manifest["games"]:
+        game, config = entry["game_id"], entry["config"]
+        record = load(WORK / "games" / f"{game}.json")
+        mine = {str(s["seat"]): s["trace_steps"] for s in record["seats"]}
+        best = None
+        for r in range(1, GAMES_PER_SERIAL + 1):
+            serial = load(SERIAL / f"{config}.C.r{r}.json")
+            theirs = {str(s["seat"]): s["trace_steps"] for s in serial["seats"]}
+            states = _common(record["state_steps"], serial["state_steps"])
+            traces = {seat: _common(steps, theirs[seat]) for seat, steps in mine.items()}
+            differing += sum(1 for seat, n in traces.items() if n < min(states, len(mine[seat])))
+            key = (states, min(traces.values()))
+            if best is None or key > best["key"]:
+                best = {"key": key, "serial": r, "traces": traces}
+        if not private[game]["pass"]:
+            reference = manifest["references"][config]
+            failing.append({"game": game, "class": reference["class"], "reference_state_prefix": reference["state_prefix_steps"],
+                            "reference_trace_prefixes": {k: v["trace_prefix_steps"] for k, v in sorted(reference["seats"].items())},
+                            "best_serial_state_prefix": best["key"][0], "best_serial_trace_prefixes": dict(sorted(best["traces"].items())),
+                            "game_states": len(record["state_steps"]),
+                            "reproduces_a_serial_chain": private[game]["matches_a_serial_chain"],
+                            "state_prefix_equal": private[game]["state_prefix_equal"],
+                            "trace_prefix_equal": private[game]["trace_prefix_equal"]})
+    return {"schema": "miaosuan-ownership-prevalence-prefix-diagnosis/1", "study_id": op.STUDY_ID, "registered": False,
+            "question": "did any baseline-v2 decision differ from a serial game while the states it observed were identical",
+            "games": len(manifest["games"]), "serial_comparisons": len(manifest["games"]) * GAMES_PER_SERIAL,
+            "decisions_differing_on_identical_observed_states": differing, "failing_games": failing}
+
+
+GAMES_PER_SERIAL = 15
+
+
+def cmd_prefix_diagnosis(args: argparse.Namespace) -> int:
+    content = text(prefix_diagnosis())
+    if args.check:
+        same = PREFIX_DIAGNOSIS.exists() and PREFIX_DIAGNOSIS.read_text(encoding="utf-8") == content
+        print("prefix diagnosis identical" if same else "MISMATCH")
+        return 0 if same else 1
+    PREFIX_DIAGNOSIS.write_text(content, encoding="utf-8", newline="\n")
+    print(f"wrote {PREFIX_DIAGNOSIS.relative_to(REPO_ROOT).as_posix()}")
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     sub = parser.add_subparsers(dest="command", required=True)
@@ -548,6 +615,9 @@ def main() -> int:
     analyze = sub.add_parser("analyze")
     analyze.add_argument("--check", action="store_true")
     analyze.set_defaults(func=cmd_analyze)
+    diagnosis = sub.add_parser("prefix-diagnosis")
+    diagnosis.add_argument("--check", action="store_true")
+    diagnosis.set_defaults(func=cmd_prefix_diagnosis)
     args = parser.parse_args()
     return args.func(args)
 
