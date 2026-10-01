@@ -33,7 +33,9 @@ one thread, which makes the same decisions with about 23% less CPU per game. On 
 count; without them a plan runs serially on runtime-r1. A registered read-only diagnostic
 (`docs/RESIDUAL_516_DIAGNOSTIC.md`) traced the residual code-516 refusals of `baseline-v2` in scenario 1930331196 to the
 engine removing an unmanned ground vehicle together with the vehicle that launched it, destroyed by the same seat's
-earlier shot in the step.
+earlier shot in the step. A counterfactual design of a rule against it (`docs/LAUNCHER_DEPENDENCY_COUNTERFACTUAL.md`)
+found that engine 4.1.0 hides enemy units' launcher relations from a seat's own observation, so a seat-local rule
+changes no decision; it was not preregistered.
 
 ## Third-party material is not in this repository
 
