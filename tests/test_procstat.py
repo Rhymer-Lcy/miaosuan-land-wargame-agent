@@ -74,6 +74,29 @@ class ParserTest(unittest.TestCase):
         self.assertTrue(ps.library_flags(["libcuda.so.1"])["gpu"])
 
 
+SCHED = """python (333791, #threads: 64)
+-------------------------------------------------------------------
+se.exec_start                                :    5009954965.571913
+se.sum_exec_runtime                          :            92.649286
+se.nr_migrations                             :                    3
+nr_switches                                  :                    6
+nr_voluntary_switches                        :                    5
+nr_involuntary_switches                      :                    1
+se.load.weight                               :              1048576
+"""
+
+
+class SchedulingParserTest(unittest.TestCase):
+    def test_sched(self) -> None:
+        self.assertEqual(ps.parse_sched(SCHED), {"exec_ms": 92.649286, "migrations": 3.0, "switches": 6.0,
+                                                 "voluntary": 5.0, "involuntary": 1.0})
+
+    def test_process_start(self) -> None:
+        stat = PID_STAT.replace(" 12345 ", " 50000 ")
+        ticks = ps.clock_ticks()
+        self.assertAlmostEqual(ps.process_start_seconds(stat, f"{50000 / ticks + 7.5:.2f} 999.0"), 7.5, places=1)
+
+
 class SummaryTest(unittest.TestCase):
     def samples(self):
         meta = {"kind": "meta", "clock_ticks": 100, "page_size": 4096, "logical_cpus": 4}
@@ -100,6 +123,7 @@ class SummaryTest(unittest.TestCase):
         self.assertAlmostEqual(summary["others_cpus_mean"], 0.0)
         self.assertEqual(summary["peak_total_rss_kib"], 2 * 256 * 4096 / 1024)
         self.assertEqual(summary["concurrent_processes_max"], 2)
+        self.assertEqual(summary["total_threads_max"], 6)
         self.assertEqual(summary["unexpected_writable_files"], ["/elsewhere/x"])
         self.assertEqual((summary["inet_socket_observations"], summary["unix_socket_observations"]), (0, 1))
         self.assertEqual(summary["gpu_peak_utilization"], {"0": 35.0})
