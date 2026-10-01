@@ -242,6 +242,11 @@ def summarize(collector: Collector, d1_steps: int) -> Dict[str, Any]:
             "mismatch_fingerprints_by_kind": hist(c["kind"] for c in
                                                   {c["fingerprint"]: c for c in mismatch_comps}.values()),
             "fingerprints_spanning_games": sum(1 for cs in fp_occ.values() if len({(c["corpus"], c["game"]) for c in cs}) > 1),
+            "table": [{"fingerprint": fp, "kind": cs[0]["kind"], "corpora": sorted({c["corpus"] for c in cs}),
+                       "occurrences": len(cs), "games": len({(c["corpus"], c["game"]) for c in cs}),
+                       "lower_attack_reserver": any(c["lower_attack_reserver"] for c in cs),
+                       "s1_owner_changed": any(c.get("s1", {}).get("owner_changed", False) for c in cs)}
+                      for fp, cs in sorted(fp_occ.items())],
         },
         "levels": level_summary(collector),
     }
