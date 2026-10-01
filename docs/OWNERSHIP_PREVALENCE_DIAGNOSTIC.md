@@ -184,3 +184,68 @@ PYTHON scripts/ownership_prevalence.py analyze
 
 Public: the module, manifest, references, scripts, this document, `observer-check.json` and `results.json` (counts,
 shares, intervals and fingerprint hashes only). Private (git-ignored): records, logs, captures and snapshots.
+
+## Results
+
+**The registered prefix check failed for 9 of 360 games, so the study stopped before interpretation, as registered: no
+prevalence is reported, and no next-step decision is taken.** Every other integrity and instrumentation check passed.
+Figures: `evaluation/baseline-v2-target-ownership-prevalence-1/results.json` (`scripts/ownership_prevalence.py analyze
+--check` regenerates it from the private records and captures).
+
+### Execution
+
+* The registration commit `c8635dd` was on the public remote, verified at 2026-10-02T00:34:06+08:00, before the
+  courtesy check and the first session. All games ran at `c8635dd` from a clean tree.
+* The courtesy check passed at its first attempt (2026-10-02T00:44:38+08:00): other activity 0.21 logical CPUs over a
+  30-second window, 31.8 idle beside the 32 workers.
+* 360 of 360 games completed in sessions 1898 to 2257, first opened at 2026-10-02T00:45:10+08:00, the pool finishing
+  after 832.2 s. No game failed, was capped, retried or replaced; the queue was the registered order.
+* Game wall time: median 18.7 s, at most 231.3 s.
+
+### Integrity
+
+| Check | Result |
+|---|---|
+| records, start markers, logs, capture pairs, queue order | 360 of 360; none overwritten; captures match their records' digests and decision counts; every capture names the registered observer source |
+| engine sessions | 1898 to 2257, consecutive, each opened and closed once; 1 engine state throughout; engine state files (the authentication file among them), `home/` and package unchanged between the snapshots before and after |
+| execution | every record names the manifest, `baseline-v2`, `baseline-v1-runtime-r2` with `OPENBLAS_NUM_THREADS=1`, 32 workers and the registered scheduler; 1 pool run, 0 leftover processes |
+
+### Instrumentation
+
+| Check | Result |
+|---|---|
+| independence prefix (registered) | **351 of 360: fails**. Deterministic configurations: 120 of 120 games reproduced a serial chain exactly. Stochastic: 231 of 240 |
+| in-game replay checks | 10,440, 0 mismatches |
+| offline re-decisions of captured snapshots | 5,335, 0 mismatches in actions or trace digest |
+| observation unchanged by the observer | 0 mutations |
+| S1 consistency with emitted actions | 0 problems |
+| observer errors | 0 |
+
+* The observer took a median of 0.064 s per game (at most 2.72 s), 0.31% of the game's wall time (at most 1.96%).
+
+### Why the prefix check failed (supplementary; not registered, not used to rescue the study)
+
+`prefix-diagnosis.json` (`scripts/ownership_prevalence.py prefix-diagnosis`, added after the run) asks whether any
+`baseline-v2` decision differed from a serial game of the same configuration while the states it had observed were
+still identical. Over 360 games and 5,400 serial comparisons: **0**. The 9 failing games, all stochastic, in 6
+configurations:
+
+* 8 games matched the reference's state prefix, but a seat's decisions diverged before the end of the reference's
+  trace prefix. Each reference is the common prefix of 15 serial games, and its trace prefix runs longer than its
+  state prefix; in these games the states diverged from every serial game first, and the decisions followed.
+* 1 game reproduced a serial game's entire chain (2,882 states, every decision), which the stochastic criterion counts
+  as a failure because it was written to detect a shared session, not an altered game.
+
+The registered criterion therefore measured something stricter than observer non-interference for stochastic
+configurations played 15 times each. That finding does not change the registered outcome.
+
+### Prevalence
+
+Not reported. The captures hold the observations, but no prevalence, event or fingerprint figure was computed for this
+report. Disclosure: while the run was being monitored, the capture summaries of 5 early games (component counts by
+event) were displayed; none had an E3 component.
+
+### Next step
+
+No decision is taken: the registered rule withholds it after a failed instrumentation check. The captures of this
+study stay unexamined and are not to be pooled with a later study.
