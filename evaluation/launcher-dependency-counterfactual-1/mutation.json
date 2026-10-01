@@ -1,0 +1,58 @@
+{
+ "killed": 12,
+ "mutations": [
+  {
+   "killed": true,
+   "mutation": "no launcher exclusion"
+  },
+  {
+   "killed": true,
+   "mutation": "inverted relation test"
+  },
+  {
+   "killed": true,
+   "mutation": "claims options the shoot-target reservation excludes"
+  },
+  {
+   "killed": true,
+   "mutation": "displacement judged on all options"
+  },
+  {
+   "killed": true,
+   "mutation": "effect never recorded"
+  },
+  {
+   "killed": true,
+   "mutation": "rejected shots reserve"
+  },
+  {
+   "killed": true,
+   "mutation": "position off by one"
+  },
+  {
+   "killed": true,
+   "mutation": "bools accepted as relations"
+  },
+  {
+   "killed": true,
+   "mutation": "strings coerced to relations"
+  },
+  {
+   "killed": true,
+   "mutation": "relations kept after the step"
+  },
+  {
+   "killed": true,
+   "mutation": "reason code reused"
+  },
+  {
+   "killed": true,
+   "mutation": "diagnostics reordered"
+  }
+ ],
+ "schema": "miaosuan-launcher-mutation/1",
+ "source": "src/miaosuan_agent/experiments/launcher_reservation.py",
+ "source_sha256": "74a6a94309851d374e8697cd0a9ec282ed541389f1f8d4ffbdfedb5624349e14",
+ "tests": "tests.test_launcher_reservation",
+ "total": 12
+}
