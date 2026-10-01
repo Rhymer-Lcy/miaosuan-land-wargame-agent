@@ -329,3 +329,16 @@ longest games and the makespan's start and end allow.
 * The OpenBLAS pool's start-up spin costs about 5 CPU-seconds per game; it was observed, not changed.
 * The equivalence corpus covers 16 games; it shows that the parallel path accounts and reproduces like the serial
   one, not that rare failures are handled identically under load.
+
+### Later findings
+
+Added after the runtime thread-pool qualification (`RUNTIME_THREAD_QUALIFICATION.md`); the text above is unchanged.
+
+* The involuntary context switches whose cause was not established here are the OpenBLAS pool's start-up under
+  contention: nearly all of them happen on the pool's threads before the game's first step, and they disappear when
+  the pool is limited to one thread.
+* The maximum decision latency is a single event, set by where a collection falls. When that qualification measured
+  the current runtime again at 24 workers, its maximum stayed within twice the w01 maximum above, so w24's latency
+  failure did not recur.
+* The recommendation of 16 workers stands for `baseline-v1-runtime-r1`. On `baseline-v1-runtime-r2`
+  (`BASELINE_V1_RUNTIME_R2.md`), the same code with the pool limited to one thread, 32 workers are recommended.
