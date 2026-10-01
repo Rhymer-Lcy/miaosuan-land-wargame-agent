@@ -1,0 +1,172 @@
+{
+ "assumptions": {
+  "active_configurations": 16,
+  "assurance": 0.9,
+  "configurations": 24,
+  "games_per_configuration": 15,
+  "non_inferiority_margin": 10.0,
+  "planning_only": "the standard error is the registered experiment's whole-suite C2/C3 margin estimate; it assumes affected games add no variance and that unaffected games differ by zero in expectation; the outcome variance in affected games is unknown",
+  "registered_c2_c3_margin_se": 1.487941,
+  "z_two_sided_5pct_plus_80pct": 2.8016
+ },
+ "grid": [
+  {
+   "ab_720": {
+    "expected_affected_active_games_per_arm": 2.4,
+    "expected_affected_games_per_arm": 3.6,
+    "per_affected_game_effect_for_80pct_at_registered_se": 416.9,
+    "per_affected_game_loss_hidden_by_suite_margin": 1000.0
+   },
+   "diagnostic_games_for_affected": {
+    "10": 1418,
+    "20": 2587,
+    "5": 798
+   },
+   "q": 0.01,
+   "registered_layout_diagnostic": {
+    "exact_95_if_expected_count_observed": [
+     0.003,
+     0.0282
+    ],
+    "expected_affected_games": 3.6,
+    "games": 360,
+    "probability_at_least": {
+     "10": 0.004,
+     "20": 0.0,
+     "5": 0.293
+    }
+   },
+   "targeted_games_per_arm_for_affected": {
+    "30": 3000
+   }
+  },
+  {
+   "ab_720": {
+    "expected_affected_active_games_per_arm": 6.0,
+    "expected_affected_games_per_arm": 9.0,
+    "per_affected_game_effect_for_80pct_at_registered_se": 166.7,
+    "per_affected_game_loss_hidden_by_suite_margin": 400.0
+   },
+   "diagnostic_games_for_affected": {
+    "10": 566,
+    "20": 1033,
+    "5": 318
+   },
+   "q": 0.025,
+   "registered_layout_diagnostic": {
+    "exact_95_if_expected_count_observed": [
+     0.0115,
+     0.0469
+    ],
+    "expected_affected_games": 9.0,
+    "games": 360,
+    "probability_at_least": {
+     "10": 0.413,
+     "20": 0.001,
+     "5": 0.947
+    }
+   },
+   "targeted_games_per_arm_for_affected": {
+    "30": 1200
+   }
+  },
+  {
+   "ab_720": {
+    "expected_affected_active_games_per_arm": 12.0,
+    "expected_affected_games_per_arm": 18.0,
+    "per_affected_game_effect_for_80pct_at_registered_se": 83.4,
+    "per_affected_game_loss_hidden_by_suite_margin": 200.0
+   },
+   "diagnostic_games_for_affected": {
+    "10": 282,
+    "20": 515,
+    "5": 158
+   },
+   "q": 0.05,
+   "registered_layout_diagnostic": {
+    "exact_95_if_expected_count_observed": [
+     0.0299,
+     0.0779
+    ],
+    "expected_affected_games": 18.0,
+    "games": 360,
+    "probability_at_least": {
+     "10": 0.986,
+     "20": 0.347,
+     "5": 1.0
+    }
+   },
+   "targeted_games_per_arm_for_affected": {
+    "30": 600
+   }
+  },
+  {
+   "ab_720": {
+    "expected_affected_active_games_per_arm": 24.0,
+    "expected_affected_games_per_arm": 36.0,
+    "per_affected_game_effect_for_80pct_at_registered_se": 41.7,
+    "per_affected_game_loss_hidden_by_suite_margin": 100.0
+   },
+   "diagnostic_games_for_affected": {
+    "10": 140,
+    "20": 256,
+    "5": 78
+   },
+   "q": 0.1,
+   "registered_layout_diagnostic": {
+    "exact_95_if_expected_count_observed": [
+     0.071,
+     0.1357
+    ],
+    "expected_affected_games": 36.0,
+    "games": 360,
+    "probability_at_least": {
+     "10": 1.0,
+     "20": 0.999,
+     "5": 1.0
+    }
+   },
+   "targeted_games_per_arm_for_affected": {
+    "30": 300
+   }
+  },
+  {
+   "ab_720": {
+    "expected_affected_active_games_per_arm": 48.0,
+    "expected_affected_games_per_arm": 72.0,
+    "per_affected_game_effect_for_80pct_at_registered_se": 20.8,
+    "per_affected_game_loss_hidden_by_suite_margin": 50.0
+   },
+   "diagnostic_games_for_affected": {
+    "10": 69,
+    "20": 126,
+    "5": 38
+   },
+   "q": 0.2,
+   "registered_layout_diagnostic": {
+    "exact_95_if_expected_count_observed": [
+     0.1599,
+     0.2451
+    ],
+    "expected_affected_games": 72.0,
+    "games": 360,
+    "probability_at_least": {
+     "10": 1.0,
+     "20": 1.0,
+     "5": 1.0
+    }
+   },
+   "targeted_games_per_arm_for_affected": {
+    "30": 150
+   }
+  }
+ ],
+ "registered_arm_displaced_units_by_condition": {
+  "C1": 1143,
+  "C2": 57,
+  "C3": 129
+ },
+ "schema": "miaosuan-target-ownership-sensitivity/1",
+ "study_id": "target-ownership-design-1",
+ "unit": "game: share q of baseline-v2 games with at least one S1 component whose first-come owner has a lower attack level than another claimant; repeated collisions within a game add no independent evidence"
+}
