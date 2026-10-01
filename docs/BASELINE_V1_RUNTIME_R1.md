@@ -38,4 +38,6 @@ and the late-game collection pauses of the shared engine process are not address
 ## Use
 
 A tactical experiment on top of `baseline-v1` runs every arm on this runtime, so that routing latency cannot
-differ between arms. The shooting-conflict experiment, recommended next, must run both of its arms on it.
+differ between arms. The shooting-conflict experiment ran both of its arms on it
+(`docs/EVALUATION_SHOOT_RESERVATION.md`), and the baseline it promoted, `baseline-v2` (`docs/BASELINE_V2.md`),
+runs on it.
