@@ -16,7 +16,9 @@ the residual-516 diagnostic must run the frozen baseline-v2 digest and plays wit
 observer, whose capture files it writes beside the record (``capture/``); its analysis is
 ``scripts/residual516_diagnostic.py``. A game of the target-ownership prevalence diagnostic must run the frozen
 baseline-v2 digest and plays with that study's read-only observer (capture files beside the record); its analysis
-is ``scripts/ownership_prevalence.py``. Records
+is ``scripts/ownership_prevalence.py``. A game of an exploratory tactical screen checks the registered digest of
+every policy it plays (baseline-v2 and the candidate) and, run with ``--purpose diagnostic`` (the mechanism
+smoke), plays with the read-only step capture; its analysis is ``scripts/tactical_screen.py``. Records
 and summaries live under the git-ignored ``local/evaluation/``; only the sanitized public results
 file is meant for version control.
 
@@ -59,9 +61,11 @@ from miaosuan_agent.evaluation import metrics, randomness  # noqa: E402
 from miaosuan_agent.evaluation import ownership_prevalence as op  # noqa: E402
 from miaosuan_agent.evaluation import residual516 as rd  # noqa: E402
 from miaosuan_agent.evaluation import shoot_experiment as sx  # noqa: E402
+from miaosuan_agent.evaluation import tactical_screen as ts  # noqa: E402
 from miaosuan_agent.evaluation import variance_study as vs  # noqa: E402
 from miaosuan_agent.evaluation.game import play  # noqa: E402
 from miaosuan_agent.evaluation.identity import POLICY_SOURCES, digest_of_files, policy_source_files  # noqa: E402
+from miaosuan_agent.experiments.deployment_split import CANDIDATE_ID as SPLIT_ID, DeploymentSplitAgent  # noqa: E402
 from miaosuan_agent.experiments.occupy_reservation import CANDIDATE_ID, ReservationAgent  # noqa: E402
 from miaosuan_agent.experiments.routing_bounded import BoundedRoutingAgent  # noqa: E402
 from miaosuan_agent.experiments.shoot_reservation import ShootReservationAgent  # noqa: E402
@@ -69,7 +73,7 @@ from miaosuan_agent.experiments.shoot_reservation import ShootReservationAgent  
 DEFAULT_MANIFEST = REPO_ROOT / "evaluation" / "baseline-v0" / "manifest.json"
 FACTORIES = {BASELINE_ID: lambda: PolicyAgent(BASELINE_ID), INERT_ID: lambda: PolicyAgent(INERT_ID),
              CANDIDATE_ID: lambda: ReservationAgent(), sx.RUNTIME_R1_CODE_ID: lambda: BoundedRoutingAgent(),
-             sx.CANDIDATE_ID: lambda: ShootReservationAgent()}
+             sx.CANDIDATE_ID: lambda: ShootReservationAgent(), SPLIT_ID: lambda: DeploymentSplitAgent()}
 
 
 def registered_source_digest(registered: Dict[str, Any]) -> str:
@@ -102,6 +106,8 @@ def all_games(manifest: Dict[str, Any]) -> Dict[str, mf.GameSpec]:
         return {spec.game_id: spec for spec in rd.scheduled_games(manifest)}
     if op.is_study(manifest):
         return {spec.game_id: spec for spec in op.scheduled_games(manifest)}
+    if ts.is_screen(manifest):
+        return {spec.game_id: spec for spec in ts.scheduled_games(manifest) + ts.scheduled_games(manifest, smoke=True)}
     return {spec.game_id: spec for spec in mf.gate1_games(manifest) + mf.games(manifest)}
 
 
@@ -161,8 +167,21 @@ def cmd_game(args: argparse.Namespace) -> int:
         print(f"unknown game id {args.game_id}", file=sys.stderr)
         return 2
     group = sx.group_of(manifest, spec.game_id) if sx.is_experiment(manifest) else None
-    registered = manifest["groups"][group]["policy_source"] if group else manifest["policy_source"]
-    policy_under_test = manifest["groups"][group]["policy"] if group else manifest["policy_under_test"]
+    screen = ts.is_screen(manifest)
+    sources: Dict[str, str] = {}
+    if screen:
+        for policy in ts.game_policies(spec):
+            pinned = manifest["policies"][policy]["policy_source"]
+            sources[policy] = registered_source_digest(pinned)
+            if sources[policy] != pinned["sha256"]:
+                print(f"REFUSED: the policy source of {policy} differs from the registered one; a policy change "
+                      "needs a new registration and a complete rerun", file=sys.stderr)
+                return 2
+        policy_under_test = manifest["candidate"] if manifest["candidate"] in sources else manifest["baseline"]
+        registered = manifest["policies"][policy_under_test]["policy_source"]
+    else:
+        registered = manifest["groups"][group]["policy_source"] if group else manifest["policy_source"]
+        policy_under_test = manifest["groups"][group]["policy"] if group else manifest["policy_under_test"]
     source = registered_source_digest(registered)
     if source != registered["sha256"]:
         print("REFUSED: the policy source differs from the registered one; a policy change needs a new "
@@ -194,7 +213,8 @@ def cmd_game(args: argparse.Namespace) -> int:
     if prevalence:
         captures = (args.work / "capture" / f"{spec.game_id}.ownership.json",
                     args.work / "capture" / f"{spec.game_id}.snapshots.pkl")
-    if (diagnostic or prevalence) and any(path.exists() for path in captures):
+    smoke = screen and args.purpose == "diagnostic"
+    if (diagnostic or prevalence or smoke) and any(path.exists() for path in captures):
         print(f"REFUSED: capture files of {spec.game_id} exist; captures are never overwritten", file=sys.stderr)
         return 2
     registered_runtime = ex.registered(manifest)["runtime"]
@@ -222,6 +242,8 @@ def cmd_game(args: argparse.Namespace) -> int:
                "manifest_sha256": mf.digest(manifest), "policy_source_sha256": source}
     if group:
         harness["group"] = group
+    if screen:
+        harness["policy_sources"] = dict(sorted(sources.items()))
     if mode == "shared":
         harness["execution"] = {"mode": mode, **execution}
     if runtime != ex.DEFAULT_RUNTIME:
@@ -234,10 +256,13 @@ def cmd_game(args: argparse.Namespace) -> int:
     observer = rd.Capture((policy_under_test,)) if diagnostic else None
     if prevalence:
         observer = op.Observer(f"{spec.scenario_id} {spec.condition}", (policy_under_test,))
+    if smoke:
+        observer = rd.Capture(tuple(ts.game_policies(spec)))
     try:
         with opener as handle:
             record = play(construct, FACTORIES, spec, inputs, manifest["players"], rng_probe=randomness.fingerprint,
-                          replay_policies={policy_under_test}, observer=observer)
+                          replay_policies=set(ts.game_policies(spec)) if screen else {policy_under_test},
+                          observer=observer)
             record["session"] = handle.opened["session"]
             handle.outcome = {"status": record["status"], "steps": record.get("steps"), "game_id": spec.game_id}
         record["session_close"] = {k: handle.closed[k] for k in ("state_changed", "home_changed", "integrity")}
@@ -280,6 +305,9 @@ def cmd_summarize(args: argparse.Namespace) -> int:
         return 2
     if rd.is_diagnostic(manifest):
         print("the residual-516 diagnostic is analysed by scripts/residual516_diagnostic.py", file=sys.stderr)
+        return 2
+    if ts.is_screen(manifest):
+        print("a tactical screen is analysed by scripts/tactical_screen.py", file=sys.stderr)
         return 2
     if op.is_study(manifest):
         print("the ownership prevalence diagnostic is analysed by scripts/ownership_prevalence.py", file=sys.stderr)
