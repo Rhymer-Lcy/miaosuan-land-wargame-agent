@@ -126,6 +126,51 @@ def parse_unix_sockets(text: str) -> Dict[int, Dict[str, str]]:
     return result
 
 
+def parse_sched(text: str) -> Dict[str, float]:
+    """``/proc/<pid>/task/<tid>/sched``: run time, migrations and switches of one thread (CONFIG_SCHED_DEBUG)."""
+    keys = {"se.sum_exec_runtime": "exec_ms", "se.nr_migrations": "migrations", "nr_switches": "switches",
+            "nr_voluntary_switches": "voluntary", "nr_involuntary_switches": "involuntary"}
+    result: Dict[str, float] = {}
+    for line in text.splitlines():
+        name, _, value = line.partition(":")
+        if name.strip() in keys and value.strip():
+            result[keys[name.strip()]] = float(value)
+    return result
+
+
+def thread_scheduling(pid: int) -> List[Dict[str, Any]]:
+    """Per thread of ``pid``: CPU seconds, voluntary and involuntary switches, and migrations where readable."""
+    ticks = clock_ticks()
+    threads = []
+    for task in sorted((Path("/proc") / str(pid) / "task").glob("*"), key=lambda p: int(p.name)):
+        stat, status = _read(task / "stat"), _read(task / "status")
+        if not stat or not status:
+            continue
+        parsed, switches = parse_pid_stat(stat), parse_status(status)
+        row = {"tid": int(task.name), "cpu_seconds": (parsed["utime"] + parsed["stime"]) / ticks,
+               "voluntary": switches.get("voluntary_switches"), "involuntary": switches.get("involuntary_switches")}
+        sched = parse_sched(_read(task / "sched") or "")
+        if "migrations" in sched:
+            row["migrations"] = sched["migrations"]
+        threads.append(row)
+    return threads
+
+
+def process_start_seconds(stat_text: str, uptime_text: str) -> float:
+    """Seconds since a process started, from its ``/proc/<pid>/stat`` field 22 and ``/proc/uptime``."""
+    start_ticks = int(stat_text.rpartition(")")[2].split()[19])
+    return float(uptime_text.split()[0]) - start_ticks / clock_ticks()
+
+
+def startup_report() -> Dict[str, Any]:
+    """The calling process's cost so far: wall time since it started, CPU time, threads (call before the game)."""
+    times = os.times()
+    stat, uptime = _read(Path("/proc/self/stat")), _read(Path("/proc/uptime"))
+    wall = process_start_seconds(stat, uptime) if stat and uptime else None
+    return {"wall_since_start_seconds": wall, "cpu_user_seconds": times.user, "cpu_system_seconds": times.system,
+            "threads": len(os.listdir("/proc/self/task")) if Path("/proc/self/task").is_dir() else None}
+
+
 def libraries(maps: str) -> List[str]:
     names = set()
     for line in maps.splitlines():
@@ -246,7 +291,7 @@ def self_report() -> Dict[str, Any]:
     libs = mapped_libraries(pid)
     return {"threads": thread_cpu(pid), "vm_hwm_kib": process.get("vm_hwm_kib"), "io": process.get("io"),
             "gc": [dict(generation) for generation in gc.get_stats()], "libraries": library_flags(libs),
-            "descriptors": descriptors(pid)}
+            "descriptors": descriptors(pid), "scheduling": thread_scheduling(pid)}
 
 
 def summarize_samples(samples: Sequence[Mapping[str, Any]], allowed_writable: Callable[[str], bool]) -> Dict[str, Any]:
@@ -316,6 +361,7 @@ def summarize_samples(samples: Sequence[Mapping[str, Any]], allowed_writable: Ca
         "mem_total_kib": hosts[0]["mem_total_kib"] if hosts else None,
         "peak_total_rss_kib": max(rss_by_time, default=0.0),
         "threads_per_process_max": max((s["threads"] for s in processes), default=None),
+        "total_threads_max": max((sum(s["threads"] for s in group) for group in by_time.values()), default=0),
         "concurrent_processes_max": max((len(g) for g in by_time.values()), default=0),
         "unexpected_writable_files": sorted(unexpected_files),
         "inet_socket_observations": inet_sockets,
