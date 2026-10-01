@@ -35,7 +35,10 @@ count; without them a plan runs serially on runtime-r1. A registered read-only d
 engine removing an unmanned ground vehicle together with the vehicle that launched it, destroyed by the same seat's
 earlier shot in the step. A counterfactual design of a rule against it (`docs/LAUNCHER_DEPENDENCY_COUNTERFACTUAL.md`)
 found that engine 4.1.0 hides enemy units' launcher relations from a seat's own observation, so a seat-local rule
-changes no decision; it was not preregistered.
+changes no decision; it was not preregistered. A read-only audit of `baseline-v2`'s first-come target ownership
+(`docs/TARGET_ALLOCATION_AUDIT.md`) found, on replayable states, the target given to a strictly weaker shooter in 14
+of 110 collision groups (6 recurring situations) and no no-op that left a supported action unused; its declared gate
+authorises designing one target-allocation candidate, and nothing was implemented or registered.
 
 ## Third-party material is not in this repository
 
@@ -74,6 +77,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/RUNTIME_THREAD_QUALIFICATION.md` | the registered diagnostic of constraining NumPy's OpenBLAS thread pool: evidence, plan, criteria, results |
 | `docs/RESIDUAL_516_DIAGNOSTIC.md` | the registered read-only diagnostic of what removes the targets of `baseline-v2`'s residual code-516 refusals |
 | `docs/LAUNCHER_DEPENDENCY_COUNTERFACTUAL.md` | the counterfactual design of a launcher-dependent shooting rule: relation semantics, candidate, replay, gate, results |
+| `docs/TARGET_ALLOCATION_AUDIT.md` | the read-only audit of `baseline-v2`'s first-come shoot-target ownership: population, definitions, oracle, gate, results |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
 | `evaluation/routing-remediation-1/` | the routing remediation's registration, pinned corpus and privacy-safe results |
@@ -83,6 +87,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `evaluation/runtime-thread-qualification-1/` | the runtime thread-pool qualification's plan and its privacy-safe results |
 | `evaluation/baseline-v2-residual-516-diagnostic-1/` | the residual-516 diagnostic's manifest and its privacy-safe results |
 | `evaluation/launcher-dependency-counterfactual-1/` | the launcher-dependency candidate's mutation results and counterfactual aggregates |
+| `evaluation/target-allocation-audit-1/` | the target-allocation audit's privacy-safe aggregates |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy
