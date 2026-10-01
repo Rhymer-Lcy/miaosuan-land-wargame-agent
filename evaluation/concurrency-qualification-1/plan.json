@@ -1,0 +1,1506 @@
+{
+ "block": [
+  {
+   "blue": "inert-v0",
+   "condition": "C2",
+   "config": "201033019601.C2",
+   "expected_wall_seconds": 4.96,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "reference": {
+    "class": "deterministic",
+    "expected_wall_seconds": 4.96,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "1e77ef4b5c3ea395bd0f35669b0607f07426e0f1a47924cc4b5ce3d2b054685b"
+      ],
+      "trace_prefix_digest": "b5927c752dcd175cc3959d34a34869b243dacb2a4fa5defdaa7044237305e834",
+      "trace_prefix_steps": 1001
+     },
+     "11": {
+      "trace_chains": [
+       "fe704c60b5ab76e62af421559418a0e5a08cb0e861fb914ba76485ff4e8b80de"
+      ],
+      "trace_prefix_digest": "3d0461ab9715c49ca771ddca94dbc049b6a5ec71ab7be956f4069aa9050562c7",
+      "trace_prefix_steps": 1001
+     }
+    },
+    "state_chains": [
+     "9e6d38c2cacab4479bb5a646a41e3ae2af1960de6a0f9f16db04dc17f6368e55"
+    ],
+    "state_prefix_digest": "f323d518655bccf22e2f70252d4455beebc5fcee33e2c5541a014ef3d09b2b4e",
+    "state_prefix_steps": 1002,
+    "state_steps": 1002
+   },
+   "scenario_id": "201033019601"
+  },
+  {
+   "blue": "inert-v0",
+   "condition": "C2",
+   "config": "2010131194.C2",
+   "expected_wall_seconds": 7.231,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "reference": {
+    "class": "deterministic",
+    "expected_wall_seconds": 7.231,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "b39be7adfe1a3ac6e80a6e936652e3725470b5c8431841c7ed09326e4734f624"
+      ],
+      "trace_prefix_digest": "0b9e4d2916599fcb1668d0de3fe66c0a4a46e0b3029744e16b3c2797107b1421",
+      "trace_prefix_steps": 1801
+     },
+     "11": {
+      "trace_chains": [
+       "67dad9c5bfc644077034713502123463fe0c76c32bd95ccadd2dcb2db829959b"
+      ],
+      "trace_prefix_digest": "df8add8eabe73eed66af1c90641f5debd9415fa21cbd5d754d1c422b6eee1dd9",
+      "trace_prefix_steps": 1801
+     }
+    },
+    "state_chains": [
+     "554ef587d2ce4f0850b8b7c4c2e4074a3ae756c8b2fcd7f6572eda887806f339"
+    ],
+    "state_prefix_digest": "be441a31bc7f66f6b6e7625c019eb23b87d2c307794d883a1fbfd921ab4344a6",
+    "state_prefix_steps": 1802,
+    "state_steps": 1802
+   },
+   "scenario_id": "2010131194"
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "C3",
+   "config": "2010211129.C3",
+   "expected_wall_seconds": 14.193,
+   "red": "inert-v0",
+   "reference": {
+    "class": "deterministic",
+    "expected_wall_seconds": 14.193,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "62a9bcd50234b3fbaa80b0914ae25de5c60fe608a0c7c7763c3bd3bb3b2df4a1"
+      ],
+      "trace_prefix_digest": "b75caefdf8652f3c143c08bfcee3e4df5c1168ca4a9141babb8faa3c1a33ce8a",
+      "trace_prefix_steps": 1801
+     },
+     "11": {
+      "trace_chains": [
+       "184fd83fb4dc4ffbc8f1dcf10ff09489a9590b3c6d5f1ab34491f25ff6c0aee8"
+      ],
+      "trace_prefix_digest": "82e7676411af56982b7904c761dd78f8d0b8fc8fcf22c1ed4d0438fb3edd724e",
+      "trace_prefix_steps": 1801
+     }
+    },
+    "state_chains": [
+     "e7b6a1dfbaf23b6996f5aecdbb20885b9042ad9d4d7cb3490f00c4da40984c52"
+    ],
+    "state_prefix_digest": "308d7b9245126cc5c7475da9913176a362e083d46ebc34917bfe5d49a076dfb4",
+    "state_prefix_steps": 1802,
+    "state_steps": 1802
+   },
+   "scenario_id": "2010211129"
+  },
+  {
+   "blue": "inert-v0",
+   "condition": "C2",
+   "config": "1910631192.C2",
+   "expected_wall_seconds": 15.8,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "reference": {
+    "class": "deterministic",
+    "expected_wall_seconds": 15.8,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "9b84e4a68522ca3127f76baf11446fca58900e0f5dd21ecb5b140132a8a270c6"
+      ],
+      "trace_prefix_digest": "d4e1b3492cec4627671798e6dc9791c1317690f1dd1a221336c04eca33dede98",
+      "trace_prefix_steps": 1801
+     },
+     "11": {
+      "trace_chains": [
+       "e22a3ecd2c2cf1276a1f792155055b28a3d18d766d37579425e1b754eafcf725"
+      ],
+      "trace_prefix_digest": "342fb731a2be220068a2de4a3d4aee728ae99ac431ee1f1d323ccd24af6dfc6c",
+      "trace_prefix_steps": 1801
+     }
+    },
+    "state_chains": [
+     "57a58a770661dbe88b304b97eb61b435e197b8daf2bb09536384b9b15339a1fc"
+    ],
+    "state_prefix_digest": "b37464a5617c424ec52019955e4fa7cda1e63bb55ed8aafd81f66482192eca94",
+    "state_prefix_steps": 1802,
+    "state_steps": 1802
+   },
+   "scenario_id": "1910631192"
+  },
+  {
+   "blue": "inert-v0",
+   "condition": "C2",
+   "config": "2010431153.C2",
+   "expected_wall_seconds": 15.161,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "reference": {
+    "class": "deterministic",
+    "expected_wall_seconds": 15.161,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "8f8270d83ab845c5a1362ae323ac2b16ac91f8801047bce0d89a26d65a25dac5"
+      ],
+      "trace_prefix_digest": "25411120d8f6b0db4042009929142c336d34950e6da45d4cee0abf16cf569980",
+      "trace_prefix_steps": 1801
+     },
+     "11": {
+      "trace_chains": [
+       "e22a3ecd2c2cf1276a1f792155055b28a3d18d766d37579425e1b754eafcf725"
+      ],
+      "trace_prefix_digest": "342fb731a2be220068a2de4a3d4aee728ae99ac431ee1f1d323ccd24af6dfc6c",
+      "trace_prefix_steps": 1801
+     }
+    },
+    "state_chains": [
+     "8169d9dbe99dc6541607ad1b5f54f4acaed4855741baef73539adf2968c8bfa0"
+    ],
+    "state_prefix_digest": "4b33c665017e8c6c830dfbb1664958f668861e2e0d123b3afbd4b08367bf8979",
+    "state_prefix_steps": 1802,
+    "state_steps": 1802
+   },
+   "scenario_id": "2010431153"
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "C3",
+   "config": "1930331196.C3",
+   "expected_wall_seconds": 93.419,
+   "red": "inert-v0",
+   "reference": {
+    "class": "stochastic",
+    "expected_wall_seconds": 93.419,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "0d3fbada32ffebe121d9c7d5a9a285524403bbf78b0e5d95f295f26875e8614a",
+       "0f774a3370ab73b9dd94584c47a238d93c396945d8f18076e01d941a93cafda5",
+       "148c599775a455c2637de5068a9d21daff77aa61aae870b72b995d1923efc7bc",
+       "97b4df9804bf2b4c8ebe96e6ccab6d914cb6fb4994b239427e5afe70b6220faf",
+       "9b94aef0fd9a714c4b5afb149f49076c55ba376ab71677cf0144af156f16280c",
+       "a97f5da4b2a7535cbc24f468702a6b7943e30e45ce15d34e23e6f4f158c770c6",
+       "b65fd6cba6ec36d334dc6400c5c190bfe80b4c28bddd03b02ef3a6d4c33f88cc",
+       "d0553fcfffa0849b15da72220c7c8d6da01d54562045c0af4b27ca1832235448",
+       "db76f65adc1b35fcb570173f83c012472a8ee6272d8ae62b306a0cec9f4cbd20",
+       "e8454baa478034eec9c05283205853610cf1ced8d9aa2ba9ca62b6c438071132",
+       "ed53b4b48444d8e3085d021083345be2afa8a9e804c16d16a8bd277035cfaef6",
+       "ed5912e9355a1d8aaca333bc55684203126f95f7f05d020b7f4c64670bef3159",
+       "f429fbdd4f8673038c68aee3c48555c79a243f0113d942eb54a140a1acac9ff8"
+      ],
+      "trace_prefix_digest": "532cb2f79ff2e379b09b3dd97da51b07445318bbdc5f0104c21e984a82f50155",
+      "trace_prefix_steps": 288
+     },
+     "11": {
+      "trace_chains": [
+       "103caf0869557a8c3944e0ad831bfd8807c879e34c60da15d318f5fe7e196a52",
+       "15559517345961d7445ab17808e457cc5b0d70b0a04c379abaafe0fc61a7642c",
+       "175a61d9a69bb0bd3f085bc094440d6d41abdc4252ba8384e69012bac557c9f7",
+       "5c12ebc6fbcb4af1fa496a38321bc2099e7fa5126a1cc2d7e4d9b6b8e78e9465",
+       "658d8e6e30a39e157bf4c6f0f46fc7d6b6b6f355c4817ba012b93961ef5427c3",
+       "77328d8954252c6ce961a740be1b726d3b588fd2379141bc916ff14d9dbe631b",
+       "7878933fa35dd6c981d70e1bf3f7b0927402b1a8dab85b4fbade42fa8ce7a571",
+       "7b20b49db3ea1d83ee9898c9d467b33a757a46b993c725860eee3ca1ae8162a1",
+       "ac29285b4c7f743c06427b9c9c2a0934e0c92be309d4bf0da7a883e128fb3f0d",
+       "b6b0f5872ae1622763a81ce915349ec87e5de792ca69b63416480d57cac273cf",
+       "cee2205f46ebf9bcc158b2c002f55636667ba57644717584e32111b4562387f3",
+       "df8315270fa338c05bb276dccfaa82fb697ba7a4f79b9fb385d907e0de9975c6",
+       "fbe256acb4b068cb7a8af9a288b69c5ec9c55d61b807d7a7e71037d7d37d6436"
+      ],
+      "trace_prefix_digest": "8bebccc2d031322b44b55ae1ff3ff485ba5eb4bcf92bc68d276dcc5bb99fdfcc",
+      "trace_prefix_steps": 362
+     }
+    },
+    "state_chains": [
+     "00ee24b616a4d633b307f77d8fd05e9315c339c18b9b0ba6b77e711494cf95d6",
+     "2838ed0bf9d79b30f8d086b89fa6590ca89ff66bbc29a2cce0de0155f3377a13",
+     "29cdf54c03fe5b3168c5845d65c7d92ad443441029db4fa5b7e2ddacf9dcd8d2",
+     "5b1008051142dfc970fe8ecd0602fe650e6b5ecad7041c21bdad0684054e6769",
+     "68475c1f711b0418d23ca0cc6ebbee2017d9dcad2fed80934194d4fea2e7945c",
+     "702e613ced1137abc999b282c01bd3d260cc4420adebd58d9a4659f7da50b87a",
+     "72da742d145173de6a7162b44d393897d04fc51a576990015f25780f2c76b7b6",
+     "962ac06b4da51d1cbeb09bdac0851547daa247e207714efaa86bbdb25196d313",
+     "a8645c474bfafe28d19112c59135b360867820da7c6a525228c0cdf6f49a5a33",
+     "c55f54b17bb59dd6947fc087aceea7295d097aa445fd52d538bf13c6d97bc62b",
+     "c8ae974de4f030d7c7f49aaa0f1ab5951b730d944e624eeebbaf2ebe2e889145",
+     "d1e7d3970338f67a77ae191a975a3755e251c8c9b027be3667cd1c0ab7421269",
+     "d936901bd75929ca326e505afa343316ae3c504443268a85488c4fadf46c7710",
+     "d961b0351c746587dc778cf7a2ced580fe1f4e680fc02538df339f7e9f2bc282",
+     "fd2f4b360d66bf1e92e071f32ebaa2f257c221912ec311357130d39726619095"
+    ],
+    "state_prefix_digest": "df4cf52a8ccc74b1f3cd67d45b4de13037458fe3f3b3cbab646063efcdf8fd7c",
+    "state_prefix_steps": 213,
+    "state_steps": 2882
+   },
+   "scenario_id": "1930331196"
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "C1",
+   "config": "2120531121.C1",
+   "expected_wall_seconds": 73.179,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "reference": {
+    "class": "stochastic",
+    "expected_wall_seconds": 73.179,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "040abb93fabbb7a0afa4946fd278947e26fe22f7b5fec952178311d248dafc14",
+       "1555c663f035110f36432c8a4d6a7e8b0b83de3b29f8b0b7d5f892c6fa5e2c91",
+       "15ec57ab5ee3fa964590c67a7aea5b5817c3cbd24e2ff26374008fd9e36993ae",
+       "2c73a2ff56c7f035a49c19750e17919387ebe44b7e835fa6c30fd2ea98b7f1fa",
+       "3a7614b58c1548d9d5bc736bb24030b294b019325be197e0a1c1ef8bf43849be",
+       "400d3c5744dcdf4fa64183f392285100537206384992d4038e189956d47a3263",
+       "5581944fdf1af37ffd80a1740cc0c4caa7418f1ce735ed23647db02ca33ce3f6",
+       "586b3d0dde90bcd8c2d8c1e058e60e2800b7da27f10efd1b19baf44ab0ef0cab",
+       "65374e4e5c40660390c8ca4e6dbcda04f49864b4b54ad45826fc563c7dfaf188",
+       "7d60dde191913103b7c8cf1ab864c1f29e389540ca2350355763bb39603aef5e",
+       "89e7a536d607a0f0b21305b25d5b0b3ebda09e6496b8bbbcf4bcbc606d2d8cd8",
+       "907bf8a332bac115fde2fba5db63f1e69afacebd4921cfcee7d5485847e40946",
+       "b480aa41b0dd530e9db4745120be0853915f85f378b64d756d355e7e753f84f2",
+       "d07b47e8f7e874d99d077facc74582d09be04b24d1792903c86402e108404509",
+       "fc873a3a1dcd032cd572f2bd9bdbad4f96a7c3c33d97078def289d955093d372"
+      ],
+      "trace_prefix_digest": "748d64b5d0b5de555003584d2b003fe22bdce9575340c566c5b87151bc44aa9d",
+      "trace_prefix_steps": 211
+     },
+     "11": {
+      "trace_chains": [
+       "076eb3ea33adc0500bfbd181289fbe5b4a786abdddd5c68b2020e93a903d7498",
+       "0c1644b61dca56af0a9e260ad7ac0c603fe467e0a635e4b396595a07613e65b4",
+       "291bbb86acc4b0f9e4e571ab22f9077c37fa83b37fa00f4ba23af14b37d833fd",
+       "2d122c018a47134f7ae96bdc5c02babfd183b03472474b7cc2564d002d043ad3",
+       "2d952f23d1fb31830af2249d1124eceedc0c3c96eed658bd24769128660c6a48",
+       "46697fba42f3c7cd707efda76fa0f3d261eb42934bf62e7762d41f2ff15fbc7f",
+       "4dcc0ba69884587b0062dcfacf4e9bc78c49f1538cb7ab0bdbef85db3acab1bc",
+       "58c58303d715ed43bee99e4465c79b64fa7b7176b84069b3380a9f10a521d650",
+       "5b5c63edd4945e4b1b6da63c6e0456b51110dbb2b9c2cedccf6d5435e8da6c7c",
+       "668a6fddbcf02ea918c3150157a53d27775f84fc12836338b9ea828dd5ae9a75",
+       "6ee042dd67c35a409581b56ca99ce8196b70f8294d52b3b6dd7ef64c0840f882",
+       "a2e7c2868cd2d59ecb03d80fb1c5610b5d9323bf0eac81ecf3c8e4154c2eea4d",
+       "afc92aa934c2e93122b573e9e2a561c21ca3627ba4c536c8d56de598e9725f79",
+       "bd47f503c13ee1930a57b687b793e86901eb1b4507bde9266841150bcbafdc90",
+       "da86749734280d61c51038e562009b8e781ad8b84c66447677c7221b9031403d"
+      ],
+      "trace_prefix_digest": "e2f7a667e1644d5a7e8ad1d042924d0fcf60d61595b0b9e9496d2fbd6be22fe9",
+      "trace_prefix_steps": 137
+     }
+    },
+    "state_chains": [
+     "019c524a93f53329f0e03a573f0f72e703dbcd7fcc1ab1bffba5685dafe54e7a",
+     "243a9e2d4a24a42714b4e0d21cd9ada3000be2be758229905fc5d3e70abbf4a3",
+     "40c126e9d80b6d302fa96d22cfc9da9ee5cc0f96ca99407741fb4629a1d5d9af",
+     "41d5f78e951fe984062f90b3e1b1fd0cf707d2b2c39f62b4b4864206f65da8a8",
+     "586bae38d394b3bd1bdc24873d9cde5146e0303db4e4d6db96d1b6df8a5f79f9",
+     "5926fceee79e4613c4af6d6747bd3b9b8eed709926c2a5a79728b6412120ce4b",
+     "75429a6b46c26f83db9ac72df1300d98b00d5c7085edea094b58876a51b9aa0d",
+     "8936364402397ee3e07828fb851b97ed7c23a5a3f04206cdb2cd698a9e42d85d",
+     "96c354c9de04e7e3925cc217b0a4b5ad106a4376172cc030c7e93076d54db673",
+     "af710c93be5d233f8eec7855b2ed40ee60da52c51c3e42bfe81a9146e860a857",
+     "cc50cf17f73d7dbe5b3762b0e300b94d4e1daa597b9713b8f6cec606342536cd",
+     "d0d17d89cffd9167385174e3542f7ff2bf4fe1053597f638b830dddd4a454ae5",
+     "dd7c1b3d5cf008977956a09e648934f4fc5057bace0a99834f4e5692bc44aa85",
+     "e9fa7da3ccee8ceb60e53589761df78b6ea4a90845be3f4a31f8aaef2ca4b201",
+     "fac74d488c82713cbbc882b6c46ebc257f54b35462eede5e5ef9d5b19a5c8882"
+    ],
+    "state_prefix_digest": "c6477dfc1d1e42e71bf08cec22cda33bfcc7bfc985bdce278e81562e74b30c8d",
+    "state_prefix_steps": 137,
+    "state_steps": 2882
+   },
+   "scenario_id": "2120531121"
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "C3",
+   "config": "2130511121.C3",
+   "expected_wall_seconds": 191.115,
+   "red": "inert-v0",
+   "reference": {
+    "class": "stochastic",
+    "expected_wall_seconds": 191.115,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "0067e5b0ea040fa4772f68d1652906d70c3b243179d8dd2109bbb58d11072380",
+       "1136333dc78f6cae4c251e8effeab5dab6dd6a945bf0e1bde21d09b6a257ba4b",
+       "51b725df641efb5ae5e5fe0b88c39ab05743976f64e7c7e9a3bb6e05b76f2113",
+       "8286df51665ca3c9b2141ed0b593cfc5b660ab71d51e3855194f7b91fdb9a3e8",
+       "b2149f28ccc590748c8806f95246fdf677cb8f5b1350d08ea90f3386f66a276f",
+       "be44397630116c815f540bc0c6030291bc35b9f7d259f257004bbfde106ecdcc",
+       "c97576b0e6627307b0f9525d5abaf5345b736c1321de503f4e97609f42ef2321",
+       "cb7ad2bc7f2202712e0a4fe3cf2fb322e322793c5b134ffd34913a6456f84a07"
+      ],
+      "trace_prefix_digest": "85874f67e260179d1d25f1e54e428ce2f4965d39b8d5c80d83de54d1914fe6d5",
+      "trace_prefix_steps": 526
+     },
+     "11": {
+      "trace_chains": [
+       "399c1ea6e5c4113daea2177865a012df42d2d7f4ac8d369e0fec3ce2c208f8bd",
+       "74e20291c2d983c1438283ef976b8197377ed573e2e630a1056c23e78b0a0504",
+       "97d1504f9e94ba213afc83444073a7d1a0555fcd85d8a9556dee39277df4fdba",
+       "99aecf014f793b70a554dd8543a3aa792652f2f7dfaf60dc2f13b6763309ecdf",
+       "b5af9b55259c94573dc30422f7c23ddbf01ea8f0919da0498f3a7616298110fc",
+       "e69af712f51e66a4046ba26e1e349236d09f30b148df57df9a6a0069c3b9f7e1",
+       "ebf2a5c65701361d47b57ea73ae0a117c73b8bf101913fe59be05dda2dd79a42"
+      ],
+      "trace_prefix_digest": "ddbd92efc813513ff2c35b224d96a13881d11b51f7b43e7ea4691f937f9d82f4",
+      "trace_prefix_steps": 600
+     }
+    },
+    "state_chains": [
+     "2358a145188245064b65a667741b14ffcbbccc4cbeb6e4b4fd1607420d2023b8",
+     "2544ba9a73c0f31796a820ed9005ec017a911e509740722014a73a790e93102f",
+     "2b67e47aa4eb5070f28b4783f6bcad8080066b864e09615d93e30669df48f9b4",
+     "38d36d330e95073a784d7cacc8fc2cbb64f78a64a19de478de6f119547633d51",
+     "3c11634f4edee6ba01497eab438d0cf6338488035dac63525267e7e2a1bb9900",
+     "44d91c842d3566f42caf95eaf82de4d3500f318b11f01b31952d299b000a1af2",
+     "4eb1cdec41b8959d8c2c6004a104a163a44db00057a2645ccaf552a7c9f63698",
+     "68ccb8f36c77ab67ee057a947ba17f0986e776d2b191604baed5f149e8a432bd",
+     "6c823e8ea6748854f0f909b7691990ab8ef13df8c6a9beff8a9a3862590bfe90",
+     "6cb99efa4576fd8681230330b01239d73532f242c1330e0bb2806a80868a37d2",
+     "840cf7b828d6d89c00508831a815e146e569cf8dafdca5751c2c80508bde048d",
+     "9395520cd1b3078fd7fe5d577ed4a1ec1f31b68a25ee64a3c046e39629af3d4d",
+     "a26fa9925f1beae82b4fcc409d7406eece17565adc48514db34afdcab63cfd40",
+     "d05ba6c64066209f6f86fff1807a0b35527316e2d4c6a700ae28d6e7291abd48",
+     "d0ab08416c4c4c32d4340bd469f4f115175e11e331483587d2551848598e2527"
+    ],
+    "state_prefix_digest": "b6a80b54d1ecb1cd2fee6411cc4807f1ff7c64f2a799b5f66b9e2c94a6dbacc3",
+    "state_prefix_steps": 526,
+    "state_steps": 2882
+   },
+   "scenario_id": "2130511121"
+  }
+ ],
+ "criteria": {
+  "knee_fraction": 0.85,
+  "material_speedup": 1.5,
+  "max_ratio": 2.0,
+  "maximum_others_cpus_during": 8.0,
+  "maximum_our_cpus": 32.0,
+  "maximum_rss_fraction": 0.1,
+  "minimum_efficiency": 0.7,
+  "p99_ratio": 1.5
+ },
+ "equivalence": {
+  "condition": "run only if a worker count is recommended and the production scheduler is added",
+  "corpus": [
+   "2010431153.C2.B.r1",
+   "2130511121.C3.C.r1",
+   "2010211129.C3.B.r1",
+   "1930331196.C3.C.r1",
+   "2010131194.C2.B.r1",
+   "201033019601.C2.B.r1",
+   "201033019601.C2.C.r1",
+   "2120531121.C1.C.r1",
+   "2120531121.C1.B.r1",
+   "1930331196.C3.B.r1",
+   "2010131194.C2.C.r1",
+   "2010211129.C3.C.r1",
+   "1910631192.C2.B.r1",
+   "2010431153.C2.C.r1",
+   "2130511121.C3.B.r1",
+   "1910631192.C2.C.r1"
+  ],
+  "criteria": [
+   "both runs record exactly the 16 planned game identities, each once, all completed",
+   "each record carries its group's registered policy digest and the experiment manifest digest",
+   "every game passes the independence comparison with its configuration and group's serial reference, and deterministic games are identical between the two runs",
+   "the ledger shows one open and one close per game, no recovery, no unclosed session, and an unchanged engine state",
+   "no game was rerun and no record overwritten"
+  ],
+  "references": {
+   "1910631192.C2.B.r1": {
+    "class": "deterministic",
+    "expected_wall_seconds": 15.806,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "d60228dbad32a0ffa5e652a3570c73227111a61e8880931076e2ddcd72f4ae2c"
+      ],
+      "trace_prefix_digest": "19d3d6bd042eefd6d17be12db14109ce8389992f763fd2d7892b25be3cb55fce",
+      "trace_prefix_steps": 1801
+     },
+     "11": {
+      "trace_chains": [
+       "e22a3ecd2c2cf1276a1f792155055b28a3d18d766d37579425e1b754eafcf725"
+      ],
+      "trace_prefix_digest": "342fb731a2be220068a2de4a3d4aee728ae99ac431ee1f1d323ccd24af6dfc6c",
+      "trace_prefix_steps": 1801
+     }
+    },
+    "state_chains": [
+     "57a58a770661dbe88b304b97eb61b435e197b8daf2bb09536384b9b15339a1fc"
+    ],
+    "state_prefix_digest": "b37464a5617c424ec52019955e4fa7cda1e63bb55ed8aafd81f66482192eca94",
+    "state_prefix_steps": 1802,
+    "state_steps": 1802
+   },
+   "1910631192.C2.C.r1": {
+    "class": "deterministic",
+    "expected_wall_seconds": 15.8,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "9b84e4a68522ca3127f76baf11446fca58900e0f5dd21ecb5b140132a8a270c6"
+      ],
+      "trace_prefix_digest": "d4e1b3492cec4627671798e6dc9791c1317690f1dd1a221336c04eca33dede98",
+      "trace_prefix_steps": 1801
+     },
+     "11": {
+      "trace_chains": [
+       "e22a3ecd2c2cf1276a1f792155055b28a3d18d766d37579425e1b754eafcf725"
+      ],
+      "trace_prefix_digest": "342fb731a2be220068a2de4a3d4aee728ae99ac431ee1f1d323ccd24af6dfc6c",
+      "trace_prefix_steps": 1801
+     }
+    },
+    "state_chains": [
+     "57a58a770661dbe88b304b97eb61b435e197b8daf2bb09536384b9b15339a1fc"
+    ],
+    "state_prefix_digest": "b37464a5617c424ec52019955e4fa7cda1e63bb55ed8aafd81f66482192eca94",
+    "state_prefix_steps": 1802,
+    "state_steps": 1802
+   },
+   "1930331196.C3.B.r1": {
+    "class": "stochastic",
+    "expected_wall_seconds": 94.1,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "0b2181589c157e5ee9434d76e0f68ceafb1a443acb790aabe2dd571685f0a9e1",
+       "0d3fbada32ffebe121d9c7d5a9a285524403bbf78b0e5d95f295f26875e8614a",
+       "0e422ed9de29315e1e5f61306c70428af2604e5db2a7ef44a7d172cd78e3118f",
+       "0f774a3370ab73b9dd94584c47a238d93c396945d8f18076e01d941a93cafda5",
+       "498edbe8ebfd82a49e3feffab717b2d508fff75f6cc44c9918ba33e613eda930",
+       "97b4df9804bf2b4c8ebe96e6ccab6d914cb6fb4994b239427e5afe70b6220faf",
+       "a97f5da4b2a7535cbc24f468702a6b7943e30e45ce15d34e23e6f4f158c770c6",
+       "d0553fcfffa0849b15da72220c7c8d6da01d54562045c0af4b27ca1832235448",
+       "d603652f77c312ce7461655924128708954f84416f546875f143ccd172f2c13d",
+       "e134ae96766818f913c34934b6629a41ef047fdfb43099418309c72f327cd0ac"
+      ],
+      "trace_prefix_digest": "0d43ae299f4007f206c5338199622fb048f46fcd3eea0426444f91a353d94b26",
+      "trace_prefix_steps": 363
+     },
+     "11": {
+      "trace_chains": [
+       "0c581d10f8e2ee58e72dda9c28c77b10173e22b21642914fb2aaefcdceec987a",
+       "16f2529d9b7df827238b193711ca2ec3f8a8fd465e3daed093ef32ace7d2d94d",
+       "2ed0bd85327a60a567d5715549ac51a5468c83c057c291bcb5308708943f327f",
+       "6a576ee346bb7944ac6bc078e8c211e9f7fc7b03ec40fe76e972ea6cabe2ef23",
+       "6cfd12f6eee82f3e757e49b83b37fbfd227cb3dbfc2643787757406691543981",
+       "6f43424d3605a8e632db47eb22e94100d0c174edbd9b7ed2af7d4afbb88717e9",
+       "980aa9ae5eb28a828d875b5b467a5236324733f4d6ed8011a83771ac907dd61a",
+       "c8a2c831900d97eb04016c82e4b2f758b885d9d9445b532709272cb52d022434",
+       "cf8df52328da4593b2618e8a77232212e51cc9ed1ef44f333ca80f495c96d1e1",
+       "dd89b1561128bd9888aeab52fe6ea78bef51f80ffd2ccb976a6cfb7282062358"
+      ],
+      "trace_prefix_digest": "78a239db8905a69990230837e1c27f49d515ebcb0d3b6c77f611036013d0727d",
+      "trace_prefix_steps": 437
+     }
+    },
+    "state_chains": [
+     "183cd47878baa9f1c29871e8935391f2a934b7a03970c2547232b6f3091d3fb4",
+     "1d5a059c83c65c8997038fdccb1cb8c51bc4d32f3f8f276268461852810653b4",
+     "2078f21f0a40179ba4bdad7064219c5eba987dd212c2e08ae5e64991db80b4fc",
+     "24066d87a4808d3327763f7e1c70f12ad173a1516c3256e1563f5d60e98d63e2",
+     "40d4000e8bd2fc4af8b60964fc391e7907ea029a2341873c0ccfc620afe06152",
+     "7039bef9d5e08da620b241e3fa6a14b6a19885bb7087a4165a4bfa40bb415c13",
+     "8007e247acec1ef9a5acc44be95a91893ece40ec97557a2b909cfcb5dd594f1f",
+     "87623a64fa9c8761cd029912e14036383b2e79be877daec9f96dde7ea27e1ef6",
+     "9e3202f521661579c24be5198e82cc6d82b41beeadcc33a54fac09e9615fdb2f",
+     "b2e425b63304af943c40188f6f9e755fe3c71d681656fb11d30a55374f2eb6d0",
+     "b444529063559ad830682693e97293d313f8ed501da17cf91f4331df52e79a3f",
+     "b5f0f94aafa2c88f70901649017a80d8e7a7da47b55d2e6bd2cfd6b220c106bb",
+     "b70c2b70337efe9b137bcfd3838dda5937d378da60ab79da3223e46a4178b2f9",
+     "bd934b26212a77e5d704f4bd8bccebd0ab4463b9db5b8bb78649150a244d19df",
+     "dbcd4826c3b9d4b913fc8f4389f95945c3c29bfab51f19b66e6aef785d104328"
+    ],
+    "state_prefix_digest": "df4cf52a8ccc74b1f3cd67d45b4de13037458fe3f3b3cbab646063efcdf8fd7c",
+    "state_prefix_steps": 213,
+    "state_steps": 2882
+   },
+   "1930331196.C3.C.r1": {
+    "class": "stochastic",
+    "expected_wall_seconds": 93.419,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "0d3fbada32ffebe121d9c7d5a9a285524403bbf78b0e5d95f295f26875e8614a",
+       "0f774a3370ab73b9dd94584c47a238d93c396945d8f18076e01d941a93cafda5",
+       "148c599775a455c2637de5068a9d21daff77aa61aae870b72b995d1923efc7bc",
+       "97b4df9804bf2b4c8ebe96e6ccab6d914cb6fb4994b239427e5afe70b6220faf",
+       "9b94aef0fd9a714c4b5afb149f49076c55ba376ab71677cf0144af156f16280c",
+       "a97f5da4b2a7535cbc24f468702a6b7943e30e45ce15d34e23e6f4f158c770c6",
+       "b65fd6cba6ec36d334dc6400c5c190bfe80b4c28bddd03b02ef3a6d4c33f88cc",
+       "d0553fcfffa0849b15da72220c7c8d6da01d54562045c0af4b27ca1832235448",
+       "db76f65adc1b35fcb570173f83c012472a8ee6272d8ae62b306a0cec9f4cbd20",
+       "e8454baa478034eec9c05283205853610cf1ced8d9aa2ba9ca62b6c438071132",
+       "ed53b4b48444d8e3085d021083345be2afa8a9e804c16d16a8bd277035cfaef6",
+       "ed5912e9355a1d8aaca333bc55684203126f95f7f05d020b7f4c64670bef3159",
+       "f429fbdd4f8673038c68aee3c48555c79a243f0113d942eb54a140a1acac9ff8"
+      ],
+      "trace_prefix_digest": "532cb2f79ff2e379b09b3dd97da51b07445318bbdc5f0104c21e984a82f50155",
+      "trace_prefix_steps": 288
+     },
+     "11": {
+      "trace_chains": [
+       "103caf0869557a8c3944e0ad831bfd8807c879e34c60da15d318f5fe7e196a52",
+       "15559517345961d7445ab17808e457cc5b0d70b0a04c379abaafe0fc61a7642c",
+       "175a61d9a69bb0bd3f085bc094440d6d41abdc4252ba8384e69012bac557c9f7",
+       "5c12ebc6fbcb4af1fa496a38321bc2099e7fa5126a1cc2d7e4d9b6b8e78e9465",
+       "658d8e6e30a39e157bf4c6f0f46fc7d6b6b6f355c4817ba012b93961ef5427c3",
+       "77328d8954252c6ce961a740be1b726d3b588fd2379141bc916ff14d9dbe631b",
+       "7878933fa35dd6c981d70e1bf3f7b0927402b1a8dab85b4fbade42fa8ce7a571",
+       "7b20b49db3ea1d83ee9898c9d467b33a757a46b993c725860eee3ca1ae8162a1",
+       "ac29285b4c7f743c06427b9c9c2a0934e0c92be309d4bf0da7a883e128fb3f0d",
+       "b6b0f5872ae1622763a81ce915349ec87e5de792ca69b63416480d57cac273cf",
+       "cee2205f46ebf9bcc158b2c002f55636667ba57644717584e32111b4562387f3",
+       "df8315270fa338c05bb276dccfaa82fb697ba7a4f79b9fb385d907e0de9975c6",
+       "fbe256acb4b068cb7a8af9a288b69c5ec9c55d61b807d7a7e71037d7d37d6436"
+      ],
+      "trace_prefix_digest": "8bebccc2d031322b44b55ae1ff3ff485ba5eb4bcf92bc68d276dcc5bb99fdfcc",
+      "trace_prefix_steps": 362
+     }
+    },
+    "state_chains": [
+     "00ee24b616a4d633b307f77d8fd05e9315c339c18b9b0ba6b77e711494cf95d6",
+     "2838ed0bf9d79b30f8d086b89fa6590ca89ff66bbc29a2cce0de0155f3377a13",
+     "29cdf54c03fe5b3168c5845d65c7d92ad443441029db4fa5b7e2ddacf9dcd8d2",
+     "5b1008051142dfc970fe8ecd0602fe650e6b5ecad7041c21bdad0684054e6769",
+     "68475c1f711b0418d23ca0cc6ebbee2017d9dcad2fed80934194d4fea2e7945c",
+     "702e613ced1137abc999b282c01bd3d260cc4420adebd58d9a4659f7da50b87a",
+     "72da742d145173de6a7162b44d393897d04fc51a576990015f25780f2c76b7b6",
+     "962ac06b4da51d1cbeb09bdac0851547daa247e207714efaa86bbdb25196d313",
+     "a8645c474bfafe28d19112c59135b360867820da7c6a525228c0cdf6f49a5a33",
+     "c55f54b17bb59dd6947fc087aceea7295d097aa445fd52d538bf13c6d97bc62b",
+     "c8ae974de4f030d7c7f49aaa0f1ab5951b730d944e624eeebbaf2ebe2e889145",
+     "d1e7d3970338f67a77ae191a975a3755e251c8c9b027be3667cd1c0ab7421269",
+     "d936901bd75929ca326e505afa343316ae3c504443268a85488c4fadf46c7710",
+     "d961b0351c746587dc778cf7a2ced580fe1f4e680fc02538df339f7e9f2bc282",
+     "fd2f4b360d66bf1e92e071f32ebaa2f257c221912ec311357130d39726619095"
+    ],
+    "state_prefix_digest": "df4cf52a8ccc74b1f3cd67d45b4de13037458fe3f3b3cbab646063efcdf8fd7c",
+    "state_prefix_steps": 213,
+    "state_steps": 2882
+   },
+   "2010131194.C2.B.r1": {
+    "class": "deterministic",
+    "expected_wall_seconds": 7.225,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "b9ce1d9116b98fb788f61d396712d59a0b3311b0315419e797d9a5a0c5516725"
+      ],
+      "trace_prefix_digest": "75731d99f8f3e09d4c03a68917b69a0a8b1c5fd4fdf4eb2d6838374a58c25a8d",
+      "trace_prefix_steps": 1801
+     },
+     "11": {
+      "trace_chains": [
+       "67dad9c5bfc644077034713502123463fe0c76c32bd95ccadd2dcb2db829959b"
+      ],
+      "trace_prefix_digest": "df8add8eabe73eed66af1c90641f5debd9415fa21cbd5d754d1c422b6eee1dd9",
+      "trace_prefix_steps": 1801
+     }
+    },
+    "state_chains": [
+     "554ef587d2ce4f0850b8b7c4c2e4074a3ae756c8b2fcd7f6572eda887806f339"
+    ],
+    "state_prefix_digest": "be441a31bc7f66f6b6e7625c019eb23b87d2c307794d883a1fbfd921ab4344a6",
+    "state_prefix_steps": 1802,
+    "state_steps": 1802
+   },
+   "2010131194.C2.C.r1": {
+    "class": "deterministic",
+    "expected_wall_seconds": 7.231,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "b39be7adfe1a3ac6e80a6e936652e3725470b5c8431841c7ed09326e4734f624"
+      ],
+      "trace_prefix_digest": "0b9e4d2916599fcb1668d0de3fe66c0a4a46e0b3029744e16b3c2797107b1421",
+      "trace_prefix_steps": 1801
+     },
+     "11": {
+      "trace_chains": [
+       "67dad9c5bfc644077034713502123463fe0c76c32bd95ccadd2dcb2db829959b"
+      ],
+      "trace_prefix_digest": "df8add8eabe73eed66af1c90641f5debd9415fa21cbd5d754d1c422b6eee1dd9",
+      "trace_prefix_steps": 1801
+     }
+    },
+    "state_chains": [
+     "554ef587d2ce4f0850b8b7c4c2e4074a3ae756c8b2fcd7f6572eda887806f339"
+    ],
+    "state_prefix_digest": "be441a31bc7f66f6b6e7625c019eb23b87d2c307794d883a1fbfd921ab4344a6",
+    "state_prefix_steps": 1802,
+    "state_steps": 1802
+   },
+   "2010211129.C3.B.r1": {
+    "class": "deterministic",
+    "expected_wall_seconds": 14.187,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "62a9bcd50234b3fbaa80b0914ae25de5c60fe608a0c7c7763c3bd3bb3b2df4a1"
+      ],
+      "trace_prefix_digest": "b75caefdf8652f3c143c08bfcee3e4df5c1168ca4a9141babb8faa3c1a33ce8a",
+      "trace_prefix_steps": 1801
+     },
+     "11": {
+      "trace_chains": [
+       "488aaf31fc13f17d1d376b9391e20ed143f23359063f80949095b8afaa9c090e"
+      ],
+      "trace_prefix_digest": "37c4e0dcfbc4edaa9e273a00f92ca3a76271b503801f619b1c3c84b798d207dc",
+      "trace_prefix_steps": 1801
+     }
+    },
+    "state_chains": [
+     "e7b6a1dfbaf23b6996f5aecdbb20885b9042ad9d4d7cb3490f00c4da40984c52"
+    ],
+    "state_prefix_digest": "308d7b9245126cc5c7475da9913176a362e083d46ebc34917bfe5d49a076dfb4",
+    "state_prefix_steps": 1802,
+    "state_steps": 1802
+   },
+   "2010211129.C3.C.r1": {
+    "class": "deterministic",
+    "expected_wall_seconds": 14.193,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "62a9bcd50234b3fbaa80b0914ae25de5c60fe608a0c7c7763c3bd3bb3b2df4a1"
+      ],
+      "trace_prefix_digest": "b75caefdf8652f3c143c08bfcee3e4df5c1168ca4a9141babb8faa3c1a33ce8a",
+      "trace_prefix_steps": 1801
+     },
+     "11": {
+      "trace_chains": [
+       "184fd83fb4dc4ffbc8f1dcf10ff09489a9590b3c6d5f1ab34491f25ff6c0aee8"
+      ],
+      "trace_prefix_digest": "82e7676411af56982b7904c761dd78f8d0b8fc8fcf22c1ed4d0438fb3edd724e",
+      "trace_prefix_steps": 1801
+     }
+    },
+    "state_chains": [
+     "e7b6a1dfbaf23b6996f5aecdbb20885b9042ad9d4d7cb3490f00c4da40984c52"
+    ],
+    "state_prefix_digest": "308d7b9245126cc5c7475da9913176a362e083d46ebc34917bfe5d49a076dfb4",
+    "state_prefix_steps": 1802,
+    "state_steps": 1802
+   },
+   "201033019601.C2.B.r1": {
+    "class": "deterministic",
+    "expected_wall_seconds": 4.952,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "d53723081f8cb47f86da784e6708bc230cdd9cf7f6a0f3fc1ee16814e7d06970"
+      ],
+      "trace_prefix_digest": "ac10a3d49886fb62c527ba9b239b0d0298be042f1a17ce93a2d2e708e862ce47",
+      "trace_prefix_steps": 1001
+     },
+     "11": {
+      "trace_chains": [
+       "fe704c60b5ab76e62af421559418a0e5a08cb0e861fb914ba76485ff4e8b80de"
+      ],
+      "trace_prefix_digest": "3d0461ab9715c49ca771ddca94dbc049b6a5ec71ab7be956f4069aa9050562c7",
+      "trace_prefix_steps": 1001
+     }
+    },
+    "state_chains": [
+     "9e6d38c2cacab4479bb5a646a41e3ae2af1960de6a0f9f16db04dc17f6368e55"
+    ],
+    "state_prefix_digest": "f323d518655bccf22e2f70252d4455beebc5fcee33e2c5541a014ef3d09b2b4e",
+    "state_prefix_steps": 1002,
+    "state_steps": 1002
+   },
+   "201033019601.C2.C.r1": {
+    "class": "deterministic",
+    "expected_wall_seconds": 4.96,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "1e77ef4b5c3ea395bd0f35669b0607f07426e0f1a47924cc4b5ce3d2b054685b"
+      ],
+      "trace_prefix_digest": "b5927c752dcd175cc3959d34a34869b243dacb2a4fa5defdaa7044237305e834",
+      "trace_prefix_steps": 1001
+     },
+     "11": {
+      "trace_chains": [
+       "fe704c60b5ab76e62af421559418a0e5a08cb0e861fb914ba76485ff4e8b80de"
+      ],
+      "trace_prefix_digest": "3d0461ab9715c49ca771ddca94dbc049b6a5ec71ab7be956f4069aa9050562c7",
+      "trace_prefix_steps": 1001
+     }
+    },
+    "state_chains": [
+     "9e6d38c2cacab4479bb5a646a41e3ae2af1960de6a0f9f16db04dc17f6368e55"
+    ],
+    "state_prefix_digest": "f323d518655bccf22e2f70252d4455beebc5fcee33e2c5541a014ef3d09b2b4e",
+    "state_prefix_steps": 1002,
+    "state_steps": 1002
+   },
+   "2010431153.C2.B.r1": {
+    "class": "deterministic",
+    "expected_wall_seconds": 15.198,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "ee1c5caf8c02f56133b4b530e6d0c5dfc6f18ecf967b7e6c9f9c995b0656cf61"
+      ],
+      "trace_prefix_digest": "c9435719433ef6a1c3f67fcd1ffe8a01ab4c5eed637c8b630b3b54ace4f8c934",
+      "trace_prefix_steps": 1801
+     },
+     "11": {
+      "trace_chains": [
+       "e22a3ecd2c2cf1276a1f792155055b28a3d18d766d37579425e1b754eafcf725"
+      ],
+      "trace_prefix_digest": "342fb731a2be220068a2de4a3d4aee728ae99ac431ee1f1d323ccd24af6dfc6c",
+      "trace_prefix_steps": 1801
+     }
+    },
+    "state_chains": [
+     "8169d9dbe99dc6541607ad1b5f54f4acaed4855741baef73539adf2968c8bfa0"
+    ],
+    "state_prefix_digest": "4b33c665017e8c6c830dfbb1664958f668861e2e0d123b3afbd4b08367bf8979",
+    "state_prefix_steps": 1802,
+    "state_steps": 1802
+   },
+   "2010431153.C2.C.r1": {
+    "class": "deterministic",
+    "expected_wall_seconds": 15.161,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "8f8270d83ab845c5a1362ae323ac2b16ac91f8801047bce0d89a26d65a25dac5"
+      ],
+      "trace_prefix_digest": "25411120d8f6b0db4042009929142c336d34950e6da45d4cee0abf16cf569980",
+      "trace_prefix_steps": 1801
+     },
+     "11": {
+      "trace_chains": [
+       "e22a3ecd2c2cf1276a1f792155055b28a3d18d766d37579425e1b754eafcf725"
+      ],
+      "trace_prefix_digest": "342fb731a2be220068a2de4a3d4aee728ae99ac431ee1f1d323ccd24af6dfc6c",
+      "trace_prefix_steps": 1801
+     }
+    },
+    "state_chains": [
+     "8169d9dbe99dc6541607ad1b5f54f4acaed4855741baef73539adf2968c8bfa0"
+    ],
+    "state_prefix_digest": "4b33c665017e8c6c830dfbb1664958f668861e2e0d123b3afbd4b08367bf8979",
+    "state_prefix_steps": 1802,
+    "state_steps": 1802
+   },
+   "2120531121.C1.B.r1": {
+    "class": "stochastic",
+    "expected_wall_seconds": 73.558,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "1423eca0004c3cb4b360dacbb2efde9695d4a7b40c40f9dbe8f14f668d70721e",
+       "2914578efd1c1c0078f5ac8b5a4dcfe2ba6d0732a27c3e61600ed2ac2c7bc891",
+       "32e4c69d1b494f907f23e68f8e8c492734e45b81ef15f71936ffbda626336296",
+       "3464c870837411824c19bbb7e11458ba474bc040ac62286244875f04dfc59a8b",
+       "441b06862d507cc73c5646c26ca98a51f5edcb61a36545c1fb29983a86bff914",
+       "4f1372348cbf5a2d5d668ca71fcd1074101d796390c6c7ba8a5aa4da07bc1ff0",
+       "7c793ba61b566f19dd33b64f4a9209b8dd18fb579e666290ab89e40d51f487b3",
+       "7ed8639f158dcdf5863dff281016e8755f4c365e91e6d2f0580ed45ee8b99422",
+       "85d09948a579d56511c3afe0bbb1c3ce9da2740075726a0acd39e52968a272b0",
+       "b2c36288d5d174dbf47184791fd02b4953625295107ea2dec4a8498307c06361",
+       "eb2165042f806a0dcbcdf642cf416e53244619432fbc3b945ffb5f1eac4bdba5",
+       "eb855139ddac97a9daa004960f62f1514502cfcaaf34cd09a90beace367fca4b",
+       "edee06c929edff58d79ead8833317b4723ae8eaab98b927334ab7be1b2609e24",
+       "f8454a80e1f5937cc8102f0b9cfe1ae4e1146e24d58ce7b2b68f38798dad4fa4",
+       "f9af26c8806de44cc46f4c6ca9b7a917526f804f2a63a5e16b1e8281225b3547"
+      ],
+      "trace_prefix_digest": "2a571e7b7c677fcf026390de4388b0b0b38aed845d2f05fad63558a5483f6a3d",
+      "trace_prefix_steps": 211
+     },
+     "11": {
+      "trace_chains": [
+       "1d31216640fc198bd719ad4ae8d6ef3bc45f8fb123c7e1e5ef4919628e6f972c",
+       "2ab520c32433570e028cb3e7cbb97bd160d17dab8c3b44ef1ae5fb30787c1939",
+       "2ca4d855fae7bf571a98b9e17bc427af2b5e2cee1a043fd3c8209fdbd93e68a8",
+       "45896dab563750c65e422b3a0f8135bb7f756c22c92775193a1d4912e65e3c75",
+       "6077a03c5153410b5fd15bbadc2597d001ab3d62fe87257588d509a5f82dbd09",
+       "60a7926d4e336ebb4a79127bb33e4e4ec1a3dff7e5eb0115a8bf7c0070b1e21c",
+       "63366f4252304fbc04278492aac76dc9f81c7c2e8ed000ec4495ba978504a2a5",
+       "74bf87e20ed7f630e8afe4ee807ab28ea7bd7c069121defd82fac59f2ba52ba4",
+       "840ecfdfa9e322f4c8d7d83acd26b01fc5c4e1e890b6279eee647234b8adb114",
+       "91f4ec0131e978540f80c0baa9324dc53fa489cc989f61ff9f422ed4a4a5b077",
+       "9e9a2b4071a50f098dec51121c085d4960a2dfa1e8f59792421b9dfb83b18028",
+       "a1fdc33bc866c22102afe306b215a289ef2efcf78d5cf950345da64e2538f1c1",
+       "bac46c48daee18e4839ac6b4854836a8eacb688f8500c24bbdb0266e1fdc10a6",
+       "da43ceaf08dc378e00ff02813794a60e6ccc841cce94f7da605ed876f4aa9d9b",
+       "e6b8cd613714902d577a45bfa5fc835c52842d916be1fe6b3b66bcdb9307fbda"
+      ],
+      "trace_prefix_digest": "8e0bd4bae6855e08cd06bea0d6d1c9a5fc0c342e9a072db797494677f390f109",
+      "trace_prefix_steps": 137
+     }
+    },
+    "state_chains": [
+     "0f65d980dca9b559b352a49f6841331189d1e0be0fb7e94833e394b252ee2144",
+     "216a94f6117b48523ba0394f638aafafee4230a3d4cc668640eb6570447a0caa",
+     "22657f2b1f219efd33d1ae91438625fe5e331ee2f330d41831c0832da19596c9",
+     "3b9906570da24fbb7f3bf419d9aa4409e9926ed736cba7898ba844efcd5656c0",
+     "4876efca36b0a7f4d6ed0f5bf3e9999a15d24e60eb456d8893526c19cbedebc0",
+     "5a916920df8622a16907d4990322531861cd50147e608e3a4a7761f1289618c1",
+     "6c238994846b19532075192392e315d086ffa0ee6384fe03db8b9a4823f42185",
+     "91c542d1de0c28b937b5c66f9d0e5c7e9f15a5ec879a3f5cd6b39c8664acc2be",
+     "9d85bcb73ce084015f44b78ae131882d2d9928586df23b7fdd52c036fc3b73a0",
+     "bdb65eff3c9f04b4d060d4d5ebf95ad84d5c6f426427445ed4643304be016a8c",
+     "c17d590e1c1fe24077cf7b7f17469664730fdd5ec0231ae6032e52100550f056",
+     "dd737c6ec6e919a8d01221c640e40ac3ccc42da9490c343f1b1e407b68ac9db0",
+     "ddad2b888b3fc3461b39db8b7ea0c0bc12c29efe8740e05bc7751b305403a7f4",
+     "f555d0f9e0c9ec1a962425be628d26ea488536ac45963179a20b619fd84385e1",
+     "fac1ce6f2e3ea11d3fee18c3f6e5a093f9e43cf0fefe33366a44ebb160cc452c"
+    ],
+    "state_prefix_digest": "c6477dfc1d1e42e71bf08cec22cda33bfcc7bfc985bdce278e81562e74b30c8d",
+    "state_prefix_steps": 137,
+    "state_steps": 2882
+   },
+   "2120531121.C1.C.r1": {
+    "class": "stochastic",
+    "expected_wall_seconds": 73.179,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "040abb93fabbb7a0afa4946fd278947e26fe22f7b5fec952178311d248dafc14",
+       "1555c663f035110f36432c8a4d6a7e8b0b83de3b29f8b0b7d5f892c6fa5e2c91",
+       "15ec57ab5ee3fa964590c67a7aea5b5817c3cbd24e2ff26374008fd9e36993ae",
+       "2c73a2ff56c7f035a49c19750e17919387ebe44b7e835fa6c30fd2ea98b7f1fa",
+       "3a7614b58c1548d9d5bc736bb24030b294b019325be197e0a1c1ef8bf43849be",
+       "400d3c5744dcdf4fa64183f392285100537206384992d4038e189956d47a3263",
+       "5581944fdf1af37ffd80a1740cc0c4caa7418f1ce735ed23647db02ca33ce3f6",
+       "586b3d0dde90bcd8c2d8c1e058e60e2800b7da27f10efd1b19baf44ab0ef0cab",
+       "65374e4e5c40660390c8ca4e6dbcda04f49864b4b54ad45826fc563c7dfaf188",
+       "7d60dde191913103b7c8cf1ab864c1f29e389540ca2350355763bb39603aef5e",
+       "89e7a536d607a0f0b21305b25d5b0b3ebda09e6496b8bbbcf4bcbc606d2d8cd8",
+       "907bf8a332bac115fde2fba5db63f1e69afacebd4921cfcee7d5485847e40946",
+       "b480aa41b0dd530e9db4745120be0853915f85f378b64d756d355e7e753f84f2",
+       "d07b47e8f7e874d99d077facc74582d09be04b24d1792903c86402e108404509",
+       "fc873a3a1dcd032cd572f2bd9bdbad4f96a7c3c33d97078def289d955093d372"
+      ],
+      "trace_prefix_digest": "748d64b5d0b5de555003584d2b003fe22bdce9575340c566c5b87151bc44aa9d",
+      "trace_prefix_steps": 211
+     },
+     "11": {
+      "trace_chains": [
+       "076eb3ea33adc0500bfbd181289fbe5b4a786abdddd5c68b2020e93a903d7498",
+       "0c1644b61dca56af0a9e260ad7ac0c603fe467e0a635e4b396595a07613e65b4",
+       "291bbb86acc4b0f9e4e571ab22f9077c37fa83b37fa00f4ba23af14b37d833fd",
+       "2d122c018a47134f7ae96bdc5c02babfd183b03472474b7cc2564d002d043ad3",
+       "2d952f23d1fb31830af2249d1124eceedc0c3c96eed658bd24769128660c6a48",
+       "46697fba42f3c7cd707efda76fa0f3d261eb42934bf62e7762d41f2ff15fbc7f",
+       "4dcc0ba69884587b0062dcfacf4e9bc78c49f1538cb7ab0bdbef85db3acab1bc",
+       "58c58303d715ed43bee99e4465c79b64fa7b7176b84069b3380a9f10a521d650",
+       "5b5c63edd4945e4b1b6da63c6e0456b51110dbb2b9c2cedccf6d5435e8da6c7c",
+       "668a6fddbcf02ea918c3150157a53d27775f84fc12836338b9ea828dd5ae9a75",
+       "6ee042dd67c35a409581b56ca99ce8196b70f8294d52b3b6dd7ef64c0840f882",
+       "a2e7c2868cd2d59ecb03d80fb1c5610b5d9323bf0eac81ecf3c8e4154c2eea4d",
+       "afc92aa934c2e93122b573e9e2a561c21ca3627ba4c536c8d56de598e9725f79",
+       "bd47f503c13ee1930a57b687b793e86901eb1b4507bde9266841150bcbafdc90",
+       "da86749734280d61c51038e562009b8e781ad8b84c66447677c7221b9031403d"
+      ],
+      "trace_prefix_digest": "e2f7a667e1644d5a7e8ad1d042924d0fcf60d61595b0b9e9496d2fbd6be22fe9",
+      "trace_prefix_steps": 137
+     }
+    },
+    "state_chains": [
+     "019c524a93f53329f0e03a573f0f72e703dbcd7fcc1ab1bffba5685dafe54e7a",
+     "243a9e2d4a24a42714b4e0d21cd9ada3000be2be758229905fc5d3e70abbf4a3",
+     "40c126e9d80b6d302fa96d22cfc9da9ee5cc0f96ca99407741fb4629a1d5d9af",
+     "41d5f78e951fe984062f90b3e1b1fd0cf707d2b2c39f62b4b4864206f65da8a8",
+     "586bae38d394b3bd1bdc24873d9cde5146e0303db4e4d6db96d1b6df8a5f79f9",
+     "5926fceee79e4613c4af6d6747bd3b9b8eed709926c2a5a79728b6412120ce4b",
+     "75429a6b46c26f83db9ac72df1300d98b00d5c7085edea094b58876a51b9aa0d",
+     "8936364402397ee3e07828fb851b97ed7c23a5a3f04206cdb2cd698a9e42d85d",
+     "96c354c9de04e7e3925cc217b0a4b5ad106a4376172cc030c7e93076d54db673",
+     "af710c93be5d233f8eec7855b2ed40ee60da52c51c3e42bfe81a9146e860a857",
+     "cc50cf17f73d7dbe5b3762b0e300b94d4e1daa597b9713b8f6cec606342536cd",
+     "d0d17d89cffd9167385174e3542f7ff2bf4fe1053597f638b830dddd4a454ae5",
+     "dd7c1b3d5cf008977956a09e648934f4fc5057bace0a99834f4e5692bc44aa85",
+     "e9fa7da3ccee8ceb60e53589761df78b6ea4a90845be3f4a31f8aaef2ca4b201",
+     "fac74d488c82713cbbc882b6c46ebc257f54b35462eede5e5ef9d5b19a5c8882"
+    ],
+    "state_prefix_digest": "c6477dfc1d1e42e71bf08cec22cda33bfcc7bfc985bdce278e81562e74b30c8d",
+    "state_prefix_steps": 137,
+    "state_steps": 2882
+   },
+   "2130511121.C3.B.r1": {
+    "class": "stochastic",
+    "expected_wall_seconds": 190.964,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "118e01e441c55ab7d2d42e57695cedabcd7a4309b7980a4894fdf494efd719e0",
+       "23839f17fea508923ed5cf33da3d06e7d4a4284090b993a13fcafb70cb63153d",
+       "84a31ddf0b02caa5749c4757c5cc99273408bd7e96a7535cb60a3d4ecc0959ea",
+       "902988f7cfa031ee11ec11e3791175bea0981dd9c0e7be48dacf870c07884212",
+       "97ee63902249f79bae6b9529ab941d96fe6fbe81b573b1795669749b92526ed3",
+       "a8480cbe84ebc3c37bcf46204843420067045a9b8194ca0c3a46ef78513b6d1e",
+       "b2149f28ccc590748c8806f95246fdf677cb8f5b1350d08ea90f3386f66a276f",
+       "be44397630116c815f540bc0c6030291bc35b9f7d259f257004bbfde106ecdcc",
+       "cb7ad2bc7f2202712e0a4fe3cf2fb322e322793c5b134ffd34913a6456f84a07"
+      ],
+      "trace_prefix_digest": "85874f67e260179d1d25f1e54e428ce2f4965d39b8d5c80d83de54d1914fe6d5",
+      "trace_prefix_steps": 526
+     },
+     "11": {
+      "trace_chains": [
+       "164d12867122213e3184f872a54490349254cd3dfea9e521e3466d321f533539",
+       "25b28b184e8424d37e511545222ce2e8c486304834f8ac3da828c5590bce9ceb",
+       "29d96070915f4df70e3d1ca5d0fb75f6e172883f9ef5754b3e31a25d0a774b4a",
+       "60358086f35aa65f4b387f2f70b5c31a2314d08e15b7392692f2b94f21627f1d",
+       "67572c0733025b00511e85d5adad64362eb39aec3f8ced64709d94ce6fbab7ab",
+       "70963dce3e5e22ee0571f636748ec4d8940a0738db5590fb1acab5ec2ef73247",
+       "75e34eeed86c304b37ef89aaf9df5c13a997f0197d40d463ba7bc3d2b5e5f390",
+       "7ff0c3982b5198141cfb61f459e36f382a1b18bbef92c946a67a5ad485b76c4c",
+       "8f3cc0e0637d44d067505bc6cae3ed4dbad3bfa24dfb44ea6616b300c6db65e4",
+       "a50fc82e31fabfbb2105e8fd89d29613001ab785e25b5b285482d078e5cc8147",
+       "b44d364d7208489ec8934802d96d7f62b58e12c6ec0efaab01f7d6f13096fcbc",
+       "ff8c8e4928a3a7df6a1927a96596ff1ed6cf218ce73a89c034502e3473529af8"
+      ],
+      "trace_prefix_digest": "e31bd876dde637426302299f9770a4862e15b975d1dd56df2bf0f7402bbae5fc",
+      "trace_prefix_steps": 600
+     }
+    },
+    "state_chains": [
+     "04369625cc73c01dfe47058380aa2acc4b41033e9cef8fa49e56cdfa90e6e7bc",
+     "1016b9ba64957c1f91f0044999d478cd5a42b7d952d89ad58701231646c68256",
+     "17ac811b93e0bf8ec44fa464b7bcde96d61809d1c0a75b93cae2fa9d51503406",
+     "2bd076e92b8ddf1512690a4f51189b03819c6edc8f7032b84570a336d752e09d",
+     "4c4b71b39478cda479916517cd081e7c08f02407e73906c7ccc42184be809144",
+     "6740c8e1cdf866f80e846d0c3dfa8d11dff1b584d4fd84d68c4b1db857f420f0",
+     "6c3a73526817e46ec0f22f2e7753219bd40696984d4ff157ef446711541344a9",
+     "88210411b65c5f8120f3cf2e84feeb1f4c2f7604cc14569b9cc5c8a9523ebd16",
+     "a0fdc992151a29d05d3806c3af49bb8789c91d54366db34ad2f1a38bac9813af",
+     "a3dd60e7e795f1166b9a99186587bb6ea3e54bff599372b8612ec58cd819778e",
+     "a61d6f23259f542576352684792b52851fe475443a27fce33904d84e78fa3707",
+     "b26d80ff65d08f0c61d04e6dc8a0cc1198d98b7bfc39907fd3e9e5e0c2b8e7f6",
+     "bef55c73fc1b9916bc8fb92c8ed9ea4139e60419a3ef4fdbd11e76022c96d805",
+     "eeee79b2f30b67ccb504ce9760732dbd8e25d7350f89ab06babe638ba41e0052",
+     "f84da4709a705ab829a354e51f97b8aa7c5e80edc0754e3ae4a29abde2ed081a"
+    ],
+    "state_prefix_digest": "b6a80b54d1ecb1cd2fee6411cc4807f1ff7c64f2a799b5f66b9e2c94a6dbacc3",
+    "state_prefix_steps": 526,
+    "state_steps": 2882
+   },
+   "2130511121.C3.C.r1": {
+    "class": "stochastic",
+    "expected_wall_seconds": 191.115,
+    "repetitions": 15,
+    "seats": {
+     "1": {
+      "trace_chains": [
+       "0067e5b0ea040fa4772f68d1652906d70c3b243179d8dd2109bbb58d11072380",
+       "1136333dc78f6cae4c251e8effeab5dab6dd6a945bf0e1bde21d09b6a257ba4b",
+       "51b725df641efb5ae5e5fe0b88c39ab05743976f64e7c7e9a3bb6e05b76f2113",
+       "8286df51665ca3c9b2141ed0b593cfc5b660ab71d51e3855194f7b91fdb9a3e8",
+       "b2149f28ccc590748c8806f95246fdf677cb8f5b1350d08ea90f3386f66a276f",
+       "be44397630116c815f540bc0c6030291bc35b9f7d259f257004bbfde106ecdcc",
+       "c97576b0e6627307b0f9525d5abaf5345b736c1321de503f4e97609f42ef2321",
+       "cb7ad2bc7f2202712e0a4fe3cf2fb322e322793c5b134ffd34913a6456f84a07"
+      ],
+      "trace_prefix_digest": "85874f67e260179d1d25f1e54e428ce2f4965d39b8d5c80d83de54d1914fe6d5",
+      "trace_prefix_steps": 526
+     },
+     "11": {
+      "trace_chains": [
+       "399c1ea6e5c4113daea2177865a012df42d2d7f4ac8d369e0fec3ce2c208f8bd",
+       "74e20291c2d983c1438283ef976b8197377ed573e2e630a1056c23e78b0a0504",
+       "97d1504f9e94ba213afc83444073a7d1a0555fcd85d8a9556dee39277df4fdba",
+       "99aecf014f793b70a554dd8543a3aa792652f2f7dfaf60dc2f13b6763309ecdf",
+       "b5af9b55259c94573dc30422f7c23ddbf01ea8f0919da0498f3a7616298110fc",
+       "e69af712f51e66a4046ba26e1e349236d09f30b148df57df9a6a0069c3b9f7e1",
+       "ebf2a5c65701361d47b57ea73ae0a117c73b8bf101913fe59be05dda2dd79a42"
+      ],
+      "trace_prefix_digest": "ddbd92efc813513ff2c35b224d96a13881d11b51f7b43e7ea4691f937f9d82f4",
+      "trace_prefix_steps": 600
+     }
+    },
+    "state_chains": [
+     "2358a145188245064b65a667741b14ffcbbccc4cbeb6e4b4fd1607420d2023b8",
+     "2544ba9a73c0f31796a820ed9005ec017a911e509740722014a73a790e93102f",
+     "2b67e47aa4eb5070f28b4783f6bcad8080066b864e09615d93e30669df48f9b4",
+     "38d36d330e95073a784d7cacc8fc2cbb64f78a64a19de478de6f119547633d51",
+     "3c11634f4edee6ba01497eab438d0cf6338488035dac63525267e7e2a1bb9900",
+     "44d91c842d3566f42caf95eaf82de4d3500f318b11f01b31952d299b000a1af2",
+     "4eb1cdec41b8959d8c2c6004a104a163a44db00057a2645ccaf552a7c9f63698",
+     "68ccb8f36c77ab67ee057a947ba17f0986e776d2b191604baed5f149e8a432bd",
+     "6c823e8ea6748854f0f909b7691990ab8ef13df8c6a9beff8a9a3862590bfe90",
+     "6cb99efa4576fd8681230330b01239d73532f242c1330e0bb2806a80868a37d2",
+     "840cf7b828d6d89c00508831a815e146e569cf8dafdca5751c2c80508bde048d",
+     "9395520cd1b3078fd7fe5d577ed4a1ec1f31b68a25ee64a3c046e39629af3d4d",
+     "a26fa9925f1beae82b4fcc409d7406eece17565adc48514db34afdcab63cfd40",
+     "d05ba6c64066209f6f86fff1807a0b35527316e2d4c6a700ae28d6e7291abd48",
+     "d0ab08416c4c4c32d4340bd469f4f115175e11e331483587d2551848598e2527"
+    ],
+    "state_prefix_digest": "b6a80b54d1ecb1cd2fee6411cc4807f1ff7c64f2a799b5f66b9e2c94a6dbacc3",
+    "state_prefix_steps": 526,
+    "state_steps": 2882
+   }
+  },
+  "runs": [
+   {
+    "path": "the existing serial loop of scripts/run_evaluation.sh",
+    "run": "serial",
+    "workers": 1
+   },
+   {
+    "path": "scripts/run_evaluation.sh --workers N (the production scheduler)",
+    "run": "parallel",
+    "workers": "the recommended worker count"
+   }
+  ]
+ },
+ "etiquette": {
+  "maximum_others_cpus_before": 16.0,
+  "minimum_idle_logical_cpus": 16,
+  "pre_tier_window_seconds": 30,
+  "recheck_seconds": 300,
+  "rechecks": 6
+ },
+ "expected_writable": [
+  ".session.lock",
+  ".ledger.lock",
+  "usage-ledger.jsonl"
+ ],
+ "game_timeout_seconds": 2100,
+ "gpu": "The games run with CUDA_VISIBLE_DEVICES empty; the qualification records whether any game maps a GPU library or appears as a GPU compute process. No GPU work is added.",
+ "independence": [
+  "Deterministic configurations: the state chain and every seat's trace chain equal the serial reference (identical in all 15 serial repetitions).",
+  "Stochastic configurations: the state digests and every seat's trace digests up to the serial common prefix (the earliest step at which any two serial repetitions differ) equal the serial prefix.",
+  "No two games of one stochastic configuration in a tier have the same state chain, and none equals a serial repetition's state chain: identical stochastic trajectories would mean the engine's randomness is shared or derived from the start time, so concurrent games would not be independent."
+ ],
+ "inputs": {
+  "engine": {
+   "sdk_archive_sha256": "ed4c9fc03cb6eb1e64821d2efbc61024d90735e3dc489dc7ffe0515e653ea725",
+   "version": "4.1.0"
+  },
+  "experiment": "baseline-v2-candidate-shoot-target-reservation",
+  "manifest_sha256": "01c9c9675af4b0859fc55e54a5dc86513b624208bf13131e7b510b87a3122afd",
+  "players": [
+   {
+    "faction": 0,
+    "role": 1,
+    "seat": 1,
+    "user_id": 0,
+    "user_name": "demo"
+   },
+   {
+    "faction": 1,
+    "role": 1,
+    "seat": 11,
+    "user_id": 0,
+    "user_name": "demo"
+   }
+  ],
+  "randomness": {
+   "global_seed": 20260929,
+   "procedure": "each game runs in a fresh process; the harness seeds Python's and NumPy's global generators with global_seed before the engine is constructed and records whether the engine consumes them; no undocumented engine interface is used",
+   "python_hash_seed": 0
+  },
+  "scenarios": [
+   {
+    "alternates": [
+     "2120511121",
+     "2130511421",
+     "2230531121",
+     "2230531221",
+     "2130511321",
+     "2130511121",
+     "2130511221"
+    ],
+    "blue": 26,
+    "cities": 5,
+    "inputs_sha256": {
+     "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+     "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+     "scenario": "a4536a361ac9dd879ad326d8c5f40583433c3299f5184b4af06ddb110ab297cf",
+     "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+    },
+    "map_id": "21",
+    "max_time": 2880,
+    "operators": 54,
+    "red": 28,
+    "rule": "S2 fewest operators on map 21",
+    "scenario_id": "2120531121"
+   },
+   {
+    "alternates": [],
+    "blue": 5,
+    "cities": 2,
+    "inputs_sha256": {
+     "basic": "0f4e4d65ec6273a0747744d60a146f57c32cd505c53a8c4863043dec28548355",
+     "cost": "2a3fc75e9822eb2995dd9f3cab51dc049ec5748daecbd0fd894fea40217ddd27",
+     "scenario": "cbf9fc185b918cba3a2fb84c1edf420f59ebd7668c6acd6f30ffa66605d7e526",
+     "see": "5f456a93999d346eeb9784b711d0140423d5ec4c0e64c819911f90d8a13f6b38"
+    },
+    "map_id": "29",
+    "max_time": 1800,
+    "operators": 11,
+    "red": 6,
+    "rule": "S2 fewest operators on map 29",
+    "scenario_id": "2010211129"
+   },
+   {
+    "alternates": [
+     "2010441253",
+     "2110431153",
+     "2110431253",
+     "2110431353",
+     "2110431453",
+     "2110431553",
+     "2110431653",
+     "2110431753"
+    ],
+    "blue": 6,
+    "cities": 2,
+    "inputs_sha256": {
+     "basic": "9d81939421d31ab9d7a158008c0a85283a94cfc78f619336322ae3d3f15d2c4d",
+     "cost": "46f4d73bcb69ec2cb6d4accf6fa8109eb4a0c23042e0cb5a6c88b0b3168c9614",
+     "scenario": "fdf73f5fc7405cd55fd410255e3cd7268096c5548743deff5954e49b38e06554",
+     "see": "7aa1d041780747504a8a486b86169adac116b242262d725f4ad80539758d15f3"
+    },
+    "map_id": "53",
+    "max_time": 1800,
+    "operators": 12,
+    "red": 6,
+    "rule": "S2 fewest operators on map 53",
+    "scenario_id": "2010431153"
+   },
+   {
+    "alternates": [
+     "1930631192",
+     "2230631192"
+    ],
+    "blue": 6,
+    "cities": 2,
+    "inputs_sha256": {
+     "basic": "8d4bf628205d08abfcc87b0672142e0e1e0b86dd205a6611fc1034de4c12f27a",
+     "cost": "b7a6ffb937be31a76ad61426a64212c90ee8c3b378eb04658162ee5825310c3c",
+     "scenario": "4a44b94fba790b4535e03c1991bcc81253d0d61a228214c0c6b00caf0b0d8022",
+     "see": "c8e346d02bcc338a96894b9e4e1ed8d09eed4b15a9baeca96d17c2edcc3eaa19"
+    },
+    "map_id": "92",
+    "max_time": 1800,
+    "operators": 12,
+    "red": 6,
+    "rule": "S2 fewest operators on map 92",
+    "scenario_id": "1910631192"
+   },
+   {
+    "alternates": [
+     "2010141294",
+     "2120131194",
+     "2120131294",
+     "2030111194",
+     "2140131194"
+    ],
+    "blue": 2,
+    "cities": 1,
+    "inputs_sha256": {
+     "basic": "dde30d0a9ffc77ee5a8ad301692d929126b34c581ecb64dde96ffcb2b3cbcc03",
+     "cost": "c447e2b130c25aa2595e80cdd5dbe8e8f117196d544507f1897f776a88d4cfbb",
+     "scenario": "103954f4ca5032150de1c124ea04fe4d47c7a0f72a290ace82bd6fb5b669bbec",
+     "see": "a01d2ab2095ecdd2841651c90c757db6c12bae72d6759526914ad2220f7d975c"
+    },
+    "map_id": "94",
+    "max_time": 1800,
+    "operators": 4,
+    "red": 2,
+    "rule": "S2 fewest operators on map 94",
+    "scenario_id": "2010131194"
+   },
+   {
+    "alternates": [
+     "2020331196",
+     "2120331196",
+     "2030331196",
+     "2030341296",
+     "2130331196",
+     "2130331296",
+     "2230331196",
+     "2140331196"
+    ],
+    "blue": 26,
+    "cities": 5,
+    "inputs_sha256": {
+     "basic": "206c437995216aed6dd14a310d3a2ada0f7148dd8d40e4ec52c900b224d06f15",
+     "cost": "b136cc86cae77d53482f2b2ff3df0087278d51628e1a4cf453307d8da008997f",
+     "scenario": "a15d3b3bf499694d93a981511c16b5c1c9247487ac1cf1d88b2bf1bd2c75c1b1",
+     "see": "e69b9e85d77cc8de4600c42b48939ea625236a7a3b705090fa9b3745775009e2"
+    },
+    "map_id": "96",
+    "max_time": 2880,
+    "operators": 52,
+    "red": 26,
+    "rule": "S2 fewest operators on map 96",
+    "scenario_id": "1930331196"
+   },
+   {
+    "alternates": [
+     "201033029601",
+     "201033039601",
+     "211033019601"
+    ],
+    "blue": 1,
+    "cities": 1,
+    "inputs_sha256": {
+     "basic": "62a5645d213ca6927e527761a2dc077ddf56bc400d7a9018e9180fff6adc2354",
+     "cost": "c187131021173b63088dd655c661809b60980c0e2159374c9f32d3d749d0b865",
+     "scenario": "e24d43d94233ac4c87eccbb47f5f88a4e37ac8e0d5a00f461a2280efcd2b59df",
+     "see": "549a763b0d90c699455f4534e0586d67dae62407357353edc6edd6ad90459d7d"
+    },
+    "map_id": "9601",
+    "max_time": 1000,
+    "operators": 2,
+    "red": 1,
+    "rule": "S2 fewest operators on map 9601",
+    "scenario_id": "201033019601"
+   },
+   {
+    "alternates": [
+     "2130511221",
+     "2140131194",
+     "2140331196",
+     "2130511321",
+     "1930631192",
+     "2030331196",
+     "2030341296",
+     "2130331196",
+     "2130331296",
+     "2230331196",
+     "2230531221",
+     "2230631192",
+     "2030111194",
+     "2130511421",
+     "2230531121",
+     "2120131294",
+     "2120511121",
+     "2120131194",
+     "2120331196",
+     "2020331196",
+     "2110431753",
+     "2010441253",
+     "2110431153",
+     "2110431253",
+     "2110431353",
+     "2110431453",
+     "2110431553",
+     "2110431653",
+     "201033029601",
+     "201033039601",
+     "211033019601",
+     "2010141294"
+    ],
+    "blue": 44,
+    "cities": 7,
+    "inputs_sha256": {
+     "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+     "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+     "scenario": "9611e334d4fd6f2eda5957a26116bf8ec21c3e04754ed349d9a0fa0e9dc68070",
+     "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+    },
+    "map_id": "21",
+    "max_time": 2880,
+    "operators": 89,
+    "red": 45,
+    "rule": "S3 largest force",
+    "scenario_id": "2130511121"
+   }
+  ]
+ },
+ "isolation": "Each game is one process started like scripts/run_evaluation.sh starts one: an environment holding only HOME (the installation's persistent home/, shared, as ENGINE_INSTALL.md requires), PATH, LANG=C.UTF-8, PYTHONNOUSERSITE=1, PYTHONDONTWRITEBYTECODE=1, PYTHONHASHSEED=0, CUDA_VISIBLE_DEVICES empty, PYTHONPATH (installation site/ then the repository's src/) and TMPDIR; a working directory and a TMPDIR of its own, both empty and checked empty afterwards; a new session (process group); output to its own log; the harness seeds Python's and NumPy's global generators as the registered evaluations do. All games share the one persistent installation and its existing authentication state; nothing is copied, reset, restored or regenerated.",
+ "kill_after_seconds": 30,
+ "known_refusal_classes": [
+  [
+   1,
+   404,
+   "CantMoveKeptPeople"
+  ],
+  [
+   2,
+   203,
+   "CantControlDiedOperator"
+  ],
+  [
+   2,
+   516,
+   "CantShootToDiedBop"
+  ],
+  [
+   5,
+   203,
+   "CantControlDiedOperator"
+  ]
+ ],
+ "measurements": [
+  "throughput = games / tier makespan (first launch to last exit); speedup(N) = throughput(N) / throughput(w01); parallel efficiency(N) = speedup(N) / N",
+  "per game (from wait4): CPU user and system seconds, peak resident set, voluntary and involuntary context switches, block input and output; process wall time; the record's in-game wall time",
+  "per game (self-report at the end): CPU seconds per thread, peak resident set, I/O counters, GC collection counts per generation, mapped GPU, OpenMP and OpenBLAS libraries, open descriptors",
+  "every second: host CPU time (busy/total), load average, running processes, context switches, available memory, and per running game CPU time, threads, resident set and context switches; descriptors every 5 s; GPU utilisation every 10 s, reduced to per-GPU utilisation and whether any of our processes uses a GPU",
+  "decision latency of the policy seats: p50, p95, p99, maximum, decisions over 100 ms, 400 ms and 1 s"
+ ],
+ "optional_efficiency": 0.85,
+ "optional_tiers": [
+  {
+   "blocks": 12,
+   "role": "optional: only if w16 met every criterion with parallel efficiency of at least 0.85",
+   "session_mode": "shared",
+   "tier": "w24",
+   "workers": 24
+  },
+  {
+   "blocks": 16,
+   "role": "optional: only if w24 met every criterion with parallel efficiency of at least 0.85",
+   "session_mode": "shared",
+   "tier": "w32",
+   "workers": 32
+  }
+ ],
+ "plan_id": "concurrency-qualification-1",
+ "policy": {
+  "code_identity": "baseline-v2-candidate-shoot-target-reservation",
+  "golden_trace_chain": "0d16c814c03909ed89303a776b276b4cc441cd047450a063329009458654910f",
+  "identity": "baseline-v2",
+  "policy_source": {
+   "files": [
+    "agent.py",
+    "boundary/__init__.py",
+    "boundary/actions.py",
+    "boundary/checks.py",
+    "boundary/errors.py",
+    "boundary/keys.py",
+    "boundary/observation.py",
+    "boundary/profile.py",
+    "boundary/state.py",
+    "boundary/terrain.py",
+    "decision/__init__.py",
+    "decision/candidates.py",
+    "decision/context.py",
+    "decision/gate.py",
+    "decision/policy.py",
+    "decision/routing.py",
+    "decision/semantics.py",
+    "decision/trace.py",
+    "experiments/__init__.py",
+    "experiments/occupy_reservation.py",
+    "experiments/routing_bounded.py",
+    "experiments/shoot_reservation.py"
+   ],
+   "sha256": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
+   "sources": [
+    "agent.py",
+    "boundary",
+    "decision",
+    "experiments/__init__.py",
+    "experiments/occupy_reservation.py",
+    "experiments/routing_bounded.py",
+    "experiments/shoot_reservation.py"
+   ]
+  },
+  "runtime": "baseline-v1-runtime-r1"
+ },
+ "purpose": "diagnostic",
+ "question": "How many engine games can run at once on the persistent installation without violating engine-state integrity, authentication integrity, independence of games, determinism, or ledger and result accounting, and does running them at once raise registered-game throughput?",
+ "queue_rule": "A tier plays its blocks' games in one queue ordered longest first: by descending expected serial wall time of the configuration (the median of its 15 serial shoot-experiment games), then by the configuration's position in the block, then by block number. Game k (1-based) of tier T is cq1.T.kkk.<scenario>.<condition>. Games are dispatched in queue order to the lowest-numbered free worker; batch = (k - 1) div workers.",
+ "recommendation_rule": "A tier is acceptable when it and every lower tier passed every safety and independence check, the engine state and ledger checks passed, speedup >= 1.5, parallel efficiency >= 0.70, decision-latency p99 <= 1.5 x w01's and maximum <= 2 x w01's, our mean CPU use <= 32 logical CPUs and our peak resident memory <= 10% of host memory. Recommend the smallest acceptable worker count whose speedup is at least 0.85 of the largest speedup among acceptable tiers (the throughput knee): RECOMMEND N WORKERS. If every check passed but no tier of two or more workers is acceptable: RETAIN SERIAL EXECUTION. If any safety, independence, engine-state or ledger check failed: CONCURRENCY BLOCKED PENDING MORE EVIDENCE.",
+ "safety_checks": [
+  "every planned game started once, exited 0, and left exactly one record, one log and one started marker",
+  "no record, log or marker path collided (created with exclusive creation; an existing path refuses the game)",
+  "the ledger parses; the tier's sessions are numbered consecutively after the last session before the tier, each has exactly one session-open and one session-close, none was recovered, and no session is unclosed",
+  "each session-open names the game of the record that cites it, with the tier's session mode and worker",
+  "the engine state file's SHA-256, size, mtime and ctime are unchanged across the tier, and every ledger record of the tier carries that hash",
+  "package integrity holds with no added file, and home/ is unchanged",
+  "each game's working directory and TMPDIR are empty after it",
+  "no game shows a contract error, project-gate rejection or replay mismatch",
+  "every factual refusal class is a known baseline-v2 class (the shoot experiment's four)",
+  "no process remained in a game's process group after it exited, and every exit status was captured",
+  "no game process held a writable file outside its record, its log and the installation's lock and ledger files, and none opened an internet socket"
+ ],
+ "schema": "miaosuan-concurrency-qualification-plan/1",
+ "stop_conditions": [
+  "Any failed safety or independence check stops the qualification after the tier: no higher tier runs, nothing is repaired, and the tier is reported as found.",
+  "Any change of the engine state file, any refused session, or any ledger anomaly is an authentication or engine-state anomaly and stops at once (running games of the tier finish; none is started).",
+  "Before each tier the host is sampled for 30 s with none of our games running. The tier starts only if other activity uses at most 16 logical CPUs and at least 16 logical CPUs stay idle after adding the tier's workers; otherwise it rechecks every 300 s up to 6 times and then pauses the qualification.",
+  "A tier during which other activity averaged more than 8 logical CPUs is reported as contended; it is repeated once under a new attempt name, and both attempts are kept."
+ ],
+ "tiers": [
+  {
+   "blocks": 1,
+   "role": "serial control: the current architecture (exclusive session lock, one game at a time)",
+   "session_mode": "exclusive",
+   "tier": "S",
+   "workers": 1
+  },
+  {
+   "blocks": 2,
+   "role": "one worker through the shared-session protocol: the throughput base and the protocol control",
+   "session_mode": "shared",
+   "tier": "w01",
+   "workers": 1
+  },
+  {
+   "blocks": 2,
+   "role": "concurrency tier",
+   "session_mode": "shared",
+   "tier": "w02",
+   "workers": 2
+  },
+  {
+   "blocks": 2,
+   "role": "concurrency tier",
+   "session_mode": "shared",
+   "tier": "w04",
+   "workers": 4
+  },
+  {
+   "blocks": 4,
+   "role": "concurrency tier",
+   "session_mode": "shared",
+   "tier": "w08",
+   "workers": 8
+  },
+  {
+   "blocks": 8,
+   "role": "concurrency tier",
+   "session_mode": "shared",
+   "tier": "w16",
+   "workers": 16
+  }
+ ]
+}
