@@ -1,0 +1,228 @@
+{
+ "baseline": {
+  "identity": "baseline-v2",
+  "policy_source_sha256": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae"
+ },
+ "candidate": {
+  "identity": "baseline-v3-candidate-launcher-dependent-shoot-reservation",
+  "pinned": false,
+  "policy_source_sha256": "6bee7958c52d3d44a699dda7b1f3e9bc92390b885012b1d73d85083a15822d61"
+ },
+ "disposition": "DO NOT PREREGISTER",
+ "faithful": {
+  "D1": {
+   "action_mix_in_changed_decisions": {
+    "baseline": {},
+    "candidate": {}
+   },
+   "baseline_shots": 24,
+   "candidate_shots": 24,
+   "categories": {
+    "C1": 0,
+    "C2": 0,
+    "C3": 0,
+    "C4": 0,
+    "C5": 0,
+    "C6": 0,
+    "C7": 0
+   },
+   "changed": 0,
+   "contract_errors": 0,
+   "decisions": 506,
+   "excluded_options": 0,
+   "gate_rejections": 0,
+   "suppressed_emitted_shots": 0,
+   "unexplained": 0,
+   "units": {
+    "alternate-target": 0,
+    "fallback-move": 0,
+    "fallback-none": 0,
+    "fallback-occupy": 0,
+    "secondary": 0,
+    "unexplained": 0
+   },
+   "units_with_unchanged_selection": 0
+  },
+  "D2": {
+   "action_mix_in_changed_decisions": {
+    "baseline": {},
+    "candidate": {}
+   },
+   "baseline_shots": 432,
+   "candidate_shots": 432,
+   "categories": {
+    "C1": 0,
+    "C2": 0,
+    "C3": 0,
+    "C4": 0,
+    "C5": 0,
+    "C6": 0,
+    "C7": 0
+   },
+   "changed": 0,
+   "contract_errors": 0,
+   "decisions": 33696,
+   "excluded_options": 0,
+   "gate_rejections": 0,
+   "suppressed_emitted_shots": 0,
+   "unexplained": 0,
+   "units": {
+    "alternate-target": 0,
+    "fallback-move": 0,
+    "fallback-none": 0,
+    "fallback-occupy": 0,
+    "secondary": 0,
+    "unexplained": 0
+   },
+   "units_with_unchanged_selection": 0
+  }
+ },
+ "fidelity": {
+  "D1 baseline-v2 exact": 506,
+  "D1 baseline-v2 unchanged by the augmentation": 506,
+  "D1 decisions": 506,
+  "D2 baseline-v0 exact": 33696,
+  "D2 baseline-v2 explained against baseline-v0": 33696,
+  "D2 baseline-v2 unchanged by the augmentation": 33696,
+  "D2 decisions": 33696
+ },
+ "gate": {
+  "G1 no secondary interaction (C6)": true,
+  "G2 nothing unexplained (C7)": true,
+  "G3 every replayable diagnostic H4 refusal suppressed": false,
+  "G4 no contract or gate regression": true,
+  "G5 seat-local observation only": true,
+  "G6 opportunity cost measured": true,
+  "G7 a meaningful A/B question remains": false
+ },
+ "h4": {
+  "diagnostic_events": 12,
+  "faithful_suppressed": 0,
+  "reference_suppressed": 12,
+  "replayable": 12
+ },
+ "information_augmented_reference": {
+  "D1": {
+   "action_mix_in_changed_decisions": {
+    "baseline": {
+     "shoot": 24
+    },
+    "candidate": {
+     "shoot": 12
+    }
+   },
+   "baseline_shots": 24,
+   "candidate_shots": 12,
+   "categories": {
+    "C1": 0,
+    "C2": 0,
+    "C3": 0,
+    "C4": 12,
+    "C5": 0,
+    "C6": 0,
+    "C7": 0
+   },
+   "changed": 12,
+   "contract_errors": 0,
+   "decisions": 506,
+   "excluded_options": 12,
+   "gate_rejections": 0,
+   "reference_o_classes": {
+    "O1": 12
+   },
+   "suppressed_emitted_shots": 12,
+   "unexplained": 0,
+   "units": {
+    "alternate-target": 0,
+    "fallback-move": 0,
+    "fallback-none": 12,
+    "fallback-occupy": 0,
+    "secondary": 0,
+    "unexplained": 0
+   },
+   "units_with_unchanged_selection": 0
+  },
+  "D1_every_step": {
+   "O1": 12,
+   "O1: dependent removed in the step": 12,
+   "O1: dependent shot refused 516": 12,
+   "O2": 14,
+   "O2: dependent removed in the step": 4,
+   "O2: dependent shot accepted, judged": 14,
+   "O2: dependent survived in the step": 10,
+   "exposed shots": 26,
+   "exposed shots, first in step": 26,
+   "launcher_blood_at_step_start": {
+    "1": {
+     "O1": 7
+    },
+    "2": {
+     "O1": 5,
+     "O2": 5
+    },
+    "3": {
+     "O2": 2
+    },
+    "4": {
+     "O2": 7
+    }
+   },
+   "signal_overlap": {
+    "launcher blood at step start": {
+     "values": 4,
+     "values_with_both_outcomes": 1,
+     "values_with_one_outcome": 3
+    },
+    "weapon of the shot at the launcher": {
+     "values": 2,
+     "values_with_both_outcomes": 1,
+     "values_with_one_outcome": 1
+    }
+   },
+   "steps": 92192
+  },
+  "D2": {
+   "action_mix_in_changed_decisions": {
+    "baseline": {
+     "shoot": 8
+    },
+    "candidate": {
+     "shoot": 5
+    }
+   },
+   "baseline_shots": 432,
+   "candidate_shots": 429,
+   "categories": {
+    "C1": 1,
+    "C2": 0,
+    "C3": 0,
+    "C4": 3,
+    "C5": 0,
+    "C6": 0,
+    "C7": 0
+   },
+   "changed": 4,
+   "contract_errors": 0,
+   "decisions": 33696,
+   "excluded_options": 9,
+   "gate_rejections": 0,
+   "reference_o_classes": {
+    "O3": 4
+   },
+   "suppressed_emitted_shots": 4,
+   "unexplained": 0,
+   "units": {
+    "alternate-target": 1,
+    "fallback-move": 0,
+    "fallback-none": 3,
+    "fallback-occupy": 0,
+    "secondary": 0,
+    "unexplained": 0
+   },
+   "units_with_unchanged_selection": 3
+  },
+  "note": "not a candidate: uses relations the seat cannot observe"
+ },
+ "plan_id": "launcher-dependency-counterfactual-1",
+ "schema": "miaosuan-launcher-counterfactual/1"
+}
