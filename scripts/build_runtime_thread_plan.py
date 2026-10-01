@@ -10,7 +10,6 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-import importlib.util
 import json
 import sys
 from pathlib import Path
@@ -30,10 +29,11 @@ MANIFEST = REPO_ROOT / "evaluation" / sx.EXPERIMENT_NAME / "manifest.json"
 
 
 def scheduler_identity() -> str:
-    spec = importlib.util.spec_from_file_location("run_game_pool", REPO_ROOT / "scripts" / "run_game_pool.py")
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module.scheduler_identity()
+    """The qualified production scheduler the runs use: the one the concurrency qualification's equivalence
+    run recorded (the pool's identity at registration; later scheduler revisions get identities of their own)."""
+    results = json.loads((REPO_ROOT / "evaluation" / cq.PLAN_ID / "results.json").read_text(encoding="utf-8"))
+    (identity,) = results["equivalence"]["scheduler"]
+    return identity
 
 
 def build() -> str:
