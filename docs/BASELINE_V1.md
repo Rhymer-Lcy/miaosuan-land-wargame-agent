@@ -56,6 +56,11 @@ Carried over from `baseline-v0` except where the change removed them; material n
   (`docs/BASELINE_V2.md`) allows at most one shot per target in a seat's step.
 * A suppressed unit, like any unit standing on an unheld objective, waits there; once every
   objective is held, all units idle. The no-op rate of unit-steps stays above 0.99.
+
+  > Correction (2026-10-01; text only, the identity and every result are unchanged): "all units idle" is
+  > inaccurate. Engagement comes first in each unit's priority whatever the objectives' state
+  > (`src/miaosuan_agent/decision/policy.py`), so once every objective is held no unit moves or occupies,
+  > but a unit with a listed shoot option still shoots. `docs/BASELINE_V2.md` states it correctly.
 * Movement ignores enemy positions, minefields and line of sight, never changes movement state and
   cannot be redirected once issued; passengers are never unloaded.
 * Rare decisions take 0.4 to 1.1 s in the candidate suite (up to 1.3 s in the `baseline-v0` suite). The
