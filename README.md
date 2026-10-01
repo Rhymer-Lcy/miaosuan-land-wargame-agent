@@ -42,7 +42,10 @@ authorises designing one target-allocation candidate, and nothing was implemente
 (`docs/TARGET_OWNERSHIP_DESIGN.md`) specified that one candidate, `highest-attack-claimant reservation`, for isolated
 single-target collisions only; within that scope 9 of the 14 mismatch groups remain (3 situations in 2 games, all on
 replayed `baseline-v0` states), so on-policy incidence is the missing fact and the next step is a prospective
-prevalence diagnostic of unchanged `baseline-v2`; nothing was implemented or registered.
+prevalence diagnostic of unchanged `baseline-v2`; nothing was implemented or registered. That diagnostic
+(`docs/OWNERSHIP_PREVALENCE_DIAGNOSTIC.md`) was registered and played 360 games, but its registered independence-prefix
+check failed for 9 stochastic games (a supplementary check found no decision differing on identical observed states),
+so it stopped before interpretation: no prevalence is reported and no next-step decision was taken.
 
 ## Third-party material is not in this repository
 
@@ -83,6 +86,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/LAUNCHER_DEPENDENCY_COUNTERFACTUAL.md` | the counterfactual design of a launcher-dependent shooting rule: relation semantics, candidate, replay, gate, results |
 | `docs/TARGET_ALLOCATION_AUDIT.md` | the read-only audit of `baseline-v2`'s first-come shoot-target ownership: population, definitions, oracle, gate, results |
 | `docs/TARGET_OWNERSHIP_DESIGN.md` | the design study of one target-ownership candidate: formal model, semantics, isolation, evidence boundaries, diagnostic and A/B design, contract, results |
+| `docs/OWNERSHIP_PREVALENCE_DIAGNOSTIC.md` | the registered prospective diagnostic of how often `baseline-v2` meets an actionable target-ownership mismatch: events, observer, plan, rules, results |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
 | `evaluation/routing-remediation-1/` | the routing remediation's registration, pinned corpus and privacy-safe results |
@@ -94,6 +98,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `evaluation/launcher-dependency-counterfactual-1/` | the launcher-dependency candidate's mutation results and counterfactual aggregates |
 | `evaluation/target-allocation-audit-1/` | the target-allocation audit's privacy-safe aggregates |
 | `evaluation/target-ownership-design-1/` | the ownership design study's structural analysis and planning sensitivity |
+| `evaluation/baseline-v2-target-ownership-prevalence-1/` | the prevalence diagnostic's manifest, references, observer check, results and prefix diagnosis |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy
