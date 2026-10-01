@@ -30,6 +30,7 @@ import io
 import json
 import os
 import pickle
+import re
 import subprocess
 import sys
 import tempfile
@@ -53,7 +54,14 @@ LIMIT_BYTES = 200 * 1024 * 1024
 STAMP = (1980, 1, 1, 0, 0, 0)
 FORBIDDEN_PARTS = ("__pycache__", ".git", "tests", "local", "Data", "data", ".engine_config")
 FORBIDDEN_SUFFIXES = (".pyc", ".pyo", ".zip", ".whl", ".pickle", ".pkl", ".npz", ".so", ".dll", ".exe", ".gz")
-FORBIDDEN_TEXT = ("/home/", "C:\\", "F:\\", "D:\\", "192.168.", "BEGIN PRIVATE KEY", "train_env", "land_wargame_sdk")
+FORBIDDEN_TEXT = ("BEGIN PRIVATE KEY", "train_env", "land_wargame_sdk")
+#: Private infrastructure identifiers, built by concatenation like tests/test_docs_policy.py so this file never
+#: matches them itself.
+FORBIDDEN_PATTERNS = {
+    "home directory": re.compile("/" + "home/" + r"[A-Za-z0-9_.-]+"),
+    "Windows drive path": re.compile(r"(?<![A-Za-z0-9])[A-Za-z]:" + r"[\\/][^\s`]"),
+    "private IPv4 address": re.compile(r"\b(?:10|192\.168|172\.(?:1[6-9]|2\d|3[01]))\.\d{1,3}\.\d{1,3}\b"),
+}
 
 INIT = '"""The platform package: ``from ai import Agent``."""\n\nfrom .agent import Agent\n\n__all__ = ["Agent"]\n'
 BASE = '''"""The platform's agent interface: setup, step and reset (written for this package; no SDK code)."""
@@ -248,6 +256,9 @@ def forbidden(name: str, data: bytes) -> List[str]:
     for needle in FORBIDDEN_TEXT:
         if needle in text:
             problems.append(f"{name}: forbidden text {needle!r}")
+    for label, pattern in FORBIDDEN_PATTERNS.items():
+        if pattern.search(text):
+            problems.append(f"{name}: {label}")
     return problems
 
 
