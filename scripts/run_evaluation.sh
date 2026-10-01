@@ -2,7 +2,8 @@
 # Play the registered evaluation plan: one isolated engine process (and session) per game.
 #
 # Usage: scripts/run_evaluation.sh --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab
-#                                  [--evaluation NAME] [--engine-install DIR]
+#                                  [--evaluation NAME] [--engine-install DIR] [--workers N]
+#                                  [--purpose diagnostic --work DIR [--games FILE]]
 #
 #   --plan gate1       the two Gate 1 games (registered scenario, mirror of the policy under test)
 #   --plan suite       every registered suite game, in registered order; refused until Gate 1 passed
@@ -18,6 +19,15 @@
 #   --evaluation NAME  the registered evaluation: evaluation/NAME/manifest.json, records under
 #                      local/evaluation/NAME (default baseline-v0). The baseline-v0 manifest is
 #                      re-derived before every run; a candidate evaluation also re-derives its own.
+#   --workers N        games played at once (default 1: the serial loop below, unchanged). N > 1 hands
+#                      the plan's games, in registered order, to scripts/run_game_pool.py: shared engine
+#                      sessions, a working directory per game, worker and batch recorded with every game.
+#                      A registered evaluation must run with the worker count its manifest registers
+#                      (execution.workers; a manifest without it registers 1).
+#   --purpose diagnostic --work DIR [--games FILE]
+#                      a diagnostic run: its own work directory, optionally only the registered games
+#                      listed in FILE (kept in registered order), any worker count; the engine ledger
+#                      records the sessions as diagnostic.
 #
 # Each game runs with the same isolation as scripts/run_engine_smoke_test.sh: an empty environment
 # (env -i), the persistent installation's home/ as HOME, no user site-packages, PYTHONHASHSEED=0,
@@ -31,6 +41,10 @@ ARCHIVE=""
 INSTALL=""
 PLAN=""
 NAME=baseline-v0
+WORKERS=1
+PURPOSE=evaluation
+WORK=""
+GAMES_FILE=""
 TIMEOUT_SECONDS=${EVALUATION_GAME_TIMEOUT_SECONDS:-2100}
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -39,11 +53,31 @@ while [[ $# -gt 0 ]]; do
         --engine-install) INSTALL=$2; shift 2 ;;
         --plan) PLAN=$2; shift 2 ;;
         --evaluation) NAME=$2; shift 2 ;;
+        --workers) WORKERS=$2; shift 2 ;;
+        --purpose) PURPOSE=$2; shift 2 ;;
+        --work) WORK=$2; shift 2 ;;
+        --games) GAMES_FILE=$2; shift 2 ;;
         *) echo "unknown argument: $1" >&2; exit 2 ;;
     esac
 done
 if [[ -z $PYTHON || -z $ARCHIVE || ( $PLAN != gate1 && $PLAN != suite && $PLAN != study && $PLAN != ab ) ]]; then
-    echo "usage: $0 --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab [--evaluation NAME] [--engine-install DIR]" >&2
+    echo "usage: $0 --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab [--evaluation NAME] [--engine-install DIR] [--workers N] [--purpose diagnostic --work DIR [--games FILE]]" >&2
+    exit 2
+fi
+if ! [[ $WORKERS =~ ^[1-9][0-9]*$ ]]; then
+    echo "--workers must be a positive integer" >&2
+    exit 2
+fi
+if [[ $PURPOSE != evaluation && $PURPOSE != diagnostic ]]; then
+    echo "--purpose must be evaluation or diagnostic" >&2
+    exit 2
+fi
+if [[ $PURPOSE == evaluation && ( -n $WORK || -n $GAMES_FILE ) ]]; then
+    echo "--work and --games are for diagnostic runs (--purpose diagnostic)" >&2
+    exit 2
+fi
+if [[ $PURPOSE == diagnostic && -z $WORK ]]; then
+    echo "a diagnostic run needs its own --work directory" >&2
     exit 2
 fi
 if [[ $(id -u) -eq 0 ]]; then
@@ -59,15 +93,28 @@ if [[ ! -f $INSTALL/install-manifest.json ]]; then
 fi
 INSTALL=$(cd "$INSTALL" && pwd)
 ARCHIVE=$(cd "$(dirname "$ARCHIVE")" && pwd)/$(basename "$ARCHIVE")
-WORK="$REPO/local/evaluation/$NAME"
+if [[ -n $GAMES_FILE ]]; then
+    GAMES_FILE=$(cd "$(dirname "$GAMES_FILE")" && pwd)/$(basename "$GAMES_FILE")
+fi
+WORK=${WORK:-$REPO/local/evaluation/$NAME}
 MANIFEST="$REPO/evaluation/$NAME/manifest.json"
 if [[ ! -f $MANIFEST ]]; then
     echo "no registered manifest at $MANIFEST" >&2
     exit 2
 fi
 mkdir -p "$WORK/games" "$WORK/started" "$WORK/logs" "$WORK/cwd/a/b"
+WORK=$(cd "$WORK" && pwd)
+REGISTERED_WORKERS=$(PYTHONNOUSERSITE=1 "$PYTHON" - "$MANIFEST" <<'PY'
+import json, sys
+print(int(json.load(open(sys.argv[1], encoding="utf-8")).get("execution", {}).get("workers", 1)))
+PY
+)
+if [[ $PURPOSE == evaluation && $WORKERS != "$REGISTERED_WORKERS" ]]; then
+    echo "REFUSED: the manifest registers $REGISTERED_WORKERS worker(s); a registered run cannot use --workers $WORKERS" >&2
+    exit 2
+fi
 
-host() { PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/run_evaluation.py" --evaluation "$NAME" "$@"; }
+host() { PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/run_evaluation.py" --evaluation "$NAME" --work "$WORK" "$@"; }
 
 archive_sha_before=$(sha256sum "$ARCHIVE" | cut -d' ' -f1)
 PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/build_evaluation_manifest.py" --sdk-archive "$ARCHIVE" --check
@@ -139,7 +186,7 @@ if not passed or decomposition.get("project_gate_rejections", 0):
 PY
 fi
 
-mapfile -t GAMES < <(PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$PLAN" <<'PY'
+mapfile -t GAMES < <(PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$PLAN" "$GAMES_FILE" <<'PY'
 import json, sys
 from miaosuan_agent.evaluation import manifest as mf
 from miaosuan_agent.evaluation import shoot_experiment as sx
@@ -151,19 +198,51 @@ elif sys.argv[2] == "ab":
     specs = sx.scheduled_games(manifest)
 else:
     specs = mf.gate1_games(manifest) if sys.argv[2] == "gate1" else mf.games(manifest)
-for spec in specs:
-    print(spec.game_id)
+ids = [spec.game_id for spec in specs]
+if sys.argv[3]:
+    wanted = [line.strip() for line in open(sys.argv[3], encoding="utf-8") if line.strip()]
+    unknown = sorted(set(wanted) - set(ids))
+    if unknown or len(set(wanted)) != len(wanted):
+        sys.exit(f"REFUSED: the games file lists unknown or repeated games: {unknown}")
+    ids = [game for game in ids if game in set(wanted)]
+for game in ids:
+    print(game)
 PY
 )
+if [[ ${#GAMES[@]} -eq 0 ]]; then
+    echo "no games to play" >&2
+    exit 2
+fi
 COMMIT=$(git -C "$REPO" rev-parse HEAD)
 DIRTY_ARGS=()
 if [[ -n $(git -C "$REPO" status --porcelain) ]]; then
     DIRTY_ARGS=(--harness-dirty)
 fi
-echo "plan $PLAN: ${#GAMES[@]} games, harness $COMMIT${DIRTY_ARGS:+ (dirty)}"
+echo "plan $PLAN: ${#GAMES[@]} games, harness $COMMIT${DIRTY_ARGS:+ (dirty)}, $WORKERS worker(s), purpose $PURPOSE"
 
+PLANNED=${#GAMES[@]}
 failures=0
 consecutive=0
+if [[ $WORKERS -gt 1 ]]; then
+    STOP_AFTER=0
+    if [[ $PLAN == study || $PLAN == ab ]]; then
+        STOP_AFTER=3
+    fi
+    QUEUE="$WORK/logs/queue-$(date -u +%Y%m%dT%H%M%SZ).txt"
+    printf '%s\n' "${GAMES[@]}" > "$QUEUE"
+    set +e
+    PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/run_game_pool.py" --evaluation "$NAME" --work "$WORK" \
+        --engine-install "$INSTALL" --python "$PYTHON" --workers "$WORKERS" --games-file "$QUEUE" \
+        --harness-commit "$COMMIT" "${DIRTY_ARGS[@]}" --purpose "$PURPOSE" --timeout "$TIMEOUT_SECONDS" \
+        --stop-after-failures "$STOP_AFTER"
+    status=$?
+    set -e
+    if [[ $status -ne 0 ]]; then
+        echo "the parallel run stopped with status $status" >&2
+        exit "$status"
+    fi
+    GAMES=()
+fi
 for id in "${GAMES[@]}"; do
     if [[ -f $WORK/games/$id.json ]]; then
         echo "recorded already: $id"
@@ -187,8 +266,8 @@ for id in "${GAMES[@]}"; do
             CUDA_VISIBLE_DEVICES= \
             PYTHONPATH="$INSTALL/site:$REPO/src" \
             timeout --signal=TERM --kill-after=30 "$TIMEOUT_SECONDS" \
-            "$PYTHON" "$REPO/scripts/run_evaluation.py" --evaluation "$NAME" game --game-id "$id" \
-                --engine-install "$INSTALL" \
+            "$PYTHON" "$REPO/scripts/run_evaluation.py" --evaluation "$NAME" --work "$WORK" game --game-id "$id" \
+                --engine-install "$INSTALL" --purpose "$PURPOSE" \
                 --harness-commit "$COMMIT" "${DIRTY_ARGS[@]}" \
             > "$WORK/logs/$id.log" 2>&1
     )
@@ -223,4 +302,8 @@ if [[ $archive_sha_before != "$archive_sha_after" ]]; then
     echo "SDK archive digest changed during the run" >&2
     exit 1
 fi
-echo "plan $PLAN finished: ${#GAMES[@]} games, $failures not completed"
+if [[ $WORKERS -gt 1 ]]; then
+    echo "plan $PLAN finished: $PLANNED games with $WORKERS workers (counts above)"
+else
+    echo "plan $PLAN finished: $PLANNED games, $failures not completed"
+fi
