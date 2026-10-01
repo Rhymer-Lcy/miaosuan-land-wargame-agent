@@ -383,6 +383,28 @@ def divergence(record: Mapping[str, Any], serial: List[Mapping[str, Any]]) -> Di
             "first_shot": first_shot, "serial_repetitions": len(serial)}
 
 
+def attribution(record: Mapping[str, Any], policy: str, pauses: Mapping[str, Any]) -> Dict[str, Any]:
+    """Where a game's slow decisions are: the first play decision (route planning) or later; and its long pauses."""
+    first_play = next((t["step"] for t in record.get("stage_transitions", []) if t["stage"] == 2), None)
+    first_ms, slow_first, slow_later = [], 0, 0
+    for seat in record.get("seats", []):
+        if seat["policy"] != policy:
+            continue
+        latencies = seat["latency_us"]
+        if first_play is not None and first_play < len(latencies):
+            first_ms.append(latencies[first_play] / 1000.0)
+        for index, value in enumerate(latencies):
+            if value > 100_000:
+                if index == first_play:
+                    slow_first += 1
+                else:
+                    slow_later += 1
+    kept = [pause for _, pause in pauses["kept"]]
+    return {"first_play_ms": max(first_ms) if first_ms else None, "slow_first_play": slow_first,
+            "slow_later": slow_later, "gc_over_100ms": sum(1 for p in kept if p > 100),
+            "gc_over_400ms": sum(1 for p in kept if p > 400), "gc_over_1000ms": sum(1 for p in kept if p > 1000)}
+
+
 def median(values: List[float]) -> Optional[float]:
     values = [v for v in values if v is not None]
     return cq.percentiles(values)["p50"] if values else None
@@ -454,11 +476,13 @@ def summarize(plan: Mapping[str, Any], collected: Mapping[str, Any], folder: Pat
             "gc_gen2_max_ms": gc_summary["max_ms"][2], "gc_max_ms": max(gc_summary["max_ms"]),
             "gc_counts": gc_summary["count"], "gc_kept": len(gc_summary["kept"]),
             "latency": cq.latency_summary([record], entry["policy"]),
+            "attribution": attribution(record, entry["policy"], gc_summary),
         })
     samples = [json.loads(line) for line in (folder / "samples.jsonl").read_text(encoding="utf-8").splitlines() if line]
     root = str(INSTALL.resolve())
-    allowed = lambda path: (path.startswith(str(folder / "games")) or path.startswith(str(folder / "logs"))
-                            or path.startswith(str(folder / "blas")) or path == "/dev/null"
+    real = folder.resolve()  # descriptors name real paths; the work tree may be reached through a symlink
+    allowed = lambda path: (path.startswith(str(real / "games")) or path.startswith(str(real / "logs"))
+                            or path.startswith(str(real / "blas")) or path == "/dev/null"
                             or path in {f"{root}/{name}" for name in plan["expected_writable"]})
     resources = procstat.summarize_samples(samples, allowed)
     if resources["unexpected_writable_files"]:
@@ -579,6 +603,13 @@ def summarize(plan: Mapping[str, Any], collected: Mapping[str, Any], folder: Pat
         "block_output_total": sum(r["block_output"] or 0 for r in rows),
         "latency": latency, "per_config": per_config,
         "gc_gen2_max_ms": max((r["gc_gen2_max_ms"] for r in rows), default=None),
+        "first_play_decision_ms": cq.percentiles([r["attribution"]["first_play_ms"] for r in rows
+                                                  if r["attribution"]["first_play_ms"] is not None]),
+        "slow_decisions_first_play": sum(r["attribution"]["slow_first_play"] for r in rows),
+        "slow_decisions_later": sum(r["attribution"]["slow_later"] for r in rows),
+        "gc_pauses_over_100ms": sum(r["attribution"]["gc_over_100ms"] for r in rows),
+        "gc_pauses_over_400ms": sum(r["attribution"]["gc_over_400ms"] for r in rows),
+        "gc_pauses_over_1000ms": sum(r["attribution"]["gc_over_1000ms"] for r in rows),
         "gc_pauses_over_50ms": sum(r["gc_kept"] for r in rows),
         "equivalence": {
             "deterministic_identical": sum(1 for v in comparisons.values() if v["class"] == "deterministic" and v["pass"]),
