@@ -1,5 +1,9 @@
 # Baseline identity: baseline-v1
 
+> Since 2026-10-01 the current baseline is `baseline-v2` (`docs/BASELINE_V2.md`), which adds one registered
+> change to this policy. The identity recorded here, the policy source and every `baseline-v1` artefact are
+> unchanged and still verify.
+
 `baseline-v1` is `baseline-v0` plus exactly one registered change: within one decision step, at most
 one occupation command is issued per objective. It was promoted after the registered candidate
 experiment passed all eleven acceptance criteria (`docs/EVALUATION_OCCUPY_RESERVATION.md`). It is a

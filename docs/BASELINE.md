@@ -1,8 +1,8 @@
 # Baseline identity: baseline-v0
 
-> Since 2026-09-30 the current baseline is `baseline-v1` (`docs/BASELINE_V1.md`), which adds one registered
-> change to this policy. This record, the policy source and every `baseline-v0` artefact are kept unchanged
-> and still verify.
+> From 2026-09-30 the current baseline was `baseline-v1` (`docs/BASELINE_V1.md`), which adds one registered
+> change to this policy; since 2026-10-01 it is `baseline-v2` (`docs/BASELINE_V2.md`), which adds a second.
+> This record, the policy source and every `baseline-v0` artefact are kept unchanged and still verify.
 
 `baseline-v0` is the project's first agent: deterministic, minimal, legal and active by
 construction, and measured by the registered evaluation (`docs/EVALUATION.md`). It is a reference
