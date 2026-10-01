@@ -120,7 +120,11 @@ class Audit:
                 again = aa.oracle_b(raw, seat, faction, v2, group, lambda: ShootReservationPolicy(costs), memory)
                 self.fidelity["O-B repeated runs differing"] += again != oracle
             self.groups.append({**where, "target": group.target, **group.metrics(), "oracle": oracle,
-                                "outcome": outcome("target", group.reserver, group.target) if outcome else {"class": "T3"}})
+                                "outcome": outcome("target", group.reserver, group.target) if outcome else {"class": "T3"},
+                                "situation": [where["corpus"], where["game"], seat, group.target,
+                                              sorted(e["unit"] for e in group.eligible)],
+                                "recorded_next": outcome("recorded", group.reserver, group.target) if outcome
+                                else "unavailable"})
             for unit in group.displaced:
                 effect = record[unit]["effect"]
                 level = next(c["level"] for c in group.claimants if c["unit"] == unit)
@@ -199,6 +203,8 @@ def d1(audit: Audit) -> None:
                     continue
 
                 def outcome(kind: str, unit: int, target: int, k: int = k) -> Any:
+                    if kind == "recorded":
+                        return "absent" if target in steps[k]["gone"] else "present"
                     return follow(steps, k, unit, target) if kind == "follow" else shot_evidence(steps[k], unit, target)
                 audit.decision({"corpus": "D1", "config": f"{scenario['scenario_id']} {rd.CONDITION}", "game": game,
                                 "k": k, "seat": seat}, raw, seat, entry["faction"], v2, costs, memory, outcome)
@@ -245,13 +251,17 @@ def d2(audit: Audit) -> None:
                 audit.fidelity["D2 excluded: baseline-v2 difference unexplained"] += 1
                 continue
             audit.fidelity["D2 baseline-v2 explained"] += 1
-            present = None
+            recorded = None
             after = by_step.get(row["step"] + 1, {}).get(1 - faction)
-            if [dict(a) for a in row["actions"]] == [dict(a) for a in v2.actions] and after is not None:
+            if after is not None:
                 view = typed_json.decode(after["observation"])
-                present = {u["obj_id"] for u in view["operators"]} | {u["obj_id"] for u in view.get("passengers") or []}
+                recorded = {u["obj_id"] for u in view["operators"]} | {u["obj_id"] for u in view.get("passengers") or []}
+            present = recorded if [dict(a) for a in row["actions"]] == [dict(a) for a in v2.actions] else None
 
-            def outcome(kind: str, unit: int, target: int, present: Optional[set] = present) -> Any:
+            def outcome(kind: str, unit: int, target: int, present: Optional[set] = present,
+                        recorded: Optional[set] = recorded) -> Any:
+                if kind == "recorded":
+                    return "unavailable" if recorded is None else "present" if target in recorded else "absent"
                 if kind == "follow":
                     return None
                 if present is None:
@@ -324,6 +334,31 @@ def registered_arm() -> Dict[str, Any]:
 
 def hist(values: Any) -> Dict[str, int]:
     return {str(k): v for k, v in sorted(collections.Counter(values).items(), key=lambda kv: (isinstance(kv[0], str), kv[0]))}
+
+
+def situations(groups: List[Dict[str, Any]], units: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """Added at review, after the first run (the gate is unchanged): collision groups of one game and seat with the
+    same target and the same eligible units are one recurring situation, so the groups are not independent."""
+    def key(g: Mapping[str, Any]) -> str:
+        return json.dumps(g["situation"])
+    occurrences: Dict[str, List[int]] = collections.defaultdict(list)
+    for g in groups:
+        occurrences[key(g)].append(g["k"])
+    no_op = {(u["corpus"], u["game"], u["k"], u["seat"], u["target"]) for u in units if u["fallback"] == "F4 no-op"}
+    with_no_op = [g for g in groups if (g["corpus"], g["game"], g["k"], g["seat"], g["target"]) in no_op]
+    stronger = [g for g in groups if g["stronger_displaced"]]
+    return {
+        "distinct": len(occurrences),
+        "distinct_with_a_stronger_displaced_claimant": len({key(g) for g in stronger}),
+        "distinct_with_a_no_op_unit": len({key(g) for g in with_no_op}),
+        "games_with_a_stronger_displaced_claimant": len({(g["corpus"], g["game"]) for g in stronger}),
+        "occurrences_per_situation": hist(len(v) for v in occurrences.values()),
+        "occurrences_per_stronger_situation": hist(len(occurrences[k]) for k in {key(g) for g in stronger}),
+        "steps_between_recurrences": hist(b - a for v in occurrences.values() for a, b in zip(sorted(v), sorted(v)[1:])),
+        "recorded_trajectory_next_step": hist(
+            f"{g['corpus']} | target {g['recorded_next']} | {'stronger displaced' if g['stronger_displaced'] else 'none stronger'}"
+            for g in groups),
+    }
 
 
 def summarize(audit: Audit) -> Dict[str, Any]:
@@ -441,6 +476,7 @@ def summarize(audit: Audit) -> Dict[str, Any]:
                      "non_shoot_changes": sum(g["oracle"]["non_shoot_changes"] for g in unambiguous),
                      "changed_units_when_coupled": hist(g["oracle"]["changed_units"] for g in changed
                                                         if not g["oracle"]["unambiguous"])},
+        "situations": situations(groups, units),
         "gate": gate, "disposition": disposition,
     }
 
