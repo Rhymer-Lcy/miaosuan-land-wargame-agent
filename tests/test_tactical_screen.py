@@ -137,6 +137,8 @@ class SmokeTest(unittest.TestCase):
         self.assertEqual(ts.smoke_verdict([good]), "PASS")
         self.assertEqual(ts.smoke_verdict([dict(good, operators_appearing_in_deployment=0)]), "BLOCKED BY ENGINE SEMANTICS")
         self.assertEqual(ts.smoke_verdict([dict(good, appearing_operators_commanded=0)]), "BLOCKED BY ENGINE SEMANTICS")
+        split_over_two_games = [dict(good, appearing_operators_commanded=0), dict(good, operators_appearing_in_deployment=0)]
+        self.assertEqual(ts.smoke_verdict(split_over_two_games), "BLOCKED BY ENGINE SEMANTICS")
         self.assertEqual(ts.smoke_verdict([good, dict(good, contract_errors=1)]), "FAIL: a game was not healthy")
         self.assertEqual(ts.smoke_verdict([good, dict(good, deployment_ended=False)]), "FAIL: a game was not healthy")
 

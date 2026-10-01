@@ -113,12 +113,13 @@ DISPOSITIONS = ("ADVANCE TO CONFIRMATION", "REVISE BEFORE CONFIRMATION", "REJECT
 
 
 def smoke_verdict(games: Sequence[Mapping[str, Any]]) -> str:
-    """The registered smoke pass rule over per-game smoke facts."""
-    took_effect = any(g["splits_emitted"] and g["operators_appearing_in_deployment"] for g in games)
-    commanded = any(g["appearing_operators_commanded"] for g in games)
+    """The registered smoke pass rule over per-game smoke facts: in one and the same game a split is followed by new
+    operators and the candidate later commands one of them."""
+    shown = any(g["splits_emitted"] and g["operators_appearing_in_deployment"] and g["appearing_operators_commanded"]
+                for g in games)
     healthy = bool(games) and all(g["status"] == "COMPLETED" and not g["contract_errors"] and g["deployment_ended"]
                                   for g in games)
-    if not took_effect or not commanded:
+    if not shown:
         return "BLOCKED BY ENGINE SEMANTICS"
     return "PASS" if healthy else "FAIL: a game was not healthy"
 
