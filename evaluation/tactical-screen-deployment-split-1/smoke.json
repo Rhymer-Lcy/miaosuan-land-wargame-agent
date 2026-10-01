@@ -1,0 +1,202 @@
+{
+ "all_games_healthy": true,
+ "games": [
+  {
+   "appearing_operators_commanded": 0,
+   "contract_errors": 0,
+   "controllable_operators_seen": 22,
+   "deployment_ended": true,
+   "deployment_steps": 3,
+   "game": "2120531121.C2.c.s01",
+   "gate_rejections": 0,
+   "operators_appearing_in_deployment": 0,
+   "operators_at_setup": 28,
+   "operators_that_acted": 16,
+   "policy": true,
+   "refused_orders_to_appearing_operators": 0,
+   "split_blood_changes": {},
+   "split_errors_by_code": {
+    "103": 24
+   },
+   "split_outcomes": {
+    "refused": 24
+   },
+   "splits_emitted": 24,
+   "status": "COMPLETED"
+  },
+  {
+   "appearing_operators_commanded": 0,
+   "contract_errors": 0,
+   "controllable_operators_seen": 4,
+   "deployment_ended": true,
+   "deployment_steps": 3,
+   "game": "2010211129.C2.c.s01",
+   "gate_rejections": 0,
+   "operators_appearing_in_deployment": 0,
+   "operators_at_setup": 6,
+   "operators_that_acted": 4,
+   "policy": true,
+   "refused_orders_to_appearing_operators": 0,
+   "split_blood_changes": {},
+   "split_errors_by_code": {
+    "103": 8
+   },
+   "split_outcomes": {
+    "refused": 8
+   },
+   "splits_emitted": 8,
+   "status": "COMPLETED"
+  },
+  {
+   "appearing_operators_commanded": 0,
+   "contract_errors": 0,
+   "controllable_operators_seen": 4,
+   "deployment_ended": true,
+   "deployment_steps": 3,
+   "game": "2010431153.C2.c.s01",
+   "gate_rejections": 0,
+   "operators_appearing_in_deployment": 0,
+   "operators_at_setup": 6,
+   "operators_that_acted": 4,
+   "policy": true,
+   "refused_orders_to_appearing_operators": 0,
+   "split_blood_changes": {},
+   "split_errors_by_code": {
+    "103": 8
+   },
+   "split_outcomes": {
+    "refused": 8
+   },
+   "splits_emitted": 8,
+   "status": "COMPLETED"
+  },
+  {
+   "appearing_operators_commanded": 4,
+   "contract_errors": 0,
+   "controllable_operators_seen": 8,
+   "deployment_ended": true,
+   "deployment_steps": 3,
+   "game": "1910631192.C2.c.s01",
+   "gate_rejections": 0,
+   "operators_appearing_in_deployment": 6,
+   "operators_at_setup": 6,
+   "operators_that_acted": 8,
+   "policy": true,
+   "refused_orders_to_appearing_operators": 0,
+   "split_blood_changes": {
+    "2->1": 2,
+    "4->2": 2
+   },
+   "split_errors_by_code": {},
+   "split_outcomes": {
+    "no effect, no error": 6,
+    "took effect": 4
+   },
+   "splits_emitted": 10,
+   "status": "COMPLETED"
+  },
+  {
+   "appearing_operators_commanded": 0,
+   "contract_errors": 0,
+   "controllable_operators_seen": 2,
+   "deployment_ended": true,
+   "deployment_steps": 3,
+   "game": "2010131194.C2.c.s01",
+   "gate_rejections": 0,
+   "operators_appearing_in_deployment": 0,
+   "operators_at_setup": 2,
+   "operators_that_acted": 2,
+   "policy": true,
+   "refused_orders_to_appearing_operators": 0,
+   "split_blood_changes": {},
+   "split_errors_by_code": {
+    "103": 4
+   },
+   "split_outcomes": {
+    "refused": 4
+   },
+   "splits_emitted": 4,
+   "status": "COMPLETED"
+  },
+  {
+   "appearing_operators_commanded": 12,
+   "contract_errors": 0,
+   "controllable_operators_seen": 32,
+   "deployment_ended": true,
+   "deployment_steps": 3,
+   "game": "1930331196.C2.c.s01",
+   "gate_rejections": 0,
+   "operators_appearing_in_deployment": 18,
+   "operators_at_setup": 26,
+   "operators_that_acted": 26,
+   "policy": true,
+   "refused_orders_to_appearing_operators": 0,
+   "split_blood_changes": {
+    "2->1": 6,
+    "4->2": 6
+   },
+   "split_errors_by_code": {},
+   "split_outcomes": {
+    "no effect, no error": 18,
+    "took effect": 12
+   },
+   "splits_emitted": 30,
+   "status": "COMPLETED"
+  },
+  {
+   "appearing_operators_commanded": 0,
+   "contract_errors": 0,
+   "controllable_operators_seen": 1,
+   "deployment_ended": true,
+   "deployment_steps": 3,
+   "game": "201033019601.C2.c.s01",
+   "gate_rejections": 0,
+   "operators_appearing_in_deployment": 0,
+   "operators_at_setup": 1,
+   "operators_that_acted": 1,
+   "policy": true,
+   "refused_orders_to_appearing_operators": 0,
+   "split_blood_changes": {},
+   "split_errors_by_code": {
+    "103": 2
+   },
+   "split_outcomes": {
+    "refused": 2
+   },
+   "splits_emitted": 2,
+   "status": "COMPLETED"
+  },
+  {
+   "appearing_operators_commanded": 28,
+   "contract_errors": 0,
+   "controllable_operators_seen": 65,
+   "deployment_ended": true,
+   "deployment_steps": 3,
+   "game": "2130511121.C2.c.s01",
+   "gate_rejections": 0,
+   "operators_appearing_in_deployment": 36,
+   "operators_at_setup": 45,
+   "operators_that_acted": 59,
+   "policy": true,
+   "refused_orders_to_appearing_operators": 0,
+   "split_blood_changes": {
+    "2->1": 14,
+    "3->2": 6,
+    "4->2": 8
+   },
+   "split_errors_by_code": {},
+   "split_outcomes": {
+    "no effect, no error": 24,
+    "took effect": 28
+   },
+   "splits_emitted": 52,
+   "status": "COMPLETED"
+  }
+ ],
+ "games_where_new_operators_were_commanded": 3,
+ "games_where_splits_took_effect": 3,
+ "manifest_sha256": "7ef883b7daa6f4272655cd2f8716cd84dcf0d369aff68f6122adec2357c77dcd",
+ "schema": "miaosuan-tactical-smoke/1",
+ "screen_id": "tactical-screen-deployment-split-1",
+ "verdict": "PASS"
+}
