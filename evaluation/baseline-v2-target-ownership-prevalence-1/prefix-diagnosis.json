@@ -1,0 +1,173 @@
+{
+ "decisions_differing_on_identical_observed_states": 0,
+ "failing_games": [
+  {
+   "best_serial_state_prefix": 2882,
+   "best_serial_trace_prefixes": {
+    "1": 2881,
+    "11": 2881
+   },
+   "class": "stochastic",
+   "game": "1930331196.C2.p09",
+   "game_states": 2882,
+   "reference_state_prefix": 612,
+   "reference_trace_prefixes": {
+    "1": 686,
+    "11": 612
+   },
+   "reproduces_a_serial_chain": true,
+   "state_prefix_equal": true,
+   "trace_prefix_equal": true
+  },
+  {
+   "best_serial_state_prefix": 169,
+   "best_serial_trace_prefixes": {
+    "1": 244,
+    "11": 318
+   },
+   "class": "stochastic",
+   "game": "2120531121.C3.p10",
+   "game_states": 2882,
+   "reference_state_prefix": 169,
+   "reference_trace_prefixes": {
+    "1": 319,
+    "11": 342
+   },
+   "reproduces_a_serial_chain": false,
+   "state_prefix_equal": true,
+   "trace_prefix_equal": false
+  },
+  {
+   "best_serial_state_prefix": 213,
+   "best_serial_trace_prefixes": {
+    "1": 338,
+    "11": 264
+   },
+   "class": "stochastic",
+   "game": "1930331196.C1.p11",
+   "game_states": 2882,
+   "reference_state_prefix": 189,
+   "reference_trace_prefixes": {
+    "1": 288,
+    "11": 339
+   },
+   "reproduces_a_serial_chain": false,
+   "state_prefix_equal": true,
+   "trace_prefix_equal": false
+  },
+  {
+   "best_serial_state_prefix": 142,
+   "best_serial_trace_prefixes": {
+    "1": 321,
+    "11": 237
+   },
+   "class": "stochastic",
+   "game": "2010431153.C1.p12",
+   "game_states": 1802,
+   "reference_state_prefix": 142,
+   "reference_trace_prefixes": {
+    "1": 217,
+    "11": 291
+   },
+   "reproduces_a_serial_chain": false,
+   "state_prefix_equal": true,
+   "trace_prefix_equal": false
+  },
+  {
+   "best_serial_state_prefix": 169,
+   "best_serial_trace_prefixes": {
+    "1": 322,
+    "11": 341
+   },
+   "class": "stochastic",
+   "game": "2120531121.C3.p12",
+   "game_states": 2882,
+   "reference_state_prefix": 169,
+   "reference_trace_prefixes": {
+    "1": 319,
+    "11": 342
+   },
+   "reproduces_a_serial_chain": false,
+   "state_prefix_equal": true,
+   "trace_prefix_equal": false
+  },
+  {
+   "best_serial_state_prefix": 102,
+   "best_serial_trace_prefixes": {
+    "1": 236,
+    "11": 182
+   },
+   "class": "stochastic",
+   "game": "2010131194.C1.p13",
+   "game_states": 1802,
+   "reference_state_prefix": 102,
+   "reference_trace_prefixes": {
+    "1": 197,
+    "11": 221
+   },
+   "reproduces_a_serial_chain": false,
+   "state_prefix_equal": true,
+   "trace_prefix_equal": false
+  },
+  {
+   "best_serial_state_prefix": 244,
+   "best_serial_trace_prefixes": {
+    "1": 322,
+    "11": 341
+   },
+   "class": "stochastic",
+   "game": "2120531121.C3.p14",
+   "game_states": 2882,
+   "reference_state_prefix": 169,
+   "reference_trace_prefixes": {
+    "1": 319,
+    "11": 342
+   },
+   "reproduces_a_serial_chain": false,
+   "state_prefix_equal": true,
+   "trace_prefix_equal": false
+  },
+  {
+   "best_serial_state_prefix": 189,
+   "best_serial_trace_prefixes": {
+    "1": 263,
+    "11": 189
+   },
+   "class": "stochastic",
+   "game": "1930331196.C1.p15",
+   "game_states": 2882,
+   "reference_state_prefix": 189,
+   "reference_trace_prefixes": {
+    "1": 288,
+    "11": 339
+   },
+   "reproduces_a_serial_chain": false,
+   "state_prefix_equal": true,
+   "trace_prefix_equal": false
+  },
+  {
+   "best_serial_state_prefix": 102,
+   "best_serial_trace_prefixes": {
+    "1": 282,
+    "11": 356
+   },
+   "class": "stochastic",
+   "game": "201033019601.C1.p15",
+   "game_states": 1002,
+   "reference_state_prefix": 102,
+   "reference_trace_prefixes": {
+    "1": 356,
+    "11": 282
+   },
+   "reproduces_a_serial_chain": false,
+   "state_prefix_equal": true,
+   "trace_prefix_equal": false
+  }
+ ],
+ "games": 360,
+ "question": "did any baseline-v2 decision differ from a serial game while the states it observed were identical",
+ "registered": false,
+ "schema": "miaosuan-ownership-prevalence-prefix-diagnosis/1",
+ "serial_comparisons": 5400,
+ "study_id": "baseline-v2-target-ownership-prevalence-1"
+}
