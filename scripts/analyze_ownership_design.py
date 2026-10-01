@@ -90,8 +90,13 @@ class Collector:
         self.games[where["corpus"]].add(where["game"])
         order, graph = od.shoot_graph(raw, seat, faction)
         comps = od.components(order, graph)
-        if [u.obj_id for u in v2.trace.units] != order:
+        traced = [u.obj_id for u in v2.trace.units]
+        if traced and traced != order:
             self.problems.append({**where, "problem": "processing order differs from the trace"})
+        if not traced:  # deployment decisions carry no unit decisions; they must have no shoot edge either
+            self.fidelity["decisions without unit decisions"] += 1
+            if graph:
+                self.problems.append({**where, "problem": "a decision without unit decisions has shoot edges"})
         groups = aa.collision_groups(raw, v2)
         component_of = {t: i for i, c in enumerate(comps) for t in c.targets}
         records = {e["obj_id"]: e for e in v2.trace.to_dict().get("shoot_reserved", [])}
