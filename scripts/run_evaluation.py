@@ -22,6 +22,11 @@ engine was touched, 4 an installation guardrail refused the session.
 starts a game: a shared engine session instead of the exclusive one, and the record's harness names the
 worker count, the worker, the batch and the scheduler identity. Without it the game, its session and its
 record are exactly the serial ones.
+
+Every game runs on a runtime identity (``src/miaosuan_agent/evaluation/execution.py``): the one its manifest
+registers, ``baseline-v1-runtime-r1`` by default, or for a diagnostic run the one ``--runtime`` names. The game
+refuses to play unless its numerical-thread variables are exactly that runtime's; a game on another runtime than
+``baseline-v1-runtime-r1`` records the runtime and its variables in its harness.
 """
 
 from __future__ import annotations
@@ -29,6 +34,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import signal
 import sys
 import time
@@ -43,6 +49,7 @@ from miaosuan_agent import engine_install, sdk_data  # noqa: E402
 from miaosuan_agent.agent import PolicyAgent  # noqa: E402
 from miaosuan_agent.decision import BASELINE_ID, INERT_ID  # noqa: E402
 from miaosuan_agent.evaluation import manifest as mf  # noqa: E402
+from miaosuan_agent.evaluation import execution as ex  # noqa: E402
 from miaosuan_agent.evaluation import metrics, randomness  # noqa: E402
 from miaosuan_agent.evaluation import shoot_experiment as sx  # noqa: E402
 from miaosuan_agent.evaluation import variance_study as vs  # noqa: E402
@@ -162,6 +169,19 @@ def cmd_game(args: argparse.Namespace) -> int:
     if out.exists():
         print(f"REFUSED: {out} exists; records are never overwritten", file=sys.stderr)
         return 2
+    registered_runtime = ex.registered(manifest)["runtime"]
+    runtime = getattr(args, "runtime", None) or registered_runtime
+    if args.purpose == "evaluation" and runtime != registered_runtime:
+        print(f"REFUSED: a registered run uses the runtime its manifest registers ({registered_runtime}), not {runtime}",
+              file=sys.stderr)
+        return 2
+    try:
+        problem = ex.check_thread_env(os.environ, runtime)
+    except ValueError as exc:
+        problem = str(exc)
+    if problem:
+        print(f"REFUSED: {problem}", file=sys.stderr)
+        return 2
     try:
         verify_inputs(manifest, args.work, spec.scenario_id, spec.map_id)
         inputs = sdk_data.load_inputs(data_root(args.work, spec.scenario_id), spec.scenario_id, spec.map_id)
@@ -176,6 +196,9 @@ def cmd_game(args: argparse.Namespace) -> int:
         harness["group"] = group
     if mode == "shared":
         harness["execution"] = {"mode": mode, **execution}
+    if runtime != ex.DEFAULT_RUNTIME:
+        harness["runtime"] = runtime
+        harness["thread_env"] = ex.runtime_env(runtime)
     install = engine_install.EngineInstall(args.engine_install.resolve())
     construct = engine_factory(install)
     opener = (engine_install.session(install, args.purpose, harness) if mode == "exclusive"
@@ -301,6 +324,9 @@ def main() -> int:
     game.add_argument("--worker", type=int, help="shared mode: this game's worker slot")
     game.add_argument("--batch", type=int, help="shared mode: this game's dispatch wave")
     game.add_argument("--scheduler", help="shared mode: the scheduler identity (id@sha256 of its sources)")
+    game.add_argument("--runtime", help="the runtime identity (default: the manifest's registered runtime); a "
+                                        "registered run may not change it, and the game's numerical-thread "
+                                        "variables must be exactly that runtime's")
     game.set_defaults(func=cmd_game)
     summarize = sub.add_parser("summarize")
     summarize.add_argument("--public", type=Path, help="also write the sanitized summary here")
