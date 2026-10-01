@@ -41,3 +41,7 @@ A tactical experiment on top of `baseline-v1` runs every arm on this runtime, so
 differ between arms. The shooting-conflict experiment ran both of its arms on it
 (`docs/EVALUATION_SHOOT_RESERVATION.md`), and the baseline it promoted, `baseline-v2` (`docs/BASELINE_V2.md`),
 runs on it.
+
+`baseline-v1-runtime-r2` (`docs/BASELINE_V1_RUNTIME_R2.md`) is this runtime's code run with NumPy's OpenBLAS pool
+limited to one thread. It makes the same decisions and uses less CPU per game; this runtime keeps its name and stays
+the default of every manifest that registers no runtime.

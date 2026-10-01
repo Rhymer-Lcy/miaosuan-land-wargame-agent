@@ -25,8 +25,12 @@ regression, and its interval excludes a loss of 10 score points or more against 
 predecessors it is a reference point, and `baseline-v1` stays reproducible under its own identity. A
 registered concurrency qualification (`docs/CONCURRENCY_QUALIFICATION.md`) found that games can share the one
 persistent engine installation without integrity, independence or accounting effects; `scripts/run_evaluation.sh
---workers N` runs a registered plan with the worker count its manifest registers (16 recommended, about 14 times the
-serial throughput), and the default stays serial.
+--workers N` runs a registered plan with the worker count its manifest registers, and the default stays serial. A
+registered runtime thread-pool qualification (`docs/RUNTIME_THREAD_QUALIFICATION.md`) then promoted
+`baseline-v1-runtime-r2` (`docs/BASELINE_V1_RUNTIME_R2.md`): runtime-r1's code with NumPy's OpenBLAS pool limited to
+one thread, which makes the same decisions with about 23% less CPU per game. On it 32 workers are acceptable (about
+27 times the serial throughput); on runtime-r1 the recommendation stays 16. A manifest registers its runtime and worker
+count; without them a plan runs serially on runtime-r1.
 
 ## Third-party material is not in this repository
 
@@ -57,6 +61,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/LATENCY_DIAGNOSTIC.md` | the measured causes of the rare decision-latency tail of `baseline-v1`, and the remediation decision |
 | `docs/ROUTING_REMEDIATION.md` | the registered behaviour-preserving routing remediation of `baseline-v1`: contract, equivalence argument, criteria, results |
 | `docs/BASELINE_V1_RUNTIME_R1.md` | identity of `baseline-v1-runtime-r1`, the runtime of `baseline-v1` with target-bounded routing |
+| `docs/BASELINE_V1_RUNTIME_R2.md` | identity of `baseline-v1-runtime-r2`: runtime-r1's code with NumPy's OpenBLAS pool limited to one thread |
 | `docs/EVALUATION_SHOOT_RESERVATION.md` | the registered two-group experiment of same-step shoot-target reservation that produced `baseline-v2`: design, criteria, results |
 | `docs/BASELINE_V2.md` | identity of `baseline-v2`: the one change, its digests and its limitations |
 | `docs/REFUSAL_TAXONOMY.md` | how engine refusals are recorded (facts) and attributed (versioned rules); the code-203 correction |

@@ -3,7 +3,9 @@
 `baseline-v2` is `baseline-v1` plus exactly one registered change: within one seat's decision step, at most one
 emitted shoot action targets the same enemy object. It was promoted after the registered two-group experiment
 passed all ten promotion criteria (`docs/EVALUATION_SHOOT_RESERVATION.md`). It runs on the runtime
-`baseline-v1-runtime-r1` (`docs/BASELINE_V1_RUNTIME_R1.md`), which keeps its name. It is a reference point, not a
+`baseline-v1-runtime-r1` (`docs/BASELINE_V1_RUNTIME_R1.md`), which keeps its name, and makes the same decisions on
+`baseline-v1-runtime-r2` (`docs/BASELINE_V1_RUNTIME_R2.md`), the same code with NumPy's OpenBLAS pool limited to one
+thread. It is a reference point, not a
 competitor; nothing in it was tuned on outcomes. `baseline-v1` (`docs/BASELINE_V1.md`) is preserved unchanged and
 still verifies under its own identity.
 
@@ -65,6 +67,6 @@ Carried over from `baseline-v1` except where the change removed them; material n
   redirected once issued; passengers are never unloaded.
 * Late-game decisions can take more than 1 s: 10 in the experiment, all in scenario 2130511121 C3. The latency
   diagnostic traced such tails to collection pauses of the shared engine process (`docs/LATENCY_DIAGNOSTIC.md`);
-  `baseline-v1-runtime-r1` does not address them.
+  neither `baseline-v1-runtime-r1` nor `baseline-v1-runtime-r2` addresses them.
 * Outcomes are stochastic once shots are fired; the experiment's outcome comparisons are means over 15 games per
   configuration.
