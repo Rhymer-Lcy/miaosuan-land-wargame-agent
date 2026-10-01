@@ -1,0 +1,2101 @@
+{
+ "commits": [
+  "93329f983f620102da28eea577617960a0b6a7aa",
+  "dc3c6155ca19bfaa041aa57612bb16fd5fb98f64"
+ ],
+ "equivalence": {
+  "deterministic_games": 10,
+  "deterministic_identical_between_runs": 10,
+  "independence": {
+   "games": 16,
+   "parallel": 16,
+   "serial": 16
+  },
+  "parallel": {
+   "batches": {
+    "0": [
+     "B",
+     "B",
+     "B",
+     "B",
+     "B",
+     "B",
+     "B",
+     "B",
+     "C",
+     "C",
+     "C",
+     "C",
+     "C",
+     "C",
+     "C",
+     "C"
+    ]
+   },
+   "pass": true,
+   "records": 16,
+   "sessions": [
+    1338,
+    1339,
+    1340,
+    1341,
+    1342,
+    1343,
+    1344,
+    1345,
+    1346,
+    1347,
+    1348,
+    1349,
+    1350,
+    1351,
+    1352,
+    1353
+   ],
+   "states": 1
+  },
+  "pass": true,
+  "pool_runs": 1,
+  "problems": [],
+  "scheduler": [
+   "miaosuan-game-pool/1@628180cbf1a3706d2c2e4da3c81f0da7e75cc01d28f2daa4e2dccdddab66d448"
+  ],
+  "serial": {
+   "pass": true,
+   "records": 16,
+   "sessions": [
+    1322,
+    1323,
+    1324,
+    1325,
+    1326,
+    1327,
+    1328,
+    1329,
+    1330,
+    1331,
+    1332,
+    1333,
+    1334,
+    1335,
+    1336,
+    1337
+   ],
+   "states": 1
+  },
+  "workers": 16
+ },
+ "plan_id": "concurrency-qualification-1",
+ "plan_sha256": "f6d0f1b1adf2f7b5e41e67513304528d50d415f17a3aae7a281f7f1c831c304c",
+ "recommendation": {
+  "disposition": "RECOMMEND 16 WORKERS",
+  "reason": "smallest acceptable tier within 0.85 of the largest acceptable speedup (14.088)",
+  "workers": 16
+ },
+ "schema": "miaosuan-concurrency-qualification-results/1",
+ "tiers": [
+  {
+   "attempt": null,
+   "batches": 8,
+   "block_input_total": 0,
+   "block_output_total": 2680.0,
+   "busy_threads_per_game_max": 1,
+   "concurrent_processes_max": 1,
+   "contended": false,
+   "context_switches_per_second": 786.1617602383799,
+   "cpu_per_wall_median": 1.3308463333592122,
+   "cpu_seconds_per_game_median": 22.825743000000003,
+   "cpu_seconds_total": 481.379192,
+   "criteria": {
+    "engine_state": {
+     "pass": true
+    },
+    "independence": {
+     "pass": true
+    },
+    "ledger": {
+     "pass": true
+    },
+    "safety": {
+     "pass": true
+    }
+   },
+   "descriptor_snapshots": 91,
+   "engine_state_pass": true,
+   "games_completed": 8,
+   "games_planned": 8,
+   "gpu": {
+    "gpu_library_mapped": false,
+    "ours_on_gpu": false,
+    "samples": 43
+   },
+   "host_busy_cpus_mean": 1.2353232226268545,
+   "host_busy_fraction_mean": 0.0193019253535446,
+   "independence": {
+    "deterministic_games": 5,
+    "deterministic_identical": 5,
+    "duplicate_chain_groups": 0,
+    "stochastic_games": 3,
+    "stochastic_prefix_equal": 3
+   },
+   "independence_pass": true,
+   "inet_socket_observations": 0,
+   "involuntary_switches_per_game_median": 67.0,
+   "latency": {
+    "decisions": 19729,
+    "max_ms": 822.979,
+    "over_1000ms": 0,
+    "over_100ms": 6,
+    "over_400ms": 2,
+    "p50_ms": 0.488,
+    "p95_ms": 1.19,
+    "p99_ms": 1.214
+   },
+   "ledger": {
+    "sessions": 8
+   },
+   "ledger_pass": true,
+   "libraries": {
+    "gpu": false,
+    "openblas": true,
+    "openmp": false
+   },
+   "load1_max": 1.26,
+   "main_thread_cpu_share_min": 0.5253333333333334,
+   "makespan_seconds": 434.7627809057012,
+   "max_rss_kib_per_game": {
+    "max": 1868348.0,
+    "p50": 759740.0,
+    "p95": 1868348.0,
+    "p99": 1868348.0
+   },
+   "others_cpus_max": 1.130899790746338,
+   "others_cpus_mean": 0.13821959764074532,
+   "our_cpus_mean": 1.1072226352890353,
+   "peak_rss_fraction": 0.0036434621776341367,
+   "peak_total_rss_kib": 1863544.0,
+   "per_config": {
+    "1910631192.C2": {
+     "cpu_median": 23.458865,
+     "games": 1,
+     "gc_collections_median": [
+      5347,
+      486,
+      18
+     ],
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 12.019,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.239,
+      "p95_ms": 0.249,
+      "p99_ms": 0.3
+     },
+     "max_rss_kib_max": 858504.0,
+     "process_wall_median": 17.62702756281942
+    },
+    "1930331196.C3": {
+     "cpu_median": 109.473079,
+     "games": 1,
+     "gc_collections_median": [
+      34868,
+      3169,
+      76
+     ],
+     "latency": {
+      "decisions": 2881,
+      "max_ms": 105.423,
+      "over_1000ms": 0,
+      "over_100ms": 1,
+      "over_400ms": 0,
+      "p50_ms": 0.742,
+      "p95_ms": 0.817,
+      "p99_ms": 0.869
+     },
+     "max_rss_kib_max": 1387780.0,
+     "process_wall_median": 103.64184864424169
+    },
+    "2010131194.C2": {
+     "cpu_median": 14.702928,
+     "games": 1,
+     "gc_collections_median": [
+      2052,
+      186,
+      9
+     ],
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 2.507,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.17,
+      "p95_ms": 0.175,
+      "p99_ms": 0.185
+     },
+     "max_rss_kib_max": 684896.0,
+     "process_wall_median": 8.876599526032805
+    },
+    "2010211129.C3": {
+     "cpu_median": 21.888632,
+     "games": 1,
+     "gc_collections_median": [
+      5065,
+      460,
+      17
+     ],
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 5.931,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.233,
+      "p95_ms": 0.241,
+      "p99_ms": 0.261
+     },
+     "max_rss_kib_max": 747924.0,
+     "process_wall_median": 16.058213918469846
+    },
+    "201033019601.C2": {
+     "cpu_median": 11.833286000000001,
+     "games": 1,
+     "gc_collections_median": [
+      1322,
+      120,
+      6
+     ],
+     "latency": {
+      "decisions": 1001,
+      "max_ms": 0.73,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.222,
+      "p95_ms": 0.227,
+      "p99_ms": 0.251
+     },
+     "max_rss_kib_max": 330776.0,
+     "process_wall_median": 6.013583422638476
+    },
+    "2010431153.C2": {
+     "cpu_median": 22.825743000000003,
+     "games": 1,
+     "gc_collections_median": [
+      5348,
+      486,
+      18
+     ],
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 12.58,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.235,
+      "p95_ms": 0.243,
+      "p99_ms": 0.299
+     },
+     "max_rss_kib_max": 759740.0,
+     "process_wall_median": 16.991097510792315
+    },
+    "2120531121.C1": {
+     "cpu_median": 80.466155,
+     "games": 1,
+     "gc_collections_median": [
+      25082,
+      2280,
+      64
+     ],
+     "latency": {
+      "decisions": 5762,
+      "max_ms": 91.355,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.626,
+      "p95_ms": 0.804,
+      "p99_ms": 0.846
+     },
+     "max_rss_kib_max": 1173160.0,
+     "process_wall_median": 74.63832602836192
+    },
+    "2130511121.C3": {
+     "cpu_median": 196.730504,
+     "games": 1,
+     "gc_collections_median": [
+      61838,
+      5621,
+      111
+     ],
+     "latency": {
+      "decisions": 2881,
+      "max_ms": 822.979,
+      "over_1000ms": 0,
+      "over_100ms": 5,
+      "over_400ms": 2,
+      "p50_ms": 1.184,
+      "p95_ms": 1.228,
+      "p99_ms": 1.328
+     },
+     "max_rss_kib_max": 1868348.0,
+     "process_wall_median": 190.9149030102417
+    }
+   },
+   "precheck_others_cpus": 0.118,
+   "process_wall_seconds": {
+    "max": 190.9149030102417,
+    "p50": 16.991097510792315,
+    "p95": 190.9149030102417,
+    "p99": 190.9149030102417
+   },
+   "procs_running_max": 4,
+   "procs_running_mean": 2.119158878504673,
+   "safety_pass": true,
+   "session_mode": "exclusive",
+   "threads_per_process_max": 64,
+   "throughput_games_per_hour": 66.24302094122136,
+   "tier": "S",
+   "unix_socket_observations": 0,
+   "voluntary_switches_per_game_median": 121.0,
+   "workers": 1,
+   "write_bytes_per_game_median": 8192
+  },
+  {
+   "attempt": null,
+   "batches": 16,
+   "block_input_total": 0,
+   "block_output_total": 5368.0,
+   "busy_threads_per_game_max": 1,
+   "concurrent_processes_max": 1,
+   "contended": false,
+   "context_switches_per_second": 766.5073283356675,
+   "cpu_per_wall_median": 1.331904808868358,
+   "cpu_seconds_per_game_median": 22.739877,
+   "cpu_seconds_total": 938.5996029999999,
+   "criteria": {
+    "efficiency": {
+     "efficiency": 1.0,
+     "pass": true
+    },
+    "engine_state": {
+     "pass": true
+    },
+    "headroom": {
+     "our_cpus_mean": 1.110165173810571,
+     "pass": true,
+     "peak_rss_fraction": 0.0036675336813555576
+    },
+    "independence": {
+     "pass": true
+    },
+    "latency": {
+     "max_ratio": 1.0,
+     "p99_ratio": 1.0,
+     "pass": true
+    },
+    "ledger": {
+     "pass": true
+    },
+    "safety": {
+     "pass": true
+    },
+    "throughput": {
+     "pass": false,
+     "speedup": 1.0
+    }
+   },
+   "descriptor_snapshots": 178,
+   "efficiency": 1.0,
+   "engine_state_pass": true,
+   "games_completed": 16,
+   "games_planned": 16,
+   "gpu": {
+    "gpu_library_mapped": false,
+    "ours_on_gpu": false,
+    "samples": 84
+   },
+   "host_busy_cpus_mean": 1.239723536542685,
+   "host_busy_fraction_mean": 0.019370680258479454,
+   "independence": {
+    "deterministic_games": 10,
+    "deterministic_identical": 10,
+    "duplicate_chain_groups": 0,
+    "stochastic_games": 6,
+    "stochastic_prefix_equal": 6
+   },
+   "independence_pass": true,
+   "inet_socket_observations": 0,
+   "involuntary_switches_per_game_median": 91.0,
+   "latency": {
+    "decisions": 39458,
+    "max_ms": 822.792,
+    "over_1000ms": 0,
+    "over_100ms": 8,
+    "over_400ms": 2,
+    "p50_ms": 0.475,
+    "p95_ms": 1.193,
+    "p99_ms": 1.227
+   },
+   "ledger": {
+    "sessions": 16
+   },
+   "ledger_pass": true,
+   "libraries": {
+    "gpu": false,
+    "openblas": true,
+    "openmp": false
+   },
+   "load1_max": 6.26,
+   "main_thread_cpu_share_min": 0.5267857142857143,
+   "makespan_seconds": 845.4594191405922,
+   "max_rss_kib_per_game": {
+    "max": 1880416.0,
+    "p50": 759648.0,
+    "p95": 1880416.0,
+    "p99": 1880416.0
+   },
+   "others_cpus_max": 1.238709677419355,
+   "others_cpus_mean": 0.1386656384024562,
+   "our_cpus_mean": 1.110165173810571,
+   "peak_rss_fraction": 0.0036675336813555576,
+   "peak_total_rss_kib": 1875856.0,
+   "per_config": {
+    "1910631192.C2": {
+     "cpu_median": 23.356519999999996,
+     "games": 2,
+     "gc_collections_median": [
+      5347,
+      486,
+      18
+     ],
+     "latency": {
+      "decisions": 3602,
+      "max_ms": 12.197,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.237,
+      "p95_ms": 0.247,
+      "p99_ms": 0.295
+     },
+     "max_rss_kib_max": 858856.0,
+     "process_wall_median": 17.53617814462632
+    },
+    "1930331196.C3": {
+     "cpu_median": 99.920022,
+     "games": 2,
+     "gc_collections_median": [
+      33009,
+      3000,
+      62
+     ],
+     "latency": {
+      "decisions": 5762,
+      "max_ms": 105.443,
+      "over_1000ms": 0,
+      "over_100ms": 2,
+      "over_400ms": 0,
+      "p50_ms": 0.731,
+      "p95_ms": 0.808,
+      "p99_ms": 0.867
+     },
+     "max_rss_kib_max": 1377760.0,
+     "process_wall_median": 94.09004444628954
+    },
+    "2010131194.C2": {
+     "cpu_median": 14.628065,
+     "games": 2,
+     "gc_collections_median": [
+      2052,
+      186,
+      9
+     ],
+     "latency": {
+      "decisions": 3602,
+      "max_ms": 2.54,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.168,
+      "p95_ms": 0.174,
+      "p99_ms": 0.183
+     },
+     "max_rss_kib_max": 685152.0,
+     "process_wall_median": 8.823319804854691
+    },
+    "2010211129.C3": {
+     "cpu_median": 21.654754,
+     "games": 2,
+     "gc_collections_median": [
+      5066,
+      460,
+      17
+     ],
+     "latency": {
+      "decisions": 3602,
+      "max_ms": 5.899,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.233,
+      "p95_ms": 0.24,
+      "p99_ms": 0.258
+     },
+     "max_rss_kib_max": 747956.0,
+     "process_wall_median": 15.850929261185229
+    },
+    "201033019601.C2": {
+     "cpu_median": 11.818311,
+     "games": 2,
+     "gc_collections_median": [
+      1322,
+      120,
+      6
+     ],
+     "latency": {
+      "decisions": 2002,
+      "max_ms": 0.718,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.221,
+      "p95_ms": 0.226,
+      "p99_ms": 0.241
+     },
+     "max_rss_kib_max": 331076.0,
+     "process_wall_median": 5.98156813532114
+    },
+    "2010431153.C2": {
+     "cpu_median": 22.717039,
+     "games": 2,
+     "gc_collections_median": [
+      5348,
+      486,
+      18
+     ],
+     "latency": {
+      "decisions": 3602,
+      "max_ms": 12.637,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.235,
+      "p95_ms": 0.244,
+      "p99_ms": 0.304
+     },
+     "max_rss_kib_max": 759648.0,
+     "process_wall_median": 16.88381407316774
+    },
+    "2120531121.C1": {
+     "cpu_median": 75.42327999999999,
+     "games": 2,
+     "gc_collections_median": [
+      23605,
+      2145,
+      64
+     ],
+     "latency": {
+      "decisions": 11524,
+      "max_ms": 91.202,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.587,
+      "p95_ms": 0.796,
+      "p99_ms": 0.842
+     },
+     "max_rss_kib_max": 1150688.0,
+     "process_wall_median": 69.61714139860123
+    },
+    "2130511121.C3": {
+     "cpu_median": 197.317756,
+     "games": 2,
+     "gc_collections_median": [
+      61705,
+      5609,
+      112
+     ],
+     "latency": {
+      "decisions": 5762,
+      "max_ms": 822.792,
+      "over_1000ms": 0,
+      "over_100ms": 6,
+      "over_400ms": 2,
+      "p50_ms": 1.186,
+      "p95_ms": 1.245,
+      "p99_ms": 1.326
+     },
+     "max_rss_kib_max": 1880416.0,
+     "process_wall_median": 191.49649222847074
+    }
+   },
+   "precheck_others_cpus": 0.12,
+   "process_wall_seconds": {
+    "max": 192.79256235901266,
+    "p50": 16.916637793183327,
+    "p95": 192.79256235901266,
+    "p99": 192.79256235901266
+   },
+   "procs_running_max": 65,
+   "procs_running_mean": 2.360576923076923,
+   "safety_pass": true,
+   "session_mode": "shared",
+   "speedup": 1.0,
+   "threads_per_process_max": 64,
+   "throughput_games_per_hour": 68.12863952541954,
+   "tier": "w01",
+   "unix_socket_observations": 0,
+   "voluntary_switches_per_game_median": 123.0,
+   "workers": 1,
+   "write_bytes_per_game_median": 8192
+  },
+  {
+   "attempt": null,
+   "batches": 8,
+   "block_input_total": 0,
+   "block_output_total": 5368.0,
+   "busy_threads_per_game_max": 1,
+   "concurrent_processes_max": 2,
+   "contended": false,
+   "context_switches_per_second": 4981.376526286005,
+   "cpu_per_wall_median": 1.3216146018358745,
+   "cpu_seconds_per_game_median": 22.935712,
+   "cpu_seconds_total": 961.1966560000001,
+   "criteria": {
+    "efficiency": {
+     "efficiency": 0.9637135934872506,
+     "pass": true
+    },
+    "engine_state": {
+     "pass": true
+    },
+    "headroom": {
+     "our_cpus_mean": 2.1912779310999677,
+     "pass": true,
+     "peak_rss_fraction": 0.007299265106688807
+    },
+    "independence": {
+     "pass": true
+    },
+    "latency": {
+     "max_ratio": 1.0235758247527929,
+     "p99_ratio": 1.0798696006519966,
+     "pass": true
+    },
+    "ledger": {
+     "pass": true
+    },
+    "safety": {
+     "pass": true
+    },
+    "throughput": {
+     "pass": true,
+     "speedup": 1.9274271869745012
+    }
+   },
+   "descriptor_snapshots": 183,
+   "efficiency": 0.9637135934872506,
+   "engine_state_pass": true,
+   "games_completed": 16,
+   "games_planned": 16,
+   "gpu": {
+    "gpu_library_mapped": false,
+    "ours_on_gpu": false,
+    "samples": 44
+   },
+   "host_busy_cpus_mean": 2.316877617666779,
+   "host_busy_fraction_mean": 0.03620121277604342,
+   "independence": {
+    "deterministic_games": 10,
+    "deterministic_identical": 10,
+    "duplicate_chain_groups": 0,
+    "stochastic_games": 6,
+    "stochastic_prefix_equal": 6
+   },
+   "independence_pass": true,
+   "inet_socket_observations": 0,
+   "involuntary_switches_per_game_median": 211.0,
+   "latency": {
+    "decisions": 39458,
+    "max_ms": 842.19,
+    "over_1000ms": 0,
+    "over_100ms": 8,
+    "over_400ms": 2,
+    "p50_ms": 0.48,
+    "p95_ms": 1.237,
+    "p99_ms": 1.325
+   },
+   "ledger": {
+    "sessions": 16
+   },
+   "ledger_pass": true,
+   "libraries": {
+    "gpu": false,
+    "openblas": true,
+    "openmp": false
+   },
+   "load1_max": 2.17,
+   "main_thread_cpu_share_min": 0.533628318584071,
+   "makespan_seconds": 438.6466191066429,
+   "max_rss_kib_per_game": {
+    "max": 1880416.0,
+    "p50": 759732.0,
+    "p95": 1880416.0,
+    "p99": 1880416.0
+   },
+   "others_cpus_max": 1.2017823042647995,
+   "others_cpus_mean": 0.14962153673598205,
+   "our_cpus_mean": 2.1912779310999677,
+   "peak_rss_fraction": 0.007299265106688807,
+   "peak_total_rss_kib": 3733400.0,
+   "per_config": {
+    "1910631192.C2": {
+     "cpu_median": 23.623694,
+     "games": 2,
+     "gc_collections_median": [
+      5348,
+      486,
+      18
+     ],
+     "latency": {
+      "decisions": 3602,
+      "max_ms": 12.494,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.239,
+      "p95_ms": 0.257,
+      "p99_ms": 0.33
+     },
+     "max_rss_kib_max": 858752.0,
+     "process_wall_median": 17.874873633496463
+    },
+    "1930331196.C3": {
+     "cpu_median": 102.30935799999999,
+     "games": 2,
+     "gc_collections_median": [
+      33053,
+      3004,
+      64
+     ],
+     "latency": {
+      "decisions": 5762,
+      "max_ms": 110.137,
+      "over_1000ms": 0,
+      "over_100ms": 2,
+      "over_400ms": 0,
+      "p50_ms": 0.75,
+      "p95_ms": 0.844,
+      "p99_ms": 0.888
+     },
+     "max_rss_kib_max": 1389740.0,
+     "process_wall_median": 96.5708878794685
+    },
+    "2010131194.C2": {
+     "cpu_median": 14.69497,
+     "games": 2,
+     "gc_collections_median": [
+      2053,
+      186,
+      9
+     ],
+     "latency": {
+      "decisions": 3602,
+      "max_ms": 2.528,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.169,
+      "p95_ms": 0.176,
+      "p99_ms": 0.247
+     },
+     "max_rss_kib_max": 684956.0,
+     "process_wall_median": 8.94416503701359
+    },
+    "2010211129.C3": {
+     "cpu_median": 21.864781999999998,
+     "games": 2,
+     "gc_collections_median": [
+      5066,
+      460,
+      17
+     ],
+     "latency": {
+      "decisions": 3602,
+      "max_ms": 5.959,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.233,
+      "p95_ms": 0.242,
+      "p99_ms": 0.277
+     },
+     "max_rss_kib_max": 748172.0,
+     "process_wall_median": 16.123120978474617
+    },
+    "201033019601.C2": {
+     "cpu_median": 11.860292999999999,
+     "games": 2,
+     "gc_collections_median": [
+      1323,
+      120,
+      6
+     ],
+     "latency": {
+      "decisions": 2002,
+      "max_ms": 0.732,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.223,
+      "p95_ms": 0.23,
+      "p99_ms": 0.319
+     },
+     "max_rss_kib_max": 331108.0,
+     "process_wall_median": 6.106737076304853
+    },
+    "2010431153.C2": {
+     "cpu_median": 22.868321,
+     "games": 2,
+     "gc_collections_median": [
+      5349,
+      486,
+      18
+     ],
+     "latency": {
+      "decisions": 3602,
+      "max_ms": 12.71,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.237,
+      "p95_ms": 0.247,
+      "p99_ms": 0.324
+     },
+     "max_rss_kib_max": 759732.0,
+     "process_wall_median": 17.124309766106308
+    },
+    "2120531121.C1": {
+     "cpu_median": 77.40420400000001,
+     "games": 2,
+     "gc_collections_median": [
+      23776,
+      2161,
+      65
+     ],
+     "latency": {
+      "decisions": 11524,
+      "max_ms": 94.348,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.613,
+      "p95_ms": 0.819,
+      "p99_ms": 0.874
+     },
+     "max_rss_kib_max": 1176796.0,
+     "process_wall_median": 71.63666414003819
+    },
+    "2130511121.C3": {
+     "cpu_median": 198.27461499999998,
+     "games": 2,
+     "gc_collections_median": [
+      61705,
+      5609,
+      112
+     ],
+     "latency": {
+      "decisions": 5762,
+      "max_ms": 842.19,
+      "over_1000ms": 0,
+      "over_100ms": 6,
+      "over_400ms": 2,
+      "p50_ms": 1.225,
+      "p95_ms": 1.332,
+      "p99_ms": 1.37
+     },
+     "max_rss_kib_max": 1880416.0,
+     "process_wall_median": 195.3031049426645
+    }
+   },
+   "precheck_others_cpus": 0.102,
+   "process_wall_seconds": {
+    "max": 198.5830088108778,
+    "p50": 17.192801403813064,
+    "p95": 198.5830088108778,
+    "p99": 198.5830088108778
+   },
+   "procs_running_max": 21,
+   "procs_running_mean": 3.1412037037037037,
+   "safety_pass": true,
+   "session_mode": "shared",
+   "speedup": 1.9274271869745012,
+   "threads_per_process_max": 64,
+   "throughput_games_per_hour": 131.3129920328792,
+   "tier": "w02",
+   "unix_socket_observations": 0,
+   "voluntary_switches_per_game_median": 124.0,
+   "workers": 2,
+   "write_bytes_per_game_median": 8192
+  },
+  {
+   "attempt": null,
+   "batches": 4,
+   "block_input_total": 0,
+   "block_output_total": 5368.0,
+   "busy_threads_per_game_max": 1,
+   "concurrent_processes_max": 4,
+   "contended": false,
+   "context_switches_per_second": 19261.425691918244,
+   "cpu_per_wall_median": 1.3036461245459872,
+   "cpu_seconds_per_game_median": 23.11721,
+   "cpu_seconds_total": 963.340144,
+   "criteria": {
+    "efficiency": {
+     "efficiency": 0.9328554131216182,
+     "pass": true
+    },
+    "engine_state": {
+     "pass": true
+    },
+    "headroom": {
+     "our_cpus_mean": 4.251686350227157,
+     "pass": true,
+     "peak_rss_fraction": 0.011000903995233811
+    },
+    "independence": {
+     "pass": true
+    },
+    "latency": {
+     "max_ratio": 1.6013390990675649,
+     "p99_ratio": 1.1214343928280357,
+     "pass": true
+    },
+    "ledger": {
+     "pass": true
+    },
+    "safety": {
+     "pass": true
+    },
+    "throughput": {
+     "pass": true,
+     "speedup": 3.731421652486473
+    }
+   },
+   "descriptor_snapshots": 187,
+   "efficiency": 0.9328554131216182,
+   "engine_state_pass": true,
+   "games_completed": 16,
+   "games_planned": 16,
+   "gpu": {
+    "gpu_library_mapped": false,
+    "ours_on_gpu": false,
+    "samples": 23
+   },
+   "host_busy_cpus_mean": 4.399315111758694,
+   "host_busy_fraction_mean": 0.0687392986212296,
+   "independence": {
+    "deterministic_games": 10,
+    "deterministic_identical": 10,
+    "duplicate_chain_groups": 0,
+    "stochastic_games": 6,
+    "stochastic_prefix_equal": 6
+   },
+   "independence_pass": true,
+   "inet_socket_observations": 0,
+   "involuntary_switches_per_game_median": 159466.0,
+   "latency": {
+    "decisions": 39458,
+    "max_ms": 1317.569,
+    "over_1000ms": 5,
+    "over_100ms": 14,
+    "over_400ms": 8,
+    "p50_ms": 0.492,
+    "p95_ms": 1.302,
+    "p99_ms": 1.376
+   },
+   "ledger": {
+    "sessions": 16
+   },
+   "ledger_pass": true,
+   "libraries": {
+    "gpu": false,
+    "openblas": true,
+    "openmp": false
+   },
+   "load1_max": 9.08,
+   "main_thread_cpu_share_min": 0.5406137184115526,
+   "makespan_seconds": 226.578365534544,
+   "max_rss_kib_per_game": {
+    "max": 1882248.0,
+    "p50": 759888.0,
+    "p95": 1882248.0,
+    "p99": 1882248.0
+   },
+   "others_cpus_max": 1.170731707317073,
+   "others_cpus_mean": 0.18077915588238178,
+   "our_cpus_mean": 4.251686350227157,
+   "peak_rss_fraction": 0.011000903995233811,
+   "peak_total_rss_kib": 5626700.0,
+   "per_config": {
+    "1910631192.C2": {
+     "cpu_median": 23.851003,
+     "games": 2,
+     "gc_collections_median": [
+      5348,
+      486,
+      18
+     ],
+     "latency": {
+      "decisions": 3602,
+      "max_ms": 12.699,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.255,
+      "p95_ms": 0.294,
+      "p99_ms": 0.35
+     },
+     "max_rss_kib_max": 858504.0,
+     "process_wall_median": 18.29561147838831
+    },
+    "1930331196.C3": {
+     "cpu_median": 96.57503700000001,
+     "games": 2,
+     "gc_collections_median": [
+      32965,
+      2996,
+      62
+     ],
+     "latency": {
+      "decisions": 5762,
+      "max_ms": 108.591,
+      "over_1000ms": 0,
+      "over_100ms": 2,
+      "over_400ms": 0,
+      "p50_ms": 0.766,
+      "p95_ms": 0.848,
+      "p99_ms": 0.9
+     },
+     "max_rss_kib_max": 1376836.0,
+     "process_wall_median": 95.18915055505931
+    },
+    "2010131194.C2": {
+     "cpu_median": 14.61836,
+     "games": 2,
+     "gc_collections_median": [
+      2053,
+      186,
+      9
+     ],
+     "latency": {
+      "decisions": 3602,
+      "max_ms": 2.52,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.17,
+      "p95_ms": 0.177,
+      "p99_ms": 0.264
+     },
+     "max_rss_kib_max": 685092.0,
+     "process_wall_median": 9.051467005163431
+    },
+    "2010211129.C3": {
+     "cpu_median": 21.823778,
+     "games": 2,
+     "gc_collections_median": [
+      5066,
+      460,
+      17
+     ],
+     "latency": {
+      "decisions": 3602,
+      "max_ms": 6.008,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.234,
+      "p95_ms": 0.252,
+      "p99_ms": 0.326
+     },
+     "max_rss_kib_max": 747948.0,
+     "process_wall_median": 16.253894336521626
+    },
+    "201033019601.C2": {
+     "cpu_median": 11.727989,
+     "games": 2,
+     "gc_collections_median": [
+      1323,
+      120,
+      6
+     ],
+     "latency": {
+      "decisions": 2002,
+      "max_ms": 0.754,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.221,
+      "p95_ms": 0.227,
+      "p99_ms": 0.247
+     },
+     "max_rss_kib_max": 331140.0,
+     "process_wall_median": 6.111121214926243
+    },
+    "2010431153.C2": {
+     "cpu_median": 22.844895,
+     "games": 2,
+     "gc_collections_median": [
+      5349,
+      486,
+      18
+     ],
+     "latency": {
+      "decisions": 3602,
+      "max_ms": 12.967,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.238,
+      "p95_ms": 0.273,
+      "p99_ms": 0.394
+     },
+     "max_rss_kib_max": 759888.0,
+     "process_wall_median": 17.28219627868384
+    },
+    "2120531121.C1": {
+     "cpu_median": 79.90811000000001,
+     "games": 2,
+     "gc_collections_median": [
+      24325,
+      2211,
+      65
+     ],
+     "latency": {
+      "decisions": 11524,
+      "max_ms": 92.651,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.644,
+      "p95_ms": 0.825,
+      "p99_ms": 0.879
+     },
+     "max_rss_kib_max": 1173644.0,
+     "process_wall_median": 74.32826081290841
+    },
+    "2130511121.C3": {
+     "cpu_median": 205.899595,
+     "games": 2,
+     "gc_collections_median": [
+      63294,
+      5753,
+      113
+     ],
+     "latency": {
+      "decisions": 5762,
+      "max_ms": 1317.569,
+      "over_1000ms": 5,
+      "over_100ms": 12,
+      "over_400ms": 8,
+      "p50_ms": 1.281,
+      "p95_ms": 1.382,
+      "p99_ms": 1.504
+     },
+     "max_rss_kib_max": 1882248.0,
+     "process_wall_median": 203.82884811330587
+    }
+   },
+   "precheck_others_cpus": 0.126,
+   "process_wall_seconds": {
+    "max": 204.48396034631878,
+    "p50": 17.56132423877716,
+    "p95": 204.48396034631878,
+    "p99": 204.48396034631878
+   },
+   "procs_running_max": 68,
+   "procs_running_mean": 5.6591928251121075,
+   "safety_pass": true,
+   "session_mode": "shared",
+   "speedup": 3.731421652486473,
+   "threads_per_process_max": 64,
+   "throughput_games_per_hour": 254.21668067959624,
+   "tier": "w04",
+   "unix_socket_observations": 0,
+   "voluntary_switches_per_game_median": 130.0,
+   "workers": 4,
+   "write_bytes_per_game_median": 8192
+  },
+  {
+   "attempt": null,
+   "batches": 4,
+   "block_input_total": 7952.0,
+   "block_output_total": 10736.0,
+   "busy_threads_per_game_max": 1,
+   "concurrent_processes_max": 8,
+   "contended": false,
+   "context_switches_per_second": 64988.18473144364,
+   "cpu_per_wall_median": 1.2867865912668517,
+   "cpu_seconds_per_game_median": 23.364918,
+   "cpu_seconds_total": 1947.3764559999995,
+   "criteria": {
+    "efficiency": {
+     "efficiency": 0.9175719875305747,
+     "pass": true
+    },
+    "engine_state": {
+     "pass": true
+    },
+    "headroom": {
+     "our_cpus_mean": 8.45390349790415,
+     "pass": true,
+     "peak_rss_fraction": 0.022075617883944805
+    },
+    "independence": {
+     "pass": true
+    },
+    "latency": {
+     "max_ratio": 1.452774212680726,
+     "p99_ratio": 1.1385493072534636,
+     "pass": true
+    },
+    "ledger": {
+     "pass": true
+    },
+    "safety": {
+     "pass": true
+    },
+    "throughput": {
+     "pass": true,
+     "speedup": 7.340575900244597
+    }
+   },
+   "descriptor_snapshots": 380,
+   "efficiency": 0.9175719875305747,
+   "engine_state_pass": true,
+   "games_completed": 32,
+   "games_planned": 32,
+   "gpu": {
+    "gpu_library_mapped": false,
+    "ours_on_gpu": false,
+    "samples": 23
+   },
+   "host_busy_cpus_mean": 8.616231934496145,
+   "host_busy_fraction_mean": 0.13462862397650227,
+   "independence": {
+    "deterministic_games": 20,
+    "deterministic_identical": 20,
+    "duplicate_chain_groups": 0,
+    "stochastic_games": 12,
+    "stochastic_prefix_equal": 12
+   },
+   "independence_pass": true,
+   "inet_socket_observations": 0,
+   "involuntary_switches_per_game_median": 446346.0,
+   "latency": {
+    "decisions": 78916,
+    "max_ms": 1195.331,
+    "over_1000ms": 2,
+    "over_100ms": 30,
+    "over_400ms": 10,
+    "p50_ms": 0.551,
+    "p95_ms": 1.342,
+    "p99_ms": 1.397
+   },
+   "ledger": {
+    "sessions": 32
+   },
+   "ledger_pass": true,
+   "libraries": {
+    "gpu": false,
+    "openblas": true,
+    "openmp": false
+   },
+   "load1_max": 7.98,
+   "main_thread_cpu_share_min": 0.5641509433962267,
+   "makespan_seconds": 230.35234036948532,
+   "max_rss_kib_per_game": {
+    "max": 1878524.0,
+    "p50": 759860.0,
+    "p95": 1870072.0,
+    "p99": 1878524.0
+   },
+   "others_cpus_max": 1.1832705592921346,
+   "others_cpus_mean": 0.23096023200534369,
+   "our_cpus_mean": 8.45390349790415,
+   "peak_rss_fraction": 0.022075617883944805,
+   "peak_total_rss_kib": 11291152.0,
+   "per_config": {
+    "1910631192.C2": {
+     "cpu_median": 23.537408999999997,
+     "games": 4,
+     "gc_collections_median": [
+      5349,
+      486,
+      18
+     ],
+     "latency": {
+      "decisions": 7204,
+      "max_ms": 12.601,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.254,
+      "p95_ms": 0.303,
+      "p99_ms": 0.415
+     },
+     "max_rss_kib_max": 858772.0,
+     "process_wall_median": 18.291618174873292
+    },
+    "1930331196.C3": {
+     "cpu_median": 101.907676,
+     "games": 4,
+     "gc_collections_median": [
+      32932,
+      2993,
+      64
+     ],
+     "latency": {
+      "decisions": 11524,
+      "max_ms": 114.353,
+      "over_1000ms": 0,
+      "over_100ms": 4,
+      "over_400ms": 0,
+      "p50_ms": 0.814,
+      "p95_ms": 0.893,
+      "p99_ms": 0.937
+     },
+     "max_rss_kib_max": 1387664.0,
+     "process_wall_median": 101.1591842835769
+    },
+    "2010131194.C2": {
+     "cpu_median": 14.407990999999999,
+     "games": 4,
+     "gc_collections_median": [
+      2054,
+      186,
+      9
+     ],
+     "latency": {
+      "decisions": 7204,
+      "max_ms": 2.594,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.17,
+      "p95_ms": 0.187,
+      "p99_ms": 0.272
+     },
+     "max_rss_kib_max": 685144.0,
+     "process_wall_median": 9.162618881091475
+    },
+    "2010211129.C3": {
+     "cpu_median": 21.894751999999997,
+     "games": 4,
+     "gc_collections_median": [
+      5068,
+      460,
+      16
+     ],
+     "latency": {
+      "decisions": 7204,
+      "max_ms": 6.183,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.239,
+      "p95_ms": 0.269,
+      "p99_ms": 0.418
+     },
+     "max_rss_kib_max": 748340.0,
+     "process_wall_median": 16.6473343456164
+    },
+    "201033019601.C2": {
+     "cpu_median": 9.695546,
+     "games": 4,
+     "gc_collections_median": [
+      1324,
+      120,
+      6
+     ],
+     "latency": {
+      "decisions": 4004,
+      "max_ms": 2.537,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.221,
+      "p95_ms": 0.23,
+      "p99_ms": 0.346
+     },
+     "max_rss_kib_max": 331232.0,
+     "process_wall_median": 6.1725431783124804
+    },
+    "2010431153.C2": {
+     "cpu_median": 23.238407000000002,
+     "games": 4,
+     "gc_collections_median": [
+      5350,
+      486,
+      18
+     ],
+     "latency": {
+      "decisions": 7204,
+      "max_ms": 13.197,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.245,
+      "p95_ms": 0.302,
+      "p99_ms": 0.421
+     },
+     "max_rss_kib_max": 759860.0,
+     "process_wall_median": 18.027889194898307
+    },
+    "2120531121.C1": {
+     "cpu_median": 84.340567,
+     "games": 4,
+     "gc_collections_median": [
+      24171,
+      2197,
+      65
+     ],
+     "latency": {
+      "decisions": 23048,
+      "max_ms": 98.234,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.663,
+      "p95_ms": 0.877,
+      "p99_ms": 0.937
+     },
+     "max_rss_kib_max": 1167988.0,
+     "process_wall_median": 79.10390845313668
+    },
+    "2130511121.C3": {
+     "cpu_median": 206.194102,
+     "games": 4,
+     "gc_collections_median": [
+      61976,
+      5634,
+      113
+     ],
+     "latency": {
+      "decisions": 11524,
+      "max_ms": 1195.331,
+      "over_1000ms": 2,
+      "over_100ms": 26,
+      "over_400ms": 10,
+      "p50_ms": 1.314,
+      "p95_ms": 1.403,
+      "p99_ms": 1.566
+     },
+     "max_rss_kib_max": 1878524.0,
+     "process_wall_median": 205.37030323129147
+    }
+   },
+   "precheck_others_cpus": 0.127,
+   "process_wall_seconds": {
+    "max": 208.57024821266532,
+    "p50": 18.124385012313724,
+    "p95": 205.7172763729468,
+    "p99": 208.57024821266532
+   },
+   "procs_running_max": 72,
+   "procs_running_mean": 9.361233480176212,
+   "safety_pass": true,
+   "session_mode": "shared",
+   "speedup": 7.340575900244597,
+   "threads_per_process_max": 64,
+   "throughput_games_per_hour": 500.10344941674623,
+   "tier": "w08",
+   "unix_socket_observations": 0,
+   "voluntary_switches_per_game_median": 139.0,
+   "workers": 8,
+   "write_bytes_per_game_median": 8192
+  },
+  {
+   "attempt": null,
+   "batches": 4,
+   "block_input_total": 9672.0,
+   "block_output_total": 21464.0,
+   "busy_threads_per_game_max": 2,
+   "concurrent_processes_max": 16,
+   "contended": false,
+   "context_switches_per_second": 211533.76011306353,
+   "cpu_per_wall_median": 1.2270475385350883,
+   "cpu_seconds_per_game_median": 23.667500999999998,
+   "cpu_seconds_total": 4018.0060489999996,
+   "criteria": {
+    "efficiency": {
+     "efficiency": 0.8805175373928662,
+     "pass": true
+    },
+    "engine_state": {
+     "pass": true
+    },
+    "headroom": {
+     "our_cpus_mean": 16.738472415820564,
+     "pass": true,
+     "peak_rss_fraction": 0.044772222692190916
+    },
+    "independence": {
+     "pass": true
+    },
+    "latency": {
+     "max_ratio": 1.4204792948886231,
+     "p99_ratio": 1.1727791361043194,
+     "pass": true
+    },
+    "ledger": {
+     "pass": true
+    },
+    "safety": {
+     "pass": true
+    },
+    "throughput": {
+     "pass": true,
+     "speedup": 14.08828059828586
+    }
+   },
+   "descriptor_snapshots": 788,
+   "efficiency": 0.8805175373928662,
+   "engine_state_pass": true,
+   "games_completed": 64,
+   "games_planned": 64,
+   "gpu": {
+    "gpu_library_mapped": false,
+    "ours_on_gpu": false,
+    "samples": 24
+   },
+   "host_busy_cpus_mean": 16.97126950422998,
+   "host_busy_fraction_mean": 0.26517608600359344,
+   "independence": {
+    "deterministic_games": 40,
+    "deterministic_identical": 40,
+    "duplicate_chain_groups": 0,
+    "stochastic_games": 24,
+    "stochastic_prefix_equal": 24
+   },
+   "independence_pass": true,
+   "inet_socket_observations": 0,
+   "involuntary_switches_per_game_median": 837450.0,
+   "latency": {
+    "decisions": 157832,
+    "max_ms": 1168.759,
+    "over_1000ms": 2,
+    "over_100ms": 76,
+    "over_400ms": 10,
+    "p50_ms": 0.633,
+    "p95_ms": 1.392,
+    "p99_ms": 1.439
+   },
+   "ledger": {
+    "sessions": 64
+   },
+   "ledger_pass": true,
+   "libraries": {
+    "gpu": false,
+    "openblas": true,
+    "openmp": false
+   },
+   "load1_max": 21.02,
+   "main_thread_cpu_share_min": 0.6011730205278599,
+   "makespan_seconds": 240.04616127349436,
+   "max_rss_kib_per_game": {
+    "max": 1881892.0,
+    "p50": 760180.0,
+    "p95": 1880020.0,
+    "p99": 1881892.0
+   },
+   "others_cpus_max": 2.672395885079105,
+   "others_cpus_mean": 0.35464284185282424,
+   "our_cpus_mean": 16.738472415820564,
+   "peak_rss_fraction": 0.044772222692190916,
+   "peak_total_rss_kib": 22899924.0,
+   "per_config": {
+    "1910631192.C2": {
+     "cpu_median": 24.610047,
+     "games": 8,
+     "gc_collections_median": [
+      5350,
+      486,
+      18
+     ],
+     "latency": {
+      "decisions": 14408,
+      "max_ms": 14.01,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.302,
+      "p95_ms": 0.354,
+      "p99_ms": 0.496
+     },
+     "max_rss_kib_max": 858992.0,
+     "process_wall_median": 20.053253117017448
+    },
+    "1930331196.C3": {
+     "cpu_median": 106.95708099999999,
+     "games": 8,
+     "gc_collections_median": [
+      32965,
+      2996,
+      65
+     ],
+     "latency": {
+      "decisions": 23048,
+      "max_ms": 120.949,
+      "over_1000ms": 0,
+      "over_100ms": 8,
+      "over_400ms": 0,
+      "p50_ms": 0.865,
+      "p95_ms": 0.937,
+      "p99_ms": 0.992
+     },
+     "max_rss_kib_max": 1378736.0,
+     "process_wall_median": 106.8112375838682
+    },
+    "2010131194.C2": {
+     "cpu_median": 11.987275,
+     "games": 8,
+     "gc_collections_median": [
+      2055,
+      186,
+      9
+     ],
+     "latency": {
+      "decisions": 14408,
+      "max_ms": 4.505,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.176,
+      "p95_ms": 0.21,
+      "p99_ms": 0.289
+     },
+     "max_rss_kib_max": 685408.0,
+     "process_wall_median": 9.504124706611037
+    },
+    "2010211129.C3": {
+     "cpu_median": 21.946806000000002,
+     "games": 8,
+     "gc_collections_median": [
+      5070,
+      460,
+      16
+     ],
+     "latency": {
+      "decisions": 14408,
+      "max_ms": 6.133,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.255,
+      "p95_ms": 0.278,
+      "p99_ms": 0.435
+     },
+     "max_rss_kib_max": 748376.0,
+     "process_wall_median": 17.357937906868756
+    },
+    "201033019601.C2": {
+     "cpu_median": 10.795031,
+     "games": 8,
+     "gc_collections_median": [
+      1326,
+      120,
+      6
+     ],
+     "latency": {
+      "decisions": 8008,
+      "max_ms": 1.145,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.228,
+      "p95_ms": 0.26,
+      "p99_ms": 0.394
+     },
+     "max_rss_kib_max": 331196.0,
+     "process_wall_median": 6.386322353035212
+    },
+    "2010431153.C2": {
+     "cpu_median": 23.295596,
+     "games": 8,
+     "gc_collections_median": [
+      5351,
+      486,
+      18
+     ],
+     "latency": {
+      "decisions": 14408,
+      "max_ms": 14.56,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.279,
+      "p95_ms": 0.339,
+      "p99_ms": 0.466
+     },
+     "max_rss_kib_max": 760180.0,
+     "process_wall_median": 18.73814427945763
+    },
+    "2120531121.C1": {
+     "cpu_median": 89.67711,
+     "games": 8,
+     "gc_collections_median": [
+      25460,
+      2314,
+      66
+     ],
+     "latency": {
+      "decisions": 46096,
+      "max_ms": 125.954,
+      "over_1000ms": 0,
+      "over_100ms": 5,
+      "over_400ms": 0,
+      "p50_ms": 0.708,
+      "p95_ms": 0.916,
+      "p99_ms": 0.98
+     },
+     "max_rss_kib_max": 1200932.0,
+     "process_wall_median": 85.3071330357343
+    },
+    "2130511121.C3": {
+     "cpu_median": 212.38632900000002,
+     "games": 8,
+     "gc_collections_median": [
+      61977,
+      5634,
+      112
+     ],
+     "latency": {
+      "decisions": 23048,
+      "max_ms": 1168.759,
+      "over_1000ms": 2,
+      "over_100ms": 63,
+      "over_400ms": 10,
+      "p50_ms": 1.375,
+      "p95_ms": 1.444,
+      "p99_ms": 2.3
+     },
+     "max_rss_kib_max": 1881892.0,
+     "process_wall_median": 211.87696176208556
+    }
+   },
+   "precheck_others_cpus": 0.118,
+   "process_wall_seconds": {
+    "max": 214.39467744156718,
+    "p50": 19.089768148958683,
+    "p95": 212.14461982250214,
+    "p99": 214.39467744156718
+   },
+   "procs_running_max": 81,
+   "procs_running_mean": 18.378723404255318,
+   "safety_pass": true,
+   "session_mode": "shared",
+   "speedup": 14.08828059828586,
+   "threads_per_process_max": 64,
+   "throughput_games_per_hour": 959.8153904135793,
+   "tier": "w16",
+   "unix_socket_observations": 0,
+   "voluntary_switches_per_game_median": 129.0,
+   "workers": 16,
+   "write_bytes_per_game_median": 8192
+  },
+  {
+   "attempt": null,
+   "batches": 4,
+   "block_input_total": 3840.0,
+   "block_output_total": 32208.0,
+   "busy_threads_per_game_max": 2,
+   "concurrent_processes_max": 24,
+   "contended": false,
+   "context_switches_per_second": 445349.8842582671,
+   "cpu_per_wall_median": 1.180628755757518,
+   "cpu_seconds_per_game_median": 24.353974,
+   "cpu_seconds_total": 6150.704359000003,
+   "criteria": {
+    "efficiency": {
+     "efficiency": 0.8478060826702176,
+     "pass": true
+    },
+    "engine_state": {
+     "pass": true
+    },
+    "headroom": {
+     "our_cpus_mean": 24.671105201321474,
+     "pass": true,
+     "peak_rss_fraction": 0.06575128895355645
+    },
+    "independence": {
+     "pass": true
+    },
+    "latency": {
+     "max_ratio": 2.1387057725403262,
+     "p99_ratio": 1.1939690301548491,
+     "pass": false
+    },
+    "ledger": {
+     "pass": true
+    },
+    "safety": {
+     "pass": true
+    },
+    "throughput": {
+     "pass": true,
+     "speedup": 20.347345984085223
+    }
+   },
+   "descriptor_snapshots": 1213,
+   "efficiency": 0.8478060826702176,
+   "engine_state_pass": true,
+   "games_completed": 96,
+   "games_planned": 96,
+   "gpu": {
+    "gpu_library_mapped": false,
+    "ours_on_gpu": false,
+    "samples": 25
+   },
+   "host_busy_cpus_mean": 24.898559970168648,
+   "host_busy_fraction_mean": 0.38903999953388513,
+   "independence": {
+    "deterministic_games": 60,
+    "deterministic_identical": 60,
+    "duplicate_chain_groups": 0,
+    "stochastic_games": 36,
+    "stochastic_prefix_equal": 36
+   },
+   "independence_pass": true,
+   "inet_socket_observations": 0,
+   "involuntary_switches_per_game_median": 1420090.0,
+   "latency": {
+    "decisions": 236748,
+    "max_ms": 1759.71,
+    "over_1000ms": 10,
+    "over_100ms": 101,
+    "over_400ms": 25,
+    "p50_ms": 0.633,
+    "p95_ms": 1.414,
+    "p99_ms": 1.465
+   },
+   "ledger": {
+    "sessions": 96
+   },
+   "ledger_pass": true,
+   "libraries": {
+    "gpu": false,
+    "openblas": true,
+    "openmp": false
+   },
+   "load1_max": 32.32,
+   "main_thread_cpu_share_min": 0.6420395421436004,
+   "makespan_seconds": 249.30801878590137,
+   "max_rss_kib_per_game": {
+    "max": 1922264.0,
+    "p50": 760124.0,
+    "p95": 1880076.0,
+    "p99": 1922264.0
+   },
+   "others_cpus_max": 3.6452571780190155,
+   "others_cpus_mean": 0.43676372003025793,
+   "our_cpus_mean": 24.671105201321474,
+   "peak_rss_fraction": 0.06575128895355645,
+   "peak_total_rss_kib": 33630216.0,
+   "per_config": {
+    "1910631192.C2": {
+     "cpu_median": 24.79517,
+     "games": 12,
+     "gc_collections_median": [
+      5352,
+      486,
+      18
+     ],
+     "latency": {
+      "decisions": 21612,
+      "max_ms": 23.659,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.323,
+      "p95_ms": 0.41,
+      "p99_ms": 0.521
+     },
+     "max_rss_kib_max": 858744.0,
+     "process_wall_median": 21.2957556899637
+    },
+    "1930331196.C3": {
+     "cpu_median": 108.375265,
+     "games": 12,
+     "gc_collections_median": [
+      32987,
+      2998,
+      65
+     ],
+     "latency": {
+      "decisions": 34572,
+      "max_ms": 124.303,
+      "over_1000ms": 0,
+      "over_100ms": 12,
+      "over_400ms": 0,
+      "p50_ms": 0.876,
+      "p95_ms": 0.95,
+      "p99_ms": 1.015
+     },
+     "max_rss_kib_max": 1388544.0,
+     "process_wall_median": 108.69110775273293
+    },
+    "2010131194.C2": {
+     "cpu_median": 13.643296,
+     "games": 12,
+     "gc_collections_median": [
+      2057,
+      187,
+      9
+     ],
+     "latency": {
+      "decisions": 21612,
+      "max_ms": 4.537,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.199,
+      "p95_ms": 0.305,
+      "p99_ms": 0.346
+     },
+     "max_rss_kib_max": 685148.0,
+     "process_wall_median": 10.0306715099141
+    },
+    "2010211129.C3": {
+     "cpu_median": 22.746485999999997,
+     "games": 12,
+     "gc_collections_median": [
+      5071,
+      460,
+      17
+     ],
+     "latency": {
+      "decisions": 21612,
+      "max_ms": 10.874,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.273,
+      "p95_ms": 0.422,
+      "p99_ms": 0.466
+     },
+     "max_rss_kib_max": 748132.0,
+     "process_wall_median": 18.89343429543078
+    },
+    "201033019601.C2": {
+     "cpu_median": 10.33578,
+     "games": 12,
+     "gc_collections_median": [
+      1328,
+      120,
+      6
+     ],
+     "latency": {
+      "decisions": 12012,
+      "max_ms": 2.343,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.251,
+      "p95_ms": 0.307,
+      "p99_ms": 0.428
+     },
+     "max_rss_kib_max": 331392.0,
+     "process_wall_median": 6.6229479582980275
+    },
+    "2010431153.C2": {
+     "cpu_median": 23.945872,
+     "games": 12,
+     "gc_collections_median": [
+      5354,
+      486,
+      18
+     ],
+     "latency": {
+      "decisions": 21612,
+      "max_ms": 23.787,
+      "over_1000ms": 0,
+      "over_100ms": 0,
+      "over_400ms": 0,
+      "p50_ms": 0.309,
+      "p95_ms": 0.451,
+      "p99_ms": 0.516
+     },
+     "max_rss_kib_max": 760124.0,
+     "process_wall_median": 20.195154852233827
+    },
+    "2120531121.C1": {
+     "cpu_median": 87.144652,
+     "games": 12,
+     "gc_collections_median": [
+      24424,
+      2220,
+      65
+     ],
+     "latency": {
+      "decisions": 69144,
+      "max_ms": 106.48,
+      "over_1000ms": 0,
+      "over_100ms": 12,
+      "over_400ms": 0,
+      "p50_ms": 0.717,
+      "p95_ms": 0.944,
+      "p99_ms": 1.037
+     },
+     "max_rss_kib_max": 1255896.0,
+     "process_wall_median": 84.15891929436475
+    },
+    "2130511121.C3": {
+     "cpu_median": 217.32398600000002,
+     "games": 12,
+     "gc_collections_median": [
+      62122,
+      5647,
+      112
+     ],
+     "latency": {
+      "decisions": 34572,
+      "max_ms": 1759.71,
+      "over_1000ms": 10,
+      "over_100ms": 77,
+      "over_400ms": 25,
+      "p50_ms": 1.397,
+      "p95_ms": 1.471,
+      "p99_ms": 2.363
+     },
+     "max_rss_kib_max": 1922264.0,
+     "process_wall_median": 217.22347703389823
+    }
+   },
+   "precheck_others_cpus": 0.106,
+   "process_wall_seconds": {
+    "max": 229.97246479149908,
+    "p50": 20.542966874316335,
+    "p95": 217.52857738919556,
+    "p99": 229.97246479149908
+   },
+   "procs_running_max": 92,
+   "procs_running_mean": 25.786008230452676,
+   "safety_pass": true,
+   "session_mode": "shared",
+   "speedup": 20.347345984085223,
+   "threads_per_process_max": 64,
+   "throughput_games_per_hour": 1386.2369998487352,
+   "tier": "w24",
+   "unix_socket_observations": 0,
+   "voluntary_switches_per_game_median": 127.0,
+   "workers": 24,
+   "write_bytes_per_game_median": 8192
+  }
+ ]
+}
