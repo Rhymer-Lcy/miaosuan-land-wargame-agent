@@ -161,10 +161,16 @@ class SeatLog:
 def play(train_env_cls: Callable[[], Any], agent_factories: Mapping[str, Callable[[], Any]], spec: GameSpec,
          inputs: Any, players: Sequence[Mapping[str, Any]], rng_probe: Optional[Callable[[], Dict[str, str]]] = None,
          wall_cap: float = WALL_CAP_SECONDS, clock: Callable[[], float] = time.perf_counter,
-         replay_policies: Collection[str] = frozenset({BASELINE_ID})) -> Dict[str, Any]:
+         replay_policies: Collection[str] = frozenset({BASELINE_ID}), observer: Optional[Any] = None) -> Dict[str, Any]:
     """Run ``spec`` to the engine's done flag or a cap. Never raises; failures are recorded.
 
     Seats playing a policy in ``replay_policies`` (the policy under test) get in-game replay checks.
+
+    ``observer`` (read-only diagnostics) gets ``setup(view, players, policies)`` once the agents are set up and
+    ``step(index, before, after, decisions)`` after every engine step, once every seat has decided; ``decisions``
+    lists, per seat in call order, the observation it received, its memory before the decision, its actions and its
+    trace. Nothing an observer returns or raises reaches the agents or the engine; its exceptions are recorded in
+    ``observer_errors``. Without an observer the loop and the record are unchanged.
     """
     policies = {0: spec.red, 1: spec.blue}
     record: Dict[str, Any] = {"schema": SCHEMA, "game_id": spec.game_id, "scenario_id": spec.scenario_id,
@@ -179,8 +185,17 @@ def play(train_env_cls: Callable[[], Any], agent_factories: Mapping[str, Callabl
     logs: List[SeatLog] = []
     state_chain = hashlib.sha256()
     state_steps: List[str] = []
+    observer_errors: List[str] = []
     started = clock()
     probe("before-construct")
+
+    def notify(event: str, *args: Any) -> None:
+        if observer is None:
+            return
+        try:
+            getattr(observer, event)(*args)
+        except Exception as exc:  # noqa: BLE001 - an observer never changes the game
+            observer_errors.append(f"{event}: {type(exc).__name__}: {exc}"[:300])
 
     def fail(origin: str, exc: BaseException) -> Dict[str, Any]:
         record["failure"] = {"origin": origin, "phase": record["phase"], "type": type(exc).__name__,
@@ -195,6 +210,8 @@ def play(train_env_cls: Callable[[], Any], agent_factories: Mapping[str, Callabl
         record["seats"] = [log.summary() for log in logs]
         record["state_chain"] = state_chain.hexdigest()
         record["state_steps"] = state_steps
+        if observer is not None:
+            record["observer_errors"] = observer_errors
         return record
 
     try:
@@ -230,6 +247,7 @@ def play(train_env_cls: Callable[[], Any], agent_factories: Mapping[str, Callabl
             logs.append(SeatLog(player["seat"], player["faction"], policies[player["faction"]]))
     except Exception as exc:  # noqa: BLE001
         return fail("agent-setup", exc)
+    notify("setup", view, players, policies)
 
     record["phase"] = "play"
     seats = {log.seat: log for log in logs}
@@ -238,6 +256,7 @@ def play(train_env_cls: Callable[[], Any], agent_factories: Mapping[str, Callabl
     while steps < spec.step_cap and clock() - started < wall_cap:
         before: StateView = view
         emitted = []
+        decisions: List[Dict[str, Any]] = []
         for player, agent, log in zip(players, agents, logs):
             observation = before.for_faction(player["faction"]).fields
             memory = agent.memory
@@ -255,7 +274,11 @@ def play(train_env_cls: Callable[[], Any], agent_factories: Mapping[str, Callabl
                 if digest(agent.replay(observation, memory)) != digest(agent.last_trace):
                     log.replay_mismatches += 1
             emitted.extend((log, action) for action in produced)
-        start_hexes = {unit.obj_id: unit.cur_hex for unit in before.global_observation.operators()}
+            if observer is not None:
+                decisions.append({"seat": player["seat"], "faction": player["faction"], "policy": log.policy,
+                                  "observation": observation, "memory": memory, "actions": produced,
+                                  "trace": agent.last_trace})
+        start_hexes ={unit.obj_id: unit.cur_hex for unit in before.global_observation.operators()}
         start_flags = {city.coord: city.flag for city in (before.global_observation.cities() or ())}
         for log in logs:
             per_objective = Counter(start_hexes.get(a.get("obj_id")) for owner, a in emitted
@@ -310,6 +333,7 @@ def play(train_env_cls: Callable[[], Any], agent_factories: Mapping[str, Callabl
         except ContractError as exc:
             record["steps"] = steps
             return fail("contract", exc)
+        notify("step", steps - 1, before, view, decisions)
         if done:
             break
     probe("end")
