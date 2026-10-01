@@ -11,7 +11,10 @@ from the one recorded in the manifest, so the registered policy cannot change si
 the variance study also refuses unless that digest is the frozen baseline-v1 digest. The study's
 games are its registered schedule; its analysis is ``scripts/analyze_variance_study.py``. A game of
 the shoot-reservation experiment checks the registered digest of its own group, and group B's must
-be the baseline-v1-runtime-r1 digest; its analysis is ``scripts/analyze_shoot_experiment.py``. Records
+be the baseline-v1-runtime-r1 digest; its analysis is ``scripts/analyze_shoot_experiment.py``. A game of
+the residual-516 diagnostic must run the frozen baseline-v2 digest and plays with the diagnostic's read-only
+observer, whose capture files it writes beside the record (``capture/``); its analysis is
+``scripts/residual516_diagnostic.py``. Records
 and summaries live under the git-ignored ``local/evaluation/``; only the sanitized public results
 file is meant for version control.
 
@@ -51,6 +54,7 @@ from miaosuan_agent.decision import BASELINE_ID, INERT_ID  # noqa: E402
 from miaosuan_agent.evaluation import manifest as mf  # noqa: E402
 from miaosuan_agent.evaluation import execution as ex  # noqa: E402
 from miaosuan_agent.evaluation import metrics, randomness  # noqa: E402
+from miaosuan_agent.evaluation import residual516 as rd  # noqa: E402
 from miaosuan_agent.evaluation import shoot_experiment as sx  # noqa: E402
 from miaosuan_agent.evaluation import variance_study as vs  # noqa: E402
 from miaosuan_agent.evaluation.game import play  # noqa: E402
@@ -91,6 +95,8 @@ def all_games(manifest: Dict[str, Any]) -> Dict[str, mf.GameSpec]:
         return {spec.game_id: spec for spec in vs.scheduled_games(manifest)}
     if sx.is_experiment(manifest):
         return {spec.game_id: spec for spec in sx.scheduled_games(manifest)}
+    if rd.is_diagnostic(manifest):
+        return {spec.game_id: spec for spec in rd.scheduled_games(manifest)}
     return {spec.game_id: spec for spec in mf.gate1_games(manifest) + mf.games(manifest)}
 
 
@@ -165,9 +171,18 @@ def cmd_game(args: argparse.Namespace) -> int:
         print("REFUSED: group B runs baseline-v1 on baseline-v1-runtime-r1 only; the digest differs from it",
               file=sys.stderr)
         return 2
+    diagnostic = rd.is_diagnostic(manifest)
+    if diagnostic and source != rd.BASELINE_V2_SOURCE_SHA256:
+        print("REFUSED: the residual-516 diagnostic runs baseline-v2 only; the policy source digest differs from it",
+              file=sys.stderr)
+        return 2
     out = args.work / "games" / f"{spec.game_id}.json"
     if out.exists():
         print(f"REFUSED: {out} exists; records are never overwritten", file=sys.stderr)
+        return 2
+    captures = (args.work / "capture" / f"{spec.game_id}.capture.json", args.work / "capture" / f"{spec.game_id}.windows.pkl")
+    if diagnostic and any(path.exists() for path in captures):
+        print(f"REFUSED: capture files of {spec.game_id} exist; captures are never overwritten", file=sys.stderr)
         return 2
     registered_runtime = ex.registered(manifest)["runtime"]
     runtime = getattr(args, "runtime", None) or registered_runtime
@@ -203,10 +218,11 @@ def cmd_game(args: argparse.Namespace) -> int:
     construct = engine_factory(install)
     opener = (engine_install.session(install, args.purpose, harness) if mode == "exclusive"
               else engine_install.shared_session(install, args.purpose, harness, str(execution["worker"])))
+    observer = rd.Capture((policy_under_test,)) if diagnostic else None
     try:
         with opener as handle:
             record = play(construct, FACTORIES, spec, inputs, manifest["players"], rng_probe=randomness.fingerprint,
-                          replay_policies={policy_under_test})
+                          replay_policies={policy_under_test}, observer=observer)
             record["session"] = handle.opened["session"]
             handle.outcome = {"status": record["status"], "steps": record.get("steps"), "game_id": spec.game_id}
         record["session_close"] = {k: handle.closed[k] for k in ("state_changed", "home_changed", "integrity")}
@@ -215,6 +231,13 @@ def cmd_game(args: argparse.Namespace) -> int:
         return 4
     record.update(harness=harness, engine_version=construct.version, python=sys.version.split()[0],
                   host_clock_finished=engine_install.now())
+    if observer is not None:
+        compact, windows = observer.files()
+        captures[0].parent.mkdir(parents=True, exist_ok=True)
+        for path, data in zip(captures, (compact, windows)):
+            with open(path, "xb") as handle:
+                handle.write(data)
+        record["capture"] = observer.summary(compact, windows)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
     seats = " ".join(f"{s['policy']}:{sum(s['actions_by_type'].values())}" for s in record.get("seats", []))
@@ -239,6 +262,9 @@ def cmd_summarize(args: argparse.Namespace) -> int:
         return 2
     if sx.is_experiment(manifest):
         print("the shoot-reservation experiment is analysed by scripts/analyze_shoot_experiment.py", file=sys.stderr)
+        return 2
+    if rd.is_diagnostic(manifest):
+        print("the residual-516 diagnostic is analysed by scripts/residual516_diagnostic.py", file=sys.stderr)
         return 2
     digest = mf.digest(manifest)
     gate_specs, suite_specs = mf.gate1_games(manifest), mf.games(manifest)
