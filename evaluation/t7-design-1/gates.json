@@ -1,0 +1,113 @@
+{
+ "disposition": "READY_FOR_MECHANISM_PROBE",
+ "gates": {
+  "G1": {
+   "evidence": {
+    "baseline_v0_replayed": true,
+    "baseline_v2_reconstructed": true,
+    "capture_digests_recorded": 6,
+    "census_reconciled": true,
+    "crosscheck_agrees": true,
+    "h0_pinned_digests_verified": true,
+    "h2r_identical": true,
+    "issued_capture_equals_record": true,
+    "real_record_test": "tests/test_real_t7_audit.py passed before the full run (docs/T7_DESIGN.md, 13.1); the private suite rebuilds audit, candidates and post-hoc outputs byte for byte",
+    "seat_vs_all_seeing_identical": true
+   },
+   "verdict": "PASS"
+  },
+  "G2": {
+   "evidence": {
+    "effect_documented": true,
+    "listing_situation": "DIRECTLY OBSERVED",
+    "observability_score": 4,
+    "option_listed_for_population": true,
+    "probe_endpoints_named": [
+     "E1",
+     "E2",
+     "E3",
+     "E4",
+     "E5",
+     "E6"
+    ],
+    "selected": "A2"
+   },
+   "verdict": "PASS"
+  },
+  "G3": {
+   "evidence": {
+    "known_unsafe_cases_excluded": "the shadow never stops a unit and refuses units in any transition or suppressed (tests/test_t7_shadow.py)",
+    "mutation": "55 of 55 killed",
+    "mutation_survivors_documented": true,
+    "permuted_run_identical": true,
+    "populations": {
+     "H0": {
+      "agrees_with_the_independent_trigger": true,
+      "baseline_v2_equal_everywhere": true,
+      "contract_valid": true,
+      "no_unit_with_two_actions": true,
+      "nothing_added_outside_play": true,
+      "nothing_added_to_a_baseline_unit": true,
+      "prefix_equal_everywhere": true,
+      "recorded_baseline_reproduced": true
+     },
+     "H1": {
+      "agrees_with_the_independent_trigger": true,
+      "baseline_v2_equal_everywhere": true,
+      "contract_valid": true,
+      "no_unit_with_two_actions": true,
+      "nothing_added_outside_play": true,
+      "nothing_added_to_a_baseline_unit": true,
+      "prefix_equal_everywhere": true,
+      "recorded_baseline_reproduced": true
+     },
+     "H2": {
+      "agrees_with_the_independent_trigger": true,
+      "baseline_v2_equal_everywhere": true,
+      "contract_valid": true,
+      "no_unit_with_two_actions": true,
+      "nothing_added_outside_play": true,
+      "nothing_added_to_a_baseline_unit": true,
+      "prefix_equal_everywhere": true,
+      "recorded_baseline_reproduced": true
+     }
+    },
+    "repeated_observation_adds_nothing": true,
+    "second_run_identical": true
+   },
+   "verdict": "PASS"
+  },
+  "G4": {
+   "evidence": {
+    "h0_scenarios_with_activations": 8,
+    "h0_witnessed_activations": 39,
+    "h0_witnessed_units": 16
+   },
+   "verdict": "PASS"
+  },
+  "G5": {
+   "evidence": {
+    "mechanism_endpoints_need_no_simulation": true,
+    "missing": [],
+    "proposal": "docs/T7_SCREEN_PROPOSAL.md",
+    "required_elements_present": [
+     "Policy delta",
+     "Identities",
+     "Scenarios and seats",
+     "Sample size",
+     "Capture requirements",
+     "Safety endpoints",
+     "Mechanism endpoints",
+     "Primary metric",
+     "Independent validation checks",
+     "Stopping rules"
+    ]
+   },
+   "verdict": "PASS"
+  }
+ },
+ "note": "a Sprint 5 research disposition; it changes no state of the hypothesis register by itself, and an offline legality check validates no engine mechanism",
+ "schema": "miaosuan-t7-gates/1",
+ "selected": "A2",
+ "study_id": "t7-design-1"
+}
