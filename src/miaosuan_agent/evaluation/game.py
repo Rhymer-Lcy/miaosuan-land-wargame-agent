@@ -13,6 +13,7 @@ is the setup state), and each seat's ``trace_steps[k]`` digests decision ``k``.
 
 from __future__ import annotations
 
+import copy
 import hashlib
 import re
 import time
@@ -168,9 +169,11 @@ def play(train_env_cls: Callable[[], Any], agent_factories: Mapping[str, Callabl
 
     ``observer`` (read-only diagnostics) gets ``setup(view, players, policies)`` once the agents are set up and
     ``step(index, before, after, decisions)`` after every engine step, once every seat has decided; ``decisions``
-    lists, per seat in call order, the observation it received, its memory before the decision, its actions and its
-    trace. Nothing an observer returns or raises reaches the agents or the engine; its exceptions are recorded in
-    ``observer_errors``. Without an observer the loop and the record are unchanged.
+    lists, per seat in call order, the observation it received, its memory before the decision, its actions (the
+    objects the engine received, which it may have rewritten in place during the step), ``submitted`` (a deep copy
+    of those actions taken before the engine step) and its trace. Nothing an observer returns or raises reaches the
+    agents or the engine; its exceptions are recorded in ``observer_errors``. Without an observer the loop and the
+    record are unchanged.
     """
     policies = {0: spec.red, 1: spec.blue}
     record: Dict[str, Any] = {"schema": SCHEMA, "game_id": spec.game_id, "scenario_id": spec.scenario_id,
@@ -277,7 +280,7 @@ def play(train_env_cls: Callable[[], Any], agent_factories: Mapping[str, Callabl
             if observer is not None:
                 decisions.append({"seat": player["seat"], "faction": player["faction"], "policy": log.policy,
                                   "observation": observation, "memory": memory, "actions": produced,
-                                  "trace": agent.last_trace})
+                                  "submitted": copy.deepcopy(produced), "trace": agent.last_trace})
         start_hexes ={unit.obj_id: unit.cur_hex for unit in before.global_observation.operators()}
         start_flags = {city.coord: city.flag for city in (before.global_observation.cities() or ())}
         for log in logs:
