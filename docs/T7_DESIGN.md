@@ -295,3 +295,175 @@ primary metric; independent validation checks; stopping rules. It compares `base
 exactly the one mechanism under identical conditions, or proposes a mechanism and safety screen only when an effect
 cannot be told from outcome variability at an affordable size. It is not a registration; any engine experiment needs
 its own public registration before its first session.
+
+## 13. Results of WP1 to WP4 (written after the protocol was public)
+
+Sections 1 to 12 were pushed in `e753456` at 2026-10-02T20:33:20+08:00 and fetched back unauthenticated at
+2026-10-02T20:33:31+08:00, byte-identical. Everything below was computed afterwards by `scripts/t7_study.py` (public
+aggregates `evaluation/t7-design-1/audit.json` and `candidates.json`), `scripts/t7_semantics.py` (`semantics.json`),
+`scripts/t7_rubric.py` (`scores.json`, `selection.json`) and, after the selection, `scripts/t7_posthoc.py`
+(`posthoc.json`, POST HOC).
+
+### 13.1 Evidence integrity
+
+* Before the full run, the audit ran on real records: `tests/test_real_t7_audit.py` (a 900-decision slice of one H0
+  game and 400 snapshots of H1) passed its 4 real-record tests: pinned digest, audit against the boundary cross-count
+  and an inline census-style count, `baseline-v0` replaying every decision of the slice, seat against all-seeing
+  listings.
+* Inputs: the 8 H0 games match their pinned digests; the SHA-256 of every H1 and H2 capture file is in `audit.json`,
+  and the close-out rebuild (`--check`) reproduces it.
+* Census reconciliation: `scripts/tactical_census.py --check` reports "census identical", and the audit's H0 play
+  decisions listing change state, stop and weapon lock are 23,660, 27,220 and 23,118, equal to the census.
+* `baseline-v0` replays all 33,696 H0 decisions exactly; `baseline-v2` is reconstructed on all 33,696 and differs from
+  `baseline-v0` in 123, each difference carrying `baseline-v2`'s own reservation record.
+* The boundary cross-count agrees with the audit on counts 1 to 3 in H0, H1 and H2.
+* Own-unit T7 listings are identical in the seat and the all-seeing views: 10,800 in H1 and 112,118 in H2.
+* H2r: P1's 532 decisions before its trigger list the same T7 actions as game `c`.
+* Issued actions: in 1,284 game records (the prevalence study excluded) no frozen policy issued a T7 action; the only
+  T7 actions ever issued are P1's 4 stops, counted 4 in its record and 4 in its compact log.
+* Process note: the first full run labelled every stop listing with `speed` 0 and a move path as a unit waiting in front
+  of a full hex, but 3,704 of the H0 listings belong to aircraft. The label was split into ground and aircraft cases
+  and the study rerun before any result was used; no count changed.
+
+### 13.2 Action semantics (WP1)
+
+The versioned matrix is `evaluation/t7-design-1/semantics.json` (version 1, 25 claims). Its observation claims are
+computed and asserted from `audit.json`; the script stops if the data contradict a stated level.
+
+| Id | Claim | Level |
+|---|---|---|
+| A-1 | Listed change-state options: vehicles {4, 5} or {5}, infantry {2, 3, 4}; option 0 (normal) and option 1 (march) never listed | DIRECTLY OBSERVED |
+| A-2 | Action 6 is listed only for units without a move path: stationary (180,833 unit-decisions) or in the move-to-stop transition (5,337); never with a move path | DIRECTLY OBSERVED |
+| A-3 | A suppressed vehicle is listed half speed only (2,003 unit-decisions), never concealment | DIRECTLY OBSERVED |
+| A-4 | Action 6 is listed in every deployment decision; the effect of a deployment-stage change is unknown | DIRECTLY OBSERVED; UNKNOWN |
+| A-5 | `move_state` is 0 in every listed own unit and never changes; `change_state_remain_time` is never positive: no state transition occurs in any record | DIRECTLY OBSERVED |
+| A-6 | The documented unit field `target_state` is absent from every unit record read | DIRECTLY OBSERVED (contradicts the field list) |
+| A-7, A-8 | Concealment: 75 s entry without other commands, interrupted by a tank firing or suppression, ended free by moving or firing; half observation distance and favourable target modifiers | DOCUMENTED |
+| A-9, A-10 | March prerequisites, speeds, restrictions and blocking; march hex time 8 s per march cost | DOCUMENTED; DERIVED |
+| A-11, A-12 | Charge speed and fatigue (transition time undocumented); half speed for minefields | DOCUMENTED; UNKNOWN |
+| A-13 | When option 1 (march) is listed | UNKNOWN |
+| B-1 | Action 10 is listed only for units with a move path: 204,629 traversing, 62,859 with `speed` 0 (9,003 of all listings are aircraft); never without a path | DIRECTLY OBSERVED |
+| B-2 | At the natural end of a path, `stop` becomes 1 exactly 75 steps after the path empties in every arrival observed to settle (141); movement is listed again at once | DIRECTLY OBSERVED |
+| B-3 | After an arrival, non-tank units list a shoot option from 75 steps on; tanks at once | DIRECTLY OBSERVED |
+| B-4 | A stop on a unit waiting in front of a full hex is deferred indefinitely (Sprint 4) | DIRECTLY OBSERVED |
+| B-5 | A stop on a traversing unit | DOCUMENTED; UNKNOWN on engine 4.1.0 |
+| B-6 | `speed` above 0 does not exclude a unit whose next hex fills before it arrives | DIRECTLY OBSERVED |
+| C-1 | Action 11 is listed only for stationary, unfolded, unsuppressed vehicles, never in the move-to-stop transition | DIRECTLY OBSERVED |
+| C-2 | Every own unit stays unfolded; action 12 is never listed; no lock or unfold occurs | DIRECTLY OBSERVED |
+| C-3 | One lock state per unit in the observation; per-weapon engine state unknown | DERIVED; UNKNOWN |
+| C-4 | Lock and unfold take 75 s each and exclude other commands; lock before march, unfold after it | DOCUMENTED |
+| C-5 | Action 11 is listed in every deployment decision; its effect there is unknown | DIRECTLY OBSERVED; UNKNOWN |
+| X-1 | No frozen policy issued a T7 action; only P1's 4 stops | DIRECTLY OBSERVED |
+
+Consequences: no T7 transition has ever been observed on engine 4.1.0, so every duration and effect beyond the natural
+move-to-stop transition is DOCUMENTED at best. March cannot be studied from records: its option was never listed and
+no unit ever locked. The audit adds nothing to `decision/semantics.py`.
+
+### 13.3 Opportunity and behaviour (WP2)
+
+Play stage, per population; "units" counts unit-decisions; the frozen policy is `baseline-v0` in H0, `baseline-v2` in
+H1 and the split candidate in H2.
+
+| Family | Population | Decisions listing | Units | Distinct situations | Issued | Frozen policy gave the unit nothing | No executable opportunity |
+|---|---|---|---|---|---|---|---|
+| A change state | H0 | 23,660 | 147,895 | 95 | 0 | 147,181 | 0 |
+| A change state | H1 | 1,163 | 4,610 | 8 | 0 | 4,598 | 0 |
+| A change state | H2 | 2,883 | 33,665 | 19 | 0 | 33,577 | 0 |
+| B stop | H0 | 27,220 | 182,925 | 38 | 0 | 182,786 | 18,332 |
+| B stop | H1 | 1,799 | 6,190 | 3 | 0 | 6,190 | 0 |
+| B stop | H2 | 4,678 | 78,373 | 11 | 0 | 78,373 | 44,527 |
+| C weapon lock | H0 | 23,118 | 134,253 | 37 | 0 | 133,968 | 0 |
+| C weapon lock | H1 | 1,085 | 4,302 | 4 | 0 | 4,298 | 0 |
+| C weapon lock | H2 | 2,881 | 32,299 | 7 | 0 | 32,268 | 0 |
+
+Weapon unfold is listed nowhere. In H0, artillery holds 103,680 of the change-state and 103,680 of the weapon-lock unit
+listings. The stop listings without an executable opportunity are those with `speed` 0 and a move path: in H0 14,628
+ground and 3,704 aircraft unit-decisions, in H2 44,527 ground (the split games' deadlock). Distinct situations per H0
+game range from 5 to 61 (change state), 5 to 34 (stop) and 1 to 22 (weapon lock). No record was missing, malformed or
+ambiguous beyond the absent `target_state` field (A-6) and the H0 deployment-to-play step gaps (16, one per seat and
+game).
+
+### 13.4 Candidate pool (WP3)
+
+`candidates.json`; "units" counts distinct units; exposure and witnesses as defined in section 8 (descriptive, from the
+recorded trajectory).
+
+| Id | Population | Activations | Units | Scenarios | Archetypes | Distinct situations | Exposure | Benefit witness (activations, units) |
+|---|---|---|---|---|---|---|---|---|
+| A1 | H0, H1, H2 | 0 | 0 | 0 | 0 | 0 | none | none |
+| A2 | H0 | 234 | 49 | 8 | 4 | 6 | 4 | 39, 16 (4 scenarios) |
+| A2 | H1 | 60 | 4 | 1 | 2 | 2 | 0 | not observable (inert opponent) |
+| A2 | H2 | 429 | 16 | 1 | 5 | 6 | 0 | not observable (inert opponent) |
+| A3 | H0, H1, H2 | 0 | 0 | 0 | 0 | 0 | none | none |
+| B1 | H0 | 33,478 | 72 | 6 | 3 | 7 | 33,478 | 13,553, 54 |
+| B2 | H0 | 17,318 | 111 | 5 | 9 | 14 | 17,318 | 10,884, 99 |
+| B2 | H2 | 98 | 5 | 1 | 3 | 3 | 98 | not observable |
+| C0 | H0, H1, H2 | 0 (never fires by design) | 0 | 0 | 0 | 0 | none | none |
+
+Why A1 and A3 never fire (`posthoc.json`, a diagnostic of the implementation): of `baseline-v2`'s 340 vehicle move
+orders in H0, 220 were issued with an enemy seen, 14 by a vehicle carrying passengers and 97 to a destination the march
+graph does not reach; the other 9 all lose time once the four transitions are counted (from 510 to 116 s). Of its 51
+infantry move orders, 50 are longer than two hexes and 1 has an enemy seen. Every B1 and B2 activation is exposed: each
+stopped move ends at an objective.
+
+### 13.5 Scores and selection (WP4)
+
+`scores.json` (every score with its reason; G and C computed from the H0 activations, U marks an UNKNOWN cell capped at
+2) and `selection.json`:
+
+| Id | G | L | O | E | I | S | C | M | Weighted | Mandatory conditions |
+|---|---|---|---|---|---|---|---|---|---|---|
+| A1 road march | 0 | 1 | 4 | 2U | 2 | 1 | 2U | 5 | 2.00 | S fails |
+| A2 idle concealment | 5 | 3 | 4 | 3 | 4 | 3 | 4 | 5 | **3.85** | met |
+| A3 infantry charge | 0 | 1 | 4 | 3 | 3 | 2U | 2U | 5 | 2.30 | S fails |
+| B1 stop to engage | 4 | 3 | 4 | 2U | 5 | 2 | 1 | 5 | 3.30 | S fails |
+| B2 halt before exposure | 3 | 2 | 4 | 2U | 5 | 2 | 1 | 4 | 2.85 | S fails |
+| C0 lock alone | 0 | 0 | 5 | 3 | 5 | 3 | 2U | 5 | 2.55 | met |
+
+**Selected: A2, concealment of idle stationary units.** It is first in all 28 declared sensitivity variants, and it also
+has the highest weighted score of the whole pool, eligible or not, in all 28. Both stop candidates fail safety: the
+only engine evidence about stops is Sprint 4's frozen units, and `speed` above 0 does not exclude a unit about to
+wait (B-6). March fails safety on its documented blocking rule and never shows a time saving in the records.
+
+POST HOC description of A2 in H0 (`posthoc.json`; it changes no score or gate): each of the 49 first-activated units
+then stays idle and stationary for at least 410 steps, 47 of them to the end of the game; all 39 witnessed activations
+are witnessed through the opposing view (no `judge_info` record targets an activated unit), 25 of them 75 or more steps
+after the activation. DERIVED from the documented distances, assuming unchanged lines of sight and the opponent as
+recorded, and ignoring terrain halving: of the 21,196 unit-steps in which the opponent saw one of the 16 observed
+units after a 75-step transition would have ended, 2,725 have an opposing unit within the concealed observation
+distance; 9 of the 16 units would not have been observable at any of those steps, 7 at every one.
+
+## 14. The selected mechanism: specification (written before any tool for it)
+
+Name `t7-idle-concealment`, a delta on `baseline-v2`, for an offline shadow and a future mechanism probe only.
+
+* **Order of decision.** `baseline-v2` decides first on the seat observation, unchanged. Then each own unit, in
+  ascending `obj_id`, that received no `baseline-v2` action is checked against the trigger.
+* **Trigger** (all must hold): the unit is an own ground unit (type 1 or 2) listed in `operators`; `valid_actions` lists
+  action 6 for it with an option whose `target_state` is 4; `move_state` is not 4; `change_state_remain_time`,
+  `move_to_stop_remain_time`, `weapon_unfold_time`, `get_on_remain_time` and `get_off_remain_time` are numbers equal
+  to 0; `stop` is 1; `move_path` is an empty list; `keep` is 0; no operator of another faction is in the seat view; the
+  candidate has not ordered this unit to change state in the last 75 steps (`cur_step` difference below 75).
+* **Action.** `{"actor": seat, "obj_id": unit, "type": 6, "target_state": 4}`, the option copied from the listing.
+* **Memory.** `baseline-v2`'s memory plus, per unit, the `cur_step` of the candidate's last change-state order; reset at
+  game start; nothing else.
+* **Own check.** Action 6 is not in the gate's catalogue (as action 314 was not for the split candidate), so the
+  candidate checks its own actions: the option is listed for the unit in this observation, the key set is exactly
+  `actor`, `obj_id`, `type`, `target_state`, and no unit receives two actions in the step. A failing check drops the
+  action and records why.
+* **Never.** It never removes or changes a `baseline-v2` action, never orders a moving, stopping, suppressed or
+  transitioning unit, never acts while an enemy is seen, never acts in deployment, never uses another seat's view, the
+  all-seeing state or hidden information, and never retries within 75 steps.
+* **Fail closed.** A missing or malformed field or option means no trigger, counted by reason.
+
+Engine behaviour it relies on, none of it observed (each a probe endpoint): E1 action 6 with option 4 is accepted from
+such a unit without an error; E2 `change_state_remain_time` becomes positive and `move_state` becomes 4 after about 75
+steps; E3 a concealed unit keeps its listings (shoot, occupy, move) and a later `baseline-v2` move or shot ends
+concealment without delay; E4 an enemy unit beyond half its documented observation distance stops seeing the concealed
+unit; E5 an order during the transition (a `baseline-v2` shot or move) is refused or delayed, and suppression
+interrupts the transition; E6 concealment changes nothing else (occupation, stacking, scores).
+
+Limitations, stated now: the benefit is conditional on the opponent observing or firing at the idle units, which the
+inert control never does; terrain halving and its stacking with concealment are undocumented; H1 and H2 have one and
+two games against an inert opponent, so only H0 shows a benefit witness; the historical outcomes say nothing about the
+effect, because the recorded trajectories never contained a concealed unit.
