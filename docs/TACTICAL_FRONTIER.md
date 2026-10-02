@@ -69,6 +69,12 @@ the seat's own and obey orders; the stacking limit voids a split silently.
 | While `cur_step` stands still the engine re-reports earlier feedback at every step | Sprint 1 smoke captures |
 | A unit whose next hex holds four own ground units does not advance, keeps its move path and gets no error; two such groups block each other for the rest of the game | Sprint 2 diagnosis, two captured games with a snapshot every step (`docs/T1R_DIAGNOSIS.md`) |
 | On the diagnosed route vehicles advance one hex per 20 steps, infantry one per 144 | Sprint 2 diagnosis |
+| `speed` is 0 while a unit with a move path waits in front of a full hex and one hex per hex time while it traverses; `valid_actions` then lists only the stop action 10 | Sprint 3 design study, both Sprint 2 games at every step (`docs/PS1_DESIGN.md`, 11.2) |
+| Hex time `(720 / basic_speed) * cost` predicts every unimpeded entry on the diagnosed route (138 of 138 and 235 of 235) | Sprint 3 design study |
+| `can_to_move`, `stop`, `flag_force_stop` and `move_state` do not tell a blocked unit from a moving one | Sprint 3 design study |
+| Hypothesis, not fact: restarting after a wait takes a full hex time, counting the restart step (registered corpus check not supported, 58 of 71; post hoc consistent with every episode) | Sprint 3 design study |
+| Hypothesis, not fact (post hoc): a unit entering a hex in front of a full hex waits at once, and simultaneous entries are processed in ascending unit index | Sprint 3 design study; to be registered and tested by the PS-1 probe |
+| Unknown: whether a stop is accepted from a blocked unit, where it takes effect, and when a move is accepted again | no stop was ever issued; the PS-1 probe's first question |
 
 ## Selection rubric (committed before scoring)
 
@@ -107,7 +113,7 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
 | TO-1 | target ownership by the highest attack level in isolated single-target collisions | `BLOCKED` (prevalence-1 stopped before interpretation); backlogged |
 | T1 | deployment disaggregation: split eligible ground operators during deployment | `SHELVED` (2026-10-02): screen 1 REVISE BEFORE CONFIRMATION ([issue #1](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/1), `docs/SCREEN_DEPLOYMENT_SPLIT.md`); the diagnosed loss is a stacking-limit block that only a play-stage change removes (`docs/T1R_DIAGNOSIS.md`, `docs/T1R_SPEC.md`, gate G6 failed) |
 | T1-r | T1 revised: probe once and stop on code 103, skip splits the stacking limit voids | specified, not implemented; waits for PS-1 |
-| PS-1 | capacity-aware movement: at most four units bound for one destination hex at a time, or a new order for a unit whose move has not advanced; on `baseline-v2`'s play stage | `IDEA`, proposed; needs the owner's approval and its own design |
+| PS-1 | capacity-aware movement on `baseline-v2`'s play stage; selected form PS-1B, stalled-movement recovery: stop the deadlocked group that can back off, re-order it after the transition | `IDEA`; design study done (Sprint 3, `docs/PS1_DESIGN.md`): G1 and G4 pass, G2 and G3 fail, disposition NEEDS_ENGINE_PROBE; the two-session probe waits for the owner's approval |
 | T2 to T9 | the other families above | `IDEA` |
 
 ## Roadmap
@@ -116,10 +122,15 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
    candidate scores 78 where `baseline-v2` scores 158) was diagnosed with two captured games: a stacking-limit block
    at the first objective, never resolved because an issued move is never changed. T1 is shelved; T1-r is specified
    but not implemented.
-2. **PS-1 capacity-aware movement** (proposed, owner's decision): the play-stage change that removes the block; it
-   would also let T1 be re-tested on top of it.
-3. **T7 movement-state micro**, the rubric's runner-up: change state, stop and weapon lock appear in most decisions.
-4. **T9 intent and task allocation**, the largest lever and the hardest to isolate; T4 (the idle artillery) follows
+2. **Done (Sprint 3)**: the offline design study of PS-1 (`docs/PS1_DESIGN.md`). The block is observable from seat
+   fields; under the movement model a stalled-movement recovery releases it, but that model failed its registered
+   fidelity check and the recovery relies on an untested stop, so the disposition is NEEDS_ENGINE_PROBE. The same
+   deadlock also occurs in ordinary `baseline-v0` replay play.
+3. **PS-1 engine probe** (owner's decision): two registered sessions, one to observe a stop issued to a blocked unit
+   and one to test the post-hoc movement model on fresh data; only then a prospective screen, which would also let T1
+   be re-tested on top of PS-1.
+4. **T7 movement-state micro**, the rubric's runner-up: change state, stop and weapon lock appear in most decisions.
+5. **T9 intent and task allocation**, the largest lever and the hardest to isolate; T4 (the idle artillery) follows
    by the rubric.
 
 A tactic that earns ADVANCE gets a confirmatory design sized from its screen's noise; one that does not is recorded
@@ -130,6 +141,8 @@ screen supports.
 
 | Date (UTC+8) | Where | What happened | Consequence |
 |---|---|---|---|
+| 2026-10-02 | PS-1 design study | the registered movement model failed its fidelity check on the split game; amendment 1 replaced it before any counterfactual was computed, and the replacement then failed fidelity and its independent check too | G3 fails as registered; a third, post-hoc model is reported only as a hypothesis for the probe (`docs/PS1_DESIGN.md`) |
+| 2026-10-02 | PS-1 design study | the certificates' assumption lists named the registered model although they ran under amendment 1's | relabelled before publication; the regenerated summary differed from the earlier one only in those labels |
 | 2026-10-02 | screen 1 smoke analysis | the first run read zero splits because the engine rewrites a deployment split's type from 314 to 14 in place before the capture serialises it; the records contradicted it | fixed, tested and pushed before the A/B; the analysis now refuses to run when capture and record disagree; the registered rule and the verdict on these data are unchanged (`docs/SCREEN_DEPLOYMENT_SPLIT.md`) |
 
 ## Platform canary and feedback loop
