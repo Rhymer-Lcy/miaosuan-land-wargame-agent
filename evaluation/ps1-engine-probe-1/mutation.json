@@ -1,0 +1,279 @@
+{
+ "killed": 42,
+ "mutations": [
+  {
+   "file": "src/miaosuan_agent/experiments/ps1_probe_hook.py",
+   "killed": true,
+   "mutation": "trigger without the stall condition",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/ps1_probe_hook.py",
+   "killed": true,
+   "mutation": "no speed verification",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/ps1_probe_hook.py",
+   "killed": true,
+   "mutation": "stops repeated (the probe keeps watching)",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/ps1_probe_hook.py",
+   "killed": true,
+   "mutation": "back-off without the move listed",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/ps1_probe_hook.py",
+   "killed": true,
+   "mutation": "no destination capacity check",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/ps1_probe_hook.py",
+   "killed": true,
+   "mutation": "no path capacity check",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/ps1_probe_hook.py",
+   "killed": true,
+   "mutation": "watch window widened",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/ps1_probe_hook.py",
+   "killed": true,
+   "mutation": "candidate actions not dropped",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/ps1_probe_hook.py",
+   "killed": true,
+   "mutation": "orders not counted as progress",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/ps1_probe_hook.py",
+   "killed": true,
+   "mutation": "hex changes not counted as progress",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/ps1_probe_hook.py",
+   "killed": true,
+   "mutation": "bypass allowed in the selection",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/ps1_probe_hook.py",
+   "killed": false,
+   "mutation": "trace replaced before the trigger",
+   "reason_if_surviving": "equivalent: with no notes the replacement rebuilds the same diagnostics and emitted fields, so the trace and its digest are unchanged"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/ps1_probe.py",
+   "killed": true,
+   "mutation": "event steps lose their snapshot",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/game.py",
+   "killed": true,
+   "mutation": "no pre-execution copy",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "E3 window not applied",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "transition timer not attributable",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "an entry before the effect still counts as in place",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "E4 violations ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "E4 restarts ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "repeated feedback kept",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "refusals ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "premise ignores the states",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "premise ignores the prediction",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "minimum events lowered",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "T-a ignores leaving units",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "T-b accepts an entry straight from waiting",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "arbitration judged by the highest indices",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "restart delay judged in descending order",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "F1 tolerance widened",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "F1 ignores observed capacity",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "F2 ignores unmatched occupations",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "F2 ignores wrong destinations",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "G3 passes without the certificate",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "SHELVE on any E1 refutation",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "channel disagreement ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "removals not applied",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "validator ignores removals",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "validators not cross-checked",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "appearances not applied",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "E2 blocked by a refused unit",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "stops not checked against the notes",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "missing snapshots tolerated",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/ps1_probe_analysis.py",
+   "killed": true,
+   "mutation": "capture against record not checked",
+   "reason_if_surviving": null
+  }
+ ],
+ "schema": "miaosuan-ps1-probe-mutation/1",
+ "sources_sha256": {
+  "scripts/ps1_probe_analysis.py": "c9d604be33b1c0e8313cde74b4e6b7fffb071c375cd0020dcdb8b265df11fb1f",
+  "src/miaosuan_agent/evaluation/game.py": "50a1c5a2b672d418941cbfb90ac90c11625102c18ce00474e22c379114b025a2",
+  "src/miaosuan_agent/evaluation/ps1_probe.py": "c05ee2d4ab44ccbe9ab7a9a14e5a1aaca9df9d6d08650794b353f2dd1bf11a94",
+  "src/miaosuan_agent/experiments/ps1_probe_hook.py": "e6b23a9d8447b9fba38ce595d20c471094b6576dc3bb077c4298a466ee0117ee"
+ },
+ "tests": [
+  "tests.test_ps1_probe_hook",
+  "tests.test_ps1_probe_analysis"
+ ],
+ "tests_sha256": {
+  "tests/test_ps1_probe_analysis.py": "da98785e342f8a84a9cd6ef764b6e76ed869c6383f0addec8ce08481dffa68ca",
+  "tests/test_ps1_probe_hook.py": "871f29f4eee4c7f6f9f5a0840793b874424a10c837299724220ba15ef5be459d"
+ },
+ "total": 43
+}
