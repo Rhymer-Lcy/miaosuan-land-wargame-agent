@@ -222,6 +222,7 @@ class Simulation:
     k: int = K
     blocked_by_mode: Mapping[int, FrozenSet[int]] = field(default_factory=dict)  # roadblocks per mode
     restart_after_wait: bool = False  # M1b (protocol amendment 1) instead of M1
+    wait_at_entry: bool = False  # M1c (post hoc, unvalidated): with M1b, an entering unit facing a full hex waits at once
     events: List[Event] = field(default_factory=list)
     _flips: Dict[int, int] = field(default_factory=dict)
 
@@ -288,6 +289,8 @@ class Simulation:
         M1 (as registered): a unit that finds its next hex full keeps retrying and enters in the first step it has room.
         M1b (amendment 1, ``restart_after_wait``): it stands at its hex centre instead (``waiting``); in the first step
         its next hex has room it starts the traversal again and arrives a hex time later (counting that step).
+        M1c (post hoc, ``wait_at_entry`` with M1b): a unit that enters a hex whose next hex is full at that moment
+        (units in ascending index, occupancy updated after each move) does not start its traversal; it waits at once.
         """
         nxt = self.step + 1
         for hex_, flag in sorted(self._flips.items()):
@@ -317,6 +320,8 @@ class Simulation:
             if u.stop_after_entry:
                 moved = replace(u, hex=target, path=(), ready_at=None, stop_after_entry=False,
                                 stopped_until=nxt + STOP_PENALTY, last_progress=nxt)
+            elif self.restart_after_wait and self.wait_at_entry and rest and u.ground and occ.get(rest[0], 0) >= self.k:
+                moved = replace(u, hex=target, path=rest, ready_at=None, waiting=True, last_progress=nxt)
             else:
                 ready = nxt + hex_time(u.speed, self.edges_by_mode[u.mode][target][rest[0]]) if rest else None
                 moved = replace(u, hex=target, path=rest, ready_at=ready, last_progress=nxt)
