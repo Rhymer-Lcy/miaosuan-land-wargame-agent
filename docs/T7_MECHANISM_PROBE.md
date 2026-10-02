@@ -289,3 +289,154 @@ proposal, which needs its own registration and approval; no A/B runs in this spr
 * The engine's random source is not controlled; E3b and E5 need events the registered policies produce on their own;
   E4 rests on the documented model calibrated on unconcealed units, and terrain stacking, aerial observers of concealed
   vehicles and the 12.5-hex boundary stay outside its verdict.
+
+## 15. Registration (written after the registration commit, before any session)
+
+* Registration commit `015400d5bbeca32e01433b02e5746b7cb02712bc` (tree `240ab89f3a704a910d2be61fbc743c97cf3e6043`), the
+  last of 13 sprint commits, pushed at 2026-10-03T02:15+08:00 and cloned back anonymously from the public remote
+  (same commit and tree, manifest file identical). Before the push the full test suite passed on the committed tree:
+  a clean clone on the workstation (1,058 tests, 54 skipped) and the evaluation server's private tree at that commit
+  (1,074 tests, none skipped), so the documentation-policy tests ran on the tracked files (the Sprint 4 deviation
+  cannot recur); the commit audit and the privacy scan (72 hits, the adjudicated Sprint 5 list unchanged) passed.
+* Public issue [#3](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/3), created
+  2026-10-03T02:16:00+08:00 (GitHub's clock; a first attempt failed in transit and created nothing, checked before
+  the retry), fetched without authentication at 2026-10-03T02:16:10+08:00: its body, 22,573 bytes, SHA-256
+  `cb11d34ed2aac502dd00f7603e4a81c75e36411b35a244d98223c1217249af56`, is byte-identical to the canonical file
+  `evaluation/t7-mechanism-probe-1/registration-issue.md` (record: `registration-verification.json`).
+* At that point the server stood at the registration commit with a clean tree, the ledger ran continuously to 2461 with
+  no unclosed session, the installation passed its integrity check and the frozen identities recomputed.
+
+## 16. Execution (written after the sessions)
+
+* Three sessions, as registered, each an exclusive diagnostic session on harness `015400d` (not dirty): **2462** (P-A),
+  **2463** (P-B1) and **2464** (P-B2). P-A's session opened about 20 s after the issue's verification once the server
+  clock is corrected by the offset recorded in `docs/ENGINE_INSTALL.md`; P-B1 started only after P-A's continuation
+  gate passed and P-B2 only after P-B1's stop branch allowed it. The ledger runs from 0001 to 2464 without a gap or an
+  unclosed session, the installation's integrity held, and the frozen identities recomputed after every game.
+* P-A: 1,801 steps, completed; P-B1 and P-B2: 2,881 steps each, completed. No observer error, contract error, replay
+  mismatch, gate rejection or engine refusal of either seat in any game; capture digests equal those in the records.
+* The registered analyses (`scripts/t7_probe_analysis.py game`, then `gate`, `stop` and `pool`) ran on the server and
+  wrote their outputs under the git-ignored `local/` tree, so the tracked tree stayed clean between games; the public
+  files were copied unchanged into `evaluation/t7-mechanism-probe-1/` (`pa.json`, `pb1.json`, `pb2.json`,
+  `gate-pa.json`, `stop-pb1.json`, `gates.json`). No analysis refused, no rule or code changed after the registration,
+  and no deviation from the registered execution occurred.
+
+## 17. P-A results and the continuation decision (registered)
+
+**Integrity.** I1 to I6 pass: the 4 orders counted three ways (trace blocks, pre-execution copies, record) and found
+by the pool predicate; every one of the 1,801 candidate decisions re-decided offline with the same actions and trace;
+4,340 affected-unit snapshots identical in both channels; transition starts and completions equal in the second
+reconstruction.
+
+**Premise and S3: PASS.** At decisions 0 to 717 the state digests (718), the candidate seat's observation digests (717),
+the baseline trace digests and the actions equal the reference's, and the first orders are at decision 717 to the 2
+predicted units; the next 2 followed at 736 to the 2 predicted units. At all 1,083 later decisions `baseline-v2`'s
+actions and the inert seat's equal the reference's, the game has the reference's 1,801 steps and the same final
+scores. (`baseline-v2`'s trace digests differ from the reference's at 93 of those decisions, where its trace records
+the concealed units' changed listings; its actions do not.)
+
+| Id | Verdict | Evidence |
+|---|---|---|
+| S1 | **PASS** | 4 orders, none with an error code |
+| S2 | **PASS** | 4 affected units; no `flag_force_stop`, no listing loss, transient or longer |
+| S3 | **PASS** | above |
+| E1 | **SUPPORTED** | 4 of 4 echoed once without an error code |
+| E2 | **SUPPORTED** | 4 of 4 COMPLETED: timer positive at `s0 + 1`, concealed exactly 75 steps after the order (`move_state` first read 4 at the same step) |
+| E3a | **SUPPORTED** | 4,002 concealed unit-snapshots; every type listed at the order (1, 6, 11) stays listed; change-state options while concealed {0, 5} |
+| E3b | NOT TESTED | no `baseline-v2` move or shot of a concealed unit (the comparison: 6 moves of unconcealed stationary units, all under way at the next snapshot) |
+| E5 | NOT TESTED | no event during a transition |
+| E6 | **SUPPORTED** | 1,084 snapshots from the first order: every unit's position, presence and blood, the flags and the scores equal the reference's; final scores equal |
+
+**Continuation gate** (`gate-pa.json`): integrity, S1, S2, S3, E2 and the ledger, installation and identities all
+pass, so P-B was authorised. P-A, against an inert opponent, carries no efficacy information.
+
+## 18. P-B results (registered)
+
+| Id | P-B1 (candidate red) | P-B2 (candidate blue) |
+|---|---|---|
+| Integrity | pass (6 orders three ways; 2,881 candidate and 2,881 `baseline-v2` decisions re-decided; 17,286 unit-snapshots in both channels) | pass (same counts) |
+| S1 | **PASS** (6 orders, no error code) | **PASS** (6, none) |
+| S2 | **PASS** (6 units) | **PASS** (6 units) |
+| S4 | **PASS** (no refusal of either seat) | **PASS** (no refusal of either seat) |
+| E1 | **SUPPORTED** (6 of 6) | **SUPPORTED** (6 of 6) |
+| E2 | **SUPPORTED** (6 of 6 COMPLETED in 75 steps) | **SUPPORTED** (6 of 6 in 75 steps) |
+| E3a | **SUPPORTED** (16,836 concealed unit-snapshots; types 6, 8, 11 kept) | **SUPPORTED** (16,836; same) |
+| E3b | NOT TESTED | NOT TESTED |
+| E5 | NOT TESTED | NOT TESTED |
+| E4a | **SUPPORTED** (95 discriminating target-steps, none listed) | **SUPPORTED** (41, none listed) |
+| E4b | NOT TESTED (no concealed target-step with an observer within the concealed distance) | NOT TESTED |
+
+**The P-B1 stop branch** (`stop-pb1.json`) allowed P-B2. **E4 detail.** The control was valid in both games: the
+model agrees with the opposing seat's listing at 48,851 of 48,851 and 44,713 of 44,713 unconcealed target-steps, and
+the matched band (unconcealed targets that would be discriminating if concealed) is listed at 2,990 of 2,990 and 1,897
+of 1,897. The discriminating evidence is narrow: one concealed unit per game (1 episode in P-B1, 2 in P-B2), against 5
+and 3 distinct observers. Concealed vehicles with an aerial observer within its normal distance were listed at all
+14,266 and 3,274 of their target-steps; that class is outside the verdict by registration. Concealed targets with no
+observer within the normal distance (2,475 and 13,521 target-steps) were never listed.
+
+## 19. Pooled primary metric, verdicts and disposition (registered)
+
+**Primary metric: 16 of 16** concealment orders (4 in P-A, 6 in P-B1, 6 in P-B2) reached the concealed state within 76
+steps; none censored, interrupted or failed; the 100% criterion holds with every applicable safety check passed.
+
+| Endpoint | Pooled | Scope of the evidence |
+|---|---|---|
+| E1, E2 | **SUPPORTED** | 16 orders; tanks and infantry fighting vehicles (P-A) and artillery (P-B), stationary, no enemy seen |
+| E3a | **SUPPORTED** | the same units; types 1, 6, 11 (P-A) and 6, 8, 11 (P-B) kept while concealed |
+| E3b | NOT TESTED | no natural event in three games |
+| E4a | **SUPPORTED** | 136 discriminating target-steps, none listed; one artillery unit per game, ground observers only |
+| E4b | NOT TESTED | no observer ever came within the concealed distance of a concealed unit |
+| E5 | NOT TESTED | no event during any transition |
+| E6 | **SUPPORTED** | P-A only (deterministic, inert opponent) |
+| S1, S2 | **PASS** | every game |
+| S3 | **PASS** | P-A |
+| S4 | **PASS** | P-B1 and P-B2 |
+
+**Registered disposition (`gates.json`): NEEDS_TARGETED_PROBE**, because E3b, an indispensable behaviour, was not
+tested; nothing was refuted and no safety check failed. A successful E2 establishes none of E3b, E4b or E5, and the
+two P-B games are a mechanism study: they estimate no score, win or rate difference.
+
+## 20. Post-hoc descriptions (written after every registered verdict; they change none)
+
+`scripts/t7_probe_posthoc.py`, output `evaluation/t7-mechanism-probe-1/posthoc.json`:
+
+1. **Populations.** P-A's 4 orders went to 2 tanks and 2 infantry fighting vehicles (vehicle sub_types 0 and 1). All
+   12 P-B orders went to artillery (vehicle sub_type 3), which lists no move action (the rules forbid artillery
+   movement) and listed 6, 8 and 11 before and after concealment. No infantry unit was ordered in any game.
+2. **Why E3b and E5 had no event.** `baseline-v2` gave none of the 16 ordered units any action after its order, in any
+   game: the P-A vehicles had finished their tasks, and `baseline-v2` never orders artillery's indirect fire (action 8)
+   and cannot move it. E3b therefore needs a population the registered games did not contain: a concealed unit that
+   `baseline-v2` later moves or uses to fire.
+3. **The discriminating targets.** In both P-B games the single discriminating target was an artillery unit seen by
+   ground vehicles at 23 hexes (P-B1) or 25 hexes (P-B2) from lower hexes; none listed it while it was concealed.
+4. **The aerial class.** In every one of its 17,540 target-steps, the observer that made the class ambiguous was a
+   helicopter between the concealed and the normal distance, with no ground observer within the concealed distance,
+   and the concealed vehicle was listed. This is consistent with concealment not helping a vehicle against an aerial
+   observer (the documented exception for a vehicle lower than its observer, if a helicopter counts as higher); it is
+   an observation of two games, not a tested rule.
+
+## 21. Research disposition and outstanding unknowns
+
+**Disposition: NEEDS_TARGETED_PROBE.** Established, within the observed populations, on engine 4.1.0: a concealment
+order from an idle, stationary ground vehicle (tank, infantry fighting vehicle, artillery) that `baseline-v2` leaves
+idle is echoed without error, starts the documented transition in the next step and completes exactly 75 steps
+later, every time (16 of 16); concealed units keep their listed actions, are not locked, and change nothing else in a
+deterministic game; an opposing ground vehicle between half and the full documented distance does not list a
+concealed artillery unit (two games, one unit each). Not established: that a concealed unit's later move or shot is
+accepted and ends concealment without delay (E3b), how the engine treats an order or a suppression during the
+transition (E5), that a concealed unit is still listed within half the distance (E4b), the effect on concealed
+infantry or against aerial observers, and any tactical benefit.
+
+The smallest remaining verification is E3b, which READY needs: one or more registered games in which `baseline-v2`
+itself later moves or fires a unit the candidate concealed. The three registered games could not produce it, so the
+configuration must be chosen offline first, from records in which `baseline-v2` acts on units that had stood idle and
+stationary with no enemy seen, without forcing any event. No tactical A/B proposal is drafted under this disposition.
+
+## 22. Limits
+
+* Three games. P-A is deterministic against an inert opponent; P-B1 and P-B2 are single stochastic games of one
+  scenario. Supported endpoints hold for the unit classes and situations observed (vehicles; artillery for E4a; ground
+  observers at 23 to 25 hexes), not engine-wide.
+* E4a's 136 discriminating target-steps come from two units in two games and are serially dependent observations.
+* The model's control agreement was exact in both games, but terrain, aerial observers and the 12.5-hex boundary
+  remain outside the registered E4 verdict.
