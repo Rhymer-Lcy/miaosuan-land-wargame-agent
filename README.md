@@ -71,7 +71,12 @@ mechanisms four failed the safety condition, and concealment of idle stationary 
 weapons on their own, which has no documented benefit. Its offline shadow
 leaves `baseline-v2` unchanged on every recorded decision; its engine effects are documented but unobserved, so the
 disposition is READY_FOR_MECHANISM_PROBE, and a three-game mechanism probe is proposed for the owner's approval
-(`docs/T7_SCREEN_PROPOSAL.md`). Nothing was registered, implemented in the policy or promoted.
+(`docs/T7_SCREEN_PROPOSAL.md`). Nothing was registered, implemented in the policy or promoted. Sprint 6 ran that probe
+(`docs/T7_MECHANISM_PROBE.md`, preregistered in issue #3) in three engine sessions: all 16 concealment orders were
+accepted and completed in exactly 75 steps, concealed units kept their listed actions, nothing else changed in the
+deterministic game, and ground observers beyond half the documented distance did not see a concealed unit; no game
+produced a concealed unit that `baseline-v2` later moved or fired, so exit from concealment is untested and the
+disposition is NEEDS_TARGETED_PROBE. Nothing was promoted or uploaded.
 
 ## Third-party material is not in this repository
 
@@ -121,6 +126,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/PS1_ENGINE_PROBE.md` | the registered two-session engine probe of PS-1: the diagnostic hook, the stop semantics (P1), the prospective test of the movement model (P2), post-hoc descriptions, gates and disposition |
 | `docs/T7_DESIGN.md` | the offline design study of T7 movement-state micro: protocol, action-semantics matrix, opportunity audit, candidate pool, rubric and selection, specification, offline shadow checks, gates and disposition |
 | `docs/T7_SCREEN_PROPOSAL.md` | the proposed mechanism probe of idle concealment (for the owner's approval; not a registration) |
+| `docs/T7_MECHANISM_PROBE.md` | the registered three-game mechanism probe of idle concealment: candidate, capture, endpoints, gates, results, post-hoc descriptions and disposition |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
 | `evaluation/routing-remediation-1/` | the routing remediation's registration, pinned corpus and privacy-safe results |
@@ -139,6 +145,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `evaluation/ps1-design-1/` | the PS-1 design study's public summary (reconstruction, audit, fidelity, certificates, census) and its post-hoc descriptions |
 | `evaluation/ps1-engine-probe-1/` | the PS-1 engine probe's manifest, mutation results, registration issue and its verification, the P1 and P2 results, the gates and the post-hoc descriptions |
 | `evaluation/t7-design-1/` | the T7 design study's frozen rubric, audit and candidate aggregates, semantics matrix, scores and selection, post-hoc descriptions, shadow checks, mutation results and gates |
+| `evaluation/t7-mechanism-probe-1/` | the T7 mechanism probe's manifest, pre-registration outputs (calibration, premise, equivalence, dry run, mutation), registration issue and its verification, per-game results, gate, stop branch, pooled result and post-hoc descriptions |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy
