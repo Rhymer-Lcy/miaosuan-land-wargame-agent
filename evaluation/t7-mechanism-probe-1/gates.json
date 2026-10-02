@@ -1,0 +1,53 @@
+{
+ "E4": {
+  "E4a": {
+   "control_valid_in_every_game": true,
+   "discriminating_target_steps": 136,
+   "listed": 0,
+   "verdict": "SUPPORTED"
+  },
+  "E4b": {
+   "expected_listed_target_steps": 0,
+   "unlisted": 0,
+   "verdict": "NOT TESTED"
+  }
+ },
+ "disposition": {
+  "disposition": "NEEDS_TARGETED_PROBE",
+  "games_played": [
+   "P-A",
+   "P-B1",
+   "P-B2"
+  ],
+  "pooled_verdicts": {
+   "E1": "SUPPORTED",
+   "E2": "SUPPORTED",
+   "E3a": "SUPPORTED",
+   "E3b": "NOT TESTED",
+   "E4a": "SUPPORTED",
+   "E4b": "NOT TESTED",
+   "E5": "NOT TESTED",
+   "E6": "SUPPORTED"
+  },
+  "reasons": [
+   "E3b NOT TESTED"
+  ]
+ },
+ "games_played": [
+  "P-A",
+  "P-B1",
+  "P-B2"
+ ],
+ "part": "pooled",
+ "primary": {
+  "censored": 0,
+  "criterion_100_percent": true,
+  "failed": 0,
+  "interrupted": 0,
+  "orders": 16,
+  "reached_within_76": 16,
+  "share": 1.0
+ },
+ "probe_id": "t7-mechanism-probe-1",
+ "schema": "miaosuan-t7-probe-analysis/1"
+}

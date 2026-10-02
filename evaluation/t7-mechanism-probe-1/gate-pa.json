@@ -1,0 +1,24 @@
+{
+ "checks": {
+  "E2": true,
+  "S1": true,
+  "S2": true,
+  "S3": true,
+  "integrity": true,
+  "ledger, installation and identities": true
+ },
+ "continue_to_pb": true,
+ "installation": {
+  "checks": {
+   "identities": true,
+   "integrity": true,
+   "no unclosed session": true,
+   "state continuous": true
+  },
+  "ok": true,
+  "sessions_opened": 2462
+ },
+ "part": "gate",
+ "probe_id": "t7-mechanism-probe-1",
+ "schema": "miaosuan-t7-probe-analysis/1"
+}

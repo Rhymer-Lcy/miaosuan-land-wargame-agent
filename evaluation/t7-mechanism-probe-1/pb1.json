@@ -1,0 +1,214 @@
+{
+ "E1": {
+  "echoed_without_error": 6,
+  "error_codes": [],
+  "no_or_several_echoes": 0,
+  "orders": 6,
+  "verdict": "SUPPORTED",
+  "with_error_code": 0
+ },
+ "E2": {
+  "durations": {
+   "75": 6
+  },
+  "first_move_state_4_offsets": {
+   "75": 6
+  },
+  "orders": 6,
+  "outcomes": {
+   "COMPLETED": 6
+  },
+  "timer_start_offsets": {
+   "1": 6
+  },
+  "verdict": "SUPPORTED"
+ },
+ "E3a": {
+  "change_state_options_while_concealed": {
+   "[0, 5]": 16836
+  },
+  "completed_orders": 6,
+  "concealed_unit_snapshots": 16836,
+  "listed_types_while_concealed": {
+   "[6, 8, 11]": 16836
+  },
+  "losses": [],
+  "lost_types": [],
+  "transients": [],
+  "verdict": "SUPPORTED"
+ },
+ "E3b": {
+  "by_type": {},
+  "consistent": 0,
+  "events": 0,
+  "excluded": 0,
+  "inconsistent": 0,
+  "matched_comparison_unconcealed_moves": {
+   "started at the next snapshot": 20
+  },
+  "other_types_on_concealed_units": {},
+  "verdict": "NOT TESTED"
+ },
+ "E4": {
+  "E4a": {
+   "control_valid_in_every_game": true,
+   "discriminating_target_steps": 95,
+   "listed": 0,
+   "verdict": "SUPPORTED"
+  },
+  "E4b": {
+   "expected_listed_target_steps": 0,
+   "unlisted": 0,
+   "verdict": "NOT TESTED"
+  },
+  "classes": {
+   "ambiguous: an aerial observer within its normal distance of a concealed vehicle (exception undocumented)": {
+    "listed": 14266
+   },
+   "discriminating: an observer between the concealed and the normal distance, none closer": {
+    "unlisted": 95
+   },
+   "excluded: launched unit": {
+    "listed": 6137,
+    "unlisted": 11829
+   },
+   "excluded: transition or other movement state": {
+    "listed": 1056,
+    "unlisted": 445
+   },
+   "expected unlisted: no observer within the normal distance": {
+    "unlisted": 2475
+   }
+  },
+  "control": {
+   "agree": 48851,
+   "agreement": 1.0,
+   "seen_listed": 31801,
+   "seen_unlisted": 0,
+   "target_steps": 48851,
+   "unseen_listed": 0,
+   "unseen_unlisted": 17050
+  },
+  "control_valid": true,
+  "distinct_pairs": {
+   "ambiguous: an aerial observer within its normal distance of a concealed vehicle (exception undocumented)": 31,
+   "discriminating: an observer between the concealed and the normal distance, none closer": 5
+  },
+  "distinct_targets": {
+   "ambiguous: an aerial observer within its normal distance of a concealed vehicle (exception undocumented)": 6,
+   "discriminating: an observer between the concealed and the normal distance, none closer": 1,
+   "expected unlisted: no observer within the normal distance": 6
+  },
+  "episodes": {
+   "ambiguous: an aerial observer within its normal distance of a concealed vehicle (exception undocumented)": 6,
+   "discriminating: an observer between the concealed and the normal distance, none closer": 1,
+   "expected unlisted: no observer within the normal distance": 7
+  },
+  "matched": {
+   "listed": 2990,
+   "share_listed": 1.0,
+   "target_steps": 2990
+  }
+ },
+ "E5": {
+  "by_event": {},
+  "events": 0,
+  "verdict": "NOT TESTED"
+ },
+ "S1": {
+  "orders": 6,
+  "orders_with_error_code": 0,
+  "verdict": "PASS"
+ },
+ "S2": {
+  "transients": [],
+  "units": 6,
+  "verdict": "PASS",
+  "violations": []
+ },
+ "S4": {
+  "opponent_classes_outside_the_set": {
+   "11": []
+  },
+  "problems": [],
+  "refusal_classes": {
+   "1": [],
+   "11": []
+  },
+  "verdict": "PASS"
+ },
+ "candidate_seat_faction": 0,
+ "game_id": "2120531121.H1.pb1",
+ "integrity": {
+  "I1": [],
+  "I2": [],
+  "I3": {
+   "missing_blocks": 0,
+   "other_change_state": 0,
+   "pre_execution": 6,
+   "record": 6,
+   "rewritten_in_place": 0,
+   "trace_blocks": 6
+  },
+  "I4": {
+   "unit_snapshots_compared": 17286
+  },
+  "I5": {
+   "baseline-v2-candidate-shoot-target-reservation decisions": 2881,
+   "pool_predicate_orders": 6,
+   "t7-idle-concealment decisions": 2881
+  },
+  "I6": {
+   "orders_compared": 6
+  },
+  "ok": true,
+  "relaxed_for_dry_run": []
+ },
+ "orders": [
+  {
+   "d": 75,
+   "outcome": "COMPLETED",
+   "timer_start_offset": 1
+  },
+  {
+   "d": 75,
+   "outcome": "COMPLETED",
+   "timer_start_offset": 1
+  },
+  {
+   "d": 75,
+   "outcome": "COMPLETED",
+   "timer_start_offset": 1
+  },
+  {
+   "d": 75,
+   "outcome": "COMPLETED",
+   "timer_start_offset": 1
+  },
+  {
+   "d": 75,
+   "outcome": "COMPLETED",
+   "timer_start_offset": 1
+  },
+  {
+   "d": 75,
+   "outcome": "COMPLETED",
+   "timer_start_offset": 1
+  }
+ ],
+ "primary": {
+  "censored": 0,
+  "criterion_100_percent": true,
+  "failed": 0,
+  "interrupted": 0,
+  "orders": 6,
+  "reached_within_76": 6,
+  "share": 1.0
+ },
+ "probe": "P-B1",
+ "probe_id": "t7-mechanism-probe-1",
+ "schema": "miaosuan-t7-probe-analysis/1",
+ "session": "2463",
+ "status": "COMPLETED",
+ "steps": 2881
+}

@@ -1,0 +1,189 @@
+{
+ "E1": {
+  "echoed_without_error": 4,
+  "error_codes": [],
+  "no_or_several_echoes": 0,
+  "orders": 4,
+  "verdict": "SUPPORTED",
+  "with_error_code": 0
+ },
+ "E2": {
+  "durations": {
+   "75": 4
+  },
+  "first_move_state_4_offsets": {
+   "75": 4
+  },
+  "orders": 4,
+  "outcomes": {
+   "COMPLETED": 4
+  },
+  "timer_start_offsets": {
+   "1": 4
+  },
+  "verdict": "SUPPORTED"
+ },
+ "E3a": {
+  "change_state_options_while_concealed": {
+   "[0, 5]": 4002
+  },
+  "completed_orders": 4,
+  "concealed_unit_snapshots": 4002,
+  "listed_types_while_concealed": {
+   "[1, 6, 11]": 4002
+  },
+  "losses": [],
+  "lost_types": [],
+  "transients": [],
+  "verdict": "SUPPORTED"
+ },
+ "E3b": {
+  "by_type": {},
+  "consistent": 0,
+  "events": 0,
+  "excluded": 0,
+  "inconsistent": 0,
+  "matched_comparison_unconcealed_moves": {
+   "started at the next snapshot": 6
+  },
+  "other_types_on_concealed_units": {},
+  "verdict": "NOT TESTED"
+ },
+ "E4_descriptive": {
+  "classes": {
+   "excluded: launched unit": {
+    "unlisted": 7204
+   },
+   "excluded: transition or other movement state": {
+    "unlisted": 602
+   },
+   "expected unlisted: no observer within the normal distance": {
+    "unlisted": 4002
+   }
+  },
+  "control": {
+   "agree": 6202,
+   "agreement": 1.0,
+   "seen_listed": 0,
+   "seen_unlisted": 0,
+   "target_steps": 6202,
+   "unseen_listed": 0,
+   "unseen_unlisted": 6202
+  },
+  "control_valid": false,
+  "distinct_pairs": {},
+  "distinct_targets": {
+   "expected unlisted: no observer within the normal distance": 4
+  },
+  "episodes": {
+   "expected unlisted: no observer within the normal distance": 4
+  },
+  "matched": {
+   "listed": 0,
+   "share_listed": null,
+   "target_steps": 0
+  }
+ },
+ "E5": {
+  "by_event": {},
+  "events": 0,
+  "verdict": "NOT TESTED"
+ },
+ "E6": {
+  "first_difference": [],
+  "snapshots_compared": 1084,
+  "verdict": "SUPPORTED"
+ },
+ "S1": {
+  "orders": 4,
+  "orders_with_error_code": 0,
+  "verdict": "PASS"
+ },
+ "S2": {
+  "transients": [],
+  "units": 4,
+  "verdict": "PASS",
+  "violations": []
+ },
+ "S3": {
+  "after_first_order": [],
+  "baseline_v2_trace_digests_after_first_order": {
+   "compared": 1083,
+   "equal": 990
+  },
+  "compared": {
+   "baseline-v2 trace digests": 718,
+   "decisions": 718,
+   "decisions after the first order": 1083,
+   "observation digests": 717,
+   "state digests": 718
+  },
+  "first_order_k": 717,
+  "premise_problems": [],
+  "s3a_premise": true,
+  "verdict": "PASS"
+ },
+ "candidate_seat_faction": 1,
+ "game_id": "1910631192.C3.pa",
+ "integrity": {
+  "I1": [],
+  "I2": [],
+  "I3": {
+   "missing_blocks": 0,
+   "other_change_state": 0,
+   "pre_execution": 4,
+   "record": 4,
+   "rewritten_in_place": 0,
+   "trace_blocks": 4
+  },
+  "I4": {
+   "unit_snapshots_compared": 4340
+  },
+  "I5": {
+   "pool_predicate_orders": 4,
+   "t7-idle-concealment decisions": 1801
+  },
+  "I6": {
+   "orders_compared": 4
+  },
+  "ok": true,
+  "relaxed_for_dry_run": []
+ },
+ "orders": [
+  {
+   "d": 75,
+   "outcome": "COMPLETED",
+   "timer_start_offset": 1
+  },
+  {
+   "d": 75,
+   "outcome": "COMPLETED",
+   "timer_start_offset": 1
+  },
+  {
+   "d": 75,
+   "outcome": "COMPLETED",
+   "timer_start_offset": 1
+  },
+  {
+   "d": 75,
+   "outcome": "COMPLETED",
+   "timer_start_offset": 1
+  }
+ ],
+ "primary": {
+  "censored": 0,
+  "criterion_100_percent": true,
+  "failed": 0,
+  "interrupted": 0,
+  "orders": 4,
+  "reached_within_76": 4,
+  "share": 1.0
+ },
+ "probe": "P-A",
+ "probe_id": "t7-mechanism-probe-1",
+ "schema": "miaosuan-t7-probe-analysis/1",
+ "session": "2462",
+ "status": "COMPLETED",
+ "steps": 1801
+}

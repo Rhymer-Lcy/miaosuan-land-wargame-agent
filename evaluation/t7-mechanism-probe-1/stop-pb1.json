@@ -1,0 +1,23 @@
+{
+ "checks": {
+  "S1": true,
+  "S2": true,
+  "S4": true,
+  "integrity": true,
+  "ledger, installation and identities": true
+ },
+ "installation": {
+  "checks": {
+   "identities": true,
+   "integrity": true,
+   "no unclosed session": true,
+   "state continuous": true
+  },
+  "ok": true,
+  "sessions_opened": 2463
+ },
+ "part": "stop",
+ "probe_id": "t7-mechanism-probe-1",
+ "run_pb2": true,
+ "schema": "miaosuan-t7-probe-analysis/1"
+}
