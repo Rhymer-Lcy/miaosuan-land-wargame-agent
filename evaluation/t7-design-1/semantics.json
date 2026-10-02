@@ -1,0 +1,426 @@
+{
+ "claims": [
+  {
+   "claim": "Listed change-state options: vehicles {4 concealment, 5 half speed} or {5}; infantry {2 and 3 charge, 4 concealment}; option 0 (normal) and option 1 (march) were never listed for any unit",
+   "evidence": {
+    "infantry [2, 3, 4]": 9772,
+    "vehicle [4, 5]": 174395,
+    "vehicle [5]": 2003
+   },
+   "family": "T7-A",
+   "id": "A-1",
+   "level": "DIRECTLY OBSERVED",
+   "provenance": "seat observations",
+   "scope": "H0, H1, H2, play stage"
+  },
+  {
+   "claim": "Action 6 is listed only for units without a move path: stationary units (stop 1) and units in the move-to-stop transition; never for a unit with a move path",
+   "evidence": {
+    "in move-to-stop transition": 5337,
+    "stationary": 180833,
+    "with a move path": 0
+   },
+   "family": "T7-A",
+   "id": "A-2",
+   "level": "DIRECTLY OBSERVED",
+   "provenance": "seat observations",
+   "scope": "H0, H1, H2, play stage"
+  },
+  {
+   "claim": "A suppressed vehicle is listed half speed only, never concealment, consistent with the rule that suppression prevents concealment (D4)",
+   "evidence": {
+    "suppressed unit-decisions": 2003
+   },
+   "family": "T7-A",
+   "id": "A-3",
+   "level": "DIRECTLY OBSERVED",
+   "provenance": "seat observations",
+   "scope": "H0, H1, H2, play stage"
+  },
+  {
+   "claim": "Action 6 is listed in every deployment decision; whether a change ordered during deployment, while cur_step stands still, completes before play is unknown",
+   "evidence": {
+    "deployment decisions": {
+     "H0": 16,
+     "H1": 0,
+     "H2": 4
+    },
+    "deployment decisions listing 6": {
+     "H0": 16,
+     "H1": 0,
+     "H2": 4
+    }
+   },
+   "family": "T7-A",
+   "id": "A-4",
+   "level": "DIRECTLY OBSERVED (listing); UNKNOWN (effect)",
+   "provenance": "seat observations",
+   "scope": "H0, H2 deployment decisions"
+  },
+  {
+   "claim": "move_state is 0 for every listed own unit, never changes, and change_state_remain_time is never positive: no state transition occurs in any record, so no transition duration, speed or observation effect is observed",
+   "evidence": {
+    "unit-decisions with move_state 0": 624974
+   },
+   "family": "T7-A",
+   "id": "A-5",
+   "level": "DIRECTLY OBSERVED",
+   "provenance": "seat observations",
+   "scope": "H0, H1, H2"
+  },
+  {
+   "claim": "The documented unit field target_state is absent from every unit record read; every other field the audit reads is present",
+   "evidence": {
+    "missing": {
+     "H0": {
+      "deployment:target_state": 204,
+      "play:target_state": 371622
+     },
+     "H1": {
+      "play:target_state": 10800
+     },
+     "H2": {
+      "deployment:target_state": 84,
+      "play:target_state": 117360
+     }
+    }
+   },
+   "family": "T7-A",
+   "id": "A-6",
+   "level": "DIRECTLY OBSERVED (CONTRADICTED for the documentation's field list)",
+   "provenance": "seat observations",
+   "scope": "H0, H1, H2"
+  },
+  {
+   "claim": "Entering concealment takes 75 s, during which the unit executes no other command; a tank firing interrupts it; suppression prevents or interrupts it; once concealed, moving or firing ends it at no time cost",
+   "evidence": {},
+   "family": "T7-A",
+   "id": "A-7",
+   "level": "DOCUMENTED",
+   "provenance": "published rules (D4)",
+   "scope": "not observed"
+  },
+  {
+   "claim": "A concealed unit is observed at half distance (not for a vehicle lower than its observer) and is a favourable target in the direct- and indirect-fire tables",
+   "evidence": {},
+   "family": "T7-A",
+   "id": "A-8",
+   "level": "DOCUMENTED",
+   "provenance": "published rules (D4)",
+   "scope": "not observed"
+  },
+  {
+   "claim": "March: vehicles only, on a road hex, after locking weapons; 75 s to enter and to leave; no fire, embarking or leaving the road while marching; blocked by a stopped or non-marching unit in the next hex; the largest adverse target modifier",
+   "evidence": {},
+   "family": "T7-A",
+   "id": "A-9",
+   "level": "DOCUMENTED",
+   "provenance": "published rules (D2)",
+   "scope": "never listed"
+  },
+  {
+   "claim": "March hex time 8 s per unit of march cost (90 km/h on a 200 m hex, cost defined relative to the mode's maximum speed)",
+   "evidence": {},
+   "family": "T7-A",
+   "id": "A-10",
+   "level": "DERIVED",
+   "provenance": "D2, D9, D10",
+   "scope": "unverified; never marched"
+  },
+  {
+   "claim": "Charge doubles or quadruples infantry speed and adds one fatigue level per charged hex; second-level fatigue stops movement; no transition time is documented",
+   "evidence": {},
+   "family": "T7-A",
+   "id": "A-11",
+   "level": "DOCUMENTED (speed, fatigue); UNKNOWN (transition)",
+   "provenance": "published rules (D3)",
+   "scope": "never ordered"
+  },
+  {
+   "claim": "Half speed (option 5) has no documented effect other than crossing minefields",
+   "evidence": {},
+   "family": "T7-A",
+   "id": "A-12",
+   "level": "DOCUMENTED",
+   "provenance": "published rules (D5)",
+   "scope": "never ordered"
+  },
+  {
+   "claim": "Whether and when option 1 (march) is listed, e.g. after a lock on a road hex",
+   "evidence": {},
+   "family": "T7-A",
+   "id": "A-13",
+   "level": "UNKNOWN",
+   "provenance": "no record",
+   "scope": "never listed"
+  },
+  {
+   "claim": "Action 10 is listed only for units with a non-empty move path, ground and air, traversing or waiting; never for a unit without a path",
+   "evidence": {
+    "aircraft": 9003,
+    "ground units with speed 0 and a path": {
+     "H0": 14628,
+     "H1": 0,
+     "H2": 44527
+    },
+    "speed 0 with a path": 62859,
+    "traversing (speed above 0)": 204629,
+    "without a path": 0
+   },
+   "family": "T7-B",
+   "id": "B-1",
+   "level": "DIRECTLY OBSERVED",
+   "provenance": "seat observations",
+   "scope": "H0, H1, H2, play stage"
+  },
+  {
+   "claim": "At the natural end of a path (no stop order) stop becomes 1 exactly 75 steps after the move path empties, in every arrival observed to settle; movement is listed again at once (a normal stop)",
+   "evidence": {
+    "settled arrivals": {
+     "H0 1.16": 1,
+     "H0 1.2": 10,
+     "H0 2.0": 10,
+     "H0 2.1": 22,
+     "H0 2.15": 3,
+     "H0 2.4": 3,
+     "H0 3.5": 27,
+     "H0 3.6": 33,
+     "H0 3.8": 12,
+     "H1 2.0": 2,
+     "H1 2.1": 2,
+     "H2 1.2": 2,
+     "H2 2.0": 3,
+     "H2 2.1": 3,
+     "H2 2.4": 2,
+     "H2 3.5": 3,
+     "H2 3.6": 3
+    }
+   },
+   "family": "T7-B",
+   "id": "B-2",
+   "level": "DIRECTLY OBSERVED",
+   "provenance": "seat observations",
+   "scope": "H0, H1, H2 arrivals that settled"
+  },
+  {
+   "claim": "After an arrival, infantry fighting vehicles and other non-tank units list a shoot option only from 75 steps on; tanks list it at once (they fire while moving, D8)",
+   "evidence": {
+    "shoot listed after (steps)": {
+     "H0 1.16": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 1
+     },
+     "H0 1.2": {
+      "max": 129,
+      "median": 129,
+      "min": 129,
+      "n": 1
+     },
+     "H0 2.0": {
+      "max": 40,
+      "median": 0.0,
+      "min": 0,
+      "n": 8
+     },
+     "H0 2.1": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 15
+     },
+     "H0 2.15": {
+      "max": 75,
+      "median": 75.0,
+      "min": 75,
+      "n": 2
+     },
+     "H0 2.4": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 3
+     },
+     "H0 3.6": {
+      "max": 75,
+      "median": 75.0,
+      "min": 75,
+      "n": 24
+     },
+     "H2 3.6": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 1
+     }
+    }
+   },
+   "family": "T7-B",
+   "id": "B-3",
+   "level": "DIRECTLY OBSERVED",
+   "provenance": "seat observations",
+   "scope": "arrivals with a later shoot listing"
+  },
+  {
+   "claim": "A stop issued to a unit waiting in front of a full hex is echoed without error, sets flag_force_stop one step later, withdraws every listed action and is deferred while the next hex stays full",
+   "evidence": {},
+   "family": "T7-B",
+   "id": "B-4",
+   "level": "DIRECTLY OBSERVED",
+   "provenance": "Sprint 4 probe P1 (docs/PS1_ENGINE_PROBE.md)",
+   "scope": "4 units, one game"
+  },
+  {
+   "claim": "The effect of a stop on a traversing unit: completes its hex, then a 75 s penalty transition during which it takes no action (D6)",
+   "evidence": {},
+   "family": "T7-B",
+   "id": "B-5",
+   "level": "DOCUMENTED; UNKNOWN on engine 4.1.0",
+   "provenance": "published rules (D6)",
+   "scope": "never issued in this project"
+  },
+  {
+   "claim": "speed above 0 does not exclude a unit traversing towards a hex that fills before it arrives (448 such unit-steps in the Sprint 2 split game)",
+   "evidence": {},
+   "family": "T7-B",
+   "id": "B-6",
+   "level": "DIRECTLY OBSERVED",
+   "provenance": "docs/PS1_DESIGN.md 11.2",
+   "scope": "one game"
+  },
+  {
+   "claim": "Action 11 is listed only for stationary vehicles (stop 1, no path) with unfolded weapons that are not suppressed, never in the move-to-stop transition, never for infantry or aircraft",
+   "evidence": {
+    "unit-decisions by archetype": {
+     "2.0": 16071,
+     "2.1": 26558,
+     "2.15": 3152,
+     "2.3": 120960,
+     "2.4": 4113
+    }
+   },
+   "family": "T7-C",
+   "id": "C-1",
+   "level": "DIRECTLY OBSERVED",
+   "provenance": "seat observations",
+   "scope": "H0, H1, H2, play stage"
+  },
+  {
+   "claim": "Every listed own unit's weapon_unfold_state is 1 (unfolded) throughout; action 12 is never listed; no lock or unfold occurs in any record",
+   "evidence": {
+    "unit-decisions unfolded": 624974
+   },
+   "family": "T7-C",
+   "id": "C-2",
+   "level": "DIRECTLY OBSERVED",
+   "provenance": "seat observations",
+   "scope": "H0, H1, H2"
+  },
+  {
+   "claim": "The observation holds one lock state per unit (weapon_unfold_state, weapon_unfold_time), so per-weapon states cannot be represented; whether the engine keeps them per weapon is unknown",
+   "evidence": {},
+   "family": "T7-C",
+   "id": "C-3",
+   "level": "DERIVED (schema); UNKNOWN (engine)",
+   "provenance": "observation note and records",
+   "scope": "all records"
+  },
+  {
+   "claim": "Locking and unfolding take 75 s each and exclude other commands; locking is required before march and unfolding after march before firing",
+   "evidence": {},
+   "family": "T7-C",
+   "id": "C-4",
+   "level": "DOCUMENTED",
+   "provenance": "published rules (D2, D7)",
+   "scope": "not observed"
+  },
+  {
+   "claim": "Lock and unfold are listed in the deployment stage too (11: every deployment decision)",
+   "evidence": {
+    "deployment decisions listing 11": {
+     "H0": 16,
+     "H1": 0,
+     "H2": 4
+    }
+   },
+   "family": "T7-C",
+   "id": "C-5",
+   "level": "DIRECTLY OBSERVED (listing); UNKNOWN (effect)",
+   "provenance": "seat observations",
+   "scope": "H0, H2 deployment decisions"
+  },
+  {
+   "claim": "No frozen policy (baseline-v0, v1, v2, the runtimes, the split candidate, the inert control) issued any T7 action in the registered records; the only T7 actions ever issued are the 4 stops of Sprint 4's probe P1",
+   "evidence": {
+    "t7 actions by policy": {
+     "baseline-v0": {
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "6": 0,
+      "seat-games": 76
+     },
+     "baseline-v1-candidate-occupy-reservation": {
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "6": 0,
+      "seat-games": 324
+     },
+     "baseline-v1-routing-bounded-candidate": {
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "6": 0,
+      "seat-games": 480
+     },
+     "baseline-v2-candidate-shoot-target-reservation": {
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "6": 0,
+      "seat-games": 657
+     },
+     "inert-v0": {
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "6": 0,
+      "seat-games": 876
+     },
+     "ps1-probe-hook-1": {
+      "10": 4,
+      "11": 0,
+      "12": 0,
+      "6": 0,
+      "seat-games": 1
+     },
+     "tactic-deployment-split-1": {
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "6": 0,
+      "seat-games": 154
+     }
+    }
+   },
+   "family": "all",
+   "id": "X-1",
+   "level": "DIRECTLY OBSERVED",
+   "provenance": "game records (R)",
+   "scope": "1284 game records"
+  }
+ ],
+ "levels": [
+  "DOCUMENTED",
+  "DIRECTLY OBSERVED",
+  "DERIVED",
+  "HYPOTHESIZED",
+  "CONTRADICTED",
+  "UNKNOWN"
+ ],
+ "schema": "miaosuan-t7-semantics/1",
+ "study_id": "t7-design-1",
+ "version": 1
+}
