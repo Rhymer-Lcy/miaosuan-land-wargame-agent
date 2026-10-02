@@ -48,7 +48,9 @@ The registered candidate would be a policy module built from `src/miaosuan_agent
 
 * **P-A** (deterministic, 1 session): scenario 1910631192, condition C3: the inert control as red, the candidate as
   blue; the configuration of Sprint 2 game `b`. That game fired no shot and is deterministic; the study's offline
-  shadow orders concealment there for the first time at decision 717, to 4 units.
+  shadow orders concealment there for the first time at decision 717, to 4 units. *Correction (2026-10-03, Sprint
+  6, before any session): the replay orders 2 units at decision 717 and 2 more units of the same hex at 736; the
+  registration (`docs/T7_MECHANISM_PROBE.md`, `evaluation/t7-mechanism-probe-1/premise.json`) names both decisions.*
 * **P-B** (observation, 2 sessions): scenario 2120531121, head to head: the candidate as red against `baseline-v2` as
   blue, then `baseline-v2` as red against the candidate as blue. In the replay corpus this scenario had the most idle
   units later seen by the opponent (9 of 12 first-activated units, `posthoc.json`), so it is where the observation
