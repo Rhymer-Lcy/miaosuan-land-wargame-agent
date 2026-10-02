@@ -1,0 +1,357 @@
+{
+ "killed": 55,
+ "mutations": [
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "ground units not required",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "any change-state option accepted",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "concealed units not refused",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "transitions ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "missing transition fields accepted",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "stop not required",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "a move path allowed",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "suppressed units allowed",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "booleans read as numbers",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "enemy seen ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "repeat window one step longer",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "repeat window removed",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "units with a baseline action considered",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "enemy units considered",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "deployment allowed",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "memory not updated",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "own check ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "own check: key set",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "own check: listing",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "own check: second action",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_idle_concealment.py",
+   "killed": true,
+   "mutation": "baseline actions dropped",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_audit.py",
+   "killed": true,
+   "mutation": "current-state option counted as an opportunity",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_audit.py",
+   "killed": true,
+   "mutation": "empty move path counted as an opportunity",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_audit.py",
+   "killed": true,
+   "mutation": "speed 0 counted as an opportunity",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_audit.py",
+   "killed": true,
+   "mutation": "aircraft labelled as ground",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_audit.py",
+   "killed": true,
+   "mutation": "locked weapons counted as a lock opportunity",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_audit.py",
+   "killed": true,
+   "mutation": "fingerprint without the enemy flag",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_audit.py",
+   "killed": true,
+   "mutation": "enemy listings counted",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_audit.py",
+   "killed": true,
+   "mutation": "issued actions not counted",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_audit.py",
+   "killed": true,
+   "mutation": "malformed options not counted",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_audit.py",
+   "killed": true,
+   "mutation": "gaps not detected",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_audit.py",
+   "killed": true,
+   "mutation": "arrivals not detected",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_audit.py",
+   "killed": true,
+   "mutation": "arrivals never settle",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_candidates.py",
+   "killed": true,
+   "mutation": "A2 ignores the enemy",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_candidates.py",
+   "killed": true,
+   "mutation": "A2 repeat window one step longer",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_candidates.py",
+   "killed": true,
+   "mutation": "stops on units with speed 0",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_candidates.py",
+   "killed": true,
+   "mutation": "B1 range one hex longer",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_candidates.py",
+   "killed": true,
+   "mutation": "B1 includes move-and-fire units",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_candidates.py",
+   "killed": true,
+   "mutation": "B2 fires inside the observation range",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_candidates.py",
+   "killed": true,
+   "mutation": "A1 counts three transitions",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_candidates.py",
+   "killed": true,
+   "mutation": "A1 includes artillery",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_candidates.py",
+   "killed": true,
+   "mutation": "A3 without the two-hex limit",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_candidates.py",
+   "killed": true,
+   "mutation": "hex distance with even rows shifted",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_candidates.py",
+   "killed": true,
+   "mutation": "weapon range columns swapped",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_candidates.py",
+   "killed": true,
+   "mutation": "short-sighted observers see 3 hexes",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/t7_study.py",
+   "killed": true,
+   "mutation": "A2 exposure window one step longer",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/t7_study.py",
+   "killed": true,
+   "mutation": "A2 witness continues after the unit moves",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/t7_study.py",
+   "killed": true,
+   "mutation": "A2 witness ignores the opposing view",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/t7_study.py",
+   "killed": true,
+   "mutation": "B2 witness always true",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/t7_study.py",
+   "killed": true,
+   "mutation": "B1 witness ignores the range",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/t7_rubric.py",
+   "killed": true,
+   "mutation": "generality without the archetype condition",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/t7_rubric.py",
+   "killed": true,
+   "mutation": "opportunity anchors widened",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/t7_rubric.py",
+   "killed": true,
+   "mutation": "mandatory minimum made strict",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/t7_rubric.py",
+   "killed": true,
+   "mutation": "unknown cells not capped in sensitivity",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/t7_shadow.py",
+   "killed": true,
+   "mutation": "contract check accepts anything",
+   "reason_if_surviving": null
+  }
+ ],
+ "schema": "miaosuan-t7-mutation/1",
+ "sources_sha256": {
+  "scripts/t7_rubric.py": "1586f3e772923818e96b947e92e86dc3d47af4c9a7a95b16833eb6227ed43f5d",
+  "scripts/t7_shadow.py": "849a1cb9bd5407e7c2509e600a52d0b68acadecb1da7300ce40f2b04ece32943",
+  "scripts/t7_study.py": "8d0ae3b65efd78af4ce0ac1aea8f2aa13a1223229021b9825f95d23cc7fb9e6a",
+  "src/miaosuan_agent/evaluation/t7_audit.py": "69e4f358f486015548d74ed6209935b2babbf1dc43e85fa201df5e6595b4e81d",
+  "src/miaosuan_agent/evaluation/t7_candidates.py": "50c77f37d7561282a257da6c3640e23ded5a2abdccb83b7d507c8811e5c312ab",
+  "src/miaosuan_agent/experiments/t7_idle_concealment.py": "0017d75f7f997b35e7359df95f837dbb84add6b694211b454090f766d6c69dd9"
+ },
+ "tests": [
+  "tests.test_t7_shadow",
+  "tests.test_t7_audit",
+  "tests.test_t7_analysis",
+  "tests.test_t7_results"
+ ],
+ "tests_sha256": {
+  "tests/test_t7_analysis.py": "1dd859343ab7b935236d0135e7e43b23c92ccd4c19d36a36aebe689993b675fc",
+  "tests/test_t7_audit.py": "72646d6da62f00ff55f2846ee401e4f0545ed1db2898aee5828942d88c83f24a",
+  "tests/test_t7_results.py": "9e70c8e160480b2b5624a60d03894dc077bcb4f2c6ceec41cfb221aa85cead91",
+  "tests/test_t7_shadow.py": "85fd22ebf6cdf48e118d60aad1d3cafd037d14daa4404f3b582a5219cbb86d44"
+ },
+ "total": 55
+}
