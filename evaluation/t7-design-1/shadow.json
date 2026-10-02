@@ -1,0 +1,148 @@
+{
+ "determinism": {
+  "h1_decisions": 1800,
+  "permuted_counts": {
+   "a unit with two actions": 0,
+   "added": 60,
+   "added outside the play stage": 0,
+   "added to a unit baseline-v2 acted on": 0,
+   "baseline-v2 differs": 0,
+   "baseline-v2 equal": 1800,
+   "contract valid": 60,
+   "decisions": 1800,
+   "play decisions": 1800,
+   "prefix equal": 1800,
+   "recorded play actions compared": 1800,
+   "recorded play actions equal": 1800,
+   "recorded trace compared": 1800,
+   "recorded trace equal": 1800
+  },
+  "permuted_run_identical": true,
+  "second_run_identical": true
+ },
+ "populations": {
+  "H0": {
+   "activations": 234,
+   "counts": {
+    "a unit with two actions": 0,
+    "added": 234,
+    "added outside the play stage": 0,
+    "added to a unit baseline-v2 acted on": 0,
+    "baseline-v2 differs": 0,
+    "baseline-v2 equal": 33696,
+    "contract valid": 234,
+    "decisions": 33696,
+    "other decisions": 16,
+    "play decisions": 33680,
+    "prefix equal": 33696
+   },
+   "latency_ms": {
+    "baseline_v2_max": 170.003,
+    "baseline_v2_median": 0.297,
+    "baseline_v2_p99": 1.238,
+    "median_added": 0.068,
+    "shadow_max": 174.895,
+    "shadow_median": 0.392,
+    "shadow_p99": 1.296
+   },
+   "max_memory_entries": 6,
+   "only_in_pool_predicate": 0,
+   "only_in_shadow": 0,
+   "pool_predicate_activations": 234,
+   "skipped_by_reason": {
+    "an enemy is seen": 127250,
+    "change state not listed": 175256,
+    "concealment not listed": 1932,
+    "in a transition": 3075,
+    "not a ground unit": 55662,
+    "ordered within the repeat window": 14765
+   },
+   "units": 49
+  },
+  "H1": {
+   "activations": 60,
+   "counts": {
+    "a unit with two actions": 0,
+    "added": 60,
+    "added outside the play stage": 0,
+    "added to a unit baseline-v2 acted on": 0,
+    "baseline-v2 differs": 0,
+    "baseline-v2 equal": 1800,
+    "contract valid": 60,
+    "decisions": 1800,
+    "play decisions": 1800,
+    "prefix equal": 1800,
+    "recorded play actions compared": 1800,
+    "recorded play actions equal": 1800,
+    "recorded trace compared": 1800,
+    "recorded trace equal": 1800
+   },
+   "latency_ms": {
+    "baseline_v2_max": 25.752,
+    "baseline_v2_median": 0.237,
+    "baseline_v2_p99": 0.266,
+    "median_added": 0.059,
+    "shadow_max": 27.304,
+    "shadow_median": 0.296,
+    "shadow_p99": 0.318
+   },
+   "max_memory_entries": 4,
+   "only_in_pool_predicate": 0,
+   "only_in_shadow": 0,
+   "pool_predicate_activations": 60,
+   "skipped_by_reason": {
+    "change state not listed": 6190,
+    "in a transition": 300,
+    "ordered within the repeat window": 4238
+   },
+   "units": 4
+  },
+  "H2": {
+   "activations": 429,
+   "counts": {
+    "a unit with two actions": 0,
+    "added": 429,
+    "added outside the play stage": 0,
+    "added to a unit baseline-v2 acted on": 0,
+    "baseline-v2 differs": 0,
+    "baseline-v2 equal": 4684,
+    "contract valid": 429,
+    "decisions": 4684,
+    "other decisions": 4,
+    "play decisions": 4680,
+    "prefix equal": 4684,
+    "recorded play actions compared": 4680,
+    "recorded play actions equal": 4680
+   },
+   "latency_ms": {
+    "baseline_v2_max": 50.861,
+    "baseline_v2_median": 0.809,
+    "baseline_v2_p99": 0.902,
+    "median_added": 0.124,
+    "shadow_max": 54.118,
+    "shadow_median": 0.938,
+    "shadow_p99": 1.067
+   },
+   "max_memory_entries": 16,
+   "only_in_pool_predicate": 0,
+   "only_in_shadow": 0,
+   "pool_predicate_activations": 429,
+   "skipped_by_reason": {
+    "an enemy is seen": 1356,
+    "change state not listed": 77935,
+    "in a transition": 758,
+    "not a ground unit": 5751,
+    "ordered within the repeat window": 31034
+   },
+   "units": 16
+  }
+ },
+ "repeated_observation": {
+  "actions added": 0,
+  "baseline-v2 actions equal": 1800,
+  "decisions": 1800
+ },
+ "schema": "miaosuan-t7-shadow/1",
+ "shadow": "t7-idle-concealment-shadow",
+ "study_id": "t7-design-1"
+}
