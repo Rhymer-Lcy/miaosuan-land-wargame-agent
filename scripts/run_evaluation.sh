@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Play the registered evaluation plan: one isolated engine process (and session) per game.
 #
-# Usage: scripts/run_evaluation.sh --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab|residual516|prevalence|screen|screen-smoke|probe
+# Usage: scripts/run_evaluation.sh --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab|residual516|prevalence|screen|screen-smoke|probe|t7-probe
 #                                  [--evaluation NAME] [--engine-install DIR] [--workers N]
 #                                  [--purpose diagnostic --work DIR [--games FILE] [--sample-every N]]
 #
@@ -37,6 +37,11 @@
 #                      its manifest is re-derived, both policies' digests are checked before the first and after
 #                      the last game and by every game, and each game writes the probe capture (a snapshot at
 #                      every decision) beside its record (records and captures: scripts/ps1_probe_analysis.py)
+#   --plan t7-probe    the games of the registered T7 mechanism probe (--evaluation t7-mechanism-probe-1), in
+#                      registered order; --purpose diagnostic --workers 1 only, one game per invocation through
+#                      --games FILE (the protocol decides after each game whether the next may run); each game's
+#                      policy sources are checked before the first and after the last game, and each game writes the
+#                      T7 capture beside its record (records and captures: scripts/t7_probe_analysis.py)
 #   --evaluation NAME  the registered evaluation: evaluation/NAME/manifest.json, records under
 #                      local/evaluation/NAME (default baseline-v0). The baseline-v0 manifest is
 #                      re-derived before every run; a candidate evaluation also re-derives its own.
@@ -99,8 +104,8 @@ if [[ -n ${SAMPLE_EVERY:-} ]]; then
     fi
     SAMPLE_ARGS=(--sample-every "$SAMPLE_EVERY")
 fi
-if [[ -z $PYTHON || -z $ARCHIVE || ( $PLAN != gate1 && $PLAN != suite && $PLAN != study && $PLAN != ab && $PLAN != residual516 && $PLAN != prevalence && $PLAN != screen && $PLAN != screen-smoke && $PLAN != probe ) ]]; then
-    echo "usage: $0 --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab|residual516|prevalence|screen|screen-smoke|probe [--evaluation NAME] [--engine-install DIR] [--workers N] [--purpose diagnostic --work DIR [--games FILE] [--sample-every N]]" >&2
+if [[ -z $PYTHON || -z $ARCHIVE || ( $PLAN != gate1 && $PLAN != suite && $PLAN != study && $PLAN != ab && $PLAN != residual516 && $PLAN != prevalence && $PLAN != screen && $PLAN != screen-smoke && $PLAN != probe && $PLAN != t7-probe ) ]]; then
+    echo "usage: $0 --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab|residual516|prevalence|screen|screen-smoke|probe|t7-probe [--evaluation NAME] [--engine-install DIR] [--workers N] [--purpose diagnostic --work DIR [--games FILE] [--sample-every N]]" >&2
     exit 2
 fi
 if ! [[ $WORKERS =~ ^[1-9][0-9]*$ ]]; then
@@ -121,6 +126,10 @@ if [[ $PLAN == screen-smoke && $PURPOSE != diagnostic ]]; then
 fi
 if [[ $PLAN == probe && ( $PURPOSE != diagnostic || $WORKERS != 1 ) ]]; then
     echo "--plan probe is a serial diagnostic run (--purpose diagnostic --workers 1 --work DIR)" >&2
+    exit 2
+fi
+if [[ $PLAN == t7-probe && ( $PURPOSE != diagnostic || $WORKERS != 1 || -z $GAMES_FILE ) ]]; then
+    echo "--plan t7-probe is a serial diagnostic run of one game per invocation (--purpose diagnostic --workers 1 --work DIR --games FILE)" >&2
     exit 2
 fi
 if [[ $PURPOSE == diagnostic && -z $WORK ]]; then
@@ -204,6 +213,9 @@ if [[ $PLAN == screen || $PLAN == screen-smoke ]]; then
 fi
 if [[ $PLAN == probe ]]; then
     PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/build_ps1_probe_manifest.py" --check
+fi
+if [[ $PLAN == t7-probe ]]; then
+    PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/build_t7_probe_manifest.py" --check
 fi
 diagnostic_digest_check() {
     PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$1" <<'PY'
@@ -290,6 +302,27 @@ PY
 if [[ $PLAN == probe ]]; then
     probe_digest_check start
 fi
+t7_digest_check() {
+    PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$1" <<'PY'
+import importlib.util, json, sys
+from pathlib import Path
+from miaosuan_agent.evaluation import t7_probe as tp
+spec = importlib.util.spec_from_file_location("rev", Path(sys.argv[1]).parents[2] / "scripts" / "run_evaluation.py")
+rev = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(rev)
+manifest = json.load(open(sys.argv[1], encoding="utf-8"))
+if not tp.is_probe(manifest):
+    sys.exit("REFUSED: --plan t7-probe needs the T7 mechanism probe manifest")
+for policy, entry in sorted(manifest["policies"].items()):
+    source = rev.registered_source_digest(entry["policy_source"])
+    if source != entry["policy_source"]["sha256"]:
+        sys.exit(f"REFUSED at {sys.argv[2]}: the policy source of {policy} is not the registered one ({source})")
+    print(f"{policy} policy source at {sys.argv[2]}: {source}")
+PY
+}
+if [[ $PLAN == t7-probe ]]; then
+    t7_digest_check start
+fi
 experiment_digest_check() {
     PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$1" <<'PY'
 import importlib.util, json, sys
@@ -357,6 +390,7 @@ from miaosuan_agent.evaluation import ps1_probe as pp
 from miaosuan_agent.evaluation import residual516 as rd
 from miaosuan_agent.evaluation import tactical_screen as ts
 from miaosuan_agent.evaluation import shoot_experiment as sx
+from miaosuan_agent.evaluation import t7_probe as tp
 from miaosuan_agent.evaluation import variance_study as vs
 manifest = json.load(open(sys.argv[1], encoding="utf-8"))
 if sys.argv[2] == "study":
@@ -371,6 +405,10 @@ elif sys.argv[2] in ("screen", "screen-smoke"):
     specs = ts.scheduled_games(manifest, smoke=sys.argv[2] == "screen-smoke")
 elif sys.argv[2] == "probe":
     specs = pp.scheduled_games(manifest)
+elif sys.argv[2] == "t7-probe":
+    if not tp.is_probe(manifest):
+        sys.exit("REFUSED: --plan t7-probe needs the T7 mechanism probe manifest")
+    specs = tp.scheduled_games(manifest)
 else:
     specs = mf.gate1_games(manifest) if sys.argv[2] == "gate1" else mf.games(manifest)
 ids = [spec.game_id for spec in specs]
@@ -380,6 +418,8 @@ if sys.argv[3]:
     if unknown or len(set(wanted)) != len(wanted):
         sys.exit(f"REFUSED: the games file lists unknown or repeated games: {unknown}")
     ids = [game for game in ids if game in set(wanted)]
+if sys.argv[2] == "t7-probe" and len(ids) != 1:
+    sys.exit("REFUSED: --plan t7-probe plays exactly one game per invocation")
 for game in ids:
     print(game)
 PY
@@ -461,7 +501,7 @@ for id in "${GAMES[@]}"; do
         if [[ $status -ne 1 ]]; then
             exit "$status"
         fi
-        if [[ ( $PLAN == study || $PLAN == ab || $PLAN == residual516 || $PLAN == prevalence || $PLAN == screen || $PLAN == screen-smoke || $PLAN == probe ) && $consecutive -ge 3 ]]; then
+        if [[ ( $PLAN == study || $PLAN == ab || $PLAN == residual516 || $PLAN == prevalence || $PLAN == screen || $PLAN == screen-smoke || $PLAN == probe || $PLAN == t7-probe ) && $consecutive -ge 3 ]]; then
             echo "STOP: 3 consecutive games did not complete; the run stops as registered" >&2
             exit 1
         fi
@@ -482,6 +522,8 @@ elif [[ $PLAN == screen || $PLAN == screen-smoke ]]; then
     screen_digest_check end
 elif [[ $PLAN == probe ]]; then
     probe_digest_check end
+elif [[ $PLAN == t7-probe ]]; then
+    t7_digest_check end
 else
     host summarize
 fi
