@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Play the registered evaluation plan: one isolated engine process (and session) per game.
 #
-# Usage: scripts/run_evaluation.sh --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab|residual516|prevalence|screen|screen-smoke
+# Usage: scripts/run_evaluation.sh --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab|residual516|prevalence|screen|screen-smoke|probe
 #                                  [--evaluation NAME] [--engine-install DIR] [--workers N]
 #                                  [--purpose diagnostic --work DIR [--games FILE] [--sample-every N]]
 #
@@ -32,6 +32,11 @@
 #                      not complete (records: scripts/tactical_screen.py)
 #   --plan screen-smoke the screen's mechanism-smoke games; --purpose diagnostic only; each game writes the
 #                      read-only step capture beside its record
+#   --plan probe       the games of the registered PS-1 engine probe (--evaluation ps1-engine-probe-1), in registered
+#                      order; --purpose diagnostic and --workers 1 only, normally one game per run through --games;
+#                      its manifest is re-derived, both policies' digests are checked before the first and after
+#                      the last game and by every game, and each game writes the probe capture (a snapshot at
+#                      every decision) beside its record (records and captures: scripts/ps1_probe_analysis.py)
 #   --evaluation NAME  the registered evaluation: evaluation/NAME/manifest.json, records under
 #                      local/evaluation/NAME (default baseline-v0). The baseline-v0 manifest is
 #                      re-derived before every run; a candidate evaluation also re-derives its own.
@@ -94,8 +99,8 @@ if [[ -n ${SAMPLE_EVERY:-} ]]; then
     fi
     SAMPLE_ARGS=(--sample-every "$SAMPLE_EVERY")
 fi
-if [[ -z $PYTHON || -z $ARCHIVE || ( $PLAN != gate1 && $PLAN != suite && $PLAN != study && $PLAN != ab && $PLAN != residual516 && $PLAN != prevalence && $PLAN != screen && $PLAN != screen-smoke ) ]]; then
-    echo "usage: $0 --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab|residual516|prevalence|screen|screen-smoke [--evaluation NAME] [--engine-install DIR] [--workers N] [--purpose diagnostic --work DIR [--games FILE] [--sample-every N]]" >&2
+if [[ -z $PYTHON || -z $ARCHIVE || ( $PLAN != gate1 && $PLAN != suite && $PLAN != study && $PLAN != ab && $PLAN != residual516 && $PLAN != prevalence && $PLAN != screen && $PLAN != screen-smoke && $PLAN != probe ) ]]; then
+    echo "usage: $0 --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab|residual516|prevalence|screen|screen-smoke|probe [--evaluation NAME] [--engine-install DIR] [--workers N] [--purpose diagnostic --work DIR [--games FILE] [--sample-every N]]" >&2
     exit 2
 fi
 if ! [[ $WORKERS =~ ^[1-9][0-9]*$ ]]; then
@@ -112,6 +117,10 @@ if [[ $PURPOSE == evaluation && ( -n $WORK || -n $GAMES_FILE || -n $RUNTIME ) ]]
 fi
 if [[ $PLAN == screen-smoke && $PURPOSE != diagnostic ]]; then
     echo "--plan screen-smoke is a diagnostic run (--purpose diagnostic --work DIR)" >&2
+    exit 2
+fi
+if [[ $PLAN == probe && ( $PURPOSE != diagnostic || $WORKERS != 1 ) ]]; then
+    echo "--plan probe is a serial diagnostic run (--purpose diagnostic --workers 1 --work DIR)" >&2
     exit 2
 fi
 if [[ $PURPOSE == diagnostic && -z $WORK ]]; then
@@ -193,6 +202,9 @@ fi
 if [[ $PLAN == screen || $PLAN == screen-smoke ]]; then
     PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/build_tactical_screen.py" --screen "$NAME" --check
 fi
+if [[ $PLAN == probe ]]; then
+    PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/build_ps1_probe_manifest.py" --check
+fi
 diagnostic_digest_check() {
     PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$1" <<'PY'
 import importlib.util, json, sys
@@ -257,6 +269,27 @@ PY
 if [[ $PLAN == screen || $PLAN == screen-smoke ]]; then
     screen_digest_check start
 fi
+probe_digest_check() {
+    PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$1" <<'PY'
+import importlib.util, json, sys
+from pathlib import Path
+from miaosuan_agent.evaluation import ps1_probe as pp
+spec = importlib.util.spec_from_file_location("rev", Path(sys.argv[1]).parents[2] / "scripts" / "run_evaluation.py")
+rev = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(rev)
+manifest = json.load(open(sys.argv[1], encoding="utf-8"))
+if not pp.is_probe(manifest):
+    sys.exit("REFUSED: --plan probe needs the PS-1 engine probe manifest")
+for policy, entry in sorted(manifest["policies"].items()):
+    source = rev.registered_source_digest(entry["policy_source"])
+    if source != entry["policy_source"]["sha256"]:
+        sys.exit(f"REFUSED at {sys.argv[2]}: the policy source of {policy} is not the registered one ({source})")
+    print(f"{policy} policy source at {sys.argv[2]}: {source}")
+PY
+}
+if [[ $PLAN == probe ]]; then
+    probe_digest_check start
+fi
 experiment_digest_check() {
     PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MANIFEST" "$1" <<'PY'
 import importlib.util, json, sys
@@ -320,6 +353,7 @@ mapfile -t GAMES < <(PYTHONNOUSERSITE=1 PYTHONPATH="$REPO/src" "$PYTHON" - "$MAN
 import json, sys
 from miaosuan_agent.evaluation import manifest as mf
 from miaosuan_agent.evaluation import ownership_prevalence as op
+from miaosuan_agent.evaluation import ps1_probe as pp
 from miaosuan_agent.evaluation import residual516 as rd
 from miaosuan_agent.evaluation import tactical_screen as ts
 from miaosuan_agent.evaluation import shoot_experiment as sx
@@ -335,6 +369,8 @@ elif sys.argv[2] == "prevalence":
     specs = op.scheduled_games(manifest)
 elif sys.argv[2] in ("screen", "screen-smoke"):
     specs = ts.scheduled_games(manifest, smoke=sys.argv[2] == "screen-smoke")
+elif sys.argv[2] == "probe":
+    specs = pp.scheduled_games(manifest)
 else:
     specs = mf.gate1_games(manifest) if sys.argv[2] == "gate1" else mf.games(manifest)
 ids = [spec.game_id for spec in specs]
@@ -425,7 +461,7 @@ for id in "${GAMES[@]}"; do
         if [[ $status -ne 1 ]]; then
             exit "$status"
         fi
-        if [[ ( $PLAN == study || $PLAN == ab || $PLAN == residual516 || $PLAN == prevalence || $PLAN == screen || $PLAN == screen-smoke ) && $consecutive -ge 3 ]]; then
+        if [[ ( $PLAN == study || $PLAN == ab || $PLAN == residual516 || $PLAN == prevalence || $PLAN == screen || $PLAN == screen-smoke || $PLAN == probe ) && $consecutive -ge 3 ]]; then
             echo "STOP: 3 consecutive games did not complete; the run stops as registered" >&2
             exit 1
         fi
@@ -444,6 +480,8 @@ elif [[ $PLAN == prevalence ]]; then
     prevalence_digest_check end
 elif [[ $PLAN == screen || $PLAN == screen-smoke ]]; then
     screen_digest_check end
+elif [[ $PLAN == probe ]]; then
+    probe_digest_check end
 else
     host summarize
 fi

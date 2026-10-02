@@ -18,8 +18,10 @@ observer, whose capture files it writes beside the record (``capture/``); its an
 baseline-v2 digest and plays with that study's read-only observer (capture files beside the record); its analysis
 is ``scripts/ownership_prevalence.py``. A game of an exploratory tactical screen checks the registered digest of
 every policy it plays (baseline-v2 and the candidate) and, run with ``--purpose diagnostic`` (the mechanism
-smoke), plays with the read-only step capture; its analysis is ``scripts/tactical_screen.py``. Records
-and summaries live under the git-ignored ``local/evaluation/``; only the sanitized public results
+smoke), plays with the read-only step capture; its analysis is ``scripts/tactical_screen.py``. A game of the
+PS-1 engine probe checks the registered digest of its policy, runs only as a diagnostic and always plays with the
+probe capture (a snapshot at every decision and a pre-execution copy of every action); its analysis is
+``scripts/ps1_probe_analysis.py``. Records and summaries live under the git-ignored ``local/evaluation/``; only the sanitized public results
 file is meant for version control.
 
 Exit status of ``game``: 0 the game completed, 1 it failed or hit a cap, 2 invalid input before the
@@ -59,6 +61,7 @@ from miaosuan_agent.evaluation import manifest as mf  # noqa: E402
 from miaosuan_agent.evaluation import execution as ex  # noqa: E402
 from miaosuan_agent.evaluation import metrics, randomness  # noqa: E402
 from miaosuan_agent.evaluation import ownership_prevalence as op  # noqa: E402
+from miaosuan_agent.evaluation import ps1_probe as pp  # noqa: E402
 from miaosuan_agent.evaluation import residual516 as rd  # noqa: E402
 from miaosuan_agent.evaluation import shoot_experiment as sx  # noqa: E402
 from miaosuan_agent.evaluation import tactical_screen as ts  # noqa: E402
@@ -67,13 +70,15 @@ from miaosuan_agent.evaluation.game import play  # noqa: E402
 from miaosuan_agent.evaluation.identity import POLICY_SOURCES, digest_of_files, policy_source_files  # noqa: E402
 from miaosuan_agent.experiments.deployment_split import CANDIDATE_ID as SPLIT_ID, DeploymentSplitAgent  # noqa: E402
 from miaosuan_agent.experiments.occupy_reservation import CANDIDATE_ID, ReservationAgent  # noqa: E402
+from miaosuan_agent.experiments.ps1_probe_hook import PROBE_ID as HOOK_ID, ProbeAgent  # noqa: E402
 from miaosuan_agent.experiments.routing_bounded import BoundedRoutingAgent  # noqa: E402
 from miaosuan_agent.experiments.shoot_reservation import ShootReservationAgent  # noqa: E402
 
 DEFAULT_MANIFEST = REPO_ROOT / "evaluation" / "baseline-v0" / "manifest.json"
 FACTORIES = {BASELINE_ID: lambda: PolicyAgent(BASELINE_ID), INERT_ID: lambda: PolicyAgent(INERT_ID),
              CANDIDATE_ID: lambda: ReservationAgent(), sx.RUNTIME_R1_CODE_ID: lambda: BoundedRoutingAgent(),
-             sx.CANDIDATE_ID: lambda: ShootReservationAgent(), SPLIT_ID: lambda: DeploymentSplitAgent()}
+             sx.CANDIDATE_ID: lambda: ShootReservationAgent(), SPLIT_ID: lambda: DeploymentSplitAgent(),
+             HOOK_ID: lambda: ProbeAgent()}
 
 
 def registered_source_digest(registered: Dict[str, Any]) -> str:
@@ -108,6 +113,8 @@ def all_games(manifest: Dict[str, Any]) -> Dict[str, mf.GameSpec]:
         return {spec.game_id: spec for spec in op.scheduled_games(manifest)}
     if ts.is_screen(manifest):
         return {spec.game_id: spec for spec in ts.scheduled_games(manifest) + ts.scheduled_games(manifest, smoke=True)}
+    if pp.is_probe(manifest):
+        return {spec.game_id: spec for spec in pp.scheduled_games(manifest)}
     return {spec.game_id: spec for spec in mf.gate1_games(manifest) + mf.games(manifest)}
 
 
@@ -168,16 +175,23 @@ def cmd_game(args: argparse.Namespace) -> int:
         return 2
     group = sx.group_of(manifest, spec.game_id) if sx.is_experiment(manifest) else None
     screen = ts.is_screen(manifest)
+    probe = pp.is_probe(manifest)
     sources: Dict[str, str] = {}
-    if screen:
-        for policy in ts.game_policies(spec):
+    if probe and args.purpose != "diagnostic":
+        print("REFUSED: the PS-1 engine probe runs as a diagnostic (--purpose diagnostic)", file=sys.stderr)
+        return 2
+    if screen or probe:
+        for policy in (ts.game_policies(spec) if screen else pp.game_policies(spec)):
             pinned = manifest["policies"][policy]["policy_source"]
             sources[policy] = registered_source_digest(pinned)
             if sources[policy] != pinned["sha256"]:
                 print(f"REFUSED: the policy source of {policy} differs from the registered one; a policy change "
                       "needs a new registration and a complete rerun", file=sys.stderr)
                 return 2
-        policy_under_test = manifest["candidate"] if manifest["candidate"] in sources else manifest["baseline"]
+        if screen:
+            policy_under_test = manifest["candidate"] if manifest["candidate"] in sources else manifest["baseline"]
+        else:
+            (policy_under_test,) = pp.game_policies(spec)
         registered = manifest["policies"][policy_under_test]["policy_source"]
     else:
         registered = manifest["groups"][group]["policy_source"] if group else manifest["policy_source"]
@@ -214,12 +228,15 @@ def cmd_game(args: argparse.Namespace) -> int:
         captures = (args.work / "capture" / f"{spec.game_id}.ownership.json",
                     args.work / "capture" / f"{spec.game_id}.snapshots.pkl")
     smoke = screen and args.purpose == "diagnostic"
-    if (diagnostic or prevalence or smoke) and any(path.exists() for path in captures):
+    if (diagnostic or prevalence or smoke or probe) and any(path.exists() for path in captures):
         print(f"REFUSED: capture files of {spec.game_id} exist; captures are never overwritten", file=sys.stderr)
         return 2
     sample_every = getattr(args, "sample_every", None)
     if sample_every is not None and (args.purpose != "diagnostic" or sample_every < 1):
         print("REFUSED: --sample-every is for diagnostic runs and must be a positive integer", file=sys.stderr)
+        return 2
+    if probe and sample_every not in (None, pp.SAMPLE_EVERY):
+        print(f"REFUSED: the probe's capture is registered with a snapshot every {pp.SAMPLE_EVERY} step", file=sys.stderr)
         return 2
     registered_runtime = ex.registered(manifest)["runtime"]
     runtime = getattr(args, "runtime", None) or registered_runtime
@@ -246,7 +263,7 @@ def cmd_game(args: argparse.Namespace) -> int:
                "manifest_sha256": mf.digest(manifest), "policy_source_sha256": source}
     if group:
         harness["group"] = group
-    if screen:
+    if screen or probe:
         harness["policy_sources"] = dict(sorted(sources.items()))
     if mode == "shared":
         harness["execution"] = {"mode": mode, **execution}
@@ -263,10 +280,14 @@ def cmd_game(args: argparse.Namespace) -> int:
     if smoke:
         observer = rd.Capture(tuple(ts.game_policies(spec)), sample_every=sample_every or rd.SAMPLE_EVERY)
         harness["capture"] = {"sample_every": sample_every or rd.SAMPLE_EVERY}
+    if probe:
+        observer = pp.ProbeCapture(tuple(pp.game_policies(spec)))
+        harness["capture"] = {"sample_every": pp.SAMPLE_EVERY, "schema": pp.CAPTURE_SCHEMA}
     try:
         with opener as handle:
             record = play(construct, FACTORIES, spec, inputs, manifest["players"], rng_probe=randomness.fingerprint,
-                          replay_policies=set(ts.game_policies(spec)) if screen else {policy_under_test},
+                          replay_policies=(set(ts.game_policies(spec)) if screen else set(pp.game_policies(spec)) if probe
+                                           else {policy_under_test}),
                           observer=observer)
             record["session"] = handle.opened["session"]
             handle.outcome = {"status": record["status"], "steps": record.get("steps"), "game_id": spec.game_id}
@@ -316,6 +337,9 @@ def cmd_summarize(args: argparse.Namespace) -> int:
         return 2
     if op.is_study(manifest):
         print("the ownership prevalence diagnostic is analysed by scripts/ownership_prevalence.py", file=sys.stderr)
+        return 2
+    if pp.is_probe(manifest):
+        print("the PS-1 engine probe is analysed by scripts/ps1_probe_analysis.py", file=sys.stderr)
         return 2
     digest = mf.digest(manifest)
     gate_specs, suite_specs = mf.gate1_games(manifest), mf.games(manifest)
