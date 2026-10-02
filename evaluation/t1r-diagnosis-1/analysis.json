@@ -1,0 +1,224 @@
+{
+ "baseline": {
+  "blood_sum_min_max": [
+   18,
+   18
+  ],
+  "boarded_or_landed_events": 0,
+  "colour": "blue",
+  "deployment_splits_issued": 0,
+  "deployment_steps": 1,
+  "final_cur_step": 1799,
+  "first_play_k": 1,
+  "flag_flip_k": {
+   "objective_value_50": 462,
+   "objective_value_80": 643
+  },
+  "flags_at_last_snapshot_reproduce_occupy_score": true,
+  "fresh_feedback_errors_by_code_and_type": {},
+  "game": "1910631192.C3.b.x01",
+  "held_value_at_end": 130,
+  "idle_reasons_play": {
+   "already moving": 6190,
+   "no objective outside own control": 4596,
+   "occupy listed, not emitted": 2
+  },
+  "idle_reasons_while_an_objective_unheld": {
+   "already moving": 3838,
+   "occupy listed, not emitted": 2
+  },
+  "keeping_unit_steps": 0,
+  "max_stack_over_game": 4,
+  "moves": {
+   "completed": 8,
+   "issued": 10,
+   "not_completed": 0,
+   "undetermined": 2
+  },
+  "moves_issued": 10,
+  "objective_values": [
+   80,
+   50
+  ],
+  "occupation_steps": [
+   461,
+   642
+  ],
+  "occupations_issued": 2,
+  "occupy_points_held_by_window": {
+   "0": 0,
+   "1000": 130,
+   "1200": 130,
+   "1400": 130,
+   "1600": 130,
+   "200": 0,
+   "400": 50,
+   "600": 130,
+   "800": 130
+  },
+  "occupy_score": 130,
+  "passenger_unit_steps": 0,
+  "play_snapshots": 1800,
+  "policy": "baseline-v2-candidate-shoot-target-reservation",
+  "remain_score": 132,
+  "scores": {
+   "blue_attack": 0,
+   "blue_occupy": 130,
+   "blue_remain": 132,
+   "blue_remain_max": 132,
+   "blue_total": 262,
+   "blue_win": 158
+  },
+  "shots": 0,
+  "snapshots": 1800,
+  "steps": 1801,
+  "steps_with_a_full_hex": 1225,
+  "unit_steps_at_stack_limit": 4900,
+  "unit_steps_standing_on_unheld_objective": 4,
+  "unit_steps_standing_on_unheld_without_occupation": 2,
+  "units_at_end": 6,
+  "units_at_first_play": 6,
+  "value_times_blood_at_end": 132
+ },
+ "candidate": {
+  "blood_sum_min_max": [
+   18,
+   18
+  ],
+  "boarded_or_landed_events": 0,
+  "colour": "blue",
+  "deployment_splits_issued": 12,
+  "deployment_steps": 3,
+  "final_cur_step": 1799,
+  "first_play_k": 3,
+  "flag_flip_k": {
+   "objective_value_50": 464,
+   "objective_value_80": null
+  },
+  "flags_at_last_snapshot_reproduce_occupy_score": true,
+  "fresh_feedback_errors_by_code_and_type": {},
+  "game": "1910631192.C3.c.x01",
+  "held_value_at_end": 50,
+  "idle_reasons_play": {
+   "already moving": 25178,
+   "occupy listed, not emitted": 3
+  },
+  "idle_reasons_while_an_objective_unheld": {
+   "already moving": 25178,
+   "occupy listed, not emitted": 3
+  },
+  "keeping_unit_steps": 0,
+  "max_stack_over_game": 4,
+  "moves": {
+   "completed": 4,
+   "issued": 18,
+   "not_completed": 0,
+   "undetermined": 14
+  },
+  "moves_issued": 18,
+  "objective_values": [
+   80,
+   50
+  ],
+  "occupation_steps": [
+   463
+  ],
+  "occupations_issued": 1,
+  "occupy_points_held_by_window": {
+   "0": 0,
+   "1000": 50,
+   "1200": 50,
+   "1400": 50,
+   "1600": 50,
+   "200": 0,
+   "400": 50,
+   "600": 50,
+   "800": 50
+  },
+  "occupy_score": 50,
+  "passenger_unit_steps": 0,
+  "play_snapshots": 1800,
+  "policy": "tactic-deployment-split-1",
+  "remain_score": 132,
+  "scores": {
+   "blue_attack": 0,
+   "blue_occupy": 50,
+   "blue_remain": 132,
+   "blue_remain_max": 132,
+   "blue_total": 182,
+   "blue_win": 78
+  },
+  "shots": 0,
+  "snapshots": 1802,
+  "steps": 1803,
+  "steps_with_a_full_hex": 1580,
+  "unit_steps_at_stack_limit": 11800,
+  "unit_steps_standing_on_unheld_objective": 4,
+  "unit_steps_standing_on_unheld_without_occupation": 3,
+  "units_at_end": 14,
+  "units_at_first_play": 14,
+  "value_times_blood_at_end": 132
+ },
+ "difference": {
+  "components": {
+   "attack": 0,
+   "occupy": -80,
+   "remain": 0
+  },
+  "components_sum_equals_total": true,
+  "occupy_points_held_by_window_candidate_minus_baseline": {
+   "0": 0,
+   "1000": -80,
+   "1200": -80,
+   "1400": -80,
+   "1600": -80,
+   "200": 0,
+   "400": 0,
+   "600": -80,
+   "800": -80
+  },
+  "total": -80
+ },
+ "first_divergence": {
+  "baseline_moves_issued_up_to_here": 6,
+  "candidate_moves_issued_up_to_here": 14,
+  "cur_step": 260,
+  "destinations_differ_at_first_play_step": false,
+  "k_baseline": 261,
+  "k_candidate": 263,
+  "preceding_aligned_steps": {
+   "257": [
+    258,
+    260
+   ],
+   "258": [
+    259,
+    261
+   ],
+   "259": [
+    260,
+    262
+   ]
+  },
+  "reasons": [
+   "blood-weighted occupancy differs in 4 hexes"
+  ]
+ },
+ "mechanical_verdicts": {
+  "H1": "REFUTED",
+  "H4": "REFUTED",
+  "H6": "REFUTED"
+ },
+ "premise": {
+  "baseline_total": 262,
+  "both_completed": true,
+  "candidate_total": 182,
+  "expected": [
+   262,
+   182
+  ],
+  "reproduced": true
+ },
+ "schema": "miaosuan-t1r-diagnosis/1",
+ "status": "DIAGNOSTIC"
+}
