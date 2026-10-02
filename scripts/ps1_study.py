@@ -469,7 +469,8 @@ def certificate(label: str, intervention: str, cap: Capture, costs: MoveCosts, r
         "evidence": {"start state": "observed", "orders and trajectory after start": "model-derived",
                      "engine acceptance of the orders": "unverified"},
         "model": "M1b (protocol amendment 1)", "assumptions": list(assumptions), "unverified": list(unverified),
-        "observable_inputs": ["own units' cur_hex, move_path, type, basic_speed, on_board (seat observation)",
+        "observable_inputs": ["own units' positions, remaining move paths, types, basic speeds and boarding state "
+                              "(seat observation)",
                               "objective flags (seat observation)", "setup cost graph", "the policy's own step history"],
         "commands": dict(collections.Counter(e.kind for e in commands)),
         "first_command_k": min((e.step for e in commands if e.kind in ("stop", "order")), default=None),
