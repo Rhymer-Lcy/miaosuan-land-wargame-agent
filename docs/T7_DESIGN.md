@@ -495,8 +495,8 @@ listed (175,256 unit-decisions), an enemy seen (127,250), not a ground unit (55,
 (14,765), in a transition (3,075) and concealment not listed (1,932).
 
 Tests: `tests/test_t7_audit.py` (18), `tests/test_t7_shadow.py` (13), `tests/test_t7_analysis.py` (9) and
-`tests/test_t7_results.py` (6), public; `tests/test_real_t7_audit.py` (6), private, including byte-identical rebuilds
-of the audit, candidate and post-hoc outputs. Mutation testing (`scripts/mutate_t7.py`, `mutation.json`): 55 of 55
+`tests/test_t7_results.py` (9), public; `tests/test_real_t7_audit.py` (8), private, including byte-identical rebuilds
+of the audit, candidate, post-hoc, shadow-check and mutation outputs. Mutation testing (`scripts/mutate_t7.py`, `mutation.json`): 55 of 55
 mutations killed. The first run killed 49 of 55; four survivors were test gaps (boundary cases of B1's range, B2's
 observation band and A3's two-hex limit, and the sensitivity variant's treatment of unknown cells), one was the shadow's
 own check, which its trigger makes unreachable (now tested with the trigger disabled), and one mutation was written
