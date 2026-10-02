@@ -1,0 +1,51 @@
+{
+ "games": {
+  "P-A": {
+   "ambiguous_aerial_target_steps": {},
+   "baseline_v2_actions_on_ordered_units_after_their_order": {},
+   "discriminating_target_steps": {},
+   "listed_at_order": {
+    "[1, 6, 11]": 4
+   },
+   "orders_by_class": {
+    "type 2 sub_type 0": 2,
+    "type 2 sub_type 1": 2
+   }
+  },
+  "P-B1": {
+   "ambiguous_aerial_target_steps": {
+    "aerial observers within their normal distance: sub_type 6 between the concealed and the normal distance; ground observer within the concealed distance: False; listed True": 14266
+   },
+   "baseline_v2_actions_on_ordered_units_after_their_order": {},
+   "discriminating_target_steps": {
+    "target type 2 sub_type 3; observer type 2 sub_type 0; distance 23; observer higher by -100; listed False": 55,
+    "target type 2 sub_type 3; observer type 2 sub_type 1; distance 23; observer higher by -100; listed False": 40
+   },
+   "listed_at_order": {
+    "[6, 8, 11]": 6
+   },
+   "orders_by_class": {
+    "type 2 sub_type 3": 6
+   }
+  },
+  "P-B2": {
+   "ambiguous_aerial_target_steps": {
+    "aerial observers within their normal distance: sub_type 6 between the concealed and the normal distance; ground observer within the concealed distance: False; listed True": 3274
+   },
+   "baseline_v2_actions_on_ordered_units_after_their_order": {},
+   "discriminating_target_steps": {
+    "target type 2 sub_type 3; observer type 2 sub_type 0; distance 25; observer higher by -40; listed False": 21,
+    "target type 2 sub_type 3; observer type 2 sub_type 1; distance 25; observer higher by -40; listed False": 20
+   },
+   "listed_at_order": {
+    "[6, 8, 11]": 6
+   },
+   "orders_by_class": {
+    "type 2 sub_type 3": 6
+   }
+  }
+ },
+ "probe_id": "t7-mechanism-probe-1",
+ "schema": "miaosuan-t7-probe-posthoc/1",
+ "status": "POST HOC: written after every registered verdict; it changes none"
+}
