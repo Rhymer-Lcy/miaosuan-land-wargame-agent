@@ -1,0 +1,828 @@
+{
+ "corpus_deadlock_episodes": {
+  "by_kind_and_release": {
+   "chain, fired, a holder received an order": 1,
+   "chain, fired, lasted to the end of the game": 1,
+   "chain, fired, removed from the observation": 3,
+   "chain, never fired, removed from the observation": 4,
+   "cycle, fired, removed from the observation": 1
+  },
+  "deadlock_steps": 2447,
+  "episodes": 10,
+  "episodes_where_the_trigger_fired": 6,
+  "rows": [
+   {
+    "end": 559,
+    "game": "1930331196.C1.r1",
+    "holders_on_objective": true,
+    "kind": "chain",
+    "max_units": 3,
+    "released_by": [
+     "removed from the observation"
+    ],
+    "seat": 1,
+    "start": 540,
+    "steps": 20,
+    "trigger_latency": null,
+    "trigger_steps": 0
+   },
+   {
+    "end": 580,
+    "game": "1930331196.C1.r1",
+    "holders_on_objective": true,
+    "kind": "chain",
+    "max_units": 2,
+    "released_by": [
+     "removed from the observation"
+    ],
+    "seat": 1,
+    "start": 580,
+    "steps": 1,
+    "trigger_latency": null,
+    "trigger_steps": 0
+   },
+   {
+    "end": 465,
+    "game": "2120531121.C1.r1",
+    "holders_on_objective": true,
+    "kind": "chain",
+    "max_units": 2,
+    "released_by": [
+     "removed from the observation"
+    ],
+    "seat": 1,
+    "start": 461,
+    "steps": 5,
+    "trigger_latency": null,
+    "trigger_steps": 0
+   },
+   {
+    "end": 668,
+    "game": "2120531121.C1.r1",
+    "holders_on_objective": true,
+    "kind": "chain",
+    "max_units": 2,
+    "released_by": [
+     "removed from the observation"
+    ],
+    "seat": 11,
+    "start": 660,
+    "steps": 9,
+    "trigger_latency": null,
+    "trigger_steps": 0
+   },
+   {
+    "end": 818,
+    "game": "2120531121.C1.r1",
+    "holders_on_objective": true,
+    "kind": "chain",
+    "max_units": 2,
+    "released_by": [
+     "removed from the observation"
+    ],
+    "seat": 11,
+    "start": 728,
+    "steps": 91,
+    "trigger_latency": 73,
+    "trigger_steps": 18
+   },
+   {
+    "end": 1118,
+    "game": "2120531121.C1.r1",
+    "holders_on_objective": true,
+    "kind": "chain",
+    "max_units": 1,
+    "released_by": [
+     "removed from the observation"
+    ],
+    "seat": 11,
+    "start": 878,
+    "steps": 241,
+    "trigger_latency": 0,
+    "trigger_steps": 241
+   },
+   {
+    "end": 735,
+    "game": "2130511121.C1.r1",
+    "holders_on_objective": true,
+    "kind": "chain",
+    "max_units": 1,
+    "released_by": [
+     "removed from the observation"
+    ],
+    "seat": 1,
+    "start": 680,
+    "steps": 56,
+    "trigger_latency": 31,
+    "trigger_steps": 25
+   },
+   {
+    "end": 803,
+    "game": "2130511121.C1.r1",
+    "holders_on_objective": true,
+    "kind": "chain",
+    "max_units": 1,
+    "released_by": [
+     "a holder received an order"
+    ],
+    "seat": 1,
+    "start": 740,
+    "steps": 64,
+    "trigger_latency": 51,
+    "trigger_steps": 13
+   },
+   {
+    "end": 704,
+    "game": "2130511121.C1.r1",
+    "holders_on_objective": false,
+    "kind": "cycle",
+    "max_units": 14,
+    "released_by": [
+     "removed from the observation"
+    ],
+    "seat": 11,
+    "start": 382,
+    "steps": 323,
+    "trigger_latency": 91,
+    "trigger_steps": 163
+   },
+   {
+    "end": 2879,
+    "game": "2130511121.C1.r1",
+    "holders_on_objective": true,
+    "kind": "chain",
+    "max_units": 6,
+    "released_by": [
+     "lasted to the end of the game"
+    ],
+    "seat": 11,
+    "start": 1243,
+    "steps": 1637,
+    "trigger_latency": 70,
+    "trigger_steps": 969
+   }
+  ],
+  "trigger_steps": 1429
+ },
+ "entry_rule_replay_corpus": {
+  "ascending agrees": 3230,
+  "ascending disagreements with the keep flag set": 10,
+  "ascending disagreements with the next hex not full": 10,
+  "ascending disagrees": 10,
+  "descending agrees": 3193,
+  "descending disagrees": 47,
+  "end of step agrees": 3221,
+  "end of step disagrees": 19,
+  "entries": 3240,
+  "skipped transitions": 76,
+  "started": 3180,
+  "waited at once": 60
+ },
+ "m1b_departure": {
+  "units": [
+   {
+    "contenders_at_room": 3,
+    "first_wait_k": 263,
+    "free_places_at_room": 2,
+    "model_entry_k": 322,
+    "observed_entry_k": 302,
+    "previous_entry_k": 243,
+    "room_k": 283,
+    "speed_zero_at_previous_entry": false
+   },
+   {
+    "contenders_at_room": 3,
+    "first_wait_k": 263,
+    "free_places_at_room": 2,
+    "model_entry_k": 283,
+    "observed_entry_k": 322,
+    "previous_entry_k": 263,
+    "room_k": 283,
+    "speed_zero_at_previous_entry": true
+   }
+  ],
+  "units_whose_sequence_differs": 2
+ },
+ "m1c": {
+  "certificates": {
+   "A1": {
+    "capacity_violations": 0,
+    "commands": {
+     "hold": 3928,
+     "occupy": 2,
+     "order": 8
+    },
+    "cycle_broken_at_k": null,
+    "cycles_at_end": 0,
+    "deadlocked_at_end": 0,
+    "flag_steps": {
+     "objective_value_50": 464,
+     "objective_value_80": 584
+    },
+    "occupy_points_at_end": 130,
+    "verdict": "feasible"
+   },
+   "A2": {
+    "capacity_violations": 0,
+    "commands": {
+     "occupy": 1,
+     "order": 16,
+     "recover": 3,
+     "stop": 10
+    },
+    "cycle_broken_at_k": 534,
+    "cycles_at_end": 0,
+    "deadlocked_at_end": 0,
+    "flag_steps": {
+     "objective_value_80": 808
+    },
+    "occupy_points_at_end": 130,
+    "verdict": "feasible"
+   },
+   "A3": {
+    "capacity_violations": 0,
+    "commands": {
+     "no-escape": 2,
+     "occupy": 1,
+     "order": 10,
+     "recover": 1,
+     "stop": 4
+    },
+    "cycle_broken_at_k": 534,
+    "cycles_at_end": 0,
+    "deadlocked_at_end": 6,
+    "flag_steps": {
+     "objective_value_80": 849
+    },
+    "occupy_points_at_end": 130,
+    "verdict": "cycle broken, unresolved residual"
+   },
+   "A4": {
+    "capacity_violations": 0,
+    "commands": {
+     "occupy": 1,
+     "order": 14,
+     "stop": 22
+    },
+    "cycle_broken_at_k": null,
+    "cycles_at_end": 0,
+    "deadlocked_at_end": 0,
+    "flag_steps": {
+     "objective_value_80": 718
+    },
+    "occupy_points_at_end": 130,
+    "verdict": "feasible"
+   },
+   "A5a": {
+    "capacity_violations": 0,
+    "commands": {
+     "occupy": 1,
+     "order": 16,
+     "recover": 3,
+     "stop": 10
+    },
+    "cycle_broken_at_k": 834,
+    "cycles_at_end": 0,
+    "deadlocked_at_end": 0,
+    "flag_steps": {
+     "objective_value_80": 1108
+    },
+    "occupy_points_at_end": 130,
+    "verdict": "feasible"
+   },
+   "A5b": {
+    "capacity_violations": 0,
+    "commands": {
+     "occupy": 1,
+     "order": 10,
+     "recover": 1,
+     "stop": 4
+    },
+    "cycle_broken_at_k": 1434,
+    "cycles_at_end": 0,
+    "deadlocked_at_end": 6,
+    "flag_steps": {
+     "objective_value_80": 1708
+    },
+    "occupy_points_at_end": 130,
+    "verdict": "cycle broken, unresolved residual"
+   }
+  },
+  "fidelity": {
+   "1910631192.C3.b.x01": {
+    "F1": {
+     "cycles_at_end": 0,
+     "deadlocked_at_end": 0,
+     "hex_sequences_differ": 0,
+     "objectives_held_at_end": 2,
+     "observed_entries": 138,
+     "simulated_entries": 138,
+     "units": 6,
+     "worst_step_offset": 0
+    },
+    "F1_pass": true,
+    "F2": {
+     "cycles_at_end": 0,
+     "deadlocked_at_end": 0,
+     "hex_sequences_differ": 0,
+     "objectives_held_at_end": 2,
+     "observed_entries": 138,
+     "occupation_steps": {
+      "recorded": [
+       461,
+       642
+      ],
+      "simulated": [
+       461,
+       642
+      ]
+     },
+     "orders": {
+      "recorded": 10,
+      "recorded_matched": 10,
+      "simulated": 10
+     },
+     "simulated_entries": 138,
+     "units": 6,
+     "worst_step_offset": 0
+    },
+    "F2_pass": true
+   },
+   "1910631192.C3.c.x01": {
+    "F1": {
+     "cycles_at_end": 1,
+     "deadlocked_at_end": 10,
+     "hex_sequences_differ": 0,
+     "objectives_held_at_end": 1,
+     "observed_entries": 274,
+     "simulated_entries": 274,
+     "units": 14,
+     "worst_step_offset": 0
+    },
+    "F1_pass": true,
+    "F2": {
+     "cycles_at_end": 1,
+     "deadlocked_at_end": 10,
+     "hex_sequences_differ": 0,
+     "objectives_held_at_end": 1,
+     "observed_entries": 274,
+     "occupation_steps": {
+      "recorded": [
+       463
+      ],
+      "simulated": [
+       463
+      ]
+     },
+     "orders": {
+      "recorded": 18,
+      "recorded_matched": 18,
+      "simulated": 18
+     },
+     "simulated_entries": 274,
+     "units": 14,
+     "worst_step_offset": 0
+    },
+    "F2_pass": true
+   }
+  }
+ },
+ "restart_outside_windows": {
+  "replay corpus": {
+   "episodes": 13,
+   "rewaits": 25,
+   "rewaits_beginning_with_the_target_full": 25,
+   "rows": [
+    {
+     "d": 58,
+     "runs": [
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       20
+      ],
+      [
+       1,
+       19
+      ]
+     ],
+     "tau": 20
+    },
+    {
+     "d": 209,
+     "runs": [
+      [
+       1,
+       59
+      ],
+      [
+       0,
+       91
+      ],
+      [
+       1,
+       59
+      ]
+     ],
+     "tau": 60
+    },
+    {
+     "d": 359,
+     "runs": [
+      [
+       1,
+       59
+      ],
+      [
+       0,
+       241
+      ],
+      [
+       1,
+       59
+      ]
+     ],
+     "tau": 60
+    },
+    {
+     "d": 97,
+     "runs": [
+      [
+       1,
+       39
+      ],
+      [
+       0,
+       19
+      ],
+      [
+       1,
+       39
+      ]
+     ],
+     "tau": 40
+    },
+    {
+     "d": 58,
+     "runs": [
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       20
+      ],
+      [
+       1,
+       19
+      ]
+     ],
+     "tau": 20
+    },
+    {
+     "d": 58,
+     "runs": [
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       20
+      ],
+      [
+       1,
+       19
+      ]
+     ],
+     "tau": 20
+    },
+    {
+     "d": 97,
+     "runs": [
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       20
+      ],
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       20
+      ],
+      [
+       1,
+       19
+      ]
+     ],
+     "tau": 20
+    },
+    {
+     "d": 119,
+     "runs": [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       20
+      ],
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       20
+      ],
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       19
+      ]
+     ],
+     "tau": 20
+    },
+    {
+     "d": 119,
+     "runs": [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       20
+      ],
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       20
+      ],
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       19
+      ]
+     ],
+     "tau": 20
+    },
+    {
+     "d": 197,
+     "runs": [
+      [
+       1,
+       39
+      ],
+      [
+       0,
+       19
+      ],
+      [
+       1,
+       39
+      ],
+      [
+       0,
+       61
+      ],
+      [
+       1,
+       39
+      ]
+     ],
+     "tau": 40
+    },
+    {
+     "d": 158,
+     "runs": [
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       20
+      ],
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       20
+      ],
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       20
+      ],
+      [
+       1,
+       19
+      ]
+     ],
+     "tau": 20
+    },
+    {
+     "d": 119,
+     "runs": [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       20
+      ],
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       20
+      ],
+      [
+       1,
+       19
+      ]
+     ],
+     "tau": 20
+    },
+    {
+     "d": 80,
+     "runs": [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       20
+      ],
+      [
+       1,
+       19
+      ]
+     ],
+     "tau": 20
+    }
+   ],
+   "traversals": 38,
+   "traversals_of_tau_minus_1": 38,
+   "traversals_within_1_of_tau_minus_1": 38
+  },
+  "sprint2 games": {
+   "episodes": 1,
+   "rewaits": 1,
+   "rewaits_beginning_with_the_target_full": 1,
+   "rows": [
+    {
+     "d": 39,
+     "runs": [
+      [
+       1,
+       19
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       19
+      ]
+     ],
+     "tau": 20
+    }
+   ],
+   "traversals": 2,
+   "traversals_of_tau_minus_1": 2,
+   "traversals_within_1_of_tau_minus_1": 2
+  }
+ },
+ "schema": "miaosuan-ps1-posthoc/1",
+ "smoke_trigger_snapshots": {
+  "1910631192.C2.c.s01": {
+   "cycle_present": false,
+   "max_deadlocked_units": 3,
+   "snapshots": 9,
+   "trigger_snapshots": 5
+  },
+  "1930331196.C2.c.s01": {
+   "cycle_present": true,
+   "max_deadlocked_units": 13,
+   "snapshots": 14,
+   "trigger_snapshots": 8
+  },
+  "2010131194.C2.c.s01": {
+   "cycle_present": false,
+   "max_deadlocked_units": 0,
+   "snapshots": 9,
+   "trigger_snapshots": 0
+  },
+  "2010211129.C2.c.s01": {
+   "cycle_present": false,
+   "max_deadlocked_units": 0,
+   "snapshots": 9,
+   "trigger_snapshots": 0
+  },
+  "201033019601.C2.c.s01": {
+   "cycle_present": false,
+   "max_deadlocked_units": 0,
+   "snapshots": 5,
+   "trigger_snapshots": 0
+  },
+  "2010431153.C2.c.s01": {
+   "cycle_present": false,
+   "max_deadlocked_units": 0,
+   "snapshots": 9,
+   "trigger_snapshots": 0
+  },
+  "2120531121.C2.c.s01": {
+   "cycle_present": false,
+   "max_deadlocked_units": 4,
+   "snapshots": 14,
+   "trigger_snapshots": 10
+  },
+  "2130511121.C2.c.s01": {
+   "cycle_present": true,
+   "max_deadlocked_units": 38,
+   "snapshots": 14,
+   "trigger_snapshots": 8
+  }
+ },
+ "status": "POST HOC (changes no gate)"
+}
