@@ -628,7 +628,8 @@ def corpus_games(root: Path) -> Iterable[Tuple[str, Dict[int, List[Tuple[int, Ma
                 obs = typed_json.decode(rec["observation"])
                 if not isinstance(obs, dict) or obs.get("time", {}).get("stage") != 2:
                     continue
-                seqs[rec["seat"]].append((obs["time"]["cur_step"], obs, [typed_json.decode(a) for a in rec["actions"]]))
+                # the corpus writer stores observations typed-encoded and actions as plain JSON
+                seqs[rec["seat"]].append((obs["time"]["cur_step"], obs, list(rec["actions"])))
                 factions[rec["seat"]] = rec["faction"]
         yield header.get("game_id", path.name), seqs, factions
 
