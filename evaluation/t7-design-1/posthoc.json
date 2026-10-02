@@ -1,6 +1,48 @@
 {
  "a2_h0": {
   "activations": 234,
+  "by_scenario": {
+   "1910631192": {
+    "first_activations": 4,
+    "units_observed_after_transition": 0,
+    "witnessed_units": 0
+   },
+   "1930331196": {
+    "first_activations": 12,
+    "units_observed_after_transition": 2,
+    "witnessed_units": 2
+   },
+   "2010131194": {
+    "first_activations": 2,
+    "units_observed_after_transition": 0,
+    "witnessed_units": 0
+   },
+   "2010211129": {
+    "first_activations": 4,
+    "units_observed_after_transition": 0,
+    "witnessed_units": 0
+   },
+   "201033019601": {
+    "first_activations": 1,
+    "units_observed_after_transition": 0,
+    "witnessed_units": 0
+   },
+   "2010431153": {
+    "first_activations": 2,
+    "units_observed_after_transition": 2,
+    "witnessed_units": 2
+   },
+   "2120531121": {
+    "first_activations": 12,
+    "units_observed_after_transition": 9,
+    "witnessed_units": 9
+   },
+   "2130511121": {
+    "first_activations": 12,
+    "units_observed_after_transition": 3,
+    "witnessed_units": 3
+   }
+  },
   "derived": {
    "observed_unit_steps_after_transition": 21196,
    "still_observable_if_concealed": 2725,
