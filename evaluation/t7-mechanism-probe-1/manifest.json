@@ -1,0 +1,394 @@
+{
+ "candidate": {
+  "fail_closed": "an exception other than a contract violation after baseline-v2 decided makes the decision baseline-v2's alone and is recorded in the trace (t7 error); a contract violation gives no action, as for baseline-v2",
+  "module": "src/miaosuan_agent/experiments/t7_concealment.py",
+  "policy": "t7-idle-concealment",
+  "rule": "docs/T7_DESIGN.md section 14: baseline-v2 decides first, unchanged, and its actions are emitted unchanged and in its order; then each own unit in ascending obj_id that received no baseline-v2 action is ordered {actor, obj_id, type 6, target_state 4} when it is a ground unit (type 1 or 2) listed in operators, valid_actions lists action 6 for it with an option whose target_state is 4, move_state is not 4, change_state_remain_time, move_to_stop_remain_time, weapon_unfold_time, get_on_remain_time and get_off_remain_time are numbers equal to 0, stop is 1, move_path is an empty list, keep is 0, no operator of another faction is in the seat view and the candidate has not ordered the unit to change state in the last 75 steps; the order passes the candidate's own check (option listed, exact key set, one action per unit). Nothing in deployment; no stop, march, charge, lock, unfold or path change; no other seat's view, all-seeing state or hidden information; a missing or malformed field fails closed",
+  "rule_module": "src/miaosuan_agent/experiments/t7_idle_concealment.py (the Sprint 5 shadow, imported unchanged)",
+  "trace": "baseline-v2's trace with the candidate's identity and every emitted action, plus a t7 block: the SHA-256 of baseline-v2's own trace for the decision, every added order and the skip reasons counted by reason"
+ },
+ "caps": {
+  "steps": "max_time + 1 + 100",
+  "wall_seconds": 1800
+ },
+ "capture": {
+  "base": "the read-only step capture of evaluation/residual516.py: per step the complete batch as serialised after the step, the engine's action feedback, judge_info records new in the step, units gone, appeared, boarded or landed, watched-field changes, every seat's trace digest",
+  "candidate_trace": "per step, the candidate seat's t7 trace block (baseline-v2 trace digest, added orders, skip reasons by count, error)",
+  "sample_every": 1,
+  "schema": "miaosuan-t7-probe-capture/1",
+  "snapshots": "a full pre-step snapshot at every decision from index 0: the all-seeing state, and for BOTH seats (the inert control included) the seat observation, the memory, the actions and the trace digest; plus the final state after the last step (all-seeing state and both seat observations)",
+  "storage": "local/evaluation/t7-mechanism-probe-1/capture/<game>.capture.json and <game>.windows.pkl, created exclusively, git-ignored, never published",
+  "submitted": "per step and seat, a deep copy of every action taken before the engine step (the engine may rewrite action objects in place); the serialised batch after the step is kept beside it"
+ },
+ "control_policy": "inert-v0",
+ "definitions": {
+  "completion": "the first snapshot after decision k whose cur_step s satisfies s - s0 <= 76 and at which the unit is concealed; d = s - s0 is the order's duration",
+  "concealed": "move_state 4 with change_state_remain_time 0",
+  "fresh_feedback": "the entries of the engine's action feedback after a step that were not already reported at the previous step while the clock stood still; an entry matches an action when its message has the same actor, type, obj_id and, for action 6, target_state",
+  "order": "a concealment order: an action {actor, obj_id, type 6, target_state 4} in the candidate seat's pre-execution copy of decision k; s0 is the cur_step of the observation it was decided on; the engine step that executes it leads to the snapshot of decision k + 1 (cur_step s0 + 1)",
+  "outcomes": {
+   "CENSORED": "the game ended before s0 + 76 without completion or interruption",
+   "COMPLETED": "the timer was positive at s0 + 1 or s0 + 2 and completion was reached (d <= 76)",
+   "COMPLETED_TIMER_ANOMALY": "completion was reached (d <= 76) but the timer was not positive at s0 + 1 or s0 + 2",
+   "INTERRUPTED": "before completion and within the window, a documented interrupter: the unit suppressed (keep above 0), an enemy unit in its hex (same-hex engagement), the unit firing (a judge_info record of it), a baseline-v2 action for it that the engine accepted, or the unit gone or boarded",
+   "LATE": "no completion within 76 steps, the unit concealed later, and no documented interrupter before",
+   "NOT_COMPLETED": "the window was fully observed (the game lasted past s0 + 76), no completion within it, no documented interrupter, and the unit never concealed later"
+  },
+  "transition": "a unit is in a documented transition at a snapshot when any of the five transition timers is positive",
+  "unit_series": "an affected unit's fields at every snapshot from decision k on (move_state, change_state_remain_time and the four other transition timers, stop, keep, move_path, cur_hex, flag_force_stop, speed, blood, on_board, listed action types and change-state options), read from the all-seeing state and independently from the candidate seat's observation; the analysis refuses when the two disagree for an affected unit"
+ },
+ "disposition": [
+  "evaluated in this order on the registered results of every game played (E verdicts pooled over the games in which they apply):",
+  "SHELVE when S1 or S2 FAIL in any game, or E1, E3b or E4a is REFUTED, or E2 is REFUTED with an order NOT_COMPLETED",
+  "REVISE when otherwise an integrity check fails or S4 FAIL (a correctable implementation or measurement defect), S3 FAIL or E6 REFUTED, E3a or E5 REFUTED, or E2 REFUTED by LATE or COMPLETED_TIMER_ANOMALY outcomes only",
+  "NEEDS_TARGETED_PROBE when nothing is refuted or failed, E2 is SUPPORTED, and any indispensable endpoint (E1, E3a, E3b, E4a, E6) is NOT TESTED or INCONCLUSIVE, or a game was not played; the smallest missing verification is named",
+  "READY_FOR_TACTICAL_SCREEN when all three games were played, E1, E2, E3a, E3b, E4a and E6 are SUPPORTED and S1 to S4 PASS wherever they apply; E4b and E5 are reported but do not decide it",
+  "otherwise (E2 not SUPPORTED without a refutation, e.g. INCONCLUSIVE or NOT TESTED): NEEDS_TARGETED_PROBE"
+ ],
+ "evaluation_id": "t7-mechanism-probe-1",
+ "execution": {
+  "runtime": "baseline-v1-runtime-r2",
+  "scheduler": "miaosuan-game-pool/1@e717be37ab01d6c6018610bfc0af4df5f247a4599bc4c760c69499f04ed8ae90",
+  "workers": 1
+ },
+ "games": [
+  {
+   "blue": "t7-idle-concealment",
+   "condition": "C3",
+   "game_id": "1910631192.C3.pa",
+   "map_id": "92",
+   "probe": "P-A",
+   "purpose": "deterministic mechanism and non-interference probe: the configuration of Sprint 2 game b with baseline-v2 replaced by the candidate",
+   "red": "inert-v0",
+   "repetition": 1,
+   "scenario_id": "1910631192"
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "H1",
+   "game_id": "2120531121.H1.pb1",
+   "map_id": "21",
+   "probe": "P-B1",
+   "purpose": "observation probe against an active opponent: the candidate red, baseline-v2 blue",
+   "red": "t7-idle-concealment",
+   "repetition": 1,
+   "scenario_id": "2120531121"
+  },
+  {
+   "blue": "t7-idle-concealment",
+   "condition": "H2",
+   "game_id": "2120531121.H2.pb2",
+   "map_id": "21",
+   "probe": "P-B2",
+   "purpose": "observation probe against an active opponent, seats swapped: baseline-v2 red, the candidate blue",
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 1,
+   "scenario_id": "2120531121"
+  }
+ ],
+ "gate_pa": "continue to P-B only when P-A's integrity checks I1 to I6 pass, S1 PASS, S2 PASS, S3 PASS and E2 SUPPORTED, and after P-A the ledger is continuous with no unclosed session, the persistent installation passes its integrity check and the frozen identities recompute. Anything else stops the probe: P-B is not run",
+ "implementation": {
+  "files": {
+   "scripts/run_evaluation.py": "d920f8e35c71edc078a8b17256c12aa4fe45a871244db78783dc1513a048aab2",
+   "scripts/run_evaluation.sh": "01db3eaeeeb5b4ed878cca554250ab2ed10a3b41509c4d2dec7596f5aa5e4c05",
+   "scripts/t7_probe_analysis.py": "380906c237372aa5dd539bbfbdc9b78779bd6b2f04c928c35464d90e4af4cee8",
+   "src/miaosuan_agent/evaluation/t7_audit.py": "69e4f358f486015548d74ed6209935b2babbf1dc43e85fa201df5e6595b4e81d",
+   "src/miaosuan_agent/evaluation/t7_candidates.py": "50c77f37d7561282a257da6c3640e23ded5a2abdccb83b7d507c8811e5c312ab",
+   "src/miaosuan_agent/evaluation/t7_probe.py": "5f030205855af4074075540de42b6a693738e2b464a1d48450c69772f25ecfd5",
+   "src/miaosuan_agent/evaluation/t7_probe_endpoints.py": "965a12a7851bac10f8b9b4e835cf105731a10436775bfb6439212bf2c1383f31",
+   "src/miaosuan_agent/evaluation/t7_probe_metrics.py": "e044628b4d244ab87776a754f80f1a6206bfb860385025643f4452d9ca3ea989",
+   "src/miaosuan_agent/evaluation/t7_visibility.py": "add2b446ec8ff847fd941a8a0952971200858db2305cdbdded0b6263f42e27ff",
+   "src/miaosuan_agent/experiments/t7_concealment.py": "9ab52f714f079f942ea3c17e4b701ec9d8824548f7583ad997ab656d10818c12",
+   "src/miaosuan_agent/experiments/t7_idle_concealment.py": "0017d75f7f997b35e7359df95f837dbb84add6b694211b454090f766d6c69dd9"
+  },
+  "tests": {
+   "scripts/mutate_t7_probe.py": "efb962b380d09dd19c116476a59655c03714ac33fd814c9046e796b434cffee2",
+   "tests/fixtures/t7_probe_engine.py": "a826a7104dc8ec6f890b9ad5b1ea6158776f101591e1901fc7b64c52ba641369",
+   "tests/test_real_t7_probe.py": "9c1d97cdd2711fcc751b59c4736a3c271bd370f11062a32644f5b089283a50e7",
+   "tests/test_t7_concealment.py": "81e42968deb9228a09b4cc12b0b91616612edc149afa64e12fb2550de83deaaa",
+   "tests/test_t7_probe_analysis.py": "399128478c8c8289ce20b733bdbd9974607d9f346ed766312c62c0e71dfb6cf2",
+   "tests/test_t7_visibility.py": "c101a9a3ed9fefe52a4e7e4f73498159154ef45c05ef36fecba4e7b2cc60f0c8"
+  }
+ },
+ "inputs": {
+  "docs/T7_SCREEN_PROPOSAL.md (normalised sha256)": "9a8ca416f5aab6611875a7e9e7dd1861d4f4754c921825135d2d4efac58598c9",
+  "evaluation/routing-remediation-1/corpus.json (normalised sha256)": "538b6df60e3c4467fa26a9c95f1a4804086a0ab4d837446262870c6fb9a7e0a8",
+  "evaluation/t7-design-1/gates.json (normalised sha256)": "ff5803b5fb05abe158df2beca9c5a7513381e8b4c9d4726664cf1b2a7f4e4ab5",
+  "evaluation/t7-design-1/shadow.json (normalised sha256)": "a294cc9dd866023bdbd8a62b074e05cf596c7cfa47325acefa4ce231d3572a4a",
+  "evaluation/t7-mechanism-probe-1/calibration.json (normalised sha256)": "dd9f95ee8dc1b0472ea85a76e3b7be47a81fdf5b5f8015f1a518992df91e2c28",
+  "evaluation/t7-mechanism-probe-1/dryrun.json (normalised sha256)": "0e4b8b746a63a2e4bfebab08bca0c9d8552112b8448b5196f1159ddbae410b87",
+  "evaluation/t7-mechanism-probe-1/equivalence.json (normalised sha256)": "bbb298cfccfbf9d820671e92f2801d692507464dad230d913e3e1daecc57e0b5",
+  "evaluation/t7-mechanism-probe-1/mutation.json (normalised sha256)": "c2dc9f19d4a4f8d9bdadc15651326fdeab57ca68ed3c192e498202b72de2558e",
+  "evaluation/t7-mechanism-probe-1/premise.json (normalised sha256)": "d4f62732b14b5a6995f607b2bf562fe9b79f192fdd4354ae93a54586614103ba",
+  "premise_private_sha256": "433a80300bee0f59885eadb32492e176c881c8c207b0de24b4cbd82edcffb41c",
+  "reference_capture_sha256": "f2403356026cceb871dc16d78109164a9ff3031e07fdb70a24831f99a4b3ba11",
+  "reference_record_sha256": "00abf939cbf2641395a0e62715a1b81793b09b6079db67e95d914f5c40837234",
+  "reference_windows_sha256": "10bfab15fc7ccc43c9000f03e86432caef419fe2912a103bf711d80a866d69de",
+  "runtime_results_sha256": "39a6cefc0b634bb86325af2298272671046841ef3b5ca066799b898431c3a798",
+  "screen_manifest_sha256": "7ef883b7daa6f4272655cd2f8716cd84dcf0d369aff68f6122adec2357c77dcd",
+  "shoot_manifest_sha256": "01c9c9675af4b0859fc55e54a5dc86513b624208bf13131e7b510b87a3122afd",
+  "sprint1_b_x01_record_sha256": "23f013dc331f1ee63d0dbd79f12b511c3d9e8e42a99a2ffb7b7a99100cabc2f9",
+  "sprint1_b_x02_record_sha256": "3cbbd5564b9f0e0805e22911eec0eb74accbc23a924e30a4b4f545d62bfa8d1a",
+  "sprint1_b_x03_record_sha256": "fa89a06c2be921fb12298237158dd8c6a1a00f0c42f2617b28f237d5a51b6a89"
+ },
+ "integrity": [
+  "I1 the record: COMPLETED, done, the registered policy digests, the registered runtime and capture settings, harness commit = the registration commit and not dirty, no observer error, no replay mismatch",
+  "I2 a snapshot at every decision index from 0 to the last, with both seats' observations and the all-seeing state, plus the final state; otherwise the analysis refuses",
+  "I3 the candidate seat's orders counted three ways agree: its t7 trace blocks, its pre-execution copies (type 6) and the record's actions_by_type; and every seat's pre-execution copies by type equal the record's counts; otherwise the analysis refuses (in-place rewrites counted, not refused)",
+  "I4 the two channels (all-seeing state and seat observation) agree on every affected unit's series; otherwise the analysis refuses",
+  "I5 offline re-decision: a fresh candidate instance re-decides every captured candidate decision from the seat's recorded observation and memory and reproduces the submitted actions and the trace digest; the independent pool predicate (evaluation/t7_candidates.py a2, written separately) finds exactly the captured orders; otherwise the analysis refuses",
+  "I6 transition start and completion are reconstructed twice (a forward scan per order over the all-seeing state, and one pass over the seat observations for every unit); otherwise the analysis refuses"
+ ],
+ "limitations": [
+  "The engine's own random source is not controlled by the harness's Python and NumPy seeds; P-A's reference was deterministic in Sprint 1 and Sprint 2 (no shot), P-B is stochastic.",
+  "E3b and E5 need events the registered policies produce on their own; none is forced.",
+  "E4 rests on the documented visibility model calibrated on unconcealed units; terrain stacking, aerial observers of concealed vehicles and the 12.5-hex boundary stay outside its verdict."
+ ],
+ "max_sessions": 3,
+ "mechanism": {
+  "E1": "per order, exactly one matching fresh feedback entry: SUPPORTED when at least one order was issued and every order has one matching entry without an error code; REFUTED when any order's matching entry carries an error code; INCONCLUSIVE when an order has no matching entry or several (and none carries an error code); NOT TESTED without an order. An echo without error is not taken as evidence of the transition",
+  "E2": "per order, the outcome of definitions.outcomes. SUPPORTED when at least one order was issued and every order is COMPLETED; REFUTED when any order is COMPLETED_TIMER_ANOMALY, LATE or NOT_COMPLETED; INCONCLUSIVE when none is refuted and some order is INTERRUPTED or CENSORED; NOT TESTED without an order. Every duration d, the first step move_state read 4, the timer's first positive value and its trajectory are reported",
+  "E3a": "retained listings: for every completed order, the action types the unit listed at its order decision except 6 must be listed at every later snapshot while the unit stays concealed, alive, on the map, outside a transition and with keep 0; a type absent for more than 1 consecutive snapshot(s) is a loss. SUPPORTED with at least one such snapshot and no loss; REFUTED with any loss (the type named); NOT TESTED without a completed order. The change-state options listed while concealed are reported",
+  "E3b": "exit by a real action: every baseline-v2 action of type 1 (move) or 2 (shoot) submitted for a unit that is concealed at the decision. Per event: listed at the decision, submitted, fresh feedback, executed (a move: the next snapshot shows the ordered path as the remaining path or the unit entered its first hex; a shot: a judge_info record of the unit new in that step), move_state at the next snapshot, and for a move the speed at the next snapshot. An event is consistent when it is accepted (no error code), executed, move_state is not 4 at the first snapshot after the step (within 1) and a move shows speed above 0 or has entered its first hex there; an event whose first hex holds 4 own ground units at the next snapshot is excluded (stacking wait). SUPPORTED with at least one consistent event and none inconsistent; REFUTED with any inconsistent event; INCONCLUSIVE when every event is excluded; NOT TESTED without an event. Moves of unconcealed stationary units of the same game are reported as the matched comparison (speed at the next snapshot). Other action types issued to concealed units are reported",
+  "E4": "P-B only; the documented visibility model (src/miaosuan_agent/evaluation/t7_visibility.py), calibrated on the replay corpus before registration (calibration.json). Targets: every own ground unit on the map of either seat at every snapshot, excluding units with a launcher relation (H0: listed whenever their launcher was, undocumented). A concealed target (move_state 4, timer 0) is classified against every opposing unit on the map (ground observers: line of sight in see mode 0; aerial observers: mode 2; distances 10 against infantry and 25 against vehicles, 2 for unmanned aerial vehicles and loitering munitions; band by distance: within the concealed distance, between it and the normal distance, on the 12.5-hex boundary, beyond, no line of sight) into exactly one class: terrain (target in a forest or town hex with a relevant observer), exception (a vehicle lower than a ground observer within its normal distance), ambiguous aerial (a concealed vehicle with an aerial observer within its normal distance), expected listed (an observer within the concealed distance), ambiguous boundary, discriminating (an observer between the concealed and the normal distance and none closer), expected unlisted (none within the normal distance). The outcome is whether the opposing seat's observation lists the target. Unconcealed targets (move_state 0, every timer 0) are the control: predicted listed exactly when some opposing unit sees them under the model (terrain halving applied); the matched band is the control target-steps whose only seeing observers are beyond half their distance (the steps concealment would change). Control validity: model agreement on at least 0.999 of the control target-steps and on at least 0.99 of at least 20 matched-band target-steps, per game. E4a: SUPPORTED when the control is valid, at least one discriminating concealed target-step exists and none is listed; REFUTED when the control is valid and at least half of the discriminating concealed target-steps are listed; INCONCLUSIVE when the control is invalid or between none and half are listed (each listed step characterised); NOT TESTED without a discriminating target-step. E4b (consistency): concealed target-steps expected listed are listed (SUPPORTED / REFUTED with any unlisted / NOT TESTED). Terrain, exception and ambiguous classes are reported with both predictions and never enter E4a. Pairs and classes are computed twice (from the all-seeing state, and from the two seats' own views) and the analysis refuses when they disagree. Reported: target-steps, distinct targets, distinct (target, observer) pairs and episodes per class, per game and pooled over P-B1 and P-B2; target-steps are serially dependent and are not independent trials",
+  "E5": "events during an unfinished transition (timer positive or before completion within the window): a baseline-v2 action submitted for the unit, the unit suppressed, an enemy unit in its hex, or the unit firing. Documented: no other command executes during the transition (an order is refused or not executed until the transition ends); a tank's shot executes and interrupts it; suppression and same-hex engagement interrupt it. SUPPORTED with at least one event, all as documented; REFUTED with any event contradicting it; INCONCLUSIVE when an event cannot be classified; NOT TESTED without an event. No event is manufactured",
+  "E6": "P-A only: at every snapshot the position (hex, on the map or not) and blood of every unit of both seats, the objectives' flags and the scores equal the reference's at the same decision index, and the final scores equal it. SUPPORTED when at least one order completed and all are equal; REFUTED with any difference (the first characterised); INCONCLUSIVE when S3a does not hold; NOT TESTED without an order"
+ },
+ "not_claimed": [
+  "No tactical efficacy: P-A's opponent is inert, and P-B's two seat-swapped games are a mechanism study, not an A/B; no score, win or rate difference is estimated.",
+  "No engine-wide generality: each verdict holds within the scenarios and unit populations observed.",
+  "No promotion and no platform upload of the candidate; baseline-v2 is unchanged."
+ ],
+ "parameters": {
+  "completion_window": 76,
+  "control_agreement": 0.999,
+  "exit_steps": 1,
+  "matched_agreement": 0.99,
+  "matched_minimum": 20,
+  "refute_share": 0.5,
+  "repeat_window": 75,
+  "timer_start": [
+   1,
+   2
+  ],
+  "transient": 1
+ },
+ "players": [
+  {
+   "faction": 0,
+   "role": 1,
+   "seat": 1,
+   "user_id": 0,
+   "user_name": "demo"
+  },
+  {
+   "faction": 1,
+   "role": 1,
+   "seat": 11,
+   "user_id": 0,
+   "user_name": "demo"
+  }
+ ],
+ "policies": {
+  "baseline-v2-candidate-shoot-target-reservation": {
+   "label": "baseline-v2, frozen",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ],
+    "sha256": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ]
+   }
+  },
+  "t7-idle-concealment": {
+   "label": "t7-idle-concealment: baseline-v2 plus the frozen concealment rule",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py",
+     "experiments/t7_concealment.py",
+     "experiments/t7_idle_concealment.py"
+    ],
+    "sha256": "6b73c39ad785938cc1c54b72065858fbf6460a66ceebae627bad4e99fa1a50f0",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py",
+     "experiments/t7_idle_concealment.py",
+     "experiments/t7_concealment.py"
+    ]
+   }
+  }
+ },
+ "primary": "the share of issued concealment orders that reach the concealed state (move_state 4 with the timer at 0) within 76 steps of the decision's cur_step, per game and pooled over the games played; every order issued is in the denominator (censored and interrupted orders included and reported as such); the mechanism criterion needs 100% with every applicable safety check passed",
+ "probe_id": "t7-mechanism-probe-1",
+ "purpose": "diagnostic",
+ "question": "Does engine 4.1.0 accept a concealment order (action 6, target_state 4) from an idle, stationary own ground unit that baseline-v2 leaves without an action, complete the documented 75-second transition, keep the unit's listed actions and let a later move or shot leave concealment without delay (E1 to E3, E5), change nothing else in a deterministic game (E6), and halve the distance at which an active opponent observes the concealed unit (E4), without engine errors or locked units (S1 to S4)?",
+ "randomness": {
+  "global_seed": 20260929,
+  "procedure": "each game runs in a fresh process; the harness seeds Python's and NumPy's global generators with global_seed before the engine is constructed and records whether the engine consumes them; no undocumented engine interface is used",
+  "python_hash_seed": 0
+ },
+ "reference": {
+  "game_id": "1910631192.C3.b.x01",
+  "policies": {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "red": "inert-v0"
+  },
+  "predicted_orders": [
+   {
+    "cur_step": 716,
+    "k": 717,
+    "units": 2
+   },
+   {
+    "cur_step": 735,
+    "k": 736,
+    "units": 2
+   }
+  ],
+  "session": "2459",
+  "work": "local/evaluation/t1r-diagnosis-1"
+ },
+ "refusal_classes": [
+  {
+   "action_type": 1,
+   "code": 404,
+   "message_class": "CantMoveKeptPeople"
+  },
+  {
+   "action_type": 2,
+   "code": 203,
+   "message_class": "CantControlDiedOperator"
+  },
+  {
+   "action_type": 2,
+   "code": 516,
+   "message_class": "CantShootToDiedBop"
+  },
+  {
+   "action_type": 5,
+   "code": 203,
+   "message_class": "CantControlDiedOperator"
+  }
+ ],
+ "runtime_environment": {
+  "OPENBLAS_NUM_THREADS": "1"
+ },
+ "safety": {
+  "S1": "PASS when no fresh feedback entry matching a concealment order carries an error code; FAIL otherwise",
+  "S2": "over the affected units (units that received at least one order), from their first order to the end: FAIL when flag_force_stop is 1 at any snapshot; or when an alive unit on the map has an empty or absent valid_actions entry for more than 1 consecutive snapshot(s) outside a documented transition; or when a unit that listed action 1 at its order decision does not list it for more than 1 consecutive snapshot(s) at which it is alive, on the map, outside a transition, with keep 0 and an empty move path. PASS when none occurs and at least one order was issued; NOT TESTED without an order. Every transient loss and every listing change is reported",
+  "S3": "P-A only. S3a premise: at every decision k below the first decision with a concealment order, and at that decision itself, the all-seeing state digest of the record equals the reference's, the candidate seat's observation digest equals the reference blue observation's (capture channel), the candidate's baseline-v2 trace digest equals the reference's blue trace digest, the inert seat's trace digest equals the reference's red trace digest, and the submitted actions equal the reference's actions (the full dictionaries, in order; at the first decision the reference's actions followed by the concealment orders); and the first order is at the predicted decision index with the predicted units. S3b: at every later decision the candidate seat's submitted actions without its concealment orders equal the reference's blue actions, the inert seat's equal the reference's red actions, the game has the reference's number of steps and the final scores equal the reference's. PASS when S3a and S3b hold; FAIL when S3a holds and S3b does not (the first differing decision, its actions and units characterised); INCONCLUSIVE when S3a does not hold (the reference was not reproduced before the intervention) or the game did not complete",
+  "S4": "P-B. PASS when every refusal of the candidate seat (record refusal facts: action type, code, message class) belongs to a class in baseline-v2's registered records (the shoot-reservation experiment's group C: 1/404 CantMoveKeptPeople, 2/203 CantControlDiedOperator, 2/516 CantShootToDiedBop, 5/203 CantControlDiedOperator), every candidate decision carries its t7 trace block, no t7 error was recorded, and the record shows no contract error, no replay mismatch and no observer error; FAIL otherwise. The opponent seat's refusal classes outside that set are reported, not judged"
+ },
+ "scenarios": [
+  {
+   "alternates": [
+    "1930631192",
+    "2230631192"
+   ],
+   "blue": 6,
+   "cities": 2,
+   "inputs_sha256": {
+    "basic": "8d4bf628205d08abfcc87b0672142e0e1e0b86dd205a6611fc1034de4c12f27a",
+    "cost": "b7a6ffb937be31a76ad61426a64212c90ee8c3b378eb04658162ee5825310c3c",
+    "scenario": "4a44b94fba790b4535e03c1991bcc81253d0d61a228214c0c6b00caf0b0d8022",
+    "see": "c8e346d02bcc338a96894b9e4e1ed8d09eed4b15a9baeca96d17c2edcc3eaa19"
+   },
+   "map_id": "92",
+   "max_time": 1800,
+   "operators": 12,
+   "red": 6,
+   "rule": "S2 fewest operators on map 92",
+   "scenario_id": "1910631192"
+  },
+  {
+   "alternates": [
+    "2120511121",
+    "2130511421",
+    "2230531121",
+    "2230531221",
+    "2130511321",
+    "2130511121",
+    "2130511221"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+    "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+    "scenario": "a4536a361ac9dd879ad326d8c5f40583433c3299f5184b4af06ddb110ab297cf",
+    "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "operators": 54,
+   "red": 28,
+   "rule": "S2 fewest operators on map 21",
+   "scenario_id": "2120531121"
+  }
+ ],
+ "schema": "miaosuan-t7-mechanism-probe-manifest/1",
+ "status": "MECHANISM PROBE: at most three diagnostic sessions; not a tactical A/B; not eligible for promotion",
+ "stop_pb": "after P-B1, P-B2 runs unless P-B1's integrity checks fail, S1, S2 or S4 FAIL, or the ledger, the installation or a frozen identity fails its check; an E verdict of P-B1 does not stop P-B2",
+ "stop_rules": [
+  "Before P-A: the registration verified (commit on the public remote; the public issue fetched without authentication and byte-identical to the canonical body), G0 passed, the server tree at the registration commit.",
+  "P-A first and alone, then (only if the continuation gate passes) P-B1, then (unless the P-B stop branch applies) P-B2; one exclusive session each, serially, through scripts/run_evaluation.sh --plan t7-probe with one game per invocation; at most 3 sessions.",
+  "No repetition, no replacement, no fourth game, no change of scenario, seed, configuration, candidate, trigger or analysis after any game. A failed or capped game is preserved and reported, never replaced.",
+  "An analysis defect found after the first game is fixed only in a separate, labelled post-hoc analysis; the registered outputs and verdicts stand.",
+  "Any integrity failure (ledger, installation, frozen identity, dirty harness, capture, count disagreement) stops the probe at once."
+ ]
+}
