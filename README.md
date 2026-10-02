@@ -58,7 +58,10 @@ CONFIRMATION. Nothing was promoted. Sprint 2 diagnosed the screen's one determin
 objective blocks itself at that objective and `baseline-v2` never re-orders a unit that is executing a move. No
 deployment-side rule corrects that without forbidding the splits themselves, so the revised candidate's specification
 (`docs/T1R_SPEC.md`) fails its gate and the T1 line is SHELVED; a play-stage candidate, capacity-aware movement, is
-proposed and not begun.
+proposed. Sprint 3 designed it offline (`docs/PS1_DESIGN.md`) without an engine session: the block is observable
+from seat fields, and under the movement model a stalled-movement recovery releases it, but that model failed its
+registered fidelity check and the recovery relies on a stop no capture has tested, so the disposition is
+NEEDS_ENGINE_PROBE. Nothing was implemented in the policy, registered or promoted.
 
 ## Third-party material is not in this repository
 
@@ -104,6 +107,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/SCREEN_DEPLOYMENT_SPLIT.md` | the exploratory screen of deployment disaggregation: registration, mechanism smoke and engine semantics, A/B, reading, disposition |
 | `docs/T1R_DIAGNOSIS.md` | the diagnosis of the screen's deterministic loss: pre-declared hypotheses and observables, two captured games, verdicts, engine facts |
 | `docs/T1R_SPEC.md` | the revised deployment-split candidate's specification (probe and stop, stack-void avoidance), the correction the diagnosis calls for, gate G6 and its verdict |
+| `docs/PS1_DESIGN.md` | the offline design study of capacity-aware movement: formal model, observation audit, amendment, fidelity, certificates, generalisation, gates, disposition, the smallest engine probe |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
 | `evaluation/routing-remediation-1/` | the routing remediation's registration, pinned corpus and privacy-safe results |
@@ -119,6 +123,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `evaluation/tactical-frontier-1/` | the capability census, the selection rubric (committed before scoring), the scores and the selection |
 | `evaluation/tactical-screen-deployment-split-1/` | the deployment-split screen's manifest, mechanism-smoke facts and exploratory results |
 | `evaluation/t1r-diagnosis-1/` | the T1-r diagnosis's public analysis of the two captured games (counts, scores, step indices) |
+| `evaluation/ps1-design-1/` | the PS-1 design study's public summary (reconstruction, audit, fidelity, certificates, census) and its post-hoc descriptions |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy
