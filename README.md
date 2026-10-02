@@ -65,7 +65,13 @@ NEEDS_ENGINE_PROBE. Nothing was implemented in the policy, registered or promote
 (`docs/PS1_ENGINE_PROBE.md`, preregistered in issue #2) in two engine sessions: a stop issued to a unit waiting in
 front of a full hex is echoed and flagged by the engine but deferred indefinitely, so the recovery cannot start, and
 the post-hoc movement model failed its prospective fidelity test on a fresh game. PS-1 is SHELVED; nothing was
-promoted.
+promoted. Sprint 5 studied the T7 family (movement state, stop, weapon lock) offline (`docs/T7_DESIGN.md`) without an
+engine session: no T7 action had ever been issued by a frozen policy and march was never listed; of six candidate
+mechanisms four failed the safety condition, and concealment of idle stationary units was selected over locking
+weapons on their own, which has no documented benefit. Its offline shadow
+leaves `baseline-v2` unchanged on every recorded decision; its engine effects are documented but unobserved, so the
+disposition is READY_FOR_MECHANISM_PROBE, and a three-game mechanism probe is proposed for the owner's approval
+(`docs/T7_SCREEN_PROPOSAL.md`). Nothing was registered, implemented in the policy or promoted.
 
 ## Third-party material is not in this repository
 
@@ -113,6 +119,8 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/T1R_SPEC.md` | the revised deployment-split candidate's specification (probe and stop, stack-void avoidance), the correction the diagnosis calls for, gate G6 and its verdict |
 | `docs/PS1_DESIGN.md` | the offline design study of capacity-aware movement: formal model, observation audit, amendment, fidelity, certificates, generalisation, gates, disposition, the smallest engine probe |
 | `docs/PS1_ENGINE_PROBE.md` | the registered two-session engine probe of PS-1: the diagnostic hook, the stop semantics (P1), the prospective test of the movement model (P2), post-hoc descriptions, gates and disposition |
+| `docs/T7_DESIGN.md` | the offline design study of T7 movement-state micro: protocol, action-semantics matrix, opportunity audit, candidate pool, rubric and selection, specification, offline shadow checks, gates and disposition |
+| `docs/T7_SCREEN_PROPOSAL.md` | the proposed mechanism probe of idle concealment (for the owner's approval; not a registration) |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
 | `evaluation/routing-remediation-1/` | the routing remediation's registration, pinned corpus and privacy-safe results |
@@ -130,6 +138,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `evaluation/t1r-diagnosis-1/` | the T1-r diagnosis's public analysis of the two captured games (counts, scores, step indices) |
 | `evaluation/ps1-design-1/` | the PS-1 design study's public summary (reconstruction, audit, fidelity, certificates, census) and its post-hoc descriptions |
 | `evaluation/ps1-engine-probe-1/` | the PS-1 engine probe's manifest, mutation results, registration issue and its verification, the P1 and P2 results, the gates and the post-hoc descriptions |
+| `evaluation/t7-design-1/` | the T7 design study's frozen rubric, audit and candidate aggregates, semantics matrix, scores and selection, post-hoc descriptions, shadow checks, mutation results and gates |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy
