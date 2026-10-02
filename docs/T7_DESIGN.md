@@ -531,3 +531,6 @@ as an `IDEA`: offline legality and non-interference are established, its engine 
   and 13.5. A stop on a traversing unit remains unobserved; the smallest probe would order one stop on a unit with
   `speed` above 0 whose next hex is not full, in a deterministic game, and record the hex completion, the transition
   length and the re-listing of movement.
+
+*Note (2026-10-03): the proposed mechanism probe was approved, registered (issue #3) and run in three sessions; its
+results and disposition, NEEDS_TARGETED_PROBE, are in `docs/T7_MECHANISM_PROBE.md`. Nothing above is changed.*
