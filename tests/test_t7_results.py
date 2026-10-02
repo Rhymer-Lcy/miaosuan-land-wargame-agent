@@ -39,6 +39,35 @@ class Regeneration(unittest.TestCase):
         self.assertEqual((EV / "selection.json").read_text(encoding="utf-8"), module.dump(selection))
 
 
+class Gates(unittest.TestCase):
+    def test_gates_regenerate_and_read_ready(self):
+        module = script("t7_gates")
+        data = module.build()
+        self.assertEqual((EV / "gates.json").read_text(encoding="utf-8"),
+                         json.dumps(data, ensure_ascii=False, indent=1, sort_keys=True) + "\n")
+        self.assertEqual({k: v["verdict"] for k, v in data["gates"].items()},
+                         {"G1": "PASS", "G2": "PASS", "G3": "PASS", "G4": "PASS", "G5": "PASS"})
+        self.assertEqual(data["disposition"], "READY_FOR_MECHANISM_PROBE")
+
+    def test_disposition_order(self):
+        module = script("t7_gates")
+        ready = {"G1": "PASS", "G2": "PASS", "G3": "PASS", "G4": "PASS", "G5": "PASS"}
+        self.assertEqual(module.disposition(ready, True, True), "READY_FOR_MECHANISM_PROBE")
+        self.assertEqual(module.disposition(ready, False, True), "SHELVE_T7_FOR_NOW")
+        self.assertEqual(module.disposition(ready, True, False), "SHELVE_T7_FOR_NOW")
+        self.assertEqual(module.disposition(dict(ready, G1="FAIL", G2="UNRESOLVED"), True, True), "REVISE")
+        self.assertEqual(module.disposition(dict(ready, G2="UNRESOLVED"), True, True), "NEEDS_ENGINE_PROBE")
+        self.assertEqual(module.disposition(dict(ready, G4="UNRESOLVED"), True, True), "NEEDS_ENGINE_PROBE")
+        self.assertEqual(module.disposition(dict(ready, G5="FAIL"), True, True), "REVISE")
+        self.assertEqual(module.disposition(dict(ready, G3="FAIL"), True, True), "REVISE")
+
+    def test_proposal_elements_are_required(self):
+        module = script("t7_gates")
+        verdict, evidence = module.g5("")
+        self.assertEqual(verdict, "FAIL")
+        self.assertEqual(len(evidence["missing"]), len(module.PROPOSAL_ELEMENTS))
+
+
 class Selection(unittest.TestCase):
     def test_selected_candidate_and_robustness(self):
         selection = json.loads((EV / "selection.json").read_text(encoding="utf-8"))

@@ -116,6 +116,12 @@ class RealRegeneration(unittest.TestCase):
     def test_posthoc(self):
         self.assertEqual(self.run_check("t7_posthoc.py"), "posthoc identical")
 
+    def test_shadow_checks(self):
+        self.assertEqual(self.run_check("t7_shadow.py"), "shadow identical (timing excluded)")
+
+    def test_mutation_results(self):
+        self.assertEqual(self.run_check("mutate_t7.py"), "mutation results identical")
+
 
 if __name__ == "__main__":
     unittest.main()
