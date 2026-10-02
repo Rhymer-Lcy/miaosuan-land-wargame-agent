@@ -1,0 +1,51 @@
+{
+ "a2_h0": {
+  "activations": 234,
+  "derived": {
+   "observed_unit_steps_after_transition": 21196,
+   "still_observable_if_concealed": 2725,
+   "units_always_observable_if_concealed": 7,
+   "units_never_observable_if_concealed": 9,
+   "units_observed_after_transition": 16
+  },
+  "first_activations": 49,
+  "first_ended_by": {
+   "acted or moved": 2,
+   "game end": 47
+  },
+  "first_idle_after_steps": {
+   "max": 2879,
+   "min": 410
+  },
+  "first_idle_at_least_75_steps": 49,
+  "witness_activations": 39,
+  "witness_at_or_after_75_steps": 25,
+  "witness_channels": {
+   "opposing view": 39
+  },
+  "witness_recomputed_agrees": true
+ },
+ "funnels": {
+  "A1": {
+   "1 vehicle move orders": 340,
+   "2 stopped: an enemy seen": 220,
+   "3 stopped: carries passengers": 14,
+   "4 stopped: destination not reachable in march mode": 97,
+   "5 reached the saving test": 9,
+   "6 saving positive": 0
+  },
+  "A1_savings_seconds": {
+   "max": -116.0,
+   "min": -510.0,
+   "n": 9
+  },
+  "A3": {
+   "1 infantry move orders": 51,
+   "3 stopped: more than two hexes": 50,
+   "5 stopped: tired or an enemy seen": 1
+  }
+ },
+ "schema": "miaosuan-t7-posthoc/1",
+ "status": "POST HOC: after the selection; changes no score, gate or disposition",
+ "study_id": "t7-design-1"
+}
