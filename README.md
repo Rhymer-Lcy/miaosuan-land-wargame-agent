@@ -61,7 +61,11 @@ deployment-side rule corrects that without forbidding the splits themselves, so 
 proposed. Sprint 3 designed it offline (`docs/PS1_DESIGN.md`) without an engine session: the block is observable
 from seat fields, and under the movement model a stalled-movement recovery releases it, but that model failed its
 registered fidelity check and the recovery relies on a stop no capture has tested, so the disposition is
-NEEDS_ENGINE_PROBE. Nothing was implemented in the policy, registered or promoted.
+NEEDS_ENGINE_PROBE. Nothing was implemented in the policy, registered or promoted. Sprint 4 ran that probe
+(`docs/PS1_ENGINE_PROBE.md`, preregistered in issue #2) in two engine sessions: a stop issued to a unit waiting in
+front of a full hex is echoed and flagged by the engine but deferred indefinitely, so the recovery cannot start, and
+the post-hoc movement model failed its prospective fidelity test on a fresh game. PS-1 is SHELVED; nothing was
+promoted.
 
 ## Third-party material is not in this repository
 
@@ -108,6 +112,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/T1R_DIAGNOSIS.md` | the diagnosis of the screen's deterministic loss: pre-declared hypotheses and observables, two captured games, verdicts, engine facts |
 | `docs/T1R_SPEC.md` | the revised deployment-split candidate's specification (probe and stop, stack-void avoidance), the correction the diagnosis calls for, gate G6 and its verdict |
 | `docs/PS1_DESIGN.md` | the offline design study of capacity-aware movement: formal model, observation audit, amendment, fidelity, certificates, generalisation, gates, disposition, the smallest engine probe |
+| `docs/PS1_ENGINE_PROBE.md` | the registered two-session engine probe of PS-1: the diagnostic hook, the stop semantics (P1), the prospective test of the movement model (P2), post-hoc descriptions, gates and disposition |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
 | `evaluation/routing-remediation-1/` | the routing remediation's registration, pinned corpus and privacy-safe results |
@@ -124,6 +129,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `evaluation/tactical-screen-deployment-split-1/` | the deployment-split screen's manifest, mechanism-smoke facts and exploratory results |
 | `evaluation/t1r-diagnosis-1/` | the T1-r diagnosis's public analysis of the two captured games (counts, scores, step indices) |
 | `evaluation/ps1-design-1/` | the PS-1 design study's public summary (reconstruction, audit, fidelity, certificates, census) and its post-hoc descriptions |
+| `evaluation/ps1-engine-probe-1/` | the PS-1 engine probe's manifest, mutation results, registration issue and its verification, the P1 and P2 results, the gates and the post-hoc descriptions |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy
