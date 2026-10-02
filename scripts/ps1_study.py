@@ -313,7 +313,8 @@ def observed_speed(cap: Capture, k: int, oid: int) -> float:
     raise KeyError(oid)
 
 
-def start_simulation(cap: Capture, k: int, costs: MoveCosts, recon: Mapping[str, Any], restart: bool = False) -> pm.Simulation:
+def start_simulation(cap: Capture, k: int, costs: MoveCosts, recon: Mapping[str, Any], restart: bool = False,
+                     entry_wait: bool = False) -> pm.Simulation:
     """The observed state before decision k, with each unit's hex timing rebuilt from the observed history.
 
     Under M1b (``restart``), a unit with a path and observed speed 0 is waiting; a unit in transit that waited after its
@@ -343,7 +344,7 @@ def start_simulation(cap: Capture, k: int, costs: MoveCosts, recon: Mapping[str,
         units.append(pm.Unit(uid=u.uid, hex=u.hex, speed=u.speed, mode=u.mode, path=u.path, ready_at=ready,
                              last_progress=last.get(u.uid, 0), waiting=waiting))
     return pm.Simulation(units=units, edges_by_mode=edges, step=k, objectives=objectives_at(cap, k), faction=cap.faction,
-                         end_step=len(cap.steps), restart_after_wait=restart)
+                         end_step=len(cap.steps), restart_after_wait=restart, wait_at_entry=entry_wait)
 
 
 def compare_entries(simulated: Sequence[Tuple[int, int, int]], observed: Sequence[Tuple[int, int, int]], start: int) -> Dict[str, Any]:
@@ -371,16 +372,17 @@ def first_play_k(cap: Capture) -> int:
     return next(s["k"] for s in cap.steps if s.get("stage") == 2)
 
 
-def fidelity(cap: Capture, costs: MoveCosts, recon: Mapping[str, Any], restart: bool = False) -> Dict[str, Any]:
+def fidelity(cap: Capture, costs: MoveCosts, recon: Mapping[str, Any], restart: bool = False,
+             entry_wait: bool = False) -> Dict[str, Any]:
     k0 = first_play_k(cap)
-    out: Dict[str, Any] = {"start_k": k0, "model": "M1b" if restart else "M1"}
+    out: Dict[str, Any] = {"start_k": k0, "model": ("M1c" if entry_wait else "M1b") if restart else "M1"}
     recorded: Dict[int, List[Tuple[str, int, Tuple[int, ...]]]] = collections.defaultdict(list)
     for k, oid, path in recon["private"]["orders"]:
         recorded[k].append(("move", oid, tuple(path)))
     for k, oid in recon["private"]["occupations"]:
         recorded[k].append(("occupy", oid, ()))
     for label, policy in (("F1", pm.recorded_orders(recorded)), ("F2", pm.surrogate)):
-        sim = start_simulation(cap, k0, costs, recon, restart)
+        sim = start_simulation(cap, k0, costs, recon, restart, entry_wait)
         try:
             sim.run(policy)
         except pm.ModelError as exc:
@@ -420,8 +422,9 @@ def retarget_policy() -> Any:
 
 
 def certificate(label: str, intervention: str, cap: Capture, costs: MoveCosts, recon: Mapping[str, Any], k: int,
-                policy_factory: Any, assumptions: Sequence[str], unverified: Sequence[str]) -> Dict[str, Any]:
-    sim = start_simulation(cap, k, costs, recon, restart=True)
+                policy_factory: Any, assumptions: Sequence[str], unverified: Sequence[str],
+                entry_wait: bool = False) -> Dict[str, Any]:
+    sim = start_simulation(cap, k, costs, recon, restart=True, entry_wait=entry_wait)
     before = list(sim.units)
     cyc0 = pm.cycles(before)
     state = None
@@ -468,7 +471,8 @@ def certificate(label: str, intervention: str, cap: Capture, costs: MoveCosts, r
         "start_cur_step": cap.global_state(k)["time"]["cur_step"],
         "evidence": {"start state": "observed", "orders and trajectory after start": "model-derived",
                      "engine acceptance of the orders": "unverified"},
-        "model": "M1b (protocol amendment 1)", "assumptions": list(assumptions), "unverified": list(unverified),
+        "model": "M1c (post hoc)" if entry_wait else "M1b (protocol amendment 1)", "assumptions": list(assumptions),
+        "unverified": list(unverified),
         "observable_inputs": ["own units' positions, remaining move paths, types, basic speeds and boarding state "
                               "(seat observation)",
                               "objective flags (seat observation)", "setup cost graph", "the policy's own step history"],
@@ -507,9 +511,11 @@ def synthetic_no_escape() -> Dict[str, Any]:
 
 
 def restart_episodes(sequence: Sequence[Tuple[int, Mapping[str, Any]]], seat: int, faction: int,
-                     edges: Mapping[int, pm.Edges]) -> List[Dict[str, Any]]:
+                     edges: Mapping[int, pm.Edges], trace: bool = False) -> List[Dict[str, Any]]:
     """Amendment 1's independent check: episodes of a unit with a path standing at speed 0 in front of a hex holding
-    four own ground units, keeping its path, then seeing room and entering. ``d`` = entry step - first step with room."""
+    four own ground units, keeping its path, then seeing room and entering. ``d`` = entry step - first step with room.
+    With ``trace`` (post hoc) each episode also carries ``runs``: from the first step with room to the entry, maximal runs
+    of (1 moving | 0 waiting, length, target occupancy at the run's first step)."""
     episodes: List[Dict[str, Any]] = []
     open_: Dict[int, Dict[str, Any]] = {}
     for step, obs in sequence:
@@ -526,9 +532,20 @@ def restart_episodes(sequence: Sequence[Tuple[int, Mapping[str, Any]]], seat: in
             if r["cur_hex"] == ep["target"]:
                 # an entry in the very step the hex got room (no room seen before) is d = 0: M1's behaviour must be
                 # observable, or the check could only ever confirm M1b
-                episodes.append({"d": step - (ep["room"] if ep["room"] is not None else step), "tau": ep["tau"]})
+                episode = {"d": step - (ep["room"] if ep["room"] is not None else step), "tau": ep["tau"]}
+                if trace:
+                    runs: List[List[int]] = []
+                    for s in range(ep["room"] if ep["room"] is not None else step, step):
+                        moving = 1 if ep["speed"].get(s) else 0
+                        if runs and runs[-1][0] == moving:
+                            runs[-1][1] += 1
+                        else:
+                            runs.append([moving, 1, ep["occ"].get(s, 0)])
+                    episode["runs"] = [tuple(r) for r in runs]
+                episodes.append(episode)
                 del open_[oid]
                 continue
+            ep["speed"][step], ep["occ"][step] = r.get("speed"), occ[ep["target"]]
             if ep["room"] is None and occ[ep["target"]] < pm.K:
                 ep["room"] = step
         for oid, r in own.items():
@@ -539,7 +556,8 @@ def restart_episodes(sequence: Sequence[Tuple[int, Mapping[str, Any]]], seat: in
             cost = edges[int(mode)].get(r["cur_hex"], {}).get(path[0]) if mode is not None else None
             if cost is None:
                 continue
-            open_[oid] = {"target": path[0], "path": path, "room": None, "tau": pm.hex_time(float(r["basic_speed"]), cost)}
+            open_[oid] = {"target": path[0], "path": path, "room": None, "tau": pm.hex_time(float(r["basic_speed"]), cost),
+                          "speed": {}, "occ": {}}
     return episodes
 
 
