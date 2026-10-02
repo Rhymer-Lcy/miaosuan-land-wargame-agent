@@ -1,0 +1,134 @@
+{
+ "candidate_names": {
+  "A1": "road march for a long road journey",
+  "A2": "concealment of idle stationary units",
+  "A3": "infantry final-approach charge",
+  "B1": "stop to engage",
+  "B2": "halt before exposure",
+  "C0": "weapon lock or unfold on its own"
+ },
+ "candidate_pool_order": [
+  "A1",
+  "A2",
+  "A3",
+  "B1",
+  "B2",
+  "C0"
+ ],
+ "criteria": {
+  "C": {
+   "anchors": {
+    "0": "removes a baseline-v2 action without carrying it out later, every time",
+    "1": "exposure above 30%",
+    "2": "exposure at most 30%",
+    "3": "exposure at most 15%",
+    "4": "exposure at most 5%",
+    "5": "exposure at most 1% of activations"
+   },
+   "name": "opportunity cost and latency (cheaper scores higher)",
+   "weight": 0.1
+  },
+  "E": {
+   "anchors": {
+    "0": "contradicted",
+    "1": "effect only hypothesised",
+    "2": "documented only",
+    "3": "the action listed for the population (observed) and its effect documented",
+    "4": "the action accepted (observed) and its effect documented",
+    "5": "the effect observed in project records"
+   },
+   "name": "existing evidence",
+   "weight": 0.1
+  },
+  "G": {
+   "anchors": {
+    "0": "no activation",
+    "1": "activations in 1 scenario",
+    "2": "activations in at least 2 scenarios",
+    "3": "activations in at least 4 scenarios",
+    "4": "activations in at least 6 scenarios",
+    "5": "activations in all 8 frozen scenarios of H0 and in at least 3 archetypes"
+   },
+   "name": "generality",
+   "weight": 0.15
+  },
+  "I": {
+   "anchors": {
+    "0": "inseparable",
+    "1": "changes several behaviours",
+    "2": "a multi-action sequence",
+    "3": "a two-step sequence of one mechanism",
+    "4": "one action type, replacing nothing, but needing memory",
+    "5": "one action type, only on units baseline-v2 leaves idle"
+   },
+   "name": "isolation",
+   "weight": 0.1
+  },
+  "L": {
+   "anchors": {
+    "0": "none",
+    "1": "marginal",
+    "2": "an effect hypothesised only",
+    "3": "a documented effect conditional on enemy behaviour",
+    "4": "a documented effect on a scoring mechanism of smaller size or in some activations",
+    "5": "a documented effect on a scoring mechanism (losses, occupation, fire) of at least a 2-point table modifier or a 30% time saving, in most activations"
+   },
+   "name": "leverage",
+   "weight": 0.2
+  },
+  "M": {
+   "anchors": {
+    "0": "not measurable",
+    "1": "needs an unvalidated simulation",
+    "2": "outcome level only",
+    "3": "needs new capture fields",
+    "4": "needs both seats' views, which the existing capture records",
+    "5": "the intermediate mechanism is a seat-observable field change, measurable per activation by the existing full-step capture"
+   },
+   "name": "measurability",
+   "weight": 0.1
+  },
+  "O": {
+   "anchors": {
+    "0": "the trigger needs hidden state",
+    "1": "an input not in the seat view",
+    "2": "an input reconstructed from history the seat cannot keep",
+    "3": "an input whose semantics is unverified",
+    "4": "inputs derived from seat fields, setup data and documented constants (class 2)",
+    "5": "every trigger input a seat field (class 1)"
+   },
+   "mandatory_minimum": 4,
+   "name": "observability",
+   "weight": 0.15
+  },
+  "S": {
+   "anchors": {
+    "0": "known unsafe",
+    "1": "can freeze units",
+    "2": "a known-unsafe case excluded only by an unverified rule",
+    "3": "a bounded irreversible window (at most 75 s), no known unsafe case",
+    "4": "reversal at a bounded cost",
+    "5": "documented free reversal, no known unsafe case"
+   },
+   "mandatory_minimum": 3,
+   "name": "safety and reversibility",
+   "weight": 0.1
+  }
+ },
+ "frozen_before_scoring": true,
+ "schema": "miaosuan-t7-rubric/1",
+ "selection": "highest weighted score among candidates meeting both mandatory minimums (O >= 4, S >= 3); ties by L, then S, then I, then pool order; none if no candidate is eligible",
+ "sensitivity": {
+  "fragile_if_first_in_fewer_than": 20,
+  "list": [
+   "equal weights",
+   "each weight plus or minus 0.05, others rescaled (16)",
+   "each criterion left out (8)",
+   "leverage 0.40 (1)",
+   "every flagged UNKNOWN cell at 0 and at 5 (2)"
+  ],
+  "variants": 28
+ },
+ "study_id": "t7-design-1",
+ "unknown_rule": "a cell whose decisive evidence is UNKNOWN is capped at 2 and flagged; never given a favourable value"
+}
