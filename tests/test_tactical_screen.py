@@ -105,6 +105,20 @@ class RegistrationTest(unittest.TestCase):
         self.assertEqual(status, 2)
         self.assertIn("captures are never overwritten", message)
 
+    def test_sample_every_is_for_diagnostic_runs_only(self) -> None:
+        rev = load_script("run_evaluation")
+        h1 = next(g["game_id"] for g in self.m["games"] if g["condition"] == "H1")
+        for purpose, sample_every in (("evaluation", 1), ("diagnostic", 0)):
+            with tempfile.TemporaryDirectory() as tmp:
+                path = Path(tmp) / "manifest.json"
+                path.write_text(json.dumps(self.m), encoding="utf-8")
+                args = Namespace(manifest=path, game_id=h1, work=Path(tmp) / "work", engine_install=Path(tmp),
+                                 harness_commit="x", harness_dirty=False, purpose=purpose, sample_every=sample_every)
+                with contextlib.redirect_stderr(io.StringIO()) as err:
+                    status = rev.cmd_game(args)
+            self.assertEqual(status, 2, (purpose, sample_every))
+            self.assertIn("--sample-every is for diagnostic runs", err.getvalue())
+
 
 class SmokeTest(unittest.TestCase):
     """The capture as the real engine leaves it: a deployment split's type rewritten from 314 to 14 in place before
