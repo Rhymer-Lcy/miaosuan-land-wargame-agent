@@ -1,0 +1,79 @@
+{
+ "f2_scope": {
+  "moves of units outside the model (aircraft)": 6,
+  "occupations": 5,
+  "shots (the surrogate never shoots)": 3
+ },
+ "flag_force_stop_elsewhere": {
+  "P1 other units": {
+   "unit_steps": 0,
+   "units": 0
+  },
+  "P2 every unit": {
+   "unit_steps": 0,
+   "units": 0
+  }
+ },
+ "m1d": {
+  "P2": {
+   "hex_sequences_differ": 0,
+   "observed_entries": 683,
+   "offset_histogram": {
+    "-20": 1,
+    "-40": 1,
+    "0": 681
+   },
+   "worst_step_offset": 40
+  },
+  "Sprint 2 1910631192.C3.b.x01 (non-regression)": {
+   "hex_sequences_differ": 0,
+   "observed_entries": 138,
+   "offset_histogram": {
+    "0": 138
+   },
+   "worst_step_offset": 0
+  },
+  "Sprint 2 1910631192.C3.c.x01 (non-regression)": {
+   "hex_sequences_differ": 0,
+   "observed_entries": 274,
+   "offset_histogram": {
+    "0": 274
+   },
+   "worst_step_offset": 0
+  },
+  "definition": "M1c plus: a unit ordered while its first hex holds four own ground units waits at once (then restarts under M1b); derived from P2 after its registered verdicts"
+ },
+ "order_aware_re_reading_p2": {
+  "order_aware_agrees": 15,
+  "order_aware_disagrees": 0,
+  "steps_with_a_re_wait": 15
+ },
+ "p1_stop_footprint": {
+  "path_kept_to_the_end": 4,
+  "states": {
+   "after": {
+    "flag_force_stop=1 stop=0 move_to_stop_remain_time=0 listed=[]": 5076
+   },
+   "before": {
+    "flag_force_stop=0 stop=0 move_to_stop_remain_time=0 listed=[10]": 2120,
+    "flag_force_stop=0 stop=1 move_to_stop_remain_time=0 listed=[1, 6, 11, 14, 15]": 2,
+    "flag_force_stop=0 stop=1 move_to_stop_remain_time=0 listed=[1, 6, 11, 15]": 10
+   }
+  },
+  "steps_from_stop_to_flag_force_stop": [
+   1
+  ],
+  "units": 4
+ },
+ "p2_lateness_under_m1c": {
+  "first_late_entry_by_class": {
+   "no order since its previous entry": 1,
+   "ordered while its first hex was full, then stood at speed 0": 4,
+   "ordered with room in its first hex": 1
+  },
+  "late_entries": 81,
+  "units_with_late_entries": 6
+ },
+ "schema": "miaosuan-ps1-probe-posthoc/1",
+ "status": "POST HOC (changes no registered verdict)"
+}
