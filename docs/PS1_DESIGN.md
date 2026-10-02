@@ -448,6 +448,13 @@ here):
 Two engine sessions in total. P1's trajectory before the stop is not fresh evidence for M1c if the engine reproduces the
 Sprint 2 game.
 
+> Later finding (Sprint 4, 2026-10-02, UTC+8; this study's verdicts are unchanged): the probe was registered and run
+> (`docs/PS1_ENGINE_PROBE.md`, issue #2). In P1 the engine echoed the 4 stops without an error, set `flag_force_stop`
+> and withdrew every listed action, but kept the move paths and never executed the stops while the next hex stayed
+> full: E1 and E2 were refuted, G2 failed again, and the certificates of 11.4, which assume a stop that takes effect in
+> place, no longer describe a reachable recovery. In P2, M1c predicted every hex of a fresh game but not every timing
+> (F1 failed), so G3 failed again. The disposition became SHELVE.
+
 ### 11.11 Question 5: separating PS-1 from the split policy (outline, not a proposal)
 
 A 2 x 2 design, `{baseline-v2, split candidate} x {PS-1B off, on}`, on the same scenarios, seats and opponents, plus an
