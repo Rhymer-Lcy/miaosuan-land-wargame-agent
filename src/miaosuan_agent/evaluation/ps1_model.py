@@ -54,6 +54,7 @@ class Unit:
     stop_after_entry: bool = False  # a stop was ordered while it was moving into path[0] (rule C2)
     last_progress: int = 0  # step of the last hex change or order
     ground: bool = True
+    waiting: bool = False  # M1b: its traversal ended in front of a full hex; it stands at its hex centre (speed 0)
 
     @property
     def moving(self) -> bool:
@@ -220,6 +221,7 @@ class Simulation:
     end_step: int = 1800
     k: int = K
     blocked_by_mode: Mapping[int, FrozenSet[int]] = field(default_factory=dict)  # roadblocks per mode
+    restart_after_wait: bool = False  # M1b (protocol amendment 1) instead of M1
     events: List[Event] = field(default_factory=list)
     _flips: Dict[int, int] = field(default_factory=dict)
 
@@ -264,9 +266,10 @@ class Simulation:
         u = self.unit(uid)
         if not u.moving:
             raise ModelError(f"unit {uid} has no move to stop")
-        waiting = u.ready_at is not None and u.ready_at <= self.step  # its hex time elapsed: it waits for capacity
+        waiting = u.waiting or (u.ready_at is not None and u.ready_at <= self.step)  # in front of a full hex
         if waiting or not u.ground:
-            self._put(replace(u, path=(), ready_at=None, stopped_until=self.step + STOP_PENALTY, last_progress=self.step))
+            self._put(replace(u, path=(), ready_at=None, waiting=False, stopped_until=self.step + STOP_PENALTY,
+                              last_progress=self.step))
         else:
             self._put(replace(u, path=u.path[:1], stop_after_entry=True))
         self.events.append(Event(self.step, "stop", uid, ("at once" if waiting else "after entry",)))
@@ -280,7 +283,12 @@ class Simulation:
 
     # ---- time
     def advance(self) -> None:
-        """One engine second: flags flip; units whose hex time elapsed enter their next hex if it is not full."""
+        """One engine second: flags flip; units whose hex time elapsed enter their next hex if it is not full.
+
+        M1 (as registered): a unit that finds its next hex full keeps retrying and enters in the first step it has room.
+        M1b (amendment 1, ``restart_after_wait``): it stands at its hex centre instead (``waiting``); in the first step
+        its next hex has room it starts the traversal again and arrives a hex time later (counting that step).
+        """
         nxt = self.step + 1
         for hex_, flag in sorted(self._flips.items()):
             self.objectives[hex_] = flag
@@ -288,11 +296,20 @@ class Simulation:
         self._flips = {}
         occ = occupancy(self.units)
         for u in sorted(self.units, key=lambda x: x.uid):
-            if not (u.moving and u.ready_at is not None and u.ready_at <= nxt):
+            if not u.moving:
                 continue
             target = u.path[0]
+            if u.waiting:
+                if not (u.ground and occ.get(target, 0) >= self.k):
+                    tau = hex_time(u.speed, self.edges_by_mode[u.mode][u.hex][target])
+                    self._put(replace(u, waiting=False, ready_at=nxt + tau - 1))
+                continue
+            if not (u.ready_at is not None and u.ready_at <= nxt):
+                continue
             if u.ground and occ.get(target, 0) >= self.k:
-                continue  # waits at its hex, retries every step
+                if self.restart_after_wait:
+                    self._put(replace(u, waiting=True, ready_at=None))
+                continue  # M1: waits at its hex, retries every step
             if u.ground:
                 occ[u.hex] -= 1
                 occ[target] = occ.get(target, 0) + 1
