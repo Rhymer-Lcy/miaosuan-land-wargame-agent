@@ -3,7 +3,7 @@
 #
 # Usage: scripts/run_evaluation.sh --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab|residual516|prevalence|screen|screen-smoke
 #                                  [--evaluation NAME] [--engine-install DIR] [--workers N]
-#                                  [--purpose diagnostic --work DIR [--games FILE]]
+#                                  [--purpose diagnostic --work DIR [--games FILE] [--sample-every N]]
 #
 #   --plan gate1       the two Gate 1 games (registered scenario, mirror of the policy under test)
 #   --plan suite       every registered suite game, in registered order; refused until Gate 1 passed
@@ -40,10 +40,12 @@
 #                      sessions, a working directory per game, worker and batch recorded with every game.
 #                      A registered evaluation must run with the worker count its manifest registers
 #                      (execution.workers; a manifest without it registers 1).
-#   --purpose diagnostic --work DIR [--games FILE] [--runtime ID]
+#   --purpose diagnostic --work DIR [--games FILE] [--runtime ID] [--sample-every N]
 #                      a diagnostic run: its own work directory, optionally only the registered games
 #                      listed in FILE (kept in registered order), any worker count and any runtime
-#                      identity; the engine ledger records the sessions as diagnostic.
+#                      identity; the engine ledger records the sessions as diagnostic. --sample-every N
+#                      (serial runs of screen games only) snapshots the full state every N steps in the
+#                      step capture instead of every 200; the game's harness block records it.
 #
 # Every game runs on a runtime identity (src/miaosuan_agent/evaluation/execution.py): the manifest's
 # execution.runtime (default baseline-v1-runtime-r1, which sets no numerical-thread variable), or for a
@@ -80,11 +82,20 @@ while [[ $# -gt 0 ]]; do
         --work) WORK=$2; shift 2 ;;
         --games) GAMES_FILE=$2; shift 2 ;;
         --runtime) RUNTIME=$2; shift 2 ;;
+        --sample-every) SAMPLE_EVERY=$2; shift 2 ;;
         *) echo "unknown argument: $1" >&2; exit 2 ;;
     esac
 done
+SAMPLE_ARGS=()
+if [[ -n ${SAMPLE_EVERY:-} ]]; then
+    if [[ $PURPOSE != diagnostic || $WORKERS != 1 ]] || ! [[ $SAMPLE_EVERY =~ ^[1-9][0-9]*$ ]]; then
+        echo "--sample-every N is for serial diagnostic runs (--purpose diagnostic, --workers 1)" >&2
+        exit 2
+    fi
+    SAMPLE_ARGS=(--sample-every "$SAMPLE_EVERY")
+fi
 if [[ -z $PYTHON || -z $ARCHIVE || ( $PLAN != gate1 && $PLAN != suite && $PLAN != study && $PLAN != ab && $PLAN != residual516 && $PLAN != prevalence && $PLAN != screen && $PLAN != screen-smoke ) ]]; then
-    echo "usage: $0 --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab|residual516|prevalence|screen|screen-smoke [--evaluation NAME] [--engine-install DIR] [--workers N] [--purpose diagnostic --work DIR [--games FILE]]" >&2
+    echo "usage: $0 --python PYTHON --sdk-archive ZIP --plan gate1|suite|study|ab|residual516|prevalence|screen|screen-smoke [--evaluation NAME] [--engine-install DIR] [--workers N] [--purpose diagnostic --work DIR [--games FILE] [--sample-every N]]" >&2
     exit 2
 fi
 if ! [[ $WORKERS =~ ^[1-9][0-9]*$ ]]; then
@@ -401,7 +412,7 @@ for id in "${GAMES[@]}"; do
             timeout --signal=TERM --kill-after=30 "$TIMEOUT_SECONDS" \
             "$PYTHON" "$REPO/scripts/run_evaluation.py" --evaluation "$NAME" --work "$WORK" game --game-id "$id" \
                 --engine-install "$INSTALL" --purpose "$PURPOSE" --runtime "$RUNTIME" \
-                --harness-commit "$COMMIT" "${DIRTY_ARGS[@]}" \
+                --harness-commit "$COMMIT" "${DIRTY_ARGS[@]}" "${SAMPLE_ARGS[@]}" \
             > "$WORK/logs/$id.log" 2>&1
     )
     status=$?

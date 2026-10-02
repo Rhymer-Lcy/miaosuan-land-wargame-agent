@@ -217,6 +217,10 @@ def cmd_game(args: argparse.Namespace) -> int:
     if (diagnostic or prevalence or smoke) and any(path.exists() for path in captures):
         print(f"REFUSED: capture files of {spec.game_id} exist; captures are never overwritten", file=sys.stderr)
         return 2
+    sample_every = getattr(args, "sample_every", None)
+    if sample_every is not None and (args.purpose != "diagnostic" or sample_every < 1):
+        print("REFUSED: --sample-every is for diagnostic runs and must be a positive integer", file=sys.stderr)
+        return 2
     registered_runtime = ex.registered(manifest)["runtime"]
     runtime = getattr(args, "runtime", None) or registered_runtime
     if args.purpose == "evaluation" and runtime != registered_runtime:
@@ -257,7 +261,8 @@ def cmd_game(args: argparse.Namespace) -> int:
     if prevalence:
         observer = op.Observer(f"{spec.scenario_id} {spec.condition}", (policy_under_test,))
     if smoke:
-        observer = rd.Capture(tuple(ts.game_policies(spec)))
+        observer = rd.Capture(tuple(ts.game_policies(spec)), sample_every=sample_every or rd.SAMPLE_EVERY)
+        harness["capture"] = {"sample_every": sample_every or rd.SAMPLE_EVERY}
     try:
         with opener as handle:
             record = play(construct, FACTORIES, spec, inputs, manifest["players"], rng_probe=randomness.fingerprint,
@@ -399,6 +404,9 @@ def main() -> int:
     game.add_argument("--runtime", help="the runtime identity (default: the manifest's registered runtime); a "
                                         "registered run may not change it, and the game's numerical-thread "
                                         "variables must be exactly that runtime's")
+    game.add_argument("--sample-every", type=int,
+                      help="diagnostic screen games only: snapshot the full state every N steps in the step capture "
+                           f"(default {rd.SAMPLE_EVERY}); recorded in the game's harness block")
     game.set_defaults(func=cmd_game)
     summarize = sub.add_parser("summarize")
     summarize.add_argument("--public", type=Path, help="also write the sanitized summary here")
