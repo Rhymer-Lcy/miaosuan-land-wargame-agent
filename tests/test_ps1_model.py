@@ -119,6 +119,40 @@ class DependencyTest(unittest.TestCase):
         self.assertEqual(entry, [30])  # enters in the step its blockers leave: they are processed first (M2)
 
 
+class RestartAfterWaitTest(unittest.TestCase):
+    """M1b (protocol amendment 1): a unit that finds its next hex full waits at its hex centre and needs a full hex
+    time again once the hex has room; a unit following a column that vacates the hex in the same step never waits."""
+
+    def blocked_then_freed(self, restart):
+        units = [unit(i, 2, (3,), ready_at=30) for i in range(1, 5)] + [unit(5, 1, (2,), ready_at=10)]
+        sim = pm.Simulation(units, line(3), step=0, end_step=80, restart_after_wait=restart)
+        sim.run()
+        return sim
+
+    def test_restart_needs_a_full_hex_time(self) -> None:
+        m1 = self.blocked_then_freed(False)
+        m1b = self.blocked_then_freed(True)
+        self.assertEqual([e.step for e in m1.events if e.kind == "enter" and e.uid == 5], [30])
+        self.assertEqual([e.step for e in m1b.events if e.kind == "enter" and e.uid == 5], [49])  # 30 + 20 - 1
+
+    def test_waiting_flag_while_blocked(self) -> None:
+        sim = pm.Simulation([unit(i, 2) for i in range(1, 5)] + [unit(5, 1, (2,), ready_at=10)], line(3), step=0,
+                            end_step=15, restart_after_wait=True)
+        sim.run()
+        u = sim.unit(5)
+        self.assertEqual((u.waiting, u.ready_at, u.hex), (True, None, 1))
+        sim.order_stop(5)
+        self.assertEqual((sim.unit(5).path, sim.events[-1].detail), ((), ("at once",)))
+
+    def test_column_following_a_vacating_column_does_not_wait(self) -> None:
+        leaders = [unit(i, 2, (3, 4), ready_at=20) for i in range(1, 5)]
+        follower = [unit(5, 1, (2, 3), ready_at=20)]
+        sim = pm.Simulation(leaders + follower, line(4), step=0, end_step=45, restart_after_wait=True)
+        sim.run()
+        self.assertEqual([e.step for e in sim.events if e.kind == "enter" and e.uid == 5], [20, 40])
+        self.assertFalse(any(u.waiting for u in sim.units))
+
+
 class TimingTest(unittest.TestCase):
     def test_hex_time_by_speed_and_cost(self) -> None:
         self.assertEqual((pm.hex_time(V, 1), pm.hex_time(I, 1), pm.hex_time(V, 3), pm.hex_time(V, 1.5)), (20, 144, 60, 30))
