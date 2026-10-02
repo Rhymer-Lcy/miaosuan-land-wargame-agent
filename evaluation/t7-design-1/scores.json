@@ -1,0 +1,259 @@
+{
+ "cap_for_unknown": 2,
+ "schema": "miaosuan-t7-scores/1",
+ "scores": {
+  "A1": {
+   "C": {
+    "reason": "no H0 activation, so the exposure is unknown",
+    "score": 2,
+    "unknown": true
+   },
+   "E": {
+    "reason": "the march option (target state 1) was never listed for any unit in H0, H1 or H2; whether it is listed after a lock is unknown; documented only",
+    "score": 2,
+    "unknown": true
+   },
+   "G": {
+    "reason": "H0 activations in 0 of 8 scenarios and 0 archetypes",
+    "score": 0,
+    "unknown": false
+   },
+   "I": {
+    "reason": "a four-action sequence: lock, change state, move, unfold",
+    "score": 2,
+    "unknown": false
+   },
+   "L": {
+    "reason": "documented road speeds exceed normal speed, but none of the 9 H0 orders that reached the saving test gains time once the four 75 s transitions are counted (funnel, private)",
+    "score": 1,
+    "unknown": false
+   },
+   "M": {
+    "reason": "move_state and weapon_unfold_state are seat fields recorded by the full-step capture",
+    "score": 5,
+    "unknown": false
+   },
+   "O": {
+    "reason": "seat fields, the setup cost graph and documented speeds (class 2)",
+    "score": 4,
+    "unknown": false
+   },
+   "S": {
+    "reason": "documented: a marching unit is blocked by any stopped or non-marching unit in its next hex, and baseline-v2 moves in columns; a blocked march can freeze units",
+    "score": 1,
+    "unknown": false
+   }
+  },
+  "A2": {
+   "C": {
+    "reason": "exposure 4 of 234 H0 activations",
+    "score": 4,
+    "unknown": false
+   },
+   "E": {
+    "reason": "target state 4 is listed for idle stationary ground units in all three populations (observed); its effects are documented; acceptance and duration were never observed",
+    "score": 3,
+    "unknown": false
+   },
+   "G": {
+    "reason": "H0 activations in 8 of 8 scenarios and 4 archetypes",
+    "score": 5,
+    "unknown": false
+   },
+   "I": {
+    "reason": "one action type, only on units baseline-v2 leaves idle, replacing nothing; needs a 75-step memory against repeated orders",
+    "score": 4,
+    "unknown": false
+   },
+   "L": {
+    "reason": "documented: half observation distance against the unit and favourable direct- and indirect-fire target modifiers, effective only when an enemy observes or fires at the unit (conditional)",
+    "score": 3,
+    "unknown": false
+   },
+   "M": {
+    "reason": "change_state_remain_time and move_state are seat fields recorded by the full-step capture",
+    "score": 5,
+    "unknown": false
+   },
+   "O": {
+    "reason": "seat fields, listed options, baseline-v2's own decision on the same observation and the candidate's own memory (class 2)",
+    "score": 4,
+    "unknown": false
+   },
+   "S": {
+    "reason": "a bounded window of at most 75 s without other commands (documented); afterwards moving or firing ends concealment at no time cost (documented); no known unsafe case",
+    "score": 3,
+    "unknown": false
+   }
+  },
+  "A3": {
+   "C": {
+    "reason": "no H0 activation, so the exposure is unknown",
+    "score": 2,
+    "unknown": true
+   },
+   "E": {
+    "reason": "target state 2 is listed for stationary infantry (observed); speed and fatigue documented",
+    "score": 3,
+    "unknown": false
+   },
+   "G": {
+    "reason": "H0 activations in 0 of 8 scenarios and 0 archetypes",
+    "score": 0,
+    "unknown": false
+   },
+   "I": {
+    "reason": "a two-step sequence of one mechanism (change state, then move)",
+    "score": 3,
+    "unknown": false
+   },
+   "L": {
+    "reason": "documented double speed for at most two hexes before an objective: at most 144 steps, and no H0 order qualifies (funnel, private)",
+    "score": 1,
+    "unknown": false
+   },
+   "M": {
+    "reason": "move_state and tire are seat fields recorded by the full-step capture",
+    "score": 5,
+    "unknown": false
+   },
+   "O": {
+    "reason": "seat fields, listed options and baseline-v2's decision (class 2)",
+    "score": 4,
+    "unknown": false
+   },
+   "S": {
+    "reason": "the charge transition time is not documented; fatigue 2 stops movement (documented, recovers one level per 75 s)",
+    "score": 2,
+    "unknown": true
+   }
+  },
+  "B1": {
+   "C": {
+    "reason": "exposure 33478 of 33478 H0 activations",
+    "score": 1,
+    "unknown": false
+   },
+   "E": {
+    "reason": "a stop on a traversing unit was never issued in this project; documented only",
+    "score": 2,
+    "unknown": true
+   },
+   "G": {
+    "reason": "H0 activations in 6 of 8 scenarios and 3 archetypes",
+    "score": 4,
+    "unknown": false
+   },
+   "I": {
+    "reason": "one action type, only on moving units, to which baseline-v2 gives no action",
+    "score": 5,
+    "unknown": false
+   },
+   "L": {
+    "reason": "a stopped unit can fire after its transition (documented); a shot needs the enemy to stay in range (conditional)",
+    "score": 3,
+    "unknown": false
+   },
+   "M": {
+    "reason": "the shoot listing after the transition is a seat field change",
+    "score": 5,
+    "unknown": false
+   },
+   "O": {
+    "reason": "seat fields, enemy positions in the seat view and published weapon ranges (class 2)",
+    "score": 4,
+    "unknown": false
+   },
+   "S": {
+    "reason": "Sprint 4: a stop on a unit waiting in front of a full hex freezes it; speed above 0 excludes waiting units but not a traversing unit whose next hex fills (448 such unit-steps in the Sprint 2 split game, docs/PS1_DESIGN.md 11.2), so the known-unsafe case is excluded only by an unverified rule",
+    "score": 2,
+    "unknown": false
+   }
+  },
+  "B2": {
+   "C": {
+    "reason": "exposure 17318 of 17318 H0 activations",
+    "score": 1,
+    "unknown": false
+   },
+   "E": {
+    "reason": "a stop on a traversing unit was never issued in this project; documented only",
+    "score": 2,
+    "unknown": true
+   },
+   "G": {
+    "reason": "H0 activations in 5 of 8 scenarios and 9 archetypes",
+    "score": 3,
+    "unknown": false
+   },
+   "I": {
+    "reason": "one action type, only on moving units, to which baseline-v2 gives no action",
+    "score": 5,
+    "unknown": false
+   },
+   "L": {
+    "reason": "halting outside a seen enemy's documented observation distance has no documented effect on losses, occupation or fire; the benefit is hypothesised",
+    "score": 2,
+    "unknown": false
+   },
+   "M": {
+    "reason": "whether the unit was observed needs the opposing view (the all-seeing capture records it)",
+    "score": 4,
+    "unknown": false
+   },
+   "O": {
+    "reason": "seat fields, enemy positions in the seat view and published observation distances (class 2)",
+    "score": 4,
+    "unknown": false
+   },
+   "S": {
+    "reason": "the same known-unsafe stop case as B1, excluded only by an unverified rule",
+    "score": 2,
+    "unknown": false
+   }
+  },
+  "C0": {
+   "C": {
+    "reason": "no H0 activation, so the exposure is unknown",
+    "score": 2,
+    "unknown": true
+   },
+   "E": {
+    "reason": "action 11 is listed for stationary unfolded vehicles (observed); its effect (no fire until unfolded) is documented",
+    "score": 3,
+    "unknown": false
+   },
+   "G": {
+    "reason": "H0 activations in 0 of 8 scenarios and 0 archetypes",
+    "score": 0,
+    "unknown": false
+   },
+   "I": {
+    "reason": "one action type on idle units",
+    "score": 5,
+    "unknown": false
+   },
+   "L": {
+    "reason": "no documented benefit of locking without march",
+    "score": 0,
+    "unknown": false
+   },
+   "M": {
+    "reason": "weapon_unfold_state is a seat field recorded by the full-step capture",
+    "score": 5,
+    "unknown": false
+   },
+   "O": {
+    "reason": "seat fields only",
+    "score": 5,
+    "unknown": false
+   },
+   "S": {
+    "reason": "a bounded window: unfolding takes 75 s (documented)",
+    "score": 3,
+    "unknown": false
+   }
+  }
+ },
+ "study_id": "t7-design-1"
+}

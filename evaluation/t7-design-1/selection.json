@@ -1,0 +1,192 @@
+{
+ "base": {
+  "A1": {
+   "eligible": false,
+   "failed_mandatory": [
+    "S"
+   ],
+   "weighted": 2.0
+  },
+  "A2": {
+   "eligible": true,
+   "failed_mandatory": [],
+   "weighted": 3.85
+  },
+  "A3": {
+   "eligible": false,
+   "failed_mandatory": [
+    "S"
+   ],
+   "weighted": 2.3
+  },
+  "B1": {
+   "eligible": false,
+   "failed_mandatory": [
+    "S"
+   ],
+   "weighted": 3.3
+  },
+  "B2": {
+   "eligible": false,
+   "failed_mandatory": [
+    "S"
+   ],
+   "weighted": 2.85
+  },
+  "C0": {
+   "eligible": true,
+   "failed_mandatory": [],
+   "weighted": 2.55
+  }
+ },
+ "schema": "miaosuan-t7-selection/1",
+ "selected": "A2",
+ "sensitivity": {
+  "fragile": false,
+  "runs": [
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "equal weights"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "C +0.05"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "C -0.05"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "E +0.05"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "E -0.05"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "G +0.05"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "G -0.05"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "I +0.05"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "I -0.05"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "L +0.05"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "L -0.05"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "M +0.05"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "M -0.05"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "O +0.05"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "O -0.05"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "S +0.05"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "S -0.05"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "without C"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "without E"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "without G"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "without I"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "without L"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "without M"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "without O"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "without S"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "leverage 0.40"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "unknown cells at 0"
+   },
+   {
+    "highest_overall": "A2",
+    "selected": "A2",
+    "variant": "unknown cells at 5"
+   }
+  ],
+  "selected_first_in": 28,
+  "variants": 28
+ },
+ "study_id": "t7-design-1"
+}
