@@ -129,6 +129,10 @@ class FidelityTest(unittest.TestCase):
             self.assertTrue(f["F1_pass"] and f["F2_pass"], (restart, f))
             self.assertEqual(f["F2"]["orders"], {"recorded": 1, "simulated": 1, "recorded_matched": 1})
             self.assertEqual(f["F2"]["occupation_steps"], {"recorded": [41], "simulated": [41]})
+        f = self.s.fidelity(cap, COSTS, recon, True, entry_wait=True)  # post-hoc M1c reaches the simulator
+        self.assertEqual((f["model"], f["F1_pass"]), ("M1c", True))
+        self.assertTrue(self.s.start_simulation(cap, 1, COSTS, recon, True, entry_wait=True).wait_at_entry)
+        self.assertFalse(self.s.start_simulation(cap, 1, COSTS, recon, True).wait_at_entry)
 
     def test_an_offset_of_two_steps_fails_fidelity(self) -> None:
         cap = self.s.Capture(*game(late=2))  # the second hex is entered two steps later than the model predicts
