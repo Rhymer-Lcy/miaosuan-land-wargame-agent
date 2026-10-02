@@ -212,6 +212,11 @@ class PoolPredicates(unittest.TestCase):
         self.assertIsNone(tc.b1(waiting, {10: None}, obs([waiting, near], {1: {10: None}}), OWN))
         self.assertIsNone(tc.b1(dict(moving, A1=1), {10: None}, raw_near, OWN))
         self.assertIsNone(tc.b1(moving, {1: None}, raw_near, OWN))
+        at_range = unit(9, 313, color=ENEMY, unit_type=1)
+        beyond = unit(9, 314, color=ENEMY, unit_type=1)
+        self.assertEqual((tc.hex_distance(303, 313), tc.hex_distance(303, 314)), (10, 11))
+        self.assertEqual(tc.b1(moving, {10: None}, obs([moving, at_range], {}), OWN)["distance"], 10)
+        self.assertIsNone(tc.b1(moving, {10: None}, obs([moving, beyond], {}), OWN))
         unknown = dict(moving, carry_weapon_ids=[5])
         self.assertIsNone(tc.b1(unknown, {10: None}, obs([unknown, near], {1: {10: None}}), OWN))
 
@@ -225,6 +230,8 @@ class PoolPredicates(unittest.TestCase):
         self.assertEqual(tc.hex_distance(303, 328), 25)
         self.assertEqual(tc.hex_distance(303, 329), 26)
         self.assertEqual(record, {"next": 328, "enemy": 9})
+        inside = unit(1, 328, stop=0, path=[327], speed=0.05)  # already at the observation distance
+        self.assertIsNone(tc.b2(inside, {10: None}, obs([inside, far], {}), OWN))
 
     def test_a1_documented_saving(self):
         rows = cols = 10
@@ -259,6 +266,8 @@ class PoolPredicates(unittest.TestCase):
         valid = {6: [{"target_state": 2}]}
         self.assertEqual(tc.a3(inf, valid, {"type": 1, "move_path": [504, 505]}, raw, OWN), {"hexes": 2})
         self.assertIsNone(tc.a3(inf, valid, {"type": 1, "move_path": [504, 505, 506]}, raw, OWN))
+        far_inf = unit(1, 502, unit_type=1, sub_type=2)
+        self.assertIsNone(tc.a3(far_inf, valid, {"type": 1, "move_path": [503, 504, 505]}, obs([far_inf], {}), OWN))
         self.assertIsNone(tc.a3(inf, valid, {"type": 1, "move_path": [504]}, raw, OWN))
         self.assertIsNone(tc.a3(dict(inf, tire=1), valid, {"type": 1, "move_path": [504, 505]}, raw, OWN))
 
