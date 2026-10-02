@@ -1,0 +1,362 @@
+{
+ "killed": 55,
+ "mutations": [
+  {
+   "file": "src/miaosuan_agent/experiments/t7_concealment.py",
+   "killed": true,
+   "mutation": "baseline digest of the composite trace",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_concealment.py",
+   "killed": true,
+   "mutation": "added orders not recorded",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_concealment.py",
+   "killed": true,
+   "mutation": "emitted list from the baseline only",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_concealment.py",
+   "killed": true,
+   "mutation": "fallback keeps no baseline action",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t7_concealment.py",
+   "killed": true,
+   "mutation": "errors not recorded",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe.py",
+   "killed": true,
+   "mutation": "copies taken after the step",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe.py",
+   "killed": true,
+   "mutation": "no snapshot at decision 0",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe.py",
+   "killed": true,
+   "mutation": "no final state",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe.py",
+   "killed": true,
+   "mutation": "t7 blocks dropped",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/game.py",
+   "killed": true,
+   "mutation": "pre-execution copy not copied",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_metrics.py",
+   "killed": true,
+   "mutation": "concealed ignores the timer",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_metrics.py",
+   "killed": true,
+   "mutation": "transition reads one timer only",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_metrics.py",
+   "killed": true,
+   "mutation": "fresh feedback keeps repeats",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_metrics.py",
+   "killed": true,
+   "mutation": "echo match ignores target_state",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_metrics.py",
+   "killed": false,
+   "mutation": "three-way: record count unchecked",
+   "reason_if_surviving": "equivalent: the per-seat comparison of the pre-execution copies by type with the record's actions_by_type, which follows, enforces the same equality"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_metrics.py",
+   "killed": true,
+   "mutation": "three-way: missing blocks tolerated",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_metrics.py",
+   "killed": true,
+   "mutation": "channels: listings not compared",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_metrics.py",
+   "killed": true,
+   "mutation": "capture: missing snapshots tolerated",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_metrics.py",
+   "killed": true,
+   "mutation": "record: dirty harness tolerated",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "window one step longer",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "completion on move_state alone",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "any timer start accepted",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "censoring never applies",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "suppression not an interrupter",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "firing not an interrupter",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "reconstruction unchecked",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "E2: anomalies not refuting",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "E1: missing echoes accepted",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "S2: flag_force_stop ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "S2: transient threshold zero",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "E3a: transient threshold two",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "E3a: weapon lock not required",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "E3b: exit not required",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "E5: executed counted as deferred",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "E5: suppression always consistent",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "S3: state digests unchecked",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "S3: later actions unchecked",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "E6: positions unchecked",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "S4: refusal classes unchecked",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "E4: channels not compared",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "E4: refutation needs all listed",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "E4: matched band unchecked",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "E4: matched minimum unchecked",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "E4: concealed units as control",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_visibility.py",
+   "killed": true,
+   "mutation": "no concealment halving band",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_visibility.py",
+   "killed": true,
+   "mutation": "terrain halving ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_visibility.py",
+   "killed": true,
+   "mutation": "aerial observers on the ground mode",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_visibility.py",
+   "killed": true,
+   "mutation": "lower vehicle exception dropped",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_visibility.py",
+   "killed": true,
+   "mutation": "boundary folded into the band",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "gate: S3 not required",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "stop branch: S4 not required",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "disposition: E4a refutation not shelving",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_probe_endpoints.py",
+   "killed": true,
+   "mutation": "pooling: inconclusive hidden",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/t7_probe_analysis.py",
+   "killed": true,
+   "mutation": "pool predicate not compared",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/t7_probe_analysis.py",
+   "killed": true,
+   "mutation": "I1 problems tolerated",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/t7_probe_analysis.py",
+   "killed": true,
+   "mutation": "re-decided actions not compared",
+   "reason_if_surviving": null
+  }
+ ],
+ "schema": "miaosuan-t7-probe-mutation/1",
+ "sources_sha256": {
+  "scripts/t7_probe_analysis.py": "380906c237372aa5dd539bbfbdc9b78779bd6b2f04c928c35464d90e4af4cee8",
+  "src/miaosuan_agent/evaluation/game.py": "50a1c5a2b672d418941cbfb90ac90c11625102c18ce00474e22c379114b025a2",
+  "src/miaosuan_agent/evaluation/t7_probe.py": "5f030205855af4074075540de42b6a693738e2b464a1d48450c69772f25ecfd5",
+  "src/miaosuan_agent/evaluation/t7_probe_endpoints.py": "965a12a7851bac10f8b9b4e835cf105731a10436775bfb6439212bf2c1383f31",
+  "src/miaosuan_agent/evaluation/t7_probe_metrics.py": "e044628b4d244ab87776a754f80f1a6206bfb860385025643f4452d9ca3ea989",
+  "src/miaosuan_agent/evaluation/t7_visibility.py": "add2b446ec8ff847fd941a8a0952971200858db2305cdbdded0b6263f42e27ff",
+  "src/miaosuan_agent/experiments/t7_concealment.py": "9ab52f714f079f942ea3c17e4b701ec9d8824548f7583ad997ab656d10818c12"
+ },
+ "tests": [
+  "tests.test_t7_concealment",
+  "tests.test_t7_visibility",
+  "tests.test_t7_probe_analysis"
+ ],
+ "tests_sha256": {
+  "tests/test_t7_concealment.py": "81e42968deb9228a09b4cc12b0b91616612edc149afa64e12fb2550de83deaaa",
+  "tests/test_t7_probe_analysis.py": "399128478c8c8289ce20b733bdbd9974607d9f346ed766312c62c0e71dfb6cf2",
+  "tests/test_t7_visibility.py": "c101a9a3ed9fefe52a4e7e4f73498159154ef45c05ef36fecba4e7b2cc60f0c8"
+ },
+ "total": 56
+}

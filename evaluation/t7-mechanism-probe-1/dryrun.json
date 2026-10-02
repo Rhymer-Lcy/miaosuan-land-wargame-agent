@@ -1,0 +1,176 @@
+{
+ "E4 machinery on the H0 game of 2120531121": {
+  "E4a": {
+   "control_valid_in_every_game": true,
+   "discriminating_target_steps": 0,
+   "listed": 0,
+   "verdict": "NOT TESTED"
+  },
+  "E4b": {
+   "expected_listed_target_steps": 0,
+   "unlisted": 0,
+   "verdict": "NOT TESTED"
+  },
+  "classes": {
+   "excluded: launched unit": {
+    "listed": 3208,
+    "unlisted": 13322
+   },
+   "excluded: transition or other movement state": {
+    "listed": 800
+   }
+  },
+  "control": {
+   "agree": 59528,
+   "agreement": 1.0,
+   "seen_listed": 35283,
+   "seen_unlisted": 0,
+   "target_steps": 59528,
+   "unseen_listed": 0,
+   "unseen_unlisted": 24245
+  },
+  "control_valid": true,
+  "distinct_pairs": {},
+  "distinct_targets": {},
+  "episodes": {},
+  "matched": {
+   "listed": 2357,
+   "share_listed": 1.0,
+   "target_steps": 2357
+  }
+ },
+ "P-A analysis on the reference game": {
+  "E1": {
+   "orders": 0,
+   "verdict": "NOT TESTED"
+  },
+  "E2": {
+   "durations": {},
+   "first_move_state_4_offsets": {},
+   "orders": 0,
+   "outcomes": {},
+   "timer_start_offsets": {},
+   "verdict": "NOT TESTED"
+  },
+  "E3a": {
+   "completed_orders": 0,
+   "losses": [],
+   "transients": [],
+   "verdict": "NOT TESTED"
+  },
+  "E3b": {
+   "by_type": {},
+   "consistent": 0,
+   "events": 0,
+   "excluded": 0,
+   "inconsistent": 0,
+   "matched_comparison_unconcealed_moves": {
+    "started at the next snapshot": 6
+   },
+   "other_types_on_concealed_units": {},
+   "verdict": "NOT TESTED"
+  },
+  "E5": {
+   "by_event": {},
+   "events": 0,
+   "verdict": "NOT TESTED"
+  },
+  "E6": {
+   "verdict": "NOT TESTED"
+  },
+  "S1": {
+   "orders": 0,
+   "orders_with_error_code": 0,
+   "verdict": "PASS"
+  },
+  "S2": {
+   "transients": [],
+   "units": 0,
+   "verdict": "NOT TESTED",
+   "violations": []
+  },
+  "S3": {
+   "after_first_order": [],
+   "baseline_v2_trace_digests_after_first_order": null,
+   "compared": {
+    "baseline-v2 trace digests": 1801,
+    "decisions": 1801,
+    "observation digests": 1800,
+    "state digests": 1801
+   },
+   "first_order_k": null,
+   "premise_problems": [
+    "no concealment order was issued"
+   ],
+   "s3a_premise": false,
+   "verdict": "INCONCLUSIVE"
+  },
+  "integrity": {
+   "I1": [
+    "policy source of baseline-v2-candidate-shoot-target-reservation is not the registered one",
+    "the record does not pin every registered policy it played",
+    "capture settings {'sample_every': 1}"
+   ],
+   "I2": [
+    "no snapshot at 1 decisions (first [0])",
+    "snapshot 1 lacks a seat",
+    "no final state"
+   ],
+   "I3": {
+    "missing_blocks": 0,
+    "other_change_state": 0,
+    "pre_execution": 0,
+    "record": 0,
+    "rewritten_in_place": 0,
+    "trace_blocks": 0
+   },
+   "I4": {
+    "unit_snapshots_compared": 0
+   },
+   "I5": {
+    "pool_predicate_orders": 0
+   },
+   "I6": {
+    "orders_compared": 0
+   },
+   "ok": false,
+   "relaxed_for_dry_run": [
+    "I1",
+    "I2",
+    "I5"
+   ]
+  },
+  "primary": {
+   "censored": 0,
+   "criterion_100_percent": false,
+   "failed": 0,
+   "interrupted": 0,
+   "orders": 0,
+   "reached_within_76": 0,
+   "share": null
+  }
+ },
+ "part": "dry run on real records",
+ "probe_id": "t7-mechanism-probe-1",
+ "reference determinism against the Sprint 1 repetitions": {
+  "x01": {
+   "final_scores_equal": true,
+   "state_digests_equal": true,
+   "steps": 1801,
+   "trace_digests_equal": true
+  },
+  "x02": {
+   "final_scores_equal": true,
+   "state_digests_equal": true,
+   "steps": 1801,
+   "trace_digests_equal": true
+  },
+  "x03": {
+   "final_scores_equal": true,
+   "state_digests_equal": true,
+   "steps": 1801,
+   "trace_digests_equal": true
+  }
+ },
+ "schema": "miaosuan-t7-probe-analysis/1"
+}

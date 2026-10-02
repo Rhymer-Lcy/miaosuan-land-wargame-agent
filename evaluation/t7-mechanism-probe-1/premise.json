@@ -1,0 +1,22 @@
+{
+ "baseline_v2_actions_equal_to_recorded": 1800,
+ "baseline_v2_trace_digest_equal_to_recorded": 1800,
+ "decisions": 1800,
+ "first_order_decisions": [
+  {
+   "k": 717,
+   "units": 2
+  },
+  {
+   "k": 736,
+   "units": 2
+  }
+ ],
+ "note": "the recorded trajectory never contained a concealed unit, so after the first order the replay is not a prediction of the probe game; only the first two order decisions are registered",
+ "orders_on_the_recorded_trajectory": 60,
+ "part": "premise",
+ "probe_id": "t7-mechanism-probe-1",
+ "reference": "1910631192.C3.b.x01",
+ "schema": "miaosuan-t7-probe-analysis/1",
+ "units_on_the_recorded_trajectory": 4
+}

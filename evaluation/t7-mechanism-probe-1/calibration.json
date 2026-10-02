@@ -1,0 +1,105 @@
+{
+ "agree": 258964,
+ "agreement": 1.0,
+ "launched_units": {
+  "listed": 14858,
+  "model disagrees": 100,
+  "model disagrees, launcher listed": 100,
+  "unlisted": 49466
+ },
+ "model": "src/miaosuan_agent/evaluation/t7_visibility.py (unconcealed prediction, terrain halving)",
+ "part": "calibration",
+ "probe_id": "t7-mechanism-probe-1",
+ "scenarios": {
+  "1910631192": {
+   "agree": 9762,
+   "counts": {
+    "launched: listed": 76,
+    "launched: unlisted": 4718,
+    "predicted by ground observers: agree": 666,
+    "predicted by none observers: agree": 9096
+   },
+   "target_steps": 9762
+  },
+  "1930331196": {
+   "agree": 70084,
+   "counts": {
+    "launched: listed": 4790,
+    "launched: unlisted": 10526,
+    "matched band: listed": 189,
+    "predicted by aerial observers: agree": 16031,
+    "predicted by ground observers: agree": 595,
+    "predicted by none observers: agree": 53458
+   },
+   "target_steps": 70084
+  },
+  "2010131194": {
+   "agree": 4041,
+   "counts": {
+    "matched band: listed": 20,
+    "predicted by ground observers: agree": 411,
+    "predicted by none observers: agree": 3630
+   },
+   "target_steps": 4041
+  },
+  "2010211129": {
+   "agree": 6225,
+   "counts": {
+    "launched: listed": 129,
+    "launched: unlisted": 4371,
+    "predicted by ground observers: agree": 593,
+    "predicted by none observers: agree": 5632
+   },
+   "target_steps": 6225
+  },
+  "201033019601": {
+   "agree": 1356,
+   "counts": {
+    "predicted by ground observers: agree": 192,
+    "predicted by none observers: agree": 1164
+   },
+   "target_steps": 1356
+  },
+  "2010431153": {
+   "agree": 7999,
+   "counts": {
+    "launched: listed": 291,
+    "launched: unlisted": 3047,
+    "matched band: listed": 510,
+    "predicted by ground observers: agree": 3315,
+    "predicted by none observers: agree": 4684
+   },
+   "target_steps": 7999
+  },
+  "2120531121": {
+   "agree": 60328,
+   "counts": {
+    "launched: listed": 3208,
+    "launched: unlisted": 13322,
+    "matched band: listed": 2357,
+    "predicted by aerial observers: agree": 35909,
+    "predicted by ground observers: agree": 174,
+    "predicted by none observers: agree": 24245
+   },
+   "target_steps": 60328
+  },
+  "2130511121": {
+   "agree": 99169,
+   "counts": {
+    "12.5-hex boundary in cover: unlisted": 238,
+    "launched: listed": 6364,
+    "launched: model disagrees": 100,
+    "launched: model disagrees, launcher listed": 100,
+    "launched: unlisted": 13482,
+    "matched band: listed": 7057,
+    "predicted by aerial observers: agree": 29609,
+    "predicted by ground observers: agree": 18256,
+    "predicted by none observers: agree": 51304
+   },
+   "target_steps": 99169
+  }
+ },
+ "schema": "miaosuan-t7-probe-analysis/1",
+ "status": "registered before the first probe session; population H0 (replay corpus), no unit concealed",
+ "target_steps": 258964
+}

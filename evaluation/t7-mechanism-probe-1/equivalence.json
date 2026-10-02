@@ -1,0 +1,37 @@
+{
+ "part": "equivalence",
+ "populations": {
+  "H0": {
+   "baseline trace digest equal to baseline-v2's": 33696,
+   "candidate actions equal to the shadow's": 33696,
+   "candidate actions start with baseline-v2's": 33696,
+   "candidate added equal to the shadow's": 33696,
+   "candidate skip reasons equal to the shadow's": 33696,
+   "decisions": 33696,
+   "no t7 error": 33696,
+   "orders": 234
+  },
+  "H1": {
+   "baseline trace digest equal to baseline-v2's": 1800,
+   "candidate actions equal to the shadow's": 1800,
+   "candidate actions start with baseline-v2's": 1800,
+   "candidate added equal to the shadow's": 1800,
+   "candidate skip reasons equal to the shadow's": 1800,
+   "decisions": 1800,
+   "no t7 error": 1800,
+   "orders": 60
+  },
+  "H2": {
+   "baseline trace digest equal to baseline-v2's": 4684,
+   "candidate actions equal to the shadow's": 4684,
+   "candidate actions start with baseline-v2's": 4684,
+   "candidate added equal to the shadow's": 4684,
+   "candidate skip reasons equal to the shadow's": 4684,
+   "decisions": 4684,
+   "no t7 error": 4684,
+   "orders": 429
+  }
+ },
+ "probe_id": "t7-mechanism-probe-1",
+ "schema": "miaosuan-t7-probe-analysis/1"
+}
