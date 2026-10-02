@@ -467,3 +467,67 @@ Limitations, stated now: the benefit is conditional on the opponent observing or
 inert control never does; terrain halving and its stacking with concealment are undocumented; H1 and H2 have one and
 two games against an inert opponent, so only H0 shows a benefit witness; the historical outcomes say nothing about the
 effect, because the recorded trajectories never contained a concealed unit.
+
+## 15. Offline checks of the selected mechanism (WP5)
+
+Sections 13 and 14 were pushed in `4f6fd1c` at 2026-10-02T21:19:48+08:00, before the shadow existed. The shadow is
+`src/miaosuan_agent/experiments/t7_idle_concealment.py` (not registered, not packaged, not in the policy registry); the
+checks are `scripts/t7_shadow.py` (`evaluation/t7-design-1/shadow.json`). For every recorded decision the shadow
+decided on the seat observation while an independent `baseline-v2` instance decided on the same observation.
+
+| Check | H0 | H1 | H2 |
+|---|---|---|---|
+| Decisions | 33,696 | 1,800 | 4,684 |
+| Concealment orders (activations) | 234 | 60 | 429 |
+| Units ordered | 49 | 4 | 16 |
+| Orders not found by the independent pool predicate, and the reverse | 0, 0 | 0, 0 | 0, 0 |
+| Decisions where `baseline-v2`'s actions and trace equal the independent instance's | 33,696 | 1,800 | 4,684 |
+| Added orders with the option listed and the exact key set (checked on the raw listing) | 234 | 60 | 429 |
+| Decisions with a unit given two actions; orders to a unit `baseline-v2` acted on; orders outside play | 0; 0; 0 | 0; 0; 0 | 0; 0; 0 |
+| Recorded play actions reproduced by `baseline-v2` | not applicable | 1,800 of 1,800 (trace too) | 4,680 of 4,680 |
+
+H1 decided a second time, and once with operators, options and `valid_actions` shuffled, gave identical decisions;
+deciding every H1 observation twice in a row added no order the second time. No observation in any population had a
+missing or malformed field the trigger reads; the fail-closed paths are exercised by the synthetic tests. The shadow's
+median added decision time was 0.068 ms in H0 (99th percentile 1.296 ms against 1.238 ms for `baseline-v2` alone) and
+its memory never held more than 16 entries. In H0 the most frequent reasons not to order a unit were: change state not
+listed (175,256 unit-decisions), an enemy seen (127,250), not a ground unit (55,662), ordered within the repeat window
+(14,765), in a transition (3,075) and concealment not listed (1,932).
+
+Tests: `tests/test_t7_audit.py` (18), `tests/test_t7_shadow.py` (13), `tests/test_t7_analysis.py` (9) and
+`tests/test_t7_results.py` (6), public; `tests/test_real_t7_audit.py` (6), private, including byte-identical rebuilds
+of the audit, candidate and post-hoc outputs. Mutation testing (`scripts/mutate_t7.py`, `mutation.json`): 55 of 55
+mutations killed. The first run killed 49 of 55; four survivors were test gaps (boundary cases of B1's range, B2's
+observation band and A3's two-hex limit, and the sensitivity variant's treatment of unknown cells), one was the shadow's
+own check, which its trigger makes unreachable (now tested with the trigger disabled), and one mutation was written
+equivalent to the original (an odd-row offset expression rewritten into an identical one) and was replaced.
+
+## 16. Gates and disposition
+
+`scripts/t7_gates.py` applies section 11 to the outputs (`gates.json`, every verdict with its evidence):
+
+| Gate | Verdict | Evidence |
+|---|---|---|
+| G1 evidence integrity | PASS | pinned and recorded digests, census reconciled exactly, cross-count agreement, seat and all-seeing listings identical, P1 reproduction, issued-action counts consistent, real-record test before use, byte-identical rebuilds |
+| G2 observable and supported mechanism | PASS | every trigger input is a seat field, the frozen `baseline-v2` decision or the candidate's memory; option 4 listed for the population (A-1, A-2) and present for every order; effects documented (A-7, A-8); unobserved behaviour named as probe endpoints E1 to E6 (section 14) |
+| G3 safety and non-interference | PASS | section 15: no stop of any kind, units in transitions and suppressed units refused, `baseline-v2` unchanged on every decision, no unit with two actions, determinism, 55 of 55 mutations killed |
+| G4 actionable opportunity | PASS | activations in 8 of 8 H0 scenarios; benefit witness in 39 activations of 16 units |
+| G5 testability | PASS | `docs/T7_SCREEN_PROPOSAL.md`: one mechanism added to `baseline-v2`, measured from captured fields by existing tooling, 3 games fixed, stopping rules, no simulation |
+
+**Disposition: `READY_FOR_MECHANISM_PROBE`.** The proposal is for the owner's approval; it is not a registration, and
+no engine session was used in this sprint (ledger still ends at 2461). In the hypothesis register the mechanism enters
+as an `IDEA`: offline legality and non-interference are established, its engine effects are not.
+
+## 17. Limits
+
+* No T7 transition has been observed on engine 4.1.0. Every effect the mechanism relies on (acceptance, the 75 s
+  transition, retained listings, free exit, halved observation distance) is documented, not measured.
+* The benefit is conditional on an opponent that observes or fires; the inert control offers neither, and in H1 and H2
+  no inert unit saw an activated unit after its transition window.
+* The H0 trigger ran on `baseline-v2` decisions reconstructed on `baseline-v0` trajectories; exposure and witnesses are
+  read from those trajectories, which a concealed unit would have changed.
+* The derived observation share (section 13.5) ignores terrain halving and assumes the opponent as recorded.
+* March, charge, stop-based tactics and weapon locking were not selected; their evidence and the reasons are in 13.4
+  and 13.5. A stop on a traversing unit remains unobserved; the smallest probe would order one stop on a unit with
+  `speed` above 0 whose next hex is not full, in a deterministic game, and record the hex completion, the transition
+  length and the re-listing of movement.
