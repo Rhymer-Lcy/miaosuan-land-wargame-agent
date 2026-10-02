@@ -82,6 +82,10 @@ the seat's own and obey orders; the stacking limit voids a split silently.
 | Stop (action 10) is listed only for units with a move path; weapon lock (action 11) only for stationary, unfolded, unsuppressed vehicles; weapon unfold (action 12) never, since no unit ever locked | Sprint 5 audit |
 | At the natural end of a path a ground unit serves 75 steps before `stop` is 1 (every settled arrival); movement is listed again at once; non-tank units list a shoot option only after those 75 steps | Sprint 5 audit |
 | No frozen policy has ever issued a change-state, lock or unfold order, so no movement-state transition has been observed on engine 4.1.0; the documented unit field `target_state` is absent from every record | Sprint 5 audit of 1,284 game records and the observations |
+| A concealment order (action 6, `target_state` 4) from an idle, stationary ground vehicle is echoed without an error, `change_state_remain_time` is positive in the next observation, and the unit is concealed (`move_state` 4, timer 0) exactly 75 steps after the order: 16 of 16 orders (tanks, infantry fighting vehicles, artillery) | Sprint 6 probe, three games (`docs/T7_MECHANISM_PROBE.md`) |
+| A concealed unit keeps its listed actions (types 1, 6, 11 for tanks and infantry fighting vehicles; 6, 8, 11 for artillery), with change-state options {0, 5}; no lock; in a deterministic game nothing else changes (positions, flags, scores, `baseline-v2`'s actions) | Sprint 6 probe |
+| A concealed artillery unit is not listed by opposing ground vehicles between half and the full documented distance (two games, one unit each); concealed vehicles with a helicopter between those distances were always listed (post hoc, outside the verdict) | Sprint 6 probe, P-B1 and P-B2 |
+| Unknown: whether a concealed unit's later move or shot is accepted and ends concealment at once; what an order or a suppression does during the transition; concealed infantry; aerial observers | no such event in the three probe games |
 
 ## Selection rubric (committed before scoring)
 
@@ -121,7 +125,7 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
 | T1 | deployment disaggregation: split eligible ground operators during deployment | `SHELVED` (2026-10-02): screen 1 REVISE BEFORE CONFIRMATION ([issue #1](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/1), `docs/SCREEN_DEPLOYMENT_SPLIT.md`); the diagnosed loss is a stacking-limit block that only a play-stage change removes (`docs/T1R_DIAGNOSIS.md`, `docs/T1R_SPEC.md`, gate G6 failed) |
 | T1-r | T1 revised: probe once and stop on code 103, skip splits the stacking limit voids | specified, not implemented; the play-stage remedy it waited for (PS-1) is shelved |
 | PS-1 | capacity-aware movement on `baseline-v2`'s play stage; selected form PS-1B, stalled-movement recovery: stop the deadlocked group that can back off, re-order it after the transition | `SHELVED` (2026-10-02): design study (Sprint 3, `docs/PS1_DESIGN.md`), then the registered engine probe ([issue #2](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/2), `docs/PS1_ENGINE_PROBE.md`): the stop on a waiting unit is deferred indefinitely (E1, E2 refuted, G2 FAIL) and the movement model failed its prospective fidelity test (G3 FAIL); disposition SHELVE |
-| T7-C | concealment of idle stationary units: own ground units that `baseline-v2` leaves idle, stationary and unsuppressed while no enemy is seen are ordered into concealment (`docs/T7_DESIGN.md`, section 14) | `IDEA` (2026-10-02): design study disposition READY_FOR_MECHANISM_PROBE; offline shadow equal to `baseline-v2` wherever it does not fire; engine effects documented, not observed; three-game mechanism probe proposed (`docs/T7_SCREEN_PROPOSAL.md`), not approved |
+| T7-C | concealment of idle stationary units: own ground units that `baseline-v2` leaves idle, stationary and unsuppressed while no enemy is seen are ordered into concealment (`docs/T7_DESIGN.md`, section 14) | `IDEA` (2026-10-03): the registered three-game mechanism probe ([issue #3](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/3), `docs/T7_MECHANISM_PROBE.md`) supports acceptance, the 75-step transition (16 of 16), retained listings, non-interference and the halved observation distance for ground observers; exit by a real move or shot is untested; disposition NEEDS_TARGETED_PROBE |
 | T2 to T9 | the other families above (T7's march, charge, stop and lock mechanisms: not selected, `docs/T7_DESIGN.md` 13.5) | `IDEA` |
 
 ## Roadmap
@@ -144,7 +148,12 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
    tactics fail on Sprint 4's frozen-unit fact. One mechanism survives: concealment of idle stationary units, selected
    in all 28 rubric variants, with an offline shadow that leaves `baseline-v2` unchanged. Disposition
    READY_FOR_MECHANISM_PROBE; the three-game probe (`docs/T7_SCREEN_PROPOSAL.md`) awaits the owner's approval.
-5. **T9 intent and task allocation**, the largest lever and the hardest to isolate; T4 (the idle artillery) follows
+5. **Done (Sprint 6)**: the registered T7 mechanism probe, three sessions (`docs/T7_MECHANISM_PROBE.md`). Every
+   concealment order was accepted and completed in exactly 75 steps; concealed units kept their listings, nothing else
+   changed in the deterministic game, and a concealed unit was not seen by ground observers beyond half the distance.
+   No game produced a concealed unit that `baseline-v2` later moved or fired, so exit from concealment (E3b) is
+   untested; disposition NEEDS_TARGETED_PROBE. No tactical A/B is proposed until that behaviour is observed.
+6. **T9 intent and task allocation**, the largest lever and the hardest to isolate; T4 (the idle artillery) follows
    by the rubric.
 
 A tactic that earns ADVANCE gets a confirmatory design sized from its screen's noise; one that does not is recorded
@@ -155,6 +164,7 @@ screen supports.
 
 | Date (UTC+8) | Where | What happened | Consequence |
 |---|---|---|---|
+| 2026-10-03 | T7 mechanism probe | the proposal and the sprint brief said the shadow's first orders were at decision 717 to 4 units; the replay gives 2 units at 717 and 2 at 736 | corrected by a dated note in the proposal before registration; the registration names both decisions, and the probe game matched them |
 | 2026-10-02 | PS-1 engine probe | the registration commit's protocol document used two phrases the documentation policy reserves for the retired engine installation, so the full suite at that commit fails two policy subtests (the probe's own suites passed; the document was untracked when the full suite last ran) | reworded after the games; the registered rules, in the manifest and the issue, are unchanged |
 | 2026-10-02 | PS-1 engine probe | the registered arbitration (T-d) and re-wait (T-c) rules judged contenders by the lowest indices and end-of-step occupancy, ignoring units leaving the hex in the same step; they refuted claims that an order-aware reading of the same events supports | the registered REFUTED verdicts stand; the order-aware reading is reported as post hoc only (`docs/PS1_ENGINE_PROBE.md`, section 16) |
 | 2026-10-02 | PS-1 design study | the registered movement model failed its fidelity check on the split game; amendment 1 replaced it before any counterfactual was computed, and the replacement then failed fidelity and its independent check too | G3 fails as registered; a third, post-hoc model is reported only as a hypothesis for the probe (`docs/PS1_DESIGN.md`) |
