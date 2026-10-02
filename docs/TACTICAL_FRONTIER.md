@@ -58,6 +58,18 @@ T1's open risks were then measured by its screen (`docs/SCREEN_DEPLOYMENT_SPLIT.
 splits were accepted in 3 of the 8 frozen scenarios and refused with code 103 in the other 5; the new operators are
 the seat's own and obey orders; the stacking limit voids a split silently.
 
+## Engine facts (4.1.0) and how they were established
+
+| Fact | Established by |
+|---|---|
+| Deployment split 314 is accepted per scenario (3 of 8 frozen), refused with code 103 elsewhere; no observation field tells the groups apart | Sprint 1 mechanism smoke, 8 captured games |
+| The engine rewrites the action object in place during the step (314 becomes 14) | Sprint 1 smoke captures against the records |
+| Split mode 4 = 2 + 2, 3 = 2 + 1, 2 = 1 + 1; products in the parent's hex under the lowest free ids; a carrier's passengers split with it; products are controllable | Sprint 1 smoke captures |
+| A split into a hex already holding four own ground units is voided silently | Sprint 1 smoke; offline replay predicted 6 of 6 split rounds |
+| While `cur_step` stands still the engine re-reports earlier feedback at every step | Sprint 1 smoke captures |
+| A unit whose next hex holds four own ground units does not advance, keeps its move path and gets no error; two such groups block each other for the rest of the game | Sprint 2 diagnosis, two captured games with a snapshot every step (`docs/T1R_DIAGNOSIS.md`) |
+| On the diagnosed route vehicles advance one hex per 20 steps, infantry one per 144 | Sprint 2 diagnosis |
+
 ## Selection rubric (committed before scoring)
 
 `evaluation/tactical-frontier-1/rubric.json` fixes the criteria, their 0 to 5 anchors and the weights before any
@@ -93,17 +105,21 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
 | Id | Hypothesis | State |
 |---|---|---|
 | TO-1 | target ownership by the highest attack level in isolated single-target collisions | `BLOCKED` (prevalence-1 stopped before interpretation); backlogged |
-| T1 | deployment disaggregation: split eligible ground operators during deployment | `EXPLORATORY`: screen 1 disposition REVISE BEFORE CONFIRMATION ([issue #1](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/1), `docs/SCREEN_DEPLOYMENT_SPLIT.md`) |
-| T1-r | T1 revised: probe once and stop on code 103, skip splits the stacking limit voids, keep the play stage's objectives after splitting; disaggregation pays when the force is large | `IDEA`, next |
+| T1 | deployment disaggregation: split eligible ground operators during deployment | `SHELVED` (2026-10-02): screen 1 REVISE BEFORE CONFIRMATION ([issue #1](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/1), `docs/SCREEN_DEPLOYMENT_SPLIT.md`); the diagnosed loss is a stacking-limit block that only a play-stage change removes (`docs/T1R_DIAGNOSIS.md`, `docs/T1R_SPEC.md`, gate G6 failed) |
+| T1-r | T1 revised: probe once and stop on code 103, skip splits the stacking limit voids | specified, not implemented; waits for PS-1 |
+| PS-1 | capacity-aware movement: at most four units bound for one destination hex at a time, or a new order for a unit whose move has not advanced; on `baseline-v2`'s play stage | `IDEA`, proposed; needs the owner's approval and its own design |
 | T2 to T9 | the other families above | `IDEA` |
 
 ## Roadmap
 
-1. **T1-r**: first diagnose the one deterministic loss of screen 1 (as blue against the inert control in 1910631192 the
-   candidate scores 78 where `baseline-v2` scores 158) with two captured diagnostic games, then register the revised
-   candidate for a fresh exploratory screen whose analysis keeps only games in which the engine accepted splits.
-2. **T7 movement-state micro**, the rubric's runner-up: change state, stop and weapon lock appear in most decisions.
-3. **T9 intent and task allocation**, the largest lever and the hardest to isolate; T4 (the idle artillery) follows
+1. **Done (Sprint 2)**: the deterministic loss of screen 1 (as blue against the inert control in 1910631192 the
+   candidate scores 78 where `baseline-v2` scores 158) was diagnosed with two captured games: a stacking-limit block
+   at the first objective, never resolved because an issued move is never changed. T1 is shelved; T1-r is specified
+   but not implemented.
+2. **PS-1 capacity-aware movement** (proposed, owner's decision): the play-stage change that removes the block; it
+   would also let T1 be re-tested on top of it.
+3. **T7 movement-state micro**, the rubric's runner-up: change state, stop and weapon lock appear in most decisions.
+4. **T9 intent and task allocation**, the largest lever and the hardest to isolate; T4 (the idle artillery) follows
    by the rubric.
 
 A tactic that earns ADVANCE gets a confirmatory design sized from its screen's noise; one that does not is recorded
