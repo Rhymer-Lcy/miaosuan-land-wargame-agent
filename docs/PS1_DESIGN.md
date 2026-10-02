@@ -202,3 +202,31 @@ Each gate is reported separately; a plausible design does not override a failed 
 
 None of these assumes this game's mechanics (stop penalty, one-way commitment of a move, simultaneous execution by an
 opaque engine); they inform the design, they do not certify it.
+
+## Amendment 1 (2026-10-02, written after the fidelity check failed and before any counterfactual was computed)
+
+**What failed.** Fidelity F1 for the registered model (assumption M1) failed on the split game: every own unit's hex
+sequence matched the capture and the deadlock was reproduced, but four units entered some hexes 19 steps earlier in the
+model than in the game (worst offset 19 against the allowed 1). On the baseline game F1 and F2 both passed with no
+offset at all. By section 8, no counterfactual is reported as model-derived feasible under M1, and G3 cannot pass on M1.
+The failure stays on record.
+
+**Why (private captures).** Those four units had reached the end of a hex time in front of a full hex; they then stood
+at their hex centre with the observation's `speed` field at 0, and entered a full hex time after the hex had room again
+(room at one step, entry 19 steps later at a 20-step hex time). Units following a column that leaves the hex in the same
+step never wait, and no hex ever held more than four own ground units, so units in transit reserve no place.
+
+**Assumption M1b**, replacing M1: a unit whose hex time ends in front of a full hex stops at its hex centre (waiting);
+in the first step its next hex has room it starts the traversal again and enters a hex time later, counting that step
+(`tau - 1` steps after it). Everything else is unchanged. M1b was derived from the same two games it must reproduce, so
+fidelity under M1b on those games is not independent evidence.
+
+**Independent check of M1b (fixed now, computed afterwards).** Over the pinned replay corpus (8 games under condition
+C1, both seats, every decision; `baseline-v0` policy), every episode in which an own ground unit with a move path stands
+with `speed` 0 in front of a hex holding four own ground units, keeps the same path, sees that hex have room at some later
+step, and then enters it. With `d` = entry step minus the first step with room: M1 predicts `d` in {0, 1}; M1b predicts
+`|d - (tau - 1)| <= 1`. M1b is supported if there are at least 10 episodes, at least 90% of them fall in the M1b window,
+and at most 10% in the M1 window. With fewer than 10 episodes the check is insufficient.
+
+**G3 as amended** passes only when F1 and F2 pass under M1b on both Sprint 2 games, the independent check supports M1b,
+and a certificate is feasible. G1, G2, G4 and G5 are unchanged.
