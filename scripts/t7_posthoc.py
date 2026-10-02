@@ -196,6 +196,11 @@ def a2(corpus: List[Tuple[Dict[str, Any], List[Dict[str, Any]]]],
         "witness_at_or_after_75_steps": sum(1 for r in rows_out if r["witness_after"] is not None
                                             and r["witness_after"] >= tc.TRANSITION),
         "witness_channels": dict(sorted(collections.Counter(r["channel"] for r in rows_out if r["channel"]).items())),
+        "by_scenario": {g.split(".")[0]: {"first_activations": sum(1 for r in first if r["game"] == g),
+                                          "witnessed_units": len({r["unit"] for r in rows_out if r["game"] == g and r["witness"]}),
+                                          "units_observed_after_transition": sum(1 for r in first if r["game"] == g
+                                                                                  and r["observed_after_transition"])}
+                        for g in sorted({r["game"] for r in rows_out})},
         "derived": {"observed_unit_steps_after_transition": sum(r["observed_after_transition"] for r in first),
                     "still_observable_if_concealed": sum(r["still_observable_if_concealed"] for r in first),
                     "units_observed_after_transition": len(seen_units),
