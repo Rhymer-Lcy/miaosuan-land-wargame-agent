@@ -1,0 +1,4035 @@
+{
+ "baseline_v2_reconstruction": {
+  "H0 baseline-v0 exact": 33696,
+  "H0 baseline-v2 differs from baseline-v0": 123,
+  "H0 baseline-v2 reconstructed": 33696,
+  "H0 decisions": 33696
+ },
+ "census_reconciliation": {
+  "census_check": "census identical",
+  "census_play_decisions_listing": {
+   "6": 23660,
+   "10": 27220,
+   "11": 23118
+  },
+  "equal": true,
+  "h0_play_decisions_listing": {
+   "6": 23660,
+   "10": 27220,
+   "11": 23118
+  }
+ },
+ "crosscheck": {
+  "H0": {
+   "agree": true,
+   "decisions_listing": true,
+   "distinct_situations": true,
+   "unit_listings": true
+  },
+  "H1": {
+   "agree": true,
+   "decisions_listing": true,
+   "distinct_situations": true,
+   "unit_listings": true
+  },
+  "H2": {
+   "agree": true,
+   "decisions_listing": true,
+   "distinct_situations": true,
+   "unit_listings": true
+  }
+ },
+ "h2r_reproduction": {
+  "before_k": 533,
+  "decisions_compared": 532,
+  "identical_t7_listings": 532
+ },
+ "inputs": [
+  {
+   "file": "1910631192.C1.r1.jsonl.gz",
+   "pinned_sha256": "e3a726e67080427106c84bfa5a6b2032fa2fb1c2d5fc9573cff974fab565d967",
+   "population": "H0",
+   "verified": true
+  },
+  {
+   "file": "1930331196.C1.r1.jsonl.gz",
+   "pinned_sha256": "3b849c3b68487946b07929d7aaa01335b8fbb0c4e66fe01b00737804273b9b9e",
+   "population": "H0",
+   "verified": true
+  },
+  {
+   "file": "2010131194.C1.r1.jsonl.gz",
+   "pinned_sha256": "84494aedadab8ed8dddccfea820eea4fccef793e5f92446ac51fe928cdbff8c0",
+   "population": "H0",
+   "verified": true
+  },
+  {
+   "file": "2010211129.C1.r1.jsonl.gz",
+   "pinned_sha256": "8eef32e046e4004327799548267ed619282aa41f6617d36c7476d780b6a5633f",
+   "population": "H0",
+   "verified": true
+  },
+  {
+   "file": "201033019601.C1.r1.jsonl.gz",
+   "pinned_sha256": "fee4eadc751d41f2bf58099b7383a63ec650fa0cc50d971b55622cd89797da37",
+   "population": "H0",
+   "verified": true
+  },
+  {
+   "file": "2010431153.C1.r1.jsonl.gz",
+   "pinned_sha256": "6f8e30e608398811beadfdbb0d35a3b1e23e72fcf7ad803bd40097a73eedc322",
+   "population": "H0",
+   "verified": true
+  },
+  {
+   "file": "2120531121.C1.r1.jsonl.gz",
+   "pinned_sha256": "9f38cd844e5fec2ab660c98090f62d8cea8fac1078f8374bea3bce3d47e5def0",
+   "population": "H0",
+   "verified": true
+  },
+  {
+   "file": "2130511121.C1.r1.jsonl.gz",
+   "pinned_sha256": "e25562afc5ba0a545e045ed0db79dbba0b7fdd98962cb517eb8f722448420f3c",
+   "population": "H0",
+   "verified": true
+  },
+  {
+   "file": "1910631192.C3.b.x01.windows.pkl",
+   "population": "H1",
+   "sha256": "10bfab15fc7ccc43c9000f03e86432caef419fe2912a103bf711d80a866d69de"
+  },
+  {
+   "file": "1910631192.C3.b.x01.capture.json",
+   "population": "H1",
+   "sha256": "f2403356026cceb871dc16d78109164a9ff3031e07fdb70a24831f99a4b3ba11"
+  },
+  {
+   "file": "1910631192.C3.c.x01.windows.pkl",
+   "population": "H2",
+   "sha256": "c45902f71334eb564b51f0958b78954e737437f8b9fefedf82995339fe5f5d7c"
+  },
+  {
+   "file": "1910631192.C3.c.x01.capture.json",
+   "population": "H2",
+   "sha256": "51f571c75f9412a4495341124ee5d3054b35324d7b11bd76c01d015de8175e87"
+  },
+  {
+   "file": "1930331196.C2.p2.windows.pkl",
+   "population": "H2",
+   "sha256": "0d11386a70f405ce230a8bc64ac668e919ffbbde809b38ddd010fc2eb119b942"
+  },
+  {
+   "file": "1930331196.C2.p2.capture.json",
+   "population": "H2",
+   "sha256": "d31167c3ca2d2a095cf13118cb3cf2948e76b7750c0b3d6e80fd68f5b22a3d8c"
+  }
+ ],
+ "issued_capture_vs_record": {
+  "1910631192.C3.b.x01": {
+   "by_type_record": {},
+   "compact_log": 0,
+   "record": 0
+  },
+  "1910631192.C3.c.x01": {
+   "by_type_record": {},
+   "compact_log": 0,
+   "record": 0
+  },
+  "1910631192.C3.p1": {
+   "by_type_record": {
+    "10": 4
+   },
+   "compact_log": 4,
+   "record": 4
+  },
+  "1930331196.C2.p2": {
+   "by_type_record": {},
+   "compact_log": 0,
+   "record": 0
+  }
+ },
+ "issued_records": {
+  "files": 1284,
+  "folders": [
+   "baseline-v0",
+   "baseline-v0-diagnostics",
+   "baseline-v1-candidate-occupy-reservation",
+   "baseline-v1-variance-study-1",
+   "baseline-v2-candidate-shoot-target-reservation",
+   "baseline-v2-residual-516-diagnostic-1",
+   "ps1-engine-probe-1",
+   "t1r-diagnosis-1",
+   "tactical-screen-deployment-split-1",
+   "tactical-screen-deployment-split-1-smoke"
+  ],
+  "t7_actions_by_policy": {
+   "baseline-v0": {
+    "10": 0,
+    "11": 0,
+    "12": 0,
+    "6": 0,
+    "seat-games": 76
+   },
+   "baseline-v1-candidate-occupy-reservation": {
+    "10": 0,
+    "11": 0,
+    "12": 0,
+    "6": 0,
+    "seat-games": 324
+   },
+   "baseline-v1-routing-bounded-candidate": {
+    "10": 0,
+    "11": 0,
+    "12": 0,
+    "6": 0,
+    "seat-games": 480
+   },
+   "baseline-v2-candidate-shoot-target-reservation": {
+    "10": 0,
+    "11": 0,
+    "12": 0,
+    "6": 0,
+    "seat-games": 657
+   },
+   "inert-v0": {
+    "10": 0,
+    "11": 0,
+    "12": 0,
+    "6": 0,
+    "seat-games": 876
+   },
+   "ps1-probe-hook-1": {
+    "10": 4,
+    "11": 0,
+    "12": 0,
+    "6": 0,
+    "seat-games": 1
+   },
+   "tactic-deployment-split-1": {
+    "10": 0,
+    "11": 0,
+    "12": 0,
+    "6": 0,
+    "seat-games": 154
+   }
+  }
+ },
+ "part": "audit",
+ "populations": {
+  "H0": {
+   "change_state_option_sets": {
+    "deployment:1.16:[2, 3, 4]": 2,
+    "deployment:1.2:[2, 3, 4]": 39,
+    "deployment:2.0:[4, 5]": 40,
+    "deployment:2.10:[4, 5]": 2,
+    "deployment:2.13:[4, 5]": 1,
+    "deployment:2.14:[4, 5]": 1,
+    "deployment:2.15:[4, 5]": 6,
+    "deployment:2.1:[4, 5]": 39,
+    "deployment:2.3:[4, 5]": 36,
+    "deployment:2.4:[4, 5]": 13,
+    "deployment:2.9:[4, 5]": 3,
+    "play:1.16:[2, 3, 4]": 578,
+    "play:1.2:[2, 3, 4]": 8484,
+    "play:2.0:[4, 5]": 8703,
+    "play:2.0:[5]": 687,
+    "play:2.10:[4, 5]": 4,
+    "play:2.13:[4, 5]": 16,
+    "play:2.13:[5]": 31,
+    "play:2.14:[4, 5]": 1,
+    "play:2.15:[4, 5]": 3259,
+    "play:2.15:[5]": 228,
+    "play:2.1:[4, 5]": 20498,
+    "play:2.1:[5]": 1055,
+    "play:2.3:[4, 5]": 103680,
+    "play:2.4:[4, 5]": 659,
+    "play:2.4:[5]": 2,
+    "play:2.9:[4, 5]": 10
+   },
+   "change_state_options": {
+    "deployment:1.16:2": 2,
+    "deployment:1.16:3": 2,
+    "deployment:1.16:4": 2,
+    "deployment:1.2:2": 39,
+    "deployment:1.2:3": 39,
+    "deployment:1.2:4": 39,
+    "deployment:2.0:4": 40,
+    "deployment:2.0:5": 40,
+    "deployment:2.10:4": 2,
+    "deployment:2.10:5": 2,
+    "deployment:2.13:4": 1,
+    "deployment:2.13:5": 1,
+    "deployment:2.14:4": 1,
+    "deployment:2.14:5": 1,
+    "deployment:2.15:4": 6,
+    "deployment:2.15:5": 6,
+    "deployment:2.1:4": 39,
+    "deployment:2.1:5": 39,
+    "deployment:2.3:4": 36,
+    "deployment:2.3:5": 36,
+    "deployment:2.4:4": 13,
+    "deployment:2.4:5": 13,
+    "deployment:2.9:4": 3,
+    "deployment:2.9:5": 3,
+    "play:1.16:2": 578,
+    "play:1.16:3": 578,
+    "play:1.16:4": 578,
+    "play:1.2:2": 8484,
+    "play:1.2:3": 8484,
+    "play:1.2:4": 8484,
+    "play:2.0:4": 8703,
+    "play:2.0:5": 9390,
+    "play:2.10:4": 4,
+    "play:2.10:5": 4,
+    "play:2.13:4": 16,
+    "play:2.13:5": 47,
+    "play:2.14:4": 1,
+    "play:2.14:5": 1,
+    "play:2.15:4": 3259,
+    "play:2.15:5": 3487,
+    "play:2.1:4": 20498,
+    "play:2.1:5": 21553,
+    "play:2.3:4": 103680,
+    "play:2.3:5": 103680,
+    "play:2.4:4": 659,
+    "play:2.4:5": 661,
+    "play:2.9:4": 10,
+    "play:2.9:5": 10
+   },
+   "decisions": {
+    "deployment": 16,
+    "play": 33680
+   },
+   "decisions_listing": {
+    "deployment:11": 16,
+    "deployment:6": 16,
+    "play:10": 27220,
+    "play:11": 23118,
+    "play:6": 23660
+   },
+   "distinct_situations": {
+    "deployment:A": 18,
+    "deployment:C": 11,
+    "play:A": 95,
+    "play:B": 38,
+    "play:C": 37
+   },
+   "distinct_situations_per_game": {
+    "deployment:A": [
+     1,
+     1,
+     5,
+     5,
+     5,
+     6,
+     6,
+     12
+    ],
+    "deployment:C": [
+     1,
+     1,
+     4,
+     4,
+     4,
+     5,
+     5,
+     6
+    ],
+    "play:A": [
+     5,
+     6,
+     13,
+     19,
+     21,
+     26,
+     32,
+     61
+    ],
+    "play:B": [
+     5,
+     6,
+     11,
+     12,
+     15,
+     18,
+     19,
+     34
+    ],
+    "play:C": [
+     1,
+     2,
+     6,
+     6,
+     8,
+     14,
+     14,
+     22
+    ]
+   },
+   "frozen_policy_instead": {
+    "deployment:11:nothing": 134,
+    "deployment:6:nothing": 182,
+    "play:10:nothing": 182786,
+    "play:10:shoot": 139,
+    "play:11:move": 102,
+    "play:11:nothing": 133968,
+    "play:11:occupy": 6,
+    "play:11:shoot": 177,
+    "play:6:move": 388,
+    "play:6:nothing": 147181,
+    "play:6:occupy": 120,
+    "play:6:shoot": 206
+   },
+   "games": 8,
+   "issued": {},
+   "malformed_options": {},
+   "missing_fields": {
+    "deployment:target_state": 204,
+    "play:target_state": 371622
+   },
+   "no_executable_opportunity": {
+    "play:10:speed 0 with a move path (aircraft)": 3704,
+    "play:10:speed 0 with a move path (ground unit; the Sprint 4 case when its next hex is full)": 14628
+   },
+   "unit_listings": {
+    "deployment:11": 134,
+    "deployment:6": 182,
+    "play:10": 182925,
+    "play:11": 134253,
+    "play:6": 147895
+   },
+   "unit_listings_by_archetype": {
+    "deployment:11:2.0": 40,
+    "deployment:11:2.1": 39,
+    "deployment:11:2.15": 6,
+    "deployment:11:2.3": 36,
+    "deployment:11:2.4": 13,
+    "deployment:6:1.16": 2,
+    "deployment:6:1.2": 39,
+    "deployment:6:2.0": 40,
+    "deployment:6:2.1": 39,
+    "deployment:6:2.10": 2,
+    "deployment:6:2.13": 1,
+    "deployment:6:2.14": 1,
+    "deployment:6:2.15": 6,
+    "deployment:6:2.3": 36,
+    "deployment:6:2.4": 13,
+    "deployment:6:2.9": 3,
+    "play:10:1.16": 5182,
+    "play:10:1.2": 88424,
+    "play:10:2.0": 23916,
+    "play:10:2.1": 32676,
+    "play:10:2.10": 1476,
+    "play:10:2.13": 2832,
+    "play:10:2.14": 559,
+    "play:10:2.15": 8013,
+    "play:10:2.4": 8860,
+    "play:10:2.9": 2422,
+    "play:10:3.5": 6588,
+    "play:10:3.6": 1383,
+    "play:10:3.8": 594,
+    "play:11:2.0": 8225,
+    "play:11:2.1": 18858,
+    "play:11:2.15": 3152,
+    "play:11:2.3": 103680,
+    "play:11:2.4": 338,
+    "play:6:1.16": 578,
+    "play:6:1.2": 8484,
+    "play:6:2.0": 9390,
+    "play:6:2.1": 21553,
+    "play:6:2.10": 4,
+    "play:6:2.13": 47,
+    "play:6:2.14": 1,
+    "play:6:2.15": 3487,
+    "play:6:2.3": 103680,
+    "play:6:2.4": 661,
+    "play:6:2.9": 10
+   }
+  },
+  "H1": {
+   "change_state_option_sets": {
+    "play:1.2:[2, 3, 4]": 2,
+    "play:2.0:[4, 5]": 2324,
+    "play:2.1:[4, 5]": 2284
+   },
+   "change_state_options": {
+    "play:1.2:2": 2,
+    "play:1.2:3": 2,
+    "play:1.2:4": 2,
+    "play:2.0:4": 2324,
+    "play:2.0:5": 2324,
+    "play:2.1:4": 2284,
+    "play:2.1:5": 2284
+   },
+   "decisions": {
+    "play": 1800
+   },
+   "decisions_listing": {
+    "play:10": 1799,
+    "play:11": 1085,
+    "play:6": 1163
+   },
+   "distinct_situations": {
+    "play:A": 8,
+    "play:B": 3,
+    "play:C": 4
+   },
+   "distinct_situations_per_game": {
+    "play:A": [
+     8
+    ],
+    "play:B": [
+     3
+    ],
+    "play:C": [
+     4
+    ]
+   },
+   "frozen_policy_instead": {
+    "play:10:nothing": 6190,
+    "play:11:move": 4,
+    "play:11:nothing": 4298,
+    "play:6:move": 10,
+    "play:6:nothing": 4598,
+    "play:6:occupy": 2
+   },
+   "games": 1,
+   "issued": {},
+   "malformed_options": {},
+   "missing_fields": {
+    "play:target_state": 10800
+   },
+   "no_executable_opportunity": {},
+   "unit_listings": {
+    "play:10": 6190,
+    "play:11": 4302,
+    "play:6": 4610
+   },
+   "unit_listings_by_archetype": {
+    "play:10:1.2": 3598,
+    "play:10:2.0": 1276,
+    "play:10:2.1": 1316,
+    "play:11:2.0": 2170,
+    "play:11:2.1": 2132,
+    "play:6:1.2": 2,
+    "play:6:2.0": 2324,
+    "play:6:2.1": 2284
+   }
+  },
+  "H2": {
+   "change_state_option_sets": {
+    "deployment:1.2:[2, 3, 4]": 14,
+    "deployment:2.0:[4, 5]": 28,
+    "deployment:2.1:[4, 5]": 20,
+    "deployment:2.3:[4, 5]": 12,
+    "deployment:2.4:[4, 5]": 6,
+    "play:1.2:[2, 3, 4]": 708,
+    "play:2.0:[4, 5]": 5938,
+    "play:2.1:[4, 5]": 5807,
+    "play:2.3:[4, 5]": 17280,
+    "play:2.4:[4, 5]": 3932
+   },
+   "change_state_options": {
+    "deployment:1.2:2": 14,
+    "deployment:1.2:3": 14,
+    "deployment:1.2:4": 14,
+    "deployment:2.0:4": 28,
+    "deployment:2.0:5": 28,
+    "deployment:2.1:4": 20,
+    "deployment:2.1:5": 20,
+    "deployment:2.3:4": 12,
+    "deployment:2.3:5": 12,
+    "deployment:2.4:4": 6,
+    "deployment:2.4:5": 6,
+    "play:1.2:2": 708,
+    "play:1.2:3": 708,
+    "play:1.2:4": 708,
+    "play:2.0:4": 5938,
+    "play:2.0:5": 5938,
+    "play:2.1:4": 5807,
+    "play:2.1:5": 5807,
+    "play:2.3:4": 17280,
+    "play:2.3:5": 17280,
+    "play:2.4:4": 3932,
+    "play:2.4:5": 3932
+   },
+   "decisions": {
+    "deployment": 4,
+    "play": 4680
+   },
+   "decisions_listing": {
+    "deployment:11": 4,
+    "deployment:6": 4,
+    "play:10": 4678,
+    "play:11": 2881,
+    "play:6": 2883
+   },
+   "distinct_situations": {
+    "deployment:A": 8,
+    "deployment:C": 6,
+    "play:A": 19,
+    "play:B": 11,
+    "play:C": 7
+   },
+   "distinct_situations_per_game": {
+    "deployment:A": [
+     4,
+     6
+    ],
+    "deployment:C": [
+     3,
+     5
+    ],
+    "play:A": [
+     5,
+     17
+    ],
+    "play:B": [
+     3,
+     11
+    ],
+    "play:C": [
+     2,
+     6
+    ]
+   },
+   "frozen_policy_instead": {
+    "deployment:11:nothing": 47,
+    "deployment:11:type 14": 19,
+    "deployment:6:nothing": 56,
+    "deployment:6:type 14": 24,
+    "play:10:nothing": 78373,
+    "play:11:move": 31,
+    "play:11:nothing": 32268,
+    "play:6:move": 82,
+    "play:6:nothing": 33577,
+    "play:6:occupy": 6
+   },
+   "games": 2,
+   "issued": {},
+   "malformed_options": {},
+   "missing_fields": {
+    "deployment:target_state": 84,
+    "play:target_state": 117360
+   },
+   "no_executable_opportunity": {
+    "play:10:speed 0 with a move path (ground unit; the Sprint 4 case when its next hex is full)": 44527
+   },
+   "unit_listings": {
+    "deployment:11": 66,
+    "deployment:6": 80,
+    "play:10": 78373,
+    "play:11": 32299,
+    "play:6": 33665
+   },
+   "unit_listings_by_archetype": {
+    "deployment:11:2.0": 28,
+    "deployment:11:2.1": 20,
+    "deployment:11:2.3": 12,
+    "deployment:11:2.4": 6,
+    "deployment:6:1.2": 14,
+    "deployment:6:2.0": 28,
+    "deployment:6:2.1": 20,
+    "deployment:6:2.3": 12,
+    "deployment:6:2.4": 6,
+    "play:10:1.2": 15132,
+    "play:10:2.0": 39422,
+    "play:10:2.1": 18673,
+    "play:10:2.4": 4708,
+    "play:10:3.5": 285,
+    "play:10:3.6": 153,
+    "play:11:2.0": 5676,
+    "play:11:2.1": 5568,
+    "play:11:2.3": 17280,
+    "play:11:2.4": 3775,
+    "play:6:1.2": 708,
+    "play:6:2.0": 5938,
+    "play:6:2.1": 5807,
+    "play:6:2.3": 17280,
+    "play:6:2.4": 3932
+   }
+  }
+ },
+ "schema": "miaosuan-t7-design/1",
+ "seat_vs_all_seeing": {
+  "H1 identical in the all-seeing view": 10800,
+  "H1 seat-vs-all-seeing unit listings": 10800,
+  "H2 identical in the all-seeing view": 112118,
+  "H2 seat-vs-all-seeing unit listings": 112118
+ },
+ "semantics_rows": {
+  "H0": [
+   {
+    "archetype": "2.0",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 11,
+    "unit_decisions": 40
+   },
+   {
+    "archetype": "2.1",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 11,
+    "unit_decisions": 39
+   },
+   {
+    "archetype": "2.15",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 11,
+    "unit_decisions": 6
+   },
+   {
+    "archetype": "2.3",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 11,
+    "unit_decisions": 36
+   },
+   {
+    "archetype": "2.4",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 11,
+    "unit_decisions": 13
+   },
+   {
+    "archetype": "1.16",
+    "options": [
+     [
+      6,
+      [
+       2,
+       3,
+       4
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 6,
+    "unit_decisions": 2
+   },
+   {
+    "archetype": "1.2",
+    "options": [
+     [
+      6,
+      [
+       2,
+       3,
+       4
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 6,
+    "unit_decisions": 39
+   },
+   {
+    "archetype": "2.0",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 6,
+    "unit_decisions": 40
+   },
+   {
+    "archetype": "2.1",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 6,
+    "unit_decisions": 39
+   },
+   {
+    "archetype": "2.10",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 6,
+    "unit_decisions": 2
+   },
+   {
+    "archetype": "2.13",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 6,
+    "unit_decisions": 1
+   },
+   {
+    "archetype": "2.14",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 6,
+    "unit_decisions": 1
+   },
+   {
+    "archetype": "2.15",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 6,
+    "unit_decisions": 6
+   },
+   {
+    "archetype": "2.3",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 6,
+    "unit_decisions": 36
+   },
+   {
+    "archetype": "2.4",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 6,
+    "unit_decisions": 13
+   },
+   {
+    "archetype": "2.9",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 6,
+    "unit_decisions": 3
+   },
+   {
+    "archetype": "1.16",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 5182
+   },
+   {
+    "archetype": "1.2",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 3316
+   },
+   {
+    "archetype": "1.2",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 662
+   },
+   {
+    "archetype": "1.2",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 83259
+   },
+   {
+    "archetype": "1.2",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 1187
+   },
+   {
+    "archetype": "2.0",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 830
+   },
+   {
+    "archetype": "2.0",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 125
+   },
+   {
+    "archetype": "2.0",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 18992
+   },
+   {
+    "archetype": "2.0",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 3969
+   },
+   {
+    "archetype": "2.1",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 4319
+   },
+   {
+    "archetype": "2.1",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 243
+   },
+   {
+    "archetype": "2.1",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 26968
+   },
+   {
+    "archetype": "2.1",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 1146
+   },
+   {
+    "archetype": "2.10",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 135
+   },
+   {
+    "archetype": "2.10",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 89
+   },
+   {
+    "archetype": "2.10",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 1192
+   },
+   {
+    "archetype": "2.10",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 60
+   },
+   {
+    "archetype": "2.13",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 2043
+   },
+   {
+    "archetype": "2.13",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 671
+   },
+   {
+    "archetype": "2.13",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 118
+   },
+   {
+    "archetype": "2.14",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 559
+   },
+   {
+    "archetype": "2.15",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 2635
+   },
+   {
+    "archetype": "2.15",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 5200
+   },
+   {
+    "archetype": "2.15",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 178
+   },
+   {
+    "archetype": "2.4",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 156
+   },
+   {
+    "archetype": "2.4",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 4
+   },
+   {
+    "archetype": "2.4",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 8557
+   },
+   {
+    "archetype": "2.4",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 143
+   },
+   {
+    "archetype": "2.9",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 71
+   },
+   {
+    "archetype": "2.9",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 2351
+   },
+   {
+    "archetype": "3.5",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 3696
+   },
+   {
+    "archetype": "3.5",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 2892
+   },
+   {
+    "archetype": "3.6",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 1383
+   },
+   {
+    "archetype": "3.8",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 8
+   },
+   {
+    "archetype": "3.8",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 586
+   },
+   {
+    "archetype": "2.0",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 11,
+    "unit_decisions": 8225
+   },
+   {
+    "archetype": "2.1",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 11,
+    "unit_decisions": 18858
+   },
+   {
+    "archetype": "2.15",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 11,
+    "unit_decisions": 3152
+   },
+   {
+    "archetype": "2.3",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 11,
+    "unit_decisions": 103680
+   },
+   {
+    "archetype": "2.4",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 11,
+    "unit_decisions": 338
+   },
+   {
+    "archetype": "1.16",
+    "options": [
+     [
+      6,
+      [
+       2,
+       3,
+       4
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 75
+   },
+   {
+    "archetype": "1.16",
+    "options": [
+     [
+      6,
+      [
+       2,
+       3,
+       4
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 503
+   },
+   {
+    "archetype": "1.2",
+    "options": [
+     [
+      6,
+      [
+       2,
+       3,
+       4
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 685
+   },
+   {
+    "archetype": "1.2",
+    "options": [
+     [
+      6,
+      [
+       2,
+       3,
+       4
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 7799
+   },
+   {
+    "archetype": "2.0",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 478
+   },
+   {
+    "archetype": "2.0",
+    "options": [
+     [
+      6,
+      [
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 472
+   },
+   {
+    "archetype": "2.0",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 8225
+   },
+   {
+    "archetype": "2.0",
+    "options": [
+     [
+      6,
+      [
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 215
+   },
+   {
+    "archetype": "2.1",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 1640
+   },
+   {
+    "archetype": "2.1",
+    "options": [
+     [
+      6,
+      [
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 249
+   },
+   {
+    "archetype": "2.1",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 18858
+   },
+   {
+    "archetype": "2.1",
+    "options": [
+     [
+      6,
+      [
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 806
+   },
+   {
+    "archetype": "2.10",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 2
+   },
+   {
+    "archetype": "2.10",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 2
+   },
+   {
+    "archetype": "2.13",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 15
+   },
+   {
+    "archetype": "2.13",
+    "options": [
+     [
+      6,
+      [
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 31
+   },
+   {
+    "archetype": "2.13",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 1
+   },
+   {
+    "archetype": "2.14",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 1
+   },
+   {
+    "archetype": "2.15",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 107
+   },
+   {
+    "archetype": "2.15",
+    "options": [
+     [
+      6,
+      [
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 139
+   },
+   {
+    "archetype": "2.15",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 3152
+   },
+   {
+    "archetype": "2.15",
+    "options": [
+     [
+      6,
+      [
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 89
+   },
+   {
+    "archetype": "2.3",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 103680
+   },
+   {
+    "archetype": "2.4",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 321
+   },
+   {
+    "archetype": "2.4",
+    "options": [
+     [
+      6,
+      [
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": true,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 2
+   },
+   {
+    "archetype": "2.4",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 338
+   },
+   {
+    "archetype": "2.9",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 7
+   },
+   {
+    "archetype": "2.9",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 3
+   }
+  ],
+  "H1": [
+   {
+    "archetype": "1.2",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 3598
+   },
+   {
+    "archetype": "2.0",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 1276
+   },
+   {
+    "archetype": "2.1",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 1316
+   },
+   {
+    "archetype": "2.0",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 11,
+    "unit_decisions": 2170
+   },
+   {
+    "archetype": "2.1",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 11,
+    "unit_decisions": 2132
+   },
+   {
+    "archetype": "1.2",
+    "options": [
+     [
+      6,
+      [
+       2,
+       3,
+       4
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 2
+   },
+   {
+    "archetype": "2.0",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 154
+   },
+   {
+    "archetype": "2.0",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 2170
+   },
+   {
+    "archetype": "2.1",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 152
+   },
+   {
+    "archetype": "2.1",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 2132
+   }
+  ],
+  "H2": [
+   {
+    "archetype": "2.0",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 11,
+    "unit_decisions": 28
+   },
+   {
+    "archetype": "2.1",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 11,
+    "unit_decisions": 20
+   },
+   {
+    "archetype": "2.3",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 11,
+    "unit_decisions": 12
+   },
+   {
+    "archetype": "2.4",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 11,
+    "unit_decisions": 6
+   },
+   {
+    "archetype": "1.2",
+    "options": [
+     [
+      6,
+      [
+       2,
+       3,
+       4
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 6,
+    "unit_decisions": 14
+   },
+   {
+    "archetype": "2.0",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 6,
+    "unit_decisions": 28
+   },
+   {
+    "archetype": "2.1",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 6,
+    "unit_decisions": 20
+   },
+   {
+    "archetype": "2.3",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 6,
+    "unit_decisions": 12
+   },
+   {
+    "archetype": "2.4",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "deployment",
+    "type": 6,
+    "unit_decisions": 6
+   },
+   {
+    "archetype": "1.2",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 307
+   },
+   {
+    "archetype": "1.2",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 14825
+   },
+   {
+    "archetype": "2.0",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 29415
+   },
+   {
+    "archetype": "2.0",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 10007
+   },
+   {
+    "archetype": "2.1",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 12274
+   },
+   {
+    "archetype": "2.1",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 6399
+   },
+   {
+    "archetype": "2.4",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 2531
+   },
+   {
+    "archetype": "2.4",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 2177
+   },
+   {
+    "archetype": "3.5",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 285
+   },
+   {
+    "archetype": "3.6",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": true,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": true,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 10,
+    "unit_decisions": 153
+   },
+   {
+    "archetype": "2.0",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 11,
+    "unit_decisions": 5676
+   },
+   {
+    "archetype": "2.1",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 11,
+    "unit_decisions": 5568
+   },
+   {
+    "archetype": "2.3",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 11,
+    "unit_decisions": 17280
+   },
+   {
+    "archetype": "2.4",
+    "options": [],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 11,
+    "unit_decisions": 3775
+   },
+   {
+    "archetype": "1.2",
+    "options": [
+     [
+      6,
+      [
+       2,
+       3,
+       4
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 150
+   },
+   {
+    "archetype": "1.2",
+    "options": [
+     [
+      6,
+      [
+       2,
+       3,
+       4
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 558
+   },
+   {
+    "archetype": "2.0",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 262
+   },
+   {
+    "archetype": "2.0",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 5676
+   },
+   {
+    "archetype": "2.1",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 239
+   },
+   {
+    "archetype": "2.1",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 5568
+   },
+   {
+    "archetype": "2.3",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 17280
+   },
+   {
+    "archetype": "2.4",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": true,
+     "speed>0": false,
+     "stop": 0,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 157
+   },
+   {
+    "archetype": "2.4",
+    "options": [
+     [
+      6,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "situation": {
+     "change_state_remain_time>0": false,
+     "has_path": false,
+     "keep>0": false,
+     "move_state": 0,
+     "move_to_stop_remain_time>0": false,
+     "speed>0": false,
+     "stop": 1,
+     "tire": 0,
+     "weapon_unfold_state": 1
+    },
+    "stage": "play",
+    "type": 6,
+    "unit_decisions": 3775
+   }
+  ]
+ },
+ "study_id": "t7-design-1",
+ "transitions": {
+  "H0": {
+   "arrival_ends": {
+    "1.16|settled": 1,
+    "1.2|moved again": 10,
+    "1.2|settled": 10,
+    "2.0|moved again": 65,
+    "2.0|settled": 10,
+    "2.0|unit gone": 8,
+    "2.10|moved again": 2,
+    "2.13|moved again": 6,
+    "2.15|moved again": 19,
+    "2.15|settled": 3,
+    "2.15|unit gone": 1,
+    "2.1|moved again": 101,
+    "2.1|settled": 22,
+    "2.1|unit gone": 4,
+    "2.4|moved again": 29,
+    "2.4|settled": 3,
+    "2.4|unit gone": 5,
+    "2.9|moved again": 6,
+    "3.5|moved again": 22,
+    "3.5|settled": 27,
+    "3.6|moved again": 10,
+    "3.6|settled": 33,
+    "3.6|unit gone": 2,
+    "3.8|moved again": 12,
+    "3.8|settled": 12
+   },
+   "arrivals": {
+    "1.16": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 1
+     },
+     "shoot_listed_after": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 1
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 1
+     }
+    },
+    "1.2": {
+     "move_listed_after": {
+      "max": 129,
+      "median": 0.0,
+      "min": 0,
+      "n": 20
+     },
+     "shoot_listed_after": {
+      "max": 129,
+      "median": 129,
+      "min": 129,
+      "n": 1
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75.0,
+      "min": 75,
+      "n": 10
+     }
+    },
+    "2.0": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 83
+     },
+     "occupy_listed_after": {
+      "max": 50,
+      "median": 0,
+      "min": 0,
+      "n": 51
+     },
+     "shoot_listed_after": {
+      "max": 40,
+      "median": 0.0,
+      "min": 0,
+      "n": 8
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75.0,
+      "min": 75,
+      "n": 10
+     }
+    },
+    "2.1": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 127
+     },
+     "occupy_listed_after": {
+      "max": 70,
+      "median": 0.0,
+      "min": 0,
+      "n": 42
+     },
+     "shoot_listed_after": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 15
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75.0,
+      "min": 75,
+      "n": 22
+     }
+    },
+    "2.10": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0.0,
+      "min": 0,
+      "n": 2
+     }
+    },
+    "2.13": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0.0,
+      "min": 0,
+      "n": 6
+     },
+     "occupy_listed_after": {
+      "max": 0,
+      "median": 0.0,
+      "min": 0,
+      "n": 2
+     }
+    },
+    "2.15": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 23
+     },
+     "occupy_listed_after": {
+      "max": 1,
+      "median": 0.0,
+      "min": 0,
+      "n": 6
+     },
+     "shoot_listed_after": {
+      "max": 75,
+      "median": 75.0,
+      "min": 75,
+      "n": 2
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 3
+     }
+    },
+    "2.4": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 37
+     },
+     "occupy_listed_after": {
+      "max": 70,
+      "median": 0,
+      "min": 0,
+      "n": 13
+     },
+     "shoot_listed_after": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 3
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 3
+     }
+    },
+    "2.9": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0.0,
+      "min": 0,
+      "n": 6
+     },
+     "occupy_listed_after": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 1
+     }
+    },
+    "3.5": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 49
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 27
+     }
+    },
+    "3.6": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 45
+     },
+     "shoot_listed_after": {
+      "max": 75,
+      "median": 75.0,
+      "min": 75,
+      "n": 24
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 33
+     }
+    },
+    "3.8": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0.0,
+      "min": 0,
+      "n": 24
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75.0,
+      "min": 75,
+      "n": 12
+     }
+    }
+   },
+   "episodes": {
+    "move_to_stop_remain_time|1.16|completed": {
+     "max": 75,
+     "median": 75,
+     "min": 75,
+     "n": 1
+    },
+    "move_to_stop_remain_time|1.2|completed": {
+     "max": 75,
+     "median": 38.0,
+     "min": 1,
+     "n": 20
+    },
+    "move_to_stop_remain_time|2.0|completed": {
+     "max": 75,
+     "median": 2,
+     "min": 1,
+     "n": 75
+    },
+    "move_to_stop_remain_time|2.0|unit gone": {
+     "max": 58,
+     "median": 24.5,
+     "min": 5,
+     "n": 8
+    },
+    "move_to_stop_remain_time|2.10|completed": {
+     "max": 1,
+     "median": 1.0,
+     "min": 1,
+     "n": 2
+    },
+    "move_to_stop_remain_time|2.13|completed": {
+     "max": 41,
+     "median": 1.0,
+     "min": 1,
+     "n": 6
+    },
+    "move_to_stop_remain_time|2.15|completed": {
+     "max": 75,
+     "median": 1.0,
+     "min": 1,
+     "n": 22
+    },
+    "move_to_stop_remain_time|2.15|unit gone": {
+     "max": 1,
+     "median": 1,
+     "min": 1,
+     "n": 1
+    },
+    "move_to_stop_remain_time|2.1|completed": {
+     "max": 75,
+     "median": 2,
+     "min": 1,
+     "n": 123
+    },
+    "move_to_stop_remain_time|2.1|unit gone": {
+     "max": 44,
+     "median": 30.0,
+     "min": 20,
+     "n": 4
+    },
+    "move_to_stop_remain_time|2.4|completed": {
+     "max": 75,
+     "median": 1.5,
+     "min": 1,
+     "n": 32
+    },
+    "move_to_stop_remain_time|2.4|unit gone": {
+     "max": 70,
+     "median": 30,
+     "min": 5,
+     "n": 5
+    },
+    "move_to_stop_remain_time|2.9|completed": {
+     "max": 2,
+     "median": 1.0,
+     "min": 1,
+     "n": 6
+    },
+    "move_to_stop_remain_time|3.5|completed": {
+     "max": 75,
+     "median": 75,
+     "min": 1,
+     "n": 49
+    },
+    "move_to_stop_remain_time|3.6|completed": {
+     "max": 75,
+     "median": 75,
+     "min": 50,
+     "n": 43
+    },
+    "move_to_stop_remain_time|3.6|unit gone": {
+     "max": 35,
+     "median": 27.5,
+     "min": 20,
+     "n": 2
+    },
+    "move_to_stop_remain_time|3.8|completed": {
+     "max": 75,
+     "median": 72.5,
+     "min": 38,
+     "n": 24
+    }
+   },
+   "field_changes": {
+    "stop:1.16:0->1": 1,
+    "stop:1.16:1->0": 2,
+    "stop:1.2:0->1": 10,
+    "stop:1.2:1->0": 39,
+    "stop:2.0:0->1": 10,
+    "stop:2.0:1->0": 41,
+    "stop:2.10:1->0": 2,
+    "stop:2.13:1->0": 1,
+    "stop:2.14:1->0": 1,
+    "stop:2.15:0->1": 3,
+    "stop:2.15:1->0": 7,
+    "stop:2.1:0->1": 22,
+    "stop:2.1:1->0": 42,
+    "stop:2.4:0->1": 3,
+    "stop:2.4:1->0": 14,
+    "stop:2.9:1->0": 3,
+    "stop:3.5:0->1": 27,
+    "stop:3.5:1->0": 27,
+    "stop:3.6:0->1": 33,
+    "stop:3.6:1->0": 35,
+    "stop:3.8:0->1": 12,
+    "stop:3.8:1->0": 12
+   },
+   "gaps": 16
+  },
+  "H1": {
+   "arrival_ends": {
+    "2.0|moved again": 2,
+    "2.0|settled": 2,
+    "2.1|moved again": 2,
+    "2.1|settled": 2
+   },
+   "arrivals": {
+    "2.0": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0.0,
+      "min": 0,
+      "n": 4
+     },
+     "occupy_listed_after": {
+      "max": 0,
+      "median": 0.0,
+      "min": 0,
+      "n": 4
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75.0,
+      "min": 75,
+      "n": 2
+     }
+    },
+    "2.1": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0.0,
+      "min": 0,
+      "n": 4
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75.0,
+      "min": 75,
+      "n": 2
+     }
+    }
+   },
+   "episodes": {
+    "move_to_stop_remain_time|2.0|completed": {
+     "max": 75,
+     "median": 38.5,
+     "min": 2,
+     "n": 4
+    },
+    "move_to_stop_remain_time|2.1|completed": {
+     "max": 75,
+     "median": 38.0,
+     "min": 1,
+     "n": 4
+    }
+   },
+   "field_changes": {
+    "stop:1.2:1->0": 2,
+    "stop:2.0:0->1": 2,
+    "stop:2.0:1->0": 2,
+    "stop:2.1:0->1": 2,
+    "stop:2.1:1->0": 2
+   },
+   "gaps": 0
+  },
+  "H2": {
+   "arrival_ends": {
+    "1.2|settled": 2,
+    "2.0|moved again": 25,
+    "2.0|settled": 3,
+    "2.1|moved again": 13,
+    "2.1|settled": 3,
+    "2.4|moved again": 6,
+    "2.4|settled": 2,
+    "3.5|settled": 3,
+    "3.6|settled": 3
+   },
+   "arrivals": {
+    "1.2": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0.0,
+      "min": 0,
+      "n": 2
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75.0,
+      "min": 75,
+      "n": 2
+     }
+    },
+    "2.0": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0.0,
+      "min": 0,
+      "n": 28
+     },
+     "occupy_listed_after": {
+      "max": 0,
+      "median": 0.0,
+      "min": 0,
+      "n": 12
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 3
+     }
+    },
+    "2.1": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0.0,
+      "min": 0,
+      "n": 16
+     },
+     "occupy_listed_after": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 1
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 3
+     }
+    },
+    "2.4": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0.0,
+      "min": 0,
+      "n": 8
+     },
+     "occupy_listed_after": {
+      "max": 0,
+      "median": 0.0,
+      "min": 0,
+      "n": 2
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75.0,
+      "min": 75,
+      "n": 2
+     }
+    },
+    "3.5": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 3
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 3
+     }
+    },
+    "3.6": {
+     "move_listed_after": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 3
+     },
+     "shoot_listed_after": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 1
+     },
+     "stop_after": {
+      "max": 75,
+      "median": 75,
+      "min": 75,
+      "n": 3
+     }
+    }
+   },
+   "episodes": {
+    "move_to_stop_remain_time|1.2|completed": {
+     "max": 75,
+     "median": 75.0,
+     "min": 75,
+     "n": 2
+    },
+    "move_to_stop_remain_time|2.0|completed": {
+     "max": 75,
+     "median": 2.0,
+     "min": 1,
+     "n": 28
+    },
+    "move_to_stop_remain_time|2.1|completed": {
+     "max": 75,
+     "median": 1.0,
+     "min": 1,
+     "n": 16
+    },
+    "move_to_stop_remain_time|2.4|completed": {
+     "max": 75,
+     "median": 1.0,
+     "min": 1,
+     "n": 8
+    },
+    "move_to_stop_remain_time|3.5|completed": {
+     "max": 75,
+     "median": 75,
+     "min": 75,
+     "n": 3
+    },
+    "move_to_stop_remain_time|3.6|completed": {
+     "max": 75,
+     "median": 75,
+     "min": 75,
+     "n": 3
+    }
+   },
+   "field_changes": {
+    "stop:1.2:0->1": 2,
+    "stop:1.2:1->0": 7,
+    "stop:2.0:0->1": 3,
+    "stop:2.0:1->0": 18,
+    "stop:2.1:0->1": 3,
+    "stop:2.1:1->0": 10,
+    "stop:2.4:0->1": 2,
+    "stop:2.4:1->0": 3,
+    "stop:3.5:0->1": 3,
+    "stop:3.5:1->0": 3,
+    "stop:3.6:0->1": 3,
+    "stop:3.6:1->0": 3
+   },
+   "gaps": 4
+  }
+ }
+}

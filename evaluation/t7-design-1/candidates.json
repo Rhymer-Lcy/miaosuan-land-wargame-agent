@@ -1,0 +1,333 @@
+{
+ "part": "candidates",
+ "pool": [
+  "A1",
+  "A2",
+  "A3",
+  "B1",
+  "B2",
+  "C0"
+ ],
+ "schema": "miaosuan-t7-design/1",
+ "study_id": "t7-design-1",
+ "summary": {
+  "H0": {
+   "A1": {
+    "activations": 0,
+    "archetypes": {},
+    "distinct_situations": 0,
+    "exposure": 0,
+    "lock_listed": 0,
+    "march_option_listed": 0,
+    "saving_seconds": null,
+    "scenarios": [],
+    "units": 0,
+    "witness_scenarios": [],
+    "witness_true": 0,
+    "witness_units": 0,
+    "witness_unobservable": 0
+   },
+   "A2": {
+    "activations": 234,
+    "archetypes": {
+     "1.2": 26,
+     "2.0": 86,
+     "2.1": 74,
+     "2.3": 48
+    },
+    "distinct_situations": 6,
+    "exposure": 4,
+    "first_activations": 49,
+    "scenarios": [
+     "1910631192",
+     "1930331196",
+     "2010131194",
+     "2010211129",
+     "201033019601",
+     "2010431153",
+     "2120531121",
+     "2130511121"
+    ],
+    "units": 49,
+    "witness_scenarios": [
+     "1930331196",
+     "2010431153",
+     "2120531121",
+     "2130511121"
+    ],
+    "witness_true": 39,
+    "witness_units": 16,
+    "witness_unobservable": 0
+   },
+   "A3": {
+    "activations": 0,
+    "archetypes": {},
+    "distinct_situations": 0,
+    "exposure": 0,
+    "scenarios": [],
+    "units": 0,
+    "witness_scenarios": [],
+    "witness_true": 0,
+    "witness_units": 0,
+    "witness_unobservable": 0
+   },
+   "B1": {
+    "activations": 33478,
+    "archetypes": {
+     "1.2": 11040,
+     "2.1": 17949,
+     "2.4": 4489
+    },
+    "distance": {
+     "max": 20,
+     "median": 6.0,
+     "min": 0,
+     "n": 33478
+    },
+    "distinct_situations": 7,
+    "exposure": 33478,
+    "scenarios": [
+     "1910631192",
+     "1930331196",
+     "2010211129",
+     "2010431153",
+     "2120531121",
+     "2130511121"
+    ],
+    "units": 72,
+    "witness_scenarios": [
+     "1930331196",
+     "2010211129",
+     "2010431153",
+     "2120531121",
+     "2130511121"
+    ],
+    "witness_true": 13553,
+    "witness_units": 54,
+    "witness_unobservable": 0
+   },
+   "B2": {
+    "activations": 17318,
+    "archetypes": {
+     "1.2": 10931,
+     "2.0": 1770,
+     "2.1": 2286,
+     "2.10": 195,
+     "2.13": 111,
+     "2.14": 100,
+     "2.15": 811,
+     "2.4": 790,
+     "2.9": 324
+    },
+    "distinct_situations": 14,
+    "exposure": 17318,
+    "scenarios": [
+     "1930331196",
+     "2010211129",
+     "2010431153",
+     "2120531121",
+     "2130511121"
+    ],
+    "units": 111,
+    "witness_scenarios": [
+     "1930331196",
+     "2010431153",
+     "2120531121",
+     "2130511121"
+    ],
+    "witness_true": 10884,
+    "witness_units": 99,
+    "witness_unobservable": 0
+   },
+   "C0": {
+    "activations": 0,
+    "archetypes": {},
+    "distinct_situations": 0,
+    "exposure": 0,
+    "scenarios": [],
+    "units": 0,
+    "witness_scenarios": [],
+    "witness_true": 0,
+    "witness_units": 0,
+    "witness_unobservable": 0
+   }
+  },
+  "H1": {
+   "A1": {
+    "activations": 0,
+    "archetypes": {},
+    "distinct_situations": 0,
+    "exposure": 0,
+    "lock_listed": 0,
+    "march_option_listed": 0,
+    "saving_seconds": null,
+    "scenarios": [],
+    "units": 0,
+    "witness_scenarios": [],
+    "witness_true": 0,
+    "witness_units": 0,
+    "witness_unobservable": 0
+   },
+   "A2": {
+    "activations": 60,
+    "archetypes": {
+     "2.0": 30,
+     "2.1": 30
+    },
+    "distinct_situations": 2,
+    "exposure": 0,
+    "first_activations": 4,
+    "scenarios": [
+     "1910631192"
+    ],
+    "units": 4,
+    "witness_scenarios": [],
+    "witness_true": 0,
+    "witness_units": 0,
+    "witness_unobservable": 0
+   },
+   "A3": {
+    "activations": 0,
+    "archetypes": {},
+    "distinct_situations": 0,
+    "exposure": 0,
+    "scenarios": [],
+    "units": 0,
+    "witness_scenarios": [],
+    "witness_true": 0,
+    "witness_units": 0,
+    "witness_unobservable": 0
+   },
+   "B1": {
+    "activations": 0,
+    "archetypes": {},
+    "distance": null,
+    "distinct_situations": 0,
+    "exposure": 0,
+    "scenarios": [],
+    "units": 0,
+    "witness_scenarios": [],
+    "witness_true": 0,
+    "witness_units": 0,
+    "witness_unobservable": 0
+   },
+   "B2": {
+    "activations": 0,
+    "archetypes": {},
+    "distinct_situations": 0,
+    "exposure": 0,
+    "scenarios": [],
+    "units": 0,
+    "witness_scenarios": [],
+    "witness_true": 0,
+    "witness_units": 0,
+    "witness_unobservable": 0
+   },
+   "C0": {
+    "activations": 0,
+    "archetypes": {},
+    "distinct_situations": 0,
+    "exposure": 0,
+    "scenarios": [],
+    "units": 0,
+    "witness_scenarios": [],
+    "witness_true": 0,
+    "witness_units": 0,
+    "witness_unobservable": 0
+   }
+  },
+  "H2": {
+   "A1": {
+    "activations": 0,
+    "archetypes": {},
+    "distinct_situations": 0,
+    "exposure": 0,
+    "lock_listed": 0,
+    "march_option_listed": 0,
+    "saving_seconds": null,
+    "scenarios": [],
+    "units": 0,
+    "witness_scenarios": [],
+    "witness_true": 0,
+    "witness_units": 0,
+    "witness_unobservable": 0
+   },
+   "A2": {
+    "activations": 429,
+    "archetypes": {
+     "1.2": 8,
+     "2.0": 78,
+     "2.1": 76,
+     "2.3": 216,
+     "2.4": 51
+    },
+    "distinct_situations": 6,
+    "exposure": 0,
+    "first_activations": 16,
+    "scenarios": [
+     "1930331196"
+    ],
+    "units": 16,
+    "witness_scenarios": [],
+    "witness_true": 0,
+    "witness_units": 0,
+    "witness_unobservable": 0
+   },
+   "A3": {
+    "activations": 0,
+    "archetypes": {},
+    "distinct_situations": 0,
+    "exposure": 0,
+    "scenarios": [],
+    "units": 0,
+    "witness_scenarios": [],
+    "witness_true": 0,
+    "witness_units": 0,
+    "witness_unobservable": 0
+   },
+   "B1": {
+    "activations": 0,
+    "archetypes": {},
+    "distance": null,
+    "distinct_situations": 0,
+    "exposure": 0,
+    "scenarios": [],
+    "units": 0,
+    "witness_scenarios": [],
+    "witness_true": 0,
+    "witness_units": 0,
+    "witness_unobservable": 0
+   },
+   "B2": {
+    "activations": 98,
+    "archetypes": {
+     "2.0": 58,
+     "2.1": 20,
+     "2.4": 20
+    },
+    "distinct_situations": 3,
+    "exposure": 98,
+    "scenarios": [
+     "1930331196"
+    ],
+    "units": 5,
+    "witness_scenarios": [],
+    "witness_true": 0,
+    "witness_units": 0,
+    "witness_unobservable": 98
+   },
+   "C0": {
+    "activations": 0,
+    "archetypes": {},
+    "distinct_situations": 0,
+    "exposure": 0,
+    "scenarios": [],
+    "units": 0,
+    "witness_scenarios": [],
+    "witness_true": 0,
+    "witness_units": 0,
+    "witness_unobservable": 0
+   }
+  }
+ }
+}
