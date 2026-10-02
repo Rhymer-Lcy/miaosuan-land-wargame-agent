@@ -39,7 +39,7 @@ objective the split arm never held at the end. These facts shape the hypotheses 
 | games | `1910631192.C3.b.x01` (red inert-v0, blue `baseline-v2`) and `1910631192.C3.c.x01` (red inert-v0, blue `tactic-deployment-split-1`), the first repetition of each Sprint 1 configuration, played again from the screen manifest (`7ef883b7...`) with `--purpose diagnostic` |
 | runtime | `baseline-v1-runtime-r2` (`OPENBLAS_NUM_THREADS=1`), serial (`--workers 1`), SDK 4.1.0 engine installation on the server |
 | work directory | `local/evaluation/t1r-diagnosis-1` (private), records and captures beside each other |
-| capture | the read-only step capture of `evaluation/residual516.py` for both seats' policies: every step's submitted batch, feedback, unit appearances and watched-field changes, trace digests; full state snapshot (all-seeing state, each policy seat's observation and memory) **every step** (`--sample-every 1`, added to the runner for this diagnosis; the default stays 200) |
+| capture | the read-only step capture of `src/miaosuan_agent/evaluation/residual516.py` for both seats' policies: every step's submitted batch, feedback, unit appearances and watched-field changes, trace digests; full state snapshot (all-seeing state, each policy seat's observation and memory) **every step** (`--sample-every 1`, added to the runner for this diagnosis; the default stays 200) |
 | premise check | each game must reproduce its Sprint 1 record exactly: blue total 262 and 182, red total 104, the same action counts by type. If either does not, the diagnosis stops and reports; determinism is part of the premise |
 | ledger | two diagnostic sessions, expected 2458 and 2459 |
 
@@ -77,6 +77,75 @@ Cross-checks required by lesson L4 before any conclusion: the batch's occupation
 record's `actions_by_type`; the final flags in the last snapshot must reproduce the record's occupy scores; the
 candidate's split count must equal the record's. The analysis refuses to run on disagreement.
 
-## 5. Results
+## 5. Results (written after the run, 2026-10-02)
 
-(filled after the run)
+Run: the plan above was pushed at `f565934` and public at 12:43:31+08:00; the two games were played at 12:50 to
+12:51+08:00 as ledger sessions 2458 (split arm) and 2459 (baseline arm), serially, runtime-r2, snapshot every step
+(recorded in each record's harness block). Both reproduced their Sprint 1 records: blue totals 262 and 182, red 104,
+the same action counts by type (`evaluation/t1r-diagnosis-1/analysis.json`, `premise.reproduced` true). Cross-checks:
+capture and record agree on 10 and 18 moves, 2 and 1 occupations, 0 and 12 deployment splits; the flags at the last
+snapshot reproduce both occupy scores; the remain score equals value x blood (132) in both games.
+
+### Attribution
+
+| | baseline arm | split arm |
+|---|---|---|
+| controllable units in play | 6 (4 vehicle operators, 2 infantry) | 14 (10 vehicle units, 4 infantry units) |
+| 50-point objective held from engine step | 462 | 464 |
+| 80-point objective held from engine step | 643 | never |
+| moves issued / completed / still running at the end | 10 / 8 / 2 | 18 / 4 / 14 |
+| unit-steps "already moving" while an objective was unheld | 3,838 | 25,178 |
+| unit-steps standing in a hex holding four own ground units | 4,900 | 11,800 |
+| play steps with at least one full hex | 1,225 of 1,800 | 1,580 of 1,800 |
+| blood sum (constant), shots, passengers | 18, 0, 0 | 18, 0, 0 |
+
+Score difference by component: occupy -80, attack 0, remain 0; the sum equals the total difference (-80). By 200-step
+window of engine time, the split arm holds the same occupy points as the baseline through window 400 and 80 fewer
+from window 600 onward (`difference.occupy_points_held_by_window_candidate_minus_baseline`), i.e. the 80 points are
+exactly the value of the objective the baseline occupies at step 643 and the split arm never occupies.
+
+What happened (from the private per-unit trajectories, `local/diagnostics/t1r/`; counts only here):
+
+1. In both games every unit's first order sends it to the nearer objective (the 50-point one): the destinations at the
+   first play step are identical (`first_divergence.destinations_differ_at_first_play_step` false). The baseline's 4
+   vehicles arrive at steps 461 to 481, occupy, and, the objective held, are ordered on to the 80-point objective at
+   steps 462 to 481; they arrive at 642 to 661 and occupy. Its 2 infantry units are too slow to arrive anywhere (one
+   hex per 144 steps) in either game.
+2. In the split game the 10 vehicle units travel in columns along the same route; whenever a route hex holds four of
+   them the followers wait (first mid-route waits at engine steps 244 to 322, 58 steps each, four units), which is the
+   first behavioural divergence at engine step 260 (blood-weighted occupancy differs in 4 hexes).
+3. Four vehicle units enter the 50-point objective's hex at step 463 and fill it; one occupies (the flag flips at
+   464). Four more wait in the single neighbouring hex of the route, two more in the hex behind. At step 464 the four
+   occupants are ordered on to the 80-point objective; their path's first hex is that neighbour, full from step 482.
+   The waiters' next hex is the objective, full with the occupants. Neither group can advance; the engine keeps every
+   unit "moving" (non-empty move path, no error, no feedback), and `baseline-v2` never re-orders a unit that is
+   executing a move, so the eight units stand in those two hexes from step 483 to the end (1,317 steps) and the two
+   behind them likewise. No unit ever reaches the 80-point objective.
+
+### Verdicts
+
+| Id | Verdict | Evidence |
+|---|---|---|
+| H1 fragmentation | REFUTED | blood sum 18 constant in both games, 0 shots, remain = value x blood |
+| H2 play-stage interaction | SUPPORTED (amplifier) | 25,178 unit-steps "already moving" while an objective was unheld; the eight blocked units are never re-ordered because an issued move is never changed; every unit targets the same nearest objective |
+| H3 positional congestion | SUPPORTED (primary) | the two route hexes at the 50-point objective hold four own units each from step 482/483 to the end; 14 of 18 moves never complete; the baseline, with four vehicles, fills a hex only in passing |
+| H4 carrier/passenger | REFUTED | no passenger unit-step, no boarding or landing event in either game |
+| H5 timing | REFUTED | deployment ends 2 engine decisions later; the 50-point flag flips at 464 against 462; the baseline's 80-point flag flips at 643, 1,157 steps before the end |
+| H6 scoring artefact | REFUTED | remain = value x blood and occupy = value of held objectives, exactly, in both games |
+| H0 | none needed | |
+
+### Engine facts established (4.1.0)
+
+* A unit with a move path whose next hex holds four own ground units does not advance; it keeps its move path, the
+  engine reports no error and no feedback, and the unit's `can_to_move` field may read 1 (the group inside the
+  objective) or 0 (the waiting group). Two groups whose next hexes are each other's hexes block each other for the rest
+  of the game.
+* Vehicles advance one hex per 20 engine steps on this route, infantry one per 144.
+
+### Conclusion for the revision
+
+The loss is attributable: the stacking limit turns a column of more than four ground units bound for one objective
+into a standing block as soon as the objective is occupied, and `baseline-v2`'s play stage (one nearest objective for
+every unit, no change to an issued move) never resolves it. Splitting did not weaken the force; it made the force
+larger than the route's capacity. Whether a deployment-side rule can correct this is the subject of
+`docs/T1R_SPEC.md`.
