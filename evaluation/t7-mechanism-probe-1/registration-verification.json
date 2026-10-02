@@ -1,0 +1,16 @@
+{
+ "author": "Rhymer-Lcy",
+ "byte_identical": true,
+ "canonical_body_bytes": 22573,
+ "canonical_body_sha256": "cb11d34ed2aac502dd00f7603e4a81c75e36411b35a244d98223c1217249af56",
+ "fetched_at": "2026-10-03T02:16:10+08:00",
+ "fetched_without_authentication": true,
+ "github_date_header": "Fri, 02 Oct 2026 18:16:10 GMT",
+ "issue_created_at_utc": "2026-10-02T18:16:00Z",
+ "issue_number": 3,
+ "issue_title": "Mechanism probe: T7 idle concealment, three registered sessions",
+ "issue_url": "https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/3",
+ "public_body_bytes": 22573,
+ "public_body_sha256": "cb11d34ed2aac502dd00f7603e4a81c75e36411b35a244d98223c1217249af56",
+ "state": "open"
+}
