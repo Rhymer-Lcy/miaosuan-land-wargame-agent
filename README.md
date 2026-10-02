@@ -53,7 +53,12 @@ capability census, and a rubric committed before scoring that selected deploymen
 screen (`docs/SCREEN_DEPLOYMENT_SPLIT.md`, preregistered in issue #1) found that engine 4.1.0 accepts deployment splits
 in 3 of the 8 frozen scenarios and refuses them in the other 5; its 192 games showed no reliable gain or loss (pooled
 head-to-head margin +5.88, 95% interval -78.58 to 97.71), and the registered disposition is REVISE BEFORE
-CONFIRMATION. Nothing was promoted.
+CONFIRMATION. Nothing was promoted. Sprint 2 diagnosed the screen's one deterministic loss with two captured games
+(`docs/T1R_DIAGNOSIS.md`): under the engine's four-units-per-hex stacking limit, a split force bound for one
+objective blocks itself at that objective and `baseline-v2` never re-orders a unit that is executing a move. No
+deployment-side rule corrects that without forbidding the splits themselves, so the revised candidate's specification
+(`docs/T1R_SPEC.md`) fails its gate and the T1 line is SHELVED; a play-stage candidate, capacity-aware movement, is
+proposed and not begun.
 
 ## Third-party material is not in this repository
 
@@ -97,6 +102,8 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/OWNERSHIP_PREVALENCE_DIAGNOSTIC.md` | the registered prospective diagnostic of how often `baseline-v2` meets an actionable target-ownership mismatch: events, observer, plan, rules, results |
 | `docs/TACTICAL_FRONTIER.md` | the tactics-first roadmap: architecture, research states, capability census, selection rubric, hypothesis register, roadmap, platform canary and failure ledger, BOKE-2026 holdout |
 | `docs/SCREEN_DEPLOYMENT_SPLIT.md` | the exploratory screen of deployment disaggregation: registration, mechanism smoke and engine semantics, A/B, reading, disposition |
+| `docs/T1R_DIAGNOSIS.md` | the diagnosis of the screen's deterministic loss: pre-declared hypotheses and observables, two captured games, verdicts, engine facts |
+| `docs/T1R_SPEC.md` | the revised deployment-split candidate's specification (probe and stop, stack-void avoidance), the correction the diagnosis calls for, gate G6 and its verdict |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
 | `evaluation/routing-remediation-1/` | the routing remediation's registration, pinned corpus and privacy-safe results |
@@ -111,6 +118,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `evaluation/baseline-v2-target-ownership-prevalence-1/` | the prevalence diagnostic's manifest, references, observer check, results and prefix diagnosis |
 | `evaluation/tactical-frontier-1/` | the capability census, the selection rubric (committed before scoring), the scores and the selection |
 | `evaluation/tactical-screen-deployment-split-1/` | the deployment-split screen's manifest, mechanism-smoke facts and exploratory results |
+| `evaluation/t1r-diagnosis-1/` | the T1-r diagnosis's public analysis of the two captured games (counts, scores, step indices) |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy
