@@ -1,0 +1,205 @@
+{
+ "E4": {
+  "discriminating_unit_steps": 0,
+  "reason": "no unit's stop took effect",
+  "restarts": 0,
+  "verdict": "INCONCLUSIVE",
+  "violations": 0
+ },
+ "actions": {
+  "by_type": {
+   "1": 18,
+   "10": 4,
+   "314": 12,
+   "333": 1,
+   "5": 1
+  },
+  "rewritten_in_place": 12,
+  "with_error_feedback": 0,
+  "without_feedback_entry": 1
+ },
+ "channels": {
+  "disagreeing_unit_entries": 0,
+  "first_k": null,
+  "steps_with_disagreement": 0
+ },
+ "evaluable": true,
+ "game": "1910631192.C3.p1",
+ "integrity": {
+  "contract_errors": 0,
+  "feedback_errors_by_code_and_type": {},
+  "gate_rejections": 0,
+  "harness_commit": "23341a4d72cd55a62c3f76aef4adfc763fc257ca",
+  "harness_dirty": false,
+  "ok": true,
+  "problems": [],
+  "replay_checks": 19,
+  "replay_mismatches": 0,
+  "session": "2460",
+  "steps": 1803
+ },
+ "max_occupancy": {
+  "all-seeing state": 4,
+  "seat observation": 4
+ },
+ "offline": {
+  "pre_trigger_decisions_rechecked": 532
+ },
+ "outcomes": {
+  "no attributable change": 4
+ },
+ "p1_s": {
+  "after_stops": {
+   "hex_sequences_differ": 0,
+   "observed_entries": 36,
+   "simulated_entries": 36,
+   "units": 4,
+   "worst_step_offset": 0
+  },
+  "before_stops": {
+   "hex_sequences_differ": 0,
+   "observed_entries": 238,
+   "simulated_entries": 238,
+   "units": 14,
+   "worst_step_offset": 0
+  },
+  "computed": true,
+  "model_error": null,
+  "orders_not_applicable": {}
+ },
+ "premise": {
+  "group_size": 4,
+  "hooked_trace_digests_equal_before_trigger": true,
+  "inert_trace_digests_equal_to_trigger": true,
+  "predicted_group_size": 4,
+  "predicted_trigger_k": 533,
+  "reproduced": true,
+  "state_digests_equal_to_trigger": true,
+  "trigger_k": 533
+ },
+ "schema": "miaosuan-ps1-probe-p1/1",
+ "secondary": {
+  "back_off_arrivals": [],
+  "back_off_emitted": 0,
+  "deadlock_episodes_after": [
+   {
+    "end": 1802,
+    "kind": "cycle",
+    "lasts_to_end": true,
+    "max_units": 10,
+    "start": 534,
+    "steps": 1269
+   }
+  ],
+  "deadlocked_at_trigger": 10,
+  "deadlocked_set_first_empty_k": null,
+  "final_objective_values_held": [
+   50
+  ],
+  "first_entry_by_a_formerly_deadlocked_unit_k": null,
+  "new_cycles_after": 0,
+  "trigger_cycle_absent_from_k": null,
+  "trigger_cycle_lengths": [
+   2
+  ]
+ },
+ "stops": 4,
+ "trigger_cur_step": 530,
+ "trigger_k": 533,
+ "trigger_recomputed": {
+  "agrees_with_hook": true,
+  "first_detection_k": 533
+ },
+ "units": [
+  {
+   "L": null,
+   "attributable": false,
+   "back_off": null,
+   "effect_cur_step": null,
+   "effect_k": null,
+   "entered_before_effect": null,
+   "feedback_codes": [
+    null
+   ],
+   "in_place": false,
+   "listed_10": true,
+   "mtsrt_positive_k": null,
+   "outcome": "no attributable change",
+   "released": 1,
+   "relist_k": null,
+   "s0": 530,
+   "transition_listed_types": [],
+   "transition_mtsrt_max": null,
+   "transition_stop_values": []
+  },
+  {
+   "L": null,
+   "attributable": false,
+   "back_off": null,
+   "effect_cur_step": null,
+   "effect_k": null,
+   "entered_before_effect": null,
+   "feedback_codes": [
+    null
+   ],
+   "in_place": false,
+   "listed_10": true,
+   "mtsrt_positive_k": null,
+   "outcome": "no attributable change",
+   "released": 1,
+   "relist_k": null,
+   "s0": 530,
+   "transition_listed_types": [],
+   "transition_mtsrt_max": null,
+   "transition_stop_values": []
+  },
+  {
+   "L": null,
+   "attributable": false,
+   "back_off": null,
+   "effect_cur_step": null,
+   "effect_k": null,
+   "entered_before_effect": null,
+   "feedback_codes": [
+    null
+   ],
+   "in_place": false,
+   "listed_10": true,
+   "mtsrt_positive_k": null,
+   "outcome": "no attributable change",
+   "released": 1,
+   "relist_k": null,
+   "s0": 530,
+   "transition_listed_types": [],
+   "transition_mtsrt_max": null,
+   "transition_stop_values": []
+  },
+  {
+   "L": null,
+   "attributable": false,
+   "back_off": null,
+   "effect_cur_step": null,
+   "effect_k": null,
+   "entered_before_effect": null,
+   "feedback_codes": [
+    null
+   ],
+   "in_place": false,
+   "listed_10": true,
+   "mtsrt_positive_k": null,
+   "outcome": "no attributable change",
+   "released": 1,
+   "relist_k": null,
+   "s0": 530,
+   "transition_listed_types": [],
+   "transition_mtsrt_max": null,
+   "transition_stop_values": []
+  }
+ ],
+ "verdicts": {
+  "E1": "REFUTED",
+  "E2": "REFUTED",
+  "E3": "INCONCLUSIVE",
+  "E4": "INCONCLUSIVE"
+ }
+}

@@ -1,0 +1,221 @@
+{
+ "F1": {
+  "accounting": {
+   "eligible_units": 30,
+   "model_error": null,
+   "orders_not_applicable": {},
+   "steps_compared": 2879,
+   "units_outside_population": 0,
+   "units_with_entries": 24
+  },
+  "accounting_complete": true,
+  "capacity_or_adjacency_violations": 0,
+  "entries_within_tolerance": 602,
+  "hex_sequences_differ": 0,
+  "max_observed_occupancy": {
+   "all-seeing state": 4,
+   "seat observation": 4
+  },
+  "observed_entries": 683,
+  "offset_histogram": {
+   "-19": 79,
+   "-20": 1,
+   "-40": 1,
+   "0": 602
+  },
+  "simulated_entries": 683,
+  "verdict": "FAIL",
+  "worst_step_offset": 40
+ },
+ "F2": {
+  "hex_sequences_differ": 12,
+  "model_error": null,
+  "occupations": {
+   "predicted": 5,
+   "predicted_steps": [
+    363,
+    444,
+    562,
+    860,
+    941
+   ],
+   "predicted_unmatched": 3,
+   "recorded": 5,
+   "recorded_matched": 2,
+   "recorded_steps": [
+    363,
+    444,
+    542,
+    821,
+    902
+   ]
+  },
+  "orders": {
+   "predicted": 81,
+   "predicted_unmatched": 25,
+   "recorded": 64,
+   "recorded_matched": 56
+  },
+  "verdict": "FAIL",
+  "worst_step_offset": 118
+ },
+ "actions": {
+  "by_type": {
+   "1": 70,
+   "2": 3,
+   "314": 30,
+   "333": 1,
+   "5": 5
+  },
+  "rewritten_in_place": 30,
+  "with_error_feedback": 0,
+  "without_feedback_entry": 1
+ },
+ "channels": {
+  "disagreeing_unit_entries": 0,
+  "first_k": null,
+  "steps_with_disagreement": 0
+ },
+ "deadlock_episodes": {
+  "episodes": 3,
+  "fired": 1,
+  "kinds": {
+   "chain": 2,
+   "cycle": 1
+  },
+  "trigger_steps_inside_episodes": 1950
+ },
+ "first_play_k": 3,
+ "frozen_extractors": {
+  "entry_rule": {
+   "agree": true,
+   "frozen": {
+    "ascending agrees": 633,
+    "descending agrees": 577,
+    "end of step agrees": 599,
+    "entries": 633,
+    "waited at once": 133
+   },
+   "mine": {
+    "ascending agrees": 633,
+    "descending agrees": 577,
+    "end of step agrees": 599,
+    "entries": 633,
+    "waited at once": 133
+   }
+  },
+  "episodes": {
+   "agree": true,
+   "frozen": 113,
+   "mine": 113
+  }
+ },
+ "game": "1930331196.C2.p2",
+ "integrity": {
+  "contract_errors": 0,
+  "feedback_errors_by_code_and_type": {},
+  "gate_rejections": 0,
+  "harness_commit": "23341a4d72cd55a62c3f76aef4adfc763fc257ca",
+  "harness_dirty": false,
+  "ok": true,
+  "problems": [],
+  "replay_checks": 29,
+  "replay_mismatches": 0,
+  "session": "2461",
+  "steps": 2883
+ },
+ "keep": {
+  "eligible_unit_steps_with_keep_and_a_path": 0,
+  "entry_rule_disagreements_with_keep": 0,
+  "f1_mismatched_units_with_keep": 0
+ },
+ "last_k": 2882,
+ "population": {
+  "aircraft_at_first_play": 2,
+  "eligible_at_first_play": 30,
+  "eligible_units": 30,
+  "orders_applied": 69,
+  "orders_echo_mismatch": 0,
+  "outside_scope": {
+   "type 1 by a unit outside the population": 6,
+   "type 2 by a unit outside the population": 3
+  },
+  "passengers_at_first_play": 12,
+  "removals": 0,
+  "units_appearing_later": 0
+ },
+ "schema": "miaosuan-ps1-probe-p2/1",
+ "targeted": {
+  "T-a": {
+   "as_predicted": 103,
+   "discriminating": 103
+  },
+  "T-b": {
+   "as_predicted": 113,
+   "discriminating": 113,
+   "length_minus_tau_histogram": {
+    "-1": 113
+   }
+  },
+  "T-c": {
+   "as_predicted": 4,
+   "discriminating": 6
+  },
+  "T-d": {
+   "ascending_as_predicted": 8,
+   "contention_events": 9,
+   "descending_as_predicted": 0,
+   "discriminating_from_first_come": 2,
+   "first_come_as_predicted": 6,
+   "with_keep_flag_excluded": 0
+  },
+  "T-e": {
+   "arbitration_events": 9,
+   "entry_rule_as_predicted": 62,
+   "entry_rule_discriminating": 62,
+   "restart_delay_as_predicted": 107,
+   "restart_delay_discriminating": 107,
+   "restart_delay_events": 117
+  },
+  "channels_agree": {
+   "arbitration": true,
+   "delay": true,
+   "entry": true,
+   "episodes": true,
+   "restart": true
+  },
+  "claims": {
+   "T-a": "SUPPORTED",
+   "T-b": "SUPPORTED",
+   "T-c": "REFUTED",
+   "T-d": "REFUTED",
+   "T-e": "REFUTED"
+  },
+  "entry_rule": {
+   "ascending agrees": 633,
+   "descending agrees": 577,
+   "descending disagrees": 56,
+   "end of step agrees": 599,
+   "end of step disagrees": 34,
+   "entries with a path left": 633,
+   "started": 500,
+   "waited at once": 133
+  },
+  "episodes": {
+   "by_outcome": {
+    "entered": 113,
+    "open at the end": 14
+   },
+   "runs_excluded": {
+    "episode open at the end": 14
+   },
+   "total": 127
+  }
+ },
+ "trigger_census": {
+  "ps1b_trigger_steps": 1950,
+  "unit_steps": 86400,
+  "unit_steps_blocked": 31463,
+  "unit_steps_deadlocked": 30716
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "G1": "PASS (Sprint 3; not contradicted)",
+ "G2": "FAIL",
+ "G3": "FAIL",
+ "G4": "PASS (Sprint 3; not contradicted)",
+ "G5": "SHELVE",
+ "inputs": {
+  "E": {
+   "E1": "REFUTED",
+   "E2": "REFUTED",
+   "E3": "INCONCLUSIVE",
+   "E4": "INCONCLUSIVE"
+  },
+  "F1": "FAIL",
+  "F2": "FAIL",
+  "certificate": null,
+  "p1_expressible": true,
+  "targeted": {
+   "T-a": "SUPPORTED",
+   "T-b": "SUPPORTED",
+   "T-c": "REFUTED",
+   "T-d": "REFUTED",
+   "T-e": "REFUTED"
+  }
+ },
+ "schema": "miaosuan-ps1-probe-gates/1"
+}
