@@ -230,3 +230,241 @@ and at most 10% in the M1 window. With fewer than 10 episodes the check is insuf
 
 **G3 as amended** passes only when F1 and F2 pass under M1b on both Sprint 2 games, the independent check supports M1b,
 and a certificate is feasible. G1, G2, G4 and G5 are unchanged.
+
+## 11. Results (written 2026-10-02, after every registered quantity was computed)
+
+Registered quantities come from `evaluation/ps1-design-1/summary.json` (`scripts/ps1_study.py`). Descriptions computed
+after the gates, which change no verdict, come from `evaluation/ps1-design-1/posthoc.json`
+(`scripts/ps1_posthoc.py`) and are marked POST HOC. `k` is the capture's decision index; in the split game the engine
+step is `k - 3`. No engine session was used.
+
+### 11.1 Reconstruction and score reconciliation
+
+Both channels agree at every snapshot of both games (0 disagreements in 1,800 and 1,802 snapshots), and the city flags
+equal the observation's own occupy counter at every snapshot. Capture and record agree on 10 and 18 moves and on 2 and 1
+occupations, and every recorded order reappears as the unit's remaining path in the next state (10 of 10, 18 of 18).
+The input files' digests were unchanged after both drivers ran (6 files).
+
+In the split game the first unit is blocked at `k` 263. From `k` 482 (engine step 479) to the end, 1,321 steps, 10
+vehicle units in groups of 4, 4 and 2 are deadlocked, with one two-hex cycle that includes an objective; the 80-point
+objective is never occupied. The declared trigger first holds at `k` 533, 51 steps after the deadlock formed (the
+vehicles' stall threshold is `2 * 20 + 10` steps), and holds on 1,270 steps. No unit is ever blocked in the baseline
+game.
+
+| Final score component (blue) | `baseline-v2` | split candidate |
+|---|---|---|
+| remain + occupy + attack | 132 + 130 + 0 | 132 + 50 + 0 |
+| total | 262 | 182 |
+| red (inert control) total | 104 | 104 |
+| win = total minus red total | 158 | 78 |
+
+The 158 and 78 of Sprint 1 and Sprint 2 are the win margins against the inert control; 262 and 182 are the totals.
+Either way the difference is 80, the 80-point objective.
+
+### 11.2 Observation audit (question 1)
+
+| Id | Input | Class | Evidence (both Sprint 2 games unless stated) |
+|---|---|---|---|
+| O1 | own units' `cur_hex`, `on_board`, `type`, `basic_speed` | 1 observed | seat observation equals the all-seeing state at every snapshot |
+| O2 | `move_path` is the remaining path | 1 observed | it advanced by exactly one hex at all 138 and 274 hex changes |
+| O3 | `valid_actions` of a blocked unit | 1 observed (listing only) | action 10 alone at all 13,764 blocked unit-steps of the split game; acceptance is O7 |
+| O4 | `speed` | 1 observed | `1 / tau` on every moving unit-step (6,190 and 11,414); 0 on 13,316 of the 13,764 blocked unit-steps, the other 448 being units still traversing towards a hex that is full at that moment |
+| O4 | `stationary_count` | 1 observed; not used | steps in the hex plus one on every blocked unit-step, but 762 moving and 28 stationary unit-steps of the split game differ |
+| O4 | `can_to_move`, `stop`, `flag_force_stop`, `move_state` | 1 observed; not blockage indicators | `can_to_move` takes both values in every class; `stop` is 0 on every blocked and moving unit-step; the other two are 0 everywhere |
+| O5 | hex time `tau` | 2 derived | predicts every unimpeded entry exactly (138 of 138 and 235 of 235, offset 0) |
+| O6 | stacking from observed positions | 2 derived | every waiting unit-step (speed 0) faces a full next hex (13,316 of 13,316); every entry after waiting follows a step with room (39 of 39) |
+| O7 | acceptance and effect of action 10 on a blocked unit | 4 unknown | no stop was ever issued |
+| O8 | processing order of simultaneous entries | 4 unknown (registered) | not examined before the gates; POST HOC evidence in 11.6, items 1 and 4 |
+
+The section 4 terms (occupancy, full hex, next-hex demand, wait-for graph, deadlock, stall age) are class 2, derived
+from O1, O2, O5 and the policy's own step history. Objective assignment and reservation are policy state. Nothing a rule
+needs is class 3 or 5.
+
+### 11.3 Fidelity and the restart check (G3)
+
+| Model | Game | F1 (recorded orders) | F2 (surrogate) |
+|---|---|---|---|
+| M1 | baseline | pass, offset 0 | pass, 10 of 10 orders, occupations at `k` 461 and 642 |
+| M1 | split | **fail**: sequences equal, worst offset 19 | **fail**: 18 of 18 orders, occupation at `k` 463, worst offset 19 |
+| M1b | baseline | pass, offset 0 | pass |
+| M1b | split | **fail**: 2 units' hex sequences differ | **fail**: the same 2 units |
+
+Every split-game run reproduces the deadlock itself (10 units, one cycle). The independent check of amendment 1 found
+71 corpus episodes: 58 in the M1b window, 0 in the M1 window, 13 in neither. That is 81.7% against the required 90%,
+so the registered verdict is **does not support M1b**. The 13 others lie 38 to 299 steps beyond a hex time. On the
+two Sprint 2 games, which are not independent, 38 of 39 episodes fall in the M1b window.
+
+### 11.4 Certificates (question 3; descriptive, because G3 fails)
+
+All under M1b from the observed state at the stated start, with 0 capacity violations. Every order after the start and
+every trajectory are model-derived; engine acceptance of every order is unverified.
+
+| Alt | Intervention | Start `k` | Commands | Cycle broken at `k` | Deadlocked at end | 80-point objective from `k` | Verdict | Unverified |
+|---|---|---|---|---|---|---|---|---|
+| A1 | PS-1A from the first play decision | 3 | 8 orders, 3,928 holds | no cycle forms | 0 | 584 | feasible | E5 |
+| A4 | stop units bound for an objective just taken, re-order | 464 | 22 stops, 14 orders | no cycle forms | 0 | 718 | feasible | E3, E4, E5 |
+| A2 | PS-1B back-off at first detection | 533 | 10 stops, 16 orders, 3 recoveries | 534 | 0 | 808 | feasible | E1 to E5 |
+| A3 | PS-1B bypass of the occupying group | 533 | 4 stops, 10 orders, 1 recovery, 2 no-escape events | 534 | 6 | 849 | cycle broken, unresolved residual | E1 to E5 |
+| A5a | PS-1B 300 steps after detection | 833 | 10 stops, 16 orders, 3 recoveries | 834 | 0 | 1108 | feasible | E1 to E5 |
+| A5b | PS-1B 900 steps after detection | 1433 | 4 stops, 10 orders, 1 recovery | 1434 | 6 | 1708 | cycle broken, unresolved residual | E1 to E5 |
+| A6 | PS-1B on a synthetic dead-end corridor | | 0 recoveries, 1 no-escape event, 4 witnesses | | 8 | | failure witness | |
+
+In the model the first recovery breaks the cycle one step after the stop. After a back-off a residual chain forms,
+which a second pair of recoveries clears once the 600-step window allows. In A5b the window outlasts the game; in A3
+the occupying group's bypass leaves 6 units with no escape. Every certificate ends with both objectives held, 130
+occupy points against the 50 observed. That is a model statement about an unobserved engine outcome, not a
+prediction of one.
+
+### 11.5 Generalisation and non-interference (G4)
+
+| Rule | Sprint 2 baseline game | split game | replay corpus (8 games, 16 seat-sequences) | Sprint 1 smoke (8 games) |
+|---|---|---|---|---|
+| PS-1A would change an order | 2 of 10 | 14 of 18 | 162 of 391 | |
+| A4's retarget trigger, unit-steps | 2,752 of 10,800 | 13,390 of 25,200 | 65,377 of 323,288 | 853 of 1,665 |
+| PS-1B trigger, steps | 0 | 1,270 | 1,429 | 31 snapshots |
+
+Every corpus firing was investigated (POST HOC detail, `posthoc.json`). The corpus holds 10 deadlock episodes (2,447
+steps, `baseline-v0` play). The trigger never fires in the 4 shortest (1 to 20 steps). It fires in the other 6:
+
+* a cycle of up to 14 units lasting 323 steps (trigger on 163 of them, first after 91), released when a unit left the
+  observation; in a private check, every deadlocked unit had speed 0 at the first, middle and last step of each trigger
+  run within it;
+* a chain of up to 6 units lasting 1,637 steps to the end of the game (trigger on 969);
+* chains of 1 or 2 units lasting 241, 91 and 56 steps, each released when a unit left the observation;
+* a chain of 1 unit lasting 64 steps, released when the policy itself ordered a holder, 13 steps after the trigger first
+  fired.
+
+In every chain at least one holder stands on an objective. In the smoke games of the split candidate (one snapshot per
+200 steps) the trigger fires in 4 of 8 scenarios: two cycles (up to 13 and 38 units) and two chains (3 and 4 units).
+
+* **PS-1A fails G4**: it changes 2 of the frozen baseline's 10 orders in a game with no blocking, and 41% of corpus
+  orders.
+* **A4's retarget fails G4**: it fires on 2,752 unit-steps of a game with no blocking.
+* **PS-1B passes G4**: it never fires without a deadlock in observed state; it does not fire in the baseline game; every
+  corpus and smoke firing is on a deadlock and is explained above.
+* Two caveats for PS-1B. Once (1 of 6 corpus episodes) the policy's own order released the units 13 steps into a firing,
+  where a stop would have cost the 75-second transition. And the trigger lapses whenever a newly blocked unit joins the
+  set (163 trigger steps in the 323-step cycle).
+
+No claim of generality beyond these scenarios is made.
+
+### 11.6 POST HOC descriptions (no gate changes)
+
+1. **The M1b departure.** At `k` 283 the contested hex had 2 free places and 3 contenders. Two had waited since `k` 263.
+   The third had entered the hex in front of it at `k` 263, the step the contested hex filled, and showed speed 0 from
+   its entry step: it never started its traversal (the first two contenders' histories are in the private trace). The
+   engine gave both places to the two earlier waiters (entries at `k` 302); the third entered at `k` 322. M1b let the
+   third traverse from its entry and gave it a place at `k` 283.
+2. **M1c** is M1b plus: a unit entering a hex whose next hex is full at that moment waits at once, with units processed
+   in ascending index and occupancy updated after each move. It reproduces both Sprint 2 games under F1 and F2 with 0
+   sequence differences and offset 0. Every certificate verdict and step of 11.4 is unchanged under it. M1c was derived
+   from item 1, so this is not evidence for it.
+3. **The 13 restart outliers** each split into traversals of exactly `tau - 1` steps (38 of 38), separated by re-waits
+   that began with the target full again (25 of 25). The Sprint 2 outlier splits the same way (2 traversals, 1
+   re-wait). The registered check measured `d` from the first step with room and did not anticipate a refill during a
+   restarted traversal.
+4. **The entry rule on the corpus.** Of 3,240 entries with a path left, 60 waited at once. Ascending-index processing
+   predicts the speed-0 state of 3,230; descending index predicts 3,193, and end-of-step occupancy 3,221. All 10
+   ascending disagreements are units at speed 0 whose next hex was not full and whose observation `keep` flag was set.
+   This corpus was already used by the amendment-1 check, and the property was chosen after item 1.
+
+### 11.7 Engine facts and hypotheses
+
+| Statement | Status | Provenance |
+|---|---|---|
+| `speed` is 0 while a unit with a path waits in front of a full hex and `1 / tau` while it traverses | fact | O4, O6 |
+| `valid_actions` lists only action 10 for a unit blocked by capacity | fact (listing) | O3 |
+| `tau = (720 / basic_speed) * cost` predicts every unimpeded entry | fact on this route | O5 |
+| `can_to_move`, `stop`, `flag_force_stop`, `move_state` do not tell a blocked unit from a moving one | fact | O4 |
+| a unit in transit reserves no place; a column follows a column leaving the hex in the same step | supported | amendment 1 (Sprint 2 captures) |
+| restarting after a wait takes a full hex time, counting the restart step (M1b) | hypothesis: registered check not supported (58 of 71); POST HOC consistent with every episode | 11.3, 11.6 item 3 |
+| a unit entering a hex in front of a full hex waits at once; entries processed in ascending index (M1c, E5) | POST HOC hypothesis | 11.6 items 1, 2, 4 |
+| action 10 is accepted from a blocked unit, takes effect in place, and is followed by a 75-second transition after which action 1 is listed again (E1 to E4) | unverified | O7 |
+| a game's length is scenario-specific: 1,800 steps in 1910631192, while a corpus game of 2130511121 runs to step 2,879 (C5 stated 1,800 without that qualification) | fact | `posthoc.json` episode rows |
+
+### 11.8 Selection (questions 2 and 4)
+
+*Detection.* Speed 0 with a full next hex identifies a waiting unit (O6); the maximal deadlocked set and its cycles
+follow from observed positions and paths. The stall condition delays detection by a hex-time margin (51 steps after
+formation in the split game) and keeps the trigger off for transient queues (the 4 short corpus episodes).
+
+*Anticipation.* PS-1A's commitment counting anticipates the block, but counts commitment rather than timing, and so
+fires where nothing would block.
+
+*Choice.* PS-1A is rejected (G4). PS-1C is not needed: under the model, recovery alone suffices (A2, A5a), and the
+combination would only add PS-1A's interference. **Selected minimal candidate: PS-1B with back-off.** When the
+deadlock-and-stall trigger holds, it stops the smallest deadlocked group on the cycle (or, for a chain, any deadlocked
+group) whose units can all back off to hexes with spare capacity that lie on no blocked unit's remaining path. After
+the transition it re-orders that group; otherwise it emits nothing. Its live uncertainties are E1 to E4, M1c with E5,
+and whether a residual chain forms in the engine as it does in the model.
+
+*State, reset and ties* (as in `src/miaosuan_agent/evaluation/ps1_model.py`):
+
+* State: for each unit, the step of its last hex change or order (its stall age), the step of its last recovery, and
+  a planned path while it is in its transition.
+* Reset: a recovery needs every deadlocked unit to be at least 600 steps past its last recovery or failed attempt. A
+  planned path is issued, and dropped from the state, at the first step its unit accepts a move again.
+* Ties: the group is the smallest, then one not standing on an objective, then the one in the lower hex index.
+  Backed-off units go to the nearest hexes by path cost, with spare capacity counted as they are placed, ties by lower
+  hex index, units taken in ascending index.
+
+### 11.9 Gate verdicts
+
+| Gate | Verdict | Reason |
+|---|---|---|
+| G1 evidence integrity | **PASS** | 11.1: both channels, flags against counters, record counts, order echo, unchanged digests, the failure as diagnosed |
+| G2 observable intervention | **FAIL** for the selected PS-1B | it uses only class 1 and 2 inputs but depends on E1 to E4, which documentation cannot settle (PS-1A would pass G2; it fails G4) |
+| G3 offline feasibility | **FAIL** | F1 and F2 fail under M1b on the split game, and the independent check does not support M1b; the certificates of 11.4 stay descriptive |
+| G4 generalisation and non-interference | **PASS** for PS-1B | 11.5; PS-1A and A4's retarget fail |
+| G5 disposition | **NEEDS_ENGINE_PROBE** | below |
+
+### 11.10 Disposition: NEEDS_ENGINE_PROBE
+
+What blocks the selected candidate is a set of named engine behaviours that no capture contains: E1 to E4 block G2, and
+the admission of entrants that outnumber the free places (E5; POST HOC, M1c's wait at entry) blocks G3.
+
+* **Not REVISE.** The one correctable defect found, an independent check that did not anticipate refills, is not what
+  blocks: with a corrected check, G2 would still fail on E1 to E4.
+* **Not SHELVE.** The model admits a capacity-consistent recovery (A2, A5a), and PS-1B passes G4.
+* **Not READY.** G2 and G3 fail.
+
+The deadlock also arises in ordinary `baseline-v0` corpus play (11.5), so the question does not depend on the split
+candidate alone. Whether `baseline-v2` meets it outside this one game is not known.
+
+**The smallest probe** (next sprint, after the owner's approval and a registration written before any session; not run
+here):
+
+* **P1, stop on a waiting unit (E1 to E4).** One session of the configuration that produced the deadlock (scenario
+  1910631192, condition C3, the split candidate against the inert control) with a diagnostic hook. At the first step
+  the registered trigger holds, the hook stops every unit of the group PS-1B selects; after the transition it issues the
+  planned back-off moves. Per step, for every unit involved, record: the engine's response to each action, `cur_hex`,
+  `move_path`, `speed`, `stop`, `valid_actions`, `stationary_count`, and own occupancy of the involved hexes. Read off:
+  acceptance (E1); the unit's hex after the stop (E2); the transition length and the re-listing of action 1 (E3);
+  whether the other group enters the stopped group's hex during the transition (E4).
+* **P2, the movement model on fresh data.** Register M1c and its pass criterion first (F1 within one step, 0 sequence
+  differences, every own unit). Then evaluate it on one session of the split candidate against the inert control, in a
+  second scenario whose smoke game showed a cycle (1930331196 or 2130511121), with no intervention.
+
+Two engine sessions in total. P1's trajectory before the stop is not fresh evidence for M1c if the engine reproduces the
+Sprint 2 game.
+
+### 11.11 Question 5: separating PS-1 from the split policy (outline, not a proposal)
+
+A 2 x 2 design, `{baseline-v2, split candidate} x {PS-1B off, on}`, on the same scenarios, seats and opponents, plus an
+observe-only arm that logs the trigger without acting.
+
+* PS-1B's effect within `baseline-v2` measures interference and the prevalence of the block in the frozen policy.
+* Its effect within the split candidate measures rescue.
+* The interaction is the part of the split's loss that capacity-aware movement removes.
+
+It is contingent on the probe and is not registered. `docs/PS1_SCREEN_PROPOSAL.md` is not written, because G5 is not
+READY_FOR_PROSPECTIVE_VALIDATION.
+
+### 11.12 Limits
+
+* The failure is observed in one scenario.
+* The certificates rest on a model that failed its registered fidelity check.
+* The corpus is `baseline-v0` play, not `baseline-v2`.
+* The smoke snapshots are 200 steps apart.
+* M1c was derived from the games it reproduces.
+* No offline counterfactual here establishes an engine outcome.
