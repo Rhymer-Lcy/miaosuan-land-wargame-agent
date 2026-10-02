@@ -78,6 +78,10 @@ the seat's own and obey orders; the stacking limit voids a split silently.
 | Hypothesis, not fact (post hoc): a unit ordered while its first hex holds four own ground units waits at once (M1d); it accounts for 79 of P2's 81 entries M1c predicted early | Sprint 4 post-hoc descriptions |
 | A stop (action 10) issued to a unit waiting in front of a full hex is echoed without an error, sets `flag_force_stop` to 1, withdraws every listed action (another stop included) and leaves the move path; it does not take effect while the next hex stays full (4 units, 1,269 steps to the end of the game) | Sprint 4 probe P1, one game |
 | Unknown: a stop on a unit that is still traversing; whether a stopped unit counts toward its hex's stacking limit; the transition length | no stop took effect in P1 |
+| Change state (action 6) is listed only for units without a move path, stationary or in the move-to-stop transition; vehicles are offered concealment and half speed (half speed only while suppressed), infantry both charge levels and concealment; normal and march were never listed | Sprint 5 audit of the replay corpus and four captured games (`docs/T7_DESIGN.md`, 13.2) |
+| Stop (action 10) is listed only for units with a move path; weapon lock (action 11) only for stationary, unfolded, unsuppressed vehicles; weapon unfold (action 12) never, since no unit ever locked | Sprint 5 audit |
+| At the natural end of a path a ground unit serves 75 steps before `stop` is 1 (every settled arrival); movement is listed again at once; non-tank units list a shoot option only after those 75 steps | Sprint 5 audit |
+| No frozen policy has ever issued a change-state, lock or unfold order, so no movement-state transition has been observed on engine 4.1.0; the documented unit field `target_state` is absent from every record | Sprint 5 audit of 1,284 game records and the observations |
 
 ## Selection rubric (committed before scoring)
 
@@ -117,7 +121,8 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
 | T1 | deployment disaggregation: split eligible ground operators during deployment | `SHELVED` (2026-10-02): screen 1 REVISE BEFORE CONFIRMATION ([issue #1](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/1), `docs/SCREEN_DEPLOYMENT_SPLIT.md`); the diagnosed loss is a stacking-limit block that only a play-stage change removes (`docs/T1R_DIAGNOSIS.md`, `docs/T1R_SPEC.md`, gate G6 failed) |
 | T1-r | T1 revised: probe once and stop on code 103, skip splits the stacking limit voids | specified, not implemented; the play-stage remedy it waited for (PS-1) is shelved |
 | PS-1 | capacity-aware movement on `baseline-v2`'s play stage; selected form PS-1B, stalled-movement recovery: stop the deadlocked group that can back off, re-order it after the transition | `SHELVED` (2026-10-02): design study (Sprint 3, `docs/PS1_DESIGN.md`), then the registered engine probe ([issue #2](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/2), `docs/PS1_ENGINE_PROBE.md`): the stop on a waiting unit is deferred indefinitely (E1, E2 refuted, G2 FAIL) and the movement model failed its prospective fidelity test (G3 FAIL); disposition SHELVE |
-| T2 to T9 | the other families above | `IDEA` |
+| T7-C | concealment of idle stationary units: own ground units that `baseline-v2` leaves idle, stationary and unsuppressed while no enemy is seen are ordered into concealment (`docs/T7_DESIGN.md`, section 14) | `IDEA` (2026-10-02): design study disposition READY_FOR_MECHANISM_PROBE; offline shadow equal to `baseline-v2` wherever it does not fire; engine effects documented, not observed; three-game mechanism probe proposed (`docs/T7_SCREEN_PROPOSAL.md`), not approved |
+| T2 to T9 | the other families above (T7's march, charge, stop and lock mechanisms: not selected, `docs/T7_DESIGN.md` 13.5) | `IDEA` |
 
 ## Roadmap
 
@@ -134,7 +139,11 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
    formed deadlock; the post-hoc movement model predicted every hex of a fresh game but not every timing. PS-1 is
    SHELVED. The deadlock remains an open problem of `baseline-v2`'s play stage (it also occurs in `baseline-v0` corpus
    play); a future remedy would have to prevent the column forming, not recover from it.
-4. **T7 movement-state micro**, the rubric's runner-up: change state, stop and weapon lock appear in most decisions.
+4. **Done (Sprint 5)**: the offline design study of T7 movement-state micro (`docs/T7_DESIGN.md`), no engine
+   session. The listings are frequent but nothing in T7 has ever been executed; march was never offered, and both stop
+   tactics fail on Sprint 4's frozen-unit fact. One mechanism survives: concealment of idle stationary units, selected
+   in all 28 rubric variants, with an offline shadow that leaves `baseline-v2` unchanged. Disposition
+   READY_FOR_MECHANISM_PROBE; the three-game probe (`docs/T7_SCREEN_PROPOSAL.md`) awaits the owner's approval.
 5. **T9 intent and task allocation**, the largest lever and the hardest to isolate; T4 (the idle artillery) follows
    by the rubric.
 
