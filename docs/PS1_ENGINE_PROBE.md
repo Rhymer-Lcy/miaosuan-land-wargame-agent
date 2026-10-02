@@ -58,7 +58,7 @@ both seat assignments are checked against the screen manifest by the manifest bu
   `PYTHONHASHSEED` 0; the engine's own random source is not controlled (procedure of the screen manifest).
 * Runtime `baseline-v1-runtime-r2` (`OPENBLAS_NUM_THREADS=1`), one game per exclusive session, serially, P1 first,
   through `scripts/run_evaluation.sh --plan probe --purpose diagnostic --workers 1 --work local/evaluation/ps1-engine-probe-1
-  --games FILE` with one game per run; the scheduler identity is recorded but the serial loop does not use it. SDK
+  --games FILE` with one game in each invocation; the scheduler identity is recorded but the serial loop does not use it. SDK
   4.1.0, CPython 3.10.20, NumPy 1.26.2, the persistent installation on the evaluation server.
 * At most 2 sessions; the ledger stood at 2459 at G0, so they are expected to be 2460 and 2461 (the ledger decides).
 * Capture: the read-only step capture of the residual-516 diagnostic with a full snapshot at every decision (the
@@ -88,7 +88,7 @@ hook that runs after the candidate's own decision:
   than 2 hex times + 10 steps), computed with the Sprint 3 functions.
 * **At the first trigger only.** A verification from the seat observation coded apart from the model (every
   deadlocked unit at speed 0, listing action 10, facing a hex with at least 4 own ground units); the frozen PS-1B
-  selection with the back-off option (`ps1_model.ps1b` on a throwaway model copy of the observed state); one stop
+  selection with the back-off option (`ps1_model.ps1b` on a scratch model copy of the observed state); one stop
   `{"actor", "obj_id", "type": 10}` per selected unit, each passing the hook's own check (the project gate does not
   catalogue action 10). A failed verification, an empty selection or a model error ends the probe without action.
 * **After the stops.** No stop is ever repeated. A stopped unit gets its planned back-off move at the first step its
@@ -264,3 +264,154 @@ supports a mechanism within its observed conditions only), or the promotion of e
   removals and appearances, which would have failed F1 falsely). Tests and a cross-checked inputs-aware validator were
   added before registration.
 * The dry run on real records of section 2.
+
+## 12. Registration (written after the registration commit, before either session)
+
+* Registration commit `23341a4d72cd55a62c3f76aef4adfc763fc257ca`, pushed and fetched back from the public remote without
+  authentication; manifest canonical SHA-256 `17de5076b15f977730c03606727da6d95fd369d9b61717dc270d0179f7fbca96`.
+* Public issue [#2](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/2), created 2026-10-02T18:27:13+08:00
+  (GitHub's clock), fetched without authentication at 2026-10-02T18:27:29+08:00: its body, 16,312 bytes, SHA-256
+  `7c8626c30ff5f60ccb222177a3c24a6d769add914d6d68ddadc9b40402e77894`, is byte-identical to the canonical file
+  `evaluation/ps1-engine-probe-1/registration-issue.md` (record: `registration-verification.json`).
+* The server stayed at the registration commit with a clean tree for both games; this record and every result file were
+  committed afterwards, so that both game records carry the registration commit, as registered.
+
+## 13. Execution (written after the sessions)
+
+* Two sessions, as registered: **2460** (P1) opened at 2026-10-02T10:35:12Z by the server clock, which runs fast by the
+  offset recorded in `docs/ENGINE_INSTALL.md`, a little over a minute after the issue's verification once corrected
+  for it; **2461** (P2) after P1's checks. Both reused the persistent installation as exclusive diagnostic sessions on
+  harness `23341a4`, not dirty. The ledger runs from 0001 to 2461 without a gap or an unclosed session; the state
+  hash chain is intact, the package integrity held and the state file did not change.
+* P1: 1,803 steps, completed; capture of 1,802 snapshots (every decision from index 1), 19 replay checks and 0
+  mismatches. P2: 2,883 steps, completed; 2,882 snapshots, 29 replay checks and 0 mismatches. Neither game had an
+  observer error, a contract error, a gate rejection or an engine refusal; capture digests equal those in the records.
+* After P1, the ledger, the installation and the frozen identities were verified before P2 started.
+* Documentation deviation: the registration commit's copy of this document used, in sections 3 and 5, two phrases
+  that the repository's documentation policy (the retired-wording rule of `tests/test_docs_policy.py`) reserves for the
+  history of the retired engine installation, so the full test suite at that commit fails two policy subtests. The probe's own suites passed before
+  registration, but the document was still untracked when the full suite last ran, and that policy test reads tracked
+  files only. The two phrases were reworded after the games; no rule changed (the rules are the manifest's and the
+  issue's, both unchanged).
+* No deviation from the registered execution. The analyses wrote their public outputs first under the server's
+  git-ignored `local/` tree (so the working tree stayed clean between the games), and the files were copied unchanged
+  into `evaluation/ps1-engine-probe-1/` (`p1.json`, `p2.json`, `gates.json`).
+
+## 14. P1 results (registered)
+
+**Premise: reproduced.** State and trace digests equal the Sprint 2 split-game record up to the trigger; the trigger
+is at decision index 533 (cur_step 530) with a group of 4, as predicted. The trigger recomputed from the all-seeing
+state with the Sprint 3 reconstruction is at 533 too, and all 532 earlier decisions re-decided offline by a fresh
+candidate agree with the hooked seat's. Both channels agree at every snapshot; no hex ever held more than 4 own ground
+units.
+
+Each of the 4 stopped units listed action 10 at the decision, the 4 stops were submitted as the hook's notes say, and
+each drew one fresh feedback entry **without an error code**. None showed an attributable change in the following 300
+steps: the remaining path never emptied, `move_to_stop_remain_time` stayed 0, and action 1 was never listed again. The
+hook released all four when its window closed, without a back-off; the deadlock (a cycle of 10 units) lasted from
+decision 534 to the end, 1,269 steps, and only the 50-point objective was held at the end.
+
+| Id | Verdict | Evidence |
+|---|---|---|
+| E1 | **REFUTED** | 4 of 4 stops with no attributable change within 300 steps (no error code) |
+| E2 | **REFUTED** | the stops did not take effect at the units' hex while the next hex stayed full |
+| E3 | **INCONCLUSIVE** | no unit stopped in place, so no transition could be timed |
+| E4 | **INCONCLUSIVE** | no stop took effect, so no transitioning unit existed |
+
+P1-S (descriptive): the replay of every accepted order through M1c reproduces the 238 entries before the stops and the
+36 after them (4 infantry units still moving) at offset 0; the stops do not change these entries in either the model or
+the game, so this does not discriminate.
+
+## 15. P2 results (registered)
+
+Population: 30 own ground units at the first play decision (2 aircraft and 12 passengers outside the model), none
+removed or added later; 69 orders applied; 6 aircraft moves and 3 aircraft shots outside the population; every
+applied move echoed.
+
+**F1: FAIL.** All 683 observed entries were predicted, with 0 hex-sequence differences among the 24 units that moved,
+no capacity or adjacency violation and complete accounting. But 81 entries were predicted early: 79 by 19 steps, 1 by
+20 and 1 by 40 (602 exact); the worst offset, 40, exceeds the registered 1.
+
+**F2: FAIL.** 12 hex sequences differ (worst offset 118); 56 of 64 recorded accepted orders are matched, with 25 of
+81 predicted orders unmatched; 2 of 5 occupations are matched.
+
+| Claim | Discriminating events | As predicted | Verdict |
+|---|---|---|---|
+| T-a wait at entry | 103 | 103 | **SUPPORTED** |
+| T-b restart (final run tau - 1) | 113 | 113 (every one exactly tau - 1) | **SUPPORTED** |
+| T-c re-wait | 6 | 4 | **REFUTED** |
+| T-d arbitration by ascending index | 9 | 8 (2 events discriminated it from first come) | **REFUTED** |
+| T-e processing order | 62 entry-rule, 9 arbitration, 107 restart-delay events | 62, 8, 107 | **REFUTED** |
+
+Coverage: 633 entries with a path left, 133 of them waiting at once; ascending-index processing agrees with every one
+of the 633 (descending 577, end of step 599); 127 blocked-wait episodes, 113 entered and 14 open at the end; the frozen
+Sprint 3 extractors give the same entries and episodes. No keep flag was set on any eligible unit with a path. The
+PS-1B trigger held on 1,950 steps, all inside the game's 3 deadlock episodes (1 cycle, 2 chains), of which 1 fired.
+
+## 16. Post-hoc descriptions (written after every registered verdict; they change none)
+
+`scripts/ps1_probe_posthoc.py`, output `evaluation/ps1-engine-probe-1/posthoc.json`:
+
+1. **The stop's footprint in P1.** One step after the stop, `flag_force_stop` turned from 0 to 1 on all 4 units and
+   their listed actions became empty; until the end of the game (5,076 unit-steps) they kept that state, their move
+   path, `stop` 0 and `move_to_stop_remain_time` 0. `flag_force_stop` was never set on any other unit of P1 or P2. So
+   the engine registered each stop and deferred it, consistent with the documented rule that a moving unit first
+   completes the hex it is moving into: a unit waiting in front of a full hex is treated as moving into it, never
+   completes it while it stays full, and is locked meanwhile, with no action listed, not even another stop. The
+   registered E1 defined acceptance by the path emptying or the transition timer, which is why the verdict is REFUTED;
+   under either reading the stop did not take effect.
+2. **Where F1's early entries come from.** All 81 belong to 6 units. For 4 of them the first early entry follows a move
+   ordered while the order's first hex already held 4 own ground units: the engine kept the unit at speed 0 until
+   room appeared and then ran a full hex time, the order-time twin of M1c's wait at entry, which M1c does not model;
+   each later entry of these units inherits the delay. The other 2 units' delays (20 and 40 steps) stay unexplained.
+3. **A post-hoc candidate M1d** (M1c plus "a unit ordered while its first hex is full waits at once") reproduces 681
+   of P2's 683 entries exactly (the remaining two late by 20 and 40) and keeps both Sprint 2 games exact (274 and 138
+   entries, offset 0). It was derived from P2 and is evidence for nothing until tested prospectively.
+4. **T-c and T-d re-read in processing order.** The registered rules judged an arbitration by the lowest indices among
+   the contenders and a re-wait by end-of-step occupancy. Processing every unit that entered or left the contested
+   hex in the step in ascending index, with the occupancy updated after each move, as M1c does, gives the observed
+   entrants in all 15 steps of P2 that had a re-wait. In the contradicting T-d event, a unit leaving the hex was
+   processed between the contenders, so the higher-index entrant found room that the lower-index re-waiters had not.
+   The registered verdicts stand; the rules, not this observation, were too coarse.
+5. **Outside F2's surrogate.** The candidate also fired 3 shots and moved its aircraft 6 times, and its occupations
+   depend on what the engine lists; the surrogate models none of this.
+
+## 17. Gate reassessment and disposition
+
+| Gate | Sprint 3 | Sprint 4 | Reason |
+|---|---|---|---|
+| G1 | PASS | **PASS**, not contradicted | P1 reproduced the Sprint 2 states exactly; both captures agree across channels and never exceed 4 own ground units per hex |
+| G2 | FAIL | **FAIL** | E1 and E2 REFUTED: a stop issued to a unit waiting in front of a full hex does not take effect there |
+| G3 | FAIL | **FAIL** | F1 and F2 FAIL; T-c, T-d and T-e REFUTED by their registered rules |
+| G4 | PASS | **PASS**, not contradicted | every PS-1B trigger step of P2 lies inside a deadlock episode; before its trigger P1 made the candidate's decisions |
+| G5 | NEEDS_ENGINE_PROBE | **SHELVE** | E1 refuted with no stop taking effect on any blocked unit: PS-1B's only intervention is unavailable, and no other approved alternative exists |
+
+**What G2's failure invalidates.** PS-1B's recovery begins by stopping the waiting group; on engine 4.1.0 that stop is
+registered but deferred until the unit enters the full hex, which in a deadlock never happens, and it removes every
+listed action from the unit. The back-off, the cooldown and the selection never get to act. Any future capacity-aware
+movement would need a different mechanism: prevention before a column forms (admission at dispatch, which PS-1A
+attempted but which failed non-interference), or intervention on units that are still traversing, whose stop
+behaviour remains unobserved.
+
+**Separated as required:**
+
+1. *Observed engine facts* (P1, one game; P2, one game): a stop on a waiting unit is echoed without error, sets
+   `flag_force_stop`, withdraws every listed action and keeps the move path for at least 1,269 steps while the next hex
+   stays full. A unit entering a hex in front of a full hex waits at once (103 of 103), and a restart takes a hex time
+   counting the restart step (113 of 113).
+2. *Prospectively supported model claims*: T-a and T-b of M1c within P2's conditions. No other claim.
+3. *Conditional simulation results*: none recomputed. The Sprint 3 certificates assume a stop that takes effect in
+   place, which P1 contradicts; they stay descriptive and no longer describe a reachable recovery.
+4. *Remaining unverified*: the stop on a traversing unit; whether a stopped unit counts toward capacity; M1d, the
+   order-aware arbitration and the two unexplained delays, all post hoc; the transition length.
+
+Research disposition: **SHELVE** for PS-1B. T1 stays shelved, now without a pending play-stage remedy; the deadlock
+itself remains a known property of `baseline-v2`'s play stage, recorded in the frontier as an open problem.
+
+## 18. Limits
+
+* One game per probe. P1 shows what the engine does to a group of waiting vehicles in one deadlock; P2 tests M1c on one
+  scenario. Neither establishes engine-wide behaviour.
+* The registered T-c and T-d rules ignored leaving units processed between the contenders; their REFUTED verdicts stand
+  as registered, and the post-hoc re-reading is not a substitute for a registered test.
+* M1d and the order-aware reading were derived from P2 and need a fresh game before they can support anything.
