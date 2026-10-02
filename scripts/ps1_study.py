@@ -675,7 +675,7 @@ def main() -> int:
     k_detect = rc["first_detection_k"]
     k_play = first_play_k(cand)
     k_flip = next((k for k in cand.ks() if objectives_at(cand, k) != objectives_at(cand, k_play)), None)
-    base = ["M1", "M2", "M4", "M5", "M6", "M7"]
+    base = ["M1b", "M2", "M4", "M5", "M6", "M7"]  # certificates run under amendment 1
     certs = {}
     plans = [("A1", "PS-1A capacity-aware dispatch from the first play decision", k_play, "ps1a", base, ["E5"])]
     if k_flip is not None:
