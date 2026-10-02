@@ -1,0 +1,16 @@
+{
+ "author": "Rhymer-Lcy",
+ "byte_identical": true,
+ "canonical_body_bytes": 16312,
+ "canonical_body_sha256": "7c8626c30ff5f60ccb222177a3c24a6d769add914d6d68ddadc9b40402e77894",
+ "fetched_at": "2026-10-02T18:27:29+08:00",
+ "fetched_without_authentication": true,
+ "github_date_header": "Fri, 02 Oct 2026 10:27:28 GMT",
+ "issue_created_at_utc": "2026-10-02T10:27:13Z",
+ "issue_number": 2,
+ "issue_title": "Engine probe: PS-1 stop semantics and a prospective test of M1c (two sessions)",
+ "issue_url": "https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/2",
+ "public_body_bytes": 16312,
+ "public_body_sha256": "7c8626c30ff5f60ccb222177a3c24a6d769add914d6d68ddadc9b40402e77894",
+ "state": "open"
+}
