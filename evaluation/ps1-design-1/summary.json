@@ -1,0 +1,871 @@
+{
+ "A6": {
+  "alternative": "A6",
+  "deadlocked_at_end": 8,
+  "evidence": {
+   "everything": "model-derived (synthetic graph)"
+  },
+  "intervention": "PS-1B on a dead-end corridor (synthetic)",
+  "no_escape_events": 1,
+  "recoveries": 0,
+  "verdict": "no escape (failure witness)",
+  "witnesses": 4
+ },
+ "certificates": {
+  "A1": {
+   "affected_units": 0,
+   "affected_units_deadlocked_at_end": 0,
+   "affected_units_moving_at_end": 0,
+   "alternative": "A1",
+   "assumptions": [
+    "M1b",
+    "M2",
+    "M4",
+    "M5",
+    "M6",
+    "M7"
+   ],
+   "capacity_violations": 0,
+   "commands": {
+    "hold": 3928,
+    "occupy": 2,
+    "order": 8
+   },
+   "cycle_broken_at_k": null,
+   "cycles_at_end": 0,
+   "deadlocked_at_end": 0,
+   "evidence": {
+    "engine acceptance of the orders": "unverified",
+    "orders and trajectory after start": "model-derived",
+    "start state": "observed"
+   },
+   "first_command_k": 3,
+   "flag_steps": {
+    "objective_value_50": 464,
+    "objective_value_80": 584
+   },
+   "initial_cycles": 0,
+   "intervention": "PS-1A capacity-aware dispatch from the first play decision",
+   "model": "M1b (protocol amendment 1)",
+   "model_error": null,
+   "objectives_held_at_end": [
+    "objective_value_50",
+    "objective_value_80"
+   ],
+   "observable_inputs": [
+    "own units' positions, remaining move paths, types, basic speeds and boarding state (seat observation)",
+    "objective flags (seat observation)",
+    "setup cost graph",
+    "the policy's own step history"
+   ],
+   "occupy_points_at_end": 130,
+   "start_cur_step": 0,
+   "start_k": 3,
+   "unverified": [
+    "E5"
+   ],
+   "verdict": "feasible",
+   "witnesses": 0
+  },
+  "A2": {
+   "affected_units": 8,
+   "affected_units_deadlocked_at_end": 0,
+   "affected_units_moving_at_end": 0,
+   "alternative": "A2",
+   "assumptions": [
+    "M1b",
+    "M2",
+    "M4",
+    "M5",
+    "M6",
+    "M7",
+    "M3"
+   ],
+   "capacity_violations": 0,
+   "commands": {
+    "occupy": 1,
+    "order": 16,
+    "recover": 3,
+    "stop": 10
+   },
+   "cycle_broken_at_k": 534,
+   "cycles_at_end": 0,
+   "deadlocked_at_end": 0,
+   "evidence": {
+    "engine acceptance of the orders": "unverified",
+    "orders and trajectory after start": "model-derived",
+    "start state": "observed"
+   },
+   "first_command_k": 533,
+   "flag_steps": {
+    "objective_value_80": 808
+   },
+   "initial_cycles": 1,
+   "intervention": "PS-1B: stop the waiting group and back it off to free hexes",
+   "model": "M1b (protocol amendment 1)",
+   "model_error": null,
+   "objectives_held_at_end": [
+    "objective_value_50",
+    "objective_value_80"
+   ],
+   "observable_inputs": [
+    "own units' positions, remaining move paths, types, basic speeds and boarding state (seat observation)",
+    "objective flags (seat observation)",
+    "setup cost graph",
+    "the policy's own step history"
+   ],
+   "occupy_points_at_end": 130,
+   "start_cur_step": 530,
+   "start_k": 533,
+   "unverified": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5"
+   ],
+   "verdict": "feasible",
+   "witnesses": 0
+  },
+  "A3": {
+   "affected_units": 8,
+   "affected_units_deadlocked_at_end": 4,
+   "affected_units_moving_at_end": 4,
+   "alternative": "A3",
+   "assumptions": [
+    "M1b",
+    "M2",
+    "M4",
+    "M5",
+    "M6",
+    "M7",
+    "M3"
+   ],
+   "capacity_violations": 0,
+   "commands": {
+    "no-escape": 2,
+    "occupy": 1,
+    "order": 10,
+    "recover": 1,
+    "stop": 4
+   },
+   "cycle_broken_at_k": 534,
+   "cycles_at_end": 0,
+   "deadlocked_at_end": 6,
+   "evidence": {
+    "engine acceptance of the orders": "unverified",
+    "orders and trajectory after start": "model-derived",
+    "start state": "observed"
+   },
+   "first_command_k": 533,
+   "flag_steps": {
+    "objective_value_80": 849
+   },
+   "initial_cycles": 1,
+   "intervention": "PS-1B: stop the occupying group and re-route it around the full corridor",
+   "model": "M1b (protocol amendment 1)",
+   "model_error": null,
+   "objectives_held_at_end": [
+    "objective_value_50",
+    "objective_value_80"
+   ],
+   "observable_inputs": [
+    "own units' positions, remaining move paths, types, basic speeds and boarding state (seat observation)",
+    "objective flags (seat observation)",
+    "setup cost graph",
+    "the policy's own step history"
+   ],
+   "occupy_points_at_end": 130,
+   "start_cur_step": 530,
+   "start_k": 533,
+   "unverified": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5"
+   ],
+   "verdict": "cycle broken, unresolved residual",
+   "witnesses": 5
+  },
+  "A4": {
+   "affected_units": 0,
+   "affected_units_deadlocked_at_end": 0,
+   "affected_units_moving_at_end": 0,
+   "alternative": "A4",
+   "assumptions": [
+    "M1b",
+    "M2",
+    "M4",
+    "M5",
+    "M6",
+    "M7",
+    "M3"
+   ],
+   "capacity_violations": 0,
+   "commands": {
+    "occupy": 1,
+    "order": 14,
+    "stop": 22
+   },
+   "cycle_broken_at_k": null,
+   "cycles_at_end": 0,
+   "deadlocked_at_end": 0,
+   "evidence": {
+    "engine acceptance of the orders": "unverified",
+    "orders and trajectory after start": "model-derived",
+    "start state": "observed"
+   },
+   "first_command_k": 464,
+   "flag_steps": {
+    "objective_value_80": 718
+   },
+   "initial_cycles": 0,
+   "intervention": "sequencing: stop units bound for an objective that became own-held, then re-order",
+   "model": "M1b (protocol amendment 1)",
+   "model_error": null,
+   "objectives_held_at_end": [
+    "objective_value_50",
+    "objective_value_80"
+   ],
+   "observable_inputs": [
+    "own units' positions, remaining move paths, types, basic speeds and boarding state (seat observation)",
+    "objective flags (seat observation)",
+    "setup cost graph",
+    "the policy's own step history"
+   ],
+   "occupy_points_at_end": 130,
+   "start_cur_step": 461,
+   "start_k": 464,
+   "unverified": [
+    "E5",
+    "C2 for a moving unit (documented)",
+    "E3",
+    "E4"
+   ],
+   "verdict": "feasible",
+   "witnesses": 0
+  },
+  "A5a": {
+   "affected_units": 8,
+   "affected_units_deadlocked_at_end": 0,
+   "affected_units_moving_at_end": 0,
+   "alternative": "A5a",
+   "assumptions": [
+    "M1b",
+    "M2",
+    "M4",
+    "M5",
+    "M6",
+    "M7",
+    "M3"
+   ],
+   "capacity_violations": 0,
+   "commands": {
+    "occupy": 1,
+    "order": 16,
+    "recover": 3,
+    "stop": 10
+   },
+   "cycle_broken_at_k": 834,
+   "cycles_at_end": 0,
+   "deadlocked_at_end": 0,
+   "evidence": {
+    "engine acceptance of the orders": "unverified",
+    "orders and trajectory after start": "model-derived",
+    "start state": "observed"
+   },
+   "first_command_k": 833,
+   "flag_steps": {
+    "objective_value_80": 1108
+   },
+   "initial_cycles": 1,
+   "intervention": "PS-1B (back-off or bypass) 300 steps after first detection",
+   "model": "M1b (protocol amendment 1)",
+   "model_error": null,
+   "objectives_held_at_end": [
+    "objective_value_50",
+    "objective_value_80"
+   ],
+   "observable_inputs": [
+    "own units' positions, remaining move paths, types, basic speeds and boarding state (seat observation)",
+    "objective flags (seat observation)",
+    "setup cost graph",
+    "the policy's own step history"
+   ],
+   "occupy_points_at_end": 130,
+   "start_cur_step": 830,
+   "start_k": 833,
+   "unverified": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5"
+   ],
+   "verdict": "feasible",
+   "witnesses": 0
+  },
+  "A5b": {
+   "affected_units": 8,
+   "affected_units_deadlocked_at_end": 4,
+   "affected_units_moving_at_end": 4,
+   "alternative": "A5b",
+   "assumptions": [
+    "M1b",
+    "M2",
+    "M4",
+    "M5",
+    "M6",
+    "M7",
+    "M3"
+   ],
+   "capacity_violations": 0,
+   "commands": {
+    "occupy": 1,
+    "order": 10,
+    "recover": 1,
+    "stop": 4
+   },
+   "cycle_broken_at_k": 1434,
+   "cycles_at_end": 0,
+   "deadlocked_at_end": 6,
+   "evidence": {
+    "engine acceptance of the orders": "unverified",
+    "orders and trajectory after start": "model-derived",
+    "start state": "observed"
+   },
+   "first_command_k": 1433,
+   "flag_steps": {
+    "objective_value_80": 1708
+   },
+   "initial_cycles": 1,
+   "intervention": "PS-1B (back-off or bypass) 900 steps after first detection",
+   "model": "M1b (protocol amendment 1)",
+   "model_error": null,
+   "objectives_held_at_end": [
+    "objective_value_50",
+    "objective_value_80"
+   ],
+   "observable_inputs": [
+    "own units' positions, remaining move paths, types, basic speeds and boarding state (seat observation)",
+    "objective flags (seat observation)",
+    "setup cost graph",
+    "the policy's own step history"
+   ],
+   "occupy_points_at_end": 130,
+   "start_cur_step": 1430,
+   "start_k": 1433,
+   "unverified": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5"
+   ],
+   "verdict": "cycle broken, unresolved residual",
+   "witnesses": 0
+  }
+ },
+ "fidelity": {
+  "1910631192.C3.b.x01": {
+   "M1": {
+    "F1": {
+     "cycles_at_end": 0,
+     "deadlocked_at_end": 0,
+     "hex_sequences_differ": 0,
+     "objectives_held_at_end": 2,
+     "observed_entries": 138,
+     "simulated_entries": 138,
+     "units": 6,
+     "worst_step_offset": 0
+    },
+    "F1_pass": true,
+    "F2": {
+     "cycles_at_end": 0,
+     "deadlocked_at_end": 0,
+     "hex_sequences_differ": 0,
+     "objectives_held_at_end": 2,
+     "observed_entries": 138,
+     "occupation_steps": {
+      "recorded": [
+       461,
+       642
+      ],
+      "simulated": [
+       461,
+       642
+      ]
+     },
+     "orders": {
+      "recorded": 10,
+      "recorded_matched": 10,
+      "simulated": 10
+     },
+     "simulated_entries": 138,
+     "units": 6,
+     "worst_step_offset": 0
+    },
+    "F2_pass": true,
+    "model": "M1",
+    "start_k": 1
+   },
+   "M1b": {
+    "F1": {
+     "cycles_at_end": 0,
+     "deadlocked_at_end": 0,
+     "hex_sequences_differ": 0,
+     "objectives_held_at_end": 2,
+     "observed_entries": 138,
+     "simulated_entries": 138,
+     "units": 6,
+     "worst_step_offset": 0
+    },
+    "F1_pass": true,
+    "F2": {
+     "cycles_at_end": 0,
+     "deadlocked_at_end": 0,
+     "hex_sequences_differ": 0,
+     "objectives_held_at_end": 2,
+     "observed_entries": 138,
+     "occupation_steps": {
+      "recorded": [
+       461,
+       642
+      ],
+      "simulated": [
+       461,
+       642
+      ]
+     },
+     "orders": {
+      "recorded": 10,
+      "recorded_matched": 10,
+      "simulated": 10
+     },
+     "simulated_entries": 138,
+     "units": 6,
+     "worst_step_offset": 0
+    },
+    "F2_pass": true,
+    "model": "M1b",
+    "start_k": 1
+   }
+  },
+  "1910631192.C3.c.x01": {
+   "M1": {
+    "F1": {
+     "cycles_at_end": 1,
+     "deadlocked_at_end": 10,
+     "hex_sequences_differ": 0,
+     "objectives_held_at_end": 1,
+     "observed_entries": 274,
+     "simulated_entries": 274,
+     "units": 14,
+     "worst_step_offset": 19
+    },
+    "F1_pass": false,
+    "F2": {
+     "cycles_at_end": 1,
+     "deadlocked_at_end": 10,
+     "hex_sequences_differ": 0,
+     "objectives_held_at_end": 1,
+     "observed_entries": 274,
+     "occupation_steps": {
+      "recorded": [
+       463
+      ],
+      "simulated": [
+       463
+      ]
+     },
+     "orders": {
+      "recorded": 18,
+      "recorded_matched": 18,
+      "simulated": 18
+     },
+     "simulated_entries": 274,
+     "units": 14,
+     "worst_step_offset": 19
+    },
+    "F2_pass": false,
+    "model": "M1",
+    "start_k": 3
+   },
+   "M1b": {
+    "F1": {
+     "cycles_at_end": 1,
+     "deadlocked_at_end": 10,
+     "hex_sequences_differ": 2,
+     "objectives_held_at_end": 1,
+     "observed_entries": 274,
+     "simulated_entries": 274,
+     "units": 14,
+     "worst_step_offset": 0
+    },
+    "F1_pass": false,
+    "F2": {
+     "cycles_at_end": 1,
+     "deadlocked_at_end": 10,
+     "hex_sequences_differ": 2,
+     "objectives_held_at_end": 1,
+     "observed_entries": 274,
+     "occupation_steps": {
+      "recorded": [
+       463
+      ],
+      "simulated": [
+       463
+      ]
+     },
+     "orders": {
+      "recorded": 18,
+      "recorded_matched": 18,
+      "simulated": 18
+     },
+     "simulated_entries": 274,
+     "units": 14,
+     "worst_step_offset": 0
+    },
+    "F2_pass": false,
+    "model": "M1b",
+    "start_k": 3
+   }
+  }
+ },
+ "generalisation": {
+  "1910631192.C3.b.x01": {
+   "orders": 10,
+   "ps1a_would_change_order": 2,
+   "retarget_trigger_unit_steps": 2752,
+   "unit_steps": 10800,
+   "unit_steps_blocked": 0,
+   "unit_steps_deadlocked": 0,
+   "unit_steps_moving": 6190,
+   "unit_steps_stalled": 0,
+   "unit_steps_stalled_not_blocked": 0
+  },
+  "1910631192.C3.c.x01": {
+   "orders": 18,
+   "ps1a_would_change_order": 14,
+   "ps1b_trigger_steps": 1270,
+   "retarget_trigger_unit_steps": 13390,
+   "unit_steps": 25200,
+   "unit_steps_blocked": 13764,
+   "unit_steps_deadlocked": 13214,
+   "unit_steps_moving": 25178,
+   "unit_steps_stalled": 12838,
+   "unit_steps_stalled_not_blocked": 32
+  },
+  "replay corpus (8 games, both seats)": {
+   "orders": 391,
+   "ps1a_would_change_order": 162,
+   "ps1b_trigger_steps": 1429,
+   "retarget_trigger_unit_steps": 65377,
+   "unit_steps": 323288,
+   "unit_steps_blocked": 14135,
+   "unit_steps_deadlocked": 12761,
+   "unit_steps_moving": 174360,
+   "unit_steps_stalled": 12503,
+   "unit_steps_stalled_not_blocked": 1068
+  },
+  "replay corpus seat-sequences": 16,
+  "smoke totals": {
+   "ps1b_trigger_steps": 31,
+   "retarget_trigger_unit_steps": 853,
+   "unit_steps": 1665,
+   "unit_steps_blocked": 658,
+   "unit_steps_deadlocked": 640,
+   "unit_steps_moving": 1094,
+   "unit_steps_stalled": 588,
+   "unit_steps_stalled_not_blocked": 0
+  }
+ },
+ "input_files": 6,
+ "inputs_unchanged": true,
+ "reconstruction": {
+  "1910631192.C3.b.x01": {
+   "O2": {
+    "path advanced by one": 138
+   },
+   "O3_blocked_valid_actions": {},
+   "O4": {
+    "can_to_move": {
+     "moving": {
+      "0": 5474,
+      "1": 716
+     },
+     "stationary": {
+      "0": 6,
+      "1": 4604
+     }
+    },
+    "flag_force_stop": {
+     "moving": {
+      "0": 6190
+     },
+     "stationary": {
+      "0": 4610
+     }
+    },
+    "move_state": {
+     "moving": {
+      "0": 6190
+     },
+     "stationary": {
+      "0": 4610
+     }
+    },
+    "stop": {
+     "moving": {
+      "0": 6190
+     },
+     "stationary": {
+      "0": 306,
+      "1": 4304
+     }
+    }
+   },
+   "O4_speed": {
+    "moving": {
+     "speed equals 1/tau": 6190
+    }
+   },
+   "O4_stationary_count": {
+    "moving": {
+     "stationary_count equals steps plus one": 5828,
+     "stationary_count equals steps since the hex was entered": 362
+    },
+    "stationary": {
+     "stationary_count equals steps plus one": 4604,
+     "stationary_count equals steps since the hex was entered": 6
+    }
+   },
+   "O5": {
+    "exact": 138
+   },
+   "O5_offset_range": [
+    0,
+    0
+   ],
+   "O6": {},
+   "blocked_unit_steps": 0,
+   "channel_disagreements": 0,
+   "deadlocked_unit_steps": 0,
+   "entries": 138,
+   "first_blocked_k": null,
+   "first_detection_k": null,
+   "flags_vs_observation_scores": {
+    "equal": 1800
+   },
+   "game": "1910631192.C3.b.x01",
+   "occupations": 2,
+   "order_echo": {
+    "next state carries the path": 10
+   },
+   "orders": 10,
+   "persistent_deadlock": null,
+   "policy": "baseline-v2-candidate-shoot-target-reservation",
+   "record_counts": {
+    "moves": [
+     10,
+     10
+    ],
+    "occupations": [
+     2,
+     2
+    ]
+   },
+   "scores": {
+    "attack": 0,
+    "occupy": 130,
+    "other_total": 104,
+    "remain": 132,
+    "total": 262,
+    "win": 158
+   },
+   "snapshots": 1800,
+   "trigger_steps": 0
+  },
+  "1910631192.C3.c.x01": {
+   "O2": {
+    "path advanced by one": 274
+   },
+   "O3_blocked_valid_actions": {
+    "(10,)": 13764
+   },
+   "O4": {
+    "can_to_move": {
+     "blocked": {
+      "0": 8480,
+      "1": 5284
+     },
+     "moving": {
+      "0": 11346,
+      "1": 68
+     },
+     "stationary": {
+      "0": 40,
+      "1": 8
+     }
+    },
+    "flag_force_stop": {
+     "blocked": {
+      "0": 13764
+     },
+     "moving": {
+      "0": 11414
+     },
+     "stationary": {
+      "0": 48
+     }
+    },
+    "move_state": {
+     "blocked": {
+      "0": 13764
+     },
+     "moving": {
+      "0": 11414
+     },
+     "stationary": {
+      "0": 48
+     }
+    },
+    "stop": {
+     "blocked": {
+      "0": 13764
+     },
+     "moving": {
+      "0": 11414
+     },
+     "stationary": {
+      "0": 8,
+      "1": 40
+     }
+    }
+   },
+   "O4_speed": {
+    "blocked": {
+     "speed equals 1/tau": 448,
+     "speed is 0": 13316
+    },
+    "moving": {
+     "speed equals 1/tau": 11414
+    }
+   },
+   "O4_stationary_count": {
+    "blocked": {
+     "stationary_count equals steps plus one": 13764
+    },
+    "moving": {
+     "stationary_count differs": 762,
+     "stationary_count equals steps plus one": 10652
+    },
+    "stationary": {
+     "stationary_count differs": 28,
+     "stationary_count equals steps plus one": 8,
+     "stationary_count equals steps since the hex was entered": 12
+    }
+   },
+   "O5": {
+    "exact": 235
+   },
+   "O5_offset_range": [
+    0,
+    0
+   ],
+   "O6": {
+    "entered after waiting: room at the previous step": 39,
+    "waiting unit-steps (speed 0): next hex full": 13316
+   },
+   "blocked_unit_steps": 13764,
+   "channel_disagreements": 0,
+   "deadlocked_unit_steps": 13214,
+   "entries": 274,
+   "first_blocked_k": 263,
+   "first_detection_k": 533,
+   "flags_vs_observation_scores": {
+    "equal": 1802
+   },
+   "game": "1910631192.C3.c.x01",
+   "occupations": 1,
+   "order_echo": {
+    "next state carries the path": 18
+   },
+   "orders": 18,
+   "persistent_deadlock": {
+    "cur_step": 479,
+    "cycle_includes_an_objective": true,
+    "cycle_lengths": [
+     2
+    ],
+    "cycles": 1,
+    "deadlocked_units": 10,
+    "group_sizes": [
+     4,
+     4,
+     2
+    ],
+    "k": 482,
+    "steps_to_end": 1321,
+    "vehicle_units": 10
+   },
+   "policy": "tactic-deployment-split-1",
+   "record_counts": {
+    "moves": [
+     18,
+     18
+    ],
+    "occupations": [
+     1,
+     1
+    ]
+   },
+   "scores": {
+    "attack": 0,
+    "occupy": 50,
+    "other_total": 104,
+    "remain": 132,
+    "total": 182,
+    "win": 78
+   },
+   "snapshots": 1802,
+   "trigger_steps": 1270
+  }
+ },
+ "restart_check": {
+  "replay corpus (independent, amendment 1)": {
+   "d_minus_tau_histogram": {
+    "-1": 54,
+    "0": 4,
+    "38": 3,
+    "57": 1,
+    "60": 1,
+    "77": 1,
+    "99": 3,
+    "138": 1,
+    "149": 1,
+    "157": 1,
+    "299": 1
+   },
+   "episodes": 71,
+   "in_M1_window": 0,
+   "in_M1b_window": 58,
+   "other": 13,
+   "verdict": "does not support M1b"
+  },
+  "sprint2 games (not independent)": {
+   "d_minus_tau_histogram": {
+    "-1": 38,
+    "19": 1
+   },
+   "episodes": 39,
+   "in_M1_window": 0,
+   "in_M1b_window": 38,
+   "other": 1,
+   "verdict": "supports M1b"
+  }
+ },
+ "schema": "miaosuan-ps1-design/1",
+ "status": "DESIGN STUDY"
+}
