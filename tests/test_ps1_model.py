@@ -153,6 +153,49 @@ class RestartAfterWaitTest(unittest.TestCase):
         self.assertFalse(any(u.waiting for u in sim.units))
 
 
+class WaitAtEntryTest(unittest.TestCase):
+    """M1c (post hoc): a unit entering a hex whose next hex is full waits at once instead of starting its traversal, so
+    when room appears it restarts together with the units already waiting and loses to lower indices."""
+
+    def contention(self, restart, entry_wait):
+        leaving = [unit(i, 3, (4,), ready_at=20) for i in (1, 2)]  # two places free up at step 20
+        holders = [unit(i, 3) for i in (8, 9)]
+        waiting = [unit(i, 2, (3,), ready_at=0) for i in (5, 6)]
+        arriving = [unit(7, 1, (2, 3), ready_at=1)]  # enters hex 2 while hex 3 is full
+        sim = pm.Simulation(leaving + holders + waiting + arriving, line(4), step=0, end_step=60,
+                            restart_after_wait=restart, wait_at_entry=entry_wait)
+        sim.run()
+        return sim
+
+    def entries(self, sim):
+        return sorted((e.step, e.uid) for e in sim.events if e.kind == "enter" and e.detail[0] == 3)
+
+    def test_entering_unit_waits_and_loses_the_place(self) -> None:
+        m1b = self.contention(True, False)
+        m1c = self.contention(True, True)
+        self.assertEqual(self.entries(m1b), [(21, 7), (39, 5)])  # M1b: the arriving unit was traversing all along
+        self.assertEqual(self.entries(m1c), [(39, 5), (39, 6)])  # M1c: all three restart at 20, ascending index wins
+        self.assertTrue(m1c.unit(7).waiting)
+
+    def test_waits_from_the_entry_step(self) -> None:
+        sim = self.contention(True, True)
+        sim2 = pm.Simulation([unit(i, 3) for i in range(1, 5)] + [unit(7, 1, (2, 3), ready_at=1)], line(4), step=0,
+                             end_step=2, restart_after_wait=True, wait_at_entry=True)
+        sim2.run()
+        self.assertEqual((sim2.unit(7).hex, sim2.unit(7).waiting, sim2.unit(7).ready_at), (2, True, None))
+        self.assertEqual(sim.unit(6).hex, 3)
+
+    def test_flag_needs_restart_mode(self) -> None:
+        def lone(entry_wait):  # one arriving unit, two places freed at step 20, M1 timing
+            units = [unit(i, 3, (4,), ready_at=20) for i in (1, 2)] + [unit(i, 3) for i in (8, 9)]
+            units += [unit(7, 1, (2, 3), ready_at=1)]
+            sim = pm.Simulation(units, line(4), step=0, end_step=60, wait_at_entry=entry_wait)
+            sim.run()
+            return self.entries(sim)
+        self.assertEqual(lone(False), [(21, 7)])
+        self.assertEqual(lone(True), [(21, 7)])  # ignored without restart_after_wait
+
+
 class TimingTest(unittest.TestCase):
     def test_hex_time_by_speed_and_cost(self) -> None:
         self.assertEqual((pm.hex_time(V, 1), pm.hex_time(I, 1), pm.hex_time(V, 3), pm.hex_time(V, 1.5)), (20, 144, 60, 30))
