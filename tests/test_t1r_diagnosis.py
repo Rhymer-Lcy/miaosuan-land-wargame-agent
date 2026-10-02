@@ -171,5 +171,23 @@ class AnalysisTest(unittest.TestCase):
         self.assertEqual(self.analyse(c_scores=scores(50, remain=61))["mechanical_verdicts"]["H6"], "SUPPORTED")
 
 
+@unittest.skipUnless((ROOT / "evaluation" / "t1r-diagnosis-1" / "analysis.json").exists(), "the public analysis is committed separately")
+class PublishedAnalysisTest(unittest.TestCase):
+    def test_identities_and_privacy(self) -> None:
+        text = (ROOT / "evaluation" / "t1r-diagnosis-1" / "analysis.json").read_text(encoding="utf-8")
+        out = json.loads(text)
+        self.assertEqual((out["status"], out["premise"]["reproduced"]), ("DIAGNOSTIC", True))
+        diff = out["difference"]
+        self.assertTrue(diff["components_sum_equals_total"])
+        self.assertEqual(diff["total"], out["candidate"]["scores"]["blue_total"] - out["baseline"]["scores"]["blue_total"])
+        for side in ("baseline", "candidate"):
+            s = out[side]
+            self.assertEqual(s["remain_score"], s["value_times_blood_at_end"])
+            self.assertEqual(s["held_value_at_end"], s["occupy_score"])
+            self.assertEqual(s["moves"]["issued"], s["moves_issued"])
+        for forbidden in ("obj_id", "cur_hex", "4754", "5052"):
+            self.assertNotIn(forbidden, text)
+
+
 if __name__ == "__main__":
     unittest.main()
