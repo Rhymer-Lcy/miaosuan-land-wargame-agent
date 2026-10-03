@@ -1,0 +1,306 @@
+{
+ "budget": {
+  "batch_sessions": 6,
+  "ledger_base_session": 2464,
+  "sprint_session_cap": 24
+ },
+ "candidate": "t9-capacity-allocation-v1",
+ "caps": {
+  "steps": "max_time + 1 + 100",
+  "wall_seconds": 1800
+ },
+ "card_id": "s8-t9-v1-h2h",
+ "configurations": "the three large scenarios (5, 5 and 7 objectives, where baseline-v2 commits up to 17 ground units to one objective): H1 candidate red against baseline-v2 blue and H2 baseline-v2 red against candidate blue, one game each",
+ "controls": "baseline-v2's own games of the registered shoot-reservation experiment (group C, 15 per configuration, same engine and code identity; baseline-v1-runtime-r2 makes the same decisions): C1 mirror for a head-to-head seat, C2 or C3 for a game against the inert control; the mechanism batch placed the candidate above all 15 control games against the inert control in both scenarios it played (s8-t9-v1-mechanism)",
+ "eligible_for_promotion": false,
+ "evaluation_id": "s8-t9-v1-h2h",
+ "execution": {
+  "runtime": "baseline-v1-runtime-r2",
+  "workers": 1
+ },
+ "games": [
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "H1",
+   "game_id": "2120531121.H1.s8-t9-v1-h2h.g01",
+   "position": 1,
+   "red": "t9-capacity-allocation-v1",
+   "scenario_id": "2120531121"
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "condition": "H2",
+   "game_id": "2120531121.H2.s8-t9-v1-h2h.g02",
+   "position": 2,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "scenario_id": "2120531121"
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "H1",
+   "game_id": "1930331196.H1.s8-t9-v1-h2h.g03",
+   "position": 3,
+   "red": "t9-capacity-allocation-v1",
+   "scenario_id": "1930331196"
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "condition": "H2",
+   "game_id": "1930331196.H2.s8-t9-v1-h2h.g04",
+   "position": 4,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "scenario_id": "1930331196"
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "H1",
+   "game_id": "2130511121.H1.s8-t9-v1-h2h.g05",
+   "position": 5,
+   "red": "t9-capacity-allocation-v1",
+   "scenario_id": "2130511121"
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "condition": "H2",
+   "game_id": "2130511121.H2.s8-t9-v1-h2h.g06",
+   "position": 6,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "scenario_id": "2130511121"
+  }
+ ],
+ "inputs": {
+  "shoot_manifest_sha256": "01c9c9675af4b0859fc55e54a5dc86513b624208bf13131e7b510b87a3122afd"
+ },
+ "intended_observations": [
+  "candidate margin per game against the C1 mirror control of the same seat (directional only: the control's standard deviation is 111 to 567 points)",
+  "occupation and attack score components, losses (remain), objectives held at the end",
+  "kept, replaced and withheld moves; waiting ground units; refusals, errors and latency"
+ ],
+ "mechanism": "as in s8-t9-v1-mechanism: ground moves kept while the destination has fewer than 4 commitments, otherwise re-assigned within twice the cost by cost per value, or withheld",
+ "next_step_rule": "if the candidate is at or above the control mean in most games without a new failure class it is the leading candidate for a confirmatory study; a clear loss pattern against active opponents (for example withheld units never committed while objectives are lost) is diagnosed from the captures and answered by a new version",
+ "players": [
+  {
+   "faction": 0,
+   "role": 1,
+   "seat": 1,
+   "user_id": 0,
+   "user_name": "demo"
+  },
+  {
+   "faction": 1,
+   "role": 1,
+   "seat": 11,
+   "user_id": 0,
+   "user_name": "demo"
+  }
+ ],
+ "policies": {
+  "baseline-v2-candidate-shoot-target-reservation": {
+   "label": "baseline-v2 (frozen)",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ],
+    "sha256": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ]
+   }
+  },
+  "t9-capacity-allocation-v1": {
+   "label": "T9 capacity-limited objective allocation, version 1",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/exploratory_addon.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py",
+     "experiments/t9_allocation.py"
+    ],
+    "sha256": "0a0b7174f52e6a6a9d30959ef6a1589c185fb82e70290ceb2b80c889109d77fa",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py",
+     "experiments/exploratory_addon.py",
+     "experiments/t9_allocation.py"
+    ]
+   }
+  }
+ },
+ "purpose": "exploratory",
+ "randomness": {
+  "global_seed": 20260929,
+  "procedure": "each game runs in a fresh process; the harness seeds Python's and NumPy's global generators with global_seed before the engine is constructed and records whether the engine consumes them; no undocumented engine interface is used",
+  "python_hash_seed": 0
+ },
+ "runtime_environment": {
+  "OPENBLAS_NUM_THREADS": "1"
+ },
+ "safety_checks": [
+  "every game through scripts/run_explore.sh: persistent engine installation, session ledger, integrity check at session open and close, no reinstall, no change to the engine or its state file",
+  "policy source digests of baseline-v2 and the candidate checked before the first game, by every game and after the last game; baseline-v2's digest must be the frozen 7cbaf032...",
+  "the batch is refused if the sprint's ledger-counted session cap (24 after session 2464) would be exceeded",
+  "clean committed tree; records and captures are never overwritten; no game is retried or replaced",
+  "stop the sprint on an integrity failure, a ledger inconsistency, a privacy exposure or an unexplained systemic contract failure (contract errors, add-on errors or a game failure without an understood cause)",
+  "every replaced move passes the project gate with the step's other actions, or reverts to baseline-v2's",
+  "only ground move orders change; shots, occupations, air units and idle units are untouched"
+ ],
+ "scenarios": [
+  {
+   "alternates": [
+    "2120511121",
+    "2130511421",
+    "2230531121",
+    "2230531221",
+    "2130511321",
+    "2130511121",
+    "2130511221"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+    "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+    "scenario": "a4536a361ac9dd879ad326d8c5f40583433c3299f5184b4af06ddb110ab297cf",
+    "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "operators": 54,
+   "red": 28,
+   "rule": "S2 fewest operators on map 21",
+   "scenario_id": "2120531121"
+  },
+  {
+   "alternates": [
+    "2020331196",
+    "2120331196",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2140331196"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "206c437995216aed6dd14a310d3a2ada0f7148dd8d40e4ec52c900b224d06f15",
+    "cost": "b136cc86cae77d53482f2b2ff3df0087278d51628e1a4cf453307d8da008997f",
+    "scenario": "a15d3b3bf499694d93a981511c16b5c1c9247487ac1cf1d88b2bf1bd2c75c1b1",
+    "see": "e69b9e85d77cc8de4600c42b48939ea625236a7a3b705090fa9b3745775009e2"
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "operators": 52,
+   "red": 26,
+   "rule": "S2 fewest operators on map 96",
+   "scenario_id": "1930331196"
+  },
+  {
+   "alternates": [
+    "2130511221",
+    "2140131194",
+    "2140331196",
+    "2130511321",
+    "1930631192",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2230531221",
+    "2230631192",
+    "2030111194",
+    "2130511421",
+    "2230531121",
+    "2120131294",
+    "2120511121",
+    "2120131194",
+    "2120331196",
+    "2020331196",
+    "2110431753",
+    "2010441253",
+    "2110431153",
+    "2110431253",
+    "2110431353",
+    "2110431453",
+    "2110431553",
+    "2110431653",
+    "201033029601",
+    "201033039601",
+    "211033019601",
+    "2010141294"
+   ],
+   "blue": 44,
+   "cities": 7,
+   "inputs_sha256": {
+    "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+    "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+    "scenario": "9611e334d4fd6f2eda5957a26116bf8ec21c3e04754ed349d9a0fa0e9dc68070",
+    "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "operators": 89,
+   "red": 45,
+   "rule": "S3 largest force",
+   "scenario_id": "2130511121"
+  }
+ ],
+ "schema": "miaosuan-exploratory-run-card/1",
+ "status": "EXPLORATORY - NOT ELIGIBLE FOR BASELINE PROMOTION",
+ "track": "EXPLORATORY",
+ "version": "t9-capacity-allocation-v1 (unchanged), head-to-head batch 1"
+}
