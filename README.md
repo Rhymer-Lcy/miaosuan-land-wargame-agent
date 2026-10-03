@@ -89,7 +89,10 @@ cap. In 23 exploratory sessions (`docs/SPRINT8_EXPLORATION.md`), indirect artill
 but its versions either damaged own units or gained nothing, and is shelved; capacity-limited objective allocation
 (T9) was above `baseline-v2`'s historical control in 10 of 12 games and is proposed for a registered confirmatory
 study (`docs/T9_CONFIRMATION_PROPOSAL.md`, awaiting the owner's approval). Exploratory results are directional and
-promote nothing. The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
+promote nothing. Sprint 9 registered the confirmatory study of T9 as a staged design (`docs/T9_CONFIRMATION.md`): a
+primary head-to-head test in scenario 2130511121 (45 games), then, each only after the previous phase's registered
+gate, a small-scenario safety screen and two secondary phases, at most 375 engine sessions in all. The canary's
+manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
 
@@ -144,6 +147,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/EXPLORATORY_TRACK.md` | the exploratory track: run cards, the exploratory runner and its safeguards, evidence and reporting, stopping |
 | `docs/SPRINT8_EXPLORATION.md` | Sprint 8's exploratory batches: T4 indirect fire (three versions) and T9 capacity-limited allocation, engine facts, game-level results, comparison and selection |
 | `docs/T9_CONFIRMATION_PROPOSAL.md` | the proposed confirmatory study of T9 (for the owner's approval; not a registration) |
+| `docs/T9_CONFIRMATION.md` | the registered, staged confirmatory study of T9: identities, design, estimand, interval, power, phase gates, failure handling, integrity, validation, disposition, results |
 | `docs/PLATFORM_CANARY.md` | the owner's manual upload and compatibility-check steps for the platform canary |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
@@ -166,6 +170,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `evaluation/t7-mechanism-probe-1/` | the T7 mechanism probe's manifest, pre-registration outputs (calibration, premise, equivalence, dry run, mutation), registration issue and its verification, per-game results, gate, stop branch, pooled result and post-hoc descriptions |
 | `evaluation/t7-e3b-search-1/` | the E3b search's frozen inputs, known-answer validation, per-dataset results, certificates, independent cross-check, decision, post-hoc descriptions and mutation results |
 | `evaluation/s8-*/` | Sprint 8's exploratory run cards (`manifest.json`) and their aggregate game results (`results.json`) |
+| `evaluation/t9-confirmation-1/` | the T9 confirmatory study's manifest, planning figures, pre-registration validation and mutation results, registration issue and its verification, phase results and disposition |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy
