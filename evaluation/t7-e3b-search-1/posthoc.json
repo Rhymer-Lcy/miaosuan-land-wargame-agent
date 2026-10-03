@@ -1,0 +1,90 @@
+{
+ "instrument_control": {
+  "A-b": {
+   "by_type": {
+    "1": 10
+   },
+   "commands_after_an_idle_run_of_at_least_75": 0,
+   "commands_to_ground_units": 10,
+   "longest_idle_run_before_a_command": 0,
+   "stationary_at_the_command": 6
+  },
+  "A-pb1": {
+   "by_type": {
+    "1": 43,
+    "2": 109
+   },
+   "commands_after_an_idle_run_of_at_least_75": 0,
+   "commands_to_ground_units": 152,
+   "longest_idle_run_before_a_command": 73,
+   "stationary_at_the_command": 31
+  },
+  "A-pb2": {
+   "by_type": {
+    "1": 28,
+    "2": 8
+   },
+   "commands_after_an_idle_run_of_at_least_75": 0,
+   "commands_to_ground_units": 36,
+   "longest_idle_run_before_a_command": 0,
+   "stationary_at_the_command": 12
+  },
+  "B-c": {
+   "by_type": {
+    "1": 18
+   },
+   "commands_after_an_idle_run_of_at_least_75": 0,
+   "commands_to_ground_units": 18,
+   "longest_idle_run_before_a_command": 0,
+   "stationary_at_the_command": 14
+  },
+  "B-p2": {
+   "by_type": {
+    "1": 64
+   },
+   "commands_after_an_idle_run_of_at_least_75": 0,
+   "commands_to_ground_units": 64,
+   "longest_idle_run_before_a_command": 0,
+   "stationary_at_the_command": 24
+  }
+ },
+ "schema": "miaosuan-t7-e3b-posthoc/1",
+ "status": "POST HOC: written after the registered outputs; changes none of them, no rule and no disposition",
+ "strongest_configuration": {
+  "2010431153": {
+   "F2_facts": {
+    "earlier_unit_seen_by_opponent": false,
+    "first_judge_before_s0": true,
+    "opponent": "baseline-v0 (active)"
+   },
+   "first_judge_record_cur_step": 141,
+   "first_witness": {
+    "d": 411,
+    "k0": 598,
+    "k1": 1009,
+    "later_type": 2,
+    "s0": 597,
+    "s1": 1008
+   },
+   "of_which_listed_by_the_opposing_seat_before_s0": 0,
+   "other_units_first_ordered_before_k0": 1,
+   "reconstruction_against_recorded_baseline_v0": {
+    "opposing seat": {
+     "before_the_first_witness_order": 1,
+     "between_the_first_witness_order_and_its_command": 0,
+     "first_difference_decision": 476,
+     "play_decisions_where_baseline_v2_differs": 1
+    },
+    "witness seat": {
+     "before_the_first_witness_order": 1,
+     "between_the_first_witness_order_and_its_command": 0,
+     "first_difference_decision": 532,
+     "play_decisions_where_baseline_v2_differs": 7
+    }
+   }
+  },
+  "witness_games": 1,
+  "witness_units": 1
+ },
+ "study_id": "t7-e3b-search-1"
+}
