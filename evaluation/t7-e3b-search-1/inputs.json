@@ -1,0 +1,1227 @@
+{
+ "datasets": [
+  {
+   "games": [
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/t1r-diagnosis-1/capture/1910631192.C3.b.x01.capture.json",
+       "sha256": "f2403356026cceb871dc16d78109164a9ff3031e07fdb70a24831f99a4b3ba11"
+      },
+      "record": {
+       "path": "local/evaluation/t1r-diagnosis-1/games/1910631192.C3.b.x01.json",
+       "sha256": "00abf939cbf2641395a0e62715a1b81793b09b6079db67e95d914f5c40837234"
+      },
+      "windows": {
+       "path": "local/evaluation/t1r-diagnosis-1/capture/1910631192.C3.b.x01.windows.pkl",
+       "sha256": "10bfab15fc7ccc43c9000f03e86432caef419fe2912a103bf711d80a866d69de"
+      }
+     },
+     "game": "1910631192.C3.b.x01",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "2459"
+    }
+   ],
+   "id": "A-b",
+   "kind": "full",
+   "seat": 11
+  },
+  {
+   "games": [
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/t7-mechanism-probe-1/capture/2120531121.H1.pb1.capture.json",
+       "sha256": "faf4cf3e4b50129ef644b9743fa4b6fa4c0a630c61bf0bbb29c028de9d0f42ce"
+      },
+      "record": {
+       "path": "local/evaluation/t7-mechanism-probe-1/games/2120531121.H1.pb1.json",
+       "sha256": "e708cdfaa84da9431d4b0ffa531e67718d671992e1e4595bc9b2efe49f731371"
+      },
+      "windows": {
+       "path": "local/evaluation/t7-mechanism-probe-1/capture/2120531121.H1.pb1.windows.pkl",
+       "sha256": "cd87eece404dd677c3332f20fd40585734ef6ff7f0c76ba48b3d04cf54288734"
+      }
+     },
+     "game": "2120531121.H1.pb1",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "t7-idle-concealment"
+     },
+     "session": "2463"
+    }
+   ],
+   "id": "A-pb1",
+   "kind": "full",
+   "seat": 11
+  },
+  {
+   "games": [
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/t7-mechanism-probe-1/capture/2120531121.H2.pb2.capture.json",
+       "sha256": "2687bb841a462ca2097dc40193ca310caf4366a2ed501220a73709ce9f91765e"
+      },
+      "record": {
+       "path": "local/evaluation/t7-mechanism-probe-1/games/2120531121.H2.pb2.json",
+       "sha256": "1c65a9d9eb4e6d1d88ef93be703bf72c2ce54cd17a884b2f86fd7f145e752a5b"
+      },
+      "windows": {
+       "path": "local/evaluation/t7-mechanism-probe-1/capture/2120531121.H2.pb2.windows.pkl",
+       "sha256": "9bc820447fdfd4ac217d45992dca5f5a58168b7d33c077e00edbb33f9558eb82"
+      }
+     },
+     "game": "2120531121.H2.pb2",
+     "policies": {
+      "blue": "t7-idle-concealment",
+      "red": "baseline-v2-candidate-shoot-target-reservation"
+     },
+     "session": "2464"
+    }
+   ],
+   "id": "A-pb2",
+   "kind": "full",
+   "seat": 1
+  },
+  {
+   "games": [
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/t1r-diagnosis-1/capture/1910631192.C3.c.x01.capture.json",
+       "sha256": "51f571c75f9412a4495341124ee5d3054b35324d7b11bd76c01d015de8175e87"
+      },
+      "record": {
+       "path": "local/evaluation/t1r-diagnosis-1/games/1910631192.C3.c.x01.json",
+       "sha256": "bfd058bf2a4b444823ea808762bf0af67b2406a7515f8cde993135d2f188845a"
+      },
+      "windows": {
+       "path": "local/evaluation/t1r-diagnosis-1/capture/1910631192.C3.c.x01.windows.pkl",
+       "sha256": "c45902f71334eb564b51f0958b78954e737437f8b9fefedf82995339fe5f5d7c"
+      }
+     },
+     "game": "1910631192.C3.c.x01",
+     "policies": {
+      "blue": "tactic-deployment-split-1",
+      "red": "inert-v0"
+     },
+     "session": "2458"
+    }
+   ],
+   "id": "B-c",
+   "kind": "full",
+   "seat": 11
+  },
+  {
+   "games": [
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/ps1-engine-probe-1/capture/1930331196.C2.p2.capture.json",
+       "sha256": "d31167c3ca2d2a095cf13118cb3cf2948e76b7750c0b3d6e80fd68f5b22a3d8c"
+      },
+      "record": {
+       "path": "local/evaluation/ps1-engine-probe-1/games/1930331196.C2.p2.json",
+       "sha256": "577335691aff782547095da5381d781132d2c5d586cb5d90aaa40274754e3b1b"
+      },
+      "windows": {
+       "path": "local/evaluation/ps1-engine-probe-1/capture/1930331196.C2.p2.windows.pkl",
+       "sha256": "0d11386a70f405ce230a8bc64ac668e919ffbbde809b38ddd010fc2eb119b942"
+      }
+     },
+     "game": "1930331196.C2.p2",
+     "policies": {
+      "blue": "inert-v0",
+      "red": "tactic-deployment-split-1"
+     },
+     "session": "2461"
+    }
+   ],
+   "id": "B-p2",
+   "kind": "full",
+   "seat": 1
+  },
+  {
+   "games": [
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/t7-mechanism-probe-1/capture/1910631192.C3.pa.capture.json",
+       "sha256": "07394d150b9bb686ff0feb8124fb6058cbb77736ca61efc14a03a208095feee5"
+      },
+      "record": {
+       "path": "local/evaluation/t7-mechanism-probe-1/games/1910631192.C3.pa.json",
+       "sha256": "6379b25dae581afe245d3108fe9e5cb9b818b30358c8b74bfc29e6c9317fc942"
+      },
+      "windows": {
+       "path": "local/evaluation/t7-mechanism-probe-1/capture/1910631192.C3.pa.windows.pkl",
+       "sha256": "0af0504a53f1e654ffc1467f2d5e2c899b81a446174497f7718f802aeac5f626"
+      }
+     },
+     "game": "1910631192.C3.pa",
+     "policies": {
+      "blue": "t7-idle-concealment",
+      "red": "inert-v0"
+     },
+     "session": "2462"
+    }
+   ],
+   "id": "K-pa",
+   "kind": "known answer",
+   "seat": 11
+  },
+  {
+   "games": [
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/t7-mechanism-probe-1/capture/2120531121.H1.pb1.capture.json",
+       "sha256": "faf4cf3e4b50129ef644b9743fa4b6fa4c0a630c61bf0bbb29c028de9d0f42ce"
+      },
+      "record": {
+       "path": "local/evaluation/t7-mechanism-probe-1/games/2120531121.H1.pb1.json",
+       "sha256": "e708cdfaa84da9431d4b0ffa531e67718d671992e1e4595bc9b2efe49f731371"
+      },
+      "windows": {
+       "path": "local/evaluation/t7-mechanism-probe-1/capture/2120531121.H1.pb1.windows.pkl",
+       "sha256": "cd87eece404dd677c3332f20fd40585734ef6ff7f0c76ba48b3d04cf54288734"
+      }
+     },
+     "game": "2120531121.H1.pb1",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "t7-idle-concealment"
+     },
+     "session": "2463"
+    }
+   ],
+   "id": "K-pb1",
+   "kind": "known answer",
+   "seat": 1
+  },
+  {
+   "games": [
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/t7-mechanism-probe-1/capture/2120531121.H2.pb2.capture.json",
+       "sha256": "2687bb841a462ca2097dc40193ca310caf4366a2ed501220a73709ce9f91765e"
+      },
+      "record": {
+       "path": "local/evaluation/t7-mechanism-probe-1/games/2120531121.H2.pb2.json",
+       "sha256": "1c65a9d9eb4e6d1d88ef93be703bf72c2ce54cd17a884b2f86fd7f145e752a5b"
+      },
+      "windows": {
+       "path": "local/evaluation/t7-mechanism-probe-1/capture/2120531121.H2.pb2.windows.pkl",
+       "sha256": "9bc820447fdfd4ac217d45992dca5f5a58168b7d33c077e00edbb33f9558eb82"
+      }
+     },
+     "game": "2120531121.H2.pb2",
+     "policies": {
+      "blue": "t7-idle-concealment",
+      "red": "baseline-v2-candidate-shoot-target-reservation"
+     },
+     "session": "2464"
+    }
+   ],
+   "id": "K-pb2",
+   "kind": "known answer",
+   "seat": 11
+  },
+  {
+   "games": [
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d01.capture.json",
+       "sha256": "1d30c3247358034fbe7d4fb78cd795273363fde544b8dc8cadd2f04db734a41a"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d01.json",
+       "sha256": "c8c08ecf272f3af01b0038cdac064112372231084e1aa046639d814530d58758"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d01.windows.pkl",
+       "sha256": "61fa83ecc4f34a32426225d8e377da1169a563784e32a19352d11e2a22ee530b"
+      }
+     },
+     "game": "1930331196.C3.d01",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1871"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d02.capture.json",
+       "sha256": "7c55c14eeda644dc309c4aaa36e3dcb10243e74ffae08573093dcdd84c5b0c7c"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d02.json",
+       "sha256": "508be2140a70de6bfefefe2428671fca6d544a3aaed32bb062db3437a805d178"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d02.windows.pkl",
+       "sha256": "2f01b47c9a10a38e6e24bb68a2972ae8e84f879bd67f53a680b6f99be04da477"
+      }
+     },
+     "game": "1930331196.C3.d02",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1868"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d03.capture.json",
+       "sha256": "1a684274f8d4b0611f937fc53246a6efa96b6b31d87c7610e7fc88e40b5e99d5"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d03.json",
+       "sha256": "1e2552f1e6d58572760279e867b93aac34d5185e3dcd360a7a759a38f6c0671f"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d03.windows.pkl",
+       "sha256": "aa791df2de95ec6c507c10d2b27e52e79ca7ce5929d691b0ff38edcda7fd0dfc"
+      }
+     },
+     "game": "1930331196.C3.d03",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1872"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d04.capture.json",
+       "sha256": "8cdcc71bf5cec919841e30c02679a06f5aa9a35e246a440bb7b3f5725c7b2431"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d04.json",
+       "sha256": "37e01701e5475fa583f8b999a12d808680aac2d741a4beac04af1f157305b19e"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d04.windows.pkl",
+       "sha256": "65d07d92d39360c298906ca21f2c2ec8cb742a6c8a5e7043b485c9ad929f481c"
+      }
+     },
+     "game": "1930331196.C3.d04",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1867"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d05.capture.json",
+       "sha256": "9e6e28cbf1b7c081e6dff9fd666f9b2d9843efd0d7c751d742177b66f11bd68c"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d05.json",
+       "sha256": "d7ef103b51eea77d8f4b3e5cf536fc4e833727ce8075743c9f65cb11d987a87d"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d05.windows.pkl",
+       "sha256": "b36ac82db90cf46e1f89a9fbd10b786c79746c68725790d7311370bf8ed29c32"
+      }
+     },
+     "game": "1930331196.C3.d05",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1870"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d06.capture.json",
+       "sha256": "cf463d25d5005b5a3fa0c838511f7f9490e6662dae011c9199d64771c08b99cb"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d06.json",
+       "sha256": "3145d9b1c284b7c40af42a3a66e0869a29ffbf1305a49375d24813ade85be813"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d06.windows.pkl",
+       "sha256": "8587d81b60295b9ff972d813c5b7bc0954a8c6917ed5ecfd5de54a80f070e843"
+      }
+     },
+     "game": "1930331196.C3.d06",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1869"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d07.capture.json",
+       "sha256": "95efe7256e18a656be447249164ee8d2c6407ed7098ed9e412fcde8c07bacbab"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d07.json",
+       "sha256": "141b0c8222d3d9d30437a228401743c1f6c4560aa3d132a0937fcaefbe16c0b9"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d07.windows.pkl",
+       "sha256": "cc42b56ec4a479ca76e622f1eacc94bec379813790ca4afe960bcb7efd33b03b"
+      }
+     },
+     "game": "1930331196.C3.d07",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1874"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d08.capture.json",
+       "sha256": "c4ba67dc17b9d7325f9e606dc83fc46dbcce83070205dbeba8140147d12c428f"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d08.json",
+       "sha256": "ae6ad755ab7786397e861eae9331379c2c9b1828d73fcf0613afa20940699621"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d08.windows.pkl",
+       "sha256": "6013fb6f8af165332a37c434f314a49f65f8e02fdfebfd53ae2076312ce95590"
+      }
+     },
+     "game": "1930331196.C3.d08",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1866"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d09.capture.json",
+       "sha256": "b1b36d9b520b5e0a41bc0a3583a58125f2ec005aeee61801a6a6c566e5c78e4e"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d09.json",
+       "sha256": "932ba3d87a065760adf4e90964ac671b5808a6983655099c20206226a18cde16"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d09.windows.pkl",
+       "sha256": "6c5e8f20d9ab96a702661a124ae9504165dbf2b44106ac5884c300ba92edabf1"
+      }
+     },
+     "game": "1930331196.C3.d09",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1876"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d10.capture.json",
+       "sha256": "283f1d5ea75f5d8b570c090b8954932994e0016c6951629980ab433ef7320374"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d10.json",
+       "sha256": "d5e0ac2a267be2ecd9fcee17708f3defb0359d928773db1bf5d75e0282c6bedd"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d10.windows.pkl",
+       "sha256": "e80c7e8eb32d62d98363506e74c8c13973bd4335a32ef9f6266fcd676530c322"
+      }
+     },
+     "game": "1930331196.C3.d10",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1873"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d11.capture.json",
+       "sha256": "b5951798e1713c3cbdc481929d2940d34ff32cc776981cedee347de636f64b5e"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d11.json",
+       "sha256": "40a44bb7af2f3cec486c4a3c607e9dee8d894b794f1f5a246730c2cf80fab5ab"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d11.windows.pkl",
+       "sha256": "4db21b333a54323babfc4e4ff627e6880e3ae36ecd806156e510f6af1c24febd"
+      }
+     },
+     "game": "1930331196.C3.d11",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1880"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d12.capture.json",
+       "sha256": "371f8192c883e2e450b8c053225b635c59da0167ce69b1d3dd73982a1031255e"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d12.json",
+       "sha256": "a9060e69be0dc449d16da4d9dd0c64d1815a153725726ed16d2480118721ee15"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d12.windows.pkl",
+       "sha256": "9c5ad028bc27fc7f9f6af196a27e06729e0b7db2991342504e91f267c5e01205"
+      }
+     },
+     "game": "1930331196.C3.d12",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1888"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d13.capture.json",
+       "sha256": "b4adac228adb1950a4aed582ea9af317ffd17208427518b8e623e7d4681bbda0"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d13.json",
+       "sha256": "57ad25fd569ac82a87196b83e44a47c134ac5b8e78306974729cc0173889e6af"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d13.windows.pkl",
+       "sha256": "0eef2ce389d8b095f2806215942cc118e56882450a8b4caaf5bbde204d425337"
+      }
+     },
+     "game": "1930331196.C3.d13",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1882"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d14.capture.json",
+       "sha256": "b5fafc2b8f70974b109a97616dba66362aea64e91a06d76d99e6af4d235f0406"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d14.json",
+       "sha256": "d51a6c084398b35dc0265f586998e7461fb3d5bcaacad58e85ca0b1221b201ba"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d14.windows.pkl",
+       "sha256": "9daddae1bb965d83179c7df9d0cc9b9b0fa7bfc83c3111ca4a858c326b252934"
+      }
+     },
+     "game": "1930331196.C3.d14",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1878"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d15.capture.json",
+       "sha256": "291fa164d7a134af5cecab535e7822c396bf4def8b2a51d4c0d40366118e9c18"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d15.json",
+       "sha256": "a90979f9ae39edfca0162fe2193e7cca1a60c4fd53718f5cca5995c2989bfb1d"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d15.windows.pkl",
+       "sha256": "1475c4218f74123db79b04a1487a1a4d5c4996958b78c44804479be0084677c6"
+      }
+     },
+     "game": "1930331196.C3.d15",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1879"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d16.capture.json",
+       "sha256": "eab29827305fb27a9598d5409303fb2f8c192570644b970354168544c0d9f166"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d16.json",
+       "sha256": "18d4b918847dd8184291dd290b44746d011642f5dcddf7e2fc0323331ef73be3"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d16.windows.pkl",
+       "sha256": "d6749514bc309a41b153419d6f4797956e0e9d7e260ca425ed3cffe80e747bd7"
+      }
+     },
+     "game": "1930331196.C3.d16",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1877"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d17.capture.json",
+       "sha256": "7533a5a8c6bd4a0f608b1c4826f6941835d07e1fe388e3f3bb64dc94431172f4"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d17.json",
+       "sha256": "aef1dc392247b393ec4aa8f70b9bb4f61fbd89b5f491fc2f50cb1c683bffd5e1"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d17.windows.pkl",
+       "sha256": "5d52ab463219951416a7f549f646d60f015f6822540ed8909a2fe723d6f98bed"
+      }
+     },
+     "game": "1930331196.C3.d17",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1875"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d18.capture.json",
+       "sha256": "c7c5a7beff95404debb5d16c565e235702ccc047d94d986523f5cf673dcf918f"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d18.json",
+       "sha256": "6559dedd43323784eae782ff0fe3bca6b8237e9e22bc824ac244c77c8c9bc05f"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d18.windows.pkl",
+       "sha256": "f5c54153a4e462c21fa8c07c221637836775348d6806bd4a542b2da4a0a4fdb3"
+      }
+     },
+     "game": "1930331196.C3.d18",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1885"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d19.capture.json",
+       "sha256": "613741c69f5226d002611604313de14cb256ddcbf948b855b8027c51cc92235f"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d19.json",
+       "sha256": "51c60995b2b3c0ab6dd97e2c2d343216a8763f4bf8ddbcfa7ccf5dbb7b9f1107"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d19.windows.pkl",
+       "sha256": "8f78b1a8b71e57af3a203c26284d2a033eac46cedb5e601754c765fbe45489c9"
+      }
+     },
+     "game": "1930331196.C3.d19",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1883"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d20.capture.json",
+       "sha256": "4ca26bca1eb1225ee4d2097247fc3ef4149f3ed3759efb4e9bc1d8fa9305d364"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d20.json",
+       "sha256": "15961d43f86ca01a472dd01a8a5afef217ed26be2a8b3c4120989a5841100100"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d20.windows.pkl",
+       "sha256": "f6ac75ebbe659e13645501477909ca96ffa4dddd79892757989c8766c7791645"
+      }
+     },
+     "game": "1930331196.C3.d20",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1884"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d21.capture.json",
+       "sha256": "6a3551cd05e05a6e064db489742f1c719dbdedce73a7afd10b03d8a9a6f8ed57"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d21.json",
+       "sha256": "6a73391bfb54d1a7acdf2b0e33d3a1e6a7b6db6f4dc8bdd0f4bbe7db9e685b67"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d21.windows.pkl",
+       "sha256": "7462011f9f6d09b029b9afbd901ce09fd461f11303b7be43860c3cd537a26710"
+      }
+     },
+     "game": "1930331196.C3.d21",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1887"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d22.capture.json",
+       "sha256": "b4004b4ba82e3e00d2411b546cec6c7058475534189515ac7faec7ed8da4663d"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d22.json",
+       "sha256": "24a85c468eeb0dd92fef122b0390ba0249c9a008f2cf1732a6d371e4d7313212"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d22.windows.pkl",
+       "sha256": "18c5027aaac830805a6fa08bd38ccafad155b2dbbb22ff78f3a3f941b4c44aaa"
+      }
+     },
+     "game": "1930331196.C3.d22",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1881"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d23.capture.json",
+       "sha256": "ce3f9998448f4aef3b23460f69f0bd405a20c5caf55521163cec3a9a30c0a573"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d23.json",
+       "sha256": "1d4cf29de56650351c6cf66a5f48258f26eb30012bd9faf5b084bb2ff08df3ea"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d23.windows.pkl",
+       "sha256": "4ce2269e3ea607139c3caf08e714c0ba3c3809d9135ce0908c8c40356b4f5913"
+      }
+     },
+     "game": "1930331196.C3.d23",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1890"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d24.capture.json",
+       "sha256": "f1008cb74c817e545b1ce1acc0ba336747fa06b63bfde671413f1a7ae5de5416"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d24.json",
+       "sha256": "fd612b1f4a998d7dae05a84311baff7042c0d1c97f7ff26e0c6abd4440ab0191"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d24.windows.pkl",
+       "sha256": "353425965eeb1acb7c40e258414fbfc10856074be44b4cc4b76749dca4916d31"
+      }
+     },
+     "game": "1930331196.C3.d24",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1893"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d25.capture.json",
+       "sha256": "4a78f954bddfc87b666fb5c106d5957bc19819b4daa86912bfbb1a32ca4b7c28"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d25.json",
+       "sha256": "698591c6d2c13624e16c56e2033e1b4fd935f63f64ace21e0bb82347be15efa6"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d25.windows.pkl",
+       "sha256": "99f81bfd728939d17bc351f1807a43405220f313f60c82ccff2c629c59ba59f2"
+      }
+     },
+     "game": "1930331196.C3.d25",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1897"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d26.capture.json",
+       "sha256": "33c99f8d534f4c17eb7d0acb506847725354d6fe9a00453eeaf2ab241e384368"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d26.json",
+       "sha256": "9d92aaad650f505e6e747a63db6037edb47813bdf96cc9950c7cafbf30c57124"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d26.windows.pkl",
+       "sha256": "c4da08265f80c8ea4285e79ee58034e404e920c10b25bf45aec223c3299eab60"
+      }
+     },
+     "game": "1930331196.C3.d26",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1896"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d27.capture.json",
+       "sha256": "4e21e778730b6eb61e2ce86817f4641e315996285763c7a90c13a6a092684fd1"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d27.json",
+       "sha256": "152c9117b8a35d615159cf5b585af4dc4b061dec497639071ff61187568cd3b3"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d27.windows.pkl",
+       "sha256": "575d2e4b6a8e0ee080dd875352050dd1edaa82d9d45a4f5c7e8b86aeb7e0babd"
+      }
+     },
+     "game": "1930331196.C3.d27",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1886"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d28.capture.json",
+       "sha256": "0dbead3101ab286c0aa4b4cf71a19396eb0292dc97a9a0ab1d338d10657f2e69"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d28.json",
+       "sha256": "97e4eac3e110c6bca24588e449f744b0988ce22c6619c97e78d1c0d2081eebd1"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d28.windows.pkl",
+       "sha256": "e0a37511e2e693ca0a3ff50f09d30e818eb53753c7ce05e05d44ab3571ee8512"
+      }
+     },
+     "game": "1930331196.C3.d28",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1889"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d29.capture.json",
+       "sha256": "97ee5dbe8574ec2dd04d796338eafb90e23999899bb274da4abc12746c1bbe0d"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d29.json",
+       "sha256": "6666ceae79d5a53a162575aafe52e86cef41514273be080d08b685fcb6ee2319"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d29.windows.pkl",
+       "sha256": "5f834c4470805786366455ce4a64c63ded06c38129b891fd643a1f339fb84e9f"
+      }
+     },
+     "game": "1930331196.C3.d29",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1891"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d30.capture.json",
+       "sha256": "45762363a2bfa6268a00fff8f962171521d051195ef4fd768493faec1a8263e8"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d30.json",
+       "sha256": "660c96ed62ec5f1b3833b8543c12b4068a9e741a865e4cf8720c39e2bcc7a14d"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d30.windows.pkl",
+       "sha256": "fe9688ad35eafa48d85666ae3c9c8ca682048261d09c1d44c3e20e4ea832752f"
+      }
+     },
+     "game": "1930331196.C3.d30",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1894"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d31.capture.json",
+       "sha256": "3d24487f5d1ced9626f5e1bc63063185888ab0d29589112fbfc0a4dbb38597eb"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d31.json",
+       "sha256": "a3801ec29a5302eb0b70c61f251c4bfff2d91dd21676f8407d861dfb25133825"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d31.windows.pkl",
+       "sha256": "2208ccb3158913a2b9e351fc6f53206fbbb37a797f413311ef778f5a9ea9fedc"
+      }
+     },
+     "game": "1930331196.C3.d31",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1892"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d32.capture.json",
+       "sha256": "480179f6580cac28a840d44fcdb4f76ece41f4eb15934d591b5158d56b026507"
+      },
+      "record": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/games/1930331196.C3.d32.json",
+       "sha256": "1cd857f9bb8076d89ce0c2275d46c0fbaee2b6f2b4470b4726fc89d14068add3"
+      },
+      "windows": {
+       "path": "local/evaluation/baseline-v2-residual-516-diagnostic-1/capture/1930331196.C3.d32.windows.pkl",
+       "sha256": "09fb3ae87d8ce67a2c4122a1a19e64999cea682cc84bb61645d01d9c34c58335"
+      }
+     },
+     "game": "1930331196.C3.d32",
+     "policies": {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "red": "inert-v0"
+     },
+     "session": "1895"
+    }
+   ],
+   "id": "B-r516",
+   "kind": "sparse",
+   "seat": 11
+  },
+  {
+   "games": [
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/capture/1910631192.C2.c.s01.capture.json",
+       "sha256": "0d9a3ffc2ef749a92a3c58f0381429c0255547d83fe214971d8f5c70805b58cb"
+      },
+      "record": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/games/1910631192.C2.c.s01.json",
+       "sha256": "ec321ee6faaa6fa8cd52d0822d12b292e0a89fdd2cb751c38185e9633bb23299"
+      },
+      "windows": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/capture/1910631192.C2.c.s01.windows.pkl",
+       "sha256": "cdb749daed12eec17543ba593fc7b4bb1f7cfa640e8545365c47002fd49a3dd8"
+      }
+     },
+     "game": "1910631192.C2.c.s01",
+     "policies": {
+      "blue": "inert-v0",
+      "red": "tactic-deployment-split-1"
+     },
+     "session": "2265"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/capture/1930331196.C2.c.s01.capture.json",
+       "sha256": "23681be442c7131bcf1b467dbb7fd6dd996f3efebb3464f37f63e88c94625c79"
+      },
+      "record": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/games/1930331196.C2.c.s01.json",
+       "sha256": "452fc6c7a03b7c0baf956a0433135f05d8e97ba3fb6b50380295c89b5e1fb0b3"
+      },
+      "windows": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/capture/1930331196.C2.c.s01.windows.pkl",
+       "sha256": "2c998f61d78d95b237c5b7a6ba067d73f1d81e72b74b1ebc1c59b867a3286a39"
+      }
+     },
+     "game": "1930331196.C2.c.s01",
+     "policies": {
+      "blue": "inert-v0",
+      "red": "tactic-deployment-split-1"
+     },
+     "session": "2264"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/capture/2010131194.C2.c.s01.capture.json",
+       "sha256": "fd09fea2e59f0aa7c3f8149e38f8312fb284ee4f08350c9d979904c5815c75b5"
+      },
+      "record": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/games/2010131194.C2.c.s01.json",
+       "sha256": "aeb8e09f55c47518793ffeb6ef3bca5e8a7f657e6af1788df061c4fc1610cc88"
+      },
+      "windows": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/capture/2010131194.C2.c.s01.windows.pkl",
+       "sha256": "ca655b87512cec90988a92092783aaae059fddbb6063814895c5556593bf5737"
+      }
+     },
+     "game": "2010131194.C2.c.s01",
+     "policies": {
+      "blue": "inert-v0",
+      "red": "tactic-deployment-split-1"
+     },
+     "session": "2259"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/capture/2010211129.C2.c.s01.capture.json",
+       "sha256": "8c402d002e4fce683c13f0992044f88a394ccfbac3425675935ab912291dddd5"
+      },
+      "record": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/games/2010211129.C2.c.s01.json",
+       "sha256": "852138b339f7b65a9affec3bdb718d14d431dfabebe6a915c356f8844c2e6b85"
+      },
+      "windows": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/capture/2010211129.C2.c.s01.windows.pkl",
+       "sha256": "5517cf4e003305453511946184976e206160d02f9dc165d8740a7b78786556a1"
+      }
+     },
+     "game": "2010211129.C2.c.s01",
+     "policies": {
+      "blue": "inert-v0",
+      "red": "tactic-deployment-split-1"
+     },
+     "session": "2260"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/capture/201033019601.C2.c.s01.capture.json",
+       "sha256": "d9ef7c71dfa31d8c7df9ccc64183f64534d499a5eb72296e42c10d39c6674ad5"
+      },
+      "record": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/games/201033019601.C2.c.s01.json",
+       "sha256": "4ae9daf2c2a81f4fb113283d8dee82158dc461e9b8f3f3899dd322d73711f828"
+      },
+      "windows": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/capture/201033019601.C2.c.s01.windows.pkl",
+       "sha256": "e6f3b51ab1bd3ca197327f57a4f77d4c60d348047e116a715ebcf08e785a8b58"
+      }
+     },
+     "game": "201033019601.C2.c.s01",
+     "policies": {
+      "blue": "inert-v0",
+      "red": "tactic-deployment-split-1"
+     },
+     "session": "2258"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/capture/2010431153.C2.c.s01.capture.json",
+       "sha256": "419801c5bbb991489df73a7bc5fa82598e022896dcfe52907834e54a696323ec"
+      },
+      "record": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/games/2010431153.C2.c.s01.json",
+       "sha256": "b006c7f1cde464560d80c5276cc69fd72b8611a9379deaa5e2889c81149cb4cc"
+      },
+      "windows": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/capture/2010431153.C2.c.s01.windows.pkl",
+       "sha256": "4500558d91ff692ce86aecdd89d7faf5fba76ef73c30dd14ea2ec2d1a7b072b5"
+      }
+     },
+     "game": "2010431153.C2.c.s01",
+     "policies": {
+      "blue": "inert-v0",
+      "red": "tactic-deployment-split-1"
+     },
+     "session": "2262"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/capture/2120531121.C2.c.s01.capture.json",
+       "sha256": "6d4f9f887a9415ae3c11eb4ae24e9bedb1cbd51367f938ae342747a4bb2aa870"
+      },
+      "record": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/games/2120531121.C2.c.s01.json",
+       "sha256": "0cd7cef38c7e20610935cb62bd55a7ca69913abb5aad2262ff20dec05ccd8cb3"
+      },
+      "windows": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/capture/2120531121.C2.c.s01.windows.pkl",
+       "sha256": "cacd9094efe0825434d4858db48f93c320cd01f9bb6f4c06488166cd6a232d68"
+      }
+     },
+     "game": "2120531121.C2.c.s01",
+     "policies": {
+      "blue": "inert-v0",
+      "red": "tactic-deployment-split-1"
+     },
+     "session": "2263"
+    },
+    {
+     "files": {
+      "compact": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/capture/2130511121.C2.c.s01.capture.json",
+       "sha256": "c6734fb0bbf4d9365178f4a941e8df1ccda9ce2512cf85e637aace6a09c4891d"
+      },
+      "record": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/games/2130511121.C2.c.s01.json",
+       "sha256": "a2d52e75def04b41296f8f1fc6a24c8a3536cf5d4c4f20b80f89db0300358def"
+      },
+      "windows": {
+       "path": "local/evaluation/tactical-screen-deployment-split-1-smoke/capture/2130511121.C2.c.s01.windows.pkl",
+       "sha256": "d21b46d3e4d6a9cca498dfc184d6b750eb153a966897d7d794271326bffa3786"
+      }
+     },
+     "game": "2130511121.C2.c.s01",
+     "policies": {
+      "blue": "inert-v0",
+      "red": "tactic-deployment-split-1"
+     },
+     "session": "2261"
+    }
+   ],
+   "id": "B-smoke",
+   "kind": "sparse",
+   "seat": 1
+  },
+  {
+   "files": [
+    {
+     "path": "local/replay-corpus/1910631192.C1.r1.jsonl.gz",
+     "sha256": "e3a726e67080427106c84bfa5a6b2032fa2fb1c2d5fc9573cff974fab565d967"
+    },
+    {
+     "path": "local/replay-corpus/1930331196.C1.r1.jsonl.gz",
+     "sha256": "3b849c3b68487946b07929d7aaa01335b8fbb0c4e66fe01b00737804273b9b9e"
+    },
+    {
+     "path": "local/replay-corpus/2010131194.C1.r1.jsonl.gz",
+     "sha256": "84494aedadab8ed8dddccfea820eea4fccef793e5f92446ac51fe928cdbff8c0"
+    },
+    {
+     "path": "local/replay-corpus/2010211129.C1.r1.jsonl.gz",
+     "sha256": "8eef32e046e4004327799548267ed619282aa41f6617d36c7476d780b6a5633f"
+    },
+    {
+     "path": "local/replay-corpus/201033019601.C1.r1.jsonl.gz",
+     "sha256": "fee4eadc751d41f2bf58099b7383a63ec650fa0cc50d971b55622cd89797da37"
+    },
+    {
+     "path": "local/replay-corpus/2010431153.C1.r1.jsonl.gz",
+     "sha256": "6f8e30e608398811beadfdbb0d35a3b1e23e72fcf7ad803bd40097a73eedc322"
+    },
+    {
+     "path": "local/replay-corpus/2120531121.C1.r1.jsonl.gz",
+     "sha256": "9f38cd844e5fec2ab660c98090f62d8cea8fac1078f8374bea3bce3d47e5def0"
+    },
+    {
+     "path": "local/replay-corpus/2130511121.C1.r1.jsonl.gz",
+     "sha256": "e25562afc5ba0a545e045ed0db79dbba0b7fdd98962cb517eb8f722448420f3c"
+    }
+   ],
+   "id": "C-h0",
+   "kind": "replay corpus"
+  }
+ ],
+ "identities": {
+  "baseline-v2-candidate-shoot-target-reservation": {
+   "recomputed": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
+   "registered": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae"
+  },
+  "pool predicate": {
+   "src/miaosuan_agent/evaluation/t7_audit.py": "69e4f358f486015548d74ed6209935b2babbf1dc43e85fa201df5e6595b4e81d",
+   "src/miaosuan_agent/evaluation/t7_candidates.py": "50c77f37d7561282a257da6c3640e23ded5a2abdccb83b7d507c8811e5c312ab"
+  },
+  "t7-idle-concealment": {
+   "recomputed": "6b73c39ad785938cc1c54b72065858fbf6460a66ceebae627bad4e99fa1a50f0",
+   "registered": "6b73c39ad785938cc1c54b72065858fbf6460a66ceebae627bad4e99fa1a50f0"
+  },
+  "tactic-deployment-split-1": {
+   "recomputed": "000f639b35becbbd712d6134def855284b80ad4644409dc2f0ae9ee47113a2e9",
+   "registered": "000f639b35becbbd712d6134def855284b80ad4644409dc2f0ae9ee47113a2e9"
+  }
+ },
+ "lead_rows": {
+  "path": "local/diagnostics/t7/posthoc-private.json",
+  "sha256": "47109bd83f62b1e32f3d22e12ca781c076a3c3afad5aa94938ebcb80fb9d72b3"
+ },
+ "note": "frozen before any eligible seat was searched; the search reads only these files",
+ "schema": "miaosuan-t7-e3b-inputs/1",
+ "setup_data": {
+  "local/evaluation/baseline-v1-variance-study-1/data/1910631192/Data/maps/map_92/92see.npz": "c8e346d02bcc338a96894b9e4e1ed8d09eed4b15a9baeca96d17c2edcc3eaa19",
+  "local/evaluation/baseline-v1-variance-study-1/data/1910631192/Data/maps/map_92/basic.json": "8d4bf628205d08abfcc87b0672142e0e1e0b86dd205a6611fc1034de4c12f27a",
+  "local/evaluation/baseline-v1-variance-study-1/data/1910631192/Data/maps/map_92/cost.pickle": "b7a6ffb937be31a76ad61426a64212c90ee8c3b378eb04658162ee5825310c3c",
+  "local/evaluation/baseline-v1-variance-study-1/data/1910631192/Data/scenarios/1910631192.json": "4a44b94fba790b4535e03c1991bcc81253d0d61a228214c0c6b00caf0b0d8022",
+  "local/evaluation/baseline-v1-variance-study-1/data/1930331196/Data/maps/map_96/96see.npz": "e69b9e85d77cc8de4600c42b48939ea625236a7a3b705090fa9b3745775009e2",
+  "local/evaluation/baseline-v1-variance-study-1/data/1930331196/Data/maps/map_96/basic.json": "206c437995216aed6dd14a310d3a2ada0f7148dd8d40e4ec52c900b224d06f15",
+  "local/evaluation/baseline-v1-variance-study-1/data/1930331196/Data/maps/map_96/cost.pickle": "b136cc86cae77d53482f2b2ff3df0087278d51628e1a4cf453307d8da008997f",
+  "local/evaluation/baseline-v1-variance-study-1/data/1930331196/Data/scenarios/1930331196.json": "a15d3b3bf499694d93a981511c16b5c1c9247487ac1cf1d88b2bf1bd2c75c1b1",
+  "local/evaluation/baseline-v1-variance-study-1/data/2010131194/Data/maps/map_94/94see.npz": "a01d2ab2095ecdd2841651c90c757db6c12bae72d6759526914ad2220f7d975c",
+  "local/evaluation/baseline-v1-variance-study-1/data/2010131194/Data/maps/map_94/basic.json": "dde30d0a9ffc77ee5a8ad301692d929126b34c581ecb64dde96ffcb2b3cbcc03",
+  "local/evaluation/baseline-v1-variance-study-1/data/2010131194/Data/maps/map_94/cost.pickle": "c447e2b130c25aa2595e80cdd5dbe8e8f117196d544507f1897f776a88d4cfbb",
+  "local/evaluation/baseline-v1-variance-study-1/data/2010131194/Data/scenarios/2010131194.json": "103954f4ca5032150de1c124ea04fe4d47c7a0f72a290ace82bd6fb5b669bbec",
+  "local/evaluation/baseline-v1-variance-study-1/data/2010211129/Data/maps/map_29/29see.npz": "5f456a93999d346eeb9784b711d0140423d5ec4c0e64c819911f90d8a13f6b38",
+  "local/evaluation/baseline-v1-variance-study-1/data/2010211129/Data/maps/map_29/basic.json": "0f4e4d65ec6273a0747744d60a146f57c32cd505c53a8c4863043dec28548355",
+  "local/evaluation/baseline-v1-variance-study-1/data/2010211129/Data/maps/map_29/cost.pickle": "2a3fc75e9822eb2995dd9f3cab51dc049ec5748daecbd0fd894fea40217ddd27",
+  "local/evaluation/baseline-v1-variance-study-1/data/2010211129/Data/scenarios/2010211129.json": "cbf9fc185b918cba3a2fb84c1edf420f59ebd7668c6acd6f30ffa66605d7e526",
+  "local/evaluation/baseline-v1-variance-study-1/data/201033019601/Data/maps/map_9601/9601see.npz": "549a763b0d90c699455f4534e0586d67dae62407357353edc6edd6ad90459d7d",
+  "local/evaluation/baseline-v1-variance-study-1/data/201033019601/Data/maps/map_9601/basic.json": "62a5645d213ca6927e527761a2dc077ddf56bc400d7a9018e9180fff6adc2354",
+  "local/evaluation/baseline-v1-variance-study-1/data/201033019601/Data/maps/map_9601/cost.pickle": "c187131021173b63088dd655c661809b60980c0e2159374c9f32d3d749d0b865",
+  "local/evaluation/baseline-v1-variance-study-1/data/201033019601/Data/scenarios/201033019601.json": "e24d43d94233ac4c87eccbb47f5f88a4e37ac8e0d5a00f461a2280efcd2b59df",
+  "local/evaluation/baseline-v1-variance-study-1/data/2010431153/Data/maps/map_53/53see.npz": "7aa1d041780747504a8a486b86169adac116b242262d725f4ad80539758d15f3",
+  "local/evaluation/baseline-v1-variance-study-1/data/2010431153/Data/maps/map_53/basic.json": "9d81939421d31ab9d7a158008c0a85283a94cfc78f619336322ae3d3f15d2c4d",
+  "local/evaluation/baseline-v1-variance-study-1/data/2010431153/Data/maps/map_53/cost.pickle": "46f4d73bcb69ec2cb6d4accf6fa8109eb4a0c23042e0cb5a6c88b0b3168c9614",
+  "local/evaluation/baseline-v1-variance-study-1/data/2010431153/Data/scenarios/2010431153.json": "fdf73f5fc7405cd55fd410255e3cd7268096c5548743deff5954e49b38e06554",
+  "local/evaluation/baseline-v1-variance-study-1/data/2120531121/Data/maps/map_21/21see.npz": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81",
+  "local/evaluation/baseline-v1-variance-study-1/data/2120531121/Data/maps/map_21/basic.json": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+  "local/evaluation/baseline-v1-variance-study-1/data/2120531121/Data/maps/map_21/cost.pickle": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+  "local/evaluation/baseline-v1-variance-study-1/data/2120531121/Data/scenarios/2120531121.json": "a4536a361ac9dd879ad326d8c5f40583433c3299f5184b4af06ddb110ab297cf",
+  "local/evaluation/baseline-v1-variance-study-1/data/2130511121/Data/maps/map_21/21see.npz": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81",
+  "local/evaluation/baseline-v1-variance-study-1/data/2130511121/Data/maps/map_21/basic.json": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+  "local/evaluation/baseline-v1-variance-study-1/data/2130511121/Data/maps/map_21/cost.pickle": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+  "local/evaluation/baseline-v1-variance-study-1/data/2130511121/Data/scenarios/2130511121.json": "9611e334d4fd6f2eda5957a26116bf8ec21c3e04754ed349d9a0fa0e9dc68070"
+ },
+ "study_id": "t7-e3b-search-1"
+}
