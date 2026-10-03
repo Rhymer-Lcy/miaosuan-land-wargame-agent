@@ -1,0 +1,269 @@
+{
+ "killed": 42,
+ "mutations": [
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "margin sign inverted",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "C1 stratum added",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "seat weights 1 instead of 1/2",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "H2 measured with the red margin",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "C1 game value is its red margin",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "inert seat swapped",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "interval limits from the wrong quantile",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "resampling repeats one game",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "standard error ignores n",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "a capped game counts as completed",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "margin identity ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "primary tested despite an integrity failure",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "primary judged by its point estimate",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "phase D threshold inclusive",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "phase B judged by the lower limit",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "recovered sessions tolerated",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "state continuity unchecked",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "a game opened twice tolerated",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "cap off by one",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "python version unchecked",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "new refusal classes tolerated",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "baseline-v2's classes in the phase not known",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "withheld runs never continue",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "embarked units counted as removed",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "departure never detected",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "objectives of the wrong side held",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "waiting series not cross-checked",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "move orders not cross-checked",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "step count not cross-checked",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "later safety failures ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "no rotation of the round order",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "the last phase continues",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "latency flag ignores the maximum",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "refused re-assigned moves not attributed",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "reverted re-assignments still attributed",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "idle flag on the reversed difference",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "integrity ignores the captures",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "contract errors not counted",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_confirmation.py",
+   "killed": true,
+   "mutation": "gate rejections read as a count",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/t9_confirmation_analysis.py",
+   "killed": true,
+   "mutation": "ledger read in full",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/t9_confirmation_analysis.py",
+   "killed": true,
+   "mutation": "capture digests not checked",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "scripts/t9_confirmation_analysis.py",
+   "killed": true,
+   "mutation": "session not compared with the ledger's",
+   "reason_if_surviving": null
+  }
+ ],
+ "schema": "miaosuan-t9-confirmation-mutation/1",
+ "sources_sha256": {
+  "scripts/t9_confirmation_analysis.py": "8f39d84e40b82e4ef0a0beddf97bdd5d3552a9c6ccfe1f44a8049009c78de281",
+  "src/miaosuan_agent/evaluation/t9_confirmation.py": "2c694b542c20a950cb1bd2662c6d3acf523e224f9098d317763acf3947b7fa62"
+ },
+ "tests": [
+  "tests.test_t9_confirmation"
+ ],
+ "tests_sha256": {
+  "tests/test_t9_confirmation.py": "35d03ae3c97396b5cbd8b5d51699de5230277e9a3a4d80b3be338d6ee2bc15e2"
+ },
+ "total": 42
+}

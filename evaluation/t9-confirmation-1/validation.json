@@ -1,0 +1,404 @@
+{
+ "calibration": {
+  "assumptions": {
+   "conservative (80% upper bounds, 2 df)": [
+    331.5692964193535,
+    242.03537712264043
+   ],
+   "observed exploratory": [
+    156.62694531912445,
+    114.33284742365161
+   ],
+   "optimistic": [
+    114.66439643378325,
+    114.66439643378325
+   ]
+  },
+  "effects": {
+   "exploratory estimate": 261.0,
+   "half the exploratory estimate": 130.5,
+   "null": 0.0
+  },
+  "independent_implementation": {
+   "15 per stratum": {
+    "independent_numpy": [
+     200.880521482052,
+     301.8620998929146
+    ],
+    "max_difference_in_se": 0.026046987542402818,
+    "registered": [
+     200.95943895294783,
+     301.2432012439314
+    ],
+    "se": 23.760853264726425
+   },
+   "5 per stratum": {
+    "independent_numpy": [
+     205.2374292150265,
+     379.00649996846875
+    ],
+    "max_difference_in_se": 0.025075690709863065,
+    "registered": [
+     204.93147389529395,
+     379.90332843749906
+    ],
+    "se": 35.764856067456584
+   }
+  },
+  "note": "the registered analysis uses 20,000 resamples; the calibration uses 1,000 per simulated interval for speed. Nominal one-sided error of 'lower limit above 0' is 2.5%. The C1 stratum enters as the zero values a zero-sum C1 game gives",
+  "resamples_per_interval": 1000,
+  "simulations_per_cell": 2000,
+  "table": {
+   "conservative (80% upper bounds, 2 df) | empirical C1 shape | exploratory estimate": {
+    "lower_limit_above_0": {
+     "percentile": 0.999,
+     "studentized (registered)": 0.998,
+     "welch": 0.9975
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.0009989994994993746
+    },
+    "simulations": 2000
+   },
+   "conservative (80% upper bounds, 2 df) | empirical C1 shape | half the exploratory estimate": {
+    "lower_limit_above_0": {
+     "percentile": 0.74,
+     "studentized (registered)": 0.656,
+     "welch": 0.693
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.010622240818207805
+    },
+    "simulations": 2000
+   },
+   "conservative (80% upper bounds, 2 df) | empirical C1 shape | null": {
+    "lower_limit_above_0": {
+     "percentile": 0.0395,
+     "studentized (registered)": 0.0205,
+     "welch": 0.0315
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.00316857617866448
+    },
+    "simulations": 2000
+   },
+   "conservative (80% upper bounds, 2 df) | normal | exploratory estimate": {
+    "lower_limit_above_0": {
+     "percentile": 0.999,
+     "studentized (registered)": 0.9975,
+     "welch": 0.9985
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.001116635571706353
+    },
+    "simulations": 2000
+   },
+   "conservative (80% upper bounds, 2 df) | normal | half the exploratory estimate": {
+    "lower_limit_above_0": {
+     "percentile": 0.73,
+     "studentized (registered)": 0.6725,
+     "welch": 0.672
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.010493897035896626
+    },
+    "simulations": 2000
+   },
+   "conservative (80% upper bounds, 2 df) | normal | null": {
+    "lower_limit_above_0": {
+     "percentile": 0.0395,
+     "studentized (registered)": 0.026,
+     "welch": 0.0285
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.003558370413546066
+    },
+    "simulations": 2000
+   },
+   "observed exploratory | empirical C1 shape | exploratory estimate": {
+    "lower_limit_above_0": {
+     "percentile": 1.0,
+     "studentized (registered)": 1.0,
+     "welch": 1.0
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.0
+    },
+    "simulations": 2000
+   },
+   "observed exploratory | empirical C1 shape | half the exploratory estimate": {
+    "lower_limit_above_0": {
+     "percentile": 0.9995,
+     "studentized (registered)": 0.9995,
+     "welch": 0.999
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.000499874984371065
+    },
+    "simulations": 2000
+   },
+   "observed exploratory | empirical C1 shape | null": {
+    "lower_limit_above_0": {
+     "percentile": 0.0435,
+     "studentized (registered)": 0.0175,
+     "welch": 0.0355
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.002932042803234632
+    },
+    "simulations": 2000
+   },
+   "observed exploratory | normal | exploratory estimate": {
+    "lower_limit_above_0": {
+     "percentile": 1.0,
+     "studentized (registered)": 1.0,
+     "welch": 1.0
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.0
+    },
+    "simulations": 2000
+   },
+   "observed exploratory | normal | half the exploratory estimate": {
+    "lower_limit_above_0": {
+     "percentile": 0.9995,
+     "studentized (registered)": 0.999,
+     "welch": 0.9995
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.0007067531393633852
+    },
+    "simulations": 2000
+   },
+   "observed exploratory | normal | null": {
+    "lower_limit_above_0": {
+     "percentile": 0.0355,
+     "studentized (registered)": 0.025,
+     "welch": 0.0265
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.0034910600109422352
+    },
+    "simulations": 2000
+   },
+   "optimistic | empirical C1 shape | exploratory estimate": {
+    "lower_limit_above_0": {
+     "percentile": 1.0,
+     "studentized (registered)": 1.0,
+     "welch": 1.0
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.0
+    },
+    "simulations": 2000
+   },
+   "optimistic | empirical C1 shape | half the exploratory estimate": {
+    "lower_limit_above_0": {
+     "percentile": 1.0,
+     "studentized (registered)": 1.0,
+     "welch": 1.0
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.0
+    },
+    "simulations": 2000
+   },
+   "optimistic | empirical C1 shape | null": {
+    "lower_limit_above_0": {
+     "percentile": 0.036,
+     "studentized (registered)": 0.015,
+     "welch": 0.029
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.0027179955849853765
+    },
+    "simulations": 2000
+   },
+   "optimistic | normal | exploratory estimate": {
+    "lower_limit_above_0": {
+     "percentile": 1.0,
+     "studentized (registered)": 1.0,
+     "welch": 1.0
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.0
+    },
+    "simulations": 2000
+   },
+   "optimistic | normal | half the exploratory estimate": {
+    "lower_limit_above_0": {
+     "percentile": 1.0,
+     "studentized (registered)": 1.0,
+     "welch": 1.0
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.0
+    },
+    "simulations": 2000
+   },
+   "optimistic | normal | null": {
+    "lower_limit_above_0": {
+     "percentile": 0.0345,
+     "studentized (registered)": 0.025,
+     "welch": 0.024
+    },
+    "monte_carlo_se": {
+     "studentized (registered)": 0.0034910600109422352
+    },
+    "simulations": 2000
+   }
+  }
+ },
+ "capture": [
+  {
+   "candidate_moves_offline": 44,
+   "candidate_seat_facts_offline": {
+    "max_objective_commitment": {
+     "max": 14,
+     "steps_positive": 2880,
+     "sum": 21788
+    },
+    "moves": {
+     "addon_errors": 0,
+     "emitted": 44,
+     "emitted_ground": 36,
+     "kept": 18,
+     "redirected": 18,
+     "replaced": 18,
+     "replaced_refused": {},
+     "reverted": 0,
+     "unreadable_destination": 0,
+     "withheld": 7
+    },
+    "waiting_in_front_of_full_hex": {
+     "max": 4,
+     "steps_positive": 2145,
+     "sum": 6612
+    },
+    "withholding": {
+     "longest_run_max": 1,
+     "longest_run_median": 1,
+     "unit_decisions": 7,
+     "units": 4
+    }
+   },
+   "candidate_side": "blue",
+   "final_held_value": {
+    "blue": 310,
+    "red": 0
+   },
+   "final_occupy_score": {
+    "blue": 310,
+    "red": 0
+   },
+   "game": "2120531121.H1.pb1",
+   "held_value_equals_occupy_score": true,
+   "note": "the candidate decided offline on states produced by baseline-v2's play; its counts describe the capture's behaviour on real observations, not the candidate's play",
+   "ok": true,
+   "other_seat_moves": 39,
+   "problems": [],
+   "steps": 2881
+  },
+  {
+   "candidate_moves_offline": 36,
+   "candidate_seat_facts_offline": {
+    "max_objective_commitment": {
+     "max": 11,
+     "steps_positive": 1872,
+     "sum": 6905
+    },
+    "moves": {
+     "addon_errors": 0,
+     "emitted": 36,
+     "emitted_ground": 28,
+     "kept": 14,
+     "redirected": 14,
+     "replaced": 14,
+     "replaced_refused": {},
+     "reverted": 0,
+     "unreadable_destination": 0,
+     "withheld": 0
+    },
+    "waiting_in_front_of_full_hex": {
+     "max": 4,
+     "steps_positive": 553,
+     "sum": 645
+    },
+    "withholding": {
+     "longest_run_max": 0,
+     "longest_run_median": 0,
+     "unit_decisions": 0,
+     "units": 0
+    }
+   },
+   "candidate_side": "red",
+   "final_held_value": {
+    "blue": 310,
+    "red": 0
+   },
+   "final_occupy_score": {
+    "blue": 310,
+    "red": 0
+   },
+   "game": "2120531121.H2.pb2",
+   "held_value_equals_occupy_score": true,
+   "note": "the candidate decided offline on states produced by baseline-v2's play; its counts describe the capture's behaviour on real observations, not the candidate's play",
+   "ok": true,
+   "other_seat_moves": 40,
+   "problems": [],
+   "steps": 2881
+  }
+ ],
+ "inventory": {
+  "files": 28,
+  "planning_sha256": "a3f2ae77fcdfa8114c3a7c00392fe3fdbf1f13b25c42a02cd9f822430022bb84",
+  "sha256": "d13a018fc5409f9bbcc64bdc79026678ebb65757eaa5571005f5d50d79a1ff01"
+ },
+ "ok": true,
+ "rehearsal": {
+  "identity_check_rejected": 21,
+  "label": "REHEARSAL on exploratory and historical records: not a result of this study, never pooled",
+  "ok": true,
+  "problems": [],
+  "records": 21,
+  "seat_average": {
+   "ci_high": 407.9336478718938,
+   "ci_low": 55.07665116544413,
+   "estimate": 261.0,
+   "percentile_ci": [
+    172.66666666666669,
+    349.3333333333333
+   ],
+   "se": 55.97916278997629,
+   "welch_ci": [
+    99.71513103034917,
+    422.2848689696508
+   ]
+  },
+  "seat_contrasts": {
+   "blue": {
+    "ci_high": 548.1187132153143,
+    "ci_low": 27.254727446638753,
+    "estimate": 299.0666666666667
+   },
+   "red": {
+    "ci_high": 710.7092999765682,
+    "ci_low": -207.23873430967421,
+    "estimate": 222.93333333333328
+   }
+  },
+  "systemic_checks": {
+   "new_refusal_classes": {},
+   "ok": true,
+   "totals": {
+    "addon_errors": 0,
+    "contract_errors": 0,
+    "gate_rejections": 0,
+    "observer_errors": 0,
+    "replay_mismatches": 0
+   }
+  }
+ },
+ "schema": "miaosuan-t9-confirmation-validation/1",
+ "study_id": "t9-confirmation-1"
+}
