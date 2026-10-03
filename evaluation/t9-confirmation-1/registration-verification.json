@@ -1,0 +1,16 @@
+{
+ "author": "Rhymer-Lcy",
+ "byte_identical": true,
+ "canonical_body_bytes": 12880,
+ "canonical_body_sha256": "bd98685185a65618fd0f4811ca916719fdd07e3cddc386753b1b8590453cd98b",
+ "fetched_at": "2026-10-03T22:09:32+08:00",
+ "fetched_without_authentication": true,
+ "github_date_header": "Sat, 03 Oct 2026 14:09:31 GMT",
+ "issue_created_at_utc": "2026-10-03T14:09:19Z",
+ "issue_number": 4,
+ "issue_title": "Confirmatory study: T9 capacity allocation, staged, at most 375 registered sessions",
+ "issue_url": "https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/4",
+ "public_body_bytes": 12880,
+ "public_body_sha256": "bd98685185a65618fd0f4811ca916719fdd07e3cddc386753b1b8590453cd98b",
+ "state": "open"
+}
