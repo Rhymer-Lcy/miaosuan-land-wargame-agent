@@ -1,0 +1,82 @@
+{
+ "certificates": [
+  {
+   "category": "C",
+   "conditional_on": null,
+   "dataset": "C-h0",
+   "deficits": [
+    "off-policy: baseline-v2 reconstructed on baseline-v0's trajectory",
+    "no feedback or all-seeing state in the corpus"
+   ],
+   "hypothetical_consequences": [
+    "baseline-v2 did not generate this trajectory; its later command is a decision on baseline-v0's states",
+    "the recorded command is not an observation of any game with concealment"
+   ],
+   "observed_historical_facts": {
+    "cur_step_s0": 597,
+    "cur_step_s1": 1008,
+    "decision_k0": 598,
+    "decision_k1": 1009,
+    "interval_d": 411,
+    "recorded_baseline_v0_at_k1": {
+     "action_type": 2,
+     "executed_in_recorded_trajectory": true,
+     "same_action": true
+    },
+    "recorded_policy": "baseline-v0",
+    "undisturbed_in_recorded_trajectory": true
+   },
+   "offline_replay_decisions": {
+    "candidate_first_order_here": true,
+    "other_units_first_ordered_before_k0": 1,
+    "other_units_first_ordered_before_k1": 1,
+    "pool_predicate_agrees": true,
+    "reconstructed_baseline_v2_later_command_type": 2
+   },
+   "scenario": "2010431153",
+   "seat_colour": "blue",
+   "unit_sub_type": 0,
+   "unit_type": 2
+  },
+  {
+   "category": "C",
+   "conditional_on": "W",
+   "dataset": "C-h0",
+   "deficits": [
+    "off-policy: baseline-v2 reconstructed on baseline-v0's trajectory",
+    "no feedback or all-seeing state in the corpus"
+   ],
+   "hypothetical_consequences": [
+    "baseline-v2 did not generate this trajectory; its later command is a decision on baseline-v0's states",
+    "the recorded command is not an observation of any game with concealment"
+   ],
+   "observed_historical_facts": {
+    "cur_step_s0": 1152,
+    "cur_step_s1": 1521,
+    "decision_k0": 1153,
+    "decision_k1": 1522,
+    "interval_d": 369,
+    "recorded_baseline_v0_at_k1": {
+     "action_type": 2,
+     "executed_in_recorded_trajectory": true,
+     "same_action": true
+    },
+    "recorded_policy": "baseline-v0",
+    "undisturbed_in_recorded_trajectory": true
+   },
+   "offline_replay_decisions": {
+    "candidate_first_order_here": false,
+    "other_units_first_ordered_before_k0": 1,
+    "other_units_first_ordered_before_k1": 1,
+    "pool_predicate_agrees": true,
+    "reconstructed_baseline_v2_later_command_type": 2
+   },
+   "scenario": "2010431153",
+   "seat_colour": "blue",
+   "unit_sub_type": 0,
+   "unit_type": 2
+  }
+ ],
+ "schema": "miaosuan-t7-e3b-search/1",
+ "study_id": "t7-e3b-search-1"
+}

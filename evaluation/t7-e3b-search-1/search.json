@@ -1,0 +1,333 @@
+{
+ "W_episodes_by_category": {
+  "C conditional": 1,
+  "C unconditional": 1
+ },
+ "datasets": {
+  "A-b": {
+   "D1": 4,
+   "D2": {
+    "by_type": {},
+    "first_refusal": {},
+    "refusals_in_runs": {},
+    "runs": 0
+   },
+   "W_categories": {},
+   "base_category": "A",
+   "candidate_replay": {
+    "baseline_part_equal": 1800,
+    "orders": 60,
+    "t7_errors": 0,
+    "units": 4
+   },
+   "decisions": 1800,
+   "first_judge_step": null,
+   "game": "1910631192.C3.b.x01",
+   "kind": "full",
+   "opponent_policy": "inert-v0",
+   "play_decisions": 1800,
+   "pool_predicate_orders": 60,
+   "redecision": {
+    "actions_equal": 1800,
+    "differences": 0,
+    "traces_equal": 1800
+   },
+   "seat_policy": "baseline-v2-candidate-shoot-target-reservation",
+   "summary": {
+    "DT_reasons": {},
+    "TI_d": [],
+    "W_d": [],
+    "conditional": {},
+    "episodes": 4,
+    "unconditional": {
+     "CE after the transition": 4
+    },
+    "with_gaps": 0
+   },
+   "trigger_implementations_agree": true
+  },
+  "A-pb1": {
+   "D1": 6,
+   "D2": {
+    "by_type": {},
+    "first_refusal": {},
+    "refusals_in_runs": {},
+    "runs": 0
+   },
+   "W_categories": {},
+   "base_category": "A",
+   "candidate_replay": {
+    "baseline_part_equal": 2880,
+    "orders": 6,
+    "t7_errors": 0,
+    "units": 6
+   },
+   "decisions": 2881,
+   "first_judge_step": 135,
+   "game": "2120531121.H1.pb1",
+   "kind": "full",
+   "opponent_policy": "t7-idle-concealment",
+   "play_decisions": 2880,
+   "pool_predicate_orders": 6,
+   "redecision": {
+    "actions_equal": 2881,
+    "differences": 0,
+    "traces_equal": 2881
+   },
+   "seat_policy": "baseline-v2-candidate-shoot-target-reservation",
+   "summary": {
+    "DT_reasons": {},
+    "TI_d": [],
+    "W_d": [],
+    "conditional": {},
+    "episodes": 6,
+    "unconditional": {
+     "CE after the transition": 6
+    },
+    "with_gaps": 0
+   },
+   "trigger_implementations_agree": true
+  },
+  "A-pb2": {
+   "D1": 6,
+   "D2": {
+    "by_type": {},
+    "first_refusal": {},
+    "refusals_in_runs": {},
+    "runs": 0
+   },
+   "W_categories": {},
+   "base_category": "A",
+   "candidate_replay": {
+    "baseline_part_equal": 2880,
+    "orders": 6,
+    "t7_errors": 0,
+    "units": 6
+   },
+   "decisions": 2881,
+   "first_judge_step": 135,
+   "game": "2120531121.H2.pb2",
+   "kind": "full",
+   "opponent_policy": "t7-idle-concealment",
+   "play_decisions": 2880,
+   "pool_predicate_orders": 6,
+   "redecision": {
+    "actions_equal": 2881,
+    "differences": 0,
+    "traces_equal": 2881
+   },
+   "seat_policy": "baseline-v2-candidate-shoot-target-reservation",
+   "summary": {
+    "DT_reasons": {},
+    "TI_d": [],
+    "W_d": [],
+    "conditional": {},
+    "episodes": 6,
+    "unconditional": {
+     "CE after the transition": 6
+    },
+    "with_gaps": 0
+   },
+   "trigger_implementations_agree": true
+  },
+  "B-c": {
+   "D1": 0,
+   "D2": {
+    "by_type": {},
+    "first_refusal": {},
+    "refusals_in_runs": {},
+    "runs": 0
+   },
+   "W_categories": {},
+   "base_category": "B",
+   "candidate_replay": {
+    "baseline_part_equal": 1800,
+    "orders": 0,
+    "t7_errors": 0,
+    "units": 0
+   },
+   "decisions": 1802,
+   "first_judge_step": null,
+   "game": "1910631192.C3.c.x01",
+   "kind": "full",
+   "opponent_policy": "inert-v0",
+   "play_decisions": 1800,
+   "pool_predicate_orders": 0,
+   "redecision": {
+    "actions_equal": 1801,
+    "differences": 1,
+    "traces_equal": 1802
+   },
+   "seat_policy": "tactic-deployment-split-1",
+   "summary": {
+    "DT_reasons": {},
+    "TI_d": [],
+    "W_d": [],
+    "conditional": {},
+    "episodes": 0,
+    "unconditional": {},
+    "with_gaps": 0
+   },
+   "trigger_implementations_agree": true
+  },
+  "B-p2": {
+   "D1": 15,
+   "D2": {
+    "by_type": {},
+    "first_refusal": {},
+    "refusals_in_runs": {},
+    "runs": 0
+   },
+   "W_categories": {},
+   "base_category": "B",
+   "candidate_replay": {
+    "baseline_part_equal": 2880,
+    "orders": 429,
+    "t7_errors": 0,
+    "units": 16
+   },
+   "decisions": 2882,
+   "first_judge_step": 647,
+   "game": "1930331196.C2.p2",
+   "kind": "full",
+   "opponent_policy": "inert-v0",
+   "play_decisions": 2880,
+   "pool_predicate_orders": 429,
+   "redecision": {
+    "actions_equal": 2882,
+    "differences": 0,
+    "traces_equal": 2882
+   },
+   "seat_policy": "tactic-deployment-split-1",
+   "summary": {
+    "DT_reasons": {},
+    "TI_d": [],
+    "W_d": [],
+    "conditional": {},
+    "episodes": 16,
+    "unconditional": {
+     "CE after the transition": 15,
+     "CE during the transition": 1
+    },
+    "with_gaps": 0
+   },
+   "trigger_implementations_agree": true
+  },
+  "B-r516": {
+   "TI_d": [],
+   "W_categories": {},
+   "W_d_lower_bounds": [],
+   "base_category": "B",
+   "classes": {
+    "CE after the transition": 406
+   },
+   "counts": {
+    "candidate baseline part equal": 448,
+    "play snapshots": 448,
+    "re-decided equal": 448,
+    "snapshots": 448
+   },
+   "games": 32,
+   "kind": "sparse"
+  },
+  "B-smoke": {
+   "TI_d": [],
+   "W_categories": {},
+   "W_d_lower_bounds": [],
+   "base_category": "B",
+   "classes": {
+    "CE after the transition": 28
+   },
+   "counts": {
+    "candidate baseline part equal": 83,
+    "play snapshots": 83,
+    "re-decided equal": 83,
+    "snapshots": 83
+   },
+   "games": 8,
+   "kind": "sparse"
+  },
+  "C-h0": {
+   "D1": 47,
+   "D2": {
+    "first refusal: an enemy is seen": 2,
+    "runs": 2
+   },
+   "TI_d": [],
+   "W_categories": {
+    "C conditional": 1,
+    "C unconditional": 1
+   },
+   "W_d": [
+    369,
+    411
+   ],
+   "base_category": "C",
+   "classes": {
+    "conditional": {
+     "CE during the transition": 2,
+     "DT after the transition": 1,
+     "W": 1
+    },
+    "unconditional": {
+     "CE after the transition": 47,
+     "DT after the transition": 1,
+     "W": 1
+    }
+   },
+   "counts": {
+    "baseline-v0 exact": 33696,
+    "baseline-v2 difference explained": 33696,
+    "candidate baseline part equal to reconstructed baseline-v2": 33696,
+    "decisions": 33696,
+    "orders": 234
+   },
+   "games": 8,
+   "kind": "replay corpus"
+  }
+ },
+ "feasible_configurations": 0,
+ "inputs_sha256": "fede8f0bf2eb33fa384da7c1fdb9d82249077d17e5fc11813a3c0bacaf37c897",
+ "leads": [
+  {
+   "decision_k0": 532,
+   "episode_class": "DT after the transition",
+   "episode_d": 478,
+   "episode_later_type": null,
+   "episode_reason": "fired",
+   "is_move_or_direct_fire_by_baseline_v2": false,
+   "label_d": 477,
+   "label_decision": 1009,
+   "label_fired_by": [
+    "recorded baseline-v0 action"
+   ],
+   "reconstructed_baseline_v2_action_type": null,
+   "recorded_baseline_v0_action_type": 2,
+   "scenario": "2010431153",
+   "unit_sub_type": 1,
+   "unit_type": 2
+  },
+  {
+   "decision_k0": 598,
+   "episode_class": "W",
+   "episode_d": 411,
+   "episode_later_type": 2,
+   "episode_reason": null,
+   "is_move_or_direct_fire_by_baseline_v2": true,
+   "label_d": 411,
+   "label_decision": 1009,
+   "label_fired_by": [
+    "recorded baseline-v0 action"
+   ],
+   "reconstructed_baseline_v2_action_type": 2,
+   "recorded_baseline_v0_action_type": 2,
+   "scenario": "2010431153",
+   "unit_sub_type": 0,
+   "unit_type": 2
+  }
+ ],
+ "part": "search",
+ "ranking": [],
+ "schema": "miaosuan-t7-e3b-search/1",
+ "study_id": "t7-e3b-search-1"
+}
