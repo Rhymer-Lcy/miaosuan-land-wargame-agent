@@ -534,3 +534,38 @@ as an `IDEA`: offline legality and non-interference are established, its engine 
 
 *Note (2026-10-03): the proposed mechanism probe was approved, registered (issue #3) and run in three sessions; its
 results and disposition, NEEDS_TARGETED_PROBE, are in `docs/T7_MECHANISM_PROBE.md`. Nothing above is changed.*
+
+## 18. Maintenance note: frozen record inventory (POST HOC, 2026-10-03; no result changes)
+
+*Written after Sprint 6; it changes no protocol, rule, candidate, output or conclusion of this study.*
+
+* **Failure.** At Sprint 6's close-out the evaluation server's full private suite (1,081 tests) failed once:
+  `tests.test_real_t7_audit.RealRegeneration.test_audit_and_candidates`, whose `scripts/t7_study.py --check` reported
+  a mismatch. The study's issued-action census (population R) read every `local/evaluation/*/games/*.json` at run
+  time; Sprint 6's three probe records (folder `t7-mechanism-probe-1`, 16 concealment orders) raised its input from
+  1,284 to 1,287 files. With that folder excluded in memory the unchanged check printed "outputs identical", so the
+  live input selection was the only cause.
+* **Reconstruction.** The census now reads a frozen file-level inventory, `evaluation/t7-design-1/record-inventory.json`
+  (1,284 entries, inventory digest `cdec2ce0e87354b84fd7ea21bea5c49831f7dc1141d1f93bdec130b7c509338d`). It is a
+  retrospective maintenance reconstruction, not a preregistered list: every record of the 10 folders that the
+  published `audit.json` names in `issued_records.folders`, accepted because the study's own aggregation over exactly
+  these files reproduces the published file count and per-policy action totals, every file predates this study's
+  protocol push (the newest was written at the end of session 2461), and their path digests are unique; the only
+  records outside it are the 360 of the excluded prevalence study and Sprint 6's 3. Each entry is 16 hex digits of the
+  SHA-256 of the record's path relative to `local/evaluation/` and 32 of the SHA-256 of its bytes; no record content
+  or unit identifier is published.
+* **Correction** (`scripts/t7_study.py`): `inventory_records` selects exactly the inventory's records, ignores every
+  other file (in new or in original folders), and stops the study when the inventory is malformed, duplicated,
+  miscounted or inconsistent with its digest, or when a named record is missing or changed; `records` aggregates as
+  before over that selection. Regression tests: `tests/test_t7_inventory.py` (synthetic records for later records in
+  new and original folders, missing, changed, duplicated and malformed entries; the committed inventory against the
+  published audit; privately, the real inventory reproducing the published census with Sprint 6's records present).
+  With those records present, `t7_study.py --check` again prints "outputs identical".
+* **Mutation artifact.** `scripts/mutate_t7.py` was rerun on the corrected code: 55 of 55 mutants killed, every
+  mutation and outcome as before. `evaluation/t7-design-1/mutation.json` differs from its original only in the source
+  digest of `scripts/t7_study.py` (`8d0ae3b65efd78af4ce0ac1aea8f2aa13a1223229021b9825f95d23cc7fb9e6a` to
+  `344d9af02ec7592c2c4847c3586c00cf7afe29521db414c00563d7b002e6c91c`); the file's SHA-256 moves from
+  `ea6a258beed7de8d3819db6c323dc47a7cb08c5f2ffcb5320a4c34a2c2ed76e4` to
+  `50677bec0cbea0f1a683b4ef7a4b192ab1cadd219fd3bd5139019053d9b1141a` and reflects the maintenance revision only; the
+  original stays in commit `e3108dd`. `audit.json`, `candidates.json` and every other output of this study are
+  unchanged, and so are its gates and its disposition.

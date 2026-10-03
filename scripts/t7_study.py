@@ -12,7 +12,10 @@ No engine. Private inputs (git-ignored, on the evaluation server):
   (the split candidate against the inert control): every pre-step snapshot (seat and all-seeing views, actions);
 * H2r, Sprint 4 game P1 before its first stop, used only to check that it reproduces game ``c``;
 * R, the game records of the registered experiments (issued actions by type), the ownership-prevalence study's
-  excluded.
+  excluded. Since a maintenance revision of 2026-10-03 R is read through the frozen file-level inventory
+  ``evaluation/t7-design-1/record-inventory.json`` (a retrospective reconstruction of the 1,284 records the study read,
+  validated against the published ``audit.json``), so records written later never enter it; a missing or changed
+  inventory record, or a malformed inventory, stops the study.
 
 Public outputs: ``evaluation/t7-design-1/audit.json`` and ``candidates.json`` (aggregates only). Private outputs:
 ``local/diagnostics/t7/`` (activation records with identifiers, transition episodes). ``--check`` rebuilds the public
@@ -60,6 +63,8 @@ CAPTURES = {"H1": [("t1r-diagnosis-1", "1910631192.C3.b.x01")],
 H2R = ("ps1-engine-probe-1", "1910631192.C3.p1")
 H2R_REFERENCE = ("t1r-diagnosis-1", "1910631192.C3.c.x01")
 EXCLUDED_RECORDS = frozenset({"baseline-v2-target-ownership-prevalence-1"})
+INVENTORY = OUT / "record-inventory.json"
+INVENTORY_SCHEMA = "miaosuan-t7-record-inventory/1"
 SCHEMA = "miaosuan-t7-design/1"
 WINDOW = tc.TRANSITION
 A1_WINDOW = 2 * tc.TRANSITION
@@ -372,14 +377,51 @@ def reproduction(trigger_k: int) -> Dict[str, Any]:
     return {"decisions_compared": compared, "identical_t7_listings": equal, "before_k": trigger_k}
 
 
-def records() -> Dict[str, Any]:
+class InventoryError(Exception):
+    """The frozen record inventory is malformed, or a record it names is missing or changed."""
+
+
+def inventory_records(root: Path = LOCAL_EVAL, inventory: Path = INVENTORY) -> List[Path]:
+    """The records of the frozen inventory under ``root``, in sorted path order; anything else is ignored.
+
+    Each entry is ``<16 hex of SHA-256 of the path relative to root>:<32 hex of SHA-256 of the bytes>``; the inventory's
+    count and digest must match its entries, which must be well formed and unique, and every entry must name exactly
+    one present record with the same bytes."""
+    spec = json.loads(inventory.read_text(encoding="utf-8"))
+    entries = spec.get("entries")
+    if spec.get("schema") != INVENTORY_SCHEMA or not isinstance(entries, list):
+        raise InventoryError("not a record inventory")
+    if any(not isinstance(e, str) or len(e) != 49 or e[16] != ":" or not all(c in "0123456789abcdef" for c in e[:16] + e[17:])
+           for e in entries):
+        raise InventoryError("malformed inventory entry")
+    expected = {e[:16]: e[17:] for e in entries}
+    if len(expected) != len(entries) or spec.get("count") != len(entries):
+        raise InventoryError("duplicate inventory entries or a wrong count")
+    if spec.get("inventory_sha256") != hashlib.sha256("\n".join(entries).encode("ascii")).hexdigest():
+        raise InventoryError("the inventory digest does not match its entries")
+    found: Dict[str, Path] = {}
+    for path in root.glob("*/games/*.json"):
+        key = hashlib.sha256(path.relative_to(root).as_posix().encode("utf-8")).hexdigest()[:16]
+        if key in expected:
+            found[key] = path
+    missing = sorted(set(expected) - set(found))
+    if missing:
+        raise InventoryError(f"{len(missing)} inventory records are missing (first path digest {missing[0]})")
+    changed = sorted(k for k, p in found.items() if hashlib.sha256(p.read_bytes()).hexdigest()[:32] != expected[k])
+    if changed:
+        raise InventoryError(f"{len(changed)} inventory records have changed (first path digest {changed[0]})")
+    selected = sorted(found.values())
+    if any(p.parts[-3] in EXCLUDED_RECORDS for p in selected):
+        raise InventoryError("the inventory names a record of an excluded study")
+    return selected
+
+
+def records(root: Path = LOCAL_EVAL, inventory: Path = INVENTORY) -> Dict[str, Any]:
     issued: Dict[str, collections.Counter] = collections.defaultdict(collections.Counter)
     files = 0
     folders = set()
-    for path in sorted(LOCAL_EVAL.glob("*/games/*.json")):
+    for path in inventory_records(root, inventory):
         folder = path.parts[-3]
-        if folder in EXCLUDED_RECORDS:
-            continue
         record = json.loads(path.read_text(encoding="utf-8"))
         files += 1
         folders.add(folder)

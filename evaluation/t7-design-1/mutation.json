@@ -336,7 +336,7 @@
  "sources_sha256": {
   "scripts/t7_rubric.py": "1586f3e772923818e96b947e92e86dc3d47af4c9a7a95b16833eb6227ed43f5d",
   "scripts/t7_shadow.py": "849a1cb9bd5407e7c2509e600a52d0b68acadecb1da7300ce40f2b04ece32943",
-  "scripts/t7_study.py": "8d0ae3b65efd78af4ce0ac1aea8f2aa13a1223229021b9825f95d23cc7fb9e6a",
+  "scripts/t7_study.py": "344d9af02ec7592c2c4847c3586c00cf7afe29521db414c00563d7b002e6c91c",
   "src/miaosuan_agent/evaluation/t7_audit.py": "69e4f358f486015548d74ed6209935b2babbf1dc43e85fa201df5e6595b4e81d",
   "src/miaosuan_agent/evaluation/t7_candidates.py": "50c77f37d7561282a257da6c3640e23ded5a2abdccb83b7d507c8811e5c312ab",
   "src/miaosuan_agent/experiments/t7_idle_concealment.py": "0017d75f7f997b35e7359df95f837dbb84add6b694211b454090f766d6c69dd9"
