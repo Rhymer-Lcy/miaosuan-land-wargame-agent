@@ -1,0 +1,80 @@
+{
+ "datasets": {
+  "A-b": {
+   "W_categories": {},
+   "classes": {
+    "conditional": {},
+    "unconditional": {
+     "CE after the transition": 4
+    }
+   }
+  },
+  "A-pb1": {
+   "W_categories": {},
+   "classes": {
+    "conditional": {},
+    "unconditional": {
+     "CE after the transition": 6
+    }
+   }
+  },
+  "A-pb2": {
+   "W_categories": {},
+   "classes": {
+    "conditional": {},
+    "unconditional": {
+     "CE after the transition": 6
+    }
+   }
+  },
+  "B-c": {
+   "W_categories": {},
+   "classes": {
+    "conditional": {},
+    "unconditional": {}
+   }
+  },
+  "B-p2": {
+   "W_categories": {},
+   "classes": {
+    "conditional": {},
+    "unconditional": {
+     "CE after the transition": 15,
+     "CE during the transition": 1
+    }
+   }
+  },
+  "B-r516": {
+   "W_categories": {},
+   "classes": {
+    "CE after the transition": 406
+   }
+  },
+  "B-smoke": {
+   "W_categories": {},
+   "classes": {
+    "CE after the transition": 28
+   }
+  },
+  "C-h0": {
+   "W_categories": {
+    "C conditional": 1,
+    "C unconditional": 1
+   },
+   "classes": {
+    "conditional": {
+     "CE during the transition": 2,
+     "DT after the transition": 1,
+     "W": 1
+    },
+    "unconditional": {
+     "CE after the transition": 47,
+     "DT after the transition": 1,
+     "W": 1
+    }
+   }
+  }
+ },
+ "schema": "miaosuan-t7-e3b-crosscheck/1",
+ "study_id": "t7-e3b-search-1"
+}

@@ -1,0 +1,14 @@
+{
+ "W_episodes_by_category": {
+  "C conditional": 1,
+  "C unconditional": 1
+ },
+ "crosscheck_agrees": true,
+ "crosscheck_differences": [],
+ "disposition": "E3B_CONFIGURATION_UNCERTAIN",
+ "feasible_configurations": 0,
+ "part": "decision",
+ "schema": "miaosuan-t7-e3b-search/1",
+ "study_id": "t7-e3b-search-1",
+ "validation_passed": true
+}
