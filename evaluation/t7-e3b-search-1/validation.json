@@ -1,0 +1,71 @@
+{
+ "orders": 16,
+ "part": "known-answer validation",
+ "passed": true,
+ "problems": [],
+ "schema": "miaosuan-t7-e3b-search/1",
+ "seats": {
+  "K-pa": {
+   "all_DT_transition_at_d1": true,
+   "classes": {
+    "DT during the transition": 4
+   },
+   "d": [
+    1
+   ],
+   "decisions": 1801,
+   "episodes": 4,
+   "orders_equal": true,
+   "pool_predicate_equal": true,
+   "re-decided_actions_equal": 1801,
+   "re-decided_traces_equal": 1801,
+   "reasons": {
+    "transition": 4
+   },
+   "recorded_orders": 4,
+   "replay_orders": 4
+  },
+  "K-pb1": {
+   "all_DT_transition_at_d1": true,
+   "classes": {
+    "DT during the transition": 6
+   },
+   "d": [
+    1
+   ],
+   "decisions": 2881,
+   "episodes": 6,
+   "orders_equal": true,
+   "pool_predicate_equal": true,
+   "re-decided_actions_equal": 2881,
+   "re-decided_traces_equal": 2881,
+   "reasons": {
+    "transition": 6
+   },
+   "recorded_orders": 6,
+   "replay_orders": 6
+  },
+  "K-pb2": {
+   "all_DT_transition_at_d1": true,
+   "classes": {
+    "DT during the transition": 6
+   },
+   "d": [
+    1
+   ],
+   "decisions": 2881,
+   "episodes": 6,
+   "orders_equal": true,
+   "pool_predicate_equal": true,
+   "re-decided_actions_equal": 2881,
+   "re-decided_traces_equal": 2881,
+   "reasons": {
+    "transition": 6
+   },
+   "recorded_orders": 6,
+   "replay_orders": 6
+  }
+ },
+ "study_id": "t7-e3b-search-1",
+ "units": 16
+}
