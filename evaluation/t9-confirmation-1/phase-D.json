@@ -1,0 +1,8362 @@
+{
+ "adverse_signals": [],
+ "against_inert": {
+  "1910631192 C2": {
+   "ci_high": 0.0,
+   "ci_low": 0.0,
+   "estimable": true,
+   "estimate": 0.0,
+   "level": 0.95,
+   "method": "studentized bootstrap (bootstrap-t)",
+   "pairwise_range": [
+    0.0,
+    0.0
+   ],
+   "percentile_ci": [
+    0.0,
+    0.0
+   ],
+   "resamples": 20000,
+   "se": 0.0,
+   "seed": 49275921115567,
+   "strata": {
+    "T9": {
+     "mean": 102.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": 1.0
+    },
+    "V2": {
+     "mean": 102.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": -1.0
+    }
+   },
+   "values": {
+    "T9": [
+     102.0,
+     102.0,
+     102.0
+    ],
+    "V2": [
+     102.0,
+     102.0,
+     102.0
+    ]
+   },
+   "welch_ci": [
+    0.0,
+    0.0
+   ],
+   "welch_df": null
+  },
+  "1910631192 C3": {
+   "ci_high": 0.0,
+   "ci_low": 0.0,
+   "estimable": true,
+   "estimate": 0.0,
+   "level": 0.95,
+   "method": "studentized bootstrap (bootstrap-t)",
+   "pairwise_range": [
+    0.0,
+    0.0
+   ],
+   "percentile_ci": [
+    0.0,
+    0.0
+   ],
+   "resamples": 20000,
+   "se": 0.0,
+   "seed": 173472055990942,
+   "strata": {
+    "T9": {
+     "mean": 158.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": 1.0
+    },
+    "V2": {
+     "mean": 158.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": -1.0
+    }
+   },
+   "values": {
+    "T9": [
+     158.0,
+     158.0,
+     158.0
+    ],
+    "V2": [
+     158.0,
+     158.0,
+     158.0
+    ]
+   },
+   "welch_ci": [
+    0.0,
+    0.0
+   ],
+   "welch_df": null
+  },
+  "2010131194 C2": {
+   "ci_high": 0.0,
+   "ci_low": 0.0,
+   "estimable": true,
+   "estimate": 0.0,
+   "level": 0.95,
+   "method": "studentized bootstrap (bootstrap-t)",
+   "pairwise_range": [
+    0.0,
+    0.0
+   ],
+   "percentile_ci": [
+    0.0,
+    0.0
+   ],
+   "resamples": 20000,
+   "se": 0.0,
+   "seed": 62708025902435,
+   "strata": {
+    "T9": {
+     "mean": 50.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": 1.0
+    },
+    "V2": {
+     "mean": 50.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": -1.0
+    }
+   },
+   "values": {
+    "T9": [
+     50.0,
+     50.0,
+     50.0
+    ],
+    "V2": [
+     50.0,
+     50.0,
+     50.0
+    ]
+   },
+   "welch_ci": [
+    0.0,
+    0.0
+   ],
+   "welch_df": null
+  },
+  "2010131194 C3": {
+   "ci_high": 0.0,
+   "ci_low": 0.0,
+   "estimable": true,
+   "estimate": 0.0,
+   "level": 0.95,
+   "method": "studentized bootstrap (bootstrap-t)",
+   "pairwise_range": [
+    0.0,
+    0.0
+   ],
+   "percentile_ci": [
+    0.0,
+    0.0
+   ],
+   "resamples": 20000,
+   "se": 0.0,
+   "seed": 80236286951305,
+   "strata": {
+    "T9": {
+     "mean": 210.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": 1.0
+    },
+    "V2": {
+     "mean": 210.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": -1.0
+    }
+   },
+   "values": {
+    "T9": [
+     210.0,
+     210.0,
+     210.0
+    ],
+    "V2": [
+     210.0,
+     210.0,
+     210.0
+    ]
+   },
+   "welch_ci": [
+    0.0,
+    0.0
+   ],
+   "welch_df": null
+  },
+  "2010211129 C2": {
+   "ci_high": 0.0,
+   "ci_low": 0.0,
+   "estimable": true,
+   "estimate": 0.0,
+   "level": 0.95,
+   "method": "studentized bootstrap (bootstrap-t)",
+   "pairwise_range": [
+    0.0,
+    0.0
+   ],
+   "percentile_ci": [
+    0.0,
+    0.0
+   ],
+   "resamples": 20000,
+   "se": 0.0,
+   "seed": 280708664452029,
+   "strata": {
+    "T9": {
+     "mean": 264.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": 1.0
+    },
+    "V2": {
+     "mean": 264.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": -1.0
+    }
+   },
+   "values": {
+    "T9": [
+     264.0,
+     264.0,
+     264.0
+    ],
+    "V2": [
+     264.0,
+     264.0,
+     264.0
+    ]
+   },
+   "welch_ci": [
+    0.0,
+    0.0
+   ],
+   "welch_df": null
+  },
+  "2010211129 C3": {
+   "ci_high": 0.0,
+   "ci_low": 0.0,
+   "estimable": true,
+   "estimate": 0.0,
+   "level": 0.95,
+   "method": "studentized bootstrap (bootstrap-t)",
+   "pairwise_range": [
+    0.0,
+    0.0
+   ],
+   "percentile_ci": [
+    0.0,
+    0.0
+   ],
+   "resamples": 20000,
+   "se": 0.0,
+   "seed": 235920438656683,
+   "strata": {
+    "T9": {
+     "mean": 128.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": 1.0
+    },
+    "V2": {
+     "mean": 128.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": -1.0
+    }
+   },
+   "values": {
+    "T9": [
+     128.0,
+     128.0,
+     128.0
+    ],
+    "V2": [
+     128.0,
+     128.0,
+     128.0
+    ]
+   },
+   "welch_ci": [
+    0.0,
+    0.0
+   ],
+   "welch_df": null
+  },
+  "201033019601 C2": {
+   "ci_high": 0.0,
+   "ci_low": 0.0,
+   "estimable": true,
+   "estimate": 0.0,
+   "level": 0.95,
+   "method": "studentized bootstrap (bootstrap-t)",
+   "pairwise_range": [
+    0.0,
+    0.0
+   ],
+   "percentile_ci": [
+    0.0,
+    0.0
+   ],
+   "resamples": 20000,
+   "se": 0.0,
+   "seed": 168466717103115,
+   "strata": {
+    "T9": {
+     "mean": 80.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": 1.0
+    },
+    "V2": {
+     "mean": 80.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": -1.0
+    }
+   },
+   "values": {
+    "T9": [
+     80.0,
+     80.0,
+     80.0
+    ],
+    "V2": [
+     80.0,
+     80.0,
+     80.0
+    ]
+   },
+   "welch_ci": [
+    0.0,
+    0.0
+   ],
+   "welch_df": null
+  },
+  "201033019601 C3": {
+   "ci_high": 0.0,
+   "ci_low": 0.0,
+   "estimable": true,
+   "estimate": 0.0,
+   "level": 0.95,
+   "method": "studentized bootstrap (bootstrap-t)",
+   "pairwise_range": [
+    0.0,
+    0.0
+   ],
+   "percentile_ci": [
+    0.0,
+    0.0
+   ],
+   "resamples": 20000,
+   "se": 0.0,
+   "seed": 50174552405240,
+   "strata": {
+    "T9": {
+     "mean": 80.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": 1.0
+    },
+    "V2": {
+     "mean": 80.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": -1.0
+    }
+   },
+   "values": {
+    "T9": [
+     80.0,
+     80.0,
+     80.0
+    ],
+    "V2": [
+     80.0,
+     80.0,
+     80.0
+    ]
+   },
+   "welch_ci": [
+    0.0,
+    0.0
+   ],
+   "welch_df": null
+  },
+  "2010431153 C2": {
+   "ci_high": 0.0,
+   "ci_low": 0.0,
+   "estimable": true,
+   "estimate": 0.0,
+   "level": 0.95,
+   "method": "studentized bootstrap (bootstrap-t)",
+   "pairwise_range": [
+    0.0,
+    0.0
+   ],
+   "percentile_ci": [
+    0.0,
+    0.0
+   ],
+   "resamples": 20000,
+   "se": 0.0,
+   "seed": 230768082344752,
+   "strata": {
+    "T9": {
+     "mean": 102.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": 1.0
+    },
+    "V2": {
+     "mean": 102.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": -1.0
+    }
+   },
+   "values": {
+    "T9": [
+     102.0,
+     102.0,
+     102.0
+    ],
+    "V2": [
+     102.0,
+     102.0,
+     102.0
+    ]
+   },
+   "welch_ci": [
+    0.0,
+    0.0
+   ],
+   "welch_df": null
+  },
+  "2010431153 C3": {
+   "ci_high": 0.0,
+   "ci_low": 0.0,
+   "estimable": true,
+   "estimate": 0.0,
+   "level": 0.95,
+   "method": "studentized bootstrap (bootstrap-t)",
+   "pairwise_range": [
+    0.0,
+    0.0
+   ],
+   "percentile_ci": [
+    0.0,
+    0.0
+   ],
+   "resamples": 20000,
+   "se": 0.0,
+   "seed": 245806128104454,
+   "strata": {
+    "T9": {
+     "mean": 158.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": 1.0
+    },
+    "V2": {
+     "mean": 158.0,
+     "n": 3,
+     "sd": 0.0,
+     "weight": -1.0
+    }
+   },
+   "values": {
+    "T9": [
+     158.0,
+     158.0,
+     158.0
+    ],
+    "V2": [
+     158.0,
+     158.0,
+     158.0
+    ]
+   },
+   "welch_ci": [
+    0.0,
+    0.0
+   ],
+   "welch_df": null
+  }
+ },
+ "completion": {
+  "margin_identity_failures": [],
+  "not_completed": [],
+  "ok": true,
+  "scheduled": 60,
+  "status": {
+   "COMPLETED": 60
+  }
+ },
+ "flags": {
+  "idle": [],
+  "latency": [],
+  "objectives": []
+ },
+ "games": [
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010431153.C3-T9.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": 158,
+    "red": -158
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 1,
+   "red": "inert-v0",
+   "repetition": 1,
+   "scenario_id": "2010431153",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 262,
+    "blue_win": 158,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -158
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 12.855,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.412,
+      "p99_ms": 0.453
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5741
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 7,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 341,
+       "held_at_end": 2,
+       "held_steps": 2880,
+       "held_value_at_end": 130,
+       "held_value_steps": 186600,
+       "max_held": 2,
+       "mean_held": 1.6
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 6,
+       "embarked": 0,
+       "ground_units": 6,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 362,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2552",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 18.53574897069484
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010431153.C2-V2.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": -102,
+    "red": 102
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 2,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 1,
+   "scenario_id": "2010431153",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 132,
+    "blue_win": -102,
+    "red_attack": 0,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 234,
+    "red_win": 102
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 12.849,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.32,
+      "p99_ms": 0.357
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5761
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 361,
+       "held_at_end": 2,
+       "held_steps": 2639,
+       "held_value_at_end": 130,
+       "held_value_steps": 175150,
+       "max_held": 2,
+       "mean_held": 1.4661111111111111
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2549",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 18.25371772516519
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "1910631192.C2-T9.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": -102,
+    "red": 102
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 3,
+   "red": "t9-capacity-allocation-v1",
+   "repetition": 1,
+   "scenario_id": "1910631192",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 132,
+    "blue_win": -102,
+    "red_attack": 0,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 234,
+    "red_win": 102
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 12.964,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.432,
+      "p99_ms": 0.478
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5841
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 7,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 441,
+       "held_at_end": 2,
+       "held_steps": 2559,
+       "held_value_at_end": 130,
+       "held_value_steps": 168750,
+       "max_held": 2,
+       "mean_held": 1.4216666666666666
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2559",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 19.41251615062356
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "1910631192.C3-V2.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": 158,
+    "red": -158
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 4,
+   "red": "inert-v0",
+   "repetition": 1,
+   "scenario_id": "1910631192",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 262,
+    "blue_win": 158,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -158
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 10,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 30.067,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.316,
+      "p99_ms": 0.351
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 6,
+       "steps_positive": 1800,
+       "sum": 8122
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 10,
+       "emitted_ground": 10,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 461,
+       "held_at_end": 2,
+       "held_steps": 2499,
+       "held_value_at_end": 130,
+       "held_value_steps": 159720,
+       "max_held": 2,
+       "mean_held": 1.3883333333333334
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 6,
+       "embarked": 0,
+       "ground_units": 6,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 362,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2560",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 19.286654515191913
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010131194.C2-V2.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": -50,
+    "red": 50
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 5,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 1,
+   "scenario_id": "2010131194",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 80,
+    "blue_remain_max": 80,
+    "blue_total": 80,
+    "blue_win": -50,
+    "red_attack": 0,
+    "red_occupy": 50,
+    "red_remain": 80,
+    "red_remain_max": 80,
+    "red_total": 130,
+    "red_win": 50
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 2,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 2.425,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.214,
+      "p99_ms": 0.243
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 2
+      },
+      "max_objective_commitment": {
+       "max": 2,
+       "steps_positive": 1800,
+       "sum": 3600
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 2,
+       "emitted_ground": 2,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 221,
+       "held_at_end": 1,
+       "held_steps": 1580,
+       "held_value_at_end": 50,
+       "held_value_steps": 79000,
+       "max_held": 1,
+       "mean_held": 0.8777777777777778
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 2,
+       "embarked": 0,
+       "ground_units": 2,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 38,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2539",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 8.334452578797936
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010131194.C3-T9.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": 210,
+    "red": -210
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 6,
+   "red": "inert-v0",
+   "repetition": 1,
+   "scenario_id": "2010131194",
+   "scores": {
+    "blue_attack": 80,
+    "blue_occupy": 50,
+    "blue_remain": 80,
+    "blue_remain_max": 80,
+    "blue_total": 210,
+    "blue_win": 210,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 0,
+    "red_remain_max": 80,
+    "red_total": 0,
+    "red_win": -210
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 2,
+      "2": 8,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 2.144,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.248,
+      "p99_ms": 0.287
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 2
+      },
+      "max_objective_commitment": {
+       "max": 2,
+       "steps_positive": 1800,
+       "sum": 3600
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 2,
+       "emitted_ground": 2,
+       "kept": 2,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 222,
+       "held_at_end": 1,
+       "held_steps": 1579,
+       "held_value_at_end": 50,
+       "held_value_steps": 78950,
+       "max_held": 1,
+       "mean_held": 0.8772222222222222
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 2,
+       "embarked": 0,
+       "ground_units": 2,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 38,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2540",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 6.7980608604848385
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010211129.C3-V2.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": 128,
+    "red": -128
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 7,
+   "red": "inert-v0",
+   "repetition": 1,
+   "scenario_id": "2010211129",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 102,
+    "blue_remain_max": 102,
+    "blue_total": 232,
+    "blue_win": 128,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -128
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 8,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 6.086,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.281,
+      "p99_ms": 0.305
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 5
+      },
+      "max_objective_commitment": {
+       "max": 5,
+       "steps_positive": 1800,
+       "sum": 5661
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 8,
+       "emitted_ground": 8,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 121,
+       "held_at_end": 2,
+       "held_steps": 3179,
+       "held_value_at_end": 130,
+       "held_value_steps": 203920,
+       "max_held": 2,
+       "mean_held": 1.7661111111111112
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 5,
+       "embarked": 0,
+       "ground_units": 5,
+       "idle_steps_max": 143,
+       "idle_steps_median": 39,
+       "idle_unit_steps": 363,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2547",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 16.937626080587506
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010211129.C2-T9.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": -264,
+    "red": 264
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 8,
+   "red": "t9-capacity-allocation-v1",
+   "repetition": 1,
+   "scenario_id": "2010211129",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 36,
+    "blue_remain_max": 102,
+    "blue_total": 36,
+    "blue_win": -264,
+    "red_attack": 66,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 300,
+    "red_win": 264
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "2": 8,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 15.139,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.408,
+      "p99_ms": 0.47
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5801
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 7,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 401,
+       "held_at_end": 2,
+       "held_steps": 2618,
+       "held_value_at_end": 130,
+       "held_value_steps": 172900,
+       "max_held": 2,
+       "mean_held": 1.4544444444444444
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2546",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 14.977605165913701
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "201033019601.C3-V2.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": 80,
+    "red": -80
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 9,
+   "red": "inert-v0",
+   "repetition": 1,
+   "scenario_id": "201033019601",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 80,
+    "blue_remain": 30,
+    "blue_remain_max": 30,
+    "blue_total": 110,
+    "blue_win": 80,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 30,
+    "red_remain_max": 30,
+    "red_total": 30,
+    "red_win": -80
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 1,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1001,
+      "max_ms": 0.779,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.238,
+      "p99_ms": 0.261
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 1
+      },
+      "max_objective_commitment": {
+       "max": 1,
+       "steps_positive": 1000,
+       "sum": 1000
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 1,
+       "emitted_ground": 1,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 361,
+       "held_at_end": 1,
+       "held_steps": 640,
+       "held_value_at_end": 80,
+       "held_value_steps": 51200,
+       "max_held": 1,
+       "mean_held": 0.64
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 1,
+       "embarked": 0,
+       "ground_units": 1,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 19,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 11,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2533",
+   "status": "COMPLETED",
+   "steps": 1001,
+   "wall_seconds": 5.646648459136486
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "1910631192.C3-T9.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": 158,
+    "red": -158
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 10,
+   "red": "inert-v0",
+   "repetition": 1,
+   "scenario_id": "1910631192",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 262,
+    "blue_win": 158,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -158
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 8,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 30.175,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.42,
+      "p99_ms": 0.686
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 7200
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 8,
+       "emitted_ground": 8,
+       "kept": 6,
+       "redirected": 2,
+       "replaced": 2,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 324
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 461,
+       "held_at_end": 2,
+       "held_steps": 2499,
+       "held_value_at_end": 130,
+       "held_value_steps": 159720,
+       "max_held": 2,
+       "mean_held": 1.3883333333333334
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 6,
+       "embarked": 0,
+       "ground_units": 6,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 362,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 162,
+       "longest_run_median": 162,
+       "unit_decisions": 324,
+       "units": 2
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2558",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 19.251171392388642
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010131194.C2-T9.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": -50,
+    "red": 50
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 11,
+   "red": "t9-capacity-allocation-v1",
+   "repetition": 1,
+   "scenario_id": "2010131194",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 80,
+    "blue_remain_max": 80,
+    "blue_total": 80,
+    "blue_win": -50,
+    "red_attack": 0,
+    "red_occupy": 50,
+    "red_remain": 80,
+    "red_remain_max": 80,
+    "red_total": 130,
+    "red_win": 50
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 2,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 2.634,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.302,
+      "p99_ms": 0.516
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 2
+      },
+      "max_objective_commitment": {
+       "max": 2,
+       "steps_positive": 1800,
+       "sum": 3600
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 2,
+       "emitted_ground": 2,
+       "kept": 2,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 221,
+       "held_at_end": 1,
+       "held_steps": 1580,
+       "held_value_at_end": 50,
+       "held_value_steps": 79000,
+       "max_held": 1,
+       "mean_held": 0.8777777777777778
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 2,
+       "embarked": 0,
+       "ground_units": 2,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 38,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2541",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 8.726484912447631
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "201033019601.C2-V2.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": -80,
+    "red": 80
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 12,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 1,
+   "scenario_id": "201033019601",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 30,
+    "blue_remain_max": 30,
+    "blue_total": 30,
+    "blue_win": -80,
+    "red_attack": 0,
+    "red_occupy": 80,
+    "red_remain": 30,
+    "red_remain_max": 30,
+    "red_total": 110,
+    "red_win": 80
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 1,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1001,
+      "max_ms": 0.74,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.27,
+      "p99_ms": 0.299
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 1
+      },
+      "max_objective_commitment": {
+       "max": 1,
+       "steps_positive": 1000,
+       "sum": 1000
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 1,
+       "emitted_ground": 1,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 281,
+       "held_at_end": 1,
+       "held_steps": 720,
+       "held_value_at_end": 80,
+       "held_value_steps": 57600,
+       "max_held": 1,
+       "mean_held": 0.72
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 1,
+       "embarked": 0,
+       "ground_units": 1,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 19,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 11,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2534",
+   "status": "COMPLETED",
+   "steps": 1001,
+   "wall_seconds": 5.6265359204262495
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010211129.C3-T9.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": 128,
+    "red": -128
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 13,
+   "red": "inert-v0",
+   "repetition": 1,
+   "scenario_id": "2010211129",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 102,
+    "blue_remain_max": 102,
+    "blue_total": 232,
+    "blue_win": 128,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -128
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 8,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 6.475,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.379,
+      "p99_ms": 0.571
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 5
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 7181
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 8,
+       "emitted_ground": 8,
+       "kept": 8,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 121
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 121,
+       "held_at_end": 2,
+       "held_steps": 3179,
+       "held_value_at_end": 130,
+       "held_value_steps": 203920,
+       "max_held": 2,
+       "mean_held": 1.7661111111111112
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 5,
+       "embarked": 0,
+       "ground_units": 5,
+       "idle_steps_max": 264,
+       "idle_steps_median": 39,
+       "idle_unit_steps": 484,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 121,
+       "longest_run_median": 121,
+       "unit_decisions": 121,
+       "units": 1
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2548",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 17.21978159248829
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010431153.C2-T9.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": -102,
+    "red": 102
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 14,
+   "red": "t9-capacity-allocation-v1",
+   "repetition": 1,
+   "scenario_id": "2010431153",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 132,
+    "blue_win": -102,
+    "red_attack": 0,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 234,
+    "red_win": 102
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 13.264,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.423,
+      "p99_ms": 0.472
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5761
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 7,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 361,
+       "held_at_end": 2,
+       "held_steps": 2639,
+       "held_value_at_end": 130,
+       "held_value_steps": 175150,
+       "max_held": 2,
+       "mean_held": 1.4661111111111111
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2551",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 18.436411129310727
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010211129.C2-V2.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": -264,
+    "red": 264
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 15,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 1,
+   "scenario_id": "2010211129",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 36,
+    "blue_remain_max": 102,
+    "blue_total": 36,
+    "blue_win": -264,
+    "red_attack": 66,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 300,
+    "red_win": 264
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "2": 9,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 14.58,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.314,
+      "p99_ms": 0.369
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5801
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 401,
+       "held_at_end": 2,
+       "held_steps": 2618,
+       "held_value_at_end": 130,
+       "held_value_steps": 172900,
+       "max_held": 2,
+       "mean_held": 1.4544444444444444
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2550",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 15.219879386015236
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010131194.C3-V2.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": 210,
+    "red": -210
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 16,
+   "red": "inert-v0",
+   "repetition": 1,
+   "scenario_id": "2010131194",
+   "scores": {
+    "blue_attack": 80,
+    "blue_occupy": 50,
+    "blue_remain": 80,
+    "blue_remain_max": 80,
+    "blue_total": 210,
+    "blue_win": 210,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 0,
+    "red_remain_max": 80,
+    "red_total": 0,
+    "red_win": -210
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 2,
+      "2": 6,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 2.152,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.175,
+      "p99_ms": 0.207
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 2
+      },
+      "max_objective_commitment": {
+       "max": 2,
+       "steps_positive": 1800,
+       "sum": 3600
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 2,
+       "emitted_ground": 2,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 222,
+       "held_at_end": 1,
+       "held_steps": 1579,
+       "held_value_at_end": 50,
+       "held_value_steps": 78950,
+       "max_held": 1,
+       "mean_held": 0.8772222222222222
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 2,
+       "embarked": 0,
+       "ground_units": 2,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 38,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2542",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 6.4500003987923265
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "201033019601.C3-T9.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": 80,
+    "red": -80
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 17,
+   "red": "inert-v0",
+   "repetition": 1,
+   "scenario_id": "201033019601",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 80,
+    "blue_remain": 30,
+    "blue_remain_max": 30,
+    "blue_total": 110,
+    "blue_win": 80,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 30,
+    "red_remain_max": 30,
+    "red_total": 30,
+    "red_win": -80
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 1,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1001,
+      "max_ms": 0.889,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.309,
+      "p99_ms": 0.343
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 1
+      },
+      "max_objective_commitment": {
+       "max": 1,
+       "steps_positive": 1000,
+       "sum": 1000
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 1,
+       "emitted_ground": 1,
+       "kept": 1,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 361,
+       "held_at_end": 1,
+       "held_steps": 640,
+       "held_value_at_end": 80,
+       "held_value_steps": 51200,
+       "max_held": 1,
+       "mean_held": 0.64
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 1,
+       "embarked": 0,
+       "ground_units": 1,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 19,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 11,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2535",
+   "status": "COMPLETED",
+   "steps": 1001,
+   "wall_seconds": 5.747991979122162
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010431153.C3-V2.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": 158,
+    "red": -158
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 18,
+   "red": "inert-v0",
+   "repetition": 1,
+   "scenario_id": "2010431153",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 262,
+    "blue_win": 158,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -158
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 12.58,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.302,
+      "p99_ms": 0.325
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5741
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 341,
+       "held_at_end": 2,
+       "held_steps": 2880,
+       "held_value_at_end": 130,
+       "held_value_steps": 186600,
+       "max_held": 2,
+       "mean_held": 1.6
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 6,
+       "embarked": 0,
+       "ground_units": 6,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 362,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2555",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 17.94459292665124
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "1910631192.C2-V2.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": -102,
+    "red": 102
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 19,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 1,
+   "scenario_id": "1910631192",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 132,
+    "blue_win": -102,
+    "red_attack": 0,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 234,
+    "red_win": 102
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 13.137,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.323,
+      "p99_ms": 0.37
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5841
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 441,
+       "held_at_end": 2,
+       "held_steps": 2559,
+       "held_value_at_end": 130,
+       "held_value_steps": 168750,
+       "max_held": 2,
+       "mean_held": 1.4216666666666666
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2562",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 19.13809503056109
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "201033019601.C2-T9.D.r01",
+   "margin_identity": true,
+   "margins": {
+    "blue": -80,
+    "red": 80
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 20,
+   "red": "t9-capacity-allocation-v1",
+   "repetition": 1,
+   "scenario_id": "201033019601",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 30,
+    "blue_remain_max": 30,
+    "blue_total": 30,
+    "blue_win": -80,
+    "red_attack": 0,
+    "red_occupy": 80,
+    "red_remain": 30,
+    "red_remain_max": 30,
+    "red_total": 110,
+    "red_win": 80
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 1,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1001,
+      "max_ms": 0.89,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.347,
+      "p99_ms": 0.383
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 1
+      },
+      "max_objective_commitment": {
+       "max": 1,
+       "steps_positive": 1000,
+       "sum": 1000
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 1,
+       "emitted_ground": 1,
+       "kept": 1,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 281,
+       "held_at_end": 1,
+       "held_steps": 720,
+       "held_value_at_end": 80,
+       "held_value_steps": 57600,
+       "max_held": 1,
+       "mean_held": 0.72
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 1,
+       "embarked": 0,
+       "ground_units": 1,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 19,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 11,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2536",
+   "status": "COMPLETED",
+   "steps": 1001,
+   "wall_seconds": 5.709037301130593
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010431153.C2-V2.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": -102,
+    "red": 102
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 21,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 2,
+   "scenario_id": "2010431153",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 132,
+    "blue_win": -102,
+    "red_attack": 0,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 234,
+    "red_win": 102
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 13.092,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.323,
+      "p99_ms": 0.37
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5761
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 361,
+       "held_at_end": 2,
+       "held_steps": 2639,
+       "held_value_at_end": 130,
+       "held_value_steps": 175150,
+       "max_held": 2,
+       "mean_held": 1.4661111111111111
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2557",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 18.47906131017953
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "1910631192.C2-T9.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": -102,
+    "red": 102
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 22,
+   "red": "t9-capacity-allocation-v1",
+   "repetition": 2,
+   "scenario_id": "1910631192",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 132,
+    "blue_win": -102,
+    "red_attack": 0,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 234,
+    "red_win": 102
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 13.017,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.429,
+      "p99_ms": 0.468
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5841
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 7,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 441,
+       "held_at_end": 2,
+       "held_steps": 2559,
+       "held_value_at_end": 130,
+       "held_value_steps": 168750,
+       "max_held": 2,
+       "mean_held": 1.4216666666666666
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2561",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 19.068011786788702
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "1910631192.C3-V2.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": 158,
+    "red": -158
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 23,
+   "red": "inert-v0",
+   "repetition": 2,
+   "scenario_id": "1910631192",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 262,
+    "blue_win": 158,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -158
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 10,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 30.746,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.313,
+      "p99_ms": 0.351
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 6,
+       "steps_positive": 1800,
+       "sum": 8122
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 10,
+       "emitted_ground": 10,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 461,
+       "held_at_end": 2,
+       "held_steps": 2499,
+       "held_value_at_end": 130,
+       "held_value_steps": 159720,
+       "max_held": 2,
+       "mean_held": 1.3883333333333334
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 6,
+       "embarked": 0,
+       "ground_units": 6,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 362,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2563",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 19.027244709432125
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010131194.C2-V2.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": -50,
+    "red": 50
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 24,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 2,
+   "scenario_id": "2010131194",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 80,
+    "blue_remain_max": 80,
+    "blue_total": 80,
+    "blue_win": -50,
+    "red_attack": 0,
+    "red_occupy": 50,
+    "red_remain": 80,
+    "red_remain_max": 80,
+    "red_total": 130,
+    "red_win": 50
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 2,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 2.437,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.213,
+      "p99_ms": 0.237
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 2
+      },
+      "max_objective_commitment": {
+       "max": 2,
+       "steps_positive": 1800,
+       "sum": 3600
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 2,
+       "emitted_ground": 2,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 221,
+       "held_at_end": 1,
+       "held_steps": 1580,
+       "held_value_at_end": 50,
+       "held_value_steps": 79000,
+       "max_held": 1,
+       "mean_held": 0.8777777777777778
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 2,
+       "embarked": 0,
+       "ground_units": 2,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 38,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2543",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 8.2658109376207
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010131194.C3-T9.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": 210,
+    "red": -210
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 25,
+   "red": "inert-v0",
+   "repetition": 2,
+   "scenario_id": "2010131194",
+   "scores": {
+    "blue_attack": 80,
+    "blue_occupy": 50,
+    "blue_remain": 80,
+    "blue_remain_max": 80,
+    "blue_total": 210,
+    "blue_win": 210,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 0,
+    "red_remain_max": 80,
+    "red_total": 0,
+    "red_win": -210
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 2,
+      "2": 11,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 2.197,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.244,
+      "p99_ms": 0.277
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 2
+      },
+      "max_objective_commitment": {
+       "max": 2,
+       "steps_positive": 1800,
+       "sum": 3600
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 2,
+       "emitted_ground": 2,
+       "kept": 2,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 222,
+       "held_at_end": 1,
+       "held_steps": 1579,
+       "held_value_at_end": 50,
+       "held_value_steps": 78950,
+       "max_held": 1,
+       "mean_held": 0.8772222222222222
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 2,
+       "embarked": 0,
+       "ground_units": 2,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 38,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2544",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 6.74125786498189
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010211129.C3-V2.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": 128,
+    "red": -128
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 26,
+   "red": "inert-v0",
+   "repetition": 2,
+   "scenario_id": "2010211129",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 102,
+    "blue_remain_max": 102,
+    "blue_total": 232,
+    "blue_win": 128,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -128
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 8,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 6.133,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.289,
+      "p99_ms": 0.32
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 5
+      },
+      "max_objective_commitment": {
+       "max": 5,
+       "steps_positive": 1800,
+       "sum": 5661
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 8,
+       "emitted_ground": 8,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 121,
+       "held_at_end": 2,
+       "held_steps": 3179,
+       "held_value_at_end": 130,
+       "held_value_steps": 203920,
+       "max_held": 2,
+       "mean_held": 1.7661111111111112
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 5,
+       "embarked": 0,
+       "ground_units": 5,
+       "idle_steps_max": 143,
+       "idle_steps_median": 39,
+       "idle_unit_steps": 363,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2556",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 17.342742853797972
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010211129.C2-T9.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": -264,
+    "red": 264
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 27,
+   "red": "t9-capacity-allocation-v1",
+   "repetition": 2,
+   "scenario_id": "2010211129",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 36,
+    "blue_remain_max": 102,
+    "blue_total": 36,
+    "blue_win": -264,
+    "red_attack": 66,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 300,
+    "red_win": 264
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "2": 8,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 14.869,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.412,
+      "p99_ms": 0.476
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5801
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 7,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 401,
+       "held_at_end": 2,
+       "held_steps": 2618,
+       "held_value_at_end": 130,
+       "held_value_steps": 172900,
+       "max_held": 2,
+       "mean_held": 1.4544444444444444
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2553",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 15.10260189883411
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "201033019601.C3-V2.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": 80,
+    "red": -80
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 28,
+   "red": "inert-v0",
+   "repetition": 2,
+   "scenario_id": "201033019601",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 80,
+    "blue_remain": 30,
+    "blue_remain_max": 30,
+    "blue_total": 110,
+    "blue_win": 80,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 30,
+    "red_remain_max": 30,
+    "red_total": 30,
+    "red_win": -80
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 1,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1001,
+      "max_ms": 0.739,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.241,
+      "p99_ms": 0.271
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 1
+      },
+      "max_objective_commitment": {
+       "max": 1,
+       "steps_positive": 1000,
+       "sum": 1000
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 1,
+       "emitted_ground": 1,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 361,
+       "held_at_end": 1,
+       "held_steps": 640,
+       "held_value_at_end": 80,
+       "held_value_steps": 51200,
+       "max_held": 1,
+       "mean_held": 0.64
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 1,
+       "embarked": 0,
+       "ground_units": 1,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 19,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 11,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2537",
+   "status": "COMPLETED",
+   "steps": 1001,
+   "wall_seconds": 5.667649573646486
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "1910631192.C3-T9.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": 158,
+    "red": -158
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 29,
+   "red": "inert-v0",
+   "repetition": 2,
+   "scenario_id": "1910631192",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 262,
+    "blue_win": 158,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -158
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 8,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 31.107,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.425,
+      "p99_ms": 0.715
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 7200
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 8,
+       "emitted_ground": 8,
+       "kept": 6,
+       "redirected": 2,
+       "replaced": 2,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 324
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 461,
+       "held_at_end": 2,
+       "held_steps": 2499,
+       "held_value_at_end": 130,
+       "held_value_steps": 159720,
+       "max_held": 2,
+       "mean_held": 1.3883333333333334
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 6,
+       "embarked": 0,
+       "ground_units": 6,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 362,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 162,
+       "longest_run_median": 162,
+       "unit_decisions": 324,
+       "units": 2
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2564",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 19.37017267756164
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010131194.C2-T9.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": -50,
+    "red": 50
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 30,
+   "red": "t9-capacity-allocation-v1",
+   "repetition": 2,
+   "scenario_id": "2010131194",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 80,
+    "blue_remain_max": 80,
+    "blue_total": 80,
+    "blue_win": -50,
+    "red_attack": 0,
+    "red_occupy": 50,
+    "red_remain": 80,
+    "red_remain_max": 80,
+    "red_total": 130,
+    "red_win": 50
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 2,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 2.616,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.294,
+      "p99_ms": 0.34
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 2
+      },
+      "max_objective_commitment": {
+       "max": 2,
+       "steps_positive": 1800,
+       "sum": 3600
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 2,
+       "emitted_ground": 2,
+       "kept": 2,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 221,
+       "held_at_end": 1,
+       "held_steps": 1580,
+       "held_value_at_end": 50,
+       "held_value_steps": 79000,
+       "max_held": 1,
+       "mean_held": 0.8777777777777778
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 2,
+       "embarked": 0,
+       "ground_units": 2,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 38,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2545",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 8.418248077854514
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "201033019601.C2-V2.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": -80,
+    "red": 80
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 31,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 2,
+   "scenario_id": "201033019601",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 30,
+    "blue_remain_max": 30,
+    "blue_total": 30,
+    "blue_win": -80,
+    "red_attack": 0,
+    "red_occupy": 80,
+    "red_remain": 30,
+    "red_remain_max": 30,
+    "red_total": 110,
+    "red_win": 80
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 1,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1001,
+      "max_ms": 0.727,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.271,
+      "p99_ms": 0.304
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 1
+      },
+      "max_objective_commitment": {
+       "max": 1,
+       "steps_positive": 1000,
+       "sum": 1000
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 1,
+       "emitted_ground": 1,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 281,
+       "held_at_end": 1,
+       "held_steps": 720,
+       "held_value_at_end": 80,
+       "held_value_steps": 57600,
+       "max_held": 1,
+       "mean_held": 0.72
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 1,
+       "embarked": 0,
+       "ground_units": 1,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 19,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 11,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2538",
+   "status": "COMPLETED",
+   "steps": 1001,
+   "wall_seconds": 5.63590086530894
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010211129.C3-T9.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": 128,
+    "red": -128
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 32,
+   "red": "inert-v0",
+   "repetition": 2,
+   "scenario_id": "2010211129",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 102,
+    "blue_remain_max": 102,
+    "blue_total": 232,
+    "blue_win": 128,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -128
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 8,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 6.416,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.381,
+      "p99_ms": 0.584
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 5
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 7181
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 8,
+       "emitted_ground": 8,
+       "kept": 8,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 121
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 121,
+       "held_at_end": 2,
+       "held_steps": 3179,
+       "held_value_at_end": 130,
+       "held_value_steps": 203920,
+       "max_held": 2,
+       "mean_held": 1.7661111111111112
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 5,
+       "embarked": 0,
+       "ground_units": 5,
+       "idle_steps_max": 264,
+       "idle_steps_median": 39,
+       "idle_unit_steps": 484,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 121,
+       "longest_run_median": 121,
+       "unit_decisions": 121,
+       "units": 1
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2554",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 17.20071974955499
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010431153.C2-T9.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": -102,
+    "red": 102
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 33,
+   "red": "t9-capacity-allocation-v1",
+   "repetition": 2,
+   "scenario_id": "2010431153",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 132,
+    "blue_win": -102,
+    "red_attack": 0,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 234,
+    "red_win": 102
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 13.882,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.419,
+      "p99_ms": 0.464
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5761
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 7,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 361,
+       "held_at_end": 2,
+       "held_steps": 2639,
+       "held_value_at_end": 130,
+       "held_value_steps": 175150,
+       "max_held": 2,
+       "mean_held": 1.4661111111111111
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2566",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 17.96161820087582
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010211129.C2-V2.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": -264,
+    "red": 264
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 34,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 2,
+   "scenario_id": "2010211129",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 36,
+    "blue_remain_max": 102,
+    "blue_total": 36,
+    "blue_win": -264,
+    "red_attack": 66,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 300,
+    "red_win": 264
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "2": 6,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 15.237,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.31,
+      "p99_ms": 0.359
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5801
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 401,
+       "held_at_end": 2,
+       "held_steps": 2618,
+       "held_value_at_end": 130,
+       "held_value_steps": 172900,
+       "max_held": 2,
+       "mean_held": 1.4544444444444444
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2567",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 14.752942728810012
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010131194.C3-V2.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": 210,
+    "red": -210
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 35,
+   "red": "inert-v0",
+   "repetition": 2,
+   "scenario_id": "2010131194",
+   "scores": {
+    "blue_attack": 80,
+    "blue_occupy": 50,
+    "blue_remain": 80,
+    "blue_remain_max": 80,
+    "blue_total": 210,
+    "blue_win": 210,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 0,
+    "red_remain_max": 80,
+    "red_total": 0,
+    "red_win": -210
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 2,
+      "2": 9,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 2.087,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.179,
+      "p99_ms": 0.22
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 2
+      },
+      "max_objective_commitment": {
+       "max": 2,
+       "steps_positive": 1800,
+       "sum": 3600
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 2,
+       "emitted_ground": 2,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 222,
+       "held_at_end": 1,
+       "held_steps": 1579,
+       "held_value_at_end": 50,
+       "held_value_steps": 78950,
+       "max_held": 1,
+       "mean_held": 0.8772222222222222
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 2,
+       "embarked": 0,
+       "ground_units": 2,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 38,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2568",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 6.87967733386904
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "201033019601.C3-T9.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": 80,
+    "red": -80
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 36,
+   "red": "inert-v0",
+   "repetition": 2,
+   "scenario_id": "201033019601",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 80,
+    "blue_remain": 30,
+    "blue_remain_max": 30,
+    "blue_total": 110,
+    "blue_win": 80,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 30,
+    "red_remain_max": 30,
+    "red_total": 30,
+    "red_win": -80
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 1,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1001,
+      "max_ms": 0.979,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.31,
+      "p99_ms": 0.337
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 1
+      },
+      "max_objective_commitment": {
+       "max": 1,
+       "steps_positive": 1000,
+       "sum": 1000
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 1,
+       "emitted_ground": 1,
+       "kept": 1,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 361,
+       "held_at_end": 1,
+       "held_steps": 640,
+       "held_value_at_end": 80,
+       "held_value_steps": 51200,
+       "max_held": 1,
+       "mean_held": 0.64
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 1,
+       "embarked": 0,
+       "ground_units": 1,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 19,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 11,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2565",
+   "status": "COMPLETED",
+   "steps": 1001,
+   "wall_seconds": 5.852755259722471
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010431153.C3-V2.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": 158,
+    "red": -158
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 37,
+   "red": "inert-v0",
+   "repetition": 2,
+   "scenario_id": "2010431153",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 262,
+    "blue_win": 158,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -158
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 13.028,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.303,
+      "p99_ms": 0.348
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5741
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 341,
+       "held_at_end": 2,
+       "held_steps": 2880,
+       "held_value_at_end": 130,
+       "held_value_steps": 186600,
+       "max_held": 2,
+       "mean_held": 1.6
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 6,
+       "embarked": 0,
+       "ground_units": 6,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 362,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2569",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 17.907142596319318
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "1910631192.C2-V2.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": -102,
+    "red": 102
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 38,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 2,
+   "scenario_id": "1910631192",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 132,
+    "blue_win": -102,
+    "red_attack": 0,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 234,
+    "red_win": 102
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 13.155,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.314,
+      "p99_ms": 0.359
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5841
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 441,
+       "held_at_end": 2,
+       "held_steps": 2559,
+       "held_value_at_end": 130,
+       "held_value_steps": 168750,
+       "max_held": 2,
+       "mean_held": 1.4216666666666666
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2570",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 18.61743518617004
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "201033019601.C2-T9.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": -80,
+    "red": 80
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 39,
+   "red": "t9-capacity-allocation-v1",
+   "repetition": 2,
+   "scenario_id": "201033019601",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 30,
+    "blue_remain_max": 30,
+    "blue_total": 30,
+    "blue_win": -80,
+    "red_attack": 0,
+    "red_occupy": 80,
+    "red_remain": 30,
+    "red_remain_max": 30,
+    "red_total": 110,
+    "red_win": 80
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 1,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1001,
+      "max_ms": 0.93,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.355,
+      "p99_ms": 0.384
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 1
+      },
+      "max_objective_commitment": {
+       "max": 1,
+       "steps_positive": 1000,
+       "sum": 1000
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 1,
+       "emitted_ground": 1,
+       "kept": 1,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 281,
+       "held_at_end": 1,
+       "held_steps": 720,
+       "held_value_at_end": 80,
+       "held_value_steps": 57600,
+       "max_held": 1,
+       "mean_held": 0.72
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 1,
+       "embarked": 0,
+       "ground_units": 1,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 19,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 11,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2571",
+   "status": "COMPLETED",
+   "steps": 1001,
+   "wall_seconds": 5.865042737685144
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010431153.C3-T9.D.r02",
+   "margin_identity": true,
+   "margins": {
+    "blue": 158,
+    "red": -158
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 40,
+   "red": "inert-v0",
+   "repetition": 2,
+   "scenario_id": "2010431153",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 262,
+    "blue_win": 158,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -158
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 13.568,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.405,
+      "p99_ms": 0.458
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5741
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 7,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 341,
+       "held_at_end": 2,
+       "held_steps": 2880,
+       "held_value_at_end": 130,
+       "held_value_steps": 186600,
+       "max_held": 2,
+       "mean_held": 1.6
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 6,
+       "embarked": 0,
+       "ground_units": 6,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 362,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2572",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 17.945131089538336
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "1910631192.C2-T9.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": -102,
+    "red": 102
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 41,
+   "red": "t9-capacity-allocation-v1",
+   "repetition": 3,
+   "scenario_id": "1910631192",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 132,
+    "blue_win": -102,
+    "red_attack": 0,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 234,
+    "red_win": 102
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 13.162,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.41,
+      "p99_ms": 0.468
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5841
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 7,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 441,
+       "held_at_end": 2,
+       "held_steps": 2559,
+       "held_value_at_end": 130,
+       "held_value_steps": 168750,
+       "max_held": 2,
+       "mean_held": 1.4216666666666666
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2573",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 18.36833497043699
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "1910631192.C3-V2.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": 158,
+    "red": -158
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 42,
+   "red": "inert-v0",
+   "repetition": 3,
+   "scenario_id": "1910631192",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 262,
+    "blue_win": 158,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -158
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 10,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 31.588,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.297,
+      "p99_ms": 0.351
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 6,
+       "steps_positive": 1800,
+       "sum": 8122
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 10,
+       "emitted_ground": 10,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 461,
+       "held_at_end": 2,
+       "held_steps": 2499,
+       "held_value_at_end": 130,
+       "held_value_steps": 159720,
+       "max_held": 2,
+       "mean_held": 1.3883333333333334
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 6,
+       "embarked": 0,
+       "ground_units": 6,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 362,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2575",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 18.14557394757867
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010131194.C2-V2.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": -50,
+    "red": 50
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 43,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 3,
+   "scenario_id": "2010131194",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 80,
+    "blue_remain_max": 80,
+    "blue_total": 80,
+    "blue_win": -50,
+    "red_attack": 0,
+    "red_occupy": 50,
+    "red_remain": 80,
+    "red_remain_max": 80,
+    "red_total": 130,
+    "red_win": 50
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 2,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 2.495,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.213,
+      "p99_ms": 0.331
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 2
+      },
+      "max_objective_commitment": {
+       "max": 2,
+       "steps_positive": 1800,
+       "sum": 3600
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 2,
+       "emitted_ground": 2,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 221,
+       "held_at_end": 1,
+       "held_steps": 1580,
+       "held_value_at_end": 50,
+       "held_value_steps": 79000,
+       "max_held": 1,
+       "mean_held": 0.8777777777777778
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 2,
+       "embarked": 0,
+       "ground_units": 2,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 38,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2574",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 8.396400656551123
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010131194.C3-T9.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": 210,
+    "red": -210
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 44,
+   "red": "inert-v0",
+   "repetition": 3,
+   "scenario_id": "2010131194",
+   "scores": {
+    "blue_attack": 80,
+    "blue_occupy": 50,
+    "blue_remain": 80,
+    "blue_remain_max": 80,
+    "blue_total": 210,
+    "blue_win": 210,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 0,
+    "red_remain_max": 80,
+    "red_total": 0,
+    "red_win": -210
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 2,
+      "2": 8,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 2.186,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.243,
+      "p99_ms": 0.289
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 2
+      },
+      "max_objective_commitment": {
+       "max": 2,
+       "steps_positive": 1800,
+       "sum": 3600
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 2,
+       "emitted_ground": 2,
+       "kept": 2,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 222,
+       "held_at_end": 1,
+       "held_steps": 1579,
+       "held_value_at_end": 50,
+       "held_value_steps": 78950,
+       "max_held": 1,
+       "mean_held": 0.8772222222222222
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 2,
+       "embarked": 0,
+       "ground_units": 2,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 38,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2576",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 6.7592538967728615
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010211129.C3-V2.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": 128,
+    "red": -128
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 45,
+   "red": "inert-v0",
+   "repetition": 3,
+   "scenario_id": "2010211129",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 102,
+    "blue_remain_max": 102,
+    "blue_total": 232,
+    "blue_win": 128,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -128
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 8,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 6.356,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.27,
+      "p99_ms": 0.32
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 5
+      },
+      "max_objective_commitment": {
+       "max": 5,
+       "steps_positive": 1800,
+       "sum": 5661
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 8,
+       "emitted_ground": 8,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 121,
+       "held_at_end": 2,
+       "held_steps": 3179,
+       "held_value_at_end": 130,
+       "held_value_steps": 203920,
+       "max_held": 2,
+       "mean_held": 1.7661111111111112
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 5,
+       "embarked": 0,
+       "ground_units": 5,
+       "idle_steps_max": 143,
+       "idle_steps_median": 39,
+       "idle_unit_steps": 363,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2577",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 16.640753560699522
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010211129.C2-T9.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": -264,
+    "red": 264
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 46,
+   "red": "t9-capacity-allocation-v1",
+   "repetition": 3,
+   "scenario_id": "2010211129",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 36,
+    "blue_remain_max": 102,
+    "blue_total": 36,
+    "blue_win": -264,
+    "red_attack": 66,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 300,
+    "red_win": 264
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "2": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 15.42,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.377,
+      "p99_ms": 0.465
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5801
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 7,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 401,
+       "held_at_end": 2,
+       "held_steps": 2618,
+       "held_value_at_end": 130,
+       "held_value_steps": 172900,
+       "max_held": 2,
+       "mean_held": 1.4544444444444444
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2578",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 14.136510098353028
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "201033019601.C3-V2.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": 80,
+    "red": -80
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 47,
+   "red": "inert-v0",
+   "repetition": 3,
+   "scenario_id": "201033019601",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 80,
+    "blue_remain": 30,
+    "blue_remain_max": 30,
+    "blue_total": 110,
+    "blue_win": 80,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 30,
+    "red_remain_max": 30,
+    "red_total": 30,
+    "red_win": -80
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 1,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1001,
+      "max_ms": 0.806,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.24,
+      "p99_ms": 0.263
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 1
+      },
+      "max_objective_commitment": {
+       "max": 1,
+       "steps_positive": 1000,
+       "sum": 1000
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 1,
+       "emitted_ground": 1,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 361,
+       "held_at_end": 1,
+       "held_steps": 640,
+       "held_value_at_end": 80,
+       "held_value_steps": 51200,
+       "max_held": 1,
+       "mean_held": 0.64
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 1,
+       "embarked": 0,
+       "ground_units": 1,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 19,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 11,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2579",
+   "status": "COMPLETED",
+   "steps": 1001,
+   "wall_seconds": 5.794948088005185
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "1910631192.C3-T9.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": 158,
+    "red": -158
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 48,
+   "red": "inert-v0",
+   "repetition": 3,
+   "scenario_id": "1910631192",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 262,
+    "blue_win": 158,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -158
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 8,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 31.893,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.387,
+      "p99_ms": 0.654
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 7200
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 8,
+       "emitted_ground": 8,
+       "kept": 6,
+       "redirected": 2,
+       "replaced": 2,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 324
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 461,
+       "held_at_end": 2,
+       "held_steps": 2499,
+       "held_value_at_end": 130,
+       "held_value_steps": 159720,
+       "max_held": 2,
+       "mean_held": 1.3883333333333334
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 6,
+       "embarked": 0,
+       "ground_units": 6,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 362,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 162,
+       "longest_run_median": 162,
+       "unit_decisions": 324,
+       "units": 2
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2580",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 17.62226028740406
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010131194.C2-T9.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": -50,
+    "red": 50
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 49,
+   "red": "t9-capacity-allocation-v1",
+   "repetition": 3,
+   "scenario_id": "2010131194",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 80,
+    "blue_remain_max": 80,
+    "blue_total": 80,
+    "blue_win": -50,
+    "red_attack": 0,
+    "red_occupy": 50,
+    "red_remain": 80,
+    "red_remain_max": 80,
+    "red_total": 130,
+    "red_win": 50
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 2,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 2.765,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.255,
+      "p99_ms": 0.328
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 2
+      },
+      "max_objective_commitment": {
+       "max": 2,
+       "steps_positive": 1800,
+       "sum": 3600
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 2,
+       "emitted_ground": 2,
+       "kept": 2,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 221,
+       "held_at_end": 1,
+       "held_steps": 1580,
+       "held_value_at_end": 50,
+       "held_value_steps": 79000,
+       "max_held": 1,
+       "mean_held": 0.8777777777777778
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 2,
+       "embarked": 0,
+       "ground_units": 2,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 38,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2582",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 8.08208191767335
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "201033019601.C2-V2.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": -80,
+    "red": 80
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 50,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 3,
+   "scenario_id": "201033019601",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 30,
+    "blue_remain_max": 30,
+    "blue_total": 30,
+    "blue_win": -80,
+    "red_attack": 0,
+    "red_occupy": 80,
+    "red_remain": 30,
+    "red_remain_max": 30,
+    "red_total": 110,
+    "red_win": 80
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 1,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1001,
+      "max_ms": 0.788,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.269,
+      "p99_ms": 0.303
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 1
+      },
+      "max_objective_commitment": {
+       "max": 1,
+       "steps_positive": 1000,
+       "sum": 1000
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 1,
+       "emitted_ground": 1,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 281,
+       "held_at_end": 1,
+       "held_steps": 720,
+       "held_value_at_end": 80,
+       "held_value_steps": 57600,
+       "max_held": 1,
+       "mean_held": 0.72
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 1,
+       "embarked": 0,
+       "ground_units": 1,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 19,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 11,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2581",
+   "status": "COMPLETED",
+   "steps": 1001,
+   "wall_seconds": 5.6301095355302095
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010211129.C3-T9.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": 128,
+    "red": -128
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 51,
+   "red": "inert-v0",
+   "repetition": 3,
+   "scenario_id": "2010211129",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 102,
+    "blue_remain_max": 102,
+    "blue_total": 232,
+    "blue_win": 128,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -128
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 8,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 6.675,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.334,
+      "p99_ms": 0.595
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 5
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 7181
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 8,
+       "emitted_ground": 8,
+       "kept": 8,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 121
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 121,
+       "held_at_end": 2,
+       "held_steps": 3179,
+       "held_value_at_end": 130,
+       "held_value_steps": 203920,
+       "max_held": 2,
+       "mean_held": 1.7661111111111112
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 5,
+       "embarked": 0,
+       "ground_units": 5,
+       "idle_steps_max": 264,
+       "idle_steps_median": 39,
+       "idle_unit_steps": 484,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 121,
+       "longest_run_median": 121,
+       "unit_decisions": 121,
+       "units": 1
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2583",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 15.525781971402466
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010431153.C2-T9.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": -102,
+    "red": 102
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 52,
+   "red": "t9-capacity-allocation-v1",
+   "repetition": 3,
+   "scenario_id": "2010431153",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 132,
+    "blue_win": -102,
+    "red_attack": 0,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 234,
+    "red_win": 102
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 13.885,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.343,
+      "p99_ms": 0.474
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5761
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 7,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 361,
+       "held_at_end": 2,
+       "held_steps": 2639,
+       "held_value_at_end": 130,
+       "held_value_steps": 175150,
+       "max_held": 2,
+       "mean_held": 1.4661111111111111
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2584",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 16.580616123043
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010211129.C2-V2.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": -264,
+    "red": 264
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 53,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 3,
+   "scenario_id": "2010211129",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 36,
+    "blue_remain_max": 102,
+    "blue_total": 36,
+    "blue_win": -264,
+    "red_attack": 66,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 300,
+    "red_win": 264
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "2": 8,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 15.078,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.246,
+      "p99_ms": 0.335
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5801
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 401,
+       "held_at_end": 2,
+       "held_steps": 2618,
+       "held_value_at_end": 130,
+       "held_value_steps": 172900,
+       "max_held": 2,
+       "mean_held": 1.4544444444444444
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2586",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 13.14672620780766
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010131194.C3-V2.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": 210,
+    "red": -210
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 54,
+   "red": "inert-v0",
+   "repetition": 3,
+   "scenario_id": "2010131194",
+   "scores": {
+    "blue_attack": 80,
+    "blue_occupy": 50,
+    "blue_remain": 80,
+    "blue_remain_max": 80,
+    "blue_total": 210,
+    "blue_win": 210,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 0,
+    "red_remain_max": 80,
+    "red_total": 0,
+    "red_win": -210
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 2,
+      "2": 7,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 2.061,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.154,
+      "p99_ms": 0.208
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 2
+      },
+      "max_objective_commitment": {
+       "max": 2,
+       "steps_positive": 1800,
+       "sum": 3600
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 2,
+       "emitted_ground": 2,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 222,
+       "held_at_end": 1,
+       "held_steps": 1579,
+       "held_value_at_end": 50,
+       "held_value_steps": 78950,
+       "max_held": 1,
+       "mean_held": 0.8772222222222222
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 2,
+       "embarked": 0,
+       "ground_units": 2,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 38,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2587",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 6.270034296438098
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "201033019601.C3-T9.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": 80,
+    "red": -80
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 55,
+   "red": "inert-v0",
+   "repetition": 3,
+   "scenario_id": "201033019601",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 80,
+    "blue_remain": 30,
+    "blue_remain_max": 30,
+    "blue_total": 110,
+    "blue_win": 80,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 30,
+    "red_remain_max": 30,
+    "red_total": 30,
+    "red_win": -80
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 1,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1001,
+      "max_ms": 0.986,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.281,
+      "p99_ms": 0.322
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 1
+      },
+      "max_objective_commitment": {
+       "max": 1,
+       "steps_positive": 1000,
+       "sum": 1000
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 1,
+       "emitted_ground": 1,
+       "kept": 1,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 361,
+       "held_at_end": 1,
+       "held_steps": 640,
+       "held_value_at_end": 80,
+       "held_value_steps": 51200,
+       "max_held": 1,
+       "mean_held": 0.64
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 1,
+       "embarked": 0,
+       "ground_units": 1,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 19,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 11,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2585",
+   "status": "COMPLETED",
+   "steps": 1001,
+   "wall_seconds": 5.418549340218306
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010431153.C3-V2.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": 158,
+    "red": -158
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 56,
+   "red": "inert-v0",
+   "repetition": 3,
+   "scenario_id": "2010431153",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 262,
+    "blue_win": 158,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -158
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 12.252,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.267,
+      "p99_ms": 0.309
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5741
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 341,
+       "held_at_end": 2,
+       "held_steps": 2880,
+       "held_value_at_end": 130,
+       "held_value_steps": 186600,
+       "max_held": 2,
+       "mean_held": 1.6
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 6,
+       "embarked": 0,
+       "ground_units": 6,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 362,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2589",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 16.12974346987903
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "1910631192.C2-V2.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": -102,
+    "red": 102
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 57,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 3,
+   "scenario_id": "1910631192",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 132,
+    "blue_win": -102,
+    "red_attack": 0,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 234,
+    "red_win": 102
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 12.401,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.237,
+      "p99_ms": 0.312
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5841
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 441,
+       "held_at_end": 2,
+       "held_steps": 2559,
+       "held_value_at_end": 130,
+       "held_value_steps": 168750,
+       "max_held": 2,
+       "mean_held": 1.4216666666666666
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2590",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 16.43170232884586
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "201033019601.C2-T9.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": -80,
+    "red": 80
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 58,
+   "red": "t9-capacity-allocation-v1",
+   "repetition": 3,
+   "scenario_id": "201033019601",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 30,
+    "blue_remain_max": 30,
+    "blue_total": 30,
+    "blue_win": -80,
+    "red_attack": 0,
+    "red_occupy": 80,
+    "red_remain": 30,
+    "red_remain_max": 30,
+    "red_total": 110,
+    "red_win": 80
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 1,
+      "333": 1,
+      "5": 1
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1001,
+      "max_ms": 0.928,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.305,
+      "p99_ms": 0.354
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 1
+      },
+      "max_objective_commitment": {
+       "max": 1,
+       "steps_positive": 1000,
+       "sum": 1000
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 1,
+       "emitted_ground": 1,
+       "kept": 1,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 1,
+       "ever_held": 1,
+       "first_hold_step_min": 281,
+       "held_at_end": 1,
+       "held_steps": 720,
+       "held_value_at_end": 80,
+       "held_value_steps": 57600,
+       "max_held": 1,
+       "mean_held": 0.72
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 1,
+       "embarked": 0,
+       "ground_units": 1,
+       "idle_steps_max": 19,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 19,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 11,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2588",
+   "status": "COMPLETED",
+   "steps": 1001,
+   "wall_seconds": 5.35243019182235
+  },
+  {
+   "blue": "t9-capacity-allocation-v1",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C3-T9",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010431153.C3-T9.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": 158,
+    "red": -158
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 59,
+   "red": "inert-v0",
+   "repetition": 3,
+   "scenario_id": "2010431153",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 130,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 262,
+    "blue_win": 158,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 104,
+    "red_win": -158
+   },
+   "seats": {
+    "blue": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 12.839,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.35,
+      "p99_ms": 0.43
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5741
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 7,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 341,
+       "held_at_end": 2,
+       "held_steps": 2880,
+       "held_value_at_end": 130,
+       "held_value_steps": 186600,
+       "max_held": 2,
+       "mean_held": 1.6
+      },
+      "policy": "t9-capacity-allocation-v1",
+      "start_positions": {
+       "departed": 6,
+       "embarked": 0,
+       "ground_units": 6,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 362,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "t9-capacity-allocation-v1",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2591",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 16.422054711729288
+  },
+  {
+   "blue": "inert-v0",
+   "capture_checks": {
+    "ok": true,
+    "problems": []
+   },
+   "cell": "C2-V2",
+   "completed": true,
+   "completion": "done",
+   "game_id": "2010431153.C2-V2.D.r03",
+   "margin_identity": true,
+   "margins": {
+    "blue": -102,
+    "red": 102
+   },
+   "observer_errors": 0,
+   "phase": "D",
+   "phase_position": 60,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 3,
+   "scenario_id": "2010431153",
+   "scores": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 132,
+    "blue_remain_max": 132,
+    "blue_total": 132,
+    "blue_win": -102,
+    "red_attack": 0,
+    "red_occupy": 130,
+    "red_remain": 104,
+    "red_remain_max": 104,
+    "red_total": 234,
+    "red_win": 102
+   },
+   "seats": {
+    "red": {
+     "actions_by_type": {
+      "1": 7,
+      "333": 1,
+      "5": 2
+     },
+     "contract_errors": 0,
+     "gate_rejections": 0,
+     "latency": {
+      "decisions": 1801,
+      "max_ms": 12.873,
+      "over_100ms": 0,
+      "over_1s": 0,
+      "p50_ms": 0.246,
+      "p99_ms": 0.316
+     },
+     "mechanism": {
+      "losses": {
+       "lost": 0,
+       "start_units": 6
+      },
+      "max_objective_commitment": {
+       "max": 4,
+       "steps_positive": 1800,
+       "sum": 5761
+      },
+      "moves": {
+       "addon_errors": 0,
+       "emitted": 7,
+       "emitted_ground": 7,
+       "kept": 0,
+       "redirected": 0,
+       "replaced": 0,
+       "replaced_refused": {},
+       "reverted": 0,
+       "unreadable_destination": 0,
+       "withheld": 0
+      },
+      "objectives": {
+       "count": 2,
+       "ever_held": 2,
+       "first_hold_step_min": 361,
+       "held_at_end": 2,
+       "held_steps": 2639,
+       "held_value_at_end": 130,
+       "held_value_steps": 175150,
+       "max_held": 2,
+       "mean_held": 1.4661111111111111
+      },
+      "policy": "baseline-v2-candidate-shoot-target-reservation",
+      "start_positions": {
+       "departed": 4,
+       "embarked": 0,
+       "ground_units": 4,
+       "idle_steps_max": 143,
+       "idle_steps_median": 19,
+       "idle_unit_steps": 200,
+       "never_departed": 0,
+       "removed_before_leaving": 0,
+       "units_idle_half_play": 0
+      },
+      "waiting_in_front_of_full_hex": {
+       "max": 0,
+       "steps_positive": 0,
+       "sum": 0
+      },
+      "withholding": {
+       "longest_run_max": 0,
+       "longest_run_median": 0,
+       "unit_decisions": 0,
+       "units": 0
+      }
+     },
+     "policy": "baseline-v2-candidate-shoot-target-reservation",
+     "refusal_classes": [],
+     "replay_checks": 19,
+     "replay_mismatches": 0
+    }
+   },
+   "session": "2592",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "wall_seconds": 16.042219296097755
+  }
+ ],
+ "gate": {
+  "decision": "CONTINUE",
+  "permits": "B",
+  "reasons": []
+ },
+ "integrity": {
+  "captures": [],
+  "ledger": {
+   "closed": 105,
+   "games": {
+    "1910631192.C2-T9.D.r01": "2559",
+    "1910631192.C2-T9.D.r02": "2561",
+    "1910631192.C2-T9.D.r03": "2573",
+    "1910631192.C2-V2.D.r01": "2562",
+    "1910631192.C2-V2.D.r02": "2570",
+    "1910631192.C2-V2.D.r03": "2590",
+    "1910631192.C3-T9.D.r01": "2558",
+    "1910631192.C3-T9.D.r02": "2564",
+    "1910631192.C3-T9.D.r03": "2580",
+    "1910631192.C3-V2.D.r01": "2560",
+    "1910631192.C3-V2.D.r02": "2563",
+    "1910631192.C3-V2.D.r03": "2575",
+    "2010131194.C2-T9.D.r01": "2541",
+    "2010131194.C2-T9.D.r02": "2545",
+    "2010131194.C2-T9.D.r03": "2582",
+    "2010131194.C2-V2.D.r01": "2539",
+    "2010131194.C2-V2.D.r02": "2543",
+    "2010131194.C2-V2.D.r03": "2574",
+    "2010131194.C3-T9.D.r01": "2540",
+    "2010131194.C3-T9.D.r02": "2544",
+    "2010131194.C3-T9.D.r03": "2576",
+    "2010131194.C3-V2.D.r01": "2542",
+    "2010131194.C3-V2.D.r02": "2568",
+    "2010131194.C3-V2.D.r03": "2587",
+    "2010211129.C2-T9.D.r01": "2546",
+    "2010211129.C2-T9.D.r02": "2553",
+    "2010211129.C2-T9.D.r03": "2578",
+    "2010211129.C2-V2.D.r01": "2550",
+    "2010211129.C2-V2.D.r02": "2567",
+    "2010211129.C2-V2.D.r03": "2586",
+    "2010211129.C3-T9.D.r01": "2548",
+    "2010211129.C3-T9.D.r02": "2554",
+    "2010211129.C3-T9.D.r03": "2583",
+    "2010211129.C3-V2.D.r01": "2547",
+    "2010211129.C3-V2.D.r02": "2556",
+    "2010211129.C3-V2.D.r03": "2577",
+    "201033019601.C2-T9.D.r01": "2536",
+    "201033019601.C2-T9.D.r02": "2571",
+    "201033019601.C2-T9.D.r03": "2588",
+    "201033019601.C2-V2.D.r01": "2534",
+    "201033019601.C2-V2.D.r02": "2538",
+    "201033019601.C2-V2.D.r03": "2581",
+    "201033019601.C3-T9.D.r01": "2535",
+    "201033019601.C3-T9.D.r02": "2565",
+    "201033019601.C3-T9.D.r03": "2585",
+    "201033019601.C3-V2.D.r01": "2533",
+    "201033019601.C3-V2.D.r02": "2537",
+    "201033019601.C3-V2.D.r03": "2579",
+    "2010431153.C2-T9.D.r01": "2551",
+    "2010431153.C2-T9.D.r02": "2566",
+    "2010431153.C2-T9.D.r03": "2584",
+    "2010431153.C2-V2.D.r01": "2549",
+    "2010431153.C2-V2.D.r02": "2557",
+    "2010431153.C2-V2.D.r03": "2592",
+    "2010431153.C3-T9.D.r01": "2552",
+    "2010431153.C3-T9.D.r02": "2572",
+    "2010431153.C3-T9.D.r03": "2591",
+    "2010431153.C3-V2.D.r01": "2555",
+    "2010431153.C3-V2.D.r02": "2569",
+    "2010431153.C3-V2.D.r03": "2589",
+    "2130511121.C1.A.r01": "2494",
+    "2130511121.C1.A.r02": "2506",
+    "2130511121.C1.A.r03": "2488",
+    "2130511121.C1.A.r04": "2513",
+    "2130511121.C1.A.r05": "2492",
+    "2130511121.C1.A.r06": "2501",
+    "2130511121.C1.A.r07": "2500",
+    "2130511121.C1.A.r08": "2511",
+    "2130511121.C1.A.r09": "2507",
+    "2130511121.C1.A.r10": "2512",
+    "2130511121.C1.A.r11": "2520",
+    "2130511121.C1.A.r12": "2522",
+    "2130511121.C1.A.r13": "2524",
+    "2130511121.C1.A.r14": "2529",
+    "2130511121.C1.A.r15": "2531",
+    "2130511121.H1.A.r01": "2502",
+    "2130511121.H1.A.r02": "2514",
+    "2130511121.H1.A.r03": "2505",
+    "2130511121.H1.A.r04": "2495",
+    "2130511121.H1.A.r05": "2493",
+    "2130511121.H1.A.r06": "2497",
+    "2130511121.H1.A.r07": "2504",
+    "2130511121.H1.A.r08": "2515",
+    "2130511121.H1.A.r09": "2517",
+    "2130511121.H1.A.r10": "2516",
+    "2130511121.H1.A.r11": "2508",
+    "2130511121.H1.A.r12": "2521",
+    "2130511121.H1.A.r13": "2526",
+    "2130511121.H1.A.r14": "2528",
+    "2130511121.H1.A.r15": "2530",
+    "2130511121.H2.A.r01": "2496",
+    "2130511121.H2.A.r02": "2510",
+    "2130511121.H2.A.r03": "2490",
+    "2130511121.H2.A.r04": "2491",
+    "2130511121.H2.A.r05": "2489",
+    "2130511121.H2.A.r06": "2498",
+    "2130511121.H2.A.r07": "2499",
+    "2130511121.H2.A.r08": "2503",
+    "2130511121.H2.A.r09": "2519",
+    "2130511121.H2.A.r10": "2518",
+    "2130511121.H2.A.r11": "2509",
+    "2130511121.H2.A.r12": "2523",
+    "2130511121.H2.A.r13": "2525",
+    "2130511121.H2.A.r14": "2527",
+    "2130511121.H2.A.r15": "2532"
+   },
+   "ok": true,
+   "problems": [],
+   "sessions": 105,
+   "unclosed": []
+  },
+  "ok": true,
+  "records_identity": {}
+ },
+ "manifest_sha256": "28324b3a6742f8fe8b4a7938b03f0077e894be701ce06527543cf81df043981c",
+ "mechanism": {
+  "1910631192 C2-T9 red T9": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 4.0,
+   "moves.emitted_ground": 7.0,
+   "moves.kept": 7.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 2.0,
+   "objectives.held_value_at_end": 130.0,
+   "objectives.held_value_steps": 168750.0,
+   "objectives.mean_held": 1.4216666666666666,
+   "replaced_refused": {},
+   "start_positions.ground_units": 4.0,
+   "start_positions.idle_steps_max": 143.0,
+   "start_positions.idle_unit_steps": 200.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "1910631192 C2-V2 red V2": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 4.0,
+   "moves.emitted_ground": 7.0,
+   "moves.kept": 0.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 2.0,
+   "objectives.held_value_at_end": 130.0,
+   "objectives.held_value_steps": 168750.0,
+   "objectives.mean_held": 1.4216666666666666,
+   "replaced_refused": {},
+   "start_positions.ground_units": 4.0,
+   "start_positions.idle_steps_max": 143.0,
+   "start_positions.idle_unit_steps": 200.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "1910631192 C3-T9 blue T9": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 4.0,
+   "moves.emitted_ground": 8.0,
+   "moves.kept": 6.0,
+   "moves.redirected": 2.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 324.0,
+   "objectives.held_at_end": 2.0,
+   "objectives.held_value_at_end": 130.0,
+   "objectives.held_value_steps": 159720.0,
+   "objectives.mean_held": 1.3883333333333334,
+   "replaced_refused": {},
+   "start_positions.ground_units": 6.0,
+   "start_positions.idle_steps_max": 143.0,
+   "start_positions.idle_unit_steps": 362.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 162.0,
+   "withholding.units": 2.0
+  },
+  "1910631192 C3-V2 blue V2": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 6.0,
+   "moves.emitted_ground": 10.0,
+   "moves.kept": 0.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 2.0,
+   "objectives.held_value_at_end": 130.0,
+   "objectives.held_value_steps": 159720.0,
+   "objectives.mean_held": 1.3883333333333334,
+   "replaced_refused": {},
+   "start_positions.ground_units": 6.0,
+   "start_positions.idle_steps_max": 143.0,
+   "start_positions.idle_unit_steps": 362.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "2010131194 C2-T9 red T9": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 2.0,
+   "moves.emitted_ground": 2.0,
+   "moves.kept": 2.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 1.0,
+   "objectives.held_value_at_end": 50.0,
+   "objectives.held_value_steps": 79000.0,
+   "objectives.mean_held": 0.8777777777777778,
+   "replaced_refused": {},
+   "start_positions.ground_units": 2.0,
+   "start_positions.idle_steps_max": 19.0,
+   "start_positions.idle_unit_steps": 38.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "2010131194 C2-V2 red V2": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 2.0,
+   "moves.emitted_ground": 2.0,
+   "moves.kept": 0.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 1.0,
+   "objectives.held_value_at_end": 50.0,
+   "objectives.held_value_steps": 79000.0,
+   "objectives.mean_held": 0.8777777777777778,
+   "replaced_refused": {},
+   "start_positions.ground_units": 2.0,
+   "start_positions.idle_steps_max": 19.0,
+   "start_positions.idle_unit_steps": 38.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "2010131194 C3-T9 blue T9": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 2.0,
+   "moves.emitted_ground": 2.0,
+   "moves.kept": 2.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 1.0,
+   "objectives.held_value_at_end": 50.0,
+   "objectives.held_value_steps": 78950.0,
+   "objectives.mean_held": 0.8772222222222222,
+   "replaced_refused": {},
+   "start_positions.ground_units": 2.0,
+   "start_positions.idle_steps_max": 19.0,
+   "start_positions.idle_unit_steps": 38.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "2010131194 C3-V2 blue V2": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 2.0,
+   "moves.emitted_ground": 2.0,
+   "moves.kept": 0.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 1.0,
+   "objectives.held_value_at_end": 50.0,
+   "objectives.held_value_steps": 78950.0,
+   "objectives.mean_held": 0.8772222222222222,
+   "replaced_refused": {},
+   "start_positions.ground_units": 2.0,
+   "start_positions.idle_steps_max": 19.0,
+   "start_positions.idle_unit_steps": 38.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "2010211129 C2-T9 red T9": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 4.0,
+   "moves.emitted_ground": 7.0,
+   "moves.kept": 7.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 2.0,
+   "objectives.held_value_at_end": 130.0,
+   "objectives.held_value_steps": 172900.0,
+   "objectives.mean_held": 1.4544444444444444,
+   "replaced_refused": {},
+   "start_positions.ground_units": 4.0,
+   "start_positions.idle_steps_max": 143.0,
+   "start_positions.idle_unit_steps": 200.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "2010211129 C2-V2 red V2": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 4.0,
+   "moves.emitted_ground": 7.0,
+   "moves.kept": 0.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 2.0,
+   "objectives.held_value_at_end": 130.0,
+   "objectives.held_value_steps": 172900.0,
+   "objectives.mean_held": 1.4544444444444444,
+   "replaced_refused": {},
+   "start_positions.ground_units": 4.0,
+   "start_positions.idle_steps_max": 143.0,
+   "start_positions.idle_unit_steps": 200.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "2010211129 C3-T9 blue T9": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 4.0,
+   "moves.emitted_ground": 8.0,
+   "moves.kept": 8.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 121.0,
+   "objectives.held_at_end": 2.0,
+   "objectives.held_value_at_end": 130.0,
+   "objectives.held_value_steps": 203920.0,
+   "objectives.mean_held": 1.7661111111111112,
+   "replaced_refused": {},
+   "start_positions.ground_units": 5.0,
+   "start_positions.idle_steps_max": 264.0,
+   "start_positions.idle_unit_steps": 484.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 121.0,
+   "withholding.units": 1.0
+  },
+  "2010211129 C3-V2 blue V2": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 5.0,
+   "moves.emitted_ground": 8.0,
+   "moves.kept": 0.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 2.0,
+   "objectives.held_value_at_end": 130.0,
+   "objectives.held_value_steps": 203920.0,
+   "objectives.mean_held": 1.7661111111111112,
+   "replaced_refused": {},
+   "start_positions.ground_units": 5.0,
+   "start_positions.idle_steps_max": 143.0,
+   "start_positions.idle_unit_steps": 363.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "201033019601 C2-T9 red T9": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 1.0,
+   "moves.emitted_ground": 1.0,
+   "moves.kept": 1.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 1.0,
+   "objectives.held_value_at_end": 80.0,
+   "objectives.held_value_steps": 57600.0,
+   "objectives.mean_held": 0.7200000000000001,
+   "replaced_refused": {},
+   "start_positions.ground_units": 1.0,
+   "start_positions.idle_steps_max": 19.0,
+   "start_positions.idle_unit_steps": 19.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "201033019601 C2-V2 red V2": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 1.0,
+   "moves.emitted_ground": 1.0,
+   "moves.kept": 0.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 1.0,
+   "objectives.held_value_at_end": 80.0,
+   "objectives.held_value_steps": 57600.0,
+   "objectives.mean_held": 0.7200000000000001,
+   "replaced_refused": {},
+   "start_positions.ground_units": 1.0,
+   "start_positions.idle_steps_max": 19.0,
+   "start_positions.idle_unit_steps": 19.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "201033019601 C3-T9 blue T9": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 1.0,
+   "moves.emitted_ground": 1.0,
+   "moves.kept": 1.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 1.0,
+   "objectives.held_value_at_end": 80.0,
+   "objectives.held_value_steps": 51200.0,
+   "objectives.mean_held": 0.64,
+   "replaced_refused": {},
+   "start_positions.ground_units": 1.0,
+   "start_positions.idle_steps_max": 19.0,
+   "start_positions.idle_unit_steps": 19.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "201033019601 C3-V2 blue V2": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 1.0,
+   "moves.emitted_ground": 1.0,
+   "moves.kept": 0.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 1.0,
+   "objectives.held_value_at_end": 80.0,
+   "objectives.held_value_steps": 51200.0,
+   "objectives.mean_held": 0.64,
+   "replaced_refused": {},
+   "start_positions.ground_units": 1.0,
+   "start_positions.idle_steps_max": 19.0,
+   "start_positions.idle_unit_steps": 19.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "2010431153 C2-T9 red T9": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 4.0,
+   "moves.emitted_ground": 7.0,
+   "moves.kept": 7.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 2.0,
+   "objectives.held_value_at_end": 130.0,
+   "objectives.held_value_steps": 175150.0,
+   "objectives.mean_held": 1.4661111111111111,
+   "replaced_refused": {},
+   "start_positions.ground_units": 4.0,
+   "start_positions.idle_steps_max": 143.0,
+   "start_positions.idle_unit_steps": 200.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "2010431153 C2-V2 red V2": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 4.0,
+   "moves.emitted_ground": 7.0,
+   "moves.kept": 0.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 2.0,
+   "objectives.held_value_at_end": 130.0,
+   "objectives.held_value_steps": 175150.0,
+   "objectives.mean_held": 1.4661111111111111,
+   "replaced_refused": {},
+   "start_positions.ground_units": 4.0,
+   "start_positions.idle_steps_max": 143.0,
+   "start_positions.idle_unit_steps": 200.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "2010431153 C3-T9 blue T9": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 4.0,
+   "moves.emitted_ground": 7.0,
+   "moves.kept": 7.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 2.0,
+   "objectives.held_value_at_end": 130.0,
+   "objectives.held_value_steps": 186600.0,
+   "objectives.mean_held": 1.6000000000000003,
+   "replaced_refused": {},
+   "start_positions.ground_units": 6.0,
+   "start_positions.idle_steps_max": 143.0,
+   "start_positions.idle_unit_steps": 362.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  },
+  "2010431153 C3-V2 blue V2": {
+   "games": 3,
+   "losses.lost": 0.0,
+   "max_objective_commitment.max": 4.0,
+   "moves.emitted_ground": 7.0,
+   "moves.kept": 0.0,
+   "moves.redirected": 0.0,
+   "moves.reverted": 0.0,
+   "moves.withheld": 0.0,
+   "objectives.held_at_end": 2.0,
+   "objectives.held_value_at_end": 130.0,
+   "objectives.held_value_steps": 186600.0,
+   "objectives.mean_held": 1.6000000000000003,
+   "replaced_refused": {},
+   "start_positions.ground_units": 6.0,
+   "start_positions.idle_steps_max": 143.0,
+   "start_positions.idle_unit_steps": 362.0,
+   "start_positions.never_departed": 0.0,
+   "start_positions.units_idle_half_play": 0.0,
+   "waiting_in_front_of_full_hex.max": 0.0,
+   "waiting_in_front_of_full_hex.sum": 0.0,
+   "withholding.longest_run_max": 0.0,
+   "withholding.units": 0.0
+  }
+ },
+ "phase": "D",
+ "role": "safety screen",
+ "schema": "miaosuan-t9-confirmation-phase/1",
+ "study_id": "t9-confirmation-1",
+ "systemic": {
+  "failures": [],
+  "known_classes": [
+   "1/404/CantMoveKeptPeople",
+   "2/203/CantControlDiedOperator",
+   "2/516/CantShootToDiedBop",
+   "5/203/CantControlDiedOperator"
+  ],
+  "new_refusal_classes": {},
+  "ok": true,
+  "totals": {
+   "addon_errors": 0,
+   "contract_errors": 0,
+   "gate_rejections": 0,
+   "observer_errors": 0,
+   "replay_mismatches": 0
+  }
+ }
+}
