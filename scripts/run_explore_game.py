@@ -41,6 +41,7 @@ from miaosuan_agent.evaluation import manifest as mf  # noqa: E402
 from miaosuan_agent.evaluation import randomness  # noqa: E402
 from miaosuan_agent.evaluation.game import play  # noqa: E402
 from miaosuan_agent.experiments.t4_artillery import CANDIDATE_ID as T4_ID, ArtilleryAgent  # noqa: E402
+from miaosuan_agent.experiments.t4_artillery_v2 import CANDIDATE_ID as T4B_ID, ArtilleryV2Agent  # noqa: E402
 from miaosuan_agent.experiments.t9_allocation import CANDIDATE_ID as T9_ID, AllocationAgent  # noqa: E402
 
 
@@ -53,7 +54,8 @@ def evaluator() -> Any:
 
 
 REV = evaluator()
-FACTORIES = {**REV.FACTORIES, T4_ID: lambda: ArtilleryAgent(), T9_ID: lambda: AllocationAgent()}
+FACTORIES = {**REV.FACTORIES, T4_ID: lambda: ArtilleryAgent(), T4B_ID: lambda: ArtilleryV2Agent(),
+             T9_ID: lambda: AllocationAgent()}
 
 
 def refuse(message: str) -> int:
