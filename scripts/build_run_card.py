@@ -31,6 +31,7 @@ from miaosuan_agent.evaluation import shoot_experiment as sx  # noqa: E402
 from miaosuan_agent.evaluation.identity import digest_of_files, policy_source_files  # noqa: E402
 from miaosuan_agent.experiments import t4_artillery as t4  # noqa: E402
 from miaosuan_agent.experiments import t4_artillery_v2 as t4b  # noqa: E402
+from miaosuan_agent.experiments import t4_artillery_v3 as t4c  # noqa: E402
 from miaosuan_agent.experiments import t9_allocation as t9  # noqa: E402
 
 V2_SOURCES = rr.candidate_sources() + ("experiments/shoot_reservation.py",)
@@ -42,6 +43,9 @@ CANDIDATES = {
     t4.CANDIDATE_ID: {"label": "T4 indirect artillery fire, version 1", "modules": (ADDON, "experiments/t4_artillery.py")},
     t4b.CANDIDATE_ID: {"label": "T4 indirect artillery fire, version 2",
                        "modules": (ADDON, "experiments/t4_artillery.py", "experiments/t4_artillery_v2.py")},
+    t4c.CANDIDATE_ID: {"label": "T4 indirect artillery fire, version 3",
+                       "modules": (ADDON, "experiments/t4_artillery.py", "experiments/t4_artillery_v2.py",
+                                   "experiments/t4_artillery_v3.py")},
     t9.CANDIDATE_ID: {"label": "T9 capacity-limited objective allocation, version 1",
                       "modules": (ADDON, "experiments/t9_allocation.py")},
 }
@@ -180,6 +184,53 @@ CARDS: Dict[str, Dict[str, Any]] = {
                               "loss pattern lead to a corrected version or to shelving",
         },
     },
+    "s8-t9-v1-rep": {
+        "candidate": t9.CANDIDATE_ID, "workers": 1,
+        "games": [("2130511121", "H1", "t9", V2_ID), ("2130511121", "H2", V2_ID, "t9"),
+                  ("2130511121", "H1", "t9", V2_ID), ("2130511121", "H2", V2_ID, "t9")],
+        "texts": {
+            "version": "t9-capacity-allocation-v1 (unchanged), head-to-head replication in the largest scenario",
+            "mechanism": "as in s8-t9-v1-mechanism and s8-t9-v1-h2h, unchanged",
+            "controls": HISTORICAL_CONTROL + "; 2130511121 is the head-to-head scenario with the least variable control "
+                        "(C1 mirror margin SD 111 over 15 games), where s8-t9-v1-h2h placed the candidate above the "
+                        "control mean in both seats (+0.49 and +2.37 standard deviations)",
+            "configurations": "2130511121: H1 candidate red against baseline-v2 blue and H2 baseline-v2 red against "
+                              "candidate blue, two games each",
+            "safety_checks": COMMON_SAFETY + [
+                "every replaced move passes the project gate with the step's other actions, or reverts to baseline-v2's",
+                "only ground move orders change; shots, occupations, air units and idle units are untouched"],
+            "intended_observations": [
+                "whether the placement above the control repeats in fresh games of the same configurations",
+                "kept, replaced and withheld moves; waiting ground units on both sides; refusals, errors and latency"],
+            "next_step_rule": "the four games plus s8-t9-v1-h2h decide whether T9 is proposed for a confirmatory "
+                              "study; they are not that study and are never pooled into it",
+        },
+    },
+    "s8-t4-v3-check": {
+        "candidate": t4c.CANDIDATE_ID, "workers": 1,
+        "games": [("2130511121", "H1", "t4c", V2_ID), ("2130511121", "H2", V2_ID, "t4c")],
+        "texts": {
+            "version": "t4-artillery-v3, friendly-fire mechanism check",
+            "mechanism": "version 2 (s8-t4-v2-batch) plus one exclusion: no target hex within 4 hexes of any objective; "
+                         "in version 2's games 55 of 58 own-unit judgements came from own units entering a still "
+                         "exploding hex, and every such hex lay within 4 hexes of an objective",
+            "controls": HISTORICAL_CONTROL + "; version 2's games of the same configurations in s8-t4-v2-batch, which "
+                        "judged own units 14 and 15 times",
+            "configurations": "2130511121: H1 candidate red against baseline-v2 blue and H2 baseline-v2 red against "
+                              "candidate blue, one game each",
+            "safety_checks": COMMON_SAFETY + [
+                "the add-on checks every indirect-fire order itself: listed weapon, exact key set, one action per unit",
+                "baseline-v2's actions are emitted first and unchanged",
+                "every indirect-fire judgement on an own unit is reported"],
+            "intended_observations": [
+                "own-unit judgements and own damage from own indirect fire (version 2: 14 and 15 judgements)",
+                "orders per game and damage to enemy units, against version 2's",
+                "candidate margin against the control of the same seat"],
+            "next_step_rule": "if own judgements disappear and orders remain, version 3 is the T4 form for any later "
+                              "batch; if own judgements remain, the exclusion zone is not the mechanism and T4 needs "
+                              "a movement-side guard, which is outside an add-on that leaves baseline-v2's moves alone",
+        },
+    },
 }
 
 
@@ -194,7 +245,7 @@ def policy_source(sources: Tuple[str, ...]) -> Dict[str, Any]:
 
 def game_rows(card_id: str, card: Dict[str, Any]) -> List[Dict[str, Any]]:
     candidate = card["candidate"]
-    short = {"t4": t4.CANDIDATE_ID, "t4b": t4b.CANDIDATE_ID, "t9": t9.CANDIDATE_ID}
+    short = {"t4": t4.CANDIDATE_ID, "t4b": t4b.CANDIDATE_ID, "t4c": t4c.CANDIDATE_ID, "t9": t9.CANDIDATE_ID}
     rows = []
     for k, (sid, condition, red, blue) in enumerate(card["games"], start=1):
         red, blue = short.get(red, red), short.get(blue, blue)
