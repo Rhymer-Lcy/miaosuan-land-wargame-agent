@@ -125,7 +125,7 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
 | T1 | deployment disaggregation: split eligible ground operators during deployment | `SHELVED` (2026-10-02): screen 1 REVISE BEFORE CONFIRMATION ([issue #1](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/1), `docs/SCREEN_DEPLOYMENT_SPLIT.md`); the diagnosed loss is a stacking-limit block that only a play-stage change removes (`docs/T1R_DIAGNOSIS.md`, `docs/T1R_SPEC.md`, gate G6 failed) |
 | T1-r | T1 revised: probe once and stop on code 103, skip splits the stacking limit voids | specified, not implemented; the play-stage remedy it waited for (PS-1) is shelved |
 | PS-1 | capacity-aware movement on `baseline-v2`'s play stage; selected form PS-1B, stalled-movement recovery: stop the deadlocked group that can back off, re-order it after the transition | `SHELVED` (2026-10-02): design study (Sprint 3, `docs/PS1_DESIGN.md`), then the registered engine probe ([issue #2](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/2), `docs/PS1_ENGINE_PROBE.md`): the stop on a waiting unit is deferred indefinitely (E1, E2 refuted, G2 FAIL) and the movement model failed its prospective fidelity test (G3 FAIL); disposition SHELVE |
-| T7-C | concealment of idle stationary units: own ground units that `baseline-v2` leaves idle, stationary and unsuppressed while no enemy is seen are ordered into concealment (`docs/T7_DESIGN.md`, section 14) | `IDEA` (2026-10-03): the registered three-game mechanism probe ([issue #3](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/3), `docs/T7_MECHANISM_PROBE.md`) supports acceptance, the 75-step transition (16 of 16), retained listings, non-interference and the halved observation distance for ground observers; exit by a real move or shot is untested; disposition NEEDS_TARGETED_PROBE |
+| T7-C | concealment of idle stationary units: own ground units that `baseline-v2` leaves idle, stationary and unsuppressed while no enemy is seen are ordered into concealment (`docs/T7_DESIGN.md`, section 14) | `IDEA` (2026-10-03): the registered three-game mechanism probe ([issue #3](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/3), `docs/T7_MECHANISM_PROBE.md`) supports acceptance, the 75-step transition (16 of 16), retained listings, non-interference and the halved observation distance for ground observers; exit by a real move or shot is untested; disposition NEEDS_TARGETED_PROBE. The offline search for a natural E3b configuration (`docs/T7_E3B_SEARCH.md`, 2026-10-03) found no on-policy witness: E3B_CONFIGURATION_UNCERTAIN |
 | T2 to T9 | the other families above (T7's march, charge, stop and lock mechanisms: not selected, `docs/T7_DESIGN.md` 13.5) | `IDEA` |
 
 ## Roadmap
@@ -153,7 +153,12 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
    changed in the deterministic game, and a concealed unit was not seen by ground observers beyond half the distance.
    No game produced a concealed unit that `baseline-v2` later moved or fired, so exit from concealment (E3b) is
    untested; disposition NEEDS_TARGETED_PROBE. No tactical A/B is proposed until that behaviour is observed.
-6. **T9 intent and task allocation**, the largest lever and the hardest to isolate; T4 (the idle artillery) follows
+6. **Done (Sprint 7)**: the offline search for a natural E3b configuration (`docs/T7_E3B_SEARCH.md`), no engine
+   session. In the three genuine full-step `baseline-v2` seats the candidate would order 16 units that `baseline-v2`
+   never commands again, and none of its 198 moves and shots follows 75 idle steps; the only witnesses are off-policy
+   (one tank in an H0 game, stochastic before the trigger). Disposition E3B_CONFIGURATION_UNCERTAIN; no probe is
+   proposed. A deterministic test of the exit mechanism would need a separate, owner-approved diagnostic command.
+7. **T9 intent and task allocation**, the largest lever and the hardest to isolate; T4 (the idle artillery) follows
    by the rubric.
 
 A tactic that earns ADVANCE gets a confirmatory design sized from its screen's noise; one that does not is recorded
