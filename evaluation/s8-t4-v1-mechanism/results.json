@@ -1,0 +1,345 @@
+{
+ "candidate": "t4-artillery-v1",
+ "card_id": "s8-t4-v1-mechanism",
+ "card_sha256": "cb4d3902f938135c452e1387dce297823d423c22a9f068fa45608f331759cc93",
+ "games": [
+  {
+   "addon_changes": {
+    "0:add": 24
+   },
+   "addon_errors": 0,
+   "addon_skips": {
+    "0": {
+     "hex excluded: target near an own ground unit": 810,
+     "hex excluded: target near an own move path": 206,
+     "hex excluded: target under own fire": 2931,
+     "no safe target": 10254
+    }
+   },
+   "blood_last": {
+    "0": 32,
+    "1": 32
+   },
+   "candidate_margin": 81,
+   "candidate_side": "red",
+   "condition": "H1",
+   "control": {
+    "above": 7,
+    "below": 8,
+    "max": 489,
+    "mean": -245,
+    "min": -871,
+    "n": 15,
+    "sd": 566.71,
+    "values": [
+     -871,
+     -871,
+     -871,
+     -751,
+     -735,
+     -731,
+     -679,
+     -627,
+     219,
+     229,
+     235,
+     411,
+     435,
+     443,
+     489
+    ]
+   },
+   "control_condition": "C1",
+   "game_id": "2120531121.H1.s8-t4-v1-mechanism.g01",
+   "indirect": {
+    "blue": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 24,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    },
+    "red": {
+     "damage": {
+      "enemy": 10
+     },
+     "explosion_steps": [
+      [
+       133,
+       1
+      ],
+      [
+       176,
+       2
+      ],
+      [
+       300,
+       20
+      ]
+     ],
+     "feedback_errors": {},
+     "feedback_without_error": 24,
+     "flight_steps": [
+      [
+       149,
+       18
+      ]
+     ],
+     "judgement_results": {
+      "enemy:-1": 3,
+      "enemy:0": 3,
+      "enemy:1": 4,
+      "enemy:2": 3
+     },
+     "judgements_by_align_status": {
+      "0": 7,
+      "1": 2,
+      "2": 4
+     },
+     "order_distances": {
+      "21": 3,
+      "24": 1,
+      "25": 1,
+      "26": 4,
+      "28": 1,
+      "36": 1,
+      "37": 1,
+      "38": 2,
+      "40": 2,
+      "43": 2,
+      "44": 3,
+      "45": 3
+     },
+     "orders": 24,
+     "points_by_statuses": {
+      "0": 6,
+      "0+1": 18,
+      "1": 5
+     }
+    }
+   },
+   "max_objective_commitment": {
+    "0": {
+     "max": 11,
+     "steps_positive": 2880,
+     "sum": 9302
+    },
+    "1": {
+     "max": 14,
+     "steps_positive": 2880,
+     "sum": 20910
+    }
+   },
+   "opponent": {
+    "actions_by_type": {
+     "1": 41,
+     "2": 43,
+     "333": 1,
+     "5": 6
+    },
+    "feedback_errors_by_code_and_type": {},
+    "policy": "baseline-v2-candidate-shoot-target-reservation"
+   },
+   "scenario_id": "2120531121",
+   "scores": {
+    "blue_total": 485,
+    "red_attack": 336,
+    "red_occupy": 180,
+    "red_remain": 50,
+    "red_remain_max": 334,
+    "red_total": 566,
+    "red_win": 81
+   },
+   "seat": {
+    "actions_by_type": {
+     "1": 48,
+     "2": 30,
+     "333": 1,
+     "5": 6,
+     "8": 24
+    },
+    "contract_errors": 0,
+    "feedback_errors_by_code_and_type": {},
+    "gate_rejections": {},
+    "latency": {
+     "max_ms": 32.998,
+     "median_ms": 0.636,
+     "p99_ms": 1.588
+    },
+    "replay_checks": 29,
+    "replay_mismatches": 0
+   },
+   "session": "2465",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "waiting_ground_units": {
+    "0": {
+     "max": 3,
+     "steps_positive": 199,
+     "sum": 289
+    },
+    "1": {
+     "max": 3,
+     "steps_positive": 191,
+     "sum": 206
+    }
+   },
+   "wall_seconds": 63.7
+  },
+  {
+   "addon_changes": {
+    "0:add": 1
+   },
+   "addon_errors": 0,
+   "addon_skips": {
+    "0": {
+     "hex excluded: target under own fire": 75,
+     "no safe target": 16980
+    }
+   },
+   "blood_last": {
+    "0": 68,
+    "1": 71
+   },
+   "candidate_margin": 274,
+   "candidate_side": "red",
+   "condition": "C2",
+   "control": {
+    "above": 0,
+    "below": 1,
+    "max": 274,
+    "mean": 272.93,
+    "min": 258,
+    "n": 15,
+    "sd": 3.99,
+    "values": [
+     258,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274
+    ]
+   },
+   "control_condition": "C2",
+   "game_id": "1930331196.C2.s8-t4-v1-mechanism.g02",
+   "indirect": {
+    "blue": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 1,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    },
+    "red": {
+     "damage": {},
+     "explosion_steps": [
+      [
+       300,
+       1
+      ]
+     ],
+     "feedback_errors": {},
+     "feedback_without_error": 1,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {
+      "47": 1
+     },
+     "orders": 1,
+     "points_by_statuses": {
+      "0": 1,
+      "1": 1
+     }
+    }
+   },
+   "max_objective_commitment": {
+    "0": {
+     "max": 11,
+     "steps_positive": 2880,
+     "sum": 22288
+    },
+    "1": {
+     "max": 0,
+     "steps_positive": 0,
+     "sum": 0
+    }
+   },
+   "opponent": {
+    "actions_by_type": {
+     "333": 1
+    },
+    "feedback_errors_by_code_and_type": {},
+    "policy": "inert-v0"
+   },
+   "scenario_id": "1930331196",
+   "scores": {
+    "blue_total": 383,
+    "red_attack": 24,
+    "red_occupy": 310,
+    "red_remain": 323,
+    "red_remain_max": 323,
+    "red_total": 657,
+    "red_win": 274
+   },
+   "seat": {
+    "actions_by_type": {
+     "1": 47,
+     "2": 1,
+     "333": 1,
+     "5": 5,
+     "8": 1
+    },
+    "contract_errors": 0,
+    "feedback_errors_by_code_and_type": {},
+    "gate_rejections": {},
+    "latency": {
+     "max_ms": 52.441,
+     "median_ms": 0.884,
+     "p99_ms": 1.124
+    },
+    "replay_checks": 29,
+    "replay_mismatches": 0
+   },
+   "session": "2466",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "waiting_ground_units": {
+    "0": {
+     "max": 4,
+     "steps_positive": 1965,
+     "sum": 5852
+    },
+    "1": {
+     "max": 0,
+     "steps_positive": 0,
+     "sum": 0
+    }
+   },
+   "wall_seconds": 107.1
+  }
+ ],
+ "note": "exploratory, directional and game-level; not a test of superiority",
+ "schema": "miaosuan-exploratory-results/1",
+ "track": "EXPLORATORY"
+}
