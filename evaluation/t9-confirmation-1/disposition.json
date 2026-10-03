@@ -1,0 +1,71 @@
+{
+ "eligible_for_promotion": false,
+ "flags": {
+  "B": {
+   "idle": [],
+   "latency": [],
+   "objectives": [
+    "2120531121 C3"
+   ]
+  }
+ },
+ "generality": {
+  "configurations": 6,
+  "estimate_above_0": 2,
+  "interval_above_0": 2,
+  "interval_below_0": 2,
+  "rows": {
+   "B 1930331196 C2": [
+    -46.93333333333334,
+    -48.26370040418629,
+    Infinity
+   ],
+   "B 1930331196 C3": [
+    -111.19999999999999,
+    -130.09704927569786,
+    -90.91815255324079
+   ],
+   "B 2120531121 C2": [
+    153.06666666666666,
+    130.7787016099702,
+    177.13596329595788
+   ],
+   "B 2120531121 C3": [
+    -68.66666666666663,
+    -75.25462140440574,
+    -57.30429683129064
+   ],
+   "B 2130511121 C2": [
+    118.39999999999998,
+    87.80402841539461,
+    147.6575197517902
+   ],
+   "B 2130511121 C3": [
+    -32.933333333333394,
+    -63.61244566810599,
+    0.682114525042735
+   ]
+  }
+ },
+ "label": "PRIMARY_SUPPORTED_NEEDS_REVISION",
+ "note": "a supported primary result holds for scenario 2130511121 head to head against baseline-v2 only; generality, mechanism and safety beyond the registered gates are descriptive; no baseline is promoted by this study",
+ "phase_files_sha256": {
+  "A": "60782d72d74fac6a72113e3959e3df97dfb1b2f3f2b39ac26945f2015955ebb8",
+  "B": "faad75f4710617e5fa8527d1c20a44c451ba23889ef7914f1e9d1e01c4594a19",
+  "D": "afac8c3a9275faf3e4097c391bad394e62fb079e8be484d18e69cf296446b0c9"
+ },
+ "phases_reached": [
+  "A",
+  "D",
+  "B"
+ ],
+ "primary": "SUPPORTED",
+ "safety": {
+  "A": "CLEAN",
+  "B": "ADVERSE_SIGNAL",
+  "C": "NOT_REACHED",
+  "D": "CLEAN"
+ },
+ "schema": "miaosuan-t9-confirmation-disposition/1",
+ "study_id": "t9-confirmation-1"
+}
