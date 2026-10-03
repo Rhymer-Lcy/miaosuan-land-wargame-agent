@@ -249,3 +249,147 @@ and listing, acceptance, the divergence analysis, and three separated sections: 
 replay decisions, hypothetical consequences); `crosscheck.json`; `decision.json` (the decision rule's inputs and
 result); `mutation.json`. Private (`local/diagnostics/e3b/`):
 the same with unit identifiers and hexes. No observation, unit identifier, hex or SDK content is published.
+
+## 12. Execution (written after the search)
+
+* Sections 1 to 11, the episode rules, their tests, the search driver, the cross-check, the mutation test and its
+  results, `inputs.json` and `validation.json` were pushed as `26f1bd9` (tree `b107c7f0fc05015bd230ccb9da53ea173352a54e`)
+  at 2026-10-03T13:58:51+08:00 and the protocol was fetched back anonymously from the public remote byte-identical.
+  Before the push: the full public suite on a clean clone of the committed tree passed (1,112 tests, 57 skipped), the
+  commit audit passed for the 10 commits, and the privacy scan gave 74 hits, the adjudicated Sprint 6 list unchanged.
+* Disclosure: the input freeze and the known-answer validation ran on the evaluation server before the push; the
+  validation reads only the three excluded candidate seats. Three planted defects (an episode's `d` changed from 1 to
+  2, one replay order dropped, one disturbance reason relabelled) each turned its PASSED into FAILED.
+* The search ran once on the server at `26f1bd9` with a clean tracked tree; every input matched `inputs.json`, no
+  population stopped, the two trigger implementations agreed on every order of every dataset, and no rule or code
+  changed after it started. No engine session was opened.
+* Mutation testing (`mutation.json`): 49 of 50 mutants of the episode rules, the evidence functions, the feasibility
+  conditions, the ranking and the decision rule are killed; the survivor is equivalent (a `CE` episode ends at the
+  last decision, so the explicit "no successor after `CE`" clause is also enforced by the end-decision boundary).
+
+## 13. Known-answer validation (`validation.json`)
+
+On the excluded candidate seats the candidate replay and the pool predicate both reproduce the 16 recorded concealment
+orders to 16 units (P-A 4, P-B1 6, P-B2 6, decision and unit); the recorded candidate decisions are re-decided with
+the same actions and traces at all 1,801, 2,881 and 2,881 decisions; and each of the 16 episodes is `DT` with reason
+"transition" at `d` = 1, with no other class and no conditional episode. The machinery therefore detects a real
+concealment transition at the step Sprint 6 observed it.
+
+## 14. Results by dataset (`search.json`, `crosscheck.json`)
+
+| Dataset | Decisions re-decided equal (actions; traces) | Candidate orders (units) | Episodes and classes | `W` | D1 | D2 |
+|---|---|---|---|---|---|---|
+| A-b | 1,800 of 1,800; 1,800 | 60 (4) | 4: `CE` after the transition | 0 | 4 | 0 |
+| A-pb1 | 2,881 of 2,881; 2,881 | 6 (6) | 6: `CE` after the transition | 0 | 6 | 0 |
+| A-pb2 | 2,881 of 2,881; 2,881 | 6 (6) | 6: `CE` after the transition | 0 | 6 | 0 |
+| B-c | 1,801 of 1,802; 1,802 | 0 (0) | none | 0 | 0 | 0 |
+| B-p2 | 2,882 of 2,882; 2,882 | 429 (16) | 16: 15 `CE` after, 1 `CE` during the transition | 0 | 15 | 0 |
+| B-r516 | 448 of 448 snapshots | trigger at snapshots | 406: `CE` after the transition | 0 | not computed | not computed |
+| B-smoke | 83 of 83 snapshots | trigger at snapshots | 28: `CE` after the transition | 0 | not computed | not computed |
+| C-h0 | `baseline-v0` exact at 33,696 of 33,696; `baseline-v2` explained at all | 234 | 49 unconditional: 47 `CE` after, 1 `DT` after the transition, 1 `W`; 4 conditional: 2 `CE` during, 1 `DT` after the transition, 1 `W` | 2 | 47 | 2 |
+
+* No `TI` or `OA` episode occurred in any dataset, and no episode of a full capture or of C-h0 carried a snapshot gap
+  or a missing field (sparse episodes are gaps by construction).
+* In every full capture the candidate's baseline part equals the recorded play decision at every play decision, the
+  candidate recorded no t7 error, and the pool predicate finds the same orders. B-c's one differing decision is
+  decision 1, a deployment decision whose trace digest is equal: its recorded actions carry type 14, the engine's
+  in-place rewrite of the split action that Sprint 1 documented.
+* The ordered units of the genuine `baseline-v2` seats: in A-b 2 tanks and 2 infantry fighting vehicles, first
+  ordered at `cur_step` 716 and 735 (Sprint 6's premise); in A-pb1 and A-pb2 6 artillery units each, first ordered at
+  `cur_step` 0. `baseline-v2` gave none of the 16 any action until the end of its game.
+* In both D2 runs of C-h0 the first trigger refusal in the run is "an enemy is seen".
+* The independent cross-check agrees on every dataset's classes and `W` categories (`decision.json`:
+  `crosscheck_agrees`); planting a one-count difference in its counts, a changed category or a missing dataset turned
+  the decision into `BLOCKED` each time.
+
+**Witnesses by category: A 0, B 0, C 2** (1 unconditional, 1 conditional), both in the same unit.
+
+## 15. The two H0 leads
+
+| Lead | Scenario, unit | Sprint 5 label | Reconstructed `baseline-v2` there | Class under section 4 |
+|---|---|---|---|---|
+| 1 | 2010431153, infantry fighting vehicle, first order at decision 532 | fired at decision 1009 (`d` 477) by a recorded `baseline-v0` shot | no action for the unit | `DT` after the transition at `d` 478 (reason "fired": the recorded `baseline-v0` shot); not a `baseline-v2` command |
+| 2 | 2010431153, tank, first order at decision 598 | fired at decision 1009 (`d` 411) by a recorded `baseline-v0` shot | the same direct-fire shot (action 2) | `W`, `d` 411: the unconditional category-C witness |
+
+So of Sprint 5's two leads, one is a genuine reconstructed `baseline-v2` direct-fire command after a sufficient idle
+interval, and the other was `baseline-v0`'s alone. Neither involved a move.
+
+## 16. The strongest configuration and its limits (`certificates.json`)
+
+**Observed historical facts.** H0 game of scenario 2010431153, condition C1, blue seat, both seats `baseline-v0`: a
+tank stood idle and stationary from decision 598 (`cur_step` 597) without being disturbed until decision 1009
+(`cur_step` 1008), where the recorded `baseline-v0` fired it at an enemy unit; the recorded trajectory shows the shot
+executed. The corpus holds no feedback and no all-seeing state.
+
+**Offline replay decisions.** The frozen candidate, replayed on the blue seat's recorded observations, orders the tank
+into concealment first at decision 598; the reconstructed `baseline-v2` gives it no action until decision 1009, where
+it issues the same direct-fire shot (interval 411). After that shot the candidate orders the tank again at decision
+1153 and the reconstructed `baseline-v2` fires it again at decision 1522 (interval 369): the conditional witness, which
+presupposes that the first shot ended concealment. One other unit of the seat (lead 1) was first ordered before
+decision 598; the opposing seat did not list it before `cur_step` 597.
+
+**Hypothetical consequences.** In a game with the candidate the tank would be concealed from `cur_step` 672 if the
+transition behaves as in Sprint 6. Whether the opposing units would still approach and be seen, whether
+`baseline-v2` would then list and choose the same shot, and whether the shot would be accepted and end concealment
+without delay are not shown by these records.
+
+**Why it is not a probe configuration (POST HOC facts, `posthoc.json`).** It fails F1 (off-policy; no feedback or
+all-seeing state), and F2 could not hold even on-policy: the game's first judge record is at `cur_step` 141, before the
+first order at 597, so the configuration is stochastic before the trigger. Replayed on the same states, `baseline-v2`
+differs from the recorded `baseline-v0` at 7 play decisions of the blue seat (the first at decision 532, one before
+the witness's first order, none between that order and its command) and at 1 of the red seat (decision 476). A game in
+which `baseline-v2` or the candidate plays blue therefore leaves the recorded trajectory before the trigger.
+
+## 17. Instrument control (POST HOC, `posthoc.json`)
+
+Every `baseline-v2` move or shot to an own ground unit in the full captures, with the undisturbed idle run immediately
+before it:
+
+| Dataset | Commands (moves, shots) | Stationary at the command | Longest idle run before a command | After a run of at least 75 |
+|---|---|---|---|---|
+| A-b | 10 (10, 0) | 6 | 0 | 0 |
+| A-pb1 | 152 (43, 109) | 31 | 73 | 0 |
+| A-pb2 | 36 (28, 8) | 12 | 0 | 0 |
+| B-c | 18 (18, 0) | 14 | 0 | 0 |
+| B-p2 | 64 (64, 0) | 24 | 0 | 0 |
+
+The rows contain `baseline-v2`'s commands, so D2 = 0 is a measured absence. In the three genuine `baseline-v2` seats
+(7,562 decisions) `baseline-v2` gave its ground units 198 moves and shots, and none followed an idle run of 75 steps;
+the longest was 73. The units it leaves idle that long are ones it no longer commands: the game-b vehicles that had
+finished their tasks, and artillery, which it cannot move and never uses for indirect fire.
+
+## 18. Disposition
+
+**`E3B_CONFIGURATION_UNCERTAIN`** (`decision.json`): no category-A or category-B witness exists in the eligible
+datasets; the strongest configuration is category C, a `baseline-v0` trajectory on which the reconstructed
+`baseline-v2` fires a tank 411 steps after the candidate would have ordered it into concealment. Missing evidence of
+that configuration: an on-policy execution (`baseline-v2` never generated the trajectory and departs from it before
+the trigger), engine feedback and the all-seeing state, and deterministic reachability (the game is stochastic from
+`cur_step` 141). No probe proposal is drafted: section 9 allows one only under `E3B_CONFIGURATION_IDENTIFIED`.
+
+## 19. Smallest remaining evidence gap
+
+* In every genuine `baseline-v2` record the sequence concealment-eligible, idle for 75 steps, then commanded did not
+  occur: 0 of 16 episodes and 0 of 198 commands. Within these records the event needs an opponent that later
+  approaches an idle vehicle; it appeared only off-policy, in one stochastic game.
+* The engine behaviour E3b names, the acceptance and execution of a move or direct-fire command issued to a concealed
+  unit and the end of concealment without delay, does not depend on which policy issues the command; what the records
+  cannot supply is a natural, reproducible occasion on which `baseline-v2` issues it.
+* A natural route would be a full-step capture of unchanged `baseline-v2` against an active opponent in 2010431153,
+  searched with this frozen machinery. Its configurations would be stochastic before the trigger (F2 fails there as it
+  does in the H0 game), and the chance of the event recurring is unknown from one off-policy game.
+* A deterministic route needs a separate, owner-approved diagnostic-policy experiment: in the P-A configuration, whose
+  prefix to the concealment Sprint 6 reproduced exactly, a pre-registered diagnostic command (a move or shot) to one
+  concealed vehicle after its transition completes. That would test the engine mechanism, not `baseline-v2`'s natural
+  behaviour, and would need its own E3b definition, since the registered one requires a `baseline-v2` command. Neither
+  route is started here.
+
+## 20. Limits
+
+* The eligible on-policy evidence is three seats of three games, two configurations; the B and C datasets add one
+  split-candidate game with an inert opponent per scenario, 40 sparse games and 8 off-policy games.
+* Episodes are evaluated on trajectories without concealment; every class says what the recorded game did, not what a
+  game with the candidate would do.
+* Disturbance is defined conservatively (any judge record naming the unit, any change of its watched fields), which
+  can only remove witnesses; enemy presence between sparse snapshots is not observed.
+* E4b and E5 are not addressed; no `TI` episode, the E5 case, occurred either.
