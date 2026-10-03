@@ -117,6 +117,34 @@ CARDS: Dict[str, Dict[str, Any]] = {
                               "baseline-v2, both seats",
         },
     },
+    "s8-t9-v1-h2h": {
+        "candidate": t9.CANDIDATE_ID, "workers": 1,
+        "games": [("2120531121", "H1", "t9", V2_ID), ("2120531121", "H2", V2_ID, "t9"),
+                  ("1930331196", "H1", "t9", V2_ID), ("1930331196", "H2", V2_ID, "t9"),
+                  ("2130511121", "H1", "t9", V2_ID), ("2130511121", "H2", V2_ID, "t9")],
+        "texts": {
+            "version": "t9-capacity-allocation-v1 (unchanged), head-to-head batch 1",
+            "mechanism": "as in s8-t9-v1-mechanism: ground moves kept while the destination has fewer than 4 "
+                         "commitments, otherwise re-assigned within twice the cost by cost per value, or withheld",
+            "controls": HISTORICAL_CONTROL + "; the mechanism batch placed the candidate above all 15 control games "
+                        "against the inert control in both scenarios it played (s8-t9-v1-mechanism)",
+            "configurations": "the three large scenarios (5, 5 and 7 objectives, where baseline-v2 commits up to 17 "
+                              "ground units to one objective): H1 candidate red against baseline-v2 blue and H2 "
+                              "baseline-v2 red against candidate blue, one game each",
+            "safety_checks": COMMON_SAFETY + [
+                "every replaced move passes the project gate with the step's other actions, or reverts to baseline-v2's",
+                "only ground move orders change; shots, occupations, air units and idle units are untouched"],
+            "intended_observations": [
+                "candidate margin per game against the C1 mirror control of the same seat (directional only: the "
+                "control's standard deviation is 111 to 567 points)",
+                "occupation and attack score components, losses (remain), objectives held at the end",
+                "kept, replaced and withheld moves; waiting ground units; refusals, errors and latency"],
+            "next_step_rule": "if the candidate is at or above the control mean in most games without a new failure "
+                              "class it is the leading candidate for a confirmatory study; a clear loss pattern "
+                              "against active opponents (for example withheld units never committed while objectives "
+                              "are lost) is diagnosed from the captures and answered by a new version",
+        },
+    },
 }
 
 
