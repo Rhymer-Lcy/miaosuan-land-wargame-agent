@@ -75,6 +75,28 @@ class CardTest(unittest.TestCase):
                 self.assertTrue(card[field], f"{card_id}: {field}")
             self.assertEqual(len(xp.scheduled_games(card)), len(card["games"]))
 
+    def test_results_files_belong_to_their_cards(self) -> None:
+        checked = 0
+        for card_id in self.builder.CARDS:
+            path = ROOT / "evaluation" / card_id / "results.json"
+            if not path.exists():
+                continue
+            card = json.loads((ROOT / "evaluation" / card_id / "manifest.json").read_text(encoding="utf-8"))
+            result = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual(result["card_sha256"], xp.digest(card), card_id)
+            self.assertEqual((result["card_id"], result["track"], result["candidate"]),
+                             (card_id, "EXPLORATORY", card["candidate"]))
+            self.assertEqual([g["game_id"] for g in result["games"]], [g["game_id"] for g in card["games"]])
+            for game in result["games"]:
+                self.assertEqual(game["status"], "COMPLETED", game["game_id"])
+                self.assertEqual(game["control"]["n"], 15, game["game_id"])
+                side = game["candidate_side"]
+                self.assertEqual(side, "red" if next(g for g in card["games"]
+                                                     if g["game_id"] == game["game_id"])["red"] == card["candidate"]
+                                 else "blue")
+            checked += 1
+        self.assertGreaterEqual(checked, 6)
+
     def test_build_rejects_inconsistent_input(self) -> None:
         shoot = json.loads((ROOT / "evaluation" / "baseline-v2-candidate-shoot-target-reservation" /
                             "manifest.json").read_text(encoding="utf-8"))
