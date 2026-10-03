@@ -1,0 +1,316 @@
+{
+ "killed": 49,
+ "mutations": [
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "75-step boundary off by one",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "indirect fire counted as a shot",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "only moves counted",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "completion boundary off by one",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "damage ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "movement ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "a move path ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "stop ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "suppression ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "boarding ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "forced stop ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "timers ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "only the first timer read",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "enemy in the hex ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "firing ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "being attacked ignored",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "a missing unit read as missing evidence",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "missing fields read as disturbance",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "snapshot gaps not recorded",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "the command checked before the state",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "order decision may carry a baseline action",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "conditional episodes not opened",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": false,
+   "mutation": "a CE episode admits a successor",
+   "reason_if_surviving": "equivalent: a CE episode ends at the last decision of the game, so every later order already fails the k <= boundary test; the explicit clause documents it"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "orders inside an episode open new ones",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "conditional flag lost",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "idle runs ignore orders",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "idle runs of 74 steps admitted",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "idle runs cross gaps",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "idle runs include non-ground units",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "acceptance with several echoes",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "an error code accepted",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "echo ignores the path",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "echo ignores the serialisation",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "shot executed without a judge record",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "move executed without entering",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "shot listing ignores the weapon",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "rows include units only listed",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "F2 accepts conditional episodes",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "F2 ignores the first shot",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "F2 shot boundary inclusive",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "F2 ignores the opponent's view",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "F3 ignores execution",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "F1 accepts category B",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "rank ignores determinism",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "rank ignores earlier activations",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "rank prefers the longer slack",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "decision ignores the cross-check",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "uncertain needs category A",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "TI episodes count as witnesses",
+   "reason_if_surviving": null
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t7_e3b.py",
+   "killed": true,
+   "mutation": "long wait limit inclusive",
+   "reason_if_surviving": null
+  }
+ ],
+ "schema": "miaosuan-t7-e3b-mutation/1",
+ "sources_sha256": {
+  "src/miaosuan_agent/evaluation/t7_e3b.py": "87e131f3cbf5cb58d08d732156d898c9a0568ca216e188cce3649405fb662549"
+ },
+ "tests": [
+  "tests.test_t7_e3b"
+ ],
+ "tests_sha256": {
+  "tests/test_t7_e3b.py": "2235ddfb882fa4a659f3adef605755b8f4198170bf6782b42959a41b8e9d1399"
+ },
+ "total": 50
+}
