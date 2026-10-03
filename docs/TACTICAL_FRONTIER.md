@@ -131,7 +131,7 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
 | PS-1 | capacity-aware movement on `baseline-v2`'s play stage; selected form PS-1B, stalled-movement recovery: stop the deadlocked group that can back off, re-order it after the transition | `SHELVED` (2026-10-02): design study (Sprint 3, `docs/PS1_DESIGN.md`), then the registered engine probe ([issue #2](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/2), `docs/PS1_ENGINE_PROBE.md`): the stop on a waiting unit is deferred indefinitely (E1, E2 refuted, G2 FAIL) and the movement model failed its prospective fidelity test (G3 FAIL); disposition SHELVE |
 | T7-C | concealment of idle stationary units: own ground units that `baseline-v2` leaves idle, stationary and unsuppressed while no enemy is seen are ordered into concealment (`docs/T7_DESIGN.md`, section 14) | `IDEA` (2026-10-03): the registered three-game mechanism probe ([issue #3](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/3), `docs/T7_MECHANISM_PROBE.md`) supports acceptance, the 75-step transition (16 of 16), retained listings, non-interference and the halved observation distance for ground observers; exit by a real move or shot is untested; disposition NEEDS_TARGETED_PROBE. The offline search for a natural E3b configuration (`docs/T7_E3B_SEARCH.md`, 2026-10-03) found no on-policy witness: E3B_CONFIGURATION_UNCERTAIN |
 | T4 | indirect artillery fire for the artillery `baseline-v2` leaves idle | `SHELVED` (2026-10-03): three exploratory versions in 11 games (`docs/SPRINT8_EXPLORATION.md`); every order executed, but version 2's damage came with friendly fire (own units entering exploding hexes near objectives) and version 3, which avoids it, sat at the control mean |
-| T9 | capacity-limited objective allocation: at most 4 ground units committed per objective, the rest re-assigned or held | `EXPLORATORY` (2026-10-03): above the historical `baseline-v2` control in 10 of 12 exploratory games, consistently in the largest scenario (`docs/SPRINT8_EXPLORATION.md`); proposed for a registered confirmatory study (`docs/T9_CONFIRMATION_PROPOSAL.md`, awaiting the owner's approval) |
+| T9 | capacity-limited objective allocation: at most 4 ground units committed per objective, the rest re-assigned or held | `NEEDS_REVISION` (2026-10-03): the registered staged confirmatory study ([issue #4](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/4), `docs/T9_CONFIRMATION.md`, 285 sessions) supported the primary head-to-head improvement in 2130511121 (+305.47, interval 172.87 to 611.24); against the inert control it lost as blue in 2120531121 and 1930331196 beyond the registered threshold, so the study stopped before its last phase; disposition PRIMARY_SUPPORTED_NEEDS_REVISION, nothing promoted |
 | T2, T3, T5, T6, T8 | the other families above (T7's march, charge, stop and lock mechanisms: not selected, `docs/T7_DESIGN.md` 13.5) | `IDEA` |
 
 ## Roadmap
@@ -168,7 +168,14 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
    engine sessions. T4 indirect fire works mechanically but its versions either damaged own units or gained nothing;
    shelved. T9 capacity-limited allocation was above the historical `baseline-v2` control in 10 of 12 games and in all
    6 head-to-head games of the largest scenario.
-8. **Next**: the registered confirmatory study of T9 (`docs/T9_CONFIRMATION_PROPOSAL.md`), after the owner's approval.
+8. **Done (Sprint 9)**: the registered, staged confirmatory study of T9 (`docs/T9_CONFIRMATION.md`), 285 engine
+   sessions. The primary head-to-head improvement in 2130511121 was supported, and the small-scenario safety screen
+   showed identical margins. Against the inert control in the large scenarios the candidate gained as red in two
+   scenarios but lost as blue in two beyond the registered threshold (one objective missed under long withholding,
+   less fire on the inert side), so the study stopped before its head-to-head phase in the other scenarios.
+   Disposition PRIMARY_SUPPORTED_NEEDS_REVISION; nothing promoted.
+9. **Next**: an exploratory diagnosis of the two adverse configurations (2120531121 C3 and 1930331196 C3, nearly
+   deterministic against the inert control) before any revised T9 candidate.
 
 A tactic that earns ADVANCE gets a confirmatory design sized from its screen's noise; one that does not is recorded
 with its disposition and left. Platform evidence runs alongside: the canary first, then each candidate that a local
