@@ -1,6 +1,8 @@
 # T9 confirmatory study: staged, registered (`t9-confirmation-1`)
 
-Status: REGISTERED before the first engine session of the study. CONFIRMATORY track (`docs/EXPLORATORY_TRACK.md`);
+Status: REGISTERED before the first engine session of the study (public issue #4); phases A, D and B ran (285
+sessions), phase B's gate stopped the study before phase C. Disposition PRIMARY_SUPPORTED_NEEDS_REVISION (see
+"Disposition and next step" under Results). CONFIRMATORY track (`docs/EXPLORATORY_TRACK.md`);
 not eligible for baseline promotion. Dates are business dates in UTC+8. The registration is
 `evaluation/t9-confirmation-1/manifest.json` (canonical SHA-256 `28324b3a6742f8fe8b4a7938b03f0077e894be701ce06527543cf81df043981c`, design digest
 `028ebf57a55e8ad00624f66de449b164fa4b44ca45c9f520ba65e4217ad15576`), built by `scripts/build_t9_confirmation_manifest.py` from committed inputs; where this text and
@@ -291,4 +293,195 @@ run only after the previous phase's file is committed and permits it.
 
 ## Results
 
-(Appended phase by phase after each gate.)
+Every figure below comes from the committed phase files (`evaluation/t9-confirmation-1/phase-X.json`), which
+`scripts/t9_confirmation_analysis.py phase --phase X --check` regenerates byte for byte from the private records,
+captures and ledger. Margins are engine score points.
+
+### Registration and execution
+
+* The registration (`48861fa`) was pushed, and public issue #4 was created at 2026-10-03T22:09:19+08:00. It was
+  fetched without authentication at 22:09:32+08:00 with a byte-identical body (12,880 bytes, SHA-256
+  `bd98685185a65618fd0f4811ca916719fdd07e3cddc386753b1b8590453cd98b`; `registration-verification.json`).
+* The first session of the study opened about one minute later, from harness commit `e4ac08c`, which adds only
+  the issue record to the registration. The time is corrected for the host clock's recorded offset
+  (`docs/ENGINE_INSTALL.md`).
+* Before the first session, the real game entry point was also run on the server with the registered manifest and
+  staged inputs against the PS-1 stand-in, with the session API replaced in-process: no engine, no ledger record.
+  It played three phase-A games, wrote records and captures that passed the cross-checks, and refused a phase-D
+  game for want of a committed gate.
+
+### Phase A (primary)
+
+* All 45 games completed, in sessions 2488 to 2532, with 32 workers. Each game took 114.6 to 163.6 s.
+* Integrity held: the ledger audit, every record's identities, both capture digests and the cross-checks. Every
+  margin equalled the engine's `<side>_win`.
+* No systemic failure: contract errors, project-gate rejections, replay mismatches, add-on errors and observer
+  errors were all 0, and no new refusal class appeared.
+
+Margins by game, in schedule order:
+
+| Cell | Margins (H1 and C1: red; H2: blue) |
+|---|---|
+| H1 | -1,003, -963, -597, -361, -827, 1,035, -967, -871, -737, -393, -755, -743, -721, -133, 709 |
+| H2 | 1,283, 973, 1,045, 1,081, 1,101, 1,061, 865, 1,391, 1,105, 1,033, 1,055, 1,435, 899, 953, 1,211 |
+| C1 | -919, -817, -1,021, -971, -1,163, -569, -661, -1,195, -1,079, -365, -217, -917, -709, -1,003, -1,191 |
+
+| Estimand | Estimate | 95% interval (registered) | Percentile | Welch |
+|---|---|---|---|---|
+| Delta, seat average (primary) | 305.47 | 172.87 to 611.24 | 168.60 to 467.73 | 133.43 to 477.50 |
+| Red: H1 minus C1 | 364.67 | 65.60 to 881.46 | 56.80 to 709.60 | 1.37 to 727.96 |
+| Blue: H2 minus C1 | 246.27 | 84.67 to 456.59 | 88.13 to 417.07 | 64.05 to 428.48 |
+
+* Strata. H1 red mean -488.47 (SD 606.51), H2 blue mean 1,099.40 (SD 166.37), C1 red mean -853.13 (SD 296.85).
+  The value c = (red + blue) / 2 was 0 in all 15 C1 games, as the convention implies.
+* **Primary: SUPPORTED.** The registered interval's lower limit, 172.87, is above 0, so gate A says CONTINUE. Both
+  sensitivity intervals also lie above 0.
+* Two of the 15 H1 games were won by the candidate as red (1,035 and 709), a side that lost every C1 game. They
+  make the H1 spread large and the registered interval asymmetric.
+* The fresh C1 games varied more than the historical ones (SD 296.85 against 114.66); their mean, -853.13, is close
+  to the historical -869.93.
+
+Mechanism (descriptive; means per game):
+
+| Seat | Ground moves emitted | Kept / re-assigned / withheld | Withheld units (longest run) | Largest commitment | Waiting unit-steps | Objectives held at the end (value) | Units lost |
+|---|---|---|---|---|---|---|---|
+| candidate red (H1) | 47.33 | 22.33 / 25.00 / 758.33 | 6.60 (91.07) | 4.00 | 190.00 | 1.27 (75.33) | 29.80 |
+| `baseline-v2` red (C1) | 62.87 | - | - | 16.00 | 754.87 | 0.33 (16.67) | 32.73 |
+| candidate blue (H2) | 38.93 | 7.80 / 31.13 / 14,803.93 | 20.27 (1,236.00) | 4.00 | 0.40 | 7.00 (440.00) | 10.20 |
+| `baseline-v2` blue (C1) | 85.53 | - | - | 17.00 | 13,994.60 | 6.67 (423.33) | 15.00 |
+
+* Re-assigned moves: none reverted, none refused by the engine.
+* Start positions: in every game of every arm the same ground units left their start hexes at the same steps
+  (25 of 31 red, 26 of 32 blue); 6 per side never moved under either policy. The candidate never withheld a unit
+  at its start position in this scenario. Its withholding, about 20 units per game as blue for runs of up to
+  1,236 consecutive decisions, fell on units that had already left.
+* A reading of these counts, descriptive only: the candidate removed the queues in front of full objective hexes
+  almost entirely (waiting unit-steps 0.40 against 13,994.60 as blue; 190.00 against 754.87 as red). It held more
+  objectives at the end (1.27 against 0.33 as red; 7.00 against 6.67 as blue) and lost fewer units. This study
+  cannot separate fewer deadlocks from a different spread over objectives.
+* Refusals: the candidate 7 code-516 shots (as blue); `baseline-v2` 6 code-516 and 4 code-203 shots, all known
+  classes.
+* Latency: the candidate's largest per-game p99 was 3.421 ms and its maximum 961.5 ms; `baseline-v2`'s were
+  2.069 ms and 311.2 ms. No decision exceeded 1 s, and no flag was raised.
+
+### Phase D (safety screen)
+
+* All 60 games completed, in sessions 2533 to 2592. Integrity held, there was no systemic failure, and no flag was
+  raised. The gate says CONTINUE.
+* In all ten configurations both arms gave the same margin in all three games, the margin of the historical
+  control:
+
+| Scenario | C2: red's margin, both arms | C3: blue's margin, both arms |
+|---|---|---|
+| 2010211129 | 264 | 128 |
+| 2010431153 | 102 | 158 |
+| 1910631192 | 102 | 158 |
+| 2010131194 | 50 | 210 |
+| 201033019601 | 80 | 80 |
+
+* The difference is 0 in every configuration, with no spread in either arm. That is no adverse signal, but three
+  identical games per arm are not a proof of non-inferiority in general.
+* The rule acted in two configurations without changing the outcome. In 1910631192 C3 it re-assigned 2 moves and
+  withheld 324 unit-decisions per game (2 units); in 2010211129 C3 it withheld 121 (1 unit). Everywhere else it
+  kept every move.
+* Latency: the candidate's largest p99 was 0.715 ms, `baseline-v2`'s 0.37 ms.
+
+### Phase B (secondary, against the inert control)
+
+* All 180 games completed, in sessions 2593 to 2772. Each game took 106.5 to 250.0 s.
+* Integrity held and there was no systemic failure. The refusals were 14 code-516 shots, all in `baseline-v2`
+  seats.
+* **Gate B: STOP.** Two configurations crossed the registered adverse threshold: their interval's upper limit lies
+  below -10.
+* Phase C was therefore not run, and its 90 sessions stay unused.
+
+Candidate margin minus `baseline-v2` margin, candidate seat (C2: red, C3: blue), 15 games per arm:
+
+| Configuration | Candidate mean (SD) | `baseline-v2` mean (SD) | Difference | 95% interval (registered) | Percentile | Welch | Signal |
+|---|---|---|---|---|---|---|---|
+| 2120531121 C2 | 516.73 (11.05) | 363.67 (40.47) | +153.07 | 130.78 to 177.14 | 132.53 to 173.60 | 130.11 to 176.02 | - |
+| 2120531121 C3 | 519.00 (0.00) | 587.67 (14.07) | -68.67 | -75.25 to -57.30 | -74.67 to -61.33 | -76.46 to -60.87 | adverse |
+| 1930331196 C2 | 226.00 (0.00) | 272.93 (4.13) | -46.93 | -48.26 to unbounded | -48.00 to -44.80 | -49.22 to -44.65 | (see below) |
+| 1930331196 C3 | 457.47 (34.88) | 568.67 (5.16) | -111.20 | -130.10 to -90.92 | -128.40 to -94.00 | -130.65 to -91.75 | adverse |
+| 2130511121 C2 | 900.73 (52.90) | 782.33 (14.86) | +118.40 | 87.80 to 147.66 | 91.20 to 144.80 | 88.35 to 148.45 | - |
+| 2130511121 C3 | 603.93 (51.84) | 636.87 (27.94) | -32.93 | -63.61 to 0.68 | -61.73 to -4.00 | -64.51 to -1.36 | - |
+
+* The unbounded limit in 1930331196 C2 is a defect of the registered procedure in a nearly degenerate case. The
+  candidate scored 226 in all 15 games, and `baseline-v2` 274 in 14 and 258 in one. Every bootstrap resample
+  without that one game has zero spread and a different estimate, which the registered rule turns into an infinite
+  t*; the upper limit therefore went to infinity.
+* Under the registered rule this configuration is not an adverse signal. Read directly, it is a deterioration of
+  about 47 points, which both sensitivity intervals place below -10. The gate decision is the same either way.
+  The pre-registration checks measured the B rule's false alarms with both arms drawn from `baseline-v2`'s games and
+  never met an arm without spread; that gap is recorded here, after the results, and nothing was re-decided.
+* Where the margins moved, by score component (means per game; against the inert control the margin is own occupy
+  + own attack + own remaining value - the inert side's remaining value):
+  * 2120531121 C3: the candidate held 4 objectives at the end of every game, `baseline-v2` 5 (occupy 230 against
+    310). The objective flag was raised.
+  * 1930331196 C3 and C2: objectives and own losses equal; the candidate destroyed less of the inert side (attack
+    31.7 against 87.3, and 0 against 23.5).
+  * 2130511121 C3: attack 60.5 against 76.9.
+  * The gains, 2120531121 C2 and 2130511121 C2: attack 139.9 against 63.3, and 251.9 against 192.7, with objectives
+    equal.
+* Mechanism (descriptive, candidate arm, means per game). The largest commitment was 4 in every configuration,
+  against 11 to 23 for `baseline-v2`, and waiting in front of full hexes nearly vanished (at most 62 unit-steps,
+  against 5,852 to 35,422).
+  * Withholding was heaviest as blue: 29,265.27 withheld unit-decisions with 12 units in 2120531121 C3, 28,332 with
+    21 units in 2130511121 C3, 1,722 with 10 units in 1930331196 C3; the longest runs averaged 2,499.20 and 1,712
+    decisions in the first two.
+  * As in phase A, start positions were identical in both arms of every configuration: withholding fell on units
+    that had already left their start.
+* Latency: the candidate's largest p99 was 3.578 ms and its maximum 1,638.5 ms (26 decisions over 1 s);
+  `baseline-v2`'s were 2.338 ms and 1,574.8 ms (14 over 1 s). These are GC-tail spikes under 32 concurrent games;
+  no latency flag was raised.
+
+### Disposition and next step
+
+The registered disposition (`disposition.json`) is **PRIMARY_SUPPORTED_NEEDS_REVISION**.
+
+* **Primary, supported in the tested scenario.** In 2130511121 head to head against `baseline-v2` the candidate
+  improved the seat-averaged terminal margin by 305.47 points (95% interval 172.87 to 611.24). It did so in both
+  seats.
+* **Generality: not supported.**
+  * The candidate gained against the inert control as red in 2120531121 and 2130511121, with intervals above 0.
+  * It lost as blue in 2120531121 and 1930331196, with intervals below -10, and by about 47 points as red in
+    1930331196.
+  * 2130511121 C3 is inconclusive (-32.93; interval -63.61 to 0.68).
+  * The head-to-head phase C in the other two scenarios was not reached.
+  * Counts over the six B configurations: estimate above 0 in 2, interval above 0 in 2, interval below 0 in 2.
+* **Mechanism (descriptive).**
+  * The rule does what it was built to do: commitments capped at 4, queues in front of full hexes nearly gone,
+    re-assigned moves accepted. Head to head, the gain came with more objectives held at the end and fewer units
+    lost.
+  * Its cost is long withholding of units that have left their start: up to about 2,500 consecutive decisions on
+    average as blue in 2120531121. With it come one missed objective (2120531121 C3) and less fire on the inert
+    side (1930331196).
+  * The known risk took a different form from the one feared: no unit was ever held at its start position.
+* **Safety.**
+  * No systemic failure in 285 games: no contract error, gate rejection, replay mismatch, add-on error or new
+    refusal class, every game completed and the ledger stayed intact.
+  * The small-scenario screen found no deterioration (identical margins).
+  * The adverse signals are tactical outcomes, not engine or contract failures.
+* **External platform: none.** No platform evidence exists; the canary has not been uploaded.
+
+No baseline is promoted; `baseline-v2` stays the frozen reference. The candidate is not changed by this study.
+
+Recommended next step (one): an exploratory diagnosis of the two adverse configurations against the inert control,
+2120531121 C3 and 1930331196 C3. Both are nearly deterministic, so a captured diagnostic game of each arm per
+configuration, under a run card, can show why the 80-point objective is never taken under long withholding and why
+fire on the inert side drops. Only then should a revised candidate, such as one that releases withheld units while
+an objective outside own control remains untaken, be written, under a new identity and its own exploratory batch.
+
+### Deviations and disclosures
+
+* None in execution: every phase ran from a clean committed tree under the registered manifest, in the registered
+  order, with no retry, replacement or added game. Sessions used: 285 of the 375 cap (2488 to 2772).
+* The degenerate interval in phase B (above) is a limitation of the registered procedure, disclosed after the
+  results; the gate decision does not depend on it.
+* The phase files store that unbounded limit as `Infinity`, which Python's JSON reader accepts but strict JSON does
+  not.
+* Before the push, the server's full private suite ran on the first registration commit, `816c16b`: 1,256 of 1,258
+  tests passed. The 2 errors were a defect of the new regeneration test itself (multiprocessing could not import the
+  scripts it loaded under another name). The test was fixed in `48861fa`, which also re-pinned the manifest, and the
+  affected test modules (79 tests) passed on the server before the registration was pushed. The full private suite
+  was run again at close-out.
