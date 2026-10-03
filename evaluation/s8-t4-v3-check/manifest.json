@@ -1,0 +1,228 @@
+{
+ "budget": {
+  "batch_sessions": 2,
+  "ledger_base_session": 2464,
+  "sprint_session_cap": 24
+ },
+ "candidate": "t4-artillery-v3",
+ "caps": {
+  "steps": "max_time + 1 + 100",
+  "wall_seconds": 1800
+ },
+ "card_id": "s8-t4-v3-check",
+ "configurations": "2130511121: H1 candidate red against baseline-v2 blue and H2 baseline-v2 red against candidate blue, one game each",
+ "controls": "baseline-v2's own games of the registered shoot-reservation experiment (group C, 15 per configuration, same engine and code identity; baseline-v1-runtime-r2 makes the same decisions): C1 mirror for a head-to-head seat, C2 or C3 for a game against the inert control; version 2's games of the same configurations in s8-t4-v2-batch, which judged own units 14 and 15 times",
+ "eligible_for_promotion": false,
+ "evaluation_id": "s8-t4-v3-check",
+ "execution": {
+  "runtime": "baseline-v1-runtime-r2",
+  "workers": 1
+ },
+ "games": [
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "H1",
+   "game_id": "2130511121.H1.s8-t4-v3-check.g01",
+   "position": 1,
+   "red": "t4-artillery-v3",
+   "scenario_id": "2130511121"
+  },
+  {
+   "blue": "t4-artillery-v3",
+   "condition": "H2",
+   "game_id": "2130511121.H2.s8-t4-v3-check.g02",
+   "position": 2,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "scenario_id": "2130511121"
+  }
+ ],
+ "inputs": {
+  "shoot_manifest_sha256": "01c9c9675af4b0859fc55e54a5dc86513b624208bf13131e7b510b87a3122afd"
+ },
+ "intended_observations": [
+  "own-unit judgements and own damage from own indirect fire (version 2: 14 and 15 judgements)",
+  "orders per game and damage to enemy units, against version 2's",
+  "candidate margin against the control of the same seat"
+ ],
+ "mechanism": "version 2 (s8-t4-v2-batch) plus one exclusion: no target hex within 4 hexes of any objective; in version 2's games 55 of 58 own-unit judgements came from own units entering a still exploding hex, and every such hex lay within 4 hexes of an objective",
+ "next_step_rule": "if own judgements disappear and orders remain, version 3 is the T4 form for any later batch; if own judgements remain, the exclusion zone is not the mechanism and T4 needs a movement-side guard, which is outside an add-on that leaves baseline-v2's moves alone",
+ "players": [
+  {
+   "faction": 0,
+   "role": 1,
+   "seat": 1,
+   "user_id": 0,
+   "user_name": "demo"
+  },
+  {
+   "faction": 1,
+   "role": 1,
+   "seat": 11,
+   "user_id": 0,
+   "user_name": "demo"
+  }
+ ],
+ "policies": {
+  "baseline-v2-candidate-shoot-target-reservation": {
+   "label": "baseline-v2 (frozen)",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ],
+    "sha256": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ]
+   }
+  },
+  "t4-artillery-v3": {
+   "label": "T4 indirect artillery fire, version 3",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/exploratory_addon.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py",
+     "experiments/t4_artillery.py",
+     "experiments/t4_artillery_v2.py",
+     "experiments/t4_artillery_v3.py"
+    ],
+    "sha256": "96a3453e0b371105e73019d4db5b14aaa93ffe038f84013038d97c573e4faaeb",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py",
+     "experiments/exploratory_addon.py",
+     "experiments/t4_artillery.py",
+     "experiments/t4_artillery_v2.py",
+     "experiments/t4_artillery_v3.py"
+    ]
+   }
+  }
+ },
+ "purpose": "exploratory",
+ "randomness": {
+  "global_seed": 20260929,
+  "procedure": "each game runs in a fresh process; the harness seeds Python's and NumPy's global generators with global_seed before the engine is constructed and records whether the engine consumes them; no undocumented engine interface is used",
+  "python_hash_seed": 0
+ },
+ "runtime_environment": {
+  "OPENBLAS_NUM_THREADS": "1"
+ },
+ "safety_checks": [
+  "every game through scripts/run_explore.sh: persistent engine installation, session ledger, integrity check at session open and close, no reinstall, no change to the engine or its state file",
+  "policy source digests of baseline-v2 and the candidate checked before the first game, by every game and after the last game; baseline-v2's digest must be the frozen 7cbaf032...",
+  "the batch is refused if the sprint's ledger-counted session cap (24 after session 2464) would be exceeded",
+  "clean committed tree; records and captures are never overwritten; no game is retried or replaced",
+  "stop the sprint on an integrity failure, a ledger inconsistency, a privacy exposure or an unexplained systemic contract failure (contract errors, add-on errors or a game failure without an understood cause)",
+  "the add-on checks every indirect-fire order itself: listed weapon, exact key set, one action per unit",
+  "baseline-v2's actions are emitted first and unchanged",
+  "every indirect-fire judgement on an own unit is reported"
+ ],
+ "scenarios": [
+  {
+   "alternates": [
+    "2130511221",
+    "2140131194",
+    "2140331196",
+    "2130511321",
+    "1930631192",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2230531221",
+    "2230631192",
+    "2030111194",
+    "2130511421",
+    "2230531121",
+    "2120131294",
+    "2120511121",
+    "2120131194",
+    "2120331196",
+    "2020331196",
+    "2110431753",
+    "2010441253",
+    "2110431153",
+    "2110431253",
+    "2110431353",
+    "2110431453",
+    "2110431553",
+    "2110431653",
+    "201033029601",
+    "201033039601",
+    "211033019601",
+    "2010141294"
+   ],
+   "blue": 44,
+   "cities": 7,
+   "inputs_sha256": {
+    "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+    "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+    "scenario": "9611e334d4fd6f2eda5957a26116bf8ec21c3e04754ed349d9a0fa0e9dc68070",
+    "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "operators": 89,
+   "red": 45,
+   "rule": "S3 largest force",
+   "scenario_id": "2130511121"
+  }
+ ],
+ "schema": "miaosuan-exploratory-run-card/1",
+ "status": "EXPLORATORY - NOT ELIGIBLE FOR BASELINE PROMOTION",
+ "track": "EXPLORATORY",
+ "version": "t4-artillery-v3, friendly-fire mechanism check"
+}
