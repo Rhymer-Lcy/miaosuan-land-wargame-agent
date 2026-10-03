@@ -42,6 +42,7 @@ from miaosuan_agent.evaluation import randomness  # noqa: E402
 from miaosuan_agent.evaluation.game import play  # noqa: E402
 from miaosuan_agent.experiments.t4_artillery import CANDIDATE_ID as T4_ID, ArtilleryAgent  # noqa: E402
 from miaosuan_agent.experiments.t4_artillery_v2 import CANDIDATE_ID as T4B_ID, ArtilleryV2Agent  # noqa: E402
+from miaosuan_agent.experiments.t4_artillery_v3 import CANDIDATE_ID as T4C_ID, ArtilleryV3Agent  # noqa: E402
 from miaosuan_agent.experiments.t9_allocation import CANDIDATE_ID as T9_ID, AllocationAgent  # noqa: E402
 
 
@@ -55,6 +56,7 @@ def evaluator() -> Any:
 
 REV = evaluator()
 FACTORIES = {**REV.FACTORIES, T4_ID: lambda: ArtilleryAgent(), T4B_ID: lambda: ArtilleryV2Agent(),
+             T4C_ID: lambda: ArtilleryV3Agent(),
              T9_ID: lambda: AllocationAgent()}
 
 
