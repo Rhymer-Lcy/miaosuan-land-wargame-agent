@@ -76,7 +76,13 @@ disposition is READY_FOR_MECHANISM_PROBE, and a three-game mechanism probe is pr
 accepted and completed in exactly 75 steps, concealed units kept their listed actions, nothing else changed in the
 deterministic game, and ground observers beyond half the documented distance did not see a concealed unit; no game
 produced a concealed unit that `baseline-v2` later moved or fired, so exit from concealment is untested and the
-disposition is NEEDS_TARGETED_PROBE. Nothing was promoted or uploaded.
+disposition is NEEDS_TARGETED_PROBE. Nothing was promoted or uploaded. Sprint 7 searched the existing records offline
+for a configuration in which `baseline-v2` itself would later move or fire a unit the candidate had concealed
+(`docs/T7_E3B_SEARCH.md`), without an engine session: in the three genuine full-step `baseline-v2` seats none of the 16
+units the candidate would order was ever commanded again, and none of `baseline-v2`'s 198 moves and shots followed 75
+idle steps; the only witnesses are off-policy (`baseline-v2` reconstructed on a `baseline-v0` game, one tank firing
+411 steps after the order) in a game that is stochastic before the trigger. The disposition is
+E3B_CONFIGURATION_UNCERTAIN, and no probe was proposed.
 
 ## Third-party material is not in this repository
 
@@ -127,6 +133,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/T7_DESIGN.md` | the offline design study of T7 movement-state micro: protocol, action-semantics matrix, opportunity audit, candidate pool, rubric and selection, specification, offline shadow checks, gates and disposition |
 | `docs/T7_SCREEN_PROPOSAL.md` | the proposed mechanism probe of idle concealment (for the owner's approval; not a registration) |
 | `docs/T7_MECHANISM_PROBE.md` | the registered three-game mechanism probe of idle concealment: candidate, capture, endpoints, gates, results, post-hoc descriptions and disposition |
+| `docs/T7_E3B_SEARCH.md` | the offline search for a natural E3b configuration: datasets, episode rules, evidence categories, rubric, decision rule, results, leads and disposition |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
 | `evaluation/routing-remediation-1/` | the routing remediation's registration, pinned corpus and privacy-safe results |
@@ -146,6 +153,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `evaluation/ps1-engine-probe-1/` | the PS-1 engine probe's manifest, mutation results, registration issue and its verification, the P1 and P2 results, the gates and the post-hoc descriptions |
 | `evaluation/t7-design-1/` | the T7 design study's frozen rubric, audit and candidate aggregates, semantics matrix, scores and selection, post-hoc descriptions, shadow checks, mutation results and gates |
 | `evaluation/t7-mechanism-probe-1/` | the T7 mechanism probe's manifest, pre-registration outputs (calibration, premise, equivalence, dry run, mutation), registration issue and its verification, per-game results, gate, stop branch, pooled result and post-hoc descriptions |
+| `evaluation/t7-e3b-search-1/` | the E3b search's frozen inputs, known-answer validation, per-dataset results, certificates, independent cross-check, decision, post-hoc descriptions and mutation results |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy
