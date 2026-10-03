@@ -8,6 +8,8 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import subprocess
+import sys
 import unittest
 from pathlib import Path
 
@@ -30,15 +32,20 @@ def load_script(name: str):
 @unittest.skipUnless(CONTROL.is_dir() and (REPO / "local" / "evaluation" / "t7-mechanism-probe-1" / "capture").is_dir(),
                      "private records absent")
 class PreRegistrationRegenerationTest(unittest.TestCase):
+    """Each script's own ``--check``: its worker functions must be importable by multiprocessing, so the scripts run
+    as programs, not as modules loaded under another name."""
+
+    def check(self, script: str) -> None:
+        done = subprocess.run([sys.executable, str(REPO / "scripts" / script), "--check"], cwd=REPO,
+                              capture_output=True, text=True)
+        self.assertEqual(done.returncode, 0, done.stdout[-1000:] + done.stderr[-2000:])
+        self.assertIn("OK evaluation/t9-confirmation-1/", done.stdout)
+
     def test_planning(self) -> None:
-        planning = load_script("t9_confirmation_planning")
-        text = json.dumps(planning.build(), ensure_ascii=False, indent=1, sort_keys=True) + "\n"
-        self.assertEqual(text, (BASE / "planning.json").read_text(encoding="utf-8"))
+        self.check("t9_confirmation_planning.py")
 
     def test_validation(self) -> None:
-        validation = load_script("t9_confirmation_validation")
-        text = json.dumps(validation.build(), ensure_ascii=False, indent=1, sort_keys=True) + "\n"
-        self.assertEqual(text, (BASE / "validation.json").read_text(encoding="utf-8"))
+        self.check("t9_confirmation_validation.py")
 
 
 @unittest.skipUnless((REPO / "local" / "evaluation" / tc.STUDY_ID / "games").is_dir() and INSTALL.is_dir(),
