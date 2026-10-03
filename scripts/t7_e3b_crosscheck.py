@@ -1,6 +1,6 @@
 """Independent cross-check of the E3b configuration search (``t7-e3b-search-1``, protocol section 7).
 
-    python scripts/t7_e3b_crosscheck.py
+    python scripts/t7_e3b_crosscheck.py [--check]
 
 Written separately from ``scripts/t7_e3b_search.py`` and ``evaluation/t7_e3b.py``, and sharing neither their episode
 rules nor their loaders: the trigger is the Sprint 5 pool predicate (``evaluation/t7_candidates.py``, ``a2``) instead
@@ -8,7 +8,8 @@ of the frozen candidate; continuity is read from the all-seeing state (the seat 
 other) and from the engine's own ``judge_info`` instead of the capture's judge delta; the later command is read from
 the batch serialised after the step instead of the pre-execution copies; echoes and execution are recomputed. It
 recounts, per dataset, the episodes by class (unconditional and conditional) and the W episodes by category, and
-writes ``evaluation/t7-e3b-search-1/crosscheck.json``. Only the frozen inputs are read (their digests are verified).
+writes (or with ``--check`` compares byte for byte) ``evaluation/t7-e3b-search-1/crosscheck.json``. Only the frozen
+inputs are read (their digests are verified).
 """
 
 from __future__ import annotations
@@ -398,6 +399,10 @@ def main() -> int:
     out["datasets"]["C-h0"] = {"classes": classes,
                                "W_categories": {k: v for k, v in (("C unconditional", w - cond), ("C conditional", cond)) if v}}
     text = json.dumps(out, indent=1, sort_keys=True) + "\n"
+    if "--check" in sys.argv[1:]:
+        same = (OUT / "crosscheck.json").read_text(encoding="utf-8") == text
+        print("crosscheck identical" if same else "MISMATCH")
+        return 0 if same else 1
     (OUT / "crosscheck.json").write_text(text, encoding="utf-8", newline="\n")
     print(text)
     return 0
