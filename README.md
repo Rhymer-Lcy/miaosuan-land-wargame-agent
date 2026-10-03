@@ -82,7 +82,14 @@ for a configuration in which `baseline-v2` itself would later move or fire a uni
 units the candidate would order was ever commanded again, and none of `baseline-v2`'s 198 moves and shots followed 75
 idle steps; the only witnesses are off-policy (`baseline-v2` reconstructed on a `baseline-v0` game, one tank firing
 411 steps after the order) in a game that is stochastic before the trigger. The disposition is
-E3B_CONFIGURATION_UNCERTAIN, and no probe was proposed.
+E3B_CONFIGURATION_UNCERTAIN, and no probe was proposed. Sprint 8 added an `EXPLORATORY` track beside the registered
+`CONFIRMATORY` one (`docs/EXPLORATORY_TRACK.md`): versioned run cards committed before each small batch, a separate
+serial runner with the same engine safeguards (the registered evaluator is unchanged), and a ledger-counted session
+cap. In 23 exploratory sessions (`docs/SPRINT8_EXPLORATION.md`), indirect artillery fire (T4) executed every order
+but its versions either damaged own units or gained nothing, and is shelved; capacity-limited objective allocation
+(T9) was above `baseline-v2`'s historical control in 10 of 12 games and is proposed for a registered confirmatory
+study (`docs/T9_CONFIRMATION_PROPOSAL.md`, awaiting the owner's approval). Exploratory results are directional and
+promote nothing. The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
 
@@ -134,6 +141,10 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/T7_SCREEN_PROPOSAL.md` | the proposed mechanism probe of idle concealment (for the owner's approval; not a registration) |
 | `docs/T7_MECHANISM_PROBE.md` | the registered three-game mechanism probe of idle concealment: candidate, capture, endpoints, gates, results, post-hoc descriptions and disposition |
 | `docs/T7_E3B_SEARCH.md` | the offline search for a natural E3b configuration: datasets, episode rules, evidence categories, rubric, decision rule, results, leads and disposition |
+| `docs/EXPLORATORY_TRACK.md` | the exploratory track: run cards, the exploratory runner and its safeguards, evidence and reporting, stopping |
+| `docs/SPRINT8_EXPLORATION.md` | Sprint 8's exploratory batches: T4 indirect fire (three versions) and T9 capacity-limited allocation, engine facts, game-level results, comparison and selection |
+| `docs/T9_CONFIRMATION_PROPOSAL.md` | the proposed confirmatory study of T9 (for the owner's approval; not a registration) |
+| `docs/PLATFORM_CANARY.md` | the owner's manual upload and compatibility-check steps for the platform canary |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
 | `evaluation/routing-remediation-1/` | the routing remediation's registration, pinned corpus and privacy-safe results |
@@ -154,6 +165,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `evaluation/t7-design-1/` | the T7 design study's frozen rubric, audit and candidate aggregates, semantics matrix, scores and selection, post-hoc descriptions, shadow checks, mutation results and gates |
 | `evaluation/t7-mechanism-probe-1/` | the T7 mechanism probe's manifest, pre-registration outputs (calibration, premise, equivalence, dry run, mutation), registration issue and its verification, per-game results, gate, stop branch, pooled result and post-hoc descriptions |
 | `evaluation/t7-e3b-search-1/` | the E3b search's frozen inputs, known-answer validation, per-dataset results, certificates, independent cross-check, decision, post-hoc descriptions and mutation results |
+| `evaluation/s8-*/` | Sprint 8's exploratory run cards (`manifest.json`) and their aggregate game results (`results.json`) |
 | `local/` (git-ignored) | machine-specific material: SDK archives, runtime files, logs, replays |
 
 ## Verifying a local SDK copy
