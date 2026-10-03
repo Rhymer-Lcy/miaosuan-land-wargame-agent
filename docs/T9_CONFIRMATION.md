@@ -2,8 +2,8 @@
 
 Status: REGISTERED before the first engine session of the study. CONFIRMATORY track (`docs/EXPLORATORY_TRACK.md`);
 not eligible for baseline promotion. Dates are business dates in UTC+8. The registration is
-`evaluation/t9-confirmation-1/manifest.json` (canonical SHA-256 `12690c6d243eb3e7ed471b1833aeff23bc3a1642cc6f269de7e79c1c3ff21880`, design digest
-`ed4f7aeeeefad33794ac79edff2bb620809b8e7245f648f2717eea70bc2f0d0d`), built by `scripts/build_t9_confirmation_manifest.py` from committed inputs; where this text and
+`evaluation/t9-confirmation-1/manifest.json` (canonical SHA-256 `28324b3a6742f8fe8b4a7938b03f0077e894be701ce06527543cf81df043981c`, design digest
+`028ebf57a55e8ad00624f66de449b164fa4b44ca45c9f520ba65e4217ad15576`), built by `scripts/build_t9_confirmation_manifest.py` from committed inputs; where this text and
 the manifest differ, the manifest governs. Results are appended under "Results", phase by phase.
 
 ## 1. Purpose and starting state
