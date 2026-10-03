@@ -30,6 +30,7 @@ from miaosuan_agent.evaluation import runtime_remediation as rr  # noqa: E402
 from miaosuan_agent.evaluation import shoot_experiment as sx  # noqa: E402
 from miaosuan_agent.evaluation.identity import digest_of_files, policy_source_files  # noqa: E402
 from miaosuan_agent.experiments import t4_artillery as t4  # noqa: E402
+from miaosuan_agent.experiments import t4_artillery_v2 as t4b  # noqa: E402
 from miaosuan_agent.experiments import t9_allocation as t9  # noqa: E402
 
 V2_SOURCES = rr.candidate_sources() + ("experiments/shoot_reservation.py",)
@@ -39,6 +40,8 @@ ADDON = "experiments/exploratory_addon.py"
 RUNTIME = "baseline-v1-runtime-r2"
 CANDIDATES = {
     t4.CANDIDATE_ID: {"label": "T4 indirect artillery fire, version 1", "modules": (ADDON, "experiments/t4_artillery.py")},
+    t4b.CANDIDATE_ID: {"label": "T4 indirect artillery fire, version 2",
+                       "modules": (ADDON, "experiments/t4_artillery.py", "experiments/t4_artillery_v2.py")},
     t9.CANDIDATE_ID: {"label": "T9 capacity-limited objective allocation, version 1",
                       "modules": (ADDON, "experiments/t9_allocation.py")},
 }
@@ -145,6 +148,38 @@ CARDS: Dict[str, Dict[str, Any]] = {
                               "are lost) is diagnosed from the captures and answered by a new version",
         },
     },
+    "s8-t4-v2-batch": {
+        "candidate": t4b.CANDIDATE_ID, "workers": 1,
+        "games": [("1930331196", "C2", "t4b", INERT_ID),
+                  ("2120531121", "H1", "t4b", V2_ID), ("2120531121", "H2", V2_ID, "t4b"),
+                  ("1930331196", "H1", "t4b", V2_ID), ("1930331196", "H2", V2_ID, "t4b"),
+                  ("2130511121", "H1", "t4b", V2_ID), ("2130511121", "H2", V2_ID, "t4b")],
+        "texts": {
+            "version": "t4-artillery-v2, mechanism check and head-to-head batch 1",
+            "mechanism": "version 1 (s8-t4-v1-mechanism) plus two changes answering its recorded failures: enemy ground "
+                         "units last seen stationary are remembered for 600 steps at their last hex (version 1 fired "
+                         "once in 2,880 steps against the inert control because the enemy was out of sight), and only "
+                         "hexes with an own round still in flight are excluded (a round lands about 150 steps after "
+                         "the order and the hex explodes for about 300 steps; units inside are judged on landing)",
+            "controls": HISTORICAL_CONTROL + "; version 1's games in s8-t4-v1-mechanism; within each game the add-on "
+                        "block's baseline_trace_sha256",
+            "configurations": "1930331196 C2: candidate red against the inert control, the configuration of version 1's "
+                              "game 2 (control 272.9, SD 4.0); then the three artillery scenarios head to head, H1 "
+                              "candidate red against baseline-v2 blue and H2 baseline-v2 red against candidate blue",
+            "safety_checks": COMMON_SAFETY + [
+                "the add-on checks every indirect-fire order itself: listed weapon, exact key set, one action per unit",
+                "baseline-v2's actions are emitted first and unchanged",
+                "any indirect-fire judgement on an own unit is reported per game (none in version 1's games)"],
+            "intended_observations": [
+                "orders per game and their tier (seen, remembered, moving), acceptance and refusals",
+                "judgements: correction status, damage to enemy units, any damage to own units",
+                "candidate margin per game against the control of the same seat; attack and remain components",
+                "decision latency"],
+            "next_step_rule": "if remembered targets produce damage and the margins sit at or above the control mean "
+                              "without own damage, T4 is a candidate for confirmation; own damage, refusals or a clear "
+                              "loss pattern lead to a corrected version or to shelving",
+        },
+    },
 }
 
 
@@ -159,7 +194,7 @@ def policy_source(sources: Tuple[str, ...]) -> Dict[str, Any]:
 
 def game_rows(card_id: str, card: Dict[str, Any]) -> List[Dict[str, Any]]:
     candidate = card["candidate"]
-    short = {"t4": t4.CANDIDATE_ID, "t9": t9.CANDIDATE_ID}
+    short = {"t4": t4.CANDIDATE_ID, "t4b": t4b.CANDIDATE_ID, "t9": t9.CANDIDATE_ID}
     rows = []
     for k, (sid, condition, red, blue) in enumerate(card["games"], start=1):
         red, blue = short.get(red, red), short.get(blue, blue)
