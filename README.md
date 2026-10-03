@@ -91,7 +91,12 @@ but its versions either damaged own units or gained nothing, and is shelved; cap
 study (`docs/T9_CONFIRMATION_PROPOSAL.md`, awaiting the owner's approval). Exploratory results are directional and
 promote nothing. Sprint 9 registered the confirmatory study of T9 as a staged design (`docs/T9_CONFIRMATION.md`): a
 primary head-to-head test in scenario 2130511121 (45 games), then, each only after the previous phase's registered
-gate, a small-scenario safety screen and two secondary phases, at most 375 engine sessions in all. The canary's
+gate, a small-scenario safety screen and two secondary phases, at most 375 engine sessions in all (public issue #4).
+In 285 sessions the primary result was supported: head to head in 2130511121 the candidate improved the seat-averaged
+margin by 305.47 points (95% interval 172.87 to 611.24). The safety screen showed identical margins. Against the
+inert control in the large scenarios, however, the candidate gained as red in two scenarios and lost as blue in two,
+beyond the registered threshold, so the study stopped before its last phase. The disposition is
+PRIMARY_SUPPORTED_NEEDS_REVISION; nothing was promoted. The canary's
 manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
