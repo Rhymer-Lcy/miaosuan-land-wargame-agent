@@ -7,7 +7,9 @@ Engineering correctness stays mandatory and serves that objective; it no longer 
 Method, as in the project's other research: hypothesise boldly, preregister before confirmatory measurement, keep
 exploration and confirmation apart, keep negative results, freeze experiment identities, never tune on confirmatory
 results, and promote only evidence-backed improvements. A tactic is not turned into a multi-day infrastructure study
-when a light mechanism check suffices.
+when a light mechanism check suffices. From Sprint 8 tactics are explored on the `EXPLORATORY` track (versioned run
+cards, small batches, `docs/EXPLORATORY_TRACK.md`); any claim of improvement still goes through a registered
+`CONFIRMATORY` study.
 
 ## Phase transition (2026-10-02, UTC+8)
 
@@ -86,6 +88,8 @@ the seat's own and obey orders; the stacking limit voids a split silently.
 | A concealed unit keeps its listed actions (types 1, 6, 11 for tanks and infantry fighting vehicles; 6, 8, 11 for artillery), with change-state options {0, 5}; no lock; in a deterministic game nothing else changes (positions, flags, scores, `baseline-v2`'s actions) | Sprint 6 probe |
 | A concealed artillery unit is not listed by opposing ground vehicles between half and the full documented distance (two games, one unit each); concealed vehicles with a helicopter between those distances were always listed (post hoc, outside the verdict) | Sprint 6 probe, P-B1 and P-B2 |
 | Unknown: whether a concealed unit's later move or shot is accepted and ends concealment at once; what an order or a suppression does during the transition; concealed infantry; aerial observers | no such event in the three probe games |
+| Artillery lists indirect fire as `{8: [{weapon_id: 72}]}` with no target; an order `{actor, obj_id, type 8, jm_pos, weapon_id}` was accepted at 15 to 65 hexes (367 of 367 orders); `weapon_cool_time` becomes 299 after an order and action 8 is not listed until it returns to 0; the ammunition counters stay 0 | Sprint 8 exploratory games, 11 games (`docs/SPRINT8_EXPLORATION.md`, section 4) |
+| A round lands 150 steps after the order; the hex then explodes, usually for 300 steps; units in the hex are judged on landing and units entering it later on entry, own units included; observation by own ground units at landing gives correction (`align_status` 2) and most of the damage | Sprint 8 exploratory games |
 
 ## Selection rubric (committed before scoring)
 
@@ -126,7 +130,9 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
 | T1-r | T1 revised: probe once and stop on code 103, skip splits the stacking limit voids | specified, not implemented; the play-stage remedy it waited for (PS-1) is shelved |
 | PS-1 | capacity-aware movement on `baseline-v2`'s play stage; selected form PS-1B, stalled-movement recovery: stop the deadlocked group that can back off, re-order it after the transition | `SHELVED` (2026-10-02): design study (Sprint 3, `docs/PS1_DESIGN.md`), then the registered engine probe ([issue #2](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/2), `docs/PS1_ENGINE_PROBE.md`): the stop on a waiting unit is deferred indefinitely (E1, E2 refuted, G2 FAIL) and the movement model failed its prospective fidelity test (G3 FAIL); disposition SHELVE |
 | T7-C | concealment of idle stationary units: own ground units that `baseline-v2` leaves idle, stationary and unsuppressed while no enemy is seen are ordered into concealment (`docs/T7_DESIGN.md`, section 14) | `IDEA` (2026-10-03): the registered three-game mechanism probe ([issue #3](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/3), `docs/T7_MECHANISM_PROBE.md`) supports acceptance, the 75-step transition (16 of 16), retained listings, non-interference and the halved observation distance for ground observers; exit by a real move or shot is untested; disposition NEEDS_TARGETED_PROBE. The offline search for a natural E3b configuration (`docs/T7_E3B_SEARCH.md`, 2026-10-03) found no on-policy witness: E3B_CONFIGURATION_UNCERTAIN |
-| T2 to T9 | the other families above (T7's march, charge, stop and lock mechanisms: not selected, `docs/T7_DESIGN.md` 13.5) | `IDEA` |
+| T4 | indirect artillery fire for the artillery `baseline-v2` leaves idle | `SHELVED` (2026-10-03): three exploratory versions in 11 games (`docs/SPRINT8_EXPLORATION.md`); every order executed, but version 2's damage came with friendly fire (own units entering exploding hexes near objectives) and version 3, which avoids it, sat at the control mean |
+| T9 | capacity-limited objective allocation: at most 4 ground units committed per objective, the rest re-assigned or held | `EXPLORATORY` (2026-10-03): above the historical `baseline-v2` control in 10 of 12 exploratory games, consistently in the largest scenario (`docs/SPRINT8_EXPLORATION.md`); proposed for a registered confirmatory study (`docs/T9_CONFIRMATION_PROPOSAL.md`, awaiting the owner's approval) |
+| T2, T3, T5, T6, T8 | the other families above (T7's march, charge, stop and lock mechanisms: not selected, `docs/T7_DESIGN.md` 13.5) | `IDEA` |
 
 ## Roadmap
 
@@ -158,8 +164,11 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
    never commands again, and none of its 198 moves and shots follows 75 idle steps; the only witnesses are off-policy
    (one tank in an H0 game, stochastic before the trigger). Disposition E3B_CONFIGURATION_UNCERTAIN; no probe is
    proposed. A deterministic test of the exit mechanism would need a separate, owner-approved diagnostic command.
-7. **T9 intent and task allocation**, the largest lever and the hardest to isolate; T4 (the idle artillery) follows
-   by the rubric.
+7. **Done (Sprint 8)**: the exploratory track and the first exploratory batches (`docs/SPRINT8_EXPLORATION.md`), 23
+   engine sessions. T4 indirect fire works mechanically but its versions either damaged own units or gained nothing;
+   shelved. T9 capacity-limited allocation was above the historical `baseline-v2` control in 10 of 12 games and in all
+   6 head-to-head games of the largest scenario.
+8. **Next**: the registered confirmatory study of T9 (`docs/T9_CONFIRMATION_PROPOSAL.md`), after the owner's approval.
 
 A tactic that earns ADVANCE gets a confirmatory design sized from its screen's noise; one that does not is recorded
 with its disposition and left. Platform evidence runs alongside: the canary first, then each candidate that a local
