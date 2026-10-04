@@ -1,0 +1,1606 @@
+{
+ "candidate": "t9-capacity-staging-v2",
+ "candidate_policy_source_sha256": "66a451d513d7ff5df2292238dbc4dd526d6b39c050991a25043546a0bce2bece",
+ "card_id": "s10-t9-v2-exploration",
+ "card_sha256": "ce0d806e798a61bd01ea315885f8a5ab031d569fbf83467998145905bc913450",
+ "directional_summary": {
+  "1930331196 C2": {
+   "candidate_margin_mean": 274,
+   "games": 2
+  },
+  "1930331196 C3": {
+   "candidate_margin_mean": 570,
+   "games": 2
+  },
+  "2120531121 C3": {
+   "candidate_margin_mean": 413,
+   "games": 2
+  },
+  "2130511121 H1": {
+   "candidate_margin_mean": -729,
+   "games": 1
+  },
+  "2130511121 H2": {
+   "candidate_margin_mean": 815,
+   "games": 1
+  },
+  "2130511121 seat average": {
+   "candidate_margin_mean": 43.0,
+   "games": 2,
+   "historical_baseline_mirror_mean": 0,
+   "historical_t9_v1_registered_mean_improvement": 305.47
+  }
+ },
+ "games": [
+  {
+   "addon_changes": {
+    "1:stage": 18,
+    "1:withhold": 28988
+   },
+   "addon_errors": 0,
+   "addon_skips": {
+    "1": {
+     "kept: destination under capacity": 20
+    }
+   },
+   "blood_last": {
+    "0": 60,
+    "1": 74
+   },
+   "candidate_margin": 423,
+   "candidate_max_objective_commitment": {
+    "max": 4,
+    "steps_positive": 2880,
+    "sum": 11520
+   },
+   "candidate_queue": {
+    "max": 1,
+    "steps_positive": 6,
+    "sum": 6
+   },
+   "candidate_side": "blue",
+   "capture_sha256": "ac34530a867706351a11305464ddbeb52ed7bb283994e785d58bbaa079bb260c",
+   "condition": "C3",
+   "control": {
+    "above": 15,
+    "below": 0,
+    "max": 599,
+    "mean": 588.33,
+    "min": 559,
+    "n": 15,
+    "sd": 14.36,
+    "values": [
+     559,
+     559,
+     569,
+     579,
+     589,
+     589,
+     589,
+     599,
+     599,
+     599,
+     599,
+     599,
+     599,
+     599,
+     599
+    ]
+   },
+   "control_condition": "C3",
+   "firing_and_damage": {
+    "attack_score": 60,
+    "direct_fire_actions": 10,
+    "feedback_refusal_attributions": {},
+    "remain_score": 407
+   },
+   "game_id": "2120531121.C3.s10-t9-v2-exploration.g01",
+   "historical_sprint9": {
+    "baseline_v2_margin_mean": 587.67,
+    "n_per_arm": 15,
+    "population": "Sprint 9 phase B 2120531121 C3",
+    "registered_mean_difference": -68.67,
+    "t9_v1_margin_mean": 519.0
+   },
+   "indirect": {
+    "blue": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 0,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    },
+    "red": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 0,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    }
+   },
+   "integrity": {
+    "addon_errors": 0,
+    "contract_errors": 0,
+    "engine_integrity_ok": true,
+    "gate_rejections": 0,
+    "home_changed": false,
+    "observer_errors": 0,
+    "replay_mismatches": 0,
+    "state_changed": false
+   },
+   "max_objective_commitment": {
+    "0": {
+     "max": 0,
+     "steps_positive": 0,
+     "sum": 0
+    },
+    "1": {
+     "max": 4,
+     "steps_positive": 2880,
+     "sum": 11520
+    }
+   },
+   "mechanism": {
+    "stage_actions": 18,
+    "stage_path_hexes_removed": {
+     "1": 14,
+     "2": 4
+    },
+    "stage_unique_units": 14,
+    "withhold_actions": 28988,
+    "withholding": {
+     "episodes": 14,
+     "longest": 2459,
+     "median": 2429.5,
+     "sum": 28988,
+     "unique_units": 14
+    }
+   },
+   "objectives_final": {
+    "candidate": 4,
+    "neutral_or_other": 1,
+    "opponent": 0
+   },
+   "opponent": {
+    "actions_by_type": {
+     "333": 1
+    },
+    "feedback_errors_by_code_and_type": {},
+    "policy": "inert-v0"
+   },
+   "record_sha256": "632a43aecdc8fbcdc293fe1694121c9d8a2abf61863887765dce91740c703a52",
+   "scenario_id": "2120531121",
+   "scores": {
+    "blue_attack": 60,
+    "blue_occupy": 230,
+    "blue_remain": 407,
+    "blue_remain_max": 407,
+    "blue_total": 697,
+    "blue_win": 423,
+    "red_total": 274
+   },
+   "seat": {
+    "actions_by_type": {
+     "1": 42,
+     "2": 10,
+     "333": 1,
+     "5": 4
+    },
+    "contract_errors": 0,
+    "feedback_errors_by_code_and_type": {},
+    "gate_rejections": {},
+    "latency": {
+     "max_ms": 91.765,
+     "median_ms": 1.455,
+     "p99_ms": 1.631
+    },
+    "replay_checks": 29,
+    "replay_mismatches": 0
+   },
+   "session": "2779",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "waiting_ground_units": {
+    "0": {
+     "max": 0,
+     "steps_positive": 0,
+     "sum": 0
+    },
+    "1": {
+     "max": 1,
+     "steps_positive": 6,
+     "sum": 6
+    }
+   },
+   "wall_seconds": 108.6
+  },
+  {
+   "addon_changes": {
+    "1:stage": 18,
+    "1:withhold": 28988
+   },
+   "addon_errors": 0,
+   "addon_skips": {
+    "1": {
+     "kept: destination under capacity": 20
+    }
+   },
+   "blood_last": {
+    "0": 64,
+    "1": 74
+   },
+   "candidate_margin": 403,
+   "candidate_max_objective_commitment": {
+    "max": 4,
+    "steps_positive": 2880,
+    "sum": 11520
+   },
+   "candidate_queue": {
+    "max": 1,
+    "steps_positive": 6,
+    "sum": 6
+   },
+   "candidate_side": "blue",
+   "capture_sha256": "4d345bb8fa0ce142c0202e4c6913b75562699b6f70ca11c334e21caca426bbe0",
+   "condition": "C3",
+   "control": {
+    "above": 15,
+    "below": 0,
+    "max": 599,
+    "mean": 588.33,
+    "min": 559,
+    "n": 15,
+    "sd": 14.36,
+    "values": [
+     559,
+     559,
+     569,
+     579,
+     589,
+     589,
+     589,
+     599,
+     599,
+     599,
+     599,
+     599,
+     599,
+     599,
+     599
+    ]
+   },
+   "control_condition": "C3",
+   "firing_and_damage": {
+    "attack_score": 50,
+    "direct_fire_actions": 13,
+    "feedback_refusal_attributions": {},
+    "remain_score": 407
+   },
+   "game_id": "2120531121.C3.s10-t9-v2-exploration.g02",
+   "historical_sprint9": {
+    "baseline_v2_margin_mean": 587.67,
+    "n_per_arm": 15,
+    "population": "Sprint 9 phase B 2120531121 C3",
+    "registered_mean_difference": -68.67,
+    "t9_v1_margin_mean": 519.0
+   },
+   "indirect": {
+    "blue": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 0,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    },
+    "red": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 0,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    }
+   },
+   "integrity": {
+    "addon_errors": 0,
+    "contract_errors": 0,
+    "engine_integrity_ok": true,
+    "gate_rejections": 0,
+    "home_changed": false,
+    "observer_errors": 0,
+    "replay_mismatches": 0,
+    "state_changed": false
+   },
+   "max_objective_commitment": {
+    "0": {
+     "max": 0,
+     "steps_positive": 0,
+     "sum": 0
+    },
+    "1": {
+     "max": 4,
+     "steps_positive": 2880,
+     "sum": 11520
+    }
+   },
+   "mechanism": {
+    "stage_actions": 18,
+    "stage_path_hexes_removed": {
+     "1": 14,
+     "2": 4
+    },
+    "stage_unique_units": 14,
+    "withhold_actions": 28988,
+    "withholding": {
+     "episodes": 14,
+     "longest": 2459,
+     "median": 2429.5,
+     "sum": 28988,
+     "unique_units": 14
+    }
+   },
+   "objectives_final": {
+    "candidate": 4,
+    "neutral_or_other": 1,
+    "opponent": 0
+   },
+   "opponent": {
+    "actions_by_type": {
+     "333": 1
+    },
+    "feedback_errors_by_code_and_type": {},
+    "policy": "inert-v0"
+   },
+   "record_sha256": "f4531e5446ded3ff4fe8f2754fd183ee4cc6b868f54a622976f1481529958aff",
+   "scenario_id": "2120531121",
+   "scores": {
+    "blue_attack": 50,
+    "blue_occupy": 230,
+    "blue_remain": 407,
+    "blue_remain_max": 407,
+    "blue_total": 687,
+    "blue_win": 403,
+    "red_total": 284
+   },
+   "seat": {
+    "actions_by_type": {
+     "1": 42,
+     "2": 13,
+     "333": 1,
+     "5": 4
+    },
+    "contract_errors": 0,
+    "feedback_errors_by_code_and_type": {},
+    "gate_rejections": {},
+    "latency": {
+     "max_ms": 92.276,
+     "median_ms": 1.466,
+     "p99_ms": 1.648
+    },
+    "replay_checks": 29,
+    "replay_mismatches": 0
+   },
+   "session": "2780",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "waiting_ground_units": {
+    "0": {
+     "max": 0,
+     "steps_positive": 0,
+     "sum": 0
+    },
+    "1": {
+     "max": 1,
+     "steps_positive": 6,
+     "sum": 6
+    }
+   },
+   "wall_seconds": 110.2
+  },
+  {
+   "addon_changes": {
+    "1:stage": 26,
+    "1:withhold": 16646
+   },
+   "addon_errors": 0,
+   "addon_skips": {
+    "1": {
+     "kept: destination under capacity": 20
+    }
+   },
+   "blood_last": {
+    "0": 56,
+    "1": 74
+   },
+   "candidate_margin": 570,
+   "candidate_max_objective_commitment": {
+    "max": 4,
+    "steps_positive": 2880,
+    "sum": 11520
+   },
+   "candidate_queue": {
+    "max": 2,
+    "steps_positive": 28,
+    "sum": 56
+   },
+   "candidate_side": "blue",
+   "capture_sha256": "07394381cb6bf1d75b520d8442778adc1fbf3e81ba5a64090517be39a0c19922",
+   "condition": "C3",
+   "control": {
+    "above": 0,
+    "below": 0,
+    "max": 570,
+    "mean": 570,
+    "min": 570,
+    "n": 15,
+    "sd": 0.0,
+    "values": [
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570
+    ]
+   },
+   "control_condition": "C3",
+   "firing_and_damage": {
+    "attack_score": 88,
+    "direct_fire_actions": 14,
+    "feedback_refusal_attributions": {
+     "target no longer alive at resolution": 1
+    },
+    "remain_score": 407
+   },
+   "game_id": "1930331196.C3.s10-t9-v2-exploration.g03",
+   "historical_sprint9": {
+    "baseline_v2_margin_mean": 568.67,
+    "n_per_arm": 15,
+    "population": "Sprint 9 phase B 1930331196 C3",
+    "registered_mean_difference": -111.2,
+    "t9_v1_margin_mean": 457.47
+   },
+   "indirect": {
+    "blue": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 0,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    },
+    "red": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 0,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    }
+   },
+   "integrity": {
+    "addon_errors": 0,
+    "contract_errors": 0,
+    "engine_integrity_ok": true,
+    "gate_rejections": 0,
+    "home_changed": false,
+    "observer_errors": 0,
+    "replay_mismatches": 0,
+    "state_changed": false
+   },
+   "max_objective_commitment": {
+    "0": {
+     "max": 0,
+     "steps_positive": 0,
+     "sum": 0
+    },
+    "1": {
+     "max": 4,
+     "steps_positive": 2880,
+     "sum": 11520
+    }
+   },
+   "mechanism": {
+    "stage_actions": 26,
+    "stage_path_hexes_removed": {
+     "1": 18,
+     "2": 6,
+     "3": 2
+    },
+    "stage_unique_units": 12,
+    "withhold_actions": 16646,
+    "withholding": {
+     "episodes": 16,
+     "longest": 1585,
+     "median": 1293.5,
+     "sum": 16646,
+     "unique_units": 12
+    }
+   },
+   "objectives_final": {
+    "candidate": 5,
+    "neutral_or_other": 0,
+    "opponent": 0
+   },
+   "opponent": {
+    "actions_by_type": {
+     "333": 1
+    },
+    "feedback_errors_by_code_and_type": {},
+    "policy": "inert-v0"
+   },
+   "record_sha256": "89cc8203935c0f0515e8f09edda143914e58a21f9a0649f7d14abf50fc3be1af",
+   "scenario_id": "1930331196",
+   "scores": {
+    "blue_attack": 88,
+    "blue_occupy": 310,
+    "blue_remain": 407,
+    "blue_remain_max": 407,
+    "blue_total": 805,
+    "blue_win": 570,
+    "red_total": 235
+   },
+   "seat": {
+    "actions_by_type": {
+     "1": 56,
+     "2": 14,
+     "333": 1,
+     "5": 5
+    },
+    "contract_errors": 0,
+    "feedback_errors_by_code_and_type": {
+     "516/2": 1
+    },
+    "gate_rejections": {},
+    "latency": {
+     "max_ms": 107.508,
+     "median_ms": 1.33,
+     "p99_ms": 1.593
+    },
+    "replay_checks": 29,
+    "replay_mismatches": 0
+   },
+   "session": "2781",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "waiting_ground_units": {
+    "0": {
+     "max": 0,
+     "steps_positive": 0,
+     "sum": 0
+    },
+    "1": {
+     "max": 2,
+     "steps_positive": 28,
+     "sum": 56
+    }
+   },
+   "wall_seconds": 102.1
+  },
+  {
+   "addon_changes": {
+    "1:stage": 26,
+    "1:withhold": 16650
+   },
+   "addon_errors": 0,
+   "addon_skips": {
+    "1": {
+     "kept: destination under capacity": 20
+    }
+   },
+   "blood_last": {
+    "0": 56,
+    "1": 74
+   },
+   "candidate_margin": 570,
+   "candidate_max_objective_commitment": {
+    "max": 4,
+    "steps_positive": 2880,
+    "sum": 11520
+   },
+   "candidate_queue": {
+    "max": 2,
+    "steps_positive": 28,
+    "sum": 56
+   },
+   "candidate_side": "blue",
+   "capture_sha256": "601dc712aa0e7eefff6b3880cb56ebb6525b588670fc89b21eb86b3d3efc1abc",
+   "condition": "C3",
+   "control": {
+    "above": 0,
+    "below": 0,
+    "max": 570,
+    "mean": 570,
+    "min": 570,
+    "n": 15,
+    "sd": 0.0,
+    "values": [
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570,
+     570
+    ]
+   },
+   "control_condition": "C3",
+   "firing_and_damage": {
+    "attack_score": 88,
+    "direct_fire_actions": 8,
+    "feedback_refusal_attributions": {},
+    "remain_score": 407
+   },
+   "game_id": "1930331196.C3.s10-t9-v2-exploration.g04",
+   "historical_sprint9": {
+    "baseline_v2_margin_mean": 568.67,
+    "n_per_arm": 15,
+    "population": "Sprint 9 phase B 1930331196 C3",
+    "registered_mean_difference": -111.2,
+    "t9_v1_margin_mean": 457.47
+   },
+   "indirect": {
+    "blue": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 0,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    },
+    "red": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 0,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    }
+   },
+   "integrity": {
+    "addon_errors": 0,
+    "contract_errors": 0,
+    "engine_integrity_ok": true,
+    "gate_rejections": 0,
+    "home_changed": false,
+    "observer_errors": 0,
+    "replay_mismatches": 0,
+    "state_changed": false
+   },
+   "max_objective_commitment": {
+    "0": {
+     "max": 0,
+     "steps_positive": 0,
+     "sum": 0
+    },
+    "1": {
+     "max": 4,
+     "steps_positive": 2880,
+     "sum": 11520
+    }
+   },
+   "mechanism": {
+    "stage_actions": 26,
+    "stage_path_hexes_removed": {
+     "1": 18,
+     "2": 6,
+     "3": 2
+    },
+    "stage_unique_units": 12,
+    "withhold_actions": 16650,
+    "withholding": {
+     "episodes": 12,
+     "longest": 1585,
+     "median": 1303.5,
+     "sum": 16650,
+     "unique_units": 12
+    }
+   },
+   "objectives_final": {
+    "candidate": 5,
+    "neutral_or_other": 0,
+    "opponent": 0
+   },
+   "opponent": {
+    "actions_by_type": {
+     "333": 1
+    },
+    "feedback_errors_by_code_and_type": {},
+    "policy": "inert-v0"
+   },
+   "record_sha256": "6cfe0a7c95d66e70e108e96d0c12425c28c0b78d0503e4f771c08b66eb28e1f4",
+   "scenario_id": "1930331196",
+   "scores": {
+    "blue_attack": 88,
+    "blue_occupy": 310,
+    "blue_remain": 407,
+    "blue_remain_max": 407,
+    "blue_total": 805,
+    "blue_win": 570,
+    "red_total": 235
+   },
+   "seat": {
+    "actions_by_type": {
+     "1": 56,
+     "2": 8,
+     "333": 1,
+     "5": 5
+    },
+    "contract_errors": 0,
+    "feedback_errors_by_code_and_type": {},
+    "gate_rejections": {},
+    "latency": {
+     "max_ms": 107.894,
+     "median_ms": 1.332,
+     "p99_ms": 1.558
+    },
+    "replay_checks": 29,
+    "replay_mismatches": 0
+   },
+   "session": "2782",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "waiting_ground_units": {
+    "0": {
+     "max": 0,
+     "steps_positive": 0,
+     "sum": 0
+    },
+    "1": {
+     "max": 2,
+     "steps_positive": 28,
+     "sum": 56
+    }
+   },
+   "wall_seconds": 102.2
+  },
+  {
+   "addon_changes": {
+    "0:stage": 26,
+    "0:withhold": 209
+   },
+   "addon_errors": 0,
+   "addon_skips": {
+    "0": {
+     "kept: destination under capacity": 20
+    }
+   },
+   "blood_last": {
+    "0": 68,
+    "1": 71
+   },
+   "candidate_margin": 274,
+   "candidate_max_objective_commitment": {
+    "max": 4,
+    "steps_positive": 2880,
+    "sum": 11500
+   },
+   "candidate_queue": {
+    "max": 5,
+    "steps_positive": 60,
+    "sum": 130
+   },
+   "candidate_side": "red",
+   "capture_sha256": "855ad1e2b6895bd14c671efe14f4e6698ca29aa0ea6ab6391aec0026b024996c",
+   "condition": "C2",
+   "control": {
+    "above": 0,
+    "below": 1,
+    "max": 274,
+    "mean": 272.93,
+    "min": 258,
+    "n": 15,
+    "sd": 3.99,
+    "values": [
+     258,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274
+    ]
+   },
+   "control_condition": "C2",
+   "firing_and_damage": {
+    "attack_score": 24,
+    "direct_fire_actions": 3,
+    "feedback_refusal_attributions": {},
+    "remain_score": 323
+   },
+   "game_id": "1930331196.C2.s10-t9-v2-exploration.g05",
+   "historical_sprint9": {
+    "baseline_v2_margin_mean": 272.93,
+    "n_per_arm": 15,
+    "population": "Sprint 9 phase B 1930331196 C2",
+    "registered_mean_difference": -46.93,
+    "t9_v1_margin_mean": 226.0
+   },
+   "indirect": {
+    "blue": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 0,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    },
+    "red": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 0,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    }
+   },
+   "integrity": {
+    "addon_errors": 0,
+    "contract_errors": 0,
+    "engine_integrity_ok": true,
+    "gate_rejections": 0,
+    "home_changed": false,
+    "observer_errors": 0,
+    "replay_mismatches": 0,
+    "state_changed": false
+   },
+   "max_objective_commitment": {
+    "0": {
+     "max": 4,
+     "steps_positive": 2880,
+     "sum": 11500
+    },
+    "1": {
+     "max": 0,
+     "steps_positive": 0,
+     "sum": 0
+    }
+   },
+   "mechanism": {
+    "stage_actions": 26,
+    "stage_path_hexes_removed": {
+     "1": 20,
+     "2": 6
+    },
+    "stage_unique_units": 9,
+    "withhold_actions": 209,
+    "withholding": {
+     "episodes": 7,
+     "longest": 61,
+     "median": 22,
+     "sum": 209,
+     "unique_units": 5
+    }
+   },
+   "objectives_final": {
+    "candidate": 5,
+    "neutral_or_other": 0,
+    "opponent": 0
+   },
+   "opponent": {
+    "actions_by_type": {
+     "333": 1
+    },
+    "feedback_errors_by_code_and_type": {},
+    "policy": "inert-v0"
+   },
+   "record_sha256": "942e61cafd43b7dc92df872caf4dea1c2dc54a20fec27057520b57af09b48ecd",
+   "scenario_id": "1930331196",
+   "scores": {
+    "blue_total": 383,
+    "red_attack": 24,
+    "red_occupy": 310,
+    "red_remain": 323,
+    "red_remain_max": 323,
+    "red_total": 657,
+    "red_win": 274
+   },
+   "seat": {
+    "actions_by_type": {
+     "1": 52,
+     "2": 3,
+     "333": 1,
+     "5": 5
+    },
+    "contract_errors": 0,
+    "feedback_errors_by_code_and_type": {},
+    "gate_rejections": {},
+    "latency": {
+     "max_ms": 82.603,
+     "median_ms": 0.789,
+     "p99_ms": 1.13
+    },
+    "replay_checks": 29,
+    "replay_mismatches": 0
+   },
+   "session": "2783",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "waiting_ground_units": {
+    "0": {
+     "max": 5,
+     "steps_positive": 60,
+     "sum": 130
+    },
+    "1": {
+     "max": 0,
+     "steps_positive": 0,
+     "sum": 0
+    }
+   },
+   "wall_seconds": 107.4
+  },
+  {
+   "addon_changes": {
+    "0:stage": 26,
+    "0:withhold": 209
+   },
+   "addon_errors": 0,
+   "addon_skips": {
+    "0": {
+     "kept: destination under capacity": 20
+    }
+   },
+   "blood_last": {
+    "0": 68,
+    "1": 71
+   },
+   "candidate_margin": 274,
+   "candidate_max_objective_commitment": {
+    "max": 4,
+    "steps_positive": 2880,
+    "sum": 11500
+   },
+   "candidate_queue": {
+    "max": 5,
+    "steps_positive": 60,
+    "sum": 130
+   },
+   "candidate_side": "red",
+   "capture_sha256": "b0029bc935b93bcf89198bef018e40b299708e2e9ddbe664b88650367021604a",
+   "condition": "C2",
+   "control": {
+    "above": 0,
+    "below": 1,
+    "max": 274,
+    "mean": 272.93,
+    "min": 258,
+    "n": 15,
+    "sd": 3.99,
+    "values": [
+     258,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274,
+     274
+    ]
+   },
+   "control_condition": "C2",
+   "firing_and_damage": {
+    "attack_score": 24,
+    "direct_fire_actions": 3,
+    "feedback_refusal_attributions": {},
+    "remain_score": 323
+   },
+   "game_id": "1930331196.C2.s10-t9-v2-exploration.g06",
+   "historical_sprint9": {
+    "baseline_v2_margin_mean": 272.93,
+    "n_per_arm": 15,
+    "population": "Sprint 9 phase B 1930331196 C2",
+    "registered_mean_difference": -46.93,
+    "t9_v1_margin_mean": 226.0
+   },
+   "indirect": {
+    "blue": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 0,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    },
+    "red": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 0,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    }
+   },
+   "integrity": {
+    "addon_errors": 0,
+    "contract_errors": 0,
+    "engine_integrity_ok": true,
+    "gate_rejections": 0,
+    "home_changed": false,
+    "observer_errors": 0,
+    "replay_mismatches": 0,
+    "state_changed": false
+   },
+   "max_objective_commitment": {
+    "0": {
+     "max": 4,
+     "steps_positive": 2880,
+     "sum": 11500
+    },
+    "1": {
+     "max": 0,
+     "steps_positive": 0,
+     "sum": 0
+    }
+   },
+   "mechanism": {
+    "stage_actions": 26,
+    "stage_path_hexes_removed": {
+     "1": 20,
+     "2": 6
+    },
+    "stage_unique_units": 9,
+    "withhold_actions": 209,
+    "withholding": {
+     "episodes": 7,
+     "longest": 61,
+     "median": 22,
+     "sum": 209,
+     "unique_units": 5
+    }
+   },
+   "objectives_final": {
+    "candidate": 5,
+    "neutral_or_other": 0,
+    "opponent": 0
+   },
+   "opponent": {
+    "actions_by_type": {
+     "333": 1
+    },
+    "feedback_errors_by_code_and_type": {},
+    "policy": "inert-v0"
+   },
+   "record_sha256": "6853c5ca1a8a1cd2663fbab4236342eb4fb310bb760943ead4dfea69f67dd354",
+   "scenario_id": "1930331196",
+   "scores": {
+    "blue_total": 383,
+    "red_attack": 24,
+    "red_occupy": 310,
+    "red_remain": 323,
+    "red_remain_max": 323,
+    "red_total": 657,
+    "red_win": 274
+   },
+   "seat": {
+    "actions_by_type": {
+     "1": 52,
+     "2": 3,
+     "333": 1,
+     "5": 5
+    },
+    "contract_errors": 0,
+    "feedback_errors_by_code_and_type": {},
+    "gate_rejections": {},
+    "latency": {
+     "max_ms": 82.532,
+     "median_ms": 0.794,
+     "p99_ms": 1.137
+    },
+    "replay_checks": 29,
+    "replay_mismatches": 0
+   },
+   "session": "2784",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "waiting_ground_units": {
+    "0": {
+     "max": 5,
+     "steps_positive": 60,
+     "sum": 130
+    },
+    "1": {
+     "max": 0,
+     "steps_positive": 0,
+     "sum": 0
+    }
+   },
+   "wall_seconds": 108.5
+  },
+  {
+   "addon_changes": {
+    "0:stage": 31,
+    "0:withhold": 1126
+   },
+   "addon_errors": 0,
+   "addon_skips": {
+    "0": {
+     "kept: destination under capacity": 24
+    }
+   },
+   "blood_last": {
+    "0": 35,
+    "1": 69
+   },
+   "candidate_margin": -729,
+   "candidate_max_objective_commitment": {
+    "max": 4,
+    "steps_positive": 2880,
+    "sum": 11520
+   },
+   "candidate_queue": {
+    "max": 1,
+    "steps_positive": 515,
+    "sum": 515
+   },
+   "candidate_side": "red",
+   "capture_sha256": "b399ffda09a44cffea65c926d555c049b646fdd947d3d00dc7147e82bab835a6",
+   "condition": "H1",
+   "control": {
+    "above": 1,
+    "below": 14,
+    "max": -719,
+    "mean": -869.93,
+    "min": -1055,
+    "n": 15,
+    "sd": 110.78,
+    "values": [
+     -1055,
+     -1039,
+     -1039,
+     -967,
+     -917,
+     -909,
+     -883,
+     -843,
+     -839,
+     -799,
+     -783,
+     -775,
+     -743,
+     -739,
+     -719
+    ]
+   },
+   "control_condition": "C1",
+   "firing_and_damage": {
+    "attack_score": 322,
+    "direct_fire_actions": 65,
+    "feedback_refusal_attributions": {},
+    "remain_score": 65
+   },
+   "game_id": "2130511121.H1.s10-t9-v2-exploration.g07",
+   "historical_sprint9": {
+    "baseline_v2_margin_mean": -853.13,
+    "n_per_arm": 15,
+    "population": "Sprint 9 phase A 2130511121 H1",
+    "registered_mean_difference": 364.67,
+    "t9_v1_margin_mean": -488.47
+   },
+   "indirect": {
+    "blue": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 0,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    },
+    "red": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 0,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    }
+   },
+   "integrity": {
+    "addon_errors": 0,
+    "contract_errors": 0,
+    "engine_integrity_ok": true,
+    "gate_rejections": 0,
+    "home_changed": false,
+    "observer_errors": 0,
+    "replay_mismatches": 0,
+    "state_changed": false
+   },
+   "max_objective_commitment": {
+    "0": {
+     "max": 4,
+     "steps_positive": 2880,
+     "sum": 11520
+    },
+    "1": {
+     "max": 17,
+     "steps_positive": 2880,
+     "sum": 20529
+    }
+   },
+   "mechanism": {
+    "stage_actions": 31,
+    "stage_path_hexes_removed": {
+     "1": 20,
+     "2": 10,
+     "3": 1
+    },
+    "stage_unique_units": 13,
+    "withhold_actions": 1126,
+    "withholding": {
+     "episodes": 30,
+     "longest": 123,
+     "median": 24.0,
+     "sum": 1126,
+     "unique_units": 11
+    }
+   },
+   "objectives_final": {
+    "candidate": 1,
+    "neutral_or_other": 0,
+    "opponent": 6
+   },
+   "opponent": {
+    "actions_by_type": {
+     "1": 125,
+     "2": 87,
+     "333": 1,
+     "5": 10
+    },
+    "feedback_errors_by_code_and_type": {},
+    "policy": "baseline-v2-candidate-shoot-target-reservation"
+   },
+   "record_sha256": "1c6feecc206edf9e1b6f1a5584a56b27116b0cc5b11c6e9caec55a9119118466",
+   "scenario_id": "2130511121",
+   "scores": {
+    "blue_total": 1166,
+    "red_attack": 322,
+    "red_occupy": 50,
+    "red_remain": 65,
+    "red_remain_max": 560,
+    "red_total": 437,
+    "red_win": -729
+   },
+   "seat": {
+    "actions_by_type": {
+     "1": 61,
+     "2": 65,
+     "333": 1,
+     "5": 5
+    },
+    "contract_errors": 0,
+    "feedback_errors_by_code_and_type": {},
+    "gate_rejections": {},
+    "latency": {
+     "max_ms": 250.646,
+     "median_ms": 0.645,
+     "p99_ms": 1.924
+    },
+    "replay_checks": 29,
+    "replay_mismatches": 0
+   },
+   "session": "2785",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "waiting_ground_units": {
+    "0": {
+     "max": 1,
+     "steps_positive": 515,
+     "sum": 515
+    },
+    "1": {
+     "max": 12,
+     "steps_positive": 2342,
+     "sum": 8744
+    }
+   },
+   "wall_seconds": 108.8
+  },
+  {
+   "addon_changes": {
+    "1:stage": 68,
+    "1:withhold": 288
+   },
+   "addon_errors": 0,
+   "addon_skips": {
+    "1": {
+     "kept: destination under capacity": 61
+    }
+   },
+   "blood_last": {
+    "0": 31,
+    "1": 82
+   },
+   "candidate_margin": 815,
+   "candidate_max_objective_commitment": {
+    "max": 4,
+    "steps_positive": 2880,
+    "sum": 11406
+   },
+   "candidate_queue": {
+    "max": 6,
+    "steps_positive": 259,
+    "sum": 549
+   },
+   "candidate_side": "blue",
+   "capture_sha256": "daa247e0cc451c20925fbfb1af90cceaa95db900a7b1be8ee1abefcdb00115ee",
+   "condition": "H2",
+   "control": {
+    "above": 9,
+    "below": 6,
+    "max": 1055,
+    "mean": 869.93,
+    "min": 719,
+    "n": 15,
+    "sd": 110.78,
+    "values": [
+     719,
+     739,
+     743,
+     775,
+     783,
+     799,
+     839,
+     843,
+     883,
+     909,
+     917,
+     967,
+     1039,
+     1039,
+     1055
+    ]
+   },
+   "control_condition": "C1",
+   "firing_and_damage": {
+    "attack_score": 486,
+    "direct_fire_actions": 105,
+    "feedback_refusal_attributions": {},
+    "remain_score": 283
+   },
+   "game_id": "2130511121.H2.s10-t9-v2-exploration.g08",
+   "historical_sprint9": {
+    "baseline_v2_margin_mean": 853.13,
+    "n_per_arm": 15,
+    "population": "Sprint 9 phase A 2130511121 H2",
+    "registered_mean_difference": 246.27,
+    "t9_v1_margin_mean": 1099.4
+   },
+   "indirect": {
+    "blue": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 0,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    },
+    "red": {
+     "damage": {},
+     "explosion_steps": [],
+     "feedback_errors": {},
+     "feedback_without_error": 0,
+     "flight_steps": [],
+     "judgement_results": {},
+     "judgements_by_align_status": {},
+     "order_distances": {},
+     "orders": 0,
+     "points_by_statuses": {}
+    }
+   },
+   "integrity": {
+    "addon_errors": 0,
+    "contract_errors": 0,
+    "engine_integrity_ok": true,
+    "gate_rejections": 0,
+    "home_changed": false,
+    "observer_errors": 0,
+    "replay_mismatches": 0,
+    "state_changed": false
+   },
+   "max_objective_commitment": {
+    "0": {
+     "max": 16,
+     "steps_positive": 2880,
+     "sum": 17091
+    },
+    "1": {
+     "max": 4,
+     "steps_positive": 2880,
+     "sum": 11406
+    }
+   },
+   "mechanism": {
+    "stage_actions": 68,
+    "stage_path_hexes_removed": {
+     "1": 48,
+     "2": 18,
+     "3": 2
+    },
+    "stage_unique_units": 23,
+    "withhold_actions": 288,
+    "withholding": {
+     "episodes": 20,
+     "longest": 39,
+     "median": 16.0,
+     "sum": 288,
+     "unique_units": 10
+    }
+   },
+   "objectives_final": {
+    "candidate": 7,
+    "neutral_or_other": 0,
+    "opponent": 0
+   },
+   "opponent": {
+    "actions_by_type": {
+     "1": 76,
+     "2": 51,
+     "333": 1,
+     "5": 8
+    },
+    "feedback_errors_by_code_and_type": {},
+    "policy": "baseline-v2-candidate-shoot-target-reservation"
+   },
+   "record_sha256": "eee67796ec4703aa337f5d22f93621cfbec1701b6487daf147bc9007f0134786",
+   "scenario_id": "2130511121",
+   "scores": {
+    "blue_attack": 486,
+    "blue_occupy": 440,
+    "blue_remain": 283,
+    "blue_remain_max": 603,
+    "blue_total": 1209,
+    "blue_win": 815,
+    "red_total": 394
+   },
+   "seat": {
+    "actions_by_type": {
+     "1": 165,
+     "2": 105,
+     "333": 1,
+     "5": 14
+    },
+    "contract_errors": 0,
+    "feedback_errors_by_code_and_type": {},
+    "gate_rejections": {},
+    "latency": {
+     "max_ms": 241.103,
+     "median_ms": 1.132,
+     "p99_ms": 2.193
+    },
+    "replay_checks": 29,
+    "replay_mismatches": 0
+   },
+   "session": "2786",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "waiting_ground_units": {
+    "0": {
+     "max": 4,
+     "steps_positive": 527,
+     "sum": 633
+    },
+    "1": {
+     "max": 6,
+     "steps_positive": 259,
+     "sum": 549
+    }
+   },
+   "wall_seconds": 131.8
+  }
+ ],
+ "integrity": {
+  "ok": true,
+  "problems": [],
+  "session_cap": 14,
+  "session_cap_used": 14,
+  "sessions": [
+   "2779",
+   "2780",
+   "2781",
+   "2782",
+   "2783",
+   "2784",
+   "2785",
+   "2786"
+  ]
+ },
+ "note": "exploratory, directional and game-level; historical controls are descriptive, not a test of superiority",
+ "privacy": "aggregates only; no unit identifiers, objective coordinates, raw observations or SDK data",
+ "schema": "miaosuan-exploratory-results/1",
+ "track": "EXPLORATORY"
+}

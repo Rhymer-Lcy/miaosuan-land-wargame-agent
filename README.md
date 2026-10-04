@@ -153,6 +153,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/SPRINT8_EXPLORATION.md` | Sprint 8's exploratory batches: T4 indirect fire (three versions) and T9 capacity-limited allocation, engine facts, game-level results, comparison and selection |
 | `docs/T9_CONFIRMATION_PROPOSAL.md` | the proposed confirmatory study of T9 (for the owner's approval; not a registration) |
 | `docs/T9_CONFIRMATION.md` | the registered, staged confirmatory study of T9: identities, design, estimand, interval, power, phase gates, failure handling, integrity, validation, disposition, results |
+| `docs/SPRINT10_T9_DIAGNOSIS.md` | Sprint 10's full-step T9 failure diagnosis, same-route T9-v2 revision, eight-game exploratory screen and disposition |
 | `docs/PLATFORM_CANARY.md` | the owner's manual upload and compatibility-check steps for the platform canary |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
