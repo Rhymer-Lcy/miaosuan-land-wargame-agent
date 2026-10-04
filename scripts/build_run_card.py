@@ -33,6 +33,7 @@ from miaosuan_agent.experiments import t4_artillery as t4  # noqa: E402
 from miaosuan_agent.experiments import t4_artillery_v2 as t4b  # noqa: E402
 from miaosuan_agent.experiments import t4_artillery_v3 as t4c  # noqa: E402
 from miaosuan_agent.experiments import t9_allocation as t9  # noqa: E402
+from miaosuan_agent.experiments import t9_staging as t9v2  # noqa: E402
 
 V2_SOURCES = rr.candidate_sources() + ("experiments/shoot_reservation.py",)
 V2_DIGEST = "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae"
@@ -48,6 +49,8 @@ CANDIDATES = {
                                    "experiments/t4_artillery_v3.py")},
     t9.CANDIDATE_ID: {"label": "T9 capacity-limited objective allocation, version 1",
                       "modules": (ADDON, "experiments/t9_allocation.py")},
+    t9v2.CANDIDATE_ID: {"label": "T9 same-route capacity staging, version 2",
+                        "modules": (ADDON, "experiments/t9_staging.py")},
 }
 
 COMMON_SAFETY = [
@@ -231,6 +234,49 @@ CARDS: Dict[str, Dict[str, Any]] = {
                               "a movement-side guard, which is outside an add-on that leaves baseline-v2's moves alone",
         },
     },
+    "s10-t9-v2-exploration": {
+        "candidate": t9v2.CANDIDATE_ID, "workers": 1,
+        "budget": {"ledger_base_session": 2772, "sprint_session_cap": 14},
+        "games": [
+            ("2120531121", "C3", INERT_ID, "t9v2"),
+            ("2120531121", "C3", INERT_ID, "t9v2"),
+            ("1930331196", "C3", INERT_ID, "t9v2"),
+            ("1930331196", "C3", INERT_ID, "t9v2"),
+            ("1930331196", "C2", "t9v2", INERT_ID),
+            ("1930331196", "C2", "t9v2", INERT_ID),
+            ("2130511121", "H1", "t9v2", V2_ID),
+            ("2130511121", "H2", V2_ID, "t9v2"),
+        ],
+        "texts": {
+            "status": "EXPLORATORY REVISION SCREEN - NOT ELIGIBLE FOR BASELINE PROMOTION",
+            "version": "t9-capacity-staging-v2, Sprint 10 same-route staging screen",
+            "mechanism": "retain baseline-v2's objective choice and route; when the destination already has four "
+                         "own ground commitments, shorten that move to the nearest non-objective waypoint on the same "
+                         "route with fewer than four endpoint commitments, or withhold it if no such waypoint exists",
+            "controls": "frozen Sprint 9 T9-v1 and baseline-v2 populations plus Sprint 10 full-step diagnostic games; "
+                        "new games are exploratory trajectories and are not pooled with either historical population",
+            "configurations": "two candidate games in each diagnosed adverse configuration (2120531121 C3, "
+                              "1930331196 C3 and 1930331196 C2), followed by one red-seat and one blue-seat "
+                              "head-to-head smoke game in the previously successful primary scenario 2130511121",
+            "safety_checks": [
+                "existing persistent engine installation and append-only ledger; no reset, reinstall, restore, clock or authentication change",
+                "clean committed tree and byte-identical card before play; frozen baseline-v2 and candidate source digests checked before every game",
+                "at most 14 Sprint 10 sessions after closed session 2772; six diagnostic sessions already consumed and this card contains exactly eight",
+                "records and captures are never overwritten, retried or replaced; stop on integrity, privacy or unexplained systemic contract failure",
+                "only ground movement toward an over-capacity objective can be shortened; shooting, occupation, aviation and unrelated actions are unchanged",
+                "each shortened move remains an exact prefix of baseline-v2's route, ends off-objective under endpoint capacity four, and passes the project gate",
+            ],
+            "intended_observations": [
+                "every individual terminal score component, objective result, firing order and damage result",
+                "same-route staging and withholding counts, unique affected units and longest continuous withholding run",
+                "waiting ground-unit series, objective commitment maxima and any capacity violation",
+                "contract errors, gate rejections, add-on errors, replay consistency and per-policy decision latency",
+                "directional comparison with frozen historical evidence only; no population claim or baseline promotion",
+            ],
+            "next_step_rule": "complete all eight unless an engine safeguard fires; preserve tactical losses as findings. "
+                              "A favorable screen may support a separately registered confirmatory proposal, never promotion",
+        },
+    },
 }
 
 
@@ -245,7 +291,8 @@ def policy_source(sources: Tuple[str, ...]) -> Dict[str, Any]:
 
 def game_rows(card_id: str, card: Dict[str, Any]) -> List[Dict[str, Any]]:
     candidate = card["candidate"]
-    short = {"t4": t4.CANDIDATE_ID, "t4b": t4b.CANDIDATE_ID, "t4c": t4c.CANDIDATE_ID, "t9": t9.CANDIDATE_ID}
+    short = {"t4": t4.CANDIDATE_ID, "t4b": t4b.CANDIDATE_ID, "t4c": t4c.CANDIDATE_ID,
+             "t9": t9.CANDIDATE_ID, "t9v2": t9v2.CANDIDATE_ID}
     rows = []
     for k, (sid, condition, red, blue) in enumerate(card["games"], start=1):
         red, blue = short.get(red, red), short.get(blue, blue)
@@ -268,9 +315,10 @@ def build(card_id: str) -> Dict[str, Any]:
                 {"id": card["candidate"], "label": entry["label"], "policy_source": policy_source(V2_SOURCES + entry["modules"])}]
     games = game_rows(card_id, card)
     texts = {"status": "EXPLORATORY - NOT ELIGIBLE FOR BASELINE PROMOTION", **card["texts"]}
+    budget = {"batch_sessions": len(games), "ledger_base_session": xp.LEDGER_BASE_SESSION,
+              "sprint_session_cap": xp.SPRINT_SESSION_CAP, **card.get("budget", {})}
     return xp.build(card_id, texts, shoot_manifest, mf.digest(shoot_manifest), policies, card["candidate"], games,
-                    RUNTIME, card["workers"], {"batch_sessions": len(games), "ledger_base_session": xp.LEDGER_BASE_SESSION,
-                                               "sprint_session_cap": xp.SPRINT_SESSION_CAP})
+                    RUNTIME, card["workers"], budget)
 
 
 def main() -> int:

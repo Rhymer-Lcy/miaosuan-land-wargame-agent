@@ -18,7 +18,6 @@ from types import SimpleNamespace
 
 from miaosuan_agent.boundary import Origin, normalize_state
 from miaosuan_agent.evaluation import exploratory as xp
-from miaosuan_agent.evaluation import manifest as mf
 
 from tests.fixtures import synthetic as syn
 
@@ -64,8 +63,9 @@ class CardTest(unittest.TestCase):
             self.assertEqual(card["track"], "EXPLORATORY")
             self.assertIs(card["eligible_for_promotion"], False)
             self.assertIn("NOT ELIGIBLE FOR BASELINE PROMOTION", card["status"])
-            self.assertEqual(card["budget"], {"batch_sessions": len(card["games"]), "ledger_base_session": 2464,
-                                              "sprint_session_cap": 24})
+            expected_budget = {"batch_sessions": len(card["games"]), "ledger_base_session": 2464,
+                               "sprint_session_cap": 24, **self.builder.CARDS[card_id].get("budget", {})}
+            self.assertEqual(card["budget"], expected_budget)
             self.assertEqual(card["policies"][self.builder.V2_ID]["policy_source"]["sha256"], V2_DIGEST)
             for game in card["games"]:
                 self.assertIn(card["candidate"], (game["red"], game["blue"]))

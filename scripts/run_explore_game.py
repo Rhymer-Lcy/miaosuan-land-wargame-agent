@@ -44,6 +44,8 @@ from miaosuan_agent.experiments.t4_artillery import CANDIDATE_ID as T4_ID, Artil
 from miaosuan_agent.experiments.t4_artillery_v2 import CANDIDATE_ID as T4B_ID, ArtilleryV2Agent  # noqa: E402
 from miaosuan_agent.experiments.t4_artillery_v3 import CANDIDATE_ID as T4C_ID, ArtilleryV3Agent  # noqa: E402
 from miaosuan_agent.experiments.t9_allocation import CANDIDATE_ID as T9_ID, AllocationAgent  # noqa: E402
+from miaosuan_agent.experiments.t9_staging import CANDIDATE_ID as T9V2_ID, StagingAgent  # noqa: E402
+from miaosuan_agent.evaluation.t9_v2_exploratory import T9V2Capture  # noqa: E402
 
 
 def evaluator() -> Any:
@@ -57,7 +59,7 @@ def evaluator() -> Any:
 REV = evaluator()
 FACTORIES = {**REV.FACTORIES, T4_ID: lambda: ArtilleryAgent(), T4B_ID: lambda: ArtilleryV2Agent(),
              T4C_ID: lambda: ArtilleryV3Agent(),
-             T9_ID: lambda: AllocationAgent()}
+             T9_ID: lambda: AllocationAgent(), T9V2_ID: lambda: StagingAgent()}
 
 
 def refuse(message: str) -> int:
@@ -114,7 +116,8 @@ def cmd_game(args: argparse.Namespace) -> int:
         harness["runtime"] = runtime
         harness["thread_env"] = ex.runtime_env(runtime)
     construct = REV.engine_factory(install)
-    observer = xp.ExploreCapture(tuple(xp.game_policies(spec)))
+    observer = (T9V2Capture if card["candidate"] == T9V2_ID else xp.ExploreCapture)(
+        tuple(xp.game_policies(spec)))
     try:
         with engine_install.session(install, "diagnostic", harness) as handle:
             record = play(construct, FACTORIES, spec, inputs, card["players"], rng_probe=randomness.fingerprint,

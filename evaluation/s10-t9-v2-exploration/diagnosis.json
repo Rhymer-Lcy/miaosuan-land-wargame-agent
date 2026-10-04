@@ -1,0 +1,90 @@
+{
+ "candidate": {
+  "identity": "t9-capacity-staging-v2",
+  "policy_source_sha256": "66a451d513d7ff5df2292238dbc4dd526d6b39c050991a25043546a0bce2bece",
+  "revision": "Keep baseline-v2's selected objective and route. If that objective already has four own ground commitments, advance only to the nearest non-objective waypoint on the same route whose endpoint count is below four; withhold only when no such waypoint exists.",
+  "safety_argument": "Objective commitments remain capped at four. Staging endpoints are independently capped at four, so overflow is distributed along the original corridor instead of forming an unbounded queue on one hex. Each replacement is an exact baseline-path prefix and passes the project action gate."
+ },
+ "diagnostic_sessions": [
+  {
+   "configuration": "2120531121 C3",
+   "policy": "t9-capacity-allocation-v1",
+   "session": 2773
+  },
+  {
+   "configuration": "2120531121 C3",
+   "policy": "baseline-v2-candidate-shoot-target-reservation",
+   "session": 2774
+  },
+  {
+   "configuration": "1930331196 C3",
+   "policy": "t9-capacity-allocation-v1",
+   "session": 2775
+  },
+  {
+   "configuration": "1930331196 C3",
+   "policy": "baseline-v2-candidate-shoot-target-reservation",
+   "session": 2776
+  },
+  {
+   "configuration": "1930331196 C2",
+   "policy": "t9-capacity-allocation-v1",
+   "session": 2777
+  },
+  {
+   "configuration": "1930331196 C2",
+   "policy": "baseline-v2-candidate-shoot-target-reservation",
+   "session": 2778
+  }
+ ],
+ "diagnoses": [
+  {
+   "configuration": "2120531121 C3",
+   "earliest_divergence": "Decision 1: after four commitments to the baseline-selected objective, four slow distant ground units were redirected to the later-missed 80-point objective.",
+   "rule_and_inputs": "T9-v1 used destination commitment count 4, unheld-objective status, path cost, objective value and its two-times detour bound. Emission order let the distant replacements reserve all four slots.",
+   "observed_timeline": [
+    "The four redirected units retained the 80-point objective as their destination for the game but finished several hexes short.",
+    "From decision 442 onward, nearby faster units whose baseline move targeted that objective were repeatedly withheld because all four commitments were already reserved.",
+    "The T9-v1 trajectory never changed that objective to blue; the independent baseline-v2 trajectory first changed it to blue at decision 564."
+   ],
+   "downstream_problem": "Permanent far-future reservations displaced near-term feasible arrivals, and the candidate missed one 80-point objective.",
+   "uncertainty": "The two policies were separate engine trajectories, so the baseline capture proves a feasible allocation pattern but not the exact score of an unobserved within-game counterfactual."
+  },
+  {
+   "configuration": "1930331196 C3",
+   "earliest_divergence": "Decision 1: twelve ground moves were redirected across objectives after their baseline destinations reached four commitments.",
+   "rule_and_inputs": "The same T9-v1 commitment and cost-per-value alternative rule selected other objectives within its detour bound.",
+   "observed_timeline": [
+    "The cross-objective replacements put direct-fire units on different approach corridors and altered later capacity holds.",
+    "In the independent baseline trajectory, four paired direct-fire events occurred at decisions 742, 804, 841 and 876 after units reached firing positions; the T9-v1 trajectory had no corresponding legal fire options at those positions.",
+    "T9-v1 retained four artillery shots and scored 20 attack points; baseline-v2 made those four shots plus eight direct shots and scored 88 attack points."
+   ],
+   "downstream_problem": "Capacity control changed tactical geometry, removing later legal direct-fire opportunities even though all objectives were eventually captured.",
+   "uncertainty": "Visibility and legal-action differences are directly observed, but separate stochastic trajectories prevent assigning the full terminal score difference to any one redirected move."
+  },
+  {
+   "configuration": "1930331196 C2",
+   "earliest_divergence": "Decision 1: seven ground moves were redirected away from the first baseline-selected objective after four commitments.",
+   "rule_and_inputs": "T9-v1 again used the four-commitment cap and cross-objective cost-per-value alternative selection.",
+   "observed_timeline": [
+    "The later shooter itself was never edited by T9-v1, but the seven earlier replacements changed objective capture order.",
+    "Baseline-v2's dynamic nearest-unheld-objective rule consequently sent that shooter through a different sequence of objectives.",
+    "At decision 611 the baseline shooter had target visibility and a legal fire action, producing 24 attack points; the candidate shooter was on another corridor with neither visibility nor a legal fire action."
+   ],
+   "downstream_problem": "Cross-objective redirection indirectly changed the unmodified shooter's future route and removed one firing opportunity.",
+   "uncertainty": "The action and opportunity chain is observed and the fresh scores reproduce the historical pattern, but it is still a comparison of independent trajectories rather than a same-game counterfactual."
+  }
+ ],
+ "gate_decision": "PASS_FOR_EXPLORATORY_REVISION",
+ "historical_boundary": "Sprint 9 remains PRIMARY_SUPPORTED_NEEDS_REVISION. Its primary estimate and registered intervals are unchanged; these diagnostic games identify mechanisms and do not re-estimate population effects.",
+ "offline_replay": {
+  "interpretation": "T9-v2 was applied one decision at a time to every captured T9-v1 seat observation. Every staged action was verified to be an exact prefix of baseline-v2's captured action. Counts are hypothetical one-step decisions on T9-v1 trajectories, not a simulated T9-v2 game outcome.",
+  "same_route_prefix_failures": 0,
+  "staged_decisions": {
+   "1930331196 C2": 1057,
+   "1930331196 C3": 1730,
+   "2120531121 C3": 29272
+  }
+ },
+ "schema": "miaosuan-sprint10-t9-diagnosis/1"
+}
