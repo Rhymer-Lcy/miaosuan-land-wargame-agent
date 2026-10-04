@@ -1,0 +1,199 @@
+{
+ "budget": {
+  "batch_sessions": 2,
+  "ledger_base_session": 2772,
+  "sprint_session_cap": 14
+ },
+ "candidate": "t9-capacity-allocation-v1",
+ "caps": {
+  "steps": "max_time + 1 + 100",
+  "wall_seconds": 1800
+ },
+ "card_id": "s10-t9-v1-c2-diagnosis",
+ "configurations": "1930331196 C2 traces the damage reduction unresolved by Sprint 9 aggregate and 50-step captures",
+ "controls": "one fresh frozen T9-v1 trajectory and one fresh baseline-v2 trajectory in the adverse 1930331196 C2 configuration; games identify actions and mechanisms, not population effects",
+ "eligible_for_promotion": false,
+ "evaluation_id": "s10-t9-v1-c2-diagnosis",
+ "execution": {
+  "runtime": "baseline-v1-runtime-r2",
+  "workers": 1
+ },
+ "games": [
+  {
+   "blue": "inert-v0",
+   "condition": "C2",
+   "game_id": "1930331196.C2.s10-t9-v1-c2-diagnosis.g01",
+   "position": 1,
+   "red": "t9-capacity-allocation-v1",
+   "scenario_id": "1930331196"
+  },
+  {
+   "blue": "inert-v0",
+   "condition": "C2",
+   "game_id": "1930331196.C2.s10-t9-v1-c2-diagnosis.g02",
+   "position": 2,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "scenario_id": "1930331196"
+  }
+ ],
+ "inputs": {
+  "shoot_manifest_sha256": "01c9c9675af4b0859fc55e54a5dc86513b624208bf13131e7b510b87a3122afd"
+ },
+ "intended_observations": [
+  "every step's all-seeing state and both seat observations, kept private under local/",
+  "unit position, move path and state; objective value, flag and occupants; visibility and legal actions",
+  "baseline-v2 pre-add-on actions, submitted pre-execution actions, T9 commitments and all alternative tests",
+  "feedback, firing options and orders, targets, judge damage and removals, score and objective transitions",
+  "earliest action-level divergence and downstream opportunity timeline, with stochastic counterfactual limits"
+ ],
+ "mechanism": "freeze both policies; capture every step and reconstruct baseline-v2 plus T9-v1 capacity decisions from each seat's own observation, including commitments, alternatives and rejections",
+ "next_step_rule": "write a three-configuration diagnosis before any new candidate; implement T9-v2 only if the captured mechanism supports one narrow correction that preserves the capacity guard",
+ "players": [
+  {
+   "faction": 0,
+   "role": 1,
+   "seat": 1,
+   "user_id": 0,
+   "user_name": "demo"
+  },
+  {
+   "faction": 1,
+   "role": 1,
+   "seat": 11,
+   "user_id": 0,
+   "user_name": "demo"
+  }
+ ],
+ "policies": {
+  "baseline-v2-candidate-shoot-target-reservation": {
+   "label": "baseline-v2 (frozen)",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ],
+    "sha256": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ]
+   }
+  },
+  "t9-capacity-allocation-v1": {
+   "label": "T9 capacity allocation v1 (frozen)",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/exploratory_addon.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py",
+     "experiments/t9_allocation.py"
+    ],
+    "sha256": "0a0b7174f52e6a6a9d30959ef6a1589c185fb82e70290ceb2b80c889109d77fa",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py",
+     "experiments/exploratory_addon.py",
+     "experiments/t9_allocation.py"
+    ]
+   }
+  }
+ },
+ "purpose": "exploratory",
+ "randomness": {
+  "global_seed": 20260929,
+  "procedure": "each game runs in a fresh process; the harness seeds Python's and NumPy's global generators with global_seed before the engine is constructed and records whether the engine consumes them; no undocumented engine interface is used",
+  "python_hash_seed": 0
+ },
+ "runtime_environment": {
+  "OPENBLAS_NUM_THREADS": "1"
+ },
+ "safety_checks": [
+  "persistent engine installation and append-only ledger; no reset, reinstall, restore or authentication change",
+  "clean committed tree and byte-identical card before play; frozen policy source digests checked before every game",
+  "at most 14 Sprint 10 sessions after closed session 2772; this card contains exactly four sessions",
+  "records and captures are never overwritten or retried; stop on integrity, privacy or systemic contract failure",
+  "the diagnostic observer is read-only and its seat-local T9 reconstruction must equal the live T9 trace and actions"
+ ],
+ "scenarios": [
+  {
+   "alternates": [
+    "2020331196",
+    "2120331196",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2140331196"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "206c437995216aed6dd14a310d3a2ada0f7148dd8d40e4ec52c900b224d06f15",
+    "cost": "b136cc86cae77d53482f2b2ff3df0087278d51628e1a4cf453307d8da008997f",
+    "scenario": "a15d3b3bf499694d93a981511c16b5c1c9247487ac1cf1d88b2bf1bd2c75c1b1",
+    "see": "e69b9e85d77cc8de4600c42b48939ea625236a7a3b705090fa9b3745775009e2"
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "operators": 52,
+   "red": 26,
+   "rule": "S2 fewest operators on map 96",
+   "scenario_id": "1930331196"
+  }
+ ],
+ "schema": "miaosuan-exploratory-run-card/1",
+ "status": "EXPLORATORY DIAGNOSIS - NOT ELIGIBLE FOR BASELINE PROMOTION",
+ "track": "EXPLORATORY",
+ "version": "Sprint 10 frozen T9-v1 full-capture diagnosis, conditional C2 batch"
+}

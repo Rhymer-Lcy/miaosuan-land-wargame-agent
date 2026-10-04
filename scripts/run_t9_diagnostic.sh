@@ -46,7 +46,7 @@ if [[ -n $(git -C "$REPO" status --porcelain) ]]; then
     echo "REFUSED: diagnostic games run only from a clean, committed tree" >&2
     exit 2
 fi
-PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/build_t9_diagnostic_card.py" --check
+PYTHONNOUSERSITE=1 "$PYTHON" "$REPO/scripts/build_t9_diagnostic_card.py" --check --card "$CARD"
 mkdir -p "$WORK/games" "$WORK/capture" "$WORK/started" "$WORK/logs" "$WORK/cwd/a/b"
 WORK=$(cd "$WORK" && pwd)
 

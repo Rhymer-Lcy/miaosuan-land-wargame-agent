@@ -62,6 +62,18 @@ class CardTest(unittest.TestCase):
         self.assertFalse(card["eligible_for_promotion"])
         self.assertEqual({g["scenario_id"] for g in card["games"]}, {"2120531121", "1930331196"})
 
+    def test_conditional_c2_card_freezes_two_red_seat_sessions(self) -> None:
+        spec = importlib.util.spec_from_file_location("builder", "scripts/build_t9_diagnostic_card.py")
+        builder = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(builder)
+        card = builder.build(builder.C2_CARD_ID)
+        self.assertEqual(card["budget"], {"batch_sessions": 2, "ledger_base_session": 2772,
+                                          "sprint_session_cap": 14})
+        self.assertEqual(len(card["games"]), 2)
+        self.assertFalse(card["eligible_for_promotion"])
+        self.assertEqual({g["condition"] for g in card["games"]}, {"C2"})
+        self.assertEqual([g["red"] for g in card["games"]], [t9.CANDIDATE_ID, builder.V2_ID])
+
 
 if __name__ == "__main__":
     unittest.main()

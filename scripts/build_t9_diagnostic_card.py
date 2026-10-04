@@ -1,4 +1,4 @@
-"""Build or check Sprint 10's versioned four-game T9 diagnostic run card."""
+"""Build or check Sprint 10's versioned frozen-policy T9 diagnostic run cards."""
 
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ from miaosuan_agent.evaluation.identity import digest_of_files, policy_source_fi
 from miaosuan_agent.experiments import t9_allocation as t9  # noqa: E402
 
 CARD_ID = "s10-t9-v1-diagnosis"
-OUT = REPO_ROOT / "evaluation" / CARD_ID / "manifest.json"
+C2_CARD_ID = "s10-t9-v1-c2-diagnosis"
 V2_ID = sx.CANDIDATE_ID
 V2_SOURCES = rr.candidate_sources() + ("experiments/shoot_reservation.py",)
 V2_DIGEST = "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae"
@@ -34,6 +34,10 @@ GAMES = (
     ("1930331196", "C3", INERT_ID, t9.CANDIDATE_ID),
     ("1930331196", "C3", INERT_ID, V2_ID),
 )
+C2_GAMES = (
+    ("1930331196", "C2", t9.CANDIDATE_ID, INERT_ID),
+    ("1930331196", "C2", V2_ID, INERT_ID),
+)
 
 
 def load(path: Path) -> Dict[str, Any]:
@@ -45,7 +49,9 @@ def policy_source(sources: Tuple[str, ...]) -> Dict[str, Any]:
     return {"sha256": digest_of_files(files), "files": files, "sources": list(sources)}
 
 
-def build() -> Dict[str, Any]:
+def build(card_id: str = CARD_ID) -> Dict[str, Any]:
+    if card_id not in (CARD_ID, C2_CARD_ID):
+        raise ValueError(f"unknown Sprint 10 diagnostic card {card_id}")
     shoot = load(REPO_ROOT / "evaluation" / sx.EXPERIMENT_NAME / "manifest.json")
     baseline, candidate = policy_source(V2_SOURCES), policy_source(T9_SOURCES)
     if baseline["sha256"] != V2_DIGEST:
@@ -56,18 +62,14 @@ def build() -> Dict[str, Any]:
         {"id": V2_ID, "label": "baseline-v2 (frozen)", "policy_source": baseline},
         {"id": t9.CANDIDATE_ID, "label": "T9 capacity allocation v1 (frozen)", "policy_source": candidate},
     ]
-    games = [{"game_id": f"{scenario}.{condition}.{CARD_ID}.g{k:02d}", "scenario_id": scenario,
+    schedule = GAMES if card_id == CARD_ID else C2_GAMES
+    games = [{"game_id": f"{scenario}.{condition}.{card_id}.g{k:02d}", "scenario_id": scenario,
               "condition": condition, "red": red, "blue": blue}
-             for k, (scenario, condition, red, blue) in enumerate(GAMES, start=1)]
-    texts = {
+             for k, (scenario, condition, red, blue) in enumerate(schedule, start=1)]
+    common = {
         "status": "EXPLORATORY DIAGNOSIS - NOT ELIGIBLE FOR BASELINE PROMOTION",
-        "version": "Sprint 10 frozen T9-v1 full-capture diagnosis, batch 1",
         "mechanism": "freeze both policies; capture every step and reconstruct baseline-v2 plus T9-v1 capacity "
                      "decisions from each seat's own observation, including commitments, alternatives and rejections",
-        "controls": "one fresh baseline-v2 diagnostic trajectory beside one frozen T9-v1 trajectory in each adverse "
-                    "C3 configuration; games identify actions and mechanisms, not population causal effects",
-        "configurations": "2120531121 C3 traces the missed 80-point objective; 1930331196 C3 traces reduced damage "
-                          "against the inert control",
         "safety_checks": [
             "persistent engine installation and append-only ledger; no reset, reinstall, restore or authentication change",
             "clean committed tree and byte-identical card before play; frozen policy source digests checked before every game",
@@ -85,24 +87,42 @@ def build() -> Dict[str, Any]:
         "next_step_rule": "write a three-configuration diagnosis before any new candidate; implement T9-v2 only if the "
                           "captured mechanism supports one narrow correction that preserves the capacity guard",
     }
-    return xp.build(CARD_ID, texts, shoot, mf.digest(shoot), policies, t9.CANDIDATE_ID, games, RUNTIME, 1,
-                    {"batch_sessions": 4, "ledger_base_session": 2772, "sprint_session_cap": 14})
+    if card_id == CARD_ID:
+        texts = {**common,
+                 "version": "Sprint 10 frozen T9-v1 full-capture diagnosis, batch 1",
+                 "controls": "one fresh baseline-v2 diagnostic trajectory beside one frozen T9-v1 trajectory in each "
+                             "adverse C3 configuration; games identify actions and mechanisms, not population causal effects",
+                 "configurations": "2120531121 C3 traces the missed 80-point objective; 1930331196 C3 traces reduced "
+                                   "damage against the inert control"}
+        batch_sessions = 4
+    else:
+        texts = {**common,
+                 "version": "Sprint 10 frozen T9-v1 full-capture diagnosis, conditional C2 batch",
+                 "controls": "one fresh frozen T9-v1 trajectory and one fresh baseline-v2 trajectory in the adverse "
+                             "1930331196 C2 configuration; games identify actions and mechanisms, not population effects",
+                 "configurations": "1930331196 C2 traces the damage reduction unresolved by Sprint 9 aggregate and "
+                                   "50-step captures"}
+        batch_sessions = 2
+    return xp.build(card_id, texts, shoot, mf.digest(shoot), policies, t9.CANDIDATE_ID, games, RUNTIME, 1,
+                    {"batch_sessions": batch_sessions, "ledger_base_session": 2772, "sprint_session_cap": 14})
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--card", choices=(CARD_ID, C2_CARD_ID), default=CARD_ID)
     args = parser.parse_args()
-    text = json.dumps(build(), indent=1, sort_keys=True) + "\n"
+    out = REPO_ROOT / "evaluation" / args.card / "manifest.json"
+    text = json.dumps(build(args.card), indent=1, sort_keys=True) + "\n"
     if args.check:
-        if not OUT.exists() or OUT.read_text(encoding="utf-8") != text:
-            print(f"{OUT} differs from a fresh build", file=sys.stderr)
+        if not out.exists() or out.read_text(encoding="utf-8") != text:
+            print(f"{out} differs from a fresh build", file=sys.stderr)
             return 1
-        print(f"{OUT} matches a fresh build (canonical SHA-256 {mf.digest(json.loads(text))})")
+        print(f"{out} matches a fresh build (canonical SHA-256 {mf.digest(json.loads(text))})")
         return 0
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(text, encoding="utf-8", newline="\n")
-    print(f"wrote {OUT} (canonical SHA-256 {mf.digest(json.loads(text))})")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(text, encoding="utf-8", newline="\n")
+    print(f"wrote {out} (canonical SHA-256 {mf.digest(json.loads(text))})")
     return 0
 
 
