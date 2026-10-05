@@ -152,6 +152,9 @@ class RedistributionTest(unittest.TestCase):
         claim = result.claimants
         self.assertLess(tb.free_flow_key(claim[winner]), tb.free_flow_key(claim[loser]))  # rank order decides
         self.assertIn(loser, set(result.staged) | set(result.withheld))
+        base = list(self.baseline(obs).actions)
+        reversed_ = self.allocate(obs, "feasible-value-redirect", list(reversed(base)))
+        self.assertEqual(set(reversed_.redirected), {winner})  # the rank, not the emission order, decides
         batch = self.allocate(obs, "batch-value-redirect")
         self.assertEqual(len(batch.redirected), 1)
 
@@ -161,6 +164,31 @@ class RedistributionTest(unittest.TestCase):
         result = self.allocate(obs, "feasible-value-redirect")
         self.assertEqual(result.claimants[903050].status, tr.LATE)
         self.assertNotIn(903050, result.redirected)
+        self.assertEqual(sum(result.dropped.values()), 0)  # no alternative is even considered for it
+
+    def test_late_claimant_boundary_is_exact_as_in_v3(self) -> None:
+        probe = observation([unit(903055, 503, INFANTRY)])
+        free_flow = 144 * len(route(503, A, INFANTRY))
+        for cur_step, status in ((2880 - free_flow, tr.LATE), (2880 - free_flow - 1, tr.FULL)):
+            obs = observation([unit(903055, 503, INFANTRY)], cur_step=cur_step)
+            result = self.allocate(obs, "feasible-value-redirect")
+            self.assertEqual(result.claimants[903055].status, status)
+            policy = ShootReservationPolicy(self.costs)
+            base = policy.decide(obs, SEAT, RED, Memory()).actions
+            v3 = tb.allocate(obs, SEAT, RED, base, policy.router)
+            self.assertEqual((result.selected, result.staged, result.withheld), (v3.selected, v3.staged, v3.withheld))
+        self.assertIsNotNone(probe)
+
+    def test_movers_that_cannot_arrive_hold_no_place_so_nothing_overflows(self) -> None:
+        path = route(100, A, INFANTRY)
+        far = [unit(903120 + k, 100, INFANTRY, move_path=path) for k in range(tr.CAPACITY)]
+        near = [unit(903130 + k, h) for k, h in enumerate((504, 506, 404, 604))]
+        bound = 144 * (len(path) - 1)
+        obs = observation(far + near, cur_step=2880 - bound)
+        result = self.allocate(obs, "feasible-value-redirect")
+        self.assertEqual(result.objectives[A]["phantom"], tr.CAPACITY)
+        self.assertEqual(set(result.selected), {903130, 903131, 903132, 903133})
+        self.assertEqual(result.redirected, {})
 
     def test_detour_bound_is_inclusive_at_exactly_twice_the_cost(self) -> None:
         near = [unit(903060 + k, h) for k, h in enumerate((405, 406, 504, 506))]

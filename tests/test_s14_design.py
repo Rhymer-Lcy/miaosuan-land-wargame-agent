@@ -94,6 +94,8 @@ class GateTest(unittest.TestCase):
         self.assertEqual(self.failed(facts), ["G9_redistribution_restored"])
         facts["candidates"]["x"]["primary"]["games"]["p02"]["first_decision_redirects"] = 10
         self.assertEqual(self.failed(facts), [])
+        facts["candidates"]["x"]["primary"]["games"]["p03"]["redirected_units"] = 4
+        self.assertEqual(self.failed(facts), [])
         facts["candidates"]["x"]["primary"]["games"]["p03"]["redirected_units"] = 3
         self.assertEqual(self.failed(facts), ["G9_redistribution_restored"])
 
@@ -207,6 +209,10 @@ class ChecksTest(unittest.TestCase):
         redirected = [a for a in good if a["obj_id"] == 905010][0]
         bent = dict(redirected, move_path=list(redirected["move_path"])[:-1] + [A])
         self.assertTrue(check([bent if a is redirected else a for a in good]))
+        detour = list(redirected["move_path"])
+        bent_route = dict(redirected, move_path=detour[:1] + [detour[0] + 1] + detour[1:])
+        self.assertIn("redirect route differs from baseline-v2's candidate route",
+                      check([bent_route if a is redirected else a for a in good]))
         off_route = dict(redirected, move_path=[list(redirected["move_path"])[0]])
         self.assertIn("changed move neither a redirect nor a strict same-route prefix off objectives",
                       check([off_route if a is redirected else a for a in good]))
