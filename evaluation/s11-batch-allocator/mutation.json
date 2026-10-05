@@ -1,0 +1,156 @@
+{
+ "killed": 28,
+ "mutations": [
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "rank by emission order"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "objective group left in emission order"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "staging processed in emission order"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "ties broken by emission order"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "rank by route cost only (speed ignored)"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "movers that cannot arrive still hold places"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "mover bound includes the hex being entered"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "late claimants selectable"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "end of game off by one"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "missing clock treated as the end"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "counted movers ignored"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "standing units ignored"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "staging hex allowed a fourth unit"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "staged endpoints not counted"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "staging allowed on an objective"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "rejected staged move emitted anyway"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "internal failure falls back to baseline-v2"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t9_batch.py",
+   "killed": true,
+   "mutation": "unreadable free-flow time selectable"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_batch_replay.py",
+   "killed": true,
+   "mutation": "cross-objective test blind to other objectives"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_batch_replay.py",
+   "killed": true,
+   "mutation": "prefix test accepts any shortening"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_batch_replay.py",
+   "killed": true,
+   "mutation": "unrelated actions compared without order"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_batch_replay.py",
+   "killed": true,
+   "mutation": "late owners never counted"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_batch_replay.py",
+   "killed": true,
+   "mutation": "caused capacity never counted"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_batch_replay.py",
+   "killed": true,
+   "mutation": "permutation check compares counts only"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_batch_replay.py",
+   "killed": true,
+   "mutation": "move listing never counted"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_batch_replay.py",
+   "killed": true,
+   "mutation": "early arrivals reported as exact"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_batch_replay.py",
+   "killed": true,
+   "mutation": "remaining bound includes the hex being entered"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/t9_batch_replay.py",
+   "killed": true,
+   "mutation": "phantom places blamed on the candidate too"
+  }
+ ],
+ "schema": "miaosuan-s11-batch-mutation/1",
+ "sources": {
+  "src/miaosuan_agent/evaluation/t9_batch_replay.py": "af1978147dba3b0dab64a4d7ac6a2171fb9aad15e4bca2b7cb41ebfc4a42fe5a",
+  "src/miaosuan_agent/experiments/t9_batch.py": "ba0e3fcd5e7b9c223b5d22129f37c06fb3bcb7ab071b0a825de6552f3edd7510"
+ },
+ "tests": [
+  "tests.test_t9_batch",
+  "tests.test_t9_batch_replay"
+ ],
+ "total": 28,
+ "unmutated_tests_pass": true
+}
