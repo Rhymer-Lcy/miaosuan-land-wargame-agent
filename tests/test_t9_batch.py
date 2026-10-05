@@ -368,15 +368,52 @@ class BatchTest(unittest.TestCase):
         kinds = {json.loads(change)["kind"] for change in agent.last_trace.changes}
         self.assertTrue(kinds and kinds <= {"stage", "withhold"}, kinds)
 
-    def test_candidate_is_offline_only(self) -> None:
+    def test_candidate_occurs_only_in_the_approved_sprint12_stage_cards(self) -> None:
+        """Owner-approved whitelist (Sprint 12 registration, 2026-10-05): v3 may appear in a run card only as one of
+        the four Sprint 12 stage cards, each binding exactly the frozen v3 source digest; no historical card or
+        builder may acquire it, and any other manifest that names it fails. A changed v3 source is a new identity
+        that needs new owner approval, so its digest is pinned here too."""
         import importlib.util
         from pathlib import Path
+        from miaosuan_agent.evaluation import exploratory as xp
+        from miaosuan_agent.evaluation import s12_screen as sc
         root = Path(__file__).resolve().parents[1]
         spec = importlib.util.spec_from_file_location("brc", root / "scripts" / "build_run_card.py")
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         self.assertNotIn(tb.CANDIDATE_ID, module.CANDIDATES)
-        self.assertNotIn("t9_batch", (root / "scripts" / "build_run_card.py").read_text(encoding="utf-8"))
+        for name in ("build_run_card.py", "run_explore.sh", "run_explore_game.py", "build_t9_diagnostic_card.py"):
+            self.assertNotIn("t9_batch", (root / "scripts" / name).read_text(encoding="utf-8"), name)
+        frozen = "9b2003a78ace45c968e2340f06e6fe5aa1938667ab1610c448725a319a48b2b8"
+        self.assertEqual((tb.CANDIDATE_ID, sc.V3_ID, sc.V3_DIGEST), ("t9-batch-capacity-v3", tb.CANDIDATE_ID, frozen))
+        from miaosuan_agent.evaluation import runtime_remediation as rr
+        from miaosuan_agent.evaluation.identity import digest_of_files, policy_source_files
+        rr_sources = rr.candidate_sources() + ("experiments/shoot_reservation.py", "experiments/exploratory_addon.py",
+                                               "experiments/t9_batch.py")
+        self.assertEqual(digest_of_files(policy_source_files(sources=rr_sources)), frozen)
+        approved = set(sc.CARD_IDS.values())
+        checked = 0
+        for path in sorted((root / "evaluation").rglob("*.json")):
+            text = path.read_text(encoding="utf-8")
+            if tb.CANDIDATE_ID not in text and frozen not in text:
+                continue
+            rel = path.relative_to(root).as_posix()
+            data = json.loads(text)
+            is_card = isinstance(data, dict) and (xp.is_card(data) or path.name == "manifest.json")
+            if not is_card:
+                self.assertTrue(rel.startswith(("evaluation/s11-batch-allocator/", "evaluation/s12-batch-allocator-draft/",
+                                                "evaluation/s12-v3-")), rel)
+                self.assertFalse(isinstance(data, dict) and data.get("executable"), rel)
+                continue
+            checked += 1
+            self.assertIn(path.parent.name, approved, rel)
+            self.assertEqual(rel, f"evaluation/{path.parent.name}/manifest.json")
+            self.assertEqual((data.get("card_id"), (data.get("screen") or {}).get("id")),
+                             (path.parent.name, sc.SCREEN_ID), rel)
+            source = data["policies"][tb.CANDIDATE_ID]["policy_source"]
+            self.assertEqual(source["sha256"], frozen, rel)
+            self.assertIn("experiments/t9_batch.py", source["files"], rel)
+        self.assertGreaterEqual(checked, 1, "the approved P1 stage card exists and is checked")
 
 
 if __name__ == "__main__":

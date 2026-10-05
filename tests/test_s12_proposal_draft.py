@@ -101,17 +101,24 @@ class DraftCompanionTest(unittest.TestCase):
                                    + rates["PRESERVED_DIRECTIONALLY"], 1.0, places=3)
 
 
-class CandidateIsInNoRunCardTest(unittest.TestCase):
-    def test_no_committed_card_or_runner_names_the_candidate(self) -> None:
+class CandidateOnlyInApprovedCardsTest(unittest.TestCase):
+    """Before the owner's approval this test required that v3 be in no run card. The registration approved on
+    2026-10-05 replaced that with an exact whitelist (tests/test_t9_batch.py holds the full check): v3 may appear only
+    in the four Sprint 12 stage cards; the draft companion stays proposal evidence, never a card."""
+
+    def test_only_approved_cards_name_the_candidate_and_old_runners_never_do(self) -> None:
+        sys.path.insert(0, str(ROOT / "src"))
+        from miaosuan_agent.evaluation import s12_screen as sc
+        approved = set(sc.CARD_IDS.values())
         cards = sorted((ROOT / "evaluation").glob("*/manifest.json"))
         self.assertGreater(len(cards), 10)
         for path in cards:
             text = path.read_text(encoding="utf-8")
-            self.assertNotIn(V3, text, path)
-            self.assertNotIn(V3_DIGEST, text, path)
+            if V3 in text or V3_DIGEST in text or "s12" in path.parent.name:
+                self.assertIn(path.parent.name, approved, path)
         for name in ("build_run_card.py", "run_explore.sh", "run_explore_game.py"):
             self.assertNotIn("t9_batch", (ROOT / "scripts" / name).read_text(encoding="utf-8"), name)
-        self.assertFalse(any("s12" in path.parent.name for path in cards))
+        self.assertFalse((DRAFT.parent / "manifest.json").exists())
 
 
 class DocumentTest(unittest.TestCase):
