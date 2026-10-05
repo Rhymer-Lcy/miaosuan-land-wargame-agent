@@ -13,7 +13,7 @@ played and its captured allocation; T9-v1 equals what the T9-v1 seats played and
 figures) and then evaluates the frozen gate, the rubric and the disposition. Public output under
 ``evaluation/s14-redistribution-design/``; private rows under ``local/diagnostics/s14/``. ``--check`` regenerates the
 public files in memory and compares them byte for byte; decision latency is measured once and kept in ``timing.json``,
-which ``--check`` reads instead of re-measuring. No engine is opened and the ledger is not read.
+which every later run reads instead of re-measuring. No engine is opened and the ledger is not read.
 """
 
 from __future__ import annotations
@@ -50,7 +50,8 @@ SCHEMA_INPUTS = "miaosuan-s14-inputs/1"
 SCHEMA = "miaosuan-s14-design/1"
 OUT_DIR = REPO_ROOT / "evaluation" / "s14-redistribution-design"
 INPUTS = OUT_DIR / "inputs.json"
-PUBLIC = ("replay", "adverse", "gate")
+ADVERSE_FILES = {"2120531121 C3": "adverse-2120531121-c3", "1930331196 C3": "adverse-1930331196-c3",
+                 "1930331196 C2": "adverse-1930331196-c2"}  # one file each: every public file stays below 100,000 bytes
 TIMING = OUT_DIR / "timing.json"
 PRIVATE = REPO_ROOT / "local" / "diagnostics" / "s14"
 EV = REPO_ROOT / "local" / "evaluation"
@@ -583,8 +584,9 @@ def combine(results: Sequence[Tuple[Dict[str, Any], Dict[str, Any]]], timing: Ma
     public = {
         "replay": {"schema": SCHEMA, "note": NOTE, "inputs_sha256": sha256(INPUTS),
                    "primary": {name: blocks[name]["primary"] for name in sx.POLICIES}},
-        "adverse": {"schema": SCHEMA, "note": NOTE, "anchors": anchors,
-                    "configurations": {name: blocks[name]["adverse"] for name in sx.POLICIES}},
+        **{stem: {"schema": SCHEMA, "note": NOTE, "configuration": config, "anchors": anchors.get(config),
+                  "policies": {name: blocks[name]["adverse"].get(config) for name in sx.POLICIES}}
+           for config, stem in ADVERSE_FILES.items()},
         "gate": {"schema": SCHEMA, "note": NOTE, "thresholds": sx.GATE, "static": static, "fidelity_problems": fidelity,
                  "gates": gates, "selection": selection, "disposition": verdict,
                  "timing_sha256": sha256(TIMING) if TIMING.exists() else None},
@@ -633,7 +635,7 @@ def run(args: argparse.Namespace) -> int:
     jobs = [("primary", g) for g in primary_games()] + [("adverse", e) for e in ADVERSE]
     with multiprocessing.get_context("fork").Pool(min(args.workers, len(jobs))) as pool:
         results = pool.map(process, jobs, chunksize=1)
-    if args.check:
+    if args.check or TIMING.exists():  # latency is measured once; later runs reuse it
         timing = json.loads(TIMING.read_text(encoding="utf-8"))
     else:
         timing = timing_of(results)
