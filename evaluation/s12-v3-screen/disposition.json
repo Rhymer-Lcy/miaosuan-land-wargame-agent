@@ -1,0 +1,10 @@
+{
+ "disposition": "NOT_PRESERVED_IN_PRIMARY",
+ "reports": {
+  "P1": "da4ee8101ab707af7ca7fe2f6983a20c57c21c450e3a6273f66ad82186deb632"
+ },
+ "rules_sha256": "1f7156f193ada6d686fa4cb3f13f2e92d6c360ca174530085c6cf4821b22b00b",
+ "schema": "miaosuan-s12-disposition/1",
+ "screen": "s12-v3-screen",
+ "stage": "P1"
+}
