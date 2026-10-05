@@ -92,7 +92,7 @@ class CleanGameTest(unittest.TestCase):
         public = tl.public(self.facts)
         units = {p["unit"] for p in self.facts["places_private"]}
         self.assertTrue(units)
-        self.assertEqual(sc.privacy_problems(public, secrets=units), [])
+        self.assertEqual(sc.privacy_problems(public, private_values=units), [])
         self.assertNotIn("places_private", public)
         self.assertNotIn("holds_private", public)
         self.assertEqual(public["stops"], {})

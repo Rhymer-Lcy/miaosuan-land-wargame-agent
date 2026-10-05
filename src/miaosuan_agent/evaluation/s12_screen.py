@@ -553,9 +553,10 @@ def public_game(facts: Mapping[str, Any]) -> Dict[str, Any]:
     return out
 
 
-def privacy_problems(value: Any, secrets: Iterable[Any] = (), path: str = "$") -> List[str]:
-    """Forbidden keys anywhere in ``value``, and any of ``secrets`` (unit ids, hexes) as a number or inside a string."""
-    secrets = {str(s) for s in secrets}
+def privacy_problems(value: Any, private_values: Iterable[Any] = (), path: str = "$") -> List[str]:
+    """Forbidden keys anywhere in ``value``, and any of ``private_values`` (unit ids, hexes) as a number, as a key or
+    as a word of a string."""
+    hidden = {str(v) for v in private_values}
     problems: List[str] = []
 
     def walk(node: Any, where: str) -> None:
@@ -563,8 +564,8 @@ def privacy_problems(value: Any, secrets: Iterable[Any] = (), path: str = "$") -
             for key, item in node.items():
                 if str(key) in FORBIDDEN_KEYS:
                     problems.append(f"{where}.{key}: forbidden key")
-                if str(key) in secrets:
-                    problems.append(f"{where}.{key}: secret as key")
+                if str(key) in hidden:
+                    problems.append(f"{where}.{key}: private value as key")
                 walk(item, f"{where}.{key}")
         elif isinstance(node, (list, tuple)):
             for i, item in enumerate(node):
@@ -572,12 +573,11 @@ def privacy_problems(value: Any, secrets: Iterable[Any] = (), path: str = "$") -
         elif isinstance(node, bool) or node is None:
             return
         elif isinstance(node, (int, float)):
-            if str(node) in secrets:
-                problems.append(f"{where}: secret value")
+            if str(node) in hidden:
+                problems.append(f"{where}: private value")
         elif isinstance(node, str):
-            for secret in secrets:
-                if secret and secret in node.split() or node == secret:
-                    problems.append(f"{where}: secret in text")
+            if node in hidden or hidden & set(node.split()):
+                problems.append(f"{where}: private value in text")
 
     walk(value, path)
     return problems

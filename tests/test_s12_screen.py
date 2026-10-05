@@ -371,13 +371,13 @@ class LedgerTest(unittest.TestCase):
 
 
 class PrivacyTest(unittest.TestCase):
-    def test_forbidden_keys_and_secrets(self) -> None:
+    def test_forbidden_keys_and_private_values(self) -> None:
         self.assertTrue(sc.privacy_problems({"a": {"obj_id": 1}}))
         self.assertTrue(sc.privacy_problems({"a": [{"cur_hex": 1}]}))
-        self.assertTrue(sc.privacy_problems({"n": 930001}, secrets=[930001]))
-        self.assertTrue(sc.privacy_problems({"s": "unit 930001 waited"}, secrets=[930001]))
-        self.assertTrue(sc.privacy_problems({"930001": 1}, secrets=[930001]))
-        self.assertEqual(sc.privacy_problems({"n": 4, "s": "four places"}, secrets=[930001]), [])
+        self.assertTrue(sc.privacy_problems({"n": 930001}, private_values=[930001]))
+        self.assertTrue(sc.privacy_problems({"s": "unit 930001 waited"}, private_values=[930001]))
+        self.assertTrue(sc.privacy_problems({"930001": 1}, private_values=[930001]))
+        self.assertEqual(sc.privacy_problems({"n": 4, "s": "four places"}, private_values=[930001]), [])
 
     def test_public_game_keeps_only_whitelisted_fields(self) -> None:
         facts = {"game_id": "g", "margin": 1, "places_private": [{"unit": 930001}], "holds_private": [], "x": 2}
