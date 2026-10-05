@@ -1,11 +1,11 @@
 {
  "note": "private inputs pinned before the Sprint 13 analysis; files stay under the ignored local/ tree",
- "policies": {
-  "baseline-v2": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
-  "t9-v1": "0a0b7174f52e6a6a9d30959ef6a1589c185fb82e70290ceb2b80c889109d77fa",
-  "t9-v2": "66a451d513d7ff5df2292238dbc4dd526d6b39c050991a25043546a0bce2bece",
-  "t9-v3": "9b2003a78ace45c968e2340f06e6fe5aa1938667ab1610c448725a319a48b2b8"
- },
+ "policies_checked_against_frozen": [
+  "baseline-v2",
+  "t9-v1",
+  "t9-v2",
+  "t9-v3"
+ ],
  "s12": {
   "card": "s12-v3-primary-1",
   "card_manifest_sha256": "6be361740848d0e2d35976846ef9bf13f8dd15dadb78c47331fd12dec8fadb60",
