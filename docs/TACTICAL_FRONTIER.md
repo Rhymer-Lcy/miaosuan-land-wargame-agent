@@ -131,7 +131,7 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
 | PS-1 | capacity-aware movement on `baseline-v2`'s play stage; selected form PS-1B, stalled-movement recovery: stop the deadlocked group that can back off, re-order it after the transition | `SHELVED` (2026-10-02): design study (Sprint 3, `docs/PS1_DESIGN.md`), then the registered engine probe ([issue #2](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/2), `docs/PS1_ENGINE_PROBE.md`): the stop on a waiting unit is deferred indefinitely (E1, E2 refuted, G2 FAIL) and the movement model failed its prospective fidelity test (G3 FAIL); disposition SHELVE |
 | T7-C | concealment of idle stationary units: own ground units that `baseline-v2` leaves idle, stationary and unsuppressed while no enemy is seen are ordered into concealment (`docs/T7_DESIGN.md`, section 14) | `IDEA` (2026-10-03): the registered three-game mechanism probe ([issue #3](https://github.com/Rhymer-Lcy/miaosuan-land-wargame-agent/issues/3), `docs/T7_MECHANISM_PROBE.md`) supports acceptance, the 75-step transition (16 of 16), retained listings, non-interference and the halved observation distance for ground observers; exit by a real move or shot is untested; disposition NEEDS_TARGETED_PROBE. The offline search for a natural E3b configuration (`docs/T7_E3B_SEARCH.md`, 2026-10-03) found no on-policy witness: E3B_CONFIGURATION_UNCERTAIN |
 | T4 | indirect artillery fire for the artillery `baseline-v2` leaves idle | `SHELVED` (2026-10-03): three exploratory versions in 11 games (`docs/SPRINT8_EXPLORATION.md`); every order executed, but version 2's damage came with friendly fire (own units entering exploding hexes near objectives) and version 3, which avoids it, sat at the control mean |
-| T9 | capacity-limited objective allocation: at most 4 ground units committed per objective, the rest re-assigned or held | `NEEDS_REVISION` (2026-10-04): Sprint 9's registered result remains PRIMARY_SUPPORTED_NEEDS_REVISION (+305.47, interval 172.87 to 611.24 in 2130511121). Sprint 10's full-step diagnosis and T9-v2 same-route staging screen (`docs/SPRINT10_T9_DIAGNOSIS.md`, 14 sessions) repaired both 1930331196 firing regressions, but still missed the fifth 2120531121 objective, worsened its margin, and directionally lost most of the primary benefit; disposition PARTIAL_REPAIR_NOT_READY_FOR_CONFIRMATION, nothing promoted |
+| T9 | capacity-limited objective allocation: at most 4 ground units committed per objective, the rest re-assigned or held | `NEEDS_REVISION` (2026-10-04): Sprint 9's registered result remains PRIMARY_SUPPORTED_NEEDS_REVISION (+305.47, interval 172.87 to 611.24 in 2130511121). Sprint 10's full-step diagnosis and T9-v2 same-route staging screen (`docs/SPRINT10_T9_DIAGNOSIS.md`, 14 sessions) repaired both 1930331196 firing regressions, but still missed the fifth 2120531121 objective, worsened its margin, and directionally lost most of the primary benefit; disposition PARTIAL_REPAIR_NOT_READY_FOR_CONFIRMATION, nothing promoted. Sprint 11's offline design (`docs/SPRINT11_BATCH_ALLOCATOR.md`, no engine session) ranks each objective's claimants together by free-flow arrival and gives no place to a unit that cannot arrive before the game ends; on the frozen captures it would seat the units T9-v1 held back from the missed objective; disposition READY_FOR_SMALL_EXPLORATORY_PROPOSAL, nothing registered |
 | T2, T3, T5, T6, T8 | the other families above (T7's march, charge, stop and lock mechanisms: not selected, `docs/T7_DESIGN.md` 13.5) | `IDEA` |
 
 ## Roadmap
@@ -179,8 +179,15 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
    exploratory games restored both 1930331196 firing configurations but still missed the 2120531121 fifth objective
    and directionally eroded the primary benefit (`docs/SPRINT10_T9_DIAGNOSIS.md`). Disposition
    PARTIAL_REPAIR_NOT_READY_FOR_CONFIRMATION; no promotion or confirmation proposal.
-10. **Next**: offline-only design of a batch capacity allocator that ranks claimants by feasible arrival while
-    preserving tactical corridors, followed by frozen-capture action replay before any further engine request.
+10. **Done (Sprint 11)**: an offline design of a batch capacity allocator (`docs/SPRINT11_BATCH_ALLOCATOR.md`), no
+    engine session. No established operation can re-order a unit already moving, so the allocator never displaces one;
+    it ranks each objective's claimants together by free-flow arrival, counts no reservation that cannot be honoured
+    before the game ends, and stages the rest on their own route. Replayed on the frozen Sprint 10 captures it would
+    have seated the units T9-v1 held back from the missed 2120531121 objective and made no cross-objective move.
+    Disposition READY_FOR_SMALL_EXPLORATORY_PROPOSAL; whether it keeps any of the primary benefit, which T9-v1 obtained
+    with redistribution, is unknown offline.
+11. **Next**: a small exploratory proposal for the batch allocator, written for the owner's approval before any
+    engine session.
 
 A tactic that earns ADVANCE gets a confirmatory design sized from its screen's noise; one that does not is recorded
 with its disposition and left. Platform evidence runs alongside: the canary first, then each candidate that a local
