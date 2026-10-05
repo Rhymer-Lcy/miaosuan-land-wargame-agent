@@ -96,7 +96,10 @@ In 285 sessions the primary result was supported: head to head in 2130511121 the
 margin by 305.47 points (95% interval 172.87 to 611.24). The safety screen showed identical margins. Against the
 inert control in the large scenarios, however, the candidate gained as red in two scenarios and lost as blue in two,
 beyond the registered threshold, so the study stopped before its last phase. The disposition is
-PRIMARY_SUPPORTED_NEEDS_REVISION; nothing was promoted. The canary's
+PRIMARY_SUPPORTED_NEEDS_REVISION; nothing was promoted. Sprint 10 diagnosed the adverse configurations and screened a
+same-route revision (`docs/SPRINT10_T9_DIAGNOSIS.md`, PARTIAL_REPAIR_NOT_READY_FOR_CONFIRMATION), and Sprint 11
+designed, offline and without engine sessions, a batch capacity allocator (`docs/SPRINT11_BATCH_ALLOCATOR.md`,
+READY_FOR_SMALL_EXPLORATORY_PROPOSAL; nothing registered). The canary's
 manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
@@ -154,6 +157,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/T9_CONFIRMATION_PROPOSAL.md` | the proposed confirmatory study of T9 (for the owner's approval; not a registration) |
 | `docs/T9_CONFIRMATION.md` | the registered, staged confirmatory study of T9: identities, design, estimand, interval, power, phase gates, failure handling, integrity, validation, disposition, results |
 | `docs/SPRINT10_T9_DIAGNOSIS.md` | Sprint 10's full-step T9 failure diagnosis, same-route T9-v2 revision, eight-game exploratory screen and disposition |
+| `docs/SPRINT11_BATCH_ALLOCATOR.md` | Sprint 11's offline design of a batch capacity allocator: control audit, formal model, designs considered, frozen-capture replay, certificate, prevalence, tests and disposition |
 | `docs/PLATFORM_CANARY.md` | the owner's manual upload and compatibility-check steps for the platform canary |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
