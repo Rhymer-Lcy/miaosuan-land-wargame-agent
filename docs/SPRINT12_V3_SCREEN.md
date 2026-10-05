@@ -42,7 +42,7 @@ pinned by digest in every stage card.
 
 | Stage | Card id | Games (screen positions) | Exists before execution |
 |---|---|---|---|
-| P1 | `s12-v3-primary-1` | 2130511121 H1, H2, H1, H2 (1 to 4) | yes: `evaluation/s12-v3-primary-1/manifest.json`, canonical SHA-256 `b0fb9f351d322e96500a6b1a465657fed3a5522bb3481dbcf483207af02e7529` |
+| P1 | `s12-v3-primary-1` | 2130511121 H1, H2, H1, H2 (1 to 4) | yes: `evaluation/s12-v3-primary-1/manifest.json`, canonical SHA-256 `3ea02487849e5558f7888e3a13a0844b6dc17ba11cc552862c84cf21acb970bb` |
 | P2 | `s12-v3-primary-2` | 2130511121 H1, H2 (5, 6) | no |
 | A1 | `s12-v3-adverse-1` | 2120531121 C3, 1930331196 C2, 1930331196 C3 (7 to 9) | no |
 | A2 | `s12-v3-adverse-2` | the A1 configurations with a replication trigger, in that order (10 to 12) | no |
