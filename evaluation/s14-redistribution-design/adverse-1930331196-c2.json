@@ -1,0 +1,2232 @@
+{
+ "anchors": {
+  "direct_fire_actions": 1,
+  "first_decision_state_identical": true,
+  "shooters": 1
+ },
+ "configuration": "1930331196 C2",
+ "note": "offline design competition on recorded states: every policy is an action-level decision on states another policy produced; nothing here is an engine outcome, a score estimate or evidence of an effect",
+ "policies": {
+  "O2": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "destinations": {
+     "50-point objective A -> 80-point objective A": 4,
+     "50-point objective A -> 80-point objective B": 2,
+     "50-point objective B -> 80-point objective B": 6,
+     "50-point objective C -> 80-point objective A": 2
+    },
+    "emitted_ground_moves": 41,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 6,
+    "first_difference_decision": 1,
+    "keeps": 20,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 0,
+     "baseline-v2": 21,
+     "t9-v1": 17,
+     "v3": 14
+    },
+    "order_divergence_distinct": {
+     "O2": 0,
+     "baseline-v2": 8,
+     "t9-v1": 10,
+     "v3": 7
+    },
+    "redirect_share": 0.3415,
+    "redirected_units": 7,
+    "redirects": 14,
+    "repeat": {},
+    "slot_divergence": {
+     "O2": 0,
+     "baseline-v2": 13,
+     "t9-v1": 5,
+     "v3": 6
+    },
+    "stages": 7,
+    "violations": {},
+    "withholds": 0
+   },
+   "causal_units_objective_changed": 4,
+   "early_redirects_baseline": 14,
+   "first_decision_prefix": {
+    "detour_ratio": {
+     "max": 1.2917,
+     "median": 1.1818,
+     "min": 1.1667,
+     "n": 6,
+     "p25": 1.1667,
+     "p75": 1.1875
+    },
+    "free_flow_steps": {
+     "max": 2736.0,
+     "median": 560.0,
+     "min": 520.0,
+     "n": 6,
+     "p25": 520.0,
+     "p75": 620.0
+    },
+    "kinds": {
+     "infantry": 1,
+     "vehicle": 5
+    },
+    "prefix_hexes": {
+     "max": 24.0,
+     "median": 21.0,
+     "min": 1.0,
+     "n": 6,
+     "p25": 2.0,
+     "p75": 24.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 1.0,
+     "min": 0.0625,
+     "n": 6,
+     "p25": 0.0833,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2360.0,
+     "median": 2320.0,
+     "min": 144.0,
+     "n": 6,
+     "p25": 2260.0,
+     "p75": 2360.0
+    }
+   },
+   "first_decision_redirects": 6,
+   "first_decision_redirects_by_trajectory": {
+    "baseline-v2": 6,
+    "t9-v1": 6
+   },
+   "first_decision_same_as_t9v1": 1,
+   "redirect_descriptives": {
+    "detour_ratio": {
+     "max": 1.2917,
+     "median": 1.1667,
+     "min": 1.0,
+     "n": 21,
+     "p25": 1.0667,
+     "p75": 1.1818
+    },
+    "free_flow_steps": {
+     "max": 2736.0,
+     "median": 520.0,
+     "min": 80.0,
+     "n": 21,
+     "p25": 320.0,
+     "p75": 560.0
+    },
+    "kinds": {
+     "infantry": 2,
+     "vehicle": 19
+    },
+    "prefix_hexes": {
+     "max": 24.0,
+     "median": 1.0,
+     "min": 0.0,
+     "n": 21,
+     "p25": 0.0,
+     "p75": 21.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 0.0833,
+     "min": 0.0,
+     "n": 21,
+     "p25": 0.0,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2360.0,
+     "median": 2260.0,
+     "min": 144.0,
+     "n": 21,
+     "p25": 2000.0,
+     "p75": 2360.0
+    }
+   },
+   "shooter_forms": {},
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "destinations": {
+     "50-point objective A -> 80-point objective A": 4,
+     "50-point objective A -> 80-point objective B": 2,
+     "50-point objective B -> 80-point objective B": 1
+    },
+    "emitted_ground_moves": 1069,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 6,
+    "first_difference_decision": 1,
+    "keeps": 12,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 0,
+     "baseline-v2": 1057,
+     "t9-v1": 1058,
+     "v3": 7
+    },
+    "order_divergence_distinct": {
+     "O2": 0,
+     "baseline-v2": 10,
+     "t9-v1": 10,
+     "v3": 7
+    },
+    "redirect_share": 0.0065,
+    "redirected_units": 7,
+    "redirects": 7,
+    "repeat": {},
+    "slot_divergence": {
+     "O2": 0,
+     "baseline-v2": 288,
+     "t9-v1": 3,
+     "v3": 3
+    },
+    "stages": 1050,
+    "violations": {},
+    "withholds": 0
+   }
+  },
+  "baseline-v2": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "destinations": {},
+    "emitted_ground_moves": 41,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 0,
+    "first_difference_decision": null,
+    "keeps": 41,
+    "max_objective_commitment": 11,
+    "order_divergence": {
+     "O2": 21,
+     "baseline-v2": 0,
+     "t9-v1": 21,
+     "v3": 21
+    },
+    "order_divergence_distinct": {
+     "O2": 8,
+     "baseline-v2": 0,
+     "t9-v1": 10,
+     "v3": 8
+    },
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {},
+    "slot_divergence": {
+     "O2": 13,
+     "baseline-v2": 0,
+     "t9-v1": 13,
+     "v3": 7
+    },
+    "stages": 0,
+    "violations": {
+     "objective above capacity": 7
+    },
+    "withholds": 0
+   },
+   "causal_units_objective_changed": 0,
+   "early_redirects_baseline": 0,
+   "first_decision_prefix": {
+    "detour_ratio": {
+     "n": 0
+    },
+    "free_flow_steps": {
+     "n": 0
+    },
+    "kinds": {},
+    "prefix_hexes": {
+     "n": 0
+    },
+    "prefix_share": {
+     "n": 0
+    },
+    "slack_steps": {
+     "n": 0
+    }
+   },
+   "first_decision_redirects": 0,
+   "first_decision_redirects_by_trajectory": {
+    "baseline-v2": 0,
+    "t9-v1": 0
+   },
+   "first_decision_same_as_t9v1": 0,
+   "redirect_descriptives": {
+    "detour_ratio": {
+     "n": 0
+    },
+    "free_flow_steps": {
+     "n": 0
+    },
+    "kinds": {},
+    "prefix_hexes": {
+     "n": 0
+    },
+    "prefix_share": {
+     "n": 0
+    },
+    "slack_steps": {
+     "n": 0
+    }
+   },
+   "shooter_forms": {},
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "destinations": {},
+    "emitted_ground_moves": 1069,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 0,
+    "first_difference_decision": null,
+    "keeps": 1069,
+    "max_objective_commitment": 11,
+    "order_divergence": {
+     "O2": 1057,
+     "baseline-v2": 0,
+     "t9-v1": 1057,
+     "v3": 1057
+    },
+    "order_divergence_distinct": {
+     "O2": 10,
+     "baseline-v2": 0,
+     "t9-v1": 9,
+     "v3": 10
+    },
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {},
+    "slot_divergence": {
+     "O2": 288,
+     "baseline-v2": 0,
+     "t9-v1": 288,
+     "v3": 285
+    },
+    "stages": 0,
+    "violations": {
+     "objective above capacity": 285
+    },
+    "withholds": 0
+   }
+  },
+  "batch-value-redirect": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "destinations": {
+     "50-point objective A -> 80-point objective A": 4,
+     "50-point objective A -> 80-point objective B": 2,
+     "50-point objective B -> 80-point objective B": 6,
+     "50-point objective C -> 80-point objective A": 2
+    },
+    "emitted_ground_moves": 41,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 6,
+    "first_difference_decision": 1,
+    "keeps": 20,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 0,
+     "baseline-v2": 21,
+     "t9-v1": 17,
+     "v3": 14
+    },
+    "order_divergence_distinct": {
+     "O2": 0,
+     "baseline-v2": 8,
+     "t9-v1": 10,
+     "v3": 7
+    },
+    "redirect_share": 0.3415,
+    "redirected_units": 7,
+    "redirects": 14,
+    "repeat": {
+     "order_comparisons": 30,
+     "repeat_comparisons": 16
+    },
+    "slot_divergence": {
+     "O2": 0,
+     "baseline-v2": 13,
+     "t9-v1": 5,
+     "v3": 6
+    },
+    "stages": 7,
+    "violations": {},
+    "withholds": 0
+   },
+   "causal_units_objective_changed": 4,
+   "early_redirects_baseline": 14,
+   "first_decision_prefix": {
+    "detour_ratio": {
+     "max": 1.2917,
+     "median": 1.1818,
+     "min": 1.1667,
+     "n": 6,
+     "p25": 1.1667,
+     "p75": 1.1875
+    },
+    "free_flow_steps": {
+     "max": 2736.0,
+     "median": 560.0,
+     "min": 520.0,
+     "n": 6,
+     "p25": 520.0,
+     "p75": 620.0
+    },
+    "kinds": {
+     "infantry": 1,
+     "vehicle": 5
+    },
+    "prefix_hexes": {
+     "max": 24.0,
+     "median": 21.0,
+     "min": 1.0,
+     "n": 6,
+     "p25": 2.0,
+     "p75": 24.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 1.0,
+     "min": 0.0625,
+     "n": 6,
+     "p25": 0.0833,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2360.0,
+     "median": 2320.0,
+     "min": 144.0,
+     "n": 6,
+     "p25": 2260.0,
+     "p75": 2360.0
+    }
+   },
+   "first_decision_redirects": 6,
+   "first_decision_redirects_by_trajectory": {
+    "baseline-v2": 6,
+    "t9-v1": 6
+   },
+   "first_decision_same_as_t9v1": 1,
+   "redirect_descriptives": {
+    "detour_ratio": {
+     "max": 1.2917,
+     "median": 1.1667,
+     "min": 1.0,
+     "n": 21,
+     "p25": 1.0667,
+     "p75": 1.1818
+    },
+    "free_flow_steps": {
+     "max": 2736.0,
+     "median": 520.0,
+     "min": 80.0,
+     "n": 21,
+     "p25": 320.0,
+     "p75": 560.0
+    },
+    "kinds": {
+     "infantry": 2,
+     "vehicle": 19
+    },
+    "prefix_hexes": {
+     "max": 24.0,
+     "median": 1.0,
+     "min": 0.0,
+     "n": 21,
+     "p25": 0.0,
+     "p75": 21.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 0.0833,
+     "min": 0.0,
+     "n": 21,
+     "p25": 0.0,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2360.0,
+     "median": 2260.0,
+     "min": 144.0,
+     "n": 21,
+     "p25": 2000.0,
+     "p75": 2360.0
+    }
+   },
+   "shooter_forms": {},
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "destinations": {
+     "50-point objective A -> 80-point objective A": 4,
+     "50-point objective A -> 80-point objective B": 2,
+     "50-point objective B -> 80-point objective B": 1
+    },
+    "emitted_ground_moves": 1069,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 6,
+    "first_difference_decision": 1,
+    "keeps": 12,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 0,
+     "baseline-v2": 1057,
+     "t9-v1": 1058,
+     "v3": 7
+    },
+    "order_divergence_distinct": {
+     "O2": 0,
+     "baseline-v2": 10,
+     "t9-v1": 10,
+     "v3": 7
+    },
+    "redirect_share": 0.0065,
+    "redirected_units": 7,
+    "redirects": 7,
+    "repeat": {
+     "order_comparisons": 858,
+     "repeat_comparisons": 289
+    },
+    "slot_divergence": {
+     "O2": 0,
+     "baseline-v2": 288,
+     "t9-v1": 3,
+     "v3": 3
+    },
+    "stages": 1050,
+    "violations": {},
+    "withholds": 0
+   }
+  },
+  "corridor-value-redirect-p25": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "destinations": {
+     "50-point objective A -> 50-point objective C": 2,
+     "50-point objective A -> 80-point objective A": 4,
+     "50-point objective C -> 80-point objective A": 2
+    },
+    "emitted_ground_moves": 41,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 6,
+    "first_difference_decision": 1,
+    "keeps": 20,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 8,
+     "baseline-v2": 21,
+     "t9-v1": 23,
+     "v3": 8
+    },
+    "order_divergence_distinct": {
+     "O2": 7,
+     "baseline-v2": 8,
+     "t9-v1": 11,
+     "v3": 6
+    },
+    "redirect_share": 0.1951,
+    "redirected_units": 6,
+    "redirects": 8,
+    "repeat": {
+     "order_comparisons": 30,
+     "repeat_comparisons": 16
+    },
+    "slot_divergence": {
+     "O2": 5,
+     "baseline-v2": 10,
+     "t9-v1": 8,
+     "v3": 3
+    },
+    "stages": 13,
+    "violations": {},
+    "withholds": 0
+   },
+   "causal_units_objective_changed": 4,
+   "early_redirects_baseline": 8,
+   "first_decision_prefix": {
+    "detour_ratio": {
+     "max": 1.1818,
+     "median": 1.1667,
+     "min": 1.125,
+     "n": 6,
+     "p25": 1.1667,
+     "p75": 1.1818
+    },
+    "free_flow_steps": {
+     "max": 2592.0,
+     "median": 560.0,
+     "min": 520.0,
+     "n": 6,
+     "p25": 520.0,
+     "p75": 560.0
+    },
+    "kinds": {
+     "infantry": 1,
+     "vehicle": 5
+    },
+    "prefix_hexes": {
+     "max": 24.0,
+     "median": 24.0,
+     "min": 7.0,
+     "n": 6,
+     "p25": 21.0,
+     "p75": 24.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 1.0,
+     "min": 0.4375,
+     "n": 6,
+     "p25": 1.0,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2360.0,
+     "median": 2320.0,
+     "min": 288.0,
+     "n": 6,
+     "p25": 2320.0,
+     "p75": 2360.0
+    }
+   },
+   "first_decision_redirects": 6,
+   "first_decision_redirects_by_trajectory": {
+    "baseline-v2": 6,
+    "t9-v1": 6
+   },
+   "first_decision_same_as_t9v1": 0,
+   "redirect_descriptives": {
+    "detour_ratio": {
+     "max": 1.1818,
+     "median": 1.1667,
+     "min": 1.0,
+     "n": 14,
+     "p25": 1.125,
+     "p75": 1.1818
+    },
+    "free_flow_steps": {
+     "max": 2592.0,
+     "median": 560.0,
+     "min": 80.0,
+     "n": 14,
+     "p25": 520.0,
+     "p75": 560.0
+    },
+    "kinds": {
+     "infantry": 2,
+     "vehicle": 12
+    },
+    "prefix_hexes": {
+     "max": 24.0,
+     "median": 21.0,
+     "min": 1.0,
+     "n": 14,
+     "p25": 7.0,
+     "p75": 24.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 1.0,
+     "min": 0.25,
+     "n": 14,
+     "p25": 0.4375,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2360.0,
+     "median": 2320.0,
+     "min": 288.0,
+     "n": 14,
+     "p25": 2320.0,
+     "p75": 2360.0
+    }
+   },
+   "shooter_forms": {},
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "destinations": {
+     "50-point objective A -> 50-point objective C": 2,
+     "50-point objective A -> 80-point objective A": 4
+    },
+    "emitted_ground_moves": 1069,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 6,
+    "first_difference_decision": 1,
+    "keeps": 12,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 3,
+     "baseline-v2": 1057,
+     "t9-v1": 1060,
+     "v3": 6
+    },
+    "order_divergence_distinct": {
+     "O2": 3,
+     "baseline-v2": 10,
+     "t9-v1": 10,
+     "v3": 6
+    },
+    "redirect_share": 0.0056,
+    "redirected_units": 6,
+    "redirects": 6,
+    "repeat": {
+     "order_comparisons": 858,
+     "repeat_comparisons": 289
+    },
+    "slot_divergence": {
+     "O2": 3,
+     "baseline-v2": 287,
+     "t9-v1": 5,
+     "v3": 2
+    },
+    "stages": 1051,
+    "violations": {},
+    "withholds": 0
+   }
+  },
+  "corridor-value-redirect-p50": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "destinations": {
+     "50-point objective A -> 50-point objective C": 1,
+     "50-point objective A -> 80-point objective A": 4
+    },
+    "emitted_ground_moves": 41,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 5,
+    "first_difference_decision": 1,
+    "keeps": 20,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 10,
+     "baseline-v2": 21,
+     "t9-v1": 25,
+     "v3": 5
+    },
+    "order_divergence_distinct": {
+     "O2": 7,
+     "baseline-v2": 8,
+     "t9-v1": 11,
+     "v3": 5
+    },
+    "redirect_share": 0.122,
+    "redirected_units": 5,
+    "redirects": 5,
+    "repeat": {
+     "order_comparisons": 30,
+     "repeat_comparisons": 16
+    },
+    "slot_divergence": {
+     "O2": 6,
+     "baseline-v2": 9,
+     "t9-v1": 9,
+     "v3": 2
+    },
+    "stages": 16,
+    "violations": {},
+    "withholds": 0
+   },
+   "causal_units_objective_changed": 3,
+   "early_redirects_baseline": 5,
+   "first_decision_prefix": {
+    "detour_ratio": {
+     "max": 1.1818,
+     "median": 1.1667,
+     "min": 1.1667,
+     "n": 5,
+     "p25": 1.1667,
+     "p75": 1.1818
+    },
+    "free_flow_steps": {
+     "max": 560.0,
+     "median": 560.0,
+     "min": 520.0,
+     "n": 5,
+     "p25": 520.0,
+     "p75": 560.0
+    },
+    "kinds": {
+     "vehicle": 5
+    },
+    "prefix_hexes": {
+     "max": 24.0,
+     "median": 24.0,
+     "min": 21.0,
+     "n": 5,
+     "p25": 21.0,
+     "p75": 24.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 1.0,
+     "min": 1.0,
+     "n": 5,
+     "p25": 1.0,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2360.0,
+     "median": 2320.0,
+     "min": 2320.0,
+     "n": 5,
+     "p25": 2320.0,
+     "p75": 2360.0
+    }
+   },
+   "first_decision_redirects": 5,
+   "first_decision_redirects_by_trajectory": {
+    "baseline-v2": 5,
+    "t9-v1": 5
+   },
+   "first_decision_same_as_t9v1": 0,
+   "redirect_descriptives": {
+    "detour_ratio": {
+     "max": 1.1818,
+     "median": 1.1667,
+     "min": 1.1667,
+     "n": 10,
+     "p25": 1.1667,
+     "p75": 1.1818
+    },
+    "free_flow_steps": {
+     "max": 560.0,
+     "median": 560.0,
+     "min": 520.0,
+     "n": 10,
+     "p25": 520.0,
+     "p75": 560.0
+    },
+    "kinds": {
+     "vehicle": 10
+    },
+    "prefix_hexes": {
+     "max": 24.0,
+     "median": 24.0,
+     "min": 21.0,
+     "n": 10,
+     "p25": 21.0,
+     "p75": 24.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 1.0,
+     "min": 1.0,
+     "n": 10,
+     "p25": 1.0,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2360.0,
+     "median": 2320.0,
+     "min": 2320.0,
+     "n": 10,
+     "p25": 2320.0,
+     "p75": 2360.0
+    }
+   },
+   "shooter_forms": {},
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "destinations": {
+     "50-point objective A -> 50-point objective C": 1,
+     "50-point objective A -> 80-point objective A": 4
+    },
+    "emitted_ground_moves": 1069,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 5,
+    "first_difference_decision": 1,
+    "keeps": 12,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 3,
+     "baseline-v2": 1057,
+     "t9-v1": 1060,
+     "v3": 5
+    },
+    "order_divergence_distinct": {
+     "O2": 3,
+     "baseline-v2": 10,
+     "t9-v1": 10,
+     "v3": 5
+    },
+    "redirect_share": 0.0047,
+    "redirected_units": 5,
+    "redirects": 5,
+    "repeat": {
+     "order_comparisons": 858,
+     "repeat_comparisons": 289
+    },
+    "slot_divergence": {
+     "O2": 3,
+     "baseline-v2": 287,
+     "t9-v1": 5,
+     "v3": 2
+    },
+    "stages": 1052,
+    "violations": {},
+    "withholds": 0
+   }
+  },
+  "corridor-value-redirect-p75": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "destinations": {
+     "50-point objective A -> 50-point objective C": 1,
+     "50-point objective A -> 80-point objective A": 4
+    },
+    "emitted_ground_moves": 41,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 5,
+    "first_difference_decision": 1,
+    "keeps": 20,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 10,
+     "baseline-v2": 21,
+     "t9-v1": 25,
+     "v3": 5
+    },
+    "order_divergence_distinct": {
+     "O2": 7,
+     "baseline-v2": 8,
+     "t9-v1": 11,
+     "v3": 5
+    },
+    "redirect_share": 0.122,
+    "redirected_units": 5,
+    "redirects": 5,
+    "repeat": {
+     "order_comparisons": 30,
+     "repeat_comparisons": 16
+    },
+    "slot_divergence": {
+     "O2": 6,
+     "baseline-v2": 9,
+     "t9-v1": 9,
+     "v3": 2
+    },
+    "stages": 16,
+    "violations": {},
+    "withholds": 0
+   },
+   "causal_units_objective_changed": 3,
+   "early_redirects_baseline": 5,
+   "first_decision_prefix": {
+    "detour_ratio": {
+     "max": 1.1818,
+     "median": 1.1667,
+     "min": 1.1667,
+     "n": 5,
+     "p25": 1.1667,
+     "p75": 1.1818
+    },
+    "free_flow_steps": {
+     "max": 560.0,
+     "median": 560.0,
+     "min": 520.0,
+     "n": 5,
+     "p25": 520.0,
+     "p75": 560.0
+    },
+    "kinds": {
+     "vehicle": 5
+    },
+    "prefix_hexes": {
+     "max": 24.0,
+     "median": 24.0,
+     "min": 21.0,
+     "n": 5,
+     "p25": 21.0,
+     "p75": 24.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 1.0,
+     "min": 1.0,
+     "n": 5,
+     "p25": 1.0,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2360.0,
+     "median": 2320.0,
+     "min": 2320.0,
+     "n": 5,
+     "p25": 2320.0,
+     "p75": 2360.0
+    }
+   },
+   "first_decision_redirects": 5,
+   "first_decision_redirects_by_trajectory": {
+    "baseline-v2": 5,
+    "t9-v1": 5
+   },
+   "first_decision_same_as_t9v1": 0,
+   "redirect_descriptives": {
+    "detour_ratio": {
+     "max": 1.1818,
+     "median": 1.1667,
+     "min": 1.1667,
+     "n": 10,
+     "p25": 1.1667,
+     "p75": 1.1818
+    },
+    "free_flow_steps": {
+     "max": 560.0,
+     "median": 560.0,
+     "min": 520.0,
+     "n": 10,
+     "p25": 520.0,
+     "p75": 560.0
+    },
+    "kinds": {
+     "vehicle": 10
+    },
+    "prefix_hexes": {
+     "max": 24.0,
+     "median": 24.0,
+     "min": 21.0,
+     "n": 10,
+     "p25": 21.0,
+     "p75": 24.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 1.0,
+     "min": 1.0,
+     "n": 10,
+     "p25": 1.0,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2360.0,
+     "median": 2320.0,
+     "min": 2320.0,
+     "n": 10,
+     "p25": 2320.0,
+     "p75": 2360.0
+    }
+   },
+   "shooter_forms": {},
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "destinations": {
+     "50-point objective A -> 50-point objective C": 1,
+     "50-point objective A -> 80-point objective A": 4
+    },
+    "emitted_ground_moves": 1069,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 5,
+    "first_difference_decision": 1,
+    "keeps": 12,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 3,
+     "baseline-v2": 1057,
+     "t9-v1": 1060,
+     "v3": 5
+    },
+    "order_divergence_distinct": {
+     "O2": 3,
+     "baseline-v2": 10,
+     "t9-v1": 10,
+     "v3": 5
+    },
+    "redirect_share": 0.0047,
+    "redirected_units": 5,
+    "redirects": 5,
+    "repeat": {
+     "order_comparisons": 858,
+     "repeat_comparisons": 289
+    },
+    "slot_divergence": {
+     "O2": 3,
+     "baseline-v2": 287,
+     "t9-v1": 5,
+     "v3": 2
+    },
+    "stages": 1052,
+    "violations": {},
+    "withholds": 0
+   }
+  },
+  "feasible-cost-redirect": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "destinations": {
+     "50-point objective A -> 50-point objective B": 3,
+     "50-point objective A -> 50-point objective C": 3,
+     "50-point objective B -> 80-point objective B": 6,
+     "50-point objective C -> 80-point objective A": 2
+    },
+    "emitted_ground_moves": 41,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 6,
+    "first_difference_decision": 1,
+    "keeps": 20,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 6,
+     "baseline-v2": 21,
+     "t9-v1": 18,
+     "v3": 14
+    },
+    "order_divergence_distinct": {
+     "O2": 6,
+     "baseline-v2": 8,
+     "t9-v1": 10,
+     "v3": 7
+    },
+    "redirect_share": 0.3415,
+    "redirected_units": 7,
+    "redirects": 14,
+    "repeat": {
+     "order_comparisons": 30,
+     "repeat_comparisons": 16
+    },
+    "slot_divergence": {
+     "O2": 4,
+     "baseline-v2": 13,
+     "t9-v1": 7,
+     "v3": 6
+    },
+    "stages": 7,
+    "violations": {},
+    "withholds": 0
+   },
+   "causal_units_objective_changed": 4,
+   "early_redirects_baseline": 14,
+   "first_decision_prefix": {
+    "detour_ratio": {
+     "max": 1.125,
+     "median": 1.125,
+     "min": 1.0909,
+     "n": 6,
+     "p25": 1.0909,
+     "p75": 1.125
+    },
+    "free_flow_steps": {
+     "max": 2592.0,
+     "median": 540.0,
+     "min": 480.0,
+     "n": 6,
+     "p25": 480.0,
+     "p75": 540.0
+    },
+    "kinds": {
+     "infantry": 1,
+     "vehicle": 5
+    },
+    "prefix_hexes": {
+     "max": 8.0,
+     "median": 7.0,
+     "min": 2.0,
+     "n": 6,
+     "p25": 2.0,
+     "p75": 8.0
+    },
+    "prefix_share": {
+     "max": 0.4375,
+     "median": 0.381,
+     "min": 0.0833,
+     "n": 6,
+     "p25": 0.0833,
+     "p75": 0.381
+    },
+    "slack_steps": {
+     "max": 2400.0,
+     "median": 2340.0,
+     "min": 288.0,
+     "n": 6,
+     "p25": 2340.0,
+     "p75": 2400.0
+    }
+   },
+   "first_decision_redirects": 6,
+   "first_decision_redirects_by_trajectory": {
+    "baseline-v2": 6,
+    "t9-v1": 6
+   },
+   "first_decision_same_as_t9v1": 0,
+   "redirect_descriptives": {
+    "detour_ratio": {
+     "max": 1.125,
+     "median": 1.0909,
+     "min": 1.0,
+     "n": 21,
+     "p25": 1.0667,
+     "p75": 1.125
+    },
+    "free_flow_steps": {
+     "max": 2592.0,
+     "median": 480.0,
+     "min": 80.0,
+     "n": 21,
+     "p25": 320.0,
+     "p75": 540.0
+    },
+    "kinds": {
+     "infantry": 2,
+     "vehicle": 19
+    },
+    "prefix_hexes": {
+     "max": 8.0,
+     "median": 2.0,
+     "min": 0.0,
+     "n": 21,
+     "p25": 0.0,
+     "p75": 7.0
+    },
+    "prefix_share": {
+     "max": 0.4375,
+     "median": 0.0833,
+     "min": 0.0,
+     "n": 21,
+     "p25": 0.0,
+     "p75": 0.381
+    },
+    "slack_steps": {
+     "max": 2400.0,
+     "median": 2340.0,
+     "min": 288.0,
+     "n": 21,
+     "p25": 2000.0,
+     "p75": 2360.0
+    }
+   },
+   "shooter_forms": {},
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "destinations": {
+     "50-point objective A -> 50-point objective B": 3,
+     "50-point objective A -> 50-point objective C": 3,
+     "50-point objective B -> 80-point objective B": 1
+    },
+    "emitted_ground_moves": 1069,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 6,
+    "first_difference_decision": 1,
+    "keeps": 12,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 6,
+     "baseline-v2": 1057,
+     "t9-v1": 1059,
+     "v3": 7
+    },
+    "order_divergence_distinct": {
+     "O2": 6,
+     "baseline-v2": 10,
+     "t9-v1": 10,
+     "v3": 7
+    },
+    "redirect_share": 0.0065,
+    "redirected_units": 7,
+    "redirects": 7,
+    "repeat": {
+     "order_comparisons": 858,
+     "repeat_comparisons": 289
+    },
+    "slot_divergence": {
+     "O2": 4,
+     "baseline-v2": 288,
+     "t9-v1": 5,
+     "v3": 3
+    },
+    "stages": 1050,
+    "violations": {},
+    "withholds": 0
+   }
+  },
+  "feasible-value-redirect": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "destinations": {
+     "50-point objective A -> 80-point objective A": 4,
+     "50-point objective A -> 80-point objective B": 2,
+     "50-point objective B -> 80-point objective B": 6,
+     "50-point objective C -> 80-point objective A": 2
+    },
+    "emitted_ground_moves": 41,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 6,
+    "first_difference_decision": 1,
+    "keeps": 20,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 0,
+     "baseline-v2": 21,
+     "t9-v1": 17,
+     "v3": 14
+    },
+    "order_divergence_distinct": {
+     "O2": 0,
+     "baseline-v2": 8,
+     "t9-v1": 10,
+     "v3": 7
+    },
+    "redirect_share": 0.3415,
+    "redirected_units": 7,
+    "redirects": 14,
+    "repeat": {
+     "order_comparisons": 30,
+     "repeat_comparisons": 16
+    },
+    "slot_divergence": {
+     "O2": 0,
+     "baseline-v2": 13,
+     "t9-v1": 5,
+     "v3": 6
+    },
+    "stages": 7,
+    "violations": {},
+    "withholds": 0
+   },
+   "causal_units_objective_changed": 4,
+   "early_redirects_baseline": 14,
+   "first_decision_prefix": {
+    "detour_ratio": {
+     "max": 1.2917,
+     "median": 1.1818,
+     "min": 1.1667,
+     "n": 6,
+     "p25": 1.1667,
+     "p75": 1.1875
+    },
+    "free_flow_steps": {
+     "max": 2736.0,
+     "median": 560.0,
+     "min": 520.0,
+     "n": 6,
+     "p25": 520.0,
+     "p75": 620.0
+    },
+    "kinds": {
+     "infantry": 1,
+     "vehicle": 5
+    },
+    "prefix_hexes": {
+     "max": 24.0,
+     "median": 21.0,
+     "min": 1.0,
+     "n": 6,
+     "p25": 2.0,
+     "p75": 24.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 1.0,
+     "min": 0.0625,
+     "n": 6,
+     "p25": 0.0833,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2360.0,
+     "median": 2320.0,
+     "min": 144.0,
+     "n": 6,
+     "p25": 2260.0,
+     "p75": 2360.0
+    }
+   },
+   "first_decision_redirects": 6,
+   "first_decision_redirects_by_trajectory": {
+    "baseline-v2": 6,
+    "t9-v1": 6
+   },
+   "first_decision_same_as_t9v1": 1,
+   "redirect_descriptives": {
+    "detour_ratio": {
+     "max": 1.2917,
+     "median": 1.1667,
+     "min": 1.0,
+     "n": 21,
+     "p25": 1.0667,
+     "p75": 1.1818
+    },
+    "free_flow_steps": {
+     "max": 2736.0,
+     "median": 520.0,
+     "min": 80.0,
+     "n": 21,
+     "p25": 320.0,
+     "p75": 560.0
+    },
+    "kinds": {
+     "infantry": 2,
+     "vehicle": 19
+    },
+    "prefix_hexes": {
+     "max": 24.0,
+     "median": 1.0,
+     "min": 0.0,
+     "n": 21,
+     "p25": 0.0,
+     "p75": 21.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 0.0833,
+     "min": 0.0,
+     "n": 21,
+     "p25": 0.0,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2360.0,
+     "median": 2260.0,
+     "min": 144.0,
+     "n": 21,
+     "p25": 2000.0,
+     "p75": 2360.0
+    }
+   },
+   "shooter_forms": {},
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "destinations": {
+     "50-point objective A -> 80-point objective A": 4,
+     "50-point objective A -> 80-point objective B": 2,
+     "50-point objective B -> 80-point objective B": 1
+    },
+    "emitted_ground_moves": 1069,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 6,
+    "first_difference_decision": 1,
+    "keeps": 12,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 0,
+     "baseline-v2": 1057,
+     "t9-v1": 1058,
+     "v3": 7
+    },
+    "order_divergence_distinct": {
+     "O2": 0,
+     "baseline-v2": 10,
+     "t9-v1": 10,
+     "v3": 7
+    },
+    "redirect_share": 0.0065,
+    "redirected_units": 7,
+    "redirects": 7,
+    "repeat": {
+     "order_comparisons": 858,
+     "repeat_comparisons": 289
+    },
+    "slot_divergence": {
+     "O2": 0,
+     "baseline-v2": 288,
+     "t9-v1": 3,
+     "v3": 3
+    },
+    "stages": 1050,
+    "violations": {},
+    "withholds": 0
+   }
+  },
+  "feasible-value-redirect-h1440": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "destinations": {
+     "50-point objective A -> 80-point objective A": 4,
+     "50-point objective A -> 80-point objective B": 1,
+     "50-point objective B -> 80-point objective B": 6,
+     "50-point objective C -> 80-point objective A": 2
+    },
+    "emitted_ground_moves": 41,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 5,
+    "first_difference_decision": 1,
+    "keeps": 20,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 1,
+     "baseline-v2": 21,
+     "t9-v1": 17,
+     "v3": 13
+    },
+    "order_divergence_distinct": {
+     "O2": 1,
+     "baseline-v2": 8,
+     "t9-v1": 10,
+     "v3": 6
+    },
+    "redirect_share": 0.3171,
+    "redirected_units": 6,
+    "redirects": 13,
+    "repeat": {
+     "order_comparisons": 30,
+     "repeat_comparisons": 16
+    },
+    "slot_divergence": {
+     "O2": 1,
+     "baseline-v2": 13,
+     "t9-v1": 5,
+     "v3": 6
+    },
+    "stages": 8,
+    "violations": {},
+    "withholds": 0
+   },
+   "causal_units_objective_changed": 3,
+   "early_redirects_baseline": 13,
+   "first_decision_prefix": {
+    "detour_ratio": {
+     "max": 1.2917,
+     "median": 1.1818,
+     "min": 1.1667,
+     "n": 5,
+     "p25": 1.1667,
+     "p75": 1.1818
+    },
+    "free_flow_steps": {
+     "max": 620.0,
+     "median": 560.0,
+     "min": 520.0,
+     "n": 5,
+     "p25": 520.0,
+     "p75": 560.0
+    },
+    "kinds": {
+     "vehicle": 5
+    },
+    "prefix_hexes": {
+     "max": 24.0,
+     "median": 21.0,
+     "min": 2.0,
+     "n": 5,
+     "p25": 21.0,
+     "p75": 24.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 1.0,
+     "min": 0.0833,
+     "n": 5,
+     "p25": 1.0,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2360.0,
+     "median": 2320.0,
+     "min": 2260.0,
+     "n": 5,
+     "p25": 2320.0,
+     "p75": 2360.0
+    }
+   },
+   "first_decision_redirects": 5,
+   "first_decision_redirects_by_trajectory": {
+    "baseline-v2": 5,
+    "t9-v1": 5
+   },
+   "first_decision_same_as_t9v1": 1,
+   "redirect_descriptives": {
+    "detour_ratio": {
+     "max": 1.2917,
+     "median": 1.1667,
+     "min": 1.0,
+     "n": 19,
+     "p25": 1.0667,
+     "p75": 1.1818
+    },
+    "free_flow_steps": {
+     "max": 620.0,
+     "median": 520.0,
+     "min": 80.0,
+     "n": 19,
+     "p25": 320.0,
+     "p75": 560.0
+    },
+    "kinds": {
+     "vehicle": 19
+    },
+    "prefix_hexes": {
+     "max": 24.0,
+     "median": 2.0,
+     "min": 0.0,
+     "n": 19,
+     "p25": 0.0,
+     "p75": 21.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 0.25,
+     "min": 0.0,
+     "n": 19,
+     "p25": 0.0,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2360.0,
+     "median": 2320.0,
+     "min": 1980.0,
+     "n": 19,
+     "p25": 2019.0,
+     "p75": 2360.0
+    }
+   },
+   "shooter_forms": {},
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "destinations": {
+     "50-point objective A -> 80-point objective A": 4,
+     "50-point objective A -> 80-point objective B": 1,
+     "50-point objective B -> 80-point objective B": 1
+    },
+    "emitted_ground_moves": 1069,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 5,
+    "first_difference_decision": 1,
+    "keeps": 12,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 1,
+     "baseline-v2": 1057,
+     "t9-v1": 1058,
+     "v3": 6
+    },
+    "order_divergence_distinct": {
+     "O2": 1,
+     "baseline-v2": 10,
+     "t9-v1": 10,
+     "v3": 6
+    },
+    "redirect_share": 0.0056,
+    "redirected_units": 6,
+    "redirects": 6,
+    "repeat": {
+     "order_comparisons": 858,
+     "repeat_comparisons": 289
+    },
+    "slot_divergence": {
+     "O2": 1,
+     "baseline-v2": 288,
+     "t9-v1": 3,
+     "v3": 3
+    },
+    "stages": 1051,
+    "violations": {},
+    "withholds": 0
+   }
+  },
+  "feasible-value-redirect-h720": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "destinations": {
+     "50-point objective A -> 80-point objective A": 4,
+     "50-point objective A -> 80-point objective B": 1,
+     "50-point objective B -> 80-point objective B": 6,
+     "50-point objective C -> 80-point objective A": 2
+    },
+    "emitted_ground_moves": 41,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 5,
+    "first_difference_decision": 1,
+    "keeps": 20,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 1,
+     "baseline-v2": 21,
+     "t9-v1": 17,
+     "v3": 13
+    },
+    "order_divergence_distinct": {
+     "O2": 1,
+     "baseline-v2": 8,
+     "t9-v1": 10,
+     "v3": 6
+    },
+    "redirect_share": 0.3171,
+    "redirected_units": 6,
+    "redirects": 13,
+    "repeat": {
+     "order_comparisons": 30,
+     "repeat_comparisons": 16
+    },
+    "slot_divergence": {
+     "O2": 1,
+     "baseline-v2": 13,
+     "t9-v1": 5,
+     "v3": 6
+    },
+    "stages": 8,
+    "violations": {},
+    "withholds": 0
+   },
+   "causal_units_objective_changed": 3,
+   "early_redirects_baseline": 13,
+   "first_decision_prefix": {
+    "detour_ratio": {
+     "max": 1.2917,
+     "median": 1.1818,
+     "min": 1.1667,
+     "n": 5,
+     "p25": 1.1667,
+     "p75": 1.1818
+    },
+    "free_flow_steps": {
+     "max": 620.0,
+     "median": 560.0,
+     "min": 520.0,
+     "n": 5,
+     "p25": 520.0,
+     "p75": 560.0
+    },
+    "kinds": {
+     "vehicle": 5
+    },
+    "prefix_hexes": {
+     "max": 24.0,
+     "median": 21.0,
+     "min": 2.0,
+     "n": 5,
+     "p25": 21.0,
+     "p75": 24.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 1.0,
+     "min": 0.0833,
+     "n": 5,
+     "p25": 1.0,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2360.0,
+     "median": 2320.0,
+     "min": 2260.0,
+     "n": 5,
+     "p25": 2320.0,
+     "p75": 2360.0
+    }
+   },
+   "first_decision_redirects": 5,
+   "first_decision_redirects_by_trajectory": {
+    "baseline-v2": 5,
+    "t9-v1": 5
+   },
+   "first_decision_same_as_t9v1": 1,
+   "redirect_descriptives": {
+    "detour_ratio": {
+     "max": 1.2917,
+     "median": 1.1667,
+     "min": 1.0,
+     "n": 19,
+     "p25": 1.0667,
+     "p75": 1.1818
+    },
+    "free_flow_steps": {
+     "max": 620.0,
+     "median": 520.0,
+     "min": 80.0,
+     "n": 19,
+     "p25": 320.0,
+     "p75": 560.0
+    },
+    "kinds": {
+     "vehicle": 19
+    },
+    "prefix_hexes": {
+     "max": 24.0,
+     "median": 2.0,
+     "min": 0.0,
+     "n": 19,
+     "p25": 0.0,
+     "p75": 21.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 0.25,
+     "min": 0.0,
+     "n": 19,
+     "p25": 0.0,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2360.0,
+     "median": 2320.0,
+     "min": 1980.0,
+     "n": 19,
+     "p25": 2019.0,
+     "p75": 2360.0
+    }
+   },
+   "shooter_forms": {},
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "destinations": {
+     "50-point objective A -> 80-point objective A": 4,
+     "50-point objective A -> 80-point objective B": 1,
+     "50-point objective B -> 80-point objective B": 1
+    },
+    "emitted_ground_moves": 1069,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 5,
+    "first_difference_decision": 1,
+    "keeps": 12,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 1,
+     "baseline-v2": 1057,
+     "t9-v1": 1058,
+     "v3": 6
+    },
+    "order_divergence_distinct": {
+     "O2": 1,
+     "baseline-v2": 10,
+     "t9-v1": 10,
+     "v3": 6
+    },
+    "redirect_share": 0.0056,
+    "redirected_units": 6,
+    "redirects": 6,
+    "repeat": {
+     "order_comparisons": 858,
+     "repeat_comparisons": 289
+    },
+    "slot_divergence": {
+     "O2": 1,
+     "baseline-v2": 288,
+     "t9-v1": 3,
+     "v3": 3
+    },
+    "stages": 1051,
+    "violations": {},
+    "withholds": 0
+   }
+  },
+  "t9-v1": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "destinations": {
+     "50-point objective A -> 80-point objective A": 4,
+     "50-point objective A -> 80-point objective B": 3,
+     "50-point objective B -> 80-point objective B": 6,
+     "50-point objective C -> 80-point objective A": 2
+    },
+    "emitted_ground_moves": 35,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 7,
+    "first_difference_decision": 1,
+    "keeps": 20,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 17,
+     "baseline-v2": 21,
+     "t9-v1": 0,
+     "v3": 25
+    },
+    "order_divergence_distinct": {
+     "O2": 10,
+     "baseline-v2": 10,
+     "t9-v1": 0,
+     "v3": 11
+    },
+    "redirect_share": 0.4286,
+    "redirected_units": 10,
+    "redirects": 15,
+    "repeat": {},
+    "slot_divergence": {
+     "O2": 5,
+     "baseline-v2": 13,
+     "t9-v1": 0,
+     "v3": 8
+    },
+    "stages": 0,
+    "violations": {},
+    "withholds": 6
+   },
+   "causal_units_objective_changed": 7,
+   "early_redirects_baseline": 15,
+   "first_decision_prefix": {
+    "detour_ratio": {
+     "max": 1.2917,
+     "median": 1.2222,
+     "min": 1.1875,
+     "n": 7,
+     "p25": 1.2105,
+     "p75": 1.2917
+    },
+    "free_flow_steps": {
+     "max": 2736.0,
+     "median": 620.0,
+     "min": 440.0,
+     "n": 7,
+     "p25": 460.0,
+     "p75": 620.0
+    },
+    "kinds": {
+     "infantry": 1,
+     "vehicle": 6
+    },
+    "prefix_hexes": {
+     "max": 17.0,
+     "median": 7.0,
+     "min": 2.0,
+     "n": 7,
+     "p25": 2.0,
+     "p75": 17.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 0.4375,
+     "min": 0.0833,
+     "n": 7,
+     "p25": 0.0833,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2440.0,
+     "median": 2260.0,
+     "min": 144.0,
+     "n": 7,
+     "p25": 2260.0,
+     "p75": 2420.0
+    }
+   },
+   "first_decision_redirects": 7,
+   "first_decision_redirects_by_trajectory": {
+    "baseline-v2": 7,
+    "t9-v1": 7
+   },
+   "first_decision_same_as_t9v1": 7,
+   "redirect_descriptives": {
+    "detour_ratio": {
+     "max": 1.2917,
+     "median": 1.2105,
+     "min": 1.0,
+     "n": 23,
+     "p25": 1.0667,
+     "p75": 1.2917
+    },
+    "free_flow_steps": {
+     "max": 2736.0,
+     "median": 460.0,
+     "min": 80.0,
+     "n": 23,
+     "p25": 320.0,
+     "p75": 620.0
+    },
+    "kinds": {
+     "infantry": 2,
+     "vehicle": 21
+    },
+    "prefix_hexes": {
+     "max": 17.0,
+     "median": 2.0,
+     "min": 0.0,
+     "n": 23,
+     "p25": 0.0,
+     "p75": 15.0
+    },
+    "prefix_share": {
+     "max": 1.0,
+     "median": 0.0833,
+     "min": 0.0,
+     "n": 23,
+     "p25": 0.0,
+     "p75": 1.0
+    },
+    "slack_steps": {
+     "max": 2440.0,
+     "median": 2260.0,
+     "min": 144.0,
+     "n": 23,
+     "p25": 2019.0,
+     "p75": 2420.0
+    }
+   },
+   "shooter_forms": {},
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "destinations": {
+     "50-point objective A -> 80-point objective A": 4,
+     "50-point objective A -> 80-point objective B": 3,
+     "50-point objective B -> 80-point objective B": 1
+    },
+    "emitted_ground_moves": 20,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 7,
+    "first_difference_decision": 1,
+    "keeps": 12,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 1058,
+     "baseline-v2": 1057,
+     "t9-v1": 0,
+     "v3": 1060
+    },
+    "order_divergence_distinct": {
+     "O2": 10,
+     "baseline-v2": 9,
+     "t9-v1": 0,
+     "v3": 10
+    },
+    "redirect_share": 0.4,
+    "redirected_units": 7,
+    "redirects": 8,
+    "repeat": {},
+    "slot_divergence": {
+     "O2": 3,
+     "baseline-v2": 288,
+     "t9-v1": 0,
+     "v3": 4
+    },
+    "stages": 0,
+    "violations": {},
+    "withholds": 1049
+   }
+  },
+  "t9-v2": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "destinations": {},
+    "emitted_ground_moves": 41,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 0,
+    "first_difference_decision": 1,
+    "keeps": 20,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 19,
+     "baseline-v2": 21,
+     "t9-v1": 21,
+     "v3": 10
+    },
+    "order_divergence_distinct": {
+     "O2": 11,
+     "baseline-v2": 10,
+     "t9-v1": 10,
+     "v3": 8
+    },
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {},
+    "slot_divergence": {
+     "O2": 8,
+     "baseline-v2": 7,
+     "t9-v1": 6,
+     "v3": 2
+    },
+    "stages": 21,
+    "violations": {},
+    "withholds": 0
+   },
+   "causal_units_objective_changed": 0,
+   "early_redirects_baseline": 0,
+   "first_decision_prefix": {
+    "detour_ratio": {
+     "n": 0
+    },
+    "free_flow_steps": {
+     "n": 0
+    },
+    "kinds": {},
+    "prefix_hexes": {
+     "n": 0
+    },
+    "prefix_share": {
+     "n": 0
+    },
+    "slack_steps": {
+     "n": 0
+    }
+   },
+   "first_decision_redirects": 0,
+   "first_decision_redirects_by_trajectory": {
+    "baseline-v2": 0,
+    "t9-v1": 0
+   },
+   "first_decision_same_as_t9v1": 0,
+   "redirect_descriptives": {
+    "detour_ratio": {
+     "n": 0
+    },
+    "free_flow_steps": {
+     "n": 0
+    },
+    "kinds": {},
+    "prefix_hexes": {
+     "n": 0
+    },
+    "prefix_share": {
+     "n": 0
+    },
+    "slack_steps": {
+     "n": 0
+    }
+   },
+   "shooter_forms": {},
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "destinations": {},
+    "emitted_ground_moves": 1069,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 0,
+    "first_difference_decision": 1,
+    "keeps": 12,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 11,
+     "baseline-v2": 1057,
+     "t9-v1": 1057,
+     "v3": 8
+    },
+    "order_divergence_distinct": {
+     "O2": 10,
+     "baseline-v2": 9,
+     "t9-v1": 9,
+     "v3": 8
+    },
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {},
+    "slot_divergence": {
+     "O2": 4,
+     "baseline-v2": 285,
+     "t9-v1": 3,
+     "v3": 1
+    },
+    "stages": 1057,
+    "violations": {},
+    "withholds": 0
+   }
+  },
+  "v3": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "destinations": {},
+    "emitted_ground_moves": 41,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 0,
+    "first_difference_decision": 1,
+    "keeps": 20,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 14,
+     "baseline-v2": 21,
+     "t9-v1": 25,
+     "v3": 0
+    },
+    "order_divergence_distinct": {
+     "O2": 7,
+     "baseline-v2": 8,
+     "t9-v1": 11,
+     "v3": 0
+    },
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {},
+    "slot_divergence": {
+     "O2": 6,
+     "baseline-v2": 7,
+     "t9-v1": 8,
+     "v3": 0
+    },
+    "stages": 21,
+    "violations": {},
+    "withholds": 0
+   },
+   "causal_units_objective_changed": 0,
+   "early_redirects_baseline": 0,
+   "first_decision_prefix": {
+    "detour_ratio": {
+     "n": 0
+    },
+    "free_flow_steps": {
+     "n": 0
+    },
+    "kinds": {},
+    "prefix_hexes": {
+     "n": 0
+    },
+    "prefix_share": {
+     "n": 0
+    },
+    "slack_steps": {
+     "n": 0
+    }
+   },
+   "first_decision_redirects": 0,
+   "first_decision_redirects_by_trajectory": {
+    "baseline-v2": 0,
+    "t9-v1": 0
+   },
+   "first_decision_same_as_t9v1": 0,
+   "redirect_descriptives": {
+    "detour_ratio": {
+     "n": 0
+    },
+    "free_flow_steps": {
+     "n": 0
+    },
+    "kinds": {},
+    "prefix_hexes": {
+     "n": 0
+    },
+    "prefix_share": {
+     "n": 0
+    },
+    "slack_steps": {
+     "n": 0
+    }
+   },
+   "shooter_forms": {},
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "destinations": {},
+    "emitted_ground_moves": 1069,
+    "end_of_game_exclusions": 0,
+    "first_decision_redirects": 0,
+    "first_difference_decision": 1,
+    "keeps": 12,
+    "max_objective_commitment": 4,
+    "order_divergence": {
+     "O2": 7,
+     "baseline-v2": 1057,
+     "t9-v1": 1060,
+     "v3": 0
+    },
+    "order_divergence_distinct": {
+     "O2": 7,
+     "baseline-v2": 10,
+     "t9-v1": 10,
+     "v3": 0
+    },
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {},
+    "slot_divergence": {
+     "O2": 3,
+     "baseline-v2": 285,
+     "t9-v1": 4,
+     "v3": 0
+    },
+    "stages": 1057,
+    "violations": {},
+    "withholds": 0
+   }
+  }
+ },
+ "schema": "miaosuan-s14-design/1"
+}
