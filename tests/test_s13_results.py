@@ -82,6 +82,8 @@ class ResultsTest(unittest.TestCase):
                 self.assertLessEqual(objective_total, g["classes"][c])
             self.assertEqual(sum(r["count"] for r in g["classes_by_v3_reason"]), sum(g["classes"].values()))
             self.assertEqual(g["decisions"], 2881)
+            self.assertEqual(g["unrelated_actions"]["differences"], 0)
+            self.assertGreater(g["unrelated_actions"]["actions_compared"], 0)
         self.assertEqual(pooled, recon["pooled_classes"])
         self.assertEqual(pooled["OTHER"], 0)
 
