@@ -1,0 +1,1502 @@
+{
+ "adverse": {
+  "1930331196 C2": {
+   "baseline_v2": {
+    "attack": {
+     "max": 24,
+     "mean": 23.4667,
+     "median": 24,
+     "min": 16,
+     "n": 15,
+     "values": [
+      16,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24
+     ]
+    },
+    "margin": {
+     "max": 274,
+     "mean": 272.9333,
+     "median": 274,
+     "min": 258,
+     "n": 15,
+     "values": [
+      258,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274,
+      274
+     ]
+    },
+    "occupy": [
+     310
+    ]
+   },
+   "candidate_side": "red",
+   "leave_one_out_classes_of_sprint9_games": {
+    "T9-v1 arm": {
+     "REGRESSED": 15
+    },
+    "baseline-v2 arm": {
+     "AMBIGUOUS": 1,
+     "AVOIDED": 14
+    }
+   },
+   "sprint10_t9_v2_games": [
+    {
+     "attack": 24,
+     "class": "AVOIDED",
+     "margin": 274,
+     "occupy": 310,
+     "session": "2783"
+    },
+    {
+     "attack": 24,
+     "class": "AVOIDED",
+     "margin": 274,
+     "occupy": 310,
+     "session": "2784"
+    }
+   ],
+   "t9_v1": {
+    "attack": {
+     "max": 0,
+     "mean": 0.0,
+     "median": 0,
+     "min": 0,
+     "n": 15,
+     "values": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "margin": {
+     "max": 226,
+     "mean": 226.0,
+     "median": 226,
+     "min": 226,
+     "n": 15,
+     "values": [
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226,
+      226
+     ]
+    },
+    "occupy": [
+     310
+    ]
+   },
+   "thresholds": {
+    "attack_at_least": 16,
+    "attack_at_most_regressed": 0
+   }
+  },
+  "1930331196 C3": {
+   "baseline_v2": {
+    "attack": {
+     "max": 88,
+     "mean": 87.3333,
+     "median": 88,
+     "min": 78,
+     "n": 15,
+     "values": [
+      78,
+      88,
+      88,
+      88,
+      88,
+      88,
+      88,
+      88,
+      88,
+      88,
+      88,
+      88,
+      88,
+      88,
+      88
+     ]
+    },
+    "margin": {
+     "max": 570,
+     "mean": 568.6667,
+     "median": 570,
+     "min": 550,
+     "n": 15,
+     "values": [
+      550,
+      570,
+      570,
+      570,
+      570,
+      570,
+      570,
+      570,
+      570,
+      570,
+      570,
+      570,
+      570,
+      570,
+      570
+     ]
+    },
+    "occupy": [
+     310
+    ]
+   },
+   "candidate_side": "blue",
+   "leave_one_out_classes_of_sprint9_games": {
+    "T9-v1 arm": {
+     "AMBIGUOUS": 1,
+     "REGRESSED": 14
+    },
+    "baseline-v2 arm": {
+     "AMBIGUOUS": 1,
+     "AVOIDED": 14
+    }
+   },
+   "sprint10_t9_v2_games": [
+    {
+     "attack": 88,
+     "class": "AVOIDED",
+     "margin": 570,
+     "occupy": 310,
+     "session": "2781"
+    },
+    {
+     "attack": 88,
+     "class": "AVOIDED",
+     "margin": 570,
+     "occupy": 310,
+     "session": "2782"
+    }
+   ],
+   "t9_v1": {
+    "attack": {
+     "max": 61,
+     "mean": 31.7333,
+     "median": 30,
+     "min": 10,
+     "n": 15,
+     "values": [
+      10,
+      10,
+      10,
+      10,
+      20,
+      30,
+      30,
+      30,
+      30,
+      40,
+      40,
+      47,
+      54,
+      54,
+      61
+     ]
+    },
+    "margin": {
+     "max": 516,
+     "mean": 457.4667,
+     "median": 454,
+     "min": 414,
+     "n": 15,
+     "values": [
+      414,
+      414,
+      414,
+      414,
+      434,
+      454,
+      454,
+      454,
+      454,
+      474,
+      474,
+      488,
+      502,
+      502,
+      516
+     ]
+    },
+    "occupy": [
+     310
+    ]
+   },
+   "thresholds": {
+    "attack_at_least": 78,
+    "attack_at_most_regressed": 61
+   }
+  },
+  "2120531121 C3": {
+   "baseline_v2": {
+    "attack": {
+     "max": 108,
+     "mean": 102.3333,
+     "median": 103,
+     "min": 88,
+     "n": 15,
+     "values": [
+      88,
+      88,
+      98,
+      98,
+      98,
+      103,
+      103,
+      103,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108
+     ]
+    },
+    "margin": {
+     "max": 599,
+     "mean": 587.6667,
+     "median": 589,
+     "min": 559,
+     "n": 15,
+     "values": [
+      559,
+      559,
+      579,
+      579,
+      579,
+      589,
+      589,
+      589,
+      599,
+      599,
+      599,
+      599,
+      599,
+      599,
+      599
+     ]
+    },
+    "occupy": [
+     310
+    ]
+   },
+   "candidate_side": "blue",
+   "leave_one_out_classes_of_sprint9_games": {
+    "T9-v1 arm": {
+     "NOT_REPAIRED": 15
+    },
+    "baseline-v2 arm": {
+     "REPAIRED": 15
+    }
+   },
+   "sprint10_t9_v2_games": [
+    {
+     "attack": 60,
+     "class": "NOT_REPAIRED",
+     "margin": 423,
+     "occupy": 230,
+     "session": "2779"
+    },
+    {
+     "attack": 50,
+     "class": "NOT_REPAIRED",
+     "margin": 403,
+     "occupy": 230,
+     "session": "2780"
+    }
+   ],
+   "t9_v1": {
+    "attack": {
+     "max": 108,
+     "mean": 108.0,
+     "median": 108,
+     "min": 108,
+     "n": 15,
+     "values": [
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108
+     ]
+    },
+    "margin": {
+     "max": 519,
+     "mean": 519.0,
+     "median": 519,
+     "min": 519,
+     "n": 15,
+     "values": [
+      519,
+      519,
+      519,
+      519,
+      519,
+      519,
+      519,
+      519,
+      519,
+      519,
+      519,
+      519,
+      519,
+      519,
+      519
+     ]
+    },
+    "occupy": [
+     230
+    ]
+   },
+   "thresholds": {
+    "margin_at_least": 559
+   }
+  }
+ },
+ "approved": false,
+ "baseline": {
+  "id": "baseline-v2-candidate-shoot-target-reservation",
+  "policy_source_sha256": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae"
+ },
+ "candidate": {
+  "id": "t9-batch-capacity-v3",
+  "policy_source_sha256": "9b2003a78ace45c968e2340f06e6fe5aa1938667ab1610c448725a319a48b2b8"
+ },
+ "declared_constants": {
+  "half_play_stage": 1440,
+  "infantry_hex_steps": 144,
+  "max_step": 2880,
+  "snapshot_calibration": {
+   "blue": [
+    -0.0281,
+    0.0714
+   ],
+   "games": 45,
+   "red": [
+    -0.032,
+    0.0636
+   ]
+  },
+  "t9_v1_exploratory_snapshot_coverage": {
+   "H1": [
+    0.7544,
+    1.193,
+    1.1579
+   ],
+   "H2": [
+    5.4561,
+    5.3684,
+    5.4737
+   ]
+  },
+  "t9_v2_snapshot_coverage": {
+   "H1": 0.4211,
+   "H2": 5.8772
+  }
+ },
+ "executable": false,
+ "frozen_identities": {
+  "baseline-v2": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
+  "t9-batch-capacity-v3": "9b2003a78ace45c968e2340f06e6fe5aa1938667ab1610c448725a319a48b2b8",
+  "t9-capacity-allocation-v1": "0a0b7174f52e6a6a9d30959ef6a1589c185fb82e70290ceb2b80c889109d77fa",
+  "t9-capacity-staging-v2": "66a451d513d7ff5df2292238dbc4dd526d6b39c050991a25043546a0bce2bece"
+ },
+ "inputs": {
+  "evaluation/s10-t9-v2-exploration/results.json": "9ca832a84139c4326276064ba2270409e22147bdea898a135f54e5bceb8e76af",
+  "evaluation/t9-confirmation-1/phase-A.json": "60782d72d74fac6a72113e3959e3df97dfb1b2f3f2b39ac26945f2015955ebb8",
+  "evaluation/t9-confirmation-1/phase-B.json": "faad75f4710617e5fa8527d1c20a44c451ba23889ef7914f1e9d1e01c4594a19",
+  "evaluation/t9-confirmation-1/planning.json": "a3f2ae77fcdfa8114c3a7c00392fe3fdbf1f13b25c42a02cd9f822430022bb84"
+ },
+ "primary": {
+  "baseline_v2_historical_C1_red_margins": {
+   "max": -719,
+   "mean": -869.9333,
+   "median": -843,
+   "min": -1055,
+   "n": 15,
+   "values": [
+    -1055,
+    -1039,
+    -1039,
+    -967,
+    -917,
+    -909,
+    -883,
+    -843,
+    -839,
+    -799,
+    -783,
+    -775,
+    -743,
+    -739,
+    -719
+   ]
+  },
+  "exploratory_t9_v1_seat_average": 261.0,
+  "populations": {
+   "T9-v1 registered H1 red (Sprint 9 phase A)": {
+    "attack": {
+     "max": 601,
+     "mean": 375.4,
+     "median": 362,
+     "min": 228,
+     "n": 15,
+     "values": [
+      228,
+      244,
+      258,
+      266,
+      286,
+      300,
+      361,
+      362,
+      364,
+      375,
+      425,
+      441,
+      555,
+      565,
+      601
+     ]
+    },
+    "coverage": {
+     "max": 5.386111111111111,
+     "mean": 1.9645,
+     "median": 1.2100694444444444,
+     "min": 0.6184027777777777,
+     "n": 15,
+     "values": [
+      0.6184027777777777,
+      0.7954861111111111,
+      0.8017361111111111,
+      0.834375,
+      0.9899305555555555,
+      1.1725694444444446,
+      1.1826388888888888,
+      1.2100694444444444,
+      1.3871527777777777,
+      1.4201388888888888,
+      2.0336805555555557,
+      2.7291666666666665,
+      3.743402777777778,
+      5.163194444444445,
+      5.386111111111111
+     ]
+    },
+    "held_at_end": {
+     "max": 7,
+     "mean": 1.2667,
+     "median": 0,
+     "min": 0,
+     "n": 15,
+     "values": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      7,
+      7
+     ]
+    },
+    "lost": {
+     "max": 35,
+     "mean": 29.8,
+     "median": 32,
+     "min": 18,
+     "n": 15,
+     "values": [
+      18,
+      22,
+      28,
+      28,
+      28,
+      29,
+      30,
+      32,
+      32,
+      32,
+      32,
+      33,
+      33,
+      35,
+      35
+     ]
+    },
+    "margin": {
+     "max": 1035,
+     "mean": -488.4667,
+     "median": -737,
+     "min": -1003,
+     "n": 15,
+     "values": [
+      -1003,
+      -967,
+      -963,
+      -871,
+      -827,
+      -755,
+      -743,
+      -737,
+      -721,
+      -597,
+      -393,
+      -361,
+      -133,
+      709,
+      1035
+     ]
+    },
+    "opponent_total": {
+     "max": 1303,
+     "mean": 1045.7333,
+     "median": 1170,
+     "min": 284,
+     "n": 15,
+     "values": [
+      284,
+      447,
+      868,
+      982,
+      998,
+      1100,
+      1162,
+      1170,
+      1173,
+      1179,
+      1215,
+      1237,
+      1283,
+      1285,
+      1303
+     ]
+    },
+    "remain": {
+     "max": 278,
+     "mean": 106.5333,
+     "median": 92,
+     "min": 56,
+     "n": 15,
+     "values": [
+      56,
+      60,
+      62,
+      66,
+      69,
+      69,
+      78,
+      92,
+      102,
+      125,
+      130,
+      130,
+      130,
+      151,
+      278
+     ]
+    },
+    "waiting": {
+     "max": 791,
+     "mean": 190.0,
+     "median": 89,
+     "min": 0,
+     "n": 15,
+     "values": [
+      0,
+      0,
+      0,
+      14,
+      70,
+      82,
+      84,
+      89,
+      89,
+      147,
+      252,
+      256,
+      474,
+      502,
+      791
+     ]
+    }
+   },
+   "T9-v1 registered H2 blue (Sprint 9 phase A)": {
+    "attack": {
+     "max": 548,
+     "mean": 534.8,
+     "median": 542,
+     "min": 490,
+     "n": 15,
+     "values": [
+      490,
+      503,
+      518,
+      530,
+      535,
+      538,
+      539,
+      542,
+      546,
+      546,
+      546,
+      546,
+      547,
+      548,
+      548
+     ]
+    },
+    "coverage": {
+     "max": 5.426041666666666,
+     "mean": 5.2889,
+     "median": 5.279513888888889,
+     "min": 5.056597222222222,
+     "n": 15,
+     "values": [
+      5.056597222222222,
+      5.220833333333333,
+      5.222569444444445,
+      5.224652777777778,
+      5.230208333333334,
+      5.251388888888889,
+      5.257291666666666,
+      5.279513888888889,
+      5.335069444444445,
+      5.335069444444445,
+      5.335069444444445,
+      5.335069444444445,
+      5.397916666666666,
+      5.426041666666666,
+      5.426041666666666
+     ]
+    },
+    "held_at_end": {
+     "max": 7,
+     "mean": 7.0,
+     "median": 7,
+     "min": 7,
+     "n": 15,
+     "values": [
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    "lost": {
+     "max": 16,
+     "mean": 10.2,
+     "median": 11,
+     "min": 3,
+     "n": 15,
+     "values": [
+      3,
+      4,
+      7,
+      8,
+      10,
+      10,
+      11,
+      11,
+      11,
+      11,
+      12,
+      12,
+      13,
+      14,
+      16
+     ]
+    },
+    "margin": {
+     "max": 1435,
+     "mean": 1099.4,
+     "median": 1061,
+     "min": 865,
+     "n": 15,
+     "values": [
+      865,
+      899,
+      953,
+      973,
+      1033,
+      1045,
+      1055,
+      1061,
+      1081,
+      1101,
+      1105,
+      1211,
+      1283,
+      1391,
+      1435
+     ]
+    },
+    "opponent_total": {
+     "max": 369,
+     "mean": 251.8,
+     "median": 271,
+     "min": 84,
+     "n": 15,
+     "values": [
+      84,
+      106,
+      160,
+      196,
+      249,
+      251,
+      261,
+      271,
+      274,
+      279,
+      285,
+      315,
+      325,
+      352,
+      369
+     ]
+    },
+    "remain": {
+     "max": 533,
+     "mean": 376.4,
+     "median": 354,
+     "min": 252,
+     "n": 15,
+     "values": [
+      252,
+      300,
+      308,
+      332,
+      338,
+      344,
+      348,
+      354,
+      374,
+      384,
+      384,
+      428,
+      456,
+      511,
+      533
+     ]
+    },
+    "waiting": {
+     "max": 6,
+     "mean": 0.4,
+     "median": 0,
+     "min": 0,
+     "n": 15,
+     "values": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      6
+     ]
+    }
+   },
+   "baseline-v2 C1 blue (Sprint 9 phase A)": {
+    "attack": {
+     "max": 546,
+     "mean": 497.2667,
+     "median": 489,
+     "min": 430,
+     "n": 15,
+     "values": [
+      430,
+      454,
+      454,
+      476,
+      482,
+      484,
+      486,
+      489,
+      500,
+      510,
+      518,
+      538,
+      546,
+      546,
+      546
+     ]
+    },
+    "coverage": {
+     "max": 6.143055555555556,
+     "mean": 5.7223,
+     "median": 5.925,
+     "min": 3.540625,
+     "n": 15,
+     "values": [
+      3.540625,
+      5.306597222222222,
+      5.446527777777778,
+      5.6350694444444445,
+      5.693402777777778,
+      5.751736111111111,
+      5.880208333333333,
+      5.925,
+      5.943402777777778,
+      6.086458333333334,
+      6.089930555555555,
+      6.1246527777777775,
+      6.125,
+      6.142361111111111,
+      6.143055555555556
+     ]
+    },
+    "held_at_end": {
+     "max": 7,
+     "mean": 6.6667,
+     "median": 7,
+     "min": 6,
+     "n": 15,
+     "values": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    "lost": {
+     "max": 28,
+     "mean": 15.0,
+     "median": 13,
+     "min": 7,
+     "n": 15,
+     "values": [
+      7,
+      8,
+      8,
+      10,
+      11,
+      11,
+      13,
+      13,
+      15,
+      15,
+      17,
+      19,
+      23,
+      27,
+      28
+     ]
+    },
+    "margin": {
+     "max": 1195,
+     "mean": 853.1333,
+     "median": 919,
+     "min": 217,
+     "n": 15,
+     "values": [
+      217,
+      365,
+      569,
+      661,
+      709,
+      817,
+      917,
+      919,
+      971,
+      1003,
+      1021,
+      1079,
+      1163,
+      1191,
+      1195
+     ]
+    },
+    "opponent_total": {
+     "max": 693,
+     "mean": 374.9333,
+     "median": 342,
+     "min": 204,
+     "n": 15,
+     "values": [
+      204,
+      206,
+      220,
+      262,
+      291,
+      300,
+      316,
+      342,
+      343,
+      393,
+      447,
+      471,
+      517,
+      619,
+      693
+     ]
+    },
+    "remain": {
+     "max": 473,
+     "mean": 307.4667,
+     "median": 321,
+     "min": 90,
+     "n": 15,
+     "values": [
+      90,
+      110,
+      178,
+      216,
+      234,
+      309,
+      310,
+      321,
+      326,
+      381,
+      397,
+      409,
+      411,
+      447,
+      473
+     ]
+    },
+    "waiting": {
+     "max": 31065,
+     "mean": 13994.6,
+     "median": 9038,
+     "min": 1469,
+     "n": 15,
+     "values": [
+      1469,
+      4583,
+      4587,
+      6500,
+      7664,
+      8517,
+      8999,
+      9038,
+      9183,
+      15226,
+      20850,
+      25198,
+      28452,
+      28588,
+      31065
+     ]
+    }
+   },
+   "baseline-v2 C1 red (Sprint 9 phase A)": {
+    "attack": {
+     "max": 513,
+     "mean": 295.5333,
+     "median": 282,
+     "min": 130,
+     "n": 15,
+     "values": [
+      130,
+      156,
+      192,
+      194,
+      206,
+      222,
+      277,
+      282,
+      293,
+      294,
+      369,
+      387,
+      425,
+      493,
+      513
+     ]
+    },
+    "coverage": {
+     "max": 2.7628472222222222,
+     "mean": 0.5812,
+     "median": 0.3784722222222222,
+     "min": 0.16041666666666668,
+     "n": 15,
+     "values": [
+      0.16041666666666668,
+      0.16111111111111112,
+      0.17847222222222223,
+      0.17881944444444445,
+      0.21354166666666666,
+      0.2170138888888889,
+      0.36006944444444444,
+      0.3784722222222222,
+      0.4232638888888889,
+      0.5517361111111111,
+      0.6100694444444444,
+      0.6684027777777778,
+      0.8569444444444444,
+      0.996875,
+      2.7628472222222222
+     ]
+    },
+    "held_at_end": {
+     "max": 1,
+     "mean": 0.3333,
+     "median": 0,
+     "min": 0,
+     "n": 15,
+     "values": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    "lost": {
+     "max": 36,
+     "mean": 32.7333,
+     "median": 33,
+     "min": 28,
+     "n": 15,
+     "values": [
+      28,
+      28,
+      29,
+      31,
+      32,
+      33,
+      33,
+      33,
+      33,
+      34,
+      34,
+      35,
+      36,
+      36,
+      36
+     ]
+    },
+    "margin": {
+     "max": -217,
+     "mean": -853.1333,
+     "median": -919,
+     "min": -1195,
+     "n": 15,
+     "values": [
+      -1195,
+      -1191,
+      -1163,
+      -1079,
+      -1021,
+      -1003,
+      -971,
+      -919,
+      -917,
+      -817,
+      -709,
+      -661,
+      -569,
+      -365,
+      -217
+     ]
+    },
+    "opponent_total": {
+     "max": 1399,
+     "mean": 1228.0667,
+     "median": 1261,
+     "min": 910,
+     "n": 15,
+     "values": [
+      910,
+      984,
+      1086,
+      1132,
+      1156,
+      1210,
+      1260,
+      1261,
+      1287,
+      1303,
+      1312,
+      1341,
+      1383,
+      1397,
+      1399
+     ]
+    },
+    "remain": {
+     "max": 130,
+     "mean": 62.7333,
+     "median": 71,
+     "min": 14,
+     "n": 15,
+     "values": [
+      14,
+      14,
+      14,
+      22,
+      42,
+      50,
+      60,
+      71,
+      74,
+      76,
+      78,
+      84,
+      106,
+      106,
+      130
+     ]
+    },
+    "waiting": {
+     "max": 1282,
+     "mean": 754.8667,
+     "median": 697,
+     "min": 392,
+     "n": 15,
+     "values": [
+      392,
+      458,
+      463,
+      549,
+      600,
+      629,
+      633,
+      697,
+      827,
+      855,
+      891,
+      900,
+      956,
+      1191,
+      1282
+     ]
+    }
+   }
+  },
+  "registered_t9_v1_seat_average": 305.47,
+  "rule_checks": {
+   "candidate drawn from T9-v1's registered games, floors from the other twelve per seat": {
+    "draws": 20000,
+    "leave_out_floors": true,
+    "rates": {
+     "AMBIGUOUS": 0.1943,
+     "NOT_PRESERVED": 0.0009,
+     "PRESERVED_DIRECTIONALLY": 0.8046,
+     "interim stop": 0.0001,
+     "stopped before the adverse stage": 0.0011
+    },
+    "seed": "20261005:t9v1"
+   },
+   "candidate drawn from baseline-v2's C1 games, floors from all fifteen T9-v1 games": {
+    "draws": 20000,
+    "leave_out_floors": false,
+    "rates": {
+     "AMBIGUOUS": 0.6666,
+     "NOT_PRESERVED": 0.2175,
+     "PRESERVED_DIRECTIONALLY": 0.0354,
+     "interim stop": 0.0804,
+     "stopped before the adverse stage": 0.298
+    },
+    "seed": "20261005:v2"
+   }
+  },
+  "rule_values": {
+   "h1_collapse_below": -1195,
+   "h1_coverage_floor": 0.6184027777777777,
+   "h2_collapse_below": 217,
+   "h2_margin_floor": 865,
+   "preserved_seat_average_at_least": 130.5
+  },
+  "scenario": "2130511121",
+  "t9_v1_exploratory_h1_games_possibly_below_the_floor": 0,
+  "t9_v1_exploratory_h2_games_below_the_floor": 0,
+  "t9_v1_exploratory_margins": {
+   "H1": {
+    "max": -505,
+    "mean": -647.0,
+    "median": -621,
+    "min": -815,
+    "n": 3,
+    "values": [
+     -815,
+     -621,
+     -505
+    ]
+   },
+   "H2": {
+    "max": 1297,
+    "mean": 1169.0,
+    "median": 1133,
+    "min": 1077,
+    "n": 3,
+    "values": [
+     1077,
+     1133,
+     1297
+    ]
+   }
+  },
+  "t9_v2_smoke": {
+   "H1": {
+    "attack": 322,
+    "coverage_snapshot_approx": 0.4211,
+    "margin": -729,
+    "objectives_at_end": 1,
+    "occupy": 50,
+    "opponent_total": 1166,
+    "remain": 65,
+    "session": "2785",
+    "stage_actions": 31,
+    "waiting_sum": 515,
+    "withheld_unit_decisions": 1126
+   },
+   "H2": {
+    "attack": 486,
+    "coverage_snapshot_approx": 5.8772,
+    "margin": 815,
+    "objectives_at_end": 7,
+    "occupy": 440,
+    "opponent_total": 394,
+    "remain": 283,
+    "session": "2786",
+    "stage_actions": 68,
+    "waiting_sum": 549,
+    "withheld_unit_decisions": 288
+   }
+  },
+  "t9_v2_smoke_games_below_the_floors": {
+   "H1": true,
+   "H2": true
+  },
+  "t9_v2_smoke_seat_average": 43.0
+ },
+ "proposal": "docs/SPRINT12_BATCH_ALLOCATOR_PROPOSAL_DRAFT.md",
+ "registered": false,
+ "schedule": {
+  "ledger_base_session": 2786,
+  "runtime": "baseline-v1-runtime-r2",
+  "session_ceiling": 12,
+  "session_mode": "exclusive diagnostic sessions, serial",
+  "sessions_if_no_stop_and_no_replication": 9,
+  "stages": [
+   {
+    "games": [
+     {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "condition": "H1",
+      "position": 1,
+      "red": "t9-batch-capacity-v3",
+      "scenario_id": "2130511121"
+     },
+     {
+      "blue": "t9-batch-capacity-v3",
+      "condition": "H2",
+      "position": 2,
+      "red": "baseline-v2-candidate-shoot-target-reservation",
+      "scenario_id": "2130511121"
+     },
+     {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "condition": "H1",
+      "position": 3,
+      "red": "t9-batch-capacity-v3",
+      "scenario_id": "2130511121"
+     },
+     {
+      "blue": "t9-batch-capacity-v3",
+      "condition": "H2",
+      "position": 4,
+      "red": "baseline-v2-candidate-shoot-target-reservation",
+      "scenario_id": "2130511121"
+     }
+    ],
+    "max_sessions": 4,
+    "proposed_card": "s12-v3-primary-1",
+    "runs_if": "the owner approves and the screen is registered; nothing earlier",
+    "stage": "P1"
+   },
+   {
+    "games": [
+     {
+      "blue": "baseline-v2-candidate-shoot-target-reservation",
+      "condition": "H1",
+      "position": 5,
+      "red": "t9-batch-capacity-v3",
+      "scenario_id": "2130511121"
+     },
+     {
+      "blue": "t9-batch-capacity-v3",
+      "condition": "H2",
+      "position": 6,
+      "red": "baseline-v2-candidate-shoot-target-reservation",
+      "scenario_id": "2130511121"
+     }
+    ],
+    "max_sessions": 2,
+    "proposed_card": "s12-v3-primary-2",
+    "runs_if": "the committed P1 report finds no stop and no interim tactical stop",
+    "stage": "P2"
+   },
+   {
+    "games": [
+     {
+      "blue": "t9-batch-capacity-v3",
+      "condition": "C3",
+      "position": 7,
+      "red": "inert-v0",
+      "scenario_id": "2120531121"
+     },
+     {
+      "blue": "inert-v0",
+      "condition": "C2",
+      "position": 8,
+      "red": "t9-batch-capacity-v3",
+      "scenario_id": "1930331196"
+     },
+     {
+      "blue": "t9-batch-capacity-v3",
+      "condition": "C3",
+      "position": 9,
+      "red": "inert-v0",
+      "scenario_id": "1930331196"
+     }
+    ],
+    "max_sessions": 3,
+    "proposed_card": "s12-v3-adverse-1",
+    "runs_if": "the committed primary report classifies the primary PRESERVED_DIRECTIONALLY or AMBIGUOUS",
+    "stage": "A1"
+   },
+   {
+    "games": [
+     {
+      "blue": "t9-batch-capacity-v3",
+      "condition": "C3",
+      "position": 10,
+      "red": "inert-v0",
+      "scenario_id": "2120531121"
+     },
+     {
+      "blue": "inert-v0",
+      "condition": "C2",
+      "position": 11,
+      "red": "t9-batch-capacity-v3",
+      "scenario_id": "1930331196"
+     },
+     {
+      "blue": "t9-batch-capacity-v3",
+      "condition": "C3",
+      "position": 12,
+      "red": "inert-v0",
+      "scenario_id": "1930331196"
+     }
+    ],
+    "max_sessions": 3,
+    "proposed_card": "s12-v3-adverse-2",
+    "runs_if": "per configuration, only if the committed A1 report names a replication trigger for it",
+    "stage": "A2"
+   }
+  ],
+  "workers": 1
+ },
+ "schema": "miaosuan-proposal-draft/1",
+ "status": "DRAFT — UNAPPROVED — NO ENGINE AUTHORIZATION"
+}
