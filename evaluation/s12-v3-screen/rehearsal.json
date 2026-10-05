@@ -1,0 +1,353 @@
+{
+ "games": [
+  {
+   "capture_sha256": "6d5b3eb3c09fbbc218a464dc7f38ca58548f96155734d3ec9c9644514464a05a",
+   "checks": {
+    "arrival audit": {
+     "arrival: exact": 14,
+     "arrival: never": 6
+    },
+    "arrival audit equals Sprint 11's": true,
+    "at most four own ground units on one hex in every state": true,
+    "baseline-v2 reconstructed equal (decisions)": [
+     2881,
+     2881
+    ],
+    "final objective value equals the occupy score": true,
+    "largest own ground stack": 4,
+    "no recomputed stop fires on correct v3 decisions": true,
+    "recomputed stops on the reconstructed v3 decisions": {
+     "S10": 0,
+     "S11": 0,
+     "S12": 0,
+     "S8 caused": 0,
+     "S9": 0,
+     "decisions checked": 2522
+    },
+    "v3 kept, shortened and withheld totals equal Sprint 11's": true,
+    "v3 places and held moves equal Sprint 11's (decisions)": [
+     2522,
+     2522
+    ]
+   },
+   "configuration": "2120531121 C3",
+   "decisions": 2881,
+   "objectives": {
+    "50-point objective A": {
+     "first_own_step": 522,
+     "own_at_end": true
+    },
+    "50-point objective B": {
+     "first_own_step": 401,
+     "own_at_end": true
+    },
+    "50-point objective C": {
+     "first_own_step": 341,
+     "own_at_end": true
+    },
+    "80-point objective A": {
+     "first_own_step": null,
+     "own_at_end": false
+    },
+    "80-point objective B": {
+     "first_own_step": 441,
+     "own_at_end": true
+    }
+   },
+   "played_by": "t9-v1",
+   "stem": "2120531121.C3.s10-t9-v1-diagnosis.g01"
+  },
+  {
+   "capture_sha256": "544f06a16d861b83b8b9a577752caac66222ce8403f41ac82ca330d7bea64133",
+   "checks": {
+    "arrival audit": {
+     "arrival: exact": 27,
+     "arrival: late": 3,
+     "arrival: never": 11
+    },
+    "arrival audit equals Sprint 11's": true,
+    "at most four own ground units on one hex in every state": true,
+    "baseline-v2 reconstructed equal (decisions)": [
+     2881,
+     2881
+    ],
+    "final objective value equals the occupy score": true,
+    "largest own ground stack": 4,
+    "no recomputed stop fires on correct v3 decisions": true,
+    "objective A first own at decision 564 with two units standing": true,
+    "recomputed stops on the reconstructed v3 decisions": {
+     "S10": 0,
+     "S11": 0,
+     "S12": 0,
+     "S8 caused": 0,
+     "S9": 0,
+     "decisions checked": 15
+    },
+    "v3 kept, shortened and withheld totals equal Sprint 11's": true,
+    "v3 places and held moves equal Sprint 11's (decisions)": [
+     15,
+     15
+    ]
+   },
+   "configuration": "2120531121 C3",
+   "decisions": 2881,
+   "objectives": {
+    "50-point objective A": {
+     "first_own_step": 462,
+     "own_at_end": true
+    },
+    "50-point objective B": {
+     "first_own_step": 401,
+     "own_at_end": true
+    },
+    "50-point objective C": {
+     "first_own_step": 341,
+     "own_at_end": true
+    },
+    "80-point objective A": {
+     "first_own_step": 563,
+     "own_at_end": true
+    },
+    "80-point objective B": {
+     "first_own_step": 482,
+     "own_at_end": true
+    }
+   },
+   "played_by": "baseline-v2",
+   "stem": "2120531121.C3.s10-t9-v1-diagnosis.g02"
+  },
+  {
+   "capture_sha256": "61e8752f90b1519f2ff0adb292b5135f25c8b505566ff179685bde659b6e7e05",
+   "checks": {
+    "arrival audit": {
+     "arrival: exact": 16,
+     "arrival: never": 4
+    },
+    "arrival audit equals Sprint 11's": true,
+    "at most four own ground units on one hex in every state": true,
+    "baseline-v2 reconstructed equal (decisions)": [
+     2881,
+     2881
+    ],
+    "final objective value equals the occupy score": true,
+    "largest own ground stack": 4,
+    "no recomputed stop fires on correct v3 decisions": true,
+    "recomputed stops on the reconstructed v3 decisions": {
+     "S10": 0,
+     "S11": 0,
+     "S12": 0,
+     "S8 caused": 0,
+     "S9": 0,
+     "decisions checked": 263
+    },
+    "v3 kept, shortened and withheld totals equal Sprint 11's": true,
+    "v3 places and held moves equal Sprint 11's (decisions)": [
+     263,
+     263
+    ]
+   },
+   "configuration": "1930331196 C3",
+   "decisions": 2881,
+   "objectives": {
+    "50-point objective A": {
+     "first_own_step": 821,
+     "own_at_end": true
+    },
+    "50-point objective B": {
+     "first_own_step": 701,
+     "own_at_end": true
+    },
+    "50-point objective C": {
+     "first_own_step": 582,
+     "own_at_end": true
+    },
+    "80-point objective A": {
+     "first_own_step": 521,
+     "own_at_end": true
+    },
+    "80-point objective B": {
+     "first_own_step": 681,
+     "own_at_end": true
+    }
+   },
+   "played_by": "t9-v1",
+   "stem": "1930331196.C3.s10-t9-v1-diagnosis.g03"
+  },
+  {
+   "capture_sha256": "8d20e32d88952577ce236d66f2e496cda1d5dc6cdc5310d3ae201db12df9ea2a",
+   "checks": {
+    "arrival audit": {
+     "arrival: exact": 30,
+     "arrival: never": 10
+    },
+    "arrival audit equals Sprint 11's": true,
+    "at most four own ground units on one hex in every state": true,
+    "baseline-v2 reconstructed equal (decisions)": [
+     2881,
+     2881
+    ],
+    "final objective value equals the occupy score": true,
+    "largest own ground stack": 4,
+    "no recomputed stop fires on correct v3 decisions": true,
+    "recomputed stops on the reconstructed v3 decisions": {
+     "S10": 0,
+     "S11": 0,
+     "S12": 0,
+     "S8 caused": 0,
+     "S9": 0,
+     "decisions checked": 13
+    },
+    "v3 kept, shortened and withheld totals equal Sprint 11's": true,
+    "v3 places and held moves equal Sprint 11's (decisions)": [
+     11,
+     11
+    ]
+   },
+   "configuration": "1930331196 C3",
+   "decisions": 2881,
+   "objectives": {
+    "50-point objective A": {
+     "first_own_step": 582,
+     "own_at_end": true
+    },
+    "50-point objective B": {
+     "first_own_step": 701,
+     "own_at_end": true
+    },
+    "50-point objective C": {
+     "first_own_step": 663,
+     "own_at_end": true
+    },
+    "80-point objective A": {
+     "first_own_step": 521,
+     "own_at_end": true
+    },
+    "80-point objective B": {
+     "first_own_step": 782,
+     "own_at_end": true
+    }
+   },
+   "played_by": "baseline-v2",
+   "stem": "1930331196.C3.s10-t9-v1-diagnosis.g04"
+  },
+  {
+   "capture_sha256": "fcc2eec344bd9e94b109c299577fa0f7f4cf113dfa1f79da7664cb7ba50567d4",
+   "checks": {
+    "arrival audit": {
+     "arrival: exact": 20
+    },
+    "arrival audit equals Sprint 11's": true,
+    "at most four own ground units on one hex in every state": true,
+    "baseline-v2 reconstructed equal (decisions)": [
+     2881,
+     2881
+    ],
+    "final objective value equals the occupy score": true,
+    "largest own ground stack": 4,
+    "no recomputed stop fires on correct v3 decisions": true,
+    "recomputed stops on the reconstructed v3 decisions": {
+     "S10": 0,
+     "S11": 0,
+     "S12": 0,
+     "S8 caused": 0,
+     "S9": 0,
+     "decisions checked": 290
+    },
+    "v3 kept, shortened and withheld totals equal Sprint 11's": true,
+    "v3 places and held moves equal Sprint 11's (decisions)": [
+     289,
+     289
+    ]
+   },
+   "configuration": "1930331196 C2",
+   "decisions": 2881,
+   "objectives": {
+    "50-point objective A": {
+     "first_own_step": 361,
+     "own_at_end": true
+    },
+    "50-point objective B": {
+     "first_own_step": 782,
+     "own_at_end": true
+    },
+    "50-point objective C": {
+     "first_own_step": 481,
+     "own_at_end": true
+    },
+    "80-point objective A": {
+     "first_own_step": 441,
+     "own_at_end": true
+    },
+    "80-point objective B": {
+     "first_own_step": 621,
+     "own_at_end": true
+    }
+   },
+   "played_by": "t9-v1",
+   "stem": "1930331196.C2.s10-t9-v1-c2-diagnosis.g01"
+  },
+  {
+   "capture_sha256": "312df862283356c3817b9647c4263347fecb55ed74ba79d0eaa84cec0044317c",
+   "checks": {
+    "accepted direct-fire order at decision 611": true,
+    "arrival audit": {
+     "arrival: exact": 32,
+     "arrival: late": 6,
+     "arrival: never": 3
+    },
+    "arrival audit equals Sprint 11's": true,
+    "at most four own ground units on one hex in every state": true,
+    "baseline-v2 reconstructed equal (decisions)": [
+     2881,
+     2881
+    ],
+    "final objective value equals the occupy score": true,
+    "largest own ground stack": 4,
+    "no recomputed stop fires on correct v3 decisions": true,
+    "recomputed stops on the reconstructed v3 decisions": {
+     "S10": 0,
+     "S11": 0,
+     "S12": 0,
+     "S8 caused": 0,
+     "S9": 0,
+     "decisions checked": 16
+    },
+    "v3 kept, shortened and withheld totals equal Sprint 11's": true,
+    "v3 places and held moves equal Sprint 11's (decisions)": [
+     16,
+     16
+    ]
+   },
+   "configuration": "1930331196 C2",
+   "decisions": 2881,
+   "objectives": {
+    "50-point objective A": {
+     "first_own_step": 361,
+     "own_at_end": true
+    },
+    "50-point objective B": {
+     "first_own_step": 804,
+     "own_at_end": true
+    },
+    "50-point objective C": {
+     "first_own_step": 442,
+     "own_at_end": true
+    },
+    "80-point objective A": {
+     "first_own_step": 503,
+     "own_at_end": true
+    },
+    "80-point objective B": {
+     "first_own_step": 885,
+     "own_at_end": true
+    }
+   },
+   "played_by": "baseline-v2",
+   "stem": "1930331196.C2.s10-t9-v1-c2-diagnosis.g02"
+  }
+ ],
+ "passed": true,
+ "s11_private_sha256": "5f03482bcb8b9dcc4c0b4ab290aabb6770b26175153e787a6cf937a92eeab332",
+ "schema": "miaosuan-s12-rehearsal/1",
+ "screen": "s12-v3-screen"
+}

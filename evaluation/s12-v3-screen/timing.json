@@ -1,0 +1,24 @@
+{
+ "analysis_seconds": 15.8,
+ "capture": "2120531121.C3.s10-t9-v1-diagnosis.g01",
+ "decisions": 2881,
+ "files_seconds": 0.7,
+ "observer_ms_per_step": 6.14,
+ "observer_seconds": 17.7,
+ "projection": {
+  "basis": "two reconstructed policy seats instead of one, and 89 operators instead of 54",
+  "conservative_basis": "Sprint 10's largest in-game full-step observer time (154.7 s) instead of this offline measurement, with the same factor",
+  "conservative_game_seconds": 641.7,
+  "conservative_process_seconds_with_analysis": 694.0,
+  "factor": 3.296,
+  "game_process_seconds_with_analysis": 244.5,
+  "game_seconds": 192.3,
+  "h2h_wall_without_timeline_seconds": 131.8,
+  "process_timeout_seconds": 2100,
+  "safe_if": "conservative game below half the wall cap and the game process below the process timeout minus 900 s",
+  "wall_cap_seconds": 1800
+ },
+ "schema": "miaosuan-s12-timing/1",
+ "timeline_compact_bytes": 22019365,
+ "windows_bytes": 185592611
+}
