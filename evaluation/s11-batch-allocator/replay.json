@@ -1,0 +1,5049 @@
+{
+ "candidate": {
+  "engine_use": "none (offline design candidate)",
+  "identity": "t9-batch-capacity-v3",
+  "policy_source_sha256": "9b2003a78ace45c968e2340f06e6fe5aa1938667ab1610c448725a319a48b2b8"
+ },
+ "certificate_2120531121_C3": {
+  "baseline_v2_capturers": {
+   "counts": {
+    "candidate at the baseline-v2 order that sent the capturer: selected": 2
+   },
+   "units": 2
+  },
+  "decision_1": {
+   "baseline-v2 game": {
+    "baseline_claimants": {
+     "50-point objective B": {
+      "count": 4,
+      "free_flow_steps": [
+       400,
+       400,
+       420,
+       440
+      ],
+      "kinds": {
+       "vehicle": 4
+      }
+     },
+     "50-point objective C": {
+      "count": 8,
+      "free_flow_steps": [
+       340,
+       360,
+       360,
+       380,
+       380,
+       380,
+       400,
+       420
+      ],
+      "kinds": {
+       "vehicle": 8
+      }
+     },
+     "80-point objective B": {
+      "count": 6,
+      "free_flow_steps": [
+       2736,
+       2736,
+       2880,
+       2880,
+       3024,
+       3024
+      ],
+      "kinds": {
+       "infantry": 6
+      }
+     }
+    },
+    "k": 1,
+    "places": {
+     "candidate": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        400,
+        420,
+        440
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        340,
+        360,
+        360,
+        380
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2736,
+        2736
+       ],
+       "kinds": {
+        "infantry": 2
+       },
+       "places": 2
+      }
+     },
+     "no-end-of-game-test": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        400,
+        420,
+        440
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        340,
+        360,
+        360,
+        380
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 2,
+       "free_flow_steps": [
+        2736,
+        2736,
+        2880,
+        2880
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      }
+     },
+     "t9-v1": {
+      "50-point objective A": {
+       "cannot_arrive_before_the_end": 2,
+       "free_flow_steps": [
+        3456,
+        3456
+       ],
+       "kinds": {
+        "infantry": 2
+       },
+       "places": 2
+      },
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        400,
+        420,
+        440
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        340,
+        360,
+        360,
+        380
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective A": {
+       "cannot_arrive_before_the_end": 4,
+       "free_flow_steps": [
+        3168,
+        3312,
+        3312,
+        3456
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        440,
+        440,
+        460,
+        480
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      }
+     },
+     "t9-v2": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        400,
+        420,
+        440
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        340,
+        360,
+        360,
+        380
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 4,
+       "free_flow_steps": [
+        2880,
+        2880,
+        3024,
+        3024
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      }
+     }
+    }
+   },
+   "t9-v1 game": {
+    "baseline_claimants": {
+     "50-point objective B": {
+      "count": 4,
+      "free_flow_steps": [
+       400,
+       400,
+       420,
+       440
+      ],
+      "kinds": {
+       "vehicle": 4
+      }
+     },
+     "50-point objective C": {
+      "count": 8,
+      "free_flow_steps": [
+       340,
+       360,
+       360,
+       380,
+       380,
+       380,
+       400,
+       420
+      ],
+      "kinds": {
+       "vehicle": 8
+      }
+     },
+     "80-point objective B": {
+      "count": 6,
+      "free_flow_steps": [
+       2736,
+       2736,
+       2880,
+       2880,
+       3024,
+       3024
+      ],
+      "kinds": {
+       "infantry": 6
+      }
+     }
+    },
+    "k": 1,
+    "places": {
+     "candidate": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        400,
+        420,
+        440
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        340,
+        360,
+        360,
+        380
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2736,
+        2736
+       ],
+       "kinds": {
+        "infantry": 2
+       },
+       "places": 2
+      }
+     },
+     "no-end-of-game-test": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        400,
+        420,
+        440
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        340,
+        360,
+        360,
+        380
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 2,
+       "free_flow_steps": [
+        2736,
+        2736,
+        2880,
+        2880
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      }
+     },
+     "t9-v1": {
+      "50-point objective A": {
+       "cannot_arrive_before_the_end": 2,
+       "free_flow_steps": [
+        3456,
+        3456
+       ],
+       "kinds": {
+        "infantry": 2
+       },
+       "places": 2
+      },
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        400,
+        420,
+        440
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        340,
+        360,
+        360,
+        380
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective A": {
+       "cannot_arrive_before_the_end": 4,
+       "free_flow_steps": [
+        3168,
+        3312,
+        3312,
+        3456
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        440,
+        440,
+        460,
+        480
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      }
+     },
+     "t9-v2": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        400,
+        420,
+        440
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        340,
+        360,
+        360,
+        380
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 4,
+       "free_flow_steps": [
+        2880,
+        2880,
+        3024,
+        3024
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      }
+     }
+    }
+   }
+  },
+  "first_capture_decision_baseline_v2": 564,
+  "objective": "80-point objective A",
+  "same_initial_play_state": true,
+  "t9_v1_blocked_decisions": {
+   "candidate_selected_free_flow_steps": {
+    "max": 160,
+    "min": 100
+   },
+   "counts": {
+    "candidate: a held-back claimant of the objective arrives sooner than a selected one": 0,
+    "candidate: decisions granting at least one place": 2339,
+    "candidate: places granted (unit-decisions)": 9194,
+    "candidate: places granted to claimants T9-v1 held back (unit-decisions)": 9194,
+    "claimants held back by T9-v1 (unit-decisions)": 28435,
+    "decisions": 2439,
+    "incumbents before the decision: 0 standing, 0 movers that can arrive, 4 that cannot": 2439,
+    "no-end-of-game-test: decisions granting at least one place": 0,
+    "no-end-of-game-test: places granted (unit-decisions)": 0,
+    "t9-v1: decisions granting at least one place": 0,
+    "t9-v1: places granted (unit-decisions)": 0,
+    "t9-v2: decisions granting at least one place": 0,
+    "t9-v2: places granted (unit-decisions)": 0
+   },
+   "first": 442,
+   "held_back_free_flow_steps": {
+    "max": 160,
+    "min": 100
+   },
+   "last": 2880,
+   "remaining_steps": {
+    "max": 2439,
+    "min": 1
+   }
+  }
+ },
+ "games": [
+  {
+   "checks": {
+    "baseline ground-move count cross-checked": 2880,
+    "baseline-v2 re-decided equal": 29,
+    "candidate policy equals pure allocation": 29,
+    "decisions with a baseline objective move": 2522,
+    "permutation checks passed": 2502,
+    "play decisions": 2880
+   },
+   "configuration": "2120531121 C3",
+   "control_audit": {
+    "arrival: exact": 14,
+    "arrival: never": 6,
+    "no path: move listed": 29300,
+    "no path: stop listed": 0,
+    "no path: unit-decisions": 46580,
+    "path, speed above 0: move listed": 0,
+    "path, speed above 0: stop listed": 22540,
+    "path, speed above 0: unit-decisions": 22540,
+    "remaining bound: arrived sooner than the bound": 0,
+    "remaining bound: checked": 264,
+    "remaining bound: not observed to arrive": 864,
+    "settled: delay-tau: 0": 18,
+    "transition: delay-tau: 0": 2
+   },
+   "decision_1": {
+    "baseline_claimants": {
+     "50-point objective B": {
+      "count": 4,
+      "free_flow_steps": [
+       400,
+       400,
+       420,
+       440
+      ],
+      "kinds": {
+       "vehicle": 4
+      }
+     },
+     "50-point objective C": {
+      "count": 8,
+      "free_flow_steps": [
+       340,
+       360,
+       360,
+       380,
+       380,
+       380,
+       400,
+       420
+      ],
+      "kinds": {
+       "vehicle": 8
+      }
+     },
+     "80-point objective B": {
+      "count": 6,
+      "free_flow_steps": [
+       2736,
+       2736,
+       2880,
+       2880,
+       3024,
+       3024
+      ],
+      "kinds": {
+       "infantry": 6
+      }
+     }
+    },
+    "k": 1,
+    "places": {
+     "candidate": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        400,
+        420,
+        440
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        340,
+        360,
+        360,
+        380
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2736,
+        2736
+       ],
+       "kinds": {
+        "infantry": 2
+       },
+       "places": 2
+      }
+     },
+     "no-end-of-game-test": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        400,
+        420,
+        440
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        340,
+        360,
+        360,
+        380
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 2,
+       "free_flow_steps": [
+        2736,
+        2736,
+        2880,
+        2880
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      }
+     },
+     "t9-v1": {
+      "50-point objective A": {
+       "cannot_arrive_before_the_end": 2,
+       "free_flow_steps": [
+        3456,
+        3456
+       ],
+       "kinds": {
+        "infantry": 2
+       },
+       "places": 2
+      },
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        400,
+        420,
+        440
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        340,
+        360,
+        360,
+        380
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective A": {
+       "cannot_arrive_before_the_end": 4,
+       "free_flow_steps": [
+        3168,
+        3312,
+        3312,
+        3456
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        440,
+        440,
+        460,
+        480
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      }
+     },
+     "t9-v2": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        400,
+        420,
+        440
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        340,
+        360,
+        360,
+        380
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 4,
+       "free_flow_steps": [
+        2880,
+        2880,
+        3024,
+        3024
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      }
+     }
+    }
+   },
+   "decisions_read": 2881,
+   "design": {
+    "candidate": {
+     "contended objective-decisions": 2544,
+     "dominated movers retained (unit-decisions)": 61,
+     "dominated movers retained (units)": 2,
+     "errors": 0,
+     "late claimants (unit-decisions)": 1404,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 567,
+     "objective-decisions with claimants": 2645,
+     "phantom movers excluded (unit-decisions)": 9998,
+     "stage-rejected": 0
+    },
+    "emission-order": {
+     "contended objective-decisions": 2544,
+     "dominated movers retained (unit-decisions)": 61,
+     "dominated movers retained (units)": 2,
+     "errors": 0,
+     "late claimants (unit-decisions)": 1404,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 567,
+     "objective-decisions with claimants": 2645,
+     "phantom movers excluded (unit-decisions)": 9998,
+     "selection differs from the candidate (objective-decisions)": 2238,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 13348
+    },
+    "horizon-1440": {
+     "contended objective-decisions": 2544,
+     "dominated movers retained (unit-decisions)": 61,
+     "dominated movers retained (units)": 2,
+     "errors": 0,
+     "late claimants (unit-decisions)": 1404,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 567,
+     "objective-decisions with claimants": 2645,
+     "phantom movers excluded (unit-decisions)": 9998,
+     "stage-rejected": 0
+    },
+    "horizon-360": {
+     "contended objective-decisions": 2544,
+     "dominated movers retained (unit-decisions)": 61,
+     "dominated movers retained (units)": 2,
+     "errors": 0,
+     "late claimants (unit-decisions)": 1404,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 567,
+     "objective-decisions with claimants": 2645,
+     "phantom movers excluded (unit-decisions)": 9998,
+     "stage-rejected": 0
+    },
+    "horizon-720": {
+     "contended objective-decisions": 2544,
+     "dominated movers retained (unit-decisions)": 61,
+     "dominated movers retained (units)": 2,
+     "errors": 0,
+     "late claimants (unit-decisions)": 1404,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 567,
+     "objective-decisions with claimants": 2645,
+     "phantom movers excluded (unit-decisions)": 9998,
+     "stage-rejected": 0
+    },
+    "no-end-of-game-test": {
+     "contended objective-decisions": 2644,
+     "dominated movers retained (unit-decisions)": 10097,
+     "dominated movers retained (units)": 8,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 10565,
+     "objective-decisions with claimants": 2645,
+     "phantom movers excluded (unit-decisions)": 0,
+     "selection differs from the candidate (objective-decisions)": 2461,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 9437
+    },
+    "route-cost": {
+     "contended objective-decisions": 2544,
+     "dominated movers retained (unit-decisions)": 61,
+     "dominated movers retained (units)": 2,
+     "errors": 0,
+     "late claimants (unit-decisions)": 1404,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 567,
+     "objective-decisions with claimants": 2645,
+     "phantom movers excluded (unit-decisions)": 9998,
+     "selection differs from the candidate (objective-decisions)": 0,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 0
+    },
+    "stage-cap-4": {
+     "contended objective-decisions": 2544,
+     "dominated movers retained (unit-decisions)": 61,
+     "dominated movers retained (units)": 2,
+     "errors": 0,
+     "late claimants (unit-decisions)": 1404,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 567,
+     "objective-decisions with claimants": 2645,
+     "phantom movers excluded (unit-decisions)": 9998,
+     "stage-rejected": 0
+    },
+    "withhold-only": {
+     "contended objective-decisions": 2544,
+     "dominated movers retained (unit-decisions)": 61,
+     "dominated movers retained (units)": 2,
+     "errors": 0,
+     "late claimants (unit-decisions)": 1404,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 567,
+     "objective-decisions with claimants": 2645,
+     "phantom movers excluded (unit-decisions)": 9998,
+     "stage-rejected": 0
+    }
+   },
+   "game": "2120531121.C3.s10-t9-v1-diagnosis.g01",
+   "hexes_removed_per_shortened_move": {
+    "candidate": {
+     "counts": {
+      "1": 17341,
+      "2": 2498
+     },
+     "max": 2,
+     "median": 1,
+     "n": 19839,
+     "sum": 22337
+    },
+    "emission-order": {
+     "counts": {
+      "1": 17338,
+      "2": 2501
+     },
+     "max": 2,
+     "median": 1,
+     "n": 19839,
+     "sum": 22340
+    },
+    "horizon-1440": {
+     "counts": {
+      "1": 17342,
+      "2": 2499
+     },
+     "max": 2,
+     "median": 1,
+     "n": 19841,
+     "sum": 22340
+    },
+    "horizon-360": {
+     "counts": {
+      "1": 17345,
+      "2": 2501
+     },
+     "max": 2,
+     "median": 1.0,
+     "n": 19846,
+     "sum": 22347
+    },
+    "horizon-720": {
+     "counts": {
+      "1": 17342,
+      "2": 2499
+     },
+     "max": 2,
+     "median": 1,
+     "n": 19841,
+     "sum": 22340
+    },
+    "no-end-of-game-test": {
+     "counts": {
+      "1": 24438,
+      "2": 4834
+     },
+     "max": 2,
+     "median": 1.0,
+     "n": 29272,
+     "sum": 34106
+    },
+    "route-cost": {
+     "counts": {
+      "1": 17341,
+      "2": 2498
+     },
+     "max": 2,
+     "median": 1,
+     "n": 19839,
+     "sum": 22337
+    },
+    "stage-cap-4": {
+     "counts": {
+      "1": 19839
+     },
+     "max": 1,
+     "median": 1,
+     "n": 19839,
+     "sum": 19839
+    },
+    "t9-v1": {
+     "n": 0
+    },
+    "t9-v2": {
+     "counts": {
+      "1": 29272
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 29272,
+     "sum": 29272
+    },
+    "withhold-only": {
+     "n": 0
+    }
+   },
+   "hold_back_episodes": {
+    "candidate": {
+     "counts": {
+      "1": 10,
+      "100": 4,
+      "12": 1,
+      "17": 1,
+      "18": 1,
+      "2234": 1,
+      "2289": 1,
+      "2309": 1,
+      "2358": 4,
+      "2439": 1,
+      "42": 1,
+      "55": 1,
+      "61": 1,
+      "62": 1,
+      "74": 3,
+      "75": 1,
+      "81": 2
+     },
+     "max": 2439,
+     "median": 74,
+     "n": 35,
+     "sum": 19839
+    },
+    "emission-order": {
+     "counts": {
+      "1": 10,
+      "100": 4,
+      "12": 1,
+      "120": 2,
+      "160": 1,
+      "17": 1,
+      "18": 1,
+      "2149": 1,
+      "2234": 1,
+      "2280": 1,
+      "2289": 1,
+      "2300": 1,
+      "2358": 1,
+      "2439": 2,
+      "55": 1,
+      "61": 1,
+      "74": 3,
+      "75": 1,
+      "81": 1
+     },
+     "max": 2439,
+     "median": 74,
+     "n": 35,
+     "sum": 19839
+    },
+    "horizon-1440": {
+     "counts": {
+      "1": 12,
+      "100": 4,
+      "12": 1,
+      "17": 1,
+      "18": 1,
+      "2234": 1,
+      "2289": 1,
+      "2309": 1,
+      "2358": 4,
+      "2439": 1,
+      "42": 1,
+      "55": 1,
+      "61": 1,
+      "62": 1,
+      "74": 3,
+      "75": 1,
+      "81": 2
+     },
+     "max": 2439,
+     "median": 62,
+     "n": 37,
+     "sum": 19841
+    },
+    "horizon-360": {
+     "counts": {
+      "1": 17,
+      "100": 4,
+      "12": 1,
+      "17": 1,
+      "18": 1,
+      "2234": 1,
+      "2289": 1,
+      "2309": 1,
+      "2358": 4,
+      "2439": 1,
+      "42": 1,
+      "55": 1,
+      "61": 1,
+      "62": 1,
+      "74": 3,
+      "75": 1,
+      "81": 2
+     },
+     "max": 2439,
+     "median": 48.5,
+     "n": 42,
+     "sum": 19846
+    },
+    "horizon-720": {
+     "counts": {
+      "1": 12,
+      "100": 4,
+      "12": 1,
+      "17": 1,
+      "18": 1,
+      "2234": 1,
+      "2289": 1,
+      "2309": 1,
+      "2358": 4,
+      "2439": 1,
+      "42": 1,
+      "55": 1,
+      "61": 1,
+      "62": 1,
+      "74": 3,
+      "75": 1,
+      "81": 2
+     },
+     "max": 2439,
+     "median": 62,
+     "n": 37,
+     "sum": 19841
+    },
+    "no-end-of-game-test": {
+     "counts": {
+      "1": 8,
+      "2234": 1,
+      "2289": 1,
+      "2309": 1,
+      "2327": 1,
+      "2400": 1,
+      "2403": 1,
+      "2404": 1,
+      "2420": 1,
+      "2439": 2,
+      "2500": 1,
+      "2520": 1,
+      "30": 2,
+      "74": 5,
+      "75": 2
+     },
+     "max": 2520,
+     "median": 74,
+     "n": 29,
+     "sum": 29272
+    },
+    "route-cost": {
+     "counts": {
+      "1": 10,
+      "100": 4,
+      "12": 1,
+      "17": 1,
+      "18": 1,
+      "2234": 1,
+      "2289": 1,
+      "2309": 1,
+      "2358": 4,
+      "2439": 1,
+      "42": 1,
+      "55": 1,
+      "61": 1,
+      "62": 1,
+      "74": 3,
+      "75": 1,
+      "81": 2
+     },
+     "max": 2439,
+     "median": 74,
+     "n": 35,
+     "sum": 19839
+    },
+    "stage-cap-4": {
+     "counts": {
+      "1": 10,
+      "100": 4,
+      "12": 1,
+      "17": 1,
+      "18": 1,
+      "2234": 1,
+      "2289": 1,
+      "2309": 1,
+      "2358": 4,
+      "2439": 1,
+      "42": 1,
+      "55": 1,
+      "61": 1,
+      "62": 1,
+      "74": 3,
+      "75": 1,
+      "81": 2
+     },
+     "max": 2439,
+     "median": 74,
+     "n": 35,
+     "sum": 19839
+    },
+    "t9-v1": {
+     "counts": {
+      "1": 12,
+      "2234": 1,
+      "2289": 1,
+      "2309": 1,
+      "2327": 1,
+      "2400": 1,
+      "2403": 1,
+      "2404": 1,
+      "2420": 1,
+      "2439": 2,
+      "2500": 1,
+      "2520": 1,
+      "30": 2,
+      "74": 5,
+      "75": 2
+     },
+     "max": 2520,
+     "median": 74,
+     "n": 33,
+     "sum": 29276
+    },
+    "t9-v2": {
+     "counts": {
+      "1": 8,
+      "2234": 1,
+      "2289": 1,
+      "2309": 1,
+      "2327": 1,
+      "2400": 1,
+      "2403": 1,
+      "2404": 1,
+      "2420": 1,
+      "2439": 2,
+      "2500": 1,
+      "2520": 1,
+      "30": 2,
+      "74": 5,
+      "75": 2
+     },
+     "max": 2520,
+     "median": 74,
+     "n": 29,
+     "sum": 29272
+    },
+    "withhold-only": {
+     "counts": {
+      "1": 10,
+      "100": 4,
+      "12": 1,
+      "17": 1,
+      "18": 1,
+      "2234": 1,
+      "2289": 1,
+      "2309": 1,
+      "2358": 4,
+      "2439": 1,
+      "42": 1,
+      "55": 1,
+      "61": 1,
+      "62": 1,
+      "74": 3,
+      "75": 1,
+      "81": 2
+     },
+     "max": 2439,
+     "median": 74,
+     "n": 35,
+     "sum": 19839
+    }
+   },
+   "played_by": "t9-v1",
+   "policies": {
+    "candidate": {
+     "capacity phantom_inclusive": 2460,
+     "cross_objective": 0,
+     "decisions changed": 2522,
+     "hold-back: claimant cannot arrive before the end": 1404,
+     "hold-back: places held by units that can arrive": 18435,
+     "invented": 0,
+     "kept": 9445,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 19839,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "emission-order": {
+     "capacity phantom_inclusive": 2460,
+     "cross_objective": 0,
+     "decisions changed": 2522,
+     "hold-back: claimant cannot arrive before the end": 1404,
+     "hold-back: places held by units that can arrive": 18435,
+     "invented": 0,
+     "kept": 9445,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 19839,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-1440": {
+     "capacity phantom_inclusive": 2460,
+     "cross_objective": 0,
+     "decisions changed": 2522,
+     "hold-back: claimant cannot arrive before the end": 1404,
+     "hold-back: places held by units that can arrive": 18437,
+     "invented": 0,
+     "kept": 9443,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 19841,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-360": {
+     "capacity phantom_inclusive": 2460,
+     "cross_objective": 0,
+     "decisions changed": 2522,
+     "hold-back: claimant cannot arrive before the end": 1404,
+     "hold-back: places held by units that can arrive": 18442,
+     "invented": 0,
+     "kept": 9438,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 19846,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-720": {
+     "capacity phantom_inclusive": 2460,
+     "cross_objective": 0,
+     "decisions changed": 2522,
+     "hold-back: claimant cannot arrive before the end": 1404,
+     "hold-back: places held by units that can arrive": 18437,
+     "invented": 0,
+     "kept": 9443,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 19841,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "no-end-of-game-test": {
+     "cross_objective": 0,
+     "decisions changed": 2522,
+     "hold-back: a place is held by a unit that cannot arrive": 27722,
+     "hold-back: claimant cannot arrive before the end": 1402,
+     "hold-back: places held by units that can arrive": 148,
+     "invented": 0,
+     "kept": 12,
+     "late_owners": 2,
+     "prefix_failures": 0,
+     "shortened": 29272,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "route-cost": {
+     "capacity phantom_inclusive": 2460,
+     "cross_objective": 0,
+     "decisions changed": 2522,
+     "hold-back: claimant cannot arrive before the end": 1404,
+     "hold-back: places held by units that can arrive": 18435,
+     "invented": 0,
+     "kept": 9445,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 19839,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "stage-cap-4": {
+     "capacity phantom_inclusive": 2460,
+     "cross_objective": 0,
+     "decisions changed": 2522,
+     "hold-back: claimant cannot arrive before the end": 1404,
+     "hold-back: places held by units that can arrive": 18435,
+     "invented": 0,
+     "kept": 9445,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 19839,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "t9-v1": {
+     "cross_objective": 12,
+     "decisions changed": 2522,
+     "hold-back: a place is held by a unit that cannot arrive": 27722,
+     "hold-back: claimant cannot arrive before the end": 1404,
+     "hold-back: places held by units that can arrive": 150,
+     "invented": 0,
+     "kept": 8,
+     "late_owners": 6,
+     "prefix_failures": 0,
+     "shortened": 0,
+     "unrelated_changed": 0,
+     "withheld": 29264
+    },
+    "t9-v2": {
+     "cross_objective": 0,
+     "decisions changed": 2522,
+     "hold-back: a place is held by a unit that cannot arrive": 27724,
+     "hold-back: claimant cannot arrive before the end": 1400,
+     "hold-back: places held by units that can arrive": 148,
+     "invented": 0,
+     "kept": 12,
+     "late_owners": 4,
+     "prefix_failures": 0,
+     "shortened": 29272,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "withhold-only": {
+     "capacity phantom_inclusive": 2460,
+     "cross_objective": 0,
+     "decisions changed": 2522,
+     "hold-back: claimant cannot arrive before the end": 1404,
+     "hold-back: places held by units that can arrive": 18435,
+     "invented": 0,
+     "kept": 9445,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 0,
+     "unrelated_changed": 0,
+     "withheld": 19839
+    }
+   },
+   "seat": 11
+  },
+  {
+   "checks": {
+    "baseline ground-move count cross-checked": 2880,
+    "baseline-v2 re-decided equal": 29,
+    "candidate policy equals pure allocation": 29,
+    "decisions with a baseline objective move": 15,
+    "permutation checks passed": 7,
+    "play decisions": 2880
+   },
+   "configuration": "2120531121 C3",
+   "control_audit": {
+    "arrival: exact": 27,
+    "arrival: late": 3,
+    "arrival: never": 11,
+    "no path: move listed": 11850,
+    "no path: stop listed": 0,
+    "no path: unit-decisions": 29130,
+    "path, speed 0: move listed": 0,
+    "path, speed 0: stop listed": 16027,
+    "path, speed 0: unit-decisions": 16027,
+    "path, speed above 0: move listed": 0,
+    "path, speed above 0: stop listed": 23963,
+    "path, speed above 0: unit-decisions": 23963,
+    "remaining bound: arrived sooner than the bound": 0,
+    "remaining bound: checked": 600,
+    "remaining bound: not observed to arrive": 1399,
+    "settled: delay-tau: 0": 18,
+    "transition: delay-tau: 0": 23
+   },
+   "decision_1": {
+    "baseline_claimants": {
+     "50-point objective B": {
+      "count": 4,
+      "free_flow_steps": [
+       400,
+       400,
+       420,
+       440
+      ],
+      "kinds": {
+       "vehicle": 4
+      }
+     },
+     "50-point objective C": {
+      "count": 8,
+      "free_flow_steps": [
+       340,
+       360,
+       360,
+       380,
+       380,
+       380,
+       400,
+       420
+      ],
+      "kinds": {
+       "vehicle": 8
+      }
+     },
+     "80-point objective B": {
+      "count": 6,
+      "free_flow_steps": [
+       2736,
+       2736,
+       2880,
+       2880,
+       3024,
+       3024
+      ],
+      "kinds": {
+       "infantry": 6
+      }
+     }
+    },
+    "k": 1,
+    "places": {
+     "candidate": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        400,
+        420,
+        440
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        340,
+        360,
+        360,
+        380
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2736,
+        2736
+       ],
+       "kinds": {
+        "infantry": 2
+       },
+       "places": 2
+      }
+     },
+     "no-end-of-game-test": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        400,
+        420,
+        440
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        340,
+        360,
+        360,
+        380
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 2,
+       "free_flow_steps": [
+        2736,
+        2736,
+        2880,
+        2880
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      }
+     },
+     "t9-v1": {
+      "50-point objective A": {
+       "cannot_arrive_before_the_end": 2,
+       "free_flow_steps": [
+        3456,
+        3456
+       ],
+       "kinds": {
+        "infantry": 2
+       },
+       "places": 2
+      },
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        400,
+        420,
+        440
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        340,
+        360,
+        360,
+        380
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective A": {
+       "cannot_arrive_before_the_end": 4,
+       "free_flow_steps": [
+        3168,
+        3312,
+        3312,
+        3456
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        440,
+        440,
+        460,
+        480
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      }
+     },
+     "t9-v2": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        400,
+        420,
+        440
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        340,
+        360,
+        360,
+        380
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 4,
+       "free_flow_steps": [
+        2880,
+        2880,
+        3024,
+        3024
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      }
+     }
+    }
+   },
+   "decisions_read": 2881,
+   "design": {
+    "candidate": {
+     "contended objective-decisions": 10,
+     "dominated movers retained (unit-decisions)": 20,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 4,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 67,
+     "objective-decisions with claimants": 18,
+     "phantom movers excluded (unit-decisions)": 10,
+     "stage-rejected": 0
+    },
+    "emission-order": {
+     "contended objective-decisions": 10,
+     "dominated movers retained (unit-decisions)": 20,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 4,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 67,
+     "objective-decisions with claimants": 18,
+     "phantom movers excluded (unit-decisions)": 10,
+     "selection differs from the candidate (objective-decisions)": 0,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 0
+    },
+    "horizon-1440": {
+     "contended objective-decisions": 10,
+     "dominated movers retained (unit-decisions)": 20,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 4,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 67,
+     "objective-decisions with claimants": 18,
+     "phantom movers excluded (unit-decisions)": 10,
+     "stage-rejected": 0
+    },
+    "horizon-360": {
+     "contended objective-decisions": 10,
+     "dominated movers retained (unit-decisions)": 20,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 4,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 67,
+     "objective-decisions with claimants": 18,
+     "phantom movers excluded (unit-decisions)": 10,
+     "stage-rejected": 0
+    },
+    "horizon-720": {
+     "contended objective-decisions": 10,
+     "dominated movers retained (unit-decisions)": 20,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 4,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 67,
+     "objective-decisions with claimants": 18,
+     "phantom movers excluded (unit-decisions)": 10,
+     "stage-rejected": 0
+    },
+    "no-end-of-game-test": {
+     "contended objective-decisions": 10,
+     "dominated movers retained (unit-decisions)": 30,
+     "dominated movers retained (units)": 6,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 77,
+     "objective-decisions with claimants": 18,
+     "phantom movers excluded (unit-decisions)": 0,
+     "selection differs from the candidate (objective-decisions)": 1,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 2
+    },
+    "route-cost": {
+     "contended objective-decisions": 10,
+     "dominated movers retained (unit-decisions)": 20,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 4,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 67,
+     "objective-decisions with claimants": 18,
+     "phantom movers excluded (unit-decisions)": 10,
+     "selection differs from the candidate (objective-decisions)": 0,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 0
+    },
+    "stage-cap-4": {
+     "contended objective-decisions": 10,
+     "dominated movers retained (unit-decisions)": 20,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 4,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 67,
+     "objective-decisions with claimants": 18,
+     "phantom movers excluded (unit-decisions)": 10,
+     "stage-rejected": 0
+    },
+    "withhold-only": {
+     "contended objective-decisions": 10,
+     "dominated movers retained (unit-decisions)": 20,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 4,
+     "mixed infantry/vehicle batches": 0,
+     "movers retained (unit-decisions)": 67,
+     "objective-decisions with claimants": 18,
+     "phantom movers excluded (unit-decisions)": 10,
+     "stage-rejected": 0
+    }
+   },
+   "game": "2120531121.C3.s10-t9-v1-diagnosis.g02",
+   "hexes_removed_per_shortened_move": {
+    "candidate": {
+     "counts": {
+      "1": 22,
+      "2": 1
+     },
+     "max": 2,
+     "median": 1,
+     "n": 23,
+     "sum": 24
+    },
+    "emission-order": {
+     "counts": {
+      "1": 22,
+      "2": 1
+     },
+     "max": 2,
+     "median": 1,
+     "n": 23,
+     "sum": 24
+    },
+    "horizon-1440": {
+     "counts": {
+      "1": 23,
+      "2": 2
+     },
+     "max": 2,
+     "median": 1,
+     "n": 25,
+     "sum": 27
+    },
+    "horizon-360": {
+     "counts": {
+      "1": 26,
+      "2": 4
+     },
+     "max": 2,
+     "median": 1.0,
+     "n": 30,
+     "sum": 34
+    },
+    "horizon-720": {
+     "counts": {
+      "1": 23,
+      "2": 2
+     },
+     "max": 2,
+     "median": 1,
+     "n": 25,
+     "sum": 27
+    },
+    "no-end-of-game-test": {
+     "counts": {
+      "1": 20,
+      "2": 1
+     },
+     "max": 2,
+     "median": 1,
+     "n": 21,
+     "sum": 22
+    },
+    "route-cost": {
+     "counts": {
+      "1": 22,
+      "2": 1
+     },
+     "max": 2,
+     "median": 1,
+     "n": 23,
+     "sum": 24
+    },
+    "stage-cap-4": {
+     "counts": {
+      "1": 23
+     },
+     "max": 1,
+     "median": 1,
+     "n": 23,
+     "sum": 23
+    },
+    "t9-v1": {
+     "n": 0
+    },
+    "t9-v2": {
+     "counts": {
+      "1": 21
+     },
+     "max": 1,
+     "median": 1,
+     "n": 21,
+     "sum": 21
+    },
+    "withhold-only": {
+     "n": 0
+    }
+   },
+   "hold_back_episodes": {
+    "candidate": {
+     "counts": {
+      "1": 23
+     },
+     "max": 1,
+     "median": 1,
+     "n": 23,
+     "sum": 23
+    },
+    "emission-order": {
+     "counts": {
+      "1": 23
+     },
+     "max": 1,
+     "median": 1,
+     "n": 23,
+     "sum": 23
+    },
+    "horizon-1440": {
+     "counts": {
+      "1": 25
+     },
+     "max": 1,
+     "median": 1,
+     "n": 25,
+     "sum": 25
+    },
+    "horizon-360": {
+     "counts": {
+      "1": 30
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 30,
+     "sum": 30
+    },
+    "horizon-720": {
+     "counts": {
+      "1": 25
+     },
+     "max": 1,
+     "median": 1,
+     "n": 25,
+     "sum": 25
+    },
+    "no-end-of-game-test": {
+     "counts": {
+      "1": 21
+     },
+     "max": 1,
+     "median": 1,
+     "n": 21,
+     "sum": 21
+    },
+    "route-cost": {
+     "counts": {
+      "1": 23
+     },
+     "max": 1,
+     "median": 1,
+     "n": 23,
+     "sum": 23
+    },
+    "stage-cap-4": {
+     "counts": {
+      "1": 23
+     },
+     "max": 1,
+     "median": 1,
+     "n": 23,
+     "sum": 23
+    },
+    "t9-v1": {
+     "counts": {
+      "1": 25
+     },
+     "max": 1,
+     "median": 1,
+     "n": 25,
+     "sum": 25
+    },
+    "t9-v2": {
+     "counts": {
+      "1": 21
+     },
+     "max": 1,
+     "median": 1,
+     "n": 21,
+     "sum": 21
+    },
+    "withhold-only": {
+     "counts": {
+      "1": 23
+     },
+     "max": 1,
+     "median": 1,
+     "n": 23,
+     "sum": 23
+    }
+   },
+   "played_by": "baseline-v2",
+   "policies": {
+    "candidate": {
+     "capacity inherited": 18,
+     "cross_objective": 0,
+     "decisions changed": 9,
+     "hold-back: claimant cannot arrive before the end": 4,
+     "hold-back: places held by units that can arrive": 19,
+     "invented": 0,
+     "kept": 18,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 23,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "emission-order": {
+     "capacity inherited": 18,
+     "cross_objective": 0,
+     "decisions changed": 9,
+     "hold-back: claimant cannot arrive before the end": 4,
+     "hold-back: places held by units that can arrive": 19,
+     "invented": 0,
+     "kept": 18,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 23,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-1440": {
+     "capacity inherited": 18,
+     "cross_objective": 0,
+     "decisions changed": 9,
+     "hold-back: claimant cannot arrive before the end": 4,
+     "hold-back: places held by units that can arrive": 21,
+     "invented": 0,
+     "kept": 16,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 25,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-360": {
+     "capacity inherited": 18,
+     "cross_objective": 0,
+     "decisions changed": 9,
+     "hold-back: claimant cannot arrive before the end": 4,
+     "hold-back: places held by units that can arrive": 26,
+     "invented": 0,
+     "kept": 11,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 30,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-720": {
+     "capacity inherited": 18,
+     "cross_objective": 0,
+     "decisions changed": 9,
+     "hold-back: claimant cannot arrive before the end": 4,
+     "hold-back: places held by units that can arrive": 21,
+     "invented": 0,
+     "kept": 16,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 25,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "no-end-of-game-test": {
+     "capacity inherited": 18,
+     "cross_objective": 0,
+     "decisions changed": 9,
+     "hold-back: a place is held by a unit that cannot arrive": 8,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 11,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 2,
+     "prefix_failures": 0,
+     "shortened": 21,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "route-cost": {
+     "capacity inherited": 18,
+     "cross_objective": 0,
+     "decisions changed": 9,
+     "hold-back: claimant cannot arrive before the end": 4,
+     "hold-back: places held by units that can arrive": 19,
+     "invented": 0,
+     "kept": 18,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 23,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "stage-cap-4": {
+     "capacity inherited": 18,
+     "cross_objective": 0,
+     "decisions changed": 9,
+     "hold-back: claimant cannot arrive before the end": 4,
+     "hold-back: places held by units that can arrive": 19,
+     "invented": 0,
+     "kept": 18,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 23,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "t9-v1": {
+     "capacity inherited": 18,
+     "cross_objective": 18,
+     "decisions changed": 9,
+     "hold-back: a place is held by a unit that cannot arrive": 8,
+     "hold-back: claimant cannot arrive before the end": 4,
+     "hold-back: places held by units that can arrive": 13,
+     "invented": 0,
+     "kept": 16,
+     "late_owners": 6,
+     "prefix_failures": 0,
+     "shortened": 0,
+     "unrelated_changed": 0,
+     "withheld": 7
+    },
+    "t9-v2": {
+     "capacity inherited": 18,
+     "cross_objective": 0,
+     "decisions changed": 9,
+     "hold-back: a place is held by a unit that cannot arrive": 10,
+     "hold-back: places held by units that can arrive": 11,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 4,
+     "prefix_failures": 0,
+     "shortened": 21,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "withhold-only": {
+     "capacity inherited": 18,
+     "cross_objective": 0,
+     "decisions changed": 9,
+     "hold-back: claimant cannot arrive before the end": 4,
+     "hold-back: places held by units that can arrive": 19,
+     "invented": 0,
+     "kept": 18,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 0,
+     "unrelated_changed": 0,
+     "withheld": 23
+    }
+   },
+   "seat": 11
+  },
+  {
+   "checks": {
+    "baseline ground-move count cross-checked": 2880,
+    "baseline-v2 re-decided equal": 29,
+    "candidate policy equals pure allocation": 29,
+    "decisions with a baseline objective move": 263,
+    "permutation checks passed": 263,
+    "play decisions": 2880
+   },
+   "configuration": "1930331196 C3",
+   "control_audit": {
+    "arrival: exact": 16,
+    "arrival: never": 4,
+    "no path: move listed": 26892,
+    "no path: stop listed": 0,
+    "no path: unit-decisions": 44172,
+    "path, speed above 0: move listed": 0,
+    "path, speed above 0: stop listed": 24948,
+    "path, speed above 0: unit-decisions": 24948,
+    "remaining bound: arrived sooner than the bound": 0,
+    "remaining bound: checked": 671,
+    "remaining bound: not observed to arrive": 576,
+    "settled: delay-tau: 0": 18,
+    "transition: delay-tau: 0": 2
+   },
+   "decision_1": {
+    "baseline_claimants": {
+     "50-point objective B": {
+      "count": 4,
+      "free_flow_steps": [
+       700,
+       700,
+       720,
+       720
+      ],
+      "kinds": {
+       "vehicle": 4
+      }
+     },
+     "80-point objective A": {
+      "count": 10,
+      "free_flow_steps": [
+       520,
+       520,
+       560,
+       560,
+       640,
+       640,
+       680,
+       680,
+       3456,
+       3600
+      ],
+      "kinds": {
+       "infantry": 2,
+       "vehicle": 8
+      }
+     },
+     "80-point objective B": {
+      "count": 4,
+      "free_flow_steps": [
+       2304,
+       2304,
+       2448,
+       2448
+      ],
+      "kinds": {
+       "infantry": 4
+      }
+     }
+    },
+    "k": 1,
+    "places": {
+     "candidate": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        700,
+        700,
+        720,
+        720
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        520,
+        520,
+        560,
+        560
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2304,
+        2304,
+        2448,
+        2448
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      }
+     },
+     "no-end-of-game-test": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        700,
+        700,
+        720,
+        720
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        520,
+        520,
+        560,
+        560
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2304,
+        2304,
+        2448,
+        2448
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      }
+     },
+     "t9-v1": {
+      "50-point objective A": {
+       "cannot_arrive_before_the_end": 2,
+       "free_flow_steps": [
+        820,
+        820,
+        3600,
+        3744
+       ],
+       "kinds": {
+        "infantry": 2,
+        "vehicle": 2
+       },
+       "places": 4
+      },
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        700,
+        700,
+        2592,
+        2736
+       ],
+       "kinds": {
+        "infantry": 2,
+        "vehicle": 2
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        720,
+        720
+       ],
+       "kinds": {
+        "vehicle": 2
+       },
+       "places": 2
+      },
+      "80-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        520,
+        520,
+        560,
+        560
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 2,
+       "free_flow_steps": [
+        680,
+        680,
+        3456,
+        3600
+       ],
+       "kinds": {
+        "infantry": 2,
+        "vehicle": 2
+       },
+       "places": 4
+      }
+     },
+     "t9-v2": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        700,
+        700,
+        720,
+        720
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        520,
+        520,
+        560,
+        560
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2304,
+        2304,
+        2448,
+        2448
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      }
+     }
+    }
+   },
+   "decisions_read": 2881,
+   "design": {
+    "candidate": {
+     "contended objective-decisions": 260,
+     "dominated movers retained (unit-decisions)": 316,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 2,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 600,
+     "objective-decisions with claimants": 285,
+     "phantom movers excluded (unit-decisions)": 524,
+     "stage-rejected": 0
+    },
+    "emission-order": {
+     "contended objective-decisions": 260,
+     "dominated movers retained (unit-decisions)": 356,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 2,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 600,
+     "objective-decisions with claimants": 285,
+     "phantom movers excluded (unit-decisions)": 524,
+     "selection differs from the candidate (objective-decisions)": 239,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 956
+    },
+    "horizon-1440": {
+     "contended objective-decisions": 260,
+     "dominated movers retained (unit-decisions)": 316,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 2,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 600,
+     "objective-decisions with claimants": 285,
+     "phantom movers excluded (unit-decisions)": 524,
+     "stage-rejected": 0
+    },
+    "horizon-360": {
+     "contended objective-decisions": 260,
+     "dominated movers retained (unit-decisions)": 316,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 2,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 600,
+     "objective-decisions with claimants": 285,
+     "phantom movers excluded (unit-decisions)": 524,
+     "stage-rejected": 0
+    },
+    "horizon-720": {
+     "contended objective-decisions": 260,
+     "dominated movers retained (unit-decisions)": 316,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 2,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 600,
+     "objective-decisions with claimants": 285,
+     "phantom movers excluded (unit-decisions)": 524,
+     "stage-rejected": 0
+    },
+    "no-end-of-game-test": {
+     "contended objective-decisions": 283,
+     "dominated movers retained (unit-decisions)": 926,
+     "dominated movers retained (units)": 6,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 1124,
+     "objective-decisions with claimants": 285,
+     "phantom movers excluded (unit-decisions)": 0,
+     "selection differs from the candidate (objective-decisions)": 262,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 524
+    },
+    "route-cost": {
+     "contended objective-decisions": 260,
+     "dominated movers retained (unit-decisions)": 316,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 2,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 600,
+     "objective-decisions with claimants": 285,
+     "phantom movers excluded (unit-decisions)": 524,
+     "selection differs from the candidate (objective-decisions)": 0,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 0
+    },
+    "stage-cap-4": {
+     "contended objective-decisions": 260,
+     "dominated movers retained (unit-decisions)": 316,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 2,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 600,
+     "objective-decisions with claimants": 285,
+     "phantom movers excluded (unit-decisions)": 524,
+     "stage-rejected": 0
+    },
+    "withhold-only": {
+     "contended objective-decisions": 260,
+     "dominated movers retained (unit-decisions)": 316,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 2,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 600,
+     "objective-decisions with claimants": 285,
+     "phantom movers excluded (unit-decisions)": 524,
+     "stage-rejected": 0
+    }
+   },
+   "game": "1930331196.C3.s10-t9-v1-diagnosis.g03",
+   "hexes_removed_per_shortened_move": {
+    "candidate": {
+     "counts": {
+      "1": 1104,
+      "2": 102
+     },
+     "max": 2,
+     "median": 1.0,
+     "n": 1206,
+     "sum": 1308
+    },
+    "emission-order": {
+     "counts": {
+      "1": 1085,
+      "2": 121
+     },
+     "max": 2,
+     "median": 1.0,
+     "n": 1206,
+     "sum": 1327
+    },
+    "horizon-1440": {
+     "counts": {
+      "1": 1108,
+      "2": 102
+     },
+     "max": 2,
+     "median": 1.0,
+     "n": 1210,
+     "sum": 1312
+    },
+    "horizon-360": {
+     "counts": {
+      "1": 1111,
+      "2": 105,
+      "3": 2
+     },
+     "max": 3,
+     "median": 1.0,
+     "n": 1218,
+     "sum": 1327
+    },
+    "horizon-720": {
+     "counts": {
+      "1": 1108,
+      "2": 102
+     },
+     "max": 2,
+     "median": 1.0,
+     "n": 1210,
+     "sum": 1312
+    },
+    "no-end-of-game-test": {
+     "counts": {
+      "1": 1508,
+      "2": 222
+     },
+     "max": 2,
+     "median": 1.0,
+     "n": 1730,
+     "sum": 1952
+    },
+    "route-cost": {
+     "counts": {
+      "1": 1104,
+      "2": 102
+     },
+     "max": 2,
+     "median": 1.0,
+     "n": 1206,
+     "sum": 1308
+    },
+    "stage-cap-4": {
+     "counts": {
+      "1": 1206
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 1206,
+     "sum": 1206
+    },
+    "t9-v1": {
+     "n": 0
+    },
+    "t9-v2": {
+     "counts": {
+      "1": 1730
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 1730,
+     "sum": 1730
+    },
+    "withhold-only": {
+     "n": 0
+    }
+   },
+   "hold_back_episodes": {
+    "candidate": {
+     "counts": {
+      "1": 6,
+      "101": 2,
+      "120": 2,
+      "140": 2,
+      "239": 2
+     },
+     "max": 239,
+     "median": 101.0,
+     "n": 14,
+     "sum": 1206
+    },
+    "emission-order": {
+     "counts": {
+      "1": 6,
+      "101": 2,
+      "120": 2,
+      "140": 2,
+      "239": 2
+     },
+     "max": 239,
+     "median": 101.0,
+     "n": 14,
+     "sum": 1206
+    },
+    "horizon-1440": {
+     "counts": {
+      "1": 10,
+      "101": 2,
+      "120": 2,
+      "140": 2,
+      "239": 2
+     },
+     "max": 239,
+     "median": 1.0,
+     "n": 18,
+     "sum": 1210
+    },
+    "horizon-360": {
+     "counts": {
+      "1": 18,
+      "101": 2,
+      "120": 2,
+      "140": 2,
+      "239": 2
+     },
+     "max": 239,
+     "median": 1.0,
+     "n": 26,
+     "sum": 1218
+    },
+    "horizon-720": {
+     "counts": {
+      "1": 10,
+      "101": 2,
+      "120": 2,
+      "140": 2,
+      "239": 2
+     },
+     "max": 239,
+     "median": 1.0,
+     "n": 18,
+     "sum": 1210
+    },
+    "no-end-of-game-test": {
+     "counts": {
+      "1": 8,
+      "101": 2,
+      "120": 2,
+      "140": 2,
+      "239": 2,
+      "261": 2
+     },
+     "max": 261,
+     "median": 101.0,
+     "n": 18,
+     "sum": 1730
+    },
+    "route-cost": {
+     "counts": {
+      "1": 6,
+      "101": 2,
+      "120": 2,
+      "140": 2,
+      "239": 2
+     },
+     "max": 239,
+     "median": 101.0,
+     "n": 14,
+     "sum": 1206
+    },
+    "stage-cap-4": {
+     "counts": {
+      "1": 6,
+      "101": 2,
+      "120": 2,
+      "140": 2,
+      "239": 2
+     },
+     "max": 239,
+     "median": 101.0,
+     "n": 14,
+     "sum": 1206
+    },
+    "t9-v1": {
+     "counts": {
+      "1": 14,
+      "101": 2,
+      "120": 2,
+      "140": 2,
+      "239": 2,
+      "261": 2
+     },
+     "max": 261,
+     "median": 1.0,
+     "n": 24,
+     "sum": 1736
+    },
+    "t9-v2": {
+     "counts": {
+      "1": 8,
+      "101": 2,
+      "120": 2,
+      "140": 2,
+      "239": 2,
+      "261": 2
+     },
+     "max": 261,
+     "median": 101.0,
+     "n": 18,
+     "sum": 1730
+    },
+    "withhold-only": {
+     "counts": {
+      "1": 6,
+      "101": 2,
+      "120": 2,
+      "140": 2,
+      "239": 2
+     },
+     "max": 239,
+     "median": 101.0,
+     "n": 14,
+     "sum": 1206
+    }
+   },
+   "played_by": "t9-v1",
+   "policies": {
+    "candidate": {
+     "capacity phantom_inclusive": 262,
+     "cross_objective": 0,
+     "decisions changed": 240,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 1204,
+     "invented": 0,
+     "kept": 536,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1206,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "emission-order": {
+     "capacity phantom_inclusive": 262,
+     "cross_objective": 0,
+     "decisions changed": 240,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 1204,
+     "invented": 0,
+     "kept": 536,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1206,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-1440": {
+     "capacity phantom_inclusive": 262,
+     "cross_objective": 0,
+     "decisions changed": 240,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 1208,
+     "invented": 0,
+     "kept": 532,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1210,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-360": {
+     "capacity phantom_inclusive": 262,
+     "cross_objective": 0,
+     "decisions changed": 240,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 1216,
+     "invented": 0,
+     "kept": 524,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1218,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-720": {
+     "capacity phantom_inclusive": 262,
+     "cross_objective": 0,
+     "decisions changed": 240,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 1208,
+     "invented": 0,
+     "kept": 532,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1210,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "no-end-of-game-test": {
+     "cross_objective": 0,
+     "decisions changed": 263,
+     "hold-back: a place is held by a unit that cannot arrive": 1684,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 44,
+     "invented": 0,
+     "kept": 12,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1730,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "route-cost": {
+     "capacity phantom_inclusive": 262,
+     "cross_objective": 0,
+     "decisions changed": 240,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 1204,
+     "invented": 0,
+     "kept": 536,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1206,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "stage-cap-4": {
+     "capacity phantom_inclusive": 262,
+     "cross_objective": 0,
+     "decisions changed": 240,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 1204,
+     "invented": 0,
+     "kept": 536,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1206,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "t9-v1": {
+     "cross_objective": 14,
+     "decisions changed": 263,
+     "hold-back: a place is held by a unit that cannot arrive": 1688,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 46,
+     "invented": 0,
+     "kept": 6,
+     "late_owners": 4,
+     "prefix_failures": 0,
+     "shortened": 0,
+     "unrelated_changed": 0,
+     "withheld": 1722
+    },
+    "t9-v2": {
+     "cross_objective": 0,
+     "decisions changed": 263,
+     "hold-back: a place is held by a unit that cannot arrive": 1684,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 44,
+     "invented": 0,
+     "kept": 12,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1730,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "withhold-only": {
+     "capacity phantom_inclusive": 262,
+     "cross_objective": 0,
+     "decisions changed": 240,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 1204,
+     "invented": 0,
+     "kept": 536,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 0,
+     "unrelated_changed": 0,
+     "withheld": 1206
+    }
+   },
+   "seat": 11
+  },
+  {
+   "checks": {
+    "baseline ground-move count cross-checked": 2880,
+    "baseline-v2 re-decided equal": 29,
+    "candidate policy equals pure allocation": 29,
+    "decisions with a baseline objective move": 11,
+    "permutation checks passed": 11,
+    "play decisions": 2880
+   },
+   "configuration": "1930331196 C3",
+   "control_audit": {
+    "arrival: exact": 30,
+    "arrival: never": 10,
+    "no path: move listed": 15960,
+    "no path: stop listed": 0,
+    "no path: unit-decisions": 33240,
+    "path, speed 0: move listed": 0,
+    "path, speed 0: stop listed": 9998,
+    "path, speed 0: unit-decisions": 9998,
+    "path, speed above 0: move listed": 0,
+    "path, speed above 0: stop listed": 25882,
+    "path, speed above 0: unit-decisions": 25882,
+    "remaining bound: arrived sooner than the bound": 0,
+    "remaining bound: checked": 496,
+    "remaining bound: not observed to arrive": 1300,
+    "settled: delay-tau: 0": 18,
+    "transition: delay-tau: 0": 22
+   },
+   "decision_1": {
+    "baseline_claimants": {
+     "50-point objective B": {
+      "count": 4,
+      "free_flow_steps": [
+       700,
+       700,
+       720,
+       720
+      ],
+      "kinds": {
+       "vehicle": 4
+      }
+     },
+     "80-point objective A": {
+      "count": 10,
+      "free_flow_steps": [
+       520,
+       520,
+       560,
+       560,
+       640,
+       640,
+       680,
+       680,
+       3456,
+       3600
+      ],
+      "kinds": {
+       "infantry": 2,
+       "vehicle": 8
+      }
+     },
+     "80-point objective B": {
+      "count": 4,
+      "free_flow_steps": [
+       2304,
+       2304,
+       2448,
+       2448
+      ],
+      "kinds": {
+       "infantry": 4
+      }
+     }
+    },
+    "k": 1,
+    "places": {
+     "candidate": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        700,
+        700,
+        720,
+        720
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        520,
+        520,
+        560,
+        560
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2304,
+        2304,
+        2448,
+        2448
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      }
+     },
+     "no-end-of-game-test": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        700,
+        700,
+        720,
+        720
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        520,
+        520,
+        560,
+        560
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2304,
+        2304,
+        2448,
+        2448
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      }
+     },
+     "t9-v1": {
+      "50-point objective A": {
+       "cannot_arrive_before_the_end": 2,
+       "free_flow_steps": [
+        820,
+        820,
+        3600,
+        3744
+       ],
+       "kinds": {
+        "infantry": 2,
+        "vehicle": 2
+       },
+       "places": 4
+      },
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        700,
+        700,
+        2592,
+        2736
+       ],
+       "kinds": {
+        "infantry": 2,
+        "vehicle": 2
+       },
+       "places": 4
+      },
+      "50-point objective C": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        720,
+        720
+       ],
+       "kinds": {
+        "vehicle": 2
+       },
+       "places": 2
+      },
+      "80-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        520,
+        520,
+        560,
+        560
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 2,
+       "free_flow_steps": [
+        680,
+        680,
+        3456,
+        3600
+       ],
+       "kinds": {
+        "infantry": 2,
+        "vehicle": 2
+       },
+       "places": 4
+      }
+     },
+     "t9-v2": {
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        700,
+        700,
+        720,
+        720
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        520,
+        520,
+        560,
+        560
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2304,
+        2304,
+        2448,
+        2448
+       ],
+       "kinds": {
+        "infantry": 4
+       },
+       "places": 4
+      }
+     }
+    }
+   },
+   "decisions_read": 2881,
+   "design": {
+    "candidate": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 10,
+     "dominated movers retained (units)": 6,
+     "errors": 0,
+     "late claimants (unit-decisions)": 2,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 34,
+     "objective-decisions with claimants": 13,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    },
+    "emission-order": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 10,
+     "dominated movers retained (units)": 6,
+     "errors": 0,
+     "late claimants (unit-decisions)": 2,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 34,
+     "objective-decisions with claimants": 13,
+     "phantom movers excluded (unit-decisions)": 0,
+     "selection differs from the candidate (objective-decisions)": 0,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 0
+    },
+    "horizon-1440": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 10,
+     "dominated movers retained (units)": 6,
+     "errors": 0,
+     "late claimants (unit-decisions)": 2,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 34,
+     "objective-decisions with claimants": 13,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    },
+    "horizon-360": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 10,
+     "dominated movers retained (units)": 6,
+     "errors": 0,
+     "late claimants (unit-decisions)": 2,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 34,
+     "objective-decisions with claimants": 13,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    },
+    "horizon-720": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 10,
+     "dominated movers retained (units)": 6,
+     "errors": 0,
+     "late claimants (unit-decisions)": 2,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 34,
+     "objective-decisions with claimants": 13,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    },
+    "no-end-of-game-test": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 10,
+     "dominated movers retained (units)": 6,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 34,
+     "objective-decisions with claimants": 13,
+     "phantom movers excluded (unit-decisions)": 0,
+     "selection differs from the candidate (objective-decisions)": 0,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 0
+    },
+    "route-cost": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 10,
+     "dominated movers retained (units)": 6,
+     "errors": 0,
+     "late claimants (unit-decisions)": 2,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 34,
+     "objective-decisions with claimants": 13,
+     "phantom movers excluded (unit-decisions)": 0,
+     "selection differs from the candidate (objective-decisions)": 0,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 0
+    },
+    "stage-cap-4": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 10,
+     "dominated movers retained (units)": 6,
+     "errors": 0,
+     "late claimants (unit-decisions)": 2,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 34,
+     "objective-decisions with claimants": 13,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    },
+    "withhold-only": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 10,
+     "dominated movers retained (units)": 6,
+     "errors": 0,
+     "late claimants (unit-decisions)": 2,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 34,
+     "objective-decisions with claimants": 13,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    }
+   },
+   "game": "1930331196.C3.s10-t9-v1-diagnosis.g04",
+   "hexes_removed_per_shortened_move": {
+    "candidate": {
+     "counts": {
+      "1": 18,
+      "2": 2
+     },
+     "max": 2,
+     "median": 1.0,
+     "n": 20,
+     "sum": 22
+    },
+    "emission-order": {
+     "counts": {
+      "1": 18,
+      "2": 2
+     },
+     "max": 2,
+     "median": 1.0,
+     "n": 20,
+     "sum": 22
+    },
+    "horizon-1440": {
+     "counts": {
+      "1": 22,
+      "2": 2
+     },
+     "max": 2,
+     "median": 1.0,
+     "n": 24,
+     "sum": 26
+    },
+    "horizon-360": {
+     "counts": {
+      "1": 25,
+      "2": 5,
+      "3": 2
+     },
+     "max": 3,
+     "median": 1.0,
+     "n": 32,
+     "sum": 41
+    },
+    "horizon-720": {
+     "counts": {
+      "1": 22,
+      "2": 2
+     },
+     "max": 2,
+     "median": 1.0,
+     "n": 24,
+     "sum": 26
+    },
+    "no-end-of-game-test": {
+     "counts": {
+      "1": 18,
+      "2": 2
+     },
+     "max": 2,
+     "median": 1.0,
+     "n": 20,
+     "sum": 22
+    },
+    "route-cost": {
+     "counts": {
+      "1": 18,
+      "2": 2
+     },
+     "max": 2,
+     "median": 1.0,
+     "n": 20,
+     "sum": 22
+    },
+    "stage-cap-4": {
+     "counts": {
+      "1": 20
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 20,
+     "sum": 20
+    },
+    "t9-v1": {
+     "n": 0
+    },
+    "t9-v2": {
+     "counts": {
+      "1": 20
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 20,
+     "sum": 20
+    },
+    "withhold-only": {
+     "n": 0
+    }
+   },
+   "hold_back_episodes": {
+    "candidate": {
+     "counts": {
+      "1": 20
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 20,
+     "sum": 20
+    },
+    "emission-order": {
+     "counts": {
+      "1": 20
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 20,
+     "sum": 20
+    },
+    "horizon-1440": {
+     "counts": {
+      "1": 24
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 24,
+     "sum": 24
+    },
+    "horizon-360": {
+     "counts": {
+      "1": 32
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 32,
+     "sum": 32
+    },
+    "horizon-720": {
+     "counts": {
+      "1": 24
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 24,
+     "sum": 24
+    },
+    "no-end-of-game-test": {
+     "counts": {
+      "1": 20
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 20,
+     "sum": 20
+    },
+    "route-cost": {
+     "counts": {
+      "1": 20
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 20,
+     "sum": 20
+    },
+    "stage-cap-4": {
+     "counts": {
+      "1": 20
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 20,
+     "sum": 20
+    },
+    "t9-v1": {
+     "counts": {
+      "1": 26
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 26,
+     "sum": 26
+    },
+    "t9-v2": {
+     "counts": {
+      "1": 20
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 20,
+     "sum": 20
+    },
+    "withhold-only": {
+     "counts": {
+      "1": 20
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 20,
+     "sum": 20
+    }
+   },
+   "played_by": "baseline-v2",
+   "policies": {
+    "candidate": {
+     "capacity inherited": 8,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 18,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 20,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "emission-order": {
+     "capacity inherited": 8,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 18,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 20,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-1440": {
+     "capacity inherited": 8,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 22,
+     "invented": 0,
+     "kept": 16,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 24,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-360": {
+     "capacity inherited": 8,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 30,
+     "invented": 0,
+     "kept": 8,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 32,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-720": {
+     "capacity inherited": 8,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 22,
+     "invented": 0,
+     "kept": 16,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 24,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "no-end-of-game-test": {
+     "capacity inherited": 8,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 18,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 20,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "route-cost": {
+     "capacity inherited": 8,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 18,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 20,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "stage-cap-4": {
+     "capacity inherited": 8,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 18,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 20,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "t9-v1": {
+     "capacity inherited": 8,
+     "cross_objective": 12,
+     "decisions changed": 7,
+     "hold-back: a place is held by a unit that cannot arrive": 4,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 20,
+     "invented": 0,
+     "kept": 14,
+     "late_owners": 4,
+     "prefix_failures": 0,
+     "shortened": 0,
+     "unrelated_changed": 0,
+     "withheld": 14
+    },
+    "t9-v2": {
+     "capacity inherited": 8,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 18,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 20,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "withhold-only": {
+     "capacity inherited": 8,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: claimant cannot arrive before the end": 2,
+     "hold-back: places held by units that can arrive": 18,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 0,
+     "unrelated_changed": 0,
+     "withheld": 20
+    }
+   },
+   "seat": 11
+  },
+  {
+   "checks": {
+    "baseline ground-move count cross-checked": 2880,
+    "baseline-v2 re-decided equal": 29,
+    "candidate policy equals pure allocation": 29,
+    "decisions with a baseline objective move": 289,
+    "permutation checks passed": 286,
+    "play decisions": 2880
+   },
+   "configuration": "1930331196 C2",
+   "control_audit": {
+    "arrival: exact": 20,
+    "no path: move listed": 20272,
+    "no path: stop listed": 0,
+    "no path: unit-decisions": 37552,
+    "path, speed above 0: move listed": 0,
+    "path, speed above 0: stop listed": 14288,
+    "path, speed above 0: unit-decisions": 14288,
+    "remaining bound: arrived sooner than the bound": 0,
+    "remaining bound: checked": 713,
+    "settled: delay-tau: 0": 12,
+    "transition: delay-tau: 0": 8
+   },
+   "decision_1": {
+    "baseline_claimants": {
+     "50-point objective A": {
+      "count": 11,
+      "free_flow_steps": [
+       360,
+       380,
+       380,
+       400,
+       440,
+       440,
+       480,
+       480,
+       480,
+       2304,
+       2736
+      ],
+      "kinds": {
+       "infantry": 2,
+       "vehicle": 9
+      }
+     },
+     "50-point objective B": {
+      "count": 1,
+      "free_flow_steps": [
+       2736
+      ],
+      "kinds": {
+       "infantry": 1
+      }
+     }
+    },
+    "k": 1,
+    "places": {
+     "candidate": {
+      "50-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        360,
+        380,
+        380,
+        400
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2736
+       ],
+       "kinds": {
+        "infantry": 1
+       },
+       "places": 1
+      }
+     },
+     "no-end-of-game-test": {
+      "50-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        360,
+        380,
+        380,
+        400
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2736
+       ],
+       "kinds": {
+        "infantry": 1
+       },
+       "places": 1
+      }
+     },
+     "t9-v1": {
+      "50-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        440,
+        440,
+        2736
+       ],
+       "kinds": {
+        "infantry": 1,
+        "vehicle": 3
+       },
+       "places": 4
+      },
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2736
+       ],
+       "kinds": {
+        "infantry": 1
+       },
+       "places": 1
+      },
+      "80-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        440,
+        460,
+        460,
+        2736
+       ],
+       "kinds": {
+        "infantry": 1,
+        "vehicle": 3
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        620,
+        620,
+        620
+       ],
+       "kinds": {
+        "vehicle": 3
+       },
+       "places": 3
+      }
+     },
+     "t9-v2": {
+      "50-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        440,
+        440,
+        2736
+       ],
+       "kinds": {
+        "infantry": 1,
+        "vehicle": 3
+       },
+       "places": 4
+      },
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2736
+       ],
+       "kinds": {
+        "infantry": 1
+       },
+       "places": 1
+      }
+     }
+    }
+   },
+   "decisions_read": 2881,
+   "design": {
+    "candidate": {
+     "contended objective-decisions": 285,
+     "dominated movers retained (unit-decisions)": 483,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 1138,
+     "objective-decisions with claimants": 290,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    },
+    "emission-order": {
+     "contended objective-decisions": 285,
+     "dominated movers retained (unit-decisions)": 483,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 1138,
+     "objective-decisions with claimants": 290,
+     "phantom movers excluded (unit-decisions)": 0,
+     "selection differs from the candidate (objective-decisions)": 1,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 6
+    },
+    "horizon-1440": {
+     "contended objective-decisions": 285,
+     "dominated movers retained (unit-decisions)": 483,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 1138,
+     "objective-decisions with claimants": 290,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    },
+    "horizon-360": {
+     "contended objective-decisions": 285,
+     "dominated movers retained (unit-decisions)": 483,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 1138,
+     "objective-decisions with claimants": 290,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    },
+    "horizon-720": {
+     "contended objective-decisions": 285,
+     "dominated movers retained (unit-decisions)": 483,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 1138,
+     "objective-decisions with claimants": 290,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    },
+    "no-end-of-game-test": {
+     "contended objective-decisions": 285,
+     "dominated movers retained (unit-decisions)": 483,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 1138,
+     "objective-decisions with claimants": 290,
+     "phantom movers excluded (unit-decisions)": 0,
+     "selection differs from the candidate (objective-decisions)": 0,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 0
+    },
+    "route-cost": {
+     "contended objective-decisions": 285,
+     "dominated movers retained (unit-decisions)": 483,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 1138,
+     "objective-decisions with claimants": 290,
+     "phantom movers excluded (unit-decisions)": 0,
+     "selection differs from the candidate (objective-decisions)": 1,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 2
+    },
+    "stage-cap-4": {
+     "contended objective-decisions": 285,
+     "dominated movers retained (unit-decisions)": 483,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 1138,
+     "objective-decisions with claimants": 290,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    },
+    "withhold-only": {
+     "contended objective-decisions": 285,
+     "dominated movers retained (unit-decisions)": 483,
+     "dominated movers retained (units)": 4,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 1138,
+     "objective-decisions with claimants": 290,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    }
+   },
+   "game": "1930331196.C2.s10-t9-v1-c2-diagnosis.g01",
+   "hexes_removed_per_shortened_move": {
+    "candidate": {
+     "counts": {
+      "1": 1057
+     },
+     "max": 1,
+     "median": 1,
+     "n": 1057,
+     "sum": 1057
+    },
+    "emission-order": {
+     "counts": {
+      "1": 1054,
+      "2": 3
+     },
+     "max": 2,
+     "median": 1,
+     "n": 1057,
+     "sum": 1060
+    },
+    "horizon-1440": {
+     "counts": {
+      "1": 1058
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 1058,
+     "sum": 1058
+    },
+    "horizon-360": {
+     "counts": {
+      "1": 1059,
+      "2": 2
+     },
+     "max": 2,
+     "median": 1,
+     "n": 1061,
+     "sum": 1063
+    },
+    "horizon-720": {
+     "counts": {
+      "1": 1058
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 1058,
+     "sum": 1058
+    },
+    "no-end-of-game-test": {
+     "counts": {
+      "1": 1057
+     },
+     "max": 1,
+     "median": 1,
+     "n": 1057,
+     "sum": 1057
+    },
+    "route-cost": {
+     "counts": {
+      "1": 1057
+     },
+     "max": 1,
+     "median": 1,
+     "n": 1057,
+     "sum": 1057
+    },
+    "stage-cap-4": {
+     "counts": {
+      "1": 1057
+     },
+     "max": 1,
+     "median": 1,
+     "n": 1057,
+     "sum": 1057
+    },
+    "t9-v1": {
+     "n": 0
+    },
+    "t9-v2": {
+     "counts": {
+      "1": 1055,
+      "2": 2
+     },
+     "max": 2,
+     "median": 1,
+     "n": 1057,
+     "sum": 1059
+    },
+    "withhold-only": {
+     "n": 0
+    }
+   },
+   "hold_back_episodes": {
+    "candidate": {
+     "counts": {
+      "1": 8,
+      "161": 3,
+      "21": 2,
+      "262": 2
+     },
+     "max": 262,
+     "median": 1,
+     "n": 15,
+     "sum": 1057
+    },
+    "emission-order": {
+     "counts": {
+      "1": 8,
+      "161": 3,
+      "21": 2,
+      "262": 2
+     },
+     "max": 262,
+     "median": 1,
+     "n": 15,
+     "sum": 1057
+    },
+    "horizon-1440": {
+     "counts": {
+      "1": 9,
+      "161": 3,
+      "21": 2,
+      "262": 2
+     },
+     "max": 262,
+     "median": 1.0,
+     "n": 16,
+     "sum": 1058
+    },
+    "horizon-360": {
+     "counts": {
+      "1": 12,
+      "161": 3,
+      "21": 2,
+      "262": 2
+     },
+     "max": 262,
+     "median": 1,
+     "n": 19,
+     "sum": 1061
+    },
+    "horizon-720": {
+     "counts": {
+      "1": 9,
+      "161": 3,
+      "21": 2,
+      "262": 2
+     },
+     "max": 262,
+     "median": 1.0,
+     "n": 16,
+     "sum": 1058
+    },
+    "no-end-of-game-test": {
+     "counts": {
+      "1": 8,
+      "161": 3,
+      "21": 2,
+      "262": 2
+     },
+     "max": 262,
+     "median": 1,
+     "n": 15,
+     "sum": 1057
+    },
+    "route-cost": {
+     "counts": {
+      "1": 8,
+      "161": 3,
+      "21": 2,
+      "262": 2
+     },
+     "max": 262,
+     "median": 1,
+     "n": 15,
+     "sum": 1057
+    },
+    "stage-cap-4": {
+     "counts": {
+      "1": 8,
+      "161": 3,
+      "21": 2,
+      "262": 2
+     },
+     "max": 262,
+     "median": 1,
+     "n": 15,
+     "sum": 1057
+    },
+    "t9-v1": {
+     "counts": {
+      "1": 8,
+      "161": 3,
+      "21": 2,
+      "262": 2
+     },
+     "max": 262,
+     "median": 1,
+     "n": 15,
+     "sum": 1057
+    },
+    "t9-v2": {
+     "counts": {
+      "1": 8,
+      "161": 3,
+      "21": 2,
+      "262": 2
+     },
+     "max": 262,
+     "median": 1,
+     "n": 15,
+     "sum": 1057
+    },
+    "withhold-only": {
+     "counts": {
+      "1": 8,
+      "161": 3,
+      "21": 2,
+      "262": 2
+     },
+     "max": 262,
+     "median": 1,
+     "n": 15,
+     "sum": 1057
+    }
+   },
+   "played_by": "t9-v1",
+   "policies": {
+    "candidate": {
+     "cross_objective": 0,
+     "decisions changed": 285,
+     "hold-back: places held by units that can arrive": 1057,
+     "invented": 0,
+     "kept": 12,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1057,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "emission-order": {
+     "cross_objective": 0,
+     "decisions changed": 285,
+     "hold-back: places held by units that can arrive": 1057,
+     "invented": 0,
+     "kept": 12,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1057,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-1440": {
+     "cross_objective": 0,
+     "decisions changed": 285,
+     "hold-back: places held by units that can arrive": 1058,
+     "invented": 0,
+     "kept": 11,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1058,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-360": {
+     "cross_objective": 0,
+     "decisions changed": 285,
+     "hold-back: places held by units that can arrive": 1061,
+     "invented": 0,
+     "kept": 8,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1061,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-720": {
+     "cross_objective": 0,
+     "decisions changed": 285,
+     "hold-back: places held by units that can arrive": 1058,
+     "invented": 0,
+     "kept": 11,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1058,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "no-end-of-game-test": {
+     "cross_objective": 0,
+     "decisions changed": 285,
+     "hold-back: places held by units that can arrive": 1057,
+     "invented": 0,
+     "kept": 12,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1057,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "route-cost": {
+     "cross_objective": 0,
+     "decisions changed": 285,
+     "hold-back: places held by units that can arrive": 1057,
+     "invented": 0,
+     "kept": 12,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1057,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "stage-cap-4": {
+     "cross_objective": 0,
+     "decisions changed": 285,
+     "hold-back: places held by units that can arrive": 1057,
+     "invented": 0,
+     "kept": 12,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1057,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "t9-v1": {
+     "cross_objective": 8,
+     "decisions changed": 285,
+     "hold-back: places held by units that can arrive": 1057,
+     "invented": 0,
+     "kept": 12,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 0,
+     "unrelated_changed": 0,
+     "withheld": 1049
+    },
+    "t9-v2": {
+     "cross_objective": 0,
+     "decisions changed": 285,
+     "hold-back: places held by units that can arrive": 1057,
+     "invented": 0,
+     "kept": 12,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 1057,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "withhold-only": {
+     "cross_objective": 0,
+     "decisions changed": 285,
+     "hold-back: places held by units that can arrive": 1057,
+     "invented": 0,
+     "kept": 12,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 0,
+     "unrelated_changed": 0,
+     "withheld": 1057
+    }
+   },
+   "seat": 1
+  },
+  {
+   "checks": {
+    "baseline ground-move count cross-checked": 2880,
+    "baseline-v2 re-decided equal": 29,
+    "candidate policy equals pure allocation": 29,
+    "decisions with a baseline objective move": 16,
+    "permutation checks passed": 10,
+    "play decisions": 2880
+   },
+   "configuration": "1930331196 C2",
+   "control_audit": {
+    "arrival: exact": 32,
+    "arrival: late": 6,
+    "arrival: never": 3,
+    "no path: move listed": 12764,
+    "no path: stop listed": 0,
+    "no path: unit-decisions": 30044,
+    "path, speed 0: move listed": 0,
+    "path, speed 0: stop listed": 5849,
+    "path, speed 0: unit-decisions": 5849,
+    "path, speed above 0: move listed": 0,
+    "path, speed above 0: stop listed": 15947,
+    "path, speed above 0: unit-decisions": 15947,
+    "remaining bound: arrived sooner than the bound": 0,
+    "remaining bound: checked": 786,
+    "remaining bound: not observed to arrive": 303,
+    "settled: delay-tau: 0": 12,
+    "transition: delay-tau: 0": 29
+   },
+   "decision_1": {
+    "baseline_claimants": {
+     "50-point objective A": {
+      "count": 11,
+      "free_flow_steps": [
+       360,
+       380,
+       380,
+       400,
+       440,
+       440,
+       480,
+       480,
+       480,
+       2304,
+       2736
+      ],
+      "kinds": {
+       "infantry": 2,
+       "vehicle": 9
+      }
+     },
+     "50-point objective B": {
+      "count": 1,
+      "free_flow_steps": [
+       2736
+      ],
+      "kinds": {
+       "infantry": 1
+      }
+     }
+    },
+    "k": 1,
+    "places": {
+     "candidate": {
+      "50-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        360,
+        380,
+        380,
+        400
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2736
+       ],
+       "kinds": {
+        "infantry": 1
+       },
+       "places": 1
+      }
+     },
+     "no-end-of-game-test": {
+      "50-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        360,
+        380,
+        380,
+        400
+       ],
+       "kinds": {
+        "vehicle": 4
+       },
+       "places": 4
+      },
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2736
+       ],
+       "kinds": {
+        "infantry": 1
+       },
+       "places": 1
+      }
+     },
+     "t9-v1": {
+      "50-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        440,
+        440,
+        2736
+       ],
+       "kinds": {
+        "infantry": 1,
+        "vehicle": 3
+       },
+       "places": 4
+      },
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2736
+       ],
+       "kinds": {
+        "infantry": 1
+       },
+       "places": 1
+      },
+      "80-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        440,
+        460,
+        460,
+        2736
+       ],
+       "kinds": {
+        "infantry": 1,
+        "vehicle": 3
+       },
+       "places": 4
+      },
+      "80-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        620,
+        620,
+        620
+       ],
+       "kinds": {
+        "vehicle": 3
+       },
+       "places": 3
+      }
+     },
+     "t9-v2": {
+      "50-point objective A": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        400,
+        440,
+        440,
+        2736
+       ],
+       "kinds": {
+        "infantry": 1,
+        "vehicle": 3
+       },
+       "places": 4
+      },
+      "50-point objective B": {
+       "cannot_arrive_before_the_end": 0,
+       "free_flow_steps": [
+        2736
+       ],
+       "kinds": {
+        "infantry": 1
+       },
+       "places": 1
+      }
+     }
+    }
+   },
+   "decisions_read": 2881,
+   "design": {
+    "candidate": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 3,
+     "dominated movers retained (units)": 1,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 35,
+     "objective-decisions with claimants": 17,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    },
+    "emission-order": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 3,
+     "dominated movers retained (units)": 1,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 35,
+     "objective-decisions with claimants": 17,
+     "phantom movers excluded (unit-decisions)": 0,
+     "selection differs from the candidate (objective-decisions)": 2,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 8
+    },
+    "horizon-1440": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 3,
+     "dominated movers retained (units)": 1,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 35,
+     "objective-decisions with claimants": 17,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    },
+    "horizon-360": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 3,
+     "dominated movers retained (units)": 1,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 35,
+     "objective-decisions with claimants": 17,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    },
+    "horizon-720": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 3,
+     "dominated movers retained (units)": 1,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 35,
+     "objective-decisions with claimants": 17,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    },
+    "no-end-of-game-test": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 3,
+     "dominated movers retained (units)": 1,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 35,
+     "objective-decisions with claimants": 17,
+     "phantom movers excluded (unit-decisions)": 0,
+     "selection differs from the candidate (objective-decisions)": 0,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 0
+    },
+    "route-cost": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 3,
+     "dominated movers retained (units)": 1,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 35,
+     "objective-decisions with claimants": 17,
+     "phantom movers excluded (unit-decisions)": 0,
+     "selection differs from the candidate (objective-decisions)": 1,
+     "stage-rejected": 0,
+     "units selected differently from the candidate (unit-decisions)": 2
+    },
+    "stage-cap-4": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 3,
+     "dominated movers retained (units)": 1,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 35,
+     "objective-decisions with claimants": 17,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    },
+    "withhold-only": {
+     "contended objective-decisions": 7,
+     "dominated movers retained (unit-decisions)": 3,
+     "dominated movers retained (units)": 1,
+     "errors": 0,
+     "late claimants (unit-decisions)": 0,
+     "mixed infantry/vehicle batches": 1,
+     "movers retained (unit-decisions)": 35,
+     "objective-decisions with claimants": 17,
+     "phantom movers excluded (unit-decisions)": 0,
+     "stage-rejected": 0
+    }
+   },
+   "game": "1930331196.C2.s10-t9-v1-c2-diagnosis.g02",
+   "hexes_removed_per_shortened_move": {
+    "candidate": {
+     "counts": {
+      "1": 21
+     },
+     "max": 1,
+     "median": 1,
+     "n": 21,
+     "sum": 21
+    },
+    "emission-order": {
+     "counts": {
+      "1": 18,
+      "2": 3
+     },
+     "max": 2,
+     "median": 1,
+     "n": 21,
+     "sum": 24
+    },
+    "horizon-1440": {
+     "counts": {
+      "1": 22
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 22,
+     "sum": 22
+    },
+    "horizon-360": {
+     "counts": {
+      "1": 23,
+      "2": 2
+     },
+     "max": 2,
+     "median": 1,
+     "n": 25,
+     "sum": 27
+    },
+    "horizon-720": {
+     "counts": {
+      "1": 22
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 22,
+     "sum": 22
+    },
+    "no-end-of-game-test": {
+     "counts": {
+      "1": 21
+     },
+     "max": 1,
+     "median": 1,
+     "n": 21,
+     "sum": 21
+    },
+    "route-cost": {
+     "counts": {
+      "1": 21
+     },
+     "max": 1,
+     "median": 1,
+     "n": 21,
+     "sum": 21
+    },
+    "stage-cap-4": {
+     "counts": {
+      "1": 21
+     },
+     "max": 1,
+     "median": 1,
+     "n": 21,
+     "sum": 21
+    },
+    "t9-v1": {
+     "n": 0
+    },
+    "t9-v2": {
+     "counts": {
+      "1": 19,
+      "2": 2
+     },
+     "max": 2,
+     "median": 1,
+     "n": 21,
+     "sum": 23
+    },
+    "withhold-only": {
+     "n": 0
+    }
+   },
+   "hold_back_episodes": {
+    "candidate": {
+     "counts": {
+      "1": 21
+     },
+     "max": 1,
+     "median": 1,
+     "n": 21,
+     "sum": 21
+    },
+    "emission-order": {
+     "counts": {
+      "1": 21
+     },
+     "max": 1,
+     "median": 1,
+     "n": 21,
+     "sum": 21
+    },
+    "horizon-1440": {
+     "counts": {
+      "1": 22
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 22,
+     "sum": 22
+    },
+    "horizon-360": {
+     "counts": {
+      "1": 25
+     },
+     "max": 1,
+     "median": 1,
+     "n": 25,
+     "sum": 25
+    },
+    "horizon-720": {
+     "counts": {
+      "1": 22
+     },
+     "max": 1,
+     "median": 1.0,
+     "n": 22,
+     "sum": 22
+    },
+    "no-end-of-game-test": {
+     "counts": {
+      "1": 21
+     },
+     "max": 1,
+     "median": 1,
+     "n": 21,
+     "sum": 21
+    },
+    "route-cost": {
+     "counts": {
+      "1": 21
+     },
+     "max": 1,
+     "median": 1,
+     "n": 21,
+     "sum": 21
+    },
+    "stage-cap-4": {
+     "counts": {
+      "1": 21
+     },
+     "max": 1,
+     "median": 1,
+     "n": 21,
+     "sum": 21
+    },
+    "t9-v1": {
+     "counts": {
+      "1": 21
+     },
+     "max": 1,
+     "median": 1,
+     "n": 21,
+     "sum": 21
+    },
+    "t9-v2": {
+     "counts": {
+      "1": 21
+     },
+     "max": 1,
+     "median": 1,
+     "n": 21,
+     "sum": 21
+    },
+    "withhold-only": {
+     "counts": {
+      "1": 21
+     },
+     "max": 1,
+     "median": 1,
+     "n": 21,
+     "sum": 21
+    }
+   },
+   "played_by": "baseline-v2",
+   "policies": {
+    "candidate": {
+     "capacity inherited": 17,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: places held by units that can arrive": 21,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 21,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "emission-order": {
+     "capacity inherited": 17,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: places held by units that can arrive": 21,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 21,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-1440": {
+     "capacity inherited": 17,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: places held by units that can arrive": 22,
+     "invented": 0,
+     "kept": 19,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 22,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-360": {
+     "capacity inherited": 17,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: places held by units that can arrive": 25,
+     "invented": 0,
+     "kept": 16,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 25,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "horizon-720": {
+     "capacity inherited": 17,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: places held by units that can arrive": 22,
+     "invented": 0,
+     "kept": 19,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 22,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "no-end-of-game-test": {
+     "capacity inherited": 17,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: places held by units that can arrive": 21,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 21,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "route-cost": {
+     "capacity inherited": 17,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: places held by units that can arrive": 21,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 21,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "stage-cap-4": {
+     "capacity inherited": 17,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: places held by units that can arrive": 21,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 21,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "t9-v1": {
+     "capacity inherited": 17,
+     "cross_objective": 15,
+     "decisions changed": 7,
+     "hold-back: places held by units that can arrive": 21,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 0,
+     "unrelated_changed": 0,
+     "withheld": 6
+    },
+    "t9-v2": {
+     "capacity inherited": 17,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: places held by units that can arrive": 21,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 21,
+     "unrelated_changed": 0,
+     "withheld": 0
+    },
+    "withhold-only": {
+     "capacity inherited": 17,
+     "cross_objective": 0,
+     "decisions changed": 7,
+     "hold-back: places held by units that can arrive": 21,
+     "invented": 0,
+     "kept": 20,
+     "late_owners": 0,
+     "prefix_failures": 0,
+     "shortened": 0,
+     "unrelated_changed": 0,
+     "withheld": 21
+    }
+   },
+   "seat": 1
+  }
+ ],
+ "inputs": [
+  {
+   "capture": "2120531121.C3.s10-t9-v1-diagnosis.g01.windows.pkl",
+   "sha256": "6d5b3eb3c09fbbc218a464dc7f38ca58548f96155734d3ec9c9644514464a05a"
+  },
+  {
+   "capture": "2120531121.C3.s10-t9-v1-diagnosis.g02.windows.pkl",
+   "sha256": "544f06a16d861b83b8b9a577752caac66222ce8403f41ac82ca330d7bea64133"
+  },
+  {
+   "capture": "1930331196.C3.s10-t9-v1-diagnosis.g03.windows.pkl",
+   "sha256": "61e8752f90b1519f2ff0adb292b5135f25c8b505566ff179685bde659b6e7e05"
+  },
+  {
+   "capture": "1930331196.C3.s10-t9-v1-diagnosis.g04.windows.pkl",
+   "sha256": "8d20e32d88952577ce236d66f2e496cda1d5dc6cdc5310d3ae201db12df9ea2a"
+  },
+  {
+   "capture": "1930331196.C2.s10-t9-v1-c2-diagnosis.g01.windows.pkl",
+   "sha256": "fcc2eec344bd9e94b109c299577fa0f7f4cf113dfa1f79da7664cb7ba50567d4"
+  },
+  {
+   "capture": "1930331196.C2.s10-t9-v1-c2-diagnosis.g02.windows.pkl",
+   "sha256": "312df862283356c3817b9647c4263347fecb55ed74ba79d0eaa84cec0044317c"
+  }
+ ],
+ "schema": "miaosuan-s11-batch-replay/1"
+}

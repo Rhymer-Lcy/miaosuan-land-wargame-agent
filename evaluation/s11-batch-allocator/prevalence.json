@@ -1,0 +1,1538 @@
+{
+ "games": [
+  {
+   "game": "1910631192.C1.r1",
+   "scenario": "1910631192",
+   "seats": [
+    {
+     "checks": {
+      "baseline-v0 reproduced, baseline-v2 reconstructed": 1801,
+      "decisions": 1801,
+      "decisions with a baseline-v2 objective move": 4
+     },
+     "design": {
+      "contended objective-decisions": 0,
+      "dominated movers retained (unit-decisions)": 0,
+      "errors": 0,
+      "late claimants (unit-decisions)": 1,
+      "mixed infantry/vehicle batches": 1,
+      "objective-decisions with claimants": 4,
+      "phantom movers excluded (unit-decisions)": 1,
+      "selection differs: emission-order (objective-decisions)": 0,
+      "selection differs: no-end-of-game-test (objective-decisions)": 1,
+      "selection differs: route-cost (objective-decisions)": 0
+     },
+     "faction": 0,
+     "policies": {
+      "candidate": {
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 1,
+       "invented": 0,
+       "kept": 7,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 1,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "emission-order": {
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 1,
+       "invented": 0,
+       "kept": 7,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 1,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "no-end-of-game-test": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 8,
+       "late_owners": 1,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "route-cost": {
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 1,
+       "invented": 0,
+       "kept": 7,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 1,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v1": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 8,
+       "late_owners": 1,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v2": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 8,
+       "late_owners": 1,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      }
+     }
+    },
+    {
+     "checks": {
+      "baseline-v0 reproduced, baseline-v2 reconstructed": 1801,
+      "decisions": 1801,
+      "decisions with a baseline-v2 objective move": 5
+     },
+     "design": {
+      "contended objective-decisions": 1,
+      "dominated movers retained (unit-decisions)": 0,
+      "errors": 0,
+      "late claimants (unit-decisions)": 2,
+      "mixed infantry/vehicle batches": 1,
+      "objective-decisions with claimants": 5,
+      "phantom movers excluded (unit-decisions)": 4,
+      "selection differs: emission-order (objective-decisions)": 0,
+      "selection differs: no-end-of-game-test (objective-decisions)": 1,
+      "selection differs: route-cost (objective-decisions)": 0
+     },
+     "faction": 1,
+     "policies": {
+      "candidate": {
+       "capacity phantom_inclusive": 1,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 2,
+       "invented": 0,
+       "kept": 12,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 2,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "emission-order": {
+       "capacity phantom_inclusive": 1,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 2,
+       "invented": 0,
+       "kept": 12,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 2,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "no-end-of-game-test": {
+       "cross_objective": 0,
+       "hold-back: a place is held by a unit that cannot arrive": 2,
+       "hold-back: claimant cannot arrive before the end": 2,
+       "invented": 0,
+       "kept": 10,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 4,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "route-cost": {
+       "capacity phantom_inclusive": 1,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 2,
+       "invented": 0,
+       "kept": 12,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 2,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v1": {
+       "cross_objective": 2,
+       "hold-back: a place is held by a unit that cannot arrive": 2,
+       "hold-back: claimant cannot arrive before the end": 2,
+       "invented": 0,
+       "kept": 10,
+       "late_owners": 2,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 2
+      },
+      "t9-v2": {
+       "cross_objective": 0,
+       "hold-back: a place is held by a unit that cannot arrive": 2,
+       "hold-back: claimant cannot arrive before the end": 2,
+       "invented": 0,
+       "kept": 10,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 4,
+       "unrelated_changed": 0,
+       "withheld": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "game": "1930331196.C1.r1",
+   "scenario": "1930331196",
+   "seats": [
+    {
+     "checks": {
+      "baseline-v0 reproduced, baseline-v2 reconstructed": 2881,
+      "decisions": 2881,
+      "decisions with a baseline-v2 objective move": 21
+     },
+     "design": {
+      "contended objective-decisions": 7,
+      "dominated movers retained (unit-decisions)": 6,
+      "errors": 0,
+      "late claimants (unit-decisions)": 2,
+      "mixed infantry/vehicle batches": 1,
+      "objective-decisions with claimants": 22,
+      "phantom movers excluded (unit-decisions)": 0,
+      "selection differs: emission-order (objective-decisions)": 1,
+      "selection differs: no-end-of-game-test (objective-decisions)": 1,
+      "selection differs: route-cost (objective-decisions)": 1
+     },
+     "faction": 0,
+     "policies": {
+      "candidate": {
+       "capacity inherited": 9,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 2,
+       "hold-back: places held by units that can arrive": 15,
+       "invented": 0,
+       "kept": 50,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 17,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "emission-order": {
+       "capacity inherited": 9,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 2,
+       "hold-back: places held by units that can arrive": 15,
+       "invented": 0,
+       "kept": 50,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 17,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "no-end-of-game-test": {
+       "capacity inherited": 9,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 1,
+       "hold-back: places held by units that can arrive": 15,
+       "invented": 0,
+       "kept": 51,
+       "late_owners": 1,
+       "prefix_failures": 0,
+       "shortened": 16,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "route-cost": {
+       "capacity inherited": 9,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 2,
+       "hold-back: places held by units that can arrive": 15,
+       "invented": 0,
+       "kept": 50,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 17,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v1": {
+       "capacity inherited": 9,
+       "cross_objective": 12,
+       "hold-back: claimant cannot arrive before the end": 1,
+       "hold-back: places held by units that can arrive": 15,
+       "invented": 0,
+       "kept": 51,
+       "late_owners": 2,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 4
+      },
+      "t9-v2": {
+       "capacity inherited": 9,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 1,
+       "hold-back: places held by units that can arrive": 15,
+       "invented": 0,
+       "kept": 51,
+       "late_owners": 1,
+       "prefix_failures": 0,
+       "shortened": 16,
+       "unrelated_changed": 0,
+       "withheld": 0
+      }
+     }
+    },
+    {
+     "checks": {
+      "baseline-v0 reproduced, baseline-v2 reconstructed": 2881,
+      "decisions": 2881,
+      "decisions with a baseline-v2 objective move": 21
+     },
+     "design": {
+      "contended objective-decisions": 6,
+      "dominated movers retained (unit-decisions)": 14,
+      "errors": 0,
+      "late claimants (unit-decisions)": 6,
+      "mixed infantry/vehicle batches": 1,
+      "objective-decisions with claimants": 23,
+      "phantom movers excluded (unit-decisions)": 8,
+      "selection differs: emission-order (objective-decisions)": 0,
+      "selection differs: no-end-of-game-test (objective-decisions)": 1,
+      "selection differs: route-cost (objective-decisions)": 0
+     },
+     "faction": 1,
+     "policies": {
+      "candidate": {
+       "capacity inherited": 7,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 6,
+       "hold-back: places held by units that can arrive": 11,
+       "invented": 0,
+       "kept": 30,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 17,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "emission-order": {
+       "capacity inherited": 7,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 6,
+       "hold-back: places held by units that can arrive": 11,
+       "invented": 0,
+       "kept": 30,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 17,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "no-end-of-game-test": {
+       "capacity inherited": 7,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 4,
+       "hold-back: places held by units that can arrive": 11,
+       "invented": 0,
+       "kept": 32,
+       "late_owners": 2,
+       "prefix_failures": 0,
+       "shortened": 15,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "route-cost": {
+       "capacity inherited": 7,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 6,
+       "hold-back: places held by units that can arrive": 11,
+       "invented": 0,
+       "kept": 30,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 17,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v1": {
+       "capacity inherited": 7,
+       "cross_objective": 14,
+       "hold-back: a place is held by a unit that cannot arrive": 4,
+       "hold-back: claimant cannot arrive before the end": 4,
+       "hold-back: places held by units that can arrive": 13,
+       "invented": 0,
+       "kept": 26,
+       "late_owners": 8,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 7
+      },
+      "t9-v2": {
+       "capacity inherited": 7,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 4,
+       "hold-back: places held by units that can arrive": 11,
+       "invented": 0,
+       "kept": 32,
+       "late_owners": 2,
+       "prefix_failures": 0,
+       "shortened": 15,
+       "unrelated_changed": 0,
+       "withheld": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "game": "2010131194.C1.r1",
+   "scenario": "2010131194",
+   "seats": [
+    {
+     "checks": {
+      "baseline-v0 reproduced, baseline-v2 reconstructed": 1801,
+      "decisions": 1801,
+      "decisions with a baseline-v2 objective move": 1
+     },
+     "design": {
+      "contended objective-decisions": 0,
+      "dominated movers retained (unit-decisions)": 0,
+      "errors": 0,
+      "late claimants (unit-decisions)": 0,
+      "mixed infantry/vehicle batches": 0,
+      "objective-decisions with claimants": 1,
+      "phantom movers excluded (unit-decisions)": 0,
+      "selection differs: emission-order (objective-decisions)": 0,
+      "selection differs: no-end-of-game-test (objective-decisions)": 0,
+      "selection differs: route-cost (objective-decisions)": 0
+     },
+     "faction": 0,
+     "policies": {
+      "candidate": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 2,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "emission-order": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 2,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "no-end-of-game-test": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 2,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "route-cost": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 2,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v1": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 2,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v2": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 2,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      }
+     }
+    },
+    {
+     "checks": {
+      "baseline-v0 reproduced, baseline-v2 reconstructed": 1801,
+      "decisions": 1801,
+      "decisions with a baseline-v2 objective move": 1
+     },
+     "design": {
+      "contended objective-decisions": 0,
+      "dominated movers retained (unit-decisions)": 0,
+      "errors": 0,
+      "late claimants (unit-decisions)": 0,
+      "mixed infantry/vehicle batches": 0,
+      "objective-decisions with claimants": 1,
+      "phantom movers excluded (unit-decisions)": 0,
+      "selection differs: emission-order (objective-decisions)": 0,
+      "selection differs: no-end-of-game-test (objective-decisions)": 0,
+      "selection differs: route-cost (objective-decisions)": 0
+     },
+     "faction": 1,
+     "policies": {
+      "candidate": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 2,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "emission-order": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 2,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "no-end-of-game-test": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 2,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "route-cost": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 2,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v1": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 2,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v2": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 2,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "game": "2010211129.C1.r1",
+   "scenario": "2010211129",
+   "seats": [
+    {
+     "checks": {
+      "baseline-v0 reproduced, baseline-v2 reconstructed": 1801,
+      "decisions": 1801,
+      "decisions with a baseline-v2 objective move": 1
+     },
+     "design": {
+      "contended objective-decisions": 0,
+      "dominated movers retained (unit-decisions)": 0,
+      "errors": 0,
+      "late claimants (unit-decisions)": 1,
+      "mixed infantry/vehicle batches": 1,
+      "objective-decisions with claimants": 1,
+      "phantom movers excluded (unit-decisions)": 0,
+      "selection differs: emission-order (objective-decisions)": 0,
+      "selection differs: no-end-of-game-test (objective-decisions)": 1,
+      "selection differs: route-cost (objective-decisions)": 0
+     },
+     "faction": 0,
+     "policies": {
+      "candidate": {
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 1,
+       "invented": 0,
+       "kept": 3,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 1,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "emission-order": {
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 1,
+       "invented": 0,
+       "kept": 3,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 1,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "no-end-of-game-test": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 4,
+       "late_owners": 1,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "route-cost": {
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 1,
+       "invented": 0,
+       "kept": 3,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 1,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v1": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 4,
+       "late_owners": 1,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v2": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 4,
+       "late_owners": 1,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      }
+     }
+    },
+    {
+     "checks": {
+      "baseline-v0 reproduced, baseline-v2 reconstructed": 1801,
+      "decisions": 1801,
+      "decisions with a baseline-v2 objective move": 3
+     },
+     "design": {
+      "contended objective-decisions": 1,
+      "dominated movers retained (unit-decisions)": 0,
+      "errors": 0,
+      "late claimants (unit-decisions)": 0,
+      "mixed infantry/vehicle batches": 1,
+      "objective-decisions with claimants": 3,
+      "phantom movers excluded (unit-decisions)": 0,
+      "selection differs: emission-order (objective-decisions)": 1,
+      "selection differs: no-end-of-game-test (objective-decisions)": 0,
+      "selection differs: route-cost (objective-decisions)": 1
+     },
+     "faction": 1,
+     "policies": {
+      "candidate": {
+       "capacity inherited": 1,
+       "cross_objective": 0,
+       "hold-back: places held by units that can arrive": 1,
+       "invented": 0,
+       "kept": 7,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 1,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "emission-order": {
+       "capacity inherited": 1,
+       "cross_objective": 0,
+       "hold-back: places held by units that can arrive": 1,
+       "invented": 0,
+       "kept": 7,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 1,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "no-end-of-game-test": {
+       "capacity inherited": 1,
+       "cross_objective": 0,
+       "hold-back: places held by units that can arrive": 1,
+       "invented": 0,
+       "kept": 7,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 1,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "route-cost": {
+       "capacity inherited": 1,
+       "cross_objective": 0,
+       "hold-back: places held by units that can arrive": 1,
+       "invented": 0,
+       "kept": 7,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 1,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v1": {
+       "capacity inherited": 1,
+       "cross_objective": 0,
+       "hold-back: places held by units that can arrive": 1,
+       "invented": 0,
+       "kept": 7,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 1
+      },
+      "t9-v2": {
+       "capacity inherited": 1,
+       "cross_objective": 0,
+       "hold-back: places held by units that can arrive": 1,
+       "invented": 0,
+       "kept": 7,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 1,
+       "unrelated_changed": 0,
+       "withheld": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "game": "201033019601.C1.r1",
+   "scenario": "201033019601",
+   "seats": [
+    {
+     "checks": {
+      "baseline-v0 reproduced, baseline-v2 reconstructed": 1001,
+      "decisions": 1001,
+      "decisions with a baseline-v2 objective move": 1
+     },
+     "design": {
+      "contended objective-decisions": 0,
+      "dominated movers retained (unit-decisions)": 0,
+      "errors": 0,
+      "late claimants (unit-decisions)": 0,
+      "mixed infantry/vehicle batches": 0,
+      "objective-decisions with claimants": 1,
+      "phantom movers excluded (unit-decisions)": 0,
+      "selection differs: emission-order (objective-decisions)": 0,
+      "selection differs: no-end-of-game-test (objective-decisions)": 0,
+      "selection differs: route-cost (objective-decisions)": 0
+     },
+     "faction": 0,
+     "policies": {
+      "candidate": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 1,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "emission-order": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 1,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "no-end-of-game-test": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 1,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "route-cost": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 1,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v1": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 1,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v2": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 1,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      }
+     }
+    },
+    {
+     "checks": {
+      "baseline-v0 reproduced, baseline-v2 reconstructed": 1001,
+      "decisions": 1001,
+      "decisions with a baseline-v2 objective move": 1
+     },
+     "design": {
+      "contended objective-decisions": 0,
+      "dominated movers retained (unit-decisions)": 0,
+      "errors": 0,
+      "late claimants (unit-decisions)": 0,
+      "mixed infantry/vehicle batches": 0,
+      "objective-decisions with claimants": 1,
+      "phantom movers excluded (unit-decisions)": 0,
+      "selection differs: emission-order (objective-decisions)": 0,
+      "selection differs: no-end-of-game-test (objective-decisions)": 0,
+      "selection differs: route-cost (objective-decisions)": 0
+     },
+     "faction": 1,
+     "policies": {
+      "candidate": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 1,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "emission-order": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 1,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "no-end-of-game-test": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 1,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "route-cost": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 1,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v1": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 1,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v2": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 1,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "game": "2010431153.C1.r1",
+   "scenario": "2010431153",
+   "seats": [
+    {
+     "checks": {
+      "baseline-v0 reproduced, baseline-v2 reconstructed": 1801,
+      "decisions": 1801,
+      "decisions with a baseline-v2 objective move": 1
+     },
+     "design": {
+      "contended objective-decisions": 0,
+      "dominated movers retained (unit-decisions)": 0,
+      "errors": 0,
+      "late claimants (unit-decisions)": 1,
+      "mixed infantry/vehicle batches": 1,
+      "objective-decisions with claimants": 1,
+      "phantom movers excluded (unit-decisions)": 0,
+      "selection differs: emission-order (objective-decisions)": 0,
+      "selection differs: no-end-of-game-test (objective-decisions)": 1,
+      "selection differs: route-cost (objective-decisions)": 0
+     },
+     "faction": 0,
+     "policies": {
+      "candidate": {
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 1,
+       "invented": 0,
+       "kept": 3,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 1,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "emission-order": {
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 1,
+       "invented": 0,
+       "kept": 3,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 1,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "no-end-of-game-test": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 4,
+       "late_owners": 1,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "route-cost": {
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 1,
+       "invented": 0,
+       "kept": 3,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 1,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v1": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 4,
+       "late_owners": 1,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v2": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 4,
+       "late_owners": 1,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      }
+     }
+    },
+    {
+     "checks": {
+      "baseline-v0 reproduced, baseline-v2 reconstructed": 1801,
+      "decisions": 1801,
+      "decisions with a baseline-v2 objective move": 3
+     },
+     "design": {
+      "contended objective-decisions": 0,
+      "dominated movers retained (unit-decisions)": 0,
+      "errors": 0,
+      "late claimants (unit-decisions)": 2,
+      "mixed infantry/vehicle batches": 1,
+      "objective-decisions with claimants": 4,
+      "phantom movers excluded (unit-decisions)": 0,
+      "selection differs: emission-order (objective-decisions)": 0,
+      "selection differs: no-end-of-game-test (objective-decisions)": 1,
+      "selection differs: route-cost (objective-decisions)": 0
+     },
+     "faction": 1,
+     "policies": {
+      "candidate": {
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 2,
+       "invented": 0,
+       "kept": 6,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 2,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "emission-order": {
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 2,
+       "invented": 0,
+       "kept": 6,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 2,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "no-end-of-game-test": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 8,
+       "late_owners": 2,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "route-cost": {
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 2,
+       "invented": 0,
+       "kept": 6,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 2,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v1": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 8,
+       "late_owners": 2,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v2": {
+       "cross_objective": 0,
+       "invented": 0,
+       "kept": 8,
+       "late_owners": 2,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "game": "2120531121.C1.r1",
+   "scenario": "2120531121",
+   "seats": [
+    {
+     "checks": {
+      "baseline-v0 reproduced, baseline-v2 reconstructed": 2881,
+      "decisions": 2881,
+      "decisions with a baseline-v2 objective move": 10
+     },
+     "design": {
+      "contended objective-decisions": 5,
+      "dominated movers retained (unit-decisions)": 0,
+      "errors": 0,
+      "late claimants (unit-decisions)": 0,
+      "mixed infantry/vehicle batches": 1,
+      "objective-decisions with claimants": 11,
+      "phantom movers excluded (unit-decisions)": 0,
+      "selection differs: emission-order (objective-decisions)": 0,
+      "selection differs: no-end-of-game-test (objective-decisions)": 0,
+      "selection differs: route-cost (objective-decisions)": 1
+     },
+     "faction": 0,
+     "policies": {
+      "candidate": {
+       "capacity inherited": 7,
+       "cross_objective": 0,
+       "hold-back: places held by units that can arrive": 14,
+       "invented": 0,
+       "kept": 15,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 14,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "emission-order": {
+       "capacity inherited": 7,
+       "cross_objective": 0,
+       "hold-back: places held by units that can arrive": 14,
+       "invented": 0,
+       "kept": 15,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 14,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "no-end-of-game-test": {
+       "capacity inherited": 7,
+       "cross_objective": 0,
+       "hold-back: places held by units that can arrive": 14,
+       "invented": 0,
+       "kept": 15,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 14,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "route-cost": {
+       "capacity inherited": 7,
+       "cross_objective": 0,
+       "hold-back: places held by units that can arrive": 14,
+       "invented": 0,
+       "kept": 15,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 14,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v1": {
+       "capacity inherited": 7,
+       "cross_objective": 15,
+       "hold-back: places held by units that can arrive": 15,
+       "invented": 0,
+       "kept": 14,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v2": {
+       "capacity inherited": 7,
+       "cross_objective": 0,
+       "hold-back: places held by units that can arrive": 14,
+       "invented": 0,
+       "kept": 15,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 14,
+       "unrelated_changed": 0,
+       "withheld": 0
+      }
+     }
+    },
+    {
+     "checks": {
+      "baseline-v0 reproduced, baseline-v2 reconstructed": 2881,
+      "decisions": 2881,
+      "decisions with a baseline-v2 objective move": 11
+     },
+     "design": {
+      "contended objective-decisions": 9,
+      "dominated movers retained (unit-decisions)": 20,
+      "errors": 0,
+      "late claimants (unit-decisions)": 4,
+      "mixed infantry/vehicle batches": 0,
+      "objective-decisions with claimants": 13,
+      "phantom movers excluded (unit-decisions)": 10,
+      "selection differs: emission-order (objective-decisions)": 0,
+      "selection differs: no-end-of-game-test (objective-decisions)": 1,
+      "selection differs: route-cost (objective-decisions)": 0
+     },
+     "faction": 1,
+     "policies": {
+      "candidate": {
+       "capacity inherited": 13,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 4,
+       "hold-back: places held by units that can arrive": 15,
+       "invented": 0,
+       "kept": 16,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 19,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "emission-order": {
+       "capacity inherited": 13,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 4,
+       "hold-back: places held by units that can arrive": 15,
+       "invented": 0,
+       "kept": 16,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 19,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "no-end-of-game-test": {
+       "capacity inherited": 13,
+       "cross_objective": 0,
+       "hold-back: a place is held by a unit that cannot arrive": 8,
+       "hold-back: claimant cannot arrive before the end": 2,
+       "hold-back: places held by units that can arrive": 7,
+       "invented": 0,
+       "kept": 18,
+       "late_owners": 2,
+       "prefix_failures": 0,
+       "shortened": 17,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "route-cost": {
+       "capacity inherited": 13,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 4,
+       "hold-back: places held by units that can arrive": 15,
+       "invented": 0,
+       "kept": 16,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 19,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v1": {
+       "capacity inherited": 13,
+       "cross_objective": 18,
+       "hold-back: a place is held by a unit that cannot arrive": 8,
+       "hold-back: claimant cannot arrive before the end": 4,
+       "hold-back: places held by units that can arrive": 9,
+       "invented": 0,
+       "kept": 14,
+       "late_owners": 6,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 3
+      },
+      "t9-v2": {
+       "capacity inherited": 13,
+       "cross_objective": 0,
+       "hold-back: a place is held by a unit that cannot arrive": 10,
+       "hold-back: places held by units that can arrive": 7,
+       "invented": 0,
+       "kept": 18,
+       "late_owners": 4,
+       "prefix_failures": 0,
+       "shortened": 17,
+       "unrelated_changed": 0,
+       "withheld": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "game": "2130511121.C1.r1",
+   "scenario": "2130511121",
+   "seats": [
+    {
+     "checks": {
+      "baseline-v0 reproduced, baseline-v2 reconstructed": 2881,
+      "decisions": 2881,
+      "decisions with a baseline-v2 objective move": 20
+     },
+     "design": {
+      "contended objective-decisions": 11,
+      "dominated movers retained (unit-decisions)": 5,
+      "errors": 0,
+      "late claimants (unit-decisions)": 4,
+      "mixed infantry/vehicle batches": 1,
+      "objective-decisions with claimants": 25,
+      "phantom movers excluded (unit-decisions)": 12,
+      "selection differs: emission-order (objective-decisions)": 0,
+      "selection differs: no-end-of-game-test (objective-decisions)": 3,
+      "selection differs: route-cost (objective-decisions)": 0
+     },
+     "faction": 0,
+     "policies": {
+      "candidate": {
+       "capacity inherited": 25,
+       "capacity phantom_inclusive": 2,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 4,
+       "hold-back: places held by units that can arrive": 29,
+       "invented": 0,
+       "kept": 30,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 33,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "emission-order": {
+       "capacity inherited": 25,
+       "capacity phantom_inclusive": 2,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 4,
+       "hold-back: places held by units that can arrive": 29,
+       "invented": 0,
+       "kept": 30,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 33,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "no-end-of-game-test": {
+       "capacity inherited": 25,
+       "cross_objective": 0,
+       "hold-back: a place is held by a unit that cannot arrive": 5,
+       "hold-back: places held by units that can arrive": 27,
+       "invented": 0,
+       "kept": 31,
+       "late_owners": 4,
+       "prefix_failures": 0,
+       "shortened": 32,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "route-cost": {
+       "capacity inherited": 25,
+       "capacity phantom_inclusive": 2,
+       "cross_objective": 0,
+       "hold-back: claimant cannot arrive before the end": 4,
+       "hold-back: places held by units that can arrive": 29,
+       "invented": 0,
+       "kept": 30,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 33,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v1": {
+       "capacity inherited": 25,
+       "cross_objective": 34,
+       "hold-back: a place is held by a unit that cannot arrive": 5,
+       "hold-back: claimant cannot arrive before the end": 2,
+       "hold-back: places held by units that can arrive": 27,
+       "invented": 0,
+       "kept": 29,
+       "late_owners": 4,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v2": {
+       "capacity inherited": 25,
+       "cross_objective": 0,
+       "hold-back: a place is held by a unit that cannot arrive": 5,
+       "hold-back: places held by units that can arrive": 27,
+       "invented": 0,
+       "kept": 31,
+       "late_owners": 4,
+       "prefix_failures": 0,
+       "shortened": 32,
+       "unrelated_changed": 0,
+       "withheld": 0
+      }
+     }
+    },
+    {
+     "checks": {
+      "baseline-v0 reproduced, baseline-v2 reconstructed": 2881,
+      "decisions": 2881,
+      "decisions with a baseline-v2 objective move": 38
+     },
+     "design": {
+      "contended objective-decisions": 25,
+      "dominated movers retained (unit-decisions)": 23,
+      "errors": 0,
+      "late claimants (unit-decisions)": 0,
+      "mixed infantry/vehicle batches": 2,
+      "objective-decisions with claimants": 43,
+      "phantom movers excluded (unit-decisions)": 0,
+      "selection differs: emission-order (objective-decisions)": 2,
+      "selection differs: no-end-of-game-test (objective-decisions)": 0,
+      "selection differs: route-cost (objective-decisions)": 2
+     },
+     "faction": 1,
+     "policies": {
+      "candidate": {
+       "capacity inherited": 87,
+       "cross_objective": 0,
+       "hold-back: places held by units that can arrive": 54,
+       "invented": 0,
+       "kept": 44,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 54,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "emission-order": {
+       "capacity inherited": 87,
+       "cross_objective": 0,
+       "hold-back: places held by units that can arrive": 54,
+       "invented": 0,
+       "kept": 44,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 54,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "no-end-of-game-test": {
+       "capacity inherited": 87,
+       "cross_objective": 0,
+       "hold-back: places held by units that can arrive": 54,
+       "invented": 0,
+       "kept": 44,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 54,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "route-cost": {
+       "capacity inherited": 87,
+       "cross_objective": 0,
+       "hold-back: places held by units that can arrive": 54,
+       "invented": 0,
+       "kept": 44,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 54,
+       "unrelated_changed": 0,
+       "withheld": 0
+      },
+      "t9-v1": {
+       "capacity inherited": 87,
+       "cross_objective": 40,
+       "hold-back: places held by units that can arrive": 55,
+       "invented": 0,
+       "kept": 43,
+       "late_owners": 1,
+       "prefix_failures": 0,
+       "shortened": 0,
+       "unrelated_changed": 0,
+       "withheld": 15
+      },
+      "t9-v2": {
+       "capacity inherited": 87,
+       "cross_objective": 0,
+       "hold-back: places held by units that can arrive": 54,
+       "invented": 0,
+       "kept": 44,
+       "late_owners": 0,
+       "prefix_failures": 0,
+       "shortened": 54,
+       "unrelated_changed": 0,
+       "withheld": 0
+      }
+     }
+    }
+   ]
+  }
+ ],
+ "inputs": [
+  {
+   "file": "1910631192.C1.r1.jsonl.gz",
+   "sha256": "e3a726e67080427106c84bfa5a6b2032fa2fb1c2d5fc9573cff974fab565d967"
+  },
+  {
+   "file": "1930331196.C1.r1.jsonl.gz",
+   "sha256": "3b849c3b68487946b07929d7aaa01335b8fbb0c4e66fe01b00737804273b9b9e"
+  },
+  {
+   "file": "2010131194.C1.r1.jsonl.gz",
+   "sha256": "84494aedadab8ed8dddccfea820eea4fccef793e5f92446ac51fe928cdbff8c0"
+  },
+  {
+   "file": "2010211129.C1.r1.jsonl.gz",
+   "sha256": "8eef32e046e4004327799548267ed619282aa41f6617d36c7476d780b6a5633f"
+  },
+  {
+   "file": "201033019601.C1.r1.jsonl.gz",
+   "sha256": "fee4eadc751d41f2bf58099b7383a63ec650fa0cc50d971b55622cd89797da37"
+  },
+  {
+   "file": "2010431153.C1.r1.jsonl.gz",
+   "sha256": "6f8e30e608398811beadfdbb0d35a3b1e23e72fcf7ad803bd40097a73eedc322"
+  },
+  {
+   "file": "2120531121.C1.r1.jsonl.gz",
+   "sha256": "9f38cd844e5fec2ab660c98090f62d8cea8fac1078f8374bea3bce3d47e5def0"
+  },
+  {
+   "file": "2130511121.C1.r1.jsonl.gz",
+   "sha256": "e25562afc5ba0a545e045ed0db79dbba0b7fdd98962cb517eb8f722448420f3c"
+  }
+ ],
+ "schema": "miaosuan-s11-batch-prevalence/1"
+}
