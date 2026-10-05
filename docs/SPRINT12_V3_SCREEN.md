@@ -154,7 +154,10 @@ spell out, and each is fixed in the frozen code.
   set, and no refused occupation with the flag turning own) and one equivalent mutation, all fixed before
   registration.
 * **Privacy.** Every public serializer refuses forbidden keys; tests plant unit ids and require their absence from
-  the public facts and reports.
+  the public facts and reports. The repository privacy scan (all reachable history) rose from 81 to 101 hits: the 20
+  new ones are the word "secrets", the sanitizer's former parameter name for those planted ids, in two of this
+  registration's commits; the parameter was renamed in a later commit, history is not rewritten, and the hits were
+  adjudicated benign, so 101 is the new baseline.
 * **Timing** (`evaluation/s12-v3-screen/timing.json`): the complete observer stack replayed over the largest Sprint 10
   capture (2,881 decisions) took 17.7 s (6.14 ms per step), the per-game analysis 15.8 s. Projected to a 2130511121
   head-to-head game (two reconstructed seats, 89 operators: factor 3.296) on Sprint 10's longest head-to-head wall
