@@ -247,3 +247,143 @@ Exactly one candidate results. Rule identity, digest and parameters are then fro
 
 Nothing in Part A is an engine result, a score estimate or evidence that any candidate improves anything: every figure is
 a decision on a state another policy produced. Sprint 12's and Sprint 13's dispositions stand.
+
+## Results (2026-10-06)
+
+Sections 1 to 12, the candidate module, its synthetic tests, the analysis module, the replay driver and the input digests
+were pushed as commit `83977e3d846068bced5b13f729439fc568f35c94` at 2026-10-06T02:59:50+08:00 and fetched back
+unauthenticated byte for byte before the replay ran; they are unchanged. The candidate module's policy-source identity
+is `9d913f4384ea9264a8ad118a4cc0afaf3bb7975c9ec965d3b8f08aaae67fc976` on both hosts. Every figure below comes from the
+public files of `evaluation/s14-redistribution-design/`, which `scripts/s14_design_replay.py run --check` regenerates
+byte for byte from the pinned private captures; every figure is a decision on a recorded state, never an engine outcome.
+
+### R1. Fidelity
+
+Every requirement of section 5 held: `baseline-v2` re-decided equalled the capture at every decision of the ten captures
+(and its trace digest in the primary games); what each diagnosed seat submitted equalled the re-decided v3, T9-v1 or
+`baseline-v2`; v3's sets equalled the captured allocation; T9-v1 equalled Sprint 10's captured audit;
+`feasible-value-redirect` equalled O2 at every decision; Sprint 13's figures were reproduced exactly (T9-v1 162, 212, 15
+and 256 redirects; slot divergence from T9-v1 550 for v3 and 222 for O2; order divergence 913 and 337; O2's 637
+redirects); and every adverse anchor was found as published (80-point objective A first owned by `baseline-v2` at
+decision 564, the certificate's 9,194 unit-decisions for v3, eight direct-fire actions at decisions 742, 804, 841 and 876,
+one at 611, T9-v1 redirecting 12 and 7 orders at the first decision). In every adverse configuration the first-decision
+state was identical in the two trajectories.
+
+### R2. Invariants (G1 to G8, G13, G14)
+
+All eight candidates passed every invariant: 3,776 recomputations with a fresh router and 10,119 reorderings without a
+single difference; no objective above four places where a place was added, no changed or reordered unrelated action, no
+invented move, every redirect `baseline-v2`'s own candidate route to an objective not held and within the detour bound,
+every other changed move a strict same-route prefix off objectives, no place for a unit that cannot arrive, no error and
+no gate rejection.
+
+### R3. Primary states (G9, G10)
+
+Pooled per seat (redirects / emitted ground moves), first-decision redirects in p01, p02, p03 and p04, and pooled
+divergence from T9-v1 relative to v3's (slot 550, orders 913):
+
+| Policy | H1 share | H2 share | First decision | Slot ratio | Order ratio | G9 | G10 |
+|---|---:|---:|---|---:|---:|---|---|
+| T9-v1 (reference) | 177/395 = 0.4481 | 468/662 = 0.7069 | 14, 19, 14, 19 | 0 | 0 | | |
+| `feasible-cost-redirect` | 175/254 = 0.689 | 462/626 = 0.738 | 12, 17, 12, 17 | 0.7382 | 0.4852 | pass | fail (H1 slot 317 not below v3's 297) |
+| `feasible-value-redirect` | 175/254 = 0.689 | 462/626 = 0.738 | 12, 17, 12, 17 | 0.4036 | 0.3691 | pass | pass |
+| `feasible-value-redirect-h1440` | 175/254 = 0.689 | 452/626 = 0.722 | 12, 12, 12, 12 | 0.4036 | 0.3691 | pass | pass |
+| `feasible-value-redirect-h720` | 173/254 = 0.6811 | 446/626 = 0.7125 | 11, 9, 11, 9 | 0.4036 | 0.3735 | fail (9 of 19) | pass |
+| `corridor-value-redirect-p25` | 160/254 = 0.6299 | 226/417 = 0.542 | 7, 16, 7, 16 | 0.6564 | 0.6857 | pass | pass |
+| `corridor-value-redirect-p50` | 152/254 = 0.5984 | 123/317 | 3, 16, 3, 16 | 0.6618 | 0.7481 | fail (3 of 14) | fail |
+| `corridor-value-redirect-p75` | 13/124 = 0.1048 | 43/259 = 0.166 | 1, 10, 1, 10 | 0.98 | 0.9737 | fail | fail |
+| `batch-value-redirect` | 175/254 = 0.689 | 464/626 = 0.7412 | 12, 18, 12, 18 | 0.5055 | 0.4819 | pass | pass |
+
+The unconstrained rules restore most of T9-v1's redistribution on these states, both seats, from the first decision.
+Their redirects are almost all vehicles (621 of 637 for `feasible-value-redirect`), with a median free-flow time of 120
+steps and a median detour ratio of 1.25. The corridor bound costs the red seat's opening redistribution first: at 50% it
+keeps 3 of T9-v1's 14 first-decision redirects in each H1 game, because those redirects leave `baseline-v2`'s route early.
+
+### R4. Adverse states (G11, G12)
+
+**1930331196 C3.** T9-v1 redirects 12 orders at the first decision (6 infantry, 6 vehicles). Every candidate redirects 4
+vehicles there (the limit, floor(12 / 3), is 4), all four among T9-v1's 12, and in both trajectories two of them are
+units that later fired at one of the four firing decisions (4 order-decisions; the distinct count is from the private
+rows). Before its firing decision every candidate kept 10 of the shooters' order-decisions on the `baseline-v2`
+trajectory, staged 10 and redirected 2. The rules differ in route, not in choice: the minimal rule's four first-decision
+redirects share a median of 0.0455 of `baseline-v2`'s route, the 75% corridor rule's share all of it (they continue past
+the objective), and both move the same two later shooters. G12 fails for every candidate on the shooter clause.
+
+**1930331196 C2.** T9-v1 redirects 7 orders at the first decision (the limit is 2). Every candidate redirects 5 or 6
+(`feasible-cost`, `feasible-value`, the 25% corridor rule and the batch rule 6; the horizon rules and the 50% and 75%
+corridor rules 5); no candidate redirects the later shooter. Before decision 611 on the `baseline-v2` trajectory T9-v1
+redirects 15 orders (limit 5); the candidates 13 or 14, except the corridor rules (8, 5 and 5). G12 fails for every
+candidate on the first-decision clause.
+
+**2120531121 C3.** For every candidate: no unreachable place, every v3 selection kept, and the Sprint 11 certificate's
+9,194 unit-decisions retained. Far reservations of objective A as registered (redirects into it issued before step 563,
+the step of the `baseline-v2` game's capture, that arrive after it): 231 for `feasible-cost`, `feasible-value` and both
+horizon rules, 191 for the batch rule, 156 for the 25% corridor rule, none for the 50% and 75% corridor rules. The private
+rows show what they are: redirects issued at decisions 405 to 522 with free-flow times of 100 to 160 steps (6 units for
+`feasible-value-redirect`), almost all on the T9-v1 trajectory (230 of 231), where objective A's places were held by
+T9-v1's unreachable infantry. They are not T9-v1's decision-1 pattern (3,168 to 3,456 steps); the registered definition
+is stricter than its intent, and G11 is read as registered.
+
+### R5. Latency (G15)
+
+Per decision with an own ground move, 99th percentile 0.928 to 0.995 ms and maximum 6.385 to 7.484 ms for seven
+candidates (T9-v1: 0.607 and 2.297 ms). `feasible-cost-redirect` had one decision at 513.458 ms against a 99th
+percentile of 1.09 ms; it was measured once, not investigated, and that candidate fails three other items.
+
+### R6. Gate and disposition
+
+| Candidate | Failed items |
+|---|---|
+| `feasible-cost-redirect` | G10, G11, G12, G15 |
+| `feasible-value-redirect` | G11, G12 |
+| `feasible-value-redirect-h1440` | G11, G12 |
+| `feasible-value-redirect-h720` | G9, G11, G12 |
+| `corridor-value-redirect-p25` | G11, G12 |
+| `corridor-value-redirect-p50` | G9, G10, G12 |
+| `corridor-value-redirect-p75` | G9, G10, G12 |
+| `batch-value-redirect` | G11, G12 |
+
+No candidate passed, so the rubric selected none:
+
+**NO_ENGINE_CANDIDATE.**
+
+Session 2791 was not opened. The result does not depend on G11's strictness or on G12's divisor (a descriptive reading,
+not a second gate): every candidate also moves two later shooters in 1930331196 C3, a zero-tolerance clause, and its 5
+or 6 first-decision redirects in C2 exceed even half of T9-v1's 7.
+
+### R7. What the competition shows
+
+1. Restoring T9-v1's redistribution on the Sprint 12 states is easy for a capacity-aware, feasibility-gated rule, and it
+   is concentrated at the opening: every unconstrained rule redirects 12 of 14 (red) and 17 or 18 of 19 (blue)
+   first-decision orders where T9-v1 redirects 14 and 19.
+2. The same rules redirect at the opening of both 1930331196 configurations, and in C3 they move exactly the kind of unit
+   Sprint 10 tied to the lost fire. No seat-local bound tried here separates the two openings: the horizon bounds keep the
+   fast vehicles that matter in both; the corridor bound removes the red primary redirects (which branch early) before it
+   removes the C3 ones (which keep the whole route); batch assignment changes which overflow unit goes where, not whether
+   the opening redistributes.
+3. The adverse damage and the primary benefit are therefore both properties of opening redistribution, as far as these
+   states can show; separating them needs either a feature these rules do not read or evidence on whether T9-v1's primary
+   advantage requires the opening redirects at all.
+
+### R8. Corrections and disclosures
+
+* Presentation, after the first run: section 11 named one `adverse.json`; at 131,935 bytes it exceeded the repository
+  scan's 100,000-byte limit, so it is written as three files, one per configuration (`adverse-*.json`), with the same
+  content. The second run reused the measured `timing.json` and reproduced `replay.json` and `gate.json` byte for byte.
+* Mutation (`scripts/mutate_s14_design.py`, `mutation.json`): 34 of 34 planted defects caught. The first run caught 28;
+  the 6 survivors were missing tests (late claimants considered for alternatives, emission order among competing overflow,
+  the exact late-claimant boundary, phantom movers, a bent redirect route, the four-unit boundary of G9), added before the
+  record; the candidate module did not change.
+* Privacy: one new scan hit in `replay.json` (the 50% corridor rule's H2 share, 123/317, rounds to a value the host
+  clock-offset pattern matches); adjudicated benign like the earlier hits of that pattern, and the output was not
+  reshaped to avoid it. The accepted 103 hit lines are otherwise unchanged; the new set of 104 awaits the owner's
+  confirmation.
+* No definition, threshold, rule or candidate was changed after the replay.
+
+### R9. Recommended next task
+
+One task, offline: test whether T9-v1's primary redistribution needs its opening redirects. On the four Sprint 12 games
+and the six Sprint 10 captures, design and replay a persistence-triggered variant of `feasible-value-redirect` (overflow
+redirected only after it has been held back for a fixed number of consecutive decisions, counted in add-on memory), with
+the adverse clauses of G11 and G12 unchanged and the primary criterion restated without the first-decision clause before
+the replay. If it clears the adverse clauses, the remaining question is an engine question and needs its own proposal.
