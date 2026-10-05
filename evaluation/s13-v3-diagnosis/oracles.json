@@ -1,0 +1,585 @@
+{
+ "games": [
+  {
+   "cell": "H1",
+   "game_id": "2130511121.H1.s12-v3-primary-1.p01",
+   "policies": {
+    "O1": {
+     "action_differences": {
+      "vs_t9-v1": 441,
+      "vs_t9-v3": 233
+     },
+     "admitted_vs_v3": 230,
+     "cross_objective": 0,
+     "distinct_differing": {
+      "vs_t9-v1": 20,
+      "vs_t9-v3": 13
+     },
+     "kept": 269,
+     "slot_differences": {
+      "vs_t9-v1": 430,
+      "vs_t9-v3": 144
+     },
+     "staged": 27,
+     "withheld": 209
+    },
+    "O2": {
+     "action_differences": {
+      "vs_t9-v1": 161,
+      "vs_t9-v3": 162
+     },
+     "admitted_vs_v3": 162,
+     "cross_objective": 162,
+     "distinct_differing": {
+      "vs_t9-v1": 12,
+      "vs_t9-v3": 16
+     },
+     "kept": 39,
+     "slot_differences": {
+      "vs_t9-v1": 153,
+      "vs_t9-v3": 142
+     },
+     "staged": 6,
+     "withheld": 298
+    },
+    "O3": {
+     "action_differences": {
+      "vs_t9-v1": 385,
+      "vs_t9-v3": 294
+     },
+     "admitted_vs_v3": 294,
+     "cross_objective": 64,
+     "distinct_differing": {
+      "vs_t9-v1": 17,
+      "vs_t9-v3": 16
+     },
+     "kept": 269,
+     "slot_differences": {
+      "vs_t9-v1": 385,
+      "vs_t9-v3": 194
+     },
+     "staged": 4,
+     "withheld": 168
+    },
+    "baseline-v2": {
+     "action_differences": {
+      "vs_t9-v1": 321,
+      "vs_t9-v3": 466
+     },
+     "admitted_vs_v3": 466,
+     "cross_objective": 0,
+     "distinct_differing": {
+      "vs_t9-v1": 18,
+      "vs_t9-v3": 20
+     },
+     "kept": 505,
+     "slot_differences": {
+      "vs_t9-v1": 292,
+      "vs_t9-v3": 293
+     },
+     "staged": 0,
+     "withheld": 0
+    },
+    "t9-v1": {
+     "action_differences": {
+      "vs_t9-v1": 0,
+      "vs_t9-v3": 313
+     },
+     "admitted_vs_v3": 309,
+     "cross_objective": 162,
+     "distinct_differing": {
+      "vs_t9-v1": 0,
+      "vs_t9-v3": 20
+     },
+     "kept": 184,
+     "slot_differences": {
+      "vs_t9-v1": 0,
+      "vs_t9-v3": 288
+     },
+     "staged": 0,
+     "withheld": 159
+    },
+    "t9-v2": {
+     "action_differences": {
+      "vs_t9-v1": 175,
+      "vs_t9-v3": 298
+     },
+     "admitted_vs_v3": 149,
+     "cross_objective": 0,
+     "distinct_differing": {
+      "vs_t9-v1": 18,
+      "vs_t9-v3": 11
+     },
+     "kept": 186,
+     "slot_differences": {
+      "vs_t9-v1": 143,
+      "vs_t9-v3": 146
+     },
+     "staged": 173,
+     "withheld": 146
+    },
+    "t9-v3": {
+     "action_differences": {
+      "vs_t9-v1": 313,
+      "vs_t9-v3": 0
+     },
+     "admitted_vs_v3": 0,
+     "cross_objective": 0,
+     "distinct_differing": {
+      "vs_t9-v1": 20,
+      "vs_t9-v3": 0
+     },
+     "kept": 39,
+     "slot_differences": {
+      "vs_t9-v1": 288,
+      "vs_t9-v3": 0
+     },
+     "staged": 38,
+     "withheld": 428
+    }
+   },
+   "redirect_alternatives_dropped_by_end_test": {
+    "O2": 0,
+    "O3": 0
+   }
+  },
+  {
+   "cell": "H2",
+   "game_id": "2130511121.H2.s12-v3-primary-1.p02",
+   "policies": {
+    "O1": {
+     "action_differences": {
+      "vs_t9-v1": 235,
+      "vs_t9-v3": 43
+     },
+     "admitted_vs_v3": 42,
+     "cross_objective": 0,
+     "distinct_differing": {
+      "vs_t9-v1": 24,
+      "vs_t9-v3": 7
+     },
+     "kept": 98,
+     "slot_differences": {
+      "vs_t9-v1": 153,
+      "vs_t9-v3": 41
+     },
+     "staged": 63,
+     "withheld": 309
+    },
+    "O2": {
+     "action_differences": {
+      "vs_t9-v1": 50,
+      "vs_t9-v3": 213
+     },
+     "admitted_vs_v3": 209,
+     "cross_objective": 209,
+     "distinct_differing": {
+      "vs_t9-v1": 23,
+      "vs_t9-v3": 23
+     },
+     "kept": 56,
+     "slot_differences": {
+      "vs_t9-v1": 21,
+      "vs_t9-v3": 106
+     },
+     "staged": 22,
+     "withheld": 183
+    },
+    "O3": {
+     "action_differences": {
+      "vs_t9-v1": 190,
+      "vs_t9-v3": 315
+     },
+     "admitted_vs_v3": 312,
+     "cross_objective": 270,
+     "distinct_differing": {
+      "vs_t9-v1": 23,
+      "vs_t9-v3": 23
+     },
+     "kept": 98,
+     "slot_differences": {
+      "vs_t9-v1": 124,
+      "vs_t9-v3": 145
+     },
+     "staged": 19,
+     "withheld": 83
+    },
+    "baseline-v2": {
+     "action_differences": {
+      "vs_t9-v1": 414,
+      "vs_t9-v3": 414
+     },
+     "admitted_vs_v3": 414,
+     "cross_objective": 0,
+     "distinct_differing": {
+      "vs_t9-v1": 23,
+      "vs_t9-v3": 24
+     },
+     "kept": 470,
+     "slot_differences": {
+      "vs_t9-v1": 250,
+      "vs_t9-v3": 144
+     },
+     "staged": 0,
+     "withheld": 0
+    },
+    "t9-v1": {
+     "action_differences": {
+      "vs_t9-v1": 0,
+      "vs_t9-v3": 236
+     },
+     "admitted_vs_v3": 214,
+     "cross_objective": 212,
+     "distinct_differing": {
+      "vs_t9-v1": 0,
+      "vs_t9-v3": 24
+     },
+     "kept": 56,
+     "slot_differences": {
+      "vs_t9-v1": 0,
+      "vs_t9-v3": 113
+     },
+     "staged": 0,
+     "withheld": 202
+    },
+    "t9-v2": {
+     "action_differences": {
+      "vs_t9-v1": 250,
+      "vs_t9-v3": 165
+     },
+     "admitted_vs_v3": 8,
+     "cross_objective": 0,
+     "distinct_differing": {
+      "vs_t9-v1": 23,
+      "vs_t9-v3": 14
+     },
+     "kept": 58,
+     "slot_differences": {
+      "vs_t9-v1": 107,
+      "vs_t9-v3": 7
+     },
+     "staged": 203,
+     "withheld": 209
+    },
+    "t9-v3": {
+     "action_differences": {
+      "vs_t9-v1": 236,
+      "vs_t9-v3": 0
+     },
+     "admitted_vs_v3": 0,
+     "cross_objective": 0,
+     "distinct_differing": {
+      "vs_t9-v1": 24,
+      "vs_t9-v3": 0
+     },
+     "kept": 56,
+     "slot_differences": {
+      "vs_t9-v1": 113,
+      "vs_t9-v3": 0
+     },
+     "staged": 68,
+     "withheld": 346
+    }
+   },
+   "redirect_alternatives_dropped_by_end_test": {
+    "O2": 4,
+    "O3": 4
+   }
+  },
+  {
+   "cell": "H1",
+   "game_id": "2130511121.H1.s12-v3-primary-1.p03",
+   "policies": {
+    "O1": {
+     "action_differences": {
+      "vs_t9-v1": 19,
+      "vs_t9-v3": 1
+     },
+     "admitted_vs_v3": 1,
+     "cross_objective": 0,
+     "distinct_differing": {
+      "vs_t9-v1": 16,
+      "vs_t9-v3": 1
+     },
+     "kept": 31,
+     "slot_differences": {
+      "vs_t9-v1": 10,
+      "vs_t9-v3": 1
+     },
+     "staged": 16,
+     "withheld": 3
+    },
+    "O2": {
+     "action_differences": {
+      "vs_t9-v1": 14,
+      "vs_t9-v3": 13
+     },
+     "admitted_vs_v3": 13,
+     "cross_objective": 13,
+     "distinct_differing": {
+      "vs_t9-v1": 12,
+      "vs_t9-v3": 12
+     },
+     "kept": 30,
+     "slot_differences": {
+      "vs_t9-v1": 8,
+      "vs_t9-v3": 4
+     },
+     "staged": 4,
+     "withheld": 3
+    },
+    "O3": {
+     "action_differences": {
+      "vs_t9-v1": 15,
+      "vs_t9-v3": 13
+     },
+     "admitted_vs_v3": 13,
+     "cross_objective": 12,
+     "distinct_differing": {
+      "vs_t9-v1": 12,
+      "vs_t9-v3": 12
+     },
+     "kept": 31,
+     "slot_differences": {
+      "vs_t9-v1": 10,
+      "vs_t9-v3": 4
+     },
+     "staged": 4,
+     "withheld": 3
+    },
+    "baseline-v2": {
+     "action_differences": {
+      "vs_t9-v1": 16,
+      "vs_t9-v3": 20
+     },
+     "admitted_vs_v3": 20,
+     "cross_objective": 0,
+     "distinct_differing": {
+      "vs_t9-v1": 14,
+      "vs_t9-v3": 16
+     },
+     "kept": 50,
+     "slot_differences": {
+      "vs_t9-v1": 10,
+      "vs_t9-v3": 6
+     },
+     "staged": 0,
+     "withheld": 0
+    },
+    "t9-v1": {
+     "action_differences": {
+      "vs_t9-v1": 0,
+      "vs_t9-v3": 19
+     },
+     "admitted_vs_v3": 19,
+     "cross_objective": 15,
+     "distinct_differing": {
+      "vs_t9-v1": 0,
+      "vs_t9-v3": 16
+     },
+     "kept": 34,
+     "slot_differences": {
+      "vs_t9-v1": 0,
+      "vs_t9-v3": 9
+     },
+     "staged": 0,
+     "withheld": 1
+    },
+    "t9-v2": {
+     "action_differences": {
+      "vs_t9-v1": 15,
+      "vs_t9-v3": 10
+     },
+     "admitted_vs_v3": 6,
+     "cross_objective": 0,
+     "distinct_differing": {
+      "vs_t9-v1": 14,
+      "vs_t9-v3": 8
+     },
+     "kept": 36,
+     "slot_differences": {
+      "vs_t9-v1": 7,
+      "vs_t9-v3": 3
+     },
+     "staged": 13,
+     "withheld": 1
+    },
+    "t9-v3": {
+     "action_differences": {
+      "vs_t9-v1": 19,
+      "vs_t9-v3": 0
+     },
+     "admitted_vs_v3": 0,
+     "cross_objective": 0,
+     "distinct_differing": {
+      "vs_t9-v1": 16,
+      "vs_t9-v3": 0
+     },
+     "kept": 30,
+     "slot_differences": {
+      "vs_t9-v1": 9,
+      "vs_t9-v3": 0
+     },
+     "staged": 17,
+     "withheld": 3
+    }
+   },
+   "redirect_alternatives_dropped_by_end_test": {
+    "O2": 0,
+    "O3": 0
+   }
+  },
+  {
+   "cell": "H2",
+   "game_id": "2130511121.H2.s12-v3-primary-1.p04",
+   "policies": {
+    "O1": {
+     "action_differences": {
+      "vs_t9-v1": 345,
+      "vs_t9-v3": 20
+     },
+     "admitted_vs_v3": 19,
+     "cross_objective": 0,
+     "distinct_differing": {
+      "vs_t9-v1": 25,
+      "vs_t9-v3": 4
+     },
+     "kept": 86,
+     "slot_differences": {
+      "vs_t9-v1": 159,
+      "vs_t9-v3": 19
+     },
+     "staged": 66,
+     "withheld": 346
+    },
+    "O2": {
+     "action_differences": {
+      "vs_t9-v1": 112,
+      "vs_t9-v3": 257
+     },
+     "admitted_vs_v3": 253,
+     "cross_objective": 253,
+     "distinct_differing": {
+      "vs_t9-v1": 22,
+      "vs_t9-v3": 23
+     },
+     "kept": 67,
+     "slot_differences": {
+      "vs_t9-v1": 40,
+      "vs_t9-v3": 111
+     },
+     "staged": 19,
+     "withheld": 159
+    },
+    "O3": {
+     "action_differences": {
+      "vs_t9-v1": 134,
+      "vs_t9-v3": 259
+     },
+     "admitted_vs_v3": 256,
+     "cross_objective": 237,
+     "distinct_differing": {
+      "vs_t9-v1": 23,
+      "vs_t9-v3": 23
+     },
+     "kept": 86,
+     "slot_differences": {
+      "vs_t9-v1": 86,
+      "vs_t9-v3": 128
+     },
+     "staged": 17,
+     "withheld": 158
+    },
+    "baseline-v2": {
+     "action_differences": {
+      "vs_t9-v1": 360,
+      "vs_t9-v3": 431
+     },
+     "admitted_vs_v3": 431,
+     "cross_objective": 0,
+     "distinct_differing": {
+      "vs_t9-v1": 22,
+      "vs_t9-v3": 25
+     },
+     "kept": 498,
+     "slot_differences": {
+      "vs_t9-v1": 254,
+      "vs_t9-v3": 166
+     },
+     "staged": 0,
+     "withheld": 0
+    },
+    "t9-v1": {
+     "action_differences": {
+      "vs_t9-v1": 0,
+      "vs_t9-v3": 345
+     },
+     "admitted_vs_v3": 329,
+     "cross_objective": 256,
+     "distinct_differing": {
+      "vs_t9-v1": 0,
+      "vs_t9-v3": 25
+     },
+     "kept": 138,
+     "slot_differences": {
+      "vs_t9-v1": 0,
+      "vs_t9-v3": 140
+     },
+     "staged": 0,
+     "withheld": 104
+    },
+    "t9-v2": {
+     "action_differences": {
+      "vs_t9-v1": 269,
+      "vs_t9-v3": 239
+     },
+     "admitted_vs_v3": 78,
+     "cross_objective": 0,
+     "distinct_differing": {
+      "vs_t9-v1": 22,
+      "vs_t9-v3": 22
+     },
+     "kept": 140,
+     "slot_differences": {
+      "vs_t9-v1": 112,
+      "vs_t9-v3": 29
+     },
+     "staged": 200,
+     "withheld": 158
+    },
+    "t9-v3": {
+     "action_differences": {
+      "vs_t9-v1": 345,
+      "vs_t9-v3": 0
+     },
+     "admitted_vs_v3": 0,
+     "cross_objective": 0,
+     "distinct_differing": {
+      "vs_t9-v1": 25,
+      "vs_t9-v3": 0
+     },
+     "kept": 67,
+     "slot_differences": {
+      "vs_t9-v1": 140,
+      "vs_t9-v3": 0
+     },
+     "staged": 68,
+     "withheld": 363
+    }
+   },
+   "redirect_alternatives_dropped_by_end_test": {
+    "O2": 4,
+    "O3": 4
+   }
+  }
+ ],
+ "inputs_sha256": "b2d1ede2166e3f831ba9b3b781d23c43e3c325239f862a423b6bd56412d1bff4",
+ "note": "offline diagnosis on recorded states: T9-v1, T9-v2 and the oracles are off-policy action counterfactuals, never engine outcomes; Sprint 9 games are other stochastic games; nothing is promoted",
+ "overlap": {
+  "a_unit_decisions": 645,
+  "b_unit_decisions": 292,
+  "both": 154,
+  "jaccard": 0.1967
+ },
+ "schema": "miaosuan-s13-diagnosis/1"
+}

@@ -1,0 +1,755 @@
+{
+ "games": [
+  {
+   "b": {
+    "admitted_decisions": 230,
+    "distinct_admitted": 12,
+    "first_step": 580,
+    "held_selectable": 319
+   },
+   "cell": "H1",
+   "episodes": {
+    "ALIVE_NOT_ARRIVED": {
+     "blocked_claimant_decisions": 0,
+     "blocking_episodes": 0,
+     "by_kind": {},
+     "counted_decisions": {
+      "n": 0
+     },
+     "episodes": 0,
+     "faster_blocked_decisions": 0,
+     "hexes_reached_share": {
+      "n": 0
+     },
+     "selection_free_flow": {
+      "n": 0
+     }
+    },
+    "DESTROYED": {
+     "blocked_claimant_decisions": 829,
+     "blocking_episodes": 11,
+     "by_kind": {
+      "vehicle": 14
+     },
+     "counted_decisions": {
+      "max": 559,
+      "median": 40.5,
+      "min": 5,
+      "n": 14
+     },
+     "episodes": 14,
+     "faster_blocked_decisions": 1,
+     "hexes_reached_share": {
+      "max": 0.9615,
+      "median": 0.5,
+      "min": 0.0,
+      "n": 14
+     },
+     "selection_free_flow": {
+      "max": 560,
+      "median": 70.0,
+      "min": 40,
+      "n": 14
+     }
+    },
+    "HONOURED": {
+     "blocked_claimant_decisions": 435,
+     "blocking_episodes": 11,
+     "by_kind": {
+      "infantry": 1,
+      "vehicle": 20
+     },
+     "counted_decisions": {
+      "max": 2747,
+      "median": 139,
+      "min": 19,
+      "n": 21
+     },
+     "episodes": 21,
+     "faster_blocked_decisions": 297,
+     "hexes_reached_share": {
+      "max": 0.9545,
+      "median": 0.8333,
+      "min": 0.0,
+      "n": 21
+     },
+     "selection_free_flow": {
+      "max": 2736,
+      "median": 140,
+      "min": 20,
+      "n": 21
+     }
+    },
+    "by_fate": {
+     "DESTROYED": 14,
+     "HONOURED": 21
+    },
+    "destroyed_blocking": {
+     "blocked_claimant_decisions": 829,
+     "blocked_claimants": 62,
+     "blocked_free_flow": {
+      "max": 200,
+      "median": 80,
+      "min": 40,
+      "n": 829
+     },
+     "faster_blocked_claimants": 1,
+     "faster_blocked_decisions": 1,
+     "holders": 11,
+     "lifetime_decisions": {
+      "max": 99,
+      "median": 41,
+      "min": 19,
+      "n": 11
+     },
+     "no_replacement": 1,
+     "release_to_replacement_steps": {
+      "max": 34,
+      "median": 0.0,
+      "min": 0,
+      "n": 10
+     },
+     "released_next_decision": 11,
+     "replacement_occupied_or_held": 1,
+     "replacement_to_arrival_steps": {
+      "max": 60,
+      "median": 40.0,
+      "min": 20,
+      "n": 2
+     },
+     "selection_to_release_decisions": {
+      "max": 100,
+      "median": 42,
+      "min": 20,
+      "n": 11
+     }
+    },
+    "episodes": 35
+   },
+   "game_id": "2130511121.H1.s12-v3-primary-1.p01",
+   "reconciliation": {
+    "decisions_from_selection_to_loss": {
+     "max": 1,
+     "median": 1.0,
+     "min": 1,
+     "n": 4
+    },
+    "destroyed_episodes": 14,
+    "destroyed_pairs_without_episode": 1,
+    "lost_places": 18,
+    "lost_places_without_episode": 4
+   },
+   "sprint12_cross_check": {
+    "places_outcomes": {
+     "ARRIVED_NOT_DECISIVE": 0,
+     "HELD": 0,
+     "LOST": 18,
+     "NEVER_ARRIVED": 0,
+     "OCCUPIED": 9,
+     "REDUNDANT": 4,
+     "TOO_LATE": 8
+    },
+    "unproductive": {
+     "holds": 319,
+     "holds_behind_an_unproductive_place": 298,
+     "unproductive_holders": 12
+    },
+    "unproductive_pair_fates": {
+     "DESTROYED": 12
+    },
+    "unproductive_pairs": 12
+   }
+  },
+  {
+   "b": {
+    "admitted_decisions": 42,
+    "distinct_admitted": 7,
+    "first_step": 364,
+    "held_selectable": 405
+   },
+   "cell": "H2",
+   "episodes": {
+    "ALIVE_NOT_ARRIVED": {
+     "blocked_claimant_decisions": 0,
+     "blocking_episodes": 0,
+     "by_kind": {},
+     "counted_decisions": {
+      "n": 0
+     },
+     "episodes": 0,
+     "faster_blocked_decisions": 0,
+     "hexes_reached_share": {
+      "n": 0
+     },
+     "selection_free_flow": {
+      "n": 0
+     }
+    },
+    "DESTROYED": {
+     "blocked_claimant_decisions": 190,
+     "blocking_episodes": 6,
+     "by_kind": {
+      "vehicle": 10
+     },
+     "counted_decisions": {
+      "max": 254,
+      "median": 54.0,
+      "min": 13,
+      "n": 10
+     },
+     "episodes": 10,
+     "faster_blocked_decisions": 0,
+     "hexes_reached_share": {
+      "max": 0.9167,
+      "median": 0.45,
+      "min": 0.0,
+      "n": 10
+     },
+     "selection_free_flow": {
+      "max": 260,
+      "median": 70.0,
+      "min": 40,
+      "n": 10
+     }
+    },
+    "HONOURED": {
+     "blocked_claimant_decisions": 1375,
+     "blocking_episodes": 35,
+     "by_kind": {
+      "vehicle": 46
+     },
+     "counted_decisions": {
+      "max": 259,
+      "median": 79.0,
+      "min": 19,
+      "n": 46
+     },
+     "episodes": 46,
+     "faster_blocked_decisions": 116,
+     "hexes_reached_share": {
+      "max": 0.9231,
+      "median": 0.6667,
+      "min": 0.0,
+      "n": 46
+     },
+     "selection_free_flow": {
+      "max": 260,
+      "median": 80.0,
+      "min": 20,
+      "n": 46
+     }
+    },
+    "by_fate": {
+     "DESTROYED": 10,
+     "HONOURED": 46
+    },
+    "destroyed_blocking": {
+     "blocked_claimant_decisions": 190,
+     "blocked_claimants": 27,
+     "blocked_free_flow": {
+      "max": 1872,
+      "median": 100.0,
+      "min": 60,
+      "n": 190
+     },
+     "faster_blocked_claimants": 0,
+     "faster_blocked_decisions": 0,
+     "holders": 6,
+     "lifetime_decisions": {
+      "max": 254,
+      "median": 59.5,
+      "min": 32,
+      "n": 6
+     },
+     "no_replacement": 0,
+     "release_to_replacement_steps": {
+      "max": 166,
+      "median": 7.5,
+      "min": 0,
+      "n": 6
+     },
+     "released_next_decision": 6,
+     "replacement_occupied_or_held": 1,
+     "replacement_to_arrival_steps": {
+      "max": 160,
+      "median": 120,
+      "min": 80,
+      "n": 5
+     },
+     "selection_to_release_decisions": {
+      "max": 255,
+      "median": 60.5,
+      "min": 33,
+      "n": 6
+     }
+    },
+    "episodes": 56
+   },
+   "game_id": "2130511121.H2.s12-v3-primary-1.p02",
+   "reconciliation": {
+    "decisions_from_selection_to_loss": {
+     "n": 0
+    },
+    "destroyed_episodes": 10,
+    "destroyed_pairs_without_episode": 0,
+    "lost_places": 10,
+    "lost_places_without_episode": 0
+   },
+   "sprint12_cross_check": {
+    "places_outcomes": {
+     "ARRIVED_NOT_DECISIVE": 12,
+     "HELD": 0,
+     "LOST": 10,
+     "NEVER_ARRIVED": 0,
+     "OCCUPIED": 19,
+     "REDUNDANT": 11,
+     "TOO_LATE": 4
+    },
+    "unproductive": {
+     "holds": 405,
+     "holds_behind_an_unproductive_place": 187,
+     "unproductive_holders": 6
+    },
+    "unproductive_pair_fates": {
+     "DESTROYED": 6
+    },
+    "unproductive_pairs": 6
+   }
+  },
+  {
+   "b": {
+    "admitted_decisions": 1,
+    "distinct_admitted": 1,
+    "first_step": 580,
+    "held_selectable": 14
+   },
+   "cell": "H1",
+   "episodes": {
+    "ALIVE_NOT_ARRIVED": {
+     "blocked_claimant_decisions": 0,
+     "blocking_episodes": 0,
+     "by_kind": {},
+     "counted_decisions": {
+      "n": 0
+     },
+     "episodes": 0,
+     "faster_blocked_decisions": 0,
+     "hexes_reached_share": {
+      "n": 0
+     },
+     "selection_free_flow": {
+      "n": 0
+     }
+    },
+    "DESTROYED": {
+     "blocked_claimant_decisions": 15,
+     "blocking_episodes": 4,
+     "by_kind": {
+      "vehicle": 15
+     },
+     "counted_decisions": {
+      "max": 559,
+      "median": 79,
+      "min": 5,
+      "n": 15
+     },
+     "episodes": 15,
+     "faster_blocked_decisions": 0,
+     "hexes_reached_share": {
+      "max": 0.9615,
+      "median": 0.619,
+      "min": 0.0,
+      "n": 15
+     },
+     "selection_free_flow": {
+      "max": 560,
+      "median": 140,
+      "min": 60,
+      "n": 15
+     }
+    },
+    "HONOURED": {
+     "blocked_claimant_decisions": 40,
+     "blocking_episodes": 5,
+     "by_kind": {
+      "infantry": 1,
+      "vehicle": 14
+     },
+     "counted_decisions": {
+      "max": 2741,
+      "median": 179,
+      "min": 19,
+      "n": 15
+     },
+     "episodes": 15,
+     "faster_blocked_decisions": 0,
+     "hexes_reached_share": {
+      "max": 0.9545,
+      "median": 0.8571,
+      "min": 0.0,
+      "n": 15
+     },
+     "selection_free_flow": {
+      "max": 2736,
+      "median": 180,
+      "min": 20,
+      "n": 15
+     }
+    },
+    "by_fate": {
+     "DESTROYED": 15,
+     "HONOURED": 15
+    },
+    "destroyed_blocking": {
+     "blocked_claimant_decisions": 15,
+     "blocked_claimants": 15,
+     "blocked_free_flow": {
+      "max": 640,
+      "median": 440,
+      "min": 180,
+      "n": 15
+     },
+     "faster_blocked_claimants": 0,
+     "faster_blocked_decisions": 0,
+     "holders": 4,
+     "lifetime_decisions": {
+      "max": 275,
+      "median": 122.5,
+      "min": 25,
+      "n": 4
+     },
+     "no_replacement": 1,
+     "release_to_replacement_steps": {
+      "max": 144,
+      "median": 75,
+      "min": 0,
+      "n": 3
+     },
+     "released_next_decision": 4,
+     "replacement_occupied_or_held": 0,
+     "replacement_to_arrival_steps": {
+      "max": 20,
+      "median": 20,
+      "min": 20,
+      "n": 1
+     },
+     "selection_to_release_decisions": {
+      "max": 276,
+      "median": 123.5,
+      "min": 26,
+      "n": 4
+     }
+    },
+    "episodes": 30
+   },
+   "game_id": "2130511121.H1.s12-v3-primary-1.p03",
+   "reconciliation": {
+    "decisions_from_selection_to_loss": {
+     "n": 0
+    },
+    "destroyed_episodes": 15,
+    "destroyed_pairs_without_episode": 0,
+    "lost_places": 15,
+    "lost_places_without_episode": 0
+   },
+   "sprint12_cross_check": {
+    "places_outcomes": {
+     "ARRIVED_NOT_DECISIVE": 0,
+     "HELD": 0,
+     "LOST": 15,
+     "NEVER_ARRIVED": 0,
+     "OCCUPIED": 6,
+     "REDUNDANT": 2,
+     "TOO_LATE": 7
+    },
+    "unproductive": {
+     "holds": 14,
+     "holds_behind_an_unproductive_place": 13,
+     "unproductive_holders": 4
+    },
+    "unproductive_pair_fates": {
+     "DESTROYED": 4
+    },
+    "unproductive_pairs": 4
+   }
+  },
+  {
+   "b": {
+    "admitted_decisions": 19,
+    "distinct_admitted": 4,
+    "first_step": 364,
+    "held_selectable": 350
+   },
+   "cell": "H2",
+   "episodes": {
+    "ALIVE_NOT_ARRIVED": {
+     "blocked_claimant_decisions": 0,
+     "blocking_episodes": 0,
+     "by_kind": {},
+     "counted_decisions": {
+      "n": 0
+     },
+     "episodes": 0,
+     "faster_blocked_decisions": 0,
+     "hexes_reached_share": {
+      "n": 0
+     },
+     "selection_free_flow": {
+      "n": 0
+     }
+    },
+    "DESTROYED": {
+     "blocked_claimant_decisions": 59,
+     "blocking_episodes": 5,
+     "by_kind": {
+      "vehicle": 10
+     },
+     "counted_decisions": {
+      "max": 152,
+      "median": 48.5,
+      "min": 11,
+      "n": 10
+     },
+     "episodes": 10,
+     "faster_blocked_decisions": 0,
+     "hexes_reached_share": {
+      "max": 0.8571,
+      "median": 0.41664999999999996,
+      "min": 0.0,
+      "n": 10
+     },
+     "selection_free_flow": {
+      "max": 260,
+      "median": 80.0,
+      "min": 60,
+      "n": 10
+     }
+    },
+    "HONOURED": {
+     "blocked_claimant_decisions": 1312,
+     "blocking_episodes": 37,
+     "by_kind": {
+      "infantry": 2,
+      "vehicle": 55
+     },
+     "counted_decisions": {
+      "max": 863,
+      "median": 79,
+      "min": 59,
+      "n": 57
+     },
+     "episodes": 57,
+     "faster_blocked_decisions": 0,
+     "hexes_reached_share": {
+      "max": 0.9231,
+      "median": 0.6667,
+      "min": 0.0,
+      "n": 57
+     },
+     "selection_free_flow": {
+      "max": 864,
+      "median": 80,
+      "min": 60,
+      "n": 57
+     }
+    },
+    "by_fate": {
+     "DESTROYED": 10,
+     "HONOURED": 57
+    },
+    "destroyed_blocking": {
+     "blocked_claimant_decisions": 59,
+     "blocked_claimants": 11,
+     "blocked_free_flow": {
+      "max": 100,
+      "median": 100,
+      "min": 80,
+      "n": 59
+     },
+     "faster_blocked_claimants": 0,
+     "faster_blocked_decisions": 0,
+     "holders": 5,
+     "lifetime_decisions": {
+      "max": 120,
+      "median": 58,
+      "min": 39,
+      "n": 5
+     },
+     "no_replacement": 0,
+     "release_to_replacement_steps": {
+      "max": 1,
+      "median": 0,
+      "min": 0,
+      "n": 5
+     },
+     "released_next_decision": 5,
+     "replacement_occupied_or_held": 3,
+     "replacement_to_arrival_steps": {
+      "max": 161,
+      "median": 140,
+      "min": 120,
+      "n": 5
+     },
+     "selection_to_release_decisions": {
+      "max": 121,
+      "median": 59,
+      "min": 40,
+      "n": 5
+     }
+    },
+    "episodes": 67
+   },
+   "game_id": "2130511121.H2.s12-v3-primary-1.p04",
+   "reconciliation": {
+    "decisions_from_selection_to_loss": {
+     "n": 0
+    },
+    "destroyed_episodes": 10,
+    "destroyed_pairs_without_episode": 0,
+    "lost_places": 10,
+    "lost_places_without_episode": 0
+   },
+   "sprint12_cross_check": {
+    "places_outcomes": {
+     "ARRIVED_NOT_DECISIVE": 12,
+     "HELD": 2,
+     "LOST": 10,
+     "NEVER_ARRIVED": 0,
+     "OCCUPIED": 22,
+     "REDUNDANT": 18,
+     "TOO_LATE": 3
+    },
+    "unproductive": {
+     "holds": 350,
+     "holds_behind_an_unproductive_place": 57,
+     "unproductive_holders": 5
+    },
+    "unproductive_pair_fates": {
+     "DESTROYED": 5
+    },
+    "unproductive_pairs": 5
+   }
+  }
+ ],
+ "inputs_sha256": "b2d1ede2166e3f831ba9b3b781d23c43e3c325239f862a423b6bd56412d1bff4",
+ "note": "offline diagnosis on recorded states: T9-v1, T9-v2 and the oracles are off-policy action counterfactuals, never engine outcomes; Sprint 9 games are other stochastic games; nothing is promoted",
+ "pooled": {
+  "ALIVE_NOT_ARRIVED": {
+   "blocked_claimant_decisions": 0,
+   "blocking_episodes": 0,
+   "by_kind": {},
+   "counted_decisions": {
+    "n": 0
+   },
+   "episodes": 0,
+   "faster_blocked_decisions": 0,
+   "hexes_reached_share": {
+    "n": 0
+   },
+   "selection_free_flow": {
+    "n": 0
+   }
+  },
+  "DESTROYED": {
+   "blocked_claimant_decisions": 1093,
+   "blocking_episodes": 26,
+   "by_kind": {
+    "vehicle": 49
+   },
+   "counted_decisions": {
+    "max": 559,
+    "median": 54,
+    "min": 5,
+    "n": 49
+   },
+   "episodes": 49,
+   "faster_blocked_decisions": 1,
+   "hexes_reached_share": {
+    "max": 0.9615,
+    "median": 0.5,
+    "min": 0.0,
+    "n": 49
+   },
+   "selection_free_flow": {
+    "max": 560,
+    "median": 80,
+    "min": 40,
+    "n": 49
+   }
+  },
+  "HONOURED": {
+   "blocked_claimant_decisions": 3162,
+   "blocking_episodes": 88,
+   "by_kind": {
+    "infantry": 4,
+    "vehicle": 135
+   },
+   "counted_decisions": {
+    "max": 2747,
+    "median": 99,
+    "min": 19,
+    "n": 139
+   },
+   "episodes": 139,
+   "faster_blocked_decisions": 413,
+   "hexes_reached_share": {
+    "max": 0.9545,
+    "median": 0.75,
+    "min": 0.0,
+    "n": 139
+   },
+   "selection_free_flow": {
+    "max": 2736,
+    "median": 100,
+    "min": 20,
+    "n": 139
+   }
+  },
+  "by_fate": {
+   "DESTROYED": 49,
+   "HONOURED": 139
+  },
+  "destroyed_blocking": {
+   "blocked_claimant_decisions": 1093,
+   "blocked_claimants": 115,
+   "blocked_free_flow": {
+    "max": 1872,
+    "median": 100,
+    "min": 40,
+    "n": 1093
+   },
+   "faster_blocked_claimants": 1,
+   "faster_blocked_decisions": 1,
+   "holders": 26,
+   "lifetime_decisions": {
+    "max": 275,
+    "median": 58.5,
+    "min": 19,
+    "n": 26
+   },
+   "no_replacement": 2,
+   "release_to_replacement_steps": {
+    "max": 166,
+    "median": 0.0,
+    "min": 0,
+    "n": 24
+   },
+   "released_next_decision": 26,
+   "replacement_occupied_or_held": 5,
+   "replacement_to_arrival_steps": {
+    "max": 161,
+    "median": 120,
+    "min": 20,
+    "n": 13
+   },
+   "selection_to_release_decisions": {
+    "max": 276,
+    "median": 59.5,
+    "min": 20,
+    "n": 26
+   }
+  },
+  "episodes": 188
+ },
+ "schema": "miaosuan-s13-diagnosis/1"
+}

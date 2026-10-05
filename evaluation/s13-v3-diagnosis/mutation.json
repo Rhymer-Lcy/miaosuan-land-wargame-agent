@@ -1,0 +1,159 @@
+{
+ "killed": 36,
+ "mutations": [
+  {
+   "killed": true,
+   "mutation": "redirect classes swapped"
+  },
+  {
+   "killed": true,
+   "mutation": "end-of-game class on the wrong reason"
+  },
+  {
+   "killed": true,
+   "mutation": "incumbent-mover class inverted"
+  },
+  {
+   "killed": true,
+   "mutation": "staging against withholding not classed"
+  },
+  {
+   "killed": true,
+   "mutation": "redirect cause ignores phantoms"
+  },
+  {
+   "killed": true,
+   "mutation": "T9-v1 restatement ignores the exclusion"
+  },
+  {
+   "killed": true,
+   "mutation": "O1 exclusion ignored"
+  },
+  {
+   "killed": true,
+   "mutation": "O1 never given the doomed movers"
+  },
+  {
+   "killed": true,
+   "mutation": "O2 redirect ignores the end-of-game test"
+  },
+  {
+   "killed": true,
+   "mutation": "O2 redirect fills a full objective"
+  },
+  {
+   "killed": true,
+   "mutation": "O2 redirect beyond the detour bound"
+  },
+  {
+   "killed": true,
+   "mutation": "phantom movers counted"
+  },
+  {
+   "killed": true,
+   "mutation": "mover bound includes the hex being entered"
+  },
+  {
+   "killed": true,
+   "mutation": "oracle selects regardless of feasibility"
+  },
+  {
+   "killed": true,
+   "mutation": "trace digest not verified"
+  },
+  {
+   "killed": true,
+   "mutation": "submitted actions not verified"
+  },
+  {
+   "killed": true,
+   "mutation": "captured selection not verified"
+  },
+  {
+   "killed": true,
+   "mutation": "selection one decision late"
+  },
+  {
+   "killed": true,
+   "mutation": "episodes never close"
+  },
+  {
+   "killed": true,
+   "mutation": "destruction before the episode counted"
+  },
+  {
+   "killed": true,
+   "mutation": "ties counted as wins"
+  },
+  {
+   "killed": true,
+   "mutation": "one game agreeing suffices"
+  },
+  {
+   "killed": true,
+   "mutation": "low separation ignored"
+  },
+  {
+   "killed": true,
+   "mutation": "own objective called contested"
+  },
+  {
+   "killed": true,
+   "mutation": "nearest enemy measured from the objective"
+  },
+  {
+   "killed": true,
+   "mutation": "equal counted as below"
+  },
+  {
+   "killed": true,
+   "mutation": "characteristic threshold exclusive"
+  },
+  {
+   "killed": true,
+   "mutation": "coverage includes the deployment snapshot"
+  },
+  {
+   "killed": true,
+   "mutation": "unit threshold exclusive"
+  },
+  {
+   "killed": true,
+   "mutation": "onset may equal the divergence"
+  },
+  {
+   "killed": true,
+   "mutation": "share threshold ignored for B"
+  },
+  {
+   "killed": true,
+   "mutation": "both seats not required"
+  },
+  {
+   "killed": true,
+   "mutation": "overlap boundary inclusive"
+  },
+  {
+   "killed": true,
+   "mutation": "ratio boundary inclusive"
+  },
+  {
+   "killed": true,
+   "mutation": "prospective evidence not required"
+  },
+  {
+   "killed": true,
+   "mutation": "declared allowances widened"
+  }
+ ],
+ "schema": "miaosuan-s13-diagnosis-mutation/1",
+ "sources": {
+  "src/miaosuan_agent/evaluation/s13_diagnosis.py": "d8e29d82c82933503c77080292048d18765ebf02801681814fa351e0705c5158",
+  "tests/test_s13_diagnosis.py": "63d183bb626a26b0e54107264211d8e0f5e4047f86fe7f26d77fe91c1dc7f8b9"
+ },
+ "tests": [
+  "tests.test_s13_diagnosis"
+ ],
+ "total": 36,
+ "unmutated_tests_pass": true
+}

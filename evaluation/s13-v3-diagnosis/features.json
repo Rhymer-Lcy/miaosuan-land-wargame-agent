@@ -1,0 +1,650 @@
+{
+ "holder_descriptives": {
+  "2130511121.H1.s12-v3-primary-1.p01": {
+   "DESTROYED": {
+    "holders": 14,
+    "mean_share_weakened": 0.5,
+    "mean_share_with_enemy_within_3": 0.8699
+   },
+   "HONOURED": {
+    "holders": 21,
+    "mean_share_weakened": 0.2519,
+    "mean_share_with_enemy_within_3": 0.6429
+   }
+  },
+  "2130511121.H1.s12-v3-primary-1.p03": {
+   "DESTROYED": {
+    "holders": 15,
+    "mean_share_weakened": 0.4293,
+    "mean_share_with_enemy_within_3": 0.7651
+   },
+   "HONOURED": {
+    "holders": 15,
+    "mean_share_weakened": 0.2869,
+    "mean_share_with_enemy_within_3": 0.5566
+   }
+  },
+  "2130511121.H2.s12-v3-primary-1.p02": {
+   "DESTROYED": {
+    "holders": 10,
+    "mean_share_weakened": 0.4904,
+    "mean_share_with_enemy_within_3": 0.6006
+   },
+   "HONOURED": {
+    "holders": 46,
+    "mean_share_weakened": 0.1597,
+    "mean_share_with_enemy_within_3": 0.517
+   }
+  },
+  "2130511121.H2.s12-v3-primary-1.p04": {
+   "DESTROYED": {
+    "holders": 10,
+    "mean_share_weakened": 0.5753,
+    "mean_share_with_enemy_within_3": 0.717
+   },
+   "HONOURED": {
+    "holders": 57,
+    "mean_share_weakened": 0.2852,
+    "mean_share_with_enemy_within_3": 0.5291
+   }
+  }
+ },
+ "inputs_sha256": "b2d1ede2166e3f831ba9b3b781d23c43e3c325239f862a423b6bd56412d1bff4",
+ "lost": 53,
+ "note": "offline diagnosis on recorded states: T9-v1, T9-v2 and the oracles are off-policy action counterfactuals, never engine outcomes; Sprint 9 games are other stochastic games; nothing is promoted",
+ "places": 192,
+ "prospectively_separating": false,
+ "quartiles": {
+  "contested": [
+   {
+    "from": 0.0,
+    "lost": 4,
+    "other": 46,
+    "to": 0.0
+   },
+   {
+    "from": 1.0,
+    "lost": 49,
+    "other": 93,
+    "to": 1.0
+   }
+  ],
+  "counted_incumbents": [
+   {
+    "from": 0.0,
+    "lost": 24,
+    "other": 92,
+    "to": 0.0
+   },
+   {
+    "from": 1.0,
+    "lost": 5,
+    "other": 20,
+    "to": 1.0
+   },
+   {
+    "from": 2.0,
+    "lost": 12,
+    "other": 17,
+    "to": 2.0
+   },
+   {
+    "from": 3.0,
+    "lost": 12,
+    "other": 10,
+    "to": 3.0
+   }
+  ],
+  "free_flow": [
+   {
+    "from": 20.0,
+    "lost": 23,
+    "other": 40,
+    "to": 60.0
+   },
+   {
+    "from": 80.0,
+    "lost": 12,
+    "other": 40,
+    "to": 100.0
+   },
+   {
+    "from": 120.0,
+    "lost": 11,
+    "other": 33,
+    "to": 160.0
+   },
+   {
+    "from": 180.0,
+    "lost": 7,
+    "other": 26,
+    "to": 2736.0
+   }
+  ],
+  "nearest_seen_enemy": [
+   {
+    "from": 0.0,
+    "lost": 30,
+    "other": 49,
+    "to": 2.0
+   },
+   {
+    "from": 3.0,
+    "lost": 7,
+    "other": 9,
+    "to": 3.0
+   },
+   {
+    "from": 4.0,
+    "lost": 9,
+    "other": 31,
+    "to": 5.0
+   },
+   {
+    "from": 6.0,
+    "lost": 3,
+    "other": 20,
+    "to": 9.0
+   }
+  ],
+  "objective_value": [
+   {
+    "from": 50.0,
+    "lost": 30,
+    "other": 80,
+    "to": 50.0
+   },
+   {
+    "from": 80.0,
+    "lost": 23,
+    "other": 59,
+    "to": 80.0
+   }
+  ],
+  "route_length": [
+   {
+    "from": 1.0,
+    "lost": 30,
+    "other": 61,
+    "to": 3.0
+   },
+   {
+    "from": 4.0,
+    "lost": 3,
+    "other": 13,
+    "to": 4.0
+   },
+   {
+    "from": 5.0,
+    "lost": 13,
+    "other": 34,
+    "to": 6.0
+   },
+   {
+    "from": 7.0,
+    "lost": 7,
+    "other": 31,
+    "to": 26.0
+   }
+  ],
+  "route_nearest_seen_enemy": [
+   {
+    "from": 0.0,
+    "lost": 32,
+    "other": 44,
+    "to": 0.0
+   },
+   {
+    "from": 1.0,
+    "lost": 9,
+    "other": 23,
+    "to": 1.0
+   },
+   {
+    "from": 2.0,
+    "lost": 7,
+    "other": 20,
+    "to": 2.0
+   },
+   {
+    "from": 4.0,
+    "lost": 1,
+    "other": 22,
+    "to": 8.0
+   }
+  ],
+  "seen_enemies": [
+   {
+    "from": 0.0,
+    "lost": 6,
+    "other": 43,
+    "to": 6.0
+   },
+   {
+    "from": 8.0,
+    "lost": 22,
+    "other": 28,
+    "to": 21.0
+   },
+   {
+    "from": 22.0,
+    "lost": 17,
+    "other": 50,
+    "to": 25.0
+   },
+   {
+    "from": 26.0,
+    "lost": 8,
+    "other": 18,
+    "to": 27.0
+   }
+  ],
+  "seen_enemies_near_route": [
+   {
+    "from": 0.0,
+    "lost": 5,
+    "other": 52,
+    "to": 0.0
+   },
+   {
+    "from": 2.0,
+    "lost": 13,
+    "other": 42,
+    "to": 6.0
+   },
+   {
+    "from": 7.0,
+    "lost": 14,
+    "other": 23,
+    "to": 10.0
+   },
+   {
+    "from": 11.0,
+    "lost": 21,
+    "other": 22,
+    "to": 20.0
+   }
+  ],
+  "strength_fraction": [
+   {
+    "from": 0.25,
+    "lost": 22,
+    "other": 27,
+    "to": 0.75
+   },
+   {
+    "from": 1.0,
+    "lost": 31,
+    "other": 112,
+    "to": 1.0
+   }
+  ],
+  "suppressed": [
+   {
+    "from": 0.0,
+    "lost": 37,
+    "other": 125,
+    "to": 0.0
+   },
+   {
+    "from": 1.0,
+    "lost": 16,
+    "other": 14,
+    "to": 1.0
+   }
+  ],
+  "vehicle": [
+   {
+    "from": 0.0,
+    "lost": 0,
+    "other": 4,
+    "to": 0.0
+   },
+   {
+    "from": 1.0,
+    "lost": 53,
+    "other": 135,
+    "to": 1.0
+   }
+  ]
+ },
+ "schema": "miaosuan-s13-diagnosis/1",
+ "separation": {
+  "contested": {
+   "eligible_games": 4,
+   "missing": 0,
+   "per_game": {
+    "2130511121.H1.s12-v3-primary-1.p01": {
+     "auc": 0.6627,
+     "lost": 18,
+     "other": 21
+    },
+    "2130511121.H1.s12-v3-primary-1.p03": {
+     "auc": 0.6667,
+     "lost": 15,
+     "other": 15
+    },
+    "2130511121.H2.s12-v3-primary-1.p02": {
+     "auc": 0.613,
+     "lost": 10,
+     "other": 46
+    },
+    "2130511121.H2.s12-v3-primary-1.p04": {
+     "auc": 0.6404,
+     "lost": 10,
+     "other": 57
+    }
+   },
+   "pooled_auc": 0.6277,
+   "separating": false
+  },
+  "counted_incumbents": {
+   "eligible_games": 4,
+   "missing": 0,
+   "per_game": {
+    "2130511121.H1.s12-v3-primary-1.p01": {
+     "auc": 0.8214,
+     "lost": 18,
+     "other": 21
+    },
+    "2130511121.H1.s12-v3-primary-1.p03": {
+     "auc": 0.6244,
+     "lost": 15,
+     "other": 15
+    },
+    "2130511121.H2.s12-v3-primary-1.p02": {
+     "auc": 0.475,
+     "lost": 10,
+     "other": 46
+    },
+    "2130511121.H2.s12-v3-primary-1.p04": {
+     "auc": 0.5939,
+     "lost": 10,
+     "other": 57
+    }
+   },
+   "pooled_auc": 0.6336,
+   "separating": false
+  },
+  "free_flow": {
+   "eligible_games": 4,
+   "missing": 0,
+   "per_game": {
+    "2130511121.H1.s12-v3-primary-1.p01": {
+     "auc": 0.1839,
+     "lost": 18,
+     "other": 21
+    },
+    "2130511121.H1.s12-v3-primary-1.p03": {
+     "auc": 0.4156,
+     "lost": 15,
+     "other": 15
+    },
+    "2130511121.H2.s12-v3-primary-1.p02": {
+     "auc": 0.4511,
+     "lost": 10,
+     "other": 46
+    },
+    "2130511121.H2.s12-v3-primary-1.p04": {
+     "auc": 0.4579,
+     "lost": 10,
+     "other": 57
+    }
+   },
+   "pooled_auc": 0.4122,
+   "separating": false
+  },
+  "nearest_seen_enemy": {
+   "eligible_games": 4,
+   "missing": 34,
+   "per_game": {
+    "2130511121.H1.s12-v3-primary-1.p01": {
+     "auc": 0.2398,
+     "lost": 17,
+     "other": 13
+    },
+    "2130511121.H1.s12-v3-primary-1.p03": {
+     "auc": 0.4135,
+     "lost": 13,
+     "other": 8
+    },
+    "2130511121.H2.s12-v3-primary-1.p02": {
+     "auc": 0.49,
+     "lost": 9,
+     "other": 39
+    },
+    "2130511121.H2.s12-v3-primary-1.p04": {
+     "auc": 0.4316,
+     "lost": 10,
+     "other": 49
+    }
+   },
+   "pooled_auc": 0.3468,
+   "separating": false
+  },
+  "objective_value": {
+   "eligible_games": 4,
+   "missing": 0,
+   "per_game": {
+    "2130511121.H1.s12-v3-primary-1.p01": {
+     "auc": 0.3413,
+     "lost": 18,
+     "other": 21
+    },
+    "2130511121.H1.s12-v3-primary-1.p03": {
+     "auc": 0.7,
+     "lost": 15,
+     "other": 15
+    },
+    "2130511121.H2.s12-v3-primary-1.p02": {
+     "auc": 0.6043,
+     "lost": 10,
+     "other": 46
+    },
+    "2130511121.H2.s12-v3-primary-1.p04": {
+     "auc": 0.5044,
+     "lost": 10,
+     "other": 57
+    }
+   },
+   "pooled_auc": 0.5048,
+   "separating": false
+  },
+  "route_length": {
+   "eligible_games": 4,
+   "missing": 0,
+   "per_game": {
+    "2130511121.H1.s12-v3-primary-1.p01": {
+     "auc": 0.1362,
+     "lost": 18,
+     "other": 21
+    },
+    "2130511121.H1.s12-v3-primary-1.p03": {
+     "auc": 0.3711,
+     "lost": 15,
+     "other": 15
+    },
+    "2130511121.H2.s12-v3-primary-1.p02": {
+     "auc": 0.5022,
+     "lost": 10,
+     "other": 46
+    },
+    "2130511121.H2.s12-v3-primary-1.p04": {
+     "auc": 0.5105,
+     "lost": 10,
+     "other": 57
+    }
+   },
+   "pooled_auc": 0.3804,
+   "separating": false
+  },
+  "route_nearest_seen_enemy": {
+   "eligible_games": 4,
+   "missing": 34,
+   "per_game": {
+    "2130511121.H1.s12-v3-primary-1.p01": {
+     "auc": 0.2557,
+     "lost": 17,
+     "other": 13
+    },
+    "2130511121.H1.s12-v3-primary-1.p03": {
+     "auc": 0.3942,
+     "lost": 13,
+     "other": 8
+    },
+    "2130511121.H2.s12-v3-primary-1.p02": {
+     "auc": 0.406,
+     "lost": 9,
+     "other": 39
+    },
+    "2130511121.H2.s12-v3-primary-1.p04": {
+     "auc": 0.2857,
+     "lost": 10,
+     "other": 49
+    }
+   },
+   "pooled_auc": 0.3436,
+   "separating": false
+  },
+  "seen_enemies": {
+   "eligible_games": 4,
+   "missing": 0,
+   "per_game": {
+    "2130511121.H1.s12-v3-primary-1.p01": {
+     "auc": 0.414,
+     "lost": 18,
+     "other": 21
+    },
+    "2130511121.H1.s12-v3-primary-1.p03": {
+     "auc": 0.6044,
+     "lost": 15,
+     "other": 15
+    },
+    "2130511121.H2.s12-v3-primary-1.p02": {
+     "auc": 0.4424,
+     "lost": 10,
+     "other": 46
+    },
+    "2130511121.H2.s12-v3-primary-1.p04": {
+     "auc": 0.6079,
+     "lost": 10,
+     "other": 57
+    }
+   },
+   "pooled_auc": 0.5796,
+   "separating": false
+  },
+  "seen_enemies_near_route": {
+   "eligible_games": 4,
+   "missing": 0,
+   "per_game": {
+    "2130511121.H1.s12-v3-primary-1.p01": {
+     "auc": 0.5013,
+     "lost": 18,
+     "other": 21
+    },
+    "2130511121.H1.s12-v3-primary-1.p03": {
+     "auc": 0.76,
+     "lost": 15,
+     "other": 15
+    },
+    "2130511121.H2.s12-v3-primary-1.p02": {
+     "auc": 0.4848,
+     "lost": 10,
+     "other": 46
+    },
+    "2130511121.H2.s12-v3-primary-1.p04": {
+     "auc": 0.7921,
+     "lost": 10,
+     "other": 57
+    }
+   },
+   "pooled_auc": 0.6993,
+   "separating": false
+  },
+  "strength_fraction": {
+   "eligible_games": 4,
+   "missing": 0,
+   "per_game": {
+    "2130511121.H1.s12-v3-primary-1.p01": {
+     "auc": 0.3254,
+     "lost": 18,
+     "other": 21
+    },
+    "2130511121.H1.s12-v3-primary-1.p03": {
+     "auc": 0.44,
+     "lost": 15,
+     "other": 15
+    },
+    "2130511121.H2.s12-v3-primary-1.p02": {
+     "auc": 0.3674,
+     "lost": 10,
+     "other": 46
+    },
+    "2130511121.H2.s12-v3-primary-1.p04": {
+     "auc": 0.3772,
+     "lost": 10,
+     "other": 57
+    }
+   },
+   "pooled_auc": 0.385,
+   "separating": false
+  },
+  "suppressed": {
+   "eligible_games": 4,
+   "missing": 0,
+   "per_game": {
+    "2130511121.H1.s12-v3-primary-1.p01": {
+     "auc": 0.6429,
+     "lost": 18,
+     "other": 21
+    },
+    "2130511121.H1.s12-v3-primary-1.p03": {
+     "auc": 0.5333,
+     "lost": 15,
+     "other": 15
+    },
+    "2130511121.H2.s12-v3-primary-1.p02": {
+     "auc": 0.6174,
+     "lost": 10,
+     "other": 46
+    },
+    "2130511121.H2.s12-v3-primary-1.p04": {
+     "auc": 0.6298,
+     "lost": 10,
+     "other": 57
+    }
+   },
+   "pooled_auc": 0.6006,
+   "separating": false
+  },
+  "vehicle": {
+   "eligible_games": 4,
+   "missing": 0,
+   "per_game": {
+    "2130511121.H1.s12-v3-primary-1.p01": {
+     "auc": 0.5238,
+     "lost": 18,
+     "other": 21
+    },
+    "2130511121.H1.s12-v3-primary-1.p03": {
+     "auc": 0.5333,
+     "lost": 15,
+     "other": 15
+    },
+    "2130511121.H2.s12-v3-primary-1.p02": {
+     "auc": 0.5,
+     "lost": 10,
+     "other": 46
+    },
+    "2130511121.H2.s12-v3-primary-1.p04": {
+     "auc": 0.5175,
+     "lost": 10,
+     "other": 57
+    }
+   },
+   "pooled_auc": 0.5144,
+   "separating": false
+  }
+ }
+}

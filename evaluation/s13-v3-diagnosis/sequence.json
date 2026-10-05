@@ -1,0 +1,1692 @@
+{
+ "certificates": [
+  {
+   "cell": "H1",
+   "divergence_snapshot": 950,
+   "first": {
+    "any_action_difference": {
+     "decision": 1,
+     "step": 0
+    },
+    "blocking_unproductive_reservation": {
+     "decision": 581,
+     "step": 580
+    },
+    "o1_admission": {
+     "decision": 581,
+     "step": 580
+    },
+    "redistribution": {
+     "decision": 1,
+     "step": 0
+    }
+   },
+   "game_id": "2130511121.H1.s12-v3-primary-1.p01",
+   "statement": "the compared T9-v1 games are other stochastic games; no causal chain between them and this game is claimed"
+  },
+  {
+   "cell": "H2",
+   "divergence_snapshot": 1450,
+   "first": {
+    "any_action_difference": {
+     "decision": 1,
+     "step": 0
+    },
+    "blocking_unproductive_reservation": {
+     "decision": 1,
+     "step": 0
+    },
+    "o1_admission": {
+     "decision": 365,
+     "step": 364
+    },
+    "redistribution": {
+     "decision": 1,
+     "step": 0
+    }
+   },
+   "game_id": "2130511121.H2.s12-v3-primary-1.p02",
+   "statement": "the compared T9-v1 games are other stochastic games; no causal chain between them and this game is claimed"
+  },
+  {
+   "cell": "H1",
+   "divergence_snapshot": 550,
+   "first": {
+    "any_action_difference": {
+     "decision": 1,
+     "step": 0
+    },
+    "blocking_unproductive_reservation": {
+     "decision": 1,
+     "step": 0
+    },
+    "o1_admission": {
+     "decision": 581,
+     "step": 580
+    },
+    "redistribution": {
+     "decision": 1,
+     "step": 0
+    }
+   },
+   "game_id": "2130511121.H1.s12-v3-primary-1.p03",
+   "statement": "the compared T9-v1 games are other stochastic games; no causal chain between them and this game is claimed"
+  },
+  {
+   "cell": "H2",
+   "divergence_snapshot": 1900,
+   "first": {
+    "any_action_difference": {
+     "decision": 1,
+     "step": 0
+    },
+    "blocking_unproductive_reservation": {
+     "decision": 365,
+     "step": 364
+    },
+    "o1_admission": {
+     "decision": 365,
+     "step": 364
+    },
+    "redistribution": {
+     "decision": 1,
+     "step": 0
+    }
+   },
+   "game_id": "2130511121.H2.s12-v3-primary-1.p04",
+   "statement": "the compared T9-v1 games are other stochastic games; no causal chain between them and this game is claimed"
+  }
+ ],
+ "comparison": {
+  "H1": {
+   "characteristic_by_snapshot": {
+    "0": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "50-point objective D": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "100": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "50-point objective D": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "1000": {
+     "50-point objective A": "own",
+     "50-point objective D": "own",
+     "80-point objective C": "own"
+    },
+    "1050": {
+     "50-point objective A": "not own",
+     "50-point objective D": "own"
+    },
+    "1100": {
+     "50-point objective A": "not own",
+     "50-point objective D": "own"
+    },
+    "1150": {
+     "50-point objective A": "not own"
+    },
+    "1200": {
+     "50-point objective A": "not own",
+     "80-point objective C": "not own"
+    },
+    "1250": {
+     "50-point objective A": "not own",
+     "80-point objective C": "not own"
+    },
+    "1300": {
+     "50-point objective A": "not own",
+     "80-point objective C": "not own"
+    },
+    "1350": {
+     "50-point objective A": "not own",
+     "80-point objective C": "not own"
+    },
+    "1400": {
+     "50-point objective A": "not own",
+     "80-point objective C": "not own"
+    },
+    "1450": {
+     "50-point objective A": "not own",
+     "80-point objective C": "not own"
+    },
+    "150": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "50-point objective D": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "1500": {
+     "50-point objective A": "not own",
+     "80-point objective C": "not own"
+    },
+    "1550": {
+     "50-point objective A": "not own",
+     "80-point objective C": "not own"
+    },
+    "1600": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "1650": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "1700": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "1750": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "1800": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "1850": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "1900": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "80-point objective A": "not own",
+     "80-point objective C": "not own"
+    },
+    "1950": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "80-point objective A": "not own",
+     "80-point objective C": "not own"
+    },
+    "200": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "50-point objective D": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2000": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "80-point objective A": "not own",
+     "80-point objective C": "not own"
+    },
+    "2050": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2100": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2150": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2200": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2250": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2300": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2350": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2400": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2450": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "250": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "50-point objective D": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2500": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2550": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2600": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2650": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2700": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2750": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2800": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "2850": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "300": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "50-point objective D": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "350": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "50-point objective D": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "400": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "50-point objective D": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "450": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "50": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "50-point objective D": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "500": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "550": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "600": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "not own",
+     "80-point objective B": "not own"
+    },
+    "650": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "not own",
+     "80-point objective A": "own"
+    },
+    "700": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "not own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective C": "own"
+    },
+    "750": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "not own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective C": "own"
+    },
+    "800": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective D": "own",
+     "80-point objective C": "own"
+    },
+    "850": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective D": "own",
+     "80-point objective C": "own"
+    },
+    "900": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective D": "own",
+     "80-point objective C": "own"
+    },
+    "950": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective D": "own",
+     "80-point objective C": "own"
+    }
+   },
+   "characteristic_entries": 269,
+   "games": [
+    {
+     "attack_divergence_snapshot": null,
+     "capture_order_50": [
+      "50-point objective A",
+      "50-point objective B",
+      "80-point objective A",
+      "80-point objective B",
+      "50-point objective C"
+     ],
+     "divergence_snapshot": 950,
+     "first_ownership_divergence": {
+      "expected": "own",
+      "k": 550,
+      "objective": "50-point objective B"
+     },
+     "game_id": "2130511121.H1.s12-v3-primary-1.p01",
+     "placement": {
+      "attack": {
+       "below": 11,
+       "equal": 1,
+       "max": 601,
+       "median": 362,
+       "min": 228,
+       "n": 15,
+       "value": 441
+      },
+      "coverage_mean": {
+       "below": 0,
+       "equal": 0,
+       "max": 5.3861,
+       "median": 1.2101,
+       "min": 0.6184,
+       "n": 15,
+       "value": 0.5691
+      },
+      "emitted_ground": {
+       "below": 15,
+       "equal": 0,
+       "max": 62,
+       "median": 44,
+       "min": 37,
+       "n": 15,
+       "value": 77
+      },
+      "ever_own": {
+       "below": 4,
+       "equal": 3,
+       "max": 7,
+       "median": 7,
+       "min": 4,
+       "n": 15,
+       "value": 6
+      },
+      "largest_commitment": {
+       "below": 0,
+       "equal": 15,
+       "max": 4,
+       "median": 4,
+       "min": 4,
+       "n": 15,
+       "value": 4
+      },
+      "margin": {
+       "below": 9,
+       "equal": 0,
+       "max": 1035,
+       "median": -737,
+       "min": -1003,
+       "n": 15,
+       "value": -609
+      },
+      "own_at_end": {
+       "below": 0,
+       "equal": 8,
+       "max": 7,
+       "median": 0,
+       "min": 0,
+       "n": 15,
+       "value": 0
+      },
+      "own_then_lost_50": {
+       "below": 4,
+       "equal": 2,
+       "max": 7,
+       "median": 6,
+       "min": 0,
+       "n": 15,
+       "value": 5
+      },
+      "redirected": {
+       "below": 0,
+       "equal": 0,
+       "max": 34,
+       "median": 25,
+       "min": 20,
+       "n": 15,
+       "value": 0
+      },
+      "units_lost": {
+       "below": 13,
+       "equal": 2,
+       "max": 35,
+       "median": 32,
+       "min": 18,
+       "n": 15,
+       "value": 35
+      },
+      "waiting_unit_steps": {
+       "below": 10,
+       "equal": 0,
+       "max": 791,
+       "median": 89,
+       "min": 0,
+       "n": 15,
+       "value": 188
+      }
+     },
+     "strength_divergence_snapshot": null,
+     "v3_changes": {
+      "0:stage": 38,
+      "0:withhold": 428
+     }
+    },
+    {
+     "attack_divergence_snapshot": 450,
+     "capture_order_50": [
+      "50-point objective A",
+      "50-point objective B",
+      "80-point objective A"
+     ],
+     "divergence_snapshot": 550,
+     "first_ownership_divergence": {
+      "expected": "own",
+      "k": 550,
+      "objective": "50-point objective B"
+     },
+     "game_id": "2130511121.H1.s12-v3-primary-1.p03",
+     "placement": {
+      "attack": {
+       "below": 0,
+       "equal": 0,
+       "max": 601,
+       "median": 362,
+       "min": 228,
+       "n": 15,
+       "value": 174
+      },
+      "coverage_mean": {
+       "below": 0,
+       "equal": 0,
+       "max": 5.3861,
+       "median": 1.2101,
+       "min": 0.6184,
+       "n": 15,
+       "value": 0.2885
+      },
+      "emitted_ground": {
+       "below": 8,
+       "equal": 1,
+       "max": 62,
+       "median": 44,
+       "min": 37,
+       "n": 15,
+       "value": 47
+      },
+      "ever_own": {
+       "below": 0,
+       "equal": 1,
+       "max": 7,
+       "median": 7,
+       "min": 4,
+       "n": 15,
+       "value": 4
+      },
+      "largest_commitment": {
+       "below": 0,
+       "equal": 15,
+       "max": 4,
+       "median": 4,
+       "min": 4,
+       "n": 15,
+       "value": 4
+      },
+      "margin": {
+       "below": 0,
+       "equal": 0,
+       "max": 1035,
+       "median": -737,
+       "min": -1003,
+       "n": 15,
+       "value": -1037
+      },
+      "own_at_end": {
+       "below": 0,
+       "equal": 8,
+       "max": 7,
+       "median": 0,
+       "min": 0,
+       "n": 15,
+       "value": 0
+      },
+      "own_then_lost_50": {
+       "below": 2,
+       "equal": 0,
+       "max": 7,
+       "median": 6,
+       "min": 0,
+       "n": 15,
+       "value": 3
+      },
+      "redirected": {
+       "below": 0,
+       "equal": 0,
+       "max": 34,
+       "median": 25,
+       "min": 20,
+       "n": 15,
+       "value": 0
+      },
+      "units_lost": {
+       "below": 5,
+       "equal": 1,
+       "max": 35,
+       "median": 32,
+       "min": 18,
+       "n": 15,
+       "value": 29
+      },
+      "waiting_unit_steps": {
+       "below": 12,
+       "equal": 0,
+       "max": 791,
+       "median": 89,
+       "min": 0,
+       "n": 15,
+       "value": 294
+      }
+     },
+     "strength_divergence_snapshot": null,
+     "v3_changes": {
+      "0:stage": 17,
+      "0:withhold": 3
+     }
+    }
+   ],
+   "t9v1_capture_orders": [
+    [
+     "50-point objective A > 50-point objective D > 50-point objective B > 80-point objective A > 80-point objective C > 80-point objective B > 50-point objective C",
+     4
+    ],
+    [
+     "50-point objective A > 50-point objective B > 80-point objective A > 50-point objective D > 80-point objective B > 80-point objective C > 50-point objective C",
+     1
+    ],
+    [
+     "50-point objective A > 50-point objective B > 80-point objective A > 80-point objective B > 80-point objective C > 50-point objective D",
+     1
+    ],
+    [
+     "50-point objective A > 50-point objective B > 80-point objective A > 80-point objective C > 50-point objective D",
+     1
+    ],
+    [
+     "50-point objective A > 50-point objective D > 50-point objective B > 80-point objective A > 80-point objective B > 80-point objective C",
+     1
+    ]
+   ],
+   "t9v1_first_own": {
+    "50-point objective A": {
+     "first_own_k": {
+      "max": 450,
+      "median": 450,
+      "min": 450,
+      "n": 15
+     },
+     "games_owning": 15
+    },
+    "50-point objective B": {
+     "first_own_k": {
+      "max": 550,
+      "median": 550,
+      "min": 550,
+      "n": 15
+     },
+     "games_owning": 15
+    },
+    "50-point objective C": {
+     "first_own_k": {
+      "max": 2850,
+      "median": 800.0,
+      "min": 700,
+      "n": 8
+     },
+     "games_owning": 8
+    },
+    "50-point objective D": {
+     "first_own_k": {
+      "max": 700,
+      "median": 450,
+      "min": 450,
+      "n": 15
+     },
+     "games_owning": 15
+    },
+    "80-point objective A": {
+     "first_own_k": {
+      "max": 700,
+      "median": 600.0,
+      "min": 450,
+      "n": 14
+     },
+     "games_owning": 14
+    },
+    "80-point objective B": {
+     "first_own_k": {
+      "max": 800,
+      "median": 700,
+      "min": 600,
+      "n": 11
+     },
+     "games_owning": 11
+    },
+    "80-point objective C": {
+     "first_own_k": {
+      "max": 800,
+      "median": 600,
+      "min": 600,
+      "n": 15
+     },
+     "games_owning": 15
+    }
+   },
+   "t9v1_withheld_unit_decisions": {
+    "max": 3269,
+    "median": 307,
+    "min": 0,
+    "n": 15
+   },
+   "unavailable_in_sprint9": [
+    "per-decision redirect timing",
+    "full-step states",
+    "shot listings",
+    "per-objective flags at the final state (snapshots end at k 2850)"
+   ]
+  },
+  "H2": {
+   "characteristic_by_snapshot": {
+    "0": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "50-point objective D": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "100": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "50-point objective D": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "1000": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1050": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1100": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1150": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1200": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1250": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1300": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1350": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1400": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1450": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "150": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "50-point objective D": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "1500": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1550": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1600": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1650": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1700": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1750": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1800": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1850": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1900": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "1950": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "200": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "50-point objective D": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "own"
+    },
+    "2000": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2050": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2100": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2150": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2200": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2250": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2300": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2350": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2400": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2450": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "250": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "50-point objective D": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2500": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2550": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2600": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2650": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2700": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2750": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2800": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "2850": {
+     "50-point objective A": "own",
+     "50-point objective B": "own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "300": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "50-point objective D": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "350": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "400": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "450": {
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "50": {
+     "50-point objective A": "not own",
+     "50-point objective B": "not own",
+     "50-point objective C": "not own",
+     "50-point objective D": "not own",
+     "80-point objective A": "not own",
+     "80-point objective B": "not own",
+     "80-point objective C": "not own"
+    },
+    "500": {
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "550": {
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "600": {
+     "50-point objective B": "not own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "650": {
+     "50-point objective B": "not own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective C": "own"
+    },
+    "700": {
+     "50-point objective B": "not own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective C": "own"
+    },
+    "750": {
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "800": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "850": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "900": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    },
+    "950": {
+     "50-point objective A": "own",
+     "50-point objective B": "not own",
+     "50-point objective C": "own",
+     "50-point objective D": "own",
+     "80-point objective A": "not own",
+     "80-point objective B": "own",
+     "80-point objective C": "own"
+    }
+   },
+   "characteristic_entries": 392,
+   "games": [
+    {
+     "attack_divergence_snapshot": 1300,
+     "capture_order_50": [
+      "50-point objective A",
+      "80-point objective C",
+      "50-point objective B",
+      "80-point objective B",
+      "50-point objective C",
+      "80-point objective A",
+      "50-point objective D"
+     ],
+     "divergence_snapshot": 1450,
+     "first_ownership_divergence": {
+      "expected": "not own",
+      "k": 250,
+      "objective": "50-point objective B"
+     },
+     "game_id": "2130511121.H2.s12-v3-primary-1.p02",
+     "placement": {
+      "attack": {
+       "below": 0,
+       "equal": 0,
+       "max": 548,
+       "median": 542,
+       "min": 490,
+       "n": 15,
+       "value": 442
+      },
+      "coverage_mean": {
+       "below": 15,
+       "equal": 0,
+       "max": 5.426,
+       "median": 5.2795,
+       "min": 5.0566,
+       "n": 15,
+       "value": 6.0056
+      },
+      "emitted_ground": {
+       "below": 15,
+       "equal": 0,
+       "max": 64,
+       "median": 37,
+       "min": 28,
+       "n": 15,
+       "value": 124
+      },
+      "ever_own": {
+       "below": 0,
+       "equal": 15,
+       "max": 7,
+       "median": 7,
+       "min": 7,
+       "n": 15,
+       "value": 7
+      },
+      "largest_commitment": {
+       "below": 0,
+       "equal": 15,
+       "max": 4,
+       "median": 4,
+       "min": 4,
+       "n": 15,
+       "value": 4
+      },
+      "margin": {
+       "below": 0,
+       "equal": 0,
+       "max": 1435,
+       "median": 1061,
+       "min": 865,
+       "n": 15,
+       "value": 481
+      },
+      "own_at_end": {
+       "below": 0,
+       "equal": 0,
+       "max": 7,
+       "median": 7,
+       "min": 7,
+       "n": 15,
+       "value": 6
+      },
+      "own_then_lost_50": {
+       "below": 15,
+       "equal": 0,
+       "max": 0,
+       "median": 0,
+       "min": 0,
+       "n": 15,
+       "value": 1
+      },
+      "redirected": {
+       "below": 0,
+       "equal": 0,
+       "max": 50,
+       "median": 30,
+       "min": 21,
+       "n": 15,
+       "value": 0
+      },
+      "units_lost": {
+       "below": 15,
+       "equal": 0,
+       "max": 16,
+       "median": 11,
+       "min": 3,
+       "n": 15,
+       "value": 18
+      },
+      "waiting_unit_steps": {
+       "below": 15,
+       "equal": 0,
+       "max": 6,
+       "median": 0,
+       "min": 0,
+       "n": 15,
+       "value": 184
+      }
+     },
+     "strength_divergence_snapshot": 750,
+     "v3_changes": {
+      "1:stage": 68,
+      "1:withhold": 346
+     }
+    },
+    {
+     "attack_divergence_snapshot": 2350,
+     "capture_order_50": [
+      "50-point objective A",
+      "80-point objective C",
+      "50-point objective B",
+      "80-point objective B",
+      "50-point objective C",
+      "80-point objective A",
+      "50-point objective D"
+     ],
+     "divergence_snapshot": 1900,
+     "first_ownership_divergence": {
+      "expected": "not own",
+      "k": 250,
+      "objective": "50-point objective B"
+     },
+     "game_id": "2130511121.H2.s12-v3-primary-1.p04",
+     "placement": {
+      "attack": {
+       "below": 0,
+       "equal": 0,
+       "max": 548,
+       "median": 542,
+       "min": 490,
+       "n": 15,
+       "value": 466
+      },
+      "coverage_mean": {
+       "below": 15,
+       "equal": 0,
+       "max": 5.426,
+       "median": 5.2795,
+       "min": 5.0566,
+       "n": 15,
+       "value": 5.7139
+      },
+      "emitted_ground": {
+       "below": 15,
+       "equal": 0,
+       "max": 64,
+       "median": 37,
+       "min": 28,
+       "n": 15,
+       "value": 135
+      },
+      "ever_own": {
+       "below": 0,
+       "equal": 15,
+       "max": 7,
+       "median": 7,
+       "min": 7,
+       "n": 15,
+       "value": 7
+      },
+      "largest_commitment": {
+       "below": 0,
+       "equal": 15,
+       "max": 4,
+       "median": 4,
+       "min": 4,
+       "n": 15,
+       "value": 4
+      },
+      "margin": {
+       "below": 0,
+       "equal": 0,
+       "max": 1435,
+       "median": 1061,
+       "min": 865,
+       "n": 15,
+       "value": 585
+      },
+      "own_at_end": {
+       "below": 0,
+       "equal": 0,
+       "max": 7,
+       "median": 7,
+       "min": 7,
+       "n": 15,
+       "value": 6
+      },
+      "own_then_lost_50": {
+       "below": 15,
+       "equal": 0,
+       "max": 0,
+       "median": 0,
+       "min": 0,
+       "n": 15,
+       "value": 1
+      },
+      "redirected": {
+       "below": 0,
+       "equal": 0,
+       "max": 50,
+       "median": 30,
+       "min": 21,
+       "n": 15,
+       "value": 0
+      },
+      "units_lost": {
+       "below": 14,
+       "equal": 1,
+       "max": 16,
+       "median": 11,
+       "min": 3,
+       "n": 15,
+       "value": 16
+      },
+      "waiting_unit_steps": {
+       "below": 15,
+       "equal": 0,
+       "max": 6,
+       "median": 0,
+       "min": 0,
+       "n": 15,
+       "value": 200
+      }
+     },
+     "strength_divergence_snapshot": 750,
+     "v3_changes": {
+      "1:stage": 68,
+      "1:withhold": 363
+     }
+    }
+   ],
+   "t9v1_capture_orders": [
+    [
+     "50-point objective A > 80-point objective C > 80-point objective B > 50-point objective C > 50-point objective D > 50-point objective B > 80-point objective A",
+     15
+    ]
+   ],
+   "t9v1_first_own": {
+    "50-point objective A": {
+     "first_own_k": {
+      "max": 200,
+      "median": 200,
+      "min": 200,
+      "n": 15
+     },
+     "games_owning": 15
+    },
+    "50-point objective B": {
+     "first_own_k": {
+      "max": 1450,
+      "median": 1450,
+      "min": 1450,
+      "n": 15
+     },
+     "games_owning": 15
+    },
+    "50-point objective C": {
+     "first_own_k": {
+      "max": 350,
+      "median": 350,
+      "min": 350,
+      "n": 15
+     },
+     "games_owning": 15
+    },
+    "50-point objective D": {
+     "first_own_k": {
+      "max": 350,
+      "median": 350,
+      "min": 350,
+      "n": 15
+     },
+     "games_owning": 15
+    },
+    "80-point objective A": {
+     "first_own_k": {
+      "max": 1900,
+      "median": 1900,
+      "min": 1900,
+      "n": 15
+     },
+     "games_owning": 15
+    },
+    "80-point objective B": {
+     "first_own_k": {
+      "max": 250,
+      "median": 250,
+      "min": 250,
+      "n": 15
+     },
+     "games_owning": 15
+    },
+    "80-point objective C": {
+     "first_own_k": {
+      "max": 200,
+      "median": 200,
+      "min": 200,
+      "n": 15
+     },
+     "games_owning": 15
+    }
+   },
+   "t9v1_withheld_unit_decisions": {
+    "max": 26784,
+    "median": 12903,
+    "min": 6203,
+    "n": 15
+   },
+   "unavailable_in_sprint9": [
+    "per-decision redirect timing",
+    "full-step states",
+    "shot listings",
+    "per-objective flags at the final state (snapshots end at k 2850)"
+   ]
+  },
+  "population": {
+   "H1": 15,
+   "H2": 15
+  }
+ },
+ "inputs_sha256": "b2d1ede2166e3f831ba9b3b781d23c43e3c325239f862a423b6bd56412d1bff4",
+ "note": "offline diagnosis on recorded states: T9-v1, T9-v2 and the oracles are off-policy action counterfactuals, never engine outcomes; Sprint 9 games are other stochastic games; nothing is promoted",
+ "schema": "miaosuan-s13-diagnosis/1"
+}

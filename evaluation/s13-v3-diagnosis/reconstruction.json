@@ -1,0 +1,700 @@
+{
+ "games": [
+  {
+   "active_decisions": 300,
+   "candidate_side": "red",
+   "cell": "H1",
+   "classes": {
+    "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+    "END_OF_GAME_FEASIBILITY_EXCLUSION": 145,
+    "INCUMBENT_MOVER_DIFFERENCE": 0,
+    "OTHER": 0,
+    "SAME_OBJECTIVE_CAPACITY_SELECTION": 4,
+    "STAGING_VERSUS_REDIRECTION": 34,
+    "STAGING_VERSUS_WITHHOLDING": 2,
+    "WITHHOLDING_VERSUS_REDIRECTION": 128
+   },
+   "classes_by_interval": {
+    "0-99": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 2,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 14,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "100-499": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 1,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "1500-end": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 143,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 0,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "500-1499": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 4,
+     "STAGING_VERSUS_REDIRECTION": 19,
+     "STAGING_VERSUS_WITHHOLDING": 2,
+     "WITHHOLDING_VERSUS_REDIRECTION": 128
+    }
+   },
+   "classes_by_objective": {
+    "50-point objective A": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 12,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "50-point objective B": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 0,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "50-point objective C": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 4,
+     "STAGING_VERSUS_REDIRECTION": 14,
+     "STAGING_VERSUS_WITHHOLDING": 2,
+     "WITHHOLDING_VERSUS_REDIRECTION": 128
+    },
+    "50-point objective D": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 0,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "80-point objective A": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 145,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 7,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "80-point objective B": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 1,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "80-point objective C": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 0,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    }
+   },
+   "classes_by_v3_reason": [
+    {
+     "class": "END_OF_GAME_FEASIBILITY_EXCLUSION",
+     "count": 145,
+     "v3_reason": "cannot arrive before the end"
+    },
+    {
+     "class": "SAME_OBJECTIVE_CAPACITY_SELECTION",
+     "count": 2,
+     "v3_reason": "-"
+    },
+    {
+     "class": "SAME_OBJECTIVE_CAPACITY_SELECTION",
+     "count": 2,
+     "v3_reason": "no place under capacity"
+    },
+    {
+     "class": "STAGING_VERSUS_REDIRECTION",
+     "count": 2,
+     "v3_reason": "cannot arrive before the end"
+    },
+    {
+     "class": "STAGING_VERSUS_REDIRECTION",
+     "count": 32,
+     "v3_reason": "no place under capacity"
+    },
+    {
+     "class": "STAGING_VERSUS_WITHHOLDING",
+     "count": 2,
+     "v3_reason": "no place under capacity"
+    },
+    {
+     "class": "WITHHOLDING_VERSUS_REDIRECTION",
+     "count": 128,
+     "v3_reason": "no place under capacity"
+    }
+   ],
+   "decisions": 2881,
+   "game_id": "2130511121.H1.s12-v3-primary-1.p01",
+   "orders": 505,
+   "redirect_causes": {
+    "CAPACITY": 162
+   },
+   "unchanged_orders": 192
+  },
+  {
+   "active_decisions": 158,
+   "candidate_side": "blue",
+   "cell": "H2",
+   "classes": {
+    "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 5,
+    "END_OF_GAME_FEASIBILITY_EXCLUSION": 2,
+    "INCUMBENT_MOVER_DIFFERENCE": 0,
+    "OTHER": 0,
+    "SAME_OBJECTIVE_CAPACITY_SELECTION": 7,
+    "STAGING_VERSUS_REDIRECTION": 46,
+    "STAGING_VERSUS_WITHHOLDING": 15,
+    "WITHHOLDING_VERSUS_REDIRECTION": 161
+   },
+   "classes_by_interval": {
+    "0-99": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 2,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 1,
+     "STAGING_VERSUS_REDIRECTION": 17,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "100-499": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 3,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 4,
+     "STAGING_VERSUS_REDIRECTION": 29,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 161
+    },
+    "1500-end": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 2,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 0,
+     "STAGING_VERSUS_WITHHOLDING": 7,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "500-1499": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 2,
+     "STAGING_VERSUS_REDIRECTION": 0,
+     "STAGING_VERSUS_WITHHOLDING": 8,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    }
+   },
+   "classes_by_objective": {
+    "50-point objective A": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 1,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 1,
+     "STAGING_VERSUS_REDIRECTION": 4,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "50-point objective B": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 1,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 1,
+     "STAGING_VERSUS_REDIRECTION": 5,
+     "STAGING_VERSUS_WITHHOLDING": 6,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "50-point objective C": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 1,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 2,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 1,
+     "STAGING_VERSUS_REDIRECTION": 9,
+     "STAGING_VERSUS_WITHHOLDING": 7,
+     "WITHHOLDING_VERSUS_REDIRECTION": 33
+    },
+    "50-point objective D": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 1,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 2,
+     "STAGING_VERSUS_REDIRECTION": 2,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "80-point objective A": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 4,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 128
+    },
+    "80-point objective B": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 2,
+     "STAGING_VERSUS_REDIRECTION": 9,
+     "STAGING_VERSUS_WITHHOLDING": 2,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "80-point objective C": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 1,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 13,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    }
+   },
+   "classes_by_v3_reason": [
+    {
+     "class": "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY",
+     "count": 5,
+     "v3_reason": "-"
+    },
+    {
+     "class": "END_OF_GAME_FEASIBILITY_EXCLUSION",
+     "count": 2,
+     "v3_reason": "cannot arrive before the end"
+    },
+    {
+     "class": "SAME_OBJECTIVE_CAPACITY_SELECTION",
+     "count": 2,
+     "v3_reason": "-"
+    },
+    {
+     "class": "SAME_OBJECTIVE_CAPACITY_SELECTION",
+     "count": 5,
+     "v3_reason": "no place under capacity"
+    },
+    {
+     "class": "STAGING_VERSUS_REDIRECTION",
+     "count": 46,
+     "v3_reason": "no place under capacity"
+    },
+    {
+     "class": "STAGING_VERSUS_WITHHOLDING",
+     "count": 7,
+     "v3_reason": "cannot arrive before the end"
+    },
+    {
+     "class": "STAGING_VERSUS_WITHHOLDING",
+     "count": 8,
+     "v3_reason": "no place under capacity"
+    },
+    {
+     "class": "WITHHOLDING_VERSUS_REDIRECTION",
+     "count": 161,
+     "v3_reason": "no place under capacity"
+    }
+   ],
+   "decisions": 2881,
+   "game_id": "2130511121.H2.s12-v3-primary-1.p02",
+   "orders": 470,
+   "redirect_causes": {
+    "CAPACITY": 212
+   },
+   "unchanged_orders": 234
+  },
+  {
+   "active_decisions": 16,
+   "candidate_side": "red",
+   "cell": "H1",
+   "classes": {
+    "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+    "END_OF_GAME_FEASIBILITY_EXCLUSION": 4,
+    "INCUMBENT_MOVER_DIFFERENCE": 0,
+    "OTHER": 0,
+    "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+    "STAGING_VERSUS_REDIRECTION": 15,
+    "STAGING_VERSUS_WITHHOLDING": 0,
+    "WITHHOLDING_VERSUS_REDIRECTION": 0
+   },
+   "classes_by_interval": {
+    "0-99": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 2,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 14,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "100-499": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 0,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "1500-end": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 2,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 0,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "500-1499": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 1,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    }
+   },
+   "classes_by_objective": {
+    "50-point objective A": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 12,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "50-point objective B": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 0,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "50-point objective C": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 0,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "50-point objective D": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 0,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "80-point objective A": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 4,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 3,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "80-point objective B": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 0,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "80-point objective C": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 0,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    }
+   },
+   "classes_by_v3_reason": [
+    {
+     "class": "END_OF_GAME_FEASIBILITY_EXCLUSION",
+     "count": 4,
+     "v3_reason": "cannot arrive before the end"
+    },
+    {
+     "class": "STAGING_VERSUS_REDIRECTION",
+     "count": 2,
+     "v3_reason": "cannot arrive before the end"
+    },
+    {
+     "class": "STAGING_VERSUS_REDIRECTION",
+     "count": 13,
+     "v3_reason": "no place under capacity"
+    }
+   ],
+   "decisions": 2881,
+   "game_id": "2130511121.H1.s12-v3-primary-1.p03",
+   "orders": 50,
+   "redirect_causes": {
+    "CAPACITY": 15
+   },
+   "unchanged_orders": 31
+  },
+  {
+   "active_decisions": 186,
+   "candidate_side": "blue",
+   "cell": "H2",
+   "classes": {
+    "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 4,
+    "END_OF_GAME_FEASIBILITY_EXCLUSION": 73,
+    "INCUMBENT_MOVER_DIFFERENCE": 0,
+    "OTHER": 0,
+    "SAME_OBJECTIVE_CAPACITY_SELECTION": 6,
+    "STAGING_VERSUS_REDIRECTION": 50,
+    "STAGING_VERSUS_WITHHOLDING": 10,
+    "WITHHOLDING_VERSUS_REDIRECTION": 202
+   },
+   "classes_by_interval": {
+    "0-99": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 2,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 1,
+     "STAGING_VERSUS_REDIRECTION": 17,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "100-499": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 2,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 3,
+     "STAGING_VERSUS_REDIRECTION": 30,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 202
+    },
+    "1500-end": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 73,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 0,
+     "STAGING_VERSUS_WITHHOLDING": 8,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "500-1499": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 2,
+     "STAGING_VERSUS_REDIRECTION": 3,
+     "STAGING_VERSUS_WITHHOLDING": 2,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    }
+   },
+   "classes_by_objective": {
+    "50-point objective A": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 1,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 1,
+     "STAGING_VERSUS_REDIRECTION": 4,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "50-point objective B": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 1,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 1,
+     "STAGING_VERSUS_REDIRECTION": 6,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "50-point objective C": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 1,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 73,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 1,
+     "STAGING_VERSUS_REDIRECTION": 8,
+     "STAGING_VERSUS_WITHHOLDING": 8,
+     "WITHHOLDING_VERSUS_REDIRECTION": 33
+    },
+    "50-point objective D": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 1,
+     "STAGING_VERSUS_REDIRECTION": 4,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "80-point objective A": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 4,
+     "STAGING_VERSUS_WITHHOLDING": 0,
+     "WITHHOLDING_VERSUS_REDIRECTION": 169
+    },
+    "80-point objective B": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 0,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 0,
+     "STAGING_VERSUS_REDIRECTION": 11,
+     "STAGING_VERSUS_WITHHOLDING": 1,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    },
+    "80-point objective C": {
+     "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 1,
+     "END_OF_GAME_FEASIBILITY_EXCLUSION": 0,
+     "INCUMBENT_MOVER_DIFFERENCE": 0,
+     "OTHER": 0,
+     "SAME_OBJECTIVE_CAPACITY_SELECTION": 2,
+     "STAGING_VERSUS_REDIRECTION": 13,
+     "STAGING_VERSUS_WITHHOLDING": 1,
+     "WITHHOLDING_VERSUS_REDIRECTION": 0
+    }
+   },
+   "classes_by_v3_reason": [
+    {
+     "class": "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY",
+     "count": 4,
+     "v3_reason": "-"
+    },
+    {
+     "class": "END_OF_GAME_FEASIBILITY_EXCLUSION",
+     "count": 73,
+     "v3_reason": "cannot arrive before the end"
+    },
+    {
+     "class": "SAME_OBJECTIVE_CAPACITY_SELECTION",
+     "count": 2,
+     "v3_reason": "-"
+    },
+    {
+     "class": "SAME_OBJECTIVE_CAPACITY_SELECTION",
+     "count": 4,
+     "v3_reason": "no place under capacity"
+    },
+    {
+     "class": "STAGING_VERSUS_REDIRECTION",
+     "count": 50,
+     "v3_reason": "no place under capacity"
+    },
+    {
+     "class": "STAGING_VERSUS_WITHHOLDING",
+     "count": 8,
+     "v3_reason": "cannot arrive before the end"
+    },
+    {
+     "class": "STAGING_VERSUS_WITHHOLDING",
+     "count": 2,
+     "v3_reason": "no place under capacity"
+    },
+    {
+     "class": "WITHHOLDING_VERSUS_REDIRECTION",
+     "count": 202,
+     "v3_reason": "no place under capacity"
+    }
+   ],
+   "decisions": 2881,
+   "game_id": "2130511121.H2.s12-v3-primary-1.p04",
+   "orders": 498,
+   "redirect_causes": {
+    "CAPACITY": 256
+   },
+   "unchanged_orders": 153
+  }
+ ],
+ "inputs_sha256": "b2d1ede2166e3f831ba9b3b781d23c43e3c325239f862a423b6bd56412d1bff4",
+ "note": "offline diagnosis on recorded states: T9-v1, T9-v2 and the oracles are off-policy action counterfactuals, never engine outcomes; Sprint 9 games are other stochastic games; nothing is promoted",
+ "pooled_classes": {
+  "CROSS_OBJECTIVE_REDIRECTION_V1_ONLY": 9,
+  "END_OF_GAME_FEASIBILITY_EXCLUSION": 224,
+  "INCUMBENT_MOVER_DIFFERENCE": 0,
+  "OTHER": 0,
+  "SAME_OBJECTIVE_CAPACITY_SELECTION": 17,
+  "STAGING_VERSUS_REDIRECTION": 145,
+  "STAGING_VERSUS_WITHHOLDING": 27,
+  "WITHHOLDING_VERSUS_REDIRECTION": 491
+ },
+ "schema": "miaosuan-s13-diagnosis/1",
+ "verification": "every decision of the v3 seat reconstructed; baseline-v2 actions and trace digest, v3 actions and allocation sets, the oracle allocator without modifications and the Sprint 10 audit of T9-v1 all agreed"
+}

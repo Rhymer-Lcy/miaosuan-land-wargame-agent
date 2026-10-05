@@ -1,0 +1,62 @@
+{
+ "a_games": 4,
+ "a_material": true,
+ "b_games": 2,
+ "b_material": false,
+ "inputs_sha256": "b2d1ede2166e3f831ba9b3b781d23c43e3c325239f862a423b6bd56412d1bff4",
+ "label": "REDISTRIBUTION_DOMINANT",
+ "note": "offline diagnosis on recorded states: T9-v1, T9-v2 and the oracles are off-policy action counterfactuals, never engine outcomes; Sprint 9 games are other stochastic games; nothing is promoted",
+ "overlap": 0.1967,
+ "per_game": {
+  "2130511121.H1.s12-v3-primary-1.p01": {
+   "a_material": true,
+   "a_share": 0.4682,
+   "b_material": true,
+   "b_share": 0.721
+  },
+  "2130511121.H1.s12-v3-primary-1.p03": {
+   "a_material": true,
+   "a_share": 0.3061,
+   "b_material": false,
+   "b_share": 0.0714
+  },
+  "2130511121.H2.s12-v3-primary-1.p02": {
+   "a_material": true,
+   "a_share": 0.791,
+   "b_material": true,
+   "b_share": 0.1037
+  },
+  "2130511121.H2.s12-v3-primary-1.p04": {
+   "a_material": true,
+   "a_share": 0.6497,
+   "b_material": false,
+   "b_share": 0.0543
+  }
+ },
+ "prospective": false,
+ "rule": 2,
+ "sa": 76,
+ "sb": 24,
+ "schema": "miaosuan-s13-diagnosis/1",
+ "seats": {
+  "2130511121.H1.s12-v3-primary-1.p01": "H1",
+  "2130511121.H1.s12-v3-primary-1.p03": "H1",
+  "2130511121.H2.s12-v3-primary-1.p02": "H2",
+  "2130511121.H2.s12-v3-primary-1.p04": "H2"
+ },
+ "thresholds": {
+  "a_min_share": 0.25,
+  "a_min_units": 4,
+  "auc_high": 0.7,
+  "auc_low": 0.3,
+  "auc_min_per_class": 3,
+  "b_min_share": 0.1,
+  "b_min_units": 4,
+  "char_not_own": 3,
+  "char_own": 12,
+  "games_needed": 3,
+  "overlap_max": 0.5,
+  "ratio": 0.25,
+  "t9v1_games_per_seat": 15
+ }
+}

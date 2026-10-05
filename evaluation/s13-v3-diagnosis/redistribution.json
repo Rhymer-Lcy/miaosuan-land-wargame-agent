@@ -1,0 +1,1405 @@
+{
+ "decision_one_state_identical_within_seat": {
+  "H1": true,
+  "H2": true
+ },
+ "games": [
+  {
+   "a": {
+    "distinct_redirected": 18,
+    "first_step": 0,
+    "redirects": 162,
+    "v1_emitted_ground": 346
+   },
+   "cell": "H1",
+   "decision_one": {
+    "distinct_redirected": 14,
+    "redirects": 14
+   },
+   "first": {
+    "any_action_difference": {
+     "decision": 1,
+     "step": 0
+    },
+    "blocking_unproductive_reservation": {
+     "decision": 581,
+     "step": 580
+    },
+    "o1_admission": {
+     "decision": 581,
+     "step": 580
+    },
+    "redistribution": {
+     "decision": 1,
+     "step": 0
+    }
+   },
+   "game_id": "2130511121.H1.s12-v3-primary-1.p01",
+   "later_facts": {
+    "by_interval": {
+     "0-99": {
+      "decisions_with_shot_listed": 0,
+      "own_units_lost": 0,
+      "shot_orders": 0
+     },
+     "100-499": {
+      "decisions_with_shot_listed": 18,
+      "own_units_lost": 1,
+      "shot_orders": 30
+     },
+     "1500-end": {
+      "decisions_with_shot_listed": 1,
+      "own_units_lost": 1,
+      "shot_orders": 1
+     },
+     "500-1499": {
+      "decisions_with_shot_listed": 6,
+      "own_units_lost": 33,
+      "shot_orders": 27
+     }
+    },
+    "capture_order": [
+     "50-point objective D",
+     "50-point objective A",
+     "50-point objective B",
+     "80-point objective A",
+     "80-point objective B",
+     "50-point objective C"
+    ],
+    "coverage": 0.5690972222222223,
+    "never_own": [
+     "80-point objective C"
+    ],
+    "objectives_at_end": 0,
+    "own_then_lost": [
+     "50-point objective A",
+     "50-point objective B",
+     "50-point objective C",
+     "50-point objective D",
+     "80-point objective A",
+     "80-point objective B"
+    ]
+   },
+   "redirect_timing": [
+    {
+     "count": 2,
+     "first_decision": 1,
+     "from": "50-point objective A",
+     "interval": "0-99",
+     "to": "50-point objective C"
+    },
+    {
+     "count": 1,
+     "first_decision": 1,
+     "from": "50-point objective A",
+     "interval": "0-99",
+     "to": "50-point objective D"
+    },
+    {
+     "count": 2,
+     "first_decision": 1,
+     "from": "50-point objective A",
+     "interval": "0-99",
+     "to": "80-point objective A"
+    },
+    {
+     "count": 3,
+     "first_decision": 1,
+     "from": "50-point objective A",
+     "interval": "0-99",
+     "to": "80-point objective B"
+    },
+    {
+     "count": 4,
+     "first_decision": 1,
+     "from": "50-point objective A",
+     "interval": "0-99",
+     "to": "80-point objective C"
+    },
+    {
+     "count": 25,
+     "first_decision": 621,
+     "from": "50-point objective C",
+     "interval": "500-1499",
+     "to": "50-point objective D"
+    },
+    {
+     "count": 34,
+     "first_decision": 587,
+     "from": "50-point objective C",
+     "interval": "500-1499",
+     "to": "80-point objective B"
+    },
+    {
+     "count": 83,
+     "first_decision": 581,
+     "from": "50-point objective C",
+     "interval": "500-1499",
+     "to": "80-point objective C"
+    },
+    {
+     "count": 1,
+     "first_decision": 1,
+     "from": "80-point objective A",
+     "interval": "0-99",
+     "to": "50-point objective B"
+    },
+    {
+     "count": 1,
+     "first_decision": 1,
+     "from": "80-point objective A",
+     "interval": "0-99",
+     "to": "80-point objective B"
+    },
+    {
+     "count": 1,
+     "first_decision": 1,
+     "from": "80-point objective A",
+     "interval": "100-499",
+     "to": "80-point objective B"
+    },
+    {
+     "count": 4,
+     "first_decision": 1,
+     "from": "80-point objective A",
+     "interval": "500-1499",
+     "to": "80-point objective B"
+    },
+    {
+     "count": 1,
+     "first_decision": 581,
+     "from": "80-point objective B",
+     "interval": "500-1499",
+     "to": "80-point objective C"
+    }
+   ],
+   "redirects": [
+    {
+     "cause": "CAPACITY",
+     "count": 2,
+     "from": "50-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective C",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "50-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 2,
+     "from": "50-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective A",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 3,
+     "from": "50-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective B",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 4,
+     "from": "50-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective C",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 3,
+     "from": "50-point objective C",
+     "from_flag": "enemy",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "enemy",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 22,
+     "from": "50-point objective C",
+     "from_flag": "enemy",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "enemy",
+     "v3_form": "WITHHOLD"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 34,
+     "from": "50-point objective C",
+     "from_flag": "enemy",
+     "kind": "vehicle",
+     "to": "80-point objective B",
+     "to_flag": "enemy",
+     "v3_form": "WITHHOLD"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 11,
+     "from": "50-point objective C",
+     "from_flag": "enemy",
+     "kind": "vehicle",
+     "to": "80-point objective C",
+     "to_flag": "enemy",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 72,
+     "from": "50-point objective C",
+     "from_flag": "enemy",
+     "kind": "vehicle",
+     "to": "80-point objective C",
+     "to_flag": "enemy",
+     "v3_form": "WITHHOLD"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "80-point objective A",
+     "from_flag": "neutral",
+     "kind": "infantry",
+     "to": "50-point objective B",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "80-point objective A",
+     "from_flag": "neutral",
+     "kind": "infantry",
+     "to": "80-point objective B",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 5,
+     "from": "80-point objective A",
+     "from_flag": "enemy",
+     "kind": "vehicle",
+     "to": "80-point objective B",
+     "to_flag": "enemy",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "80-point objective B",
+     "from_flag": "enemy",
+     "kind": "vehicle",
+     "to": "80-point objective C",
+     "to_flag": "enemy",
+     "v3_form": "STAGE"
+    }
+   ]
+  },
+  {
+   "a": {
+    "distinct_redirected": 22,
+    "first_step": 0,
+    "redirects": 212,
+    "v1_emitted_ground": 268
+   },
+   "cell": "H2",
+   "decision_one": {
+    "distinct_redirected": 19,
+    "redirects": 19
+   },
+   "first": {
+    "any_action_difference": {
+     "decision": 1,
+     "step": 0
+    },
+    "blocking_unproductive_reservation": {
+     "decision": 1,
+     "step": 0
+    },
+    "o1_admission": {
+     "decision": 365,
+     "step": 364
+    },
+    "redistribution": {
+     "decision": 1,
+     "step": 0
+    }
+   },
+   "game_id": "2130511121.H2.s12-v3-primary-1.p02",
+   "later_facts": {
+    "by_interval": {
+     "0-99": {
+      "decisions_with_shot_listed": 0,
+      "own_units_lost": 0,
+      "shot_orders": 0
+     },
+     "100-499": {
+      "decisions_with_shot_listed": 12,
+      "own_units_lost": 7,
+      "shot_orders": 15
+     },
+     "1500-end": {
+      "decisions_with_shot_listed": 11,
+      "own_units_lost": 0,
+      "shot_orders": 21
+     },
+     "500-1499": {
+      "decisions_with_shot_listed": 11,
+      "own_units_lost": 11,
+      "shot_orders": 38
+     }
+    },
+    "capture_order": [
+     "50-point objective A",
+     "80-point objective C",
+     "50-point objective B",
+     "80-point objective B",
+     "50-point objective C",
+     "80-point objective A",
+     "50-point objective D"
+    ],
+    "coverage": 6.0055555555555555,
+    "never_own": [],
+    "objectives_at_end": 6,
+    "own_then_lost": [
+     "50-point objective C"
+    ]
+   },
+   "redirect_timing": [
+    {
+     "count": 4,
+     "first_decision": 1,
+     "from": "50-point objective A",
+     "interval": "0-99",
+     "to": "80-point objective A"
+    },
+    {
+     "count": 1,
+     "first_decision": 1,
+     "from": "50-point objective A",
+     "interval": "0-99",
+     "to": "80-point objective C"
+    },
+    {
+     "count": 1,
+     "first_decision": 181,
+     "from": "50-point objective B",
+     "interval": "100-499",
+     "to": "80-point objective A"
+    },
+    {
+     "count": 5,
+     "first_decision": 162,
+     "from": "50-point objective B",
+     "interval": "100-499",
+     "to": "80-point objective B"
+    },
+    {
+     "count": 9,
+     "first_decision": 361,
+     "from": "50-point objective C",
+     "interval": "100-499",
+     "to": "50-point objective D"
+    },
+    {
+     "count": 34,
+     "first_decision": 284,
+     "from": "50-point objective C",
+     "interval": "100-499",
+     "to": "80-point objective A"
+    },
+    {
+     "count": 3,
+     "first_decision": 422,
+     "from": "50-point objective D",
+     "interval": "100-499",
+     "to": "50-point objective A"
+    },
+    {
+     "count": 132,
+     "first_decision": 365,
+     "from": "80-point objective A",
+     "interval": "100-499",
+     "to": "50-point objective D"
+    },
+    {
+     "count": 6,
+     "first_decision": 241,
+     "from": "80-point objective B",
+     "interval": "100-499",
+     "to": "50-point objective C"
+    },
+    {
+     "count": 3,
+     "first_decision": 241,
+     "from": "80-point objective B",
+     "interval": "100-499",
+     "to": "80-point objective A"
+    },
+    {
+     "count": 4,
+     "first_decision": 1,
+     "from": "80-point objective C",
+     "interval": "0-99",
+     "to": "50-point objective B"
+    },
+    {
+     "count": 2,
+     "first_decision": 1,
+     "from": "80-point objective C",
+     "interval": "0-99",
+     "to": "50-point objective C"
+    },
+    {
+     "count": 4,
+     "first_decision": 1,
+     "from": "80-point objective C",
+     "interval": "0-99",
+     "to": "50-point objective D"
+    },
+    {
+     "count": 4,
+     "first_decision": 1,
+     "from": "80-point objective C",
+     "interval": "0-99",
+     "to": "80-point objective B"
+    }
+   ],
+   "redirects": [
+    {
+     "cause": "CAPACITY",
+     "count": 4,
+     "from": "50-point objective A",
+     "from_flag": "neutral",
+     "kind": "infantry",
+     "to": "80-point objective A",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "50-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective C",
+     "to_flag": "neutral",
+     "v3_form": "KEEP"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "50-point objective B",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective A",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "50-point objective B",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective B",
+     "to_flag": "neutral",
+     "v3_form": "KEEP"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 4,
+     "from": "50-point objective B",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective B",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "50-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 8,
+     "from": "50-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "neutral",
+     "v3_form": "WITHHOLD"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "50-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective A",
+     "to_flag": "neutral",
+     "v3_form": "KEEP"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 8,
+     "from": "50-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective A",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 25,
+     "from": "50-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective A",
+     "to_flag": "neutral",
+     "v3_form": "WITHHOLD"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "50-point objective D",
+     "from_flag": "enemy",
+     "kind": "vehicle",
+     "to": "50-point objective A",
+     "to_flag": "enemy",
+     "v3_form": "KEEP"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 2,
+     "from": "50-point objective D",
+     "from_flag": "enemy",
+     "kind": "vehicle",
+     "to": "50-point objective A",
+     "to_flag": "enemy",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "80-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "enemy",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 3,
+     "from": "80-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 39,
+     "from": "80-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "enemy",
+     "v3_form": "WITHHOLD"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 89,
+     "from": "80-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "neutral",
+     "v3_form": "WITHHOLD"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 6,
+     "from": "80-point objective B",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective C",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 3,
+     "from": "80-point objective B",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective A",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 4,
+     "from": "80-point objective C",
+     "from_flag": "neutral",
+     "kind": "infantry",
+     "to": "50-point objective B",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "80-point objective C",
+     "from_flag": "neutral",
+     "kind": "infantry",
+     "to": "50-point objective C",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "80-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective C",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 4,
+     "from": "80-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "80-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective B",
+     "to_flag": "neutral",
+     "v3_form": "KEEP"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 3,
+     "from": "80-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective B",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    }
+   ]
+  },
+  {
+   "a": {
+    "distinct_redirected": 14,
+    "first_step": 0,
+    "redirects": 15,
+    "v1_emitted_ground": 49
+   },
+   "cell": "H1",
+   "decision_one": {
+    "distinct_redirected": 14,
+    "redirects": 14
+   },
+   "first": {
+    "any_action_difference": {
+     "decision": 1,
+     "step": 0
+    },
+    "blocking_unproductive_reservation": {
+     "decision": 1,
+     "step": 0
+    },
+    "o1_admission": {
+     "decision": 581,
+     "step": 580
+    },
+    "redistribution": {
+     "decision": 1,
+     "step": 0
+    }
+   },
+   "game_id": "2130511121.H1.s12-v3-primary-1.p03",
+   "later_facts": {
+    "by_interval": {
+     "0-99": {
+      "decisions_with_shot_listed": 0,
+      "own_units_lost": 0,
+      "shot_orders": 0
+     },
+     "100-499": {
+      "decisions_with_shot_listed": 13,
+      "own_units_lost": 6,
+      "shot_orders": 26
+     },
+     "1500-end": {
+      "decisions_with_shot_listed": 0,
+      "own_units_lost": 1,
+      "shot_orders": 0
+     },
+     "500-1499": {
+      "decisions_with_shot_listed": 1,
+      "own_units_lost": 22,
+      "shot_orders": 23
+     }
+    },
+    "capture_order": [
+     "50-point objective D",
+     "50-point objective A",
+     "50-point objective B",
+     "80-point objective A"
+    ],
+    "coverage": 0.28854166666666664,
+    "never_own": [
+     "50-point objective C",
+     "80-point objective B",
+     "80-point objective C"
+    ],
+    "objectives_at_end": 0,
+    "own_then_lost": [
+     "50-point objective A",
+     "50-point objective B",
+     "50-point objective D",
+     "80-point objective A"
+    ]
+   },
+   "redirect_timing": [
+    {
+     "count": 2,
+     "first_decision": 1,
+     "from": "50-point objective A",
+     "interval": "0-99",
+     "to": "50-point objective C"
+    },
+    {
+     "count": 1,
+     "first_decision": 1,
+     "from": "50-point objective A",
+     "interval": "0-99",
+     "to": "50-point objective D"
+    },
+    {
+     "count": 2,
+     "first_decision": 1,
+     "from": "50-point objective A",
+     "interval": "0-99",
+     "to": "80-point objective A"
+    },
+    {
+     "count": 3,
+     "first_decision": 1,
+     "from": "50-point objective A",
+     "interval": "0-99",
+     "to": "80-point objective B"
+    },
+    {
+     "count": 4,
+     "first_decision": 1,
+     "from": "50-point objective A",
+     "interval": "0-99",
+     "to": "80-point objective C"
+    },
+    {
+     "count": 1,
+     "first_decision": 1,
+     "from": "80-point objective A",
+     "interval": "0-99",
+     "to": "50-point objective B"
+    },
+    {
+     "count": 1,
+     "first_decision": 1,
+     "from": "80-point objective A",
+     "interval": "0-99",
+     "to": "80-point objective B"
+    },
+    {
+     "count": 1,
+     "first_decision": 1,
+     "from": "80-point objective A",
+     "interval": "500-1499",
+     "to": "80-point objective B"
+    }
+   ],
+   "redirects": [
+    {
+     "cause": "CAPACITY",
+     "count": 2,
+     "from": "50-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective C",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "50-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 2,
+     "from": "50-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective A",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 3,
+     "from": "50-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective B",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 4,
+     "from": "50-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective C",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "80-point objective A",
+     "from_flag": "neutral",
+     "kind": "infantry",
+     "to": "50-point objective B",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "80-point objective A",
+     "from_flag": "neutral",
+     "kind": "infantry",
+     "to": "80-point objective B",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "80-point objective A",
+     "from_flag": "enemy",
+     "kind": "vehicle",
+     "to": "80-point objective B",
+     "to_flag": "enemy",
+     "v3_form": "STAGE"
+    }
+   ]
+  },
+  {
+   "a": {
+    "distinct_redirected": 22,
+    "first_step": 0,
+    "redirects": 256,
+    "v1_emitted_ground": 394
+   },
+   "cell": "H2",
+   "decision_one": {
+    "distinct_redirected": 19,
+    "redirects": 19
+   },
+   "first": {
+    "any_action_difference": {
+     "decision": 1,
+     "step": 0
+    },
+    "blocking_unproductive_reservation": {
+     "decision": 365,
+     "step": 364
+    },
+    "o1_admission": {
+     "decision": 365,
+     "step": 364
+    },
+    "redistribution": {
+     "decision": 1,
+     "step": 0
+    }
+   },
+   "game_id": "2130511121.H2.s12-v3-primary-1.p04",
+   "later_facts": {
+    "by_interval": {
+     "0-99": {
+      "decisions_with_shot_listed": 0,
+      "own_units_lost": 0,
+      "shot_orders": 0
+     },
+     "100-499": {
+      "decisions_with_shot_listed": 12,
+      "own_units_lost": 7,
+      "shot_orders": 15
+     },
+     "1500-end": {
+      "decisions_with_shot_listed": 6,
+      "own_units_lost": 0,
+      "shot_orders": 16
+     },
+     "500-1499": {
+      "decisions_with_shot_listed": 39,
+      "own_units_lost": 9,
+      "shot_orders": 47
+     }
+    },
+    "capture_order": [
+     "50-point objective A",
+     "80-point objective C",
+     "50-point objective B",
+     "80-point objective B",
+     "50-point objective C",
+     "80-point objective A",
+     "50-point objective D"
+    ],
+    "coverage": 5.713888888888889,
+    "never_own": [],
+    "objectives_at_end": 6,
+    "own_then_lost": [
+     "50-point objective C"
+    ]
+   },
+   "redirect_timing": [
+    {
+     "count": 4,
+     "first_decision": 1,
+     "from": "50-point objective A",
+     "interval": "0-99",
+     "to": "80-point objective A"
+    },
+    {
+     "count": 1,
+     "first_decision": 1,
+     "from": "50-point objective A",
+     "interval": "0-99",
+     "to": "80-point objective C"
+    },
+    {
+     "count": 1,
+     "first_decision": 181,
+     "from": "50-point objective B",
+     "interval": "100-499",
+     "to": "80-point objective A"
+    },
+    {
+     "count": 5,
+     "first_decision": 162,
+     "from": "50-point objective B",
+     "interval": "100-499",
+     "to": "80-point objective B"
+    },
+    {
+     "count": 1,
+     "first_decision": 621,
+     "from": "50-point objective B",
+     "interval": "500-1499",
+     "to": "80-point objective C"
+    },
+    {
+     "count": 9,
+     "first_decision": 302,
+     "from": "50-point objective C",
+     "interval": "100-499",
+     "to": "50-point objective D"
+    },
+    {
+     "count": 33,
+     "first_decision": 284,
+     "from": "50-point objective C",
+     "interval": "100-499",
+     "to": "80-point objective A"
+    },
+    {
+     "count": 4,
+     "first_decision": 424,
+     "from": "50-point objective D",
+     "interval": "100-499",
+     "to": "50-point objective A"
+    },
+    {
+     "count": 173,
+     "first_decision": 365,
+     "from": "80-point objective A",
+     "interval": "100-499",
+     "to": "50-point objective D"
+    },
+    {
+     "count": 1,
+     "first_decision": 544,
+     "from": "80-point objective B",
+     "interval": "500-1499",
+     "to": "50-point objective B"
+    },
+    {
+     "count": 6,
+     "first_decision": 241,
+     "from": "80-point objective B",
+     "interval": "100-499",
+     "to": "50-point objective C"
+    },
+    {
+     "count": 1,
+     "first_decision": 241,
+     "from": "80-point objective B",
+     "interval": "500-1499",
+     "to": "50-point objective C"
+    },
+    {
+     "count": 3,
+     "first_decision": 241,
+     "from": "80-point objective B",
+     "interval": "100-499",
+     "to": "80-point objective A"
+    },
+    {
+     "count": 4,
+     "first_decision": 1,
+     "from": "80-point objective C",
+     "interval": "0-99",
+     "to": "50-point objective B"
+    },
+    {
+     "count": 2,
+     "first_decision": 1,
+     "from": "80-point objective C",
+     "interval": "0-99",
+     "to": "50-point objective C"
+    },
+    {
+     "count": 4,
+     "first_decision": 1,
+     "from": "80-point objective C",
+     "interval": "0-99",
+     "to": "50-point objective D"
+    },
+    {
+     "count": 4,
+     "first_decision": 1,
+     "from": "80-point objective C",
+     "interval": "0-99",
+     "to": "80-point objective B"
+    }
+   ],
+   "redirects": [
+    {
+     "cause": "CAPACITY",
+     "count": 4,
+     "from": "50-point objective A",
+     "from_flag": "neutral",
+     "kind": "infantry",
+     "to": "80-point objective A",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "50-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective C",
+     "to_flag": "neutral",
+     "v3_form": "KEEP"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "50-point objective B",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective A",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "50-point objective B",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective B",
+     "to_flag": "neutral",
+     "v3_form": "KEEP"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 4,
+     "from": "50-point objective B",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective B",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "50-point objective B",
+     "from_flag": "enemy",
+     "kind": "vehicle",
+     "to": "80-point objective C",
+     "to_flag": "enemy",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 2,
+     "from": "50-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 7,
+     "from": "50-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "neutral",
+     "v3_form": "WITHHOLD"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "50-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective A",
+     "to_flag": "neutral",
+     "v3_form": "KEEP"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 6,
+     "from": "50-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective A",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 26,
+     "from": "50-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective A",
+     "to_flag": "neutral",
+     "v3_form": "WITHHOLD"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 4,
+     "from": "50-point objective D",
+     "from_flag": "enemy",
+     "kind": "vehicle",
+     "to": "50-point objective A",
+     "to_flag": "enemy",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "80-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "enemy",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 3,
+     "from": "80-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 59,
+     "from": "80-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "enemy",
+     "v3_form": "WITHHOLD"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 110,
+     "from": "80-point objective A",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "neutral",
+     "v3_form": "WITHHOLD"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "80-point objective B",
+     "from_flag": "enemy",
+     "kind": "vehicle",
+     "to": "50-point objective B",
+     "to_flag": "enemy",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "80-point objective B",
+     "from_flag": "enemy",
+     "kind": "vehicle",
+     "to": "50-point objective C",
+     "to_flag": "enemy",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 6,
+     "from": "80-point objective B",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective C",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 3,
+     "from": "80-point objective B",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective A",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 4,
+     "from": "80-point objective C",
+     "from_flag": "neutral",
+     "kind": "infantry",
+     "to": "50-point objective B",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "80-point objective C",
+     "from_flag": "neutral",
+     "kind": "infantry",
+     "to": "50-point objective C",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "80-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective C",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 4,
+     "from": "80-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "50-point objective D",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 1,
+     "from": "80-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective B",
+     "to_flag": "neutral",
+     "v3_form": "KEEP"
+    },
+    {
+     "cause": "CAPACITY",
+     "count": 3,
+     "from": "80-point objective C",
+     "from_flag": "neutral",
+     "kind": "vehicle",
+     "to": "80-point objective B",
+     "to_flag": "neutral",
+     "v3_form": "STAGE"
+    }
+   ]
+  }
+ ],
+ "inputs_sha256": "b2d1ede2166e3f831ba9b3b781d23c43e3c325239f862a423b6bd56412d1bff4",
+ "note": "offline diagnosis on recorded states: T9-v1, T9-v2 and the oracles are off-policy action counterfactuals, never engine outcomes; Sprint 9 games are other stochastic games; nothing is promoted",
+ "schema": "miaosuan-s13-diagnosis/1"
+}
