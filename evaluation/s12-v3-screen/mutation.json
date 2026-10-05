@@ -1,0 +1,258 @@
+{
+ "killed": 48,
+ "mutations": [
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "H2 floor changed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "H1 coverage floor changed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "red collapse floor changed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "preserved seat average changed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "2120531121 C3 margin limit changed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "1930331196 C3 attack limit changed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "ceiling raised"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "coverage floor inclusive"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "H2 floor inclusive"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "collapse inclusive"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "interim stop needs three collapses"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "final stop on either seat"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "preserved allows two T9-v2-like games"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "preserved average exclusive"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "fifth objective missed not detected"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "repaired margin exclusive"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "regressed limit exclusive"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "avoided limit exclusive"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "late capture boundary inclusive"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "unfavourable A1 game not replicated"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "P1 permits A1"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "prerequisite ignores what the report permits"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "A2 not restricted to the triggered configurations"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "S14 not a v3 defect"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "staging blocks ignored by readiness"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "ceiling check off by one"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "integrity failure not a stop"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "unit id key allowed in public files"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_screen.py",
+   "killed": true,
+   "mutation": "frozen file changes not detected"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_timeline.py",
+   "killed": true,
+   "mutation": "S1 not read from the session close"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_timeline.py",
+   "killed": true,
+   "mutation": "S9 at the stacking limit instead of the staging cap"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_timeline.py",
+   "killed": true,
+   "mutation": "S8 stacking inclusive"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_timeline.py",
+   "killed": true,
+   "mutation": "S8 counted places not checked"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_timeline.py",
+   "killed": true,
+   "mutation": "S10 ignored"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_timeline.py",
+   "killed": true,
+   "mutation": "S11 ignored"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_timeline.py",
+   "killed": true,
+   "mutation": "S12 ignores invented moves"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_timeline.py",
+   "killed": true,
+   "mutation": "S7 ignores missing reconstructions"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_timeline.py",
+   "killed": true,
+   "mutation": "S13 ignores refusal classes known from earlier games"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_timeline.py",
+   "killed": true,
+   "mutation": "S14 ignores units standing on the objective"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_timeline.py",
+   "killed": true,
+   "mutation": "S14 accepts a holder that arrived"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_timeline.py",
+   "killed": true,
+   "mutation": "occupation counted without acceptance"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_timeline.py",
+   "killed": true,
+   "mutation": "slack off by one"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_timeline.py",
+   "killed": true,
+   "mutation": "lost and never-arrived swapped"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_timeline.py",
+   "killed": true,
+   "mutation": "redundant before held"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_timeline.py",
+   "killed": true,
+   "mutation": "fifth objective is the first captured"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_capture.py",
+   "killed": true,
+   "mutation": "live actions not compared"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_capture.py",
+   "killed": true,
+   "mutation": "timeline not full-step"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s12_capture.py",
+   "killed": true,
+   "mutation": "staging not counted in hold episodes"
+  }
+ ],
+ "schema": "miaosuan-s12-screen-mutation/1",
+ "sources": {
+  "src/miaosuan_agent/evaluation/s12_capture.py": "0412c4983e243726fc0bc4062c8b5d033e67b831c9bbdc9b85acb7ddadb42423",
+  "src/miaosuan_agent/evaluation/s12_screen.py": "49d46d54e36a64c9530c0b35f33b2473ab3c6f37de7f5d437b0cf076eacaa578",
+  "src/miaosuan_agent/evaluation/s12_timeline.py": "5e2ae9e1357b77d8baaeb639a7eac091dfa64d9164a6f6d4d447bc6d7c7f5632"
+ },
+ "tests": [
+  "tests.test_s12_screen",
+  "tests.test_s12_timeline",
+  "tests.test_s12_capture"
+ ],
+ "total": 48,
+ "unmutated_tests_pass": true
+}
