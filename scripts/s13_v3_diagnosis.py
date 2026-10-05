@@ -210,6 +210,7 @@ def analyze_game(entry: Mapping[str, Any], costs: MoveCosts, repo: Path = REPO_R
     action_diffs = {name: {"vs_t9-v1": set(), "vs_t9-v3": set()} for name in POLICIES}
     action_diff_decisions = {name: {"vs_t9-v1": 0, "vs_t9-v3": 0} for name in POLICIES}
     redirect_infeasible = {"O2": 0, "O3": 0}
+    unrelated = {"actions_compared": 0, "differences": 0}
     first = {"any_action": None, "redistribution": None}
     active = 0
     for k in range(n):
@@ -266,6 +267,15 @@ def analyze_game(entry: Mapping[str, Any], costs: MoveCosts, repo: Path = REPO_R
             redirect_infeasible[name] += decided[f"{name}_allocation"].redirect_infeasible
         ground = sd.own_ground(observation, faction)
         cities = {c.coord for c in (observation.cities() or ())}
+
+        def other_actions(actions):
+            return [rd.plain(a) for a in actions if not (a.get("type") == sd.MOVE and a.get("obj_id") in ground)]
+        reference = other_actions(decided["baseline"])
+        for name in POLICIES[1:] + ("identity",):
+            unrelated["actions_compared"] += len(reference)
+            if other_actions(decided[name]) != reference:
+                unrelated["differences"] += 1
+                problems.append(f"decision {k}: {name} changed an action other than an own ground move")
         emitted = {name: sd.ground_moves(decided["baseline" if name == "baseline-v2" else name], ground)
                    for name in POLICIES}
         slots = {name: collections.defaultdict(set) for name in POLICIES}
@@ -438,7 +448,7 @@ def analyze_game(entry: Mapping[str, Any], costs: MoveCosts, repo: Path = REPO_R
 
     public = {
         "game_id": gid, "cell": cell, "candidate_side": ("red", "blue")[faction], "decisions": n,
-        "active_decisions": active, "orders": len(orders),
+        "active_decisions": active, "orders": len(orders), "unrelated_actions": unrelated,
         "classes": {c: classes.get(c, 0) for c in sd.CLASSES},
         "unchanged_orders": sum(1 for o in orders if not o["class"]),
         "classes_by_interval": {iv: {c: sum(1 for o in orders if o["class"] == c and o["interval"] == iv)
@@ -720,7 +730,7 @@ def build(repo: Path = REPO_ROOT) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, 
                                                                       "active_decisions", "orders", "unchanged_orders",
                                                                       "classes", "classes_by_interval",
                                                                       "classes_by_objective", "redirect_causes",
-                                                                      "classes_by_v3_reason")}
+                                                                      "classes_by_v3_reason", "unrelated_actions")}
                                              for g in games],
                            "pooled_classes": {c: sum(g["classes"][c] for g in games) for c in sd.CLASSES},
                            "verification": "every decision of the v3 seat reconstructed; baseline-v2 actions and trace "
