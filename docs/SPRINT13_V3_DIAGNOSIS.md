@@ -451,6 +451,12 @@ overflow; with other stochastic games as the only reference, that is an observat
   renamed; the disposition file's thresholds were overwritten by the rule number until renamed `thresholds`; and four
   descriptive tables (redirect timing, classes by v3's reason, the LOST-place reconciliation and the decision-1 state
   identity) were added after the first results were read.
+* One amendment after the analysis, to a file pinned before it: the pushed `inputs.json` listed the four policy
+  digests, and Sprint 12's owner-approved safeguard (`tests/test_t9_batch.py`) allows v3's identity in no evaluation
+  file outside its listed folders, so the full suite failed on it. The safeguard was left unchanged; `inputs.json` now
+  names the identities the driver checks against its frozen table (the digests remain in section 1 and in the driver,
+  which refuses on any mismatch). Its Sprint 12 and Sprint 9 input digests are byte-identical to the pushed version, and
+  the public files changed only in the digest of `inputs.json` they record.
 * Privacy: every public file passed the forbidden-key check and a value check against every hex the games' seats saw.
   Unit ids are not part of the value check: these games' ids include round numbers such as 100 and 1,300 that coincide
   with steps and counts, so ids are excluded structurally (forbidden keys, aggregates only, planted-id tests).
