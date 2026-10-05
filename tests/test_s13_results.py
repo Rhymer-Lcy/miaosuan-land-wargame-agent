@@ -46,7 +46,7 @@ class ResultsTest(unittest.TestCase):
             self.assertLess((FOLDER / f"{name}.json").stat().st_size, 100_000)
             self.assertEqual(sd.public_check(self.files[name]), [], name)
             self.assertEqual(self.files[name]["inputs_sha256"], digest, name)
-        self.assertEqual(self.inputs["policies"], self.driver.FROZEN)
+        self.assertEqual(self.inputs["policies_checked_against_frozen"], sorted(self.driver.FROZEN))
         self.assertEqual(self.driver.policy_digests(), self.driver.FROZEN)
         self.assertEqual(len(self.inputs["s12"]["games"]), 4)
         self.assertEqual(len(self.inputs["s9"]["games"]), 30)
