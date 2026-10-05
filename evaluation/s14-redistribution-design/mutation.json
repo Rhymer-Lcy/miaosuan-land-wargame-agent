@@ -1,0 +1,188 @@
+{
+ "killed": 34,
+ "mutations": [
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "claimants that cannot arrive are redirected"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "overflow ranked by emission order"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "detour bound exclusive"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "redirect arrival not tested"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "horizon exclusive"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "corridor bound ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "corridor bound measured on the redirect's own route"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "ranks swapped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "greedy fills a full objective"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "redirects not counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "stage-1 selections not counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "batch exceeds the free places"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "batch maximises cost"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "rejected redirect staged instead of withheld"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "late claimant boundary exclusive"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "fail-closed keeps the moves"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_redistribution.py",
+   "mutation": "phantom movers hold places"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "unrelated actions not compared"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "invented moves not counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "capacity check loosened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "reachability not checked"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "redirect route not compared"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "staging prefix not checked"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "order differences never counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "repeat differences never counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "share threshold exclusive"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "unit threshold exclusive"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "divergence threshold exclusive"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "certificate not required"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "shooters ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "first-decision limit halves instead of thirds"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "latency limit doubled"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "rubric keeps the smallest margin"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s14_design.py",
+   "mutation": "disposition inverted"
+  }
+ ],
+ "schema": "miaosuan-s14-design-mutation/1",
+ "sources": {
+  "src/miaosuan_agent/evaluation/s14_design.py": "84f2df140a330edce5a3eba93fe1c937d60027c8c2a9f52593966eb6e329a3df",
+  "src/miaosuan_agent/experiments/t9_redistribution.py": "dff214ce6605270cf6f36cdb553a5757bf5a6d96407b5583f42ade1dc56c46b8",
+  "tests/test_s14_design.py": "76f54d30567290ab1d06c3cedbfc7e435a7df6d3878ef23f6cf60b48ca434feb",
+  "tests/test_t9_redistribution.py": "f0f95eb680d4d0962b35cd0b9c839c6cf1c17aed9c679408aacfc5e3194f0048"
+ },
+ "tests": [
+  "tests.test_t9_redistribution",
+  "tests.test_s14_design"
+ ],
+ "total": 34,
+ "unmutated_tests_pass": true
+}
