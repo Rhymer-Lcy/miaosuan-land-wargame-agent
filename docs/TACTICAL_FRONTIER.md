@@ -187,7 +187,8 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
     Disposition READY_FOR_SMALL_EXPLORATORY_PROPOSAL; whether it keeps any of the primary benefit, which T9-v1 obtained
     with redistribution, is unknown offline.
 11. **Next**: a small exploratory proposal for the batch allocator, written for the owner's approval before any
-    engine session.
+    engine session. Drafted on 2026-10-05 (`docs/SPRINT12_BATCH_ALLOCATOR_PROPOSAL_DRAFT.md`): at most 12 sessions,
+    the primary scenario first; unapproved and unregistered, so it authorizes no engine session.
 
 A tactic that earns ADVANCE gets a confirmatory design sized from its screen's noise; one that does not is recorded
 with its disposition and left. Platform evidence runs alongside: the canary first, then each candidate that a local
