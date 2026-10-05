@@ -1,0 +1,1196 @@
+{
+ "card": "s12-v3-primary-1",
+ "decision": {
+  "decision": "STOP",
+  "interim_stop": true,
+  "kind": "tactical",
+  "permits": null,
+  "primary": {
+   "collapse_games": 0,
+   "games_h1": 2,
+   "games_h2": 2,
+   "seat_average": -145.0,
+   "t9v2_like_h1": 2,
+   "t9v2_like_h2": 2
+  },
+  "stage": "P1",
+  "stops": []
+ },
+ "eligible_for_promotion": false,
+ "games": [
+  {
+   "attack": 441,
+   "candidate_side": "red",
+   "capture_digests": {
+    "t9.json": true,
+    "timeline.json": true,
+    "timeline.pkl": true,
+    "v3.json": true,
+    "v3series.json.gz": true
+   },
+   "capture_order": [
+    "50-point objective D",
+    "50-point objective A",
+    "50-point objective B",
+    "80-point objective A",
+    "80-point objective B",
+    "50-point objective C"
+   ],
+   "card": "s12-v3-primary-1",
+   "collapse": false,
+   "commitments": {
+    "max_counted": 4,
+    "max_raw": 4,
+    "raw_above_capacity": 0,
+    "raw_above_capacity_with_released": 0
+   },
+   "condition": "H1",
+   "consistency": {
+    "differences": 0,
+    "reconstructed_decisions": 5762,
+    "structural": {
+     "cross_objective": 0,
+     "invented": 0,
+     "prefix_failures": 0,
+     "unrelated_changed": 0
+    }
+   },
+   "coverage": 0.5690972222222223,
+   "fifth_objective_attributed_to_v3_selection": false,
+   "fifth_objective_last_to_own_step": null,
+   "fire": {
+    "decisions_with_shot_listed": 25,
+    "orders": 58,
+    "reference_decisions": {},
+    "responses": {
+     "accepted": 58
+    },
+    "shots_listed": 31
+   },
+   "flags": [],
+   "game_id": "2130511121.H1.s12-v3-primary-1.p01",
+   "held_at_end": 0,
+   "holds": {
+    "changes": {
+     "0:stage": 38,
+     "0:withhold": 428
+    },
+    "episodes": 52,
+    "long_holds_flagged": 0,
+    "longest_decisions": 112
+   },
+   "latency": {
+    "decisions": 2881,
+    "max_ms": 177.882,
+    "over_100ms": 1,
+    "over_1s": 0,
+    "p50_ms": 0.63,
+    "p99_ms": 1.978
+   },
+   "lost": 35,
+   "margin": -609,
+   "objectives": {
+    "50-point objective A": {
+     "first_own_step": 421,
+     "last_to_own_step": 421,
+     "outcomes": {
+      "OCCUPIED": 3,
+      "REDUNDANT": 1
+     },
+     "own_at_end": false,
+     "places_selected": 4,
+     "transitions": 3
+    },
+    "50-point objective B": {
+     "first_own_step": 562,
+     "last_to_own_step": 562,
+     "outcomes": {
+      "LOST": 1,
+      "OCCUPIED": 2,
+      "REDUNDANT": 1
+     },
+     "own_at_end": false,
+     "places_selected": 4,
+     "transitions": 3
+    },
+    "50-point objective C": {
+     "first_own_step": 849,
+     "last_to_own_step": 849,
+     "outcomes": {
+      "LOST": 15,
+      "OCCUPIED": 1,
+      "TOO_LATE": 1
+     },
+     "own_at_end": false,
+     "places_selected": 17,
+     "transitions": 3
+    },
+    "50-point objective D": {
+     "first_own_step": 401,
+     "last_to_own_step": 401,
+     "outcomes": {
+      "OCCUPIED": 1,
+      "TOO_LATE": 2
+     },
+     "own_at_end": false,
+     "places_selected": 3,
+     "transitions": 2
+    },
+    "80-point objective A": {
+     "first_own_step": 562,
+     "last_to_own_step": 562,
+     "outcomes": {
+      "LOST": 1,
+      "OCCUPIED": 1,
+      "REDUNDANT": 2,
+      "TOO_LATE": 1
+     },
+     "own_at_end": false,
+     "places_selected": 5,
+     "transitions": 3
+    },
+    "80-point objective B": {
+     "first_own_step": 708,
+     "last_to_own_step": 708,
+     "outcomes": {
+      "LOST": 1,
+      "OCCUPIED": 1,
+      "TOO_LATE": 4
+     },
+     "own_at_end": false,
+     "places_selected": 6,
+     "transitions": 3
+    },
+    "80-point objective C": {
+     "first_own_step": null,
+     "last_to_own_step": null,
+     "outcomes": {},
+     "own_at_end": false,
+     "places_selected": 0,
+     "transitions": 1
+    }
+   },
+   "objectives_at_end": 0,
+   "observer_seconds": {
+    "timeline": 12.380276902578771
+   },
+   "occupation": {
+    "listed_unit_states": 13,
+    "orders": 6,
+    "responses": {
+     "accepted": 6
+    }
+   },
+   "occupy": 0,
+   "opponent_total": 1106,
+   "places": {
+    "arrival_delay": {
+     "max": 12,
+     "median": 0,
+     "min": 0,
+     "n": 21
+    },
+    "arrival_slack": {
+     "max": 2480,
+     "median": 2319,
+     "min": 132,
+     "n": 21
+    },
+    "arrival_slack_by_outcome": {
+     "OCCUPIED": {
+      "max": 2480,
+      "median": 2319,
+      "min": 2080,
+      "n": 9
+     },
+     "REDUNDANT": {
+      "max": 2440,
+      "median": 2299,
+      "min": 2299,
+      "n": 4
+     },
+     "TOO_LATE": {
+      "max": 2480,
+      "median": 2399,
+      "min": 132,
+      "n": 8
+     }
+    },
+    "arrival_to_first_occupation_listing": {
+     "max": 226,
+     "median": 0,
+     "min": 0,
+     "n": 13
+    },
+    "arrival_to_path_end": {
+     "max": 0,
+     "median": 0,
+     "min": 0,
+     "n": 21
+    },
+    "by_kind": {
+     "infantry": 1,
+     "vehicle": 38
+    },
+    "occupation_responses": {
+     "accepted": 9
+    },
+    "outcomes": {
+     "ARRIVED_NOT_DECISIVE": 0,
+     "HELD": 0,
+     "LOST": 18,
+     "NEVER_ARRIVED": 0,
+     "OCCUPIED": 9,
+     "REDUNDANT": 4,
+     "TOO_LATE": 8
+    },
+    "path_end_to_stationary": {
+     "max": 156,
+     "median": 75,
+     "min": 75,
+     "n": 6
+    },
+    "predicted_slack": {
+     "max": 2480,
+     "median": 2258,
+     "min": 144,
+     "n": 39
+    },
+    "selected": 39
+   },
+   "premise": {
+    "arrivals_earlier_than_free_flow": 0
+   },
+   "refusal_classes": {},
+   "remain": 56,
+   "scenario_id": "2130511121",
+   "scores": {
+    "red_attack": 441,
+    "red_occupy": 0,
+    "red_remain": 56,
+    "red_remain_max": 560,
+    "red_total": 497,
+    "red_win": -609
+   },
+   "screen_position": 1,
+   "session": "2787",
+   "staging": {
+    "max_staging_hex_occupancy": 4,
+    "stage_rejected": 0,
+    "staged_moves": 38,
+    "staging_hexes": 13,
+    "waits": {
+     "n": 0
+    },
+    "waits_above_flag": 0
+   },
+   "staging_blocks_to_end": 0,
+   "status": "COMPLETED",
+   "steps": 2881,
+   "stop_details_count": 0,
+   "stops": {},
+   "t9v2_like": true,
+   "unproductive": {
+    "holds": 319,
+    "holds_behind_an_unproductive_place": 298,
+    "unproductive_holders": 12
+   },
+   "waiting_max": 1,
+   "waiting_unit_steps": 188
+  },
+  {
+   "attack": 442,
+   "candidate_side": "blue",
+   "capture_digests": {
+    "t9.json": true,
+    "timeline.json": true,
+    "timeline.pkl": true,
+    "v3.json": true,
+    "v3series.json.gz": true
+   },
+   "capture_order": [
+    "50-point objective A",
+    "80-point objective C",
+    "50-point objective B",
+    "80-point objective B",
+    "50-point objective C",
+    "80-point objective A",
+    "50-point objective D"
+   ],
+   "card": "s12-v3-primary-1",
+   "collapse": false,
+   "commitments": {
+    "max_counted": 4,
+    "max_raw": 4,
+    "raw_above_capacity": 0,
+    "raw_above_capacity_with_released": 0
+   },
+   "condition": "H2",
+   "consistency": {
+    "differences": 0,
+    "reconstructed_decisions": 5762,
+    "structural": {
+     "cross_objective": 0,
+     "invented": 0,
+     "prefix_failures": 0,
+     "unrelated_changed": 0
+    }
+   },
+   "coverage": 6.0055555555555555,
+   "fifth_objective_attributed_to_v3_selection": false,
+   "fifth_objective_last_to_own_step": null,
+   "fire": {
+    "decisions_with_shot_listed": 34,
+    "orders": 74,
+    "reference_decisions": {},
+    "responses": {
+     "accepted": 74
+    },
+    "shots_listed": 50
+   },
+   "flags": [
+    "waiting unit-steps above the largest T9-v1 value of the seat"
+   ],
+   "game_id": "2130511121.H2.s12-v3-primary-1.p02",
+   "held_at_end": 6,
+   "holds": {
+    "changes": {
+     "1:stage": 68,
+     "1:withhold": 346
+    },
+    "episodes": 77,
+    "long_holds_flagged": 0,
+    "longest_decisions": 62
+   },
+   "latency": {
+    "decisions": 2881,
+    "max_ms": 89.633,
+    "over_100ms": 0,
+    "over_1s": 0,
+    "p50_ms": 0.982,
+    "p99_ms": 2.323
+   },
+   "lost": 18,
+   "margin": 481,
+   "objectives": {
+    "50-point objective A": {
+     "first_own_step": 161,
+     "last_to_own_step": 625,
+     "outcomes": {
+      "ARRIVED_NOT_DECISIVE": 1,
+      "LOST": 1,
+      "OCCUPIED": 3,
+      "REDUNDANT": 3
+     },
+     "own_at_end": true,
+     "places_selected": 8,
+     "transitions": 3
+    },
+    "50-point objective B": {
+     "first_own_step": 222,
+     "last_to_own_step": 766,
+     "outcomes": {
+      "ARRIVED_NOT_DECISIVE": 4,
+      "LOST": 1,
+      "OCCUPIED": 5,
+      "REDUNDANT": 2
+     },
+     "own_at_end": true,
+     "places_selected": 12,
+     "transitions": 5
+    },
+    "50-point objective C": {
+     "first_own_step": 364,
+     "last_to_own_step": 364,
+     "outcomes": {
+      "OCCUPIED": 2,
+      "TOO_LATE": 4
+     },
+     "own_at_end": false,
+     "places_selected": 6,
+     "transitions": 2
+    },
+    "50-point objective D": {
+     "first_own_step": 522,
+     "last_to_own_step": 522,
+     "outcomes": {
+      "ARRIVED_NOT_DECISIVE": 1,
+      "LOST": 2,
+      "OCCUPIED": 1,
+      "REDUNDANT": 2
+     },
+     "own_at_end": true,
+     "places_selected": 6,
+     "transitions": 2
+    },
+    "80-point objective A": {
+     "first_own_step": 421,
+     "last_to_own_step": 421,
+     "outcomes": {
+      "LOST": 1,
+      "OCCUPIED": 3,
+      "REDUNDANT": 1
+     },
+     "own_at_end": true,
+     "places_selected": 5,
+     "transitions": 1
+    },
+    "80-point objective B": {
+     "first_own_step": 283,
+     "last_to_own_step": 827,
+     "outcomes": {
+      "ARRIVED_NOT_DECISIVE": 5,
+      "LOST": 5,
+      "OCCUPIED": 3,
+      "REDUNDANT": 2
+     },
+     "own_at_end": true,
+     "places_selected": 15,
+     "transitions": 5
+    },
+    "80-point objective C": {
+     "first_own_step": 161,
+     "last_to_own_step": 161,
+     "outcomes": {
+      "ARRIVED_NOT_DECISIVE": 1,
+      "OCCUPIED": 2,
+      "REDUNDANT": 1
+     },
+     "own_at_end": true,
+     "places_selected": 4,
+     "transitions": 1
+    }
+   },
+   "objectives_at_end": 6,
+   "observer_seconds": {
+    "timeline": 13.542714443989098
+   },
+   "occupation": {
+    "listed_unit_states": 29,
+    "orders": 12,
+    "responses": {
+     "accepted": 12
+    }
+   },
+   "occupy": 390,
+   "opponent_total": 561,
+   "places": {
+    "arrival_delay": {
+     "max": 0,
+     "median": 0,
+     "min": 0,
+     "n": 46
+    },
+    "arrival_slack": {
+     "max": 2720,
+     "median": 2359,
+     "min": 63,
+     "n": 46
+    },
+    "arrival_slack_by_outcome": {
+     "ARRIVED_NOT_DECISIVE": {
+      "max": 2720,
+      "median": 2359,
+      "min": 2054,
+      "n": 12
+     },
+     "OCCUPIED": {
+      "max": 2720,
+      "median": 2416,
+      "min": 2054,
+      "n": 19
+     },
+     "REDUNDANT": {
+      "max": 2700,
+      "median": 2317,
+      "min": 2039,
+      "n": 11
+     },
+     "TOO_LATE": {
+      "max": 2517,
+      "median": 63,
+      "min": 63,
+      "n": 4
+     }
+    },
+    "arrival_to_first_occupation_listing": {
+     "max": 364,
+     "median": 0,
+     "min": 0,
+     "n": 30
+    },
+    "arrival_to_path_end": {
+     "max": 0,
+     "median": 0,
+     "min": 0,
+     "n": 46
+    },
+    "by_kind": {
+     "vehicle": 56
+    },
+    "occupation_responses": {
+     "accepted": 22
+    },
+    "outcomes": {
+     "ARRIVED_NOT_DECISIVE": 12,
+     "HELD": 0,
+     "LOST": 10,
+     "NEVER_ARRIVED": 0,
+     "OCCUPIED": 19,
+     "REDUNDANT": 11,
+     "TOO_LATE": 4
+    },
+    "path_end_to_stationary": {
+     "max": 741,
+     "median": 320,
+     "min": 75,
+     "n": 18
+    },
+    "predicted_slack": {
+     "max": 2720,
+     "median": 2359,
+     "min": 63,
+     "n": 56
+    },
+    "selected": 56
+   },
+   "premise": {
+    "arrivals_earlier_than_free_flow": 0
+   },
+   "refusal_classes": {},
+   "remain": 210,
+   "scenario_id": "2130511121",
+   "scores": {
+    "blue_attack": 442,
+    "blue_occupy": 390,
+    "blue_remain": 210,
+    "blue_remain_max": 603,
+    "blue_total": 1042,
+    "blue_win": 481
+   },
+   "screen_position": 2,
+   "session": "2788",
+   "staging": {
+    "max_staging_hex_occupancy": 4,
+    "stage_rejected": 0,
+    "staged_moves": 68,
+    "staging_hexes": 21,
+    "waits": {
+     "max": 20,
+     "median": 1,
+     "min": 1,
+     "n": 9
+    },
+    "waits_above_flag": 0
+   },
+   "staging_blocks_to_end": 0,
+   "status": "COMPLETED",
+   "steps": 2881,
+   "stop_details_count": 0,
+   "stops": {},
+   "t9v2_like": true,
+   "unproductive": {
+    "holds": 405,
+    "holds_behind_an_unproductive_place": 187,
+    "unproductive_holders": 6
+   },
+   "waiting_max": 5,
+   "waiting_unit_steps": 184
+  },
+  {
+   "attack": 174,
+   "candidate_side": "red",
+   "capture_digests": {
+    "t9.json": true,
+    "timeline.json": true,
+    "timeline.pkl": true,
+    "v3.json": true,
+    "v3series.json.gz": true
+   },
+   "capture_order": [
+    "50-point objective D",
+    "50-point objective A",
+    "50-point objective B",
+    "80-point objective A"
+   ],
+   "card": "s12-v3-primary-1",
+   "collapse": false,
+   "commitments": {
+    "max_counted": 4,
+    "max_raw": 4,
+    "raw_above_capacity": 0,
+    "raw_above_capacity_with_released": 0
+   },
+   "condition": "H1",
+   "consistency": {
+    "differences": 0,
+    "reconstructed_decisions": 5762,
+    "structural": {
+     "cross_objective": 0,
+     "invented": 0,
+     "prefix_failures": 0,
+     "unrelated_changed": 0
+    }
+   },
+   "coverage": 0.28854166666666664,
+   "fifth_objective_attributed_to_v3_selection": false,
+   "fifth_objective_last_to_own_step": null,
+   "fire": {
+    "decisions_with_shot_listed": 14,
+    "orders": 49,
+    "reference_decisions": {},
+    "responses": {
+     "accepted": 49
+    },
+    "shots_listed": 17
+   },
+   "flags": [],
+   "game_id": "2130511121.H1.s12-v3-primary-1.p03",
+   "held_at_end": 0,
+   "holds": {
+    "changes": {
+     "0:stage": 17,
+     "0:withhold": 3
+    },
+    "episodes": 19,
+    "long_holds_flagged": 0,
+    "longest_decisions": 2
+   },
+   "latency": {
+    "decisions": 2881,
+    "max_ms": 175.717,
+    "over_100ms": 1,
+    "over_1s": 0,
+    "p50_ms": 0.839,
+    "p99_ms": 1.52
+   },
+   "lost": 29,
+   "margin": -1037,
+   "objectives": {
+    "50-point objective A": {
+     "first_own_step": 421,
+     "last_to_own_step": 661,
+     "outcomes": {
+      "LOST": 1,
+      "OCCUPIED": 3,
+      "REDUNDANT": 2
+     },
+     "own_at_end": false,
+     "places_selected": 6,
+     "transitions": 5
+    },
+    "50-point objective B": {
+     "first_own_step": 581,
+     "last_to_own_step": 581,
+     "outcomes": {
+      "LOST": 2,
+      "OCCUPIED": 1,
+      "TOO_LATE": 1
+     },
+     "own_at_end": false,
+     "places_selected": 4,
+     "transitions": 3
+    },
+    "50-point objective C": {
+     "first_own_step": null,
+     "last_to_own_step": null,
+     "outcomes": {
+      "LOST": 2,
+      "TOO_LATE": 1
+     },
+     "own_at_end": false,
+     "places_selected": 3,
+     "transitions": 1
+    },
+    "50-point objective D": {
+     "first_own_step": 401,
+     "last_to_own_step": 401,
+     "outcomes": {
+      "OCCUPIED": 1,
+      "TOO_LATE": 2
+     },
+     "own_at_end": false,
+     "places_selected": 3,
+     "transitions": 2
+    },
+    "80-point objective A": {
+     "first_own_step": 741,
+     "last_to_own_step": 741,
+     "outcomes": {
+      "LOST": 8,
+      "OCCUPIED": 1
+     },
+     "own_at_end": false,
+     "places_selected": 9,
+     "transitions": 3
+    },
+    "80-point objective B": {
+     "first_own_step": null,
+     "last_to_own_step": null,
+     "outcomes": {
+      "LOST": 2,
+      "TOO_LATE": 3
+     },
+     "own_at_end": false,
+     "places_selected": 5,
+     "transitions": 1
+    },
+    "80-point objective C": {
+     "first_own_step": null,
+     "last_to_own_step": null,
+     "outcomes": {},
+     "own_at_end": false,
+     "places_selected": 0,
+     "transitions": 1
+    }
+   },
+   "objectives_at_end": 0,
+   "observer_seconds": {
+    "timeline": 15.954457644373178
+   },
+   "occupation": {
+    "listed_unit_states": 8,
+    "orders": 5,
+    "responses": {
+     "accepted": 5
+    }
+   },
+   "occupy": 0,
+   "opponent_total": 1320,
+   "places": {
+    "arrival_delay": {
+     "max": 6,
+     "median": 0,
+     "min": 0,
+     "n": 15
+    },
+    "arrival_slack": {
+     "max": 2480,
+     "median": 2399,
+     "min": 138,
+     "n": 15
+    },
+    "arrival_slack_by_outcome": {
+     "OCCUPIED": {
+      "max": 2480,
+      "median": 2300,
+      "min": 2140,
+      "n": 6
+     },
+     "REDUNDANT": {
+      "max": 2440,
+      "median": 2440,
+      "min": 2440,
+      "n": 2
+     },
+     "TOO_LATE": {
+      "max": 2480,
+      "median": 2399,
+      "min": 138,
+      "n": 7
+     }
+    },
+    "arrival_to_first_occupation_listing": {
+     "max": 20,
+     "median": 0,
+     "min": 0,
+     "n": 8
+    },
+    "arrival_to_path_end": {
+     "max": 0,
+     "median": 0,
+     "min": 0,
+     "n": 15
+    },
+    "by_kind": {
+     "infantry": 1,
+     "vehicle": 29
+    },
+    "occupation_responses": {
+     "accepted": 6
+    },
+    "outcomes": {
+     "ARRIVED_NOT_DECISIVE": 0,
+     "HELD": 0,
+     "LOST": 15,
+     "NEVER_ARRIVED": 0,
+     "OCCUPIED": 6,
+     "REDUNDANT": 2,
+     "TOO_LATE": 7
+    },
+    "path_end_to_stationary": {
+     "max": 75,
+     "median": 75,
+     "min": 75,
+     "n": 1
+    },
+    "predicted_slack": {
+     "max": 2480,
+     "median": 2300,
+     "min": 144,
+     "n": 30
+    },
+    "selected": 30
+   },
+   "premise": {
+    "arrivals_earlier_than_free_flow": 0
+   },
+   "refusal_classes": {},
+   "remain": 109,
+   "scenario_id": "2130511121",
+   "scores": {
+    "red_attack": 174,
+    "red_occupy": 0,
+    "red_remain": 109,
+    "red_remain_max": 560,
+    "red_total": 283,
+    "red_win": -1037
+   },
+   "screen_position": 3,
+   "session": "2789",
+   "staging": {
+    "max_staging_hex_occupancy": 4,
+    "stage_rejected": 0,
+    "staged_moves": 17,
+    "staging_hexes": 7,
+    "waits": {
+     "n": 0
+    },
+    "waits_above_flag": 0
+   },
+   "staging_blocks_to_end": 0,
+   "status": "COMPLETED",
+   "steps": 2881,
+   "stop_details_count": 0,
+   "stops": {},
+   "t9v2_like": true,
+   "unproductive": {
+    "holds": 14,
+    "holds_behind_an_unproductive_place": 13,
+    "unproductive_holders": 4
+   },
+   "waiting_max": 2,
+   "waiting_unit_steps": 294
+  },
+  {
+   "attack": 466,
+   "candidate_side": "blue",
+   "capture_digests": {
+    "t9.json": true,
+    "timeline.json": true,
+    "timeline.pkl": true,
+    "v3.json": true,
+    "v3series.json.gz": true
+   },
+   "capture_order": [
+    "50-point objective A",
+    "80-point objective C",
+    "50-point objective B",
+    "80-point objective B",
+    "50-point objective C",
+    "80-point objective A",
+    "50-point objective D"
+   ],
+   "card": "s12-v3-primary-1",
+   "collapse": false,
+   "commitments": {
+    "max_counted": 4,
+    "max_raw": 4,
+    "raw_above_capacity": 0,
+    "raw_above_capacity_with_released": 0
+   },
+   "condition": "H2",
+   "consistency": {
+    "differences": 0,
+    "reconstructed_decisions": 5762,
+    "structural": {
+     "cross_objective": 0,
+     "invented": 0,
+     "prefix_failures": 0,
+     "unrelated_changed": 0
+    }
+   },
+   "coverage": 5.713888888888889,
+   "fifth_objective_attributed_to_v3_selection": false,
+   "fifth_objective_last_to_own_step": null,
+   "fire": {
+    "decisions_with_shot_listed": 57,
+    "orders": 78,
+    "reference_decisions": {},
+    "responses": {
+     "accepted": 78
+    },
+    "shots_listed": 63
+   },
+   "flags": [
+    "waiting unit-steps above the largest T9-v1 value of the seat"
+   ],
+   "game_id": "2130511121.H2.s12-v3-primary-1.p04",
+   "held_at_end": 6,
+   "holds": {
+    "changes": {
+     "1:stage": 68,
+     "1:withhold": 363
+    },
+    "episodes": 80,
+    "long_holds_flagged": 0,
+    "longest_decisions": 61
+   },
+   "latency": {
+    "decisions": 2881,
+    "max_ms": 89.667,
+    "over_100ms": 0,
+    "over_1s": 0,
+    "p50_ms": 1.002,
+    "p99_ms": 2.362
+   },
+   "lost": 16,
+   "margin": 585,
+   "objectives": {
+    "50-point objective A": {
+     "first_own_step": 161,
+     "last_to_own_step": 641,
+     "outcomes": {
+      "ARRIVED_NOT_DECISIVE": 1,
+      "LOST": 1,
+      "OCCUPIED": 3,
+      "REDUNDANT": 3
+     },
+     "own_at_end": true,
+     "places_selected": 8,
+     "transitions": 3
+    },
+    "50-point objective B": {
+     "first_own_step": 222,
+     "last_to_own_step": 986,
+     "outcomes": {
+      "ARRIVED_NOT_DECISIVE": 5,
+      "HELD": 1,
+      "LOST": 3,
+      "OCCUPIED": 4
+     },
+     "own_at_end": true,
+     "places_selected": 13,
+     "transitions": 7
+    },
+    "50-point objective C": {
+     "first_own_step": 364,
+     "last_to_own_step": 885,
+     "outcomes": {
+      "LOST": 1,
+      "OCCUPIED": 3,
+      "REDUNDANT": 2,
+      "TOO_LATE": 3
+     },
+     "own_at_end": false,
+     "places_selected": 9,
+     "transitions": 4
+    },
+    "50-point objective D": {
+     "first_own_step": 481,
+     "last_to_own_step": 481,
+     "outcomes": {
+      "OCCUPIED": 2,
+      "REDUNDANT": 2
+     },
+     "own_at_end": true,
+     "places_selected": 4,
+     "transitions": 2
+    },
+    "80-point objective A": {
+     "first_own_step": 421,
+     "last_to_own_step": 421,
+     "outcomes": {
+      "LOST": 2,
+      "OCCUPIED": 2,
+      "REDUNDANT": 2
+     },
+     "own_at_end": true,
+     "places_selected": 6,
+     "transitions": 1
+    },
+    "80-point objective B": {
+     "first_own_step": 283,
+     "last_to_own_step": 986,
+     "outcomes": {
+      "ARRIVED_NOT_DECISIVE": 5,
+      "LOST": 1,
+      "OCCUPIED": 5,
+      "REDUNDANT": 5
+     },
+     "own_at_end": true,
+     "places_selected": 16,
+     "transitions": 7
+    },
+    "80-point objective C": {
+     "first_own_step": 161,
+     "last_to_own_step": 1047,
+     "outcomes": {
+      "ARRIVED_NOT_DECISIVE": 1,
+      "HELD": 1,
+      "LOST": 2,
+      "OCCUPIED": 3,
+      "REDUNDANT": 4
+     },
+     "own_at_end": true,
+     "places_selected": 11,
+     "transitions": 5
+    }
+   },
+   "objectives_at_end": 6,
+   "observer_seconds": {
+    "timeline": 12.802053084596992
+   },
+   "occupation": {
+    "listed_unit_states": 33,
+    "orders": 17,
+    "responses": {
+     "accepted": 17
+    }
+   },
+   "occupy": 390,
+   "opponent_total": 509,
+   "places": {
+    "arrival_delay": {
+     "max": 61,
+     "median": 0,
+     "min": 0,
+     "n": 57
+    },
+    "arrival_slack": {
+     "max": 2720,
+     "median": 2300,
+     "min": 1152,
+     "n": 57
+    },
+    "arrival_slack_by_outcome": {
+     "ARRIVED_NOT_DECISIVE": {
+      "max": 2720,
+      "median": 2598,
+      "min": 1895,
+      "n": 12
+     },
+     "HELD": {
+      "max": 1728,
+      "median": 1152,
+      "min": 1152,
+      "n": 2
+     },
+     "OCCUPIED": {
+      "max": 2720,
+      "median": 2256,
+      "min": 1834,
+      "n": 22
+     },
+     "REDUNDANT": {
+      "max": 2700,
+      "median": 2279,
+      "min": 1814,
+      "n": 18
+     },
+     "TOO_LATE": {
+      "max": 2517,
+      "median": 2517,
+      "min": 2517,
+      "n": 3
+     }
+    },
+    "arrival_to_first_occupation_listing": {
+     "max": 380,
+     "median": 0,
+     "min": 0,
+     "n": 37
+    },
+    "arrival_to_path_end": {
+     "max": 0,
+     "median": 0,
+     "min": 0,
+     "n": 57
+    },
+    "by_kind": {
+     "infantry": 2,
+     "vehicle": 65
+    },
+    "occupation_responses": {
+     "accepted": 23
+    },
+    "outcomes": {
+     "ARRIVED_NOT_DECISIVE": 12,
+     "HELD": 2,
+     "LOST": 10,
+     "NEVER_ARRIVED": 0,
+     "OCCUPIED": 22,
+     "REDUNDANT": 18,
+     "TOO_LATE": 3
+    },
+    "path_end_to_stationary": {
+     "max": 981,
+     "median": 318,
+     "min": 75,
+     "n": 28
+    },
+    "predicted_slack": {
+     "max": 2720,
+     "median": 2279,
+     "min": 1152,
+     "n": 67
+    },
+    "selected": 67
+   },
+   "premise": {
+    "arrivals_earlier_than_free_flow": 0
+   },
+   "refusal_classes": {},
+   "remain": 238,
+   "scenario_id": "2130511121",
+   "scores": {
+    "blue_attack": 466,
+    "blue_occupy": 390,
+    "blue_remain": 238,
+    "blue_remain_max": 603,
+    "blue_total": 1094,
+    "blue_win": 585
+   },
+   "screen_position": 4,
+   "session": "2790",
+   "staging": {
+    "max_staging_hex_occupancy": 4,
+    "stage_rejected": 0,
+    "staged_moves": 68,
+    "staging_hexes": 23,
+    "waits": {
+     "max": 20,
+     "median": 4,
+     "min": 1,
+     "n": 7
+    },
+    "waits_above_flag": 0
+   },
+   "staging_blocks_to_end": 0,
+   "status": "COMPLETED",
+   "steps": 2881,
+   "stop_details_count": 0,
+   "stops": {},
+   "t9v2_like": true,
+   "unproductive": {
+    "holds": 350,
+    "holds_behind_an_unproductive_place": 57,
+    "unproductive_holders": 5
+   },
+   "waiting_max": 5,
+   "waiting_unit_steps": 200
+  }
+ ],
+ "inputs": {
+  "2130511121.H1.s12-v3-primary-1.p01": "34bc35a81254bf209d8be4d8d6641c7900345054f7ea5d3ccf46f9b4c5ac37b7",
+  "2130511121.H1.s12-v3-primary-1.p03": "17d9b1ffa5dba84a7ddde32b003a4194cc269e57137f8c9e3b9d69eb74aaad15",
+  "2130511121.H2.s12-v3-primary-1.p02": "598796293456d75b5ece4232a939ff8cdd8f75ed2d613677c35a5c3c54fec30c",
+  "2130511121.H2.s12-v3-primary-1.p04": "50ccb5eaab67c339245bafe3cbd23a1adef725db78c7d1bbe3b7474e73d47c8a"
+ },
+ "note": "exploratory and directional; historical references are descriptive; nothing is promoted",
+ "rules_sha256": "1f7156f193ada6d686fa4cb3f13f2e92d6c360ca174530085c6cf4821b22b00b",
+ "schema": "miaosuan-s12-stage-report/1",
+ "screen": "s12-v3-screen",
+ "stage": "P1",
+ "track": "EXPLORATORY"
+}
