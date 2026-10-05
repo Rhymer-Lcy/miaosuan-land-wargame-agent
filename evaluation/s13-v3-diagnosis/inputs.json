@@ -1,0 +1,379 @@
+{
+ "note": "private inputs pinned before the Sprint 13 analysis; files stay under the ignored local/ tree",
+ "policies": {
+  "baseline-v2": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
+  "t9-v1": "0a0b7174f52e6a6a9d30959ef6a1589c185fb82e70290ceb2b80c889109d77fa",
+  "t9-v2": "66a451d513d7ff5df2292238dbc4dd526d6b39c050991a25043546a0bce2bece",
+  "t9-v3": "9b2003a78ace45c968e2340f06e6fe5aa1938667ab1610c448725a319a48b2b8"
+ },
+ "s12": {
+  "card": "s12-v3-primary-1",
+  "card_manifest_sha256": "6be361740848d0e2d35976846ef9bf13f8dd15dadb78c47331fd12dec8fadb60",
+  "cost_data": {
+   "files": 4,
+   "sha256": "8ab3d0dbe6dc47ab58a13e07acd806a5a5aa550ddb70b5523b55bad054f3a4ab"
+  },
+  "games": [
+   {
+    "captures": {
+     "t9.json": "4c8c695475d7ef2936cd976e0f9e41d641b4d7237fcd8a856512d8f4878fc7f8",
+     "timeline.json": "5ff0c1f76260d11969b26bbee790ee5468d1ec6b673a0a2a737cfb32fb47f3f2",
+     "timeline.pkl": "e538388b4fb2758497041293c06f3029c9a50863ef019e2d647f43e5644def2b",
+     "v3.json": "d3084fe36cdfd60856bb2474ef7e0edd3823827a5ddefed03b90e57a0aa7b2dd",
+     "v3series.json.gz": "6afcadd75bc8e7af0674b1ec55d17d199328399a4bbdc42f036449eea66c9619"
+    },
+    "game_id": "2130511121.H1.s12-v3-primary-1.p01",
+    "record_sha256": "34bc35a81254bf209d8be4d8d6641c7900345054f7ea5d3ccf46f9b4c5ac37b7",
+    "screen_position": 1,
+    "session": "2787"
+   },
+   {
+    "captures": {
+     "t9.json": "69f201e4cd99bcfb772a13255955b94ef0ddd3984435463d4ea85548ba24795f",
+     "timeline.json": "b74a61967fa63b1f7b7d5d26d04f2d1fe34b0878b85fdacd0b00086d4ee4fabf",
+     "timeline.pkl": "998c2b0bbf76b073d3dd3bb6b0216e8655a1f533b26f182cac421ec4ce171732",
+     "v3.json": "1eea9f4ac895d2a4dd150944068a331a5c04e107d340e8568723b24bd496f3be",
+     "v3series.json.gz": "8c21fc9be516f3f1a636e10f45225f49e0adf853d702155845c99b10f6a82651"
+    },
+    "game_id": "2130511121.H2.s12-v3-primary-1.p02",
+    "record_sha256": "598796293456d75b5ece4232a939ff8cdd8f75ed2d613677c35a5c3c54fec30c",
+    "screen_position": 2,
+    "session": "2788"
+   },
+   {
+    "captures": {
+     "t9.json": "d66cfa7b4feffbcb010e2838bc60fc995c23e60fe242a77bafa6d312a2b49c3e",
+     "timeline.json": "d54456228e8ca2e37f9c602c9a6e1379cdb698d9624e13d7cd1156de2673fdbe",
+     "timeline.pkl": "1279b5b8983f0ac602a45004483b2716b722b65fe9fcbe29c0640348574a0b87",
+     "v3.json": "4de63e3f3b34bdff4f86864cd8c95d0fa84c8b82646f56eb1456a64e470b5570",
+     "v3series.json.gz": "42477714549f66311820bf322a6da0dfed496176533f510040b1006653006d1e"
+    },
+    "game_id": "2130511121.H1.s12-v3-primary-1.p03",
+    "record_sha256": "17d9b1ffa5dba84a7ddde32b003a4194cc269e57137f8c9e3b9d69eb74aaad15",
+    "screen_position": 3,
+    "session": "2789"
+   },
+   {
+    "captures": {
+     "t9.json": "2ba1cba53ee8a420350b25947390c865a543490be7f4d062ad14cae74e5e2713",
+     "timeline.json": "9798694150d91ad297460f5aaccfbe3e66e4d5ec95aa2a5a0d8f628eeb666bff",
+     "timeline.pkl": "114b25417a37989737989c833220eed6fda84d3b2f0211af2533e92fbea65d7b",
+     "v3.json": "955b75803811a715868c17b58eb2d3452134743d6be5fdde834660be3696385a",
+     "v3series.json.gz": "50925980069df2d7ec5e2c6eabcb9c94d929294b38e956771ceb710ed3e458f5"
+    },
+    "game_id": "2130511121.H2.s12-v3-primary-1.p04",
+    "record_sha256": "50ccb5eaab67c339245bafe3cbd23a1adef725db78c7d1bbe3b7474e73d47c8a",
+    "screen_position": 4,
+    "session": "2790"
+   }
+  ],
+  "report_sha256": "da4ee8101ab707af7ca7fe2f6983a20c57c21c450e3a6273f66ad82186deb632"
+ },
+ "s9": {
+  "games": [
+   {
+    "captures": {
+     "explore.json": "42a49b8fe1909d0e496750bef02f3f449707177a0d6f46a2c976f32dac5658b5",
+     "t9.json": "328e032bbaf81e4b0a33aedece75a9f88b821548e39ca1012740ea5297c4fb56"
+    },
+    "cell": "H2",
+    "game_id": "2130511121.H2.A.r01",
+    "record_sha256": "11c9271292c0564d0ffaf8fa10140501d66cb48acf84f12aa1c6236f71003acf",
+    "session": "2496"
+   },
+   {
+    "captures": {
+     "explore.json": "b08096cf30eee9f2b74818c1c43425f03633e3371881c271f796a433ff4f82c9",
+     "t9.json": "cbc16afd78335f72a6ecadb1098539e2700cd288b23be13f9d5bb9af1aeed7c8"
+    },
+    "cell": "H1",
+    "game_id": "2130511121.H1.A.r01",
+    "record_sha256": "418a071dededae872a0e2cd88270faa33fe63eb567d1f9baaf341af24eb9fac9",
+    "session": "2502"
+   },
+   {
+    "captures": {
+     "explore.json": "2691180e49e89fed555dc5d5a7be7c950419f6e69c26aa60011a72b1194d81aa",
+     "t9.json": "72e23260cac4af69e7aa5dd421f3494c19d0a27af6d84c1be0170cf537d002ac"
+    },
+    "cell": "H2",
+    "game_id": "2130511121.H2.A.r02",
+    "record_sha256": "548eceba0422dd7e8393ee52a70bd767c17b8a263968c8668252322b6b0ebe05",
+    "session": "2510"
+   },
+   {
+    "captures": {
+     "explore.json": "381272b233c06da395d14bc821877b67046ff7de1cde836aa90eec958f4df625",
+     "t9.json": "31c91f263a2283b83f1c0eabaff788863fa10880eb2fc83a6cab072d95c2a2a3"
+    },
+    "cell": "H1",
+    "game_id": "2130511121.H1.A.r02",
+    "record_sha256": "59816e926cdb09abd3b9c96503a037996d52797d9543659ef804dfd6d01c1a05",
+    "session": "2514"
+   },
+   {
+    "captures": {
+     "explore.json": "c700e147370d474eade783acd1a014c2fd721ee056d5f866b7e72775be13fbde",
+     "t9.json": "c18cf38c8f2948a3d01b9bfe5d85bcb6a92af77a044006a3180c8f50664e0287"
+    },
+    "cell": "H1",
+    "game_id": "2130511121.H1.A.r03",
+    "record_sha256": "7ca84b56f6ffd492b07e2f38fd3ca7d3f3cf0c8259c8bc7c7650b4a8a985594f",
+    "session": "2505"
+   },
+   {
+    "captures": {
+     "explore.json": "a7a47b99a001ad156f59a2707447913f78f174722fd433b9040afb947a797877",
+     "t9.json": "801b4a96600457d9725050dc07c4f9c8ba3feb5b4ab20e624d41e707115a504b"
+    },
+    "cell": "H2",
+    "game_id": "2130511121.H2.A.r03",
+    "record_sha256": "f57ced55994619dcf63d39a43b54dbedb47a9debf99cadf78639bc76901d457e",
+    "session": "2490"
+   },
+   {
+    "captures": {
+     "explore.json": "9a6ade0e6aa69e00c59cdaf6e517d5174903582c51ebee3bdc707f9b37594b9a",
+     "t9.json": "b21ad55accbe849eeabbb5f3b3ff2d16235cb3fd4967ba83bda3d3468797ff25"
+    },
+    "cell": "H2",
+    "game_id": "2130511121.H2.A.r04",
+    "record_sha256": "987a97d0ca4e0c8e3f0fd7de09f827e3102a6dafae2c7e7d793a70df43ab116c",
+    "session": "2491"
+   },
+   {
+    "captures": {
+     "explore.json": "d48ebbe3100d6c3835f0c43ceb9ac23f68dfe9db223bb648b4d00c546c972e9d",
+     "t9.json": "bbaa299a0c92762917d2eeffa80becd0738a973cd8c50d9b0f80b1f8bd03727f"
+    },
+    "cell": "H1",
+    "game_id": "2130511121.H1.A.r04",
+    "record_sha256": "d65333cb1c096750bbe9a0a594c87f71b0eae455bc3f5f89ab4b04694148c656",
+    "session": "2495"
+   },
+   {
+    "captures": {
+     "explore.json": "ec426e1e33620a2898cdc1832638d051cd6613d9fbb81836abddbc9ae1d5794e",
+     "t9.json": "432dbac2f39048e2c8850d2434a7e460f5fe9b0dc3903258b6841363dd334fb0"
+    },
+    "cell": "H2",
+    "game_id": "2130511121.H2.A.r05",
+    "record_sha256": "bf25d4ae2752674c7e2c9e00041adc9b3c7f762b9fad4478069fc99f358a601e",
+    "session": "2489"
+   },
+   {
+    "captures": {
+     "explore.json": "5339fd5a7812f11765fa443a9e50ee395695befdea7bd5d3d726a276e58ac6e9",
+     "t9.json": "1cf6140a4b176b8e59bbfa91dbc0a99b43df3e2af8141f4682b96ae2242213e5"
+    },
+    "cell": "H1",
+    "game_id": "2130511121.H1.A.r05",
+    "record_sha256": "22bb3b3ffc9bb8367a18da8d560d6e574397f81d9b8fa139ccbda47cb3807f3d",
+    "session": "2493"
+   },
+   {
+    "captures": {
+     "explore.json": "120b79b1d919e5d8132a03153adae4d04d3a157db62f853555063e0ac5cb1c08",
+     "t9.json": "c0c9289abcd400d561568f510f9639730521bc1e4fc293a6219aafb7a78d2d4d"
+    },
+    "cell": "H1",
+    "game_id": "2130511121.H1.A.r06",
+    "record_sha256": "94b57c06156e6d1248e0fc515ed0916598758e6fd1e7837bd3ce5b541569066b",
+    "session": "2497"
+   },
+   {
+    "captures": {
+     "explore.json": "4722865adb0e0fbccf54ce89f2302f14c58ab44329e7d4d0ec9da6aa69fb9153",
+     "t9.json": "4ad0abe62a1d676ce8fb3b310f989ec62551042918b0f671c66fae75b8f1a762"
+    },
+    "cell": "H2",
+    "game_id": "2130511121.H2.A.r06",
+    "record_sha256": "92b199912593d277b1e88576083ca2389ceda44d957b42a5cb5efd5b02c863d9",
+    "session": "2498"
+   },
+   {
+    "captures": {
+     "explore.json": "41dda18f919e1ab213f0d4c9f6e9dbd5c89391db8a3065d62080d8e4b702b3fc",
+     "t9.json": "6cb80997e959dc9f2492b9b8c34bcc29c1645b9a8d32cec679f8a9e4bd0875a6"
+    },
+    "cell": "H2",
+    "game_id": "2130511121.H2.A.r07",
+    "record_sha256": "3d112a7390daf6ddcfb783648fe565b54227d83f7fdbecfa3a17851c835797da",
+    "session": "2499"
+   },
+   {
+    "captures": {
+     "explore.json": "6fec9e4f2f44f5dc515ec5894b01c1130821624c0047eaca4e5982cfc226638d",
+     "t9.json": "836c32cb79c353aca87a0dba4219f51125ff1566aceadd4d1db2e306d3af9fea"
+    },
+    "cell": "H1",
+    "game_id": "2130511121.H1.A.r07",
+    "record_sha256": "3d48045521bc62418b652e488efa0cb84664877853bee9f78a6cd6f40338a4a7",
+    "session": "2504"
+   },
+   {
+    "captures": {
+     "explore.json": "b1644f939eed42a7be0f6737419253292c4bb62f27b7ef6d67cc865468858b9b",
+     "t9.json": "e869e47b57c6a5faa0e31fc4a0071e8587f4ceae32445b585383c583f205109b"
+    },
+    "cell": "H2",
+    "game_id": "2130511121.H2.A.r08",
+    "record_sha256": "6e2f09d14c7abb256cab5158a59b2b1ce83705a71c3205a013ed6ed7c7f3efb7",
+    "session": "2503"
+   },
+   {
+    "captures": {
+     "explore.json": "e88f5ae9f97227385e30df15c503fc475d4d11038d3f90b32b90270df686114f",
+     "t9.json": "84d8a9533fb2b21b3df2bf9e2402fe6c85d35524da2165ec21dbcc6b1cb3a7d8"
+    },
+    "cell": "H1",
+    "game_id": "2130511121.H1.A.r08",
+    "record_sha256": "24da78f359940faab1d09b1efe19094be73028406a1f2df5506b1e9ef03fe57c",
+    "session": "2515"
+   },
+   {
+    "captures": {
+     "explore.json": "012df8022a2b56b43af070731a9995270579acddd1c8caea237b97e20a1b4065",
+     "t9.json": "672e7cec4e345ca1b38cd9183c333c290953e0c6c37f506d968c5eeaa1e97c25"
+    },
+    "cell": "H1",
+    "game_id": "2130511121.H1.A.r09",
+    "record_sha256": "a92ec0c9b490bcf96da9d2c002c6759d08bbf0bc91874de63a42624c93eed1c0",
+    "session": "2517"
+   },
+   {
+    "captures": {
+     "explore.json": "22384026265be8b9130084c670d24640c3b8d91d8ff9e7412702ee3e24a1d0f7",
+     "t9.json": "e3b7e485e7e09dc3ee8fb5eaa8b3ae9d9262904a2c6e9726421f8b2aed323f1a"
+    },
+    "cell": "H2",
+    "game_id": "2130511121.H2.A.r09",
+    "record_sha256": "424e658d8b341446ef0c2985032baaab4bc60b53b320a50b741c0306301539fc",
+    "session": "2519"
+   },
+   {
+    "captures": {
+     "explore.json": "75c26690c77b75a642f043f0b7e4de5f0b0fc3d7edfe0b02c0efbe7ac6a860ea",
+     "t9.json": "8f271d8a9c75513ff5dda84449a8c717bad5abc70eaea1bca22a518b3c9dd432"
+    },
+    "cell": "H2",
+    "game_id": "2130511121.H2.A.r10",
+    "record_sha256": "b050acedd68aeec0c5b659a8a2aefaf6b709970dd9533ca06ea1eaab360b48ad",
+    "session": "2518"
+   },
+   {
+    "captures": {
+     "explore.json": "0d8e0a2541f66cc5392a6316839dfa9c73619cfdccdb96b990fc3288b777756a",
+     "t9.json": "ac6c49a02a6d43916afdeb0c6fe420a1668286c83a09e042c5ca4cc4fd26fbef"
+    },
+    "cell": "H1",
+    "game_id": "2130511121.H1.A.r10",
+    "record_sha256": "4c9d7f82547e5d54ab8387ec8011e91db0fd3b0066937c4f475cc8644a0800e4",
+    "session": "2516"
+   },
+   {
+    "captures": {
+     "explore.json": "a30681b64510756986fec937bc22da62191a1fc9bcfd9f0bdfc958ccb6b2f032",
+     "t9.json": "b2814057bb7ed9231cbacd569f1022a32568f88b118990bb101f444767772ad8"
+    },
+    "cell": "H2",
+    "game_id": "2130511121.H2.A.r11",
+    "record_sha256": "9113f21ed660b31bc8dbd8a0dc23ab7a60e15a507c7a411883f55695ee72481c",
+    "session": "2509"
+   },
+   {
+    "captures": {
+     "explore.json": "551ec14e9aefa7fc4c971b9cb8d71324445cb3a24e541f82b8b13cc160f0e18f",
+     "t9.json": "5f6c04f078165a4e912d046c0507136292dcb9b7b8c7607c296c6a4baf69feed"
+    },
+    "cell": "H1",
+    "game_id": "2130511121.H1.A.r11",
+    "record_sha256": "ee67fb5823a28c561d04daee1f0fa48b149a8c9c26d240cebc16a9c75a676716",
+    "session": "2508"
+   },
+   {
+    "captures": {
+     "explore.json": "9138ffe6fc4e63dc3da3fd53cc7e4be296ad63340c6fbe7bb5667a48c27d2f53",
+     "t9.json": "82a44650149603cb4bba45c8a19484b184b0f650cfb784a481876f24c3c9b85b"
+    },
+    "cell": "H1",
+    "game_id": "2130511121.H1.A.r12",
+    "record_sha256": "05d8972bfd47f639a126ba7157067d21c118b9d108aa1add7c1c9873c120d1ce",
+    "session": "2521"
+   },
+   {
+    "captures": {
+     "explore.json": "3247584dc69ad5220610738ea0ada7c246f9356e017e4a5bd95cfa1077fdebd5",
+     "t9.json": "274e8b08e1872f40cbf34422fbcf378bd74e78cdcc198b8cd7a60c8b63641b3a"
+    },
+    "cell": "H2",
+    "game_id": "2130511121.H2.A.r12",
+    "record_sha256": "1af4fa537634036de73ba317654a14017ac7eb10d65fd439af9eed1f1a4c154c",
+    "session": "2523"
+   },
+   {
+    "captures": {
+     "explore.json": "c1f549ed412562452fafc7d624df8c30fcbfb7ae556ba726c54ce17b9119c539",
+     "t9.json": "b1ef85df1f94b955e91d68f4b11ffe0649ad0c9cceff7eda2610b97aafdea0a0"
+    },
+    "cell": "H2",
+    "game_id": "2130511121.H2.A.r13",
+    "record_sha256": "6d11d94f13309296bc3a98e833f5318e992bf5a8924d14e77283a29619f7d5dd",
+    "session": "2525"
+   },
+   {
+    "captures": {
+     "explore.json": "b11e7ff9ca63602472e3b28ef9ce3bcc0597b088bd35cf86051f7819bbde97ef",
+     "t9.json": "24e175e99bf35b2eaf1091b469050e0f630bce3dc0cb51b38d00262b25ffbf07"
+    },
+    "cell": "H1",
+    "game_id": "2130511121.H1.A.r13",
+    "record_sha256": "39ff0e6f56a90f673c4b4e3f038a60fbd60e5ef857f67c69a08eb13040157c87",
+    "session": "2526"
+   },
+   {
+    "captures": {
+     "explore.json": "101ed493fe5609bf2fd0327abb143cebfc76afa96240cf3602dac9fa1e9782be",
+     "t9.json": "3f5bf7cc5a2bb7e9d8261a52a8cb1e91a0106c6887df1db5ff5f8f31899bb459"
+    },
+    "cell": "H2",
+    "game_id": "2130511121.H2.A.r14",
+    "record_sha256": "71a752754f1197ff7178c3b3c9ceb176ccd4ed8fe3decf96443be021ff9a1ac4",
+    "session": "2527"
+   },
+   {
+    "captures": {
+     "explore.json": "991309bd5f1d6296eb03d4153d5fa61dd078377b762a6014f568ef71e0b7af2b",
+     "t9.json": "a36891f0ad051a9c489bc3243f45603922c1f055041d2f0688589390dde7c281"
+    },
+    "cell": "H1",
+    "game_id": "2130511121.H1.A.r14",
+    "record_sha256": "d93abfe80b698114e18058bb95ec1f79bc7ed3920dec09037a565e5575dea220",
+    "session": "2528"
+   },
+   {
+    "captures": {
+     "explore.json": "673020bcf8f857787ff7c0b97de36e76ad25736b65bcb812a107376fe0c8da82",
+     "t9.json": "0ec0f33288536a6298efe0d9fb3bdadd59f4849ef65337e40cea6fbb43d22bc0"
+    },
+    "cell": "H1",
+    "game_id": "2130511121.H1.A.r15",
+    "record_sha256": "890c760453ac420c68785961dec94ff6a0a4025807b1b075c35655e6f21a0df0",
+    "session": "2530"
+   },
+   {
+    "captures": {
+     "explore.json": "bd798ead2bcd7a1085ec5d0e6fb6ec8494ada3726302d2f3d2f537a1406b88e2",
+     "t9.json": "a1acfe36852bbbde32f8a1e1029b7beba7d466345edb07fc67bbba096feb29f8"
+    },
+    "cell": "H2",
+    "game_id": "2130511121.H2.A.r15",
+    "record_sha256": "da845ce28fdd92a11deae451dcf599e366ff75b172cd825b4ac6210dc2300ac4",
+    "session": "2532"
+   }
+  ],
+  "phase_file_sha256": "60782d72d74fac6a72113e3959e3df97dfb1b2f3f2b39ac26945f2015955ebb8",
+  "study": "t9-confirmation-1"
+ },
+ "schema": "miaosuan-s13-inputs/1"
+}
