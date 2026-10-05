@@ -99,7 +99,8 @@ beyond the registered threshold, so the study stopped before its last phase. The
 PRIMARY_SUPPORTED_NEEDS_REVISION; nothing was promoted. Sprint 10 diagnosed the adverse configurations and screened a
 same-route revision (`docs/SPRINT10_T9_DIAGNOSIS.md`, PARTIAL_REPAIR_NOT_READY_FOR_CONFIRMATION), and Sprint 11
 designed, offline and without engine sessions, a batch capacity allocator (`docs/SPRINT11_BATCH_ALLOCATOR.md`,
-READY_FOR_SMALL_EXPLORATORY_PROPOSAL; nothing registered). The canary's
+READY_FOR_SMALL_EXPLORATORY_PROPOSAL; nothing registered). A small exploratory screen of it is drafted for the owner's
+approval (`docs/SPRINT12_BATCH_ALLOCATOR_PROPOSAL_DRAFT.md`; unapproved, no engine session). The canary's
 manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
@@ -158,6 +159,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/T9_CONFIRMATION.md` | the registered, staged confirmatory study of T9: identities, design, estimand, interval, power, phase gates, failure handling, integrity, validation, disposition, results |
 | `docs/SPRINT10_T9_DIAGNOSIS.md` | Sprint 10's full-step T9 failure diagnosis, same-route T9-v2 revision, eight-game exploratory screen and disposition |
 | `docs/SPRINT11_BATCH_ALLOCATOR.md` | Sprint 11's offline design of a batch capacity allocator: control audit, formal model, designs considered, frozen-capture replay, certificate, prevalence, tests and disposition |
+| `docs/SPRINT12_BATCH_ALLOCATOR_PROPOSAL_DRAFT.md` | the proposed Sprint 12 exploratory screen of the batch capacity allocator (a draft for the owner's approval; not a registration, no engine authorization) |
 | `docs/PLATFORM_CANARY.md` | the owner's manual upload and compatibility-check steps for the platform canary |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
