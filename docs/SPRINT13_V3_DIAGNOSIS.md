@@ -241,3 +241,227 @@ seat-local. Exactly one next task is recommended.
 
 Nothing here is an engine result for T9-v1, T9-v2 or any oracle on these states, a score estimate, or evidence that a
 revised policy would improve anything. Sprint 12's disposition stands.
+
+## Results (2026-10-06)
+
+Sections 1 to 12 were pushed as commit `a34f2691598b43b64ff01acdebb69a5dc3391d6d` at 2026-10-06T00:11:21+08:00, together
+with the input digests, and fetched back unauthenticated byte for byte before the analysis ran; they are unchanged.
+Every figure below comes from the public files of `evaluation/s13-v3-diagnosis/` (`reconstruction`, `redistribution`,
+`reservations`, `features`, `oracles`, `sequence`, `disposition`), which `scripts/s13_v3_diagnosis.py run --check`
+regenerates byte for byte from the pinned private inputs on the evaluation server. T9-v1, T9-v2 and the oracles are
+action-level counterfactuals on states that v3 produced; none of their consequences was played.
+
+### R1. Inputs and reconstruction
+
+* Inputs: the four Sprint 12 P1 games (sessions 2787 to 2790) with their records and 20 capture files, the scenario's
+  cost data, and the 30 Sprint 9 phase-A primary T9-v1 seats (15 H1 red, 15 H2 blue) with their records, `T9Capture`
+  and exploratory capture files, each pinned by SHA-256 in `evaluation/s13-v3-diagnosis/inputs.json`; the four policy
+  identities were recomputed from the checkout and equal the frozen values.
+* All 11,524 decisions of the v3 seat (2,881 per game) were reconstructed. At every one the reconstructed
+  `baseline-v2` actions and trace digest equalled the captured ones and the reconstructed v3 actions equalled the
+  submitted actions; at every decision with an own ground move (660: 300, 158, 16 and 186 in games p01 to p04) v3's
+  selected, staged and withheld sets equalled the captured allocation, the oracle allocator without modifications
+  equalled `t9_batch.allocate`, the frozen T9-v1 add-on equalled Sprint 10's independent audit, and the counted movers
+  equalled the captured ones. No disagreement occurred.
+* The seat's decision-1 state was identical in the two games of each seat (H1 and H2).
+
+### R2. Where T9-v1 and v3 differ (section 4)
+
+1,523 `baseline-v2` ground move orders were classified (505, 470, 50 and 498); 913 of them differ between T9-v1 and v3.
+
+| Class | p01 (H1) | p02 (H2) | p03 (H1) | p04 (H2) | Pooled |
+|---|---:|---:|---:|---:|---:|
+| `CROSS_OBJECTIVE_REDIRECTION_V1_ONLY` | 0 | 5 | 0 | 4 | 9 |
+| `STAGING_VERSUS_REDIRECTION` | 34 | 46 | 15 | 50 | 145 |
+| `WITHHOLDING_VERSUS_REDIRECTION` | 128 | 161 | 0 | 202 | 491 |
+| `END_OF_GAME_FEASIBILITY_EXCLUSION` | 145 | 2 | 4 | 73 | 224 |
+| `INCUMBENT_MOVER_DIFFERENCE` | 0 | 0 | 0 | 0 | 0 |
+| `SAME_OBJECTIVE_CAPACITY_SELECTION` | 4 | 7 | 0 | 6 | 17 |
+| `STAGING_VERSUS_WITHHOLDING` | 2 | 15 | 0 | 10 | 27 |
+| `OTHER` | 0 | 0 | 0 | 0 | 0 |
+
+* Redistribution classes (the first three) hold 645 of the 913 differences. Every T9-v1 redirect had the cause
+  `CAPACITY`: none was triggered only by movers that cannot arrive, so the incumbent-mover difference never arose.
+* The end-of-game exclusions are late: 220 of the 224 come from decision 1,500 on (143 in p01, 73 in p04), when the
+  units T9-v1 would have kept could not reach their objective before the end.
+* Every action other than an own ground move order was identical to `baseline-v2`'s under every policy and oracle,
+  in order (1,127 comparisons at the 660 decisions with an own ground move).
+
+### R3. Loss of cross-objective reallocation (section 5)
+
+| Game | Distinct units T9-v1 redirects | Redirects | T9-v1 emitted ground moves | Redirect share |
+|---|---:|---:|---:|---:|
+| p01 (H1) | 18 | 162 | 346 | 0.4682 |
+| p02 (H2) | 22 | 212 | 268 | 0.7910 |
+| p03 (H1) | 14 | 15 | 49 | 0.3061 |
+| p04 (H2) | 22 | 256 | 394 | 0.6497 |
+
+* Timing: the first T9-v1/v3 action difference and the first redirect are at decision 1 in every game. At decision 1
+  T9-v1 redirects 14 units as red and 19 as blue (the states are identical within a seat). Later redirects concentrate
+  where v3 withholds full-objective overflow repeatedly: in p01 from decision 581 on, from 50-point objective C to
+  80-point objective C (83 orders), 80-point objective B (34) and 50-point objective D (25); in p02 and p04 from
+  decision 365 on, from 80-point objective A to 50-point objective D (132 and 173 orders), of which v3 withheld 128 and
+  169 and staged the rest.
+* Signature against Sprint 9 (descriptive, different state populations): the share of re-assigned among emitted
+  ground moves was 0.4107 to 0.6500 in the 15 real T9-v1 H1 seats and 0.7500 to 0.8444 in the 15 H2 seats; on v3's
+  states T9-v1 would redirect 0.4682 and 0.3061 as red and 0.7910 and 0.6497 as blue. v3 makes none by construction.
+* What the redirects point at, beside what v3 then did. As red, the objectives T9-v1 redirects to at decision 1
+  include 80-point objectives B and C; at the 50-step snapshots T9-v1 owned 80-point objective C in all 15 of its H1
+  games and objective B in 11, while v3 never owned objective C in either H1 game and never owned objective B in p03.
+  Both H1 games ended with no objective own (p01 never own: 80-point objective C; p03: 50-point objective C and 80-point objectives B and C). As
+  blue, v3 owned all seven objectives at some point and six at the end in both games (50-point objective C own and
+  then lost); T9-v1 owned all seven at the end in all 15 H2 games. These are other stochastic games, so no causal chain
+  is claimed.
+
+### R4. Reservations that were never honoured (section 6)
+
+* Sprint 12's figures are reproduced exactly: holds behind a never-honoured place 298 of 319, 187 of 405, 13 of 14 and
+  57 of 350, and 12, 6, 4 and 5 such holders, all 27 destroyed before arriving.
+* Episodes: 188 reservation episodes, 139 honoured and 49 destroyed before arriving; none alive without arriving. The
+  53 places Sprint 12 classed LOST are the 49 destroyed episodes plus 4 units in p01 lost one decision after their
+  selection, before they were ever counted. One of the 27 holders, in p01, likewise formed no episode, so
+  episode-level blocking covers the other 26.
+* The 26 destroyed holders that blocked a claimant held their place a median of 59.5 decisions from selection to
+  release (20 to 276) and blocked 1,093 claimant-decisions. In only 1 of those 1,093 was the blocked claimant's
+  free-flow time below the holder's remaining bound: the destroyed holders were almost always closer to the objective
+  than the units they kept out. Honoured holders blocked 3,162 claimant-decisions, 413 of them by a faster claimant.
+* Release and replacement: every one of the 26 places was released at the first decision whose observation no longer
+  listed the holder. v3 selected a replacement for that objective a median of 0 steps later (0 to 166; 2 of 26 never
+  replaced); the replacements that arrived took 20 to 161 steps, and for 5 of the 26 a replacement place ended
+  OCCUPIED or HELD.
+
+### R5. Prospective features (section 7)
+
+192 places were selected in the four games, 53 of them LOST. No registered feature is prospectively separating.
+
+| Feature | Pooled AUC (LOST larger) | Per game p01, p02, p03, p04 |
+|---|---:|---|
+| seen enemies within 3 hexes of the route | 0.6993 | 0.5013, 0.4848, 0.76, 0.7921 |
+| objective contested | 0.6277 | 0.6627, 0.613, 0.6667, 0.6404 |
+| counted incumbents | 0.6336 | 0.8214, 0.475, 0.6244, 0.5939 |
+| route's nearest seen enemy (hexes) | 0.3436 | 0.2557, 0.406, 0.3942, 0.2857 |
+| strength fraction | 0.385 | 0.3254, 0.3674, 0.44, 0.3772 |
+| free-flow time | 0.4122 | 0.1839, 0.4511, 0.4156, 0.4579 |
+
+* The closest, seen enemies near the route, falls below 0.70 pooled and points the other way in p02. Conditional
+  counts show associations, not identification: 49 of the 142 places at a contested objective were lost, against 4 of
+  the 50 elsewhere, so a rule that dropped contested reservations would also have dropped 93 places that were not lost.
+* Per holder, destroyed holders spent a larger share of their counted decisions with a seen enemy within 3 hexes and
+  below full strength than honoured ones in every game (`features.json`, holder descriptives); this is a description,
+  not a predictor.
+
+### R6. Oracle decomposition (section 7)
+
+Pooled over the four games (order-decisions; objective-decisions for slot assignments):
+
+| Policy | Cross-objective | Staged | Withheld | Admitted where v3 held back | Slot assignments differing from T9-v1 | Orders differing from T9-v1 | Orders differing from v3 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `baseline-v2` | 0 | 0 | 0 | 1,331 | 806 | 1,111 | 1,331 |
+| T9-v1 | 645 | 0 | 466 | 871 | 0 | 0 | 913 |
+| T9-v2 | 0 | 589 | 514 | 241 | 369 | 709 | 712 |
+| v3 | 0 | 191 | 1,140 | 0 | 550 | 913 | 0 |
+| O1 (no doomed holders) | 0 | 172 | 867 | 292 | 752 | 1,040 | 297 |
+| O2 (v3 plus T9-v1 redirection) | 637 | 51 | 643 | 637 | 222 | 337 | 645 |
+| O3 (both) | 583 | 44 | 412 | 875 | 605 | 724 | 881 |
+
+* O2 removes most of v3's divergence from T9-v1 (slot assignments 550 to 222, orders 913 to 337); O1 moves v3 further
+  from T9-v1 (752 and 1,040), because T9-v1 also counts the holders that later die.
+* The two modifications change different decisions: of the 645 T9-v1 redirect order-decisions and the 292 O1
+  admissions, 154 coincide (overlap 0.1967). The end-of-game test removed 8 T9-v1 alternatives in O2 (4 in each H2
+  game) and none as red.
+
+### R7. Sequence and Sprint 9 comparison (section 8)
+
+| Game | First redirect | First blocking unproductive reservation | First O1 admission | First ownership divergence | Score divergence `D` | Attack | Strength |
+|---|---|---|---|---|---|---|---|
+| p01 (H1) | decision 1 | decision 581 | decision 581 | step 550 | step 950 | none | none |
+| p02 (H2) | decision 1 | decision 1 | decision 365 | step 250 | step 1450 | step 1300 | step 750 |
+| p03 (H1) | decision 1 | decision 1 | decision 581 | step 550 | step 550 | step 450 | none |
+| p04 (H2) | decision 1 | decision 365 | decision 365 | step 250 | step 1900 | step 2350 | step 750 |
+
+* The characteristic T9-v1 pattern is defined in both seats (269 entries as red, 392 as blue). As red, all 15 T9-v1
+  games first owned 50-point objective B at step 550 and neither v3 game owned it then; as blue, all 15 first owned it
+  at step 1450, so none owned it at step 250, and both v3 games did.
+* The ownership pattern departs from T9-v1's before the seat metric does in three games and at the same snapshot in
+  p03, and every game's redistribution difference is present from decision 1. As blue, own strength falls below every
+  T9-v1 game from step 750 on, well before the margin (steps 1450 and 1900).
+* Against the 15 same-seat T9-v1 games (`sequence.json`, placements): as red, coverage 0.5691 and 0.2885 below the
+  minimum 0.6184 and units lost 35 and 29 against a median of 32; as blue, coverage 6.0056 and 5.7139 above the maximum
+  5.426, yet attack 442 and 466 below the minimum 490, units lost 18 and 16 against a median of 11, waiting unit-steps
+  184 and 200 against at most 6, and six objectives at the end against seven in every T9-v1 game. v3 emitted 124 and 135
+  ground moves as blue against at most 64.
+* Not available in Sprint 9: per-decision redirect timing, full-step states, shot listings and per-objective flags in
+  the final state (its snapshots end at step 2850); none of them was reconstructed from aggregates.
+
+### R8. Disposition
+
+| Game | A share | A material | B share | B material |
+|---|---:|---|---:|---|
+| p01 (H1) | 0.4682 | yes | 0.721 | yes |
+| p02 (H2) | 0.791 | yes | 0.1037 | yes |
+| p03 (H1) | 0.3061 | yes | 0.0714 | no |
+| p04 (H2) | 0.6497 | yes | 0.0543 | no |
+
+A is material in all four games; B in two (one per seat), short of the three the rule requires. `SA` = 76, `SB` = 24,
+overlap 0.1967, no prospectively separating feature. Rule 2 applies:
+
+**REDISTRIBUTION_DOMINANT.**
+
+Sensitivity, stated because the margin is narrow: B in p02 is 0.1037 against the 0.10 threshold, and in p04 it is
+0.0543. Had B been material in one more game, rule 5 would have given BOTH_MECHANISMS_MATERIAL (`SB` 24 is not below
+0.25 `SA` = 19). Never-honoured reservations are therefore a real, large effect in p01 (230 of 319 held claimant-decisions
+admitted by O1) and a small one elsewhere; they are not the main actionable difference across the four games, and
+nothing seat-local identified them in advance.
+
+No third mechanism was established. The end-of-game exclusions (224 orders) are late and concern units that could not
+reach their objective before the end. As blue, the earliest divergence in a score-type quantity is own strength at
+step 750, after the decision-1 redistribution difference and during v3's withholding of 80-point objective A's
+overflow; with other stochastic games as the only reference, that is an observation, not an established mechanism.
+
+### R9. Design constraints implied (no design is implemented)
+
+1. Cross-objective reallocation is the part of T9-v1 that v3 lost, and it is the part Sprint 10 tied to the adverse
+   configurations (1930331196 C2 and C3 corridors, 2120531121 C3 far reservations). A future allocator that restores
+   any of it must be evaluated offline on the Sprint 10 adverse captures as well as on these four primary games before
+   any engine request.
+2. Any redirect keeps v3's admission discipline: rank order free of emission order, and no place for a unit that
+   cannot arrive before the end (the test that removed T9-v1's unreachable reservations). O2 shows the two compose: it
+   redirects 637 order-decisions and the end-of-game test dropped only 8 alternatives.
+3. Redirection should be bounded to overflow of a full objective (T9-v1's trigger); O2 kept every claimant that had a
+   place and redirected only the rest, and still removed most of v3's slot-assignment divergence from T9-v1 (550 to 222
+   objective-decisions).
+4. No reservation timeout, threat-based release or overbooking is supported: destroyed holders were released at the
+   next decision every time, the claimants they blocked were almost never faster, and no seat-local feature separated
+   them in advance.
+5. Seat-local inputs only; stop orders to active movers stay outside every design (untested at the engine).
+
+### R10. Tests, privacy, provenance
+
+* Tests: `tests/test_s13_diagnosis.py` (28 synthetic tests: redistribution only, unproductive reservation only, both,
+  neither, a holder destroyed after several blocked decisions and released and replaced, a faster claimant blocked by an
+  incumbent, a feature that cannot identify destruction, the exact boundaries, the oracle allocator's identity with v3,
+  planted ids), `tests/test_s13_results.py` (6 tests binding the files to each other, to Sprint 12's committed report and
+  to the registered rule; five planted result errors were each caught), `tests/test_real_s13_diagnosis.py` (server:
+  freeze and run `--check`, mutation record). Mutation: 36 of 36 planted analysis defects caught
+  (`evaluation/s13-v3-diagnosis/mutation.json`); the first run caught 31, and the 5 gaps were missing tests, added
+  before the record.
+* Corrections made before the results were committed, none to a registered measure or threshold: a reservation episode
+  first omitted the holder's own selection decision from its blocked claimant-decisions, which section 6 includes
+  (Sprint 12 counts a unit selected at a decision among that decision's holders); a public key named `units` was
+  renamed; the disposition file's thresholds were overwritten by the rule number until renamed `thresholds`; and four
+  descriptive tables (redirect timing, classes by v3's reason, the LOST-place reconciliation and the decision-1 state
+  identity) were added after the first results were read.
+* Privacy: every public file passed the forbidden-key check and a value check against every hex the games' seats saw.
+  Unit ids are not part of the value check: these games' ids include round numbers such as 100 and 1,300 that coincide
+  with steps and counts, so ids are excluded structurally (forbidden keys, aggregates only, planted-id tests).
+* No engine session was opened; the server's read-only ledger check still reports 2,790 sessions, none unclosed.
+
+### R11. Recommended next task
+
+One task, offline and without the engine: a design study of a feasibility-gated cross-objective allocator that starts
+from O2 (v3's counting, ranking and end-of-game test, with T9-v1's redirection applied only to the overflow of a full
+objective), evaluated by action replay on these four primary games and on the six Sprint 10 diagnostic captures of the
+adverse configurations, with offline criteria fixed before the replay: how much of T9-v1's primary slot assignment it
+recovers, and that it recreates neither the 1930331196 corridor redirects nor a far reservation of 2120531121 C3's
+missed objective. The study may conclude that no gated redirection meets both; no proposal or engine request comes
+before it closes.
