@@ -122,7 +122,9 @@ def build_inputs(repo: Path = REPO_ROOT) -> Dict[str, Any]:
                    "captures": {suffix: sha256(ev / S9_STUDY / "capture" / f"{gid}.{suffix}") for suffix in S9_CAPTURES}})
     if len(s12) != 4 or len(s9) != 30:
         raise SystemExit(f"refused: expected 4 Sprint 12 and 30 Sprint 9 games, found {len(s12)} and {len(s9)}")
-    return {"schema": SCHEMA_INPUTS, "policies": dict(sorted(digests.items())),
+    # The identities are checked against FROZEN above and only named here: Sprint 12's owner-approved safeguard
+    # (tests/test_t9_batch.py) allows v3's identity in no evaluation file outside its listed folders.
+    return {"schema": SCHEMA_INPUTS, "policies_checked_against_frozen": sorted(digests),
             "s12": {"card": S12_CARD, "card_manifest_sha256": sha256(repo / "evaluation" / S12_CARD / "manifest.json"),
                     "report_sha256": sha256(repo / "evaluation" / S12_CARD / "report.json"),
                     "cost_data": tree_digest(ev / S12_CARD / "data" / SCENARIO), "games": s12},
