@@ -171,7 +171,11 @@
    "redirect_causes": {
     "CAPACITY": 162
    },
-   "unchanged_orders": 192
+   "unchanged_orders": 192,
+   "unrelated_actions": {
+    "actions_compared": 168,
+    "differences": 0
+   }
   },
   {
    "active_decisions": 158,
@@ -349,7 +353,11 @@
    "redirect_causes": {
     "CAPACITY": 212
    },
-   "unchanged_orders": 234
+   "unchanged_orders": 234,
+   "unrelated_actions": {
+    "actions_compared": 392,
+    "differences": 0
+   }
   },
   {
    "active_decisions": 16,
@@ -502,7 +510,11 @@
    "redirect_causes": {
     "CAPACITY": 15
    },
-   "unchanged_orders": 31
+   "unchanged_orders": 31,
+   "unrelated_actions": {
+    "actions_compared": 84,
+    "differences": 0
+   }
   },
   {
    "active_decisions": 186,
@@ -680,7 +692,11 @@
    "redirect_causes": {
     "CAPACITY": 256
    },
-   "unchanged_orders": 153
+   "unchanged_orders": 153,
+   "unrelated_actions": {
+    "actions_compared": 483,
+    "differences": 0
+   }
   }
  ],
  "inputs_sha256": "b2d1ede2166e3f831ba9b3b781d23c43e3c325239f862a423b6bd56412d1bff4",
