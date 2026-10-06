@@ -109,6 +109,10 @@ reservations held by units destroyed en route are large in one game and were not
 Sprint 14's offline design competition (`docs/SPRINT14_REDISTRIBUTION.md`, no engine session) found no
 feasibility-gated redistribution rule that restores the primary redistribution without also redirecting at the openings
 of the 1930331196 adverse configurations (disposition NO_ENGINE_CANDIDATE; session 2791 not opened).
+Sprint 15's offline study of delayed, memory-triggered redistribution (`docs/SPRINT15_DELAYED_REDISTRIBUTION.md`, no
+engine session) found no trigger that passes its restoration items (disposition NO_RESTORING_TRIGGER); two design
+defects found after the replay are disclosed with a post-hoc sensitivity analysis, and no existing adverse capture can
+exercise the one trigger family that restores red-seat redistribution.
 The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
@@ -171,6 +175,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/SPRINT12_V3_SCREEN.md` | the registered Sprint 12 screen: approval, identities, stage cards, frozen implementation, capture, registration clarifications, pre-session validation, results and disposition |
 | `docs/SPRINT13_V3_DIAGNOSIS.md` | Sprint 13's offline diagnosis of v3's primary-scenario failure: protocol, four-policy reconstruction, difference classes, reservation episodes, prospective features, oracle decomposition, Sprint 9 comparison and disposition |
 | `docs/SPRINT14_REDISTRIBUTION.md` | Sprint 14's offline design competition of bounded cross-objective redistribution rules: protocol, eight frozen candidates, fidelity, primary and adverse replay, gate, rubric and disposition |
+| `docs/SPRINT15_DELAYED_REDISTRIBUTION.md` | Sprint 15's offline study of delayed, memory-triggered redistribution: reference diagnostics, protocol, six frozen stateful candidates, replay, gate, adequacy rule, disposition and a post-hoc sensitivity analysis |
 | `docs/PLATFORM_CANARY.md` | the owner's manual upload and compatibility-check steps for the platform canary |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
