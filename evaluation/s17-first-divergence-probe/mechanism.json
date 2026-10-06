@@ -1,0 +1,484 @@
+{
+ "configurations": {
+  "1930331196 C2": {
+   "candidate_redirects": {
+    "decisions": [
+     {
+      "count": 2,
+      "decision": 421,
+      "from": [
+       "50-point objective C"
+      ],
+      "independent_checks_clean": true,
+      "kinds": [
+       "vehicle",
+       "vehicle"
+      ],
+      "to": [
+       "80-point objective A"
+      ]
+     },
+     {
+      "count": 1,
+      "decision": 521,
+      "from": [
+       "50-point objective B"
+      ],
+      "independent_checks_clean": true,
+      "kinds": [
+       "vehicle"
+      ],
+      "to": [
+       "80-point objective B"
+      ]
+     },
+     {
+      "count": 1,
+      "decision": 522,
+      "from": [
+       "50-point objective B"
+      ],
+      "independent_checks_clean": true,
+      "kinds": [
+       "vehicle"
+      ],
+      "to": [
+       "80-point objective B"
+      ]
+     },
+     {
+      "count": 2,
+      "decision": 541,
+      "from": [
+       "50-point objective B"
+      ],
+      "independent_checks_clean": true,
+      "kinds": [
+       "vehicle",
+       "vehicle"
+      ],
+      "to": [
+       "80-point objective B"
+      ]
+     }
+    ],
+    "redirected_units": 6,
+    "redirects": 6
+   },
+   "capture_order": [
+    "50-point objective A",
+    "50-point objective C",
+    "80-point objective A",
+    "50-point objective B",
+    "80-point objective B"
+   ],
+   "classification": {
+    "class": "C2_MECHANISM_PRESERVED",
+    "reasons": [],
+    "retired": false
+   },
+   "direct_fire": {
+    "decisions_with_a_direct_fire_listing": 2,
+    "order_decisions": [
+     611,
+     686
+    ],
+    "orders": 2,
+    "responses": {
+     "accepted": 2
+    }
+   },
+   "first_divergence": {
+    "changed_unit_kinds": [
+     "vehicle",
+     "vehicle"
+    ],
+    "cur_step": 420,
+    "decision": 421,
+    "independent_check_violations": {},
+    "ordinal": 5,
+    "redirects": [
+     {
+      "alternative": "80-point objective A",
+      "candidate_action": "REDIRECT",
+      "free_flow_steps": 100,
+      "kind": "vehicle",
+      "own_cost": 5.0,
+      "route_cost": 5.0,
+      "source": "50-point objective C",
+      "to_problem_objective": false,
+      "v3_action": "STAGE"
+     },
+     {
+      "alternative": "80-point objective A",
+      "candidate_action": "REDIRECT",
+      "free_flow_steps": 100,
+      "kind": "vehicle",
+      "own_cost": 5.0,
+      "route_cost": 5.0,
+      "source": "50-point objective C",
+      "to_problem_objective": false,
+      "v3_action": "STAGE"
+     }
+    ]
+   },
+   "game_id": "1930331196.C2.s17-post-stage-v6-probe-1.p01",
+   "memory_bounds": {
+    "eligible_claimant_decisions": 81,
+    "ended": {
+     "moving to an objective": 6,
+     "source held by the side": 18
+    },
+    "max_records": 8
+   },
+   "objective_ownership": {
+    "50-point objective A": {
+     "first_ownership_decision": 362,
+     "first_ownership_step": 361,
+     "own_at_end": true,
+     "transitions": 1,
+     "v3_first_ownership_decision": 362
+    },
+    "50-point objective B": {
+     "first_ownership_decision": 805,
+     "first_ownership_step": 804,
+     "own_at_end": true,
+     "transitions": 1,
+     "v3_first_ownership_decision": 805
+    },
+    "50-point objective C": {
+     "first_ownership_decision": 443,
+     "first_ownership_step": 442,
+     "own_at_end": true,
+     "transitions": 1,
+     "v3_first_ownership_decision": 443
+    },
+    "80-point objective A": {
+     "first_ownership_decision": 504,
+     "first_ownership_step": 503,
+     "own_at_end": true,
+     "transitions": 1,
+     "v3_first_ownership_decision": 504
+    },
+    "80-point objective B": {
+     "first_ownership_decision": 864,
+     "first_ownership_step": 863,
+     "own_at_end": true,
+     "transitions": 1,
+     "v3_first_ownership_decision": 886
+    }
+   },
+   "protected_fire_endpoints": {
+    "611": {
+     "accepted": true,
+     "decision": 611,
+     "emitted": true,
+     "listed": true,
+     "orders_by_unit": 1,
+     "preserved": true
+    },
+    "686": {
+     "accepted": true,
+     "decision": 686,
+     "emitted": true,
+     "listed": true,
+     "orders_by_unit": 1,
+     "preserved": true
+    }
+   },
+   "recourse": {
+    "episodes": 24,
+    "episodes_over_limit": 0,
+    "episodes_with_a_redirect": 6,
+    "limit": 1,
+    "max_redirects_per_episode": 1,
+    "multi_destination_episodes": 0,
+    "oscillations_across_episodes": 0,
+    "pass": true,
+    "redirects_outside_episodes": 0,
+    "redirects_per_unit": {
+     "1": 6
+    }
+   },
+   "v3_capture_order": [
+    "50-point objective A",
+    "50-point objective C",
+    "80-point objective A",
+    "50-point objective B",
+    "80-point objective B"
+   ]
+  },
+  "2120531121 C3": {
+   "candidate_redirects": {
+    "decisions": [
+     {
+      "count": 2,
+      "decision": 361,
+      "from": [
+       "80-point objective B"
+      ],
+      "independent_checks_clean": true,
+      "kinds": [
+       "vehicle",
+       "vehicle"
+      ],
+      "to": [
+       "80-point objective A"
+      ]
+     },
+     {
+      "count": 2,
+      "decision": 381,
+      "from": [
+       "80-point objective B"
+      ],
+      "independent_checks_clean": true,
+      "kinds": [
+       "vehicle",
+       "vehicle"
+      ],
+      "to": [
+       "80-point objective A"
+      ]
+     }
+    ],
+    "redirected_units": 4,
+    "redirects": 4
+   },
+   "capture_order": [
+    "50-point objective C",
+    "50-point objective B",
+    "50-point objective A",
+    "80-point objective B",
+    "80-point objective A"
+   ],
+   "classification": {
+    "class": "C3_212_MECHANISM_LOST",
+    "reasons": [
+     "B: 45 EARLY-PLACE BLOCK events before first ownership"
+    ],
+    "retired": true
+   },
+   "decision_361_units": [
+    {
+     "counted_decisions": 160,
+     "lost_before_ownership": false,
+     "on_objective_at_ownership": true,
+     "present_at_ownership": true
+    },
+    {
+     "counted_decisions": 160,
+     "lost_before_ownership": false,
+     "on_objective_at_ownership": false,
+     "present_at_ownership": true
+    }
+   ],
+   "direct_fire": {
+    "decisions_with_a_direct_fire_listing": 21,
+    "order_decisions": [
+     168,
+     243,
+     318,
+     321,
+     341,
+     342,
+     361,
+     401,
+     402,
+     476,
+     477,
+     551,
+     552,
+     596,
+     616,
+     617,
+     626,
+     627,
+     671,
+     746,
+     821
+    ],
+    "orders": 22,
+    "responses": {
+     "accepted": 22
+    }
+   },
+   "first_divergence": {
+    "changed_unit_kinds": [
+     "vehicle",
+     "vehicle"
+    ],
+    "cur_step": 360,
+    "decision": 361,
+    "independent_check_violations": {},
+    "ordinal": 3,
+    "redirects": [
+     {
+      "alternative": "80-point objective A",
+      "candidate_action": "REDIRECT",
+      "free_flow_steps": 160,
+      "kind": "vehicle",
+      "own_cost": 7.0,
+      "route_cost": 8.0,
+      "source": "80-point objective B",
+      "to_problem_objective": true,
+      "v3_action": "STAGE"
+     },
+     {
+      "alternative": "80-point objective A",
+      "candidate_action": "REDIRECT",
+      "free_flow_steps": 160,
+      "kind": "vehicle",
+      "own_cost": 7.0,
+      "route_cost": 8.0,
+      "source": "80-point objective B",
+      "to_problem_objective": true,
+      "v3_action": "STAGE"
+     }
+    ]
+   },
+   "game_id": "2120531121.C3.s17-post-stage-v6-probe-1.p02",
+   "memory_bounds": {
+    "eligible_claimant_decisions": 110,
+    "ended": {
+     "moving to an objective": 4,
+     "source held by the side": 14
+    },
+    "max_records": 8
+   },
+   "objective_ownership": {
+    "50-point objective A": {
+     "first_ownership_decision": 463,
+     "first_ownership_step": 462,
+     "own_at_end": true,
+     "transitions": 1,
+     "v3_first_ownership_decision": 463
+    },
+    "50-point objective B": {
+     "first_ownership_decision": 402,
+     "first_ownership_step": 401,
+     "own_at_end": true,
+     "transitions": 1,
+     "v3_first_ownership_decision": 402
+    },
+    "50-point objective C": {
+     "first_ownership_decision": 342,
+     "first_ownership_step": 341,
+     "own_at_end": true,
+     "transitions": 1,
+     "v3_first_ownership_decision": 342
+    },
+    "80-point objective A": {
+     "first_ownership_decision": 522,
+     "first_ownership_step": 521,
+     "own_at_end": true,
+     "transitions": 1,
+     "v3_first_ownership_decision": 564
+    },
+    "80-point objective B": {
+     "first_ownership_decision": 483,
+     "first_ownership_step": 482,
+     "own_at_end": true,
+     "transitions": 1,
+     "v3_first_ownership_decision": 483
+    }
+   },
+   "pre_capture_audit": {
+    "able_to_arrive": 49,
+    "claim_decisions": 23,
+    "claimant_decisions": 49,
+    "claimants": 8,
+    "descriptive_all_redirect_place_blocks": 48,
+    "early_place_block_decisions": [
+     463,
+     481,
+     483,
+     501,
+     503,
+     504,
+     505,
+     506,
+     507,
+     508,
+     509,
+     510,
+     511,
+     512,
+     513,
+     514,
+     515,
+     516,
+     517,
+     518,
+     519,
+     520,
+     521
+    ],
+    "early_place_block_forms": {
+     "STAGE": 7,
+     "WITHHOLD": 38
+    },
+    "early_place_blocks": 45,
+    "first_claim_decision": 463,
+    "forms": {
+     "STAGE": 8,
+     "WITHHOLD": 41
+    },
+    "max_early_places": 2,
+    "placed": 0,
+    "selectable_not_placed": 49
+   },
+   "problem_objective": {
+    "deadline": 564,
+    "first_ownership_decision": 522,
+    "label": "80-point objective A"
+   },
+   "recourse": {
+    "episodes": 18,
+    "episodes_over_limit": 0,
+    "episodes_with_a_redirect": 4,
+    "limit": 1,
+    "max_redirects_per_episode": 1,
+    "multi_destination_episodes": 0,
+    "oscillations_across_episodes": 0,
+    "pass": true,
+    "redirects_outside_episodes": 0,
+    "redirects_per_unit": {
+     "1": 4
+    }
+   },
+   "v3_capture_order": [
+    "50-point objective C",
+    "50-point objective B",
+    "50-point objective A",
+    "80-point objective B",
+    "80-point objective A"
+   ],
+   "v3_capturers_in_this_game": [
+    {
+     "claim_decisions": 20,
+     "early_place_blocks": 20,
+     "forms": {
+      "STAGE": 1,
+      "WITHHOLD": 19
+     },
+     "kind": "vehicle",
+     "on_objective_at_ownership": false
+    },
+    {
+     "claim_decisions": 20,
+     "early_place_blocks": 20,
+     "forms": {
+      "STAGE": 1,
+      "WITHHOLD": 19
+     },
+     "kind": "vehicle",
+     "on_objective_at_ownership": false
+    }
+   ]
+  }
+ },
+ "inputs_sha256": "bd2a86666341db91ceef9962e72417cad78e3e200efc0b3c1b35189bc8492b21",
+ "note": "mechanism probe: the executable candidate played its seat in two games against the inert control. Every figure is a fact of the observed trajectory; nothing here is a score estimate, a performance comparison or evidence of an effect, and one game per configuration shows one observed trajectory. Record scores are reported for audit and enter no rule",
+ "schema": "miaosuan-s17-probe/1"
+}

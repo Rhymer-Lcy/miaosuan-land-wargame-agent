@@ -1,0 +1,96 @@
+{
+ "card": {
+  "canonical_sha256": "6d3bbc8a06b2ceaedfe0adbf20d541cd8c004db5a03771670f9d769e5cb3e1d1",
+  "id": "s17-post-stage-v6-probe-1"
+ },
+ "games": [
+  {
+   "configuration": "1930331196 C2",
+   "game_id": "1930331196.C2.s17-post-stage-v6-probe-1.p01",
+   "offline_reconstruction": {
+    "decisions": 2881,
+    "differences": 0,
+    "memory_compared": 2881,
+    "problems": 0
+   },
+   "position": 1,
+   "prefix": {
+    "pass": true,
+    "problems": [],
+    "registered_first_divergence": 421,
+    "world_identical_through_divergence": {
+     "decisions": 422,
+     "identical": 422
+    }
+   },
+   "record_facts_not_used_in_any_rule": {
+    "blue_attack": 0,
+    "blue_occupy": 0,
+    "blue_remain": 383,
+    "blue_remain_max": 407,
+    "blue_total": 383,
+    "blue_win": -274,
+    "red_attack": 24,
+    "red_occupy": 310,
+    "red_remain": 323,
+    "red_remain_max": 323,
+    "red_total": 657,
+    "red_win": 274
+   },
+   "session": "2794",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "structural_stops": []
+  },
+  {
+   "configuration": "2120531121 C3",
+   "game_id": "2120531121.C3.s17-post-stage-v6-probe-1.p02",
+   "offline_reconstruction": {
+    "decisions": 2881,
+    "differences": 0,
+    "memory_compared": 2881,
+    "problems": 0
+   },
+   "position": 2,
+   "prefix": {
+    "pass": true,
+    "problems": [],
+    "registered_first_divergence": 361,
+    "world_identical_through_divergence": {
+     "decisions": 362,
+     "identical": 169
+    }
+   },
+   "record_facts_not_used_in_any_rule": {
+    "blue_attack": 98,
+    "blue_occupy": 310,
+    "blue_remain": 407,
+    "blue_remain_max": 407,
+    "blue_total": 815,
+    "blue_win": 579,
+    "red_attack": 0,
+    "red_occupy": 0,
+    "red_remain": 236,
+    "red_remain_max": 334,
+    "red_total": 236,
+    "red_win": -579
+   },
+   "session": "2795",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "structural_stops": []
+  }
+ ],
+ "inputs_sha256": "bd2a86666341db91ceef9962e72417cad78e3e200efc0b3c1b35189bc8492b21",
+ "ledger": {
+  "ok": true,
+  "sessions": [
+   2794,
+   2795
+  ],
+  "sessions_after_base": 2,
+  "unclosed": []
+ },
+ "note": "mechanism probe: the executable candidate played its seat in two games against the inert control. Every figure is a fact of the observed trajectory; nothing here is a score estimate, a performance comparison or evidence of an effect, and one game per configuration shows one observed trajectory. Record scores are reported for audit and enter no rule",
+ "schema": "miaosuan-s17-probe/1"
+}

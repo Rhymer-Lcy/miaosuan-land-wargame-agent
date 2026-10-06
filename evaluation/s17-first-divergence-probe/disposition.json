@@ -1,0 +1,20 @@
+{
+ "classes": {
+  "1930331196 C2": "C2_MECHANISM_PRESERVED",
+  "2120531121 C3": "C3_212_MECHANISM_LOST"
+ },
+ "disposition": {
+  "disposition": "MECHANISM_REFUTED_212"
+ },
+ "inputs_sha256": "bd2a86666341db91ceef9962e72417cad78e3e200efc0b3c1b35189bc8492b21",
+ "note": "mechanism probe: the executable candidate played its seat in two games against the inert control. Every figure is a fact of the observed trajectory; nothing here is a score estimate, a performance comparison or evidence of an effect, and one game per configuration shows one observed trajectory. Record scores are reported for audit and enter no rule",
+ "problems": [],
+ "reasons": {
+  "1930331196 C2": [],
+  "2120531121 C3": [
+   "B: 45 EARLY-PLACE BLOCK events before first ownership"
+  ]
+ },
+ "schema": "miaosuan-s17-probe/1",
+ "statement": "the disposition concerns two observed games of the executable candidate; it promotes nothing, authorizes no further engine use and returns to the owner"
+}
