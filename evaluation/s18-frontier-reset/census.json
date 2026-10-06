@@ -509,98 +509,30 @@
    }
   },
   "issued_action_types_by_policy": {
-   "baseline-v0": {
-    "type_01": 2446,
-    "type_02": 1437,
-    "type_05": 526,
-    "type_333": 76
-   },
-   "baseline-v1-candidate-occupy-reservation": {
-    "type_01": 9583,
-    "type_02": 5287,
-    "type_05": 1159,
-    "type_333": 324
-   },
-   "baseline-v1-routing-bounded-candidate": {
-    "type_01": 13674,
-    "type_02": 8164,
-    "type_05": 1605,
-    "type_333": 480
-   },
-   "baseline-v2-candidate-shoot-target-reservation": {
+   "baseline-v2": {
     "type_01": 34538,
     "type_02": 17618,
     "type_05": 3846,
     "type_333": 867
    },
-   "inert-v0": {
-    "type_333": 1138
+   "earlier baselines (v0, v1 and the v1 routing runtime candidate)": {
+    "type_01": 25703,
+    "type_02": 14888,
+    "type_05": 3290,
+    "type_333": 880
    },
-   "ps1-probe-hook-1": {
-    "type_01": 18,
-    "type_05": 1,
-    "type_10": 4,
-    "type_314": 12,
-    "type_333": 1
-   },
-   "t4-artillery-v1": {
-    "type_01": 95,
-    "type_02": 31,
-    "type_05": 11,
-    "type_08": 25,
-    "type_333": 2
-   },
-   "t4-artillery-v2": {
-    "type_01": 482,
-    "type_02": 390,
-    "type_05": 53,
-    "type_08": 274,
-    "type_333": 7
-   },
-   "t4-artillery-v3": {
-    "type_01": 213,
-    "type_02": 168,
-    "type_05": 18,
-    "type_08": 68,
-    "type_333": 2
-   },
-   "t7-idle-concealment": {
-    "type_01": 89,
-    "type_02": 142,
-    "type_05": 10,
+   "exploratory and tactical candidates": {
+    "type_01": 14283,
+    "type_02": 10543,
+    "type_05": 1648,
     "type_06": 16,
-    "type_333": 3
+    "type_08": 367,
+    "type_10": 4,
+    "type_314": 2910,
+    "type_333": 351
    },
-   "t9-batch-capacity-v3": {
-    "type_01": 697,
-    "type_02": 290,
-    "type_05": 55,
-    "type_333": 7
-   },
-   "t9-capacity-allocation-v1": {
-    "type_01": 5789,
-    "type_02": 5499,
-    "type_05": 930,
-    "type_333": 165
-   },
-   "t9-capacity-staging-v2": {
-    "type_01": 526,
-    "type_02": 221,
-    "type_05": 47,
-    "type_333": 8
-   },
-   "t9-delayed-post-stage-any-v6": {
-    "type_01": 87,
-    "type_02": 24,
-    "type_05": 10,
-    "type_333": 2
-   },
-   "tactic-deployment-split-1": {
-    "type_01": 6287,
-    "type_02": 3778,
-    "type_05": 513,
-    "type_314": 2898,
-    "type_333": 154
+   "inert control": {
+    "type_333": 1138
    }
   },
   "records": 1618,
@@ -608,21 +540,10 @@
    "total equals occupy + attack + remain": 423
   },
   "seats_by_policy": {
-   "baseline-v0": 76,
-   "baseline-v1-candidate-occupy-reservation": 324,
-   "baseline-v1-routing-bounded-candidate": 480,
-   "baseline-v2-candidate-shoot-target-reservation": 867,
-   "inert-v0": 1138,
-   "ps1-probe-hook-1": 1,
-   "t4-artillery-v1": 2,
-   "t4-artillery-v2": 7,
-   "t4-artillery-v3": 2,
-   "t7-idle-concealment": 3,
-   "t9-batch-capacity-v3": 7,
-   "t9-capacity-allocation-v1": 165,
-   "t9-capacity-staging-v2": 8,
-   "t9-delayed-post-stage-any-v6": 2,
-   "tactic-deployment-split-1": 154
+   "baseline-v2": 867,
+   "earlier baselines (v0, v1 and the v1 routing runtime candidate)": 880,
+   "exploratory and tactical candidates": 351,
+   "inert control": 1138
   }
  },
  "scan": {
