@@ -122,6 +122,11 @@ Sprint 17's registered probe (`docs/SPRINT17_FIRST_DIVERGENCE_PROBE.md`, session
 form of the post-staging rule once in each of those two configurations: the 1930331196 C2 firing sequence survived, but
 in 2120531121 C3 the early redirected vehicles held the problem objective's places while later claimants were blocked
 behind them (disposition MECHANISM_REFUTED_212); the rule is retired and nothing was promoted.
+On 2026-10-06 the owner shelved T9; Sprint 9's primary result stands, but no deterministic, seat-local revision found
+through Sprint 17 kept its redistribution without the adverse mechanisms. Sprint 18's offline frontier reset
+(`docs/SPRINT18_FRONTIER_RESET.md`, no engine session) re-read every usable historical capture, admitted three new
+families and scored one concrete next increment per family under a rubric registered before scoring: the selected
+family is T6, threat-aware movement, with a threat-entry gate as its first experiment, which awaits the owner's approval.
 The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
@@ -187,6 +192,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/SPRINT15_DELAYED_REDISTRIBUTION.md` | Sprint 15's offline study of delayed, memory-triggered redistribution: reference diagnostics, protocol, six frozen stateful candidates, replay, gate, adequacy rule, disposition and a post-hoc sensitivity analysis |
 | `docs/SPRINT16_MECHANISM_CAPTURE.md` | Sprint 16's registered three-session mechanism capture of the frozen v3: card, corrected analysis-side shadows, first-divergence rules, restoration and recourse measures, results and disposition |
 | `docs/SPRINT17_FIRST_DIVERGENCE_PROBE.md` | Sprint 17's registered two-session probe of the executable delayed post-staging candidate: card, prefix check, direct-fire endpoints, EARLY-PLACE BLOCK audit, retirement rules, results and disposition |
+| `docs/SPRINT18_FRONTIER_RESET.md` | Sprint 18's offline frontier reset after T9 was shelved: populations, census definitions, new-family scan, increment rubric with information per session, results, scores, sensitivity and the selected next family |
 | `docs/PLATFORM_CANARY.md` | the owner's manual upload and compatibility-check steps for the platform canary |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
