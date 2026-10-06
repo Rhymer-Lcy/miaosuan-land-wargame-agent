@@ -1,0 +1,268 @@
+{
+ "killed": 50,
+ "mutations": [
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "repeat threshold exclusive"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "repeat ignores the source"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "stable ignores the alternative"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "post-stage counts an emitted, not a completed, staging move"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "post-stage-same ignores the source"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "saturated ignores the previous observation"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "redirect flag ignored (unbounded recourse)"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "record survives a move to an objective"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "record survives standing on an objective"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "capture of the source does not end the episode"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "capture of the source wipes the staging fact"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "staging completion detected away from the endpoint"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "a new source does not reset the count"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "a new source keeps the redirect flag"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "redirect not remembered"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "staging not remembered"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "a place given does not end the record"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "alternative not recorded"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "recorded saturation counts movers"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "current saturation counts movers"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "episode counter not capped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "decode accepts unknown fields"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "failed memory update keeps the records"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "fail-closed loses the memory"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "everyone switch ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "redirects not counted against capacity"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_delayed.py",
+   "mutation": "overflow in emission order"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "R2 requirement rounded down"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "R2 exclusive"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "R3 seats not strictly below"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "R3 ratio exclusive"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "R1 ignores the primary games"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "R4 exclusive"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "R4 ignores oscillations"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "A1 ignores shooters"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "A1 ignores the early limit"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "A2 certificate not required"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "G9 ignores memory problems"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "adequacy never untested"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "selection ignores adequacy"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "opportunity test inverted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "restoring candidates need not restore"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "stray records ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "counter bound loosened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "oscillation matches a repeat, not a return"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "rubric keeps the smallest margin"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "rubric tolerance dropped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "bucket boundary shifted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "rule search prefers primary over adverse"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s15_delayed.py",
+   "mutation": "determinism ignores memory"
+  }
+ ],
+ "schema": "miaosuan-s15-delayed-mutation/1",
+ "sources": {
+  "src/miaosuan_agent/evaluation/s15_delayed.py": "05fbc5d48e3cd85f16252d63e51b5c9ee0e3e5a0c27b4e43a055d6f37386c0c1",
+  "src/miaosuan_agent/experiments/t9_delayed.py": "bd1cf3a38ff6c1ce4f2a1d1dd639819496019bd1ec0505134d3018b9c604eecd",
+  "tests/test_s15_delayed.py": "5ae87fa393cbe8fd4229722993c1424e61a8f6129a04cf002acf3af4a429e204",
+  "tests/test_t9_delayed.py": "f7d1948cb588dc5adc9a431ee8f569357d1f0a57be88147c56c8cc3324f80246"
+ },
+ "tests": [
+  "tests.test_t9_delayed",
+  "tests.test_s15_delayed"
+ ],
+ "total": 50,
+ "unmutated_tests_pass": true
+}
