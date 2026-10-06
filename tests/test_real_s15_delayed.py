@@ -44,6 +44,23 @@ class RealRegenerationTest(unittest.TestCase):
     def test_every_public_file_regenerates(self) -> None:
         self.assertIn("OK: public files regenerate byte for byte", self.run_program("run", "--check"))
 
+    @unittest.skipUnless((OUT / "posthoc.json").exists(), "post-hoc analysis not run yet")
+    def test_the_posthoc_analysis_regenerates(self) -> None:
+        out = self.run_program_at(ROOT / "scripts" / "s15_posthoc.py", "--check")
+        self.assertTrue(out.startswith("OK "), out)
+
+    @unittest.skipUnless((OUT / "mutation.json").exists(), "mutation record not written yet")
+    def test_the_mutation_record_regenerates(self) -> None:
+        out = self.run_program_at(ROOT / "scripts" / "mutate_s15_delayed.py", "--check")
+        self.assertTrue(out.startswith("OK "), out)
+
+    def run_program_at(self, script: Path, *args: str) -> str:
+        env = dict(os.environ, PYTHONNOUSERSITE="1", OPENBLAS_NUM_THREADS="1")
+        done = subprocess.run([sys.executable, str(script), *args], cwd=ROOT, env=env, capture_output=True, text=True,
+                              timeout=7200)
+        self.assertEqual(done.returncode, 0, done.stdout + done.stderr)
+        return done.stdout
+
 
 if __name__ == "__main__":
     unittest.main()
