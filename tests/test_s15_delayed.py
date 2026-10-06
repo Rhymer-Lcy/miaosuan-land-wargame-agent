@@ -148,6 +148,8 @@ class GateTest(unittest.TestCase):
         gates = {n: s15.gate(NAME, facts()) for n in names[:3]}
         rows = {n: {"gate": gates[n], "post_slot": 150, "redirects": 20, "latency_p99": 1.0} for n in names[:3]}
         self.assertEqual(s15.select(rows)["selected"], names[0])  # full tie: the simplest
+        rows[names[0]]["redirects"] = 22  # within 10% of the least (20): kept, and the simplest still wins
+        self.assertEqual(s15.select(rows)["selected"], names[0])
         rows[names[0]]["redirects"] = 40
         self.assertEqual(s15.select(rows)["selected"], names[1])  # more recourse loses
         better = s15.gate(NAME, facts(primary={"post_units": (16, 26)}))
@@ -165,6 +167,60 @@ class GateTest(unittest.TestCase):
                                     "rubric_tolerance": 0.10})
         self.assertEqual(s15.RISK_WINDOW, {"1930331196 C3": 876, "1930331196 C2": 611, "2120531121 C3": 564})
         self.assertEqual(s15.CANDIDATES, tuple(td.RULES))
+
+
+class DecisionTest(unittest.TestCase):
+    """``decide_step``, ``outcome`` and ``repeat_checks`` on the synthetic WITHHELD scene of ``test_t9_delayed``."""
+
+    def setUp(self) -> None:
+        from miaosuan_agent.boundary import MoveCosts
+        from tests import test_t9_delayed as scenes
+        self.costs = MoveCosts.from_raw(syn.cost_data())
+        self.scenes = scenes
+        self.obs = scenes.observation(scenes.holders() + [scenes.unit(scenes.X, 506)], cities=(scenes.A, scenes.E),
+                                      movable=[scenes.X])
+
+    def decide(self, memories):
+        from miaosuan_agent.decision import Memory
+        return s15.decide_step(self.obs, self.scenes.SEAT, self.scenes.RED, Memory(), self.costs, memories)
+
+    def test_identities_and_memory_flow(self) -> None:
+        first = self.decide({})
+        self.assertTrue(first["active"])
+        self.assertTrue(first["identity_v3"] and first["identity_o2"])
+        self.assertEqual(first["O2_allocation"].redirected[self.scenes.X].objective, self.scenes.E)
+        for name in s15.CANDIDATES:
+            self.assertEqual(first[f"{name}_allocation"].redirected, {}, name)  # nothing fires on empty memory
+        second = self.decide({name: first[f"{name}_memory"] for name in s15.CANDIDATES})
+        self.assertIn(self.scenes.X, second["delayed-repeat-2_allocation"].redirected)
+        self.assertNotIn(self.scenes.X, second["delayed-repeat-3_allocation"].redirected)
+        self.assertNotIn(self.scenes.X, second["delayed-post-stage-any_allocation"].redirected)  # never staged
+        self.assertEqual(second[f"{s15.V3_TRACK}_allocation"].redirected, {})
+
+    def test_outcome_includes_memory_and_repeat_checks_see_a_difference(self) -> None:
+        first = self.decide({})
+        memories = {name: first[f"{name}_memory"] for name in s15.CANDIDATES}
+        second = self.decide(memories)
+        a = second["delayed-repeat-2_allocation"]
+        changed = copy.copy(a)
+        changed.memory = a.memory + ((999 * 16, 1),)
+        self.assertNotEqual(s15.outcome(a), s15.outcome(changed))
+        base = second["baseline-v2"]
+        clean = s15.repeat_checks(self.obs, self.scenes.SEAT, self.scenes.RED, base, self.costs, second, memories, "t")
+        self.assertEqual(clean["delayed-repeat-2"]["repeat_comparisons"], 1)
+        self.assertEqual(clean["delayed-repeat-2"]["repeat_differences"], 0)
+        real = s15.td.allocate
+
+        def drifting(*args, **kwargs):
+            result = real(*args, **kwargs)
+            result.memory = result.memory + ((998 * 16, 1),)
+            return result
+
+        from unittest import mock
+        with mock.patch.object(s15.td, "allocate", side_effect=drifting):
+            dirty = s15.repeat_checks(self.obs, self.scenes.SEAT, self.scenes.RED, base, self.costs, second, memories,
+                                      "t")
+        self.assertEqual(dirty["delayed-repeat-2"]["repeat_differences"], 1)
 
 
 class HelperTest(unittest.TestCase):
@@ -210,6 +266,14 @@ class HelperTest(unittest.TestCase):
         self.assertEqual(out["leave_one_group_out"]["P2"]["held_out_primary_allowed"], 2)
         scored = s15.score([("b", ">=", 5)], rows)
         self.assertEqual(scored, (2, 6, 1))
+
+    def test_rule_search_never_trades_an_adverse_row_for_primary_rows(self) -> None:
+        rows = ([{"a": 1, "b": 5, "label": "PRIMARY", "group": "P"} for _ in range(3)]
+                + [{"a": 1, "b": 1, "label": "PRIMARY", "group": "P"} for _ in range(3)]
+                + [{"a": 1, "b": 1, "label": "ADVERSE", "group": "A"}])
+        best = s15.rule_search(rows, ("a", "b"))["all"]
+        self.assertEqual((best["adverse_allowed"], best["primary_allowed"]), (0, 3))  # not (1, 6)
+        self.assertEqual(best["rule"], [["b", ">=", 5]])
 
 
 if __name__ == "__main__":
