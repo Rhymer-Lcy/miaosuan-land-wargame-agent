@@ -457,3 +457,26 @@ made before those claimants arrive does by construction. Since Sprint 12 the lin
 redistribution and stays clear of the adverse mechanisms. The one next task: an offline re-selection of the next
 tactical family from the frontier register (`docs/TACTICAL_FRONTIER.md`), scored with the committed rubric against the
 evidence gathered since Sprint 1, with no engine session, for the owner's decision.
+
+### R9. Close-out
+
+* Tests at the results commit `45f8e2928ff3f8eb91afa46289a4cbe9ebd94e23`: the workstation tree ran 1,612 tests (81
+  skipped) with exit 0; a clean clone from GitHub at the same commit and tree ran 1,609 (82 skipped) with exit 0; the
+  evaluation server's private tree ran 1,625 tests (0 skipped, 5,226 s) with exit 0, regenerating every Sprint 17 public
+  file, `inputs.json`, the prefix reference and the mutation record from the private captures, and Sprint 16's public
+  files with its ledger read bounded at session 2793, with the ledger file byte-identical before and after.
+* Process note: the first close-out run on the server started on the registration commit, because the fast-forward had
+  been refused: the analysis had written the three public result files into the server's clone as untracked files
+  (byte-identical to the committed ones). That run was stopped, the files removed, the clone fast-forwarded and the suite
+  started again; a stop pattern that matched its own shell also ended a second, unfinished run. Only the complete run is
+  reported.
+* Documentation gates: Sprint 17's private gate (`local/diagnostics/s17/doc_gate.py`) passes, checks that sections 1 to
+  14 equal the pushed registration and catches every planted error; the historical gates pass with their plants,
+  Sprint 10's on the server with 40 checks and no failure.
+* Privacy: the scan over every reachable blob at the results commit (890 blobs) found 104 hit lines, identical as a set
+  to the accepted 104.
+* Platform canary: rebuilt byte for byte on the workstation and the server.
+* Engine ledger: read-only verify after the suite, 2,795 sessions opened and closed, none unclosed, integrity ok, state
+  chain continuous; the Sprint 17 ledger audit of the whole live ledger passes (sessions 2794 and 2795, the card's two
+  games in order, no later session). The server's development worktree was removed; the evidence stays under the
+  ignored `local/` tree.
