@@ -1,0 +1,756 @@
+{
+ "corrections": [
+  "memory: standing on an objective ends a record only when the side does not hold it",
+  "reference posthoc-bounded-o2: O2 with at most one redirect per episode and no delay"
+ ],
+ "fidelity_problems": [],
+ "inputs_sha256": "f0199fc327220493f813e992777b2441c5b287f9f4e3b59dbcd0aac18c484a74",
+ "label": "POST HOC: not a registered result; no disposition and no candidate follow from it",
+ "schema": "miaosuan-s15-posthoc/1",
+ "variants": {
+  "posthoc-bounded-o2": {
+   "A1": {
+    "configurations": {
+     "1930331196 C2": {
+      "early_limit": 5,
+      "early_redirects_baseline": 14,
+      "first_decision_redirects": 6,
+      "first_limit": 2,
+      "pass": false,
+      "shooters_redirected": 0
+     },
+     "1930331196 C3": {
+      "early_limit": 4,
+      "early_redirects_baseline": 4,
+      "first_decision_redirects": 4,
+      "first_limit": 4,
+      "pass": false,
+      "shooters_redirected": 4
+     }
+    },
+    "pass": false
+   },
+   "A2": {
+    "certificate_unit_decisions": 9194,
+    "pass": true,
+    "unreachable_places": 0,
+    "v3_certificate_unit_decisions": 9194,
+    "v3_selection_not_kept": 0
+   },
+   "R1": {
+    "adverse": {
+     "1930331196 C2": 6,
+     "1930331196 C3": 4,
+     "2120531121 C3": 4
+    },
+    "pass": false,
+    "primary": {
+     "p01": 12,
+     "p02": 17,
+     "p03": 12,
+     "p04": 17
+    }
+   },
+   "R2": {
+    "pass": true,
+    "post_opening_units": {
+     "H1": 15,
+     "H2": 26
+    },
+    "required": {
+     "H1": 8,
+     "H2": 13
+    }
+   },
+   "R3": {
+    "pass": false,
+    "post_slot_ratio": 0.9237,
+    "seat_below_v3": {
+     "H1": true,
+     "H2": true
+    }
+   },
+   "R4": {
+    "limit": 3,
+    "max_redirects_per_unit_game": 7,
+    "oscillations": 0,
+    "pass": false
+   },
+   "adequacy": {
+    "all_tested": true,
+    "configurations": {
+     "1930331196 C2": {
+      "status": "TESTED",
+      "trigger_exposure_in_window": 248
+     },
+     "1930331196 C3": {
+      "status": "TESTED",
+      "trigger_exposure_in_window": 1222
+     },
+     "2120531121 C3": {
+      "status": "TESTED",
+      "trigger_exposure_in_window": 343
+     }
+    }
+   },
+   "adverse_redirects": {
+    "1930331196 C2": 21,
+    "1930331196 C3": 8,
+    "2120531121 C3": 27
+   },
+   "failed_excluding_latency": [
+    "R1_no_opening_redistribution",
+    "R3_divergence_reduced",
+    "R4_bounded_recourse",
+    "A1_1930331196"
+   ],
+   "invariants_pass": true,
+   "primary_pooled": {
+    "max_redirects_per_unit_game": 7,
+    "orders_vs_baseline-v2": 1331,
+    "orders_vs_t9-v1": 818,
+    "orders_vs_v3": 161,
+    "oscillations": 0,
+    "post_slot_vs_t9-v1": 484,
+    "redirects": 155,
+    "slot_vs_t9-v1": 510
+   }
+  },
+  "posthoc-delayed-post-stage-any": {
+   "A1": {
+    "configurations": {
+     "1930331196 C2": {
+      "early_limit": 5,
+      "early_redirects_baseline": 0,
+      "first_decision_redirects": 0,
+      "first_limit": 2,
+      "pass": true,
+      "shooters_redirected": 0
+     },
+     "1930331196 C3": {
+      "early_limit": 4,
+      "early_redirects_baseline": 0,
+      "first_decision_redirects": 0,
+      "first_limit": 4,
+      "pass": true,
+      "shooters_redirected": 0
+     }
+    },
+    "pass": true
+   },
+   "A2": {
+    "certificate_unit_decisions": 9194,
+    "pass": true,
+    "unreachable_places": 0,
+    "v3_certificate_unit_decisions": 9194,
+    "v3_selection_not_kept": 0
+   },
+   "R1": {
+    "adverse": {
+     "1930331196 C2": 0,
+     "1930331196 C3": 0,
+     "2120531121 C3": 0
+    },
+    "pass": true,
+    "primary": {
+     "p01": 0,
+     "p02": 0,
+     "p03": 0,
+     "p04": 0
+    }
+   },
+   "R2": {
+    "pass": true,
+    "post_opening_units": {
+     "H1": 9,
+     "H2": 21
+    },
+    "required": {
+     "H1": 8,
+     "H2": 13
+    }
+   },
+   "R3": {
+    "pass": false,
+    "post_slot_ratio": 0.937,
+    "seat_below_v3": {
+     "H1": true,
+     "H2": true
+    }
+   },
+   "R4": {
+    "limit": 3,
+    "max_redirects_per_unit_game": 6,
+    "oscillations": 0,
+    "pass": false
+   },
+   "adequacy": {
+    "all_tested": false,
+    "configurations": {
+     "1930331196 C2": {
+      "status": "UNTESTED",
+      "trigger_exposure_in_window": 0
+     },
+     "1930331196 C3": {
+      "status": "UNTESTED",
+      "trigger_exposure_in_window": 0
+     },
+     "2120531121 C3": {
+      "status": "UNTESTED",
+      "trigger_exposure_in_window": 0
+     }
+    }
+   },
+   "adverse_redirects": {
+    "1930331196 C2": 0,
+    "1930331196 C3": 0,
+    "2120531121 C3": 0
+   },
+   "failed_excluding_latency": [
+    "R3_divergence_reduced",
+    "R4_bounded_recourse"
+   ],
+   "invariants_pass": true,
+   "primary_pooled": {
+    "max_redirects_per_unit_game": 6,
+    "orders_vs_baseline-v2": 1331,
+    "orders_vs_t9-v1": 857,
+    "orders_vs_v3": 78,
+    "oscillations": 0,
+    "post_slot_vs_t9-v1": 491,
+    "redirects": 76,
+    "slot_vs_t9-v1": 517
+   }
+  },
+  "posthoc-delayed-post-stage-same": {
+   "A1": {
+    "configurations": {
+     "1930331196 C2": {
+      "early_limit": 5,
+      "early_redirects_baseline": 0,
+      "first_decision_redirects": 0,
+      "first_limit": 2,
+      "pass": true,
+      "shooters_redirected": 0
+     },
+     "1930331196 C3": {
+      "early_limit": 4,
+      "early_redirects_baseline": 0,
+      "first_decision_redirects": 0,
+      "first_limit": 4,
+      "pass": true,
+      "shooters_redirected": 0
+     }
+    },
+    "pass": true
+   },
+   "A2": {
+    "certificate_unit_decisions": 9194,
+    "pass": true,
+    "unreachable_places": 0,
+    "v3_certificate_unit_decisions": 9194,
+    "v3_selection_not_kept": 0
+   },
+   "R1": {
+    "adverse": {
+     "1930331196 C2": 0,
+     "1930331196 C3": 0,
+     "2120531121 C3": 0
+    },
+    "pass": true,
+    "primary": {
+     "p01": 0,
+     "p02": 0,
+     "p03": 0,
+     "p04": 0
+    }
+   },
+   "R2": {
+    "pass": false,
+    "post_opening_units": {
+     "H1": 2,
+     "H2": 8
+    },
+    "required": {
+     "H1": 8,
+     "H2": 13
+    }
+   },
+   "R3": {
+    "pass": false,
+    "post_slot_ratio": 0.9924,
+    "seat_below_v3": {
+     "H1": true,
+     "H2": true
+    }
+   },
+   "R4": {
+    "limit": 3,
+    "max_redirects_per_unit_game": 1,
+    "oscillations": 0,
+    "pass": true
+   },
+   "adequacy": {
+    "all_tested": false,
+    "configurations": {
+     "1930331196 C2": {
+      "status": "UNTESTED",
+      "trigger_exposure_in_window": 0
+     },
+     "1930331196 C3": {
+      "status": "UNTESTED",
+      "trigger_exposure_in_window": 0
+     },
+     "2120531121 C3": {
+      "status": "UNTESTED",
+      "trigger_exposure_in_window": 0
+     }
+    }
+   },
+   "adverse_redirects": {
+    "1930331196 C2": 0,
+    "1930331196 C3": 0,
+    "2120531121 C3": 0
+   },
+   "failed_excluding_latency": [
+    "R2_post_opening_restored",
+    "R3_divergence_reduced"
+   ],
+   "invariants_pass": true,
+   "primary_pooled": {
+    "max_redirects_per_unit_game": 1,
+    "orders_vs_baseline-v2": 1331,
+    "orders_vs_t9-v1": 906,
+    "orders_vs_v3": 10,
+    "oscillations": 0,
+    "post_slot_vs_t9-v1": 520,
+    "redirects": 10,
+    "slot_vs_t9-v1": 546
+   }
+  },
+  "posthoc-delayed-repeat-2": {
+   "A1": {
+    "configurations": {
+     "1930331196 C2": {
+      "early_limit": 5,
+      "early_redirects_baseline": 0,
+      "first_decision_redirects": 0,
+      "first_limit": 2,
+      "pass": true,
+      "shooters_redirected": 0
+     },
+     "1930331196 C3": {
+      "early_limit": 4,
+      "early_redirects_baseline": 0,
+      "first_decision_redirects": 0,
+      "first_limit": 4,
+      "pass": true,
+      "shooters_redirected": 0
+     }
+    },
+    "pass": true
+   },
+   "A2": {
+    "certificate_unit_decisions": 9194,
+    "pass": true,
+    "unreachable_places": 0,
+    "v3_certificate_unit_decisions": 9194,
+    "v3_selection_not_kept": 0
+   },
+   "R1": {
+    "adverse": {
+     "1930331196 C2": 0,
+     "1930331196 C3": 0,
+     "2120531121 C3": 0
+    },
+    "pass": true,
+    "primary": {
+     "p01": 0,
+     "p02": 0,
+     "p03": 0,
+     "p04": 0
+    }
+   },
+   "R2": {
+    "pass": false,
+    "post_opening_units": {
+     "H1": 3,
+     "H2": 16
+    },
+    "required": {
+     "H1": 8,
+     "H2": 13
+    }
+   },
+   "R3": {
+    "pass": false,
+    "post_slot_ratio": 0.9866,
+    "seat_below_v3": {
+     "H1": true,
+     "H2": true
+    }
+   },
+   "R4": {
+    "limit": 3,
+    "max_redirects_per_unit_game": 2,
+    "oscillations": 0,
+    "pass": true
+   },
+   "adequacy": {
+    "all_tested": true,
+    "configurations": {
+     "1930331196 C2": {
+      "status": "TESTED",
+      "trigger_exposure_in_window": 218
+     },
+     "1930331196 C3": {
+      "status": "TESTED",
+      "trigger_exposure_in_window": 1190
+     },
+     "2120531121 C3": {
+      "status": "TESTED",
+      "trigger_exposure_in_window": 309
+     }
+    }
+   },
+   "adverse_redirects": {
+    "1930331196 C2": 0,
+    "1930331196 C3": 0,
+    "2120531121 C3": 9
+   },
+   "failed_excluding_latency": [
+    "R2_post_opening_restored",
+    "R3_divergence_reduced"
+   ],
+   "invariants_pass": true,
+   "primary_pooled": {
+    "max_redirects_per_unit_game": 2,
+    "orders_vs_baseline-v2": 1331,
+    "orders_vs_t9-v1": 895,
+    "orders_vs_v3": 23,
+    "oscillations": 0,
+    "post_slot_vs_t9-v1": 517,
+    "redirects": 23,
+    "slot_vs_t9-v1": 543
+   }
+  },
+  "posthoc-delayed-repeat-3": {
+   "A1": {
+    "configurations": {
+     "1930331196 C2": {
+      "early_limit": 5,
+      "early_redirects_baseline": 0,
+      "first_decision_redirects": 0,
+      "first_limit": 2,
+      "pass": true,
+      "shooters_redirected": 0
+     },
+     "1930331196 C3": {
+      "early_limit": 4,
+      "early_redirects_baseline": 0,
+      "first_decision_redirects": 0,
+      "first_limit": 4,
+      "pass": true,
+      "shooters_redirected": 0
+     }
+    },
+    "pass": true
+   },
+   "A2": {
+    "certificate_unit_decisions": 9194,
+    "pass": true,
+    "unreachable_places": 0,
+    "v3_certificate_unit_decisions": 9194,
+    "v3_selection_not_kept": 0
+   },
+   "R1": {
+    "adverse": {
+     "1930331196 C2": 0,
+     "1930331196 C3": 0,
+     "2120531121 C3": 0
+    },
+    "pass": true,
+    "primary": {
+     "p01": 0,
+     "p02": 0,
+     "p03": 0,
+     "p04": 0
+    }
+   },
+   "R2": {
+    "pass": false,
+    "post_opening_units": {
+     "H1": 2,
+     "H2": 16
+    },
+    "required": {
+     "H1": 8,
+     "H2": 13
+    }
+   },
+   "R3": {
+    "pass": false,
+    "post_slot_ratio": 0.9885,
+    "seat_below_v3": {
+     "H1": true,
+     "H2": true
+    }
+   },
+   "R4": {
+    "limit": 3,
+    "max_redirects_per_unit_game": 2,
+    "oscillations": 0,
+    "pass": true
+   },
+   "adequacy": {
+    "all_tested": true,
+    "configurations": {
+     "1930331196 C2": {
+      "status": "TESTED",
+      "trigger_exposure_in_window": 214
+     },
+     "1930331196 C3": {
+      "status": "TESTED",
+      "trigger_exposure_in_window": 1180
+     },
+     "2120531121 C3": {
+      "status": "TESTED",
+      "trigger_exposure_in_window": 300
+     }
+    }
+   },
+   "adverse_redirects": {
+    "1930331196 C2": 0,
+    "1930331196 C3": 0,
+    "2120531121 C3": 9
+   },
+   "failed_excluding_latency": [
+    "R2_post_opening_restored",
+    "R3_divergence_reduced"
+   ],
+   "invariants_pass": true,
+   "primary_pooled": {
+    "max_redirects_per_unit_game": 2,
+    "orders_vs_baseline-v2": 1331,
+    "orders_vs_t9-v1": 899,
+    "orders_vs_v3": 22,
+    "oscillations": 0,
+    "post_slot_vs_t9-v1": 518,
+    "redirects": 22,
+    "slot_vs_t9-v1": 544
+   }
+  },
+  "posthoc-delayed-saturated-source": {
+   "A1": {
+    "configurations": {
+     "1930331196 C2": {
+      "early_limit": 5,
+      "early_redirects_baseline": 0,
+      "first_decision_redirects": 0,
+      "first_limit": 2,
+      "pass": true,
+      "shooters_redirected": 0
+     },
+     "1930331196 C3": {
+      "early_limit": 4,
+      "early_redirects_baseline": 0,
+      "first_decision_redirects": 0,
+      "first_limit": 4,
+      "pass": true,
+      "shooters_redirected": 0
+     }
+    },
+    "pass": true
+   },
+   "A2": {
+    "certificate_unit_decisions": 9194,
+    "pass": true,
+    "unreachable_places": 0,
+    "v3_certificate_unit_decisions": 9194,
+    "v3_selection_not_kept": 0
+   },
+   "R1": {
+    "adverse": {
+     "1930331196 C2": 0,
+     "1930331196 C3": 0,
+     "2120531121 C3": 0
+    },
+    "pass": true,
+    "primary": {
+     "p01": 0,
+     "p02": 0,
+     "p03": 0,
+     "p04": 0
+    }
+   },
+   "R2": {
+    "pass": false,
+    "post_opening_units": {
+     "H1": 0,
+     "H2": 0
+    },
+    "required": {
+     "H1": 8,
+     "H2": 13
+    }
+   },
+   "R3": {
+    "pass": false,
+    "post_slot_ratio": 1.0,
+    "seat_below_v3": {
+     "H1": false,
+     "H2": false
+    }
+   },
+   "R4": {
+    "limit": 3,
+    "max_redirects_per_unit_game": 0,
+    "oscillations": 0,
+    "pass": true
+   },
+   "adequacy": {
+    "all_tested": false,
+    "configurations": {
+     "1930331196 C2": {
+      "status": "UNTESTED",
+      "trigger_exposure_in_window": 0
+     },
+     "1930331196 C3": {
+      "status": "UNTESTED",
+      "trigger_exposure_in_window": 0
+     },
+     "2120531121 C3": {
+      "status": "UNTESTED",
+      "trigger_exposure_in_window": 0
+     }
+    }
+   },
+   "adverse_redirects": {
+    "1930331196 C2": 0,
+    "1930331196 C3": 0,
+    "2120531121 C3": 0
+   },
+   "failed_excluding_latency": [
+    "R2_post_opening_restored",
+    "R3_divergence_reduced"
+   ],
+   "invariants_pass": true,
+   "primary_pooled": {
+    "max_redirects_per_unit_game": 0,
+    "orders_vs_baseline-v2": 1331,
+    "orders_vs_t9-v1": 913,
+    "orders_vs_v3": 0,
+    "oscillations": 0,
+    "post_slot_vs_t9-v1": 524,
+    "redirects": 0,
+    "slot_vs_t9-v1": 550
+   }
+  },
+  "posthoc-delayed-stable-alternative": {
+   "A1": {
+    "configurations": {
+     "1930331196 C2": {
+      "early_limit": 5,
+      "early_redirects_baseline": 0,
+      "first_decision_redirects": 0,
+      "first_limit": 2,
+      "pass": true,
+      "shooters_redirected": 0
+     },
+     "1930331196 C3": {
+      "early_limit": 4,
+      "early_redirects_baseline": 0,
+      "first_decision_redirects": 0,
+      "first_limit": 4,
+      "pass": true,
+      "shooters_redirected": 0
+     }
+    },
+    "pass": true
+   },
+   "A2": {
+    "certificate_unit_decisions": 9194,
+    "pass": true,
+    "unreachable_places": 0,
+    "v3_certificate_unit_decisions": 9194,
+    "v3_selection_not_kept": 0
+   },
+   "R1": {
+    "adverse": {
+     "1930331196 C2": 0,
+     "1930331196 C3": 0,
+     "2120531121 C3": 0
+    },
+    "pass": true,
+    "primary": {
+     "p01": 0,
+     "p02": 0,
+     "p03": 0,
+     "p04": 0
+    }
+   },
+   "R2": {
+    "pass": false,
+    "post_opening_units": {
+     "H1": 2,
+     "H2": 16
+    },
+    "required": {
+     "H1": 8,
+     "H2": 13
+    }
+   },
+   "R3": {
+    "pass": false,
+    "post_slot_ratio": 0.9885,
+    "seat_below_v3": {
+     "H1": true,
+     "H2": true
+    }
+   },
+   "R4": {
+    "limit": 3,
+    "max_redirects_per_unit_game": 2,
+    "oscillations": 0,
+    "pass": true
+   },
+   "adequacy": {
+    "all_tested": false,
+    "configurations": {
+     "1930331196 C2": {
+      "status": "UNTESTED",
+      "trigger_exposure_in_window": 0
+     },
+     "1930331196 C3": {
+      "status": "UNTESTED",
+      "trigger_exposure_in_window": 0
+     },
+     "2120531121 C3": {
+      "status": "TESTED",
+      "trigger_exposure_in_window": 9
+     }
+    }
+   },
+   "adverse_redirects": {
+    "1930331196 C2": 0,
+    "1930331196 C3": 0,
+    "2120531121 C3": 9
+   },
+   "failed_excluding_latency": [
+    "R2_post_opening_restored",
+    "R3_divergence_reduced"
+   ],
+   "invariants_pass": true,
+   "primary_pooled": {
+    "max_redirects_per_unit_game": 2,
+    "orders_vs_baseline-v2": 1331,
+    "orders_vs_t9-v1": 896,
+    "orders_vs_v3": 22,
+    "oscillations": 0,
+    "post_slot_vs_t9-v1": 518,
+    "redirects": 22,
+    "slot_vs_t9-v1": 544
+   }
+  }
+ }
+}
