@@ -118,6 +118,10 @@ v3 once in each adverse configuration against the inert control and evaluated th
 analysis-side shadows with a corrected memory: on the observed trajectories the post-staging trigger never acts in
 1930331196 C3 and first diverges from v3 inside the risk window in C2 and 2120531121 C3, without recreating a diagnosed
 mechanism (disposition MECHANISM_AMBIGUOUS); nothing was promoted.
+Sprint 17's registered probe (`docs/SPRINT17_FIRST_DIVERGENCE_PROBE.md`, sessions 2794 and 2795) played an executable
+form of the post-staging rule once in each of those two configurations: the 1930331196 C2 firing sequence survived, but
+in 2120531121 C3 the early redirected vehicles held the problem objective's places while later claimants were blocked
+behind them (disposition MECHANISM_REFUTED_212); the rule is retired and nothing was promoted.
 The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
@@ -182,6 +186,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/SPRINT14_REDISTRIBUTION.md` | Sprint 14's offline design competition of bounded cross-objective redistribution rules: protocol, eight frozen candidates, fidelity, primary and adverse replay, gate, rubric and disposition |
 | `docs/SPRINT15_DELAYED_REDISTRIBUTION.md` | Sprint 15's offline study of delayed, memory-triggered redistribution: reference diagnostics, protocol, six frozen stateful candidates, replay, gate, adequacy rule, disposition and a post-hoc sensitivity analysis |
 | `docs/SPRINT16_MECHANISM_CAPTURE.md` | Sprint 16's registered three-session mechanism capture of the frozen v3: card, corrected analysis-side shadows, first-divergence rules, restoration and recourse measures, results and disposition |
+| `docs/SPRINT17_FIRST_DIVERGENCE_PROBE.md` | Sprint 17's registered two-session probe of the executable delayed post-staging candidate: card, prefix check, direct-fire endpoints, EARLY-PLACE BLOCK audit, retirement rules, results and disposition |
 | `docs/PLATFORM_CANARY.md` | the owner's manual upload and compatibility-check steps for the platform canary |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
