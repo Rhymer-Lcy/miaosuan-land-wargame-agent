@@ -332,3 +332,128 @@ rule.
 No score, effect or population property. One game per configuration shows one trajectory. A preserved mechanism here
 says nothing about other configurations or other trajectories, and a refutation retires this rule for the reason
 registered, not the T9 line in general.
+
+## Results (2026-10-06)
+
+Every figure below comes from the committed public files of `evaluation/s17-first-divergence-probe/`, which
+`scripts/s17_analysis.py run --check` regenerates byte for byte from the private records and captures, or from the run
+logs kept privately. Scores are record facts that enter no rule.
+
+### R1. Registration and pre-engine checks
+
+Sections 1 to 14, every frozen file, the card, the inputs, the tests and the mutation record were pushed as commit
+`93ac24e843958722533dbb469875389ea9476b25` (tree `629df1aeb80a60958f8eb91351df411e92658ddc`) at
+2026-10-06T19:31:06+08:00, after an audit of its 13 commits; a fresh unauthenticated clone from GitHub had the same
+commit and tree and all 16 changed files byte for byte. The evaluation server was fast-forwarded to the same commit by
+bundle, and on that committed tree the card and `inputs.json` regenerated, the rehearsal passed every requirement and
+the stand-in rehearsal passed with the clean-tree guards in force. Before session 2794: the workstation tree ran 1,612
+tests (81 skipped) with exit 0, a clean clone from GitHub 1,609 (82 skipped) with exit 0, and the server's private tree
+1,625 (1 skipped: the regeneration of the result files, which did not exist yet; 5,200 s) with exit 0 and the ledger
+file byte-identical before and after; the privacy scan over every reachable blob (884 blobs) found 104 hit lines,
+identical as a set to the accepted 104; the platform canary rebuilt byte for byte on both hosts; a read-only verify
+reported 2,793 sessions, integrity ok, state continuous, none unclosed.
+
+### R2. Sessions and capture integrity
+
+| Session | Game | Candidate seat | Wall time | Structural stops | Decisions reconstructed offline, memory compared, differences |
+|---:|---|---|---:|---|---|
+| 2794 | 1930331196 C2, position 1 | red | 117.2 s | none | 2,881, 2,881, 0 |
+| 2795 | 2120531121 C3, position 2 | blue | 112.9 s | none | 2,881, 2,881, 0 |
+
+Both games were launched at 2026-10-06T20:59:42+08:00 and completed 2,881 steps in schedule order, one at a time;
+nothing was retried or replaced and no third session was opened. Both sessions closed with integrity ok; the ledger
+audit found each session after 2793 to be the card's game in its schedule position under the card's digest and the
+candidate's registered digest, none unclosed, and the read-only verify afterwards reported 2,795 sessions, integrity ok,
+state continuous. The live reconstruction found no difference at any decision, the memory chain included; the offline
+replay re-derived every candidate decision and its memory from an empty memory with no difference and no problem.
+`CAPTURE_INVALID` does not apply.
+
+### R3. Prefix reproduction
+
+| Configuration | Actions before the divergence equal to frozen v3 | Registered first divergence reproduced | Memory chain equal | Seat observations identical through the divergence |
+|---|---|---|---|---|
+| 1930331196 C2 | yes (decisions 0 to 420) | yes, decision 421 | yes | 422 of 422 |
+| 2120531121 C3 | yes (decisions 0 to 360) | yes, decision 361 | yes | 169 of 362 |
+
+SP passed in both games, live and offline. In 2120531121 C3 the seat's observations equal Sprint 16's only through
+decision 168: the seat's helicopter fired at decision 168 in both games and the engine's damage draw differed (2 points
+in Sprint 16's game, 1 here), which changes the inert enemy's state and the scores from decision 169 on. Every own action
+through decision 361 was nevertheless identical and the registered redirect was reproduced exactly; this is reported, as
+registered, and gates nothing.
+
+### R4. 1930331196 C2
+
+* **Decision 421.** As registered: two vehicles that `baseline-v2` sent to 50-point objective C, which v3 would have
+  staged, were redirected to 80-point objective A at the same route cost (5.0, 100 free-flow steps); Sprint 14's
+  independent checks found no violation.
+* **Later redirects.** Four more vehicles were redirected from 50-point objective B to 80-point objective B: one at
+  decision 521, one at 522 and two at 541, all with clean independent checks. Six redirects of six units in all; 24
+  memory episodes, 6 with a redirect, none with more than one; no oscillation.
+* **Protected direct fire.**
+
+| Decision | Listed for the protected unit | Order emitted by it | Response |
+|---:|---|---|---|
+| 611 | yes | yes | accepted |
+| 686 | yes | yes | accepted |
+
+* **Capture order.** The same as v3's in Sprint 16 (50-point A, 50-point C, 80-point A, 50-point B, 80-point B), and
+  every first ownership at the same decision except 80-point objective B, first owned at decision 864 instead of 886.
+* Record facts: margin 274 and attack 24, as in Sprint 16's v3 game.
+
+**Class `C2_MECHANISM_PRESERVED`**: both protected fire events survive, and the Sprint 10 capture-order and firing
+regression did not reappear on this trajectory.
+
+### R5. 2120531121 C3
+
+* **Decision 361.** As registered: two vehicles that `baseline-v2` sent to 80-point objective B, which v3 would have
+  staged, were redirected into the problem objective (route cost 8.0 against 7.0, 160 free-flow steps), with clean
+  independent checks. Two more vehicles followed the same redirect at decision 381. Four redirects of four units; 18
+  memory episodes, 4 with a redirect, none with more than one; no oscillation.
+* **First ownership.** The problem objective was first owned at decision 522, 42 decisions before v3's 564; clause A of
+  the retirement rule does not hold.
+* **Pre-capture audit (decisions 361 to 521).** Units claimed the problem objective at 23 decisions, the first at 463:
+  49 claimant-decisions by 8 vehicles, every one able to arrive and none placed, because at each of those decisions the
+  objective's four counted places were held by the two decision-361 vehicles and the two decision-381 vehicles. Removing
+  only the two early places would have placed a claimant 45 times: **45 EARLY-PLACE BLOCK events**, at all 23 claim
+  decisions (38 withheld, 7 staged). v3's two capturers were blocked at each of their 20 claim decisions (each withheld
+  19 times and staged once) and were not on the objective at its first ownership; five other vehicles were blocked once
+  each. With every candidate redirect place removed (descriptive), 48 claimant-decisions would have been placed.
+* **The decision-361 vehicles** stayed counted on the objective for 160 decisions each, both survived, and one of them
+  stood on it at its first ownership.
+* Record facts: margin 579 and attack 98, as in Sprint 16's v3 game.
+
+**Class `C3_212_MECHANISM_LOST`** (clause B: 45 EARLY-PLACE BLOCK events before first ownership). The candidate is
+RETIRED BY 212.
+
+### R6. Disposition
+
+C2 preserved, 212 retired, no structural, fidelity, prefix or reconstruction problem. By the rule of section 9:
+
+**MECHANISM_REFUTED_212.**
+
+It promotes nothing and authorizes no further engine use; the study returns to the owner.
+
+### R7. What Sprint 17 shows
+
+1. **The executable candidate is the shadow.** It reproduced frozen v3 and Sprint 16's corrected-memory chain exactly up
+   to both registered divergences and made exactly the registered redirects; every one of the 5,762 decisions was
+   re-derived from the seat's own observation and memory without a difference.
+2. **1930331196 C2: crossing decision 421 did not touch the firing sequence.** The protected unit fired at 611 and 686
+   as in v3's game and the capture order was unchanged; 80-point objective B, the destination of the later redirects,
+   was first owned 22 decisions earlier than in v3's game (whether because of them is not measured).
+3. **2120531121 C3: the early places recreate capacity reservation.** The two decision-361 vehicles, joined by two more
+   at 381, held every counted place of the problem objective from the first claim at 463 to the capture, and every
+   later claimant, v3's own two capturers included, was withheld or staged behind them: the mechanism the 212 rule was
+   registered to detect. On this trajectory the reserving vehicles did arrive, and the objective was taken 42 decisions
+   earlier than by v3; the registered clause counts the displacement itself and does not measure whether it was
+   harmful, and nothing here does.
+
+### R8. Recommendation (one)
+
+Retire `delayed-post-stage-any` completely, as the registered refutation requires, add no exception to it, and shelve
+the T9 redistribution line. The engine exposed no new generic mechanism: what the 212 clause found is the property it
+was written for, an early redirect holding capacity that later claimants would have used, which is what a redirect
+made before those claimants arrive does by construction. Since Sprint 12 the line has produced no rule that both restores T9-v1's primary
+redistribution and stays clear of the adverse mechanisms. The one next task: an offline re-selection of the next
+tactical family from the frontier register (`docs/TACTICAL_FRONTIER.md`), scored with the committed rubric against the
+evidence gathered since Sprint 1, with no engine session, for the owner's decision.
