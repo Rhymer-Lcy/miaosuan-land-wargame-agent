@@ -1,0 +1,2886 @@
+{
+ "decomposition": {
+  "1930331196 C2": {
+   "g01 (t9-v1 trajectory)": {
+    "active_decisions": 289,
+    "opening_overflow_units": 7,
+    "policies": {
+     "O2": {
+      "buckets": {
+       "first": 6,
+       "later": 1,
+       "next20": 0,
+       "next5": 0
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 1,
+      "post_opening_units": 1,
+      "post_opening_units_never_opening_overflow": 1,
+      "redirected_units": 7,
+      "redirects": 7,
+      "redirects_by_opening_overflow_units": 6,
+      "unit_source_pairs_redirected_more_than_once": 0
+     },
+     "batch-value-redirect": {
+      "buckets": {
+       "first": 6,
+       "later": 1,
+       "next20": 0,
+       "next5": 0
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 1,
+      "post_opening_units": 1,
+      "post_opening_units_never_opening_overflow": 1,
+      "redirected_units": 7,
+      "redirects": 7,
+      "redirects_by_opening_overflow_units": 6,
+      "unit_source_pairs_redirected_more_than_once": 0
+     },
+     "t9-v1": {
+      "buckets": {
+       "first": 7,
+       "later": 1,
+       "next20": 0,
+       "next5": 0
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 1,
+      "post_opening_units": 1,
+      "post_opening_units_never_opening_overflow": 1,
+      "redirected_units": 7,
+      "redirects": 8,
+      "redirects_by_opening_overflow_units": 4,
+      "unit_source_pairs_redirected_more_than_once": 0
+     }
+    }
+   },
+   "g02 (baseline-v2 trajectory)": {
+    "active_decisions": 16,
+    "opening_overflow_units": 7,
+    "policies": {
+     "O2": {
+      "buckets": {
+       "first": 6,
+       "later": 0,
+       "next20": 6,
+       "next5": 2
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 8,
+      "post_opening_units": 6,
+      "post_opening_units_never_opening_overflow": 1,
+      "redirected_units": 7,
+      "redirects": 14,
+      "redirects_by_opening_overflow_units": 13,
+      "unit_source_pairs_redirected_more_than_once": 0
+     },
+     "batch-value-redirect": {
+      "buckets": {
+       "first": 6,
+       "later": 0,
+       "next20": 6,
+       "next5": 2
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 8,
+      "post_opening_units": 6,
+      "post_opening_units_never_opening_overflow": 1,
+      "redirected_units": 7,
+      "redirects": 14,
+      "redirects_by_opening_overflow_units": 13,
+      "unit_source_pairs_redirected_more_than_once": 0
+     },
+     "t9-v1": {
+      "buckets": {
+       "first": 7,
+       "later": 0,
+       "next20": 6,
+       "next5": 2
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 8,
+      "post_opening_units": 7,
+      "post_opening_units_never_opening_overflow": 2,
+      "redirected_units": 10,
+      "redirects": 15,
+      "redirects_by_opening_overflow_units": 10,
+      "unit_source_pairs_redirected_more_than_once": 0
+     }
+    }
+   }
+  },
+  "1930331196 C3": {
+   "g03 (t9-v1 trajectory)": {
+    "active_decisions": 263,
+    "opening_overflow_units": 4,
+    "policies": {
+     "O2": {
+      "buckets": {
+       "first": 4,
+       "later": 0,
+       "next20": 0,
+       "next5": 0
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 0,
+      "post_opening_units": 0,
+      "post_opening_units_never_opening_overflow": 0,
+      "redirected_units": 4,
+      "redirects": 4,
+      "redirects_by_opening_overflow_units": 4,
+      "unit_source_pairs_redirected_more_than_once": 0
+     },
+     "batch-value-redirect": {
+      "buckets": {
+       "first": 4,
+       "later": 0,
+       "next20": 0,
+       "next5": 0
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 0,
+      "post_opening_units": 0,
+      "post_opening_units_never_opening_overflow": 0,
+      "redirected_units": 4,
+      "redirects": 4,
+      "redirects_by_opening_overflow_units": 4,
+      "unit_source_pairs_redirected_more_than_once": 0
+     },
+     "t9-v1": {
+      "buckets": {
+       "first": 12,
+       "later": 0,
+       "next20": 0,
+       "next5": 2
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 2,
+      "post_opening_units": 2,
+      "post_opening_units_never_opening_overflow": 2,
+      "redirected_units": 14,
+      "redirects": 14,
+      "redirects_by_opening_overflow_units": 4,
+      "unit_source_pairs_redirected_more_than_once": 0
+     }
+    }
+   },
+   "g04 (baseline-v2 trajectory)": {
+    "active_decisions": 11,
+    "opening_overflow_units": 4,
+    "policies": {
+     "O2": {
+      "buckets": {
+       "first": 4,
+       "later": 0,
+       "next20": 0,
+       "next5": 0
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 0,
+      "post_opening_units": 0,
+      "post_opening_units_never_opening_overflow": 0,
+      "redirected_units": 4,
+      "redirects": 4,
+      "redirects_by_opening_overflow_units": 4,
+      "unit_source_pairs_redirected_more_than_once": 0
+     },
+     "batch-value-redirect": {
+      "buckets": {
+       "first": 4,
+       "later": 0,
+       "next20": 0,
+       "next5": 0
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 0,
+      "post_opening_units": 0,
+      "post_opening_units_never_opening_overflow": 0,
+      "redirected_units": 4,
+      "redirects": 4,
+      "redirects_by_opening_overflow_units": 4,
+      "unit_source_pairs_redirected_more_than_once": 0
+     },
+     "t9-v1": {
+      "buckets": {
+       "first": 12,
+       "later": 0,
+       "next20": 0,
+       "next5": 0
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 0,
+      "post_opening_units": 0,
+      "post_opening_units_never_opening_overflow": 0,
+      "redirected_units": 12,
+      "redirects": 12,
+      "redirects_by_opening_overflow_units": 4,
+      "unit_source_pairs_redirected_more_than_once": 0
+     }
+    }
+   }
+  },
+  "2120531121 C3": {
+   "g01 (t9-v1 trajectory)": {
+    "active_decisions": 2522,
+    "opening_overflow_units": 4,
+    "policies": {
+     "O2": {
+      "buckets": {
+       "first": 4,
+       "later": 298,
+       "next20": 24,
+       "next5": 6
+      },
+      "largest_repeat": 99,
+      "post_opening_redirects": 328,
+      "post_opening_units": 7,
+      "post_opening_units_never_opening_overflow": 6,
+      "redirected_units": 10,
+      "redirects": 332,
+      "redirects_by_opening_overflow_units": 8,
+      "unit_source_pairs_redirected_more_than_once": 5
+     },
+     "batch-value-redirect": {
+      "buckets": {
+       "first": 4,
+       "later": 298,
+       "next20": 24,
+       "next5": 6
+      },
+      "largest_repeat": 81,
+      "post_opening_redirects": 328,
+      "post_opening_units": 10,
+      "post_opening_units_never_opening_overflow": 6,
+      "redirected_units": 10,
+      "redirects": 332,
+      "redirects_by_opening_overflow_units": 166,
+      "unit_source_pairs_redirected_more_than_once": 7
+     },
+     "t9-v1": {
+      "buckets": {
+       "first": 10,
+       "later": 0,
+       "next20": 0,
+       "next5": 2
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 2,
+      "post_opening_units": 2,
+      "post_opening_units_never_opening_overflow": 2,
+      "redirected_units": 12,
+      "redirects": 12,
+      "redirects_by_opening_overflow_units": 4,
+      "unit_source_pairs_redirected_more_than_once": 0
+     }
+    }
+   },
+   "g02 (baseline-v2 trajectory)": {
+    "active_decisions": 15,
+    "opening_overflow_units": 4,
+    "policies": {
+     "O2": {
+      "buckets": {
+       "first": 4,
+       "later": 0,
+       "next20": 1,
+       "next5": 7
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 8,
+      "post_opening_units": 8,
+      "post_opening_units_never_opening_overflow": 4,
+      "redirected_units": 8,
+      "redirects": 12,
+      "redirects_by_opening_overflow_units": 8,
+      "unit_source_pairs_redirected_more_than_once": 0
+     },
+     "batch-value-redirect": {
+      "buckets": {
+       "first": 4,
+       "later": 0,
+       "next20": 1,
+       "next5": 7
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 8,
+      "post_opening_units": 8,
+      "post_opening_units_never_opening_overflow": 4,
+      "redirected_units": 8,
+      "redirects": 12,
+      "redirects_by_opening_overflow_units": 8,
+      "unit_source_pairs_redirected_more_than_once": 0
+     },
+     "t9-v1": {
+      "buckets": {
+       "first": 10,
+       "later": 0,
+       "next20": 1,
+       "next5": 7
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 8,
+      "post_opening_units": 8,
+      "post_opening_units_never_opening_overflow": 4,
+      "redirected_units": 14,
+      "redirects": 18,
+      "redirects_by_opening_overflow_units": 8,
+      "unit_source_pairs_redirected_more_than_once": 0
+     }
+    }
+   }
+  },
+  "2130511121 H1": {
+   "p01 (v3 trajectory)": {
+    "active_decisions": 300,
+    "opening_overflow_units": 12,
+    "policies": {
+     "O2": {
+      "buckets": {
+       "first": 12,
+       "later": 125,
+       "next20": 24,
+       "next5": 1
+      },
+      "largest_repeat": 109,
+      "post_opening_redirects": 150,
+      "post_opening_units": 14,
+      "post_opening_units_never_opening_overflow": 4,
+      "redirected_units": 16,
+      "redirects": 162,
+      "redirects_by_opening_overflow_units": 157,
+      "unit_source_pairs_redirected_more_than_once": 3
+     },
+     "batch-value-redirect": {
+      "buckets": {
+       "first": 12,
+       "later": 125,
+       "next20": 24,
+       "next5": 1
+      },
+      "largest_repeat": 109,
+      "post_opening_redirects": 150,
+      "post_opening_units": 14,
+      "post_opening_units_never_opening_overflow": 4,
+      "redirected_units": 16,
+      "redirects": 162,
+      "redirects_by_opening_overflow_units": 157,
+      "unit_source_pairs_redirected_more_than_once": 3
+     },
+     "t9-v1": {
+      "buckets": {
+       "first": 14,
+       "later": 123,
+       "next20": 24,
+       "next5": 1
+      },
+      "largest_repeat": 107,
+      "post_opening_redirects": 148,
+      "post_opening_units": 14,
+      "post_opening_units_never_opening_overflow": 4,
+      "redirected_units": 18,
+      "redirects": 162,
+      "redirects_by_opening_overflow_units": 155,
+      "unit_source_pairs_redirected_more_than_once": 3
+     }
+    }
+   },
+   "p03 (v3 trajectory)": {
+    "active_decisions": 16,
+    "opening_overflow_units": 12,
+    "policies": {
+     "O2": {
+      "buckets": {
+       "first": 12,
+       "later": 0,
+       "next20": 1,
+       "next5": 0
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 1,
+      "post_opening_units": 1,
+      "post_opening_units_never_opening_overflow": 0,
+      "redirected_units": 12,
+      "redirects": 13,
+      "redirects_by_opening_overflow_units": 13,
+      "unit_source_pairs_redirected_more_than_once": 0
+     },
+     "batch-value-redirect": {
+      "buckets": {
+       "first": 12,
+       "later": 0,
+       "next20": 1,
+       "next5": 0
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 1,
+      "post_opening_units": 1,
+      "post_opening_units_never_opening_overflow": 0,
+      "redirected_units": 12,
+      "redirects": 13,
+      "redirects_by_opening_overflow_units": 13,
+      "unit_source_pairs_redirected_more_than_once": 0
+     },
+     "t9-v1": {
+      "buckets": {
+       "first": 14,
+       "later": 0,
+       "next20": 1,
+       "next5": 0
+      },
+      "largest_repeat": 1,
+      "post_opening_redirects": 1,
+      "post_opening_units": 1,
+      "post_opening_units_never_opening_overflow": 0,
+      "redirected_units": 14,
+      "redirects": 15,
+      "redirects_by_opening_overflow_units": 13,
+      "unit_source_pairs_redirected_more_than_once": 0
+     }
+    }
+   }
+  },
+  "2130511121 H2": {
+   "p02 (v3 trajectory)": {
+    "active_decisions": 158,
+    "opening_overflow_units": 18,
+    "policies": {
+     "O2": {
+      "buckets": {
+       "first": 17,
+       "later": 160,
+       "next20": 26,
+       "next5": 6
+      },
+      "largest_repeat": 39,
+      "post_opening_redirects": 192,
+      "post_opening_units": 13,
+      "post_opening_units_never_opening_overflow": 5,
+      "redirected_units": 22,
+      "redirects": 209,
+      "redirects_by_opening_overflow_units": 152,
+      "unit_source_pairs_redirected_more_than_once": 9
+     },
+     "batch-value-redirect": {
+      "buckets": {
+       "first": 18,
+       "later": 160,
+       "next20": 26,
+       "next5": 6
+      },
+      "largest_repeat": 39,
+      "post_opening_redirects": 192,
+      "post_opening_units": 13,
+      "post_opening_units_never_opening_overflow": 5,
+      "redirected_units": 23,
+      "redirects": 210,
+      "redirects_by_opening_overflow_units": 153,
+      "unit_source_pairs_redirected_more_than_once": 9
+     },
+     "t9-v1": {
+      "buckets": {
+       "first": 19,
+       "later": 161,
+       "next20": 26,
+       "next5": 6
+      },
+      "largest_repeat": 39,
+      "post_opening_redirects": 193,
+      "post_opening_units": 13,
+      "post_opening_units_never_opening_overflow": 5,
+      "redirected_units": 22,
+      "redirects": 212,
+      "redirects_by_opening_overflow_units": 155,
+      "unit_source_pairs_redirected_more_than_once": 9
+     }
+    }
+   },
+   "p04 (v3 trajectory)": {
+    "active_decisions": 186,
+    "opening_overflow_units": 18,
+    "policies": {
+     "O2": {
+      "buckets": {
+       "first": 17,
+       "later": 205,
+       "next20": 25,
+       "next5": 6
+      },
+      "largest_repeat": 42,
+      "post_opening_redirects": 236,
+      "post_opening_units": 13,
+      "post_opening_units_never_opening_overflow": 5,
+      "redirected_units": 22,
+      "redirects": 253,
+      "redirects_by_opening_overflow_units": 186,
+      "unit_source_pairs_redirected_more_than_once": 12
+     },
+     "batch-value-redirect": {
+      "buckets": {
+       "first": 18,
+       "later": 205,
+       "next20": 25,
+       "next5": 6
+      },
+      "largest_repeat": 56,
+      "post_opening_redirects": 236,
+      "post_opening_units": 13,
+      "post_opening_units_never_opening_overflow": 5,
+      "redirected_units": 23,
+      "redirects": 254,
+      "redirects_by_opening_overflow_units": 187,
+      "unit_source_pairs_redirected_more_than_once": 12
+     },
+     "t9-v1": {
+      "buckets": {
+       "first": 19,
+       "later": 206,
+       "next20": 25,
+       "next5": 6
+      },
+      "largest_repeat": 42,
+      "post_opening_redirects": 237,
+      "post_opening_units": 13,
+      "post_opening_units_never_opening_overflow": 5,
+      "redirected_units": 22,
+      "redirects": 256,
+      "redirects_by_opening_overflow_units": 189,
+      "unit_source_pairs_redirected_more_than_once": 12
+     }
+    }
+   }
+  }
+ },
+ "features": {
+  "all": {
+   "groups": {
+    "1930331196 C2": {
+     "features": {
+      "completed_stage": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 19,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "detour_ratio": {
+       "max": 1.2917,
+       "median": 1.1667,
+       "min": 1.0,
+       "n": 19,
+       "p25": 1.0667,
+       "p75": 1.1818
+      },
+      "enemies_within_10": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 19,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "free_flow": {
+       "max": 2736.0,
+       "median": 520.0,
+       "min": 80.0,
+       "n": 19,
+       "p25": 320.0,
+       "p75": 560.0
+      },
+      "nearest_seen_enemy": {
+       "max": 25.0,
+       "median": 25.0,
+       "min": 25.0,
+       "n": 4,
+       "p25": 25.0,
+       "p75": 25.0
+      },
+      "prior_overflow_same_source": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 19,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "source_saturated": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 19,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "steps_in_episode": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 19,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "strength": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 19,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "unheld_share": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 0.4,
+       "n": 19,
+       "p25": 0.8,
+       "p75": 1.0
+      },
+      "value_ratio": {
+       "max": 1.6,
+       "median": 1.6,
+       "min": 1.6,
+       "n": 19,
+       "p25": 1.6,
+       "p75": 1.6
+      },
+      "vehicle": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 0.0,
+       "n": 19,
+       "p25": 1.0,
+       "p75": 1.0
+      }
+     },
+     "label": "ADVERSE",
+     "rows": 19
+    },
+    "1930331196 C3": {
+     "features": {
+      "completed_stage": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 8,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "detour_ratio": {
+       "max": 1.0625,
+       "median": 1.0625,
+       "min": 1.0588,
+       "n": 8,
+       "p25": 1.0588,
+       "p75": 1.0625
+      },
+      "enemies_within_10": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 8,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "free_flow": {
+       "max": 720.0,
+       "median": 720.0,
+       "min": 680.0,
+       "n": 8,
+       "p25": 680.0,
+       "p75": 720.0
+      },
+      "nearest_seen_enemy": {
+       "n": 0
+      },
+      "prior_overflow_same_source": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 8,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "source_saturated": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 8,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "steps_in_episode": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 8,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "strength": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 8,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "unheld_share": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 8,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "value_ratio": {
+       "max": 0.625,
+       "median": 0.625,
+       "min": 0.625,
+       "n": 8,
+       "p25": 0.625,
+       "p75": 0.625
+      },
+      "vehicle": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 8,
+       "p25": 1.0,
+       "p75": 1.0
+      }
+     },
+     "label": "ADVERSE",
+     "rows": 8
+    },
+    "2120531121 C3": {
+     "features": {
+      "completed_stage": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 23,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "detour_ratio": {
+       "max": 2.0,
+       "median": 1.1429,
+       "min": 1.0,
+       "n": 23,
+       "p25": 1.1429,
+       "p75": 1.2857
+      },
+      "enemies_within_10": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 23,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "free_flow": {
+       "max": 540.0,
+       "median": 160.0,
+       "min": 100.0,
+       "n": 23,
+       "p25": 160.0,
+       "p75": 440.0
+      },
+      "nearest_seen_enemy": {
+       "max": 20.0,
+       "median": 17.0,
+       "min": 17.0,
+       "n": 15,
+       "p25": 17.0,
+       "p75": 20.0
+      },
+      "prior_overflow_same_source": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 23,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "source_saturated": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 23,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "steps_in_episode": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 23,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "strength": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 23,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "unheld_share": {
+       "max": 1.0,
+       "median": 0.8,
+       "min": 0.4,
+       "n": 23,
+       "p25": 0.8,
+       "p75": 1.0
+      },
+      "value_ratio": {
+       "max": 1.6,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 23,
+       "p25": 1.0,
+       "p75": 1.6
+      },
+      "vehicle": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 23,
+       "p25": 1.0,
+       "p75": 1.0
+      }
+     },
+     "label": "UNLABELLED",
+     "rows": 23
+    },
+    "2130511121 H1": {
+     "features": {
+      "completed_stage": {
+       "max": 1.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 39,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "detour_ratio": {
+       "max": 2.0,
+       "median": 1.1071,
+       "min": 1.0,
+       "n": 39,
+       "p25": 1.0909,
+       "p75": 1.2258
+      },
+      "enemies_within_10": {
+       "max": 24.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 39,
+       "p25": 0.0,
+       "p75": 19.0
+      },
+      "free_flow": {
+       "max": 780.0,
+       "median": 460.0,
+       "min": 60.0,
+       "n": 39,
+       "p25": 220.0,
+       "p75": 660.0
+      },
+      "nearest_seen_enemy": {
+       "max": 3.0,
+       "median": 2.0,
+       "min": 0.0,
+       "n": 15,
+       "p25": 1.0,
+       "p75": 2.0
+      },
+      "prior_overflow_same_source": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 39,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "source_saturated": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 39,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "steps_in_episode": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 39,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "strength": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 0.5,
+       "n": 39,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "unheld_share": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 0.4286,
+       "n": 39,
+       "p25": 0.8571,
+       "p75": 1.0
+      },
+      "value_ratio": {
+       "max": 1.6,
+       "median": 1.6,
+       "min": 1.0,
+       "n": 39,
+       "p25": 1.6,
+       "p75": 1.6
+      },
+      "vehicle": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 39,
+       "p25": 1.0,
+       "p75": 1.0
+      }
+     },
+     "label": "PRIMARY",
+     "rows": 39
+    },
+    "2130511121 H2": {
+     "features": {
+      "completed_stage": {
+       "max": 1.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 60,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "detour_ratio": {
+       "max": 1.8333,
+       "median": 1.375,
+       "min": 1.0,
+       "n": 60,
+       "p25": 1.2308,
+       "p75": 1.5833
+      },
+      "enemies_within_10": {
+       "max": 15.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 60,
+       "p25": 0.0,
+       "p75": 4.0
+      },
+      "free_flow": {
+       "max": 2736.0,
+       "median": 280.0,
+       "min": 80.0,
+       "n": 60,
+       "p25": 160.0,
+       "p75": 1296.0
+      },
+      "nearest_seen_enemy": {
+       "max": 10.0,
+       "median": 8.0,
+       "min": 2.0,
+       "n": 26,
+       "p25": 6.0,
+       "p75": 9.0
+      },
+      "prior_overflow_same_source": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 60,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "source_saturated": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 60,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "steps_in_episode": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 60,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "strength": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 60,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "unheld_share": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 0.2857,
+       "n": 60,
+       "p25": 0.7143,
+       "p75": 1.0
+      },
+      "value_ratio": {
+       "max": 1.6,
+       "median": 1.0,
+       "min": 0.625,
+       "n": 60,
+       "p25": 0.625,
+       "p75": 1.0
+      },
+      "vehicle": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 0.0,
+       "n": 60,
+       "p25": 0.0,
+       "p75": 1.0
+      }
+     },
+     "label": "PRIMARY",
+     "rows": 60
+    }
+   },
+   "rule_search": {
+    "all": {
+     "adverse_allowed": 0,
+     "adverse_rows": 27,
+     "primary_allowed": 53,
+     "primary_rows": 99,
+     "rule": [
+      [
+       "detour_ratio",
+       ">=",
+       1.0909
+      ],
+      [
+       "free_flow",
+       "<=",
+       500
+      ]
+     ]
+    },
+    "leave_one_group_out": {
+     "1930331196 C2": {
+      "held_out_adverse_allowed": 12,
+      "held_out_primary_allowed": 0,
+      "held_out_rows": 19,
+      "rule": [
+       [
+        "detour_ratio",
+        ">=",
+        1.0909
+       ]
+      ]
+     },
+     "1930331196 C3": {
+      "held_out_adverse_allowed": 8,
+      "held_out_primary_allowed": 0,
+      "held_out_rows": 8,
+      "rule": [
+       [
+        "value_ratio",
+        "<=",
+        1.0
+       ]
+      ]
+     },
+     "2130511121 H1": {
+      "held_out_adverse_allowed": 0,
+      "held_out_primary_allowed": 3,
+      "held_out_rows": 39,
+      "rule": [
+       [
+        "detour_ratio",
+        ">=",
+        1.3333
+       ]
+      ]
+     },
+     "2130511121 H2": {
+      "held_out_adverse_allowed": 0,
+      "held_out_primary_allowed": 18,
+      "held_out_rows": 60,
+      "rule": [
+       [
+        "unheld_share",
+        ">=",
+        0.8571
+       ],
+       [
+        "free_flow",
+        "<=",
+        500
+       ]
+      ]
+     }
+    }
+   }
+  },
+  "opening": {
+   "groups": {
+    "1930331196 C2": {
+     "features": {
+      "completed_stage": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 12,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "detour_ratio": {
+       "max": 1.2917,
+       "median": 1.1818,
+       "min": 1.1667,
+       "n": 12,
+       "p25": 1.1667,
+       "p75": 1.1875
+      },
+      "enemies_within_10": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 12,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "free_flow": {
+       "max": 2736.0,
+       "median": 560.0,
+       "min": 520.0,
+       "n": 12,
+       "p25": 520.0,
+       "p75": 620.0
+      },
+      "nearest_seen_enemy": {
+       "n": 0
+      },
+      "prior_overflow_same_source": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 12,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "source_saturated": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 12,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "steps_in_episode": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 12,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "strength": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 12,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "unheld_share": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 12,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "value_ratio": {
+       "max": 1.6,
+       "median": 1.6,
+       "min": 1.6,
+       "n": 12,
+       "p25": 1.6,
+       "p75": 1.6
+      },
+      "vehicle": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 0.0,
+       "n": 12,
+       "p25": 1.0,
+       "p75": 1.0
+      }
+     },
+     "label": "ADVERSE",
+     "rows": 12
+    },
+    "1930331196 C3": {
+     "features": {
+      "completed_stage": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 8,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "detour_ratio": {
+       "max": 1.0625,
+       "median": 1.0625,
+       "min": 1.0588,
+       "n": 8,
+       "p25": 1.0588,
+       "p75": 1.0625
+      },
+      "enemies_within_10": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 8,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "free_flow": {
+       "max": 720.0,
+       "median": 720.0,
+       "min": 680.0,
+       "n": 8,
+       "p25": 680.0,
+       "p75": 720.0
+      },
+      "nearest_seen_enemy": {
+       "n": 0
+      },
+      "prior_overflow_same_source": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 8,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "source_saturated": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 8,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "steps_in_episode": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 8,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "strength": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 8,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "unheld_share": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 8,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "value_ratio": {
+       "max": 0.625,
+       "median": 0.625,
+       "min": 0.625,
+       "n": 8,
+       "p25": 0.625,
+       "p75": 0.625
+      },
+      "vehicle": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 8,
+       "p25": 1.0,
+       "p75": 1.0
+      }
+     },
+     "label": "ADVERSE",
+     "rows": 8
+    },
+    "2120531121 C3": {
+     "features": {
+      "completed_stage": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 8,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "detour_ratio": {
+       "max": 1.3,
+       "median": 1.2857,
+       "min": 1.1579,
+       "n": 8,
+       "p25": 1.1579,
+       "p75": 1.2857
+      },
+      "enemies_within_10": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 8,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "free_flow": {
+       "max": 540.0,
+       "median": 520.0,
+       "min": 440.0,
+       "n": 8,
+       "p25": 440.0,
+       "p75": 520.0
+      },
+      "nearest_seen_enemy": {
+       "n": 0
+      },
+      "prior_overflow_same_source": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 8,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "source_saturated": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 8,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "steps_in_episode": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 8,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "strength": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 8,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "unheld_share": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 8,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "value_ratio": {
+       "max": 1.6,
+       "median": 1.6,
+       "min": 1.6,
+       "n": 8,
+       "p25": 1.6,
+       "p75": 1.6
+      },
+      "vehicle": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 8,
+       "p25": 1.0,
+       "p75": 1.0
+      }
+     },
+     "label": "UNLABELLED",
+     "rows": 8
+    },
+    "2130511121 H1": {
+     "features": {
+      "completed_stage": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 24,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "detour_ratio": {
+       "max": 1.2333,
+       "median": 1.1071,
+       "min": 1.0,
+       "n": 24,
+       "p25": 1.0909,
+       "p75": 1.2188
+      },
+      "enemies_within_10": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 24,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "free_flow": {
+       "max": 780.0,
+       "median": 640.0,
+       "min": 440.0,
+       "n": 24,
+       "p25": 480.0,
+       "p75": 740.0
+      },
+      "nearest_seen_enemy": {
+       "n": 0
+      },
+      "prior_overflow_same_source": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 24,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "source_saturated": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 24,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "steps_in_episode": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 24,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "strength": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 24,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "unheld_share": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 24,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "value_ratio": {
+       "max": 1.6,
+       "median": 1.6,
+       "min": 1.6,
+       "n": 24,
+       "p25": 1.6,
+       "p75": 1.6
+      },
+      "vehicle": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 24,
+       "p25": 1.0,
+       "p75": 1.0
+      }
+     },
+     "label": "PRIMARY",
+     "rows": 24
+    },
+    "2130511121 H2": {
+     "features": {
+      "completed_stage": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 34,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "detour_ratio": {
+       "max": 1.6667,
+       "median": 1.375,
+       "min": 1.125,
+       "n": 34,
+       "p25": 1.2857,
+       "p75": 1.5833
+      },
+      "enemies_within_10": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 34,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "free_flow": {
+       "max": 2736.0,
+       "median": 500.0,
+       "min": 240.0,
+       "n": 34,
+       "p25": 360.0,
+       "p75": 1584.0
+      },
+      "nearest_seen_enemy": {
+       "n": 0
+      },
+      "prior_overflow_same_source": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 34,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "source_saturated": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 34,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "steps_in_episode": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 34,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "strength": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 34,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "unheld_share": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 34,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "value_ratio": {
+       "max": 1.6,
+       "median": 1.0,
+       "min": 0.625,
+       "n": 34,
+       "p25": 0.625,
+       "p75": 1.0
+      },
+      "vehicle": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 0.0,
+       "n": 34,
+       "p25": 0.0,
+       "p75": 1.0
+      }
+     },
+     "label": "PRIMARY",
+     "rows": 34
+    }
+   },
+   "rule_search": {
+    "all": {
+     "adverse_allowed": 0,
+     "adverse_rows": 20,
+     "primary_allowed": 32,
+     "primary_rows": 58,
+     "rule": [
+      [
+       "detour_ratio",
+       ">=",
+       1.125
+      ],
+      [
+       "value_ratio",
+       "<=",
+       1.0
+      ]
+     ]
+    },
+    "leave_one_group_out": {
+     "1930331196 C2": {
+      "held_out_adverse_allowed": 12,
+      "held_out_primary_allowed": 0,
+      "held_out_rows": 12,
+      "rule": [
+       [
+        "detour_ratio",
+        ">=",
+        1.0909
+       ]
+      ]
+     },
+     "1930331196 C3": {
+      "held_out_adverse_allowed": 8,
+      "held_out_primary_allowed": 0,
+      "held_out_rows": 8,
+      "rule": [
+       [
+        "value_ratio",
+        "<=",
+        1.0
+       ]
+      ]
+     },
+     "2130511121 H1": {
+      "held_out_adverse_allowed": 0,
+      "held_out_primary_allowed": 0,
+      "held_out_rows": 24,
+      "rule": [
+       [
+        "detour_ratio",
+        ">=",
+        1.125
+       ],
+       [
+        "value_ratio",
+        "<=",
+        1.0
+       ]
+      ]
+     },
+     "2130511121 H2": {
+      "held_out_adverse_allowed": 0,
+      "held_out_primary_allowed": 0,
+      "held_out_rows": 34,
+      "rule": [
+       [
+        "detour_ratio",
+        "<=",
+        1.1364
+       ],
+       [
+        "value_ratio",
+        ">=",
+        1.6
+       ]
+      ]
+     }
+    }
+   }
+  },
+  "post_opening": {
+   "groups": {
+    "1930331196 C2": {
+     "features": {
+      "completed_stage": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 7,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "detour_ratio": {
+       "max": 1.0667,
+       "median": 1.0667,
+       "min": 1.0,
+       "n": 7,
+       "p25": 1.0588,
+       "p75": 1.0667
+      },
+      "enemies_within_10": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 7,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "free_flow": {
+       "max": 360.0,
+       "median": 320.0,
+       "min": 80.0,
+       "n": 7,
+       "p25": 320.0,
+       "p75": 320.0
+      },
+      "nearest_seen_enemy": {
+       "max": 25.0,
+       "median": 25.0,
+       "min": 25.0,
+       "n": 4,
+       "p25": 25.0,
+       "p75": 25.0
+      },
+      "prior_overflow_same_source": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 7,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "source_saturated": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 7,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "steps_in_episode": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 7,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "strength": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 7,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "unheld_share": {
+       "max": 0.8,
+       "median": 0.4,
+       "min": 0.4,
+       "n": 7,
+       "p25": 0.4,
+       "p75": 0.8
+      },
+      "value_ratio": {
+       "max": 1.6,
+       "median": 1.6,
+       "min": 1.6,
+       "n": 7,
+       "p25": 1.6,
+       "p75": 1.6
+      },
+      "vehicle": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 7,
+       "p25": 1.0,
+       "p75": 1.0
+      }
+     },
+     "label": "ADVERSE",
+     "rows": 7
+    },
+    "2120531121 C3": {
+     "features": {
+      "completed_stage": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 15,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "detour_ratio": {
+       "max": 2.0,
+       "median": 1.1429,
+       "min": 1.0,
+       "n": 15,
+       "p25": 1.1429,
+       "p75": 1.1429
+      },
+      "enemies_within_10": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 15,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "free_flow": {
+       "max": 160.0,
+       "median": 160.0,
+       "min": 100.0,
+       "n": 15,
+       "p25": 160.0,
+       "p75": 160.0
+      },
+      "nearest_seen_enemy": {
+       "max": 20.0,
+       "median": 17.0,
+       "min": 17.0,
+       "n": 15,
+       "p25": 17.0,
+       "p75": 20.0
+      },
+      "prior_overflow_same_source": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 15,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "source_saturated": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 15,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "steps_in_episode": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 15,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "strength": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 15,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "unheld_share": {
+       "max": 0.8,
+       "median": 0.8,
+       "min": 0.4,
+       "n": 15,
+       "p25": 0.8,
+       "p75": 0.8
+      },
+      "value_ratio": {
+       "max": 1.6,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 15,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "vehicle": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 15,
+       "p25": 1.0,
+       "p75": 1.0
+      }
+     },
+     "label": "UNLABELLED",
+     "rows": 15
+    },
+    "2130511121 H1": {
+     "features": {
+      "completed_stage": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 0.0,
+       "n": 15,
+       "p25": 0.0,
+       "p75": 1.0
+      },
+      "detour_ratio": {
+       "max": 2.0,
+       "median": 1.2222,
+       "min": 1.0,
+       "n": 15,
+       "p25": 1.1,
+       "p75": 1.2857
+      },
+      "enemies_within_10": {
+       "max": 24.0,
+       "median": 20.0,
+       "min": 15.0,
+       "n": 15,
+       "p25": 19.0,
+       "p75": 21.0
+      },
+      "free_flow": {
+       "max": 220.0,
+       "median": 200.0,
+       "min": 60.0,
+       "n": 15,
+       "p25": 180.0,
+       "p75": 220.0
+      },
+      "nearest_seen_enemy": {
+       "max": 3.0,
+       "median": 2.0,
+       "min": 0.0,
+       "n": 15,
+       "p25": 1.0,
+       "p75": 2.0
+      },
+      "prior_overflow_same_source": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 15,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "source_saturated": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 15,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "steps_in_episode": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 15,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "strength": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 0.5,
+       "n": 15,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "unheld_share": {
+       "max": 0.8571,
+       "median": 0.5714,
+       "min": 0.4286,
+       "n": 15,
+       "p25": 0.5714,
+       "p75": 0.8571
+      },
+      "value_ratio": {
+       "max": 1.6,
+       "median": 1.6,
+       "min": 1.0,
+       "n": 15,
+       "p25": 1.0,
+       "p75": 1.6
+      },
+      "vehicle": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 15,
+       "p25": 1.0,
+       "p75": 1.0
+      }
+     },
+     "label": "PRIMARY",
+     "rows": 15
+    },
+    "2130511121 H2": {
+     "features": {
+      "completed_stage": {
+       "max": 1.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 26,
+       "p25": 0.0,
+       "p75": 1.0
+      },
+      "detour_ratio": {
+       "max": 1.8333,
+       "median": 1.3333,
+       "min": 1.0,
+       "n": 26,
+       "p25": 1.1429,
+       "p75": 1.5
+      },
+      "enemies_within_10": {
+       "max": 15.0,
+       "median": 4.0,
+       "min": 4.0,
+       "n": 26,
+       "p25": 4.0,
+       "p75": 6.0
+      },
+      "free_flow": {
+       "max": 220.0,
+       "median": 120.0,
+       "min": 80.0,
+       "n": 26,
+       "p25": 100.0,
+       "p75": 200.0
+      },
+      "nearest_seen_enemy": {
+       "max": 10.0,
+       "median": 8.0,
+       "min": 2.0,
+       "n": 26,
+       "p25": 6.0,
+       "p75": 9.0
+      },
+      "prior_overflow_same_source": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 26,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "source_saturated": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 26,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "steps_in_episode": {
+       "max": 0.0,
+       "median": 0.0,
+       "min": 0.0,
+       "n": 26,
+       "p25": 0.0,
+       "p75": 0.0
+      },
+      "strength": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 26,
+       "p25": 1.0,
+       "p75": 1.0
+      },
+      "unheld_share": {
+       "max": 0.7143,
+       "median": 0.5714,
+       "min": 0.2857,
+       "n": 26,
+       "p25": 0.5714,
+       "p75": 0.7143
+      },
+      "value_ratio": {
+       "max": 1.6,
+       "median": 1.0,
+       "min": 0.625,
+       "n": 26,
+       "p25": 0.625,
+       "p75": 1.6
+      },
+      "vehicle": {
+       "max": 1.0,
+       "median": 1.0,
+       "min": 1.0,
+       "n": 26,
+       "p25": 1.0,
+       "p75": 1.0
+      }
+     },
+     "label": "PRIMARY",
+     "rows": 26
+    }
+   },
+   "rule_search": {
+    "all": {
+     "adverse_allowed": 0,
+     "adverse_rows": 7,
+     "primary_allowed": 41,
+     "primary_rows": 41,
+     "rule": [
+      [
+       "nearest_seen_enemy",
+       "<=",
+       10
+      ]
+     ]
+    },
+    "leave_one_group_out": {
+     "1930331196 C2": {
+      "held_out_adverse_allowed": 7,
+      "held_out_primary_allowed": 0,
+      "held_out_rows": 7,
+      "rule": [
+       [
+        "vehicle",
+        ">=",
+        1
+       ]
+      ]
+     },
+     "2130511121 H1": {
+      "held_out_adverse_allowed": 0,
+      "held_out_primary_allowed": 15,
+      "held_out_rows": 15,
+      "rule": [
+       [
+        "nearest_seen_enemy",
+        "<=",
+        10
+       ]
+      ]
+     },
+     "2130511121 H2": {
+      "held_out_adverse_allowed": 0,
+      "held_out_primary_allowed": 6,
+      "held_out_rows": 26,
+      "rule": [
+       [
+        "nearest_seen_enemy",
+        "<=",
+        3
+       ]
+      ]
+     }
+    }
+   }
+  }
+ },
+ "fidelity_problems": [],
+ "note": "offline study on recorded states: every policy is an action-level decision on states another policy produced, with each candidate's own memory simulated over the recorded observations; nothing here is an engine outcome, a score estimate or evidence of an effect",
+ "primary_first_post_opening_opportunity": {
+  "p01": {
+   "decision": 460,
+   "post_opening_opportunity_observations": 150,
+   "step": 459
+  },
+  "p02": {
+   "decision": 162,
+   "post_opening_opportunity_observations": 192,
+   "step": 161
+  },
+  "p03": {
+   "decision": 581,
+   "post_opening_opportunity_observations": 1,
+   "step": 580
+  },
+  "p04": {
+   "decision": 162,
+   "post_opening_opportunity_observations": 236,
+   "step": 161
+  }
+ },
+ "reference_opportunity": {
+  "H1": {
+   "batch_post_opening_units": 15,
+   "o2_post_opening_units": 15,
+   "required": 8,
+   "t9-v1_post_opening_units": 15
+  },
+  "H2": {
+   "batch_post_opening_units": 26,
+   "o2_post_opening_units": 26,
+   "required": 13,
+   "t9-v1_post_opening_units": 26
+  }
+ },
+ "reference_primary": {
+  "O2": {
+   "pooled": {
+    "orders_vs_baseline-v2": 1331,
+    "orders_vs_t9-v1": 337,
+    "orders_vs_v3": 645,
+    "post_slot_vs_t9-v1": 196,
+    "redirects": 637,
+    "slot_vs_t9-v1": 222
+   },
+   "seats": {
+    "H1": {
+     "emitted": 254,
+     "post_opening_units": 15,
+     "post_slot_vs_t9-v1": 149,
+     "redirects": 175,
+     "slot_vs_t9-v1": 161
+    },
+    "H2": {
+     "emitted": 626,
+     "post_opening_units": 26,
+     "post_slot_vs_t9-v1": 47,
+     "redirects": 462,
+     "slot_vs_t9-v1": 61
+    }
+   }
+  },
+  "baseline-v2": {
+   "pooled": {
+    "orders_vs_baseline-v2": 0,
+    "orders_vs_t9-v1": 1111,
+    "orders_vs_v3": 1331,
+    "post_slot_vs_t9-v1": 778,
+    "redirects": 0,
+    "slot_vs_t9-v1": 806
+   },
+   "seats": {
+    "H1": {
+     "emitted": 555,
+     "post_opening_units": 0,
+     "post_slot_vs_t9-v1": 288,
+     "redirects": 0,
+     "slot_vs_t9-v1": 302
+    },
+    "H2": {
+     "emitted": 968,
+     "post_opening_units": 0,
+     "post_slot_vs_t9-v1": 490,
+     "redirects": 0,
+     "slot_vs_t9-v1": 504
+    }
+   }
+  },
+  "batch-value-redirect": {
+   "pooled": {
+    "orders_vs_baseline-v2": 1331,
+    "orders_vs_t9-v1": 440,
+    "orders_vs_v3": 644,
+    "post_slot_vs_t9-v1": 252,
+    "redirects": 639,
+    "slot_vs_t9-v1": 278
+   },
+   "seats": {
+    "H1": {
+     "emitted": 254,
+     "post_opening_units": 15,
+     "post_slot_vs_t9-v1": 149,
+     "redirects": 175,
+     "slot_vs_t9-v1": 161
+    },
+    "H2": {
+     "emitted": 626,
+     "post_opening_units": 26,
+     "post_slot_vs_t9-v1": 103,
+     "redirects": 464,
+     "slot_vs_t9-v1": 117
+    }
+   }
+  },
+  "t9-v1": {
+   "pooled": {
+    "orders_vs_baseline-v2": 1111,
+    "orders_vs_t9-v1": 0,
+    "orders_vs_v3": 913,
+    "post_slot_vs_t9-v1": 0,
+    "redirects": 645,
+    "slot_vs_t9-v1": 0
+   },
+   "seats": {
+    "H1": {
+     "emitted": 395,
+     "post_opening_units": 15,
+     "post_slot_vs_t9-v1": 0,
+     "redirects": 177,
+     "slot_vs_t9-v1": 0
+    },
+    "H2": {
+     "emitted": 662,
+     "post_opening_units": 26,
+     "post_slot_vs_t9-v1": 0,
+     "redirects": 468,
+     "slot_vs_t9-v1": 0
+    }
+   }
+  },
+  "v3": {
+   "pooled": {
+    "orders_vs_baseline-v2": 1331,
+    "orders_vs_t9-v1": 913,
+    "orders_vs_v3": 0,
+    "post_slot_vs_t9-v1": 524,
+    "redirects": 0,
+    "slot_vs_t9-v1": 550
+   },
+   "seats": {
+    "H1": {
+     "emitted": 124,
+     "post_opening_units": 0,
+     "post_slot_vs_t9-v1": 285,
+     "redirects": 0,
+     "slot_vs_t9-v1": 297
+    },
+    "H2": {
+     "emitted": 259,
+     "post_opening_units": 0,
+     "post_slot_vs_t9-v1": 239,
+     "redirects": 0,
+     "slot_vs_t9-v1": 253
+    }
+   }
+  }
+ },
+ "schema": "miaosuan-s15-delayed/1",
+ "shooters": {
+  "1930331196 C2": {
+   "g01 (t9-v1 trajectory)": [
+    {
+     "claims_before_firing": 0,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 611,
+     "o2_opportunities_before_firing": 0,
+     "opening_overflow": false,
+     "overflow_claims_before_firing": 0,
+     "post_opening_o2_opportunities_before_firing": 0
+    }
+   ],
+   "g02 (baseline-v2 trajectory)": [
+    {
+     "claims_before_firing": 0,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 611,
+     "o2_opportunities_before_firing": 0,
+     "opening_overflow": false,
+     "overflow_claims_before_firing": 0,
+     "post_opening_o2_opportunities_before_firing": 0
+    }
+   ]
+  },
+  "1930331196 C3": {
+   "g03 (t9-v1 trajectory)": [
+    {
+     "claims_before_firing": 41,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 742,
+     "o2_opportunities_before_firing": 0,
+     "opening_overflow": false,
+     "overflow_claims_before_firing": 40,
+     "post_opening_o2_opportunities_before_firing": 0
+    },
+    {
+     "claims_before_firing": 41,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 742,
+     "o2_opportunities_before_firing": 0,
+     "opening_overflow": false,
+     "overflow_claims_before_firing": 40,
+     "post_opening_o2_opportunities_before_firing": 0
+    },
+    {
+     "claims_before_firing": 223,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 804,
+     "o2_opportunities_before_firing": 0,
+     "opening_overflow": false,
+     "overflow_claims_before_firing": 221,
+     "post_opening_o2_opportunities_before_firing": 0
+    },
+    {
+     "claims_before_firing": 223,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 804,
+     "o2_opportunities_before_firing": 0,
+     "opening_overflow": false,
+     "overflow_claims_before_firing": 221,
+     "post_opening_o2_opportunities_before_firing": 0
+    },
+    {
+     "claims_before_firing": 141,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 841,
+     "o2_opportunities_before_firing": 1,
+     "opening_overflow": true,
+     "overflow_claims_before_firing": 141,
+     "post_opening_o2_opportunities_before_firing": 0
+    },
+    {
+     "claims_before_firing": 141,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 841,
+     "o2_opportunities_before_firing": 1,
+     "opening_overflow": true,
+     "overflow_claims_before_firing": 141,
+     "post_opening_o2_opportunities_before_firing": 0
+    },
+    {
+     "claims_before_firing": 1,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 876,
+     "o2_opportunities_before_firing": 0,
+     "opening_overflow": false,
+     "overflow_claims_before_firing": 0,
+     "post_opening_o2_opportunities_before_firing": 0
+    },
+    {
+     "claims_before_firing": 1,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 876,
+     "o2_opportunities_before_firing": 0,
+     "opening_overflow": false,
+     "overflow_claims_before_firing": 0,
+     "post_opening_o2_opportunities_before_firing": 0
+    }
+   ],
+   "g04 (baseline-v2 trajectory)": [
+    {
+     "claims_before_firing": 2,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 742,
+     "o2_opportunities_before_firing": 0,
+     "opening_overflow": false,
+     "overflow_claims_before_firing": 1,
+     "post_opening_o2_opportunities_before_firing": 0
+    },
+    {
+     "claims_before_firing": 2,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 742,
+     "o2_opportunities_before_firing": 0,
+     "opening_overflow": false,
+     "overflow_claims_before_firing": 1,
+     "post_opening_o2_opportunities_before_firing": 0
+    },
+    {
+     "claims_before_firing": 4,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 804,
+     "o2_opportunities_before_firing": 0,
+     "opening_overflow": false,
+     "overflow_claims_before_firing": 1,
+     "post_opening_o2_opportunities_before_firing": 0
+    },
+    {
+     "claims_before_firing": 4,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 804,
+     "o2_opportunities_before_firing": 0,
+     "opening_overflow": false,
+     "overflow_claims_before_firing": 1,
+     "post_opening_o2_opportunities_before_firing": 0
+    },
+    {
+     "claims_before_firing": 3,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 841,
+     "o2_opportunities_before_firing": 1,
+     "opening_overflow": true,
+     "overflow_claims_before_firing": 3,
+     "post_opening_o2_opportunities_before_firing": 0
+    },
+    {
+     "claims_before_firing": 3,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 841,
+     "o2_opportunities_before_firing": 1,
+     "opening_overflow": true,
+     "overflow_claims_before_firing": 3,
+     "post_opening_o2_opportunities_before_firing": 0
+    },
+    {
+     "claims_before_firing": 2,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 876,
+     "o2_opportunities_before_firing": 0,
+     "opening_overflow": false,
+     "overflow_claims_before_firing": 1,
+     "post_opening_o2_opportunities_before_firing": 0
+    },
+    {
+     "claims_before_firing": 2,
+     "fire_listed_at_claims": 0,
+     "firing_decision": 876,
+     "o2_opportunities_before_firing": 0,
+     "opening_overflow": false,
+     "overflow_claims_before_firing": 1,
+     "post_opening_o2_opportunities_before_firing": 0
+    }
+   ]
+  }
+ },
+ "sprint14_inputs_sha256": "3d07d7c4afd0377f97695a18379c06be20dbd4cd36d07682723ce46217a1b120",
+ "staging_geometry": {
+  "1930331196 C2 g01 (t9-v1 trajectory)": {
+   "overflow_units": 7,
+   "own_cost_from_staging_end": {
+    "max": 1.0,
+    "median": 1.0,
+    "min": 1.0,
+    "n": 7,
+    "p25": 1.0,
+    "p75": 1.0
+   },
+   "staged": 7,
+   "with_an_objective_within_twice_from_the_staging_end": 0
+  },
+  "1930331196 C2 g02 (baseline-v2 trajectory)": {
+   "overflow_units": 7,
+   "own_cost_from_staging_end": {
+    "max": 1.0,
+    "median": 1.0,
+    "min": 1.0,
+    "n": 7,
+    "p25": 1.0,
+    "p75": 1.0
+   },
+   "staged": 7,
+   "with_an_objective_within_twice_from_the_staging_end": 0
+  },
+  "1930331196 C3 g03 (t9-v1 trajectory)": {
+   "overflow_units": 4,
+   "own_cost_from_staging_end": {
+    "max": 2.0,
+    "median": 1.0,
+    "min": 1.0,
+    "n": 4,
+    "p25": 1.0,
+    "p75": 1.0
+   },
+   "staged": 4,
+   "with_an_objective_within_twice_from_the_staging_end": 0
+  },
+  "1930331196 C3 g04 (baseline-v2 trajectory)": {
+   "overflow_units": 4,
+   "own_cost_from_staging_end": {
+    "max": 2.0,
+    "median": 1.0,
+    "min": 1.0,
+    "n": 4,
+    "p25": 1.0,
+    "p75": 1.0
+   },
+   "staged": 4,
+   "with_an_objective_within_twice_from_the_staging_end": 0
+  },
+  "2120531121 C3 g01 (t9-v1 trajectory)": {
+   "overflow_units": 4,
+   "own_cost_from_staging_end": {
+    "max": 2.0,
+    "median": 1.0,
+    "min": 1.0,
+    "n": 4,
+    "p25": 1.0,
+    "p75": 1.0
+   },
+   "staged": 4,
+   "with_an_objective_within_twice_from_the_staging_end": 0
+  },
+  "2120531121 C3 g02 (baseline-v2 trajectory)": {
+   "overflow_units": 4,
+   "own_cost_from_staging_end": {
+    "max": 2.0,
+    "median": 1.0,
+    "min": 1.0,
+    "n": 4,
+    "p25": 1.0,
+    "p75": 1.0
+   },
+   "staged": 4,
+   "with_an_objective_within_twice_from_the_staging_end": 0
+  },
+  "2130511121 H1 p01 (v3 trajectory)": {
+   "overflow_units": 12,
+   "own_cost_from_staging_end": {
+    "max": 2.0,
+    "median": 2.0,
+    "min": 1.0,
+    "n": 12,
+    "p25": 1.0,
+    "p75": 2.0
+   },
+   "staged": 12,
+   "with_an_objective_within_twice_from_the_staging_end": 0
+  },
+  "2130511121 H1 p03 (v3 trajectory)": {
+   "overflow_units": 12,
+   "own_cost_from_staging_end": {
+    "max": 2.0,
+    "median": 2.0,
+    "min": 1.0,
+    "n": 12,
+    "p25": 1.0,
+    "p75": 2.0
+   },
+   "staged": 12,
+   "with_an_objective_within_twice_from_the_staging_end": 0
+  },
+  "2130511121 H2 p02 (v3 trajectory)": {
+   "overflow_units": 18,
+   "own_cost_from_staging_end": {
+    "max": 3.0,
+    "median": 1.0,
+    "min": 1.0,
+    "n": 18,
+    "p25": 1.0,
+    "p75": 2.0
+   },
+   "staged": 18,
+   "with_an_objective_within_twice_from_the_staging_end": 7
+  },
+  "2130511121 H2 p04 (v3 trajectory)": {
+   "overflow_units": 18,
+   "own_cost_from_staging_end": {
+    "max": 3.0,
+    "median": 1.0,
+    "min": 1.0,
+    "n": 18,
+    "p25": 1.0,
+    "p75": 2.0
+   },
+   "staged": 18,
+   "with_an_objective_within_twice_from_the_staging_end": 7
+  }
+ },
+ "staging_proxy": {
+  "1930331196 C2 g02 (baseline-v2 trajectory)": {
+   "known_answer": false,
+   "pinned_units": 7,
+   "proxy_agrees_on_that_claim": 3,
+   "proxy_first_opportunity_steps": {
+    "max": 420.0,
+    "median": 420.0,
+    "min": 420.0,
+    "n": 2,
+    "p25": 420.0,
+    "p75": 420.0
+   },
+   "proxy_given_a_place_units": 3,
+   "proxy_redirect_opportunity_units": 2,
+   "ready_step_equals_first_claim_step": 0,
+   "recorded_first_claim_was_an_o2_opportunity": 2,
+   "units_with_a_recorded_post_opening_claim": 5
+  },
+  "1930331196 C3 g04 (baseline-v2 trajectory)": {
+   "known_answer": false,
+   "pinned_units": 4,
+   "proxy_agrees_on_that_claim": 4,
+   "proxy_first_opportunity_steps": {
+    "n": 0
+   },
+   "proxy_given_a_place_units": 2,
+   "proxy_redirect_opportunity_units": 0,
+   "ready_step_equals_first_claim_step": 0,
+   "recorded_first_claim_was_an_o2_opportunity": 0,
+   "units_with_a_recorded_post_opening_claim": 4
+  },
+  "2120531121 C3 g02 (baseline-v2 trajectory)": {
+   "known_answer": false,
+   "pinned_units": 4,
+   "proxy_agrees_on_that_claim": 0,
+   "proxy_first_opportunity_steps": {
+    "max": 380.0,
+    "median": 380.0,
+    "min": 360.0,
+    "n": 4,
+    "p25": 360.0,
+    "p75": 380.0
+   },
+   "proxy_given_a_place_units": 0,
+   "proxy_redirect_opportunity_units": 4,
+   "ready_step_equals_first_claim_step": 0,
+   "recorded_first_claim_was_an_o2_opportunity": 4,
+   "units_with_a_recorded_post_opening_claim": 4
+  },
+  "2130511121 H1 p01 (v3 trajectory)": {
+   "known_answer": true,
+   "pinned_units": 12,
+   "proxy_agrees_on_that_claim": 4,
+   "proxy_first_opportunity_steps": {
+    "max": 421.0,
+    "median": 421.0,
+    "min": 421.0,
+    "n": 1,
+    "p25": 421.0,
+    "p75": 421.0
+   },
+   "proxy_given_a_place_units": 11,
+   "proxy_redirect_opportunity_units": 1,
+   "ready_step_equals_first_claim_step": 11,
+   "recorded_first_claim_was_an_o2_opportunity": 8,
+   "units_with_a_recorded_post_opening_claim": 12
+  },
+  "2130511121 H1 p03 (v3 trajectory)": {
+   "known_answer": true,
+   "pinned_units": 12,
+   "proxy_agrees_on_that_claim": 9,
+   "proxy_first_opportunity_steps": {
+    "n": 0
+   },
+   "proxy_given_a_place_units": 10,
+   "proxy_redirect_opportunity_units": 0,
+   "ready_step_equals_first_claim_step": 9,
+   "recorded_first_claim_was_an_o2_opportunity": 1,
+   "units_with_a_recorded_post_opening_claim": 10
+  },
+  "2130511121 H2 p02 (v3 trajectory)": {
+   "known_answer": true,
+   "pinned_units": 18,
+   "proxy_agrees_on_that_claim": 13,
+   "proxy_first_opportunity_steps": {
+    "max": 260.0,
+    "median": 260.0,
+    "min": 260.0,
+    "n": 1,
+    "p25": 260.0,
+    "p75": 260.0
+   },
+   "proxy_given_a_place_units": 17,
+   "proxy_redirect_opportunity_units": 1,
+   "ready_step_equals_first_claim_step": 9,
+   "recorded_first_claim_was_an_o2_opportunity": 6,
+   "units_with_a_recorded_post_opening_claim": 18
+  },
+  "2130511121 H2 p04 (v3 trajectory)": {
+   "known_answer": true,
+   "pinned_units": 18,
+   "proxy_agrees_on_that_claim": 13,
+   "proxy_first_opportunity_steps": {
+    "max": 260.0,
+    "median": 260.0,
+    "min": 260.0,
+    "n": 1,
+    "p25": 260.0,
+    "p75": 260.0
+   },
+   "proxy_given_a_place_units": 17,
+   "proxy_redirect_opportunity_units": 1,
+   "ready_step_equals_first_claim_step": 14,
+   "recorded_first_claim_was_an_o2_opportunity": 6,
+   "units_with_a_recorded_post_opening_claim": 18
+  }
+ },
+ "t9_v2_captures": [
+  {
+   "file": "1930331196.C2.s10-t9-v2-exploration.g05.explore.json",
+   "sha256": "855ad1e2b6895bd14c671efe14f4e6698ca29aa0ea6ab6391aec0026b024996c"
+  },
+  {
+   "file": "1930331196.C2.s10-t9-v2-exploration.g06.explore.json",
+   "sha256": "b0029bc935b93bcf89198bef018e40b299708e2e9ddbe664b88650367021604a"
+  },
+  {
+   "file": "1930331196.C3.s10-t9-v2-exploration.g03.explore.json",
+   "sha256": "07394381cb6bf1d75b520d8442778adc1fbf3e81ba5a64090517be39a0c19922"
+  },
+  {
+   "file": "1930331196.C3.s10-t9-v2-exploration.g04.explore.json",
+   "sha256": "601dc712aa0e7eefff6b3880cb56ebb6525b588670fc89b21eb86b3d3efc1abc"
+  },
+  {
+   "file": "2120531121.C3.s10-t9-v2-exploration.g01.explore.json",
+   "sha256": "ac34530a867706351a11305464ddbeb52ed7bb283994e785d58bbaa079bb260c"
+  },
+  {
+   "file": "2120531121.C3.s10-t9-v2-exploration.g02.explore.json",
+   "sha256": "4d345bb8fa0ce142c0202e4c6913b75562699b6f70ca11c334e21caca426bbe0"
+  },
+  {
+   "file": "2130511121.H1.s10-t9-v2-exploration.g07.explore.json",
+   "sha256": "b399ffda09a44cffea65c926d555c049b646fdd947d3d00dc7147e82bab835a6"
+  },
+  {
+   "file": "2130511121.H2.s10-t9-v2-exploration.g08.explore.json",
+   "sha256": "daa247e0cc451c20925fbfb1af90cceaa95db900a7b1be8ee1abefcdb00115ee"
+  }
+ ],
+ "t9_v2_withhold_episodes": {
+  "1930331196 C2 g05": {
+   "longest": 61,
+   "shooter_episodes_starting_before_firing": [],
+   "withheld_units": 5,
+   "withhold_episodes": 7
+  },
+  "1930331196 C2 g06": {
+   "longest": 61,
+   "shooter_episodes_starting_before_firing": [],
+   "withheld_units": 5,
+   "withhold_episodes": 7
+  },
+  "1930331196 C3 g03": {
+   "longest": 1585,
+   "shooter_episodes_starting_before_firing": [
+    {
+     "decisions": 1585,
+     "episode_start": 721,
+     "firing_decision": 876,
+     "gap_to_firing": 155,
+     "unheld_objectives_on_the_baseline_trajectory_then": 1
+    },
+    {
+     "decisions": 1585,
+     "episode_start": 721,
+     "firing_decision": 876,
+     "gap_to_firing": 155,
+     "unheld_objectives_on_the_baseline_trajectory_then": 1
+    }
+   ],
+   "withheld_units": 12,
+   "withhold_episodes": 16
+  },
+  "1930331196 C3 g04": {
+   "longest": 1585,
+   "shooter_episodes_starting_before_firing": [
+    {
+     "decisions": 1585,
+     "episode_start": 721,
+     "firing_decision": 876,
+     "gap_to_firing": 155,
+     "unheld_objectives_on_the_baseline_trajectory_then": 1
+    },
+    {
+     "decisions": 1585,
+     "episode_start": 721,
+     "firing_decision": 876,
+     "gap_to_firing": 155,
+     "unheld_objectives_on_the_baseline_trajectory_then": 1
+    }
+   ],
+   "withheld_units": 12,
+   "withhold_episodes": 12
+  },
+  "2120531121 C3 g01": {
+   "longest": 2459,
+   "shooter_episodes_starting_before_firing": [],
+   "withheld_units": 14,
+   "withhold_episodes": 14
+  },
+  "2120531121 C3 g02": {
+   "longest": 2459,
+   "shooter_episodes_starting_before_firing": [],
+   "withheld_units": 14,
+   "withhold_episodes": 14
+  },
+  "2130511121 H1 g07": {
+   "longest": 123,
+   "shooter_episodes_starting_before_firing": [],
+   "withheld_units": 11,
+   "withhold_episodes": 30
+  },
+  "2130511121 H2 g08": {
+   "longest": 39,
+   "shooter_episodes_starting_before_firing": [],
+   "withheld_units": 10,
+   "withhold_episodes": 20
+  }
+ }
+}
