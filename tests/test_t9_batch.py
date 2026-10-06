@@ -372,11 +372,16 @@ class BatchTest(unittest.TestCase):
         """Owner-approved whitelist (Sprint 12 registration, 2026-10-05): v3 may appear in a run card only as one of
         the four Sprint 12 stage cards, each binding exactly the frozen v3 source digest; no historical card or
         builder may acquire it, and any other manifest that names it fails. A changed v3 source is a new identity
-        that needs new owner approval, so its digest is pinned here too."""
+        that needs new owner approval, so its digest is pinned here too.
+
+        Owner-approved amendment (Sprint 16, 2026-10-06): exactly one further card id, the Sprint 16 read-only
+        mechanism capture ``s16-v3-mechanism-capture-1``, may bind the same frozen v3 identity (same digest, same
+        source files); nothing else changes (no wildcard, no folder family, no generic builder)."""
         import importlib.util
         from pathlib import Path
         from miaosuan_agent.evaluation import exploratory as xp
         from miaosuan_agent.evaluation import s12_screen as sc
+        from miaosuan_agent.evaluation import s16_mechanism as ms
         root = Path(__file__).resolve().parents[1]
         spec = importlib.util.spec_from_file_location("brc", root / "scripts" / "build_run_card.py")
         module = importlib.util.module_from_spec(spec)
@@ -391,8 +396,13 @@ class BatchTest(unittest.TestCase):
         rr_sources = rr.candidate_sources() + ("experiments/shoot_reservation.py", "experiments/exploratory_addon.py",
                                                "experiments/t9_batch.py")
         self.assertEqual(digest_of_files(policy_source_files(sources=rr_sources)), frozen)
-        approved = set(sc.CARD_IDS.values())
-        checked = 0
+        screens = {card_id: sc.SCREEN_ID for card_id in sc.CARD_IDS.values()}
+        screens["s16-v3-mechanism-capture-1"] = "s16-mechanism-capture"  # the Sprint 16 amendment, and only it
+        self.assertEqual(len(screens), 5)
+        self.assertEqual((ms.CARD_ID, ms.STUDY_ID, ms.V3_ID, ms.V3_DIGEST),
+                         ("s16-v3-mechanism-capture-1", "s16-mechanism-capture", tb.CANDIDATE_ID, frozen))
+        approved = set(screens)
+        checked, seen = 0, set()
         for path in sorted((root / "evaluation").rglob("*.json")):
             text = path.read_text(encoding="utf-8")
             if tb.CANDIDATE_ID not in text and frozen not in text:
@@ -406,14 +416,16 @@ class BatchTest(unittest.TestCase):
                 self.assertFalse(isinstance(data, dict) and data.get("executable"), rel)
                 continue
             checked += 1
+            seen.add(path.parent.name)
             self.assertIn(path.parent.name, approved, rel)
             self.assertEqual(rel, f"evaluation/{path.parent.name}/manifest.json")
             self.assertEqual((data.get("card_id"), (data.get("screen") or {}).get("id")),
-                             (path.parent.name, sc.SCREEN_ID), rel)
+                             (path.parent.name, screens[path.parent.name]), rel)
             source = data["policies"][tb.CANDIDATE_ID]["policy_source"]
             self.assertEqual(source["sha256"], frozen, rel)
             self.assertIn("experiments/t9_batch.py", source["files"], rel)
         self.assertGreaterEqual(checked, 1, "the approved P1 stage card exists and is checked")
+        self.assertEqual(seen, {"s12-v3-primary-1", "s16-v3-mechanism-capture-1"}, "the committed cards that bind v3")
 
 
 if __name__ == "__main__":

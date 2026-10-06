@@ -104,12 +104,15 @@ class DraftCompanionTest(unittest.TestCase):
 class CandidateOnlyInApprovedCardsTest(unittest.TestCase):
     """Before the owner's approval this test required that v3 be in no run card. The registration approved on
     2026-10-05 replaced that with an exact whitelist (tests/test_t9_batch.py holds the full check): v3 may appear only
-    in the four Sprint 12 stage cards; the draft companion stays proposal evidence, never a card."""
+    in the four Sprint 12 stage cards; the draft companion stays proposal evidence, never a card. Owner-approved
+    amendment (Sprint 16, 2026-10-06): exactly one more card id, the read-only mechanism capture
+    ``s16-v3-mechanism-capture-1`` of the same frozen identity, as in tests/test_t9_batch.py."""
 
     def test_only_approved_cards_name_the_candidate_and_old_runners_never_do(self) -> None:
         sys.path.insert(0, str(ROOT / "src"))
         from miaosuan_agent.evaluation import s12_screen as sc
-        approved = set(sc.CARD_IDS.values())
+        approved = set(sc.CARD_IDS.values()) | {"s16-v3-mechanism-capture-1"}
+        self.assertEqual(len(approved), 5)
         cards = sorted((ROOT / "evaluation").glob("*/manifest.json"))
         self.assertGreater(len(cards), 10)
         for path in cards:
