@@ -1,0 +1,232 @@
+{
+ "H0": {
+  "corpus_list": "evaluation/routing-remediation-1/corpus.json",
+  "games": [
+   {
+    "decisions": 3602,
+    "path": "local/replay-corpus/1910631192.C1.r1.jsonl.gz",
+    "sha256": "e3a726e67080427106c84bfa5a6b2032fa2fb1c2d5fc9573cff974fab565d967"
+   },
+   {
+    "decisions": 5762,
+    "path": "local/replay-corpus/1930331196.C1.r1.jsonl.gz",
+    "sha256": "3b849c3b68487946b07929d7aaa01335b8fbb0c4e66fe01b00737804273b9b9e"
+   },
+   {
+    "decisions": 3602,
+    "path": "local/replay-corpus/2010131194.C1.r1.jsonl.gz",
+    "sha256": "84494aedadab8ed8dddccfea820eea4fccef793e5f92446ac51fe928cdbff8c0"
+   },
+   {
+    "decisions": 3602,
+    "path": "local/replay-corpus/2010211129.C1.r1.jsonl.gz",
+    "sha256": "8eef32e046e4004327799548267ed619282aa41f6617d36c7476d780b6a5633f"
+   },
+   {
+    "decisions": 2002,
+    "path": "local/replay-corpus/201033019601.C1.r1.jsonl.gz",
+    "sha256": "fee4eadc751d41f2bf58099b7383a63ec650fa0cc50d971b55622cd89797da37"
+   },
+   {
+    "decisions": 3602,
+    "path": "local/replay-corpus/2010431153.C1.r1.jsonl.gz",
+    "sha256": "6f8e30e608398811beadfdbb0d35a3b1e23e72fcf7ad803bd40097a73eedc322"
+   },
+   {
+    "decisions": 5762,
+    "path": "local/replay-corpus/2120531121.C1.r1.jsonl.gz",
+    "sha256": "9f38cd844e5fec2ab660c98090f62d8cea8fac1078f8374bea3bce3d47e5def0"
+   },
+   {
+    "decisions": 5762,
+    "path": "local/replay-corpus/2130511121.C1.r1.jsonl.gz",
+    "sha256": "e25562afc5ba0a545e045ed0db79dbba0b7fdd98962cb517eb8f722448420f3c"
+   }
+  ]
+ },
+ "HH": {
+  "analysed_side": "the baseline-v2 seat",
+  "games": [
+   {
+    "game": "2130511121.H1.s12-v3-primary-1.p01",
+    "record": {
+     "path": "local/evaluation/s12-v3-primary-1/games/2130511121.H1.s12-v3-primary-1.p01.json",
+     "sha256": "34bc35a81254bf209d8be4d8d6641c7900345054f7ea5d3ccf46f9b4c5ac37b7"
+    },
+    "timeline": {
+     "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H1.s12-v3-primary-1.p01.timeline.pkl",
+     "sha256": "e538388b4fb2758497041293c06f3029c9a50863ef019e2d647f43e5644def2b"
+    },
+    "timeline_index": {
+     "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H1.s12-v3-primary-1.p01.timeline.json",
+     "sha256": "5ff0c1f76260d11969b26bbee790ee5468d1ec6b673a0a2a737cfb32fb47f3f2"
+    }
+   },
+   {
+    "game": "2130511121.H2.s12-v3-primary-1.p02",
+    "record": {
+     "path": "local/evaluation/s12-v3-primary-1/games/2130511121.H2.s12-v3-primary-1.p02.json",
+     "sha256": "598796293456d75b5ece4232a939ff8cdd8f75ed2d613677c35a5c3c54fec30c"
+    },
+    "timeline": {
+     "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H2.s12-v3-primary-1.p02.timeline.pkl",
+     "sha256": "998c2b0bbf76b073d3dd3bb6b0216e8655a1f533b26f182cac421ec4ce171732"
+    },
+    "timeline_index": {
+     "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H2.s12-v3-primary-1.p02.timeline.json",
+     "sha256": "b74a61967fa63b1f7b7d5d26d04f2d1fe34b0878b85fdacd0b00086d4ee4fabf"
+    }
+   },
+   {
+    "game": "2130511121.H1.s12-v3-primary-1.p03",
+    "record": {
+     "path": "local/evaluation/s12-v3-primary-1/games/2130511121.H1.s12-v3-primary-1.p03.json",
+     "sha256": "17d9b1ffa5dba84a7ddde32b003a4194cc269e57137f8c9e3b9d69eb74aaad15"
+    },
+    "timeline": {
+     "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H1.s12-v3-primary-1.p03.timeline.pkl",
+     "sha256": "1279b5b8983f0ac602a45004483b2716b722b65fe9fcbe29c0640348574a0b87"
+    },
+    "timeline_index": {
+     "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H1.s12-v3-primary-1.p03.timeline.json",
+     "sha256": "d54456228e8ca2e37f9c602c9a6e1379cdb698d9624e13d7cd1156de2673fdbe"
+    }
+   },
+   {
+    "game": "2130511121.H2.s12-v3-primary-1.p04",
+    "record": {
+     "path": "local/evaluation/s12-v3-primary-1/games/2130511121.H2.s12-v3-primary-1.p04.json",
+     "sha256": "50ccb5eaab67c339245bafe3cbd23a1adef725db78c7d1bbe3b7474e73d47c8a"
+    },
+    "timeline": {
+     "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H2.s12-v3-primary-1.p04.timeline.pkl",
+     "sha256": "114b25417a37989737989c833220eed6fda84d3b2f0211af2533e92fbea65d7b"
+    },
+    "timeline_index": {
+     "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H2.s12-v3-primary-1.p04.timeline.json",
+     "sha256": "9798694150d91ad297460f5aaccfbe3e66e4d5ec95aa2a5a0d8f628eeb666bff"
+    }
+   }
+  ]
+ },
+ "HI": {
+  "games": [
+   {
+    "game": "1930331196.C3.s16-v3-mechanism-capture-1.p01",
+    "record": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/games/1930331196.C3.s16-v3-mechanism-capture-1.p01.json",
+     "sha256": "a8129ed39ffabc6ff1d5a5127cae057fe4c17fc6f33cfe5a2c60c13f05596e52"
+    },
+    "timeline": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/capture/1930331196.C3.s16-v3-mechanism-capture-1.p01.timeline.pkl",
+     "sha256": "22ce490e7a467aa676e7b1a6340074bec08e8d33d34bb0e78416032d3b323d45"
+    },
+    "timeline_index": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/capture/1930331196.C3.s16-v3-mechanism-capture-1.p01.timeline.json",
+     "sha256": "9b435297fe9b31f6ba171aa0855ee2e40f2317d4bcdb9d80c699e10b14415fe5"
+    }
+   },
+   {
+    "game": "1930331196.C2.s16-v3-mechanism-capture-1.p02",
+    "record": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/games/1930331196.C2.s16-v3-mechanism-capture-1.p02.json",
+     "sha256": "997de7e5477009ac3a9edb05e032dc9b183a8f587f9983cd0c946625ac1ce018"
+    },
+    "timeline": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/capture/1930331196.C2.s16-v3-mechanism-capture-1.p02.timeline.pkl",
+     "sha256": "b5d9950285ff4aaf3a5c02bd3648e9dcdddf111700d34830e6479566bbc28b29"
+    },
+    "timeline_index": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/capture/1930331196.C2.s16-v3-mechanism-capture-1.p02.timeline.json",
+     "sha256": "08c08977df991fa7cd59228cc97e44b5a470f027408f81f6d0583cb3406684ff"
+    }
+   },
+   {
+    "game": "2120531121.C3.s16-v3-mechanism-capture-1.p03",
+    "record": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/games/2120531121.C3.s16-v3-mechanism-capture-1.p03.json",
+     "sha256": "2d2c277edd7801cfdc83203861f5537a0f4cdcc3c3a03f1750e3c61efc411380"
+    },
+    "timeline": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/capture/2120531121.C3.s16-v3-mechanism-capture-1.p03.timeline.pkl",
+     "sha256": "8e0c77cb3488e881649e97ebe915c5076f607a4b5d8d3565b2d6f7b4ccc071ae"
+    },
+    "timeline_index": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/capture/2120531121.C3.s16-v3-mechanism-capture-1.p03.timeline.json",
+     "sha256": "10ddc23cefa7472363e2a5ccfa0a793b7a386ecbbc00ae4b5cd6b7bd6fff5c52"
+    }
+   },
+   {
+    "game": "1930331196.C2.s17-post-stage-v6-probe-1.p01",
+    "record": {
+     "path": "local/evaluation/s17-post-stage-v6-probe-1/games/1930331196.C2.s17-post-stage-v6-probe-1.p01.json",
+     "sha256": "0f4f6e18276047085619bd5216c9f8dd4e0c1844ff1f6dd2b89ac5130204167e"
+    },
+    "timeline": {
+     "path": "local/evaluation/s17-post-stage-v6-probe-1/capture/1930331196.C2.s17-post-stage-v6-probe-1.p01.timeline.pkl",
+     "sha256": "f9cbc432a1ce83090936f265d71d8bbedd2b1ffcd6bbb6b2fb1ddf1361b4605a"
+    },
+    "timeline_index": {
+     "path": "local/evaluation/s17-post-stage-v6-probe-1/capture/1930331196.C2.s17-post-stage-v6-probe-1.p01.timeline.json",
+     "sha256": "6090ce7174e99a0d0672eaa2c29353493070fa1cb4f8922576194b08a3d65e02"
+    }
+   },
+   {
+    "game": "2120531121.C3.s17-post-stage-v6-probe-1.p02",
+    "record": {
+     "path": "local/evaluation/s17-post-stage-v6-probe-1/games/2120531121.C3.s17-post-stage-v6-probe-1.p02.json",
+     "sha256": "68e0e5b9e0a389d30d89d9f774883d34c6fb0b4628153f9c841813ad04f7ad35"
+    },
+    "timeline": {
+     "path": "local/evaluation/s17-post-stage-v6-probe-1/capture/2120531121.C3.s17-post-stage-v6-probe-1.p02.timeline.pkl",
+     "sha256": "ceff7561252611b903f8accfb787718e93b730b9a15029869de8e48a868ca2c9"
+    },
+    "timeline_index": {
+     "path": "local/evaluation/s17-post-stage-v6-probe-1/capture/2120531121.C3.s17-post-stage-v6-probe-1.p02.timeline.json",
+     "sha256": "4867dd3e7d9892f67b0a93409f21f7ca78c90a14bd2b53848d877bd1b777d955"
+    }
+   }
+  ],
+  "use": "listing, starting-configuration and movement-timing figures only"
+ },
+ "R": {
+  "excluded_folders": {
+   "baseline-v2-target-ownership-prevalence-1": "registered stop: its data stay unexamined"
+  },
+  "inventory_line": "<relative path>:<sha256 of the record file>, sorted, one per line",
+  "inventory_sha256": "7d2a00fa84901aee9649f231f9ff7486c6ebf762571c6fbee81d8efa23ecd648",
+  "records": 1618,
+  "records_by_folder": {
+   "baseline-v0": 66,
+   "baseline-v0-diagnostics": 4,
+   "baseline-v1-candidate-occupy-reservation": 66,
+   "baseline-v1-variance-study-1": 192,
+   "baseline-v2-candidate-shoot-target-reservation": 720,
+   "baseline-v2-residual-516-diagnostic-1": 32,
+   "ps1-engine-probe-1": 2,
+   "s10-t9-v1-c2-diagnosis": 2,
+   "s10-t9-v1-diagnosis": 4,
+   "s10-t9-v2-exploration": 8,
+   "s12-v3-primary-1": 4,
+   "s16-v3-mechanism-capture-1": 3,
+   "s17-post-stage-v6-probe-1": 2,
+   "s8-t4-v1-mechanism": 2,
+   "s8-t4-v2-batch": 7,
+   "s8-t4-v3-check": 2,
+   "s8-t9-v1-h2h": 6,
+   "s8-t9-v1-mechanism": 2,
+   "s8-t9-v1-rep": 4,
+   "t1r-diagnosis-1": 2,
+   "t7-mechanism-probe-1": 3,
+   "t9-confirmation-1": 285,
+   "tactical-screen-deployment-split-1": 192,
+   "tactical-screen-deployment-split-1-smoke": 8
+  }
+ },
+ "S": {
+  "path": "local/source-archives/land_wargame_sdk.zip",
+  "sha256": "ed4c9fc03cb6eb1e64821d2efbc61024d90735e3dc489dc7ffe0515e653ea725"
+ },
+ "schema": "miaosuan-s18-inputs/1",
+ "study_id": "s18-frontier-reset"
+}
