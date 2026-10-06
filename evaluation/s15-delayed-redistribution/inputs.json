@@ -1,0 +1,318 @@
+{
+ "adverse": [
+  {
+   "configuration": "2120531121 C3",
+   "game_id": "2120531121.C3.s10-t9-v1-diagnosis.g01",
+   "played": "t9-v1",
+   "seat": 11,
+   "windows_sha256": "6d5b3eb3c09fbbc218a464dc7f38ca58548f96155734d3ec9c9644514464a05a"
+  },
+  {
+   "configuration": "2120531121 C3",
+   "game_id": "2120531121.C3.s10-t9-v1-diagnosis.g02",
+   "played": "baseline-v2",
+   "seat": 11,
+   "windows_sha256": "544f06a16d861b83b8b9a577752caac66222ce8403f41ac82ca330d7bea64133"
+  },
+  {
+   "configuration": "1930331196 C3",
+   "game_id": "1930331196.C3.s10-t9-v1-diagnosis.g03",
+   "played": "t9-v1",
+   "seat": 11,
+   "windows_sha256": "61e8752f90b1519f2ff0adb292b5135f25c8b505566ff179685bde659b6e7e05"
+  },
+  {
+   "configuration": "1930331196 C3",
+   "game_id": "1930331196.C3.s10-t9-v1-diagnosis.g04",
+   "played": "baseline-v2",
+   "seat": 11,
+   "windows_sha256": "8d20e32d88952577ce236d66f2e496cda1d5dc6cdc5310d3ae201db12df9ea2a"
+  },
+  {
+   "configuration": "1930331196 C2",
+   "game_id": "1930331196.C2.s10-t9-v1-c2-diagnosis.g01",
+   "played": "t9-v1",
+   "seat": 1,
+   "windows_sha256": "fcc2eec344bd9e94b109c299577fa0f7f4cf113dfa1f79da7664cb7ba50567d4"
+  },
+  {
+   "configuration": "1930331196 C2",
+   "game_id": "1930331196.C2.s10-t9-v1-c2-diagnosis.g02",
+   "played": "baseline-v2",
+   "seat": 1,
+   "windows_sha256": "312df862283356c3817b9647c4263347fecb55ed74ba79d0eaa84cec0044317c"
+  }
+ ],
+ "adverse_facts": {
+  "1930331196 C2": {
+   "direct_fire_actions": 1,
+   "fire_decisions": [
+    611
+   ],
+   "t9v1_first_decision_redirects": 7
+  },
+  "1930331196 C3": {
+   "direct_fire_actions": 8,
+   "fire_decisions": [
+    742,
+    804,
+    841,
+    876
+   ],
+   "t9v1_first_decision_redirects": 12
+  },
+  "2120531121 C3": {
+   "baseline_capture_decision": 564,
+   "certificate_from_decision": 442,
+   "v3_certificate_unit_decisions": 9194
+  }
+ },
+ "candidates": {
+  "module_files": [
+   "experiments/exploratory_addon.py",
+   "experiments/t9_batch.py",
+   "experiments/t9_redistribution.py",
+   "experiments/t9_delayed.py"
+  ],
+  "policy_source_sha256": "aabc4b9547b78c3b64efb1332784ed6092577bf792658850e63dace9137979c2",
+  "rules": {
+   "delayed-post-stage-any": {
+    "count": 0,
+    "identity": "t9-delayed-post-stage-any-v5",
+    "same_source": false,
+    "trigger": "staged"
+   },
+   "delayed-post-stage-same": {
+    "count": 0,
+    "identity": "t9-delayed-post-stage-same-v5",
+    "same_source": true,
+    "trigger": "staged"
+   },
+   "delayed-repeat-2": {
+    "count": 2,
+    "identity": "t9-delayed-repeat-2-v5",
+    "same_source": true,
+    "trigger": "repeat"
+   },
+   "delayed-repeat-3": {
+    "count": 3,
+    "identity": "t9-delayed-repeat-3-v5",
+    "same_source": true,
+    "trigger": "repeat"
+   },
+   "delayed-saturated-source": {
+    "count": 0,
+    "identity": "t9-delayed-saturated-source-v5",
+    "same_source": true,
+    "trigger": "saturated"
+   },
+   "delayed-stable-alternative": {
+    "count": 0,
+    "identity": "t9-delayed-stable-alternative-v5",
+    "same_source": true,
+    "trigger": "stable"
+   }
+  }
+ },
+ "cost_data": {
+  "primary_cost": {
+   "files": 4,
+   "sha256": "8ab3d0dbe6dc47ab58a13e07acd806a5a5aa550ddb70b5523b55bad054f3a4ab"
+  },
+  "s10_c2_cost": {
+   "files": 4,
+   "sha256": "441a890bd36b59342dd867872c1b8b8a0a03c5fa495b1cc4b62e99520aef257c"
+  },
+  "s10_cost": {
+   "files": 8,
+   "sha256": "a930638ff7138cef653957d166d01c2179d3666652f3473941ed478d9e04d064"
+  }
+ },
+ "diagnostics_sha256": "3033147c3119f9cdd7a4d6afa68d1a24145995043fcbcbd0b34c5d1b6fe879e2",
+ "frozen_policies_checked": [
+  "baseline-v2",
+  "t9-v1",
+  "t9-v2",
+  "v3"
+ ],
+ "gate_thresholds": {
+  "adverse_early_divisor": 3,
+  "adverse_first_divisor": 3,
+  "divergence_ratio_max": 0.7,
+  "latency_max_ms_max": 200.0,
+  "latency_p99_ms_max": 20.0,
+  "recourse_max": 3,
+  "restore_units_min": 4,
+  "restore_units_ratio_min": 0.5,
+  "rubric_band": 0.05,
+  "rubric_tolerance": 0.1
+ },
+ "h0": {
+  "corpus_sha256": "538b6df60e3c4467fa26a9c95f1a4804086a0ab4d837446262870c6fb9a7e0a8",
+  "data": {
+   "files": 32,
+   "sha256": "b4c6a4018173c8c9b6139776d1fa7bac4f1c5fbf9503ffe6aca7089a6a42fd62"
+  },
+  "games": [
+   {
+    "file": "1910631192.C1.r1.jsonl.gz",
+    "sha256": "e3a726e67080427106c84bfa5a6b2032fa2fb1c2d5fc9573cff974fab565d967"
+   },
+   {
+    "file": "1930331196.C1.r1.jsonl.gz",
+    "sha256": "3b849c3b68487946b07929d7aaa01335b8fbb0c4e66fe01b00737804273b9b9e"
+   },
+   {
+    "file": "2010131194.C1.r1.jsonl.gz",
+    "sha256": "84494aedadab8ed8dddccfea820eea4fccef793e5f92446ac51fe928cdbff8c0"
+   },
+   {
+    "file": "2010211129.C1.r1.jsonl.gz",
+    "sha256": "8eef32e046e4004327799548267ed619282aa41f6617d36c7476d780b6a5633f"
+   },
+   {
+    "file": "201033019601.C1.r1.jsonl.gz",
+    "sha256": "fee4eadc751d41f2bf58099b7383a63ec650fa0cc50d971b55622cd89797da37"
+   },
+   {
+    "file": "2010431153.C1.r1.jsonl.gz",
+    "sha256": "6f8e30e608398811beadfdbb0d35a3b1e23e72fcf7ad803bd40097a73eedc322"
+   },
+   {
+    "file": "2120531121.C1.r1.jsonl.gz",
+    "sha256": "9f38cd844e5fec2ab660c98090f62d8cea8fac1078f8374bea3bce3d47e5def0"
+   },
+   {
+    "file": "2130511121.C1.r1.jsonl.gz",
+    "sha256": "e25562afc5ba0a545e045ed0db79dbba0b7fdd98962cb517eb8f722448420f3c"
+   }
+  ]
+ },
+ "note": "private inputs pinned before the Sprint 15 final replay; files stay under the ignored local/ tree",
+ "primary": {
+  "card": "s12-v3-primary-1",
+  "games": [
+   {
+    "cell": "H1",
+    "files": {
+     "record": "34bc35a81254bf209d8be4d8d6641c7900345054f7ea5d3ccf46f9b4c5ac37b7",
+     "timeline.json": "5ff0c1f76260d11969b26bbee790ee5468d1ec6b673a0a2a737cfb32fb47f3f2",
+     "timeline.pkl": "e538388b4fb2758497041293c06f3029c9a50863ef019e2d647f43e5644def2b"
+    },
+    "game_id": "2130511121.H1.s12-v3-primary-1.p01",
+    "label": "p01"
+   },
+   {
+    "cell": "H2",
+    "files": {
+     "record": "598796293456d75b5ece4232a939ff8cdd8f75ed2d613677c35a5c3c54fec30c",
+     "timeline.json": "b74a61967fa63b1f7b7d5d26d04f2d1fe34b0878b85fdacd0b00086d4ee4fabf",
+     "timeline.pkl": "998c2b0bbf76b073d3dd3bb6b0216e8655a1f533b26f182cac421ec4ce171732"
+    },
+    "game_id": "2130511121.H2.s12-v3-primary-1.p02",
+    "label": "p02"
+   },
+   {
+    "cell": "H1",
+    "files": {
+     "record": "17d9b1ffa5dba84a7ddde32b003a4194cc269e57137f8c9e3b9d69eb74aaad15",
+     "timeline.json": "d54456228e8ca2e37f9c602c9a6e1379cdb698d9624e13d7cd1156de2673fdbe",
+     "timeline.pkl": "1279b5b8983f0ac602a45004483b2716b722b65fe9fcbe29c0640348574a0b87"
+    },
+    "game_id": "2130511121.H1.s12-v3-primary-1.p03",
+    "label": "p03"
+   },
+   {
+    "cell": "H2",
+    "files": {
+     "record": "50ccb5eaab67c339245bafe3cbd23a1adef725db78c7d1bbe3b7474e73d47c8a",
+     "timeline.json": "9798694150d91ad297460f5aaccfbe3e66e4d5ec95aa2a5a0d8f628eeb666bff",
+     "timeline.pkl": "114b25417a37989737989c833220eed6fda84d3b2f0211af2533e92fbea65d7b"
+    },
+    "game_id": "2130511121.H2.s12-v3-primary-1.p04",
+    "label": "p04"
+   }
+  ]
+ },
+ "risk_windows": {
+  "1930331196 C2": 611,
+  "1930331196 C3": 876,
+  "2120531121 C3": 564
+ },
+ "s13_expected": {
+  "pooled": {
+   "O2": {
+    "orders_vs_t9-v1": 337,
+    "orders_vs_v3": 645,
+    "redirects": 637,
+    "slot_vs_t9-v1": 222
+   },
+   "v3": {
+    "orders_vs_t9-v1": 913,
+    "slot_vs_t9-v1": 550
+   }
+  },
+  "t9-v1": {
+   "emitted": {
+    "p01": 346,
+    "p02": 268,
+    "p03": 49,
+    "p04": 394
+   },
+   "first_decision_redirects": {
+    "p01": 14,
+    "p02": 19,
+    "p03": 14,
+    "p04": 19
+   },
+   "redirected_units": {
+    "p01": 18,
+    "p02": 22,
+    "p03": 14,
+    "p04": 22
+   },
+   "redirects": {
+    "p01": 162,
+    "p02": 212,
+    "p03": 15,
+    "p04": 256
+   }
+  }
+ },
+ "schema": "miaosuan-s15-inputs/1",
+ "sprint14_inputs_sha256": "3d07d7c4afd0377f97695a18379c06be20dbd4cd36d07682723ce46217a1b120",
+ "t9_v2_captures": [
+  {
+   "file": "1930331196.C2.s10-t9-v2-exploration.g05.explore.json",
+   "sha256": "855ad1e2b6895bd14c671efe14f4e6698ca29aa0ea6ab6391aec0026b024996c"
+  },
+  {
+   "file": "1930331196.C2.s10-t9-v2-exploration.g06.explore.json",
+   "sha256": "b0029bc935b93bcf89198bef018e40b299708e2e9ddbe664b88650367021604a"
+  },
+  {
+   "file": "1930331196.C3.s10-t9-v2-exploration.g03.explore.json",
+   "sha256": "07394381cb6bf1d75b520d8442778adc1fbf3e81ba5a64090517be39a0c19922"
+  },
+  {
+   "file": "1930331196.C3.s10-t9-v2-exploration.g04.explore.json",
+   "sha256": "601dc712aa0e7eefff6b3880cb56ebb6525b588670fc89b21eb86b3d3efc1abc"
+  },
+  {
+   "file": "2120531121.C3.s10-t9-v2-exploration.g01.explore.json",
+   "sha256": "ac34530a867706351a11305464ddbeb52ed7bb283994e785d58bbaa079bb260c"
+  },
+  {
+   "file": "2120531121.C3.s10-t9-v2-exploration.g02.explore.json",
+   "sha256": "4d345bb8fa0ce142c0202e4c6913b75562699b6f70ca11c334e21caca426bbe0"
+  },
+  {
+   "file": "2130511121.H1.s10-t9-v2-exploration.g07.explore.json",
+   "sha256": "b399ffda09a44cffea65c926d555c049b646fdd947d3d00dc7147e82bab835a6"
+  },
+  {
+   "file": "2130511121.H2.s10-t9-v2-exploration.g08.explore.json",
+   "sha256": "daa247e0cc451c20925fbfb1af90cceaa95db900a7b1be8ee1abefcdb00115ee"
+  }
+ ]
+}
