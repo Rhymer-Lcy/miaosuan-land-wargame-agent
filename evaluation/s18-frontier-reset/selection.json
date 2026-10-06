@@ -1,0 +1,420 @@
+{
+ "band": [
+  "T6"
+ ],
+ "candidates": {
+  "T10": {
+   "G_source": {
+    "count": 47,
+    "of": 50,
+    "score": 5,
+    "share": 0.94
+   },
+   "P_source": {
+    "count": 6,
+    "of": 16,
+    "score": 2,
+    "share": 0.375
+   },
+   "increment": "T10-P1 remove-suppression probe",
+   "reasons": {
+    "E": "about two infantry onsets per game (15 over 8 H0 games, 4 over 4 HH games): three to six sessions for several events",
+    "I": "an action type baseline-v2 never issues, on units it cannot command while suppressed",
+    "L": "infantry suppression onsets: 15 in H0 (6 sides) and 4 in HH; infantry damage events: 5 in H0, none in HH; occasional",
+    "M": "keep and the restored listings are direct, but suppression needs an acting opponent",
+    "O": "keep and the listing are seat fields",
+    "R": "listed, effect undocumented"
+   },
+   "scores": {
+    "E": 3,
+    "G": 5,
+    "I": 5,
+    "L": 2,
+    "M": 4,
+    "O": 5,
+    "P": 2,
+    "R": 3
+   }
+  },
+  "T11": {
+   "G_source": {
+    "count": 50,
+    "of": 50,
+    "score": 5,
+    "share": 1.0
+   },
+   "P_source": {
+    "count": 14,
+    "of": 16,
+    "score": 4,
+    "share": 0.875
+   },
+   "increment": "T11-O1 kill-first target rule",
+   "reasons": {
+    "E": "about 24 changed shots per side-game in HH: one or two sessions show kills per changed shot directly; a negative closes only this rule",
+    "I": "changes baseline-v2's target for a subset of shots",
+    "L": "127 of 432 H0 and 97 of 319 HH shots had a lower-blood target listed: a local advantage for that subset of shots, traded against attack level",
+    "M": "chosen targets and destroyed units are direct; an acting opponent is needed",
+    "O": "listed shoot options and visible enemy blood are seat fields",
+    "R": "shoot executed in every baseline game"
+   },
+   "scores": {
+    "E": 4,
+    "G": 5,
+    "I": 3,
+    "L": 3,
+    "M": 4,
+    "O": 5,
+    "P": 4,
+    "R": 5
+   }
+  },
+  "T12": {
+   "G_source": {
+    "count": 50,
+    "of": 50,
+    "score": 5,
+    "share": 1.0
+   },
+   "P_source": {
+    "count": 10,
+    "of": 16,
+    "score": 3,
+    "share": 0.625
+   },
+   "increment": "T12-O1 objective-zone dispersion",
+   "reasons": {
+    "E": "the deterministic session shows only execution; denial needs enemy capture attempts, rare: three to six sessions",
+    "I": "withholds baseline-v2's later moves for dispersed units (the T9 interaction)",
+    "L": "stationary stacked holders took 40 of 177 H0 ground events (64 of 285 damage) and 10 of 130 in HH: a local advantage for holders",
+    "M": "stack and flag are direct; denial and damage need an acting opponent",
+    "O": "own hexes, the stack field and objective flags are seat fields",
+    "R": "moves executed; the adjacent-denial rule is documented, never tested"
+   },
+   "scores": {
+    "E": 3,
+    "G": 5,
+    "I": 3,
+    "L": 3,
+    "M": 4,
+    "O": 5,
+    "P": 3,
+    "R": 4
+   }
+  },
+  "T2": {
+   "G_source": {
+    "count": 47,
+    "of": 50,
+    "score": 5,
+    "share": 0.94
+   },
+   "P_source": {
+    "count": 12,
+    "of": 16,
+    "score": 4,
+    "share": 0.75
+   },
+   "increment": "T2-P1 transport mechanism probe",
+   "reasons": {
+    "E": "one deterministic session answers embark, carry and disembark; a negative result removes transport, the family's main branch",
+    "I": "changes baseline-v2's selection for infantry and their carriers (the embark replaces the infantry's move; the carrier is held 75 steps)",
+    "L": "infantry are slow: 20 of 51 H0 infantry move orders cannot arrive before the end (median 2,304 steps against 140 for vehicles) and 21 of 41 infantry never stand on an objective; transport helps that subset, at the cost of passengers lost with their carrier",
+    "M": "embark, passengers, timing, disembark and the infantry on the objective are fields of one deterministic game against the inert control",
+    "O": "co-location, stationarity and the embark listing are seat fields",
+    "R": "listed and documented, never executed; the stacking-limit interaction at disembark, which silently voided T1's splits, and the carrier hold are untested"
+   },
+   "scores": {
+    "E": 5,
+    "G": 5,
+    "I": 3,
+    "L": 3,
+    "M": 5,
+    "O": 5,
+    "P": 4,
+    "R": 3
+   }
+  },
+  "T3": {
+   "G_source": {
+    "count": 50,
+    "of": 50,
+    "score": 5,
+    "share": 1.0
+   },
+   "P_source": {
+    "count": 12,
+    "of": 16,
+    "score": 4,
+    "share": 0.75
+   },
+   "increment": "T3-O1 short threat memory",
+   "reasons": {
+    "E": "no engine step of its own; through a T6-type screen its few events (15 over 8 games) need more than six sessions",
+    "I": "as an input of a gate that changes baseline-v2's selection for a subset",
+    "L": "attackers unseen at the event but seen within 300 steps: 15 of 205 H0 and 4 of 158 HH events; the current view already covers 188 and 154",
+    "M": "which damage a memory would have avoided is a derived quantity",
+    "O": "own observation plus bookkeeping of what was seen",
+    "R": "no new action"
+   },
+   "scores": {
+    "E": 2,
+    "G": 5,
+    "I": 3,
+    "L": 2,
+    "M": 3,
+    "O": 4,
+    "P": 4,
+    "R": 5
+   }
+  },
+  "T5": {
+   "G_source": {
+    "count": 47,
+    "of": 50,
+    "score": 5,
+    "share": 0.94
+   },
+   "P_source": {
+    "count": 1,
+    "of": 16,
+    "score": 1,
+    "share": 0.0625
+   },
+   "increment": "T5-O1 guided-fire availability",
+   "reasons": {
+    "E": "no session can be expected to produce a listing under baseline-v2's movement",
+    "I": "an action type baseline-v2 never issues",
+    "L": "extra missile shots where a guide sees a target, occasional",
+    "M": "the listing and the shot are direct, but only in situations an acting opponent creates",
+    "O": "the listing is a seat field",
+    "R": "rarely listed (1 H0 decision, none in HH or HI), complex parameters"
+   },
+   "scores": {
+    "E": 1,
+    "G": 5,
+    "I": 5,
+    "L": 2,
+    "M": 4,
+    "O": 5,
+    "P": 1,
+    "R": 2
+   }
+  },
+  "T6": {
+   "G_source": {
+    "count": 50,
+    "of": 50,
+    "score": 5,
+    "share": 1.0
+   },
+   "P_source": {
+    "count": 12,
+    "of": 16,
+    "score": 4,
+    "share": 0.75
+   },
+   "increment": "T6-G threat-entry gate",
+   "reasons": {
+    "E": "one or two head-to-head sessions show directly whether gated units avoid damage (about 25 exposed-then-damaged orders per side-game in HH); a negative removes only the timing branch",
+    "I": "withholds baseline-v2 moves for a subset of units",
+    "L": "moving ground units took 124 of 205 (H0) and 117 of 158 (HH) damage events, and 60 of 128 and 55 of 89 lost units were ground units lost with a move path, the dominant loss mode while baseline-v2 loses a median 0.81 to 0.85 of its force value against acting opponents; offset: holds delay arrival (the T9 lesson)",
+    "M": "gates are direct; damage to gated units needs an acting opponent, several events per game (HH: 101 exposed orders followed by damage over 4 games)",
+    "O": "visible enemies, published weapon ranges and baseline-v2's own route: seat observation only, cheap",
+    "R": "no new action: moves and holds are executed in every baseline game"
+   },
+   "scores": {
+    "E": 4,
+    "G": 5,
+    "I": 3,
+    "L": 4,
+    "M": 4,
+    "O": 5,
+    "P": 4,
+    "R": 5
+   }
+  },
+  "T7-C": {
+   "G_source": {
+    "count": 50,
+    "of": 50,
+    "score": 5,
+    "share": 1.0
+   },
+   "P_source": {
+    "count": 11,
+    "of": 16,
+    "score": 3,
+    "share": 0.6875
+   },
+   "increment": "T7-E3b controlled exit diagnostic",
+   "reasons": {
+    "E": "one deterministic session answers the move exit (the fire exit may need a second configuration); a negative removes only the safety branch, the benefit question remains",
+    "I": "acts only on units baseline-v2 leaves idle",
+    "L": "the benefit channel is empty in the corpus: no damage event on a concealable unit in H0, 4 in HH (2 units), none by a ground attacker beyond half its observation distance",
+    "M": "the exit endpoint is a field of one deterministic game",
+    "O": "the A2 trigger is seat-local",
+    "R": "action 6 executed with known semantics; a concealed unit's move or shot is documented, never executed"
+   },
+   "scores": {
+    "E": 4,
+    "G": 5,
+    "I": 5,
+    "L": 1,
+    "M": 5,
+    "O": 5,
+    "P": 3,
+    "R": 4
+   }
+  },
+  "T8": {
+   "G_source": {
+    "count": 26,
+    "of": 50,
+    "score": 3,
+    "share": 0.52
+   },
+   "P_source": {
+    "count": 4,
+    "of": 16,
+    "score": 2,
+    "share": 0.25
+   },
+   "increment": "T8-A helicopter altitude probe",
+   "reasons": {
+    "E": "one session gives the transition; the exposure effect needs an acting opponent",
+    "I": "one new behaviour for one archetype",
+    "L": "13 aircraft damage events in H0 (4 sides), all while not moving, and 3 in HH: occasional",
+    "M": "the altitude transition is a field of a deterministic game",
+    "O": "the listing and the visible enemies are seat fields",
+    "R": "listed; its effect on attack helicopters is undocumented"
+   },
+   "scores": {
+    "E": 4,
+    "G": 3,
+    "I": 4,
+    "L": 2,
+    "M": 5,
+    "O": 5,
+    "P": 2,
+    "R": 3
+   }
+  },
+  "TO-1": {
+   "G_source": {
+    "count": 50,
+    "of": 50,
+    "score": 5,
+    "share": 1.0
+   },
+   "P_source": {
+    "count": 2,
+    "of": 8,
+    "score": 2,
+    "share": 0.25
+   },
+   "increment": "TO-1 registered next step",
+   "reasons": {
+    "E": "the registered next step is a 360-game prevalence diagnostic",
+    "I": "changes baseline-v2's target ownership in collisions",
+    "L": "owner changes in 2 of 8 replay-corpus games, shots unchanged (published)",
+    "M": "the owner is direct in the record; effects need acting opponents",
+    "O": "seat-local collision graph",
+    "R": "shoot actions only"
+   },
+   "scores": {
+    "E": 1,
+    "G": 5,
+    "I": 3,
+    "L": 2,
+    "M": 4,
+    "O": 5,
+    "P": 2,
+    "R": 5
+   }
+  }
+ },
+ "eligible": {
+  "T10": true,
+  "T11": true,
+  "T12": true,
+  "T2": true,
+  "T3": true,
+  "T5": false,
+  "T6": true,
+  "T7-C": true,
+  "T8": true,
+  "TO-1": false
+ },
+ "margin_over_runner_up": 0.25,
+ "most_frequent_other_first": "T2",
+ "note": "a research prioritisation under the rubric registered before scoring; not evidence that any tactic works",
+ "outcome": "NEXT_FAMILY_SELECTED",
+ "ranking": [
+  "T6",
+  "T11",
+  "T2",
+  "T12",
+  "T7-C",
+  "T10",
+  "T3",
+  "T8"
+ ],
+ "robust_min_first": 17,
+ "runner_up": "T11",
+ "schema": "miaosuan-s18-selection/1",
+ "selected": "T6",
+ "selected_first_in": 24,
+ "study_id": "s18-frontier-reset",
+ "tie_band": 0.15,
+ "tied": [],
+ "variants": {
+  "E as a criterion at 0.10": "T6",
+  "E as a criterion at 0.20": "T2",
+  "G +0.05": "T6",
+  "G -0.05": "T6",
+  "I +0.05": "T6",
+  "I -0.05": "T6",
+  "L +0.05": "T6",
+  "L -0.05": "T6",
+  "M +0.05": "T6",
+  "M -0.05": "T6",
+  "O +0.05": "T6",
+  "O -0.05": "T6",
+  "P +0.05": "T6",
+  "P -0.05": "T6",
+  "R +0.05": "T6",
+  "R -0.05": "T6",
+  "equal weights": "T6",
+  "leverage 0.40": "T6",
+  "without G": "T6",
+  "without I": "T6",
+  "without L": "T6",
+  "without M": "T6",
+  "without O": "T6",
+  "without P": "T6",
+  "without R": "T6"
+ },
+ "variants_total": 25,
+ "weighted": {
+  "T10": 3.65,
+  "T11": 4.1,
+  "T12": 3.9,
+  "T2": 4.0,
+  "T3": 3.6,
+  "T5": 3.45,
+  "T6": 4.35,
+  "T7-C": 3.7,
+  "T8": 3.25,
+  "TO-1": 3.65
+ },
+ "weights": {
+  "G": 0.2,
+  "I": 0.1,
+  "L": 0.25,
+  "M": 0.1,
+  "O": 0.15,
+  "P": 0.1,
+  "R": 0.1
+ }
+}
