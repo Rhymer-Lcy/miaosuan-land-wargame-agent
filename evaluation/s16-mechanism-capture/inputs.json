@@ -1,0 +1,202 @@
+{
+ "anchors": {
+  "1930331196 C2": {
+   "firing_decisions": [
+    611
+   ],
+   "historical_shooters": 1,
+   "registered_anchors": [
+    611
+   ]
+  },
+  "1930331196 C3": {
+   "firing_decisions": [
+    742,
+    804,
+    841,
+    876
+   ],
+   "historical_shooters": 8,
+   "registered_anchors": [
+    742,
+    804,
+    841,
+    876
+   ]
+  },
+  "2120531121 C3": {
+   "baseline_capture_decision": 564,
+   "problem_objective": "80-point objective A",
+   "registered_anchor": 564
+  }
+ },
+ "card": {
+  "canonical_sha256": "22ccef48831cae3a1100497f329f10a842cfff51ac3ae6e35dd0afb3acea9099",
+  "id": "s16-v3-mechanism-capture-1"
+ },
+ "cost_data": {
+  "primary_cost": {
+   "files": 4,
+   "sha256": "8ab3d0dbe6dc47ab58a13e07acd806a5a5aa550ddb70b5523b55bad054f3a4ab"
+  },
+  "s10_c2_cost": {
+   "files": 4,
+   "sha256": "441a890bd36b59342dd867872c1b8b8a0a03c5fa495b1cc4b62e99520aef257c"
+  },
+  "s10_cost": {
+   "files": 8,
+   "sha256": "a930638ff7138cef653957d166d01c2179d3666652f3473941ed478d9e04d064"
+  }
+ },
+ "historical_adverse": [
+  {
+   "configuration": "1930331196 C3",
+   "game_id": "1930331196.C3.s10-t9-v1-diagnosis.g04",
+   "played": "baseline-v2",
+   "windows_sha256": "8d20e32d88952577ce236d66f2e496cda1d5dc6cdc5310d3ae201db12df9ea2a"
+  },
+  {
+   "configuration": "1930331196 C2",
+   "game_id": "1930331196.C2.s10-t9-v1-c2-diagnosis.g02",
+   "played": "baseline-v2",
+   "windows_sha256": "312df862283356c3817b9647c4263347fecb55ed74ba79d0eaa84cec0044317c"
+  },
+  {
+   "configuration": "2120531121 C3",
+   "game_id": "2120531121.C3.s10-t9-v1-diagnosis.g01",
+   "played": "t9-v1",
+   "windows_sha256": "6d5b3eb3c09fbbc218a464dc7f38ca58548f96155734d3ec9c9644514464a05a"
+  },
+  {
+   "configuration": "2120531121 C3",
+   "game_id": "2120531121.C3.s10-t9-v1-diagnosis.g02",
+   "played": "baseline-v2",
+   "windows_sha256": "544f06a16d861b83b8b9a577752caac66222ce8403f41ac82ca330d7bea64133"
+  }
+ ],
+ "note": "historical inputs pinned before session 2791; files stay under the ignored local/ tree",
+ "primary": {
+  "card": "s12-v3-primary-1",
+  "games": [
+   {
+    "cell": "H1",
+    "files": {
+     "record": "34bc35a81254bf209d8be4d8d6641c7900345054f7ea5d3ccf46f9b4c5ac37b7",
+     "timeline.json": "5ff0c1f76260d11969b26bbee790ee5468d1ec6b673a0a2a737cfb32fb47f3f2",
+     "timeline.pkl": "e538388b4fb2758497041293c06f3029c9a50863ef019e2d647f43e5644def2b"
+    },
+    "game_id": "2130511121.H1.s12-v3-primary-1.p01",
+    "label": "p01"
+   },
+   {
+    "cell": "H2",
+    "files": {
+     "record": "598796293456d75b5ece4232a939ff8cdd8f75ed2d613677c35a5c3c54fec30c",
+     "timeline.json": "b74a61967fa63b1f7b7d5d26d04f2d1fe34b0878b85fdacd0b00086d4ee4fabf",
+     "timeline.pkl": "998c2b0bbf76b073d3dd3bb6b0216e8655a1f533b26f182cac421ec4ce171732"
+    },
+    "game_id": "2130511121.H2.s12-v3-primary-1.p02",
+    "label": "p02"
+   },
+   {
+    "cell": "H1",
+    "files": {
+     "record": "17d9b1ffa5dba84a7ddde32b003a4194cc269e57137f8c9e3b9d69eb74aaad15",
+     "timeline.json": "d54456228e8ca2e37f9c602c9a6e1379cdb698d9624e13d7cd1156de2673fdbe",
+     "timeline.pkl": "1279b5b8983f0ac602a45004483b2716b722b65fe9fcbe29c0640348574a0b87"
+    },
+    "game_id": "2130511121.H1.s12-v3-primary-1.p03",
+    "label": "p03"
+   },
+   {
+    "cell": "H2",
+    "files": {
+     "record": "50ccb5eaab67c339245bafe3cbd23a1adef725db78c7d1bbe3b7474e73d47c8a",
+     "timeline.json": "9798694150d91ad297460f5aaccfbe3e66e4d5ec95aa2a5a0d8f628eeb666bff",
+     "timeline.pkl": "114b25417a37989737989c833220eed6fda84d3b2f0211af2533e92fbea65d7b"
+    },
+    "game_id": "2130511121.H2.s12-v3-primary-1.p04",
+    "label": "p04"
+   }
+  ]
+ },
+ "rules": {
+  "capacity": 4,
+  "historical_capture_anchor": {
+   "2120531121 C3": 564
+  },
+  "historical_fire_anchors": {
+   "1930331196 C2": [
+    611
+   ],
+   "1930331196 C3": [
+    742,
+    804,
+    841,
+    876
+   ]
+  },
+  "max_step": 2880,
+  "recourse_per_episode_max": 1,
+  "reference_units": {
+   "H1": 15,
+   "H2": 26
+  },
+  "restoration_required": {
+   "H1": 8,
+   "H2": 13
+  }
+ },
+ "rules_sha256": "614da9f3684b1b65ef855ba5547acc71175c9048b39d09169aecb9b967e8f941",
+ "schema": "miaosuan-s16-inputs/1",
+ "shadow": {
+  "executable": false,
+  "id": "s16-delayed-shadow-v6",
+  "rules": [
+   {
+    "count": 2,
+    "identity": "s16-delayed-repeat-2-shadow-v6",
+    "rule": "delayed-repeat-2",
+    "same_source": true,
+    "trigger": "repeat"
+   },
+   {
+    "count": 3,
+    "identity": "s16-delayed-repeat-3-shadow-v6",
+    "rule": "delayed-repeat-3",
+    "same_source": true,
+    "trigger": "repeat"
+   },
+   {
+    "count": 0,
+    "identity": "s16-delayed-stable-alternative-shadow-v6",
+    "rule": "delayed-stable-alternative",
+    "same_source": true,
+    "trigger": "stable"
+   },
+   {
+    "count": 0,
+    "identity": "s16-delayed-post-stage-same-shadow-v6",
+    "rule": "delayed-post-stage-same",
+    "same_source": true,
+    "trigger": "staged"
+   },
+   {
+    "count": 0,
+    "identity": "s16-delayed-post-stage-any-shadow-v6",
+    "rule": "delayed-post-stage-any",
+    "same_source": false,
+    "trigger": "staged"
+   },
+   {
+    "count": 0,
+    "identity": "s16-delayed-saturated-source-shadow-v6",
+    "rule": "delayed-saturated-source",
+    "same_source": true,
+    "trigger": "saturated"
+   }
+  ],
+  "source_sha256": "0fcf979e1fc6a09140081b5a35984ac6e20bdbb4a3ff5c6fe3042946f8a56e29",
+  "target": "delayed-post-stage-any"
+ }
+}
