@@ -473,3 +473,17 @@ full-step capture. Its registered endpoints would be mechanism facts only, read 
 1930331196 C3 needs no session, because the target equals v3 on the observed trajectory, unless the design finds
 that game not deterministic before decision 876. There would be no score comparison, no replication and no third
 configuration, and the design must state beforehand which result would retire the rule.
+
+### R10. Close-out
+
+* Tests at the results commit `bb50c6403f75ef133ce7334b1432e2af0b56327f`: the workstation tree ran 1,556 tests (78
+  skipped) with exit 0; a clean clone from GitHub at the same commit and tree ran 1,553 (79 skipped) with exit 0; the
+  evaluation server's private tree ran 1,569 tests (0 skipped, 5,154 s) with exit 0, regenerating every Sprint 16 public
+  file, `inputs.json` and the mutation record from the private captures, with the ledger file byte-identical before and
+  after.
+* Documentation gates: Sprint 16's private gate (`local/diagnostics/s16/doc_gate.py`) passes, checks that sections 1 to
+  13 equal the pushed registration and catches 16 of 16 planted errors; the historical gates pass with their plants.
+* Privacy: the scan over every reachable blob (867 blobs) found 104 hit lines, identical as a set to the accepted 104.
+* Platform canary: rebuilt byte for byte on the workstation and the server.
+* Engine ledger: read-only verify after the suite, 2,793 sessions opened and closed, none unclosed, integrity ok, state
+  chain continuous; the Sprint 16 ledger audit passes (sessions 2791 to 2793, the card's three games in order).
