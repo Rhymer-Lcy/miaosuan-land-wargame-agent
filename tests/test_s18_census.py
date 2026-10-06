@@ -227,6 +227,14 @@ class PublicCensusTest(unittest.TestCase):
                 continue
             self.assertEqual(privacy_problems(data), [], name)
 
+    def test_no_candidate_identity_in_the_public_files(self) -> None:
+        # the owner-approved whitelists of Sprints 12 and 17 keep candidate identities in their own folders
+        for path in sorted(OUT.glob("*.json")):
+            text = path.read_text(encoding="utf-8")
+            for needle in ("t9-batch-capacity-v3", "t9-delayed-post-stage-any-v6", "t9-capacity", "t4-artillery",
+                           "t7-idle-concealment", "tactic-deployment-split", "ps1-probe-hook"):
+                self.assertNotIn(needle, text, path.name)
+
     def test_opportunity_flags_cover_sixteen_sides(self) -> None:
         sides = self.census["opportunity_sides"]
         self.assertEqual(sides["of"], 16)
