@@ -442,3 +442,9 @@ automatic next steps.
   rewritten with the editor tool.
 * The first mutation run imported the unmutated package because the test package puts the repository's `src` first;
   the script now runs each mutant in a copied tree and requires the unmutated copy to pass first.
+* The first full workstation suite failed two owner-approved whitelist tests (Sprints 12 and 17): the census listed
+  issued action types under every recorded policy name, two of them candidate identities that may appear only in their
+  approved folders. The safeguards were not touched; the census now labels policies by class (`baseline-v2`, earlier
+  baselines, the inert control, exploratory and tactical candidates), a test keeps candidate identities out of every
+  Sprint 18 public file, and the census was regenerated: only those two label tables changed, every figure and the
+  selection are identical.
