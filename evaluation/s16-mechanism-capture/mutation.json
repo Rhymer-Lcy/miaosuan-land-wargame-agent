@@ -1,0 +1,344 @@
+{
+ "killed": 54,
+ "killed_with_the_card_rebuilt": 53,
+ "mutations": [
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_shadow.py",
+   "mutation": "corrected reset reverted to v5 (any objective ends the record)"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_shadow.py",
+   "mutation": "standing on an unheld objective no longer ends the record"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_shadow.py",
+   "mutation": "a move to an objective no longer ends the record"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_shadow.py",
+   "mutation": "an absent unit keeps its record"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_shadow.py",
+   "mutation": "the source's capture no longer ends the episode"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_shadow.py",
+   "mutation": "the source's capture wipes the staging fact"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_shadow.py",
+   "mutation": "staging completion detected away from the staging endpoint"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_shadow.py",
+   "mutation": "every overflow claimant eligible"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "a reordering is not a divergence"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "a withheld action is not a changed unit"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "fire window ignores the new game's fire"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "fire risk window boundary exclusive"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "reservation risk window boundary exclusive"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "reservation window ignores the first ownership"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "historical shooter protected only strictly before its firing decision"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "historical shooters ignored"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "a fire role before the divergence still protects"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "a fire listing at the divergence itself does not protect"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "no divergence read as ambiguous"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "the opening topology ignored (fire)"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "an early non-shooter divergence read as safe"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "the fourth clause without the capturer condition"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "a dominated redirect is not bad"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "domination at equal free-flow time"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "domination ignores the place given"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "first ownership boundary inclusive"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "the opening topology ignored (reservation)"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "a capture problem does not invalidate"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "a missing configuration does not invalidate"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "an unsafe first divergence does not refute"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "ambiguity read as support"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "restoration counts units outside the reference"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "restoration threshold exclusive"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "tracker: a held objective ends the episode"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "tracker: a new source continues the episode"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "tracker: the source's capture does not end the episode"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "recourse allows a second redirect per episode"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "recourse ignores redirects outside episodes"
+  },
+  {
+   "card_rebuilt": false,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "v3 digest changed"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "session mapping shifted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "ledger base moved"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "C2 seats swapped"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "ledger ignores the schedule position"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "ledger ignores the card digest"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "ledger ceiling raised"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "reconstruction mismatch is not structural"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "card check ignores the schedule"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "card check ignores an executable shadow"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s16_mechanism.py",
+   "mutation": "restoration requirement lowered"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "scripts/s16_analysis.py",
+   "mutation": "certificate episode count excludes this observation"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "scripts/s16_analysis.py",
+   "mutation": "last-place test off by one"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "scripts/s16_analysis.py",
+   "mutation": "destination count ignores stage-1 selections and standing units"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "scripts/s16_analysis.py",
+   "mutation": "public files may name the v3 identity"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "scripts/s16_analysis.py",
+   "mutation": "shadow memory carried across streams"
+  }
+ ],
+ "schema": "miaosuan-s16-mutation/1",
+ "sources": {
+  "scripts/s16_analysis.py": "8c10efa182151f9b9f89c468ea70f65bb2edf4b5519e709c1288bc37ca038030",
+  "src/miaosuan_agent/evaluation/s16_mechanism.py": "c54e426bd2cd93bbb45b3c15b1fc3fdae8ae8d3c9748fee1862b6cd3b56945b3",
+  "src/miaosuan_agent/evaluation/s16_shadow.py": "8aad7a4efc9b0c613af996608b2b7ae146ee593bb973462e7ecc849f3f6d1c03",
+  "tests/test_s16_mechanism.py": "0ccd8f510b3d39da16047ae571c1a1e0fc782f6c4f8557a91fb482a72e3bdd7b",
+  "tests/test_s16_shadow.py": "d78babac4ba066731f7adaf1d0a576cb7f9d1ababddf0c929e44050cf7b19187"
+ },
+ "tests": [
+  "tests.test_s16_shadow",
+  "tests.test_s16_mechanism"
+ ],
+ "total": 54,
+ "unmutated_tests_pass": true
+}
