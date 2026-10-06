@@ -318,8 +318,8 @@ the windows as well).
 The memory shows why. On the three `baseline-v2` trajectories every record ended with "moving to an objective"
 (`delayed-repeat-2`: 18, 21 and 19 records in 1930331196 C3, C2 and 2120531121 C3): the overflow units really moved
 there, so no episode can grow. On the three T9-v1 trajectories the records ended with "standing on an objective" 1,200,
-1,049 and 18,429 times: these units stand on objectives the side already holds and are sent on by `baseline-v2` at
-every decision (section R7). In 1930331196 C3 on the T9-v1 trajectory, for example, the two shooters of decision 804
+1,049 and 18,429 times: these are claimants standing on objectives the side already holds, sent on by `baseline-v2`
+at every decision (section R7). In 1930331196 C3 on the T9-v1 trajectory, for example, the two shooters of decision 804
 were observed as overflow 442 times before firing, every time at episode count 1.
 
 ### R4. Generalisation corpus (H0)
@@ -360,7 +360,8 @@ registered disposition stands.
 
 1. **Memory.** The record ends when the unit stands on any objective. `baseline-v2` never orders a unit standing on an
    objective the side does not hold, so a claimant standing on an objective always stands on one the side holds, and is
-   a deferred unit, not a committed one. The rule should have ended a record only on an objective the side does not
+   a deferred unit, not a committed one (measured on the exploration table of the ten captures: 32,413 claimant
+   observations on an objective, every one on an objective the side held). The rule should have ended a record only on an objective the side does not
    hold. A synthetic test now pins the frozen behaviour, so a correction can only come under a new identity.
 2. **R3 and R4 on recorded states.** T9-v1 is stateless and redirects the same overflow unit again at every decision
    while the recorded policy holds it; a rule that redirects once per episode emits a staging move or a withholding at
@@ -421,7 +422,7 @@ What the post-hoc run shows:
   the 8 survivors (a changed best alternative, each saturation condition alone, the reset of count and redirect flag
   on a new source, emission order among competing eligible claimants, the rule search's priority of adverse over
   primary rows) were missing tests, added before the record.
-* Privacy, latency and the close-out checks are reported in section R11.
+* Privacy and the close-out checks are reported in section R11; latency in section R5.
 
 ### R10. Recommended next task (one)
 
@@ -433,3 +434,23 @@ overflow is re-targeted with an admissible alternative before the firing decisio
 missed objective is taken, and with which state. The registration would fix beforehand the corrected memory rule
 (section R7) and an on-policy replacement for R3 and R4, and evaluate the six rules only as offline shadows on the new
 captures. Nothing is claimed about scores; no screen of a candidate is proposed.
+
+### R11. Close-out
+
+* Tests: the workstation tree at `80dc18148d7966e4a2ac20b76b04ed25c9bf4188` ran 1,510 tests (75 skipped)
+  with exit 0; a clean clone from GitHub at the same commit ran 1,507 (76 skipped) with exit 0; the
+  evaluation server's private tree ran 1,523 of 1,523 (0 skipped, 4,997 s) with exit 0,
+  regenerating every Sprint 15 public file, the post-hoc analysis and the mutation record from the private captures.
+* Documentation gates: Sprint 15's private gate (`local/diagnostics/s15/doc_gate.py`) passes and catches 16 of 16
+  planted errors, and checks that sections 1 to 12 equal the pushed protocol; the historical gates pass with their
+  plants (Sprint 8 8 of 8, Sprint 10 version 2 40 checks and 15 of 15, Sprint 11 34 of 34, Sprint 12 37 of 37 and 29 of
+  29, Sprint 13 18 of 18, Sprint 14 12 of 12, T9 confirmation 10 of 10 twice, T7 probe 16 of 16, 9 of 9 and 9 of 9,
+  E3b 12 of 12).
+* Privacy: the repository scan over every reachable blob (843 blobs) found 104 hit lines, identical as a set to
+  the 104 accepted at Sprint 14's close: none added, none removed.
+* Platform canary: rebuilt byte for byte on the workstation and the server (SHA-256
+  `a3d3b0229118c0a389d379b315a620465624222f93fcf39de115e8e9dde59511`).
+* Engine ledger: read-only verify before and after the server suite, 2,790 sessions opened and closed, none
+  unclosed, integrity ok, state chain continuous; the ledger file's SHA-256 is
+  `e2116700df7645f7c116386bfb4b955cb2725f1541ba24f906fafe9172891cef` before and after. Session 2791 has never been
+  opened.
