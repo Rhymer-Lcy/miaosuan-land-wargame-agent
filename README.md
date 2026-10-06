@@ -113,6 +113,11 @@ Sprint 15's offline study of delayed, memory-triggered redistribution (`docs/SPR
 engine session) found no trigger that passes its restoration items (disposition NO_RESTORING_TRIGGER); two design
 defects found after the replay are disclosed with a post-hoc sensitivity analysis, and no existing adverse capture can
 exercise the one trigger family that restores red-seat redistribution.
+Sprint 16's registered mechanism capture (`docs/SPRINT16_MECHANISM_CAPTURE.md`, sessions 2791 to 2793) played the frozen
+v3 once in each adverse configuration against the inert control and evaluated the delayed rules afterwards as
+analysis-side shadows with a corrected memory: on the observed trajectories the post-staging trigger never acts in
+1930331196 C3 and first diverges from v3 inside the risk window in C2 and 2120531121 C3, without recreating a diagnosed
+mechanism (disposition MECHANISM_AMBIGUOUS); nothing was promoted.
 The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
@@ -176,6 +181,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/SPRINT13_V3_DIAGNOSIS.md` | Sprint 13's offline diagnosis of v3's primary-scenario failure: protocol, four-policy reconstruction, difference classes, reservation episodes, prospective features, oracle decomposition, Sprint 9 comparison and disposition |
 | `docs/SPRINT14_REDISTRIBUTION.md` | Sprint 14's offline design competition of bounded cross-objective redistribution rules: protocol, eight frozen candidates, fidelity, primary and adverse replay, gate, rubric and disposition |
 | `docs/SPRINT15_DELAYED_REDISTRIBUTION.md` | Sprint 15's offline study of delayed, memory-triggered redistribution: reference diagnostics, protocol, six frozen stateful candidates, replay, gate, adequacy rule, disposition and a post-hoc sensitivity analysis |
+| `docs/SPRINT16_MECHANISM_CAPTURE.md` | Sprint 16's registered three-session mechanism capture of the frozen v3: card, corrected analysis-side shadows, first-divergence rules, restoration and recourse measures, results and disposition |
 | `docs/PLATFORM_CANARY.md` | the owner's manual upload and compatibility-check steps for the platform canary |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
