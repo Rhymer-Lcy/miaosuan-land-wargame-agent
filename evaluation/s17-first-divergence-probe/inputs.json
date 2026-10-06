@@ -1,0 +1,149 @@
+{
+ "anchors": {
+  "1930331196 C2": {
+   "first_divergence_decision": 421,
+   "protected_fire_decisions": [
+    611,
+    686
+   ],
+   "protected_unit_kind": "aircraft",
+   "redirect_destination": [
+    "80-point objective A"
+   ],
+   "redirected_vehicles": 2,
+   "reference_fire_endpoints": {
+    "611": {
+     "accepted": true,
+     "emitted": true,
+     "listed": true,
+     "orders_by_unit": 1,
+     "preserved": true
+    },
+    "686": {
+     "accepted": true,
+     "emitted": true,
+     "listed": true,
+     "orders_by_unit": 1,
+     "preserved": true
+    }
+   },
+   "source_game": "1930331196.C2.s16-v3-mechanism-capture-1.p02",
+   "v3_first_ownership": {
+    "50-point objective A": 362,
+    "50-point objective B": 805,
+    "50-point objective C": 443,
+    "80-point objective A": 504,
+    "80-point objective B": 886
+   }
+  },
+  "2120531121 C3": {
+   "first_divergence_decision": 361,
+   "first_ownership_deadline": 564,
+   "problem_objective": "80-point objective A",
+   "redirect_destination": [
+    "80-point objective A"
+   ],
+   "redirected_vehicles": 2,
+   "source_game": "2120531121.C3.s16-v3-mechanism-capture-1.p03",
+   "v3_first_ownership": {
+    "50-point objective A": 463,
+    "50-point objective B": 402,
+    "50-point objective C": 342,
+    "80-point objective A": 564,
+    "80-point objective B": 483
+   }
+  }
+ },
+ "candidate": {
+  "files": [
+   "agent.py",
+   "boundary/__init__.py",
+   "boundary/actions.py",
+   "boundary/checks.py",
+   "boundary/errors.py",
+   "boundary/keys.py",
+   "boundary/observation.py",
+   "boundary/profile.py",
+   "boundary/state.py",
+   "boundary/terrain.py",
+   "decision/__init__.py",
+   "decision/candidates.py",
+   "decision/context.py",
+   "decision/gate.py",
+   "decision/policy.py",
+   "decision/routing.py",
+   "decision/semantics.py",
+   "decision/trace.py",
+   "experiments/__init__.py",
+   "experiments/exploratory_addon.py",
+   "experiments/occupy_reservation.py",
+   "experiments/routing_bounded.py",
+   "experiments/shoot_reservation.py",
+   "experiments/t9_batch.py",
+   "experiments/t9_delayed.py",
+   "experiments/t9_post_stage_v6.py",
+   "experiments/t9_redistribution.py"
+  ],
+  "id": "t9-delayed-post-stage-any-v6",
+  "policy_source_sha256": "b60e3812a8d43ffaf3a015c87783f7693d8e98894c4fb2363b90ea59dd306ec0"
+ },
+ "card": {
+  "canonical_sha256": "6d3bbc8a06b2ceaedfe0adbf20d541cd8c004db5a03771670f9d769e5cb3e1d1",
+  "id": "s17-post-stage-v6-probe-1"
+ },
+ "note": "inputs pinned before session 2794; the prefix reference and every capture stay under the ignored local/ tree",
+ "prefix_reference_sha256": "6f0aba90ffaa20151610311d15c2060f3dd1492580869e6a5c2f726f9363bc89",
+ "rules": {
+  "capacity": 4,
+  "early_place_blocks_allowed": 0,
+  "first_divergence": {
+   "1930331196 C2": 421,
+   "2120531121 C3": 361
+  },
+  "first_divergence_redirected_vehicles": {
+   "1930331196 C2": 2,
+   "2120531121 C3": 2
+  },
+  "first_ownership_deadline": 564,
+  "max_step": 2880,
+  "problem_objective": "80-point objective A",
+  "protected_fire_decisions": [
+   611,
+   686
+  ]
+ },
+ "rules_sha256": "6d373079536e57915e4190ec7720a51222a1a900e3ca18b59479e59b90295f08",
+ "schema": "miaosuan-s17-inputs/1",
+ "source": {
+  "canonical_sha256": "22ccef48831cae3a1100497f329f10a842cfff51ac3ae6e35dd0afb3acea9099",
+  "card": "s16-v3-mechanism-capture-1",
+  "cost_data": {
+   "1930331196": "734996e97d79af411697a5598e127d659fea6d146e359ae2e8357f7080a5364f",
+   "2120531121": "1b10b6030e2ea038fbc285332ee318456457a64cb0ed78228afa9e8a1d0425a5"
+  },
+  "games": {
+   "1930331196 C2": {
+    "files": {
+     "record": "997de7e5477009ac3a9edb05e032dc9b183a8f587f9983cd0c946625ac1ce018",
+     "t9.json": "aa2e9a0cf5b9341889a6880ee3b0e82431881ff07afb12c2c220254db3e84ff1",
+     "timeline.json": "08c08977df991fa7cd59228cc97e44b5a470f027408f81f6d0583cb3406684ff",
+     "timeline.pkl": "b5d9950285ff4aaf3a5c02bd3648e9dcdddf111700d34830e6479566bbc28b29",
+     "v3.json": "695a7028a60ce6630c371ba62d9ff15defaf1bd4eda9bad65feee538ea62f235",
+     "v3series.json.gz": "90b2fda1c8d0c21e1de17eab68de243142fd3157b75ebf21ae31b2afa84fd9e0"
+    },
+    "game_id": "1930331196.C2.s16-v3-mechanism-capture-1.p02"
+   },
+   "2120531121 C3": {
+    "files": {
+     "record": "2d2c277edd7801cfdc83203861f5537a0f4cdcc3c3a03f1750e3c61efc411380",
+     "t9.json": "151c77b5191fba12793cd12115ed2e37c84312dd122fe7ea9216bfb888937d74",
+     "timeline.json": "10ddc23cefa7472363e2a5ccfa0a793b7a386ecbbc00ae4b5cd6b7bd6fff5c52",
+     "timeline.pkl": "8e0c77cb3488e881649e97ebe915c5076f607a4b5d8d3565b2d6f7b4ccc071ae",
+     "v3.json": "7d63c364787c8a18db9aab022819f5bca6471283d342a3db94a086f1f79935ce",
+     "v3series.json.gz": "b49276c440e29d263e0d4ebdcb3e73f6986241db6501fba32ec4ccbef53d02e2"
+    },
+    "game_id": "2120531121.C3.s16-v3-mechanism-capture-1.p03"
+   }
+  }
+ }
+}
