@@ -1,0 +1,894 @@
+{
+ "S": {
+  "infantry_start": {
+   "infantry units on board at start": 74,
+   "infantry units on the ground at start": 304
+  },
+  "presence_all": {
+   "T2 infantry and infantry fighting vehicle": 47,
+   "T3 any unit": 50,
+   "T5 guide-capable unit and infantry fighting vehicle": 47,
+   "T6 any unit": 50,
+   "T7-C ground vehicle or infantry": 50,
+   "T8 fortification (type 4)": 4,
+   "T8 helicopter (3.6) or transport helicopter (3.8)": 26,
+   "T8 mine layer (2.13)": 7,
+   "TO-1 any unit": 50,
+   "scan aircraft (type 3)": 44,
+   "scan infantry (1.2)": 47,
+   "scan infantry starting on board": 10
+  },
+  "presence_frozen": {
+   "T2 infantry and infantry fighting vehicle": 6,
+   "T3 any unit": 8,
+   "T5 guide-capable unit and infantry fighting vehicle": 6,
+   "T6 any unit": 8,
+   "T7-C ground vehicle or infantry": 8,
+   "T8 fortification (type 4)": 1,
+   "T8 helicopter (3.6) or transport helicopter (3.8)": 3,
+   "T8 mine layer (2.13)": 1,
+   "TO-1 any unit": 8,
+   "scan aircraft (type 3)": 6,
+   "scan infantry (1.2)": 6,
+   "scan infantry starting on board": 0
+  },
+  "scenarios": {
+   "all": 50,
+   "frozen": 8
+  }
+ },
+ "consistency": {
+  "H0 A2 orders": {
+   "census": 234,
+   "equal": true,
+   "published": 234
+  },
+  "H0 A2 units": {
+   "census": 49,
+   "equal": true,
+   "published": 49
+  },
+  "H0 decisions": {
+   "census": 33696,
+   "equal": true,
+   "published": 33696
+  },
+  "H0 decisions listing 03": {
+   "census": 77,
+   "equal": true,
+   "published": 77
+  },
+  "H0 decisions listing 04": {
+   "census": 256,
+   "equal": true,
+   "published": 256
+  },
+  "H0 decisions listing 07": {
+   "census": 1687,
+   "equal": true,
+   "published": 1687
+  },
+  "H0 decisions listing 09": {
+   "census": 1,
+   "equal": true,
+   "published": 1
+  },
+  "H0 play decisions": {
+   "census": 33680,
+   "equal": true,
+   "published": 33680
+  },
+  "H0 v2 differs from recorded v0": {
+   "census": 123,
+   "equal": true,
+   "published": 123
+  },
+  "HH baseline-v2 reconstruction equal": {
+   "census": 11524,
+   "equal": true,
+   "published": 11524
+  }
+ },
+ "families": {
+  "T2": {
+   "H0": {
+    "damage_events_on_board": 0,
+    "end_infantry_aboard_squads": 0,
+    "end_infantry_aboard_units": 0,
+    "infantry_never_on_objective": 21,
+    "infantry_on_ground_units": 41,
+    "issued_disembark": 0,
+    "issued_embark": 0,
+    "listings": {
+     "decisions_3": 77,
+     "decisions_4": 256,
+     "unit_decisions_3_infantry": 39,
+     "unit_decisions_3_vehicle": 75,
+     "unit_decisions_4_vehicle": 352
+    },
+    "move_order_free_flow_steps": {
+     "aircraft": {
+      "max": 238,
+      "median": 21.0,
+      "n": 118,
+      "p90": 105
+     },
+     "infantry": {
+      "max": 4464,
+      "median": 2304,
+      "n": 51,
+      "p90": 3024
+     },
+     "vehicle": {
+      "max": 720,
+      "median": 140.0,
+      "n": 340,
+      "p90": 440
+     }
+    },
+    "move_orders_by_class": {
+     "aircraft": 118,
+     "infantry": 51,
+     "vehicle": 340
+    },
+    "move_orders_unable_to_arrive": {
+     "aircraft": 0,
+     "infantry": 20,
+     "vehicle": 0
+    },
+    "move_orders_unreadable": 0,
+    "start_infantry_aboard": 0,
+    "start_infantry_on_ground": 41
+   },
+   "HH": {
+    "damage_events_on_board": 0,
+    "end_infantry_aboard_squads": 0,
+    "end_infantry_aboard_units": 0,
+    "infantry_never_on_objective": 10,
+    "infantry_on_ground_units": 28,
+    "issued_disembark": 0,
+    "issued_embark": 0,
+    "listings": {
+     "decisions_3": 937,
+     "decisions_4": 2,
+     "unit_decisions_3_infantry": 957,
+     "unit_decisions_3_vehicle": 8,
+     "unit_decisions_4_vehicle": 8
+    },
+    "move_order_free_flow_steps": {
+     "aircraft": {
+      "max": 182,
+      "median": 24.0,
+      "n": 114,
+      "p90": 104
+     },
+     "infantry": {
+      "max": 4464,
+      "median": 1584.0,
+      "n": 32,
+      "p90": 3024
+     },
+     "vehicle": {
+      "max": 640,
+      "median": 120.0,
+      "n": 270,
+      "p90": 440
+     }
+    },
+    "move_orders_by_class": {
+     "aircraft": 114,
+     "infantry": 32,
+     "vehicle": 270
+    },
+    "move_orders_unable_to_arrive": {
+     "aircraft": 0,
+     "infantry": 8,
+     "vehicle": 0
+    },
+    "move_orders_unreadable": 0,
+    "start_infantry_aboard": 0,
+    "start_infantry_on_ground": 28
+   },
+   "HI": {
+    "damage_events_on_board": 0,
+    "end_infantry_aboard_squads": 0,
+    "end_infantry_aboard_units": 0,
+    "infantry_never_on_objective": 14,
+    "infantry_on_ground_units": 24,
+    "issued_disembark": 0,
+    "issued_embark": 0,
+    "listings": {
+     "decisions_3": 3812,
+     "decisions_4": 3932,
+     "unit_decisions_3_infantry": 93,
+     "unit_decisions_3_vehicle": 11261,
+     "unit_decisions_4_vehicle": 11446
+    },
+    "move_order_free_flow_steps": {
+     "aircraft": {
+      "max": 238,
+      "median": 32.0,
+      "n": 34,
+      "p90": 168
+     },
+     "infantry": {
+      "max": 3456,
+      "median": 2736.0,
+      "n": 24,
+      "p90": 2880
+     },
+     "vehicle": {
+      "max": 720,
+      "median": 120,
+      "n": 183,
+      "p90": 440
+     }
+    },
+    "move_orders_by_class": {
+     "aircraft": 34,
+     "infantry": 24,
+     "vehicle": 183
+    },
+    "move_orders_unable_to_arrive": {
+     "aircraft": 0,
+     "infantry": 2,
+     "vehicle": 0
+    },
+    "move_orders_unreadable": 0,
+    "start_infantry_aboard": 0,
+    "start_infantry_on_ground": 24
+   }
+  },
+  "T3": {
+   "H0": {
+    "events_attacker_never_seen_before": 2,
+    "events_attacker_seen_at_event": 188,
+    "events_attacker_unseen_but_seen_within_window": 15,
+    "events_attacker_unseen_seen_earlier_outside_window": 0,
+    "reappearance_episodes": 211,
+    "reappearance_gap_steps": {
+     "max": 1417,
+     "median": 41,
+     "n": 211,
+     "p90": 341
+    }
+   },
+   "HH": {
+    "events_attacker_never_seen_before": 0,
+    "events_attacker_seen_at_event": 154,
+    "events_attacker_unseen_but_seen_within_window": 4,
+    "events_attacker_unseen_seen_earlier_outside_window": 0,
+    "reappearance_episodes": 103,
+    "reappearance_gap_steps": {
+     "max": 985,
+     "median": 21,
+     "n": 103,
+     "p90": 225
+    }
+   }
+  },
+  "T5": {
+   "H0": {
+    "guide_capable_units_at_first_play": 61,
+    "listings": {
+     "decisions_09": 1,
+     "decisions_17": 2,
+     "unit_decisions_09": 1,
+     "unit_decisions_17": 2
+    }
+   },
+   "HH": {
+    "guide_capable_units_at_first_play": 40,
+    "listings": {
+     "decisions_17": 4,
+     "unit_decisions_17": 4
+    }
+   },
+   "HI": {
+    "guide_capable_units_at_first_play": 35,
+    "listings": {}
+   }
+  },
+  "T6": {
+   "H0": {
+    "events_by_victim_state": {
+     "aircraft": 13,
+     "moving ground": 124,
+     "stationary ground": 68
+    },
+    "ground_units_lost_with_a_move_path": 60,
+    "move_orders": 509,
+    "moving_ground_events": 124,
+    "moving_ground_seen_at_event": 117,
+    "moving_ground_seen_before": 120,
+    "threat_exposed_orders": 230,
+    "threat_exposed_then_damaged": 88,
+    "threat_unreadable_orders": 96,
+    "units_lost": 128
+   },
+   "HH": {
+    "events_by_victim_state": {
+     "aircraft": 3,
+     "moving ground": 117,
+     "stationary ground": 38
+    },
+    "ground_units_lost_with_a_move_path": 55,
+    "move_orders": 416,
+    "moving_ground_events": 117,
+    "moving_ground_seen_at_event": 114,
+    "moving_ground_seen_before": 117,
+    "threat_exposed_orders": 200,
+    "threat_exposed_then_damaged": 101,
+    "threat_unreadable_orders": 90,
+    "units_lost": 89
+   }
+  },
+  "T7-C": {
+   "H0": {
+    "concealable_by_aircraft": 0,
+    "concealable_by_ground_attacker": 0,
+    "concealable_damage": 0,
+    "concealable_events": 0,
+    "concealable_ground_beyond_half_distance": 0,
+    "concealable_ground_beyond_half_equal_elevation": 0,
+    "concealable_lost": 0,
+    "concealable_units_damaged": 0,
+    "e3b_exposure_actions": 6,
+    "e3b_exposure_units": 1,
+    "orders": 234,
+    "units_ordered": 49
+   },
+   "HH": {
+    "concealable_by_aircraft": 0,
+    "concealable_by_ground_attacker": 4,
+    "concealable_damage": 5,
+    "concealable_events": 4,
+    "concealable_ground_beyond_half_distance": 0,
+    "concealable_ground_beyond_half_equal_elevation": 0,
+    "concealable_lost": 2,
+    "concealable_units_damaged": 2,
+    "e3b_exposure_actions": 0,
+    "e3b_exposure_units": 0,
+    "orders": 35,
+    "units_ordered": 29
+   }
+  },
+  "T8": {
+   "H0": {
+    "listings": {
+     "decisions_14": 1693,
+     "decisions_15": 923,
+     "decisions_16": 6957,
+     "decisions_20": 1,
+     "unit_decisions_14": 6744,
+     "unit_decisions_15": 1846,
+     "unit_decisions_16": 12990,
+     "unit_decisions_20": 1
+    }
+   },
+   "HH": {
+    "listings": {
+     "decisions_14": 3487,
+     "decisions_15": 1765,
+     "decisions_16": 9731,
+     "decisions_20": 2,
+     "unit_decisions_14": 12726,
+     "unit_decisions_15": 3530,
+     "unit_decisions_16": 34134,
+     "unit_decisions_20": 2
+    }
+   },
+   "HI": {
+    "listings": {
+     "decisions_14": 6018,
+     "decisions_16": 7406,
+     "unit_decisions_14": 43934,
+     "unit_decisions_16": 7406
+    }
+   }
+  }
+ },
+ "inputs_sha256": "38aaa462057d17899d66fa51a3c20a4bd1789c648ec4773dab249a1adbc8fbe9",
+ "note": "aggregates only; H0 figures are baseline-v2 decisions on baseline-v0 trajectories; HH is four games in one scenario; HI is against the inert control",
+ "opportunity_sides": {
+  "of": 16,
+  "sides_with_opportunity": {
+   "T2": 12,
+   "T3": 12,
+   "T5": 1,
+   "T6": 12,
+   "T7-C": 11,
+   "T8": 4,
+   "scan aircraft damaged": 4,
+   "scan ground unit lost with a move path": 11,
+   "scan idle ground unit with an enemy visible": 13,
+   "scan infantry hit while already suppressed": 1,
+   "scan infantry suppressed at least once": 6,
+   "scan objective lost after being held": 7,
+   "scan remove-suppression listed while suppressed": 6,
+   "scan shot with two or more targets": 14,
+   "scan stacked ground unit damaged": 13,
+   "scan unit in close combat": 10
+  }
+ },
+ "populations": {
+  "H0": {
+   "decisions": 33696,
+   "games": 8,
+   "play_decisions": 33680,
+   "scenario_sides": 16
+  },
+  "HH": {
+   "analysed_sides": 4,
+   "decisions": 11524,
+   "games": 4
+  },
+  "HI": {
+   "analysed_sides": 5,
+   "decisions": 14405,
+   "games": 5
+  }
+ },
+ "records": {
+  "baseline_v2_against_acting_opponents": {
+   "against another acting policy": {
+    "attack": {
+     "max": 544,
+     "median": 264,
+     "n": 105,
+     "p90": 486
+    },
+    "occupy": {
+     "max": 440,
+     "median": 80,
+     "n": 105,
+     "p90": 440
+    },
+    "remain": {
+     "max": 429,
+     "median": 58,
+     "n": 105,
+     "p90": 277
+    },
+    "remain_lost_share": {
+     "max": 1.0,
+     "median": 0.8462,
+     "n": 105,
+     "p90": 1.0
+    },
+    "remain_max": {
+     "max": 603,
+     "median": 407,
+     "n": 105,
+     "p90": 603
+    },
+    "total": {
+     "max": 1320,
+     "median": 325,
+     "n": 105,
+     "p90": 1170
+    }
+   },
+   "mirror": {
+    "attack": {
+     "max": 548,
+     "median": 98.0,
+     "n": 318,
+     "p90": 466
+    },
+    "occupy": {
+     "max": 440,
+     "median": 50.0,
+     "n": 318,
+     "p90": 390
+    },
+    "remain": {
+     "max": 473,
+     "median": 48.0,
+     "n": 318,
+     "p90": 251
+    },
+    "remain_lost_share": {
+     "max": 1.0,
+     "median": 0.8107,
+     "n": 318,
+     "p90": 1.0
+    },
+    "remain_max": {
+     "max": 603,
+     "median": 132.0,
+     "n": 318,
+     "p90": 603
+    },
+    "total": {
+     "max": 1421,
+     "median": 269.0,
+     "n": 318,
+     "p90": 984
+    }
+   }
+  },
+  "issued_action_types_by_policy": {
+   "baseline-v0": {
+    "type_01": 2446,
+    "type_02": 1437,
+    "type_05": 526,
+    "type_333": 76
+   },
+   "baseline-v1-candidate-occupy-reservation": {
+    "type_01": 9583,
+    "type_02": 5287,
+    "type_05": 1159,
+    "type_333": 324
+   },
+   "baseline-v1-routing-bounded-candidate": {
+    "type_01": 13674,
+    "type_02": 8164,
+    "type_05": 1605,
+    "type_333": 480
+   },
+   "baseline-v2-candidate-shoot-target-reservation": {
+    "type_01": 34538,
+    "type_02": 17618,
+    "type_05": 3846,
+    "type_333": 867
+   },
+   "inert-v0": {
+    "type_333": 1138
+   },
+   "ps1-probe-hook-1": {
+    "type_01": 18,
+    "type_05": 1,
+    "type_10": 4,
+    "type_314": 12,
+    "type_333": 1
+   },
+   "t4-artillery-v1": {
+    "type_01": 95,
+    "type_02": 31,
+    "type_05": 11,
+    "type_08": 25,
+    "type_333": 2
+   },
+   "t4-artillery-v2": {
+    "type_01": 482,
+    "type_02": 390,
+    "type_05": 53,
+    "type_08": 274,
+    "type_333": 7
+   },
+   "t4-artillery-v3": {
+    "type_01": 213,
+    "type_02": 168,
+    "type_05": 18,
+    "type_08": 68,
+    "type_333": 2
+   },
+   "t7-idle-concealment": {
+    "type_01": 89,
+    "type_02": 142,
+    "type_05": 10,
+    "type_06": 16,
+    "type_333": 3
+   },
+   "t9-batch-capacity-v3": {
+    "type_01": 697,
+    "type_02": 290,
+    "type_05": 55,
+    "type_333": 7
+   },
+   "t9-capacity-allocation-v1": {
+    "type_01": 5789,
+    "type_02": 5499,
+    "type_05": 930,
+    "type_333": 165
+   },
+   "t9-capacity-staging-v2": {
+    "type_01": 526,
+    "type_02": 221,
+    "type_05": 47,
+    "type_333": 8
+   },
+   "t9-delayed-post-stage-any-v6": {
+    "type_01": 87,
+    "type_02": 24,
+    "type_05": 10,
+    "type_333": 2
+   },
+   "tactic-deployment-split-1": {
+    "type_01": 6287,
+    "type_02": 3778,
+    "type_05": 513,
+    "type_314": 2898,
+    "type_333": 154
+   }
+  },
+  "records": 1618,
+  "score_identity": {
+   "total equals occupy + attack + remain": 423
+  },
+  "seats_by_policy": {
+   "baseline-v0": 76,
+   "baseline-v1-candidate-occupy-reservation": 324,
+   "baseline-v1-routing-bounded-candidate": 480,
+   "baseline-v2-candidate-shoot-target-reservation": 867,
+   "inert-v0": 1138,
+   "ps1-probe-hook-1": 1,
+   "t4-artillery-v1": 2,
+   "t4-artillery-v2": 7,
+   "t4-artillery-v3": 2,
+   "t7-idle-concealment": 3,
+   "t9-batch-capacity-v3": 7,
+   "t9-capacity-allocation-v1": 165,
+   "t9-capacity-staging-v2": 8,
+   "t9-delayed-post-stage-any-v6": 2,
+   "tactic-deployment-split-1": 154
+  }
+ },
+ "scan": {
+  "N1": {
+   "H0": {
+    "issued_by_baseline_v2": {
+     "type_01": 509,
+     "type_02": 432,
+     "type_05": 65,
+     "type_333": 16
+    },
+    "listings": {
+     "decisions_01": 21897,
+     "decisions_02": 351,
+     "decisions_03": 77,
+     "decisions_04": 256,
+     "decisions_05": 66,
+     "decisions_06": 23660,
+     "decisions_07": 1687,
+     "decisions_08": 17280,
+     "decisions_09": 1,
+     "decisions_10": 27220,
+     "decisions_11": 23118,
+     "decisions_14": 1693,
+     "decisions_15": 923,
+     "decisions_16": 6957,
+     "decisions_17": 2,
+     "decisions_20": 1,
+     "unit_decisions_01": 84938,
+     "unit_decisions_02": 458,
+     "unit_decisions_03": 114,
+     "unit_decisions_04": 352,
+     "unit_decisions_05": 126,
+     "unit_decisions_06": 147895,
+     "unit_decisions_07": 1709,
+     "unit_decisions_08": 103680,
+     "unit_decisions_09": 1,
+     "unit_decisions_10": 182925,
+     "unit_decisions_11": 134253,
+     "unit_decisions_14": 6744,
+     "unit_decisions_15": 1846,
+     "unit_decisions_16": 12990,
+     "unit_decisions_17": 2,
+     "unit_decisions_20": 1
+    }
+   },
+   "HH": {
+    "issued_by_baseline_v2": {
+     "type_01": 416,
+     "type_02": 319,
+     "type_05": 42,
+     "type_333": 4
+    },
+    "listings": {
+     "decisions_01": 11007,
+     "decisions_02": 291,
+     "decisions_03": 937,
+     "decisions_04": 2,
+     "decisions_05": 40,
+     "decisions_06": 11520,
+     "decisions_07": 551,
+     "decisions_08": 11520,
+     "decisions_10": 11516,
+     "decisions_11": 11520,
+     "decisions_14": 3487,
+     "decisions_15": 1765,
+     "decisions_16": 9731,
+     "decisions_17": 4,
+     "decisions_20": 2,
+     "unit_decisions_01": 74238,
+     "unit_decisions_02": 328,
+     "unit_decisions_03": 965,
+     "unit_decisions_04": 8,
+     "unit_decisions_05": 73,
+     "unit_decisions_06": 100553,
+     "unit_decisions_07": 700,
+     "unit_decisions_08": 69120,
+     "unit_decisions_10": 156647,
+     "unit_decisions_11": 77193,
+     "unit_decisions_14": 12726,
+     "unit_decisions_15": 3530,
+     "unit_decisions_16": 34134,
+     "unit_decisions_17": 4,
+     "unit_decisions_20": 2
+    }
+   },
+   "HI": {
+    "issued_by_baseline_v2": {
+     "type_01": 241,
+     "type_02": 55,
+     "type_05": 25,
+     "type_333": 5
+    },
+    "listings": {
+     "decisions_01": 13649,
+     "decisions_02": 53,
+     "decisions_03": 3812,
+     "decisions_04": 3932,
+     "decisions_05": 25,
+     "decisions_06": 14400,
+     "decisions_08": 14400,
+     "decisions_10": 14107,
+     "decisions_11": 14400,
+     "decisions_14": 6018,
+     "decisions_16": 7406,
+     "unit_decisions_01": 148122,
+     "unit_decisions_02": 61,
+     "unit_decisions_03": 11354,
+     "unit_decisions_04": 11446,
+     "unit_decisions_05": 34,
+     "unit_decisions_06": 207984,
+     "unit_decisions_08": 86400,
+     "unit_decisions_10": 105318,
+     "unit_decisions_11": 197884,
+     "unit_decisions_14": 43934,
+     "unit_decisions_16": 7406
+    }
+   }
+  },
+  "N2": {
+   "H0": {
+    "infantry_events": 5,
+    "infantry_events_already_suppressed": 1,
+    "keep_remain_time_at_onset": {
+     "max": 150,
+     "median": 149.0,
+     "n": 89,
+     "p90": 150
+    },
+    "onsets_by_class": {
+     "infantry": 15,
+     "vehicle": 74
+    },
+    "remove_suppression_unit_decisions": {
+     "keep_1": 1709
+    }
+   },
+   "HH": {
+    "infantry_events": 0,
+    "infantry_events_already_suppressed": 0,
+    "keep_remain_time_at_onset": {
+     "max": 150,
+     "median": 149.0,
+     "n": 65,
+     "p90": 150
+    },
+    "onsets_by_class": {
+     "infantry": 4,
+     "vehicle": 61
+    },
+    "remove_suppression_unit_decisions": {
+     "keep_1": 700
+    }
+   }
+  },
+  "N3": {
+   "H0": {
+    "lower_blood_target_listed": 127,
+    "shots": 432,
+    "shots_with_two_or_more_targets": 368
+   },
+   "HH": {
+    "lower_blood_target_listed": 97,
+    "shots": 319,
+    "shots_with_two_or_more_targets": 267
+   }
+  },
+  "N4": {
+   "H0": {
+    "held_at_end": 25,
+    "losses_with_own_unit_on_it_before": 0,
+    "objective_losses": 40
+   },
+   "HH": {
+    "held_at_end": 16,
+    "losses_with_own_unit_on_it_before": 0,
+    "objective_losses": 26
+   }
+  },
+  "N5": {
+   "H0": {
+    "artillery_enemy_visible": 102024,
+    "artillery_no_enemy": 1656,
+    "infantry_enemy_visible": 7119,
+    "infantry_no_enemy": 2016,
+    "vehicle_enemy_visible": 23224,
+    "vehicle_no_enemy": 12247
+   },
+   "HH": {
+    "artillery_enemy_visible": 68448,
+    "artillery_no_enemy": 672,
+    "infantry_enemy_visible": 22346,
+    "infantry_no_enemy": 120,
+    "vehicle_enemy_visible": 8735,
+    "vehicle_no_enemy": 120
+   }
+  },
+  "N6": {
+   "H0": {
+    "first_ownership_steps": {
+     "max": 1063,
+     "median": 442.0,
+     "n": 40,
+     "p90": 823
+    }
+   },
+   "HH": {
+    "first_ownership_steps": {
+     "max": 2737,
+     "median": 421,
+     "n": 25,
+     "p90": 561
+    }
+   }
+  },
+  "N7": {
+   "H0": {
+    "events_at_distance_0": 71,
+    "unit_decisions_in_close_combat": 1475
+   },
+   "HH": {
+    "events_at_distance_0": 55,
+    "unit_decisions_in_close_combat": 1480
+   }
+  },
+  "N8": {
+   "H0": {
+    "events": 13,
+    "events_while_moving": 0,
+    "units_lost": 13
+   },
+   "HH": {
+    "events": 3,
+    "events_while_moving": 0,
+    "units_lost": 3
+   }
+  },
+  "N9": {
+   "H0": {
+    "ground_events": 177,
+    "ground_events_victim_stacked": 112
+   },
+   "HH": {
+    "ground_events": 130,
+    "ground_events_victim_stacked": 70
+   }
+  },
+  "distances_by_judgement_type": {
+   "H0": {
+    "直瞄射击": {
+     "max": 19,
+     "median": 2,
+     "n": 205,
+     "p90": 9
+    }
+   },
+   "HH": {
+    "直瞄射击": {
+     "max": 20,
+     "median": 3.0,
+     "n": 158,
+     "p90": 11
+    }
+   }
+  }
+ },
+ "schema": "miaosuan-s18-census/1",
+ "study_id": "s18-frontier-reset"
+}
