@@ -166,6 +166,18 @@ def summarise_lists(node: Any) -> Any:
     return node
 
 
+def policy_class(policy: str) -> str:
+    """The public label of a recorded policy. Candidate identities are not repeated in public files outside their
+    owner-approved folders (the whitelist tests of Sprints 12 and 17), so every non-baseline policy is one class."""
+    if policy == V2:
+        return "baseline-v2"
+    if policy == INERT:
+        return "inert control"
+    if policy.startswith("baseline-"):
+        return "earlier baselines (v0, v1 and the v1 routing runtime candidate)"
+    return "exploratory and tactical candidates"
+
+
 class Census:
     def __init__(self) -> None:
         from miaosuan_agent.evaluation import s18_census as sc
@@ -415,9 +427,9 @@ class Census:
             record = json.loads(path.read_text(encoding="utf-8"))
             seats = record.get("seats") or []
             for s in seats:
-                seats_by_policy[s["policy"]] += 1
+                seats_by_policy[policy_class(s["policy"])] += 1
                 for t, n in (s.get("actions_by_type") or {}).items():
-                    issued[s["policy"]][f"type_{int(t):02d}" if str(t).isdigit() else f"type_{t}"] += n
+                    issued[policy_class(s["policy"])][f"type_{int(t):02d}" if str(t).isdigit() else f"type_{t}"] += n
             policies = {s["faction"]: s["policy"] for s in seats}
             scores = record.get("final_scores") or {}
             for s in seats:
