@@ -448,3 +448,23 @@ automatic next steps.
   baselines, the inert control, exploratory and tactical candidates), a test keeps candidate identities out of every
   Sprint 18 public file, and the census was regenerated: only those two label tables changed, every figure and the
   selection are identical.
+
+### R13. Close-out checks
+
+At `5506051` (tree `5e6397ed`), the results as pushed at 2026-10-07T00:48:04+08:00 and fetched back from GitHub
+identical: the workstation tree ran 1,651 tests (82 skipped) and a clean clone 1,648 (83 skipped), both passing; the
+server's private tree ran 1,664 tests, none skipped, passing in 5,490 s, with the ledger file byte-identical before and
+after. On the server the census and admission tables regenerate byte for byte (`tests/test_real_s18.py`), and the
+selection regenerates byte for byte anywhere. The private documentation gate binds 74 anchored clauses of these results
+and catches 19 of 19 planted errors; every earlier sprint's documentation gate passes and catches all its plants
+(Sprint 10's on the server: 40 checks, no failure, 15 of 15). The privacy scan of all 917 reachable blobs gives the 104
+accepted hit lines, the same set. The platform canary rebuilds on both hosts with SHA-256 `a3d3b022...` and no
+mismatch. A read-only verify reports 2,795 sessions, none unclosed, integrity ok, state chain continuous; session 2796
+was never opened. The server's development worktree was removed; its private outputs stay under
+`local/diagnostics/s18/`.
+
+### R14. Recommendation (one)
+
+Run the T6-G offline shadow study, with no engine session: freeze the gate and its criteria first, replay it on H0 and
+HH, and report the stop items of R11. If it passes, write the two-session head-to-head probe registration for the
+owner's approval. The engine experiment is not run without that approval.
