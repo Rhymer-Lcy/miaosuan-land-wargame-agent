@@ -265,3 +265,171 @@ results.
   file) and the constant churn measure (section 7).
 * Not claimed: any engine outcome, score, or effect; that a candidate passing offline would restore T9-v1's primary
   advantage; that any adverse configuration is safe beyond what its recorded trajectories can show.
+
+## Results (2026-10-06)
+
+Sections 1 to 12, the candidate module, its tests, the analysis module, the replay driver, the reference diagnostics and
+the input digests were pushed as commit `cd314ccc4e021de109d43fe66f5e75b96ee09015` at 2026-10-06T11:47:47+08:00 and
+fetched back unauthenticated byte for byte (9 files) before the replay ran; they are unchanged. The candidate module's
+policy-source identity is `aabc4b9547b78c3b64efb1332784ed6092577bf792658850e63dace9137979c2`. The final replay ran once,
+on the evaluation server at that commit. Every figure below comes from the public files of
+`evaluation/s15-delayed-redistribution/`, which `scripts/s15_delayed_replay.py run --check` regenerates byte for byte;
+every figure is a decision on a recorded state, never an engine outcome.
+
+### R1. Fidelity and invariants
+
+Every fidelity requirement of section 5 held: `gate.json` lists no fidelity problem. Sprint 13's figures and the adverse
+anchors were reproduced, the module equalled v3 with nobody eligible and O2 with everyone eligible at every decision
+with an own ground move, and every capture's first such decision was decision 1. All six candidates passed every
+invariant: 3,918 recomputations with a fresh router and 10,377 reorderings without a difference in actions, allocation
+or memory; 62,506 memory checks without a problem; no capacity, unrelated-action, invented-move, route, detour,
+reachability or gate violation, on the ten captures and H0.
+
+### R2. Primary states
+
+Post-opening distinct redirected units per seat (R2 requires 8 as red and 13 as blue), primary redirect order-decisions,
+pooled post-opening slot divergence from T9-v1 and its ratio to v3's 524 (R3 requires at most 0.70), and the largest
+number of redirects of one unit in one game (R4 allows 3):
+
+| Policy | Units H1 / H2 | Redirects | Post-opening slot divergence (ratio) | Most redirects of one unit |
+|---|---|---:|---|---:|
+| T9-v1 (reference) | 15 / 26 | 645 | 0 | |
+| O2 (reference) | 15 / 26 | 637 | 196 (0.374) | |
+| `delayed-repeat-2` | 2 / 14 | 20 | 520 (0.9924) | 2 |
+| `delayed-repeat-3` | 1 / 14 | 19 | 521 (0.9943) | 2 |
+| `delayed-stable-alternative` | 1 / 14 | 19 | 521 (0.9943) | 2 |
+| `delayed-post-stage-same` | 2 / 8 | 10 | 520 (0.9924) | 1 |
+| `delayed-post-stage-any` | 9 / 21 | 76 | 491 (0.937) | 6 |
+| `delayed-saturated-source` | 0 / 0 | 0 | 524 (1.0) | 0 |
+
+No candidate redirected at the first decision of any capture (R1). As red, every rule except `delayed-post-stage-any`
+restored at most 2 of the 15 units T9-v1 redirects after the opening; `delayed-post-stage-any` restored 9 as red and 21
+as blue, all vehicles, with a median free-flow time of 140 steps and a median detour ratio of 1.4. No rule brought the
+post-opening slot divergence near 0.70 of v3's. No oscillation occurred.
+
+### R3. Adverse states
+
+No candidate redirected anything in any of the six adverse captures: no shooter redirected, no first-decision or early
+redirect, no unreachable place, every v3 selection kept, the certificate's 9,194 unit-decisions retained, and no
+redirect into the missed 80-point objective. A1 and A2 therefore pass for every candidate, and the adequacy rule marks
+every configuration UNTESTED for every candidate: the trigger never held in any risk window (exposure 0, and 0 outside
+the windows as well).
+
+The memory shows why. On the three `baseline-v2` trajectories every record ended with "moving to an objective"
+(`delayed-repeat-2`: 18, 21 and 19 records in 1930331196 C3, C2 and 2120531121 C3): the overflow units really moved
+there, so no episode can grow. On the three T9-v1 trajectories the records ended with "standing on an objective" 1,200,
+1,049 and 18,429 times: these units stand on objectives the side already holds and are sent on by `baseline-v2` at
+every decision (section R7). In 1930331196 C3 on the T9-v1 trajectory, for example, the two shooters of decision 804
+were observed as overflow 442 times before firing, every time at episode count 1.
+
+### R4. Generalisation corpus (H0)
+
+On 142 decisions with an own ground move (of 33,696), every candidate met the same 139 overflow observations, its
+trigger never held, and it redirected nothing (O2: 107 redirects of 63 units on the same states). 142 recomputations and
+258 reorderings showed no difference; no memory problem, no oscillation, no violation.
+
+### R5. Latency
+
+Per decision with an own ground move, 99th percentile 1.034 to 1.091 ms and maximum 6.644 to 31.871 ms for five
+candidates; `delayed-repeat-3` had one decision at 537.081 ms against a 99th percentile of 1.177 ms and fails G12. It
+was measured once and not investigated (a single outlier of the kind Sprint 14 also saw); it does not change any
+disposition, because that candidate also fails R2 and R3.
+
+### R6. Gate and disposition
+
+| Candidate | Failed items | Adverse configurations |
+|---|---|---|
+| `delayed-repeat-2` | R2, R3 | all UNTESTED |
+| `delayed-repeat-3` | G12, R2, R3 | all UNTESTED |
+| `delayed-stable-alternative` | R2, R3 | all UNTESTED |
+| `delayed-post-stage-same` | R2, R3 | all UNTESTED |
+| `delayed-post-stage-any` | R3, R4 | all UNTESTED |
+| `delayed-saturated-source` | R2, R3 | all UNTESTED |
+
+The opportunity test of rule 2 did not apply (O2 restores 15 and 26 units against 8 and 13). No candidate passed the
+invariants and the restoration items together, so rule 6 applies:
+
+**NO_RESTORING_TRIGGER.**
+
+Session 2791 was not opened. No candidate is proposed for an engine screen.
+
+### R7. Two defects found after the replay, and a post-hoc sensitivity analysis
+
+Both defects are in the design, found by reading the results; neither is repaired in the frozen evaluation, and the
+registered disposition stands.
+
+1. **Memory.** The record ends when the unit stands on any objective. `baseline-v2` never orders a unit standing on an
+   objective the side does not hold, so a claimant standing on an objective always stands on one the side holds, and is
+   a deferred unit, not a committed one. The rule should have ended a record only on an objective the side does not
+   hold. A synthetic test now pins the frozen behaviour, so a correction can only come under a new identity.
+2. **R3 and R4 on recorded states.** T9-v1 is stateless and redirects the same overflow unit again at every decision
+   while the recorded policy holds it; a rule that redirects once per episode emits a staging move or a withholding at
+   those later decisions instead, so R3 counts it as diverging again, and every episode that the recorded state ends
+   and restarts allows another redirect (R4). Neither measure can tell a bounded-recourse rule from no redistribution.
+
+`scripts/s15_posthoc.py` (`posthoc.json`, labelled POST HOC; no disposition and no candidate follow from it) re-ran the
+frozen driver's analysis with the corrected memory rule for the six rules, and a reference rule `posthoc-bounded-o2`
+(O2 with at most one redirect per episode and no delay):
+
+| Variant (corrected memory) | Units H1 / H2 | R3 ratio | Most redirects of one unit | Trigger exposure in the risk windows (C3, C2, 2120531121 C3) | Adverse redirects (C3, C2, 2120531121 C3) |
+|---|---|---:|---:|---|---|
+| `posthoc-delayed-repeat-2` | 3 / 16 | 0.9866 | 2 | 1,190, 218, 309 | 0, 0, 9 |
+| `posthoc-delayed-repeat-3` | 2 / 16 | 0.9885 | 2 | 1,180, 214, 300 | 0, 0, 9 |
+| `posthoc-delayed-stable-alternative` | 2 / 16 | 0.9885 | 2 | 0, 0, 9 | 0, 0, 9 |
+| `posthoc-delayed-post-stage-same` | 2 / 8 | 0.9924 | 1 | 0, 0, 0 | 0, 0, 0 |
+| `posthoc-delayed-post-stage-any` | 9 / 21 | 0.937 | 6 | 0, 0, 0 | 0, 0, 0 |
+| `posthoc-delayed-saturated-source` | 0 / 0 | 1.0 | 0 | 0, 0, 0 | 0, 0, 0 |
+| `posthoc-bounded-o2` (not delayed) | 15 / 26 | 0.9237 | 7 | 1,222, 248, 343 | 8, 21, 27 |
+
+What the post-hoc run shows:
+
+* The memory defect decided adequacy, not restoration. With the corrected rule the repeat rules are exercised in every
+  adverse configuration and stay safe there (no shooter or early redirect, no unreachable place, the certificate kept),
+  but as red they still restore 3 or 2 units of the 8 required.
+* R3 and R4 cannot be met by any rule that redirects at most once per episode on these recorded states: the reference
+  that redirects every overflow unit at first sight, once, restores all 15 and 26 units and still reads 0.9237 and 7.
+* The one rule that restores post-opening redistribution as red, `delayed-post-stage-any`, is never exercised in an
+  adverse configuration: no adverse capture contains a completed staging move.
+
+### R8. What Sprint 15 shows
+
+1. **Opening versus later.** On v3's states T9-v1's post-opening redistribution as red involves 15 units, 14 of them in
+   one game (p01), and in the other H1 game (p03) everything but one redirect happens at the opening; as blue it
+   involves 26 units in both games. Most post-opening redirects re-redirect units that already overflowed at the opening.
+2. **Does the primary benefit need the opening?** Offline evidence cannot say, and it bounds what a delayed rule can do.
+   No persistence, stability or saturation trigger restores more than 3 red units, with or without the memory correction:
+   as red, post-opening redistribution does not arise as persistent overflow at one source but after `baseline-v2`
+   re-targets units that were staged. In p03 a delayed rule equals v3 until decision 581 (step 580), after the first
+   ownership divergence from T9-v1's characteristic pattern at step 550 (section 3, item 2).
+3. **Discriminator.** The restoring trigger is "re-targeted after a completed staging move". Whether that re-targeting
+   reaches the 1930331196 shooters or changes C2's capture order cannot be observed in any existing capture: both
+   adverse trajectories are other policies' (T9-v1 and `baseline-v2`), neither stages, and the staging-hex proxy failed
+   its known-answer calibration (section 3, item 5). The contact distance that separates the post-opening primary
+   opportunities from the adverse ones is confounded with the inert opponent and unstable when a group is left out.
+4. **The limit of the existing observations.** Every adverse-safety claim about a delayed rule rests on trajectories
+   that never stage; for the T9 line the frozen captures have reached what they can support.
+
+### R9. Corrections and disclosures
+
+* Protocol section 12 says the smoke run found three plumbing defects; one of them, a digest of a missing file, was a
+  defect of the smoke harness, not of the driver. The driver defects were the default argument and the forbidden public
+  key; the third finding of that run was the constant churn measure.
+* After the replay, and without changing the candidate module, the analysis module, the driver, any threshold or any
+  rule: tests were added (`decide_step`, `outcome` and `repeat_checks` on a synthetic scene, a rubric tolerance case,
+  eight cases closing the mutation gaps below, and the test pinning the memory defect), and the post-hoc script.
+* Mutation (`scripts/mutate_s15_delayed.py`, `mutation.json`): 50 of 50 planted defects caught. The first run caught 42;
+  the 8 survivors (a changed best alternative, each saturation condition alone, the reset of count and redirect flag
+  on a new source, emission order among competing eligible claimants, the rule search's priority of adverse over
+  primary rows) were missing tests, added before the record.
+* Privacy, latency and the close-out checks are reported in section R11.
+
+### R10. Recommended next task (one)
+
+A registered, owner-approved **mechanism capture, not a score screen**: three exclusive sessions of the frozen v3
+(`t9-batch-capacity-v3`, identity unchanged) in 2120531121 C3, 1930331196 C2 and 1930331196 C3 against the inert
+control, with Sprint 12's full-step capture. A delayed rule equals v3 until its first redirect, so these games are every
+delayed rule's own trajectory up to that point. They would show what no existing capture can: whether v3's staged opening
+overflow is re-targeted with an admissible alternative before the firing decisions (742 to 876; 611) or before the
+missed objective is taken, and with which state. The registration would fix beforehand the corrected memory rule
+(section R7) and an on-policy replacement for R3 and R4, and evaluate the six rules only as offline shadows on the new
+captures. Nothing is claimed about scores; no screen of a candidate is proposed.
