@@ -1,0 +1,302 @@
+{
+ "budget": {
+  "batch_sessions": 2,
+  "ledger_base_session": 2793,
+  "sprint_session_cap": 2
+ },
+ "candidate": "t9-delayed-post-stage-any-v6",
+ "caps": {
+  "steps": "max_time + 1 + 100",
+  "wall_seconds": 1800
+ },
+ "card_id": "s17-post-stage-v6-probe-1",
+ "configurations": "1930331196 C2 and 2120531121 C3 against the inert control, one game each, serially",
+ "controls": "none: the inert control seat; no score is compared and nothing is pooled",
+ "eligible_for_promotion": false,
+ "evaluation_id": "s17-post-stage-v6-probe-1",
+ "execution": {
+  "runtime": "baseline-v1-runtime-r2",
+  "workers": 1
+ },
+ "games": [
+  {
+   "blue": "inert-v0",
+   "condition": "C2",
+   "game_id": "1930331196.C2.s17-post-stage-v6-probe-1.p01",
+   "position": 1,
+   "red": "t9-delayed-post-stage-any-v6",
+   "scenario_id": "1930331196",
+   "screen_position": 1
+  },
+  {
+   "blue": "t9-delayed-post-stage-any-v6",
+   "condition": "C3",
+   "game_id": "2120531121.C3.s17-post-stage-v6-probe-1.p02",
+   "position": 2,
+   "red": "inert-v0",
+   "scenario_id": "2120531121",
+   "screen_position": 2
+  }
+ ],
+ "inputs": {
+  "shoot_manifest_sha256": "01c9c9675af4b0859fc55e54a5dc86513b624208bf13131e7b510b87a3122afd"
+ },
+ "intended_observations": [
+  "Sprint 9's T9Capture, the exploratory capture and the Sprint 17 full-step timeline with the seat-local reconstruction of baseline-v2, the stage-1 allocator and the candidate, with its memory chain, at every decision"
+ ],
+ "mechanism": "the executable delayed-post-stage-any v6 candidate plays its seat: frozen stage 1, Sprint 16's corrected deferred-history memory, the frozen post-stage-any trigger, Sprint 14's feasible-value redirect, at most one redirect per memory episode; it is expected to equal the frozen stage-1 allocator until the registered first divergences (decision 421 in 1930331196 C2, decision 361 in 2120531121 C3)",
+ "next_step_rule": "none automatic: after the analysis the study returns to the owner",
+ "players": [
+  {
+   "faction": 0,
+   "role": 1,
+   "seat": 1,
+   "user_id": 0,
+   "user_name": "demo"
+  },
+  {
+   "faction": 1,
+   "role": 1,
+   "seat": 11,
+   "user_id": 0,
+   "user_name": "demo"
+  }
+ ],
+ "policies": {
+  "baseline-v2-candidate-shoot-target-reservation": {
+   "label": "baseline-v2 (frozen)",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ],
+    "sha256": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ]
+   }
+  },
+  "t9-delayed-post-stage-any-v6": {
+   "label": "delayed post-stage-any redistribution, version 6 (Sprint 17 executable candidate)",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/exploratory_addon.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py",
+     "experiments/t9_batch.py",
+     "experiments/t9_delayed.py",
+     "experiments/t9_post_stage_v6.py",
+     "experiments/t9_redistribution.py"
+    ],
+    "sha256": "b60e3812a8d43ffaf3a015c87783f7693d8e98894c4fb2363b90ea59dd306ec0",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py",
+     "experiments/exploratory_addon.py",
+     "experiments/t9_batch.py",
+     "experiments/t9_redistribution.py",
+     "experiments/t9_delayed.py",
+     "experiments/t9_post_stage_v6.py"
+    ]
+   }
+  }
+ },
+ "purpose": "exploratory",
+ "randomness": {
+  "global_seed": 20260929,
+  "procedure": "each game runs in a fresh process; the harness seeds Python's and NumPy's global generators with global_seed before the engine is constructed and records whether the engine consumes them; no undocumented engine interface is used",
+  "python_hash_seed": 0
+ },
+ "runtime_environment": {
+  "OPENBLAS_NUM_THREADS": "1"
+ },
+ "safety_checks": [
+  "structural stops after every game (S1, S2, S3, S4, S6, S7 and the prefix check SP)",
+  "exactly two sessions after closed session 2793; exclusive diagnostic sessions, one at a time",
+  "every frozen implementation file pinned by digest; any difference refuses the card",
+  "the candidate's policy source pinned to b60e3812...; baseline-v2's to 7cbaf032..."
+ ],
+ "scenarios": [
+  {
+   "alternates": [
+    "2120511121",
+    "2130511421",
+    "2230531121",
+    "2230531221",
+    "2130511321",
+    "2130511121",
+    "2130511221"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+    "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+    "scenario": "a4536a361ac9dd879ad326d8c5f40583433c3299f5184b4af06ddb110ab297cf",
+    "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "operators": 54,
+   "red": 28,
+   "rule": "S2 fewest operators on map 21",
+   "scenario_id": "2120531121"
+  },
+  {
+   "alternates": [
+    "2020331196",
+    "2120331196",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2140331196"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "206c437995216aed6dd14a310d3a2ada0f7148dd8d40e4ec52c900b224d06f15",
+    "cost": "b136cc86cae77d53482f2b2ff3df0087278d51628e1a4cf453307d8da008997f",
+    "scenario": "a15d3b3bf499694d93a981511c16b5c1c9247487ac1cf1d88b2bf1bd2c75c1b1",
+    "see": "e69b9e85d77cc8de4600c42b48939ea625236a7a3b705090fa9b3745775009e2"
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "operators": 52,
+   "red": 26,
+   "rule": "S2 fewest operators on map 96",
+   "scenario_id": "1930331196"
+  }
+ ],
+ "schema": "miaosuan-exploratory-run-card/1",
+ "screen": {
+  "expected_sessions": [
+   2794,
+   2795
+  ],
+  "frozen_files": {
+   "scripts/build_s17_card.py": "f2f11441be5369170dc0b4dcfb67c3df071c82abc52914fe708535f5f4069644",
+   "scripts/run_evaluation.py": "d920f8e35c71edc078a8b17256c12aa4fe45a871244db78783dc1513a048aab2",
+   "scripts/run_s12_stage.py": "c8f092f4dc7f56a51614309fead4f24eacdb2761f4edd06cf08a2bf6939645c4",
+   "scripts/run_s17_game.py": "0e8ff33a3d2ec6f7801bb9c49974626bc30c9b525e080ae0e550a872edab70c3",
+   "scripts/run_s17_probe.py": "6ac58250181b5ffaf7a1848f481d67dd9e005e5a00e63b2fe94165f7c79d01a3",
+   "scripts/s14_design_replay.py": "4e9ec8cea206438edd09fb15121508a77779a379c3fc808a226e4cb6d71521ea",
+   "scripts/s17_analysis.py": "0d2e63c1dcc29082af0b6c5333f470d8d17730d2cde9fefd97bd1bd6d3fe31a6",
+   "src/miaosuan_agent/evaluation/exploratory.py": "5cbc6296314706a6f46f740f5e66e454385c9828f0dfbaa14f7db68503aad8d3",
+   "src/miaosuan_agent/evaluation/game.py": "50a1c5a2b672d418941cbfb90ac90c11625102c18ce00474e22c379114b025a2",
+   "src/miaosuan_agent/evaluation/residual516.py": "cb397781063722a67e34f98ef3130bf0adc6a34432666586ddfdd182de1ef437",
+   "src/miaosuan_agent/evaluation/s12_capture.py": "0412c4983e243726fc0bc4062c8b5d033e67b831c9bbdc9b85acb7ddadb42423",
+   "src/miaosuan_agent/evaluation/s12_screen.py": "bb69cc96e4e35daade0ec9eca98dcaf84a3e0c5973f9d91a028781000570a67e",
+   "src/miaosuan_agent/evaluation/s12_timeline.py": "5e2ae9e1357b77d8baaeb639a7eac091dfa64d9164a6f6d4d447bc6d7c7f5632",
+   "src/miaosuan_agent/evaluation/s13_diagnosis.py": "d8e29d82c82933503c77080292048d18765ebf02801681814fa351e0705c5158",
+   "src/miaosuan_agent/evaluation/s14_design.py": "84f2df140a330edce5a3eba93fe1c937d60027c8c2a9f52593966eb6e329a3df",
+   "src/miaosuan_agent/evaluation/s15_delayed.py": "05fbc5d48e3cd85f16252d63e51b5c9ee0e3e5a0c27b4e43a055d6f37386c0c1",
+   "src/miaosuan_agent/evaluation/s16_mechanism.py": "c54e426bd2cd93bbb45b3c15b1fc3fdae8ae8d3c9748fee1862b6cd3b56945b3",
+   "src/miaosuan_agent/evaluation/s16_shadow.py": "8aad7a4efc9b0c613af996608b2b7ae146ee593bb973462e7ecc849f3f6d1c03",
+   "src/miaosuan_agent/evaluation/s17_capture.py": "1b1ba7507e25d5f70af5d9eb7e54e4f65113f1482ae619a986aef784cd212fc6",
+   "src/miaosuan_agent/evaluation/s17_probe.py": "998801d7b1140e55131f8f67b22d762398d3723e496a6f6ffce7edd36a83af6c",
+   "src/miaosuan_agent/evaluation/t9_confirmation.py": "2c694b542c20a950cb1bd2662c6d3acf523e224f9098d317763acf3947b7fa62",
+   "src/miaosuan_agent/experiments/exploratory_addon.py": "803f110696670adedb1531cf490dc331176abdfef8b665071ecd30d4168425f1",
+   "src/miaosuan_agent/experiments/t9_batch.py": "ba0e3fcd5e7b9c223b5d22129f37c06fb3bcb7ab071b0a825de6552f3edd7510",
+   "src/miaosuan_agent/experiments/t9_delayed.py": "bd1cf3a38ff6c1ce4f2a1d1dd639819496019bd1ec0505134d3018b9c604eecd",
+   "src/miaosuan_agent/experiments/t9_post_stage_v6.py": "882478f0580ea676cfc399ee5899277e00b6166ad1a2273ebeb88361909908a3",
+   "src/miaosuan_agent/experiments/t9_redistribution.py": "dff214ce6605270cf6f36cdb553a5757bf5a6d96407b5583f42ade1dc56c46b8",
+   "tests/test_s17_probe.py": "d31f760424d9f36c30df1eaaffef2a49d91c52bca6fa98909b4020abebbe20c7",
+   "tests/test_t9_post_stage_v6.py": "f3c111a77ad23092056dd77a5c76ad8582b4ef3eb766ec0c24f9931e08cdc25d"
+  },
+  "id": "s17-first-divergence-probe",
+  "prefix_reference": {
+   "canonical_sha256": "22ccef48831cae3a1100497f329f10a842cfff51ac3ae6e35dd0afb3acea9099",
+   "card": "s16-v3-mechanism-capture-1",
+   "games": {
+    "1930331196 C2": "1930331196.C2.s16-v3-mechanism-capture-1.p02",
+    "2120531121 C3": "2120531121.C3.s16-v3-mechanism-capture-1.p03"
+   }
+  },
+  "rules": {
+   "capacity": 4,
+   "early_place_blocks_allowed": 0,
+   "first_divergence": {
+    "1930331196 C2": 421,
+    "2120531121 C3": 361
+   },
+   "first_divergence_redirected_vehicles": {
+    "1930331196 C2": 2,
+    "2120531121 C3": 2
+   },
+   "first_ownership_deadline": 564,
+   "max_step": 2880,
+   "problem_objective": "80-point objective A",
+   "protected_fire_decisions": [
+    611,
+    686
+   ]
+  },
+  "rules_sha256": "6d373079536e57915e4190ec7720a51222a1a900e3ca18b59479e59b90295f08",
+  "stage": "probe",
+  "structural_stops": [
+   "S1",
+   "S2",
+   "S3",
+   "S4",
+   "S6",
+   "S7",
+   "SP"
+  ]
+ },
+ "status": "EXPLORATORY TRACK - REGISTERED MECHANISM PROBE - NOT A SCORE SCREEN - NOT ELIGIBLE FOR PROMOTION",
+ "track": "EXPLORATORY",
+ "version": "t9-delayed-post-stage-any-v6, Sprint 17 first-divergence probe (docs/SPRINT17_FIRST_DIVERGENCE_PROBE.md)"
+}
