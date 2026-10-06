@@ -1,0 +1,58 @@
+{
+ "classes": {
+  "1930331196 C2": "C2_PREFIX_AMBIGUOUS",
+  "1930331196 C3": "C3_PREFIX_SAFE",
+  "2120531121 C3": "C3_212_PREFIX_AMBIGUOUS"
+ },
+ "disposition": {
+  "configurations": [
+   "1930331196 C2",
+   "2120531121 C3"
+  ],
+  "disposition": "MECHANISM_AMBIGUOUS"
+ },
+ "inputs_sha256": "39473714fa64352abf819c824e2b516936b67353ada77e994273a2cff9894e09",
+ "note": "mechanism capture: frozen v3 played every decision of its seat; every shadow figure is a decision computed afterwards on the recorded v3 observations. Before a shadow's first divergence the recorded states are its own trajectory (on-policy); every later figure is OFF-POLICY shadow replay on v3 states and is descriptive only. Nothing here is a score estimate or evidence of an effect; one game per configuration shows one observed trajectory, not what a configuration can or cannot do",
+ "other_shadows": {
+  "delayed-post-stage-same": {
+   "1930331196 C2": "C2_PREFIX_SAFE",
+   "1930331196 C3": "C3_PREFIX_SAFE",
+   "2120531121 C3": "C3_212_PREFIX_AMBIGUOUS"
+  },
+  "delayed-repeat-2": {
+   "1930331196 C2": "C2_PREFIX_SAFE",
+   "1930331196 C3": "C3_PREFIX_SAFE",
+   "2120531121 C3": "C3_212_PREFIX_AMBIGUOUS"
+  },
+  "delayed-repeat-3": {
+   "1930331196 C2": "C2_PREFIX_SAFE",
+   "1930331196 C3": "C3_PREFIX_SAFE",
+   "2120531121 C3": "C3_212_PREFIX_AMBIGUOUS"
+  },
+  "delayed-saturated-source": {
+   "1930331196 C2": "C2_PREFIX_SAFE",
+   "1930331196 C3": "C3_PREFIX_SAFE",
+   "2120531121 C3": "C3_212_PREFIX_SAFE"
+  },
+  "delayed-stable-alternative": {
+   "1930331196 C2": "C2_PREFIX_SAFE",
+   "1930331196 C3": "C3_PREFIX_SAFE",
+   "2120531121 C3": "C3_212_PREFIX_AMBIGUOUS"
+  }
+ },
+ "problems": [],
+ "schema": "miaosuan-s16-mechanism/1",
+ "statement": "the disposition concerns the target shadow's first divergence on three observed v3 trajectories; it authorizes no engine use and returns to the owner",
+ "sublabels": {
+  "1930331196 C2": "first divergence inside the risk window on a unit with no firing role: the world diverges before the window ends",
+  "1930331196 C3": "NO_TRIGGER_OBSERVED",
+  "2120531121 C3": "first divergence inside the risk window, no bad-reservation clause: the world diverges before v3's capture"
+ },
+ "target": "delayed-post-stage-any",
+ "target_identity": "s16-delayed-post-stage-any-shadow-v6",
+ "target_restoration_and_recourse": {
+  "R3_pass": true,
+  "R4_pass": true,
+  "note": "reported with their frozen values; they do not enter the Sprint 16 disposition"
+ }
+}

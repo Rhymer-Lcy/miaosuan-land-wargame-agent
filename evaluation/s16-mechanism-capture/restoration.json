@@ -1,0 +1,341 @@
+{
+ "inputs_sha256": "39473714fa64352abf819c824e2b516936b67353ada77e994273a2cff9894e09",
+ "note": "mechanism capture: frozen v3 played every decision of its seat; every shadow figure is a decision computed afterwards on the recorded v3 observations. Before a shadow's first divergence the recorded states are its own trajectory (on-policy); every later figure is OFF-POLICY shadow replay on v3 states and is descriptive only. Nothing here is a score estimate or evidence of an effect; one game per configuration shows one observed trajectory, not what a configuration can or cannot do",
+ "reference": {
+  "H1": 15,
+  "H2": 26
+ },
+ "schema": "miaosuan-s16-mechanism/1",
+ "shadows": {
+  "delayed-post-stage-any": {
+   "R3_distinct_unit_restoration": {
+    "pass": true,
+    "reference_reproduced": {
+     "H1": true,
+     "H2": true
+    },
+    "seats": {
+     "H1": {
+      "pass": true,
+      "reference_units": 15,
+      "required": 8,
+      "restored_units": 9
+     },
+     "H2": {
+      "pass": true,
+      "reference_units": 26,
+      "required": 13,
+      "restored_units": 21
+     }
+    }
+   },
+   "R4_pass": true,
+   "R4_recourse_new_captures_off_policy": {
+    "episodes": 70,
+    "episodes_over_limit": 0,
+    "episodes_with_a_redirect": 13,
+    "limit": 1,
+    "max_redirects_per_episode": 1,
+    "multi_destination_episodes": 0,
+    "oscillations_across_episodes": 0,
+    "pass": true,
+    "redirects_outside_episodes": 0,
+    "redirects_per_unit": {
+     "1": 9,
+     "2": 2
+    }
+   },
+   "R4_recourse_primary": {
+    "episodes": 170,
+    "episodes_over_limit": 0,
+    "episodes_with_a_redirect": 76,
+    "limit": 1,
+    "max_redirects_per_episode": 1,
+    "multi_destination_episodes": 0,
+    "oscillations_across_episodes": 0,
+    "pass": true,
+    "redirects_outside_episodes": 0,
+    "redirects_per_unit": {
+     "1": 6,
+     "2": 12,
+     "3": 6,
+     "4": 3,
+     "5": 2,
+     "6": 1
+    }
+   },
+   "identity": "s16-delayed-post-stage-any-shadow-v6"
+  },
+  "delayed-post-stage-same": {
+   "R3_distinct_unit_restoration": {
+    "pass": false,
+    "reference_reproduced": {
+     "H1": true,
+     "H2": true
+    },
+    "seats": {
+     "H1": {
+      "pass": false,
+      "reference_units": 15,
+      "required": 8,
+      "restored_units": 2
+     },
+     "H2": {
+      "pass": false,
+      "reference_units": 26,
+      "required": 13,
+      "restored_units": 8
+     }
+    }
+   },
+   "R4_pass": true,
+   "R4_recourse_new_captures_off_policy": {
+    "episodes": 70,
+    "episodes_over_limit": 0,
+    "episodes_with_a_redirect": 7,
+    "limit": 1,
+    "max_redirects_per_episode": 1,
+    "multi_destination_episodes": 0,
+    "oscillations_across_episodes": 0,
+    "pass": true,
+    "redirects_outside_episodes": 0,
+    "redirects_per_unit": {
+     "1": 7
+    }
+   },
+   "R4_recourse_primary": {
+    "episodes": 170,
+    "episodes_over_limit": 0,
+    "episodes_with_a_redirect": 10,
+    "limit": 1,
+    "max_redirects_per_episode": 1,
+    "multi_destination_episodes": 0,
+    "oscillations_across_episodes": 0,
+    "pass": true,
+    "redirects_outside_episodes": 0,
+    "redirects_per_unit": {
+     "1": 10
+    }
+   },
+   "identity": "s16-delayed-post-stage-same-shadow-v6"
+  },
+  "delayed-repeat-2": {
+   "R3_distinct_unit_restoration": {
+    "pass": false,
+    "reference_reproduced": {
+     "H1": true,
+     "H2": true
+    },
+    "seats": {
+     "H1": {
+      "pass": false,
+      "reference_units": 15,
+      "required": 8,
+      "restored_units": 3
+     },
+     "H2": {
+      "pass": true,
+      "reference_units": 26,
+      "required": 13,
+      "restored_units": 16
+     }
+    }
+   },
+   "R4_pass": true,
+   "R4_recourse_new_captures_off_policy": {
+    "episodes": 70,
+    "episodes_over_limit": 0,
+    "episodes_with_a_redirect": 7,
+    "limit": 1,
+    "max_redirects_per_episode": 1,
+    "multi_destination_episodes": 0,
+    "oscillations_across_episodes": 0,
+    "pass": true,
+    "redirects_outside_episodes": 0,
+    "redirects_per_unit": {
+     "1": 7
+    }
+   },
+   "R4_recourse_primary": {
+    "episodes": 170,
+    "episodes_over_limit": 0,
+    "episodes_with_a_redirect": 23,
+    "limit": 1,
+    "max_redirects_per_episode": 1,
+    "multi_destination_episodes": 0,
+    "oscillations_across_episodes": 0,
+    "pass": true,
+    "redirects_outside_episodes": 0,
+    "redirects_per_unit": {
+     "1": 15,
+     "2": 4
+    }
+   },
+   "identity": "s16-delayed-repeat-2-shadow-v6"
+  },
+  "delayed-repeat-3": {
+   "R3_distinct_unit_restoration": {
+    "pass": false,
+    "reference_reproduced": {
+     "H1": true,
+     "H2": true
+    },
+    "seats": {
+     "H1": {
+      "pass": false,
+      "reference_units": 15,
+      "required": 8,
+      "restored_units": 2
+     },
+     "H2": {
+      "pass": true,
+      "reference_units": 26,
+      "required": 13,
+      "restored_units": 16
+     }
+    }
+   },
+   "R4_pass": true,
+   "R4_recourse_new_captures_off_policy": {
+    "episodes": 70,
+    "episodes_over_limit": 0,
+    "episodes_with_a_redirect": 7,
+    "limit": 1,
+    "max_redirects_per_episode": 1,
+    "multi_destination_episodes": 0,
+    "oscillations_across_episodes": 0,
+    "pass": true,
+    "redirects_outside_episodes": 0,
+    "redirects_per_unit": {
+     "1": 7
+    }
+   },
+   "R4_recourse_primary": {
+    "episodes": 170,
+    "episodes_over_limit": 0,
+    "episodes_with_a_redirect": 22,
+    "limit": 1,
+    "max_redirects_per_episode": 1,
+    "multi_destination_episodes": 0,
+    "oscillations_across_episodes": 0,
+    "pass": true,
+    "redirects_outside_episodes": 0,
+    "redirects_per_unit": {
+     "1": 14,
+     "2": 4
+    }
+   },
+   "identity": "s16-delayed-repeat-3-shadow-v6"
+  },
+  "delayed-saturated-source": {
+   "R3_distinct_unit_restoration": {
+    "pass": false,
+    "reference_reproduced": {
+     "H1": true,
+     "H2": true
+    },
+    "seats": {
+     "H1": {
+      "pass": false,
+      "reference_units": 15,
+      "required": 8,
+      "restored_units": 0
+     },
+     "H2": {
+      "pass": false,
+      "reference_units": 26,
+      "required": 13,
+      "restored_units": 0
+     }
+    }
+   },
+   "R4_pass": true,
+   "R4_recourse_new_captures_off_policy": {
+    "episodes": 70,
+    "episodes_over_limit": 0,
+    "episodes_with_a_redirect": 0,
+    "limit": 1,
+    "max_redirects_per_episode": 0,
+    "multi_destination_episodes": 0,
+    "oscillations_across_episodes": 0,
+    "pass": true,
+    "redirects_outside_episodes": 0,
+    "redirects_per_unit": {}
+   },
+   "R4_recourse_primary": {
+    "episodes": 170,
+    "episodes_over_limit": 0,
+    "episodes_with_a_redirect": 0,
+    "limit": 1,
+    "max_redirects_per_episode": 0,
+    "multi_destination_episodes": 0,
+    "oscillations_across_episodes": 0,
+    "pass": true,
+    "redirects_outside_episodes": 0,
+    "redirects_per_unit": {}
+   },
+   "identity": "s16-delayed-saturated-source-shadow-v6"
+  },
+  "delayed-stable-alternative": {
+   "R3_distinct_unit_restoration": {
+    "pass": false,
+    "reference_reproduced": {
+     "H1": true,
+     "H2": true
+    },
+    "seats": {
+     "H1": {
+      "pass": false,
+      "reference_units": 15,
+      "required": 8,
+      "restored_units": 2
+     },
+     "H2": {
+      "pass": true,
+      "reference_units": 26,
+      "required": 13,
+      "restored_units": 16
+     }
+    }
+   },
+   "R4_pass": true,
+   "R4_recourse_new_captures_off_policy": {
+    "episodes": 70,
+    "episodes_over_limit": 0,
+    "episodes_with_a_redirect": 7,
+    "limit": 1,
+    "max_redirects_per_episode": 1,
+    "multi_destination_episodes": 0,
+    "oscillations_across_episodes": 0,
+    "pass": true,
+    "redirects_outside_episodes": 0,
+    "redirects_per_unit": {
+     "1": 7
+    }
+   },
+   "R4_recourse_primary": {
+    "episodes": 170,
+    "episodes_over_limit": 0,
+    "episodes_with_a_redirect": 22,
+    "limit": 1,
+    "max_redirects_per_episode": 1,
+    "multi_destination_episodes": 0,
+    "oscillations_across_episodes": 0,
+    "pass": true,
+    "redirects_outside_episodes": 0,
+    "redirects_per_unit": {
+     "1": 14,
+     "2": 4
+    }
+   },
+   "identity": "s16-delayed-stable-alternative-shadow-v6"
+  }
+ },
+ "thresholds": {
+  "recourse_per_episode_max": 1,
+  "restoration_required": {
+   "H1": 8,
+   "H2": 13
+  }
+ }
+}

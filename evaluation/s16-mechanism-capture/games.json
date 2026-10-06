@@ -1,0 +1,976 @@
+{
+ "card": {
+  "canonical_sha256": "22ccef48831cae3a1100497f329f10a842cfff51ac3ae6e35dd0afb3acea9099",
+  "id": "s16-v3-mechanism-capture-1"
+ },
+ "games": [
+  {
+   "configuration": "1930331196 C3",
+   "fire_in_the_new_game": {
+    "decisions_with_a_listing": 3,
+    "first_listing_decision": 742,
+    "last_listing_decision": 802,
+    "order_decisions": [
+     212,
+     287,
+     362,
+     437,
+     742,
+     801,
+     802
+    ],
+    "orders": 8,
+    "responses": {
+     "accepted": 8
+    },
+    "units_with_a_fire_role": 5
+   },
+   "game_id": "1930331196.C3.s16-v3-mechanism-capture-1.p01",
+   "offline_reconstruction": {
+    "allocation_compared": 2881,
+    "baseline_compared": 2881,
+    "decisions": 2881,
+    "problems": 0,
+    "v3_compared": 2881
+   },
+   "position": 1,
+   "reported_v3_findings": [],
+   "risk_window_end_decision": 876,
+   "session": "2791",
+   "staging_then_overflow_on_the_v3_trajectory": {
+    "events": {
+     "at_another_source": 2697,
+     "overflow_after_completed_staging": 15119
+    },
+    "first": {
+     "other_source": 621,
+     "other_source_with_alternative": null
+    }
+   },
+   "status": "COMPLETED",
+   "steps": 2881,
+   "structural_stops": [],
+   "v3": {
+    "attack": 88,
+    "candidate_side": "blue",
+    "capture_digests": {
+     "t9.json": true,
+     "timeline.json": true,
+     "timeline.pkl": true,
+     "v3.json": true,
+     "v3series.json.gz": true
+    },
+    "capture_order": [
+     "80-point objective A",
+     "50-point objective A",
+     "50-point objective C",
+     "50-point objective B",
+     "80-point objective B"
+    ],
+    "card": "s16-v3-mechanism-capture-1",
+    "commitments": {
+     "max_counted": 4,
+     "max_raw": 4,
+     "raw_above_capacity": 0,
+     "raw_above_capacity_with_released": 0
+    },
+    "condition": "C3",
+    "consistency": {
+     "differences": 0,
+     "reconstructed_decisions": 2881,
+     "structural": {
+      "cross_objective": 0,
+      "invented": 0,
+      "prefix_failures": 0,
+      "unrelated_changed": 0
+     }
+    },
+    "coverage": 3.3447916666666666,
+    "fifth_objective_last_to_own_step": 2305,
+    "fire": {
+     "decisions_with_shot_listed": 3,
+     "orders": 8,
+     "reference_decisions": {
+      "742": {
+       "orders": 2,
+       "shot_listed": true
+      },
+      "804": {
+       "orders": 0,
+       "shot_listed": false
+      },
+      "841": {
+       "orders": 0,
+       "shot_listed": false
+      },
+      "876": {
+       "orders": 0,
+       "shot_listed": false
+      }
+     },
+     "responses": {
+      "accepted": 8
+     },
+     "shots_listed": 5
+    },
+    "flags": [
+     "a unit staged or withheld for 1,440 or more consecutive decisions while its objective was not own"
+    ],
+    "game_id": "1930331196.C3.s16-v3-mechanism-capture-1.p01",
+    "held_at_end": 5,
+    "holds": {
+     "changes": {
+      "1:stage": 26,
+      "1:withhold": 16691
+     },
+     "episodes": 38,
+     "long_holds_flagged": 4,
+     "longest_decisions": 1585
+    },
+    "latency": {
+     "decisions": 2881,
+     "max_ms": 107.465,
+     "over_100ms": 1,
+     "over_1s": 0,
+     "p50_ms": 1.483,
+     "p99_ms": 1.765
+    },
+    "lost": 0,
+    "margin": 570,
+    "objectives": {
+     "50-point objective A": {
+      "first_own_step": 582,
+      "last_to_own_step": 582,
+      "outcomes": {
+       "ARRIVED_NOT_DECISIVE": 1,
+       "OCCUPIED": 1,
+       "REDUNDANT": 2
+      },
+      "own_at_end": true,
+      "places_selected": 4,
+      "transitions": 1
+     },
+     "50-point objective B": {
+      "first_own_step": 701,
+      "last_to_own_step": 701,
+      "outcomes": {
+       "ARRIVED_NOT_DECISIVE": 1,
+       "HELD": 1,
+       "OCCUPIED": 1,
+       "REDUNDANT": 1
+      },
+      "own_at_end": true,
+      "places_selected": 4,
+      "transitions": 1
+     },
+     "50-point objective C": {
+      "first_own_step": 663,
+      "last_to_own_step": 663,
+      "outcomes": {
+       "ARRIVED_NOT_DECISIVE": 1,
+       "OCCUPIED": 1,
+       "REDUNDANT": 2
+      },
+      "own_at_end": true,
+      "places_selected": 4,
+      "transitions": 1
+     },
+     "80-point objective A": {
+      "first_own_step": 521,
+      "last_to_own_step": 521,
+      "outcomes": {
+       "ARRIVED_NOT_DECISIVE": 1,
+       "OCCUPIED": 1,
+       "REDUNDANT": 2
+      },
+      "own_at_end": true,
+      "places_selected": 4,
+      "transitions": 1
+     },
+     "80-point objective B": {
+      "first_own_step": 2305,
+      "last_to_own_step": 2305,
+      "outcomes": {
+       "HELD": 3,
+       "OCCUPIED": 1
+      },
+      "own_at_end": true,
+      "places_selected": 4,
+      "transitions": 1
+     }
+    },
+    "objectives_at_end": 5,
+    "observer_seconds": {
+     "timeline": 9.138002605177462
+    },
+    "occupation": {
+     "listed_unit_states": 10,
+     "orders": 5,
+     "responses": {
+      "accepted": 5
+     }
+    },
+    "occupy": 310,
+    "opponent_total": 235,
+    "places": {
+     "arrival_delay": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 20
+     },
+     "arrival_slack": {
+      "max": 2360,
+      "median": 2180,
+      "min": 432,
+      "n": 20
+     },
+     "arrival_slack_by_outcome": {
+      "ARRIVED_NOT_DECISIVE": {
+       "max": 2360,
+       "median": 2218,
+       "min": 2180,
+       "n": 4
+      },
+      "HELD": {
+       "max": 2160,
+       "median": 432,
+       "min": 432,
+       "n": 4
+      },
+      "OCCUPIED": {
+       "max": 2360,
+       "median": 2218,
+       "min": 576,
+       "n": 5
+      },
+      "REDUNDANT": {
+       "max": 2320,
+       "median": 2260,
+       "min": 2160,
+       "n": 7
+      }
+     },
+     "arrival_to_first_occupation_listing": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 10
+     },
+     "arrival_to_path_end": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 20
+     },
+     "by_kind": {
+      "infantry": 4,
+      "vehicle": 16
+     },
+     "occupation_responses": {
+      "accepted": 5
+     },
+     "outcomes": {
+      "ARRIVED_NOT_DECISIVE": 4,
+      "HELD": 4,
+      "LOST": 0,
+      "NEVER_ARRIVED": 0,
+      "OCCUPIED": 5,
+      "REDUNDANT": 7,
+      "TOO_LATE": 0
+     },
+     "path_end_to_stationary": {
+      "max": 575,
+      "median": 376,
+      "min": 75,
+      "n": 20
+     },
+     "predicted_slack": {
+      "max": 2360,
+      "median": 2180,
+      "min": 432,
+      "n": 20
+     },
+     "selected": 20
+    },
+    "premise": {
+     "arrivals_earlier_than_free_flow": 0
+    },
+    "refusal_classes": {},
+    "remain": 407,
+    "scenario_id": "1930331196",
+    "scores": {
+     "blue_attack": 88,
+     "blue_occupy": 310,
+     "blue_remain": 407,
+     "blue_remain_max": 407,
+     "blue_total": 805,
+     "blue_win": 570
+    },
+    "screen_position": 1,
+    "session": "2791",
+    "staging": {
+     "max_staging_hex_occupancy": 4,
+     "stage_rejected": 0,
+     "staged_moves": 26,
+     "staging_hexes": 12,
+     "waits": {
+      "n": 0
+     },
+     "waits_above_flag": 0
+    },
+    "staging_blocks_to_end": 0,
+    "status": "COMPLETED",
+    "steps": 2881,
+    "stop_details_count": 0,
+    "stops": {},
+    "unproductive": {
+     "holds": 16715,
+     "holds_behind_an_unproductive_place": 0,
+     "unproductive_holders": 0
+    },
+    "waiting_max": 3,
+    "waiting_unit_steps": 75
+   }
+  },
+  {
+   "configuration": "1930331196 C2",
+   "fire_in_the_new_game": {
+    "decisions_with_a_listing": 0,
+    "first_listing_decision": null,
+    "last_listing_decision": null,
+    "order_decisions": [
+     611,
+     686
+    ],
+    "orders": 2,
+    "responses": {
+     "accepted": 2
+    },
+    "units_with_a_fire_role": 1
+   },
+   "game_id": "1930331196.C2.s16-v3-mechanism-capture-1.p02",
+   "offline_reconstruction": {
+    "allocation_compared": 2881,
+    "baseline_compared": 2881,
+    "decisions": 2881,
+    "problems": 0,
+    "v3_compared": 2881
+   },
+   "position": 2,
+   "reported_v3_findings": [],
+   "risk_window_end_decision": 686,
+   "session": "2792",
+   "staging_then_overflow_on_the_v3_trajectory": {
+    "events": {
+     "at_another_source": 13,
+     "at_another_source_with_an_admissible_alternative": 6,
+     "overflow_after_completed_staging": 132
+    },
+    "first": {
+     "other_source": 421,
+     "other_source_with_alternative": 421
+    }
+   },
+   "status": "COMPLETED",
+   "steps": 2881,
+   "structural_stops": [],
+   "v3": {
+    "attack": 24,
+    "candidate_side": "red",
+    "capture_digests": {
+     "t9.json": true,
+     "timeline.json": true,
+     "timeline.pkl": true,
+     "v3.json": true,
+     "v3series.json.gz": true
+    },
+    "capture_order": [
+     "50-point objective A",
+     "50-point objective C",
+     "80-point objective A",
+     "50-point objective B",
+     "80-point objective B"
+    ],
+    "card": "s16-v3-mechanism-capture-1",
+    "commitments": {
+     "max_counted": 4,
+     "max_raw": 4,
+     "raw_above_capacity": 0,
+     "raw_above_capacity_with_released": 0
+    },
+    "condition": "C2",
+    "consistency": {
+     "differences": 0,
+     "reconstructed_decisions": 2881,
+     "structural": {
+      "cross_objective": 0,
+      "invented": 0,
+      "prefix_failures": 0,
+      "unrelated_changed": 0
+     }
+    },
+    "coverage": 3.9618055555555554,
+    "fifth_objective_last_to_own_step": 885,
+    "fire": {
+     "decisions_with_shot_listed": 0,
+     "orders": 2,
+     "reference_decisions": {
+      "611": {
+       "orders": 1,
+       "shot_listed": false
+      }
+     },
+     "responses": {
+      "accepted": 2
+     },
+     "shots_listed": 0
+    },
+    "flags": [],
+    "game_id": "1930331196.C2.s16-v3-mechanism-capture-1.p02",
+    "held_at_end": 5,
+    "holds": {
+     "changes": {
+      "0:stage": 24,
+      "0:withhold": 121
+     },
+     "episodes": 30,
+     "long_holds_flagged": 0,
+     "longest_decisions": 25
+    },
+    "latency": {
+     "decisions": 2881,
+     "max_ms": 53.633,
+     "over_100ms": 0,
+     "over_1s": 0,
+     "p50_ms": 0.803,
+     "p99_ms": 1.22
+    },
+    "lost": 0,
+    "margin": 274,
+    "objectives": {
+     "50-point objective A": {
+      "first_own_step": 361,
+      "last_to_own_step": 361,
+      "outcomes": {
+       "OCCUPIED": 1,
+       "REDUNDANT": 3
+      },
+      "own_at_end": true,
+      "places_selected": 4,
+      "transitions": 1
+     },
+     "50-point objective B": {
+      "first_own_step": 804,
+      "last_to_own_step": 804,
+      "outcomes": {
+       "HELD": 2,
+       "OCCUPIED": 1,
+       "REDUNDANT": 1
+      },
+      "own_at_end": true,
+      "places_selected": 4,
+      "transitions": 1
+     },
+     "50-point objective C": {
+      "first_own_step": 442,
+      "last_to_own_step": 442,
+      "outcomes": {
+       "OCCUPIED": 1,
+       "REDUNDANT": 3
+      },
+      "own_at_end": true,
+      "places_selected": 4,
+      "transitions": 1
+     },
+     "80-point objective A": {
+      "first_own_step": 503,
+      "last_to_own_step": 503,
+      "outcomes": {
+       "OCCUPIED": 1,
+       "REDUNDANT": 3
+      },
+      "own_at_end": true,
+      "places_selected": 4,
+      "transitions": 1
+     },
+     "80-point objective B": {
+      "first_own_step": 885,
+      "last_to_own_step": 885,
+      "outcomes": {
+       "HELD": 3,
+       "OCCUPIED": 1
+      },
+      "own_at_end": true,
+      "places_selected": 4,
+      "transitions": 1
+     }
+    },
+    "objectives_at_end": 5,
+    "observer_seconds": {
+     "timeline": 7.1844170689582825
+    },
+    "occupation": {
+     "listed_unit_states": 5,
+     "orders": 5,
+     "responses": {
+      "accepted": 5
+     }
+    },
+    "occupy": 310,
+    "opponent_total": 383,
+    "places": {
+     "arrival_delay": {
+      "max": 60,
+      "median": 0,
+      "min": 0,
+      "n": 20
+     },
+     "arrival_slack": {
+      "max": 2520,
+      "median": 2360,
+      "min": 144,
+      "n": 20
+     },
+     "arrival_slack_by_outcome": {
+      "HELD": {
+       "max": 1997,
+       "median": 1956,
+       "min": 144,
+       "n": 5
+      },
+      "OCCUPIED": {
+       "max": 2520,
+       "median": 2378,
+       "min": 1996,
+       "n": 5
+      },
+      "REDUNDANT": {
+       "max": 2500,
+       "median": 2400,
+       "min": 2060,
+       "n": 10
+      }
+     },
+     "arrival_to_first_occupation_listing": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 5
+     },
+     "arrival_to_path_end": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 20
+     },
+     "by_kind": {
+      "infantry": 1,
+      "vehicle": 19
+     },
+     "occupation_responses": {
+      "accepted": 5
+     },
+     "outcomes": {
+      "ARRIVED_NOT_DECISIVE": 0,
+      "HELD": 5,
+      "LOST": 0,
+      "NEVER_ARRIVED": 0,
+      "OCCUPIED": 5,
+      "REDUNDANT": 10,
+      "TOO_LATE": 0
+     },
+     "path_end_to_stationary": {
+      "max": 619,
+      "median": 457,
+      "min": 75,
+      "n": 20
+     },
+     "predicted_slack": {
+      "max": 2520,
+      "median": 2360,
+      "min": 144,
+      "n": 20
+     },
+     "selected": 20
+    },
+    "premise": {
+     "arrivals_earlier_than_free_flow": 0
+    },
+    "refusal_classes": {},
+    "remain": 323,
+    "scenario_id": "1930331196",
+    "scores": {
+     "red_attack": 24,
+     "red_occupy": 310,
+     "red_remain": 323,
+     "red_remain_max": 323,
+     "red_total": 657,
+     "red_win": 274
+    },
+    "screen_position": 2,
+    "session": "2792",
+    "staging": {
+     "max_staging_hex_occupancy": 4,
+     "stage_rejected": 0,
+     "staged_moves": 24,
+     "staging_hexes": 11,
+     "waits": {
+      "max": 20,
+      "median": 20,
+      "min": 4,
+      "n": 3
+     },
+     "waits_above_flag": 0
+    },
+    "staging_blocks_to_end": 0,
+    "status": "COMPLETED",
+    "steps": 2881,
+    "stop_details_count": 0,
+    "stops": {},
+    "unproductive": {
+     "holds": 145,
+     "holds_behind_an_unproductive_place": 0,
+     "unproductive_holders": 0
+    },
+    "waiting_max": 5,
+    "waiting_unit_steps": 150
+   }
+  },
+  {
+   "configuration": "2120531121 C3",
+   "fire_in_the_new_game": {
+    "decisions_with_a_listing": 18,
+    "first_listing_decision": 321,
+    "last_listing_decision": 841,
+    "order_decisions": [
+     168,
+     243,
+     318,
+     321,
+     341,
+     342,
+     361,
+     401,
+     402,
+     476,
+     477,
+     551,
+     552,
+     583,
+     616,
+     626,
+     627,
+     656,
+     691,
+     766,
+     841
+    ],
+    "orders": 21,
+    "responses": {
+     "accepted": 21
+    },
+    "units_with_a_fire_role": 9
+   },
+   "game_id": "2120531121.C3.s16-v3-mechanism-capture-1.p03",
+   "offline_reconstruction": {
+    "allocation_compared": 2881,
+    "baseline_compared": 2881,
+    "decisions": 2881,
+    "problems": 0,
+    "v3_compared": 2881
+   },
+   "position": 3,
+   "problem_objective": {
+    "label": "80-point objective A",
+    "v3_first_ownership_decision": 564
+   },
+   "reported_v3_findings": [],
+   "risk_window_end_decision": 564,
+   "session": "2793",
+   "staging_then_overflow_on_the_v3_trajectory": {
+    "events": {
+     "at_another_source": 10,
+     "at_another_source_with_an_admissible_alternative": 4,
+     "overflow_after_completed_staging": 313
+    },
+    "first": {
+     "other_source": 361,
+     "other_source_with_alternative": 361
+    }
+   },
+   "status": "COMPLETED",
+   "steps": 2881,
+   "structural_stops": [],
+   "v3": {
+    "attack": 98,
+    "candidate_side": "blue",
+    "capture_digests": {
+     "t9.json": true,
+     "timeline.json": true,
+     "timeline.pkl": true,
+     "v3.json": true,
+     "v3series.json.gz": true
+    },
+    "capture_order": [
+     "50-point objective C",
+     "50-point objective B",
+     "50-point objective A",
+     "80-point objective B",
+     "80-point objective A"
+    ],
+    "card": "s16-v3-mechanism-capture-1",
+    "commitments": {
+     "max_counted": 4,
+     "max_raw": 4,
+     "raw_above_capacity": 0,
+     "raw_above_capacity_with_released": 0
+    },
+    "condition": "C3",
+    "consistency": {
+     "differences": 0,
+     "reconstructed_decisions": 2881,
+     "structural": {
+      "cross_objective": 0,
+      "invented": 0,
+      "prefix_failures": 0,
+      "unrelated_changed": 0
+     }
+    },
+    "coverage": 4.220833333333333,
+    "fifth_objective_last_to_own_step": 563,
+    "fire": {
+     "decisions_with_shot_listed": 18,
+     "orders": 21,
+     "reference_decisions": {},
+     "responses": {
+      "accepted": 21
+     },
+     "shots_listed": 20
+    },
+    "flags": [],
+    "game_id": "2120531121.C3.s16-v3-mechanism-capture-1.p03",
+    "held_at_end": 5,
+    "holds": {
+     "changes": {
+      "1:stage": 22,
+      "1:withhold": 303
+     },
+     "episodes": 30,
+     "long_holds_flagged": 0,
+     "longest_decisions": 43
+    },
+    "latency": {
+     "decisions": 2881,
+     "max_ms": 91.512,
+     "over_100ms": 0,
+     "over_1s": 0,
+     "p50_ms": 0.938,
+     "p99_ms": 1.565
+    },
+    "lost": 0,
+    "margin": 579,
+    "objectives": {
+     "50-point objective A": {
+      "first_own_step": 462,
+      "last_to_own_step": 462,
+      "outcomes": {
+       "OCCUPIED": 1,
+       "REDUNDANT": 3
+      },
+      "own_at_end": true,
+      "places_selected": 4,
+      "transitions": 1
+     },
+     "50-point objective B": {
+      "first_own_step": 401,
+      "last_to_own_step": 401,
+      "outcomes": {
+       "OCCUPIED": 2,
+       "REDUNDANT": 2
+      },
+      "own_at_end": true,
+      "places_selected": 4,
+      "transitions": 1
+     },
+     "50-point objective C": {
+      "first_own_step": 341,
+      "last_to_own_step": 341,
+      "outcomes": {
+       "OCCUPIED": 1,
+       "REDUNDANT": 3
+      },
+      "own_at_end": true,
+      "places_selected": 4,
+      "transitions": 1
+     },
+     "80-point objective A": {
+      "first_own_step": 563,
+      "last_to_own_step": 563,
+      "outcomes": {
+       "HELD": 3,
+       "OCCUPIED": 1
+      },
+      "own_at_end": true,
+      "places_selected": 4,
+      "transitions": 1
+     },
+     "80-point objective B": {
+      "first_own_step": 482,
+      "last_to_own_step": 482,
+      "outcomes": {
+       "HELD": 2,
+       "OCCUPIED": 1,
+       "REDUNDANT": 1
+      },
+      "own_at_end": true,
+      "places_selected": 4,
+      "transitions": 1
+     }
+    },
+    "objectives_at_end": 5,
+    "observer_seconds": {
+     "timeline": 7.660445395857096
+    },
+    "occupation": {
+     "listed_unit_states": 7,
+     "orders": 5,
+     "responses": {
+      "accepted": 5
+     }
+    },
+    "occupy": 310,
+    "opponent_total": 236,
+    "places": {
+     "arrival_delay": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 20
+     },
+     "arrival_slack": {
+      "max": 2540,
+      "median": 2400,
+      "min": 144,
+      "n": 20
+     },
+     "arrival_slack_by_outcome": {
+      "HELD": {
+       "max": 2318,
+       "median": 2298,
+       "min": 144,
+       "n": 5
+      },
+      "OCCUPIED": {
+       "max": 2540,
+       "median": 2419,
+       "min": 2318,
+       "n": 6
+      },
+      "REDUNDANT": {
+       "max": 2520,
+       "median": 2440,
+       "min": 2380,
+       "n": 9
+      }
+     },
+     "arrival_to_first_occupation_listing": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 7
+     },
+     "arrival_to_path_end": {
+      "max": 0,
+      "median": 0,
+      "min": 0,
+      "n": 20
+     },
+     "by_kind": {
+      "infantry": 2,
+      "vehicle": 18
+     },
+     "occupation_responses": {
+      "accepted": 6
+     },
+     "outcomes": {
+      "ARRIVED_NOT_DECISIVE": 0,
+      "HELD": 5,
+      "LOST": 0,
+      "NEVER_ARRIVED": 0,
+      "OCCUPIED": 6,
+      "REDUNDANT": 9,
+      "TOO_LATE": 0
+     },
+     "path_end_to_stationary": {
+      "max": 317,
+      "median": 175,
+      "min": 75,
+      "n": 20
+     },
+     "predicted_slack": {
+      "max": 2540,
+      "median": 2400,
+      "min": 144,
+      "n": 20
+     },
+     "selected": 20
+    },
+    "premise": {
+     "arrivals_earlier_than_free_flow": 0
+    },
+    "refusal_classes": {},
+    "remain": 407,
+    "scenario_id": "2120531121",
+    "scores": {
+     "blue_attack": 98,
+     "blue_occupy": 310,
+     "blue_remain": 407,
+     "blue_remain_max": 407,
+     "blue_total": 815,
+     "blue_win": 579
+    },
+    "screen_position": 3,
+    "session": "2793",
+    "staging": {
+     "max_staging_hex_occupancy": 4,
+     "stage_rejected": 0,
+     "staged_moves": 22,
+     "staging_hexes": 10,
+     "waits": {
+      "max": 41,
+      "median": 41,
+      "min": 41,
+      "n": 1
+     },
+     "waits_above_flag": 0
+    },
+    "staging_blocks_to_end": 0,
+    "status": "COMPLETED",
+    "steps": 2881,
+    "stop_details_count": 0,
+    "stops": {},
+    "unproductive": {
+     "holds": 321,
+     "holds_behind_an_unproductive_place": 0,
+     "unproductive_holders": 0
+    },
+    "waiting_max": 1,
+    "waiting_unit_steps": 47
+   }
+  }
+ ],
+ "inputs_sha256": "39473714fa64352abf819c824e2b516936b67353ada77e994273a2cff9894e09",
+ "ledger": {
+  "ok": true,
+  "sessions": [
+   2791,
+   2792,
+   2793
+  ],
+  "sessions_after_base": 3,
+  "unclosed": []
+ },
+ "note": "mechanism capture: frozen v3 played every decision of its seat; every shadow figure is a decision computed afterwards on the recorded v3 observations. Before a shadow's first divergence the recorded states are its own trajectory (on-policy); every later figure is OFF-POLICY shadow replay on v3 states and is descriptive only. Nothing here is a score estimate or evidence of an effect; one game per configuration shows one observed trajectory, not what a configuration can or cannot do",
+ "schema": "miaosuan-s16-mechanism/1"
+}
