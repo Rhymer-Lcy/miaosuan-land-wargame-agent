@@ -149,6 +149,57 @@ class DelayedTest(unittest.TestCase):
         self.assertEqual(results[1].overflow, (X,))
         self.assertEqual(self.sequence("delayed-repeat-2", [obs, obs])[1].redirected[X].objective, E)
 
+    def test_stable_alternative_needs_the_same_alternative_not_any_alternative(self) -> None:
+        g = 307  # a second alternative, as close to X as E
+        self.assertEqual((cost(506, g), cost(506, E)), (2.0, 2.0))
+        values = {A: 50, E: 80, g: 50}
+        first = observation(holders() + [unit(X, 506)], cities=(A, E, g), values=values, movable=[X])
+        filled = observation(holders() + [unit(905400 + k, E) for k in range(4)] + [unit(X, 506)], cities=(A, E, g),
+                             values=values, movable=[X])
+        one = self.run_rule(first, "delayed-stable-alternative")
+        self.assertEqual(one.best[X], E)
+        two = self.run_rule(filled, "delayed-stable-alternative", one.memory)
+        self.assertEqual(two.best[X], g)  # E is full now: the best alternative changed
+        self.assertEqual(two.redirected, {})
+        self.assertEqual(self.run_rule(filled, "delayed-repeat-2", one.memory).redirected[X].objective, g)
+
+    def test_saturation_is_read_separately_now_and_at_the_previous_observation(self) -> None:
+        mover = unit(905150, 504, move_path=route(504, A))
+        partial = observation([unit(h, A) for h in HOLDERS[:3]] + [mover, unit(X, 506)], cities=(A, E), movable=[X])
+        first = self.run_rule(partial, "delayed-saturated-source")
+        self.assertEqual(first.overflow, (X,))
+        self.assertEqual(td.decode(first.memory)[0][X][td.SATURATED], 0)  # a counted mover: full, not saturated
+        then_saturated = self.run_rule(self.withheld_scene(), "delayed-saturated-source", first.memory)
+        self.assertEqual(then_saturated.redirected, {})  # saturated now, not at the previous observation
+        saturated = self.run_rule(self.withheld_scene(), "delayed-saturated-source")
+        self.assertEqual(td.decode(saturated.memory)[0][X][td.SATURATED], 1)
+        no_longer = self.run_rule(partial, "delayed-saturated-source", saturated.memory)
+        self.assertEqual(no_longer.redirected, {})  # saturated before, not now
+
+    def test_a_new_source_starts_a_new_episode(self) -> None:
+        stale = [0] * len(td.FIELD_NAMES)
+        stale[td.SOURCE], stale[td.COUNT], stale[td.REDIRECTED], stale[td.FIRST] = E, 5, 1, 7
+        stale[td.STAGED], stale[td.DONE], stale[td.STAGE_SOURCE] = 405, 1, E
+        result = self.run_rule(self.withheld_scene(), "delayed-repeat-3", td.encode({X: stale}))
+        self.assertEqual(result.redirected, {})
+        record = td.decode(result.memory)[0][X]
+        self.assertEqual((record[td.SOURCE], record[td.COUNT], record[td.REDIRECTED], record[td.FIRST]), (A, 1, 0, 100))
+        self.assertEqual((record[td.STAGED], record[td.DONE], record[td.STAGE_SOURCE]), (405, 1, E))
+
+    def test_competing_eligible_claimants_take_places_in_rank_order_whatever_the_emission_order(self) -> None:
+        y = 904999  # slower than X, and listed before it
+        self.assertLess(cost(105, A), cost(105, E))
+        self.assertLessEqual(cost(105, E), tr.DETOUR * cost(105, A))
+        self.assertLess(cost(506, A), cost(105, A))
+        standing_at_e = [unit(905300 + k, E) for k in range(3)]
+        obs = observation(holders() + standing_at_e + [unit(y, 105), unit(X, 506)], cities=(A, E), movable=[X, y])
+        records = td.encode({u: [A, 1, 0, 0, E, 1, 0, 1, 0] for u in (X, y)})
+        _, base = self.base(obs)
+        self.assertEqual({a["obj_id"] for a in base if a["type"] == 1}, {X, y})
+        for order in (list(base), list(reversed(base))):
+            result = self.run_rule(obs, "delayed-repeat-2", records, order)
+            self.assertEqual(set(result.redirected), {X})  # one place at E: the faster claimant takes it
+
     def test_post_stage_rules_wait_for_the_completed_staging_move(self) -> None:
         for name in ("delayed-post-stage-same", "delayed-post-stage-any"):
             start, arrived = self.sequence(name, [self.staged_scene_start(), self.staged_scene_arrived()])
@@ -220,6 +271,20 @@ class DelayedTest(unittest.TestCase):
         self.assertNotIn(X, td.decode(captured.memory)[0])
         again = self.run_rule(self.withheld_scene(), "delayed-repeat-2", captured.memory)
         self.assertEqual(again.redirected, {})
+
+    def test_frozen_semantics_end_a_record_on_a_held_objective_too(self) -> None:
+        """The frozen module's disclosed defect (docs/SPRINT15_DELAYED_REDISTRIBUTION.md, results R7): a unit standing
+        on an objective the side already holds, which baseline-v2 keeps sending on, loses its record at every
+        decision, so its episode never grows. Pinned here so that a correction can only come under a new identity."""
+        self.assertLess(cost(E, A), tr.DETOUR * cost(E, A))
+        first = self.run_rule(self.withheld_scene(), "delayed-repeat-2")
+        on_held = observation(holders() + [unit(X, E)], cities=(A, E), movable=[X], held=(E,))
+        after = self.run_rule(on_held, "delayed-repeat-2", first.memory)
+        self.assertEqual(after.claimants[X].objective, A)
+        self.assertEqual(after.ended, {X: "standing on an objective"})
+        self.assertEqual(td.decode(after.memory)[0][X][td.COUNT], 1)
+        again = self.run_rule(on_held, "delayed-repeat-2", after.memory)
+        self.assertEqual(td.decode(again.memory)[0][X][td.COUNT], 1)  # never reaches the second observation
 
     def test_a_place_given_by_stage_one_ends_the_record(self) -> None:
         first = self.run_rule(self.withheld_scene(), "delayed-repeat-2")
