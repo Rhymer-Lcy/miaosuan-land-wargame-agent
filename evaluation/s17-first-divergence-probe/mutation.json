@@ -1,0 +1,357 @@
+{
+ "killed": 56,
+ "killed_with_the_card_rebuilt": 56,
+ "mutations": [
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_post_stage_v6.py",
+   "mutation": "corrected reset reverted to v5 (any objective ends the record)"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_post_stage_v6.py",
+   "mutation": "standing on an unheld objective no longer ends the record"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_post_stage_v6.py",
+   "mutation": "a move to an objective no longer ends the record"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_post_stage_v6.py",
+   "mutation": "an absent unit keeps its record"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_post_stage_v6.py",
+   "mutation": "the source's capture no longer ends the episode"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_post_stage_v6.py",
+   "mutation": "the source's capture wipes the staging fact"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_post_stage_v6.py",
+   "mutation": "staging completion detected away from the staging endpoint"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_post_stage_v6.py",
+   "mutation": "every overflow claimant eligible"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_post_stage_v6.py",
+   "mutation": "the post-stage-same trigger instead of post-stage-any"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_post_stage_v6.py",
+   "mutation": "the repeat-2 trigger instead of post-stage-any"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_post_stage_v6.py",
+   "mutation": "memory dropped outside the play stage"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_post_stage_v6.py",
+   "mutation": "a failed memory update keeps the records"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_post_stage_v6.py",
+   "mutation": "the add-on carries the incoming memory forward"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t9_post_stage_v6.py",
+   "mutation": "the trace omits ended records"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "ledger ceiling off by one"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "ledger ignores the candidate digest"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "ledger ignores the schedule position"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "ledger ignores an integrity failure"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "the prefix check is not a structural stop"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "wrong seats accepted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "a candidate add-on error is not structural"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "a wrong max_step accepted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "a capture digest mismatch accepted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "an incomplete reconstruction accepted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "prefix actions checked from decision 1"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "no divergence accepted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "any divergence accepted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "the memory after the divergence is not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "changed units not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "redirect routes not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "a listing is not required"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "another unit's shot counts"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "a refused shot counts as accepted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "only the first protected decision is checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "another decision may substitute for a protected one"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "first ownership reads the other side"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "the counterfactual does not remove the early places"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "the counterfactual removes every counted place"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "a placed claimant may be blocked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "a claimant that cannot arrive may be blocked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "the audit accepts a ranking that does not reproduce stage 1"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "212 deadline exclusive"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "212 never owned passes"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "212 blocks ignored"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "both refutations read as C2 only"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "212 refutation ignored"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "structural problems do not invalidate"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_probe.py",
+   "mutation": "the stage-1 identity may be published"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_capture.py",
+   "mutation": "the add-on memory chain is not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_capture.py",
+   "mutation": "the emitted actions are not compared"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_capture.py",
+   "mutation": "prefix digests read every seat's actions"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s17_capture.py",
+   "mutation": "a withheld action is not a changed unit"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "scripts/s17_analysis.py",
+   "mutation": "the audit summary counts placements as blocks"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "scripts/s17_analysis.py",
+   "mutation": "the audit window starts after the divergence"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "scripts/s17_analysis.py",
+   "mutation": "the public files may name the stage-1 identity"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "scripts/s17_analysis.py",
+   "mutation": "candidate memory carried into the next stream"
+  }
+ ],
+ "schema": "miaosuan-s17-mutation/1",
+ "sources": {
+  "scripts/s17_analysis.py": "0d2e63c1dcc29082af0b6c5333f470d8d17730d2cde9fefd97bd1bd6d3fe31a6",
+  "src/miaosuan_agent/evaluation/s17_capture.py": "1b1ba7507e25d5f70af5d9eb7e54e4f65113f1482ae619a986aef784cd212fc6",
+  "src/miaosuan_agent/evaluation/s17_probe.py": "998801d7b1140e55131f8f67b22d762398d3723e496a6f6ffce7edd36a83af6c",
+  "src/miaosuan_agent/experiments/t9_post_stage_v6.py": "882478f0580ea676cfc399ee5899277e00b6166ad1a2273ebeb88361909908a3",
+  "tests/test_s17_probe.py": "d31f760424d9f36c30df1eaaffef2a49d91c52bca6fa98909b4020abebbe20c7",
+  "tests/test_t9_post_stage_v6.py": "f3c111a77ad23092056dd77a5c76ad8582b4ef3eb766ec0c24f9931e08cdc25d"
+ },
+ "tests": [
+  "tests.test_t9_post_stage_v6",
+  "tests.test_s17_probe"
+ ],
+ "total": 56,
+ "unmutated_tests_pass": true
+}
