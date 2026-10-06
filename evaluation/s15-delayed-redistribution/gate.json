@@ -1,0 +1,954 @@
+{
+ "adequacy": {
+  "delayed-post-stage-any": {
+   "all_tested": false,
+   "configurations": {
+    "1930331196 C2": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    },
+    "1930331196 C3": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    },
+    "2120531121 C3": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    }
+   }
+  },
+  "delayed-post-stage-same": {
+   "all_tested": false,
+   "configurations": {
+    "1930331196 C2": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    },
+    "1930331196 C3": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    },
+    "2120531121 C3": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    }
+   }
+  },
+  "delayed-repeat-2": {
+   "all_tested": false,
+   "configurations": {
+    "1930331196 C2": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    },
+    "1930331196 C3": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    },
+    "2120531121 C3": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    }
+   }
+  },
+  "delayed-repeat-3": {
+   "all_tested": false,
+   "configurations": {
+    "1930331196 C2": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    },
+    "1930331196 C3": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    },
+    "2120531121 C3": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    }
+   }
+  },
+  "delayed-saturated-source": {
+   "all_tested": false,
+   "configurations": {
+    "1930331196 C2": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    },
+    "1930331196 C3": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    },
+    "2120531121 C3": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    }
+   }
+  },
+  "delayed-stable-alternative": {
+   "all_tested": false,
+   "configurations": {
+    "1930331196 C2": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    },
+    "1930331196 C3": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    },
+    "2120531121 C3": {
+     "status": "UNTESTED",
+     "trigger_exposure_in_window": 0
+    }
+   }
+  }
+ },
+ "disposition": {
+  "disposition": "NO_RESTORING_TRIGGER",
+  "passed": []
+ },
+ "fidelity_problems": [],
+ "gates": {
+  "delayed-post-stage-any": {
+   "failed": [
+    "R3_divergence_reduced",
+    "R4_bounded_recourse"
+   ],
+   "groups": {
+    "adverse": true,
+    "invariants": true,
+    "restoration": false
+   },
+   "items": {
+    "A1_1930331196": {
+     "configurations": {
+      "1930331196 C2": {
+       "early_limit": 5,
+       "early_redirects_baseline": 0,
+       "first_decision_redirects": 0,
+       "first_limit": 2,
+       "pass": true,
+       "shooters_redirected": 0
+      },
+      "1930331196 C3": {
+       "early_limit": 4,
+       "early_redirects_baseline": 0,
+       "first_decision_redirects": 0,
+       "first_limit": 4,
+       "pass": true,
+       "shooters_redirected": 0
+      }
+     },
+     "pass": true
+    },
+    "A2_2120531121_C3": {
+     "certificate_unit_decisions": 9194,
+     "pass": true,
+     "unreachable_places": 0,
+     "v3_certificate_unit_decisions": 9194,
+     "v3_selection_not_kept": 0
+    },
+    "G10_no_future_information": {
+     "basis": "the allocator's inputs (static check)",
+     "pass": true
+    },
+    "G11_no_special_case": {
+     "basis": "numeric literals (static check)",
+     "pass": true
+    },
+    "G12_latency": {
+     "max_ms": 31.871,
+     "p99_ms": 1.037,
+     "pass": true
+    },
+    "G1_deterministic": {
+     "comparisons": 3918,
+     "differences": 0,
+     "pass": true
+    },
+    "G2_seat_local": {
+     "basis": "module imports and inputs (static check)",
+     "pass": true
+    },
+    "G3_order_invariant": {
+     "comparisons": 10377,
+     "differences": 0,
+     "pass": true
+    },
+    "G4_capacity": {
+     "pass": true,
+     "violations": 0
+    },
+    "G5_unrelated_actions": {
+     "pass": true,
+     "violations": 0
+    },
+    "G6_no_invented_move": {
+     "pass": true,
+     "violations": 0
+    },
+    "G7_engine_supported_moves": {
+     "pass": true,
+     "violations": 0
+    },
+    "G8_reachable": {
+     "pass": true,
+     "violations": 0
+    },
+    "G9_memory": {
+     "checks": 62506,
+     "pass": true,
+     "problems": 0
+    },
+    "R1_no_opening_redistribution": {
+     "adverse": {
+      "1930331196 C2": 0,
+      "1930331196 C3": 0,
+      "2120531121 C3": 0
+     },
+     "pass": true,
+     "primary": {
+      "p01": 0,
+      "p02": 0,
+      "p03": 0,
+      "p04": 0
+     }
+    },
+    "R2_post_opening_restored": {
+     "pass": true,
+     "post_opening_units": {
+      "H1": 9,
+      "H2": 21
+     },
+     "required": {
+      "H1": 8,
+      "H2": 13
+     }
+    },
+    "R3_divergence_reduced": {
+     "pass": false,
+     "post_slot_ratio": 0.937,
+     "seat_below_v3": {
+      "H1": true,
+      "H2": true
+     }
+    },
+    "R4_bounded_recourse": {
+     "limit": 3,
+     "max_redirects_per_unit_game": 6,
+     "oscillations": 0,
+     "pass": false
+    }
+   },
+   "pass": false
+  },
+  "delayed-post-stage-same": {
+   "failed": [
+    "R2_post_opening_restored",
+    "R3_divergence_reduced"
+   ],
+   "groups": {
+    "adverse": true,
+    "invariants": true,
+    "restoration": false
+   },
+   "items": {
+    "A1_1930331196": {
+     "configurations": {
+      "1930331196 C2": {
+       "early_limit": 5,
+       "early_redirects_baseline": 0,
+       "first_decision_redirects": 0,
+       "first_limit": 2,
+       "pass": true,
+       "shooters_redirected": 0
+      },
+      "1930331196 C3": {
+       "early_limit": 4,
+       "early_redirects_baseline": 0,
+       "first_decision_redirects": 0,
+       "first_limit": 4,
+       "pass": true,
+       "shooters_redirected": 0
+      }
+     },
+     "pass": true
+    },
+    "A2_2120531121_C3": {
+     "certificate_unit_decisions": 9194,
+     "pass": true,
+     "unreachable_places": 0,
+     "v3_certificate_unit_decisions": 9194,
+     "v3_selection_not_kept": 0
+    },
+    "G10_no_future_information": {
+     "basis": "the allocator's inputs (static check)",
+     "pass": true
+    },
+    "G11_no_special_case": {
+     "basis": "numeric literals (static check)",
+     "pass": true
+    },
+    "G12_latency": {
+     "max_ms": 6.644,
+     "p99_ms": 1.043,
+     "pass": true
+    },
+    "G1_deterministic": {
+     "comparisons": 3918,
+     "differences": 0,
+     "pass": true
+    },
+    "G2_seat_local": {
+     "basis": "module imports and inputs (static check)",
+     "pass": true
+    },
+    "G3_order_invariant": {
+     "comparisons": 10377,
+     "differences": 0,
+     "pass": true
+    },
+    "G4_capacity": {
+     "pass": true,
+     "violations": 0
+    },
+    "G5_unrelated_actions": {
+     "pass": true,
+     "violations": 0
+    },
+    "G6_no_invented_move": {
+     "pass": true,
+     "violations": 0
+    },
+    "G7_engine_supported_moves": {
+     "pass": true,
+     "violations": 0
+    },
+    "G8_reachable": {
+     "pass": true,
+     "violations": 0
+    },
+    "G9_memory": {
+     "checks": 62506,
+     "pass": true,
+     "problems": 0
+    },
+    "R1_no_opening_redistribution": {
+     "adverse": {
+      "1930331196 C2": 0,
+      "1930331196 C3": 0,
+      "2120531121 C3": 0
+     },
+     "pass": true,
+     "primary": {
+      "p01": 0,
+      "p02": 0,
+      "p03": 0,
+      "p04": 0
+     }
+    },
+    "R2_post_opening_restored": {
+     "pass": false,
+     "post_opening_units": {
+      "H1": 2,
+      "H2": 8
+     },
+     "required": {
+      "H1": 8,
+      "H2": 13
+     }
+    },
+    "R3_divergence_reduced": {
+     "pass": false,
+     "post_slot_ratio": 0.9924,
+     "seat_below_v3": {
+      "H1": true,
+      "H2": true
+     }
+    },
+    "R4_bounded_recourse": {
+     "limit": 3,
+     "max_redirects_per_unit_game": 1,
+     "oscillations": 0,
+     "pass": true
+    }
+   },
+   "pass": false
+  },
+  "delayed-repeat-2": {
+   "failed": [
+    "R2_post_opening_restored",
+    "R3_divergence_reduced"
+   ],
+   "groups": {
+    "adverse": true,
+    "invariants": true,
+    "restoration": false
+   },
+   "items": {
+    "A1_1930331196": {
+     "configurations": {
+      "1930331196 C2": {
+       "early_limit": 5,
+       "early_redirects_baseline": 0,
+       "first_decision_redirects": 0,
+       "first_limit": 2,
+       "pass": true,
+       "shooters_redirected": 0
+      },
+      "1930331196 C3": {
+       "early_limit": 4,
+       "early_redirects_baseline": 0,
+       "first_decision_redirects": 0,
+       "first_limit": 4,
+       "pass": true,
+       "shooters_redirected": 0
+      }
+     },
+     "pass": true
+    },
+    "A2_2120531121_C3": {
+     "certificate_unit_decisions": 9194,
+     "pass": true,
+     "unreachable_places": 0,
+     "v3_certificate_unit_decisions": 9194,
+     "v3_selection_not_kept": 0
+    },
+    "G10_no_future_information": {
+     "basis": "the allocator's inputs (static check)",
+     "pass": true
+    },
+    "G11_no_special_case": {
+     "basis": "numeric literals (static check)",
+     "pass": true
+    },
+    "G12_latency": {
+     "max_ms": 6.791,
+     "p99_ms": 1.041,
+     "pass": true
+    },
+    "G1_deterministic": {
+     "comparisons": 3918,
+     "differences": 0,
+     "pass": true
+    },
+    "G2_seat_local": {
+     "basis": "module imports and inputs (static check)",
+     "pass": true
+    },
+    "G3_order_invariant": {
+     "comparisons": 10377,
+     "differences": 0,
+     "pass": true
+    },
+    "G4_capacity": {
+     "pass": true,
+     "violations": 0
+    },
+    "G5_unrelated_actions": {
+     "pass": true,
+     "violations": 0
+    },
+    "G6_no_invented_move": {
+     "pass": true,
+     "violations": 0
+    },
+    "G7_engine_supported_moves": {
+     "pass": true,
+     "violations": 0
+    },
+    "G8_reachable": {
+     "pass": true,
+     "violations": 0
+    },
+    "G9_memory": {
+     "checks": 62506,
+     "pass": true,
+     "problems": 0
+    },
+    "R1_no_opening_redistribution": {
+     "adverse": {
+      "1930331196 C2": 0,
+      "1930331196 C3": 0,
+      "2120531121 C3": 0
+     },
+     "pass": true,
+     "primary": {
+      "p01": 0,
+      "p02": 0,
+      "p03": 0,
+      "p04": 0
+     }
+    },
+    "R2_post_opening_restored": {
+     "pass": false,
+     "post_opening_units": {
+      "H1": 2,
+      "H2": 14
+     },
+     "required": {
+      "H1": 8,
+      "H2": 13
+     }
+    },
+    "R3_divergence_reduced": {
+     "pass": false,
+     "post_slot_ratio": 0.9924,
+     "seat_below_v3": {
+      "H1": true,
+      "H2": true
+     }
+    },
+    "R4_bounded_recourse": {
+     "limit": 3,
+     "max_redirects_per_unit_game": 2,
+     "oscillations": 0,
+     "pass": true
+    }
+   },
+   "pass": false
+  },
+  "delayed-repeat-3": {
+   "failed": [
+    "G12_latency",
+    "R2_post_opening_restored",
+    "R3_divergence_reduced"
+   ],
+   "groups": {
+    "adverse": true,
+    "invariants": false,
+    "restoration": false
+   },
+   "items": {
+    "A1_1930331196": {
+     "configurations": {
+      "1930331196 C2": {
+       "early_limit": 5,
+       "early_redirects_baseline": 0,
+       "first_decision_redirects": 0,
+       "first_limit": 2,
+       "pass": true,
+       "shooters_redirected": 0
+      },
+      "1930331196 C3": {
+       "early_limit": 4,
+       "early_redirects_baseline": 0,
+       "first_decision_redirects": 0,
+       "first_limit": 4,
+       "pass": true,
+       "shooters_redirected": 0
+      }
+     },
+     "pass": true
+    },
+    "A2_2120531121_C3": {
+     "certificate_unit_decisions": 9194,
+     "pass": true,
+     "unreachable_places": 0,
+     "v3_certificate_unit_decisions": 9194,
+     "v3_selection_not_kept": 0
+    },
+    "G10_no_future_information": {
+     "basis": "the allocator's inputs (static check)",
+     "pass": true
+    },
+    "G11_no_special_case": {
+     "basis": "numeric literals (static check)",
+     "pass": true
+    },
+    "G12_latency": {
+     "max_ms": 537.081,
+     "p99_ms": 1.177,
+     "pass": false
+    },
+    "G1_deterministic": {
+     "comparisons": 3918,
+     "differences": 0,
+     "pass": true
+    },
+    "G2_seat_local": {
+     "basis": "module imports and inputs (static check)",
+     "pass": true
+    },
+    "G3_order_invariant": {
+     "comparisons": 10377,
+     "differences": 0,
+     "pass": true
+    },
+    "G4_capacity": {
+     "pass": true,
+     "violations": 0
+    },
+    "G5_unrelated_actions": {
+     "pass": true,
+     "violations": 0
+    },
+    "G6_no_invented_move": {
+     "pass": true,
+     "violations": 0
+    },
+    "G7_engine_supported_moves": {
+     "pass": true,
+     "violations": 0
+    },
+    "G8_reachable": {
+     "pass": true,
+     "violations": 0
+    },
+    "G9_memory": {
+     "checks": 62506,
+     "pass": true,
+     "problems": 0
+    },
+    "R1_no_opening_redistribution": {
+     "adverse": {
+      "1930331196 C2": 0,
+      "1930331196 C3": 0,
+      "2120531121 C3": 0
+     },
+     "pass": true,
+     "primary": {
+      "p01": 0,
+      "p02": 0,
+      "p03": 0,
+      "p04": 0
+     }
+    },
+    "R2_post_opening_restored": {
+     "pass": false,
+     "post_opening_units": {
+      "H1": 1,
+      "H2": 14
+     },
+     "required": {
+      "H1": 8,
+      "H2": 13
+     }
+    },
+    "R3_divergence_reduced": {
+     "pass": false,
+     "post_slot_ratio": 0.9943,
+     "seat_below_v3": {
+      "H1": true,
+      "H2": true
+     }
+    },
+    "R4_bounded_recourse": {
+     "limit": 3,
+     "max_redirects_per_unit_game": 2,
+     "oscillations": 0,
+     "pass": true
+    }
+   },
+   "pass": false
+  },
+  "delayed-saturated-source": {
+   "failed": [
+    "R2_post_opening_restored",
+    "R3_divergence_reduced"
+   ],
+   "groups": {
+    "adverse": true,
+    "invariants": true,
+    "restoration": false
+   },
+   "items": {
+    "A1_1930331196": {
+     "configurations": {
+      "1930331196 C2": {
+       "early_limit": 5,
+       "early_redirects_baseline": 0,
+       "first_decision_redirects": 0,
+       "first_limit": 2,
+       "pass": true,
+       "shooters_redirected": 0
+      },
+      "1930331196 C3": {
+       "early_limit": 4,
+       "early_redirects_baseline": 0,
+       "first_decision_redirects": 0,
+       "first_limit": 4,
+       "pass": true,
+       "shooters_redirected": 0
+      }
+     },
+     "pass": true
+    },
+    "A2_2120531121_C3": {
+     "certificate_unit_decisions": 9194,
+     "pass": true,
+     "unreachable_places": 0,
+     "v3_certificate_unit_decisions": 9194,
+     "v3_selection_not_kept": 0
+    },
+    "G10_no_future_information": {
+     "basis": "the allocator's inputs (static check)",
+     "pass": true
+    },
+    "G11_no_special_case": {
+     "basis": "numeric literals (static check)",
+     "pass": true
+    },
+    "G12_latency": {
+     "max_ms": 6.708,
+     "p99_ms": 1.034,
+     "pass": true
+    },
+    "G1_deterministic": {
+     "comparisons": 3918,
+     "differences": 0,
+     "pass": true
+    },
+    "G2_seat_local": {
+     "basis": "module imports and inputs (static check)",
+     "pass": true
+    },
+    "G3_order_invariant": {
+     "comparisons": 10377,
+     "differences": 0,
+     "pass": true
+    },
+    "G4_capacity": {
+     "pass": true,
+     "violations": 0
+    },
+    "G5_unrelated_actions": {
+     "pass": true,
+     "violations": 0
+    },
+    "G6_no_invented_move": {
+     "pass": true,
+     "violations": 0
+    },
+    "G7_engine_supported_moves": {
+     "pass": true,
+     "violations": 0
+    },
+    "G8_reachable": {
+     "pass": true,
+     "violations": 0
+    },
+    "G9_memory": {
+     "checks": 62506,
+     "pass": true,
+     "problems": 0
+    },
+    "R1_no_opening_redistribution": {
+     "adverse": {
+      "1930331196 C2": 0,
+      "1930331196 C3": 0,
+      "2120531121 C3": 0
+     },
+     "pass": true,
+     "primary": {
+      "p01": 0,
+      "p02": 0,
+      "p03": 0,
+      "p04": 0
+     }
+    },
+    "R2_post_opening_restored": {
+     "pass": false,
+     "post_opening_units": {
+      "H1": 0,
+      "H2": 0
+     },
+     "required": {
+      "H1": 8,
+      "H2": 13
+     }
+    },
+    "R3_divergence_reduced": {
+     "pass": false,
+     "post_slot_ratio": 1.0,
+     "seat_below_v3": {
+      "H1": false,
+      "H2": false
+     }
+    },
+    "R4_bounded_recourse": {
+     "limit": 3,
+     "max_redirects_per_unit_game": 0,
+     "oscillations": 0,
+     "pass": true
+    }
+   },
+   "pass": false
+  },
+  "delayed-stable-alternative": {
+   "failed": [
+    "R2_post_opening_restored",
+    "R3_divergence_reduced"
+   ],
+   "groups": {
+    "adverse": true,
+    "invariants": true,
+    "restoration": false
+   },
+   "items": {
+    "A1_1930331196": {
+     "configurations": {
+      "1930331196 C2": {
+       "early_limit": 5,
+       "early_redirects_baseline": 0,
+       "first_decision_redirects": 0,
+       "first_limit": 2,
+       "pass": true,
+       "shooters_redirected": 0
+      },
+      "1930331196 C3": {
+       "early_limit": 4,
+       "early_redirects_baseline": 0,
+       "first_decision_redirects": 0,
+       "first_limit": 4,
+       "pass": true,
+       "shooters_redirected": 0
+      }
+     },
+     "pass": true
+    },
+    "A2_2120531121_C3": {
+     "certificate_unit_decisions": 9194,
+     "pass": true,
+     "unreachable_places": 0,
+     "v3_certificate_unit_decisions": 9194,
+     "v3_selection_not_kept": 0
+    },
+    "G10_no_future_information": {
+     "basis": "the allocator's inputs (static check)",
+     "pass": true
+    },
+    "G11_no_special_case": {
+     "basis": "numeric literals (static check)",
+     "pass": true
+    },
+    "G12_latency": {
+     "max_ms": 8.938,
+     "p99_ms": 1.091,
+     "pass": true
+    },
+    "G1_deterministic": {
+     "comparisons": 3918,
+     "differences": 0,
+     "pass": true
+    },
+    "G2_seat_local": {
+     "basis": "module imports and inputs (static check)",
+     "pass": true
+    },
+    "G3_order_invariant": {
+     "comparisons": 10377,
+     "differences": 0,
+     "pass": true
+    },
+    "G4_capacity": {
+     "pass": true,
+     "violations": 0
+    },
+    "G5_unrelated_actions": {
+     "pass": true,
+     "violations": 0
+    },
+    "G6_no_invented_move": {
+     "pass": true,
+     "violations": 0
+    },
+    "G7_engine_supported_moves": {
+     "pass": true,
+     "violations": 0
+    },
+    "G8_reachable": {
+     "pass": true,
+     "violations": 0
+    },
+    "G9_memory": {
+     "checks": 62506,
+     "pass": true,
+     "problems": 0
+    },
+    "R1_no_opening_redistribution": {
+     "adverse": {
+      "1930331196 C2": 0,
+      "1930331196 C3": 0,
+      "2120531121 C3": 0
+     },
+     "pass": true,
+     "primary": {
+      "p01": 0,
+      "p02": 0,
+      "p03": 0,
+      "p04": 0
+     }
+    },
+    "R2_post_opening_restored": {
+     "pass": false,
+     "post_opening_units": {
+      "H1": 1,
+      "H2": 14
+     },
+     "required": {
+      "H1": 8,
+      "H2": 13
+     }
+    },
+    "R3_divergence_reduced": {
+     "pass": false,
+     "post_slot_ratio": 0.9943,
+     "seat_below_v3": {
+      "H1": true,
+      "H2": true
+     }
+    },
+    "R4_bounded_recourse": {
+     "limit": 3,
+     "max_redirects_per_unit_game": 2,
+     "oscillations": 0,
+     "pass": true
+    }
+   },
+   "pass": false
+  }
+ },
+ "note": "offline study on recorded states: every policy is an action-level decision on states another policy produced, with each candidate's own memory simulated over the recorded observations; nothing here is an engine outcome, a score estimate or evidence of an effect",
+ "opportunity": {
+  "H1": {
+   "batch_post_opening_units": 15,
+   "o2_post_opening_units": 15,
+   "required": 8,
+   "t9-v1_post_opening_units": 15
+  },
+  "H2": {
+   "batch_post_opening_units": 26,
+   "o2_post_opening_units": 26,
+   "required": 13,
+   "t9-v1_post_opening_units": 26
+  }
+ },
+ "risk_windows": {
+  "1930331196 C2": 611,
+  "1930331196 C3": 876,
+  "2120531121 C3": 564
+ },
+ "schema": "miaosuan-s15-delayed/1",
+ "selection": {
+  "selected": null,
+  "steps": []
+ },
+ "static": {
+  "no_special_case_literal": true,
+  "seat_local": true
+ },
+ "thresholds": {
+  "adverse_early_divisor": 3,
+  "adverse_first_divisor": 3,
+  "divergence_ratio_max": 0.7,
+  "latency_max_ms_max": 200.0,
+  "latency_p99_ms_max": 20.0,
+  "recourse_max": 3,
+  "restore_units_min": 4,
+  "restore_units_ratio_min": 0.5,
+  "rubric_band": 0.05,
+  "rubric_tolerance": 0.1
+ },
+ "timing_sha256": "1c0d679866e801725f64b4f58c38014d6d9e29eca03f4a5601ec1ffafbb698b6"
+}

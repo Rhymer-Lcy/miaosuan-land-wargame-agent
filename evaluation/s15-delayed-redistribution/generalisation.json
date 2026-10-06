@@ -1,0 +1,1110 @@
+{
+ "games": {
+  "1910631192": {
+   "checks": {
+    "baseline-v0 reproduced, baseline-v2 reconstructed": 3602,
+    "decisions": 3602,
+    "decisions with an own ground move": 9
+   },
+   "policies": {
+    "O2": {
+     "active_decisions": 9,
+     "max_records": 0,
+     "max_redirects_per_unit_game": null,
+     "memory_checks": 0,
+     "memory_problems": 0,
+     "oscillations": null,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {},
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-post-stage-any": {
+     "active_decisions": 9,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 21,
+      "repeat_comparisons": 9
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-post-stage-same": {
+     "active_decisions": 9,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 21,
+      "repeat_comparisons": 9
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-repeat-2": {
+     "active_decisions": 9,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 21,
+      "repeat_comparisons": 9
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-repeat-3": {
+     "active_decisions": 9,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 21,
+      "repeat_comparisons": 9
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-saturated-source": {
+     "active_decisions": 9,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 21,
+      "repeat_comparisons": 9
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-stable-alternative": {
+     "active_decisions": 9,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 21,
+      "repeat_comparisons": 9
+     },
+     "trigger_held": 0,
+     "violations": {}
+    }
+   }
+  },
+  "1930331196": {
+   "checks": {
+    "baseline-v0 reproduced, baseline-v2 reconstructed": 5762,
+    "decisions": 5762,
+    "decisions with an own ground move": 42
+   },
+   "policies": {
+    "O2": {
+     "active_decisions": 42,
+     "max_records": 0,
+     "max_redirects_per_unit_game": null,
+     "memory_checks": 0,
+     "memory_problems": 0,
+     "oscillations": null,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 11,
+     "redirects": 14,
+     "repeat": {},
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-post-stage-any": {
+     "active_decisions": 42,
+     "max_records": 7,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 26,
+     "records_ended": {
+      "moving to an objective": 26
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 78,
+      "repeat_comparisons": 42
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-post-stage-same": {
+     "active_decisions": 42,
+     "max_records": 7,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 26,
+     "records_ended": {
+      "moving to an objective": 26
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 78,
+      "repeat_comparisons": 42
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-repeat-2": {
+     "active_decisions": 42,
+     "max_records": 7,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 26,
+     "records_ended": {
+      "moving to an objective": 26
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 78,
+      "repeat_comparisons": 42
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-repeat-3": {
+     "active_decisions": 42,
+     "max_records": 7,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 26,
+     "records_ended": {
+      "moving to an objective": 26
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 78,
+      "repeat_comparisons": 42
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-saturated-source": {
+     "active_decisions": 42,
+     "max_records": 7,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 26,
+     "records_ended": {
+      "moving to an objective": 26
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 78,
+      "repeat_comparisons": 42
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-stable-alternative": {
+     "active_decisions": 42,
+     "max_records": 7,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 26,
+     "records_ended": {
+      "moving to an objective": 26
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 78,
+      "repeat_comparisons": 42
+     },
+     "trigger_held": 0,
+     "violations": {}
+    }
+   }
+  },
+  "2010131194": {
+   "checks": {
+    "baseline-v0 reproduced, baseline-v2 reconstructed": 3602,
+    "decisions": 3602,
+    "decisions with an own ground move": 2
+   },
+   "policies": {
+    "O2": {
+     "active_decisions": 2,
+     "max_records": 0,
+     "max_redirects_per_unit_game": null,
+     "memory_checks": 0,
+     "memory_problems": 0,
+     "oscillations": null,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {},
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-post-stage-any": {
+     "active_decisions": 2,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 6,
+      "repeat_comparisons": 2
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-post-stage-same": {
+     "active_decisions": 2,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 6,
+      "repeat_comparisons": 2
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-repeat-2": {
+     "active_decisions": 2,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 6,
+      "repeat_comparisons": 2
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-repeat-3": {
+     "active_decisions": 2,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 6,
+      "repeat_comparisons": 2
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-saturated-source": {
+     "active_decisions": 2,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 6,
+      "repeat_comparisons": 2
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-stable-alternative": {
+     "active_decisions": 2,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 6,
+      "repeat_comparisons": 2
+     },
+     "trigger_held": 0,
+     "violations": {}
+    }
+   }
+  },
+  "2010211129": {
+   "checks": {
+    "baseline-v0 reproduced, baseline-v2 reconstructed": 3602,
+    "decisions": 3602,
+    "decisions with an own ground move": 4
+   },
+   "policies": {
+    "O2": {
+     "active_decisions": 4,
+     "max_records": 0,
+     "max_redirects_per_unit_game": null,
+     "memory_checks": 0,
+     "memory_problems": 0,
+     "oscillations": null,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {},
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-post-stage-any": {
+     "active_decisions": 4,
+     "max_records": 1,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 1,
+     "records_ended": {
+      "moving to an objective": 1
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 9,
+      "repeat_comparisons": 4
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-post-stage-same": {
+     "active_decisions": 4,
+     "max_records": 1,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 1,
+     "records_ended": {
+      "moving to an objective": 1
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 9,
+      "repeat_comparisons": 4
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-repeat-2": {
+     "active_decisions": 4,
+     "max_records": 1,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 1,
+     "records_ended": {
+      "moving to an objective": 1
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 9,
+      "repeat_comparisons": 4
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-repeat-3": {
+     "active_decisions": 4,
+     "max_records": 1,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 1,
+     "records_ended": {
+      "moving to an objective": 1
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 9,
+      "repeat_comparisons": 4
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-saturated-source": {
+     "active_decisions": 4,
+     "max_records": 1,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 1,
+     "records_ended": {
+      "moving to an objective": 1
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 9,
+      "repeat_comparisons": 4
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-stable-alternative": {
+     "active_decisions": 4,
+     "max_records": 1,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 1,
+     "records_ended": {
+      "moving to an objective": 1
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 9,
+      "repeat_comparisons": 4
+     },
+     "trigger_held": 0,
+     "violations": {}
+    }
+   }
+  },
+  "201033019601": {
+   "checks": {
+    "baseline-v0 reproduced, baseline-v2 reconstructed": 2002,
+    "decisions": 2002,
+    "decisions with an own ground move": 2
+   },
+   "policies": {
+    "O2": {
+     "active_decisions": 2,
+     "max_records": 0,
+     "max_redirects_per_unit_game": null,
+     "memory_checks": 0,
+     "memory_problems": 0,
+     "oscillations": null,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {},
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-post-stage-any": {
+     "active_decisions": 2,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 2002,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "repeat_comparisons": 2
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-post-stage-same": {
+     "active_decisions": 2,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 2002,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "repeat_comparisons": 2
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-repeat-2": {
+     "active_decisions": 2,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 2002,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "repeat_comparisons": 2
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-repeat-3": {
+     "active_decisions": 2,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 2002,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "repeat_comparisons": 2
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-saturated-source": {
+     "active_decisions": 2,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 2002,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "repeat_comparisons": 2
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-stable-alternative": {
+     "active_decisions": 2,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 2002,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "repeat_comparisons": 2
+     },
+     "trigger_held": 0,
+     "violations": {}
+    }
+   }
+  },
+  "2010431153": {
+   "checks": {
+    "baseline-v0 reproduced, baseline-v2 reconstructed": 3602,
+    "decisions": 3602,
+    "decisions with an own ground move": 4
+   },
+   "policies": {
+    "O2": {
+     "active_decisions": 4,
+     "max_records": 0,
+     "max_redirects_per_unit_game": null,
+     "memory_checks": 0,
+     "memory_problems": 0,
+     "oscillations": null,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {},
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-post-stage-any": {
+     "active_decisions": 4,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 6,
+      "repeat_comparisons": 4
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-post-stage-same": {
+     "active_decisions": 4,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 6,
+      "repeat_comparisons": 4
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-repeat-2": {
+     "active_decisions": 4,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 6,
+      "repeat_comparisons": 4
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-repeat-3": {
+     "active_decisions": 4,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 6,
+      "repeat_comparisons": 4
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-saturated-source": {
+     "active_decisions": 4,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 6,
+      "repeat_comparisons": 4
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-stable-alternative": {
+     "active_decisions": 4,
+     "max_records": 0,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 3602,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 6,
+      "repeat_comparisons": 4
+     },
+     "trigger_held": 0,
+     "violations": {}
+    }
+   }
+  },
+  "2120531121": {
+   "checks": {
+    "baseline-v0 reproduced, baseline-v2 reconstructed": 5762,
+    "decisions": 5762,
+    "decisions with an own ground move": 21
+   },
+   "policies": {
+    "O2": {
+     "active_decisions": 21,
+     "max_records": 0,
+     "max_redirects_per_unit_game": null,
+     "memory_checks": 0,
+     "memory_problems": 0,
+     "oscillations": null,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 15,
+     "redirects": 26,
+     "repeat": {},
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-post-stage-any": {
+     "active_decisions": 21,
+     "max_records": 7,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 29,
+     "records_ended": {
+      "moving to an objective": 29
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 39,
+      "repeat_comparisons": 21
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-post-stage-same": {
+     "active_decisions": 21,
+     "max_records": 7,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 29,
+     "records_ended": {
+      "moving to an objective": 29
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 39,
+      "repeat_comparisons": 21
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-repeat-2": {
+     "active_decisions": 21,
+     "max_records": 7,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 29,
+     "records_ended": {
+      "moving to an objective": 29
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 39,
+      "repeat_comparisons": 21
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-repeat-3": {
+     "active_decisions": 21,
+     "max_records": 7,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 29,
+     "records_ended": {
+      "moving to an objective": 29
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 39,
+      "repeat_comparisons": 21
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-saturated-source": {
+     "active_decisions": 21,
+     "max_records": 7,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 29,
+     "records_ended": {
+      "moving to an objective": 29
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 39,
+      "repeat_comparisons": 21
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-stable-alternative": {
+     "active_decisions": 21,
+     "max_records": 7,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 29,
+     "records_ended": {
+      "moving to an objective": 29
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 39,
+      "repeat_comparisons": 21
+     },
+     "trigger_held": 0,
+     "violations": {}
+    }
+   }
+  },
+  "2130511121": {
+   "checks": {
+    "baseline-v0 reproduced, baseline-v2 reconstructed": 5762,
+    "decisions": 5762,
+    "decisions with an own ground move": 58
+   },
+   "policies": {
+    "O2": {
+     "active_decisions": 58,
+     "max_records": 0,
+     "max_redirects_per_unit_game": null,
+     "memory_checks": 0,
+     "memory_problems": 0,
+     "oscillations": null,
+     "overflow_observations": 0,
+     "records_ended": {},
+     "redirected_units": 37,
+     "redirects": 67,
+     "repeat": {},
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-post-stage-any": {
+     "active_decisions": 58,
+     "max_records": 18,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 83,
+     "records_ended": {
+      "absent": 1,
+      "moving to an objective": 82
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 99,
+      "repeat_comparisons": 58
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-post-stage-same": {
+     "active_decisions": 58,
+     "max_records": 18,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 83,
+     "records_ended": {
+      "absent": 1,
+      "moving to an objective": 82
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 99,
+      "repeat_comparisons": 58
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-repeat-2": {
+     "active_decisions": 58,
+     "max_records": 18,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 83,
+     "records_ended": {
+      "absent": 1,
+      "moving to an objective": 82
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 99,
+      "repeat_comparisons": 58
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-repeat-3": {
+     "active_decisions": 58,
+     "max_records": 18,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 83,
+     "records_ended": {
+      "absent": 1,
+      "moving to an objective": 82
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 99,
+      "repeat_comparisons": 58
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-saturated-source": {
+     "active_decisions": 58,
+     "max_records": 18,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 83,
+     "records_ended": {
+      "absent": 1,
+      "moving to an objective": 82
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 99,
+      "repeat_comparisons": 58
+     },
+     "trigger_held": 0,
+     "violations": {}
+    },
+    "delayed-stable-alternative": {
+     "active_decisions": 58,
+     "max_records": 18,
+     "max_redirects_per_unit_game": 0,
+     "memory_checks": 5762,
+     "memory_problems": 0,
+     "oscillations": 0,
+     "overflow_observations": 83,
+     "records_ended": {
+      "absent": 1,
+      "moving to an objective": 82
+     },
+     "redirected_units": 0,
+     "redirects": 0,
+     "repeat": {
+      "order_comparisons": 99,
+      "repeat_comparisons": 58
+     },
+     "trigger_held": 0,
+     "violations": {}
+    }
+   }
+  }
+ },
+ "note": "H0: baseline-v0 mirror games, both seats, baseline-v2 reconstructed; states no T9 policy reached; invariants and trigger prevalence only",
+ "schema": "miaosuan-s15-delayed/1"
+}

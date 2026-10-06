@@ -1,0 +1,1077 @@
+{
+ "anchors": {
+  "firing_decisions": [
+   611
+  ],
+  "first_decision_state_identical": true,
+  "shooters": 1
+ },
+ "configuration": "1930331196 C2",
+ "note": "offline study on recorded states: every policy is an action-level decision on states another policy produced, with each candidate's own memory simulated over the recorded observations; nothing here is an engine outcome, a score estimate or evidence of an effect",
+ "policies": {
+  "O2": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "buckets": {
+     "first": 6,
+     "later": 0,
+     "next20": 6,
+     "next5": 2
+    },
+    "emitted_ground_moves": 41,
+    "first_decision_redirects": 6,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 0,
+     "baseline-v2": 21,
+     "t9-v1": 17,
+     "v3": 14
+    },
+    "post_opening_units": 6,
+    "post_slot_vs_t9-v1": 2,
+    "redirect_share": 0.3415,
+    "redirected_units": 7,
+    "redirects": 14,
+    "repeat": {},
+    "slot_vs_t9-v1": 5,
+    "stages": 7,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 14,
+   "first_decision_redirects": 6,
+   "first_decision_redirects_own_game": 6,
+   "redirects_in_risk_window": 21,
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "buckets": {
+     "first": 6,
+     "later": 1,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1069,
+    "first_decision_redirects": 6,
+    "keeps": 12,
+    "order_divergence": {
+     "O2": 0,
+     "baseline-v2": 1057,
+     "t9-v1": 1058,
+     "v3": 7
+    },
+    "post_opening_units": 1,
+    "post_slot_vs_t9-v1": 0,
+    "redirect_share": 0.0065,
+    "redirected_units": 7,
+    "redirects": 7,
+    "repeat": {},
+    "slot_vs_t9-v1": 3,
+    "stages": 1050,
+    "violations": {},
+    "withholds": 0
+   }
+  },
+  "baseline-v2": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 41,
+    "first_decision_redirects": 0,
+    "keeps": 41,
+    "order_divergence": {
+     "O2": 21,
+     "baseline-v2": 0,
+     "t9-v1": 21,
+     "v3": 21
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 10,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {},
+    "slot_vs_t9-v1": 13,
+    "stages": 0,
+    "violations": {
+     "objective above capacity": 7
+    },
+    "withholds": 0
+   },
+   "early_redirects_baseline": 0,
+   "first_decision_redirects": 0,
+   "first_decision_redirects_own_game": 0,
+   "redirects_in_risk_window": 0,
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1069,
+    "first_decision_redirects": 0,
+    "keeps": 1069,
+    "order_divergence": {
+     "O2": 1057,
+     "baseline-v2": 0,
+     "t9-v1": 1057,
+     "v3": 1057
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 285,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {},
+    "slot_vs_t9-v1": 288,
+    "stages": 0,
+    "violations": {
+     "objective above capacity": 285
+    },
+    "withholds": 0
+   }
+  },
+  "batch-value-redirect": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "buckets": {
+     "first": 6,
+     "later": 0,
+     "next20": 6,
+     "next5": 2
+    },
+    "emitted_ground_moves": 41,
+    "first_decision_redirects": 6,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 0,
+     "baseline-v2": 21,
+     "t9-v1": 17,
+     "v3": 14
+    },
+    "post_opening_units": 6,
+    "post_slot_vs_t9-v1": 2,
+    "redirect_share": 0.3415,
+    "redirected_units": 7,
+    "redirects": 14,
+    "repeat": {},
+    "slot_vs_t9-v1": 5,
+    "stages": 7,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 14,
+   "first_decision_redirects": 6,
+   "first_decision_redirects_own_game": 6,
+   "redirects_in_risk_window": 21,
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "buckets": {
+     "first": 6,
+     "later": 1,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1069,
+    "first_decision_redirects": 6,
+    "keeps": 12,
+    "order_divergence": {
+     "O2": 0,
+     "baseline-v2": 1057,
+     "t9-v1": 1058,
+     "v3": 7
+    },
+    "post_opening_units": 1,
+    "post_slot_vs_t9-v1": 0,
+    "redirect_share": 0.0065,
+    "redirected_units": 7,
+    "redirects": 7,
+    "repeat": {},
+    "slot_vs_t9-v1": 3,
+    "stages": 1050,
+    "violations": {},
+    "withholds": 0
+   }
+  },
+  "delayed-post-stage-any": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 41,
+    "first_decision_redirects": 0,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 14,
+     "baseline-v2": 21,
+     "t9-v1": 25,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 5,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 30,
+     "repeat_comparisons": 16
+    },
+    "slot_vs_t9-v1": 8,
+    "stages": 21,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 0,
+   "first_decision_redirects": 0,
+   "first_decision_redirects_own_game": 0,
+   "memory_metrics": {
+    "baseline-v2": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 7,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 21,
+     "records_ended": {
+      "moving to an objective": 21
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    },
+    "t9-v1": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 7,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 1057,
+     "records_ended": {
+      "moving to an objective": 8,
+      "standing on an objective": 1049
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    }
+   },
+   "redirects_in_risk_window": 0,
+   "shooter_memory_before_firing": {
+    "baseline-v2": {
+     "611": {
+      "absent": 611,
+      "no record": 611,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    },
+    "t9-v1": {
+     "611": {
+      "absent": 611,
+      "no record": 611,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    }
+   },
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1069,
+    "first_decision_redirects": 0,
+    "keeps": 12,
+    "order_divergence": {
+     "O2": 7,
+     "baseline-v2": 1057,
+     "t9-v1": 1060,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 1,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 858,
+     "repeat_comparisons": 289
+    },
+    "slot_vs_t9-v1": 4,
+    "stages": 1057,
+    "violations": {},
+    "withholds": 0
+   },
+   "trigger_exposure_in_window": 0,
+   "trigger_exposure_total": 0
+  },
+  "delayed-post-stage-same": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 41,
+    "first_decision_redirects": 0,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 14,
+     "baseline-v2": 21,
+     "t9-v1": 25,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 5,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 30,
+     "repeat_comparisons": 16
+    },
+    "slot_vs_t9-v1": 8,
+    "stages": 21,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 0,
+   "first_decision_redirects": 0,
+   "first_decision_redirects_own_game": 0,
+   "memory_metrics": {
+    "baseline-v2": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 7,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 21,
+     "records_ended": {
+      "moving to an objective": 21
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    },
+    "t9-v1": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 7,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 1057,
+     "records_ended": {
+      "moving to an objective": 8,
+      "standing on an objective": 1049
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    }
+   },
+   "redirects_in_risk_window": 0,
+   "shooter_memory_before_firing": {
+    "baseline-v2": {
+     "611": {
+      "absent": 611,
+      "no record": 611,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    },
+    "t9-v1": {
+     "611": {
+      "absent": 611,
+      "no record": 611,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    }
+   },
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1069,
+    "first_decision_redirects": 0,
+    "keeps": 12,
+    "order_divergence": {
+     "O2": 7,
+     "baseline-v2": 1057,
+     "t9-v1": 1060,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 1,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 858,
+     "repeat_comparisons": 289
+    },
+    "slot_vs_t9-v1": 4,
+    "stages": 1057,
+    "violations": {},
+    "withholds": 0
+   },
+   "trigger_exposure_in_window": 0,
+   "trigger_exposure_total": 0
+  },
+  "delayed-repeat-2": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 41,
+    "first_decision_redirects": 0,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 14,
+     "baseline-v2": 21,
+     "t9-v1": 25,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 5,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 30,
+     "repeat_comparisons": 16
+    },
+    "slot_vs_t9-v1": 8,
+    "stages": 21,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 0,
+   "first_decision_redirects": 0,
+   "first_decision_redirects_own_game": 0,
+   "memory_metrics": {
+    "baseline-v2": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 7,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 21,
+     "records_ended": {
+      "moving to an objective": 21
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    },
+    "t9-v1": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 7,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 1057,
+     "records_ended": {
+      "moving to an objective": 8,
+      "standing on an objective": 1049
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    }
+   },
+   "redirects_in_risk_window": 0,
+   "shooter_memory_before_firing": {
+    "baseline-v2": {
+     "611": {
+      "absent": 611,
+      "no record": 611,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    },
+    "t9-v1": {
+     "611": {
+      "absent": 611,
+      "no record": 611,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    }
+   },
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1069,
+    "first_decision_redirects": 0,
+    "keeps": 12,
+    "order_divergence": {
+     "O2": 7,
+     "baseline-v2": 1057,
+     "t9-v1": 1060,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 1,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 858,
+     "repeat_comparisons": 289
+    },
+    "slot_vs_t9-v1": 4,
+    "stages": 1057,
+    "violations": {},
+    "withholds": 0
+   },
+   "trigger_exposure_in_window": 0,
+   "trigger_exposure_total": 0
+  },
+  "delayed-repeat-3": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 41,
+    "first_decision_redirects": 0,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 14,
+     "baseline-v2": 21,
+     "t9-v1": 25,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 5,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 30,
+     "repeat_comparisons": 16
+    },
+    "slot_vs_t9-v1": 8,
+    "stages": 21,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 0,
+   "first_decision_redirects": 0,
+   "first_decision_redirects_own_game": 0,
+   "memory_metrics": {
+    "baseline-v2": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 7,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 21,
+     "records_ended": {
+      "moving to an objective": 21
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    },
+    "t9-v1": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 7,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 1057,
+     "records_ended": {
+      "moving to an objective": 8,
+      "standing on an objective": 1049
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    }
+   },
+   "redirects_in_risk_window": 0,
+   "shooter_memory_before_firing": {
+    "baseline-v2": {
+     "611": {
+      "absent": 611,
+      "no record": 611,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    },
+    "t9-v1": {
+     "611": {
+      "absent": 611,
+      "no record": 611,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    }
+   },
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1069,
+    "first_decision_redirects": 0,
+    "keeps": 12,
+    "order_divergence": {
+     "O2": 7,
+     "baseline-v2": 1057,
+     "t9-v1": 1060,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 1,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 858,
+     "repeat_comparisons": 289
+    },
+    "slot_vs_t9-v1": 4,
+    "stages": 1057,
+    "violations": {},
+    "withholds": 0
+   },
+   "trigger_exposure_in_window": 0,
+   "trigger_exposure_total": 0
+  },
+  "delayed-saturated-source": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 41,
+    "first_decision_redirects": 0,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 14,
+     "baseline-v2": 21,
+     "t9-v1": 25,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 5,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 30,
+     "repeat_comparisons": 16
+    },
+    "slot_vs_t9-v1": 8,
+    "stages": 21,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 0,
+   "first_decision_redirects": 0,
+   "first_decision_redirects_own_game": 0,
+   "memory_metrics": {
+    "baseline-v2": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 7,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 21,
+     "records_ended": {
+      "moving to an objective": 21
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    },
+    "t9-v1": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 7,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 1057,
+     "records_ended": {
+      "moving to an objective": 8,
+      "standing on an objective": 1049
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    }
+   },
+   "redirects_in_risk_window": 0,
+   "shooter_memory_before_firing": {
+    "baseline-v2": {
+     "611": {
+      "absent": 611,
+      "no record": 611,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    },
+    "t9-v1": {
+     "611": {
+      "absent": 611,
+      "no record": 611,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    }
+   },
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1069,
+    "first_decision_redirects": 0,
+    "keeps": 12,
+    "order_divergence": {
+     "O2": 7,
+     "baseline-v2": 1057,
+     "t9-v1": 1060,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 1,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 858,
+     "repeat_comparisons": 289
+    },
+    "slot_vs_t9-v1": 4,
+    "stages": 1057,
+    "violations": {},
+    "withholds": 0
+   },
+   "trigger_exposure_in_window": 0,
+   "trigger_exposure_total": 0
+  },
+  "delayed-stable-alternative": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 41,
+    "first_decision_redirects": 0,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 14,
+     "baseline-v2": 21,
+     "t9-v1": 25,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 5,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 30,
+     "repeat_comparisons": 16
+    },
+    "slot_vs_t9-v1": 8,
+    "stages": 21,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 0,
+   "first_decision_redirects": 0,
+   "first_decision_redirects_own_game": 0,
+   "memory_metrics": {
+    "baseline-v2": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 7,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 21,
+     "records_ended": {
+      "moving to an objective": 21
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    },
+    "t9-v1": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 7,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 1057,
+     "records_ended": {
+      "moving to an objective": 8,
+      "standing on an objective": 1049
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    }
+   },
+   "redirects_in_risk_window": 0,
+   "shooter_memory_before_firing": {
+    "baseline-v2": {
+     "611": {
+      "absent": 611,
+      "no record": 611,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    },
+    "t9-v1": {
+     "611": {
+      "absent": 611,
+      "no record": 611,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    }
+   },
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1069,
+    "first_decision_redirects": 0,
+    "keeps": 12,
+    "order_divergence": {
+     "O2": 7,
+     "baseline-v2": 1057,
+     "t9-v1": 1060,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 1,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 858,
+     "repeat_comparisons": 289
+    },
+    "slot_vs_t9-v1": 4,
+    "stages": 1057,
+    "violations": {},
+    "withholds": 0
+   },
+   "trigger_exposure_in_window": 0,
+   "trigger_exposure_total": 0
+  },
+  "t9-v1": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "buckets": {
+     "first": 7,
+     "later": 0,
+     "next20": 6,
+     "next5": 2
+    },
+    "emitted_ground_moves": 35,
+    "first_decision_redirects": 7,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 17,
+     "baseline-v2": 21,
+     "t9-v1": 0,
+     "v3": 25
+    },
+    "post_opening_units": 7,
+    "post_slot_vs_t9-v1": 0,
+    "redirect_share": 0.4286,
+    "redirected_units": 10,
+    "redirects": 15,
+    "repeat": {},
+    "slot_vs_t9-v1": 0,
+    "stages": 0,
+    "violations": {},
+    "withholds": 6
+   },
+   "early_redirects_baseline": 15,
+   "first_decision_redirects": 7,
+   "first_decision_redirects_own_game": 7,
+   "redirects_in_risk_window": 23,
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "buckets": {
+     "first": 7,
+     "later": 1,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 20,
+    "first_decision_redirects": 7,
+    "keeps": 12,
+    "order_divergence": {
+     "O2": 1058,
+     "baseline-v2": 1057,
+     "t9-v1": 0,
+     "v3": 1060
+    },
+    "post_opening_units": 1,
+    "post_slot_vs_t9-v1": 0,
+    "redirect_share": 0.4,
+    "redirected_units": 7,
+    "redirects": 8,
+    "repeat": {},
+    "slot_vs_t9-v1": 0,
+    "stages": 0,
+    "violations": {},
+    "withholds": 1049
+   }
+  },
+  "v3": {
+   "baseline-v2": {
+    "active_decisions": 16,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 41,
+    "first_decision_redirects": 0,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 14,
+     "baseline-v2": 21,
+     "t9-v1": 25,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 5,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {},
+    "slot_vs_t9-v1": 8,
+    "stages": 21,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 0,
+   "first_decision_redirects": 0,
+   "first_decision_redirects_own_game": 0,
+   "redirects_in_risk_window": 0,
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 289,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1069,
+    "first_decision_redirects": 0,
+    "keeps": 12,
+    "order_divergence": {
+     "O2": 7,
+     "baseline-v2": 1057,
+     "t9-v1": 1060,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 1,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {},
+    "slot_vs_t9-v1": 4,
+    "stages": 1057,
+    "violations": {},
+    "withholds": 0
+   }
+  }
+ },
+ "schema": "miaosuan-s15-delayed/1"
+}

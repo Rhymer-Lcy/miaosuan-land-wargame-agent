@@ -1,0 +1,1344 @@
+{
+ "anchors": {
+  "firing_decisions": [
+   742,
+   804,
+   841,
+   876
+  ],
+  "first_decision_state_identical": true,
+  "shooters": 8
+ },
+ "configuration": "1930331196 C3",
+ "note": "offline study on recorded states: every policy is an action-level decision on states another policy produced, with each candidate's own memory simulated over the recorded observations; nothing here is an engine outcome, a score estimate or evidence of an effect",
+ "policies": {
+  "O2": {
+   "baseline-v2": {
+    "active_decisions": 11,
+    "buckets": {
+     "first": 4,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 40,
+    "first_decision_redirects": 4,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 0,
+     "baseline-v2": 20,
+     "t9-v1": 24,
+     "v3": 4
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 0,
+    "redirect_share": 0.1,
+    "redirected_units": 4,
+    "redirects": 4,
+    "repeat": {},
+    "slot_vs_t9-v1": 4,
+    "stages": 16,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 4,
+   "first_decision_redirects": 4,
+   "first_decision_redirects_own_game": 4,
+   "redirects_in_risk_window": 8,
+   "shooters_redirected": 4,
+   "t9-v1": {
+    "active_decisions": 263,
+    "buckets": {
+     "first": 4,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1742,
+    "first_decision_redirects": 4,
+    "keeps": 536,
+    "order_divergence": {
+     "O2": 0,
+     "baseline-v2": 1206,
+     "t9-v1": 1734,
+     "v3": 4
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 263,
+    "redirect_share": 0.0023,
+    "redirected_units": 4,
+    "redirects": 4,
+    "repeat": {},
+    "slot_vs_t9-v1": 267,
+    "stages": 1202,
+    "violations": {},
+    "withholds": 0
+   }
+  },
+  "baseline-v2": {
+   "baseline-v2": {
+    "active_decisions": 11,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 40,
+    "first_decision_redirects": 0,
+    "keeps": 40,
+    "order_divergence": {
+     "O2": 20,
+     "baseline-v2": 0,
+     "t9-v1": 26,
+     "v3": 20
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 6,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {},
+    "slot_vs_t9-v1": 11,
+    "stages": 0,
+    "violations": {
+     "objective above capacity": 7,
+     "place for a unit that cannot arrive before the end": 2
+    },
+    "withholds": 0
+   },
+   "early_redirects_baseline": 0,
+   "first_decision_redirects": 0,
+   "first_decision_redirects_own_game": 0,
+   "redirects_in_risk_window": 0,
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 263,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1742,
+    "first_decision_redirects": 0,
+    "keeps": 1742,
+    "order_divergence": {
+     "O2": 1206,
+     "baseline-v2": 0,
+     "t9-v1": 1736,
+     "v3": 1206
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 283,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {},
+    "slot_vs_t9-v1": 288,
+    "stages": 0,
+    "violations": {
+     "objective above capacity": 260,
+     "place for a unit that cannot arrive before the end": 2
+    },
+    "withholds": 0
+   }
+  },
+  "batch-value-redirect": {
+   "baseline-v2": {
+    "active_decisions": 11,
+    "buckets": {
+     "first": 4,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 40,
+    "first_decision_redirects": 4,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 0,
+     "baseline-v2": 20,
+     "t9-v1": 24,
+     "v3": 4
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 0,
+    "redirect_share": 0.1,
+    "redirected_units": 4,
+    "redirects": 4,
+    "repeat": {},
+    "slot_vs_t9-v1": 4,
+    "stages": 16,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 4,
+   "first_decision_redirects": 4,
+   "first_decision_redirects_own_game": 4,
+   "redirects_in_risk_window": 8,
+   "shooters_redirected": 4,
+   "t9-v1": {
+    "active_decisions": 263,
+    "buckets": {
+     "first": 4,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1742,
+    "first_decision_redirects": 4,
+    "keeps": 536,
+    "order_divergence": {
+     "O2": 0,
+     "baseline-v2": 1206,
+     "t9-v1": 1734,
+     "v3": 4
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 263,
+    "redirect_share": 0.0023,
+    "redirected_units": 4,
+    "redirects": 4,
+    "repeat": {},
+    "slot_vs_t9-v1": 267,
+    "stages": 1202,
+    "violations": {},
+    "withholds": 0
+   }
+  },
+  "delayed-post-stage-any": {
+   "baseline-v2": {
+    "active_decisions": 11,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 40,
+    "first_decision_redirects": 0,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 4,
+     "baseline-v2": 20,
+     "t9-v1": 26,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 0,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 33,
+     "repeat_comparisons": 11
+    },
+    "slot_vs_t9-v1": 4,
+    "stages": 20,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 0,
+   "first_decision_redirects": 0,
+   "first_decision_redirects_own_game": 0,
+   "memory_metrics": {
+    "baseline-v2": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 4,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 18,
+     "records_ended": {
+      "moving to an objective": 18
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    },
+    "t9-v1": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 8,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 1204,
+     "records_ended": {
+      "moving to an objective": 4,
+      "standing on an objective": 1200
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    }
+   },
+   "redirects_in_risk_window": 0,
+   "shooter_memory_before_firing": {
+    "baseline-v2": {
+     "742": {
+      "absent": 0,
+      "no record": 1482,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     },
+     "804": {
+      "absent": 0,
+      "no record": 1606,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     },
+     "841": {
+      "absent": 0,
+      "no record": 1676,
+      "overflow observations": 6,
+      "record: episode count 1, completed staging 0, redirected 0": 6,
+      "trigger held": 0
+     },
+     "876": {
+      "absent": 0,
+      "no record": 1750,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     }
+    },
+    "t9-v1": {
+     "742": {
+      "absent": 0,
+      "no record": 1404,
+      "overflow observations": 80,
+      "record: episode count 1, completed staging 0, redirected 0": 80,
+      "trigger held": 0
+     },
+     "804": {
+      "absent": 0,
+      "no record": 1166,
+      "overflow observations": 442,
+      "record: episode count 1, completed staging 0, redirected 0": 442,
+      "trigger held": 0
+     },
+     "841": {
+      "absent": 0,
+      "no record": 1400,
+      "overflow observations": 282,
+      "record: episode count 1, completed staging 0, redirected 0": 282,
+      "trigger held": 0
+     },
+     "876": {
+      "absent": 0,
+      "no record": 1752,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    }
+   },
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 263,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1742,
+    "first_decision_redirects": 0,
+    "keeps": 536,
+    "order_divergence": {
+     "O2": 4,
+     "baseline-v2": 1206,
+     "t9-v1": 1736,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 263,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 789,
+     "repeat_comparisons": 263
+    },
+    "slot_vs_t9-v1": 267,
+    "stages": 1206,
+    "violations": {},
+    "withholds": 0
+   },
+   "trigger_exposure_in_window": 0,
+   "trigger_exposure_total": 0
+  },
+  "delayed-post-stage-same": {
+   "baseline-v2": {
+    "active_decisions": 11,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 40,
+    "first_decision_redirects": 0,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 4,
+     "baseline-v2": 20,
+     "t9-v1": 26,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 0,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 33,
+     "repeat_comparisons": 11
+    },
+    "slot_vs_t9-v1": 4,
+    "stages": 20,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 0,
+   "first_decision_redirects": 0,
+   "first_decision_redirects_own_game": 0,
+   "memory_metrics": {
+    "baseline-v2": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 4,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 18,
+     "records_ended": {
+      "moving to an objective": 18
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    },
+    "t9-v1": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 8,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 1204,
+     "records_ended": {
+      "moving to an objective": 4,
+      "standing on an objective": 1200
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    }
+   },
+   "redirects_in_risk_window": 0,
+   "shooter_memory_before_firing": {
+    "baseline-v2": {
+     "742": {
+      "absent": 0,
+      "no record": 1482,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     },
+     "804": {
+      "absent": 0,
+      "no record": 1606,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     },
+     "841": {
+      "absent": 0,
+      "no record": 1676,
+      "overflow observations": 6,
+      "record: episode count 1, completed staging 0, redirected 0": 6,
+      "trigger held": 0
+     },
+     "876": {
+      "absent": 0,
+      "no record": 1750,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     }
+    },
+    "t9-v1": {
+     "742": {
+      "absent": 0,
+      "no record": 1404,
+      "overflow observations": 80,
+      "record: episode count 1, completed staging 0, redirected 0": 80,
+      "trigger held": 0
+     },
+     "804": {
+      "absent": 0,
+      "no record": 1166,
+      "overflow observations": 442,
+      "record: episode count 1, completed staging 0, redirected 0": 442,
+      "trigger held": 0
+     },
+     "841": {
+      "absent": 0,
+      "no record": 1400,
+      "overflow observations": 282,
+      "record: episode count 1, completed staging 0, redirected 0": 282,
+      "trigger held": 0
+     },
+     "876": {
+      "absent": 0,
+      "no record": 1752,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    }
+   },
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 263,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1742,
+    "first_decision_redirects": 0,
+    "keeps": 536,
+    "order_divergence": {
+     "O2": 4,
+     "baseline-v2": 1206,
+     "t9-v1": 1736,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 263,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 789,
+     "repeat_comparisons": 263
+    },
+    "slot_vs_t9-v1": 267,
+    "stages": 1206,
+    "violations": {},
+    "withholds": 0
+   },
+   "trigger_exposure_in_window": 0,
+   "trigger_exposure_total": 0
+  },
+  "delayed-repeat-2": {
+   "baseline-v2": {
+    "active_decisions": 11,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 40,
+    "first_decision_redirects": 0,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 4,
+     "baseline-v2": 20,
+     "t9-v1": 26,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 0,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 33,
+     "repeat_comparisons": 11
+    },
+    "slot_vs_t9-v1": 4,
+    "stages": 20,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 0,
+   "first_decision_redirects": 0,
+   "first_decision_redirects_own_game": 0,
+   "memory_metrics": {
+    "baseline-v2": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 4,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 18,
+     "records_ended": {
+      "moving to an objective": 18
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    },
+    "t9-v1": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 8,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 1204,
+     "records_ended": {
+      "moving to an objective": 4,
+      "standing on an objective": 1200
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    }
+   },
+   "redirects_in_risk_window": 0,
+   "shooter_memory_before_firing": {
+    "baseline-v2": {
+     "742": {
+      "absent": 0,
+      "no record": 1482,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     },
+     "804": {
+      "absent": 0,
+      "no record": 1606,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     },
+     "841": {
+      "absent": 0,
+      "no record": 1676,
+      "overflow observations": 6,
+      "record: episode count 1, completed staging 0, redirected 0": 6,
+      "trigger held": 0
+     },
+     "876": {
+      "absent": 0,
+      "no record": 1750,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     }
+    },
+    "t9-v1": {
+     "742": {
+      "absent": 0,
+      "no record": 1404,
+      "overflow observations": 80,
+      "record: episode count 1, completed staging 0, redirected 0": 80,
+      "trigger held": 0
+     },
+     "804": {
+      "absent": 0,
+      "no record": 1166,
+      "overflow observations": 442,
+      "record: episode count 1, completed staging 0, redirected 0": 442,
+      "trigger held": 0
+     },
+     "841": {
+      "absent": 0,
+      "no record": 1400,
+      "overflow observations": 282,
+      "record: episode count 1, completed staging 0, redirected 0": 282,
+      "trigger held": 0
+     },
+     "876": {
+      "absent": 0,
+      "no record": 1752,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    }
+   },
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 263,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1742,
+    "first_decision_redirects": 0,
+    "keeps": 536,
+    "order_divergence": {
+     "O2": 4,
+     "baseline-v2": 1206,
+     "t9-v1": 1736,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 263,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 789,
+     "repeat_comparisons": 263
+    },
+    "slot_vs_t9-v1": 267,
+    "stages": 1206,
+    "violations": {},
+    "withholds": 0
+   },
+   "trigger_exposure_in_window": 0,
+   "trigger_exposure_total": 0
+  },
+  "delayed-repeat-3": {
+   "baseline-v2": {
+    "active_decisions": 11,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 40,
+    "first_decision_redirects": 0,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 4,
+     "baseline-v2": 20,
+     "t9-v1": 26,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 0,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 33,
+     "repeat_comparisons": 11
+    },
+    "slot_vs_t9-v1": 4,
+    "stages": 20,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 0,
+   "first_decision_redirects": 0,
+   "first_decision_redirects_own_game": 0,
+   "memory_metrics": {
+    "baseline-v2": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 4,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 18,
+     "records_ended": {
+      "moving to an objective": 18
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    },
+    "t9-v1": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 8,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 1204,
+     "records_ended": {
+      "moving to an objective": 4,
+      "standing on an objective": 1200
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    }
+   },
+   "redirects_in_risk_window": 0,
+   "shooter_memory_before_firing": {
+    "baseline-v2": {
+     "742": {
+      "absent": 0,
+      "no record": 1482,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     },
+     "804": {
+      "absent": 0,
+      "no record": 1606,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     },
+     "841": {
+      "absent": 0,
+      "no record": 1676,
+      "overflow observations": 6,
+      "record: episode count 1, completed staging 0, redirected 0": 6,
+      "trigger held": 0
+     },
+     "876": {
+      "absent": 0,
+      "no record": 1750,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     }
+    },
+    "t9-v1": {
+     "742": {
+      "absent": 0,
+      "no record": 1404,
+      "overflow observations": 80,
+      "record: episode count 1, completed staging 0, redirected 0": 80,
+      "trigger held": 0
+     },
+     "804": {
+      "absent": 0,
+      "no record": 1166,
+      "overflow observations": 442,
+      "record: episode count 1, completed staging 0, redirected 0": 442,
+      "trigger held": 0
+     },
+     "841": {
+      "absent": 0,
+      "no record": 1400,
+      "overflow observations": 282,
+      "record: episode count 1, completed staging 0, redirected 0": 282,
+      "trigger held": 0
+     },
+     "876": {
+      "absent": 0,
+      "no record": 1752,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    }
+   },
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 263,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1742,
+    "first_decision_redirects": 0,
+    "keeps": 536,
+    "order_divergence": {
+     "O2": 4,
+     "baseline-v2": 1206,
+     "t9-v1": 1736,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 263,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 789,
+     "repeat_comparisons": 263
+    },
+    "slot_vs_t9-v1": 267,
+    "stages": 1206,
+    "violations": {},
+    "withholds": 0
+   },
+   "trigger_exposure_in_window": 0,
+   "trigger_exposure_total": 0
+  },
+  "delayed-saturated-source": {
+   "baseline-v2": {
+    "active_decisions": 11,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 40,
+    "first_decision_redirects": 0,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 4,
+     "baseline-v2": 20,
+     "t9-v1": 26,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 0,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 33,
+     "repeat_comparisons": 11
+    },
+    "slot_vs_t9-v1": 4,
+    "stages": 20,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 0,
+   "first_decision_redirects": 0,
+   "first_decision_redirects_own_game": 0,
+   "memory_metrics": {
+    "baseline-v2": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 4,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 18,
+     "records_ended": {
+      "moving to an objective": 18
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    },
+    "t9-v1": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 8,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 1204,
+     "records_ended": {
+      "moving to an objective": 4,
+      "standing on an objective": 1200
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    }
+   },
+   "redirects_in_risk_window": 0,
+   "shooter_memory_before_firing": {
+    "baseline-v2": {
+     "742": {
+      "absent": 0,
+      "no record": 1482,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     },
+     "804": {
+      "absent": 0,
+      "no record": 1606,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     },
+     "841": {
+      "absent": 0,
+      "no record": 1676,
+      "overflow observations": 6,
+      "record: episode count 1, completed staging 0, redirected 0": 6,
+      "trigger held": 0
+     },
+     "876": {
+      "absent": 0,
+      "no record": 1750,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     }
+    },
+    "t9-v1": {
+     "742": {
+      "absent": 0,
+      "no record": 1404,
+      "overflow observations": 80,
+      "record: episode count 1, completed staging 0, redirected 0": 80,
+      "trigger held": 0
+     },
+     "804": {
+      "absent": 0,
+      "no record": 1166,
+      "overflow observations": 442,
+      "record: episode count 1, completed staging 0, redirected 0": 442,
+      "trigger held": 0
+     },
+     "841": {
+      "absent": 0,
+      "no record": 1400,
+      "overflow observations": 282,
+      "record: episode count 1, completed staging 0, redirected 0": 282,
+      "trigger held": 0
+     },
+     "876": {
+      "absent": 0,
+      "no record": 1752,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    }
+   },
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 263,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1742,
+    "first_decision_redirects": 0,
+    "keeps": 536,
+    "order_divergence": {
+     "O2": 4,
+     "baseline-v2": 1206,
+     "t9-v1": 1736,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 263,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 789,
+     "repeat_comparisons": 263
+    },
+    "slot_vs_t9-v1": 267,
+    "stages": 1206,
+    "violations": {},
+    "withholds": 0
+   },
+   "trigger_exposure_in_window": 0,
+   "trigger_exposure_total": 0
+  },
+  "delayed-stable-alternative": {
+   "baseline-v2": {
+    "active_decisions": 11,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 40,
+    "first_decision_redirects": 0,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 4,
+     "baseline-v2": 20,
+     "t9-v1": 26,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 0,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 33,
+     "repeat_comparisons": 11
+    },
+    "slot_vs_t9-v1": 4,
+    "stages": 20,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 0,
+   "first_decision_redirects": 0,
+   "first_decision_redirects_own_game": 0,
+   "memory_metrics": {
+    "baseline-v2": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 4,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 18,
+     "records_ended": {
+      "moving to an objective": 18
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    },
+    "t9-v1": {
+     "episode_count_at_redirect": {
+      "n": 0
+     },
+     "max_records": 8,
+     "memory_checks": 2881,
+     "memory_problems": 0,
+     "overflow_observations": 1204,
+     "records_ended": {
+      "moving to an objective": 4,
+      "standing on an objective": 1200
+     },
+     "steps_in_episode_at_redirect": {
+      "n": 0
+     },
+     "trigger_held": 0
+    }
+   },
+   "redirects_in_risk_window": 0,
+   "shooter_memory_before_firing": {
+    "baseline-v2": {
+     "742": {
+      "absent": 0,
+      "no record": 1482,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     },
+     "804": {
+      "absent": 0,
+      "no record": 1606,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     },
+     "841": {
+      "absent": 0,
+      "no record": 1676,
+      "overflow observations": 6,
+      "record: episode count 1, completed staging 0, redirected 0": 6,
+      "trigger held": 0
+     },
+     "876": {
+      "absent": 0,
+      "no record": 1750,
+      "overflow observations": 2,
+      "record: episode count 1, completed staging 0, redirected 0": 2,
+      "trigger held": 0
+     }
+    },
+    "t9-v1": {
+     "742": {
+      "absent": 0,
+      "no record": 1404,
+      "overflow observations": 80,
+      "record: episode count 1, completed staging 0, redirected 0": 80,
+      "trigger held": 0
+     },
+     "804": {
+      "absent": 0,
+      "no record": 1166,
+      "overflow observations": 442,
+      "record: episode count 1, completed staging 0, redirected 0": 442,
+      "trigger held": 0
+     },
+     "841": {
+      "absent": 0,
+      "no record": 1400,
+      "overflow observations": 282,
+      "record: episode count 1, completed staging 0, redirected 0": 282,
+      "trigger held": 0
+     },
+     "876": {
+      "absent": 0,
+      "no record": 1752,
+      "overflow observations": 0,
+      "trigger held": 0
+     }
+    }
+   },
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 263,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1742,
+    "first_decision_redirects": 0,
+    "keeps": 536,
+    "order_divergence": {
+     "O2": 4,
+     "baseline-v2": 1206,
+     "t9-v1": 1736,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 263,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {
+     "order_comparisons": 789,
+     "repeat_comparisons": 263
+    },
+    "slot_vs_t9-v1": 267,
+    "stages": 1206,
+    "violations": {},
+    "withholds": 0
+   },
+   "trigger_exposure_in_window": 0,
+   "trigger_exposure_total": 0
+  },
+  "t9-v1": {
+   "baseline-v2": {
+    "active_decisions": 11,
+    "buckets": {
+     "first": 12,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 26,
+    "first_decision_redirects": 12,
+    "keeps": 14,
+    "order_divergence": {
+     "O2": 24,
+     "baseline-v2": 26,
+     "t9-v1": 0,
+     "v3": 26
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 0,
+    "redirect_share": 0.4615,
+    "redirected_units": 12,
+    "redirects": 12,
+    "repeat": {},
+    "slot_vs_t9-v1": 0,
+    "stages": 0,
+    "violations": {
+     "place for a unit that cannot arrive before the end": 4
+    },
+    "withholds": 14
+   },
+   "early_redirects_baseline": 12,
+   "first_decision_redirects": 12,
+   "first_decision_redirects_own_game": 12,
+   "redirects_in_risk_window": 26,
+   "shooters_redirected": 10,
+   "t9-v1": {
+    "active_decisions": 263,
+    "buckets": {
+     "first": 12,
+     "later": 0,
+     "next20": 0,
+     "next5": 2
+    },
+    "emitted_ground_moves": 20,
+    "first_decision_redirects": 12,
+    "keeps": 6,
+    "order_divergence": {
+     "O2": 1734,
+     "baseline-v2": 1736,
+     "t9-v1": 0,
+     "v3": 1736
+    },
+    "post_opening_units": 2,
+    "post_slot_vs_t9-v1": 0,
+    "redirect_share": 0.7,
+    "redirected_units": 14,
+    "redirects": 14,
+    "repeat": {},
+    "slot_vs_t9-v1": 0,
+    "stages": 0,
+    "violations": {
+     "place for a unit that cannot arrive before the end": 4
+    },
+    "withholds": 1722
+   }
+  },
+  "v3": {
+   "baseline-v2": {
+    "active_decisions": 11,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 40,
+    "first_decision_redirects": 0,
+    "keeps": 20,
+    "order_divergence": {
+     "O2": 4,
+     "baseline-v2": 20,
+     "t9-v1": 26,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 0,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {},
+    "slot_vs_t9-v1": 4,
+    "stages": 20,
+    "violations": {},
+    "withholds": 0
+   },
+   "early_redirects_baseline": 0,
+   "first_decision_redirects": 0,
+   "first_decision_redirects_own_game": 0,
+   "redirects_in_risk_window": 0,
+   "shooters_redirected": 0,
+   "t9-v1": {
+    "active_decisions": 263,
+    "buckets": {
+     "first": 0,
+     "later": 0,
+     "next20": 0,
+     "next5": 0
+    },
+    "emitted_ground_moves": 1742,
+    "first_decision_redirects": 0,
+    "keeps": 536,
+    "order_divergence": {
+     "O2": 4,
+     "baseline-v2": 1206,
+     "t9-v1": 1736,
+     "v3": 0
+    },
+    "post_opening_units": 0,
+    "post_slot_vs_t9-v1": 263,
+    "redirect_share": 0.0,
+    "redirected_units": 0,
+    "redirects": 0,
+    "repeat": {},
+    "slot_vs_t9-v1": 267,
+    "stages": 1206,
+    "violations": {},
+    "withholds": 0
+   }
+  }
+ },
+ "schema": "miaosuan-s15-delayed/1"
+}
