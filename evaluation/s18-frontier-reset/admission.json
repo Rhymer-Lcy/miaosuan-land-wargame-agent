@@ -1,0 +1,80 @@
+{
+ "census_sha256": "6c0919e287a96abcace4767594b68a08506b432ae647bfc4e2a9bfeff3d2bffa",
+ "label": "post hoc relative to the census, written before any family was scored; descriptive",
+ "private_rows_sha256": "d83a5928e98681b3b229c83c9a1431c54cd74b2b3b0bdba65cff3794f5fd8b82",
+ "schema": "miaosuan-s18-admission/1",
+ "study_id": "s18-frontier-reset",
+ "tables": {
+  "H0": {
+   "aircraft_events_by_attacker_class": {
+    "infantry": 3,
+    "vehicle": 10
+   },
+   "close_combat_events": 71,
+   "close_combat_events_attacker_seen_before": 71,
+   "close_combat_events_victim_moving": 26,
+   "close_combat_events_victim_on_objective": 49,
+   "close_combat_events_victim_stacked": 51,
+   "damage_events": 205,
+   "events_by_attacker_class": {
+    "aircraft": 37,
+    "infantry": 6,
+    "vehicle": 162
+   },
+   "ground_damage_by_state": {
+    "moving, off objectives, alone": 78,
+    "moving, off objectives, stacked": 101,
+    "moving, on an objective, alone": 5,
+    "moving, on an objective, stacked": 20,
+    "stationary, on an objective, alone": 17,
+    "stationary, on an objective, stacked": 64
+   },
+   "ground_events_by_state": {
+    "moving, off objectives, alone": 49,
+    "moving, off objectives, stacked": 57,
+    "moving, on an objective, alone": 3,
+    "moving, on an objective, stacked": 15,
+    "stationary, on an objective, alone": 13,
+    "stationary, on an objective, stacked": 40
+   },
+   "sides": 16,
+   "sides_with_a_close_combat_hit_on_a_moving_unit": 6,
+   "sides_with_a_stationary_stacked_hit_on_an_objective": 10,
+   "stationary_stacked_on_objective_events_attacker_seen_before": 40
+  },
+  "HH": {
+   "aircraft_events_by_attacker_class": {
+    "vehicle": 3
+   },
+   "close_combat_events": 55,
+   "close_combat_events_attacker_seen_before": 55,
+   "close_combat_events_victim_moving": 45,
+   "close_combat_events_victim_on_objective": 29,
+   "close_combat_events_victim_stacked": 32,
+   "damage_events": 158,
+   "events_by_attacker_class": {
+    "aircraft": 35,
+    "infantry": 6,
+    "vehicle": 117
+   },
+   "ground_damage_by_state": {
+    "moving, off objectives, alone": 83,
+    "moving, off objectives, stacked": 66,
+    "moving, on an objective, alone": 15,
+    "moving, on an objective, stacked": 27,
+    "stationary, on an objective, alone": 4,
+    "stationary, on an objective, stacked": 14
+   },
+   "ground_events_by_state": {
+    "moving, off objectives, alone": 47,
+    "moving, off objectives, stacked": 40,
+    "moving, on an objective, alone": 10,
+    "moving, on an objective, stacked": 20,
+    "stationary, on an objective, alone": 3,
+    "stationary, on an objective, stacked": 10
+   },
+   "sides": 4,
+   "stationary_stacked_on_objective_events_attacker_seen_before": 10
+  }
+ }
+}
