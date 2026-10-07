@@ -440,3 +440,19 @@ an unidentifiable registered endpoint.
 
 **Recommended next task (one, owner's approval):** T2, transport and infantry defence, the next eligible family of
 Sprint 18's frozen ranking after T6 and T11.
+
+### R11. Close-out checks
+
+At `9082e7e` (tree `8a568bf2`), the results as pushed at 2026-10-07T19:14:30+08:00 and fetched back from GitHub
+identical: the workstation tree ran 1,818 tests (85 skipped) and a clean clone 1,815 (93 skipped), both passing; the
+server's private tree ran 1,831 tests, passing in 6,129 s, with 7 skipped (the documentation-snapshot checks of
+Sprints 20 and 21, which need the snapshot only the workstation holds and pass there), and the ledger file
+byte-identical before and after. Inside that suite `tests/test_real_s21.py` regenerates the protocol, the inputs, every
+public result file and the private rows byte for byte. The private documentation gate binds the anchored clauses of
+these results, the frontier row and roadmap item and the README note to the public files and the copied logs and catches
+every planted error; each of 23 current documentation gates passes and catches all its plants (Sprint 10's on the
+server: 40 checks, no failure, 15 of 15); the four retired copies kept beside them fail identically to the start of the
+sprint. The privacy scan of all 988 reachable blobs gives the 104 accepted hit lines, the same set. The platform canary
+rebuilds on both hosts with SHA-256 `a3d3b022...` and no mismatch. A read-only verify reports 2,795 sessions, none
+unclosed, integrity ok, state chain continuous; session 2796 was never opened. The server's development worktree was
+removed after these checks; the private rows stay in its main clone's ignored `local/`.
