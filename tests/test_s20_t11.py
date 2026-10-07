@@ -462,7 +462,10 @@ class DecisionRuleTest(unittest.TestCase):
         self.assertTrue(side.integrity_ok)
         public = st.public_side(side)
         root = public["root_switches"]
-        self.assertEqual((root["n"], root["baseline_target_blood"], root["t11_target_blood"]), (1, {"4": 1}, {"1": 1}))
+        self.assertEqual((root["n"], root["baseline_target_blood"], root["t11_target_blood"]),
+                         (1, {"blood_4": 1}, {"blood_1": 1}))
+        self.assertEqual((root["blood_reduction"], root["attack_level_change"], root["targets_available"]),
+                         ({"reduction_3": 1}, {"change_-5": 1}, {"targets_2": 1}))
         self.assertEqual((root["attack_level_pairs"], root["t11_level_lower"]), ({"L8_L3": 1}, 1))
         self.assertEqual(public["reservation"]["max_chain"], 2)
         side.add(2, 7, 2, False, st.DecisionComparison(), {})
@@ -510,6 +513,10 @@ class PrivacyTest(unittest.TestCase):
         ids = {A, B, E1, E2, E3, 102, 103, 304, 305, 306, 909}
         self.assertEqual(st.public_problems(st.public_side(side), ids), [])
         self.assertEqual(st.public_problems(st.pooled([side]), ids), [])
+        # real unit identifiers include small integers: no public key may be a bare count, blood or level value
+        small = set(range(0, 50)) | {-5, -4, -3, -2, -1}
+        self.assertEqual(st.public_problems(st.public_side(side), small), [])
+        self.assertEqual(st.public_problems(st.pooled([side]), small), [])
 
 
 if __name__ == "__main__":
