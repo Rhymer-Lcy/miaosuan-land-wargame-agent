@@ -123,6 +123,7 @@ class ResultsTest(unittest.TestCase):
         self.assertEqual(d["disposition"], expected["disposition"])
         self.assertEqual(d["items"], expected["items"])
         self.assertEqual(d["hh_changed_emitted_shots"], changed)
+        self.assertEqual(d["disposition"], "T11_OFFLINE_MODEL_UNAVAILABLE")  # the committed result (2026-10-07)
 
     def test_side_game_figures_are_internally_consistent(self) -> None:
         r = load("replay.json")
