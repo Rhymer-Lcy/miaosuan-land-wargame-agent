@@ -439,6 +439,196 @@ def rehearse() -> int:
 
 
 # ------------------------------------------------------------------------------------------------
+# inputs (registration) and the post-game analysis (results)
+
+INPUTS = PUBLIC / "inputs.json"
+GAMES_OUT = PUBLIC / "games.json"
+MECHANISM = PUBLIC / "mechanism.json"
+DISPOSITION = PUBLIC / "disposition.json"
+WORK = LOCAL_EVAL / sp.CARD_ID
+ANALYSIS_PRIVATE = PRIVATE / "analysis-private.json"
+LEDGER = REPO_ROOT / "local" / "engines" / "sdk-4.1.0" / "usage-ledger.jsonl"
+
+
+def load_script(name: str) -> Any:
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(f"s22_{name}", REPO_ROOT / "scripts" / f"{name}.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def inputs() -> Dict[str, Any]:
+    from miaosuan_agent.evaluation import manifest as mf
+    card = load_script("build_s22_card").build()
+    witness_public = json.loads(WITNESS.read_text(encoding="utf-8"))
+    corpus_pins = [{"folder": e["folder"], "game": e["game"], "tier": e["tier"],
+                    "files": {k: {"file": p.relative_to(REPO_ROOT).as_posix(), "sha256": sha256(p)}
+                              for k, p in sorted(e["files"].items())}} for e in corpus()]
+    return {"schema": sp.SCHEMA + "/inputs", "study_id": sp.STUDY_ID, "card_id": sp.CARD_ID,
+            "card_canonical_sha256": mf.digest(card), "candidate": sp.CANDIDATE_ID,
+            "candidate_policy_source_sha256": sp.CANDIDATE_DIGEST, "rules_sha256": sp.rules_digest(),
+            "corpus": corpus_pins, "s21_inputs_sha256": sha256(S21_INPUTS),
+            "semantics_sha256": sha256(SEMANTICS), "witness_sha256": sha256(WITNESS),
+            "witness_reference_sha256": sha256(REFERENCE), "selected_witness": witness_public["selected"],
+            "expected_sessions": list(sp.EXPECTED_SESSIONS), "ledger_base_session": sp.LEDGER_BASE_SESSION}
+
+
+def read_ledger() -> List[Dict[str, Any]]:
+    """The ledger up to the last authorized session (2796), so that the public files regenerate after later sprints'
+    sessions; the runner and the game entry point audit the whole live ledger, and the close-out verifies separately
+    that no session after 2796 was opened in this sprint."""
+    records = [json.loads(line) for line in LEDGER.read_text(encoding="utf-8").splitlines() if line.strip()]
+    return [r for r in records if r.get("session") is None or int(r["session"]) <= sp.EXPECTED_SESSIONS[-1]]
+
+
+def analyse() -> Tuple[Dict[str, Any], Dict[str, Any], Dict[str, Any], Dict[str, Any]]:
+    """games.json, mechanism.json, disposition.json and the private analysis, from the record and captures."""
+    the_card = json.loads((REPO_ROOT / "evaluation" / sp.CARD_ID / "manifest.json").read_text(encoding="utf-8"))
+    game_entry = load_script("run_s22_game")
+    entry = the_card["games"][0]
+    reference = json.loads(REFERENCE.read_text(encoding="utf-8"))["selected"]
+    problems: List[str] = []
+    stops = game_entry.recorded_stops(the_card, entry, WORK)
+    audit = sp.ledger_audit(read_ledger(), the_card)
+    for code, found in audit["problems"].items():
+        stops.setdefault(code, []).extend(found)
+    codes = sp.structural_stops(stops)
+    problems.extend(f"{c}: {p}" for c in codes for p in stops[c])
+    record = json.loads((WORK / "games" / f"{entry['game_id']}.json").read_text(encoding="utf-8"))
+    timeline = json.loads((WORK / "capture" / f"{entry['game_id']}.timeline.json").read_text(encoding="utf-8"))
+    with (WORK / "capture" / f"{entry['game_id']}.timeline.pkl").open("rb") as handle:
+        windows = pickle.load(handle)
+    seat = next(s["seat"] for s in record["seats"] if s["policy"] == sp.CANDIDATE_ID)
+    faction = next(s["faction"] for s in record["seats"] if s["policy"] == sp.CANDIDATE_ID)
+    samples = sorted(windows["samples"], key=lambda s: s["k"])
+    steps = timeline["steps"]
+    if [s["k"] for s in samples] != list(range(len(steps))):
+        problems.append("the timeline does not hold one snapshot per decision")
+    scenario = entry["scenario_id"]
+    map_id = next(s["map_id"] for s in the_card["scenarios"] if s["scenario_id"] == scenario)
+    costs = MoveCosts.from_raw(sdk_data.load_inputs(WORK / "data" / scenario / "Data", scenario, map_id).cost,
+                               Origin.ENGINE, "setup_info.cost_data")
+    # offline re-derivation from an empty memory (section 20)
+    from miaosuan_agent.decision import Memory
+    from miaosuan_agent.evaluation import s22_capture as cap
+    base_memory: Any = Memory()
+    addon_memory: Tuple[Tuple[int, int], ...] = ()
+    raws, submitted, feedback, states, differences = [], [], [], [], 0
+    memory_compared = 0
+    for k, sample in enumerate(samples):
+        snap = sample["seats"].get(seat) or sample["seats"].get(str(seat))
+        raw = pickle.loads(snap["observation"])
+        live_memory = pickle.loads(snap["memory"])
+        live_actions = [a["action"] for a in steps[k].get("submitted") or () if a["seat"] == seat]
+        if cap.split_memory(live_memory) != (base_memory, addon_memory):
+            problems.append(f"decision {k}: the carried memory differs from the offline chain")
+        memory_compared += 1
+        rebuilt = cap.reconstruct(raw, seat, faction, AddonMemory(base_memory, addon_memory), costs)
+        if rebuilt["actions"] != rd.plain(live_actions):
+            differences += 1
+            problems.append(f"decision {k}: the live actions differ from the offline reconstruction")
+        found = sp.unregistered_differences(rebuilt["baseline_actions"], live_actions, rebuilt["state_before"],
+                                            rebuilt["state_after"], rebuilt["pair"])
+        if found:
+            problems.append(f"decision {k}: {found[0]}")
+        base_memory, addon_memory = rebuilt["baseline_memory_out"], tuple(tuple(p) for p in rebuilt["memory_out"])
+        raws.append(raw)
+        submitted.append(live_actions)
+        feedback.append([f for f in steps[k].get("feedback") or () if (f.get("message") or {}).get("actor") == seat])
+        states.append((rebuilt["state_before"], rebuilt["state_after"], rebuilt["cur_step"]))
+    live = cap.prefix_inputs(timeline, seat, reference["trigger_decision"])
+    prefix = sp.prefix_problems({"trigger_decision": reference["trigger_decision"], "pair": reference["pair"],
+                                 "trigger_actions": cap.actions_digest(reference["trigger_actions"])},
+                                live["live"], live["baseline"], live["trigger_actions"], live["pair"])
+    problems.extend(f"SP: {p}" for p in prefix)
+    frames = [sp.Frame(raw, faction, seat) for raw in raws]
+    facts = sp.transport_facts(frames, submitted, feedback, reference["pair"], reference["trigger_decision"])
+    embark = sp.embark_endpoint(facts["embark"])
+    carry = sp.carry_endpoint(facts["carry"]) if "carry" in facts else None
+    stacking = sp.stacking_endpoint(facts["stacking"]) if "stacking" in facts else None
+    disembark = sp.disembark_endpoint(facts["disembark"]) if "disembark" in facts else None
+    verdict = sp.disposition(None, problems, embark, carry, stacking, disembark)
+    # descriptive: the candidate's state sequence, the holds, the destination against the prediction, travel time
+    sequence = []
+    for before, after, cur in states:
+        if after != (sequence[-1]["state"] if sequence else "READY"):
+            sequence.append({"state": after, "cur_step": cur})
+    holds = collections.Counter()
+    for k in range(len(steps)):
+        row = (steps[k].get("s22") or {}).get(str(seat)) or {}
+        for change in row.get("changes") or ():
+            c = json.loads(change)
+            if c.get("kind") == "carrier-move-withheld":
+                holds[c["state"]] += 1
+    names = tl.labels({c["coord"]: c.get("value") for c in raws[0].get("cities") or ()})
+    private = facts["private"]
+    destination = private.get("destination")
+    descriptive: Dict[str, Any] = {
+        "candidate_states": sequence,
+        "carrier_move_withheld_decisions": dict(sorted(holds.items())),
+        "destination": names.get(destination) if destination is not None else None,
+        "destination_equals_prediction": destination == reference["destination_hex"] if destination else None,
+    }
+    if private.get("route"):
+        arrival = private["decisions"].get("arrival")
+        car = next(u for u in raws[private["decisions"]["move"]]["operators"] if u["obj_id"] == reference["pair"][1])
+        descriptive["carrier_route_free_flow"] = free_flow(ShootReservationPolicy(costs).router, car, private["route"])
+        descriptive["release_to_arrival_steps"] = facts["carry"].get("release_to_arrival_steps")
+        descriptive["infantry_foot_free_flow_to_destination_predicted"] = \
+            sp.RULES["witness"]["infantry_free_flow_to_destination"]
+        descriptive["arrival_cur_step"] = None if arrival is None else raws[arrival]["time"]["cur_step"]
+    public_facts = {k: v for k, v in facts.items() if k != "private"}
+    scores = record.get("final_scores") or {}
+    games_public = {"schema": sp.SCHEMA + "/games", "study_id": sp.STUDY_ID, "game_id": entry["game_id"],
+                    "session": record.get("session"), "status": record.get("status"), "steps": record.get("steps"),
+                    "candidate_side": sp.candidate_side(entry), "structural_stops": codes,
+                    "ledger_sessions_after_base": audit["sessions"], "decisions_reconstructed_offline": len(samples),
+                    "memory_compared": memory_compared, "offline_differences": differences,
+                    "live_consistency_errors": len(timeline.get("consistency_errors") or ()),
+                    "live_unregistered_differences": len(timeline.get("unregistered_differences") or ()),
+                    "prefix_problems": len(prefix),
+                    "record_facts_not_used": {"scores": {k: scores.get(k) for k in sorted(scores)}}}
+    mechanism_public = {"schema": sp.SCHEMA + "/mechanism", "study_id": sp.STUDY_ID, "facts": public_facts,
+                        "endpoints": {"embark": embark, "carry": carry, "stacking": stacking, "disembark": disembark},
+                        "descriptive": descriptive}
+    disposition_public = {"schema": sp.SCHEMA + "/disposition", "study_id": sp.STUDY_ID, **verdict,
+                          "order": list(sp.DISPOSITIONS)}
+    private_out = {"facts": facts, "states": states, "problems": problems, "reference": reference}
+    return games_public, mechanism_public, disposition_public, private_out
+
+
+def result_private_values(reference: Mapping[str, Any], facts_private: Mapping[str, Any]) -> set:
+    """The private values the result files are checked against: the selected witness's unit ids, hexes and paths and
+    the live game's destination and route (the other corpus games' values cannot occur in facts about this game)."""
+    selected = reference["selected"]
+    values = private_values({"triggers": {selected["game"]: selected}})
+    values.update(v for v in [facts_private.get("destination")] + list(facts_private.get("route") or ())
+                  if v is not None)
+    return values
+
+
+def run(check: bool) -> int:
+    games_public, mechanism_public, disposition_public, private_out = analyse()
+    reference = json.loads(REFERENCE.read_text(encoding="utf-8"))
+    values = result_private_values(reference, private_out["facts"]["private"])
+    for name, data in (("games", games_public), ("mechanism", mechanism_public), ("disposition", disposition_public)):
+        found = sp.public_check(data, values)
+        if found:
+            print(f"REFUSED: public {name} fails the privacy check: {found[:5]}", file=sys.stderr)
+            return 1
+    ok = True
+    if not check:
+        PRIVATE.mkdir(parents=True, exist_ok=True)
+        ANALYSIS_PRIVATE.write_text(json.dumps(private_out, indent=1, sort_keys=True, default=repr) + "\n",
+                                    encoding="utf-8")
+    for path, data in ((GAMES_OUT, games_public), (MECHANISM, mechanism_public), (DISPOSITION, disposition_public)):
+        ok = write_or_check(path, sp.dump(data), check) and ok
+    print(f"disposition {disposition_public['disposition']}")
+    return 0 if ok else 1
+
+
+# ------------------------------------------------------------------------------------------------
 
 
 def write_or_check(path: Path, text: str, check: bool) -> bool:
@@ -456,11 +646,20 @@ def write_or_check(path: Path, text: str, check: bool) -> bool:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     sub = parser.add_subparsers(dest="command", required=True)
-    for name in ("semantics", "witness"):
+    for name in ("semantics", "witness", "inputs", "run"):
         p = sub.add_parser(name)
         p.add_argument("--check", action="store_true")
     sub.add_parser("rehearse")
     args = parser.parse_args()
+    if args.command == "inputs":
+        data = inputs()
+        problems = sp.public_check(data, private_values(json.loads(REFERENCE.read_text(encoding="utf-8"))))
+        if problems:
+            print(f"REFUSED: public inputs fail the privacy check: {problems[:5]}", file=sys.stderr)
+            return 1
+        return 0 if write_or_check(INPUTS, sp.dump(data), args.check) else 1
+    if args.command == "run":
+        return run(args.check)
     if args.command == "semantics":
         data = semantics()
         problems = sp.public_check(data)
