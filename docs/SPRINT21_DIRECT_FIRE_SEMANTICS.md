@@ -47,8 +47,9 @@ evaluator or any historical output, no external research and no private data sen
 
 Before writing these sections the author read Sprint 20's document, `kill_model.json` and replay summary, the
 residual-516 diagnostic's findings on `judge_info`, Sprint 18's census loaders and the capture modules, and the public
-documentation snapshot of 2026-09-29 (rules, tables, observation reference). Every private file was then read for its
-**structure** only, by scripts kept in the evaluation server's scratch area and the workstation's ignored `local/`:
+documentation snapshot of 2026-09-29 (rules, tables, observation reference). The private captures (not the prevalence
+study's, which was not opened) were then read for their **structure** only, by scripts kept in the evaluation server's
+scratch area and the workstation's ignored `local/`:
 
 * an inventory of every capture: steps, pre-step snapshots, kept seats, final state, and counts of shoot actions,
   feedback entries and judge records (section 4 publishes it);
@@ -94,10 +95,11 @@ All 18 games ran on engine 4.1.0. The four `s12-v3-primary-1` games are the game
 
 Not used, by the same rule or by registration:
 
-* the 32 residual-516 diagnostic captures (309 shoot actions, 297 records), the 8 deployment-split smoke captures (82,
-  82), the 2 PS-1 probe captures (3, 3) and the 2 T1-r diagnosis captures (no shot): no pre-step snapshot for most
-  steps, so neither the listed option nor the pre-shot target state can be reconstructed for most shots, and (except
-  PS-1) no pre-execution copies;
+* the 32 residual-516 diagnostic captures (309 shoot actions, 297 records) and the 8 deployment-split smoke captures
+  (82, 82): pre-step snapshots only every 200th step and around refusals, so neither the listed option nor the pre-shot
+  target state can be reconstructed for most shots; no pre-execution copies and no final state;
+* the 2 PS-1 probe captures (3, 3) and the 2 T1-r diagnosis captures (no shot): one step without a pre-step snapshot
+  and no final state, and (T1-r) no pre-execution copies;
 * the exploratory and confirmation captures (`s8-*`, `s10-t9-v2-exploration`, `t9-confirmation-1`): the exploratory
   capture keeps only indirect-fire judgements and the confirmation capture none;
 * every game record (aggregates only) and the replay corpus (seat observations and actions without the engine's
@@ -229,8 +231,8 @@ a strength clamp exercised (`max(0, o + r) > B`).
 Per target class, over target-steps with exactly one direct-fire record and the target in the pre-step state: A, a
 target present after the step lost exactly the damage in blood; B, damage below the blood leaves it present; C, damage
 at or above the blood removes it (present means listed in the all-seeing operators or passengers after the step). A
-target whose launcher or carrier is removed in the same step with a lethal record of its own is excluded from the lethal
-rule and counted. **K6_SUPPORTED** for a class only with no contradiction of A, B or C, at least one lethal row and at
+target whose launcher or carrier is removed in the same step with a lethal record of its own is excluded from tests A
+to C and counted. **K6_SUPPORTED** for a class only with no contradiction of A, B or C, at least one lethal row and at
 least one non-lethal row with positive damage; any contradiction is **K6_REFUTED**; a class without a lethal or a
 non-lethal positive row is **K6_UNTESTED**.
 
@@ -272,7 +274,9 @@ Under any other disposition no calculator is built and no T11 row is read.
   fortification occupant row.
 * Checks: synthetic tests of every rule (`tests/test_s21_semantics.py`, with the table transcription and quotations
   checked against the snapshot on the workstation); mutation tests in a copied tree whose unmutated copy passes first
-  (`scripts/mutate_s21.py`); the committed files bound to the registration (`tests/test_s21_results.py`) and regenerated
+  (`scripts/mutate_s21.py`, record `mutation.json`: 36 of 36 mutants killed before the freeze; the first run killed 35,
+  and the survivor, integrity checked after sufficiency in the disposition order, was a test gap closed before the
+  freeze); the committed files bound to the registration (`tests/test_s21_results.py`) and regenerated
   on the server (`tests/test_real_s21.py`); a private documentation gate with planted errors; every current
   historical gate; the full non-engine suites on the workstation tree, a clean clone and the server's private tree; the
   privacy scan compared as a set with the 104 accepted hit lines; the platform canary rebuilt; a read-only ledger verify
