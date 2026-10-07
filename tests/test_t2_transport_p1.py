@@ -142,6 +142,8 @@ class TriggerTest(unittest.TestCase):
                                                                    move(INF, START, DEST, 1)]),
             "baseline-v2 occupies with the carrier": dict(actions=[move(INF, START, DEST, 1),
                                                                    {"actor": SEAT, "obj_id": CAR, "type": 5}]),
+            "baseline-v2 occupies with the infantry": dict(actions=[{"actor": SEAT, "obj_id": INF, "type": 5},
+                                                                    move(CAR, START, DEST)]),
         }
         for name, change in cases.items():
             with self.subTest(name):
@@ -555,6 +557,18 @@ class IdentityTest(unittest.TestCase):
         code = source.split('"""', 2)[2]
         for word in ("scenario", "1930331196", "2120531121", "threat", "random", "time.time", "score"):
             self.assertNotIn(word, code)
+
+    def test_source_identity_is_pinned(self) -> None:
+        import importlib.util
+        from miaosuan_agent.evaluation.identity import digest_of_files, policy_source_files
+        spec = importlib.util.spec_from_file_location("bs22_identity", ROOT / "scripts" / "build_s22_card.py")
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        files = policy_source_files(sources=module.CANDIDATE_SOURCES)
+        self.assertIn("experiments/t2_transport_p1.py", files)
+        self.assertEqual(digest_of_files(files), sp.CANDIDATE_DIGEST)
+        self.assertEqual(sp.CANDIDATE_DIGEST, "1cb53199a246557bb0e564a7f5156b68396680c4b3a39a39c12023b98b96f65f")
+        self.assertEqual(digest_of_files(policy_source_files(sources=module.V2_SOURCES)), sp.V2_DIGEST)
 
     def test_identity_and_policy_classes(self) -> None:
         self.assertEqual((t2.CANDIDATE_ID, t2.ADDON_NAME), ("t2-transport-p1", "t2_transport_p1"))
