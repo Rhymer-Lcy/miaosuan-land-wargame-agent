@@ -158,3 +158,243 @@ the trigger decision and step, with objectives by value label only (`evaluation/
 unit ids, hexes and paths go only to the private reference `local/diagnostics/s22/witness-reference.json`, whose
 SHA-256 the registration pins. If no game meets every minimum, the disposition is `T2_P1_NO_DETERMINISTIC_WITNESS` and
 session 2796 is not opened.
+
+## 10. Witness search result and rehearsal
+
+Sections 1 to 9 and the code they name were pushed as commit `441034a29c55895739148030cf89aa2d3ff751a6` at
+2026-10-07T22:18:26+08:00. The search then ran once on the evaluation server from that commit and regenerates byte for
+byte (`scripts/s22_analysis.py witness --check`).
+
+| Corpus game | Tier | Minimum criteria | Trigger (decision, step) | Destination | Carrier free flow | Infantry on foot | Peak own ground units on the destination | Infantry can arrive on foot |
+|---|---:|---|---|---|---:|---:|---:|---|
+| 1930331196 C3, Sprint 10 g04 (session 2776) | 1 | all met | 1, 0 | 80-point objective A | 560 | 3,456 | 2 | no |
+| 2120531121 C3, Sprint 10 g02 (session 2774) | 1 | all met | 1, 0 | 50-point objective B | 420 | 3,024 | 3 | no |
+| 1930331196 C2, Sprint 10 g02 (session 2778) | 1 | all met | 1, 0 | 50-point objective A | 440 | 2,736 | 3 | yes |
+| 1910631192 C3, Sprint 6 P-A (session 2462) | 2 | all met | 1, 0 | 50-point objective A | 480 | 3,312 | 4 | no |
+| eight other tier-2 games (Sprint 10 T9-v1, Sprint 16, Sprint 17) | 2 | the seat differs from `baseline-v2` before any trigger | none | | | | | |
+
+In every eligible game the trigger is the first play decision. No eligible game's destination was taken by another own
+unit before release, and every free-flow saving is positive. **Selected: 1930331196 C3**, `baseline-v2` blue against the
+inert red (Sprint 10's game g04). The 2120531121 C3 game equals it on every preference and is separated only by the last
+rule, the game id; the 1930331196 C2 game ranks third because its infantry could arrive on foot; the tier-2 game is not
+considered because tier-1 games qualify. At the trigger the selected pair is the infantry and the infantry fighting
+vehicle that start in the same hex; `baseline-v2` sends both to the 80-point objective A, the infantry along a route of
+3,456 free-flow steps (it cannot arrive before the end, at 2,880) and the carrier along one of 560. The private reference
+`local/diagnostics/s22/witness-reference.json` has SHA-256 `3e918de23c5615f9ec7c889ad3c1f6deffc48cf8c2252da7988cb422b8b7712a`.
+
+**Rehearsal** (`scripts/s22_analysis.py rehearse`, server): the candidate replayed over the witness game's decisions 0
+and 1 equals `baseline-v2` at decision 0 (deployment), and at decision 1 emits exactly `baseline-v2`'s 20 move orders
+with the infantry's move replaced in place by the embark copied from its listing and the carrier's move removed; its
+memory is EMBARK_REQUESTED for the registered pair; no difference from `baseline-v2` is outside the registered edits.
+Nothing later can be rehearsed on recorded data: after the trigger the game is the candidate's own.
+
+**Post-selection context** (read privately after the selection, disclosed, changing nothing): the infantry and the
+carrier are the only own ground units in their start hex and the carrier carries nothing; in the historical game no enemy
+unit ever stood on the destination and no same-hex engagement occurred (no judge record at distance 0); the destination
+was first owned at decision 522 by another own unit, before the carrier's own historical arrival at decision 561. The
+loaded carrier, held about 75 steps at the start, is therefore likely to arrive on an objective its side already holds,
+where `baseline-v2` would send it on at once: the destination hold of section 5 is expected to be exercised.
+
+**Expectation under the documented semantics** (an expectation, not a rule): aboard about 75 steps after the order,
+arrival at the earliest about 560 steps after release, disembark listed about 75 steps after arrival, the infantry on
+the ground about 75 steps after the order, all well before step 2,880.
+
+## 11. The candidate `t2-transport-p1`
+
+`src/miaosuan_agent/experiments/t2_transport_p1.py` (identity `t2-transport-p1`, add-on `t2_transport_p1`) is a new
+exploratory mechanism identity, not a baseline. It runs `baseline-v2` first through the existing add-on wrapper
+(`experiments/exploratory_addon.py`, unchanged) and then applies only the edits of section 5 for one pair. It reads only
+the seat's own observation and its bounded memory; it holds no numeric literal other than the documented action and
+class codes, the documented 75-step transition, its 150-step bound and the stacking limit of 4 (a test enumerates them);
+it imports no analysis module; its memory is empty at the start of every game (`AddonAgent.setup` and `reset`). If the
+add-on raises anything other than a contract violation, the wrapper plays `baseline-v2`'s decision and records the error
+(an S7 stop). Source identity: 24 files, `baseline-v2`'s set, the add-on wrapper and the candidate module, digest
+`1cb53199a246557bb0e564a7f5156b68396680c4b3a39a39c12023b98b96f65f` (line endings normalised).
+
+## 12. Transport state machine
+
+| State | Entered when (seat-observable conditions) | Carrier MOVE | Leaves to |
+|---|---|---|---|
+| READY | start of the game (empty memory) | `baseline-v2`'s | EMBARK_REQUESTED at the trigger (section 8): the infantry's move replaced in place by the listed embark, the carrier's move withheld |
+| EMBARK_REQUESTED | the embark was emitted | withheld | ABOARD when the infantry is in `passengers` with `car` the carrier and `on_board` 1, listed in the carrier's `passenger_ids`, not in `operators`, and both units' `get_on` fields are cleared; FAILED if the carrier is absent, the representation is inconsistent (in both lists, or aboard another unit), or 150 steps pass |
+| ABOARD | as above (same decision) | `baseline-v2`'s | CARRIER_RELEASED at once |
+| CARRIER_RELEASED | the hold ended | `baseline-v2`'s | the destination is fixed at the end hex of the first `baseline-v2` MOVE of the carrier; AT_DESTINATION when the carrier stands on it with no move path; FAILED if the infantry leaves the carrier, either unit is absent or the representation is inconsistent |
+| AT_DESTINATION | arrival | withheld | DISEMBARK_REQUESTED when the carrier's own listing offers disembark for the infantry (key set exactly `target_obj_id`) and the hex holds fewer than 4 own ground units: the carrier's action replaced in place by the listed disembark, or the disembark appended if it has none; FAILED (destination at the stacking limit) if the hex holds 4 then, or (disembark not listed) if 150 steps pass, classified as the stacking limit if the hex holds 4 at that moment; FAILED if the carrier leaves the hex or the infantry leaves it |
+| DISEMBARK_REQUESTED | the disembark was emitted | withheld | DISEMBARKED when the infantry is in `operators`, not in `passengers` and not in the carrier's `passenger_ids`, both units' `get_off` fields cleared; FAILED if the carrier is absent or leaves the hex, the representation is inconsistent, or 150 steps pass |
+| DISEMBARKED | as above (same decision) | `baseline-v2`'s | DONE at once |
+| DONE, FAILED | terminal | `baseline-v2`'s | none: the decision is `baseline-v2`'s exactly for the rest of the game |
+
+Inside the two transitions the infantry may be in neither list for a step; the pair then waits within the bound. Memory
+that cannot be interpreted ends the pair (FAILED) without any edit. Every other `baseline-v2` action of the carrier
+(an occupation, for example) passes in every state.
+
+## 13 to 19. Mechanism endpoints
+
+The analysis reads every endpoint from the seat's own observations, the emitted actions and the engine's echoes, not
+from the candidate's memory (`s22_probe.transport_facts` and the endpoint functions).
+
+* **Embark** (section 13) succeeds only if the registered embark was emitted at the trigger decision, its echo carries
+  no error, the infantry is represented aboard the selected carrier with the `get_on` fields cleared within 150 steps,
+  no decision in that window shows an inconsistent representation, and the carrier stays present and controlled by the
+  seat. Otherwise `T2_P1_MECHANISM_REFUTED`; no second parameterization is tried.
+* **Hold and release** (section 14): recorded per decision, `baseline-v2`'s carrier action, the candidate's action, the
+  passenger and transition state; after release the carrier is `baseline-v2`'s; no other path or objective is imposed.
+* **Carry** (section 15) succeeds only if, after release, a `baseline-v2` move of the carrier is emitted and not refused,
+  the carrier changes hex, the infantry is aboard the same carrier at every decision until the disembark order with
+  its position equal to the carrier's, no action is emitted for it while aboard, and the carrier stands on the
+  destination with no move path before the end. The travel time is compared with the route's free-flow time and the
+  infantry's foot estimate, descriptively.
+* **Destination** (section 16): the end hex of the first `baseline-v2` move of the carrier after release; it must be an
+  objective; whether it equals the predicted 80-point objective A is reported.
+* **Stacking** (section 17): the own ground units standing on the destination (passengers excluded) at the decision
+  disembark would be issued (its listing present), or at the end of the 150-step settle bound without a listing. At 4
+  or more nothing is issued and, if embark and carry succeeded, the disposition is
+  `T2_P1_DESTINATION_CAPACITY_BLOCKED`; no other objective or pair is tried.
+* **Disembark** (section 18) succeeds only if it is listed within 150 steps of arrival, emitted exactly once as listed,
+  not refused, and within 150 steps the infantry is again an own operator on the destination hex, not aboard, with the
+  `get_off` fields cleared, no inconsistent representation in between, and the carrier present.
+* **After disembark** (section 19, reported, not gated): the infantry's listed action types, whether occupation is
+  listed, suppression, the cleared passenger fields and the destination's ownership. No occupation is forced.
+
+## 20. On-policy fidelity
+
+At every candidate decision the live timeline re-decides `baseline-v2` and the candidate from the seat's own
+observation and carried memory, requires equality with the emitted actions, the add-on's change records, the recorded
+state, `baseline-v2`'s trace digest, no add-on error, and the memory chain (empty before the first decision); and it
+requires every difference between the emitted actions and `baseline-v2`'s to be a registered edit
+(`s22_probe.unregistered_differences`: the embark at READY to EMBARK_REQUESTED, a carrier MOVE removed when the decision
+ends in a hold state, the disembark issued at the destination, the remaining actions in `baseline-v2`'s order). The
+analysis repeats all of it offline from an empty memory. Any difference is `CAPTURE_INVALID`.
+
+## 21. Capture
+
+Three read-only observers through Sprint 9's `Tee`: `T9Capture` and the exploratory capture, unchanged, and the Sprint 22
+timeline (`evaluation/s22_capture.py`), which keeps for every step the all-seeing state, the seat's observation (operators,
+passengers, listings for the pair, transition fields, objective ownership), memory, emitted actions and their
+pre-execution copies, the engine's echoes, units boarded and landed, and the final post-step state. Record and five
+capture files are written exclusively under the ignored `local/evaluation/s22-t2-transport-probe-1/`, digested in the
+record; nothing is overwritten.
+
+## 22. Card, runner and the one session
+
+The card is `evaluation/s22-t2-transport-probe-1/manifest.json` (built and checked by `scripts/build_s22_card.py`): one
+game, `1930331196.C3.s22-t2-transport-probe-1.p01`, the inert control red and the candidate blue (Sprint 10's seats),
+runtime `baseline-v1-runtime-r2`, ledger base session 2795, ceiling 1, expected session 2796; it pins the normalised
+SHA-256 of every file of `s22_probe.FROZEN_FILES`. `scripts/run_s22_probe.py` refuses to start unless the tree is clean
+and committed, the card rebuilds byte for byte with every pin equal to the checkout, the private witness reference has
+the digest `inputs.json` pins, and the ledger audit passes; it plays the game through `scripts/run_s22_game.py` in the
+registered evaluator's isolation with a hard timeout. The game entry point refuses, before the engine is touched, any
+other card, a changed pin, another candidate digest, a dirty tree, an existing record or capture, a session beyond the
+ceiling, a wrong thread environment, or a missing or altered witness reference. Session 2797 is not authorized; no
+retry or replacement of an opened session, which counts even if it fails.
+
+**Whitelist.** A new safeguard (`tests/test_s22_probe.py`): the identity `t2-transport-p1` may appear in exactly one run
+card, this one, bound to the registered digest; any other JSON naming it lies in `evaluation/s22-t2-transport-probe/`
+and is never executable; the generic builders and runners do not name it; only the Sprint 22 scripts import the module.
+
+## 23. Structural stops
+
+| Stop | Meaning |
+|---|---|
+| S1 | engine-installation integrity failure (session close or the ledger's state chain) |
+| S2 | a session after 2795 that is not this card's game under its digest and the candidate's registered digest, an unclosed session, or more than one session (any session other than 2796) |
+| S3 | a file outside the ignored tree appeared, or a tracked file changed, during the game |
+| S4 | a contract error, a margin that is not the engine's `<side>_win`, or a game that did not complete |
+| S6 | a replay mismatch |
+| S7 | an observer error; a missing or digest-mismatched capture; a live decision, change record, state or memory that differs from the seat-local reconstruction; a difference from `baseline-v2` that is not a registered edit; a candidate add-on error; captures and record disagreeing on steps or on the seat's move orders; a decision not reconstructed; a wrong scenario, condition or seat; a `max_step` other than 2,880 |
+| SP | the candidate differs from `baseline-v2` before the registered trigger decision, or its actions at decision 1 are not the registered trigger actions, or the pair is not the registered one |
+
+Any structural stop ends the study at once; nothing is retried. A wrong engine installation, a ledger inconsistency, a
+wrong session number, scenario, seat or card, a digest or identity mismatch, a dirty tree, a capture or reconstruction
+failure, a privacy exposure, an unclosed session, a wrong action schema or an unexplained candidate action are all
+covered by these stops.
+
+## 24. Dispositions (first match)
+
+| Disposition | Rule |
+|---|---|
+| `T2_P1_PROTOCOL_AMBIGUOUS` | the transport actions cannot be specified from the documentation and listings (offline; no session) |
+| `T2_P1_NO_DETERMINISTIC_WITNESS` | no corpus game meets every minimum criterion (offline; no session) |
+| `CAPTURE_INVALID` | a session occurred and any structural, fidelity, prefix or registered-difference requirement fails |
+| `T2_P1_DESTINATION_CAPACITY_BLOCKED` | embark and carry succeeded and the destination held 4 own ground units when disembark would have been issued |
+| `T2_P1_MECHANISM_REFUTED` | any core transition failed: embark refused, voided or never aboard; the passenger relation not established or broken; the carrier unable to move with it or never reaching the destination; disembark never listed within the bound, refused or voided; the infantry not back on the ground at the destination coherently |
+| `T2_P1_MECHANISM_SUPPORTED` | every endpoint of sections 13 to 18 holds and no unexplained behaviour occurred |
+
+The first two cannot apply any more: the semantics are specified (section 6) and a witness was selected (section 10).
+`T2_P1_MECHANISM_SUPPORTED` means only that transport is mechanically usable in this one deterministic probe; it does
+not mean a score improvement, general safety, promotion or readiness for confirmation.
+
+## 25. Score
+
+Scores, margin, winner and kills are recorded as record facts if the harness produces them and enter no rule.
+
+## 26. Validation before session 2796
+
+* **Tests** (`tests/test_t2_transport_p1.py`, 31; `tests/test_s22_probe.py`, 36): both action schemas as copies of the
+  listed options; the exact pair, the wrong pair (another class, another side, not controlled), the same-hex
+  requirement, stationarity (path, speed, stop transition), suppression, transitions under way, passenger capacity, a
+  carrier already carrying infantry and one carrying other passenger types, a missing listing and a wrong key set,
+  `baseline-v2` giving either unit something other than a move; the infantry's move replaced in place and nothing
+  else changed; the carrier hold exactly in the hold states with its other actions passing; every transition and each
+  bound at its exact boundary (150 passes, 151 fails); the passenger appearing only with the transition over; the
+  passenger leaving independent ground control; the carrier resuming `baseline-v2`; the destination from its first move
+  after release; occupancy 3 (disembark issued) and 4 (blocked, nothing issued); the disembark listing; a refused
+  disembark; the passenger back on the ground; game reset; the disappearance of either unit; inconsistent
+  representations; malformed memory; the source digest; the session ceiling of exactly 2796 and every ledger defect; the
+  structural checks; the registered-difference and prefix checks clause by clause; every endpoint fact with planted
+  defects; the disposition order; the public sanitizer; the observer's reconstruction, memory chain and difference
+  check against a live agent, with tampering detected; and the whitelist. Two of the tests play the real game loop
+  (`evaluation.game.play`) with the three observers against a stand-in transport engine (`tests/fixtures/s22_engine.py`,
+  documented semantics only): the complete chain is `T2_P1_MECHANISM_SUPPORTED` with no reconstruction or difference
+  finding, a refused embark `T2_P1_MECHANISM_REFUTED`, and three immobile own tanks on the destination
+  `T2_P1_DESTINATION_CAPACITY_BLOCKED`. `tests/test_real_s22.py` (server, 4) regenerates the semantics, witness and
+  inputs files, repeats the rehearsal, and, once they exist, the result files and the mutation record.
+* **Mutation** (`scripts/mutate_s22.py`, `evaluation/s22-t2-transport-probe/mutation.json`): 64 of 64 planted defects
+  caught, each with the card rebuilt in the copy and, for candidate defects, the source digest re-pinned in the copy so
+  that only the logic tests can catch them: the action schemas, the in-place replacement, every hold, the hold's scope,
+  every bound, both transition-cleared conditions, the stacking boundary and its absence, the trigger's conditions, the
+  passenger leaving, the destination, the carrier leaving, malformed memory, a second trigger after a terminal state, the
+  carrier's absence; the selection's tiers, ranking and feasibility; the ledger ceiling, expected session, digest and
+  integrity; the stops; the difference check's scope, order, holds and disembark; every prefix clause; the endpoint
+  bounds, refusal, passenger, position, arrival, stacking, emission and destination clauses; the disposition's problem
+  and precedence clauses; the facts' aboard conditions and control; the observer's comparisons and digests. The first
+  run caught 58 of 64: four test gaps (the infantry given a non-move action, a refused embark judged on its echo alone,
+  aboard before the transition fields clear, the prefix digests with another seat's actions present), closed before the
+  record; and two equivalent defects (a terminal state's early return, whose omission changes nothing, and the tier
+  restriction, which the ranking's first key enforces as well), replaced by a second trigger after a terminal state and
+  tier 2 preferred to tier 1.
+* **Stand-in rehearsal of the runner** (private, `local/diagnostics/s22/standin_rehearsal.py`; the transport stand-in,
+  a session context that records nothing, the ledger file byte-identical before and after): a 40-step game completed,
+  wrote its record and five captures with matching digests, raised S7 and SP, and the runner stopped with one game
+  recorded; a full-length game completed with SP as its only stop (the stand-in is not the witness), all 2,881
+  decisions reconstructed live with no consistency or difference finding; with the prefix check disabled inside the game
+  module only, the analysis re-derived and memory-compared all 2,881 decisions with no difference, found the prefix
+  failure on its own and decided `CAPTURE_INVALID`, and its public files passed the privacy checks; pointed at the
+  stand-in's own pair and trigger, the analysis found no problem and decided `T2_P1_MECHANISM_SUPPORTED` (states
+  EMBARK_REQUESTED, CARRIER_RELEASED, AT_DESTINATION, DISEMBARK_REQUESTED, DONE; the carrier's move withheld at 74
+  destination decisions); a refused embark gave `T2_P1_MECHANISM_REFUTED` and three immobile tanks on the destination
+  `T2_P1_DESTINATION_CAPACITY_BLOCKED`; an unknown game, an existing record, a dirty-tree flag and an altered witness
+  reference were refused.
+* **Server rehearsal and regeneration**: the semantics, witness and inputs files regenerate byte for byte, and the
+  rehearsal of section 10 passes, on the server from the committed tree.
+* **Registration checks**: the registration pushed and fetched back byte for byte; the server fast-forwarded; the
+  workstation, GitHub and server at the same commit and tree; the full non-engine suites; the privacy scan compared as a
+  set; the canary rebuilt; a read-only engine verify; the ledger still at 2,795 with none unclosed. Their results are
+  reported in the results section.
+
+## 27. Outputs and privacy
+
+* Public (`evaluation/s22-t2-transport-probe/`): before the session `semantics.json`, `witness.json`, `inputs.json` (the
+  corpus pins, the digests of the semantics, witness and private reference files, the card's canonical digest, the
+  candidate digest, the rules digest) and `mutation.json`; after it `games.json` (session, reconstruction counts,
+  structural stops, prefix result, record facts), `mechanism.json` (every endpoint fact and verdict, the candidate's state
+  sequence, the holds, the destination label, travel times) and `disposition.json`, all regenerating byte for byte
+  (`scripts/s22_analysis.py run --check`; its ledger read stops at session 2796 so that it regenerates after later
+  sprints, while the runner audits the whole live ledger). Every public file passes the forbidden-key and private-value
+  checks: no unit id, hex or path.
+* Private (ignored `local/`): the record and captures, `local/diagnostics/s22/witness-reference.json`,
+  `local/diagnostics/s22/analysis-private.json` (ids, hexes, decisions of every event).
+
+## 28. Not claimed
+
+No score, effect, population or generality claim. One deterministic probe shows one trajectory of one pair.
