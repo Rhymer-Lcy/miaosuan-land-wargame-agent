@@ -1,0 +1,154 @@
+{
+ "declared": 36,
+ "file": "src/miaosuan_agent/evaluation/s21_semantics.py",
+ "killed": 36,
+ "mutants": [
+  {
+   "mutant": "refused shot read as accepted",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "duplicate submissions not detected",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "ambiguous records paired with the first",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "a record claimed twice still paired",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "refused shot with a record tolerated",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "accepted shot without a record tolerated",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "weapon ignored in the pairing key",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "actor ignored in acceptance",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "K2 mismatch not refuting",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "K2 elevation coverage ignored",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "K2 class without rows not untested",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "infantry light weapon reads the vehicle table",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "vehicle columns ignore the shooter count",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "attack level off by one in the personnel table",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "out-of-table rows accepted by the mapping",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "two values for one kind accepted",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "probability law accepted from route C",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "probability law always supported",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "personnel correction boundary moved",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "lower clamp dropped from the additive relation",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "positive-only relation corrects a zero raw loss",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "resuppression term ignores prior suppression",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "several survivors read as identified",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "annihilation read as one in the whole-unit relation",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "decrement test skipped",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "lethal boundary exclusive",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "linked removals counted as contradictions",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "no lethal row still supported",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "K4 probability not required",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "missing required class ignored",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "integrity checked after sufficiency",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "zero kill edge passes",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "denominator not enforced",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "required classes miss the T11 side",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "bare numeric public keys",
+   "outcome": "killed"
+  },
+  {
+   "mutant": "numbers not masked by the sanitizer",
+   "outcome": "killed"
+  }
+ ],
+ "schema": "miaosuan-s21-mutation/1",
+ "source_sha256": "b38d530e3628ee23fc13117d41d4ebdb3419299441f59243c62cb3b2b05fdd40",
+ "test": "tests.test_s21_semantics"
+}
