@@ -1,0 +1,404 @@
+{
+ "killed": 64,
+ "killed_with_the_card_rebuilt": 64,
+ "mutations": [
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "embark schema: unit and target swapped"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "disembark schema: unit and target swapped"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "embark appended instead of replacing the move in place"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "no carrier hold at the trigger"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "no carrier hold during the embark transition"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "no carrier hold at the destination"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "no carrier hold during the disembark transition"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "the hold withholds every carrier action"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "embark bound off by one"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "settle bound off by one"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "disembark bound off by one"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "aboard without the embark transition over"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "done without the disembark transition over"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "stacking boundary off by one"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "stacking never checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "same hex not required"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "speed ignored by stationarity"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "suppression ignored"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "capacity ignored"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "a carrier already carrying infantry accepted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "the carrier's class not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "the carrier's control not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "baseline-v2's infantry move not required"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "baseline-v2's carrier move not required"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "the option key set not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "the disembark option key set not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "a passenger leaving early does not fail"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "the destination read from the first hex of the move"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "the carrier leaving the destination does not fail"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "malformed memory accepted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "a terminal state triggers a second pair"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_p1.py",
+   "mutation": "the carrier's absence does not fail the embark transition"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "tier 2 preferred to tier 1"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "the saturation preference ignored"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "feasibility off by one"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "ledger ceiling off by one"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "ledger ignores the expected session"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "ledger ignores the candidate digest"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "ledger ignores an integrity failure"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "game stops ignore unregistered differences"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "differences: other units not compared"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "differences: order not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "differences: a hold allowed in any state"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "differences: disembark allowed in any state"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "prefix: early differences ignored"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "prefix: trigger actions not compared"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "prefix: pair not compared"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "embark endpoint bound off by one"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "embark refusal ignored"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "carry: passenger breaks ignored"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "carry: position mismatches ignored"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "carry: actions for the passenger ignored"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "carry: arrival not required"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "stacking endpoint boundary off by one"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "disembark emitted more than once accepted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "disembark destination not required"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "disposition: problems ignored"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "disposition: blocked after refuted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "facts: aboard without the transition over"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "facts: aboard ignores the car field"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_probe.py",
+   "mutation": "facts: the carrier's control not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_capture.py",
+   "mutation": "the live actions are never compared"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_capture.py",
+   "mutation": "the memory chain is never compared"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s22_capture.py",
+   "mutation": "prefix digests read every seat's actions"
+  }
+ ],
+ "schema": "miaosuan-s22-mutation/1",
+ "sources": {
+  "src/miaosuan_agent/evaluation/s22_capture.py": "37200885af337e3b324ac7d2a6bd3d482a7ab054e5b8bae795152a259466a1e0",
+  "src/miaosuan_agent/evaluation/s22_probe.py": "f59269aed524d6b83660c6dd44f39d536c0ba1783ee4baef8dedeec4f1da6b45",
+  "src/miaosuan_agent/experiments/t2_transport_p1.py": "732ec56330c37aaa72ded6cad73351778905686a114e0be81d78e0a94049d651",
+  "tests/test_s22_probe.py": "722ecb486a35d26d09a9fbba04dc3844770f3d67575959a5f8a88640f37146ab",
+  "tests/test_t2_transport_p1.py": "e529bfcedcdf6f22c7f5d26abba3eea131eb57990af91411a524307126895850"
+ },
+ "tests": [
+  "tests.test_t2_transport_p1",
+  "tests.test_s22_probe"
+ ],
+ "total": 64,
+ "unmutated_tests_pass": true
+}
