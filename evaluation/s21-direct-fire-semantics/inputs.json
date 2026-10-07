@@ -1,0 +1,1653 @@
+{
+ "corpus": [
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/s10-t9-v1-c2-diagnosis/capture/1930331196.C2.s10-t9-v1-c2-diagnosis.g01.diagnostic.json",
+     "sha256": "8911c7743a8982c1ae0258893f8127891fd1b4954f11017a40ec955c817622b7"
+    },
+    "record": {
+     "path": "local/evaluation/s10-t9-v1-c2-diagnosis/games/1930331196.C2.s10-t9-v1-c2-diagnosis.g01.json",
+     "sha256": "1a96de633dce24051622a5d5e55132f3617fe6ba08726ddcbce8f109cd5af3bc"
+    },
+    "windows": {
+     "path": "local/evaluation/s10-t9-v1-c2-diagnosis/capture/1930331196.C2.s10-t9-v1-c2-diagnosis.g01.windows.pkl",
+     "sha256": "fcc2eec344bd9e94b109c299577fa0f7f4cf113dfa1f79da7664cb7ba50567d4"
+    }
+   },
+   "folder": "s10-t9-v1-c2-diagnosis",
+   "game": "1930331196.C2.s10-t9-v1-c2-diagnosis.g01"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/s10-t9-v1-c2-diagnosis/capture/1930331196.C2.s10-t9-v1-c2-diagnosis.g02.diagnostic.json",
+     "sha256": "4cd0302ad3349864cae111ebf24ce2275fb1fcc013fe09fcd04722db8b36fd64"
+    },
+    "record": {
+     "path": "local/evaluation/s10-t9-v1-c2-diagnosis/games/1930331196.C2.s10-t9-v1-c2-diagnosis.g02.json",
+     "sha256": "d0b3c837a94bc5c62886e1e75e32f8aeaf690e4304c41aadb1efc60db79b8b28"
+    },
+    "windows": {
+     "path": "local/evaluation/s10-t9-v1-c2-diagnosis/capture/1930331196.C2.s10-t9-v1-c2-diagnosis.g02.windows.pkl",
+     "sha256": "312df862283356c3817b9647c4263347fecb55ed74ba79d0eaa84cec0044317c"
+    }
+   },
+   "folder": "s10-t9-v1-c2-diagnosis",
+   "game": "1930331196.C2.s10-t9-v1-c2-diagnosis.g02"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/s10-t9-v1-diagnosis/capture/1930331196.C3.s10-t9-v1-diagnosis.g03.diagnostic.json",
+     "sha256": "47a0fe7ba85ec2330e21cdd8b5aa71566b096e260ddbeca019a26d21147eff23"
+    },
+    "record": {
+     "path": "local/evaluation/s10-t9-v1-diagnosis/games/1930331196.C3.s10-t9-v1-diagnosis.g03.json",
+     "sha256": "77ce774c8b8b08c6437ecb9f5e253f8b7a9a4ee85b5305c2945dffd7911f3244"
+    },
+    "windows": {
+     "path": "local/evaluation/s10-t9-v1-diagnosis/capture/1930331196.C3.s10-t9-v1-diagnosis.g03.windows.pkl",
+     "sha256": "61e8752f90b1519f2ff0adb292b5135f25c8b505566ff179685bde659b6e7e05"
+    }
+   },
+   "folder": "s10-t9-v1-diagnosis",
+   "game": "1930331196.C3.s10-t9-v1-diagnosis.g03"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/s10-t9-v1-diagnosis/capture/1930331196.C3.s10-t9-v1-diagnosis.g04.diagnostic.json",
+     "sha256": "f1f7a06c3dfa5f95019ed954b342e7e1dca86100ecdaf2fd55344a233556b430"
+    },
+    "record": {
+     "path": "local/evaluation/s10-t9-v1-diagnosis/games/1930331196.C3.s10-t9-v1-diagnosis.g04.json",
+     "sha256": "5ac899553270e1552da76d68f29ef6d8b3d01c8cf91ae6ac7d2b90e958bd7da3"
+    },
+    "windows": {
+     "path": "local/evaluation/s10-t9-v1-diagnosis/capture/1930331196.C3.s10-t9-v1-diagnosis.g04.windows.pkl",
+     "sha256": "8d20e32d88952577ce236d66f2e496cda1d5dc6cdc5310d3ae201db12df9ea2a"
+    }
+   },
+   "folder": "s10-t9-v1-diagnosis",
+   "game": "1930331196.C3.s10-t9-v1-diagnosis.g04"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/s10-t9-v1-diagnosis/capture/2120531121.C3.s10-t9-v1-diagnosis.g01.diagnostic.json",
+     "sha256": "c60b929913404d673fb2b39e9036806c30aa9b71c9c767544cdb5e1ff1f7169a"
+    },
+    "record": {
+     "path": "local/evaluation/s10-t9-v1-diagnosis/games/2120531121.C3.s10-t9-v1-diagnosis.g01.json",
+     "sha256": "d6444084e5883e330c4152abae37bb6c1d6c796c5923a14f22e7c99d0604f93f"
+    },
+    "windows": {
+     "path": "local/evaluation/s10-t9-v1-diagnosis/capture/2120531121.C3.s10-t9-v1-diagnosis.g01.windows.pkl",
+     "sha256": "6d5b3eb3c09fbbc218a464dc7f38ca58548f96155734d3ec9c9644514464a05a"
+    }
+   },
+   "folder": "s10-t9-v1-diagnosis",
+   "game": "2120531121.C3.s10-t9-v1-diagnosis.g01"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/s10-t9-v1-diagnosis/capture/2120531121.C3.s10-t9-v1-diagnosis.g02.diagnostic.json",
+     "sha256": "c38336b0cb0f25f0729c0007556e8b40b351f8196d94a75b4695c4ca94dfbbe3"
+    },
+    "record": {
+     "path": "local/evaluation/s10-t9-v1-diagnosis/games/2120531121.C3.s10-t9-v1-diagnosis.g02.json",
+     "sha256": "84d82e84fc46d04a7cfc1f0414bf7d9bf2d4f639acb23e2ba1a77ae691ef11b4"
+    },
+    "windows": {
+     "path": "local/evaluation/s10-t9-v1-diagnosis/capture/2120531121.C3.s10-t9-v1-diagnosis.g02.windows.pkl",
+     "sha256": "544f06a16d861b83b8b9a577752caac66222ce8403f41ac82ca330d7bea64133"
+    }
+   },
+   "folder": "s10-t9-v1-diagnosis",
+   "game": "2120531121.C3.s10-t9-v1-diagnosis.g02"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H1.s12-v3-primary-1.p01.timeline.json",
+     "sha256": "5ff0c1f76260d11969b26bbee790ee5468d1ec6b673a0a2a737cfb32fb47f3f2"
+    },
+    "record": {
+     "path": "local/evaluation/s12-v3-primary-1/games/2130511121.H1.s12-v3-primary-1.p01.json",
+     "sha256": "34bc35a81254bf209d8be4d8d6641c7900345054f7ea5d3ccf46f9b4c5ac37b7"
+    },
+    "windows": {
+     "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H1.s12-v3-primary-1.p01.timeline.pkl",
+     "sha256": "e538388b4fb2758497041293c06f3029c9a50863ef019e2d647f43e5644def2b"
+    }
+   },
+   "folder": "s12-v3-primary-1",
+   "game": "2130511121.H1.s12-v3-primary-1.p01"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H1.s12-v3-primary-1.p03.timeline.json",
+     "sha256": "d54456228e8ca2e37f9c602c9a6e1379cdb698d9624e13d7cd1156de2673fdbe"
+    },
+    "record": {
+     "path": "local/evaluation/s12-v3-primary-1/games/2130511121.H1.s12-v3-primary-1.p03.json",
+     "sha256": "17d9b1ffa5dba84a7ddde32b003a4194cc269e57137f8c9e3b9d69eb74aaad15"
+    },
+    "windows": {
+     "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H1.s12-v3-primary-1.p03.timeline.pkl",
+     "sha256": "1279b5b8983f0ac602a45004483b2716b722b65fe9fcbe29c0640348574a0b87"
+    }
+   },
+   "folder": "s12-v3-primary-1",
+   "game": "2130511121.H1.s12-v3-primary-1.p03"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H2.s12-v3-primary-1.p02.timeline.json",
+     "sha256": "b74a61967fa63b1f7b7d5d26d04f2d1fe34b0878b85fdacd0b00086d4ee4fabf"
+    },
+    "record": {
+     "path": "local/evaluation/s12-v3-primary-1/games/2130511121.H2.s12-v3-primary-1.p02.json",
+     "sha256": "598796293456d75b5ece4232a939ff8cdd8f75ed2d613677c35a5c3c54fec30c"
+    },
+    "windows": {
+     "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H2.s12-v3-primary-1.p02.timeline.pkl",
+     "sha256": "998c2b0bbf76b073d3dd3bb6b0216e8655a1f533b26f182cac421ec4ce171732"
+    }
+   },
+   "folder": "s12-v3-primary-1",
+   "game": "2130511121.H2.s12-v3-primary-1.p02"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H2.s12-v3-primary-1.p04.timeline.json",
+     "sha256": "9798694150d91ad297460f5aaccfbe3e66e4d5ec95aa2a5a0d8f628eeb666bff"
+    },
+    "record": {
+     "path": "local/evaluation/s12-v3-primary-1/games/2130511121.H2.s12-v3-primary-1.p04.json",
+     "sha256": "50ccb5eaab67c339245bafe3cbd23a1adef725db78c7d1bbe3b7474e73d47c8a"
+    },
+    "windows": {
+     "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H2.s12-v3-primary-1.p04.timeline.pkl",
+     "sha256": "114b25417a37989737989c833220eed6fda84d3b2f0211af2533e92fbea65d7b"
+    }
+   },
+   "folder": "s12-v3-primary-1",
+   "game": "2130511121.H2.s12-v3-primary-1.p04"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/capture/1930331196.C2.s16-v3-mechanism-capture-1.p02.timeline.json",
+     "sha256": "08c08977df991fa7cd59228cc97e44b5a470f027408f81f6d0583cb3406684ff"
+    },
+    "record": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/games/1930331196.C2.s16-v3-mechanism-capture-1.p02.json",
+     "sha256": "997de7e5477009ac3a9edb05e032dc9b183a8f587f9983cd0c946625ac1ce018"
+    },
+    "windows": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/capture/1930331196.C2.s16-v3-mechanism-capture-1.p02.timeline.pkl",
+     "sha256": "b5d9950285ff4aaf3a5c02bd3648e9dcdddf111700d34830e6479566bbc28b29"
+    }
+   },
+   "folder": "s16-v3-mechanism-capture-1",
+   "game": "1930331196.C2.s16-v3-mechanism-capture-1.p02"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/capture/1930331196.C3.s16-v3-mechanism-capture-1.p01.timeline.json",
+     "sha256": "9b435297fe9b31f6ba171aa0855ee2e40f2317d4bcdb9d80c699e10b14415fe5"
+    },
+    "record": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/games/1930331196.C3.s16-v3-mechanism-capture-1.p01.json",
+     "sha256": "a8129ed39ffabc6ff1d5a5127cae057fe4c17fc6f33cfe5a2c60c13f05596e52"
+    },
+    "windows": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/capture/1930331196.C3.s16-v3-mechanism-capture-1.p01.timeline.pkl",
+     "sha256": "22ce490e7a467aa676e7b1a6340074bec08e8d33d34bb0e78416032d3b323d45"
+    }
+   },
+   "folder": "s16-v3-mechanism-capture-1",
+   "game": "1930331196.C3.s16-v3-mechanism-capture-1.p01"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/capture/2120531121.C3.s16-v3-mechanism-capture-1.p03.timeline.json",
+     "sha256": "10ddc23cefa7472363e2a5ccfa0a793b7a386ecbbc00ae4b5cd6b7bd6fff5c52"
+    },
+    "record": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/games/2120531121.C3.s16-v3-mechanism-capture-1.p03.json",
+     "sha256": "2d2c277edd7801cfdc83203861f5537a0f4cdcc3c3a03f1750e3c61efc411380"
+    },
+    "windows": {
+     "path": "local/evaluation/s16-v3-mechanism-capture-1/capture/2120531121.C3.s16-v3-mechanism-capture-1.p03.timeline.pkl",
+     "sha256": "8e0c77cb3488e881649e97ebe915c5076f607a4b5d8d3565b2d6f7b4ccc071ae"
+    }
+   },
+   "folder": "s16-v3-mechanism-capture-1",
+   "game": "2120531121.C3.s16-v3-mechanism-capture-1.p03"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/s17-post-stage-v6-probe-1/capture/1930331196.C2.s17-post-stage-v6-probe-1.p01.timeline.json",
+     "sha256": "6090ce7174e99a0d0672eaa2c29353493070fa1cb4f8922576194b08a3d65e02"
+    },
+    "record": {
+     "path": "local/evaluation/s17-post-stage-v6-probe-1/games/1930331196.C2.s17-post-stage-v6-probe-1.p01.json",
+     "sha256": "0f4f6e18276047085619bd5216c9f8dd4e0c1844ff1f6dd2b89ac5130204167e"
+    },
+    "windows": {
+     "path": "local/evaluation/s17-post-stage-v6-probe-1/capture/1930331196.C2.s17-post-stage-v6-probe-1.p01.timeline.pkl",
+     "sha256": "f9cbc432a1ce83090936f265d71d8bbedd2b1ffcd6bbb6b2fb1ddf1361b4605a"
+    }
+   },
+   "folder": "s17-post-stage-v6-probe-1",
+   "game": "1930331196.C2.s17-post-stage-v6-probe-1.p01"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/s17-post-stage-v6-probe-1/capture/2120531121.C3.s17-post-stage-v6-probe-1.p02.timeline.json",
+     "sha256": "4867dd3e7d9892f67b0a93409f21f7ca78c90a14bd2b53848d877bd1b777d955"
+    },
+    "record": {
+     "path": "local/evaluation/s17-post-stage-v6-probe-1/games/2120531121.C3.s17-post-stage-v6-probe-1.p02.json",
+     "sha256": "68e0e5b9e0a389d30d89d9f774883d34c6fb0b4628153f9c841813ad04f7ad35"
+    },
+    "windows": {
+     "path": "local/evaluation/s17-post-stage-v6-probe-1/capture/2120531121.C3.s17-post-stage-v6-probe-1.p02.timeline.pkl",
+     "sha256": "ceff7561252611b903f8accfb787718e93b730b9a15029869de8e48a868ca2c9"
+    }
+   },
+   "folder": "s17-post-stage-v6-probe-1",
+   "game": "2120531121.C3.s17-post-stage-v6-probe-1.p02"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/t7-mechanism-probe-1/capture/1910631192.C3.pa.capture.json",
+     "sha256": "07394d150b9bb686ff0feb8124fb6058cbb77736ca61efc14a03a208095feee5"
+    },
+    "record": {
+     "path": "local/evaluation/t7-mechanism-probe-1/games/1910631192.C3.pa.json",
+     "sha256": "6379b25dae581afe245d3108fe9e5cb9b818b30358c8b74bfc29e6c9317fc942"
+    },
+    "windows": {
+     "path": "local/evaluation/t7-mechanism-probe-1/capture/1910631192.C3.pa.windows.pkl",
+     "sha256": "0af0504a53f1e654ffc1467f2d5e2c899b81a446174497f7718f802aeac5f626"
+    }
+   },
+   "folder": "t7-mechanism-probe-1",
+   "game": "1910631192.C3.pa"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/t7-mechanism-probe-1/capture/2120531121.H1.pb1.capture.json",
+     "sha256": "faf4cf3e4b50129ef644b9743fa4b6fa4c0a630c61bf0bbb29c028de9d0f42ce"
+    },
+    "record": {
+     "path": "local/evaluation/t7-mechanism-probe-1/games/2120531121.H1.pb1.json",
+     "sha256": "e708cdfaa84da9431d4b0ffa531e67718d671992e1e4595bc9b2efe49f731371"
+    },
+    "windows": {
+     "path": "local/evaluation/t7-mechanism-probe-1/capture/2120531121.H1.pb1.windows.pkl",
+     "sha256": "cd87eece404dd677c3332f20fd40585734ef6ff7f0c76ba48b3d04cf54288734"
+    }
+   },
+   "folder": "t7-mechanism-probe-1",
+   "game": "2120531121.H1.pb1"
+  },
+  {
+   "files": {
+    "compact": {
+     "path": "local/evaluation/t7-mechanism-probe-1/capture/2120531121.H2.pb2.capture.json",
+     "sha256": "2687bb841a462ca2097dc40193ca310caf4366a2ed501220a73709ce9f91765e"
+    },
+    "record": {
+     "path": "local/evaluation/t7-mechanism-probe-1/games/2120531121.H2.pb2.json",
+     "sha256": "1c65a9d9eb4e6d1d88ef93be703bf72c2ce54cd17a884b2f86fd7f145e752a5b"
+    },
+    "windows": {
+     "path": "local/evaluation/t7-mechanism-probe-1/capture/2120531121.H2.pb2.windows.pkl",
+     "sha256": "9bc820447fdfd4ac217d45992dca5f5a58168b7d33c077e00edbb33f9558eb82"
+    }
+   },
+   "folder": "t7-mechanism-probe-1",
+   "game": "2120531121.H2.pb2"
+  }
+ ],
+ "explore_or_confirmation_only_folders": [
+  "s10-t9-v2-exploration",
+  "s8-t4-v1-mechanism",
+  "s8-t4-v2-batch",
+  "s8-t4-v3-check",
+  "s8-t9-v1-h2h",
+  "s8-t9-v1-mechanism",
+  "s8-t9-v1-rep",
+  "t9-confirmation-1"
+ ],
+ "inventory": [
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d01",
+   "judge_records": 10,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1871",
+   "shoot_actions": 10,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d02",
+   "judge_records": 8,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1868",
+   "shoot_actions": 8,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d03",
+   "judge_records": 10,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1872",
+   "shoot_actions": 10,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d04",
+   "judge_records": 10,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1867",
+   "shoot_actions": 10,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d05",
+   "judge_records": 10,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1870",
+   "shoot_actions": 10,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d06",
+   "judge_records": 8,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1869",
+   "shoot_actions": 8,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d07",
+   "judge_records": 10,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1874",
+   "shoot_actions": 10,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d08",
+   "judge_records": 9,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1866",
+   "shoot_actions": 10,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d09",
+   "judge_records": 9,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1876",
+   "shoot_actions": 10,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d10",
+   "judge_records": 7,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1873",
+   "shoot_actions": 8,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d11",
+   "judge_records": 10,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1880",
+   "shoot_actions": 10,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d12",
+   "judge_records": 10,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1888",
+   "shoot_actions": 10,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d13",
+   "judge_records": 11,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1882",
+   "shoot_actions": 12,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d14",
+   "judge_records": 9,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1878",
+   "shoot_actions": 10,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d15",
+   "judge_records": 9,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1879",
+   "shoot_actions": 9,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d16",
+   "judge_records": 9,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1877",
+   "shoot_actions": 9,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d17",
+   "judge_records": 11,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1875",
+   "shoot_actions": 12,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d18",
+   "judge_records": 10,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1885",
+   "shoot_actions": 10,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d19",
+   "judge_records": 11,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1883",
+   "shoot_actions": 11,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d20",
+   "judge_records": 10,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1884",
+   "shoot_actions": 10,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d21",
+   "judge_records": 4,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1887",
+   "shoot_actions": 4,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d22",
+   "judge_records": 10,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1881",
+   "shoot_actions": 10,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d23",
+   "judge_records": 10,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1890",
+   "shoot_actions": 10,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d24",
+   "judge_records": 9,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1893",
+   "shoot_actions": 10,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d25",
+   "judge_records": 7,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1897",
+   "shoot_actions": 8,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d26",
+   "judge_records": 10,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1896",
+   "shoot_actions": 10,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d27",
+   "judge_records": 11,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1886",
+   "shoot_actions": 12,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d28",
+   "judge_records": 5,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1889",
+   "shoot_actions": 6,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d29",
+   "judge_records": 9,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1891",
+   "shoot_actions": 9,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d30",
+   "judge_records": 9,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1894",
+   "shoot_actions": 9,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d31",
+   "judge_records": 11,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1892",
+   "shoot_actions": 12,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "baseline-v2-residual-516-diagnostic-1",
+   "game": "1930331196.C3.d32",
+   "judge_records": 11,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "1895",
+   "shoot_actions": 12,
+   "snapshots": 14,
+   "steps": 2881,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "ps1-engine-probe-1",
+   "game": "1910631192.C3.p1",
+   "judge_records": 0,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1910631192",
+   "session": "2460",
+   "shoot_actions": 0,
+   "snapshots": 1802,
+   "steps": 1803,
+   "usable": false
+  },
+  {
+   "condition": "C2",
+   "engine_version": "4.1.0",
+   "folder": "ps1-engine-probe-1",
+   "game": "1930331196.C2.p2",
+   "judge_records": 3,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "2461",
+   "shoot_actions": 3,
+   "snapshots": 2882,
+   "steps": 2883,
+   "usable": false
+  },
+  {
+   "condition": "C2",
+   "engine_version": "4.1.0",
+   "folder": "s10-t9-v1-c2-diagnosis",
+   "game": "1930331196.C2.s10-t9-v1-c2-diagnosis.g01",
+   "judge_records": 0,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "1930331196",
+   "session": "2777",
+   "shoot_actions": 0,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "C2",
+   "engine_version": "4.1.0",
+   "folder": "s10-t9-v1-c2-diagnosis",
+   "game": "1930331196.C2.s10-t9-v1-c2-diagnosis.g02",
+   "judge_records": 1,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "1930331196",
+   "session": "2778",
+   "shoot_actions": 1,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "s10-t9-v1-diagnosis",
+   "game": "1930331196.C3.s10-t9-v1-diagnosis.g03",
+   "judge_records": 4,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "1930331196",
+   "session": "2775",
+   "shoot_actions": 4,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "s10-t9-v1-diagnosis",
+   "game": "1930331196.C3.s10-t9-v1-diagnosis.g04",
+   "judge_records": 11,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "1930331196",
+   "session": "2776",
+   "shoot_actions": 12,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "s10-t9-v1-diagnosis",
+   "game": "2120531121.C3.s10-t9-v1-diagnosis.g01",
+   "judge_records": 21,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "2120531121",
+   "session": "2773",
+   "shoot_actions": 21,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "s10-t9-v1-diagnosis",
+   "game": "2120531121.C3.s10-t9-v1-diagnosis.g02",
+   "judge_records": 16,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "2120531121",
+   "session": "2774",
+   "shoot_actions": 16,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "H1",
+   "engine_version": "4.1.0",
+   "folder": "s12-v3-primary-1",
+   "game": "2130511121.H1.s12-v3-primary-1.p01",
+   "judge_records": 192,
+   "policy_classes": [
+    "baseline-v2",
+    "exploratory and tactical candidates"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "2130511121",
+   "session": "2787",
+   "shoot_actions": 136,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "H1",
+   "engine_version": "4.1.0",
+   "folder": "s12-v3-primary-1",
+   "game": "2130511121.H1.s12-v3-primary-1.p03",
+   "judge_records": 200,
+   "policy_classes": [
+    "baseline-v2",
+    "exploratory and tactical candidates"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "2130511121",
+   "session": "2789",
+   "shoot_actions": 171,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "H2",
+   "engine_version": "4.1.0",
+   "folder": "s12-v3-primary-1",
+   "game": "2130511121.H2.s12-v3-primary-1.p02",
+   "judge_records": 184,
+   "policy_classes": [
+    "baseline-v2",
+    "exploratory and tactical candidates"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "2130511121",
+   "session": "2788",
+   "shoot_actions": 134,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "H2",
+   "engine_version": "4.1.0",
+   "folder": "s12-v3-primary-1",
+   "game": "2130511121.H2.s12-v3-primary-1.p04",
+   "judge_records": 173,
+   "policy_classes": [
+    "baseline-v2",
+    "exploratory and tactical candidates"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "2130511121",
+   "session": "2790",
+   "shoot_actions": 137,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "C2",
+   "engine_version": "4.1.0",
+   "folder": "s16-v3-mechanism-capture-1",
+   "game": "1930331196.C2.s16-v3-mechanism-capture-1.p02",
+   "judge_records": 2,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "1930331196",
+   "session": "2792",
+   "shoot_actions": 2,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "s16-v3-mechanism-capture-1",
+   "game": "1930331196.C3.s16-v3-mechanism-capture-1.p01",
+   "judge_records": 8,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "1930331196",
+   "session": "2791",
+   "shoot_actions": 8,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "s16-v3-mechanism-capture-1",
+   "game": "2120531121.C3.s16-v3-mechanism-capture-1.p03",
+   "judge_records": 21,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "2120531121",
+   "session": "2793",
+   "shoot_actions": 21,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "C2",
+   "engine_version": "4.1.0",
+   "folder": "s17-post-stage-v6-probe-1",
+   "game": "1930331196.C2.s17-post-stage-v6-probe-1.p01",
+   "judge_records": 2,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "1930331196",
+   "session": "2794",
+   "shoot_actions": 2,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "s17-post-stage-v6-probe-1",
+   "game": "2120531121.C3.s17-post-stage-v6-probe-1.p02",
+   "judge_records": 22,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "2120531121",
+   "session": "2795",
+   "shoot_actions": 22,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "t1r-diagnosis-1",
+   "game": "1910631192.C3.b.x01",
+   "judge_records": 0,
+   "policy_classes": [
+    "baseline-v2",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1910631192",
+   "session": "2459",
+   "shoot_actions": 0,
+   "snapshots": 1800,
+   "steps": 1801,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "t1r-diagnosis-1",
+   "game": "1910631192.C3.c.x01",
+   "judge_records": 0,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1910631192",
+   "session": "2458",
+   "shoot_actions": 0,
+   "snapshots": 1802,
+   "steps": 1803,
+   "usable": false
+  },
+  {
+   "condition": "C3",
+   "engine_version": "4.1.0",
+   "folder": "t7-mechanism-probe-1",
+   "game": "1910631192.C3.pa",
+   "judge_records": 0,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "1910631192",
+   "session": "2462",
+   "shoot_actions": 0,
+   "snapshots": 1801,
+   "steps": 1801,
+   "usable": true
+  },
+  {
+   "condition": "H1",
+   "engine_version": "4.1.0",
+   "folder": "t7-mechanism-probe-1",
+   "game": "2120531121.H1.pb1",
+   "judge_records": 193,
+   "policy_classes": [
+    "baseline-v2",
+    "exploratory and tactical candidates"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "2120531121",
+   "session": "2463",
+   "shoot_actions": 156,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "H2",
+   "engine_version": "4.1.0",
+   "folder": "t7-mechanism-probe-1",
+   "game": "2120531121.H2.pb2",
+   "judge_records": 160,
+   "policy_classes": [
+    "baseline-v2",
+    "exploratory and tactical candidates"
+   ],
+   "reasons_not_usable": [],
+   "scenario_id": "2120531121",
+   "session": "2464",
+   "shoot_actions": 139,
+   "snapshots": 2881,
+   "steps": 2881,
+   "usable": true
+  },
+  {
+   "condition": "C2",
+   "engine_version": "4.1.0",
+   "folder": "tactical-screen-deployment-split-1-smoke",
+   "game": "1910631192.C2.c.s01",
+   "judge_records": 0,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1910631192",
+   "session": "2265",
+   "shoot_actions": 0,
+   "snapshots": 9,
+   "steps": 1803,
+   "usable": false
+  },
+  {
+   "condition": "C2",
+   "engine_version": "4.1.0",
+   "folder": "tactical-screen-deployment-split-1-smoke",
+   "game": "1930331196.C2.c.s01",
+   "judge_records": 4,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "1930331196",
+   "session": "2264",
+   "shoot_actions": 4,
+   "snapshots": 14,
+   "steps": 2883,
+   "usable": false
+  },
+  {
+   "condition": "C2",
+   "engine_version": "4.1.0",
+   "folder": "tactical-screen-deployment-split-1-smoke",
+   "game": "2010131194.C2.c.s01",
+   "judge_records": 0,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "2010131194",
+   "session": "2259",
+   "shoot_actions": 0,
+   "snapshots": 9,
+   "steps": 1803,
+   "usable": false
+  },
+  {
+   "condition": "C2",
+   "engine_version": "4.1.0",
+   "folder": "tactical-screen-deployment-split-1-smoke",
+   "game": "2010211129.C2.c.s01",
+   "judge_records": 7,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "2010211129",
+   "session": "2260",
+   "shoot_actions": 7,
+   "snapshots": 9,
+   "steps": 1803,
+   "usable": false
+  },
+  {
+   "condition": "C2",
+   "engine_version": "4.1.0",
+   "folder": "tactical-screen-deployment-split-1-smoke",
+   "game": "201033019601.C2.c.s01",
+   "judge_records": 0,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "201033019601",
+   "session": "2258",
+   "shoot_actions": 0,
+   "snapshots": 5,
+   "steps": 1003,
+   "usable": false
+  },
+  {
+   "condition": "C2",
+   "engine_version": "4.1.0",
+   "folder": "tactical-screen-deployment-split-1-smoke",
+   "game": "2010431153.C2.c.s01",
+   "judge_records": 0,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "2010431153",
+   "session": "2262",
+   "shoot_actions": 0,
+   "snapshots": 9,
+   "steps": 1803,
+   "usable": false
+  },
+  {
+   "condition": "C2",
+   "engine_version": "4.1.0",
+   "folder": "tactical-screen-deployment-split-1-smoke",
+   "game": "2120531121.C2.c.s01",
+   "judge_records": 6,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "2120531121",
+   "session": "2263",
+   "shoot_actions": 6,
+   "snapshots": 14,
+   "steps": 2883,
+   "usable": false
+  },
+  {
+   "condition": "C2",
+   "engine_version": "4.1.0",
+   "folder": "tactical-screen-deployment-split-1-smoke",
+   "game": "2130511121.C2.c.s01",
+   "judge_records": 65,
+   "policy_classes": [
+    "exploratory and tactical candidates",
+    "inert control"
+   ],
+   "reasons_not_usable": [
+    "the step log lacks pre-execution copies, feedback or judge records",
+    "pre-step snapshots do not cover every step",
+    "no final post-step state"
+   ],
+   "scenario_id": "2130511121",
+   "session": "2261",
+   "shoot_actions": 65,
+   "snapshots": 14,
+   "steps": 2883,
+   "usable": false
+  }
+ ],
+ "not_opened": {
+  "baseline-v2-target-ownership-prevalence-1": "registered stop of the prevalence study: its data stay unexamined"
+ },
+ "other_sources": {
+  "BOKE-2026": "not used",
+  "explore and confirmation captures": "the exploratory capture keeps only indirect-fire judgements and the confirmation capture keeps no judge record",
+  "game records": "game records hold aggregates only, no per-shot judge record",
+  "local/replay-corpus": "seat observations and actions of the replay corpus: no engine feedback, so acceptance cannot be established independently of the judge record"
+ },
+ "records_only_folders": [
+  "baseline-v0",
+  "baseline-v0-diagnostics",
+  "baseline-v1-candidate-occupy-reservation",
+  "baseline-v1-variance-study-1",
+  "baseline-v2-candidate-shoot-target-reservation",
+  "tactical-screen-deployment-split-1"
+ ],
+ "s20_replay": {
+  "path": "evaluation/s20-t11-replay/replay.json",
+  "sha256": "dd9dd9363a61c39cd631e78252e0dbbdd3efe99632857a45f13189a41ce08605"
+ },
+ "schema": "miaosuan-s21-inputs/1",
+ "study_id": "s21-direct-fire-semantics"
+}

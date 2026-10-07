@@ -1,0 +1,970 @@
+{
+ "class_by_type": {
+  "type_1": "infantry",
+  "type_2": "vehicle",
+  "type_3": "aircraft",
+  "type_4": "fortification"
+ },
+ "dispositions_first_match": [
+  "SEMANTICS_AUDIT_INVALID",
+  "DIRECT_FIRE_SEMANTICS_UNDERIDENTIFIED",
+  "DIRECT_FIRE_SEMANTICS_RESOLVED"
+ ],
+ "engine_sessions": 0,
+ "hh_changed_shots": 94,
+ "k2": {
+  "rule": "supported only if every paired shot with both levels has listed == judged, the paired rows cover two or more ele_diff values (unless the corpus has only one), and no source contradicts it",
+  "statuses": [
+   "K2_RUNTIME_SUPPORTED",
+   "K2_REFUTED_FOR_THE_SIMPLE_MODEL",
+   "K2_UNRESOLVED"
+  ],
+  "subgroups": [
+   "shooter_class",
+   "target_class",
+   "ele_diff",
+   "att_obj_blood",
+   "weapon"
+  ]
+ },
+ "k4": {
+  "mapping_statuses": [
+   "K4_MAPPING_SUPPORTED",
+   "K4_MAPPING_CONTRADICTED",
+   "K4_MAPPING_UNTESTED"
+  ],
+  "probability_evidence": [
+   {
+    "finding": "the result tables are read with a random number from 2 to 12; the tables do not say how it is drawn",
+    "id": "A1",
+    "quotes": [
+     [
+      "rules_tables.txt",
+      "### 对车辆单位战斗结果"
+     ],
+     [
+      "rules_tables.txt",
+      "### 直瞄武器对人员/步兵轻武器对车辆战斗结果表"
+     ],
+     [
+      "rules_tables.txt",
+      "### 空战斗结果表"
+     ]
+    ],
+    "route": "A",
+    "source": "public rules, direct-fire result tables",
+    "status": "does_not_state_the_law"
+   },
+   {
+    "finding": "dice are stated only for the corrections: two dice for vehicle targets, one die for personnel targets",
+    "id": "A2",
+    "quotes": [
+     [
+      "rules_tables.txt",
+      "对车辆战斗结果修正时，修正方法是2颗骰子生成随机数"
+     ],
+     [
+      "rules_tables.txt",
+      "对人员战斗结果修正时，修正方法是1颗骰子生成随机数"
+     ]
+    ],
+    "route": "A",
+    "source": "public rules, correction notes",
+    "status": "does_not_state_the_law"
+   },
+   {
+    "finding": "random1 and random2 are documented only by name and type",
+    "id": "A3",
+    "quotes": [
+     [
+      "reference_observations.txt",
+      "\"random1\": \"int, 随机数1\","
+     ],
+     [
+      "reference_observations.txt",
+      "\"random2_rect\": \"int, 随机数2修正值\","
+     ]
+    ],
+    "route": "A",
+    "source": "public observation reference and SDK observation notes",
+    "status": "does_not_state_the_law"
+   },
+   {
+    "finding": "the engine draws from neither of the process's global generators; no seed is documented; the engine's own generator is not exposed by any record",
+    "id": "B1",
+    "quotes": [
+     [
+      "docs/BASELINE.md",
+      "the engine draws from neither of the process's global generators, and no seed is documented."
+     ]
+    ],
+    "route": "B",
+    "source": "the project's recorded harness evidence (docs/BASELINE.md)",
+    "status": "does_not_state_the_law"
+   },
+   {
+    "finding": "records carry the drawn values only; observed values are a sample and cannot establish a law (section 10); no record names a generator or the dice behind random1",
+    "id": "B2",
+    "quotes": [],
+    "route": "B",
+    "source": "the frozen corpus's judge records",
+    "status": "does_not_state_the_law"
+   }
+  ],
+  "probability_status_at_registration": "K4_PROBABILITY_UNRESOLVED",
+  "probability_statuses": [
+   "K4_PROBABILITY_SUPPORTED",
+   "K4_PROBABILITY_UNRESOLVED"
+  ],
+  "snapshot": {
+   "files_sha256": {
+    "reference_observations.txt": "04a779ac5c6717f820213c6d886ee87097b5936ee4535d62e8c9000579ab71fa",
+    "rules_tables.html": "07d3fff0a7897fa2b7bb25a73965ae786cd97f82107b6d62436274e68cbe73f8",
+    "rules_tables.txt": "b153352372678e72959034c3a250edcb5f7efa3c467b987dec3876446618a930"
+   },
+   "path": "local/source-archives/docs-live-snapshot-20260929"
+  },
+  "tables": {
+   "air_by_random_number": {
+    "random_value_10": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "random_value_11": [
+     null,
+     null,
+     null,
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "random_value_12": [
+     null,
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "random_value_2": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "random_value_3": [
+     null,
+     null,
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "random_value_4": [
+     null,
+     null,
+     null,
+     null,
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "random_value_5": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "random_value_6": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "A",
+     "A",
+     "A"
+    ],
+    "random_value_7": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "A"
+    ],
+    "random_value_8": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "A",
+     "A"
+    ],
+    "random_value_9": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "A",
+     "A",
+     "A",
+     "A"
+    ]
+   },
+   "infantry_light_weapon": 29,
+   "personnel_by_random_number": {
+    "random_value_10": [
+     null,
+     null,
+     null,
+     "S",
+     "S",
+     "S",
+     "S",
+     "S",
+     1,
+     1
+    ],
+    "random_value_11": [
+     null,
+     "S",
+     "S",
+     "S",
+     "S",
+     "S",
+     "S",
+     1,
+     1,
+     2
+    ],
+    "random_value_12": [
+     "S",
+     "S",
+     "S",
+     "S",
+     "S",
+     1,
+     2,
+     2,
+     2,
+     2
+    ],
+    "random_value_2": [
+     "S",
+     "S",
+     "S",
+     "S",
+     1,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "random_value_3": [
+     null,
+     "S",
+     "S",
+     "S",
+     "S",
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "random_value_4": [
+     null,
+     null,
+     "S",
+     "S",
+     "S",
+     "S",
+     "S",
+     1,
+     1,
+     1
+    ],
+    "random_value_5": [
+     null,
+     null,
+     null,
+     null,
+     "S",
+     "S",
+     "S",
+     "S",
+     1,
+     1
+    ],
+    "random_value_6": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     "S",
+     "S",
+     "S",
+     "S",
+     "S"
+    ],
+    "random_value_7": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "S",
+     "S",
+     "S",
+     "S"
+    ],
+    "random_value_8": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "S",
+     "S",
+     "S",
+     "S"
+    ],
+    "random_value_9": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     "S",
+     "S",
+     "S",
+     "S",
+     1
+    ]
+   },
+   "personnel_correction": "modified random number <= 0: -1; 1 to 7: 0; >= 8: +1",
+   "vehicle_by_random_number": {
+    "random_value_10": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     4,
+     4,
+     4
+    ],
+    "random_value_11": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     2,
+     2,
+     null,
+     null,
+     2,
+     3,
+     3,
+     2,
+     2,
+     3
+    ],
+    "random_value_12": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     1,
+     2,
+     3,
+     3,
+     3,
+     2,
+     4
+    ],
+    "random_value_2": [
+     1,
+     null,
+     null,
+     null,
+     null,
+     null,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     2,
+     3,
+     3,
+     2,
+     3,
+     5
+    ],
+    "random_value_3": [
+     null,
+     null,
+     null,
+     1,
+     null,
+     null,
+     1,
+     null,
+     null,
+     1,
+     1,
+     1,
+     1,
+     1,
+     2,
+     3,
+     3,
+     2,
+     1,
+     1
+    ],
+    "random_value_4": [
+     null,
+     1,
+     null,
+     1,
+     1,
+     null,
+     null,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "random_value_5": [
+     null,
+     null,
+     null,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "random_value_6": [
+     null,
+     null,
+     null,
+     null,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     3,
+     5
+    ],
+    "random_value_7": [
+     null,
+     null,
+     1,
+     null,
+     null,
+     1,
+     1,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     3,
+     3,
+     3,
+     4,
+     3,
+     4,
+     3
+    ],
+    "random_value_8": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     1,
+     1,
+     1,
+     null,
+     null,
+     2,
+     2,
+     2,
+     2,
+     2,
+     4,
+     4,
+     4
+    ],
+    "random_value_9": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     4,
+     3,
+     4
+    ]
+   },
+   "vehicle_columns_by_shooter_count": {
+    "count_1": [
+     1,
+     null,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     null,
+     9,
+     10,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "count_2": [
+     null,
+     1,
+     null,
+     2,
+     null,
+     3,
+     4,
+     5,
+     6,
+     7,
+     null,
+     8,
+     9,
+     10,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "count_3": [
+     null,
+     null,
+     1,
+     null,
+     2,
+     null,
+     3,
+     4,
+     null,
+     5,
+     null,
+     6,
+     7,
+     8,
+     9,
+     10,
+     null,
+     null,
+     null,
+     null
+    ],
+    "count_4": [
+     null,
+     null,
+     1,
+     null,
+     2,
+     null,
+     3,
+     null,
+     4,
+     null,
+     5,
+     null,
+     6,
+     7,
+     8,
+     null,
+     9,
+     10,
+     null,
+     null
+    ],
+    "count_5": [
+     null,
+     null,
+     1,
+     null,
+     2,
+     null,
+     null,
+     null,
+     3,
+     null,
+     4,
+     null,
+     null,
+     5,
+     6,
+     7,
+     null,
+     8,
+     9,
+     10
+    ]
+   },
+   "vehicle_correction_bins_low_high_by_armor_0_to_4": [
+    [
+     null,
+     -3,
+     [
+      0,
+      -1,
+      -2,
+      -3,
+      -3
+     ]
+    ],
+    [
+     -2,
+     -1,
+     [
+      0,
+      0,
+      -1,
+      -2,
+      -3
+     ]
+    ],
+    [
+     0,
+     0,
+     [
+      0,
+      0,
+      0,
+      -1,
+      -3
+     ]
+    ],
+    [
+     1,
+     1,
+     [
+      0,
+      0,
+      0,
+      -1,
+      -2
+     ]
+    ],
+    [
+     2,
+     2,
+     [
+      0,
+      0,
+      0,
+      0,
+      -2
+     ]
+    ],
+    [
+     3,
+     5,
+     [
+      1,
+      0,
+      0,
+      0,
+      -1
+     ]
+    ],
+    [
+     6,
+     8,
+     [
+      1,
+      1,
+      0,
+      0,
+      0
+     ]
+    ],
+    [
+     9,
+     9,
+     [
+      1,
+      1,
+      1,
+      0,
+      0
+     ]
+    ],
+    [
+     10,
+     10,
+     [
+      2,
+      2,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     11,
+     11,
+     [
+      2,
+      2,
+      2,
+      2,
+      1
+     ]
+    ],
+    [
+     12,
+     null,
+     [
+      3,
+      3,
+      3,
+      2,
+      2
+     ]
+    ]
+   ]
+  }
+ },
+ "k5": {
+  "relations": [
+   "additive_lower_and_strength_clamp__with_resuppression_loss",
+   "additive_lower_and_strength_clamp__without_resuppression_loss",
+   "additive_lower_clamp__with_resuppression_loss",
+   "additive_lower_clamp__without_resuppression_loss",
+   "additive_unclamped__with_resuppression_loss",
+   "additive_unclamped__without_resuppression_loss",
+   "correction_on_positive_raw_only__with_resuppression_loss",
+   "correction_on_positive_raw_only__without_resuppression_loss",
+   "correction_on_positive_raw_only_strength_clamp__with_resuppression_loss",
+   "correction_on_positive_raw_only_strength_clamp__without_resuppression_loss",
+   "rect_damage_is_final__with_resuppression_loss",
+   "rect_damage_is_final__without_resuppression_loss"
+  ],
+  "short_relations": [
+   "table_value_annihilation_one__with_resuppression_loss",
+   "table_value_annihilation_one__without_resuppression_loss",
+   "table_value_annihilation_whole_unit__with_resuppression_loss",
+   "table_value_annihilation_whole_unit__without_resuppression_loss"
+  ],
+  "statuses": [
+   "K5_RUNTIME_IDENTIFIED",
+   "K5_UNDERIDENTIFIED",
+   "K5_NO_REGISTERED_RELATION_FITS",
+   "K5_UNTESTED"
+  ]
+ },
+ "k6": {
+  "statuses": [
+   "K6_SUPPORTED",
+   "K6_REFUTED",
+   "K6_UNTESTED"
+  ]
+ },
+ "pairing": {
+  "accepted": "exactly one shoot echo with the same seat, unit, target and weapon, without error",
+  "ambiguous": "an accepted shot with more than one such record: excluded and counted",
+  "integrity_failures": [
+   "accepted_no_record",
+   "refused_with_record",
+   "acceptance_unknown",
+   "a record claimed by two accepted shots",
+   "a paired record whose cur_step is not the step's",
+   "a paired record whose colours disagree with the shooter's and target's",
+   "a shooter or target absent from the pre-step state",
+   "a shooting seat's observation missing",
+   "a missing snapshot or final state",
+   "a step's removed units disagreeing with its snapshots",
+   "an unpaired record that is not a same-hex engagement",
+   "a judge record of another type"
+  ],
+  "paired": "an accepted shot with exactly one direct-fire record of the step naming its unit, target and weapon, claimed by no other accepted shot"
+ },
+ "required_classes": [
+  "infantry",
+  "vehicle",
+  "aircraft",
+  "fortification"
+ ],
+ "required_classes_source": "evaluation/s20-t11-replay/replay.json, HH pooled target class pairs of root and induced changed shots, both sides",
+ "s20_replay_sha256": "dd9dd9363a61c39cd631e78252e0dbbdd3efe99632857a45f13189a41ce08605",
+ "schema": "miaosuan-s21-protocol/1",
+ "sources": {
+  "scripts/s21_semantics.py": "fc8b8b1da4dcdb51a179caf5d3952c7f739911e809d1537b0cdceef580dcf6ca",
+  "src/miaosuan_agent/evaluation/s21_semantics.py": "b38d530e3628ee23fc13117d41d4ebdb3419299441f59243c62cb3b2b05fdd40"
+ },
+ "study_id": "s21-direct-fire-semantics",
+ "t11_completions": [
+  "T11_OFFLINE_NO_KILL_EDGE",
+  "T11_OFFLINE_PASS"
+ ],
+ "target_classes": [
+  "infantry",
+  "vehicle",
+  "aircraft",
+  "fortification",
+  "other"
+ ],
+ "usable_capture_rule": "a capture of the full-step observer family whose window file holds a pre-step snapshot (the all-seeing state and the observation of every shooting seat) for every step, whose step log holds the pre-execution copies of the submitted actions, the engine's feedback and the step's new judge records, and which keeps the final post-step state"
+}
