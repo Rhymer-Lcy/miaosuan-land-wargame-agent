@@ -426,3 +426,23 @@ evidence order puts runtime observation first) whether a listed `attack_level` e
 removal means for infantry, vehicles, aircraft and fortifications. It would settle or confirm K2, K4, K5 and K6 without
 fitting any probability; only then could a documented `p_kill_now` be frozen and T11-O1, as registered, be evaluated.
 If the owner prefers to leave direct fire, the frozen ranking's next eligible family is T2.
+
+### R7. Close-out checks
+
+At `527bfdb` (tree `afc18d61`), the results as pushed at 2026-10-07T16:12:34+08:00 and fetched back from GitHub
+identical: the workstation tree ran 1,749 tests (84 skipped) and a clean clone 1,746 (86 skipped), both passing; the
+server's private tree ran 1,762 tests, passing in 6,084 s, with one skipped by design (the quotation check of
+`kill_model.json`, which needs the documentation snapshot that only the workstation holds, and passes there) and the
+ledger file byte-identical before and after. Inside that suite `tests/test_real_s20.py` regenerates the protocol, the
+inputs, every public result file and the private rows byte for byte. The private documentation gate binds the anchored
+clauses of these results, the frontier row and roadmap item and the README note to the public files and the copied
+logs and catches every planted error; every current earlier-sprint documentation gate passes and catches all its plants
+(Sprint 10's on the server: 40 checks, no failure, 15 of 15); the four retired copies kept beside them fail identically
+on the documents as they stood at the start of the sprint. The privacy scan of all 965 reachable blobs gives the 104
+accepted hit lines, the same set. The platform canary rebuilds on both hosts with SHA-256 `a3d3b022...` and no
+mismatch. A read-only verify reports 2,795 sessions, none unclosed, integrity ok, state chain continuous; session 2796
+was never opened.
+
+A close-out helper written to run every documentation gate matched its own file name and launched itself recursively
+(192 processes) before it was stopped; it wrote no file and changed nothing in the tree, and the gates were then run
+once each with the helper excluding itself. The server's development worktree was removed after these checks.
