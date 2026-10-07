@@ -339,3 +339,17 @@ registered offline step: replay the kill-first target rule on H0 and HH with its
 shots per side-game, or no gain in kills per shot) frozen before the replay, and no engine session; its two-session
 probe would again need the owner's approval. A T6 branch on movement inside envelopes is not recommended as the next
 task: it would need a new frontier decision with this sprint's finding as an input.
+
+### R8. Close-out checks
+
+At `973e9b5` (tree `150d4721`), the results as pushed at 2026-10-07T11:27:35+08:00 and fetched back from GitHub
+identical: the workstation tree ran 1,695 tests (83 skipped) and a clean clone 1,692 (84 skipped), both passing; the
+server's private tree ran 1,708 tests, none skipped, passing in 5,729 s, with the ledger file byte-identical before and
+after. On the server `run --check` regenerates every public file and the private rows byte for byte
+(`tests/test_real_s19.py`). The private documentation gate binds the anchored clauses of these results, the frontier
+row and the README note to the public files and the copied logs and catches every planted error; every current
+earlier-sprint documentation gate passes and catches all its plants (Sprint 10's on the server: 40 checks, no failure,
+15 of 15); the retired copies kept beside them fail identically on the documents as they stood at the start of the
+sprint. The privacy scan of all 938 reachable blobs gives the 104 accepted hit lines, the same set. The platform canary
+rebuilds on both hosts with SHA-256 `a3d3b022...` and no mismatch. A read-only verify reports 2,795 sessions, none
+unclosed, integrity ok, state chain continuous; session 2796 was never opened.
