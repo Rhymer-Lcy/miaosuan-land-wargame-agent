@@ -1,0 +1,177 @@
+{
+ "declared": 33,
+ "killed": 33,
+ "mutants": [
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "current position at range counted outside",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "route hex at range counted outside",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "prefix of six hexes",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "prefix slice one too long",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "prefix of four hexes",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "hold limit exclusive",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "hold limit 149",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "cooldown expiry exclusive",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "cooldown 301",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "cooldown ignored",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "no-baseline-move release dropped",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "absent unit keeps its state",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "repeat not dropped",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "condition cleared keeps the hold",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "first weapon only",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "nearest listed threat only for the current position",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "unreadable route not refused",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "order reversed",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "every unit class gated",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t6_threat_entry_gate.py",
+   "mutant": "first entry index zero-based",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s19_t6g.py",
+   "mutant": "opportunity threshold exclusive",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s19_t6g.py",
+   "mutant": "side-game count not checked",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s19_t6g.py",
+   "mutant": "pooled opportunity",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s19_t6g.py",
+   "mutant": "exactly one half fails",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s19_t6g.py",
+   "mutant": "fidelity ignored",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s19_t6g.py",
+   "mutant": "opportunity ignored",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s19_t6g.py",
+   "mutant": "gated decisions counted as opportunities",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s19_t6g.py",
+   "mutant": "capturers de-duplicated across side-games",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s19_t6g.py",
+   "mutant": "damage window exclusive",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s19_t6g.py",
+   "mutant": "damage before the gate counted",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s19_t6g.py",
+   "mutant": "initial ownership has participants",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s19_t6g.py",
+   "mutant": "numbers not masked",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s19_t6g.py",
+   "mutant": "open episode not closed",
+   "outcome": "killed"
+  }
+ ],
+ "schema": "miaosuan-s19-mutation/1",
+ "sources_sha256": {
+  "src/miaosuan_agent/evaluation/s19_t6g.py": "1e1940b0720c0d13b99eeecca2fdb06c83d5bf9d056f22e54481b1f096f8a918",
+  "src/miaosuan_agent/experiments/t6_threat_entry_gate.py": "2c61f49463f05fac13666fd287cf8fd2bb703b916866975c7edfea74999433f1"
+ },
+ "test": "tests.test_s19_t6g"
+}
