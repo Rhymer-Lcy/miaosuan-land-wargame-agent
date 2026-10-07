@@ -319,3 +319,107 @@ cannot be outcome-motivated. A test now checks the public side and pooled summar
 (0 to 49 and -5 to -1), and a mutant restoring bare keys is killed: the mutation record is 36 of 36. `protocol.json`
 is re-frozen; only the analysis module's normalised digest changes. The replay is run once more after this amendment is
 pushed; the refused launch is counted as a run that produced no output.
+
+## Results (2026-10-07)
+
+### R1. Order of work
+
+Sections 1 to 17, the rule, the analysis, the driver, their tests, `protocol.json`, `inputs.json`, `kill_model.json`
+and `mutation.json` (`3a5870c` to `ac774a7`, tree `538dfecb`) were pushed at 2026-10-07T15:39:44+08:00 and fetched back
+from GitHub identical. The first launch of the replay was refused by its own privacy check and wrote nothing; Amendment
+A1 (`6fb4ce4` to `cf67013`, tree `8c0ff02a`) was pushed at 2026-10-07T15:55:19+08:00 and fetched back identical; the
+evaluation server fast-forwarded to it and `freeze --check` confirmed the frozen protocol and inputs. The replay then ran
+once, from 2026-10-07T16:02:19+08:00 to 16:07:47+08:00, and wrote `fidelity.json`, `replay.json` and
+`disposition.json`. `run --check` afterwards regenerated every public file and the private rows byte for byte.
+
+### R2. Fidelity: every item holds
+
+Every Sprint 18 anchor of section 9 is reproduced exactly (`fidelity.json`): H0 432 `baseline-v2` direct-fire shots,
+368 with at least two targets listed, 127 with a listed target of lower blood than the chosen one; HH 319, 267 and 97;
+the fire-choice blocks of `census.json` are equal for both populations; H0 33,696 decisions and 33,680 play decisions,
+123 decisions where reconstructed `baseline-v2` differs from the recorded `baseline-v0`; HH reconstruction equal to the
+recorded seat in 11,524 of 11,524 decisions. Run `B` reproduces `baseline-v2` in 33,696 of 33,696 H0 and 11,524 of
+11,524 HH decisions. In all 16 H0 and 4 HH side-games there is no problem of any kind: no UNEXPLAINED difference, no
+memory or non-play difference, no duplicate shoot target in either run, no T11 shot outside its unit's listed options
+or at a target reserved earlier in the step.
+
+### R3. Disposition: T11_OFFLINE_MODEL_UNAVAILABLE
+
+By the first-match rule of section 14 (`disposition.json`): fidelity passes; the kill model is unavailable (section 11:
+K2 and K5 undocumented, K4 and K6 inferred). **T11_OFFLINE_MODEL_UNAVAILABLE.** No `p_kill_now` was computed, no
+probe registration is drafted, nothing is promoted, and session 2796 was not opened. The items below the first match,
+computed and reported as descriptive only (they decide nothing):
+
+* pure target priority: holds. There are 0 lost, gained or other non-shoot differences in every HH and H0 side-game;
+  every T11 change is a changed shot, the same units shoot in both runs, and the two runs emit the same number of
+  shots (319 in HH, 432 in H0);
+* opportunity: would pass. The four HH side-games have 15, 33, 19 and 27 changed emitted shots, each at least 10;
+* kill edge: not evaluated (`delta_pkill` null).
+
+### R4. What the replay shows (descriptive)
+
+| HH side-game | Decisions with a change | Changed emitted shots | Root switches | Reservation-induced | Distinct changed shooters | First changed decision (step) |
+|---|---|---|---|---|---|---|
+| p01, `baseline-v2` blue | 13 | 15 | 15 | 0 | 5 | 276 (275) |
+| p02, `baseline-v2` red | 33 | 33 | 33 | 0 | 6 | 180 (179) |
+| p03, `baseline-v2` blue | 18 | 19 | 19 | 0 | 6 | 276 (275) |
+| p04, `baseline-v2` red | 27 | 27 | 27 | 0 | 6 | 180 (179) |
+
+Pooled over HH: 94 changed emitted shots in 91 of 11,524 decisions, all of them root switches, and 1 silent root
+switch (in p01: a root switch whose emitted shot equals `baseline-v2`'s because the two runs' reservations also
+differed). In H0, 133 changed shots (122 root switches, 11 reservation-induced) in 100 decisions, in 6 of the 16
+side-games (the 1930331196, 2120531121 and 2130511121 games); the other 10 side-games, with 2 to 15 shots each, have
+none. No unit fell back for want of a readable blood: every remaining target was a visible enemy with an integer blood.
+Everything after a side-game's first change is on recorded states that are off-policy for T11 (section 7): in HH the
+first change is at decision 180 or 276, so 2,700 or 2,604 of the 2,881 decisions follow it.
+
+**The root switches trade attack level for low blood.** Of the 94 HH root switches, T11's attack level is lower in 58,
+equal in 36 and never higher (H0: 90, 32 and 0 of 122); the drop is 5 levels or more in 17 (H0 10). T11's target has
+blood 1 in 77 of the 94 (H0 104 of 122), while `baseline-v2`'s target at the same point had blood 3 in 52 (H0 48);
+the two rankings never name the same target. The shooters are vehicles of sub-type 0 and aircraft of sub-type 6 (49
+and 45 of the HH root switches; in H0 also vehicles of sub-type 1 and 4).
+
+**Reservation effects are small.** In HH no shot changes only because of an earlier change: the 3 decisions with a
+reservation chain hold root switches only, a later one also seeing a different reserved set; the longest chain is 2.
+Changed decisions reserve 94 targets that `baseline-v2` did not and leave 94 unreserved that it did; 4 units had an
+option excluded only under T11 and 4 only under `baseline-v2`. In H0 the 11 induced changed shots come from chains of
+up to 3 (31 decisions with a chain, 33 units each way).
+
+**Post hoc, labelled: where the low-blood targets are.** The target classes of `replay.json` show that the rule's
+lowest blood is often not a combat unit's strength. In HH, 24 of the 94 T11 targets are fortifications (type 4), 16 of
+them switched onto from another class; the published rules adjudicate fire at a fortification against its remaining
+capacity, and vehicles inside do not inherit the result. In H0, 53 of the 122 switches move fire onto aircraft
+(type 3), from other classes, for which the rules publish separate anti-air tables. These observations were not
+anticipated by the registration, change no item and are not a repair; they bear on any later form of the rule (R6).
+
+### R5. Process notes
+
+* The first mutation run killed 33 of 35 mutants; the two survivors were test gaps (a reservation chain longer than
+  two, and a non-reproducing reference decision not recorded as a problem), closed before the freeze. Amendment A1
+  added a mutant for bare public keys: 36 of 36.
+* The first replay launch was refused by the frozen privacy check before writing any file (Amendment A1). The synthetic
+  privacy test had used only large identifiers; it now checks small ones. The refused launch is counted as a run that
+  produced no output; the registered decision rule was not touched.
+* A binding test first compared the six anchors in a hand-typed key order that was wrong; it was replaced by a named
+  comparison before the registration commit.
+* A pre-push re-read removed an unverified claim about the snapshot's provenance and corrected the range of the
+  elevation correction table (from -5 to +1) in section 11.
+* A shell heredoc carrying this section failed to parse on its apostrophes and wrote nothing; the section was written
+  with the editor instead.
+
+### R6. What it teaches, and the one recommended next task
+
+Mechanically, T11-O1 is the narrow change it was meant to be: on these states it changes only targets, never the
+shooting units or any other behaviour, and it has more than the registered opportunity in every HH side-game. What
+blocks it is the endpoint. The public documentation does not say how a result and its correction combine (K5) or
+whether a listed attack level already includes the elevation correction (K2), and the rule gives up attack level on
+exactly the low-blood targets, often fortifications or aircraft, where those gaps decide whether a shot can kill.
+Under the registered gate no engine probe is justified until the endpoint is valid.
+
+**Recommended next task (one, owner's approval):** an offline, registered adjudication-semantics audit of the existing
+direct-fire judge records, with no engine session: establish from the engine's own records (the project's semantics
+evidence order puts runtime observation first) whether a listed `attack_level` equals the record's `att_level`, how
+`ori_damage` and `rect_damage` combine into `damage` (a no-effect or suppression result and clamping included), and what
+removal means for infantry, vehicles, aircraft and fortifications. It would settle or confirm K2, K4, K5 and K6 without
+fitting any probability; only then could a documented `p_kill_now` be frozen and T11-O1, as registered, be evaluated.
+If the owner prefers to leave direct fire, the frozen ranking's next eligible family is T2.
