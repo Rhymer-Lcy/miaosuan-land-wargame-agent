@@ -1,0 +1,187 @@
+{
+ "declared": 35,
+ "killed": 35,
+ "mutants": [
+  {
+   "file": "src/miaosuan_agent/experiments/t11_kill_first.py",
+   "mutant": "blood direction: highest first",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t11_kill_first.py",
+   "mutant": "blood tie broken by the higher target id",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t11_kill_first.py",
+   "mutant": "attack-level direction on the chosen target",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t11_kill_first.py",
+   "mutant": "weapon tie-break reversed",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t11_kill_first.py",
+   "mutant": "ranking before the reservation's exclusion",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t11_kill_first.py",
+   "mutant": "reservation not updated by the selected shot",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t11_kill_first.py",
+   "mutant": "a bool blood accepted",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t11_kill_first.py",
+   "mutant": "a negative blood accepted",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t11_kill_first.py",
+   "mutant": "a missing blood read as zero",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t11_kill_first.py",
+   "mutant": "an invisible target skipped instead of failing closed",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t11_kill_first.py",
+   "mutant": "own units counted as enemies",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/experiments/t11_kill_first.py",
+   "mutant": "baseline ranking is kill-first",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "root switches not separated",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "unexplained differences accepted",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "occupation state ignored in the explanation",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "lost shots counted as changed shots",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "silent root switches counted as differences",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "chain not accumulated",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "memory difference ignored",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "reserved-target shot not flagged",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "unlisted shot not flagged",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "changed-shot denominator includes non-shoot differences",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "opportunity threshold exclusive",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "pooled opportunity",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "side-game count not checked",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "gained shots not coupling",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "coupling reads one population",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "zero kill edge passes",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "model availability checked after coupling",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "opportunity checked before coupling",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "fidelity ignored",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "inferred items accepted by the model rule",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "quotations compared without normalising whitespace",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "numbers not masked",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "an unequal reference decision accepted",
+   "outcome": "killed"
+  }
+ ],
+ "schema": "miaosuan-s20-mutation/1",
+ "sources_sha256": {
+  "src/miaosuan_agent/evaluation/s20_t11.py": "e362d43fe412c28a8ff0d9be748dc189271d8a3763381a055567a79426459c5e",
+  "src/miaosuan_agent/experiments/t11_kill_first.py": "08766b028ffcf63064692ac196a9043c58387f7014380381739547af7fe86eac"
+ },
+ "test": "tests.test_s20_t11"
+}
