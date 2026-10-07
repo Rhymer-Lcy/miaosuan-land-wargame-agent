@@ -1,0 +1,197 @@
+{
+ "available": false,
+ "gaps": [
+  "K2",
+  "K4",
+  "K5",
+  "K6"
+ ],
+ "items": [
+  {
+   "finding": "result tables exist for vehicle targets (indexed by the shooter's vehicle or squad count and the attack level), for personnel targets and infantry light weapons against vehicles (indexed by the attack level), and for air targets; each is read with a random number from 2 to 12",
+   "id": "K1",
+   "quotes": [
+    [
+     "rules_tables.txt",
+     "### 对车辆单位战斗结果"
+    ],
+    [
+     "rules_tables.txt",
+     "### 直瞄武器对人员/步兵轻武器对车辆战斗结果表"
+    ],
+    [
+     "rules_tables.txt",
+     "### 空战斗结果表"
+    ]
+   ],
+   "requirement": "a published table maps the attack level of a direct-fire shot to its possible results",
+   "status": "documented"
+  },
+  {
+   "finding": "valid_actions documents attack_level only as an attack level; the rules derive a shot's attack level from the weapon and distance tables, the shooter's vehicle or squad count (against personnel) and a separate elevation-difference correction. Whether the listed value already includes the elevation correction and the count row is not stated, so the listed value cannot be taken as the table index without an assumption",
+   "id": "K2",
+   "quotes": [
+    [
+     "reference_observations.txt",
+     "\"attack_level\": \"攻击等级 int\""
+    ],
+    [
+     "rules_tables.txt",
+     "### 攻击等级高度差修正"
+    ]
+   ],
+   "requirement": "the listed option's attack_level is the index those tables are read with",
+   "status": "undocumented"
+  },
+  {
+   "finding": "a number eliminates that many squads or vehicles (and suppresses a vehicle target); no effect; suppression only",
+   "id": "K3",
+   "quotes": [
+    [
+     "rules_rules.txt",
+     "战果为数字表示消灭了对方几个班（或几辆车），同时对车辆单位造成压制。"
+    ],
+    [
+     "rules_rules.txt",
+     "无效，表示未对对方造成损失。"
+    ],
+    [
+     "rules_rules.txt",
+     "压制，表示未消灭对方有生力量，但造成了对目标的压制。"
+    ]
+   ],
+   "requirement": "the possible results of one shot",
+   "status": "documented"
+  },
+  {
+   "finding": "the result tables are indexed by a random number from 2 to 12; the dice are stated only for the corrections (two dice for vehicles, one die for personnel), not for the result tables themselves, so two fair dice is an inference from the range",
+   "id": "K4",
+   "quotes": [
+    [
+     "rules_tables.txt",
+     "对车辆战斗结果修正时，修正方法是2颗骰子生成随机数"
+    ],
+    [
+     "rules_tables.txt",
+     "对人员战斗结果修正时，修正方法是1颗骰子生成随机数"
+    ]
+   ],
+   "requirement": "the probability of each result: the distribution of the random number the result tables are read with",
+   "status": "inferred_not_stated"
+  },
+  {
+   "finding": "the correction is read from the armour column (vehicles) or as -1, 0 or +1 (personnel) after a modified second random number; whether it applies to a no-effect or a suppression result, how it is added to a number, and how a total below zero or above the target's strength is treated are not stated (the judge record names an original loss, a loss correction and a final loss, without a rule)",
+   "id": "K5",
+   "quotes": [
+    [
+     "rules_tables.txt",
+     "尔后对照车辆的装甲级别查表确定最终修正结果"
+    ],
+    [
+     "reference_observations.txt",
+     "\"ori_damage\": \"int, 原始战损\""
+    ],
+    [
+     "reference_observations.txt",
+     "\"rect_damage\": \"int, 战损修正值\""
+    ],
+    [
+     "reference_observations.txt",
+     "\"damage\": \"int, 最终战损\""
+    ]
+   ],
+   "requirement": "how the result and its correction combine into the final loss",
+   "status": "undocumented"
+  },
+  {
+   "finding": "blood is the unit's squad (or vehicle) count and a numeric result eliminates that many, and a suppressed infantry unit suppressed again loses one squad; that a unit whose count reaches zero is removed is not stated as a rule",
+   "id": "K6",
+   "quotes": [
+    [
+     "rules_elements.txt",
+     "血量（班组数）"
+    ],
+    [
+     "rules_rules.txt",
+     "被压制的步兵棋子再次被裁决压制，损失1个班，剩余的班仍保持被压制状态。"
+    ]
+   ],
+   "requirement": "how the observed blood maps to destruction",
+   "status": "inferred_not_stated"
+  },
+  {
+   "finding": "yes: separate tables against personnel, vehicles (with the target's armour class, an observed field) and aircraft",
+   "id": "K7",
+   "quotes": [
+    [
+     "reference_observations.txt",
+     "装甲类型 0-无 1-轻型 2-中型 3-重型 4-复合装甲"
+    ],
+    [
+     "rules_tables.txt",
+     "### 对人员攻击等级表"
+    ],
+    [
+     "rules_tables.txt",
+     "### 对车辆攻击等级表"
+    ]
+   ],
+   "requirement": "whether the target class changes the table",
+   "status": "documented"
+  },
+  {
+   "finding": "the weapon enters through the attack-level tables; the shooter's vehicle or squad count enters the vehicle result table and the personnel attack-level table; shooter state (suppressed, moving) enters the corrections",
+   "id": "K8",
+   "quotes": [
+    [
+     "rules_rules.txt",
+     "射击单位处于机动中、被压制状态，战果作不利修正。"
+    ]
+   ],
+   "requirement": "whether the weapon or shooter class changes the table",
+   "status": "documented"
+  },
+  {
+   "finding": "target terrain (map), target state (concealed, moving, stacked, marching) and shooter state are named, with observation fields for the state",
+   "id": "K9",
+   "quotes": [
+    [
+     "rules_rules.txt",
+     "目标单位处于掩蔽地形、机动中，战果作不利修正。"
+    ],
+    [
+     "rules_rules.txt",
+     "目标单位处于堆叠状态、行军状态，战果作有利修正。"
+    ]
+   ],
+   "requirement": "the inputs of the corrections are observable",
+   "status": "documented"
+  },
+  {
+   "finding": "the vehicle result table covers counts 1 to 5 and attack levels 1 to 10; outside them the table gives no result",
+   "id": "K10",
+   "quotes": [
+    [
+     "rules_tables.txt",
+     "### 对车辆单位战斗结果"
+    ]
+   ],
+   "requirement": "the conditions under which the model is undefined",
+   "status": "documented"
+  }
+ ],
+ "question": "P(immediate destruction of the observed target | its current state, the listed shoot option), from the public platform documentation only",
+ "rule": "available only if every item is documented; an inferred or undocumented item means an unsupported assumption",
+ "schema": "miaosuan-s20-kill-model/1",
+ "snapshot": {
+  "fetched": "2026-09-29T18:41:10+08:00",
+  "files_sha256": {
+   "reference_observations.txt": "04a779ac5c6717f820213c6d886ee87097b5936ee4535d62e8c9000579ab71fa",
+   "rules_elements.txt": "defbc5886615e4c6045ca30d63001bebe6d71d8311f940f44ed02aed9e04de6d",
+   "rules_rules.txt": "db2542608d115e982ef4d2c1bc5969bf3760d6f7b86b1c708b51fcb6728402c1",
+   "rules_tables.txt": "b153352372678e72959034c3a250edcb5f7efa3c467b987dec3876446618a930"
+  },
+  "path": "local/source-archives/docs-live-snapshot-20260929"
+ },
+ "study_id": "s20-t11-replay"
+}
