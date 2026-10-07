@@ -134,6 +134,10 @@ Sprint 20's offline replay of the next family's first rule, kill-first target pr
 no engine session), found that the public rules do not define the immediate-kill probability its gate needs
 (disposition T11_OFFLINE_MODEL_UNAVAILABLE); descriptively the rule changes only which target a shooter fires at, and
 nothing was promoted.
+Sprint 21's offline audit of the existing direct-fire judge records (`docs/SPRINT21_DIRECT_FIRE_SEMANTICS.md`, no
+engine session) found the engine's bookkeeping largely readable from its records but the probability law of its draws
+stated nowhere the project may use (disposition DIRECT_FIRE_SEMANTICS_UNDERIDENTIFIED), so T11-O1 is closed and
+nothing was promoted.
 The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
@@ -202,6 +206,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/SPRINT18_FRONTIER_RESET.md` | Sprint 18's offline frontier reset after T9 was shelved: populations, census definitions, new-family scan, increment rubric with information per session, results, scores, sensitivity and the selected next family |
 | `docs/SPRINT19_T6G_SHADOW.md` | Sprint 19's offline shadow study of the T6-G threat-entry gate: frozen gate and hold state machine, evidence boundary, fidelity, opportunity and capturer rules, results and disposition |
 | `docs/SPRINT20_T11_REPLAY.md` | Sprint 20's offline replay of the T11-O1 kill-first target rule: frozen rule and reservation semantics, classification of differences, the documentary kill-model assessment, fidelity, opportunity and coupling rules, results and disposition |
+| `docs/SPRINT21_DIRECT_FIRE_SEMANTICS.md` | Sprint 21's offline audit of direct-fire adjudication semantics in the existing judge records: frozen corpus and pairing, the K2 to K6 rules, sufficiency, results, post-hoc findings and disposition |
 | `docs/PLATFORM_CANARY.md` | the owner's manual upload and compatibility-check steps for the platform canary |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
