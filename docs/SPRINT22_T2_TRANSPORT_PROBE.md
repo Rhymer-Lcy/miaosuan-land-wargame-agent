@@ -398,3 +398,104 @@ Scores, margin, winner and kills are recorded as record facts if the harness pro
 ## 28. Not claimed
 
 No score, effect, population or generality claim. One deterministic probe shows one trajectory of one pair.
+
+## Results (2026-10-08)
+
+Every figure below comes from the committed public files of `evaluation/s22-t2-transport-probe/`, which
+`scripts/s22_analysis.py run --check` regenerates byte for byte from the private record and captures, or from the private
+logs and post-hoc listing named where used. Scores are record facts that enter no rule.
+
+### R1. Registration and pre-engine checks
+
+Sections 1 to 9 were pushed as `441034a29c55895739148030cf89aa2d3ff751a6` before the witness search; the complete
+registration, every frozen file, the card, the inputs, the tests and the mutation record as
+`75b35b2ca0b63832a64d0be634af3cbc40a63e90` (tree `57d069bbb3d7b49bb0cbbcbdbe89d18cd3e64a44`) at
+2026-10-07T22:58:12+08:00, after an audit of its 16 commits. A fresh clone from GitHub had the same commit and tree and
+all 18 sprint files byte for byte; the evaluation server was fast-forwarded to the same commit by bundle, and on that
+committed tree the card, the semantics, witness and inputs files regenerated, the rehearsal passed and the stand-in
+rehearsal passed with the clean-tree guards in force. Before session 2796: the workstation tree ran 1,889 tests (89
+skipped) with exit 0, a clean clone from GitHub 1,886 (97 skipped) with exit 0, and the server's private tree 1,902 (8
+skipped; 6,899 s) with exit 0 and the ledger file byte-identical before and after; the privacy scan over every reachable
+blob (1,012 blobs) found 104 hit lines, identical as a set to the accepted 104; the platform canary rebuilt byte for byte
+on both hosts; a read-only verify reported 2,795 sessions, integrity ok, state continuous, the last event a close.
+
+### R2. Session and capture integrity
+
+| Session | Game | Candidate seat | Wall time | Structural stops | Decisions reconstructed offline, memory compared, differences |
+|---:|---|---|---:|---|---|
+| 2796 | `1930331196.C3.s22-t2-transport-probe-1.p01` | blue | 111.8 s | none | 2,881, 2,881, 0 |
+
+The game was opened once (server clock 2026-10-07T17:16:01Z, a host clock that runs ahead by the offset recorded in
+`docs/ENGINE_INSTALL.md`), completed 2,881 steps, and closed with integrity ok; nothing was retried or replaced and no
+second session was opened. The ledger audit found exactly one session after 2795, the card's game under the card's
+digest and the candidate's registered digest. The live timeline found no consistency error and no difference from
+`baseline-v2` outside the registered edits; the offline replay re-derived every decision and memory from an empty memory
+with no difference. `CAPTURE_INVALID` does not apply.
+
+### R3. Prefix
+
+The candidate equalled `baseline-v2` at decision 0, and at decision 1 emitted exactly the registered trigger actions for
+the registered pair (SP passed live and offline): the infantry's move replaced in place by the embark copied from its
+listing, the carrier's move withheld, every other move unchanged.
+
+### R4. Endpoints
+
+| Endpoint | Observed | Verdict |
+|---|---|---|
+| Embark | emitted at the trigger, accepted; the infantry represented aboard the carrier with the transition fields cleared 75 steps after the order (the relation itself also appeared at 75); no inconsistent representation; the carrier present and controlled throughout | holds |
+| Hold and release | the carrier's `baseline-v2` move withheld at the trigger decision only, because neither unit listed any action during the embark transition; released 75 steps after the order | as registered |
+| Carry | `baseline-v2`'s first move of the carrier after release accepted; the carrier moved and stood on its destination 560 steps after release, equal to the route's free-flow time of 560; the infantry aboard at all 635 decisions from boarding to the disembark order, its position equal to the carrier's, no action emitted for it | holds |
+| Destination | 80-point objective A, the predicted objective; an objective | holds |
+| Stacking | 1 own ground unit (the carrier) on the destination when disembark was listed | not blocked |
+| Destination hold | the carrier's `baseline-v2` move withheld at 75 decisions after arrival, while the carrier settled | as registered |
+| Disembark | listed 75 steps after arrival, emitted once as listed, accepted; the infantry an own operator on the destination hex again 75 steps after the order, with the transition fields cleared, no inconsistent representation, the carrier present | holds |
+| After disembark (reported) | listed actions move, embark, change state and split; occupation not listed (the objective was already the side's); not suppressed; the passenger fields cleared | reported |
+
+The candidate's own state sequence agreed: EMBARK_REQUESTED at step 0, CARRIER_RELEASED at 75, AT_DESTINATION at 635,
+DISEMBARK_REQUESTED at 710 and DONE at 785. The infantry, whose foot route to the same objective takes 3,456 free-flow
+steps and cannot be completed in a 2,880-step game, stood on the objective at step 785.
+
+### R5. Disposition
+
+Embark, carry and disembark succeeded at the registered destination, the destination was below the stacking limit, and
+no structural, fidelity, prefix or registered-difference problem occurred. By the rule of section 24:
+
+**T2_P1_MECHANISM_SUPPORTED.**
+
+It means only that engine 4.1.0 executed the complete infantry-transport chain for this one registered pair in this one
+deterministic probe, with `baseline-v2` driving everything else unchanged. It is not a score improvement, not general
+safety, not a promotion and not readiness for confirmation; nothing was promoted, and no further engine use is
+authorized.
+
+### R6. Post-hoc facts (read from the private capture after the disposition; they change nothing)
+
+From `local/diagnostics/s22/posthoc.py`:
+
+* The only actions emitted for the pair in the whole game were the embark, the carrier's single `baseline-v2` move at
+  release and the disembark. The candidate seat's only refused action was one shot by an unrelated unit (code 516, the
+  target already removed), `baseline-v2`'s known residual class.
+* Neither unit listed any action during either transition; during its stop transition on the destination the carrier
+  listed move and change of state, which is why `baseline-v2` proposed a move at every one of those 75 decisions: without
+  the destination hold the owner approved in section 5 the carrier would have left before disembark was listed.
+* After landing the infantry stayed on the objective at every one of the remaining 2,095 decisions and was present at
+  the end of the game.
+* Record facts (enter no rule): blue margin 550, occupation 310, attack 78.
+
+### R7. What Sprint 22 shows
+
+1. **Both transport actions are specified by their listings.** Embark is listed under the passenger and disembark under
+   the carrier, each with the single key `target_obj_id`; copying the listed option was accepted both times.
+2. **The documented 75-step transitions hold exactly in this probe**: aboard 75 steps after embark, disembark listed 75
+   steps after arrival (the stop transition), on the ground 75 steps after disembark.
+3. **Carrying cost no speed here**: the loaded carrier took exactly its route's free-flow time.
+4. **The integration constraint is `baseline-v2`'s, not the engine's**: `baseline-v2` re-orders a vehicle that ends a
+   move on an objective its side holds, so any transport policy built on it must keep the carrier still for the stop
+   transition before disembark can be listed.
+
+### R8. Recommendation (one)
+
+Design, offline and for the owner's approval only, the smallest T2 exploratory policy and screen built on the observed
+mechanics: the same seat-local trigger generalised to every co-located infantry-carrier pair whose infantry `baseline-v2`
+sends to an objective, the carrier's destination hold kept, with the evidence needed to size a screen (how often the
+trigger is available, how many infantry orders it would replace, and the travel time saved) computed on the existing
+captures before any engine request. The screen itself is not run in this sprint, and session 2797 is not opened.
