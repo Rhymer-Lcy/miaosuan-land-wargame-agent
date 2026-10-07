@@ -1,0 +1,233 @@
+{
+ "HH": [
+  {
+   "first_own_step": 161,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "80-point objective C",
+   "participants": 2,
+   "side_game": "HH p01 baseline-v2 blue",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 161,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "50-point objective A",
+   "participants": 1,
+   "side_game": "HH p01 baseline-v2 blue",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 222,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "50-point objective B",
+   "participants": 2,
+   "side_game": "HH p01 baseline-v2 blue",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 283,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "80-point objective B",
+   "participants": 2,
+   "side_game": "HH p01 baseline-v2 blue",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 364,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "50-point objective C",
+   "participants": 2,
+   "side_game": "HH p01 baseline-v2 blue",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 421,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "80-point objective A",
+   "participants": 1,
+   "side_game": "HH p01 baseline-v2 blue",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 442,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "50-point objective D",
+   "participants": 1,
+   "side_game": "HH p01 baseline-v2 blue",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 401,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "50-point objective D",
+   "participants": 3,
+   "side_game": "HH p02 baseline-v2 red",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 421,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "50-point objective A",
+   "participants": 2,
+   "side_game": "HH p02 baseline-v2 red",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 482,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "80-point objective B",
+   "participants": 3,
+   "side_game": "HH p02 baseline-v2 red",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 543,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "50-point objective B",
+   "participants": 3,
+   "side_game": "HH p02 baseline-v2 red",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 2737,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "50-point objective C",
+   "participants": 1,
+   "side_game": "HH p02 baseline-v2 red",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 161,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "80-point objective C",
+   "participants": 2,
+   "side_game": "HH p03 baseline-v2 blue",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 161,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "50-point objective A",
+   "participants": 1,
+   "side_game": "HH p03 baseline-v2 blue",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 222,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "50-point objective B",
+   "participants": 2,
+   "side_game": "HH p03 baseline-v2 blue",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 283,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "80-point objective B",
+   "participants": 2,
+   "side_game": "HH p03 baseline-v2 blue",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 364,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "50-point objective C",
+   "participants": 2,
+   "side_game": "HH p03 baseline-v2 blue",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 421,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "80-point objective A",
+   "participants": 2,
+   "side_game": "HH p03 baseline-v2 blue",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 442,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "50-point objective D",
+   "participants": 1,
+   "side_game": "HH p03 baseline-v2 blue",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 401,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "50-point objective D",
+   "participants": 3,
+   "side_game": "HH p04 baseline-v2 red",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 421,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "50-point objective A",
+   "participants": 1,
+   "side_game": "HH p04 baseline-v2 red",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 482,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "80-point objective B",
+   "participants": 3,
+   "side_game": "HH p04 baseline-v2 red",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 543,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "50-point objective B",
+   "participants": 3,
+   "side_game": "HH p04 baseline-v2 red",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 561,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "50-point objective C",
+   "participants": 1,
+   "side_game": "HH p04 baseline-v2 red",
+   "steps_from_earliest_gate_to_first_ownership": null
+  },
+  {
+   "first_own_step": 604,
+   "gated_before_first_ownership": 0,
+   "gated_participants": 0,
+   "objective": "80-point objective C",
+   "participants": 3,
+   "side_game": "HH p04 baseline-v2 red",
+   "steps_from_earliest_gate_to_first_ownership": null
+  }
+ ],
+ "inputs_sha256": "1cf02131ba727d7695cf68de797bfe2d6748f0f30a1f008633e83033dd047e1b",
+ "protocol_sha256": "a67d04346dc1c946016ec6c05fb502af68b4aa8256457392167234c7033c54c4",
+ "schema": "miaosuan-s19-results/1",
+ "study_id": "s19-t6g-shadow"
+}

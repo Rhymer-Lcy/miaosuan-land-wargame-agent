@@ -1,0 +1,12 @@
+{
+ "HH": [
+  null,
+  null,
+  null,
+  null
+ ],
+ "inputs_sha256": "1cf02131ba727d7695cf68de797bfe2d6748f0f30a1f008633e83033dd047e1b",
+ "protocol_sha256": "a67d04346dc1c946016ec6c05fb502af68b4aa8256457392167234c7033c54c4",
+ "schema": "miaosuan-s19-results/1",
+ "study_id": "s19-t6g-shadow"
+}

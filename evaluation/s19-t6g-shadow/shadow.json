@@ -1,0 +1,1328 @@
+{
+ "H0": {
+  "pooled": {
+   "attackers_after_gate": {
+    "any_damage_by_a_causing_threat": 0,
+    "episodes_damaged_within_300": 0,
+    "first_attacker_caused_the_gate": 0,
+    "first_attacker_class": [],
+    "first_attacker_visible_at_gate": 0,
+    "steps_from_gate_to_first_damage": {
+     "n": 0
+    },
+    "victim_moving_at_first_damage": 0
+   },
+   "capturers": {
+    "fraction": null,
+    "gated": 0,
+    "participants": 0,
+    "per_side_game": [
+     [
+      "H0 1910631192 red",
+      0,
+      0
+     ],
+     [
+      "H0 1910631192 blue",
+      0,
+      0
+     ],
+     [
+      "H0 1930331196 red",
+      0,
+      0
+     ],
+     [
+      "H0 1930331196 blue",
+      0,
+      0
+     ],
+     [
+      "H0 2010131194 red",
+      0,
+      0
+     ],
+     [
+      "H0 2010131194 blue",
+      0,
+      0
+     ],
+     [
+      "H0 2010211129 red",
+      0,
+      0
+     ],
+     [
+      "H0 2010211129 blue",
+      0,
+      0
+     ],
+     [
+      "H0 201033019601 red",
+      0,
+      0
+     ],
+     [
+      "H0 201033019601 blue",
+      0,
+      0
+     ],
+     [
+      "H0 2010431153 red",
+      0,
+      0
+     ],
+     [
+      "H0 2010431153 blue",
+      0,
+      0
+     ],
+     [
+      "H0 2120531121 red",
+      0,
+      0
+     ],
+     [
+      "H0 2120531121 blue",
+      0,
+      0
+     ],
+     [
+      "H0 2130511121 red",
+      0,
+      0
+     ],
+     [
+      "H0 2130511121 blue",
+      0,
+      0
+     ]
+    ]
+   },
+   "cooldown_suppressions": 0,
+   "damage_after_exposed_not_gated": {
+    "damaged_within_150": 56,
+    "damaged_within_300": 88,
+    "damaged_within_75": 28,
+    "n": 230
+   },
+   "damage_after_exposed_not_gated_by_class": {
+    "infantry": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 10
+    },
+    "vehicle": {
+     "damaged_within_150": 56,
+     "damaged_within_300": 88,
+     "damaged_within_75": 28,
+     "n": 220
+    }
+   },
+   "damage_after_first_gate_only": {
+    "damaged_within_150": 0,
+    "damaged_within_300": 0,
+    "damaged_within_75": 0,
+    "n": 0
+   },
+   "damage_after_gate": {
+    "damaged_within_150": 0,
+    "damaged_within_300": 0,
+    "damaged_within_75": 0,
+    "n": 0
+   },
+   "damage_after_gate_by_class": {},
+   "damage_after_post_divergence_gates": {
+    "damaged_within_150": 0,
+    "damaged_within_300": 0,
+    "damaged_within_75": 0,
+    "n": 0
+   },
+   "diagnostics": {
+    "causing_ranges": [],
+    "causing_threat_class": [],
+    "causing_threats": {
+     "n": 0
+    },
+    "close_combat_entry": 0,
+    "current_distance_to_causing": {
+     "n": 0
+    },
+    "current_margin_outside_range": {
+     "n": 0
+    },
+    "first_entry_index": [],
+    "in_close_combat": 0,
+    "inspected_length": [],
+    "objective_bound": 0,
+    "on_objective": 0,
+    "route_entry_depth_inside_range": {
+     "n": 0
+    },
+    "route_length": {
+     "n": 0
+    },
+    "stacked": 0,
+    "unit_class": [],
+    "visible_qualifying_threats": {
+     "n": 0
+    }
+   },
+   "distinct_gated_damaged_within_300_of_first_gate": 0,
+   "episode_reference": {
+    "damaged_from_start_to_release_plus_300": 0,
+    "episodes": 0
+   },
+   "gate_episodes": 0,
+   "gated_decisions": 0,
+   "gated_distinct_side_game_instances": 0,
+   "move_orders": 509,
+   "of_which_first_ownership_participants": 0,
+   "release_reasons": {},
+   "side_games": 16,
+   "synthetic_hold_steps": {
+    "n": 0
+   },
+   "threat_entry_opportunities": 0
+  },
+  "sides": [
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "no_qualifying_threat": 8
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 1801,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 2,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 8,
+    "objectives_owned_at_first_decision": 0,
+    "population": "H0",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "H0 1910631192 red",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "no_qualifying_threat": 14
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 1801,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 2,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 14,
+    "objectives_owned_at_first_decision": 0,
+    "population": "H0",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "H0 1910631192 blue",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "current_hex_inside": 55,
+     "no_qualifying_threat": 12,
+     "not_ground": 18
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 6,
+     "damaged_within_300": 11,
+     "damaged_within_75": 1,
+     "n": 55
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 2881,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 5,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 85,
+    "objectives_owned_at_first_decision": 0,
+    "population": "H0",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "H0 1930331196 red",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "current_hex_inside": 29,
+     "no_qualifying_threat": 18,
+     "not_ground": 18
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 10,
+     "damaged_within_300": 14,
+     "damaged_within_75": 3,
+     "n": 29
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 2881,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 5,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 65,
+    "objectives_owned_at_first_decision": 0,
+    "population": "H0",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "H0 1930331196 blue",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "no_qualifying_threat": 2
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 1801,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 0,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 2,
+    "objectives_owned_at_first_decision": 0,
+    "population": "H0",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "H0 2010131194 red",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "no_qualifying_threat": 2
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 1801,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 1,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 2,
+    "objectives_owned_at_first_decision": 0,
+    "population": "H0",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "H0 2010131194 blue",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "no_qualifying_threat": 4
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 1801,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 0,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 4,
+    "objectives_owned_at_first_decision": 0,
+    "population": "H0",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "H0 2010211129 red",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "no_qualifying_threat": 8
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 1801,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 2,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 8,
+    "objectives_owned_at_first_decision": 0,
+    "population": "H0",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "H0 2010211129 blue",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "no_qualifying_threat": 1
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 1001,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 1,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 1,
+    "objectives_owned_at_first_decision": 0,
+    "population": "H0",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "H0 201033019601 red",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "no_qualifying_threat": 1
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 1001,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 0,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 1,
+    "objectives_owned_at_first_decision": 0,
+    "population": "H0",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "H0 201033019601 blue",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "no_qualifying_threat": 4
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 1801,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 0,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 4,
+    "objectives_owned_at_first_decision": 0,
+    "population": "H0",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "H0 2010431153 red",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "current_hex_inside": 2,
+     "no_qualifying_threat": 6
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 1,
+     "damaged_within_300": 1,
+     "damaged_within_75": 1,
+     "n": 2
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 1801,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 2,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 8,
+    "objectives_owned_at_first_decision": 0,
+    "population": "H0",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "H0 2010431153 blue",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "current_hex_inside": 17,
+     "no_qualifying_threat": 12,
+     "not_ground": 8
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 9,
+     "damaged_within_300": 11,
+     "damaged_within_75": 7,
+     "n": 17
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 2881,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 2,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 37,
+    "objectives_owned_at_first_decision": 0,
+    "population": "H0",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "H0 2120531121 red",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "current_hex_inside": 17,
+     "no_qualifying_threat": 18,
+     "not_ground": 6
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 4,
+     "damaged_within_300": 7,
+     "damaged_within_75": 1,
+     "n": 17
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 2881,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 5,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 41,
+    "objectives_owned_at_first_decision": 0,
+    "population": "H0",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "H0 2120531121 blue",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "current_hex_inside": 38,
+     "no_qualifying_threat": 25,
+     "not_ground": 18
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 18,
+     "damaged_within_300": 29,
+     "damaged_within_75": 11,
+     "n": 38
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 2881,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 6,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 81,
+    "objectives_owned_at_first_decision": 0,
+    "population": "H0",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "H0 2130511121 red",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "current_hex_inside": 72,
+     "no_qualifying_threat": 26,
+     "not_ground": 50
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 8,
+     "damaged_within_300": 15,
+     "damaged_within_75": 4,
+     "n": 72
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 2881,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 7,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 148,
+    "objectives_owned_at_first_decision": 0,
+    "population": "H0",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "H0 2130511121 blue",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   }
+  ]
+ },
+ "HH": {
+  "pooled": {
+   "attackers_after_gate": {
+    "any_damage_by_a_causing_threat": 0,
+    "episodes_damaged_within_300": 0,
+    "first_attacker_caused_the_gate": 0,
+    "first_attacker_class": [],
+    "first_attacker_visible_at_gate": 0,
+    "steps_from_gate_to_first_damage": {
+     "n": 0
+    },
+    "victim_moving_at_first_damage": 0
+   },
+   "capturers": {
+    "fraction": null,
+    "gated": 0,
+    "participants": 0,
+    "per_side_game": [
+     [
+      "HH p01 baseline-v2 blue",
+      0,
+      0
+     ],
+     [
+      "HH p02 baseline-v2 red",
+      0,
+      0
+     ],
+     [
+      "HH p03 baseline-v2 blue",
+      0,
+      0
+     ],
+     [
+      "HH p04 baseline-v2 red",
+      0,
+      0
+     ]
+    ]
+   },
+   "cooldown_suppressions": 0,
+   "damage_after_exposed_not_gated": {
+    "damaged_within_150": 67,
+    "damaged_within_300": 101,
+    "damaged_within_75": 42,
+    "n": 200
+   },
+   "damage_after_exposed_not_gated_by_class": {
+    "infantry": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 4
+    },
+    "vehicle": {
+     "damaged_within_150": 67,
+     "damaged_within_300": 101,
+     "damaged_within_75": 42,
+     "n": 196
+    }
+   },
+   "damage_after_first_gate_only": {
+    "damaged_within_150": 0,
+    "damaged_within_300": 0,
+    "damaged_within_75": 0,
+    "n": 0
+   },
+   "damage_after_gate": {
+    "damaged_within_150": 0,
+    "damaged_within_300": 0,
+    "damaged_within_75": 0,
+    "n": 0
+   },
+   "damage_after_gate_by_class": {},
+   "damage_after_post_divergence_gates": {
+    "damaged_within_150": 0,
+    "damaged_within_300": 0,
+    "damaged_within_75": 0,
+    "n": 0
+   },
+   "diagnostics": {
+    "causing_ranges": [],
+    "causing_threat_class": [],
+    "causing_threats": {
+     "n": 0
+    },
+    "close_combat_entry": 0,
+    "current_distance_to_causing": {
+     "n": 0
+    },
+    "current_margin_outside_range": {
+     "n": 0
+    },
+    "first_entry_index": [],
+    "in_close_combat": 0,
+    "inspected_length": [],
+    "objective_bound": 0,
+    "on_objective": 0,
+    "route_entry_depth_inside_range": {
+     "n": 0
+    },
+    "route_length": {
+     "n": 0
+    },
+    "stacked": 0,
+    "unit_class": [],
+    "visible_qualifying_threats": {
+     "n": 0
+    }
+   },
+   "distinct_gated_damaged_within_300_of_first_gate": 0,
+   "episode_reference": {
+    "damaged_from_start_to_release_plus_300": 0,
+    "episodes": 0
+   },
+   "gate_episodes": 0,
+   "gated_decisions": 0,
+   "gated_distinct_side_game_instances": 0,
+   "move_orders": 416,
+   "of_which_first_ownership_participants": 0,
+   "release_reasons": {},
+   "side_games": 4,
+   "synthetic_hold_steps": {
+    "n": 0
+   },
+   "threat_entry_opportunities": 0
+  },
+  "sides": [
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "current_hex_inside": 57,
+     "no_qualifying_threat": 26,
+     "not_ground": 48
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 11,
+     "damaged_within_300": 23,
+     "damaged_within_75": 4,
+     "n": 57
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 2881,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 7,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 131,
+    "objectives_owned_at_first_decision": 0,
+    "population": "HH",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "HH p01 baseline-v2 blue",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "current_hex_inside": 36,
+     "no_qualifying_threat": 25,
+     "not_ground": 6
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 21,
+     "damaged_within_300": 31,
+     "damaged_within_75": 17,
+     "n": 36
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 2881,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 5,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 67,
+    "objectives_owned_at_first_decision": 0,
+    "population": "HH",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "HH p02 baseline-v2 red",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "current_hex_inside": 52,
+     "no_qualifying_threat": 26,
+     "not_ground": 54
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 7,
+     "damaged_within_300": 9,
+     "damaged_within_75": 2,
+     "n": 52
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 2881,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 7,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 132,
+    "objectives_owned_at_first_decision": 0,
+    "population": "HH",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "HH p03 baseline-v2 blue",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   },
+   {
+    "capturers": {
+     "distinct_gated": 0,
+     "first_ownership_participants": 0
+    },
+    "condition_cleared_by": {},
+    "condition_reasons_over_all_moves": {
+     "current_hex_inside": 55,
+     "no_qualifying_threat": 25,
+     "not_ground": 6
+    },
+    "cooldown_suppressions": 0,
+    "damage_after_exposed_not_gated": {
+     "damaged_within_150": 28,
+     "damaged_within_300": 38,
+     "damaged_within_75": 19,
+     "n": 55
+    },
+    "damage_after_gate": {
+     "damaged_within_150": 0,
+     "damaged_within_300": 0,
+     "damaged_within_75": 0,
+     "n": 0
+    },
+    "decisions": 2881,
+    "distinct_gated": 0,
+    "distinct_with_an_opportunity": 0,
+    "first_gate": null,
+    "first_ownerships": 6,
+    "gate_episodes": 0,
+    "gated_decisions": 0,
+    "integrity": {
+     "action order preserved and only dropped moves removed": true,
+     "every dropped move is a Sprint 18 threat-exposed order": true,
+     "every episode starts with a dropped move": true,
+     "every move route starts after the current hex": true,
+     "first ownerships equal the Sprint 18 census steps": true,
+     "gated decisions = episodes + repeats": true
+    },
+    "move_orders": 86,
+    "objectives_owned_at_first_decision": 0,
+    "population": "HH",
+    "post_divergence_episodes": 0,
+    "release_reasons": {},
+    "repeats_within_episodes": 0,
+    "side_game": "HH p04 baseline-v2 red",
+    "synthetic_hold_steps": {
+     "n": 0
+    },
+    "threat_entry_opportunities": 0
+   }
+  ]
+ },
+ "evidence_boundary": "before a side-game's first gate the candidate equals baseline-v2; the first gate is an action-level fact; later gates are opportunity diagnostics on off-policy recorded states. H0 states are baseline-v0 trajectories throughout.",
+ "inputs_sha256": "1cf02131ba727d7695cf68de797bfe2d6748f0f30a1f008633e83033dd047e1b",
+ "protocol_sha256": "a67d04346dc1c946016ec6c05fb502af68b4aa8256457392167234c7033c54c4",
+ "schema": "miaosuan-s19-results/1",
+ "study_id": "s19-t6g-shadow"
+}

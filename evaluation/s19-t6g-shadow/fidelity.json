@@ -1,0 +1,121 @@
+{
+ "anchors": {
+  "H0 baseline-v2 move orders": {
+   "equal": true,
+   "replay": 509,
+   "sprint18": 509
+  },
+  "H0 damage events": {
+   "equal": true,
+   "replay": 205,
+   "sprint18": 205
+  },
+  "H0 damage events on moving ground units": {
+   "equal": true,
+   "replay": 124,
+   "sprint18": 124
+  },
+  "H0 decisions": {
+   "equal": true,
+   "replay": 33696,
+   "sprint18": 33696
+  },
+  "H0 of those, attacker seen before": {
+   "equal": true,
+   "replay": 120,
+   "sprint18": 120
+  },
+  "H0 play decisions": {
+   "equal": true,
+   "replay": 33680,
+   "sprint18": 33680
+  },
+  "H0 threat-exposed move orders": {
+   "equal": true,
+   "replay": 230,
+   "sprint18": 230
+  },
+  "H0 threat-exposed orders followed by mover damage within 300 steps": {
+   "equal": true,
+   "replay": 88,
+   "sprint18": 88
+  },
+  "H0 v2 differs from recorded v0": {
+   "equal": true,
+   "replay": 123,
+   "sprint18": 123
+  },
+  "HH baseline-v2 move orders": {
+   "equal": true,
+   "replay": 416,
+   "sprint18": 416
+  },
+  "HH baseline-v2 reconstruction equal to the recorded seat": {
+   "equal": true,
+   "replay": 11524,
+   "sprint18": 11524
+  },
+  "HH damage events": {
+   "equal": true,
+   "replay": 158,
+   "sprint18": 158
+  },
+  "HH damage events on moving ground units": {
+   "equal": true,
+   "replay": 117,
+   "sprint18": 117
+  },
+  "HH of those, attacker seen before": {
+   "equal": true,
+   "replay": 117,
+   "sprint18": 117
+  },
+  "HH threat-exposed move orders": {
+   "equal": true,
+   "replay": 200,
+   "sprint18": 200
+  },
+  "HH threat-exposed orders followed by mover damage within 300 steps": {
+   "equal": true,
+   "replay": 101,
+   "sprint18": 101
+  }
+ },
+ "blocks": {
+  "T6 H0 block equal to census.json": true,
+  "T6 HH block equal to census.json": true,
+  "first ownership H0 equal to census.json": true,
+  "first ownership HH equal to census.json": true
+ },
+ "inputs_sha256": "1cf02131ba727d7695cf68de797bfe2d6748f0f30a1f008633e83033dd047e1b",
+ "ok": true,
+ "protocol_sha256": "a67d04346dc1c946016ec6c05fb502af68b4aa8256457392167234c7033c54c4",
+ "schema": "miaosuan-s19-results/1",
+ "shadow_integrity_by_side_game": {
+  "H0 1910631192 blue": true,
+  "H0 1910631192 red": true,
+  "H0 1930331196 blue": true,
+  "H0 1930331196 red": true,
+  "H0 2010131194 blue": true,
+  "H0 2010131194 red": true,
+  "H0 2010211129 blue": true,
+  "H0 2010211129 red": true,
+  "H0 201033019601 blue": true,
+  "H0 201033019601 red": true,
+  "H0 2010431153 blue": true,
+  "H0 2010431153 red": true,
+  "H0 2120531121 blue": true,
+  "H0 2120531121 red": true,
+  "H0 2130511121 blue": true,
+  "H0 2130511121 red": true,
+  "HH p01 baseline-v2 blue": true,
+  "HH p02 baseline-v2 red": true,
+  "HH p03 baseline-v2 blue": true,
+  "HH p04 baseline-v2 red": true
+ },
+ "side_games": {
+  "H0": 16,
+  "HH": 4
+ },
+ "study_id": "s19-t6g-shadow"
+}
