@@ -88,7 +88,7 @@ class RegistrationTest(unittest.TestCase):
 
     def test_mutation_record_covers_the_frozen_sources(self) -> None:
         m = load("mutation.json")
-        self.assertEqual((m["declared"], m["killed"]), (35, 35))
+        self.assertEqual((m["declared"], m["killed"]), (36, 36))  # 35 at registration, 36 after amendment A1
         p = load("protocol.json")
         for path, digest in m["sources_sha256"].items():
             self.assertEqual(p["sources"][path], digest, path)
