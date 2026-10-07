@@ -102,9 +102,15 @@ RULES: Dict[str, Any] = {
     "documented_transition_steps": t2.DOCUMENTED_TRANSITION,
     "transition_bound_steps": t2.BOUND,
     "stacking_limit": t2.STACK_LIMIT,
-    "witness": None,
+    # the selected witness (evaluation/s22-t2-transport-probe/witness.json): Sprint 10's baseline-v2 game of the
+    # configuration, the candidate's first trigger in it, and the carrier's natural destination by value label
+    "witness": {"game": "1930331196.C3.s10-t9-v1-diagnosis.g04", "tier": 1, "trigger_decision": 1, "trigger_step": 0,
+                "destination": "80-point objective A", "carrier_free_flow": 560,
+                "infantry_free_flow_to_destination": 3456},
 }
-SCHEDULE: Tuple[Tuple[int, str, str, str, str], ...] = ()
+#: (position, scenario, condition, red, blue): the witness configuration, the inert control red and the candidate blue
+#: (the seats of Sprint 10's baseline-v2 game).
+SCHEDULE: Tuple[Tuple[int, str, str, str, str], ...] = ((1, "1930331196", "C3", INERT_ID, CANDIDATE_ID),)
 STRUCTURAL_STOPS = ("S1", "S2", "S3", "S4", "S6", "S7", "SP")
 STOP_MEANING = {
     "S1": "engine-installation integrity failure (session close or the ledger's state chain)",
@@ -143,6 +149,7 @@ FROZEN_FILES = (
     "scripts/run_s12_stage.py",
     "tests/test_t2_transport_p1.py",
     "tests/test_s22_probe.py",
+    "tests/fixtures/s22_engine.py",
 )
 
 TEXTS = {
@@ -163,8 +170,8 @@ TEXTS = {
                               "at every decision"],
     "next_step_rule": "none automatic: after the analysis the study returns to the owner",
 }
-#: The candidate's policy source, fixed at registration (set by the registration commit).
-CANDIDATE_DIGEST = ""
+#: The candidate's policy source (baseline-v2's set, the add-on wrapper and t2_transport_p1), fixed before session 2796.
+CANDIDATE_DIGEST = "1cb53199a246557bb0e564a7f5156b68396680c4b3a39a39c12023b98b96f65f"
 
 
 def normalized_sha256(path: Path) -> str:
@@ -399,6 +406,10 @@ def unregistered_differences(baseline: Sequence[Mapping[str, Any]], live: Sequen
             problems.append("actions differ from baseline-v2 with no transport pair")
         return problems
     inf, car = pair
+    position = {a.get("obj_id"): i for i, a in enumerate(base)}
+    order = [position.get(a.get("obj_id"), len(base)) for a in out]
+    if order != sorted(order) or len(set(order)) != len(order):
+        problems.append("the actions are not in baseline-v2's order (an edit may only replace in place or append)")
     others_base = [canonical(a) for a in base if a.get("obj_id") not in (inf, car)]
     others_live = [canonical(a) for a in out if a.get("obj_id") not in (inf, car)]
     if others_base != others_live:
@@ -534,6 +545,157 @@ def disembark_endpoint(facts: Mapping[str, Any]) -> Dict[str, Any]:
     if not facts.get("carrier_present"):
         reasons.append("the carrier did not remain present")
     return {"ok": not reasons, "reasons": reasons}
+
+
+def _key(value: Any) -> Any:
+    return int(value) if isinstance(value, str) and value.lstrip("-").isdigit() else value
+
+
+class Frame:
+    """One decision of the candidate's seat, read from its own raw observation (independent of the candidate)."""
+
+    def __init__(self, raw: Mapping[str, Any], faction: int, seat: int) -> None:
+        self.cur_step = (raw.get("time") or {}).get("cur_step")
+        self.own = {u["obj_id"]: u for u in raw.get("operators") or () if u.get("color") == faction}
+        self.aboard = {u["obj_id"]: u for u in raw.get("passengers") or () if u.get("color") == faction}
+        self.valid = {_key(k): {_key(a): o for a, o in (v or {}).items()} for k, v in (raw.get("valid_actions") or {}).items()}
+        seats = raw.get("role_and_grouping_info") or {}
+        info = seats.get(seat) or seats.get(str(seat)) or {}
+        self.controlled = set(info.get("operators") or ())
+        self.flags = {c["coord"]: c.get("flag") for c in raw.get("cities") or ()}
+
+    def listed(self, unit: int, action_type: int, target: int) -> bool:
+        return any(isinstance(o, Mapping) and set(o) == {"target_obj_id"} and o.get("target_obj_id") == target
+                   for o in (self.valid.get(unit) or {}).get(action_type) or ())
+
+    def passenger_ids(self, carrier: int) -> List[Any]:
+        return list((self.own.get(carrier) or {}).get("passenger_ids") or ())
+
+    def is_aboard(self, inf: int, car: int) -> bool:
+        p = self.aboard.get(inf)
+        return (inf not in self.own and p is not None and p.get("car") == car and p.get("on_board") == 1
+                and inf in self.passenger_ids(car))
+
+    def on_ground(self, inf: int, car: int) -> bool:
+        return inf in self.own and inf not in self.aboard and inf not in self.passenger_ids(car)
+
+    def inconsistent(self, inf: int, car: int) -> bool:
+        if inf in self.own and inf in self.aboard:
+            return True
+        p = self.aboard.get(inf)
+        return p is not None and (p.get("car") != car or inf not in self.passenger_ids(car))
+
+    def cleared(self, inf: int, car: int, prefix: str) -> bool:
+        units = [self.own.get(car), self.own.get(inf) or self.aboard.get(inf)]
+        return all(u is not None and not (u.get(f"{prefix}_remain_time") or 0) and not u.get(f"{prefix}_partner_id")
+                   for u in units)
+
+    def ground_on(self, hex_: Any) -> int:
+        return sum(1 for u in self.own.values() if u.get("type") in (1, 2) and u.get("cur_hex") == hex_)
+
+
+def transport_facts(frames: Sequence[Frame], submitted: Sequence[Sequence[Mapping[str, Any]]],
+                    feedback: Sequence[Sequence[Mapping[str, Any]]], pair: Sequence[int], trigger: int
+                    ) -> Dict[str, Any]:
+    """The facts of every endpoint, read from the seat's own observations, the emitted actions and the engine's
+    feedback per decision (private: unit ids and hexes appear in the returned ``private`` block only).
+
+    ``frames[j]``: the seat's view at decision j; ``submitted[j]``: the seat's emitted actions at j (pre-execution
+    copies); ``feedback[j]``: the engine's echoes after step j; ``pair``: (infantry, carrier); ``trigger``: the
+    registered trigger decision."""
+    inf, car = pair
+    n = len(frames)
+    step = [f.cur_step for f in frames]
+    embark_action = {"type": EMBARK, "obj_id": inf, "target_obj_id": car}
+    disembark_action = {"type": DISEMBARK, "obj_id": car, "target_obj_id": inf}
+
+    def emitted(j: int, action: Mapping[str, Any]) -> int:
+        return sum(1 for a in submitted[j] if all(a.get(k) == v for k, v in action.items()))
+
+    out: Dict[str, Any] = {"private": {}}
+    embark = {"emitted": trigger < n and emitted(trigger, embark_action) == 1}
+    embark["response"] = accepted(feedback[trigger], embark_action) if embark["emitted"] else None
+    relation = next((j for j in range(trigger + 1, n) if frames[j].is_aboard(inf, car)), None)
+    aboard = next((j for j in range(trigger + 1, n) if frames[j].is_aboard(inf, car)
+                   and frames[j].cleared(inf, car, "get_on")), None)
+    embark["relation_after"] = None if relation is None else step[relation] - step[trigger]
+    embark["aboard_after"] = None if aboard is None else step[aboard] - step[trigger]
+    order = next((j for j in range(trigger, n) if emitted(j, disembark_action)), None)
+    landing = None
+    if order is not None:
+        landing = next((j for j in range(order + 1, n) if frames[j].on_ground(inf, car)
+                        and frames[j].cleared(inf, car, "get_off")), None)
+    end = landing if landing is not None else n - 1
+    first_window_end = aboard if aboard is not None else min(n - 1, trigger + 1 + t2.BOUND)
+    embark["inconsistent_decisions"] = sum(1 for j in range(trigger, first_window_end + 1)
+                                           if frames[j].inconsistent(inf, car))
+    embark["carrier_present_and_controlled"] = all(car in frames[j].own and car in frames[j].controlled
+                                                   for j in range(trigger, end + 1))
+    out["embark"] = embark
+    out["private"]["decisions"] = {"trigger": trigger, "relation": relation, "aboard": aboard, "order": order,
+                                   "landing": landing}
+    if aboard is None:
+        return out
+
+    move_j = next((j for j in range(aboard, n) if any(a.get("obj_id") == car and a.get("type") == MOVE
+                                                      for a in submitted[j])), None)
+    carry: Dict[str, Any] = {"move_emitted": move_j is not None}
+    destination = None
+    if move_j is not None:
+        move = next(a for a in submitted[move_j] if a.get("obj_id") == car and a.get("type") == MOVE)
+        carry["move_response"] = accepted(feedback[move_j], move)
+        destination = (list(move.get("move_path") or ()) or [None])[-1]
+        start_hex = frames[move_j].own[car].get("cur_hex")
+        carry["carrier_moved"] = any((frames[j].own.get(car) or {}).get("cur_hex") not in (None, start_hex)
+                                     for j in range(move_j, n))
+        arrival = next((j for j in range(move_j + 1, n) if (frames[j].own.get(car) or {}).get("cur_hex") == destination
+                        and not (frames[j].own.get(car) or {}).get("move_path")), None)
+        carry["arrival_decision"] = arrival
+        carry["release_to_arrival_steps"] = None if arrival is None else step[arrival] - step[move_j]
+        carry["destination_is_objective"] = destination in frames[move_j].flags
+        out["private"]["destination"] = destination
+        out["private"]["route"] = list(move.get("move_path") or ())
+        out["private"]["decisions"].update(move=move_j, arrival=arrival)
+    else:
+        carry.update(move_response=None, carrier_moved=False, arrival_decision=None, release_to_arrival_steps=None,
+                     destination_is_objective=False)
+    stop = order if order is not None else n
+    carry["passenger_breaks"] = sum(1 for j in range(aboard, stop) if not frames[j].is_aboard(inf, car))
+    carry["position_mismatches"] = sum(1 for j in range(aboard, stop) if frames[j].is_aboard(inf, car)
+                                       and frames[j].aboard[inf].get("cur_hex") != frames[j].own[car].get("cur_hex"))
+    carry["actions_for_passenger"] = sum(1 for j in range(aboard, end + 1) for a in submitted[j]
+                                         if a.get("obj_id") == inf and j >= aboard and (landing is None or j < landing))
+    carry["aboard_decisions"] = sum(1 for j in range(aboard, stop) if frames[j].is_aboard(inf, car))
+    out["carry"] = carry
+    arrival = carry.get("arrival_decision")
+    if arrival is None:
+        return out
+
+    listing = next((j for j in range(arrival, n) if frames[j].listed(car, DISEMBARK, inf)
+                    and step[j] - step[arrival] <= t2.BOUND), None)
+    check = listing if listing is not None else next((j for j in range(arrival, n)
+                                                      if step[j] - step[arrival] > t2.BOUND), None)
+    out["stacking"] = {"ground_units_at_check": None if check is None else frames[check].ground_on(destination),
+                       "ground_units_at_arrival": frames[arrival].ground_on(destination),
+                       "check_is_listing": listing is not None}
+    disembark: Dict[str, Any] = {"listed_after": None if listing is None else step[listing] - step[arrival],
+                                 "emitted": sum(emitted(j, disembark_action) for j in range(n))}
+    disembark["response"] = accepted(feedback[order], disembark_action) if order is not None else None
+    disembark["ground_after"] = None if landing is None else step[landing] - step[order]
+    disembark["on_destination"] = landing is not None and frames[landing].own[inf].get("cur_hex") == destination
+    disembark["inconsistent_decisions"] = 0 if order is None else sum(
+        1 for j in range(order, (landing if landing is not None else min(n - 1, order + 1 + t2.BOUND)) + 1)
+        if frames[j].inconsistent(inf, car))
+    disembark["carrier_present"] = order is not None and all(car in frames[j].own for j in range(order, end + 1))
+    out["disembark"] = disembark
+    if landing is not None:
+        f = frames[landing]
+        listed = sorted((f.valid.get(inf) or {}).keys())
+        out["post"] = {"listed_action_types": listed, "occupy_listed": OCCUPY in listed,
+                       "suppressed": bool(f.own[inf].get("keep")), "aboard_cleared": inf not in f.aboard,
+                       "destination_own": f.flags.get(destination) == f.own[inf].get("color"),
+                       "on_board_field": f.own[inf].get("on_board"), "car_field_empty": f.own[inf].get("car") is None}
+    return out
 
 
 def disposition(offline: Optional[str], problems: Sequence[str], embark: Optional[Mapping[str, Any]],
