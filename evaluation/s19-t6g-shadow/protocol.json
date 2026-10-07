@@ -1,0 +1,73 @@
+{
+ "anchors": {
+  "H0 baseline-v2 move orders": 509,
+  "H0 damage events on moving ground units": 124,
+  "H0 of those, attacker seen before": 120,
+  "H0 threat-exposed move orders": 230,
+  "H0 threat-exposed orders followed by mover damage within 300 steps": 88,
+  "HH baseline-v2 move orders": 416,
+  "HH damage events on moving ground units": 117,
+  "HH of those, attacker seen before": 117,
+  "HH threat-exposed move orders": 200,
+  "HH threat-exposed orders followed by mover damage within 300 steps": 101
+ },
+ "capturer": {
+  "definition": "own ground unit standing on the objective hex at the side's first decision whose flag reads its own colour",
+  "fails_when": "participants * 2 > gated (strictly more than one half)",
+  "metric": "pooled over the HH side-games, distinct gated units de-duplicated within a side-game"
+ },
+ "damage_windows_steps": [
+  75,
+  150,
+  300
+ ],
+ "dispositions_first_match": [
+  "REPLAY_INVALID",
+  "T6_G_OFFLINE_INADEQUATE_OPPORTUNITY",
+  "T6_G_OFFLINE_CAPTURE_RISK",
+  "T6_G_OFFLINE_PASS"
+ ],
+ "engine_sessions": 0,
+ "episode_reference_after_release_steps": 300,
+ "gate": {
+  "condition_reasons": [
+   "eligible",
+   "not_ground",
+   "unreadable_mover",
+   "no_qualifying_threat",
+   "current_hex_inside",
+   "unreadable_route",
+   "empty_route",
+   "no_route_entry"
+  ],
+  "cooldown_steps": 300,
+  "distance": "evaluation/t7_visibility.hex_distance",
+  "hold_limit_steps": 150,
+  "identity": "t6-threat-entry-gate-shadow",
+  "range_source": "evaluation/t7_candidates.weapon_range: longest published direct-fire range of the enemy's carried weapons against the mover's class (type 1 personnel, type 2 vehicles)",
+  "release_reasons": [
+   "condition_cleared",
+   "hold_limit",
+   "no_baseline_move",
+   "unit_absent",
+   "open_at_end"
+  ],
+  "route_prefix": 5
+ },
+ "opportunity": {
+  "hh_side_games": 4,
+  "minimum_per_hh_side_game": 10,
+  "unit": "first gate of a hold episode, every recorded decision of the side-game"
+ },
+ "schema": "miaosuan-s19-protocol/1",
+ "sources": {
+  "scripts/s18_census.py": "b8d56b890d80a2730e1e37d06ce468bd7f568c95a237d4af0639dc8e33b77d30",
+  "scripts/s19_t6g_shadow.py": "87e4bd6fd1cd57b12bf402ae6257691ae1e1de9041058744d0d3755aa8c00871",
+  "src/miaosuan_agent/evaluation/s18_census.py": "d48d741997b54a0659260f6df1716aff59983d96359eb8c79d31bd9ebbec3771",
+  "src/miaosuan_agent/evaluation/s19_t6g.py": "1e1940b0720c0d13b99eeecca2fdb06c83d5bf9d056f22e54481b1f096f8a918",
+  "src/miaosuan_agent/evaluation/t7_candidates.py": "50c77f37d7561282a257da6c3640e23ded5a2abdccb83b7d507c8811e5c312ab",
+  "src/miaosuan_agent/evaluation/t7_visibility.py": "add2b446ec8ff847fd941a8a0952971200858db2305cdbdded0b6263f42e27ff",
+  "src/miaosuan_agent/experiments/t6_threat_entry_gate.py": "2c61f49463f05fac13666fd287cf8fd2bb703b916866975c7edfea74999433f1"
+ },
+ "study_id": "s19-t6g-shadow"
+}
