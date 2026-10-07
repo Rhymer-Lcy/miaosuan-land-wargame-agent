@@ -1,0 +1,80 @@
+{
+ "anchors": {
+  "H0 baseline-v2 direct-fire shots": 432,
+  "H0 shots with a lower-blood target listed": 127,
+  "H0 shots with two or more targets listed": 368,
+  "HH baseline-v2 direct-fire shots": 319,
+  "HH shots with a lower-blood target listed": 97,
+  "HH shots with two or more targets listed": 267
+ },
+ "classes": [
+  "ROOT_TARGET_SWITCH",
+  "RESERVATION_INDUCED_SHOOT_CHANGE",
+  "RESERVATION_INDUCED_NONSHOOT_CHANGE",
+  "UNEXPLAINED"
+ ],
+ "dispositions_first_match": [
+  "REPLAY_INVALID",
+  "T11_OFFLINE_MODEL_UNAVAILABLE",
+  "T11_OFFLINE_COUPLED_BEHAVIOR",
+  "T11_OFFLINE_INADEQUATE_OPPORTUNITY",
+  "T11_OFFLINE_NO_KILL_EDGE",
+  "T11_OFFLINE_PASS"
+ ],
+ "engine_sessions": 0,
+ "integrity": {
+  "H0 decisions": 33696,
+  "H0 play decisions": 33680,
+  "H0 v2 differs from recorded v0": 123
+ },
+ "kill_edge": "pooled paired HH delta of p_kill_now over changed emitted shots strictly above 0",
+ "kill_model": {
+  "available": false,
+  "gaps": [
+   "K2",
+   "K4",
+   "K5",
+   "K6"
+  ],
+  "path": "evaluation/s20-t11-replay/kill_model.json",
+  "sha256": "0d1d0159bd84b3b37933ab88d770f7fc043f7d00443ff31b89e51188ba9727fb"
+ },
+ "kinds": [
+  "changed_shot",
+  "lost_shot",
+  "gained_shot",
+  "other_nonshoot"
+ ],
+ "opportunity": {
+  "hh_side_games": 4,
+  "minimum_per_hh_side_game": 10,
+  "unit": "changed emitted shoot actions (root and reservation-induced) of one HH side-game"
+ },
+ "pure_target_priority": "fails on any lost, gained or other non-shoot difference in any HH or H0 side-game",
+ "rule": {
+  "blood": "the enemy unit's blood field in the seat's operators: a non-negative int, not a bool",
+  "fail_closed": [
+   "target_not_visible",
+   "blood_missing",
+   "blood_malformed"
+  ],
+  "identity": "t11-kill-first-shadow",
+  "rankings": [
+   "baseline",
+   "kill-first"
+  ],
+  "selection": "after the same-step reservation's exclusions: the remaining engage candidates whose target has the lowest observed blood, then baseline-v2's rank (highest attack level, lower target id, lower weapon id)"
+ },
+ "schema": "miaosuan-s20-protocol/1",
+ "sources": {
+  "scripts/s18_census.py": "b8d56b890d80a2730e1e37d06ce468bd7f568c95a237d4af0639dc8e33b77d30",
+  "scripts/s20_t11_replay.py": "3b90657a4b4950fed3e67eebe43570b246b73c03af812d18340fbbf057c73ce3",
+  "src/miaosuan_agent/decision/candidates.py": "9e7ed4e02e50c28ee04b48cbbad903945a7b59791a51d500d848f44a90890050",
+  "src/miaosuan_agent/decision/policy.py": "e407095cc13a97e476f9f2c637991989a9ac0dfd982c4eedc52abbc520260a12",
+  "src/miaosuan_agent/evaluation/s18_census.py": "d48d741997b54a0659260f6df1716aff59983d96359eb8c79d31bd9ebbec3771",
+  "src/miaosuan_agent/evaluation/s20_t11.py": "e362d43fe412c28a8ff0d9be748dc189271d8a3763381a055567a79426459c5e",
+  "src/miaosuan_agent/experiments/shoot_reservation.py": "07ae9b0b367a0d86aa1b9cb80c65c09718ab9fc073a53b7f06dbddd6ce47903d",
+  "src/miaosuan_agent/experiments/t11_kill_first.py": "08766b028ffcf63064692ac196a9043c58387f7014380381739547af7fe86eac"
+ },
+ "study_id": "s20-t11-replay"
+}
