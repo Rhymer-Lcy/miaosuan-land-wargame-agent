@@ -423,8 +423,10 @@ def choice_row(baseline: Optional[Tuple[int, int, int]], ranked: Optional[Tuple[
 # ------------------------------------------------------------------------------------------------
 # summaries (public, aggregates only)
 
-def counter(values: Iterable[Any]) -> Dict[str, int]:
-    out = collections.Counter(str(v) for v in values)
+def counter(values: Iterable[Any], label: str = "") -> Dict[str, int]:
+    """Counts by value. A numeric value is written with a label (``blood_2``), never as a bare number: bare small
+    integers collide with private unit identifiers in the sanitizer's key check."""
+    out = collections.Counter(f"{label}_{v}" if label else str(v) for v in values)
     return dict(sorted(out.items()))
 
 
@@ -435,17 +437,17 @@ def summarise_root_rows(rows: Sequence[Mapping[str, Any]]) -> Dict[str, Any]:
     levels = [(r["baseline_level"], r["t11_level"]) for r in root]
     return {
         "n": len(rows),
-        "baseline_target_blood": counter(r["baseline_blood"] for r in root),
-        "t11_target_blood": counter(r["t11_blood"] for r in root),
-        "blood_reduction": counter(reductions),
+        "baseline_target_blood": counter((r["baseline_blood"] for r in root), "blood"),
+        "t11_target_blood": counter((r["t11_blood"] for r in root), "blood"),
+        "blood_reduction": counter(reductions, "reduction"),
         "attack_level_pairs": counter(f"L{b}_L{t}" for b, t in levels),
-        "attack_level_change": counter(t - b for b, t in levels),
+        "attack_level_change": counter((t - b for b, t in levels), "change"),
         "t11_level_lower": sum(1 for b, t in levels if t < b),
         "t11_level_equal": sum(1 for b, t in levels if t == b),
         "t11_level_higher": sum(1 for b, t in levels if t > b),
         "shooter_class": counter(r["shooter_class"] for r in rows),
         "target_class_pairs": counter(f"{r['baseline_target_class']} -> {r['t11_target_class']}" for r in root),
-        "targets_available": counter(r["targets_available"] for r in rows),
+        "targets_available": counter((r["targets_available"] for r in rows), "targets"),
         "same_target_as_baseline_ranking": sum(1 for r in root if r["same_target"]),
         "emitted_pair_same_target": sum(1 for r in rows if r["same_target"]),
     }
