@@ -1,0 +1,2675 @@
+{
+ "H0": {
+  "pooled": {
+   "counts": {
+    "baseline_shots": 432,
+    "candidate_shots": 432,
+    "changed_emitted_shots": 133,
+    "duplicate_targets_baseline": 0,
+    "duplicate_targets_candidate": 0,
+    "induced_changed_shots": 11,
+    "root_changed_shots": 122,
+    "silent_root_switches": 0
+   },
+   "decisions": 33696,
+   "decisions_with_a_change": 100,
+   "differences_by_class_and_kind": {
+    "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+     "changed_shot": 0,
+     "gained_shot": 0,
+     "lost_shot": 0,
+     "other_nonshoot": 0
+    },
+    "RESERVATION_INDUCED_SHOOT_CHANGE": {
+     "changed_shot": 11,
+     "gained_shot": 0,
+     "lost_shot": 0,
+     "other_nonshoot": 0
+    },
+    "ROOT_TARGET_SWITCH": {
+     "changed_shot": 122,
+     "gained_shot": 0,
+     "lost_shot": 0,
+     "other_nonshoot": 0
+    },
+    "UNEXPLAINED": {
+     "changed_shot": 0,
+     "gained_shot": 0,
+     "lost_shot": 0,
+     "other_nonshoot": 0
+    }
+   },
+   "distinct_changed_shooters_summed_over_side_games": 31,
+   "induced_changed_shots": {
+    "blood_pairs": {
+     "b1_t2": 1,
+     "b2_t4": 4,
+     "b3_t3": 2,
+     "b3_t4": 1,
+     "b4_t4": 3
+    },
+    "n": 11,
+    "shooter_class": {
+     "type 2 sub 0": 1,
+     "type 2 sub 1": 5,
+     "type 3 sub 6": 5
+    },
+    "target_class_pairs": {
+     "type 1 sub 2 -> type 1 sub 2": 5,
+     "type 2 sub 0 -> type 2 sub 0": 1,
+     "type 2 sub 1 -> type 2 sub 0": 1,
+     "type 2 sub 1 -> type 2 sub 1": 1,
+     "type 2 sub 15 -> type 2 sub 1": 2,
+     "type 2 sub 15 -> type 2 sub 15": 1
+    }
+   },
+   "non_shoot_differences": 0,
+   "reservation": {
+    "baseline_shoot_targets_in_changed_decisions": 140,
+    "decisions_with_a_chain": 31,
+    "max_chain": 3,
+    "newly_reserved_targets": 108,
+    "no_longer_reserved_targets": 108,
+    "t11_shoot_targets_in_changed_decisions": 140,
+    "units_with_an_option_excluded_only_under_baseline": 33,
+    "units_with_an_option_excluded_only_under_t11": 33
+   },
+   "root_switches": {
+    "attack_level_change": {
+     "change_-1": 20,
+     "change_-2": 33,
+     "change_-3": 26,
+     "change_-4": 1,
+     "change_-5": 3,
+     "change_-6": 4,
+     "change_-7": 3,
+     "change_0": 32
+    },
+    "attack_level_pairs": {
+     "L10_L10": 4,
+     "L10_L8": 1,
+     "L10_L9": 4,
+     "L2_L2": 1,
+     "L3_L2": 1,
+     "L3_L3": 7,
+     "L4_L1": 1,
+     "L4_L2": 3,
+     "L4_L3": 6,
+     "L4_L4": 4,
+     "L5_L2": 1,
+     "L5_L3": 22,
+     "L5_L4": 2,
+     "L5_L5": 3,
+     "L6_L3": 13,
+     "L6_L5": 1,
+     "L7_L5": 3,
+     "L7_L6": 1,
+     "L7_L7": 2,
+     "L8_L1": 3,
+     "L8_L2": 4,
+     "L8_L3": 3,
+     "L8_L5": 9,
+     "L8_L6": 3,
+     "L8_L7": 3,
+     "L8_L8": 5,
+     "L9_L5": 1,
+     "L9_L6": 2,
+     "L9_L7": 1,
+     "L9_L8": 2,
+     "L9_L9": 6
+    },
+    "baseline_target_blood": {
+     "blood_2": 24,
+     "blood_3": 48,
+     "blood_4": 46,
+     "blood_5": 4
+    },
+    "blood_reduction": {
+     "reduction_1": 32,
+     "reduction_2": 52,
+     "reduction_3": 36,
+     "reduction_4": 2
+    },
+    "emitted_pair_same_target": 0,
+    "n": 122,
+    "same_target_as_baseline_ranking": 0,
+    "shooter_class": {
+     "type 2 sub 0": 33,
+     "type 2 sub 1": 29,
+     "type 2 sub 4": 1,
+     "type 3 sub 6": 59
+    },
+    "t11_level_equal": 32,
+    "t11_level_higher": 0,
+    "t11_level_lower": 90,
+    "t11_target_blood": {
+     "blood_1": 104,
+     "blood_2": 14,
+     "blood_3": 4
+    },
+    "target_class_pairs": {
+     "type 1 sub 2 -> type 1 sub 2": 5,
+     "type 1 sub 2 -> type 2 sub 0": 1,
+     "type 1 sub 2 -> type 2 sub 1": 2,
+     "type 1 sub 2 -> type 2 sub 10": 1,
+     "type 1 sub 2 -> type 3 sub 5": 19,
+     "type 1 sub 2 -> type 3 sub 6": 7,
+     "type 2 sub 0 -> type 2 sub 0": 6,
+     "type 2 sub 0 -> type 2 sub 1": 9,
+     "type 2 sub 0 -> type 2 sub 10": 2,
+     "type 2 sub 0 -> type 2 sub 9": 8,
+     "type 2 sub 0 -> type 3 sub 5": 4,
+     "type 2 sub 0 -> type 3 sub 6": 10,
+     "type 2 sub 0 -> type 4 sub 11": 1,
+     "type 2 sub 1 -> type 2 sub 0": 4,
+     "type 2 sub 1 -> type 2 sub 1": 2,
+     "type 2 sub 1 -> type 2 sub 10": 1,
+     "type 2 sub 1 -> type 2 sub 15": 3,
+     "type 2 sub 1 -> type 2 sub 9": 5,
+     "type 2 sub 1 -> type 3 sub 5": 12,
+     "type 2 sub 1 -> type 3 sub 6": 1,
+     "type 2 sub 10 -> type 2 sub 0": 3,
+     "type 2 sub 10 -> type 2 sub 9": 2,
+     "type 2 sub 15 -> type 2 sub 0": 2,
+     "type 2 sub 15 -> type 2 sub 1": 2,
+     "type 2 sub 4 -> type 2 sub 9": 1,
+     "type 4 sub 11 -> type 2 sub 0": 4,
+     "type 4 sub 11 -> type 2 sub 1": 1,
+     "type 4 sub 11 -> type 4 sub 11": 1,
+     "type 4 sub 12 -> type 2 sub 10": 1,
+     "type 4 sub 12 -> type 4 sub 11": 1,
+     "type 4 sub 12 -> type 4 sub 12": 1
+    },
+    "targets_available": {
+     "targets_10": 4,
+     "targets_11": 5,
+     "targets_12": 4,
+     "targets_13": 3,
+     "targets_14": 4,
+     "targets_15": 4,
+     "targets_16": 10,
+     "targets_17": 4,
+     "targets_18": 6,
+     "targets_19": 1,
+     "targets_2": 3,
+     "targets_24": 1,
+     "targets_25": 2,
+     "targets_27": 2,
+     "targets_3": 9,
+     "targets_4": 20,
+     "targets_5": 6,
+     "targets_6": 4,
+     "targets_7": 10,
+     "targets_8": 11,
+     "targets_9": 9
+    }
+   },
+   "side_games": 16
+  },
+  "sides": [
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     1801,
+     1801
+    ],
+    "counts": {
+     "baseline_shots": 2,
+     "candidate_shots": 2,
+     "changed_emitted_shots": 0,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 0,
+     "silent_root_switches": 0
+    },
+    "decisions": 1801,
+    "decisions_after_first_change": 0,
+    "decisions_with_a_change": 0,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 0,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": null,
+    "first_change_step": null,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 1800,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 0,
+     "decisions_with_a_chain": 0,
+     "max_chain": 0,
+     "newly_reserved_targets": 0,
+     "no_longer_reserved_targets": 0,
+     "t11_shoot_targets_in_changed_decisions": 0,
+     "units_with_an_option_excluded_only_under_baseline": 0,
+     "units_with_an_option_excluded_only_under_t11": 0
+    },
+    "root_switches": {
+     "attack_level_change": {},
+     "attack_level_pairs": {},
+     "baseline_target_blood": {},
+     "blood_reduction": {},
+     "emitted_pair_same_target": 0,
+     "n": 0,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {},
+     "t11_level_equal": 0,
+     "t11_level_higher": 0,
+     "t11_level_lower": 0,
+     "t11_target_blood": {},
+     "target_class_pairs": {},
+     "targets_available": {}
+    },
+    "side_game": "H0 1910631192 red"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     1801,
+     1801
+    ],
+    "counts": {
+     "baseline_shots": 5,
+     "candidate_shots": 5,
+     "changed_emitted_shots": 0,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 0,
+     "silent_root_switches": 0
+    },
+    "decisions": 1801,
+    "decisions_after_first_change": 0,
+    "decisions_with_a_change": 0,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 0,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": null,
+    "first_change_step": null,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 1800,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 0,
+     "decisions_with_a_chain": 0,
+     "max_chain": 0,
+     "newly_reserved_targets": 0,
+     "no_longer_reserved_targets": 0,
+     "t11_shoot_targets_in_changed_decisions": 0,
+     "units_with_an_option_excluded_only_under_baseline": 0,
+     "units_with_an_option_excluded_only_under_t11": 0
+    },
+    "root_switches": {
+     "attack_level_change": {},
+     "attack_level_pairs": {},
+     "baseline_target_blood": {},
+     "blood_reduction": {},
+     "emitted_pair_same_target": 0,
+     "n": 0,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {},
+     "t11_level_equal": 0,
+     "t11_level_higher": 0,
+     "t11_level_lower": 0,
+     "t11_target_blood": {},
+     "target_class_pairs": {},
+     "targets_available": {}
+    },
+    "side_game": "H0 1910631192 blue"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     2881,
+     2881
+    ],
+    "counts": {
+     "baseline_shots": 43,
+     "candidate_shots": 43,
+     "changed_emitted_shots": 3,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 3,
+     "silent_root_switches": 0
+    },
+    "decisions": 2881,
+    "decisions_after_first_change": 2431,
+    "decisions_with_a_change": 3,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 3,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 1,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": 449,
+    "first_change_step": 448,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 2880,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 3,
+     "decisions_with_a_chain": 0,
+     "max_chain": 1,
+     "newly_reserved_targets": 3,
+     "no_longer_reserved_targets": 3,
+     "t11_shoot_targets_in_changed_decisions": 3,
+     "units_with_an_option_excluded_only_under_baseline": 0,
+     "units_with_an_option_excluded_only_under_t11": 0
+    },
+    "root_switches": {
+     "attack_level_change": {
+      "change_-3": 1,
+      "change_-5": 2
+     },
+     "attack_level_pairs": {
+      "L4_L1": 1,
+      "L8_L3": 2
+     },
+     "baseline_target_blood": {
+      "blood_3": 3
+     },
+     "blood_reduction": {
+      "reduction_2": 3
+     },
+     "emitted_pair_same_target": 0,
+     "n": 3,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {
+      "type 3 sub 6": 3
+     },
+     "t11_level_equal": 0,
+     "t11_level_higher": 0,
+     "t11_level_lower": 3,
+     "t11_target_blood": {
+      "blood_1": 3
+     },
+     "target_class_pairs": {
+      "type 2 sub 0 -> type 3 sub 5": 1,
+      "type 2 sub 0 -> type 3 sub 6": 1,
+      "type 2 sub 1 -> type 3 sub 5": 1
+     },
+     "targets_available": {
+      "targets_5": 1,
+      "targets_7": 1,
+      "targets_8": 1
+     }
+    },
+    "side_game": "H0 1930331196 red"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     2881,
+     2881
+    ],
+    "counts": {
+     "baseline_shots": 25,
+     "candidate_shots": 25,
+     "changed_emitted_shots": 5,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 5,
+     "silent_root_switches": 0
+    },
+    "decisions": 2881,
+    "decisions_after_first_change": 2668,
+    "decisions_with_a_change": 5,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 5,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 1,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": 212,
+    "first_change_step": 211,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 2880,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 5,
+     "decisions_with_a_chain": 0,
+     "max_chain": 1,
+     "newly_reserved_targets": 5,
+     "no_longer_reserved_targets": 5,
+     "t11_shoot_targets_in_changed_decisions": 5,
+     "units_with_an_option_excluded_only_under_baseline": 0,
+     "units_with_an_option_excluded_only_under_t11": 0
+    },
+    "root_switches": {
+     "attack_level_change": {
+      "change_-2": 2,
+      "change_-5": 1,
+      "change_-6": 2
+     },
+     "attack_level_pairs": {
+      "L4_L2": 1,
+      "L5_L3": 1,
+      "L8_L2": 2,
+      "L8_L3": 1
+     },
+     "baseline_target_blood": {
+      "blood_3": 1,
+      "blood_4": 4
+     },
+     "blood_reduction": {
+      "reduction_2": 1,
+      "reduction_3": 4
+     },
+     "emitted_pair_same_target": 0,
+     "n": 5,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {
+      "type 3 sub 6": 5
+     },
+     "t11_level_equal": 0,
+     "t11_level_higher": 0,
+     "t11_level_lower": 5,
+     "t11_target_blood": {
+      "blood_1": 5
+     },
+     "target_class_pairs": {
+      "type 1 sub 2 -> type 2 sub 0": 1,
+      "type 2 sub 0 -> type 3 sub 5": 2,
+      "type 2 sub 0 -> type 3 sub 6": 1,
+      "type 2 sub 1 -> type 3 sub 6": 1
+     },
+     "targets_available": {
+      "targets_5": 1,
+      "targets_8": 1,
+      "targets_9": 3
+     }
+    },
+    "side_game": "H0 1930331196 blue"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     1801,
+     1801
+    ],
+    "counts": {
+     "baseline_shots": 3,
+     "candidate_shots": 3,
+     "changed_emitted_shots": 0,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 0,
+     "silent_root_switches": 0
+    },
+    "decisions": 1801,
+    "decisions_after_first_change": 0,
+    "decisions_with_a_change": 0,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 0,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": null,
+    "first_change_step": null,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 1800,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 0,
+     "decisions_with_a_chain": 0,
+     "max_chain": 0,
+     "newly_reserved_targets": 0,
+     "no_longer_reserved_targets": 0,
+     "t11_shoot_targets_in_changed_decisions": 0,
+     "units_with_an_option_excluded_only_under_baseline": 0,
+     "units_with_an_option_excluded_only_under_t11": 0
+    },
+    "root_switches": {
+     "attack_level_change": {},
+     "attack_level_pairs": {},
+     "baseline_target_blood": {},
+     "blood_reduction": {},
+     "emitted_pair_same_target": 0,
+     "n": 0,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {},
+     "t11_level_equal": 0,
+     "t11_level_higher": 0,
+     "t11_level_lower": 0,
+     "t11_target_blood": {},
+     "target_class_pairs": {},
+     "targets_available": {}
+    },
+    "side_game": "H0 2010131194 red"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     1801,
+     1801
+    ],
+    "counts": {
+     "baseline_shots": 4,
+     "candidate_shots": 4,
+     "changed_emitted_shots": 0,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 0,
+     "silent_root_switches": 0
+    },
+    "decisions": 1801,
+    "decisions_after_first_change": 0,
+    "decisions_with_a_change": 0,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 0,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": null,
+    "first_change_step": null,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 1800,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 0,
+     "decisions_with_a_chain": 0,
+     "max_chain": 0,
+     "newly_reserved_targets": 0,
+     "no_longer_reserved_targets": 0,
+     "t11_shoot_targets_in_changed_decisions": 0,
+     "units_with_an_option_excluded_only_under_baseline": 0,
+     "units_with_an_option_excluded_only_under_t11": 0
+    },
+    "root_switches": {
+     "attack_level_change": {},
+     "attack_level_pairs": {},
+     "baseline_target_blood": {},
+     "blood_reduction": {},
+     "emitted_pair_same_target": 0,
+     "n": 0,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {},
+     "t11_level_equal": 0,
+     "t11_level_higher": 0,
+     "t11_level_lower": 0,
+     "t11_target_blood": {},
+     "target_class_pairs": {},
+     "targets_available": {}
+    },
+    "side_game": "H0 2010131194 blue"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     1801,
+     1801
+    ],
+    "counts": {
+     "baseline_shots": 2,
+     "candidate_shots": 2,
+     "changed_emitted_shots": 0,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 0,
+     "silent_root_switches": 0
+    },
+    "decisions": 1801,
+    "decisions_after_first_change": 0,
+    "decisions_with_a_change": 0,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 0,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": null,
+    "first_change_step": null,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 1800,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 0,
+     "decisions_with_a_chain": 0,
+     "max_chain": 0,
+     "newly_reserved_targets": 0,
+     "no_longer_reserved_targets": 0,
+     "t11_shoot_targets_in_changed_decisions": 0,
+     "units_with_an_option_excluded_only_under_baseline": 0,
+     "units_with_an_option_excluded_only_under_t11": 0
+    },
+    "root_switches": {
+     "attack_level_change": {},
+     "attack_level_pairs": {},
+     "baseline_target_blood": {},
+     "blood_reduction": {},
+     "emitted_pair_same_target": 0,
+     "n": 0,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {},
+     "t11_level_equal": 0,
+     "t11_level_higher": 0,
+     "t11_level_lower": 0,
+     "t11_target_blood": {},
+     "target_class_pairs": {},
+     "targets_available": {}
+    },
+    "side_game": "H0 2010211129 red"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     1801,
+     1801
+    ],
+    "counts": {
+     "baseline_shots": 4,
+     "candidate_shots": 4,
+     "changed_emitted_shots": 0,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 0,
+     "silent_root_switches": 0
+    },
+    "decisions": 1801,
+    "decisions_after_first_change": 0,
+    "decisions_with_a_change": 0,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 0,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": null,
+    "first_change_step": null,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 1800,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 0,
+     "decisions_with_a_chain": 0,
+     "max_chain": 0,
+     "newly_reserved_targets": 0,
+     "no_longer_reserved_targets": 0,
+     "t11_shoot_targets_in_changed_decisions": 0,
+     "units_with_an_option_excluded_only_under_baseline": 0,
+     "units_with_an_option_excluded_only_under_t11": 0
+    },
+    "root_switches": {
+     "attack_level_change": {},
+     "attack_level_pairs": {},
+     "baseline_target_blood": {},
+     "blood_reduction": {},
+     "emitted_pair_same_target": 0,
+     "n": 0,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {},
+     "t11_level_equal": 0,
+     "t11_level_higher": 0,
+     "t11_level_lower": 0,
+     "t11_target_blood": {},
+     "target_class_pairs": {},
+     "targets_available": {}
+    },
+    "side_game": "H0 2010211129 blue"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     1001,
+     1001
+    ],
+    "counts": {
+     "baseline_shots": 3,
+     "candidate_shots": 3,
+     "changed_emitted_shots": 0,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 0,
+     "silent_root_switches": 0
+    },
+    "decisions": 1001,
+    "decisions_after_first_change": 0,
+    "decisions_with_a_change": 0,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 0,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": null,
+    "first_change_step": null,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 1000,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 0,
+     "decisions_with_a_chain": 0,
+     "max_chain": 0,
+     "newly_reserved_targets": 0,
+     "no_longer_reserved_targets": 0,
+     "t11_shoot_targets_in_changed_decisions": 0,
+     "units_with_an_option_excluded_only_under_baseline": 0,
+     "units_with_an_option_excluded_only_under_t11": 0
+    },
+    "root_switches": {
+     "attack_level_change": {},
+     "attack_level_pairs": {},
+     "baseline_target_blood": {},
+     "blood_reduction": {},
+     "emitted_pair_same_target": 0,
+     "n": 0,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {},
+     "t11_level_equal": 0,
+     "t11_level_higher": 0,
+     "t11_level_lower": 0,
+     "t11_target_blood": {},
+     "target_class_pairs": {},
+     "targets_available": {}
+    },
+    "side_game": "H0 201033019601 red"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     1001,
+     1001
+    ],
+    "counts": {
+     "baseline_shots": 3,
+     "candidate_shots": 3,
+     "changed_emitted_shots": 0,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 0,
+     "silent_root_switches": 0
+    },
+    "decisions": 1001,
+    "decisions_after_first_change": 0,
+    "decisions_with_a_change": 0,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 0,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": null,
+    "first_change_step": null,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 1000,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 0,
+     "decisions_with_a_chain": 0,
+     "max_chain": 0,
+     "newly_reserved_targets": 0,
+     "no_longer_reserved_targets": 0,
+     "t11_shoot_targets_in_changed_decisions": 0,
+     "units_with_an_option_excluded_only_under_baseline": 0,
+     "units_with_an_option_excluded_only_under_t11": 0
+    },
+    "root_switches": {
+     "attack_level_change": {},
+     "attack_level_pairs": {},
+     "baseline_target_blood": {},
+     "blood_reduction": {},
+     "emitted_pair_same_target": 0,
+     "n": 0,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {},
+     "t11_level_equal": 0,
+     "t11_level_higher": 0,
+     "t11_level_lower": 0,
+     "t11_target_blood": {},
+     "target_class_pairs": {},
+     "targets_available": {}
+    },
+    "side_game": "H0 201033019601 blue"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     1801,
+     1801
+    ],
+    "counts": {
+     "baseline_shots": 6,
+     "candidate_shots": 6,
+     "changed_emitted_shots": 0,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 0,
+     "silent_root_switches": 0
+    },
+    "decisions": 1801,
+    "decisions_after_first_change": 0,
+    "decisions_with_a_change": 0,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 0,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": null,
+    "first_change_step": null,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 1800,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 0,
+     "decisions_with_a_chain": 0,
+     "max_chain": 0,
+     "newly_reserved_targets": 0,
+     "no_longer_reserved_targets": 0,
+     "t11_shoot_targets_in_changed_decisions": 0,
+     "units_with_an_option_excluded_only_under_baseline": 0,
+     "units_with_an_option_excluded_only_under_t11": 0
+    },
+    "root_switches": {
+     "attack_level_change": {},
+     "attack_level_pairs": {},
+     "baseline_target_blood": {},
+     "blood_reduction": {},
+     "emitted_pair_same_target": 0,
+     "n": 0,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {},
+     "t11_level_equal": 0,
+     "t11_level_higher": 0,
+     "t11_level_lower": 0,
+     "t11_target_blood": {},
+     "target_class_pairs": {},
+     "targets_available": {}
+    },
+    "side_game": "H0 2010431153 red"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     1801,
+     1801
+    ],
+    "counts": {
+     "baseline_shots": 15,
+     "candidate_shots": 15,
+     "changed_emitted_shots": 0,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 0,
+     "silent_root_switches": 0
+    },
+    "decisions": 1801,
+    "decisions_after_first_change": 0,
+    "decisions_with_a_change": 0,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 0,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": null,
+    "first_change_step": null,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 1800,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 0,
+     "decisions_with_a_chain": 0,
+     "max_chain": 0,
+     "newly_reserved_targets": 0,
+     "no_longer_reserved_targets": 0,
+     "t11_shoot_targets_in_changed_decisions": 0,
+     "units_with_an_option_excluded_only_under_baseline": 0,
+     "units_with_an_option_excluded_only_under_t11": 0
+    },
+    "root_switches": {
+     "attack_level_change": {},
+     "attack_level_pairs": {},
+     "baseline_target_blood": {},
+     "blood_reduction": {},
+     "emitted_pair_same_target": 0,
+     "n": 0,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {},
+     "t11_level_equal": 0,
+     "t11_level_higher": 0,
+     "t11_level_lower": 0,
+     "t11_target_blood": {},
+     "target_class_pairs": {},
+     "targets_available": {}
+    },
+    "side_game": "H0 2010431153 blue"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     2881,
+     2881
+    ],
+    "counts": {
+     "baseline_shots": 34,
+     "candidate_shots": 34,
+     "changed_emitted_shots": 21,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 1,
+     "root_changed_shots": 20,
+     "silent_root_switches": 0
+    },
+    "decisions": 2881,
+    "decisions_after_first_change": 2584,
+    "decisions_with_a_change": 17,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 1,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 20,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 4,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": 296,
+    "first_change_step": 295,
+    "induced_changed_shots": {
+     "blood_pairs": {
+      "b3_t3": 1
+     },
+     "n": 1,
+     "shooter_class": {
+      "type 3 sub 6": 1
+     },
+     "target_class_pairs": {
+      "type 2 sub 1 -> type 2 sub 0": 1
+     }
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 2880,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 22,
+     "decisions_with_a_chain": 4,
+     "max_chain": 2,
+     "newly_reserved_targets": 20,
+     "no_longer_reserved_targets": 20,
+     "t11_shoot_targets_in_changed_decisions": 22,
+     "units_with_an_option_excluded_only_under_baseline": 4,
+     "units_with_an_option_excluded_only_under_t11": 4
+    },
+    "root_switches": {
+     "attack_level_change": {
+      "change_-2": 15,
+      "change_-6": 1,
+      "change_0": 4
+     },
+     "attack_level_pairs": {
+      "L4_L2": 2,
+      "L4_L4": 1,
+      "L5_L3": 13,
+      "L7_L7": 2,
+      "L8_L2": 1,
+      "L8_L8": 1
+     },
+     "baseline_target_blood": {
+      "blood_2": 5,
+      "blood_3": 15
+     },
+     "blood_reduction": {
+      "reduction_1": 5,
+      "reduction_2": 15
+     },
+     "emitted_pair_same_target": 0,
+     "n": 20,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {
+      "type 2 sub 0": 2,
+      "type 3 sub 6": 18
+     },
+     "t11_level_equal": 4,
+     "t11_level_higher": 0,
+     "t11_level_lower": 16,
+     "t11_target_blood": {
+      "blood_1": 20
+     },
+     "target_class_pairs": {
+      "type 2 sub 0 -> type 2 sub 0": 4,
+      "type 2 sub 0 -> type 3 sub 5": 1,
+      "type 2 sub 0 -> type 3 sub 6": 4,
+      "type 2 sub 1 -> type 3 sub 5": 11
+     },
+     "targets_available": {
+      "targets_10": 1,
+      "targets_11": 2,
+      "targets_12": 1,
+      "targets_6": 2,
+      "targets_7": 6,
+      "targets_8": 6,
+      "targets_9": 2
+     }
+    },
+    "side_game": "H0 2120531121 red"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     2881,
+     2881
+    ],
+    "counts": {
+     "baseline_shots": 120,
+     "candidate_shots": 120,
+     "changed_emitted_shots": 31,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 31,
+     "silent_root_switches": 0
+    },
+    "decisions": 2881,
+    "decisions_after_first_change": 2637,
+    "decisions_with_a_change": 24,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 31,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 8,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": 243,
+    "first_change_step": 242,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 2880,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 32,
+     "decisions_with_a_chain": 7,
+     "max_chain": 2,
+     "newly_reserved_targets": 24,
+     "no_longer_reserved_targets": 24,
+     "t11_shoot_targets_in_changed_decisions": 32,
+     "units_with_an_option_excluded_only_under_baseline": 7,
+     "units_with_an_option_excluded_only_under_t11": 7
+    },
+    "root_switches": {
+     "attack_level_change": {
+      "change_-1": 3,
+      "change_-2": 6,
+      "change_-3": 14,
+      "change_0": 8
+     },
+     "attack_level_pairs": {
+      "L10_L10": 1,
+      "L3_L3": 4,
+      "L4_L3": 3,
+      "L5_L2": 1,
+      "L5_L3": 6,
+      "L6_L3": 13,
+      "L8_L8": 3
+     },
+     "baseline_target_blood": {
+      "blood_2": 10,
+      "blood_3": 1,
+      "blood_4": 20
+     },
+     "blood_reduction": {
+      "reduction_1": 11,
+      "reduction_2": 3,
+      "reduction_3": 17
+     },
+     "emitted_pair_same_target": 0,
+     "n": 31,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {
+      "type 2 sub 0": 3,
+      "type 2 sub 1": 22,
+      "type 3 sub 6": 6
+     },
+     "t11_level_equal": 8,
+     "t11_level_higher": 0,
+     "t11_level_lower": 23,
+     "t11_target_blood": {
+      "blood_1": 27,
+      "blood_2": 4
+     },
+     "target_class_pairs": {
+      "type 1 sub 2 -> type 3 sub 5": 19,
+      "type 1 sub 2 -> type 3 sub 6": 7,
+      "type 2 sub 0 -> type 2 sub 1": 3,
+      "type 2 sub 0 -> type 3 sub 6": 1,
+      "type 2 sub 1 -> type 2 sub 1": 1
+     },
+     "targets_available": {
+      "targets_2": 1,
+      "targets_3": 7,
+      "targets_4": 16,
+      "targets_5": 4,
+      "targets_7": 1,
+      "targets_9": 2
+     }
+    },
+    "side_game": "H0 2120531121 blue"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     2881,
+     2881
+    ],
+    "counts": {
+     "baseline_shots": 69,
+     "candidate_shots": 69,
+     "changed_emitted_shots": 37,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 1,
+     "root_changed_shots": 36,
+     "silent_root_switches": 0
+    },
+    "decisions": 2881,
+    "decisions_after_first_change": 2700,
+    "decisions_with_a_change": 30,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 1,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 36,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 9,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": 180,
+    "first_change_step": 179,
+    "induced_changed_shots": {
+     "blood_pairs": {
+      "b1_t2": 1
+     },
+     "n": 1,
+     "shooter_class": {
+      "type 3 sub 6": 1
+     },
+     "target_class_pairs": {
+      "type 2 sub 1 -> type 2 sub 1": 1
+     }
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 2880,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 39,
+     "decisions_with_a_chain": 7,
+     "max_chain": 2,
+     "newly_reserved_targets": 34,
+     "no_longer_reserved_targets": 34,
+     "t11_shoot_targets_in_changed_decisions": 39,
+     "units_with_an_option_excluded_only_under_baseline": 7,
+     "units_with_an_option_excluded_only_under_t11": 7
+    },
+    "root_switches": {
+     "attack_level_change": {
+      "change_-1": 11,
+      "change_-2": 7,
+      "change_-3": 7,
+      "change_-7": 3,
+      "change_0": 8
+     },
+     "attack_level_pairs": {
+      "L10_L10": 2,
+      "L10_L8": 1,
+      "L10_L9": 1,
+      "L4_L3": 1,
+      "L4_L4": 3,
+      "L5_L3": 2,
+      "L5_L4": 2,
+      "L5_L5": 3,
+      "L6_L5": 1,
+      "L7_L5": 3,
+      "L7_L6": 1,
+      "L8_L1": 3,
+      "L8_L5": 6,
+      "L8_L7": 3,
+      "L9_L6": 1,
+      "L9_L7": 1,
+      "L9_L8": 2
+     },
+     "baseline_target_blood": {
+      "blood_2": 7,
+      "blood_3": 23,
+      "blood_4": 2,
+      "blood_5": 4
+     },
+     "blood_reduction": {
+      "reduction_1": 11,
+      "reduction_2": 20,
+      "reduction_3": 3,
+      "reduction_4": 2
+     },
+     "emitted_pair_same_target": 0,
+     "n": 36,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {
+      "type 2 sub 0": 11,
+      "type 2 sub 1": 5,
+      "type 2 sub 4": 1,
+      "type 3 sub 6": 19
+     },
+     "t11_level_equal": 8,
+     "t11_level_higher": 0,
+     "t11_level_lower": 28,
+     "t11_target_blood": {
+      "blood_1": 30,
+      "blood_2": 5,
+      "blood_3": 1
+     },
+     "target_class_pairs": {
+      "type 1 sub 2 -> type 2 sub 1": 2,
+      "type 1 sub 2 -> type 2 sub 10": 1,
+      "type 2 sub 0 -> type 2 sub 1": 6,
+      "type 2 sub 0 -> type 2 sub 10": 2,
+      "type 2 sub 0 -> type 3 sub 6": 3,
+      "type 2 sub 0 -> type 4 sub 11": 1,
+      "type 2 sub 1 -> type 2 sub 0": 4,
+      "type 2 sub 1 -> type 2 sub 1": 1,
+      "type 2 sub 1 -> type 2 sub 10": 1,
+      "type 2 sub 10 -> type 2 sub 0": 3,
+      "type 2 sub 15 -> type 2 sub 0": 1,
+      "type 2 sub 15 -> type 2 sub 1": 2,
+      "type 4 sub 11 -> type 2 sub 0": 4,
+      "type 4 sub 11 -> type 2 sub 1": 1,
+      "type 4 sub 11 -> type 4 sub 11": 1,
+      "type 4 sub 12 -> type 2 sub 10": 1,
+      "type 4 sub 12 -> type 4 sub 11": 1,
+      "type 4 sub 12 -> type 4 sub 12": 1
+     },
+     "targets_available": {
+      "targets_10": 1,
+      "targets_11": 1,
+      "targets_13": 2,
+      "targets_14": 4,
+      "targets_15": 3,
+      "targets_16": 8,
+      "targets_17": 3,
+      "targets_18": 5,
+      "targets_19": 1,
+      "targets_24": 1,
+      "targets_25": 2,
+      "targets_27": 2,
+      "targets_3": 1,
+      "targets_7": 1,
+      "targets_9": 1
+     }
+    },
+    "side_game": "H0 2130511121 red"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     2881,
+     2881
+    ],
+    "counts": {
+     "baseline_shots": 94,
+     "candidate_shots": 94,
+     "changed_emitted_shots": 36,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 9,
+     "root_changed_shots": 27,
+     "silent_root_switches": 0
+    },
+    "decisions": 2881,
+    "decisions_after_first_change": 2604,
+    "decisions_with_a_change": 21,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 9,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 27,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 8,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": 276,
+    "first_change_step": 275,
+    "induced_changed_shots": {
+     "blood_pairs": {
+      "b2_t4": 4,
+      "b3_t3": 1,
+      "b3_t4": 1,
+      "b4_t4": 3
+     },
+     "n": 9,
+     "shooter_class": {
+      "type 2 sub 0": 1,
+      "type 2 sub 1": 5,
+      "type 3 sub 6": 3
+     },
+     "target_class_pairs": {
+      "type 1 sub 2 -> type 1 sub 2": 5,
+      "type 2 sub 0 -> type 2 sub 0": 1,
+      "type 2 sub 15 -> type 2 sub 1": 2,
+      "type 2 sub 15 -> type 2 sub 15": 1
+     }
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 2880,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 39,
+     "decisions_with_a_chain": 13,
+     "max_chain": 3,
+     "newly_reserved_targets": 22,
+     "no_longer_reserved_targets": 22,
+     "t11_shoot_targets_in_changed_decisions": 39,
+     "units_with_an_option_excluded_only_under_baseline": 15,
+     "units_with_an_option_excluded_only_under_t11": 15
+    },
+    "root_switches": {
+     "attack_level_change": {
+      "change_-1": 6,
+      "change_-2": 3,
+      "change_-3": 4,
+      "change_-4": 1,
+      "change_-6": 1,
+      "change_0": 12
+     },
+     "attack_level_pairs": {
+      "L10_L10": 1,
+      "L10_L9": 3,
+      "L2_L2": 1,
+      "L3_L2": 1,
+      "L3_L3": 3,
+      "L4_L3": 2,
+      "L8_L2": 1,
+      "L8_L5": 3,
+      "L8_L6": 3,
+      "L8_L8": 1,
+      "L9_L5": 1,
+      "L9_L6": 1,
+      "L9_L9": 6
+     },
+     "baseline_target_blood": {
+      "blood_2": 2,
+      "blood_3": 5,
+      "blood_4": 20
+     },
+     "blood_reduction": {
+      "reduction_1": 5,
+      "reduction_2": 10,
+      "reduction_3": 12
+     },
+     "emitted_pair_same_target": 0,
+     "n": 27,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {
+      "type 2 sub 0": 17,
+      "type 2 sub 1": 2,
+      "type 3 sub 6": 8
+     },
+     "t11_level_equal": 12,
+     "t11_level_higher": 0,
+     "t11_level_lower": 15,
+     "t11_target_blood": {
+      "blood_1": 19,
+      "blood_2": 5,
+      "blood_3": 3
+     },
+     "target_class_pairs": {
+      "type 1 sub 2 -> type 1 sub 2": 5,
+      "type 2 sub 0 -> type 2 sub 0": 2,
+      "type 2 sub 0 -> type 2 sub 9": 8,
+      "type 2 sub 1 -> type 2 sub 15": 3,
+      "type 2 sub 1 -> type 2 sub 9": 5,
+      "type 2 sub 10 -> type 2 sub 9": 2,
+      "type 2 sub 15 -> type 2 sub 0": 1,
+      "type 2 sub 4 -> type 2 sub 9": 1
+     },
+     "targets_available": {
+      "targets_10": 2,
+      "targets_11": 2,
+      "targets_12": 3,
+      "targets_13": 1,
+      "targets_15": 1,
+      "targets_16": 2,
+      "targets_17": 1,
+      "targets_18": 1,
+      "targets_2": 2,
+      "targets_3": 1,
+      "targets_4": 4,
+      "targets_6": 2,
+      "targets_7": 1,
+      "targets_8": 3,
+      "targets_9": 1
+     }
+    },
+    "side_game": "H0 2130511121 blue"
+   }
+  ]
+ },
+ "HH": {
+  "pooled": {
+   "counts": {
+    "baseline_shots": 319,
+    "candidate_shots": 319,
+    "changed_emitted_shots": 94,
+    "duplicate_targets_baseline": 0,
+    "duplicate_targets_candidate": 0,
+    "induced_changed_shots": 0,
+    "root_changed_shots": 94,
+    "silent_root_switches": 1
+   },
+   "decisions": 11524,
+   "decisions_with_a_change": 91,
+   "differences_by_class_and_kind": {
+    "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+     "changed_shot": 0,
+     "gained_shot": 0,
+     "lost_shot": 0,
+     "other_nonshoot": 0
+    },
+    "RESERVATION_INDUCED_SHOOT_CHANGE": {
+     "changed_shot": 0,
+     "gained_shot": 0,
+     "lost_shot": 0,
+     "other_nonshoot": 0
+    },
+    "ROOT_TARGET_SWITCH": {
+     "changed_shot": 94,
+     "gained_shot": 0,
+     "lost_shot": 0,
+     "other_nonshoot": 0
+    },
+    "UNEXPLAINED": {
+     "changed_shot": 0,
+     "gained_shot": 0,
+     "lost_shot": 0,
+     "other_nonshoot": 0
+    }
+   },
+   "distinct_changed_shooters_summed_over_side_games": 23,
+   "induced_changed_shots": {
+    "blood_pairs": {},
+    "n": 0,
+    "shooter_class": {},
+    "target_class_pairs": {}
+   },
+   "non_shoot_differences": 0,
+   "reservation": {
+    "baseline_shoot_targets_in_changed_decisions": 99,
+    "decisions_with_a_chain": 3,
+    "max_chain": 2,
+    "newly_reserved_targets": 94,
+    "no_longer_reserved_targets": 94,
+    "t11_shoot_targets_in_changed_decisions": 99,
+    "units_with_an_option_excluded_only_under_baseline": 4,
+    "units_with_an_option_excluded_only_under_t11": 4
+   },
+   "root_switches": {
+    "attack_level_change": {
+     "change_-1": 20,
+     "change_-2": 16,
+     "change_-3": 4,
+     "change_-4": 1,
+     "change_-5": 3,
+     "change_-6": 7,
+     "change_-7": 7,
+     "change_0": 36
+    },
+    "attack_level_pairs": {
+     "L10_L10": 3,
+     "L10_L8": 4,
+     "L10_L9": 8,
+     "L3_L2": 3,
+     "L3_L3": 13,
+     "L4_L2": 2,
+     "L6_L5": 1,
+     "L7_L2": 1,
+     "L7_L6": 1,
+     "L7_L7": 1,
+     "L8_L1": 7,
+     "L8_L2": 7,
+     "L8_L3": 2,
+     "L8_L5": 3,
+     "L8_L6": 5,
+     "L8_L7": 4,
+     "L8_L8": 12,
+     "L9_L5": 1,
+     "L9_L6": 1,
+     "L9_L7": 5,
+     "L9_L8": 3,
+     "L9_L9": 7
+    },
+    "baseline_target_blood": {
+     "blood_2": 20,
+     "blood_3": 52,
+     "blood_4": 15,
+     "blood_5": 7
+    },
+    "blood_reduction": {
+     "reduction_1": 32,
+     "reduction_2": 47,
+     "reduction_3": 13,
+     "reduction_4": 2
+    },
+    "emitted_pair_same_target": 0,
+    "n": 94,
+    "same_target_as_baseline_ranking": 0,
+    "shooter_class": {
+     "type 2 sub 0": 49,
+     "type 3 sub 6": 45
+    },
+    "t11_level_equal": 36,
+    "t11_level_higher": 0,
+    "t11_level_lower": 58,
+    "t11_target_blood": {
+     "blood_1": 77,
+     "blood_2": 11,
+     "blood_3": 5,
+     "blood_4": 1
+    },
+    "target_class_pairs": {
+     "type 1 sub 2 -> type 1 sub 2": 1,
+     "type 1 sub 2 -> type 4 sub 11": 4,
+     "type 2 sub 0 -> type 2 sub 0": 2,
+     "type 2 sub 0 -> type 2 sub 1": 15,
+     "type 2 sub 0 -> type 2 sub 15": 1,
+     "type 2 sub 0 -> type 2 sub 9": 11,
+     "type 2 sub 0 -> type 3 sub 6": 5,
+     "type 2 sub 0 -> type 4 sub 11": 4,
+     "type 2 sub 1 -> type 2 sub 0": 4,
+     "type 2 sub 1 -> type 2 sub 1": 6,
+     "type 2 sub 1 -> type 2 sub 10": 2,
+     "type 2 sub 1 -> type 2 sub 15": 3,
+     "type 2 sub 1 -> type 2 sub 9": 3,
+     "type 2 sub 1 -> type 4 sub 11": 8,
+     "type 2 sub 10 -> type 2 sub 9": 1,
+     "type 2 sub 10 -> type 3 sub 6": 6,
+     "type 2 sub 13 -> type 2 sub 0": 1,
+     "type 2 sub 15 -> type 2 sub 15": 2,
+     "type 2 sub 4 -> type 2 sub 0": 1,
+     "type 2 sub 4 -> type 2 sub 9": 2,
+     "type 4 sub 11 -> type 2 sub 0": 1,
+     "type 4 sub 11 -> type 2 sub 15": 1,
+     "type 4 sub 11 -> type 3 sub 5": 2,
+     "type 4 sub 11 -> type 4 sub 11": 3,
+     "type 4 sub 11 -> type 4 sub 12": 2,
+     "type 4 sub 12 -> type 4 sub 12": 3
+    },
+    "targets_available": {
+     "targets_11": 8,
+     "targets_12": 8,
+     "targets_13": 10,
+     "targets_14": 2,
+     "targets_15": 4,
+     "targets_16": 7,
+     "targets_17": 5,
+     "targets_19": 3,
+     "targets_2": 4,
+     "targets_23": 1,
+     "targets_24": 6,
+     "targets_25": 2,
+     "targets_26": 3,
+     "targets_27": 3,
+     "targets_3": 4,
+     "targets_4": 2,
+     "targets_6": 6,
+     "targets_7": 7,
+     "targets_8": 4,
+     "targets_9": 5
+    }
+   },
+   "side_games": 4
+  },
+  "sides": [
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     2881,
+     2881
+    ],
+    "counts": {
+     "baseline_shots": 78,
+     "candidate_shots": 78,
+     "changed_emitted_shots": 15,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 15,
+     "silent_root_switches": 1
+    },
+    "decisions": 2881,
+    "decisions_after_first_change": 2604,
+    "decisions_with_a_change": 13,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 15,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 5,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": 276,
+    "first_change_step": 275,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 2880,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 16,
+     "decisions_with_a_chain": 2,
+     "max_chain": 2,
+     "newly_reserved_targets": 15,
+     "no_longer_reserved_targets": 15,
+     "t11_shoot_targets_in_changed_decisions": 16,
+     "units_with_an_option_excluded_only_under_baseline": 3,
+     "units_with_an_option_excluded_only_under_t11": 3
+    },
+    "root_switches": {
+     "attack_level_change": {
+      "change_-1": 3,
+      "change_-2": 1,
+      "change_-4": 1,
+      "change_-6": 2,
+      "change_0": 8
+     },
+     "attack_level_pairs": {
+      "L10_L10": 2,
+      "L10_L9": 2,
+      "L3_L2": 1,
+      "L8_L2": 2,
+      "L8_L6": 1,
+      "L8_L8": 3,
+      "L9_L5": 1,
+      "L9_L9": 3
+     },
+     "baseline_target_blood": {
+      "blood_2": 5,
+      "blood_3": 5,
+      "blood_4": 5
+     },
+     "blood_reduction": {
+      "reduction_1": 5,
+      "reduction_2": 6,
+      "reduction_3": 4
+     },
+     "emitted_pair_same_target": 0,
+     "n": 15,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {
+      "type 2 sub 0": 10,
+      "type 3 sub 6": 5
+     },
+     "t11_level_equal": 8,
+     "t11_level_higher": 0,
+     "t11_level_lower": 7,
+     "t11_target_blood": {
+      "blood_1": 14,
+      "blood_2": 1
+     },
+     "target_class_pairs": {
+      "type 2 sub 0 -> type 2 sub 0": 2,
+      "type 2 sub 0 -> type 2 sub 1": 1,
+      "type 2 sub 0 -> type 2 sub 9": 8,
+      "type 2 sub 1 -> type 2 sub 0": 1,
+      "type 2 sub 1 -> type 2 sub 1": 1,
+      "type 2 sub 1 -> type 2 sub 9": 1,
+      "type 2 sub 4 -> type 2 sub 0": 1
+     },
+     "targets_available": {
+      "targets_12": 2,
+      "targets_13": 2,
+      "targets_14": 1,
+      "targets_15": 2,
+      "targets_16": 1,
+      "targets_17": 1,
+      "targets_19": 1,
+      "targets_6": 1,
+      "targets_7": 1,
+      "targets_8": 2,
+      "targets_9": 1
+     }
+    },
+    "side_game": "HH p01 baseline-v2 blue"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     2881,
+     2881
+    ],
+    "counts": {
+     "baseline_shots": 60,
+     "candidate_shots": 60,
+     "changed_emitted_shots": 33,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 33,
+     "silent_root_switches": 0
+    },
+    "decisions": 2881,
+    "decisions_after_first_change": 2700,
+    "decisions_with_a_change": 33,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 33,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 6,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": 180,
+    "first_change_step": 179,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 2880,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 35,
+     "decisions_with_a_chain": 0,
+     "max_chain": 1,
+     "newly_reserved_targets": 33,
+     "no_longer_reserved_targets": 33,
+     "t11_shoot_targets_in_changed_decisions": 35,
+     "units_with_an_option_excluded_only_under_baseline": 0,
+     "units_with_an_option_excluded_only_under_t11": 0
+    },
+    "root_switches": {
+     "attack_level_change": {
+      "change_-1": 4,
+      "change_-2": 6,
+      "change_-6": 2,
+      "change_-7": 3,
+      "change_0": 18
+     },
+     "attack_level_pairs": {
+      "L10_L8": 2,
+      "L10_L9": 1,
+      "L3_L3": 11,
+      "L6_L5": 1,
+      "L7_L7": 1,
+      "L8_L1": 3,
+      "L8_L2": 2,
+      "L8_L6": 1,
+      "L8_L7": 2,
+      "L8_L8": 6,
+      "L9_L7": 3
+     },
+     "baseline_target_blood": {
+      "blood_2": 8,
+      "blood_3": 21,
+      "blood_4": 1,
+      "blood_5": 3
+     },
+     "blood_reduction": {
+      "reduction_1": 12,
+      "reduction_2": 19,
+      "reduction_3": 1,
+      "reduction_4": 1
+     },
+     "emitted_pair_same_target": 0,
+     "n": 33,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {
+      "type 2 sub 0": 13,
+      "type 3 sub 6": 20
+     },
+     "t11_level_equal": 18,
+     "t11_level_higher": 0,
+     "t11_level_lower": 15,
+     "t11_target_blood": {
+      "blood_1": 28,
+      "blood_2": 3,
+      "blood_3": 1,
+      "blood_4": 1
+     },
+     "target_class_pairs": {
+      "type 2 sub 0 -> type 2 sub 1": 11,
+      "type 2 sub 0 -> type 3 sub 6": 3,
+      "type 2 sub 0 -> type 4 sub 11": 2,
+      "type 2 sub 1 -> type 2 sub 0": 2,
+      "type 2 sub 1 -> type 2 sub 1": 1,
+      "type 2 sub 1 -> type 2 sub 10": 2,
+      "type 2 sub 1 -> type 4 sub 11": 6,
+      "type 2 sub 10 -> type 3 sub 6": 2,
+      "type 4 sub 11 -> type 2 sub 0": 1,
+      "type 4 sub 11 -> type 4 sub 11": 2,
+      "type 4 sub 11 -> type 4 sub 12": 1
+     },
+     "targets_available": {
+      "targets_11": 1,
+      "targets_12": 5,
+      "targets_13": 6,
+      "targets_15": 1,
+      "targets_16": 4,
+      "targets_17": 2,
+      "targets_19": 2,
+      "targets_2": 1,
+      "targets_24": 3,
+      "targets_25": 2,
+      "targets_26": 2,
+      "targets_3": 1,
+      "targets_6": 2,
+      "targets_9": 1
+     }
+    },
+    "side_game": "HH p02 baseline-v2 red"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     2881,
+     2881
+    ],
+    "counts": {
+     "baseline_shots": 122,
+     "candidate_shots": 122,
+     "changed_emitted_shots": 19,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 19,
+     "silent_root_switches": 0
+    },
+    "decisions": 2881,
+    "decisions_after_first_change": 2604,
+    "decisions_with_a_change": 18,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 19,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 6,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": 276,
+    "first_change_step": 275,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 2880,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 20,
+     "decisions_with_a_chain": 1,
+     "max_chain": 2,
+     "newly_reserved_targets": 19,
+     "no_longer_reserved_targets": 19,
+     "t11_shoot_targets_in_changed_decisions": 20,
+     "units_with_an_option_excluded_only_under_baseline": 1,
+     "units_with_an_option_excluded_only_under_t11": 1
+    },
+    "root_switches": {
+     "attack_level_change": {
+      "change_-1": 6,
+      "change_-2": 2,
+      "change_-3": 1,
+      "change_-5": 1,
+      "change_-6": 1,
+      "change_-7": 2,
+      "change_0": 6
+     },
+     "attack_level_pairs": {
+      "L10_L10": 1,
+      "L10_L9": 4,
+      "L3_L3": 1,
+      "L7_L2": 1,
+      "L8_L1": 2,
+      "L8_L2": 1,
+      "L8_L5": 1,
+      "L8_L6": 2,
+      "L9_L8": 2,
+      "L9_L9": 4
+     },
+     "baseline_target_blood": {
+      "blood_2": 3,
+      "blood_3": 9,
+      "blood_4": 7
+     },
+     "blood_reduction": {
+      "reduction_1": 6,
+      "reduction_2": 6,
+      "reduction_3": 7
+     },
+     "emitted_pair_same_target": 0,
+     "n": 19,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {
+      "type 2 sub 0": 15,
+      "type 3 sub 6": 4
+     },
+     "t11_level_equal": 6,
+     "t11_level_higher": 0,
+     "t11_level_lower": 13,
+     "t11_target_blood": {
+      "blood_1": 16,
+      "blood_2": 3
+     },
+     "target_class_pairs": {
+      "type 1 sub 2 -> type 1 sub 2": 1,
+      "type 2 sub 0 -> type 2 sub 1": 3,
+      "type 2 sub 0 -> type 2 sub 9": 3,
+      "type 2 sub 1 -> type 2 sub 1": 3,
+      "type 2 sub 1 -> type 2 sub 9": 2,
+      "type 2 sub 10 -> type 2 sub 9": 1,
+      "type 2 sub 10 -> type 3 sub 6": 2,
+      "type 2 sub 15 -> type 2 sub 15": 2,
+      "type 2 sub 4 -> type 2 sub 9": 2
+     },
+     "targets_available": {
+      "targets_11": 2,
+      "targets_13": 1,
+      "targets_16": 2,
+      "targets_2": 1,
+      "targets_3": 2,
+      "targets_6": 3,
+      "targets_7": 3,
+      "targets_8": 2,
+      "targets_9": 3
+     }
+    },
+    "side_game": "HH p03 baseline-v2 blue"
+   },
+   {
+    "baseline_ranking_reproduces_baseline_v2": [
+     2881,
+     2881
+    ],
+    "counts": {
+     "baseline_shots": 59,
+     "candidate_shots": 59,
+     "changed_emitted_shots": 27,
+     "duplicate_targets_baseline": 0,
+     "duplicate_targets_candidate": 0,
+     "induced_changed_shots": 0,
+     "root_changed_shots": 27,
+     "silent_root_switches": 0
+    },
+    "decisions": 2881,
+    "decisions_after_first_change": 2700,
+    "decisions_with_a_change": 27,
+    "differences_by_class_and_kind": {
+     "RESERVATION_INDUCED_NONSHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "RESERVATION_INDUCED_SHOOT_CHANGE": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "ROOT_TARGET_SWITCH": {
+      "changed_shot": 27,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     },
+     "UNEXPLAINED": {
+      "changed_shot": 0,
+      "gained_shot": 0,
+      "lost_shot": 0,
+      "other_nonshoot": 0
+     }
+    },
+    "distinct_changed_shooters": 6,
+    "fallbacks": {},
+    "fallbacks_with_two_or_more_targets": {},
+    "first_change_decision": 180,
+    "first_change_step": 179,
+    "induced_changed_shots": {
+     "blood_pairs": {},
+     "n": 0,
+     "shooter_class": {},
+     "target_class_pairs": {}
+    },
+    "integrity_ok": true,
+    "non_shoot_differences": 0,
+    "play_decisions": 2880,
+    "problems": 0,
+    "reservation": {
+     "baseline_shoot_targets_in_changed_decisions": 28,
+     "decisions_with_a_chain": 0,
+     "max_chain": 1,
+     "newly_reserved_targets": 27,
+     "no_longer_reserved_targets": 27,
+     "t11_shoot_targets_in_changed_decisions": 28,
+     "units_with_an_option_excluded_only_under_baseline": 0,
+     "units_with_an_option_excluded_only_under_t11": 0
+    },
+    "root_switches": {
+     "attack_level_change": {
+      "change_-1": 7,
+      "change_-2": 7,
+      "change_-3": 3,
+      "change_-5": 2,
+      "change_-6": 2,
+      "change_-7": 2,
+      "change_0": 4
+     },
+     "attack_level_pairs": {
+      "L10_L8": 2,
+      "L10_L9": 1,
+      "L3_L2": 2,
+      "L3_L3": 1,
+      "L4_L2": 2,
+      "L7_L6": 1,
+      "L8_L1": 2,
+      "L8_L2": 2,
+      "L8_L3": 2,
+      "L8_L5": 2,
+      "L8_L6": 1,
+      "L8_L7": 2,
+      "L8_L8": 3,
+      "L9_L6": 1,
+      "L9_L7": 2,
+      "L9_L8": 1
+     },
+     "baseline_target_blood": {
+      "blood_2": 4,
+      "blood_3": 17,
+      "blood_4": 2,
+      "blood_5": 4
+     },
+     "blood_reduction": {
+      "reduction_1": 9,
+      "reduction_2": 16,
+      "reduction_3": 1,
+      "reduction_4": 1
+     },
+     "emitted_pair_same_target": 0,
+     "n": 27,
+     "same_target_as_baseline_ranking": 0,
+     "shooter_class": {
+      "type 2 sub 0": 11,
+      "type 3 sub 6": 16
+     },
+     "t11_level_equal": 4,
+     "t11_level_higher": 0,
+     "t11_level_lower": 23,
+     "t11_target_blood": {
+      "blood_1": 19,
+      "blood_2": 4,
+      "blood_3": 4
+     },
+     "target_class_pairs": {
+      "type 1 sub 2 -> type 4 sub 11": 4,
+      "type 2 sub 0 -> type 2 sub 15": 1,
+      "type 2 sub 0 -> type 3 sub 6": 2,
+      "type 2 sub 0 -> type 4 sub 11": 2,
+      "type 2 sub 1 -> type 2 sub 0": 1,
+      "type 2 sub 1 -> type 2 sub 1": 1,
+      "type 2 sub 1 -> type 2 sub 15": 3,
+      "type 2 sub 1 -> type 4 sub 11": 2,
+      "type 2 sub 10 -> type 3 sub 6": 2,
+      "type 2 sub 13 -> type 2 sub 0": 1,
+      "type 4 sub 11 -> type 2 sub 15": 1,
+      "type 4 sub 11 -> type 3 sub 5": 2,
+      "type 4 sub 11 -> type 4 sub 11": 1,
+      "type 4 sub 11 -> type 4 sub 12": 1,
+      "type 4 sub 12 -> type 4 sub 12": 3
+     },
+     "targets_available": {
+      "targets_11": 5,
+      "targets_12": 1,
+      "targets_13": 1,
+      "targets_14": 1,
+      "targets_15": 1,
+      "targets_17": 2,
+      "targets_2": 2,
+      "targets_23": 1,
+      "targets_24": 3,
+      "targets_26": 1,
+      "targets_27": 3,
+      "targets_3": 1,
+      "targets_4": 2,
+      "targets_7": 3
+     }
+    },
+    "side_game": "HH p04 baseline-v2 red"
+   }
+  ]
+ },
+ "evidence_boundary": "every action list of one seat-decision is decided from the same recorded observation, so each comparison, reservation effects included, is a valid action-level counterfactual; after a side-game's first change the recorded states are off-policy for T11. H0 states are baseline-v0 trajectories with baseline-v2 reconstructed.",
+ "inputs_sha256": "86a18d7933f692147962168d981b242740c9cd2e2f1cd275de7563e1382f43a6",
+ "kill_model": {
+  "available": false,
+  "gaps": [
+   "K2",
+   "K4",
+   "K5",
+   "K6"
+  ],
+  "p_kill_now": "not computed: the documented model is unavailable"
+ },
+ "kill_model_sha256": "0d1d0159bd84b3b37933ab88d770f7fc043f7d00443ff31b89e51188ba9727fb",
+ "protocol_sha256": "e187b8b9f0d5db30c623fed1339951ea1cdaae9af730689bb28328e343230bfb",
+ "schema": "miaosuan-s20-results/1",
+ "study_id": "s20-t11-replay"
+}

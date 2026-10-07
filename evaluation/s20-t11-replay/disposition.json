@@ -1,0 +1,26 @@
+{
+ "coupled_h0": false,
+ "coupled_hh": false,
+ "delta_pkill": null,
+ "disposition": "T11_OFFLINE_MODEL_UNAVAILABLE",
+ "hh_changed_emitted_shots": [
+  15,
+  33,
+  19,
+  27
+ ],
+ "inputs_sha256": "86a18d7933f692147962168d981b242740c9cd2e2f1cd275de7563e1382f43a6",
+ "items": {
+  "fidelity": true,
+  "kill_edge": false,
+  "kill_model_available": false,
+  "opportunity": true,
+  "pure_target_priority": true
+ },
+ "items_below_the_first_match_are_descriptive": true,
+ "kill_model_sha256": "0d1d0159bd84b3b37933ab88d770f7fc043f7d00443ff31b89e51188ba9727fb",
+ "protocol_sha256": "e187b8b9f0d5db30c623fed1339951ea1cdaae9af730689bb28328e343230bfb",
+ "rule": "first match in the order REPLAY_INVALID, T11_OFFLINE_MODEL_UNAVAILABLE, T11_OFFLINE_COUPLED_BEHAVIOR, T11_OFFLINE_INADEQUATE_OPPORTUNITY, T11_OFFLINE_NO_KILL_EDGE, T11_OFFLINE_PASS",
+ "schema": "miaosuan-s20-results/1",
+ "study_id": "s20-t11-replay"
+}

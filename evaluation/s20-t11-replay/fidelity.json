@@ -1,0 +1,124 @@
+{
+ "anchors": {
+  "H0 baseline-v2 direct-fire shots": {
+   "equal": true,
+   "replay": 432,
+   "sprint18": 432
+  },
+  "H0 decisions": {
+   "equal": true,
+   "replay": 33696,
+   "sprint18": 33696
+  },
+  "H0 play decisions": {
+   "equal": true,
+   "replay": 33680,
+   "sprint18": 33680
+  },
+  "H0 shots with a lower-blood target listed": {
+   "equal": true,
+   "replay": 127,
+   "sprint18": 127
+  },
+  "H0 shots with two or more targets listed": {
+   "equal": true,
+   "replay": 368,
+   "sprint18": 368
+  },
+  "H0 v2 differs from recorded v0": {
+   "equal": true,
+   "replay": 123,
+   "sprint18": 123
+  },
+  "HH baseline-v2 direct-fire shots": {
+   "equal": true,
+   "replay": 319,
+   "sprint18": 319
+  },
+  "HH baseline-v2 reconstruction equal to the recorded seat": {
+   "equal": true,
+   "replay": 11524,
+   "sprint18": 11524
+  },
+  "HH shots with a lower-blood target listed": {
+   "equal": true,
+   "replay": 97,
+   "sprint18": 97
+  },
+  "HH shots with two or more targets listed": {
+   "equal": true,
+   "replay": 267,
+   "sprint18": 267
+  }
+ },
+ "baseline_ranking_reproduces_baseline_v2": {
+  "H0": [
+   33696,
+   33696,
+   33696
+  ],
+  "HH": [
+   11524,
+   11524,
+   11524
+  ]
+ },
+ "blocks": {
+  "fire-choice block H0 equal to census.json": true,
+  "fire-choice block HH equal to census.json": true
+ },
+ "inputs_sha256": "86a18d7933f692147962168d981b242740c9cd2e2f1cd275de7563e1382f43a6",
+ "integrity_by_side_game": {
+  "H0 1910631192 blue": true,
+  "H0 1910631192 red": true,
+  "H0 1930331196 blue": true,
+  "H0 1930331196 red": true,
+  "H0 2010131194 blue": true,
+  "H0 2010131194 red": true,
+  "H0 2010211129 blue": true,
+  "H0 2010211129 red": true,
+  "H0 201033019601 blue": true,
+  "H0 201033019601 red": true,
+  "H0 2010431153 blue": true,
+  "H0 2010431153 red": true,
+  "H0 2120531121 blue": true,
+  "H0 2120531121 red": true,
+  "H0 2130511121 blue": true,
+  "H0 2130511121 red": true,
+  "HH p01 baseline-v2 blue": true,
+  "HH p02 baseline-v2 red": true,
+  "HH p03 baseline-v2 blue": true,
+  "HH p04 baseline-v2 red": true
+ },
+ "kill_model_sha256": "0d1d0159bd84b3b37933ab88d770f7fc043f7d00443ff31b89e51188ba9727fb",
+ "ok": true,
+ "problems_by_side_game": {
+  "H0 1910631192 blue": 0,
+  "H0 1910631192 red": 0,
+  "H0 1930331196 blue": 0,
+  "H0 1930331196 red": 0,
+  "H0 2010131194 blue": 0,
+  "H0 2010131194 red": 0,
+  "H0 2010211129 blue": 0,
+  "H0 2010211129 red": 0,
+  "H0 201033019601 blue": 0,
+  "H0 201033019601 red": 0,
+  "H0 2010431153 blue": 0,
+  "H0 2010431153 red": 0,
+  "H0 2120531121 blue": 0,
+  "H0 2120531121 red": 0,
+  "H0 2130511121 blue": 0,
+  "H0 2130511121 red": 0,
+  "HH p01 baseline-v2 blue": 0,
+  "HH p02 baseline-v2 red": 0,
+  "HH p03 baseline-v2 blue": 0,
+  "HH p04 baseline-v2 red": 0
+ },
+ "protocol_sha256": "e187b8b9f0d5db30c623fed1339951ea1cdaae9af730689bb28328e343230bfb",
+ "schema": "miaosuan-s20-results/1",
+ "side_games": {
+  "H0": 16,
+  "HH": 4
+ },
+ "study_id": "s20-t11-replay"
+}
