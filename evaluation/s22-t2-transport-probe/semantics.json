@@ -1,0 +1,201 @@
+{
+ "disembark_listing_by_carrier_state": [
+  {
+   "carrier_state": "moving",
+   "count": 11882,
+   "listing": "disembark not listed"
+  },
+  {
+   "carrier_state": "settled",
+   "count": 21769,
+   "listing": "disembark listed"
+  },
+  {
+   "carrier_state": "stop transition",
+   "count": 921,
+   "listing": "disembark not listed"
+  }
+ ],
+ "games": [
+  {
+   "decisions": 2881,
+   "game": "1930331196.C2.s10-t9-v1-c2-diagnosis.g01",
+   "tier": 2
+  },
+  {
+   "decisions": 2881,
+   "game": "1930331196.C2.s10-t9-v1-c2-diagnosis.g02",
+   "tier": 1
+  },
+  {
+   "decisions": 2881,
+   "game": "1930331196.C3.s10-t9-v1-diagnosis.g03",
+   "tier": 2
+  },
+  {
+   "decisions": 2881,
+   "game": "1930331196.C3.s10-t9-v1-diagnosis.g04",
+   "tier": 1
+  },
+  {
+   "decisions": 2881,
+   "game": "2120531121.C3.s10-t9-v1-diagnosis.g01",
+   "tier": 2
+  },
+  {
+   "decisions": 2881,
+   "game": "2120531121.C3.s10-t9-v1-diagnosis.g02",
+   "tier": 1
+  },
+  {
+   "decisions": 2881,
+   "game": "1930331196.C2.s16-v3-mechanism-capture-1.p02",
+   "tier": 2
+  },
+  {
+   "decisions": 2881,
+   "game": "1930331196.C3.s16-v3-mechanism-capture-1.p01",
+   "tier": 2
+  },
+  {
+   "decisions": 2881,
+   "game": "2120531121.C3.s16-v3-mechanism-capture-1.p03",
+   "tier": 2
+  },
+  {
+   "decisions": 2881,
+   "game": "1930331196.C2.s17-post-stage-v6-probe-1.p01",
+   "tier": 2
+  },
+  {
+   "decisions": 2881,
+   "game": "2120531121.C3.s17-post-stage-v6-probe-1.p02",
+   "tier": 2
+  },
+  {
+   "decisions": 1801,
+   "game": "1910631192.C3.pa",
+   "tier": 2
+  }
+ ],
+ "ifv_capacity_fields": [
+  {
+   "count": 124604,
+   "loading_capacity": "loading_capacity 3",
+   "max_passenger_nums": "max_passenger_nums {\"2\": 1, \"4\": 1, \"7\": 2}",
+   "valid_passenger_types": "valid_passenger_types [2, 4, 7]"
+  },
+  {
+   "count": 34572,
+   "loading_capacity": "loading_capacity 4",
+   "max_passenger_nums": "max_passenger_nums {\"2\": 1, \"4\": 1, \"7\": 2}",
+   "valid_passenger_types": "valid_passenger_types [2, 4, 7]"
+  }
+ ],
+ "issued_transport_orders": [],
+ "listings": [
+  {
+   "action": 3,
+   "actor_class": "type 1 sub 2",
+   "actor_state": "actor stationary",
+   "co_location": "same hex",
+   "count": 457,
+   "target_class": "type 2 sub 1",
+   "target_relation": "target an own operator",
+   "target_state": "target stationary"
+  },
+  {
+   "action": 3,
+   "actor_class": "type 2 sub 4",
+   "actor_state": "actor stationary",
+   "co_location": "same hex",
+   "count": 21561,
+   "target_class": "type 2 sub 1",
+   "target_relation": "target an own operator",
+   "target_state": "target stationary"
+  },
+  {
+   "action": 4,
+   "actor_class": "type 2 sub 1",
+   "actor_state": "actor stationary",
+   "co_location": "same hex",
+   "count": 43538,
+   "target_class": "type 3 sub 7",
+   "target_relation": "target an own passenger",
+   "target_state": "target stationary"
+  }
+ ],
+ "option_key_sets": [
+  {
+   "action": 3,
+   "count": 22018,
+   "keys": "target_obj_id"
+  },
+  {
+   "action": 4,
+   "count": 43538,
+   "keys": "target_obj_id"
+  }
+ ],
+ "passenger_representation": [
+  {
+   "car": "car is an own operator",
+   "carrier_listing": "listed by its car",
+   "count": 69144,
+   "on_board": "on_board 1",
+   "passenger_class": "type 3 sub 7"
+  }
+ ],
+ "schema": "miaosuan-s22-probe/1/semantics",
+ "study_id": "s22-t2-transport-probe",
+ "vehicle_arrivals_on_objectives": [
+  {
+   "count": 107,
+   "next_move": "next move after 0 decisions",
+   "occupy": "no occupy",
+   "ownership": "objective held at arrival"
+  },
+  {
+   "count": 2,
+   "next_move": "next move after more than 2 decisions",
+   "occupy": "no occupy",
+   "ownership": "objective held at arrival"
+  },
+  {
+   "count": 46,
+   "next_move": "no move within 300 decisions",
+   "occupy": "no occupy",
+   "ownership": "objective held at arrival"
+  },
+  {
+   "count": 14,
+   "next_move": "next move after 1 decisions",
+   "occupy": "no occupy",
+   "ownership": "objective not held at arrival"
+  },
+  {
+   "count": 13,
+   "next_move": "no move within 300 decisions",
+   "occupy": "no occupy",
+   "ownership": "objective not held at arrival"
+  },
+  {
+   "count": 34,
+   "next_move": "next move after 1 decisions",
+   "occupy": "occupy at the arrival decision",
+   "ownership": "objective not held at arrival"
+  },
+  {
+   "count": 3,
+   "next_move": "next move after 2 decisions",
+   "occupy": "occupy at the arrival decision",
+   "ownership": "objective not held at arrival"
+  },
+  {
+   "count": 17,
+   "next_move": "no move within 300 decisions",
+   "occupy": "occupy at the arrival decision",
+   "ownership": "objective not held at arrival"
+  }
+ ]
+}
