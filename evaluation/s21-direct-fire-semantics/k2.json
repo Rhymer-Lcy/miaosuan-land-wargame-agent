@@ -1,0 +1,174 @@
+{
+ "by_target_class": {
+  "aircraft": "K2_RUNTIME_SUPPORTED",
+  "fortification": "K2_RUNTIME_SUPPORTED",
+  "infantry": "K2_RUNTIME_SUPPORTED",
+  "other": "UNTESTED",
+  "vehicle": "K2_RUNTIME_SUPPORTED"
+ },
+ "difference_distribution": {
+  "difference_0": 975
+ },
+ "different": 0,
+ "ele_diff_values_in_corpus": 12,
+ "ele_diff_values_in_paired_rows": 12,
+ "elevation_coverage": true,
+ "equal": 975,
+ "inputs_sha256": "657a80040d2be444e4a2ae6c62c6e8b208a735723c867fd0859f774dc116aa1f",
+ "missing_judged": 0,
+ "missing_listed": 0,
+ "n_both_levels": 975,
+ "paired_rows": 975,
+ "protocol_sha256": "308fc32eda72690b9376ddca0fbdca08c8482831c440b7d8431ea95ed7855d27",
+ "schema": "miaosuan-s21-results/1",
+ "status": "K2_RUNTIME_SUPPORTED",
+ "study_id": "s21-direct-fire-semantics",
+ "subgroups": {
+  "att_obj_blood": {
+   "att_obj_blood_1": {
+    "equal": 506,
+    "n": 506
+   },
+   "att_obj_blood_2": {
+    "equal": 107,
+    "n": 107
+   },
+   "att_obj_blood_3": {
+    "equal": 313,
+    "n": 313
+   },
+   "att_obj_blood_4": {
+    "equal": 49,
+    "n": 49
+   }
+  },
+  "ele_diff": {
+   "ele_diff_0": {
+    "equal": 561,
+    "n": 561
+   },
+   "ele_diff_1": {
+    "equal": 82,
+    "n": 82
+   },
+   "ele_diff_2": {
+    "equal": 66,
+    "n": 66
+   },
+   "ele_diff_3": {
+    "equal": 17,
+    "n": 17
+   },
+   "ele_diff_5": {
+    "equal": 31,
+    "n": 31
+   },
+   "ele_diff_6": {
+    "equal": 11,
+    "n": 11
+   },
+   "ele_diff_7": {
+    "equal": 11,
+    "n": 11
+   },
+   "ele_diff_minus_1": {
+    "equal": 141,
+    "n": 141
+   },
+   "ele_diff_minus_2": {
+    "equal": 42,
+    "n": 42
+   },
+   "ele_diff_minus_3": {
+    "equal": 8,
+    "n": 8
+   },
+   "ele_diff_minus_6": {
+    "equal": 4,
+    "n": 4
+   },
+   "ele_diff_minus_7": {
+    "equal": 1,
+    "n": 1
+   }
+  },
+  "shooter_class": {
+   "aircraft": {
+    "equal": 323,
+    "n": 323
+   },
+   "infantry": {
+    "equal": 8,
+    "n": 8
+   },
+   "vehicle": {
+    "equal": 644,
+    "n": 644
+   }
+  },
+  "target_class": {
+   "aircraft": {
+    "equal": 154,
+    "n": 154
+   },
+   "fortification": {
+    "equal": 58,
+    "n": 58
+   },
+   "infantry": {
+    "equal": 240,
+    "n": 240
+   },
+   "vehicle": {
+    "equal": 523,
+    "n": 523
+   }
+  },
+  "weapon": {
+   "weapon_1": {
+    "equal": 30,
+    "n": 30
+   },
+   "weapon_29": {
+    "equal": 6,
+    "n": 6
+   },
+   "weapon_36": {
+    "equal": 320,
+    "n": 320
+   },
+   "weapon_37": {
+    "equal": 116,
+    "n": 116
+   },
+   "weapon_4": {
+    "equal": 39,
+    "n": 39
+   },
+   "weapon_5": {
+    "equal": 1,
+    "n": 1
+   },
+   "weapon_56": {
+    "equal": 317,
+    "n": 317
+   },
+   "weapon_69": {
+    "equal": 19,
+    "n": 19
+   },
+   "weapon_71": {
+    "equal": 1,
+    "n": 1
+   },
+   "weapon_73": {
+    "equal": 124,
+    "n": 124
+   },
+   "weapon_74": {
+    "equal": 2,
+    "n": 2
+   }
+  }
+ }
+}

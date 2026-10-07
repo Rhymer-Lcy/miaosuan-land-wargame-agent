@@ -1,0 +1,27 @@
+{
+ "disposition": "DIRECT_FIRE_SEMANTICS_UNDERIDENTIFIED",
+ "engine_sessions": 0,
+ "inputs_sha256": "657a80040d2be444e4a2ae6c62c6e8b208a735723c867fd0859f774dc116aa1f",
+ "insufficient_required_classes": [
+  "infantry",
+  "vehicle",
+  "aircraft",
+  "fortification"
+ ],
+ "integrity_ok": true,
+ "order": [
+  "SEMANTICS_AUDIT_INVALID",
+  "DIRECT_FIRE_SEMANTICS_UNDERIDENTIFIED",
+  "DIRECT_FIRE_SEMANTICS_RESOLVED"
+ ],
+ "protocol_sha256": "308fc32eda72690b9376ddca0fbdca08c8482831c440b7d8431ea95ed7855d27",
+ "required_classes": [
+  "infantry",
+  "vehicle",
+  "aircraft",
+  "fortification"
+ ],
+ "schema": "miaosuan-s21-results/1",
+ "study_id": "s21-direct-fire-semantics",
+ "t11_completion": null
+}

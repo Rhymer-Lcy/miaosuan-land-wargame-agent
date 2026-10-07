@@ -1,0 +1,139 @@
+{
+ "by_source": {
+  "s10-t9-v1-c2-diagnosis": {
+   "games": 2,
+   "records_by_status": {
+    "paired": 1
+   },
+   "shots_by_status": {
+    "paired": 1
+   },
+   "steps": 5762
+  },
+  "s10-t9-v1-diagnosis": {
+   "games": 4,
+   "records_by_status": {
+    "paired": 52
+   },
+   "shots_by_status": {
+    "paired": 52,
+    "refused": 1
+   },
+   "steps": 11524
+  },
+  "s12-v3-primary-1": {
+   "games": 4,
+   "records_by_status": {
+    "ambiguous_group": 12,
+    "paired": 572,
+    "same_hex_engagement": 165
+   },
+   "shots_by_status": {
+    "ambiguous": 5,
+    "paired": 572,
+    "refused": 1
+   },
+   "steps": 11524
+  },
+  "s16-v3-mechanism-capture-1": {
+   "games": 3,
+   "records_by_status": {
+    "paired": 31
+   },
+   "shots_by_status": {
+    "paired": 31
+   },
+   "steps": 8643
+  },
+  "s17-post-stage-v6-probe-1": {
+   "games": 2,
+   "records_by_status": {
+    "paired": 24
+   },
+   "shots_by_status": {
+    "paired": 24
+   },
+   "steps": 5762
+  },
+  "t7-mechanism-probe-1": {
+   "games": 3,
+   "records_by_status": {
+    "paired": 295,
+    "same_hex_engagement": 58
+   },
+   "shots_by_status": {
+    "paired": 295
+   },
+   "steps": 7563
+  }
+ },
+ "by_target_class": {
+  "aircraft": {
+   "ambiguous_shots": 5,
+   "judge_records": 166,
+   "paired_shots": 154,
+   "records_with_one_record_on_the_target_in_step": 154,
+   "refused_shots": 0,
+   "submitted_shots": 159
+  },
+  "fortification": {
+   "ambiguous_shots": 0,
+   "judge_records": 58,
+   "paired_shots": 58,
+   "records_with_one_record_on_the_target_in_step": 58,
+   "refused_shots": 0,
+   "submitted_shots": 58
+  },
+  "infantry": {
+   "ambiguous_shots": 0,
+   "judge_records": 289,
+   "paired_shots": 240,
+   "records_with_one_record_on_the_target_in_step": 244,
+   "refused_shots": 0,
+   "submitted_shots": 240
+  },
+  "other": {
+   "ambiguous_shots": 0,
+   "judge_records": 0,
+   "paired_shots": 0,
+   "records_with_one_record_on_the_target_in_step": 0,
+   "refused_shots": 0,
+   "submitted_shots": 0
+  },
+  "vehicle": {
+   "ambiguous_shots": 0,
+   "judge_records": 697,
+   "paired_shots": 523,
+   "records_with_one_record_on_the_target_in_step": 616,
+   "refused_shots": 2,
+   "submitted_shots": 525
+  }
+ },
+ "games": 18,
+ "inputs_sha256": "657a80040d2be444e4a2ae6c62c6e8b208a735723c867fd0859f774dc116aa1f",
+ "integrity_ok": true,
+ "integrity_problems": 0,
+ "integrity_problems_by_kind": {},
+ "judge_records_of_another_type": 0,
+ "listed_level_status_of_paired_shots": {
+  "listed": 975
+ },
+ "paired_record_att_obj_blood_equal_to_shooter_blood_before": [
+  974,
+  975
+ ],
+ "protocol_sha256": "308fc32eda72690b9376ddca0fbdca08c8482831c440b7d8431ea95ed7855d27",
+ "records_by_status": {
+  "ambiguous_group": 12,
+  "paired": 975,
+  "same_hex_engagement": 223
+ },
+ "records_target_not_in_pre_state": 0,
+ "schema": "miaosuan-s21-results/1",
+ "shots_by_status": {
+  "ambiguous": 5,
+  "paired": 975,
+  "refused": 2
+ },
+ "study_id": "s21-direct-fire-semantics"
+}

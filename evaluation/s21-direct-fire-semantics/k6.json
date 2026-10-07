@@ -1,0 +1,161 @@
+{
+ "by_class": {
+  "aircraft": {
+   "a_decrement_not_equal_to_damage": 141,
+   "a_present_after": 141,
+   "b_nonlethal": 141,
+   "b_nonlethal_positive_damage": 0,
+   "b_nonlethal_removed": 0,
+   "blood_before": {
+    "blood_1": 135,
+    "blood_2": 19
+   },
+   "c_lethal": 13,
+   "c_lethal_retained": 0,
+   "damage": {
+    "damage_1": 12,
+    "damage_2": 1,
+    "damage_minus_1": 141
+   },
+   "linked_removals_excluded": 0,
+   "status": "K6_REFUTED",
+   "target_steps": 154,
+   "zero_damage": 0
+  },
+  "fortification": {
+   "a_decrement_not_equal_to_damage": 10,
+   "a_present_after": 44,
+   "b_nonlethal": 44,
+   "b_nonlethal_positive_damage": 33,
+   "b_nonlethal_removed": 0,
+   "blood_before": {
+    "blood_1": 6,
+    "blood_2": 7,
+    "blood_3": 7,
+    "blood_4": 9,
+    "blood_5": 29
+   },
+   "c_lethal": 14,
+   "c_lethal_retained": 0,
+   "damage": {
+    "damage_0": 1,
+    "damage_1": 18,
+    "damage_2": 14,
+    "damage_3": 8,
+    "damage_4": 5,
+    "damage_5": 2,
+    "damage_minus_1": 10
+   },
+   "linked_removals_excluded": 0,
+   "status": "K6_REFUTED",
+   "target_steps": 58,
+   "zero_damage": 1
+  },
+  "infantry": {
+   "a_decrement_not_equal_to_damage": 215,
+   "a_present_after": 239,
+   "b_nonlethal": 244,
+   "b_nonlethal_positive_damage": 5,
+   "b_nonlethal_removed": 5,
+   "blood_before": {
+    "blood_1": 17,
+    "blood_2": 15,
+    "blood_3": 73,
+    "blood_4": 139
+   },
+   "c_lethal": 0,
+   "c_lethal_retained": 0,
+   "damage": {
+    "damage_0": 45,
+    "damage_1": 4,
+    "damage_2": 1,
+    "damage_minus_1": 194
+   },
+   "linked_removals_excluded": 0,
+   "status": "K6_REFUTED",
+   "target_steps": 244,
+   "zero_damage": 45
+  },
+  "other": {
+   "a_decrement_not_equal_to_damage": 0,
+   "a_present_after": 0,
+   "b_nonlethal": 0,
+   "b_nonlethal_positive_damage": 0,
+   "b_nonlethal_removed": 0,
+   "blood_before": {},
+   "c_lethal": 0,
+   "c_lethal_retained": 0,
+   "damage": {},
+   "linked_removals_excluded": 0,
+   "status": "K6_UNTESTED",
+   "target_steps": 0,
+   "zero_damage": 0
+  },
+  "vehicle": {
+   "a_decrement_not_equal_to_damage": 179,
+   "a_present_after": 475,
+   "b_nonlethal": 475,
+   "b_nonlethal_positive_damage": 216,
+   "b_nonlethal_removed": 0,
+   "blood_before": {
+    "blood_1": 161,
+    "blood_2": 138,
+    "blood_3": 208,
+    "blood_4": 109
+   },
+   "c_lethal": 141,
+   "c_lethal_retained": 0,
+   "damage": {
+    "damage_0": 80,
+    "damage_1": 197,
+    "damage_2": 117,
+    "damage_3": 39,
+    "damage_4": 4,
+    "damage_minus_1": 179
+   },
+   "linked_removals_excluded": 0,
+   "status": "K6_REFUTED",
+   "target_steps": 616,
+   "zero_damage": 80
+  }
+ },
+ "fortification_occupants": {
+  "blood_lost": 0,
+  "by_class": {},
+  "occupant_steps": 0,
+  "removed": 0,
+  "removed_or_blood_lost_without_own_record": 0,
+  "with_own_record": 0
+ },
+ "inputs_sha256": "657a80040d2be444e4a2ae6c62c6e8b208a735723c867fd0859f774dc116aa1f",
+ "protocol_sha256": "308fc32eda72690b9376ddca0fbdca08c8482831c440b7d8431ea95ed7855d27",
+ "removals_without_own_record": {
+  "aircraft": {
+   "linked_to_a_removed_unit_with_a_record": 56,
+   "on_board": 56,
+   "removed": 56
+  },
+  "fortification": {
+   "linked_to_a_removed_unit_with_a_record": 0,
+   "on_board": 0,
+   "removed": 0
+  },
+  "infantry": {
+   "linked_to_a_removed_unit_with_a_record": 0,
+   "on_board": 0,
+   "removed": 0
+  },
+  "other": {
+   "linked_to_a_removed_unit_with_a_record": 0,
+   "on_board": 0,
+   "removed": 0
+  },
+  "vehicle": {
+   "linked_to_a_removed_unit_with_a_record": 22,
+   "on_board": 0,
+   "removed": 22
+  }
+ },
+ "schema": "miaosuan-s21-results/1",
+ "study_id": "s21-direct-fire-semantics"
+}

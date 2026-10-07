@@ -1,0 +1,524 @@
+{
+ "correction_mapping": {
+  "personnel_correction": {
+   "compared": 289,
+   "matches": 117,
+   "mismatches": 172,
+   "undefined_armor": 0
+  },
+  "vehicle_correction": {
+   "compared": 755,
+   "matches": 100,
+   "mismatches": 655,
+   "undefined_armor": 0
+  }
+ },
+ "inputs_sha256": "657a80040d2be444e4a2ae6c62c6e8b208a735723c867fd0859f774dc116aa1f",
+ "mapping": {
+  "air_result_table": {
+   "compared_field": {
+    "field_damage": 166
+   },
+   "non_numeric_values": {
+    "annihilation": {
+     "value_0": 4,
+     "value_1": 15,
+     "value_2": 3
+    },
+    "no_effect": {
+     "value_minus_1": 144
+    }
+   },
+   "numeric_cells": 0,
+   "numeric_matches": 0,
+   "numeric_mismatches": 0,
+   "out_of_table": 0,
+   "records": 166,
+   "status": "K4_MAPPING_CONTRADICTED"
+  },
+  "personnel_result_table": {
+   "compared_field": {
+    "field_ori_damage": 297
+   },
+   "non_numeric_values": {
+    "no_effect": {
+     "value_minus_1": 190
+    },
+    "suppression": {
+     "value_0": 94
+    }
+   },
+   "numeric_cells": 13,
+   "numeric_matches": 13,
+   "numeric_mismatches": 0,
+   "out_of_table": 0,
+   "records": 297,
+   "status": "K4_MAPPING_SUPPORTED"
+  },
+  "vehicle_result_table": {
+   "compared_field": {
+    "field_ori_damage": 747
+   },
+   "non_numeric_values": {
+    "no_effect": {
+     "value_minus_1": 216
+    }
+   },
+   "numeric_cells": 531,
+   "numeric_matches": 531,
+   "numeric_mismatches": 0,
+   "out_of_table": 0,
+   "records": 747,
+   "status": "K4_MAPPING_SUPPORTED"
+  }
+ },
+ "mapping_paired_shots_only": {
+  "air_result_table": {
+   "compared_field": {
+    "field_damage": 154
+   },
+   "non_numeric_values": {
+    "annihilation": {
+     "value_1": 12,
+     "value_2": 1
+    },
+    "no_effect": {
+     "value_minus_1": 141
+    }
+   },
+   "numeric_cells": 0,
+   "numeric_matches": 0,
+   "numeric_mismatches": 0,
+   "out_of_table": 0,
+   "records": 154,
+   "status": "K4_MAPPING_CONTRADICTED"
+  },
+  "personnel_result_table": {
+   "compared_field": {
+    "field_ori_damage": 240
+   },
+   "non_numeric_values": {
+    "no_effect": {
+     "value_minus_1": 170
+    },
+    "suppression": {
+     "value_0": 66
+    }
+   },
+   "numeric_cells": 4,
+   "numeric_matches": 4,
+   "numeric_mismatches": 0,
+   "out_of_table": 0,
+   "records": 240,
+   "status": "K4_MAPPING_SUPPORTED"
+  },
+  "vehicle_result_table": {
+   "compared_field": {
+    "field_ori_damage": 581
+   },
+   "non_numeric_values": {
+    "no_effect": {
+     "value_minus_1": 197
+    }
+   },
+   "numeric_cells": 384,
+   "numeric_matches": 384,
+   "numeric_mismatches": 0,
+   "out_of_table": 0,
+   "records": 581,
+   "status": "K4_MAPPING_SUPPORTED"
+  }
+ },
+ "probability_law": {
+  "evidence": [
+   {
+    "id": "A1",
+    "route": "A",
+    "status": "does_not_state_the_law"
+   },
+   {
+    "id": "A2",
+    "route": "A",
+    "status": "does_not_state_the_law"
+   },
+   {
+    "id": "A3",
+    "route": "A",
+    "status": "does_not_state_the_law"
+   },
+   {
+    "id": "B1",
+    "route": "B",
+    "status": "does_not_state_the_law"
+   },
+   {
+    "id": "B2",
+    "route": "B",
+    "status": "does_not_state_the_law"
+   }
+  ],
+  "evidence_text": "protocol.json, k4.probability_evidence",
+  "status": "K4_PROBABILITY_UNRESOLVED"
+ },
+ "protocol_sha256": "308fc32eda72690b9376ddca0fbdca08c8482831c440b7d8431ea95ed7855d27",
+ "schema": "miaosuan-s21-results/1",
+ "study_id": "s21-direct-fire-semantics",
+ "support": {
+  "air_result_table": {
+   "joint_random1_random2": {},
+   "random1": {
+    "max": 12,
+    "min": 2,
+    "populated": 166,
+    "support": {
+     "random_value_10": 16,
+     "random_value_11": 9,
+     "random_value_12": 2,
+     "random_value_2": 2,
+     "random_value_3": 10,
+     "random_value_4": 10,
+     "random_value_5": 22,
+     "random_value_6": 24,
+     "random_value_7": 17,
+     "random_value_8": 24,
+     "random_value_9": 30
+    }
+   },
+   "random2": {
+    "max": null,
+    "min": null,
+    "populated": 0,
+    "support": {}
+   },
+   "random2_rect": {
+    "max": null,
+    "min": null,
+    "populated": 0,
+    "support": {}
+   },
+   "random2_rect_minus_random2": {},
+   "records": 166
+  },
+  "personnel_result_table": {
+   "joint_random1_random2": {
+    "random1_10_random2_1": 4,
+    "random1_10_random2_2": 3,
+    "random1_10_random2_3": 7,
+    "random1_10_random2_4": 3,
+    "random1_10_random2_5": 4,
+    "random1_10_random2_6": 2,
+    "random1_11_random2_1": 3,
+    "random1_11_random2_11": 1,
+    "random1_11_random2_2": 6,
+    "random1_11_random2_3": 3,
+    "random1_11_random2_4": 2,
+    "random1_11_random2_5": 1,
+    "random1_11_random2_6": 1,
+    "random1_11_random2_7": 2,
+    "random1_12_random2_1": 1,
+    "random1_12_random2_2": 1,
+    "random1_12_random2_3": 1,
+    "random1_12_random2_4": 1,
+    "random1_12_random2_6": 1,
+    "random1_2_random2_1": 2,
+    "random1_2_random2_2": 2,
+    "random1_2_random2_3": 2,
+    "random1_2_random2_4": 2,
+    "random1_2_random2_5": 2,
+    "random1_2_random2_6": 2,
+    "random1_3_random2_1": 1,
+    "random1_3_random2_2": 4,
+    "random1_3_random2_5": 6,
+    "random1_3_random2_6": 1,
+    "random1_3_random2_7": 1,
+    "random1_4_random2_2": 5,
+    "random1_4_random2_3": 2,
+    "random1_4_random2_4": 7,
+    "random1_4_random2_5": 3,
+    "random1_4_random2_6": 7,
+    "random1_5_random2_1": 6,
+    "random1_5_random2_2": 5,
+    "random1_5_random2_3": 4,
+    "random1_5_random2_4": 1,
+    "random1_5_random2_5": 5,
+    "random1_5_random2_6": 2,
+    "random1_6_random2_1": 8,
+    "random1_6_random2_2": 8,
+    "random1_6_random2_3": 8,
+    "random1_6_random2_4": 6,
+    "random1_6_random2_5": 7,
+    "random1_6_random2_6": 4,
+    "random1_7_random2_1": 7,
+    "random1_7_random2_2": 9,
+    "random1_7_random2_3": 13,
+    "random1_7_random2_4": 7,
+    "random1_7_random2_5": 9,
+    "random1_7_random2_6": 6,
+    "random1_7_random2_8": 1,
+    "random1_8_random2_1": 5,
+    "random1_8_random2_2": 7,
+    "random1_8_random2_3": 7,
+    "random1_8_random2_4": 10,
+    "random1_8_random2_5": 8,
+    "random1_8_random2_6": 16,
+    "random1_9_random2_1": 6,
+    "random1_9_random2_2": 3,
+    "random1_9_random2_3": 4,
+    "random1_9_random2_4": 6,
+    "random1_9_random2_5": 9,
+    "random1_9_random2_6": 4
+   },
+   "random1": {
+    "max": 12,
+    "min": 2,
+    "populated": 297,
+    "support": {
+     "random_value_10": 23,
+     "random_value_11": 19,
+     "random_value_12": 5,
+     "random_value_2": 12,
+     "random_value_3": 13,
+     "random_value_4": 24,
+     "random_value_5": 23,
+     "random_value_6": 41,
+     "random_value_7": 52,
+     "random_value_8": 53,
+     "random_value_9": 32
+    }
+   },
+   "random2": {
+    "max": 11,
+    "min": 1,
+    "populated": 297,
+    "support": {
+     "random_value_1": 43,
+     "random_value_11": 1,
+     "random_value_2": 53,
+     "random_value_3": 51,
+     "random_value_4": 45,
+     "random_value_5": 54,
+     "random_value_6": 46,
+     "random_value_7": 3,
+     "random_value_8": 1
+    }
+   },
+   "random2_rect": {
+    "max": 0,
+    "min": -6,
+    "populated": 297,
+    "support": {
+     "random_value_0": 18,
+     "random_value_minus_1": 22,
+     "random_value_minus_2": 152,
+     "random_value_minus_3": 69,
+     "random_value_minus_4": 19,
+     "random_value_minus_5": 14,
+     "random_value_minus_6": 3
+    }
+   },
+   "random2_rect_minus_random2": {
+    "modifier_minus_1": 3,
+    "modifier_minus_10": 13,
+    "modifier_minus_11": 4,
+    "modifier_minus_12": 1,
+    "modifier_minus_14": 1,
+    "modifier_minus_2": 8,
+    "modifier_minus_3": 34,
+    "modifier_minus_4": 41,
+    "modifier_minus_5": 47,
+    "modifier_minus_6": 42,
+    "modifier_minus_7": 46,
+    "modifier_minus_8": 42,
+    "modifier_minus_9": 15
+   },
+   "records": 297
+  },
+  "vehicle_result_table": {
+   "joint_random1_random2": {
+    "random1_10_random2_10": 7,
+    "random1_10_random2_11": 5,
+    "random1_10_random2_12": 2,
+    "random1_10_random2_2": 2,
+    "random1_10_random2_3": 3,
+    "random1_10_random2_4": 10,
+    "random1_10_random2_5": 6,
+    "random1_10_random2_6": 10,
+    "random1_10_random2_7": 12,
+    "random1_10_random2_8": 11,
+    "random1_10_random2_9": 11,
+    "random1_11_random2_10": 5,
+    "random1_11_random2_12": 1,
+    "random1_11_random2_2": 1,
+    "random1_11_random2_4": 6,
+    "random1_11_random2_5": 7,
+    "random1_11_random2_6": 6,
+    "random1_11_random2_7": 8,
+    "random1_11_random2_8": 5,
+    "random1_11_random2_9": 5,
+    "random1_12_random2_10": 1,
+    "random1_12_random2_3": 2,
+    "random1_12_random2_5": 2,
+    "random1_12_random2_6": 3,
+    "random1_12_random2_7": 4,
+    "random1_12_random2_8": 2,
+    "random1_2_random2_10": 3,
+    "random1_2_random2_11": 1,
+    "random1_2_random2_3": 1,
+    "random1_2_random2_4": 3,
+    "random1_2_random2_5": 6,
+    "random1_2_random2_6": 5,
+    "random1_2_random2_7": 4,
+    "random1_2_random2_8": 3,
+    "random1_2_random2_9": 1,
+    "random1_3_random2_10": 1,
+    "random1_3_random2_11": 2,
+    "random1_3_random2_12": 1,
+    "random1_3_random2_2": 1,
+    "random1_3_random2_3": 2,
+    "random1_3_random2_4": 3,
+    "random1_3_random2_5": 4,
+    "random1_3_random2_6": 7,
+    "random1_3_random2_7": 9,
+    "random1_3_random2_8": 3,
+    "random1_3_random2_9": 6,
+    "random1_4_random2_10": 8,
+    "random1_4_random2_11": 1,
+    "random1_4_random2_12": 4,
+    "random1_4_random2_2": 2,
+    "random1_4_random2_3": 2,
+    "random1_4_random2_4": 5,
+    "random1_4_random2_5": 7,
+    "random1_4_random2_6": 6,
+    "random1_4_random2_7": 9,
+    "random1_4_random2_8": 6,
+    "random1_4_random2_9": 6,
+    "random1_5_random2_10": 6,
+    "random1_5_random2_11": 4,
+    "random1_5_random2_12": 4,
+    "random1_5_random2_2": 4,
+    "random1_5_random2_3": 6,
+    "random1_5_random2_4": 2,
+    "random1_5_random2_5": 11,
+    "random1_5_random2_6": 12,
+    "random1_5_random2_7": 12,
+    "random1_5_random2_8": 12,
+    "random1_5_random2_9": 13,
+    "random1_6_random2_10": 8,
+    "random1_6_random2_11": 8,
+    "random1_6_random2_12": 3,
+    "random1_6_random2_2": 4,
+    "random1_6_random2_3": 2,
+    "random1_6_random2_4": 9,
+    "random1_6_random2_5": 12,
+    "random1_6_random2_6": 11,
+    "random1_6_random2_7": 17,
+    "random1_6_random2_8": 19,
+    "random1_6_random2_9": 12,
+    "random1_7_random2_10": 9,
+    "random1_7_random2_11": 4,
+    "random1_7_random2_12": 1,
+    "random1_7_random2_2": 5,
+    "random1_7_random2_3": 7,
+    "random1_7_random2_4": 9,
+    "random1_7_random2_5": 20,
+    "random1_7_random2_6": 17,
+    "random1_7_random2_7": 23,
+    "random1_7_random2_8": 19,
+    "random1_7_random2_9": 17,
+    "random1_8_random2_10": 10,
+    "random1_8_random2_11": 7,
+    "random1_8_random2_12": 5,
+    "random1_8_random2_2": 4,
+    "random1_8_random2_3": 2,
+    "random1_8_random2_4": 6,
+    "random1_8_random2_5": 15,
+    "random1_8_random2_6": 16,
+    "random1_8_random2_7": 16,
+    "random1_8_random2_8": 7,
+    "random1_8_random2_9": 13,
+    "random1_9_random2_10": 1,
+    "random1_9_random2_11": 3,
+    "random1_9_random2_2": 3,
+    "random1_9_random2_3": 2,
+    "random1_9_random2_4": 4,
+    "random1_9_random2_5": 11,
+    "random1_9_random2_6": 8,
+    "random1_9_random2_7": 15,
+    "random1_9_random2_8": 11,
+    "random1_9_random2_9": 7
+   },
+   "random1": {
+    "max": 12,
+    "min": 2,
+    "populated": 747,
+    "support": {
+     "random_value_10": 79,
+     "random_value_11": 44,
+     "random_value_12": 14,
+     "random_value_2": 27,
+     "random_value_3": 39,
+     "random_value_4": 56,
+     "random_value_5": 86,
+     "random_value_6": 105,
+     "random_value_7": 131,
+     "random_value_8": 101,
+     "random_value_9": 65
+    }
+   },
+   "random2": {
+    "max": 12,
+    "min": 2,
+    "populated": 747,
+    "support": {
+     "random_value_10": 59,
+     "random_value_11": 35,
+     "random_value_12": 21,
+     "random_value_2": 26,
+     "random_value_3": 29,
+     "random_value_4": 57,
+     "random_value_5": 101,
+     "random_value_6": 101,
+     "random_value_7": 129,
+     "random_value_8": 98,
+     "random_value_9": 91
+    }
+   },
+   "random2_rect": {
+    "max": 2,
+    "min": -6,
+    "populated": 747,
+    "support": {
+     "random_value_0": 150,
+     "random_value_1": 83,
+     "random_value_2": 38,
+     "random_value_minus_1": 114,
+     "random_value_minus_2": 128,
+     "random_value_minus_3": 129,
+     "random_value_minus_4": 84,
+     "random_value_minus_5": 16,
+     "random_value_minus_6": 5
+    }
+   },
+   "random2_rect_minus_random2": {
+    "modifier_0": 2,
+    "modifier_minus_1": 7,
+    "modifier_minus_10": 75,
+    "modifier_minus_11": 77,
+    "modifier_minus_12": 50,
+    "modifier_minus_13": 29,
+    "modifier_minus_14": 25,
+    "modifier_minus_15": 9,
+    "modifier_minus_16": 3,
+    "modifier_minus_2": 14,
+    "modifier_minus_3": 14,
+    "modifier_minus_4": 38,
+    "modifier_minus_5": 55,
+    "modifier_minus_6": 82,
+    "modifier_minus_7": 74,
+    "modifier_minus_8": 103,
+    "modifier_minus_9": 90
+   },
+   "records": 747
+  }
+ }
+}

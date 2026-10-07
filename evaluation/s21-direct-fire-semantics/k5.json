@@ -1,0 +1,177 @@
+{
+ "by_class": {
+  "aircraft": {
+   "evaluated": 166,
+   "families": {
+    "short": {
+     "raw_kinds": {
+      "kind_annihilation": 22,
+      "kind_no_effect": 144
+     },
+     "resuppression_term_rows": 0,
+     "rows": 166,
+     "rows_fitted_by_relation": {
+      "table_value_annihilation_one__with_resuppression_loss": 15,
+      "table_value_annihilation_one__without_resuppression_loss": 15,
+      "table_value_annihilation_whole_unit__with_resuppression_loss": 18,
+      "table_value_annihilation_whole_unit__without_resuppression_loss": 18
+     },
+     "status": "K5_NO_REGISTERED_RELATION_FITS",
+     "survivors": []
+    }
+   },
+   "not_evaluable": 0,
+   "records": 166,
+   "status": "K5_NO_REGISTERED_RELATION_FITS"
+  },
+  "fortification": {
+   "evaluated": 58,
+   "families": {
+    "full": {
+     "boundary_coverage": {
+      "lower_clamp_exercised": 10,
+      "negative_correction": 0,
+      "no_effect_raw": 14,
+      "positive_correction": 19,
+      "positive_raw": 44,
+      "suppression_raw": 0,
+      "upper_clamp_exercised": 8,
+      "zero_correction": 39
+     },
+     "raw_kinds": {
+      "kind_no_effect": 14,
+      "kind_numeric": 44
+     },
+     "resuppression_term_rows": 0,
+     "rows": 58,
+     "rows_fitted_by_relation": {
+      "additive_lower_and_strength_clamp__with_resuppression_loss": 40,
+      "additive_lower_and_strength_clamp__without_resuppression_loss": 40,
+      "additive_lower_clamp__with_resuppression_loss": 48,
+      "additive_lower_clamp__without_resuppression_loss": 48,
+      "additive_unclamped__with_resuppression_loss": 58,
+      "additive_unclamped__without_resuppression_loss": 58,
+      "correction_on_positive_raw_only__with_resuppression_loss": 45,
+      "correction_on_positive_raw_only__without_resuppression_loss": 45,
+      "correction_on_positive_raw_only_strength_clamp__with_resuppression_loss": 37,
+      "correction_on_positive_raw_only_strength_clamp__without_resuppression_loss": 37,
+      "rect_damage_is_final__with_resuppression_loss": 0,
+      "rect_damage_is_final__without_resuppression_loss": 0
+     },
+     "status": "K5_UNDERIDENTIFIED",
+     "survivors": [
+      "additive_unclamped__without_resuppression_loss",
+      "additive_unclamped__with_resuppression_loss"
+     ]
+    }
+   },
+   "not_evaluable": 0,
+   "records": 58,
+   "status": "K5_UNDERIDENTIFIED"
+  },
+  "infantry": {
+   "evaluated": 289,
+   "families": {
+    "full": {
+     "boundary_coverage": {
+      "lower_clamp_exercised": 231,
+      "negative_correction": 117,
+      "no_effect_raw": 190,
+      "positive_correction": 0,
+      "positive_raw": 8,
+      "suppression_raw": 91,
+      "upper_clamp_exercised": 0,
+      "zero_correction": 172
+     },
+     "raw_kinds": {
+      "kind_no_effect": 190,
+      "kind_numeric": 8,
+      "kind_suppression": 91
+     },
+     "resuppression_term_rows": 51,
+     "rows": 289,
+     "rows_fitted_by_relation": {
+      "additive_lower_and_strength_clamp__with_resuppression_loss": 28,
+      "additive_lower_and_strength_clamp__without_resuppression_loss": 58,
+      "additive_lower_clamp__with_resuppression_loss": 28,
+      "additive_lower_clamp__without_resuppression_loss": 58,
+      "additive_unclamped__with_resuppression_loss": 166,
+      "additive_unclamped__without_resuppression_loss": 217,
+      "correction_on_positive_raw_only__with_resuppression_loss": 28,
+      "correction_on_positive_raw_only__without_resuppression_loss": 58,
+      "correction_on_positive_raw_only_strength_clamp__with_resuppression_loss": 28,
+      "correction_on_positive_raw_only_strength_clamp__without_resuppression_loss": 58,
+      "rect_damage_is_final__with_resuppression_loss": 112,
+      "rect_damage_is_final__without_resuppression_loss": 163
+     },
+     "status": "K5_NO_REGISTERED_RELATION_FITS",
+     "survivors": []
+    }
+   },
+   "not_evaluable": 0,
+   "records": 289,
+   "status": "K5_NO_REGISTERED_RELATION_FITS"
+  },
+  "other": {
+   "evaluated": 0,
+   "families": {},
+   "not_evaluable": 0,
+   "records": 0,
+   "status": "K5_UNTESTED"
+  },
+  "vehicle": {
+   "evaluated": 697,
+   "families": {
+    "full": {
+     "boundary_coverage": {
+      "lower_clamp_exercised": 195,
+      "negative_correction": 167,
+      "no_effect_raw": 202,
+      "positive_correction": 75,
+      "positive_raw": 492,
+      "suppression_raw": 3,
+      "upper_clamp_exercised": 58,
+      "zero_correction": 455
+     },
+     "raw_kinds": {
+      "kind_no_effect": 202,
+      "kind_numeric": 492,
+      "kind_suppression": 3
+     },
+     "resuppression_term_rows": 0,
+     "rows": 697,
+     "rows_fitted_by_relation": {
+      "additive_lower_and_strength_clamp__with_resuppression_loss": 444,
+      "additive_lower_and_strength_clamp__without_resuppression_loss": 444,
+      "additive_lower_clamp__with_resuppression_loss": 502,
+      "additive_lower_clamp__without_resuppression_loss": 502,
+      "additive_unclamped__with_resuppression_loss": 647,
+      "additive_unclamped__without_resuppression_loss": 647,
+      "correction_on_positive_raw_only__with_resuppression_loss": 493,
+      "correction_on_positive_raw_only__without_resuppression_loss": 493,
+      "correction_on_positive_raw_only_strength_clamp__with_resuppression_loss": 436,
+      "correction_on_positive_raw_only_strength_clamp__without_resuppression_loss": 436,
+      "rect_damage_is_final__with_resuppression_loss": 39,
+      "rect_damage_is_final__without_resuppression_loss": 39
+     },
+     "status": "K5_NO_REGISTERED_RELATION_FITS",
+     "survivors": []
+    }
+   },
+   "not_evaluable": 0,
+   "records": 697,
+   "status": "K5_NO_REGISTERED_RELATION_FITS"
+  }
+ },
+ "inputs_sha256": "657a80040d2be444e4a2ae6c62c6e8b208a735723c867fd0859f774dc116aa1f",
+ "paired_shots_only_status": {
+  "aircraft": "K5_NO_REGISTERED_RELATION_FITS",
+  "fortification": "K5_UNDERIDENTIFIED",
+  "infantry": "K5_NO_REGISTERED_RELATION_FITS",
+  "other": "K5_UNTESTED",
+  "vehicle": "K5_NO_REGISTERED_RELATION_FITS"
+ },
+ "protocol_sha256": "308fc32eda72690b9376ddca0fbdca08c8482831c440b7d8431ea95ed7855d27",
+ "schema": "miaosuan-s21-results/1",
+ "study_id": "s21-direct-fire-semantics"
+}

@@ -1,0 +1,80 @@
+{
+ "by_class": {
+  "aircraft": {
+   "items": {
+    "K2": true,
+    "K4_probability": false,
+    "K5": false,
+    "K6": false
+   },
+   "k2": "K2_RUNTIME_SUPPORTED",
+   "k4_probability": "K4_PROBABILITY_UNRESOLVED",
+   "k5": "K5_NO_REGISTERED_RELATION_FITS",
+   "k6": "K6_REFUTED",
+   "sufficient": false
+  },
+  "fortification": {
+   "items": {
+    "K2": true,
+    "K4_probability": false,
+    "K5": false,
+    "K6": false
+   },
+   "k2": "K2_RUNTIME_SUPPORTED",
+   "k4_probability": "K4_PROBABILITY_UNRESOLVED",
+   "k5": "K5_UNDERIDENTIFIED",
+   "k6": "K6_REFUTED",
+   "sufficient": false
+  },
+  "infantry": {
+   "items": {
+    "K2": true,
+    "K4_probability": false,
+    "K5": false,
+    "K6": false
+   },
+   "k2": "K2_RUNTIME_SUPPORTED",
+   "k4_probability": "K4_PROBABILITY_UNRESOLVED",
+   "k5": "K5_NO_REGISTERED_RELATION_FITS",
+   "k6": "K6_REFUTED",
+   "sufficient": false
+  },
+  "other": {
+   "items": {
+    "K2": false,
+    "K4_probability": false,
+    "K5": false,
+    "K6": false
+   },
+   "k2": "UNTESTED",
+   "k4_probability": "K4_PROBABILITY_UNRESOLVED",
+   "k5": "K5_UNTESTED",
+   "k6": "K6_UNTESTED",
+   "sufficient": false
+  },
+  "vehicle": {
+   "items": {
+    "K2": true,
+    "K4_probability": false,
+    "K5": false,
+    "K6": false
+   },
+   "k2": "K2_RUNTIME_SUPPORTED",
+   "k4_probability": "K4_PROBABILITY_UNRESOLVED",
+   "k5": "K5_NO_REGISTERED_RELATION_FITS",
+   "k6": "K6_REFUTED",
+   "sufficient": false
+  }
+ },
+ "inputs_sha256": "657a80040d2be444e4a2ae6c62c6e8b208a735723c867fd0859f774dc116aa1f",
+ "p_kill_now_calculator": "not constructed: the semantics are not resolved",
+ "protocol_sha256": "308fc32eda72690b9376ddca0fbdca08c8482831c440b7d8431ea95ed7855d27",
+ "required_classes": [
+  "infantry",
+  "vehicle",
+  "aircraft",
+  "fortification"
+ ],
+ "schema": "miaosuan-s21-results/1",
+ "study_id": "s21-direct-fire-semantics"
+}
