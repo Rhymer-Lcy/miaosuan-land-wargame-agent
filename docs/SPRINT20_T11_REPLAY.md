@@ -295,3 +295,27 @@ follows, are properties of a trajectory no record contains. The kill-model deter
 public documentation, not about the engine: the engine may implement a definite rule that the documentation does not
 state. HH is four games in one scenario against one opponent policy; H0 describes `baseline-v2`'s decisions on
 `baseline-v0` trajectories.
+
+## Amendment A1 (2026-10-07, after a refused first run, before any result was written)
+
+Sections 1 to 17 were pushed at 2026-10-07T15:39:44+08:00 (`ac774a7`, tree `538dfecb`) and fetched back from GitHub
+identical. The replay was then launched once on the evaluation server at 2026-10-07T15:46:48+08:00. It computed every
+figure but wrote nothing: the frozen privacy check refused `replay.json` before any file was written, because the
+frozen serializer wrote the root-switch distributions (target blood, blood reduction, attack-level change, remaining
+targets) with bare numbers as keys, and small integers are also private unit identifiers in these records. The
+synthetic privacy test had used only large identifiers and could not see it. The server's tree stayed clean, with no
+result file and no private output.
+
+What the author saw before this amendment, disclosed in full: the refusal message, which lists the first 10 offending
+keys, all in the first HH side-game's root-switch block (`baseline_target_blood` keys 2, 3 and 4; `t11_target_blood`
+1 and 2; `blood_reduction` 1, 2 and 3; `attack_level_change` 0; `targets_available` 6). It shows that this side-game has
+root switches and these key values; it shows no count, no other side-game and no disposition item. Because the run
+reached the privacy check of `replay.json`, the fidelity items of section 9 had held (that file is built only then).
+
+The amendment changes the public serializer only: every count keyed by a number is keyed by a labelled value instead
+(`blood_2`, `reduction_1`, `change_0`, `targets_6`). No definition, threshold, classification, input or disposition
+rule changes, and the disposition was fixed at its second step by section 11 unless fidelity failed, so the amendment
+cannot be outcome-motivated. A test now checks the public side and pooled summaries against small identifiers
+(0 to 49 and -5 to -1), and a mutant restoring bare keys is killed: the mutation record is 36 of 36. `protocol.json`
+is re-frozen; only the analysis module's normalised digest changes. The replay is run once more after this amendment is
+pushed; the refused launch is counted as a run that produced no output.
