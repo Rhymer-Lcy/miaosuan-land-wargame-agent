@@ -1,6 +1,6 @@
 {
- "declared": 35,
- "killed": 35,
+ "declared": 36,
+ "killed": 36,
  "mutants": [
   {
    "file": "src/miaosuan_agent/experiments/t11_kill_first.py",
@@ -174,13 +174,18 @@
   },
   {
    "file": "src/miaosuan_agent/evaluation/s20_t11.py",
+   "mutant": "bare numeric keys in public counts",
+   "outcome": "killed"
+  },
+  {
+   "file": "src/miaosuan_agent/evaluation/s20_t11.py",
    "mutant": "an unequal reference decision accepted",
    "outcome": "killed"
   }
  ],
  "schema": "miaosuan-s20-mutation/1",
  "sources_sha256": {
-  "src/miaosuan_agent/evaluation/s20_t11.py": "e362d43fe412c28a8ff0d9be748dc189271d8a3763381a055567a79426459c5e",
+  "src/miaosuan_agent/evaluation/s20_t11.py": "6ea766b678906b9211cf776dd97bd097d0b0ee5b4be15377c17b3fe37fbea02a",
   "src/miaosuan_agent/experiments/t11_kill_first.py": "08766b028ffcf63064692ac196a9043c58387f7014380381739547af7fe86eac"
  },
  "test": "tests.test_s20_t11"
