@@ -72,7 +72,7 @@
   "src/miaosuan_agent/decision/candidates.py": "9e7ed4e02e50c28ee04b48cbbad903945a7b59791a51d500d848f44a90890050",
   "src/miaosuan_agent/decision/policy.py": "e407095cc13a97e476f9f2c637991989a9ac0dfd982c4eedc52abbc520260a12",
   "src/miaosuan_agent/evaluation/s18_census.py": "d48d741997b54a0659260f6df1716aff59983d96359eb8c79d31bd9ebbec3771",
-  "src/miaosuan_agent/evaluation/s20_t11.py": "e362d43fe412c28a8ff0d9be748dc189271d8a3763381a055567a79426459c5e",
+  "src/miaosuan_agent/evaluation/s20_t11.py": "6ea766b678906b9211cf776dd97bd097d0b0ee5b4be15377c17b3fe37fbea02a",
   "src/miaosuan_agent/experiments/shoot_reservation.py": "07ae9b0b367a0d86aa1b9cb80c65c09718ab9fc073a53b7f06dbddd6ce47903d",
   "src/miaosuan_agent/experiments/t11_kill_first.py": "08766b028ffcf63064692ac196a9043c58387f7014380381739547af7fe86eac"
  },
