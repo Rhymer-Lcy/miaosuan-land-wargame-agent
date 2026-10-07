@@ -105,6 +105,8 @@ MUTANTS = [
     (ANALYSIS, "quotations compared without normalising whitespace",
      "            if normalise_space(text) not in cache[name]:", "            if text not in read(name):"),
     (ANALYSIS, "numbers not masked", "privacy_problems(mask_numbers(data), ", "privacy_problems(data, "),
+    (ANALYSIS, "bare numeric keys in public counts", "    out = collections.Counter(f\"{label}_{v}\" if label else str(v) for v in values)",
+     "    out = collections.Counter(str(v) for v in values)"),
     (ANALYSIS, "an unequal reference decision accepted",
      "                self.problems.append(f\"k{k}: the baseline ranking does not reproduce baseline-v2\")\n", "                pass\n"),
 ]
