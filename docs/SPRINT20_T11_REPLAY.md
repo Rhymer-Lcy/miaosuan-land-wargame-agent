@@ -330,7 +330,10 @@ from GitHub identical. The first launch of the replay was refused by its own pri
 A1 (`6fb4ce4` to `cf67013`, tree `8c0ff02a`) was pushed at 2026-10-07T15:55:19+08:00 and fetched back identical; the
 evaluation server fast-forwarded to it and `freeze --check` confirmed the frozen protocol and inputs. The replay then ran
 once, from 2026-10-07T16:02:19+08:00 to 16:07:47+08:00, and wrote `fidelity.json`, `replay.json` and
-`disposition.json`. `run --check` afterwards regenerated every public file and the private rows byte for byte.
+`disposition.json`. `run --check` afterwards regenerated every public file and the private rows byte for byte. Times
+of server runs in this document (the smoke run of section 9, both launches and the replay) are read from the evaluation
+server's host clock, which runs ahead of the workstation's by the offset recorded in `docs/ENGINE_INSTALL.md`; push
+times are the workstation's. The order of events is unaffected.
 
 ### R2. Fidelity: every item holds
 
