@@ -1,0 +1,13 @@
+{
+ "disposition": "T2_P1_MECHANISM_SUPPORTED",
+ "order": [
+  "T2_P1_PROTOCOL_AMBIGUOUS",
+  "T2_P1_NO_DETERMINISTIC_WITNESS",
+  "CAPTURE_INVALID",
+  "T2_P1_DESTINATION_CAPACITY_BLOCKED",
+  "T2_P1_MECHANISM_REFUTED",
+  "T2_P1_MECHANISM_SUPPORTED"
+ ],
+ "schema": "miaosuan-s22-probe/1/disposition",
+ "study_id": "s22-t2-transport-probe"
+}

@@ -1,0 +1,106 @@
+{
+ "descriptive": {
+  "arrival_cur_step": 635,
+  "candidate_states": [
+   {
+    "cur_step": 0,
+    "state": "EMBARK_REQUESTED"
+   },
+   {
+    "cur_step": 75,
+    "state": "CARRIER_RELEASED"
+   },
+   {
+    "cur_step": 635,
+    "state": "AT_DESTINATION"
+   },
+   {
+    "cur_step": 710,
+    "state": "DISEMBARK_REQUESTED"
+   },
+   {
+    "cur_step": 785,
+    "state": "DONE"
+   }
+  ],
+  "carrier_move_withheld_decisions": {
+   "AT_DESTINATION": 75,
+   "EMBARK_REQUESTED": 1
+  },
+  "carrier_route_free_flow": 560,
+  "destination": "80-point objective A",
+  "destination_equals_prediction": true,
+  "infantry_foot_free_flow_to_destination_predicted": 3456,
+  "release_to_arrival_steps": 560
+ },
+ "endpoints": {
+  "carry": {
+   "ok": true,
+   "reasons": []
+  },
+  "disembark": {
+   "ok": true,
+   "reasons": []
+  },
+  "embark": {
+   "ok": true,
+   "reasons": []
+  },
+  "stacking": {
+   "blocked": false,
+   "ground_units_at_check": 1
+  }
+ },
+ "facts": {
+  "carry": {
+   "aboard_decisions": 635,
+   "actions_for_passenger": 0,
+   "arrival_decision": 636,
+   "carrier_moved": true,
+   "destination_is_objective": true,
+   "move_emitted": true,
+   "move_response": true,
+   "passenger_breaks": 0,
+   "position_mismatches": 0,
+   "release_to_arrival_steps": 560
+  },
+  "disembark": {
+   "carrier_present": true,
+   "emitted": 1,
+   "ground_after": 75,
+   "inconsistent_decisions": 0,
+   "listed_after": 75,
+   "on_destination": true,
+   "response": true
+  },
+  "embark": {
+   "aboard_after": 75,
+   "carrier_present_and_controlled": true,
+   "emitted": true,
+   "inconsistent_decisions": 0,
+   "relation_after": 75,
+   "response": true
+  },
+  "post": {
+   "aboard_cleared": true,
+   "car_field_empty": true,
+   "destination_own": true,
+   "listed_action_types": [
+    1,
+    3,
+    6,
+    14
+   ],
+   "occupy_listed": false,
+   "on_board_field": 0,
+   "suppressed": false
+  },
+  "stacking": {
+   "check_is_listing": true,
+   "ground_units_at_arrival": 1,
+   "ground_units_at_check": 1
+  }
+ },
+ "schema": "miaosuan-s22-probe/1/mechanism",
+ "study_id": "s22-t2-transport-probe"
+}

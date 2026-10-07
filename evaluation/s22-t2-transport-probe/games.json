@@ -1,0 +1,33 @@
+{
+ "candidate_side": "blue",
+ "decisions_reconstructed_offline": 2881,
+ "game_id": "1930331196.C3.s22-t2-transport-probe-1.p01",
+ "ledger_sessions_after_base": 1,
+ "live_consistency_errors": 0,
+ "live_unregistered_differences": 0,
+ "memory_compared": 2881,
+ "offline_differences": 0,
+ "prefix_problems": 0,
+ "record_facts_not_used": {
+  "scores": {
+   "blue_attack": 78,
+   "blue_occupy": 310,
+   "blue_remain": 407,
+   "blue_remain_max": 407,
+   "blue_total": 795,
+   "blue_win": 550,
+   "red_attack": 0,
+   "red_occupy": 0,
+   "red_remain": 245,
+   "red_remain_max": 323,
+   "red_total": 245,
+   "red_win": -550
+  }
+ },
+ "schema": "miaosuan-s22-probe/1/games",
+ "session": "2796",
+ "status": "COMPLETED",
+ "steps": 2881,
+ "structural_stops": [],
+ "study_id": "s22-t2-transport-probe"
+}
