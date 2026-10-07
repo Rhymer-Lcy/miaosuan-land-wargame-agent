@@ -135,7 +135,7 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
 | T6 | threat-aware movement; first increment T6-G, the threat-entry gate: withhold a `baseline-v2` move that would carry a ground unit from outside every visible enemy's published direct-fire envelope into one, for at most 150 steps per episode | `IDEA` (2026-10-07): selected by Sprint 18's frozen rubric (`docs/SPRINT18_FRONTIER_RESET.md`, W 4.35, first in 24 of 25 variants). Timing branch CLOSED (2026-10-07): Sprint 19's offline shadow (`docs/SPRINT19_T6G_SHADOW.md`, no engine session) reproduced every Sprint 18 figure and found no move that enters a visible enemy's envelope from outside (0 gate episodes in every HH and H0 side-game; all 200 HH and 230 H0 threat-exposed orders started inside an envelope); disposition T6_G_OFFLINE_INADEQUATE_OPPORTUNITY; no probe drafted. Movement inside envelopes, route choice and formation stay open and need a frontier decision |
 | T2, T3, T5, T8 | the other families above (T7's march, charge, stop and lock mechanisms: not selected, `docs/T7_DESIGN.md` 13.5) | `IDEA`; scored on their next increments in Sprint 18 and not selected (T5 not eligible) |
 | T10 | suppression relief: remove suppression (action 7) for suppressed own infantry | `IDEA` (2026-10-07): admitted by Sprint 18's scan; listed only while suppressed, never issued, effect undocumented |
-| T11 | direct-fire target priority: prefer the listed target most likely to be destroyed | `IDEA` (2026-10-07): admitted by Sprint 18's scan; Sprint 18's runner-up |
+| T11 | direct-fire target priority: prefer the listed target most likely to be destroyed | `IDEA` (2026-10-07): admitted by Sprint 18's scan; Sprint 18's runner-up. First increment T11-O1, the kill-first rule (lowest observed blood, then `baseline-v2`'s rank), replayed offline by Sprint 20 (`docs/SPRINT20_T11_REPLAY.md`, no engine session): the public rules do not support a defensible immediate-kill probability (how a result and its correction combine, and whether a listed attack level includes the elevation correction, are undocumented); disposition T11_OFFLINE_MODEL_UNAVAILABLE; no probe drafted. Descriptively the rule changes only targets (0 non-shoot differences) and has 15, 33, 19 and 27 changed shots in the four HH side-games. Its endpoint needs the adjudication semantics settled first |
 | T12 | objective-zone dispersion: spread stacked holders of a held objective over adjacent hexes | `IDEA` (2026-10-07): admitted by Sprint 18's scan; inherits T9's withholding interaction |
 
 ## Roadmap
@@ -258,6 +258,13 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
     Disposition T6_G_OFFLINE_INADEQUATE_OPPORTUNITY; the timing branch of T6 is closed, nothing was promoted.
     Next: T11's registered offline step (the kill-first target rule replayed on the same populations), for the owner's
     approval.
+20. **Done (Sprint 20)**: the T11-O1 offline replay (`docs/SPRINT20_T11_REPLAY.md`), no engine session. The kill-first
+    rule, its same-step reservation semantics and every threshold were frozen and pushed before the replay; a reading of
+    the public rules found the immediate-kill probability undefined without unsupported assumptions, so the disposition
+    is T11_OFFLINE_MODEL_UNAVAILABLE and nothing was promoted. The replay reproduced every Sprint 18 anchor; the rule
+    changes only shot targets, mostly to lower attack levels on targets of blood 1, often fortifications or aircraft.
+    Next: an offline audit of the direct-fire adjudication semantics in the existing judge records, for the owner's
+    approval; otherwise T2.
 
 A tactic that earns ADVANCE gets a confirmatory design sized from its screen's noise; one that does not is recorded
 with its disposition and left. Platform evidence runs alongside: the canary first, then each candidate that a local
