@@ -251,3 +251,91 @@ No tactic is shown to work or fail. The shadow counts opportunities and describe
 states; whether a held unit avoids damage, and how much capture is delayed, are properties of a trajectory no record
 contains. HH is four games in one scenario against one opponent policy; H0 describes `baseline-v2`'s decisions on
 `baseline-v0` trajectories.
+
+## Results (2026-10-07)
+
+### R1. Order of work
+
+Sections 1 to 15, the gate, the analysis, the driver, their tests, `protocol.json`, `inputs.json` and `mutation.json`
+(`8d017a2` to `6b4db88`, tree `e2918170`) were pushed at 2026-10-07T11:05:19+08:00 and fetched back from GitHub byte for
+byte. The evaluation server then checked out `6b4db88` and `freeze --check` confirmed the frozen protocol and inputs. A
+first launch of the replay did not start: the command line called a timing program the server does not have, the shell
+exited with code 127 before Python ran, and nothing was read or written. The replay itself ran once, from
+2026-10-07T11:12:38+08:00 to 11:16:32+08:00, and `run --check` afterwards reproduced every public file and the private
+rows byte for byte.
+
+### R2. Fidelity: every item holds
+
+Every Sprint 18 figure of section 8 is reproduced exactly (`fidelity.json`): H0 230 threat-exposed move orders, 88 of
+them followed by mover damage within 300 steps; HH 200 and 101; damage events on moving ground units 124 and 117,
+attacker seen before 120 and 117; damage events 205 and 158; `baseline-v2` move orders 509 and 416; H0 33,696 decisions
+and 33,680 play decisions, 123 decisions where reconstructed `baseline-v2` differs from the recorded `baseline-v0`; HH
+reconstruction equal to the recorded seat in 11,524 of 11,524 decisions. The whole T6 blocks and the first-ownership
+figures of `census.json` are equal for H0 and HH, and the shadow's invariants hold in all 16 H0 and 4 HH side-games.
+
+### R3. The gate never fires
+
+Not one move meets the threat-entry condition, in any side-game of either population. Every move falls in one of three
+classes (`shadow.json`, condition reasons over all moves):
+
+| Population | Move orders | Mover not a ground unit | No qualifying visible threat | Current hex already inside an envelope | Route enters from outside |
+|---|---|---|---|---|---|
+| HH | 416 | 114 | 102 | 200 | 0 |
+| H0 | 509 | 118 | 161 | 230 | 0 |
+
+The moves whose current hex is already inside are exactly Sprint 18's threat-exposed orders (200 and 230): every
+exposed order was exposed at its starting hex, none only along its route. So there are 0 threat-entry opportunities,
+0 gate episodes, 0 gated decisions and 0 cooldown suppressions in each of the four HH side-games and each of the 16 H0
+side-games, and no first-gate certificate exists (`certificates.json` holds one empty entry per HH side-game).
+
+What depends on gates is empty as a consequence, not as a finding of its own: the capturer fraction is undefined (0
+gated units, 0 participants); none of the 25 HH first ownerships (7, 5, 7 and 6 per side-game) or 40 H0 first
+ownerships has a gated participant (`objectives.json`); no objective was owned at a side's first decision; the
+historical episode-level reference has no episode. The only damage-following table with entries is the one for the
+exposed orders the shadow did not gate, which are all exposed orders: within 75, 150 and 300 steps, 42, 67 and 101 of
+the 200 HH orders and 28, 56 and 88 of the 230 H0 orders were followed by damage to the mover, all of them vehicles'
+(4 HH and 10 H0 infantry orders were never followed by damage). The 300-step counts are Sprint 18's.
+
+### R4. Post hoc: how deep inside the envelopes the moves start (labelled, not registered)
+
+Because a zero can come from a defect, the starting margins were measured after the registered run by a separate script
+(`local/diagnostics/s19/posthoc_margins.py`, private; it recomputes ranges from the weapon table directly and does not
+use the gate's reason codes). Of the 430 ground moves with a qualifying visible threat (416 by vehicles, 14 by
+infantry), every one had at least one envelope over its current hex, and its distance minus range to the nearest one
+was between -20 and -2, median -16: the movers started deep inside, not at the edge. The farthest qualifying visible
+threat was a median 9 hexes away (at most 21), with a median 10.5 qualifying threats in view (at most 15). In this
+historical play `baseline-v2` orders ground moves either before any armed enemy is in view or once its units are already
+in contact; it never orders a move from outside a visible enemy's fire into it.
+
+### R5. Disposition: T6_G_OFFLINE_INADEQUATE_OPPORTUNITY
+
+By the first-match rule of section 13 (`disposition.json`): fidelity passes; the opportunity item fails, with 0, 0, 0
+and 0 gate episodes in the four HH side-games against the registered minimum of 10 each; the capturer item is not
+reached. **T6_G_OFFLINE_INADEQUATE_OPPORTUNITY.** The timing branch of T6 is closed. T6-G is not repaired in this
+sprint, no probe registration is drafted, nothing is promoted, and session 2796 was not opened.
+
+What it teaches: the damage Sprint 18 attributed to threat-exposed moves happens to units that are already inside the
+fire of enemies in view when they are ordered to move; a gate on entering an envelope from outside has nothing to act
+on in this play. Any later T6 branch would have to act on moves made inside an envelope (whether, where and when to
+move while in contact), which is a different mechanism with a different safety risk (it touches the moves that take
+objectives under fire) and needs its own frontier decision; route choice and formation stay open questions, not
+automatic next steps.
+
+### R6. Process notes
+
+* The first mutation run killed 32 of 33 mutants; the survivor (a pooled opportunity count in place of the per-side-game
+  rule) was a test gap, closed before the freeze; 33 of 33 afterwards.
+* A pre-push re-read found a router description in quotation marks that was not the source's wording; the marks were
+  removed in the unpushed registration commit.
+* The first replay launch failed before Python started (R1); it is not counted as a run, and the replay was not
+  repeated after the one run that produced the files.
+* The known-answer smoke runs (section 3) were what made the zero credible before the post-hoc check: the same
+  plumbing drops exactly Sprint 18's 230 and 200 exposed orders when driven by Sprint 18's predicate.
+
+### R7. Recommendation (one)
+
+Start the next eligible family of Sprint 18's frozen ranking, T11 (direct-fire target priority, W 4.10), with its
+registered offline step: replay the kill-first target rule on H0 and HH with its stop condition (fewer than 10 changed
+shots per side-game, or no gain in kills per shot) frozen before the replay, and no engine session; its two-session
+probe would again need the owner's approval. A T6 branch on movement inside envelopes is not recommended as the next
+task: it would need a new frontier decision with this sprint's finding as an input.
