@@ -288,3 +288,155 @@ The audit describes what engine 4.1.0 recorded in 18 games; a relation that hold
 a published rule, and a relation that is not exercised is not established. K4-PROBABILITY is a statement about the
 documentation and the existing evidence, not about the engine, which may draw from a definite law nobody has published.
 No probability is fitted, no tactic is evaluated, and nothing is promoted.
+
+## Results (2026-10-07)
+
+### R1. Order of work
+
+Sections 1 to 14, the analysis module, the driver, their tests, `protocol.json`, `inputs.json` and `mutation.json`
+(`c0fff2b` to `5e64f69`, 10 commits, tree `667b37a6`) were pushed at 2026-10-07T19:02:49+08:00 and fetched back from
+GitHub identical. The evaluation server's main clone fast-forwarded to them and `freeze --check` reproduced the frozen
+protocol and inputs. The audit then ran once, from 2026-10-07T19:10:00+08:00 to 19:10:29+08:00 (the server's host clock,
+see section 5), and wrote the seven result files and the private rows; `run --check` afterwards regenerated all of them
+byte for byte.
+
+### R2. Corpus and integrity: valid
+
+All 18 games loaded with 0 integrity problems and no judge record of another type (`coverage.json`). Of the 982 shoot
+actions, 975 were paired with exactly one record, 5 were ambiguous (all 5 at aircraft, with 12 records between them) and
+2 were refused without a record. Of the 1,210 direct-fire records, 975 are paired, 12 belong to ambiguous groups and 223
+are same-hex engagements; every record's target was in the pre-step state, every paired shot's listed option was found,
+and the record's attacker strength equals the shooter's blood before the step in 974 of 975 paired shots.
+
+| Target class | Judge records | Paired shots | Target-steps with one record |
+|---|---|---|---|
+| infantry | 289 | 240 | 244 |
+| vehicle | 697 | 523 | 616 |
+| aircraft | 166 | 154 | 154 |
+| fortification | 58 | 58 | 58 |
+
+### R3. Disposition: DIRECT_FIRE_SEMANTICS_UNDERIDENTIFIED
+
+By the first-match rule of section 11 (`disposition.json`): integrity holds, and none of the four required classes is
+sufficient (`semantics.json`). **DIRECT_FIRE_SEMANTICS_UNDERIDENTIFIED.** This closes T11-O1 under its registered
+endpoint. No `p_kill_now` calculator was built, no T11 row was read, no probe is drafted, nothing is promoted, and
+session 2796 was not opened.
+
+| Class | K2 | K4-PROBABILITY | K5 | K6 |
+|---|---|---|---|---|
+| infantry | K2_RUNTIME_SUPPORTED | K4_PROBABILITY_UNRESOLVED | K5_NO_REGISTERED_RELATION_FITS | K6_REFUTED |
+| vehicle | K2_RUNTIME_SUPPORTED | K4_PROBABILITY_UNRESOLVED | K5_NO_REGISTERED_RELATION_FITS | K6_REFUTED |
+| aircraft | K2_RUNTIME_SUPPORTED | K4_PROBABILITY_UNRESOLVED | K5_NO_REGISTERED_RELATION_FITS | K6_REFUTED |
+| fortification | K2_RUNTIME_SUPPORTED | K4_PROBABILITY_UNRESOLVED | K5_UNDERIDENTIFIED | K6_REFUTED |
+
+K4-PROBABILITY alone, determined at registration, decides the disposition; the K5 and K6 statuses would block every
+class as well.
+
+### R4. K2: supported
+
+The listed `attack_level` equals the record's `att_level` in all 975 paired shots (`k2.json`): across 12 `ele_diff`
+values from -7 to 7 (every value in the corpus), attacker strengths 1 to 4, 11 weapons, vehicle, aircraft and infantry
+shooters and all four target classes. On these records the listed level is the level the engine adjudicated with; how
+the engine derived it (the elevation correction included) is not shown, and K2 needs no more.
+
+### R5. K4: the table mapping holds for ground targets; the probability law stays unstated
+
+* **Mapping** (`k4.json`). The vehicle result table, read with the record's attack level, `random1` and the attacker's
+  count, reproduces all 531 numeric cells; its 216 no-effect cells all carry `ori_damage` -1: K4_MAPPING_SUPPORTED. The
+  personnel table reproduces all 13 numeric cells, with suppression recorded as 0 (94 records) and no effect as -1
+  (190): K4_MAPPING_SUPPORTED. The air table (no correction fields, so `damage` is compared) has no numeric cell; its
+  no-effect cells carry -1 (144) but its annihilation cells carry 0, 1 or 2 (4, 15 and 3 records):
+  K4_MAPPING_CONTRADICTED. The paired-shot subset gives the same three statuses.
+* **Corrections (descriptive).** `rect_damage` equals the published correction for `random2_rect` in 117 of 289
+  personnel records and 100 of 755 vehicle and fortification records. `random2_rect - random2` runs from -14 to -1
+  (personnel) and from -16 to 0 (vehicles and fortifications), outside the sums the published modifiers allow, and 5
+  personnel records carry a `random2` above 6, which one die cannot give. The recorded correction fields therefore do
+  not follow the published correction procedure as written; what they follow is not identified here.
+* **Support (descriptive).** `random1` takes every value from 2 to 12 in all three tables; `random2` and `random2_rect`
+  are populated only in records with correction fields. No law is inferred from these counts.
+* **Probability law.** K4_PROBABILITY_UNRESOLVED, as determined at registration (section 8).
+
+### R6. K5 as registered: no relation identified
+
+`k5.json`, over every record whose target was in the pre-step state:
+
+| Class | Rows | Best-fitting registered relation | Rows it fits | Status |
+|---|---|---|---|---|
+| infantry | 289 | additive, unclamped | 217 | K5_NO_REGISTERED_RELATION_FITS |
+| vehicle | 697 | additive, unclamped | 647 | K5_NO_REGISTERED_RELATION_FITS |
+| aircraft | 166 | the cell as the final loss, annihilation as the whole unit | 18 | K5_NO_REGISTERED_RELATION_FITS |
+| fortification | 58 | additive, unclamped (with and without the re-suppression term) | 58 | K5_UNDERIDENTIFIED |
+
+Two defects of the registered K5 rule, found after the run and not repaired (neither can change the disposition, which
+K4-PROBABILITY fixes): (1) the re-suppression term is 0 for every non-infantry row, so for vehicles, aircraft and
+fortifications each relation "with" the term is identical to its twin "without" it, and no data could have identified
+K5 for those classes; the fortification result is that structural tie, and collapsing the twins leaves additive
+unclamped as the only survivor there; (2) no registered relation anticipated that a loss of nothing is recorded as -1
+(R8).
+
+### R7. K6 as registered: refuted in every class
+
+`k6.json`. Test A (a present target loses exactly the damage in blood) fails in all four classes, because the record's
+`damage` is -1 in rows where the target loses nothing: the contradictions equal the -1 rows exactly for vehicles (179),
+aircraft (141) and fortifications (10), and exceed them by 21 for infantry (215 against 194). Test B (damage below the
+blood leaves the target present) fails in 5 infantry rows, and test C (damage at or above the blood removes it) never
+fails: 141 vehicle, 13 aircraft and 14 fortification rows are lethal and every one of those targets was removed; no
+infantry row is lethal. No row was excluded as a launcher-linked removal. Units removed without a record of their own:
+56 aircraft, all on board, and 22 vehicles, all depending on a unit removed with a record in the same step (the launcher
+pattern of the residual-516 diagnostic). No unit was inside a fortification when it was fired at.
+
+### R8. Post hoc, labelled: what the records do show
+
+These analyses were made after the registered results were written (`local/diagnostics/s21/posthoc.py`, aggregates
+only). They change no registered item and no disposition. The relation in the second bullet was formulated after
+reading the patterns of the rows the registered relations missed, so it describes these records; it is not a tested
+rule.
+
+* **-1 means no loss.** In all 524 single-record rows whose `damage` is -1, the target's blood did not change and it
+  was not removed.
+* **One relation reproduces every corrected record.** `damage = max(-1, ori_damage + rect_damage)`, with no clamp at the
+  target's strength, holds in all 1,044 records with correction fields (289 infantry, 697 vehicle, 58 fortification).
+  The recorded damage exceeds the target's blood in 58 vehicle and 8 fortification records.
+* **K6 with -1 set aside.** Vehicles: no contradiction, 141 lethal and 216 non-lethal positive rows. Fortifications: no
+  contradiction, 14 lethal and 33 non-lethal positive. Aircraft: no contradiction, 13 lethal, no non-lethal positive
+  row. Infantry: 26 rows lose one squad beyond the recorded damage (5 of them removing the target), all with `damage` 0
+  on a target already suppressed before the shot.
+* **Re-suppression is applied outside `damage`.** For infantry targets whose published cell is suppression (single
+  record), a squad was lost in 25 of 25 rows with `damage` 0 and the target already suppressed, in 0 of 19 with
+  `damage` 0 and the target not suppressed, and in 0 of 24 with `damage` -1 (the suppression corrected away).
+* **Aircraft.** Annihilation cells give `damage` equal to the target's blood in 18 records and 0 in 4 (2 of blood 1, 2
+  of blood 2); the 4 are not explained here.
+
+So the engine's deterministic bookkeeping is largely readable from its own records: listed and adjudicated attack
+levels agree, the ground result tables apply as published, the raw result and its correction add with a floor at -1,
+and damage at or above the blood removes the unit. What remains unidentified is every probability: the law of
+`random1` is unstated, and the correction is drawn by a procedure the published modifiers do not reproduce. A
+`p_kill_now` built on these records would still need two unsupported laws.
+
+### R9. Process notes
+
+* The first mutation run killed 35 of 36 mutants; the survivor (integrity checked after sufficiency in the disposition
+  order) was a test gap closed before the freeze: 36 of 36.
+* A pre-freeze review found that the public output would have used a forbidden key and repeated small numbers in
+  evidence texts, either of which would have made the frozen privacy check refuse the run (the trap that refused
+  Sprint 20's first launch); both were fixed, and a synthetic test now passes the driver's aggregation through the
+  sanitizer with small identifiers and fails when the forbidden key is planted back.
+* A pre-push re-read corrected three passages of the registration (the disclosure's scope, the reason two capture
+  families were excluded, and which tests exclude linked removals) in a separate commit before the push.
+* A structural probe run from the server's scratch area wrote its output file into the main clone's root because the
+  script changed directory; it was moved out before any other step and nothing was committed from it.
+* Shell heredocs again failed twice: one removed a backslash from a regular expression in a scan script, another did
+  not parse this section's apostrophes and wrote nothing; both were redone with the editor.
+* The two registered-rule defects of R6 are recorded above and were not repaired.
+
+### R10. What it teaches, and the one recommended next task
+
+The audit answered its question: the existing records do not identify the immediate direct-fire adjudication well
+enough to define `p_kill_now` without an unsupported assumption. The obstacle is the random laws, not the bookkeeping:
+the records settle K2 and, post hoc, most of the result arithmetic, but no permitted evidence states the law of the
+result-table draw, and the correction draws do not follow the published procedure. Recovering those laws would need
+new engine evidence or fitted frequencies, both outside this line by the owner's brief. T11-O1 is closed as blocked by
+an unidentifiable registered endpoint.
+
+**Recommended next task (one, owner's approval):** T2, transport and infantry defence, the next eligible family of
+Sprint 18's frozen ranking after T6 and T11.
