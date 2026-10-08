@@ -543,3 +543,26 @@ group-level retention variant of T13 (T13-D1 with a modified trigger, and the po
 order-vacating losses on a valid prefix, would bind it as it bound this study) and any engine probe (stop B is met).
 The T13 family stays `IDEA`; any later T13 increment needs a genuinely different mechanism and the owner's decision.
 
+### R15. Close-out
+
+* The results were pushed as `a192fb99cd325ecdf0d7bce123fe20c7edd563a0` (tree
+  `c090fee8654c3a3be01372b19d63d0c4ccb45f24`) at 2026-10-08T20:36:56+08:00; a fresh clone from GitHub had the same commit
+  and tree and byte-identical files. The evaluation server's run outputs were confirmed byte-identical to the committed
+  files before its main clone was fast-forwarded to the commit by bundle; there `freeze --check` and `run --check`
+  (public files and private rows) passed. All 21 sprint commits up to the results were audited as a set (author,
+  single-line ASCII subjects of at most 72 characters, no body).
+* Tests at that commit: the workstation tree ran 2,101 tests (95 skipped) with exit 0; a clean clone from GitHub 2,098
+  (103 skipped) with exit 0; the evaluation server's private tree 2,114 (7 skipped; 7,387 s) with exit 0, including
+  this sprint's regeneration and mutation-record tests, with the ledger file byte-identical before and after.
+* Documentation gates: this sprint's private gate (`local/diagnostics/s25/doc_gate.py`) binds the results to the public
+  files and the copied logs and catches all its planted errors; all 27 current gates pass with their plants, and the
+  four retired `_v1` copies fail as at Sprint 24's close-out.
+* Privacy: the scan of every reachable blob at the results commit (1,091 blobs) gives 106 hit lines, identical to the
+  accepted set; no line was added or removed.
+* Platform canary: rebuilt on the workstation and the server, SHA-256
+  `a3d3b0229118c0a389d379b315a620465624222f93fcf39de115e8e9dde59511`, no smoke mismatch on either host.
+* Engine ledger: read-only verify after the server suite, 2,796 sessions opened and closed, none unclosed, integrity
+  ok, state chain continuous, the last event the close of session 2796; ledger file SHA-256 unchanged from the start of
+  the sprint; no session 2797. No engine installation, configuration or historical result was touched, and the server's
+  development worktree was removed.
+
