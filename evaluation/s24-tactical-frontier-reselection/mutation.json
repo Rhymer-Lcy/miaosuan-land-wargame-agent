@@ -1,0 +1,226 @@
+{
+ "killed": 42,
+ "mutations": [
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "level: a share at a threshold falls below it"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "P: the basis penalty ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "L cap: the level of the stake ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "L cap: the side minimum made strict"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "C: the engineering term dropped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "eligibility: excluded families allowed"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "eligibility: admission not required"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "eligibility: repairs of closed increments allowed"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "eligibility: unidentified semantics allowed"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "eligibility: stopped data allowed"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "eligibility: minima made strict"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "eligibility: the next-session cap made strict"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "eligibility: the follow-session cap dropped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "eligibility: the engineering cap made strict"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "eligibility: X2 without the conflict measure allowed"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "tie order: lower E preferred"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "tie order: sessions dropped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "tie order: engineering dropped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "band: the edge excluded"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "main: equal tie keys resolved by identifier"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "ranking: ineligible candidates ranked"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "variants: the cost variants dropped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "variants: the band ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "robustness: the threshold made inclusive"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "robustness: the challenger chosen by identifier"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "perturbation: the leverage cap ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "perturbation: only the selected candidate perturbed"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "perturbation: only upward steps"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s24_selection.py",
+   "mutation": "perturbation: the flip share made inclusive"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s24_select.py",
+   "mutation": "evidence: an equal float accepted for an int"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s24_select.py",
+   "mutation": "evidence: quotes not whitespace-normalised"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s24_select.py",
+   "mutation": "evidence: the value not required in its quote"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s24_select.py",
+   "mutation": "evidence: the level not checked"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s24_select.py",
+   "mutation": "whole number: separators not rejected after the number"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s24_select.py",
+   "mutation": "pins: the rules digest not compared"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s24_select.py",
+   "mutation": "public: identities not checked"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s24_select.py",
+   "mutation": "table: the leverage cap not applied"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s24_select.py",
+   "mutation": "table: the X2 cap on I not applied"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s24_select.py",
+   "mutation": "table: P over any denominator"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s24_select.py",
+   "mutation": "table: a keyless P without a reason"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s24_select.py",
+   "mutation": "table: new families admitted by default"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s24_select.py",
+   "mutation": "experiments: unknown closed increments accepted"
+  }
+ ],
+ "schema": "miaosuan-s24-mutation/1",
+ "sources": {
+  "scripts/s24_select.py": "4c1b6203cad8393c1fce76ac9746be8138e5a8af8b4a52520243af7fceb248ab",
+  "src/miaosuan_agent/evaluation/s24_selection.py": "3f3434545eaf40b008128d6979dc9b4b3c7ace16d9c979da99902325ebc06f23",
+  "tests/test_s24_selection.py": "89efec024c42fb57c774cacece6f9e06aa479f52dfc51ef56f555545c5f60a85"
+ },
+ "tests": [
+  "tests.test_s24_selection"
+ ],
+ "total": 42,
+ "unmutated_tests_pass": true
+}
