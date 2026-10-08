@@ -363,3 +363,132 @@ clause of section 14 that makes a sanitizer failure `T2_DESIGN_INVALID` applies 
 an exposure of private content, and the owner may still apply it literally. The rules module's digest therefore
 changes in `inputs.json` and in the mutation record (57 of 57 caught again), which are regenerated and committed with
 this section before the study is run again, once.
+
+## Results (2026-10-08)
+
+Every figure below comes from the committed public files of `evaluation/s23-t2-policy-design/`, which
+`scripts/s23_t2_design.py run --check` regenerates byte for byte on the evaluation server, unless it is marked post hoc.
+
+### R1. Registration, amendment and run
+
+The registration was pushed as `151624b09e547842823a83a5f805826b13b63a54` after the local suite passed (1,960 tests,
+92 skipped, exit 0) and an audit of its 11 commits; Amendment A1 as `488881edf12a3e172de22838501c8b7fccfd954f` (tree
+`9eab516a9dab9a356f4267e7a4911d58b045df80`) at 2026-10-08T12:49:23+08:00, fetched back identical and fast-forwarded
+onto the server's clean main clone. From that tree `freeze --check` reproduced `inputs.json`, the study ran once (about
+69 s, 15 worker processes) and `run --check` then regenerated all three public files byte for byte.
+
+### R2. Fidelity
+
+| Check | Published | Study |
+|---|---:|---:|
+| H0 decisions | 33,696 | 33,696 |
+| H0 play decisions | 33,680 | 33,680 |
+| H0 decisions where `baseline-v2` differs from the recorded `baseline-v0` | 123 | 123 |
+| HH decisions, all equal to the recorded `baseline-v2` seat | 11,524 | 11,524 |
+| HI decisions equal to the recorded `baseline-v2` seat (recorded memory) | | 8,643 of 8,643 |
+
+The three known answers hold: in 1930331196 C2 and C3, whose Sprint 22 single-pair trigger sent both units to the same
+objective, Sprint 22's pair is in the candidate's first batch at decision 1; in 2120531121 C3, whose units went to
+different objectives, it is not. The independent batch check found no problem in any batch, the candidate's step agreed
+with its own matching at every decision with a selection, and every play decision of a side before its first trigger
+is a certificate (the candidate equals `baseline-v2`). No invalidating problem: `T2_DESIGN_INVALID` does not apply.
+
+### R3. Opportunity funnel (pooled over the 23 side-games)
+
+| Stage | H0 | HH | HI | All |
+|---|---:|---:|---:|---:|
+| side-games | 16 | 4 | 3 | 23 |
+| infantry present (distinct per side-game) | 39 | 24 | 15 | 78 |
+| infantry fighting vehicles present | 39 | 24 | 15 | 78 |
+| embark listed to infantry (unit-decisions) | 39 | 957 | 222 | 1,218 |
+| co-located pairs (distinct) | 44 | 27 | 17 | 88 |
+| pass conditions 2 to 4 (distinct; both moved by `baseline-v2`) | 39 | 24 | 15 | 78 |
+| pass condition 5, the same objective (distinct) | 21 | 14 | 4 | 39 |
+| pass conditions 6 to 8 (distinct) | 21 | 14 | 4 | 39 |
+| rejected by destination admission, condition 9 (pair-decisions) | 3 | 6 | 0 | 9 |
+| infantry or carrier conflicts | 0 | 0 | 0 | 0 |
+| selected pairs = distinct infantry helped | 18 | 8 | 4 | 30 |
+| decisions with a selection | 10 | 2 | 2 | 14 |
+| `baseline-v2` infantry MOVE actions (whole games) | 49 | 28 | 15 | 92 |
+
+Every selection happens at decision 1 (step 0), the first play decision, and nowhere else: the 14 decisions with a
+selection are the first triggers of 14 side-games (10 H0, 2 HH, 2 HI), all valid first divergences (in H0 the first
+difference between `baseline-v2` and `baseline-v0` comes at decision 136 or later). There is therefore no
+post-divergence recorded-state opportunity at all: after the opening, no recorded decision has a co-located pair
+that `baseline-v2` moves together to the same objective. The same-objective condition halves the eligible pairs (78 to 39);
+of the 957 HH embark listings only 24 pair-decisions have `baseline-v2` moving both units. The selected
+pair-decisions are 30 against 92 `baseline-v2` infantry MOVE actions; each delays one carrier MOVE by the 75-step
+embark. Matching order made no difference (the identity order selected the same pairs at every decision).
+
+### R4. First-divergence episodes (30)
+
+| | H0 | HH | HI | All |
+|---|---:|---:|---:|---:|
+| episodes | 18 | 8 | 4 | 30 |
+| side-games | 10 | 2 | 2 | 14 |
+| scenarios | 6 | 1 | 1 | 6 |
+| infantry unable to arrive on foot | 8 | 0 | 2 | 10 |
+| role A (potential first capture) | 2 | 0 | 0 | 2 |
+| role B (reinforcement of a held objective) | 9 | 4 | 4 | 17 |
+| role D (unclassifiable) | 7 | 4 | 0 | 11 |
+| saturated at the projected arrival | 0 | 0 | 0 | 0 |
+| potential claimant elsewhere | 13 | 8 | 4 | 25 |
+
+Projected savings range from 375 to 2,815 steps (median 1,439); the projected on-objective gain within the game from 375
+to 2,095 (median 1,243). No destination held an own ground unit at the trigger, and at the projected carrier arrival the
+recorded destination held no other own ground unit in 24 episodes, one in 5 and two in 1: never three, so no projected
+delivery meets a saturated objective. All four HI episodes and 26 of all 30 go to a destination shared with a second
+pair of the same batch.
+
+**Carrier opportunity cost.** In 28 of the 30 episodes the carrier reached the destination in the record; there the
+destination was already held in 23. In 25 episodes `baseline-v2` gave the carrier its next MOVE 0 steps (23) or 1 step
+(2) after that arrival, to another objective the side did not hold: the destination hold would suppress about 150
+decisions of that order (the median projected suppression is 150). `baseline-v2` gave the carrier 1 to 3 MOVE orders
+within the expected 150-step hold in 25 episodes.
+
+### R5. Disposition
+
+The opportunity minimums are met (30 episodes, 26 in acting-opponent populations, 6 scenarios). The saturated share is
+0/30, within its maximum of 1/4; the claimant share is 25/30, above its maximum of 1/2. By the rule of section 14:
+
+**T2_UNRESOLVED_INTERACTION_RISK.**
+
+The frozen same-objective transport trigger has enough opening opportunities, deterministic matching and an
+independently checked batch, but the carrier hold that disembark requires collides with `baseline-v2`'s own onward
+routing in most episodes: the carrier that would wait 150 steps on a held objective is, in 25 of 30 episodes, the unit
+`baseline-v2` sends straight on to an objective the side does not yet hold. No screen is proposed (the screen rule of
+section 15 applies only when ready); nothing is promoted and no engine use is authorized. Sprint 22's mechanism result
+stands unchanged.
+
+### R6. Post-hoc facts (read after the disposition; they change nothing)
+
+From `local/diagnostics/s23/posthoc.py` on the private study file:
+
+* **The episodes repeat openings.** HH's two triggered side-games and H0's 2130511121 blue side start from the same
+  state, as do HI's two games and H0's 1930331196 sides; the 30 episodes are 17 distinct pair configurations in 10
+  opening scenario-sides of 6 scenarios. The claimant flag holds in 15 of the 17 configurations (3 differ between
+  populations because their recorded trajectories differ).
+* **The hold rarely delays a recorded first capture.** Of the 25 claimant episodes, the carrier was among the side's
+  first owners of the objective `baseline-v2` sent it to next in 5 (that ownership came 61 to 181 steps after the
+  order); in 20 that objective was first owned without this carrier. The claimant measure therefore bounds the cost from
+  above; it is the registered measure and the disposition stands.
+
+### R7. What Sprint 23 shows
+
+1. **T2 as specified is an opening tactic.** Under `baseline-v2`, co-located, stationary infantry-carrier pairs that are
+   both sent to the same objective exist only at the first play decision; no later opportunity appears in any of the 23
+   side-games.
+2. **Stacking is not the binding constraint.** No projected delivery meets a saturated objective, and the admission rule
+   rejects only 9 pair-decisions, all in 2130511121's blue opening, where seven eligible pairs aim at two objectives
+   together and four are admitted.
+3. **The carrier's onward move is the binding constraint.** Disembark needs a settled carrier, and `baseline-v2` moves a
+   vehicle on from a held objective at once; holding it is the price of every delivery, and in most episodes the held
+   carrier is one `baseline-v2` would send to an unheld objective.
+4. **Stranding remains an exclusion** carried by the design (section 9), untested on the engine.
+
+### R8. Recommendation (one)
+
+An offline frontier re-selection for the owner: re-score the Sprint 18 rubric with the evidence of Sprints 19 to 23
+(T6-G inadequate opportunity, T11-O1 closed, T2 mechanism supported and T2-X1 `T2_UNRESOLVED_INTERACTION_RISK` as an
+opening-only tactic whose hold competes with `baseline-v2`'s onward routing) and choose the next increment, with no
+engine use. Session 2797 is not opened.
