@@ -1,0 +1,662 @@
+{
+ "band": [
+  "T13",
+  "T6"
+ ],
+ "candidates": {
+  "T10": {
+   "G_source": {
+    "count": 47,
+    "of": 50,
+    "score": 5,
+    "share": 0.94
+   },
+   "P_source": {
+    "basis": "TRIGGER",
+    "count": 6,
+    "of": 16,
+    "score": 2,
+    "share": 0.375
+   },
+   "admitted": true,
+   "caps_applied": [],
+   "engineering": 3,
+   "follow_sessions": 0,
+   "increment": "T10-P1 remove-suppression probe",
+   "interaction": 0,
+   "leverage_cap": 5,
+   "next_sessions": 3,
+   "reasons": {
+    "E": "three sessions for a few suppression events",
+    "I": "an action type baseline-v2 never issues, on units it cannot command while suppressed",
+    "L": "occasional: about one infantry suppression onset per H0 side-game (15 over 16) and 4 in HH; a re-suppressed infantry loses a squad (25 of 25, post hoc)",
+    "M": "keep and the restored listings are direct, but suppression needs an acting opponent",
+    "O": "keep and the listing are seat fields",
+    "R": "listed, its effect undocumented"
+   },
+   "scores": {
+    "C": 0,
+    "E": 3,
+    "G": 5,
+    "I": 5,
+    "L": 2,
+    "M": 4,
+    "O": 5,
+    "P": 2,
+    "R": 3
+   },
+   "stakes": [
+    "s18.N2.H0.infantry_onsets"
+   ]
+  },
+  "T12": {
+   "G_source": {
+    "count": 50,
+    "of": 50,
+    "score": 5,
+    "share": 1.0
+   },
+   "P_source": {
+    "basis": "STAKE",
+    "count": 10,
+    "of": 16,
+    "score": 2,
+    "share": 0.625
+   },
+   "admitted": true,
+   "caps_applied": [],
+   "engineering": 3,
+   "follow_sessions": 3,
+   "increment": "T12-O1 objective-zone dispersion: offline count, then one deterministic and two head-to-head sessions",
+   "interaction": 2,
+   "leverage_cap": 3,
+   "next_sessions": 0,
+   "reasons": {
+    "E": "the deterministic session shows only execution; denial needs enemy capture attempts: three sessions",
+    "I": "withholds baseline-v2's later moves for dispersed units",
+    "L": "a local advantage for holders: stationary stacked holders took 40 of 177 H0 ground damage events (post hoc), but baseline-v2 sends vehicles on from held objectives at once, so idle stacked holders may be rare",
+    "M": "stack and flags are direct; denial and damage need an acting opponent",
+    "O": "own hexes, the stack field and objective flags are seat fields",
+    "R": "moves executed; adjacent denial documented but never tested"
+   },
+   "scores": {
+    "C": 0,
+    "E": 3,
+    "G": 5,
+    "I": 3,
+    "L": 3,
+    "M": 4,
+    "O": 5,
+    "P": 2,
+    "R": 4
+   },
+   "stakes": [
+    "s18.admission.H0.stationary_on_objective"
+   ]
+  },
+  "T13": {
+   "G_source": {
+    "count": 50,
+    "of": 50,
+    "score": 5,
+    "share": 1.0
+   },
+   "P_source": {
+    "basis": "STAKE",
+    "count": 7,
+    "of": 16,
+    "score": 1,
+    "share": 0.4375
+   },
+   "admitted": true,
+   "caps_applied": [],
+   "engineering": 3,
+   "follow_sessions": 2,
+   "increment": "T13-D1 held-objective loss anatomy and garrison shadow (offline), then a two-session garrison probe",
+   "interaction": 2,
+   "leverage_cap": 5,
+   "next_sessions": 0,
+   "reasons": {
+    "E": "two sessions answer it with directly observed endpoints that need an acting opponent's approach; a negative closes on-hex retention, not adjacent denial or fire",
+    "I": "withholds baseline-v2's MOVE for the last unit of a held objective's zone",
+    "L": "objective control is the occupy score (median 80 against acting policies): 40 held-objective losses on 7 of 16 H0 scenario-sides and 26 in the 4 HH side-games against 25 first ownerships there, none with an own unit on the hex; offsetting cost, the withheld onward moves",
+    "M": "losses, the garrison's presence and survival and first ownerships are direct fields; an acting opponent is needed, and HH shows several losses per game",
+    "O": "objective flags, own units' hexes, the emitted MOVE and visible enemy ground units are seat fields; the distance is a frozen constant",
+    "R": "only withholding of moves; the on-hex denial rule is documented and none of the 66 published losses had an own unit on the hex"
+   },
+   "scores": {
+    "C": 1,
+    "E": 4,
+    "G": 5,
+    "I": 3,
+    "L": 4,
+    "M": 4,
+    "O": 5,
+    "P": 1,
+    "R": 5
+   },
+   "stakes": [
+    "s18.N4.H0.losses",
+    "s18.N4.HH.losses"
+   ]
+  },
+  "T2": {
+   "G_source": {
+    "count": 10,
+    "of": 50,
+    "score": 1,
+    "share": 0.2
+   },
+   "P_source": {
+    "basis": "TRIGGER",
+    "count": 0,
+    "of": 16,
+    "score": 0,
+    "share": 0.0
+   },
+   "admitted": true,
+   "caps_applied": [],
+   "engineering": 3,
+   "follow_sessions": 0,
+   "increment": "T2-S opening dismount of infantry that start on board",
+   "interaction": 2,
+   "leverage_cap": 3,
+   "next_sessions": 1,
+   "reasons": {
+    "E": "one deterministic session answers listing and execution directly; a negative removes only this increment, since T2-P1 stands",
+    "I": "replaces the carrier's opening action and holds its MOVE for the 75-step disembark",
+    "L": "occasional: 74 infantry in 10 of 50 scenarios stay aboard all game under baseline-v2, which never issues disembark; once dismounted they are slow foot infantry",
+    "M": "the listing, its acceptance and the infantry on the ground are fields of one deterministic game against the inert control",
+    "O": "passengers, the carrier's state and the disembark listing are seat fields",
+    "R": "disembark was listed and executed on engine 4.1.0 once (Sprint 22), never for passengers aboard at the start or at the opening"
+   },
+   "scores": {
+    "C": 2,
+    "E": 4,
+    "G": 1,
+    "I": 3,
+    "L": 2,
+    "M": 5,
+    "O": 5,
+    "P": 0,
+    "R": 4
+   },
+   "stakes": [
+    "s18.S.start_aboard_units"
+   ]
+  },
+  "T3": {
+   "G_source": {
+    "count": 50,
+    "of": 50,
+    "score": 5,
+    "share": 1.0
+   },
+   "P_source": {
+    "basis": "STAKE",
+    "count": 12,
+    "of": 16,
+    "score": 3,
+    "share": 0.75
+   },
+   "admitted": true,
+   "caps_applied": [],
+   "engineering": 1,
+   "follow_sessions": 0,
+   "increment": "T3-O2 short memory of enemies near held objectives",
+   "interaction": 0,
+   "leverage_cap": 5,
+   "next_sessions": 0,
+   "reasons": {
+    "E": "no engine step of its own; its value shows only as a comparison inside T13 games, with and without the memory",
+    "I": "as an input of T13 it changes which baseline-v2 moves are withheld",
+    "L": "occasional: attackers out of view at the event but seen within 300 steps caused 15 of 205 (H0) and 4 of 158 (HH) damage events; its value for objective retention is unmeasured",
+    "M": "whether a remembered threat would have fired before a loss is a derived counterfactual over full-step captures",
+    "O": "the seat's view plus simple bookkeeping of where enemies were last seen",
+    "R": "no new action"
+   },
+   "scores": {
+    "C": 5,
+    "E": 1,
+    "G": 5,
+    "I": 3,
+    "L": 2,
+    "M": 3,
+    "O": 4,
+    "P": 3,
+    "R": 5
+   },
+   "stakes": [
+    "s18.T3.H0.unseen_within"
+   ]
+  },
+  "T6": {
+   "G_source": {
+    "count": 50,
+    "of": 50,
+    "score": 5,
+    "share": 1.0
+   },
+   "P_source": {
+    "basis": "STAKE",
+    "count": 13,
+    "of": 16,
+    "score": 3,
+    "share": 0.8125
+   },
+   "admitted": true,
+   "caps_applied": [],
+   "engineering": 3,
+   "follow_sessions": 2,
+   "increment": "T6-S stacked-column stagger: offline shadow, then a two-session probe",
+   "interaction": 2,
+   "leverage_cap": 5,
+   "next_sessions": 0,
+   "reasons": {
+    "E": "two sessions, but the endpoint that answers the tactical question is a derived rate",
+    "I": "withholds some baseline-v2 MOVEs for one hex time",
+    "L": "a local advantage for co-departing movers: stacked victims took 112 of 177 (H0) and 70 of 130 (HH) ground damage events, but the co-departing share is unmeasured and the stacking correction's size is not identified",
+    "M": "the stagger is directly observed, but its effect is a derived exposure rate (stacked moving unit-steps inside envelopes, damage per exposed mover) over full-step captures",
+    "O": "own hexes, emitted routes, visible enemies and published ranges are seat fields (Sprint 19's machinery)",
+    "R": "only withholding of moves, executed in every gate study; no new action"
+   },
+   "scores": {
+    "C": 1,
+    "E": 3,
+    "G": 5,
+    "I": 3,
+    "L": 3,
+    "M": 3,
+    "O": 5,
+    "P": 3,
+    "R": 5
+   },
+   "stakes": [
+    "s18.N9.H0.stacked",
+    "s18.N9.HH.stacked"
+   ]
+  },
+  "T7-C": {
+   "G_source": {
+    "count": 50,
+    "of": 50,
+    "score": 5,
+    "share": 1.0
+   },
+   "P_source": {
+    "basis": "TRIGGER",
+    "count": 11,
+    "of": 16,
+    "score": 3,
+    "share": 0.6875
+   },
+   "admitted": true,
+   "caps_applied": [],
+   "engineering": 3,
+   "follow_sessions": 0,
+   "increment": "T7-E3b controlled concealment-exit diagnostic",
+   "interaction": 0,
+   "leverage_cap": 5,
+   "next_sessions": 2,
+   "reasons": {
+    "E": "one session answers the move exit directly; the fire exit may need a second configuration, and a negative closes only the exit question",
+    "I": "acts only on an idle concealed unit; baseline-v2's decisions are untouched",
+    "L": "marginal: the benefit channel is empty (no damage on a concealable unit in H0, 4 events in HH) and baseline-v2 orders only 1 unit after the trigger in H0",
+    "M": "acceptance and the movement state are fields of one deterministic game",
+    "O": "a fixed deterministic configuration and the seat's own fields",
+    "R": "move is listed for concealed units and the free exit is documented, but never executed"
+   },
+   "scores": {
+    "C": 1,
+    "E": 4,
+    "G": 5,
+    "I": 5,
+    "L": 1,
+    "M": 5,
+    "O": 5,
+    "P": 3,
+    "R": 4
+   },
+   "stakes": [
+    "s18.T7C.HH.concealable_events"
+   ]
+  },
+  "T8": {
+   "G_source": {
+    "count": 26,
+    "of": 50,
+    "score": 3,
+    "share": 0.52
+   },
+   "P_source": {
+    "basis": "CAPABILITY",
+    "count": 4,
+    "of": 16,
+    "score": 1,
+    "share": 0.25
+   },
+   "admitted": true,
+   "caps_applied": [],
+   "engineering": 3,
+   "follow_sessions": 2,
+   "increment": "T8-A helicopter altitude probe",
+   "interaction": 0,
+   "leverage_cap": 5,
+   "next_sessions": 1,
+   "reasons": {
+    "E": "one session answers the transition; two more show exposure with directly observed damage events",
+    "I": "one new behaviour for one archetype with an action type baseline-v2 never issues",
+    "L": "occasional: 13 aircraft damage events in H0 on 4 of 16 scenario-sides, none while moving; the altitude effect for attack helicopters is undocumented",
+    "M": "the transition is a field of a deterministic game, but its exposure effect needs an acting opponent",
+    "O": "the helicopter's state, visible enemies and the altitude listing are seat fields",
+    "R": "listed, its effect on attack helicopters undocumented"
+   },
+   "scores": {
+    "C": 0,
+    "E": 4,
+    "G": 3,
+    "I": 4,
+    "L": 2,
+    "M": 4,
+    "O": 5,
+    "P": 1,
+    "R": 3
+   },
+   "stakes": [
+    "s18.N8.H0.aircraft_events"
+   ]
+  }
+ },
+ "eligible": [
+  "T10",
+  "T12",
+  "T13",
+  "T6",
+  "T7-C",
+  "T8"
+ ],
+ "evidence_checked": {
+  "by_level": {
+   "OBSERVED ENGINE MECHANISM": 3,
+   "OFFLINE ACTION COUNTERFACTUAL": 4,
+   "POST-HOC DIAGNOSTIC": 10,
+   "REGISTERED RESULT": 46
+  },
+  "items": 63,
+  "keyed": 56,
+  "quoted": 7
+ },
+ "ineligible": {
+  "T2": [
+   "withholding interaction without an offline conflict measure first"
+  ],
+  "T3": [
+   "E below 2"
+  ]
+ },
+ "inputs_sha256": "081f03ce495d10591670da1670e37aabc248695f4b49928fca8a191e8238e7a6",
+ "margin_over_runner_up": 0.15,
+ "most_frequent_other_first": "T7-C",
+ "note": "a research prioritisation under the rubric registered before candidates and scores; not evidence that any tactic works; nothing is promoted",
+ "outcome": "NEXT_INCREMENT_SELECTED",
+ "perturbation_flip_share": "2/20",
+ "perturbation_flips": 2,
+ "perturbation_winners": {
+  "T13+T6": 2
+ },
+ "perturbations": [
+  {
+   "candidate": "T13",
+   "criterion": "L",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": -1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T13",
+   "criterion": "L",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": 1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T13",
+   "criterion": "O",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": -1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T13",
+   "criterion": "I",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": -1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T13",
+   "criterion": "I",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": 1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T13",
+   "criterion": "M",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": -1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T13",
+   "criterion": "M",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": 1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T13",
+   "criterion": "R",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": -1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T13",
+   "criterion": "E",
+   "flipped": true,
+   "outcome": "FRONTIER_TIE",
+   "step": -1,
+   "tied": [
+    "T13",
+    "T6"
+   ],
+   "winner": null
+  },
+  {
+   "candidate": "T13",
+   "criterion": "E",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": 1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T6",
+   "criterion": "L",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": -1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T6",
+   "criterion": "L",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": 1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T6",
+   "criterion": "O",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": -1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T6",
+   "criterion": "I",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": -1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T6",
+   "criterion": "I",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": 1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T6",
+   "criterion": "M",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": -1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T6",
+   "criterion": "M",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": 1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T6",
+   "criterion": "R",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": -1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T6",
+   "criterion": "E",
+   "flipped": false,
+   "outcome": "NEXT_INCREMENT_SELECTED",
+   "step": -1,
+   "tied": [],
+   "winner": "T13"
+  },
+  {
+   "candidate": "T6",
+   "criterion": "E",
+   "flipped": true,
+   "outcome": "FRONTIER_TIE",
+   "step": 1,
+   "tied": [
+    "T13",
+    "T6"
+   ],
+   "winner": null
+  }
+ ],
+ "perturbations_total": 20,
+ "ranking": [
+  "T13",
+  "T6",
+  "T12",
+  "T7-C",
+  "T10",
+  "T8"
+ ],
+ "robust_min_first": 19,
+ "runner_up": "T6",
+ "schema": "miaosuan-s24-selection/1",
+ "selected": "T13",
+ "selected_first_in": 26,
+ "stage": "robust",
+ "study_id": "s24-tactical-frontier-reselection",
+ "tie_band": 0.15,
+ "tied": [],
+ "variants": {
+  "C as a criterion at 0.10": "T13",
+  "C as a criterion at 0.20": "T13",
+  "E as a criterion at 0.10": "T13",
+  "E as a criterion at 0.20": "T13",
+  "G +0.05": "T13",
+  "G -0.05": "T13",
+  "I +0.05": "T13",
+  "I -0.05": "T13",
+  "L +0.05": "T13",
+  "L -0.05": "T13",
+  "M +0.05": "T13",
+  "M -0.05": "T13",
+  "O +0.05": "T13",
+  "O -0.05": "T13",
+  "P +0.05": "T13",
+  "P -0.05": "T13",
+  "R +0.05": "T13",
+  "R -0.05": "T13",
+  "equal weights": "T13",
+  "leverage 0.40": "T13",
+  "without G": "T13",
+  "without I": "T13",
+  "without L": "T7-C",
+  "without M": "T13",
+  "without O": "T13",
+  "without P": "T13",
+  "without R": "T13"
+ },
+ "variants_total": 27,
+ "weighted": {
+  "T10": 3.65,
+  "T12": 3.8,
+  "T13": 4.05,
+  "T2": 2.65,
+  "T3": 3.5,
+  "T6": 3.9,
+  "T7-C": 3.7,
+  "T8": 3.05
+ },
+ "weights": {
+  "G": 0.2,
+  "I": 0.1,
+  "L": 0.25,
+  "M": 0.1,
+  "O": 0.15,
+  "P": 0.1,
+  "R": 0.1
+ }
+}
