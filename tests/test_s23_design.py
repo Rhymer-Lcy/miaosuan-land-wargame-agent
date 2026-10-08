@@ -203,6 +203,16 @@ class DispositionTest(unittest.TestCase):
         self.assertEqual(sd.disposition([], three_claim)["above_maximum"], ["claimant_share"])
         self.assertEqual(sd.disposition([], three_claim)["claimant_share"], "3/4")
 
+    def test_shares_are_published_unreduced_and_pass_the_sanitizer_with_small_private_ids(self) -> None:
+        """Amendment A1: a reduced share ("0", "1") equals a small private unit id as a word of a string."""
+        base = [ep("HH", "a"), ep("HH", "b"), ep("HI", "a"), ep("HI", "b")]
+        for flags, expected in (((False,) * 4, "0/4"), ((True,) * 4, "4/4"), ((True, True, False, False), "2/4")):
+            episodes = [dict(e, claimant_elsewhere=f) for e, f in zip(base, flags)]
+            out = sd.disposition([], episodes)
+            self.assertEqual((out["claimant_share"], out["saturated_share"]), (expected, "0/4"))
+            self.assertEqual(sd.public_problems(out, range(50)), [])
+        self.assertTrue(sd.public_problems({"share": "0"}, range(50)))
+
     def test_no_episode_is_no_opportunity(self) -> None:
         self.assertEqual(sd.disposition([], [])["disposition"], sd.NO_OPPORTUNITY)
 
