@@ -1,0 +1,121 @@
+{
+ "note": "every public source the study may cite, pinned before any candidate or score was written; run refuses on any difference",
+ "rubric_sha256": "79e76ce22deb6440029b5f240509890d240fa603dfdfc9e77d0e457fe1d745e4",
+ "rules_sha256": "3f3434545eaf40b008128d6979dc9b4b3c7ace16d9c979da99902325ebc06f23",
+ "schema": "miaosuan-s24-inputs/1",
+ "sources": {
+  "doc_ps1": {
+   "file": "docs/PS1_DESIGN.md",
+   "sha256": "d5caf8743528efe1a29e68bdc7f73b91ac6eaaf8e8d2b9f6b3e4ffda4ef7a02c"
+  },
+  "doc_s18": {
+   "file": "docs/SPRINT18_FRONTIER_RESET.md",
+   "sha256": "b775d886b5b3e5d8aee0769178506cbfdf85cd703f272024931aeee12ed949d5"
+  },
+  "doc_s19": {
+   "file": "docs/SPRINT19_T6G_SHADOW.md",
+   "sha256": "772338fe15c4ce8dfaa19afab9f3bf58147b599e208a70f0c14bb57096aa6d28"
+  },
+  "doc_s20": {
+   "file": "docs/SPRINT20_T11_REPLAY.md",
+   "sha256": "9d84b7f42d346f4df18414fc845c20871bb1d8a97bc8738bd9db316fb96cf1e9"
+  },
+  "doc_s21": {
+   "file": "docs/SPRINT21_DIRECT_FIRE_SEMANTICS.md",
+   "sha256": "31cd88c73dbd8a25400f9e579434ede096367d93c3ebb3885019950d132ea0d0"
+  },
+  "doc_s22": {
+   "file": "docs/SPRINT22_T2_TRANSPORT_PROBE.md",
+   "sha256": "bc69b5322ebe83185c551c3740da2c94d43ec4f954d24cd80a98a746dfeee8da"
+  },
+  "doc_s23": {
+   "file": "docs/SPRINT23_T2_POLICY_DESIGN.md",
+   "sha256": "1c09ec24a81226fb1a11a1c8576531cebeb453cb600d241a851d784e13bf26d2"
+  },
+  "doc_t1r": {
+   "file": "docs/T1R_DIAGNOSIS.md",
+   "sha256": "cf76095d26674040b0c626ccbb8c943deb1dfe6852bc391fddbe1d01eda60892"
+  },
+  "doc_t7_probe": {
+   "file": "docs/T7_MECHANISM_PROBE.md",
+   "sha256": "f523cb56839e7ba21ecc940ba32feaf5eaba5dc7c465d5dbb325604f5646a7e9"
+  },
+  "s18_admission": {
+   "file": "evaluation/s18-frontier-reset/admission.json",
+   "sha256": "bc81c835f563a5580155b25c89122f472eae64cb6e1b1308c04b16b7bfab52cc"
+  },
+  "s18_census": {
+   "file": "evaluation/s18-frontier-reset/census.json",
+   "sha256": "f308118ba921d4149e949b540019cef18f56164d57e067245e9a01926b79380b"
+  },
+  "s18_experiments": {
+   "file": "evaluation/s18-frontier-reset/experiments.json",
+   "sha256": "9eeb035c533a62f1a5d951ac83292e94e662ea921a42fc202ca04bd0861e7864"
+  },
+  "s18_rubric": {
+   "file": "evaluation/s18-frontier-reset/rubric.json",
+   "sha256": "b8043af8e6d252d34727b8db692d20c6bcf506efb491d45bc0244673cf15199c"
+  },
+  "s18_scores": {
+   "file": "evaluation/s18-frontier-reset/scores.json",
+   "sha256": "62c3acd4ef63f05131a37b28747f589f17c9ffc2c5032153185c0b5d883dd9c6"
+  },
+  "s18_selection": {
+   "file": "evaluation/s18-frontier-reset/selection.json",
+   "sha256": "3c86fddb669074be3cde5a56e7a3d87d1f9d135a8879fd4d08da0b516be5f1bd"
+  },
+  "s19_disposition": {
+   "file": "evaluation/s19-t6g-shadow/disposition.json",
+   "sha256": "8b69b5a525320bb7cc3c6cf20c518d1a65f17a41f7b9af8bbfc7964b83161cfd"
+  },
+  "s19_shadow": {
+   "file": "evaluation/s19-t6g-shadow/shadow.json",
+   "sha256": "277609abd13f1d3eea30e4a7e345aae355da8970b2583087db82df1d6879263a"
+  },
+  "s1_census": {
+   "file": "evaluation/tactical-frontier-1/census.json",
+   "sha256": "b4634e1d1e0a4407093b6e8415a6817bf7cd34f8463e385f89af4e4592c6a2af"
+  },
+  "s20_disposition": {
+   "file": "evaluation/s20-t11-replay/disposition.json",
+   "sha256": "3933bf9f6dfa690b6ea4a58ae2aba928143df525df3bb05bf8f5254089f1d131"
+  },
+  "s20_replay": {
+   "file": "evaluation/s20-t11-replay/replay.json",
+   "sha256": "dd9dd9363a61c39cd631e78252e0dbbdd3efe99632857a45f13189a41ce08605"
+  },
+  "s21_disposition": {
+   "file": "evaluation/s21-direct-fire-semantics/disposition.json",
+   "sha256": "d5a1121f049b03fda69b8566589fdc6830ca74735f56ef0d51d72484d9d71fe4"
+  },
+  "s21_semantics": {
+   "file": "evaluation/s21-direct-fire-semantics/semantics.json",
+   "sha256": "2a7e7e0879ac2c7b61df90ec802987d7fde1d17d8ee5cf47d4ba9681ebc61e68"
+  },
+  "s22_disposition": {
+   "file": "evaluation/s22-t2-transport-probe/disposition.json",
+   "sha256": "8d7a5655387c5555bc237387cdb92f908c8cee590a2df3dad7dfc1913ca1df33"
+  },
+  "s22_mechanism": {
+   "file": "evaluation/s22-t2-transport-probe/mechanism.json",
+   "sha256": "f50c7a1a7e25635339813ccc118dfccb8b11d0973aa7cedbf633567a11efb2e3"
+  },
+  "s22_witness": {
+   "file": "evaluation/s22-t2-transport-probe/witness.json",
+   "sha256": "ed6cefd4f6d20441bea4a22904aec96dc273fcc9b507ad9a11d926c76ddfa45a"
+  },
+  "s23_disposition": {
+   "file": "evaluation/s23-t2-policy-design/disposition.json",
+   "sha256": "bf40c5e854b66140a6954bbc5602468544e70901ee8a8e714cfaf93bb0d4acb7"
+  },
+  "s23_episodes": {
+   "file": "evaluation/s23-t2-policy-design/episodes.json",
+   "sha256": "b5127eedf4dab9a951d4af9e995e9454024f0758945ba4cced4edec079277852"
+  },
+  "s23_prevalence": {
+   "file": "evaluation/s23-t2-policy-design/prevalence.json",
+   "sha256": "e5b6344de1964c4be26fe547a019ea2dd1fca89e0a13027851d3fb31cf4368ad"
+  }
+ },
+ "study_id": "s24-tactical-frontier-reselection"
+}
