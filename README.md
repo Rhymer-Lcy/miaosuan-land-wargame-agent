@@ -155,6 +155,10 @@ Sprint 25's registered offline study of that anatomy (`docs/SPRINT25_T13_D1.md`,
 objectives lost mostly to departures under `baseline-v2`'s own orders, not to destruction, but by stacked groups
 leaving together, so the frozen single-unit garrison rule could act on almost none of them (disposition
 T13_D1_NOT_READY). Nothing was promoted.
+Sprint 26's registered offline shadow of the runner-up, a stacked-column stagger (`docs/SPRINT26_T6S_SHADOW.md`, no
+engine session), found `baseline-v2` sending stacked columns along identical routes under visible threat repeatedly,
+and the frozen rule (hold each follower one hex time) passed its opportunity, generality and onward-capture stops
+(disposition T6_S_OFFLINE_PASS). A DRAFT two-session probe awaits the owner's review; nothing was executed or promoted.
 The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
@@ -228,6 +232,8 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/SPRINT23_T2_POLICY_DESIGN.md` | Sprint 23's offline T2 policy design: the proposed multi-pair candidate, matching, time model, admission, failure handling, the frozen readiness rule, the opportunity study and its disposition |
 | `docs/SPRINT24_TACTICAL_FRONTIER_RESELECTION.md` | Sprint 24's offline frontier re-selection: the Sprint 23 qualification, the prospective rubric and its robustness rules, the candidate experiments with checked evidence, the scores, the selection and the next experiment |
 | `docs/SPRINT25_T13_D1.md` | Sprint 25's offline T13-D1 study: the privacy owner decision, the frozen loss and departure definitions, the non-executable garrison shadow, the stops, Amendment A1, the loss anatomy, results and disposition |
+| `docs/SPRINT26_T6S_SHADOW.md` | Sprint 26's offline T6-S study: the privacy baseline check, the timing reading, the non-executable stagger shadow, chain order, wait bound, the stops, results and disposition |
+| `docs/SPRINT26_T6S_PROBE_DRAFT.md` | the DRAFT two-session T6-S mechanism probe returned to the owner; not registered, not executed |
 | `docs/PLATFORM_CANARY.md` | the owner's manual upload and compatibility-check steps for the platform canary |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
