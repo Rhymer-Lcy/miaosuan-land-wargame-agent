@@ -138,6 +138,7 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
 | T10 | suppression relief: remove suppression (action 7) for suppressed own infantry | `IDEA` (2026-10-07): admitted by Sprint 18's scan; listed only while suppressed, never issued, effect undocumented |
 | T11 | direct-fire target priority: prefer the listed target most likely to be destroyed | `IDEA` (2026-10-07): admitted by Sprint 18's scan; Sprint 18's runner-up. First increment T11-O1, the kill-first rule (lowest observed blood, then `baseline-v2`'s rank), replayed offline by Sprint 20 (`docs/SPRINT20_T11_REPLAY.md`, no engine session): the public rules do not support a defensible immediate-kill probability (how a result and its correction combine, and whether a listed attack level includes the elevation correction, are undocumented); disposition T11_OFFLINE_MODEL_UNAVAILABLE; no probe drafted. Descriptively the rule changes only targets (0 non-shoot differences) and has 15, 33, 19 and 27 changed shots in the four HH side-games. Its endpoint needs the adjudication semantics settled first. Sprint 21's offline audit of the existing direct-fire judge records (`docs/SPRINT21_DIRECT_FIRE_SEMANTICS.md`, no engine session; 18 games, 975 paired shots) found the listed attack level equal to the adjudicated one in every paired shot, but no permitted evidence states the probability law of the result-table draw; disposition DIRECT_FIRE_SEMANTICS_UNDERIDENTIFIED. T11-O1 is CLOSED as blocked by an unidentifiable registered endpoint; nothing was promoted |
 | T12 | objective-zone dispersion: spread stacked holders of a held objective over adjacent hexes | `IDEA` (2026-10-07): admitted by Sprint 18's scan; inherits T9's withholding interaction |
+| T13 | objective retention (post-capture denial): keep the last own ground unit in a held objective's denial zone (its hex and the six neighbours) while a visible enemy ground unit is near | `IDEA` (2026-10-08): admitted by Sprint 24's scan and selected by its frozen rubric (`docs/SPRINT24_TACTICAL_FRONTIER_RESELECTION.md`, W 4.05, first in 26 of 27 weight variants, 2 of 20 judgement perturbations move the winner; the runner-up T6-S is 0.15 behind and E decides). Motivation: 40 (replay corpus) and 26 (head-to-head captures) losses of held objectives, none with an own unit on the hex. First experiment T13-D1, an offline loss anatomy and garrison shadow with no engine session; nothing promoted |
 
 ## Roadmap
 
@@ -282,6 +283,15 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
     the study; the trigger fires only at the opening, and the carrier hold that disembark needs competes with
     `baseline-v2`'s onward routing in 25 of 30 episodes, so the disposition is T2_UNRESOLVED_INTERACTION_RISK; no screen
     was proposed and nothing was promoted. Next: an offline frontier re-selection for the owner; no engine use.
+    **Owner decision (2026-10-08)**: T2-P1 preserved, T2-X1 shelved, the T2 family open; Sprint 23's disposition is
+    qualified (original protocol read literally: T2_DESIGN_INVALID; amended: T2_UNRESOLVED_INTERACTION_RISK).
+24. **Done (Sprint 24)**: the evidence-updated frontier re-selection (`docs/SPRINT24_TACTICAL_FRONTIER_RESELECTION.md`),
+    no engine session. A prospective rubric (Sprint 18's criteria, weights and anchors, plus rules for evidence levels,
+    unmeasured triggers, leverage without registered support, closed increments, engine-session and engineering cost,
+    and judgement perturbations) was pushed before any candidate or score; every quantitative claim of the eight
+    candidate experiments was read back from its pinned public source. One new family was admitted (T13, objective
+    retention); the outcome is NEXT_INCREMENT_SELECTED: T13-D1, an offline anatomy of held-objective losses with a
+    garrison shadow. Next: that offline diagnostic, registered first, for the owner's approval; no engine use.
 
 A tactic that earns ADVANCE gets a confirmatory design sized from its screen's noise; one that does not is recorded
 with its disposition and left. Platform evidence runs alongside: the canary first, then each candidate that a local
