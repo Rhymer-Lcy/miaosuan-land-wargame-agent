@@ -1,0 +1,140 @@
+{
+ "anchors": {
+  "H0 baseline-v2 move orders": 509,
+  "H0 damage events": 205,
+  "H0 damage events on moving ground units": 124,
+  "H0 decisions": 33696,
+  "H0 ground damage events": 177,
+  "H0 ground damage events on a stacked victim": 112,
+  "H0 ground events on stacked units moving off objectives": 57,
+  "H0 moving ground events, attacker seen before": 120,
+  "H0 play decisions": 33680,
+  "H0 scenario-sides with a stacked ground victim": 13,
+  "H0 side-games": 16,
+  "H0 threat-exposed move orders": 230,
+  "H0 threat-exposed orders followed by mover damage within the lookback window": 88,
+  "H0 v2 differs from recorded v0": 123,
+  "HH baseline-v2 move orders": 416,
+  "HH baseline-v2 reconstruction equal": 11524,
+  "HH damage events": 158,
+  "HH damage events on moving ground units": 117,
+  "HH gate episodes of the frozen T6-G gate": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "HH ground damage events": 130,
+  "HH ground damage events on a stacked victim": 70,
+  "HH ground events on stacked units moving off objectives": 40,
+  "HH moving ground events, attacker seen before": 117,
+  "HH side-games": 4,
+  "HH threat-exposed move orders": 200,
+  "HH threat-exposed orders followed by mover damage within the lookback window": 101
+ },
+ "damage_windows_steps": [
+  75,
+  150,
+  300
+ ],
+ "dispositions_first_match": [
+  "T6_S_INVALID",
+  "T6_S_INADEQUATE_OPPORTUNITY",
+  "T6_S_ONWARD_CAPTURE_RISK",
+  "T6_S_OFFLINE_PASS"
+ ],
+ "engine_sessions": 0,
+ "first_owner_risk": "an episode is at risk when at least one withheld follower stands on its ordered destination objective at the side's first-ever play-stage ownership of it, after the episode start",
+ "follow_up_window_steps": 300,
+ "own_ground_unit": "own operator of the infantry or vehicle type (artillery included) with a readable hex; passengers are not operators",
+ "public_file_limit_bytes": 90000,
+ "s25_categories_first_match": [
+  "ordered at several decisions",
+  "ordered at one decision from different hexes",
+  "same hex, different first route hexes",
+  "no qualifying visible threat",
+  "baseline-v2 did not emit the same MOVEs",
+  "frozen trigger fails",
+  "trigger holds at a valid first divergence",
+  "trigger holds after a divergence or without prefix support"
+ ],
+ "s25_intersection": {
+  "multi_defender_order_vacating_losses": 28,
+  "scope": "descriptive only; a mismatch voids the intersection, not the study"
+ },
+ "schema": "miaosuan-s26-protocol/1",
+ "shadow": {
+  "chain_order": "free-flow arrival, route cost, route length, unit id (experiments/t9_batch.path_times, the unit's type and move_state, basic_speed, the setup cost graph)",
+  "executable": false,
+  "group_outcomes": [
+   "triggered",
+   "single_mover",
+   "no_qualifying_threat"
+  ],
+  "group_trigger": "eligible movers grouped by current hex and route first hex; a group of at least minimum_group movers with at least one threat-exposed member starts an episode",
+  "identity": "t6s-column-stagger-shadow",
+  "minimum_group": 2,
+  "mover_checks_in_order": [
+   "eligible",
+   "unit_absent",
+   "not_ground",
+   "unreadable_unit_hex",
+   "several_moves",
+   "already_moving",
+   "transport_committed",
+   "move_not_listed",
+   "unreadable_route",
+   "unreadable_travel",
+   "in_active_episode",
+   "not_rearmed"
+  ],
+  "one_episode_per_unit": "a member of an active episode cannot join another; after completion each member is spent at the shared start hex until observed on another hex",
+  "open_at_end": "open_at_end",
+  "queue_reasons": [
+   "follower_absent",
+   "follower_left"
+  ],
+  "release": "the next pending member is released when the reference unit (initially the leader) is absent or observed on a readable hex other than the shared start hex; a released member with a baseline-v2 MOVE becomes the reference",
+  "release_reasons": [
+   "reference_left",
+   "reference_absent",
+   "timeout"
+  ],
+  "route_prefix_hexes": 5,
+  "stall_factor": 2,
+  "stall_slack_steps": 10,
+  "status": "ANALYSIS SHADOW - NON-EXECUTABLE",
+  "threat": "Sprint 18's threat-exposed order predicate: a visible enemy operator of any class with a published direct-fire range against the mover's type covers the mover's hex or one of the first route_prefix_hexes route hexes (distance at most the range)",
+  "wait_bound": "every pending member is released when the reference has not left and cur_step - reference release step > stall_factor * reference hex time + stall_slack (the PS-1 stall definition)"
+ },
+ "sources": {
+  "scripts/s18_census.py": "b8d56b890d80a2730e1e37d06ce468bd7f568c95a237d4af0639dc8e33b77d30",
+  "scripts/s26_t6s.py": "cfa96bf48abe5379660524ef2cebf53ea113cd21f972da0ed2e1c782f80faf9e",
+  "src/miaosuan_agent/decision/routing.py": "51ac79b5b977ec6c9d5ced2debd6b42d254750f792b9dbe3668abf4679ca711c",
+  "src/miaosuan_agent/evaluation/s12_screen.py": "bb69cc96e4e35daade0ec9eca98dcaf84a3e0c5973f9d91a028781000570a67e",
+  "src/miaosuan_agent/evaluation/s12_timeline.py": "5e2ae9e1357b77d8baaeb639a7eac091dfa64d9164a6f6d4d447bc6d7c7f5632",
+  "src/miaosuan_agent/evaluation/s18_census.py": "d48d741997b54a0659260f6df1716aff59983d96359eb8c79d31bd9ebbec3771",
+  "src/miaosuan_agent/evaluation/s19_t6g.py": "1e1940b0720c0d13b99eeecca2fdb06c83d5bf9d056f22e54481b1f096f8a918",
+  "src/miaosuan_agent/evaluation/s26_t6s.py": "a5801c73fe613028f9ba92d6ef90573419212895fc80435d9c4df69c3363116c",
+  "src/miaosuan_agent/evaluation/t7_candidates.py": "50c77f37d7561282a257da6c3640e23ded5a2abdccb83b7d507c8811e5c312ab",
+  "src/miaosuan_agent/evaluation/t7_visibility.py": "add2b446ec8ff847fd941a8a0952971200858db2305cdbdded0b6263f42e27ff",
+  "src/miaosuan_agent/experiments/t6_threat_entry_gate.py": "2c61f49463f05fac13666fd287cf8fd2bb703b916866975c7edfea74999433f1",
+  "src/miaosuan_agent/experiments/t6s_stagger_shadow.py": "f937cce7c901f4cb3ed083d0904fd3fd6c7b8f996755fb64e5fa419f8aaf6077",
+  "src/miaosuan_agent/experiments/t9_batch.py": "ba0e3fcd5e7b9c223b5d22129f37c06fb3bcb7ab071b0a825de6552f3edd7510"
+ },
+ "stops": {
+  "A": {
+   "hh_side_games": 4,
+   "minimum_episodes_per_hh_side_game": 10,
+   "rule": "met when any registered HH side-game has fewer episodes than the minimum (episodes counted over every recorded decision, under the frozen state machine), or when the HH side-games are not all present"
+  },
+  "B": {
+   "minimum_h0_scenario_sides": 4,
+   "rule": "met when fewer distinct H0 scenario-sides than the minimum have an episode"
+  },
+  "C": {
+   "rule": "over the H0 and HH episodes, replicas de-duplicated (an identical episode counts once, and is at risk if at risk in any replica): met when there is no episode, or when twice the first-owner-risk episodes exceed the episodes (strictly more than one half)"
+  }
+ },
+ "study_id": "s26-t6s-shadow"
+}
