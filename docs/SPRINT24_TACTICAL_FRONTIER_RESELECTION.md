@@ -460,8 +460,40 @@ side has the configuration).
   the robustness threshold, the challenger choice, the flip-share edge, a number followed by a separator, the rules digest
   in the pins), closed with configurations found by a small search before the registration; 42 of 42 since, and again
   after the results were bound.
-* A commit subject of 73 characters was reworded before the first push (tree unchanged), and a word the privacy scanner
-  treats as a secret word was removed from the new files before the first commit.
+* A commit subject of 73 characters was reworded before the first push (tree unchanged), and a word matching one of the
+  privacy scanner's patterns was removed from the new files before the first commit.
 * Review before committing the candidate entries found two denominators printed without an evidence item and one side
   count bound to the wrong census flag (aircraft damage, not the altitude listing); fixed, and a test now requires every
   number in an entry's text to be one of its own evidence values or a declared constant.
+
+### R14. Close-out
+
+* The results were pushed as `113d233fd3c51ec4ada7ae349d3f6a23e13d58fa` (tree
+  `95be0b7a62bb2f84b21c0e28525c48b1d4e6c392`) at 2026-10-08T16:17:16+08:00; a fresh clone from GitHub had the same commit
+  and tree and regenerated `inputs.json` and `selection.json` byte for byte, and the evaluation server's main clone was
+  fast-forwarded to it by bundle and is clean. All 17 sprint commits were audited as a set (author, single-line ASCII
+  subjects of at most 72 characters, no body).
+* Tests at that commit: the workstation tree ran 1,998 tests (92 skipped) with exit 0; a clean clone from GitHub 1,995
+  (100 skipped) with exit 0; the evaluation server's private tree 2,011 (7 skipped; 7,127 s) with exit 0 and the ledger
+  file byte-identical before and after.
+* Documentation gates: this sprint's private gate (`local/diagnostics/s24/doc_gate.py`) binds the results to the public
+  files and the copied logs and catches all its planted errors; every earlier current gate passes with its plants, and
+  the four retired `_v1` copies fail as at Sprint 23's close-out.
+* Privacy: the scan over every reachable blob at the results commit (1,062 blobs) found 105 hit lines: the accepted 104,
+  identical as a set, plus one new line, the process note of R13 as first written, which described a removed scanner
+  word by using it. It names no secret, credential, host, path or private value and is adjudicated benign
+  (`local/diagnostics/s24/privacy-adjudication.txt`); it was pushed before the scan and stays in history unless the
+  branch is rewritten, which was not done. The note was reworded in this close-out so later revisions add no further
+  hit. Proposed baseline: 105, pending the owner's confirmation.
+* Platform canary: rebuilt on the workstation and the server, SHA-256 `a3d3b0229118c0a389d379b315a620465624222f93fcf39de115e8e9dde59511`,
+  no smoke mismatch on either host.
+* Engine ledger: read-only verify after the server suite, 2,796 sessions opened and closed, none unclosed, integrity ok,
+  state chain continuous, the last event the close of session 2796; ledger file SHA-256 unchanged from the start of the
+  sprint; no session 2797. No engine installation, configuration or historical result was touched.
+
+### R15. Recommendation (one)
+
+Register and run T13-D1, the offline held-objective loss anatomy and garrison shadow of R10, with no engine session:
+freeze its definitions, distance, bound, fidelity figures and the three stop conditions first, then run it once on H0
+and HH. If it ends ready, write the two-session garrison probe's registration for the owner's approval; the engine is
+not called without that approval.
