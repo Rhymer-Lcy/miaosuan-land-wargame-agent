@@ -1,0 +1,256 @@
+{
+ "killed": 47,
+ "mutations": [
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "zone radius two hexes"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "threat margin zero"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "threat at range plus margin excluded"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "artillery eligible as defender"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "artillery not counted as an occupant"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "a second occupant tolerated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "route must leave entirely"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "existing path ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "transport commitment ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "unknown range treated as a threat"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "enemy aircraft counted as threats"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "hold limit released one step late"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "cooldown one step short"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "no cooldown after a release"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "backup entry does not release"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "threat clearance does not release"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "defender outside the zone does not release"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "repeat moves pass during a hold"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "overlap owner by hex only"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "non-play decisions examined"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_garrison_shadow.py",
+   "mutation": "release order: threat before backup"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "a neutral flag after holding is not a loss"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "destruction without a damage record at the disappearance"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "departure attributed without the route"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "zone occupied at the loss not checked"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "mixed fates read as V_ORDER"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "several defenders actionable"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "order from outside the zone actionable"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "H0 baseline-v2 agreement ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "prefix support not required"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "post-divergence counted as touched"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "lookback window open at its lower edge"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "first owner before the order counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "non-objective destination has no next objective"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "independent withholding check skipped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "stop A: exactly half fails"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "stop A: pooled only"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "stop B: three touched suffice"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "stop B: one scenario-side suffices"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "stop B: replicas counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "stop C: exactly half fails"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "stop C: no touched loss passes"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "disposition: not-ready before invalid"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s25_t13.py",
+   "mutation": "disposition: unexplained differences ignored"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s25_t13_d1.py",
+   "mutation": "recorded actions in file order"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s25_t13_d1.py",
+   "mutation": "side colours swapped"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s25_t13_d1.py",
+   "mutation": "split parts may exceed the limit"
+  }
+ ],
+ "schema": "miaosuan-s25-mutation/1",
+ "sources": {
+  "scripts/s25_t13_d1.py": "91bd54e78e3b54c313c0124d6b4a3223b5a0fe8d7aa60956b9542db9b6b5a5b3",
+  "src/miaosuan_agent/evaluation/s25_t13.py": "16445a768feddce562e2afdd3083ebd6eb265821ca29d9360a6d0aa492997e04",
+  "src/miaosuan_agent/experiments/t13_garrison_shadow.py": "fd781f3fc3c5d08f2ad6a6457394b1b3127ba8aef4b302c95ee7bb46a6868929",
+  "tests/test_s25_driver.py": "4b82c904b75f947ce1ccdd99177e9a1c3eb6690c3efa40b5c42f4916797120aa",
+  "tests/test_s25_t13.py": "c008123776876e2a55fd12320530215e4d3cb1e62f59254b646fcb7a3bdca1b9",
+  "tests/test_t13_garrison_shadow.py": "2e49fe3b5f167284a5866cefad1f63cd9453deddb01b30347e9b378635bb9421"
+ },
+ "tests": [
+  "tests.test_t13_garrison_shadow",
+  "tests.test_s25_t13",
+  "tests.test_s25_driver"
+ ],
+ "total": 47,
+ "unmutated_tests_pass": true
+}
