@@ -481,10 +481,12 @@ side has the configuration).
   the four retired `_v1` copies fail as at Sprint 23's close-out.
 * Privacy: the scan over every reachable blob at the results commit (1,062 blobs) found 105 hit lines: the accepted 104,
   identical as a set, plus one new line, the process note of R13 as first written, which described a removed scanner
-  word by using it. It names no secret, credential, host, path or private value and is adjudicated benign
-  (`local/diagnostics/s24/privacy-adjudication.txt`); it was pushed before the scan and stays in history unless the
-  branch is rewritten, which was not done. The note was reworded in this close-out so later revisions add no further
-  hit. Proposed baseline: 105, pending the owner's confirmation.
+  word by using it. It carries no credential, host, path or private value and is adjudicated benign
+  (`local/diagnostics/s24/privacy-adjudication.txt`). The first version of this close-out (`a52974c`, pushed at
+  2026-10-08T18:19:37+08:00 before its own scan) repeated the trap in the sentence adjudicating it, a second benign
+  line of the same kind. Both lines stay in history unless the branch is rewritten, which was not done; both sentences
+  are reworded, and the scan of every reachable blob after this correction (1,064 blobs) finds 106 hit lines: the
+  accepted 104, identical as a set, and the two benign lines. Proposed baseline: 106, pending the owner's confirmation.
 * Platform canary: rebuilt on the workstation and the server, SHA-256 `a3d3b0229118c0a389d379b315a620465624222f93fcf39de115e8e9dde59511`,
   no smoke mismatch on either host.
 * Engine ledger: read-only verify after the server suite, 2,796 sessions opened and closed, none unclosed, integrity ok,
