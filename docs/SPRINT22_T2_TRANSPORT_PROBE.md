@@ -499,3 +499,31 @@ mechanics: the same seat-local trigger generalised to every co-located infantry-
 sends to an objective, the carrier's destination hold kept, with the evidence needed to size a screen (how often the
 trigger is available, how many infantry orders it would replace, and the travel time saved) computed on the existing
 captures before any engine request. The screen itself is not run in this sprint, and session 2797 is not opened.
+
+### R9. Close-out
+
+* **Maintenance found by the close-out.** The first close-out run of the server's private suite at the results commit
+  `6755ea058b3fdea25ce29ecfa123585c3269b1ff` failed one test, Sprint 21's regeneration test: Sprint 21's inventory lists
+  every capture folder under `local/evaluation/`, so this sprint's new capture folder entered a fresh inventory (one more
+  usable game) and `freeze --check` reported a mismatch, although nothing of Sprint 21 had changed; the registration-time
+  run could not see it because the folder did not exist yet. Commit `186556d473f64bb3edfdbae55b2285aaf7bf9eb6` changes
+  only that test: it runs Sprint 21's frozen driver unchanged, in process, with its folder listing bounded to the folders
+  Sprint 21's committed `inputs.json` names, and still runs `run --check` as a program; Sprint 21's driver, pins and
+  public files are untouched. With the new folder admitted the bounded comparison fails, and bounded it passes.
+* Tests at `186556d473f64bb3edfdbae55b2285aaf7bf9eb6` (tree `550fab103cd04357c8e39e0c08dc81532b60fb67`): the
+  workstation tree ran 1,894 tests (89 skipped) with exit 0; a clean clone from GitHub at the results commit ran 1,891
+  (97 skipped) with exit 0 (the maintenance commit changes a test that skips off the server); the evaluation server's
+  private tree ran 1,907 tests (7 skipped; 6,962 s) with exit 0, regenerating the
+  semantics, witness and inputs files, the rehearsal, the three result files and the mutation record, with the ledger
+  file byte-identical before and after.
+* Documentation gates: Sprint 22's private gate (`local/diagnostics/s22/doc_gate.py`) binds the registration and the
+  results to the public files and the copied logs and catches every planted error; every earlier current gate passes
+  with its plants (the four retired `_v1` copies fail as at Sprint 21's close-out), and Sprint 10's gate on the server
+  reports 40 checks with no failure and catches its 15 plants.
+* Privacy: the scan over every reachable blob at the results commit (1,019 blobs) found 104 hit lines, identical as a
+  set to the accepted 104.
+* Platform canary: rebuilt byte for byte on the workstation and the server.
+* Engine ledger: read-only verify after the session, 2,796 sessions opened and closed, none unclosed, integrity ok,
+  state chain continuous; the Sprint 22 audit of the whole live ledger passes (session 2796 the card's game, no other
+  session after 2795). Session 2797 was not opened. The server's development worktree was removed; the evidence stays
+  under the ignored `local/` tree.
