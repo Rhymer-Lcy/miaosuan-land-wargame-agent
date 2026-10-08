@@ -352,3 +352,194 @@ label); the mutation record was regenerated on the amended sources (47 of 47 kil
 differs only in that label and the analysis module's digest. The registration did not map a sanitizer refusal to a
 disposition (section 18: the run writes nothing), so the run under this amendment is the study's run of record; the
 refused attempt produced no result.
+
+## Results (2026-10-08)
+
+Every figure below is read from the committed public files of `evaluation/s25-t13-d1/`, which `scripts/s25_t13_d1.py
+run --check` regenerates byte for byte on the evaluation server, unless it is labelled post hoc.
+
+### R1. Order of work
+
+The privacy decision was applied first (section 1). The registration was pushed at 2026-10-08T19:48:52+08:00 after the
+workstation suite passed on it (2,100 tests, 101 skipped); a fresh GitHub clone had the same commit and tree, its 13
+registered files were byte-identical, and its suite passed (2,097 tests, 109 skipped). The first run refused before
+writing anything; Amendment A1 (`f620291` to `b9372d74989803ffea6a7ab8611d0642fda33bb4`, tree
+`6cb995b12be142cc38e3a8a682ee3f80ea1e9730`) was pushed at 2026-10-08T20:06:41+08:00 after the workstation suite passed
+(2,101 tests, 101 skipped) and the privacy scan matched the 106 accepted lines exactly; the clone again matched. The
+server's main clone was fast-forwarded to it, `freeze --check` passed, and `run` wrote the six result files and the
+private rows once. No engine was called and no definition, threshold or stop was changed after the run.
+
+### R2. Fidelity
+
+All 12 anchors and the four Sprint 18 blocks (N4 and N6, H0 and HH) are reproduced exactly (`fidelity.json`): H0 33,696
+decisions, 33,680 play decisions, 123 recorded/`baseline-v2` differences (also by the separate recorded-action pass);
+HH 11,524 of 11,524 reconstructions equal to the recorded seat; 40 and 26 held-objective losses; 0 losses with an own
+unit on the hex; 7 H0 scenario-sides with a loss; 16 and 4 side-games. All 20 side-games pass every integrity check, and
+there is no unexplained action difference at any decision.
+
+### R3. V classes
+
+| | H0 | HH | Pooled |
+|---|---:|---:|---:|
+| held-objective losses | 40 | 26 | 66 |
+| V_ORDER | 39 | 20 | 59 |
+| of which one last defender | 19 | 12 | 31 |
+| of which several last defenders, all leaving under recorded MOVEs | 20 | 8 | 28 |
+| V_LOSS (destroyed in the zone) | 0 | 4 | 4 |
+| V_OTHER | 1 | 2 | 3 |
+
+V_OTHER: one H0 loss whose several last defenders had different fates in the same step, and two HH losses with a last
+defender missing without a damage record at its disappearance. A last defender was identified and the zone had become
+empty before every one of the 66 losses; no zone was occupied at a loss decision. In other count units the losses cover
+7 scenario-sides (HH's two coincide with H0's 2130511121 sides), 27 distinct setups (scenario-side and objective), 8
+games, 11 side-games and 59 defender units; V_ORDER alone covers the same 7 scenario-sides, 27 setups and 52 defender
+units.
+
+### R4. Loss anatomy by side-game
+
+| Side-game | Losses | V_ORDER | V_LOSS | V_OTHER | Touched | No prefix support | Later opportunity | Non-actionable | Ambiguity |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| H0 1910631192 red | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
+| H0 1910631192 blue | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
+| H0 1930331196 red | 10 | 10 | 0 | 0 | 0 | 0 | 0 | 10 | 0 |
+| H0 1930331196 blue | 12 | 12 | 0 | 0 | 0 | 0 | 3 | 9 | 0 |
+| H0 2120531121 red | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
+| H0 2130511121 red | 7 | 6 | 0 | 1 | 0 | 1 | 1 | 4 | 1 |
+| H0 2130511121 blue | 6 | 6 | 0 | 0 | 0 | 1 | 0 | 5 | 0 |
+| HH p01 baseline-v2 blue | 5 | 4 | 1 | 0 | 1 | 0 | 0 | 4 | 0 |
+| HH p02 baseline-v2 red | 6 | 4 | 1 | 1 | 0 | 0 | 0 | 5 | 1 |
+| HH p03 baseline-v2 blue | 4 | 4 | 0 | 0 | 0 | 0 | 0 | 4 | 0 |
+| HH p04 baseline-v2 red | 11 | 8 | 2 | 1 | 0 | 0 | 0 | 10 | 1 |
+
+The other nine H0 side-games have no loss.
+
+### R5. The 31 single-defender departures
+
+Every one is a vehicle sent to an objective its side did not hold, by a MOVE that `baseline-v2` itself issues (H0: the
+identical action in all 19; HH: the recorded seat). 28 were ordered from inside the lost objective's zone (H0 16, HH 12),
+none at the last decision the zone was occupied and none while the unit already had a remaining route: the order came a
+median 162 steps before the loss (41 to 715) and the zone was empty a median 121 steps before it (1 to 675; H0 140, HH
+81), never at the loss decision itself; 23 of the 31 orders (H0 12, HH 11) came within 300 steps of the loss. At the
+order a qualifying threat was visible in 30 (the nearest visible enemy a median 5 hexes from the objective, at most 11;
+the nearest threat a median 15.5 hexes inside its range plus one), and in the other one an enemy had been seen within
+the lookback window; 24 also had a visible enemy without a published range against the departing class.
+
+**The trigger at the departing MOVE**: `zone_not_single` in 22 (H0 11, HH 11), eligible in 8 (H0 7, HH 1),
+`no_qualifying_threat` in 1. The single-occupant condition is what the departures fail: the last unit to leave was
+ordered while another own ground unit was still in the zone.
+
+### R6. Touch categories
+
+| Category | H0 | HH | Reasons |
+|---|---:|---:|---|
+| touched at a valid first divergence | 0 | 1 | withheld at the side's first divergence |
+| first divergence without prefix support | 2 | 0 | recorded actions differ from `baseline-v2` earlier |
+| later historical-state opportunity only | 4 | 0 | after the side's first divergence |
+| non-actionable | 33 | 23 | several last defenders 20 / 8; trigger `zone_not_single` 9 / 11; ordered before entering the zone 3 / 0; trigger `no_qualifying_threat` 1 / 0; destroyed in the zone 0 / 4 |
+| classification ambiguity | 1 | 2 | V_OTHER |
+
+### R7. The shadow and the divergence boundary
+
+The shadow examined every `baseline-v2` MOVE (H0 509, HH 416, Sprint 18's published move-order counts): `zone_not_single`
+230 and 193, not in a held zone 146 and 102, not a ground unit (aircraft) 118 and 114, no qualifying threat 2 and 2,
+eligible 13 and 5. It started 18 synthetic episodes (H0 13 in 4 side-games, HH 5 in 3), with no repeat, overlap or
+in-zone pass: on the recorded trajectory the withheld unit always moved on, so the episodes ended by the defender
+leaving the zone (H0 9, HH 1), the threat clearing (H0 3), a backup entering (HH 1), the defender's absence (HH 1) or
+stayed open at the end (H0 1, HH 2). These hold lengths describe the replay, not holds the candidate would make.
+
+First divergences occur in 7 side-games; in the other 13 the candidate equals `baseline-v2` throughout.
+
+| Side-game | Decision | Step | Prefix supported | Withheld unit | Objective | Qualifying threats | Nearest threat (hexes) | Precedes a loss of it |
+|---|---:|---:|---|---|---|---:|---:|---|
+| H0 1930331196 red | 2305 | 2304 | no | infantry | 50-point objective A | 1 | 9 | no |
+| H0 1930331196 blue | 743 | 742 | no | vehicle | 50-point objective A | 4 | 5 | no |
+| H0 2130511121 red | 701 | 700 | no | vehicle | 50-point objective B | 7 | 4 | yes |
+| H0 2130511121 blue | 422 | 421 | no | vehicle | 80-point objective A | 11 | 5 | yes |
+| HH p01 baseline-v2 blue | 422 | 421 | yes | vehicle | 80-point objective A | 12 | 5 | yes |
+| HH p02 baseline-v2 red | 2738 | 2737 | yes | infantry | 50-point objective C | 2 | 3 | no |
+| HH p04 baseline-v2 red | 562 | 561 | yes | vehicle | 50-point objective C | 6 | 2 | no |
+
+Eleven later episodes (H0 9, HH 2) are post-divergence replays and are not counted as candidate behaviour. H0's four
+first divergences all come after that side's first recorded/`baseline-v2` difference, so none is a valid action-level
+fact; H0 2130511121 blue's falls at the same decision and step, on the same objective, as HH p01's (the same
+opening).
+
+### R8. The touched loss and the cost of withholding
+
+One loss is touched at a valid first divergence: HH p01, `baseline-v2` blue, the 80-point objective A. The departing
+vehicle's MOVE at step 421 was the side's first divergence; the zone was empty 61 steps before the loss at step 562;
+12 qualifying threats were visible, the nearest 5 hexes from the objective. Its destination was an objective the side
+did not hold; it was not among that objective's first owners, and it was lost later in the game. Over all 31
+single-defender departures (descriptive): every destination an objective not held; the departing unit a first owner of
+its next objective in 3 (all H0), and of any objective after the order also in 3; the departing unit lost later in 25
+(H0 17, HH 8).
+
+### R9. Stop conditions
+
+| Stop | Registered quantity | Result | Met |
+|---|---|---|---|
+| A, departure not dominant | V_ORDER share, each population and pooled | H0 39/40, HH 20/26, pooled 59/66 | no |
+| B, insufficient actionable coverage | distinct touched losses (at least 4) and their scenario-sides (at least 2) | 1 touched (raw 1), 1 scenario-side | **yes** |
+| C, onward capture interference | first owners among the distinct touched losses (more than one half) | 0/1 | no |
+
+### R10. Disposition: T13_D1_NOT_READY
+
+Fidelity is intact and no action difference is unexplained, so the study is valid; stop B is met. Held-objective
+losses are dominated by departures under `baseline-v2`'s own MOVEs, but the frozen garrison rule reaches one of them at
+a valid first divergence, in one scenario-side. No engine probe is drafted, nothing is promoted, and session 2797 is
+not opened. The T13-D1 increment is closed with this evidence; T13 is not patched in this sprint.
+
+### R11. Post-hoc facts (read after the disposition; they change nothing)
+
+From `local/diagnostics/s25/posthoc.py` on the evaluation server (aggregates only):
+
+* **The vacating units are stacked groups.** Every one of the 81 last-defender instances of the 28 multi-defender exits
+  was stacked (79 vehicles, 2 infantry), and in 27 of those 28 the recorded stream ordered all last defenders at one
+  decision.
+* **The vacating order often empties the zone at once.** At the decision of the last defender's order, every own ground
+  unit then in the zone was ordered out of it in 22 of the 59 V_ORDER losses (H0 16, HH 6); in the others some occupant
+  left the zone without an order at that decision, or the departing unit was not yet in the zone (in 8 losses the zone
+  was empty at the order, and the unit entered it later). A qualifying threat was visible at that decision in 45 of the
+  59; in H0, `baseline-v2` issues the same MOVEs there in all 39.
+* **The evidence capacity is small.** Only 23 of the 59 V_ORDER losses had their departure order on a valid prefix: all
+  20 in HH (one scenario, two openings) and 3 in H0 (2 in 1910631192 red, whose recorded actions equal `baseline-v2`'s
+  throughout, and 1 in 1930331196 red). With one first divergence per side-game, the registered coverage of four
+  distinct touched losses on two scenario-sides needs nearly every valid side-game to diverge first on a loss
+  departure.
+
+### R12. What Sprint 25 shows
+
+1. **Held objectives are lost to departures, not to destruction**: 59 of 66 losses follow the last defenders' departure
+   under recorded MOVEs, in both populations (HH 20 of 26 on genuine `baseline-v2` seats); only 4 follow a destruction
+   in the zone. The capture rule's premise holds on these data: the zone was empty before every loss.
+2. **The departures are collective.** `baseline-v2` sends stacked groups off held objectives, often in one decision;
+   the last unit to leave was alone in the zone when ordered in only 8 of the 59 V_ORDER losses. A single-occupant
+   garrison trigger therefore sees few of the departures that matter.
+3. **The recorded-state evidence boundary binds.** Valid first divergences come almost only from HH, one scenario, and
+   each side-game offers one.
+4. **Descriptively, the onward cost looked small**: the departing unit was a first owner elsewhere in 3 of 31
+   single-defender departures and was lost later in 25. This is a historical label, not a counterfactual estimate.
+
+### R13. Process notes
+
+* The first registered run was refused by the public sanitizer (Amendment A1): a label named the lookback window by its
+  length, a number word equal to a private value. Sprints 20 and 23 met the same class of collision; the registered
+  labels are now tested for number words.
+* The first mutation run caught 46 of 47 planted defects; the survivor was a test gap (a first ownership before the
+  order counted as a risk), closed before registration.
+* Two disclosure sentences were corrected before registration: the HH step repetition (one repeated step per game, not
+  located) and the reading of the damage-record offsets.
+
+### R14. Recommendation (one)
+
+Run Sprint 24's runner-up experiment, **T6-S, the stacked-column stagger offline shadow** (its entry in
+`evaluation/s24-tactical-frontier-reselection/experiments.json`), with no engine session, after its definitions and
+stops are registered in the manner of this sprint and the owner approves. Why this one: T13-D1 failed because held
+objectives are emptied by stacked groups that `baseline-v2` orders off together, which a single-unit garrison cannot
+see; T6-S's trigger acts on stacked groups sent off a shared hex under a visible threat, so its shadow measures the
+population this study found, with its own onward first-owner stop; Sprint 24 placed T6-S inside its tie band and named
+the offline shadows of T13 and T6 as what would separate them; and it needs no engine session. Not recommended: a
+group-level retention variant of T13 (T13-D1 with a modified trigger, and the post-hoc evidence capacity, 23 of 59
+order-vacating losses on a valid prefix, would bind it as it bound this study) and any engine probe (stop B is met).
+The T13 family stays `IDEA`; any later T13 increment needs a genuinely different mechanism and the owner's decision.
+
