@@ -151,6 +151,10 @@ Sprint 24's offline frontier re-selection (`docs/SPRINT24_TACTICAL_FRONTIER_RESE
 Sprint 22's mechanism result, shelved the multi-pair transport increment, scored one next experiment per family under
 a rubric registered before any candidate was written, and selected a new family, objective retention: its first
 experiment is an offline anatomy of how held objectives are lost. Nothing was promoted.
+Sprint 25's registered offline study of that anatomy (`docs/SPRINT25_T13_D1.md`, no engine session) found held
+objectives lost mostly to departures under `baseline-v2`'s own orders, not to destruction, but by stacked groups
+leaving together, so the frozen single-unit garrison rule could act on almost none of them (disposition
+T13_D1_NOT_READY). Nothing was promoted.
 The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
@@ -223,6 +227,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/SPRINT22_T2_TRANSPORT_PROBE.md` | Sprint 22's registered T2-P1 transport mechanism probe: the transport-semantics audit, the frozen witness selection, the candidate and its state machine, the endpoints, the one engine session, results and disposition |
 | `docs/SPRINT23_T2_POLICY_DESIGN.md` | Sprint 23's offline T2 policy design: the proposed multi-pair candidate, matching, time model, admission, failure handling, the frozen readiness rule, the opportunity study and its disposition |
 | `docs/SPRINT24_TACTICAL_FRONTIER_RESELECTION.md` | Sprint 24's offline frontier re-selection: the Sprint 23 qualification, the prospective rubric and its robustness rules, the candidate experiments with checked evidence, the scores, the selection and the next experiment |
+| `docs/SPRINT25_T13_D1.md` | Sprint 25's offline T13-D1 study: the privacy owner decision, the frozen loss and departure definitions, the non-executable garrison shadow, the stops, Amendment A1, the loss anatomy, results and disposition |
 | `docs/PLATFORM_CANARY.md` | the owner's manual upload and compatibility-check steps for the platform canary |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
