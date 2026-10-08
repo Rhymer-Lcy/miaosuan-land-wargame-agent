@@ -1,0 +1,306 @@
+{
+ "killed": 57,
+ "mutations": [
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "embark schema: unit and target swapped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "embark appended instead of replacing the move in place"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "no carrier hold at the trigger"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "the hold withholds every carrier action"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "condition 2: units of a past episode eligible again"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "condition 2: a moving carrier eligible"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "condition 3: the listing not required"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "condition 4: the carrier's MOVE not required"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "condition 5: different destinations accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "condition 5: a non-objective destination accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "condition 6: a tie with the foot arrival accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "condition 7: arrival at the last step accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "unable on foot: arrival at the last step counted as able"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "time model: one transition left out"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "condition 8: capacity not checked"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "matching: smaller saving first"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "matching: infantry able to walk preferred"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "matching: no infantry conflict"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "matching: no carrier conflict"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "admission: the pair's own two places not counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "admission: active reservations ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "reservations: a carrier on the destination still counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "disembark issued at the stacking limit"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "embark failure read in the order's own step"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "embark bound off by one"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "carriage bound without the free-flow time"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "destination bound off by one"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "no hold while waiting at the destination"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "no re-issue of an interrupted disembark"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "disembark appended instead of replacing the carrier's action"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "recovery may start at the failure decision"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "recovery on a full hex"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "recovery attempts unbounded"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "an absent infantry tolerated outside a transition"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t2_transport_x1.py",
+   "mutation": "memory with a unit in two episodes accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "batch check: an over-committed destination accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "batch check: a kept carrier MOVE accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "batch check: an unselected admissible pair accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "batch check: different objectives accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "projection: arrival without the embark"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "saturation at four others instead of three"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "saturation counts the pair's own units"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "role C boundary off by one"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "role B: any owner counts"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "role A: earlier ownership ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "carrier hold window one step short"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "claimant: a held objective counts"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "runs: non-consecutive selections merged"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "readiness: a minimum met one below"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "readiness: inert episodes counted as acting"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "readiness: a share at its maximum blocks"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "readiness: risk before opportunity"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "screen: phase M with a single pair"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s23_design.py",
+   "mutation": "screen: H0 preferred to HH on ties"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s23_t2_design.py",
+   "mutation": "H0 validity: a difference at the trigger decision invalidates"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s23_t2_design.py",
+   "mutation": "H0 validity not required"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s23_t2_design.py",
+   "mutation": "known answer: decision not compared"
+  }
+ ],
+ "schema": "miaosuan-s23-mutation/1",
+ "sources": {
+  "scripts/s23_t2_design.py": "8a1a6f62b733d9d36974c43f1a5ed944677d12d94b717bca8e570d614b64f629",
+  "src/miaosuan_agent/evaluation/s23_design.py": "7aa94f2bdbabe657b45e8705085c4b2e4d94fc66dbf2ef3bbc9dd1d1c1b2cb0f",
+  "src/miaosuan_agent/experiments/t2_transport_x1.py": "dde2949892bcc7f75d34b14fb98f5ac2238e7946c26fcbf6f1fc9229a9b8eeec",
+  "tests/test_s23_design.py": "0e54f29660bb7c516b999c43cafdc8955770e5b0b669c250b7dec4af8f64543f",
+  "tests/test_s23_driver.py": "3433f5d673433049cb0eb6a7f1da546af39d7d6e8e2ff06c29b06e46cf15210e",
+  "tests/test_t2_transport_x1.py": "07b5472ca842741aa093a7e6f83eb40984dbdf270593cc138bf47ac84667f0af"
+ },
+ "tests": [
+  "tests.test_t2_transport_x1",
+  "tests.test_s23_design",
+  "tests.test_s23_driver"
+ ],
+ "total": 57,
+ "unmutated_tests_pass": true
+}
