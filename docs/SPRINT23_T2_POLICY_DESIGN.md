@@ -340,3 +340,26 @@ sessions, none unclosed, the state chain continuous, no session 2797.
 
 No score, margin, safety or effect claim; no claim that transported infantry would arrive as projected; nothing is
 promoted, and no engine use is authorized by any outcome of this sprint.
+
+## 19. Amendment A1 (2026-10-08, before any result was read)
+
+The registration (sections 1 to 18) was pushed as `151624b09e547842823a83a5f805826b13b63a54` (tree
+`4c1edbdc2fcaa642c11f5817e0ddf3905e971efd`) at 2026-10-08T12:42:56+08:00; a fresh clone from GitHub had the same
+commit, tree and files, and the evaluation server was fast-forwarded to it. The study then ran once from that tree and
+**refused to write anything**: the sanitizer reported `saturated_share: private value in text` in the disposition.
+The share was published as a reduced fraction of two counts (`str(Fraction(...))`), and a reduced share such as `0`
+or `1` equals a small private unit id as a word of a string, the trap Sprint 20 met with bare small integers. The
+field holds no unit id or hex by construction, so this is a defect of the registered public format, not an exposure.
+No public or private file was written, and no figure was printed.
+
+What the refused run revealed, disclosed here: a disposition carries the two shares only when it has passed the
+opportunity minimums of section 14, so the registered run did not end in `T2_NO_GENERALIZABLE_OPPORTUNITY`; and one
+share's text equals a small integer. Nothing else was seen.
+
+The amendment changes only the representation: both shares are published unreduced as `part/whole` (for example
+`0/7`), and a new test checks the disposition against private ids 0 to 49. The thresholds, the comparisons (still on
+exact fractions), the order of the rule and every other file of the registration are unchanged. Read strictly, the
+clause of section 14 that makes a sanitizer failure `T2_DESIGN_INVALID` applies to this refusal; it was written for
+an exposure of private content, and the owner may still apply it literally. The rules module's digest therefore
+changes in `inputs.json` and in the mutation record (57 of 57 caught again), which are regenerated and committed with
+this section before the study is run again, once.
