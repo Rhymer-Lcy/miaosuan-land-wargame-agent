@@ -492,3 +492,23 @@ An offline frontier re-selection for the owner: re-score the Sprint 18 rubric wi
 (T6-G inadequate opportunity, T11-O1 closed, T2 mechanism supported and T2-X1 `T2_UNRESOLVED_INTERACTION_RISK` as an
 opening-only tactic whose hold competes with `baseline-v2`'s onward routing) and choose the next increment, with no
 engine use. Session 2797 is not opened.
+
+### R9. Close-out
+
+* The results were pushed as `0d14ce9c8906e6f61c2a6135ab88640381f67595` (tree
+  `f77d4979f69f36babf88ea49a793b74ad28a64d6`) at 2026-10-08T13:00:56+08:00; a fresh clone from GitHub had the same commit
+  and tree, and the evaluation server's main clone was fast-forwarded to it (its untracked copies of the three result
+  files, byte-identical to the committed ones, were removed first) and is clean.
+* Tests at that commit: the workstation tree ran 1,966 tests (92 skipped) with exit 0; a clean clone from GitHub 1,963
+  (100 skipped) with exit 0; the evaluation server's private tree 1,979 (7 skipped; 7,088 s) with exit 0 and the ledger
+  file byte-identical before and after, including the Sprint 23 regeneration of `inputs.json`, the three result files
+  and the mutation record.
+* Documentation gates: Sprint 23's private gate (`local/diagnostics/s23/doc_gate.py`) binds the results to the public
+  files and the copied post-hoc log (50 clauses) and catches 15 of 15 planted errors; every earlier current gate passes
+  with its plants, and the four retired `_v1` copies fail as at Sprint 22's close-out.
+* Privacy: the scan over every reachable blob (1,044 blobs) found 104 hit lines, identical as a set to the accepted 104.
+* Platform canary: rebuilt byte for byte on the workstation and the server.
+* Engine ledger: read-only verify, 2,796 sessions opened and closed, none unclosed, integrity ok, state chain
+  continuous, the last event the close of session 2796; ledger file SHA-256 unchanged from the start of the sprint; no
+  session 2797. No engine installation, configuration or historical result was touched. The server's development
+  worktree was removed; private evidence stays under the ignored `local/`.
