@@ -1,0 +1,97 @@
+{
+ "anchors": {
+  "H0 decisions": {
+   "equal": true,
+   "replay": 33696,
+   "sprint18": 33696
+  },
+  "H0 held-objective losses": {
+   "equal": true,
+   "replay": 40,
+   "sprint18": 40
+  },
+  "H0 losses with an own unit on the hex before": {
+   "equal": true,
+   "replay": 0,
+   "sprint18": 0
+  },
+  "H0 play decisions": {
+   "equal": true,
+   "replay": 33680,
+   "sprint18": 33680
+  },
+  "H0 recorded actions differ from reconstructed baseline-v2 (separate pass)": {
+   "equal": true,
+   "replay": 123,
+   "sprint18": 123
+  },
+  "H0 scenario-sides with a loss": {
+   "equal": true,
+   "replay": 7,
+   "sprint18": 7
+  },
+  "H0 side-games": {
+   "equal": true,
+   "replay": 16,
+   "sprint18": 16
+  },
+  "H0 v2 differs from recorded v0": {
+   "equal": true,
+   "replay": 123,
+   "sprint18": 123
+  },
+  "HH baseline-v2 reconstruction equal to the recorded seat": {
+   "equal": true,
+   "replay": 11524,
+   "sprint18": 11524
+  },
+  "HH held-objective losses": {
+   "equal": true,
+   "replay": 26,
+   "sprint18": 26
+  },
+  "HH losses with an own unit on the hex before": {
+   "equal": true,
+   "replay": 0,
+   "sprint18": 0
+  },
+  "HH side-games": {
+   "equal": true,
+   "replay": 4,
+   "sprint18": 4
+  }
+ },
+ "blocks": {
+  "N4 H0 block equal to census.json": true,
+  "N4 HH block equal to census.json": true,
+  "N6 H0 block equal to census.json": true,
+  "N6 HH block equal to census.json": true
+ },
+ "inputs_sha256": "31318086e168d1bb0aa946cde6c6cdf1758e641cda42b7586e51a9044dfe4bf3",
+ "ok": true,
+ "protocol_sha256": "f2f88042b0b4eec0cdc6965163fa7e2276fd74b12d79b70277e3cff87e81328f",
+ "schema": "miaosuan-s25-results/1",
+ "side_integrity": {
+  "H0 1910631192 blue": true,
+  "H0 1910631192 red": true,
+  "H0 1930331196 blue": true,
+  "H0 1930331196 red": true,
+  "H0 2010131194 blue": true,
+  "H0 2010131194 red": true,
+  "H0 2010211129 blue": true,
+  "H0 2010211129 red": true,
+  "H0 201033019601 blue": true,
+  "H0 201033019601 red": true,
+  "H0 2010431153 blue": true,
+  "H0 2010431153 red": true,
+  "H0 2120531121 blue": true,
+  "H0 2120531121 red": true,
+  "H0 2130511121 blue": true,
+  "H0 2130511121 red": true,
+  "HH p01 baseline-v2 blue": true,
+  "HH p02 baseline-v2 red": true,
+  "HH p03 baseline-v2 blue": true,
+  "HH p04 baseline-v2 red": true
+ },
+ "study_id": "s25-t13-d1"
+}

@@ -1,0 +1,53 @@
+{
+ "disposition": "T13_D1_NOT_READY",
+ "fidelity_ok": true,
+ "inputs_sha256": "31318086e168d1bb0aa946cde6c6cdf1758e641cda42b7586e51a9044dfe4bf3",
+ "integrity_ok": true,
+ "protocol_sha256": "f2f88042b0b4eec0cdc6965163fa7e2276fd74b12d79b70277e3cff87e81328f",
+ "schema": "miaosuan-s25-results/1",
+ "stops": {
+  "A_departure_not_dominant": {
+   "by_population": {
+    "H0": {
+     "losses": 40,
+     "met": false,
+     "share": "39/40",
+     "v_order": 39
+    },
+    "HH": {
+     "losses": 26,
+     "met": false,
+     "share": "20/26",
+     "v_order": 20
+    },
+    "pooled": {
+     "losses": 66,
+     "met": false,
+     "share": "59/66",
+     "v_order": 59
+    }
+   },
+   "met": false
+  },
+  "B_insufficient_actionable_coverage": {
+   "distinct_scenario_sides": 1,
+   "met": true,
+   "minimum_scenario_sides": 2,
+   "minimum_touched": 4,
+   "touched_distinct": 1,
+   "touched_raw": 1
+  },
+  "C_onward_capture_interference": {
+   "evaluable": true,
+   "first_owner": 0,
+   "met": false,
+   "share": "0/1",
+   "touched_distinct": 1
+  }
+ },
+ "stops_met": [
+  "B_insufficient_actionable_coverage"
+ ],
+ "study_id": "s25-t13-d1",
+ "unexplained_action_differences": 0
+}

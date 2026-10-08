@@ -1,0 +1,1034 @@
+{
+ "H0": {
+  "baseline_v2_same_move": [
+   [
+    "identical",
+    19
+   ]
+  ],
+  "by_category": {
+   "classification ambiguity": {
+    "defender_units": 4,
+    "distinct_setups": 1,
+    "events": 1,
+    "games": 1,
+    "scenario_sides": 1,
+    "side_games": 1
+   },
+   "first divergence without prefix support (opportunity only)": {
+    "defender_units": 2,
+    "distinct_setups": 2,
+    "events": 2,
+    "games": 1,
+    "scenario_sides": 2,
+    "side_games": 2
+   },
+   "later historical-state opportunity only": {
+    "defender_units": 3,
+    "distinct_setups": 4,
+    "events": 4,
+    "games": 2,
+    "scenario_sides": 2,
+    "side_games": 2
+   },
+   "non-actionable": {
+    "defender_units": 28,
+    "distinct_setups": 23,
+    "events": 33,
+    "games": 4,
+    "scenario_sides": 7,
+    "side_games": 7
+   },
+   "touched at a valid first divergence": {
+    "defender_units": 0,
+    "distinct_setups": 0,
+    "events": 0,
+    "games": 0,
+    "scenario_sides": 0,
+    "side_games": 0
+   }
+  },
+  "by_v_class": {
+   "V_LOSS": {
+    "defender_units": 0,
+    "distinct_setups": 0,
+    "events": 0,
+    "games": 0,
+    "scenario_sides": 0,
+    "side_games": 0
+   },
+   "V_ORDER": {
+    "defender_units": 30,
+    "distinct_setups": 26,
+    "events": 39,
+    "games": 4,
+    "scenario_sides": 7,
+    "side_games": 7
+   },
+   "V_OTHER": {
+    "defender_units": 4,
+    "distinct_setups": 1,
+    "events": 1,
+    "games": 1,
+    "scenario_sides": 1,
+    "side_games": 1
+   }
+  },
+  "category_reasons": [
+   [
+    "after the side's first divergence",
+    4
+   ],
+   [
+    "ordered before entering the zone",
+    3
+   ],
+   [
+    "recorded actions differ from baseline-v2 earlier",
+    2
+   ],
+   [
+    "several last defenders",
+    20
+   ],
+   [
+    "several last defenders with different fates in the same step",
+    1
+   ],
+   [
+    "trigger: no_qualifying_threat",
+    1
+   ],
+   [
+    "trigger: zone_not_single",
+    9
+   ]
+  ],
+  "departing_unit_class": [
+   [
+    "vehicle",
+    19
+   ]
+  ],
+  "departure_enemy_info": [
+   [
+    "seen within the lookback window",
+    1
+   ],
+   [
+    "visible, a qualifying threat",
+    18
+   ]
+  ],
+  "departures_with_visible_enemy_without_published_range": 12,
+  "existing_path_at_order": 0,
+  "last_defender_identified": 40,
+  "last_defenders": [
+   [
+    1,
+    19
+   ],
+   [
+    2,
+    9
+   ],
+   [
+    3,
+    4
+   ],
+   [
+    4,
+    8
+   ]
+  ],
+  "losses": {
+   "defender_units": 33,
+   "distinct_setups": 26,
+   "events": 40,
+   "games": 4,
+   "scenario_sides": 7,
+   "side_games": 7
+  },
+  "nearest_visible_enemy_distance": {
+   "max": 10,
+   "median": 5.0,
+   "min": 0,
+   "n": 18
+  },
+  "onward_destination": [
+   [
+    "objective not held",
+    19
+   ]
+  ],
+  "onward_first_owner": 3,
+  "onward_first_owner_of_any_objective": 3,
+  "onward_unit_later_lost": 17,
+  "order_at_last_occupied_decision": 0,
+  "order_to_loss_within_hold_limit": 12,
+  "ordered_from_inside_zone": 16,
+  "same_decision_empty_and_lost": 0,
+  "single_defender_departures": 19,
+  "steps_departure_to_loss": {
+   "max": 675,
+   "median": 140,
+   "min": 1,
+   "n": 19
+  },
+  "steps_order_to_loss": {
+   "max": 715,
+   "median": 242,
+   "min": 41,
+   "n": 19
+  },
+  "threat_margin_at_departure": {
+   "max": -11,
+   "median": -15.5,
+   "min": -21,
+   "n": 18
+  },
+  "trigger_reason_at_departure": [
+   [
+    "eligible",
+    7
+   ],
+   [
+    "no_qualifying_threat",
+    1
+   ],
+   [
+    "zone_not_single",
+    11
+   ]
+  ],
+  "v_reasons": [
+   [
+    "left alive under a recorded MOVE",
+    19
+   ],
+   [
+    "several last defenders with different fates in the same step",
+    1
+   ],
+   [
+    "several last defenders, all left alive under recorded MOVEs",
+    20
+   ]
+  ],
+  "withheld_by_stateful_shadow": 7,
+  "zone_became_empty": 40
+ },
+ "HH": {
+  "baseline_v2_same_move": [
+   [
+    "identical",
+    12
+   ]
+  ],
+  "by_category": {
+   "classification ambiguity": {
+    "defender_units": 4,
+    "distinct_setups": 1,
+    "events": 2,
+    "games": 2,
+    "scenario_sides": 1,
+    "side_games": 2
+   },
+   "first divergence without prefix support (opportunity only)": {
+    "defender_units": 0,
+    "distinct_setups": 0,
+    "events": 0,
+    "games": 0,
+    "scenario_sides": 0,
+    "side_games": 0
+   },
+   "later historical-state opportunity only": {
+    "defender_units": 0,
+    "distinct_setups": 0,
+    "events": 0,
+    "games": 0,
+    "scenario_sides": 0,
+    "side_games": 0
+   },
+   "non-actionable": {
+    "defender_units": 25,
+    "distinct_setups": 11,
+    "events": 23,
+    "games": 4,
+    "scenario_sides": 2,
+    "side_games": 4
+   },
+   "touched at a valid first divergence": {
+    "defender_units": 1,
+    "distinct_setups": 1,
+    "events": 1,
+    "games": 1,
+    "scenario_sides": 1,
+    "side_games": 1
+   }
+  },
+  "by_v_class": {
+   "V_LOSS": {
+    "defender_units": 4,
+    "distinct_setups": 3,
+    "events": 4,
+    "games": 3,
+    "scenario_sides": 2,
+    "side_games": 3
+   },
+   "V_ORDER": {
+    "defender_units": 22,
+    "distinct_setups": 8,
+    "events": 20,
+    "games": 4,
+    "scenario_sides": 2,
+    "side_games": 4
+   },
+   "V_OTHER": {
+    "defender_units": 4,
+    "distinct_setups": 1,
+    "events": 2,
+    "games": 2,
+    "scenario_sides": 1,
+    "side_games": 2
+   }
+  },
+  "category_reasons": [
+   [
+    "a last defender missing without a damage record at its disappearance",
+    2
+   ],
+   [
+    "destroyed in the zone",
+    4
+   ],
+   [
+    "several last defenders",
+    8
+   ],
+   [
+    "trigger: zone_not_single",
+    11
+   ],
+   [
+    "withheld at the side's first divergence",
+    1
+   ]
+  ],
+  "departing_unit_class": [
+   [
+    "vehicle",
+    12
+   ]
+  ],
+  "departure_enemy_info": [
+   [
+    "visible, a qualifying threat",
+    12
+   ]
+  ],
+  "departures_with_visible_enemy_without_published_range": 12,
+  "existing_path_at_order": 0,
+  "last_defender_identified": 26,
+  "last_defenders": [
+   [
+    1,
+    16
+   ],
+   [
+    2,
+    4
+   ],
+   [
+    3,
+    5
+   ],
+   [
+    4,
+    1
+   ]
+  ],
+  "losses": {
+   "defender_units": 26,
+   "distinct_setups": 11,
+   "events": 26,
+   "games": 4,
+   "scenario_sides": 2,
+   "side_games": 4
+  },
+  "nearest_visible_enemy_distance": {
+   "max": 11,
+   "median": 4.5,
+   "min": 2,
+   "n": 12
+  },
+  "onward_destination": [
+   [
+    "objective not held",
+    12
+   ]
+  ],
+  "onward_first_owner": 0,
+  "onward_first_owner_of_any_objective": 0,
+  "onward_unit_later_lost": 8,
+  "order_at_last_occupied_decision": 0,
+  "order_to_loss_within_hold_limit": 11,
+  "ordered_from_inside_zone": 12,
+  "same_decision_empty_and_lost": 0,
+  "single_defender_departures": 12,
+  "steps_departure_to_loss": {
+   "max": 240,
+   "median": 81.0,
+   "min": 1,
+   "n": 12
+  },
+  "steps_order_to_loss": {
+   "max": 301,
+   "median": 141.0,
+   "min": 41,
+   "n": 12
+  },
+  "threat_margin_at_departure": {
+   "max": -10,
+   "median": -15.5,
+   "min": -19,
+   "n": 12
+  },
+  "trigger_reason_at_departure": [
+   [
+    "eligible",
+    1
+   ],
+   [
+    "zone_not_single",
+    11
+   ]
+  ],
+  "v_reasons": [
+   [
+    "a last defender missing without a damage record at its disappearance",
+    2
+   ],
+   [
+    "destroyed in the zone",
+    4
+   ],
+   [
+    "left alive under a recorded MOVE",
+    12
+   ],
+   [
+    "several last defenders, all left alive under recorded MOVEs",
+    8
+   ]
+  ],
+  "withheld_by_stateful_shadow": 1,
+  "zone_became_empty": 26
+ },
+ "evidence_boundary": "H0: baseline-v0 trajectories, baseline-v2 reconstructed on them (descriptive unless the recorded prefix equals baseline-v2); HH: genuine baseline-v2 seats, four games of one scenario, two openings. Before a side's first divergence the candidate equals baseline-v2; later shadow states are off-policy.",
+ "inputs_sha256": "31318086e168d1bb0aa946cde6c6cdf1758e641cda42b7586e51a9044dfe4bf3",
+ "pooled": {
+  "baseline_v2_same_move": [
+   [
+    "identical",
+    31
+   ]
+  ],
+  "by_category": {
+   "classification ambiguity": {
+    "defender_units": 8,
+    "distinct_setups": 1,
+    "events": 3,
+    "games": 3,
+    "scenario_sides": 1,
+    "side_games": 3
+   },
+   "first divergence without prefix support (opportunity only)": {
+    "defender_units": 2,
+    "distinct_setups": 2,
+    "events": 2,
+    "games": 1,
+    "scenario_sides": 2,
+    "side_games": 2
+   },
+   "later historical-state opportunity only": {
+    "defender_units": 3,
+    "distinct_setups": 4,
+    "events": 4,
+    "games": 2,
+    "scenario_sides": 2,
+    "side_games": 2
+   },
+   "non-actionable": {
+    "defender_units": 53,
+    "distinct_setups": 27,
+    "events": 56,
+    "games": 8,
+    "scenario_sides": 7,
+    "side_games": 11
+   },
+   "touched at a valid first divergence": {
+    "defender_units": 1,
+    "distinct_setups": 1,
+    "events": 1,
+    "games": 1,
+    "scenario_sides": 1,
+    "side_games": 1
+   }
+  },
+  "by_v_class": {
+   "V_LOSS": {
+    "defender_units": 4,
+    "distinct_setups": 3,
+    "events": 4,
+    "games": 3,
+    "scenario_sides": 2,
+    "side_games": 3
+   },
+   "V_ORDER": {
+    "defender_units": 52,
+    "distinct_setups": 27,
+    "events": 59,
+    "games": 8,
+    "scenario_sides": 7,
+    "side_games": 11
+   },
+   "V_OTHER": {
+    "defender_units": 8,
+    "distinct_setups": 1,
+    "events": 3,
+    "games": 3,
+    "scenario_sides": 1,
+    "side_games": 3
+   }
+  },
+  "category_reasons": [
+   [
+    "a last defender missing without a damage record at its disappearance",
+    2
+   ],
+   [
+    "after the side's first divergence",
+    4
+   ],
+   [
+    "destroyed in the zone",
+    4
+   ],
+   [
+    "ordered before entering the zone",
+    3
+   ],
+   [
+    "recorded actions differ from baseline-v2 earlier",
+    2
+   ],
+   [
+    "several last defenders",
+    28
+   ],
+   [
+    "several last defenders with different fates in the same step",
+    1
+   ],
+   [
+    "trigger: no_qualifying_threat",
+    1
+   ],
+   [
+    "trigger: zone_not_single",
+    20
+   ],
+   [
+    "withheld at the side's first divergence",
+    1
+   ]
+  ],
+  "departing_unit_class": [
+   [
+    "vehicle",
+    31
+   ]
+  ],
+  "departure_enemy_info": [
+   [
+    "seen within the lookback window",
+    1
+   ],
+   [
+    "visible, a qualifying threat",
+    30
+   ]
+  ],
+  "departures_with_visible_enemy_without_published_range": 24,
+  "existing_path_at_order": 0,
+  "last_defender_identified": 66,
+  "last_defenders": [
+   [
+    1,
+    35
+   ],
+   [
+    2,
+    13
+   ],
+   [
+    3,
+    9
+   ],
+   [
+    4,
+    9
+   ]
+  ],
+  "losses": {
+   "defender_units": 59,
+   "distinct_setups": 27,
+   "events": 66,
+   "games": 8,
+   "scenario_sides": 7,
+   "side_games": 11
+  },
+  "nearest_visible_enemy_distance": {
+   "max": 11,
+   "median": 5.0,
+   "min": 0,
+   "n": 30
+  },
+  "onward_destination": [
+   [
+    "objective not held",
+    31
+   ]
+  ],
+  "onward_first_owner": 3,
+  "onward_first_owner_of_any_objective": 3,
+  "onward_unit_later_lost": 25,
+  "order_at_last_occupied_decision": 0,
+  "order_to_loss_within_hold_limit": 23,
+  "ordered_from_inside_zone": 28,
+  "same_decision_empty_and_lost": 0,
+  "single_defender_departures": 31,
+  "steps_departure_to_loss": {
+   "max": 675,
+   "median": 121,
+   "min": 1,
+   "n": 31
+  },
+  "steps_order_to_loss": {
+   "max": 715,
+   "median": 162,
+   "min": 41,
+   "n": 31
+  },
+  "threat_margin_at_departure": {
+   "max": -10,
+   "median": -15.5,
+   "min": -21,
+   "n": 30
+  },
+  "trigger_reason_at_departure": [
+   [
+    "eligible",
+    8
+   ],
+   [
+    "no_qualifying_threat",
+    1
+   ],
+   [
+    "zone_not_single",
+    22
+   ]
+  ],
+  "v_reasons": [
+   [
+    "a last defender missing without a damage record at its disappearance",
+    2
+   ],
+   [
+    "destroyed in the zone",
+    4
+   ],
+   [
+    "left alive under a recorded MOVE",
+    31
+   ],
+   [
+    "several last defenders with different fates in the same step",
+    1
+   ],
+   [
+    "several last defenders, all left alive under recorded MOVEs",
+    28
+   ]
+  ],
+  "withheld_by_stateful_shadow": 8,
+  "zone_became_empty": 66
+ },
+ "protocol_sha256": "f2f88042b0b4eec0cdc6965163fa7e2276fd74b12d79b70277e3cff87e81328f",
+ "schema": "miaosuan-s25-results/1",
+ "sides": [
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 2,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 2,
+   "population": "H0",
+   "scenario_side": "1910631192 red",
+   "side_game": "H0 1910631192 red",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 2,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 1,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 1,
+   "population": "H0",
+   "scenario_side": "1910631192 blue",
+   "side_game": "H0 1910631192 blue",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 1,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 10,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 10,
+   "population": "H0",
+   "scenario_side": "1930331196 red",
+   "side_game": "H0 1930331196 red",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 10,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 3,
+    "non-actionable": 9,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 12,
+   "population": "H0",
+   "scenario_side": "1930331196 blue",
+   "side_game": "H0 1930331196 blue",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 12,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 0,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 0,
+   "population": "H0",
+   "scenario_side": "2010131194 red",
+   "side_game": "H0 2010131194 red",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 0,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 0,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 0,
+   "population": "H0",
+   "scenario_side": "2010131194 blue",
+   "side_game": "H0 2010131194 blue",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 0,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 0,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 0,
+   "population": "H0",
+   "scenario_side": "2010211129 red",
+   "side_game": "H0 2010211129 red",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 0,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 0,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 0,
+   "population": "H0",
+   "scenario_side": "2010211129 blue",
+   "side_game": "H0 2010211129 blue",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 0,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 0,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 0,
+   "population": "H0",
+   "scenario_side": "201033019601 red",
+   "side_game": "H0 201033019601 red",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 0,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 0,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 0,
+   "population": "H0",
+   "scenario_side": "201033019601 blue",
+   "side_game": "H0 201033019601 blue",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 0,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 0,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 0,
+   "population": "H0",
+   "scenario_side": "2010431153 red",
+   "side_game": "H0 2010431153 red",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 0,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 0,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 0,
+   "population": "H0",
+   "scenario_side": "2010431153 blue",
+   "side_game": "H0 2010431153 blue",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 0,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 2,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 2,
+   "population": "H0",
+   "scenario_side": "2120531121 red",
+   "side_game": "H0 2120531121 red",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 2,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 0,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 0,
+   "population": "H0",
+   "scenario_side": "2120531121 blue",
+   "side_game": "H0 2120531121 blue",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 0,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 1,
+    "first divergence without prefix support (opportunity only)": 1,
+    "later historical-state opportunity only": 1,
+    "non-actionable": 4,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 7,
+   "population": "H0",
+   "scenario_side": "2130511121 red",
+   "side_game": "H0 2130511121 red",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 6,
+    "V_OTHER": 1
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 1,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 5,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 6,
+   "population": "H0",
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 6,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 4,
+    "touched at a valid first divergence": 1
+   },
+   "losses": 5,
+   "population": "HH",
+   "scenario_side": "2130511121 blue",
+   "side_game": "HH p01 baseline-v2 blue",
+   "v_classes": {
+    "V_LOSS": 1,
+    "V_ORDER": 4,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 1,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 5,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 6,
+   "population": "HH",
+   "scenario_side": "2130511121 red",
+   "side_game": "HH p02 baseline-v2 red",
+   "v_classes": {
+    "V_LOSS": 1,
+    "V_ORDER": 4,
+    "V_OTHER": 1
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 0,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 4,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 4,
+   "population": "HH",
+   "scenario_side": "2130511121 blue",
+   "side_game": "HH p03 baseline-v2 blue",
+   "v_classes": {
+    "V_LOSS": 0,
+    "V_ORDER": 4,
+    "V_OTHER": 0
+   }
+  },
+  {
+   "categories": {
+    "classification ambiguity": 1,
+    "first divergence without prefix support (opportunity only)": 0,
+    "later historical-state opportunity only": 0,
+    "non-actionable": 10,
+    "touched at a valid first divergence": 0
+   },
+   "losses": 11,
+   "population": "HH",
+   "scenario_side": "2130511121 red",
+   "side_game": "HH p04 baseline-v2 red",
+   "v_classes": {
+    "V_LOSS": 2,
+    "V_ORDER": 8,
+    "V_OTHER": 1
+   }
+  }
+ ],
+ "study_id": "s25-t13-d1"
+}
