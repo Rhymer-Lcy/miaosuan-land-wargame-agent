@@ -1,0 +1,321 @@
+{
+ "killed": 60,
+ "mutations": [
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "route prefix four hexes"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "range boundary excluded"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "start hex not inspected"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "minimum group of three"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "grouped by start hex only"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "grouped by first hex only"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "every member must be exposed"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "no threat required"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "leader by first-hex time"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "ties by unit id first"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "ties ignore the route cost"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "moving units eligible"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "positive speed ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "listing not checked"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "transport commitment ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "several MOVEs tolerated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "release without the reference leaving"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "release only after the reference leaves the first hex too"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "released member never becomes the reference"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "member without a MOVE becomes the reference"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "timeout one step early"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "stall factor three"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "no stall slack"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "no wait bound"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "timeout releases the head only"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "absent follower kept in the queue"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "members not spent on completion"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "never re-armed"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "re-armed at once"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "members of active episodes eligible"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "pending MOVEs pass"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "non-play decisions examined"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_stagger_shadow.py",
+   "mutation": "the leader withheld instead of the last follower"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "independent check skipped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "independent bound loosened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "independent second run allowed"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "independent check: own free-flow time not required"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "first ownership at the start counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "the leader counted as delayed"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "projected wait includes the own hex time"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "follow-up co-location on the start hex counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "certificate ignores the prefix"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "stop A: nine episodes suffice"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "stop A: pooled over side-games"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "stop A: a missing side-game ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "stop B: three scenario-sides suffice"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "stop B: side-games counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "stop C: exactly half fails"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "stop C: no episode passes"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "stop C: replicas counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "stop C: risk read from the first replica only"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "disposition: capture risk before opportunity"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s26_t6s.py",
+   "mutation": "disposition: unexplained differences ignored"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s26_t6s.py",
+   "mutation": "recorded actions in file order"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s26_t6s.py",
+   "mutation": "side colours swapped"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s26_t6s.py",
+   "mutation": "split parts may exceed the limit"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s26_t6s.py",
+   "mutation": "fidelity: gate episodes not compared"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s26_t6s.py",
+   "mutation": "fidelity: side-games not compared"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s26_t6s.py",
+   "mutation": "fidelity: separate pass not compared"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s26_t6s.py",
+   "mutation": "moving damage counts stationary units"
+  }
+ ],
+ "schema": "miaosuan-s26-mutation/1",
+ "sources": {
+  "scripts/s26_t6s.py": "cfa96bf48abe5379660524ef2cebf53ea113cd21f972da0ed2e1c782f80faf9e",
+  "src/miaosuan_agent/evaluation/s26_t6s.py": "a5801c73fe613028f9ba92d6ef90573419212895fc80435d9c4df69c3363116c",
+  "src/miaosuan_agent/experiments/t6s_stagger_shadow.py": "f937cce7c901f4cb3ed083d0904fd3fd6c7b8f996755fb64e5fa419f8aaf6077",
+  "tests/test_s26_driver.py": "ded9f180b18ecdb696358eec423c9068f59849cf841e6ae61db1c6fcaa288fd1",
+  "tests/test_s26_t6s.py": "910ea6c633b86fc867848cfbe61ab68a40938859e755d52fa818a4b9f3389a17",
+  "tests/test_t6s_stagger_shadow.py": "fb97ac39631c817450a6b759d3e38a19b676f2096133a6115a4643a108fc84df"
+ },
+ "tests": [
+  "tests.test_t6s_stagger_shadow",
+  "tests.test_s26_t6s",
+  "tests.test_s26_driver"
+ ],
+ "total": 60,
+ "unmutated_tests_pass": true
+}
