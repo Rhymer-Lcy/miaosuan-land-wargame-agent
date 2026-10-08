@@ -1,0 +1,106 @@
+{
+ "anchors": {
+  "H0 decisions": 33696,
+  "H0 held-objective losses": 40,
+  "H0 losses with an own unit on the hex before": 0,
+  "H0 play decisions": 33680,
+  "H0 scenario-sides with a loss": 7,
+  "H0 side-games": 16,
+  "H0 v2 differs from recorded v0": 123,
+  "HH baseline-v2 reconstruction equal": 11524,
+  "HH held-objective losses": 26,
+  "HH losses with an own unit on the hex before": 0,
+  "HH side-games": 4
+ },
+ "denial_zone": {
+  "distance": "evaluation/t7_visibility.hex_distance (cube coordinates of the four-digit hex)",
+  "radius_hexes": 1
+ },
+ "dispositions_first_match": [
+  "T13_D1_INVALID",
+  "T13_D1_NOT_READY",
+  "T13_D1_READY_FOR_SMALL_EXPLORATORY_PROPOSAL"
+ ],
+ "enemy_information_first_match": [
+  "visible, a qualifying threat",
+  "visible, no qualifying threat",
+  "seen within the previous 300 steps",
+  "seen earlier only",
+  "never seen"
+ ],
+ "engine_sessions": 0,
+ "fates": [
+  "left alive",
+  "destroyed",
+  "missing",
+  "alive, hex unreadable"
+ ],
+ "lookback_steps": 300,
+ "loss_event": "Sprint 18 N4: over the play-stage decisions of a side in order, an objective whose flag read the side's colour at the previous play decision and does not now; placed at that decision",
+ "own_ground_unit": "own operator of type 1 or 2 with a readable hex; artillery (type 2, sub_type 3) counts as an occupant but is not an eligible defender; passengers are not operators",
+ "public_file_limit_bytes": 90000,
+ "schema": "miaosuan-s25-protocol/1",
+ "shadow": {
+  "cooldown_steps": 300,
+  "executable": false,
+  "hold_limit_steps": 300,
+  "identity": "t13-d1-garrison-shadow",
+  "proximity": "enemy hex to objective hex at most range + threat margin",
+  "range_source": "evaluation/t7_candidates.weapon_range: the longest published direct-fire range of a visible enemy ground unit's carried weapons against the defender's class (type 1 personnel, type 2 vehicles); unknown range = not a threat",
+  "release_reasons_first_match": [
+   "objective_not_held",
+   "defender_absent",
+   "defender_outside_zone",
+   "backup_entered",
+   "threat_cleared",
+   "hold_limit"
+  ],
+  "status": "ANALYSIS SHADOW - NON-EXECUTABLE",
+  "threat_margin_hexes": 1,
+  "trigger_reasons": [
+   "eligible",
+   "unit_absent",
+   "not_ground",
+   "artillery",
+   "unreadable_unit_hex",
+   "not_in_a_held_zone",
+   "zone_not_single",
+   "unreadable_route",
+   "route_stays_in_zone",
+   "existing_path_exits",
+   "transport_committed",
+   "no_qualifying_threat",
+   "objective_in_episode",
+   "objective_in_cooldown"
+  ]
+ },
+ "sources": {
+  "scripts/s18_census.py": "b8d56b890d80a2730e1e37d06ce468bd7f568c95a237d4af0639dc8e33b77d30",
+  "scripts/s25_t13_d1.py": "91bd54e78e3b54c313c0124d6b4a3223b5a0fe8d7aa60956b9542db9b6b5a5b3",
+  "src/miaosuan_agent/evaluation/s12_screen.py": "bb69cc96e4e35daade0ec9eca98dcaf84a3e0c5973f9d91a028781000570a67e",
+  "src/miaosuan_agent/evaluation/s12_timeline.py": "5e2ae9e1357b77d8baaeb639a7eac091dfa64d9164a6f6d4d447bc6d7c7f5632",
+  "src/miaosuan_agent/evaluation/s18_census.py": "d48d741997b54a0659260f6df1716aff59983d96359eb8c79d31bd9ebbec3771",
+  "src/miaosuan_agent/evaluation/s25_t13.py": "16445a768feddce562e2afdd3083ebd6eb265821ca29d9360a6d0aa492997e04",
+  "src/miaosuan_agent/evaluation/t7_candidates.py": "50c77f37d7561282a257da6c3640e23ded5a2abdccb83b7d507c8811e5c312ab",
+  "src/miaosuan_agent/evaluation/t7_visibility.py": "add2b446ec8ff847fd941a8a0952971200858db2305cdbdded0b6263f42e27ff",
+  "src/miaosuan_agent/experiments/t13_garrison_shadow.py": "fd781f3fc3c5d08f2ad6a6457394b1b3127ba8aef4b302c95ee7bb46a6868929"
+ },
+ "stops": {
+  "A": "for H0, HH and pooled separately: met when 2 * V_ORDER < losses (or no loss)",
+  "B": "met when distinct touched losses < 4 or their distinct scenario-sides < 2",
+  "C": "met when no distinct touched loss, or 2 * first-owner departures > distinct touched losses"
+ },
+ "study_id": "s25-t13-d1",
+ "touched_categories": [
+  "touched at a valid first divergence",
+  "first divergence without prefix support (opportunity only)",
+  "later historical-state opportunity only",
+  "non-actionable",
+  "classification ambiguity"
+ ],
+ "v_classes": [
+  "V_ORDER",
+  "V_LOSS",
+  "V_OTHER"
+ ]
+}
