@@ -24,7 +24,7 @@
  "enemy_information_first_match": [
   "visible, a qualifying threat",
   "visible, no qualifying threat",
-  "seen within the previous 300 steps",
+  "seen within the lookback window",
   "seen earlier only",
   "never seen"
  ],
@@ -80,7 +80,7 @@
   "src/miaosuan_agent/evaluation/s12_screen.py": "bb69cc96e4e35daade0ec9eca98dcaf84a3e0c5973f9d91a028781000570a67e",
   "src/miaosuan_agent/evaluation/s12_timeline.py": "5e2ae9e1357b77d8baaeb639a7eac091dfa64d9164a6f6d4d447bc6d7c7f5632",
   "src/miaosuan_agent/evaluation/s18_census.py": "d48d741997b54a0659260f6df1716aff59983d96359eb8c79d31bd9ebbec3771",
-  "src/miaosuan_agent/evaluation/s25_t13.py": "16445a768feddce562e2afdd3083ebd6eb265821ca29d9360a6d0aa492997e04",
+  "src/miaosuan_agent/evaluation/s25_t13.py": "1936b3dfa3b699d7f10205084cba084e3ac3e0fd1291fe6f29387ff70a31fe6a",
   "src/miaosuan_agent/evaluation/t7_candidates.py": "50c77f37d7561282a257da6c3640e23ded5a2abdccb83b7d507c8811e5c312ab",
   "src/miaosuan_agent/evaluation/t7_visibility.py": "add2b446ec8ff847fd941a8a0952971200858db2305cdbdded0b6263f42e27ff",
   "src/miaosuan_agent/experiments/t13_garrison_shadow.py": "fd781f3fc3c5d08f2ad6a6457394b1b3127ba8aef4b302c95ee7bb46a6868929"
