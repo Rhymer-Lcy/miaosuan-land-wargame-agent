@@ -327,3 +327,28 @@ evidence, and exactly one next research task is recommended from the actual fail
 No tactic is shown to work or fail. A V_ORDER share describes recorded trajectories (H0's are `baseline-v0`'s); a
 touched loss is an eligible historical target of the registered rule, not a prevented loss; onward labels are
 historical, not counterfactual; nothing here estimates a score effect.
+
+## Amendment A1 (before the rerun)
+
+The registration (`ac9ac6e` to `10fd841ddd37c55d3de2660125cf42dc97662ae4`, tree
+`2b10e7986a5346944125f01a41a6027d7a420610`) was pushed at 2026-10-08T19:48:52+08:00; a fresh GitHub clone had the same
+commit and tree and byte-identical files, and its suite passed (2,097 tests, 109 skipped). The evaluation server's main
+clone was fast-forwarded to it by bundle, `freeze --check` passed there, and `run` was started once. **It refused before
+writing any file**: the public sanitizer found, in `anatomy.json`, the first entry of the enemy-information tally of the
+H0 table and of the pooled table to be a label with a word made only of digits, equal to a private hex or unit
+identifier. That label was the third enemy-information category of section 12, which named the lookback window by its
+length.
+
+**What the refusal revealed** (disclosed in full): `fidelity.json`, checked first, carried no private value (whether its
+anchors held was not printed); in H0 and in the pooled table the alphabetically first enemy-information category among
+the single-defender departures was that third category, so H0 has at least one single-defender departure in it and
+neither population has one whose enemy was "never seen" or "seen earlier only"; HH's table did not contain the
+category; and the number is among the private hexes or unit identifiers. Nothing else was printed or written.
+
+**Change**: only the public text of that label, now "seen within the lookback window"; the window itself is unchanged
+(300 steps, `step - 300 <= seen < step`). No definition, parameter, threshold, stop, disposition rule or input changed.
+A test now refuses any registered label or public string with a word made only of digits (it fails on the original
+label); the mutation record was regenerated on the amended sources (47 of 47 killed); `protocol.json` was re-frozen and
+differs only in that label and the analysis module's digest. The registration did not map a sanitizer refusal to a
+disposition (section 18: the run writes nothing), so the run under this amendment is the study's run of record; the
+refused attempt produced no result.
