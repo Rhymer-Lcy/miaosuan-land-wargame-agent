@@ -1,0 +1,103 @@
+{
+ "schema": "miaosuan-s24-scores/1",
+ "study_id": "s24-tactical-frontier-reselection",
+ "written": "after experiments.json was committed and pushed; G and P are computed from the named sources, L is capped and C computed by scripts/s24_select.py; every judgement score carries a reason",
+ "candidates": {
+  "T2": {
+   "increment": "T2-S opening dismount of infantry that start on board",
+   "G": {"file": "s18_census", "key": ["S", "presence_all", "scan infantry starting on board"], "of": 50},
+   "P": {"file": "s18_census", "key": null, "of": 16, "basis": "TRIGGER", "zero_reason": "no H0 scenario-side has infantry on board at the start: none of the 8 frozen scenarios starts any (census presence_frozen)"},
+   "L": [2, "occasional: 74 infantry in 10 of 50 scenarios stay aboard all game under baseline-v2, which never issues disembark; once dismounted they are slow foot infantry"],
+   "O": [5, "passengers, the carrier's state and the disembark listing are seat fields"],
+   "I": [3, "replaces the carrier's opening action and holds its MOVE for the 75-step disembark"],
+   "M": [5, "the listing, its acceptance and the infantry on the ground are fields of one deterministic game against the inert control"],
+   "R": [4, "disembark was listed and executed on engine 4.1.0 once (Sprint 22), never for passengers aboard at the start or at the opening"],
+   "E": [4, "one deterministic session answers listing and execution directly; a negative removes only this increment, since T2-P1 stands"],
+   "stakes": ["s18.S.start_aboard_units"]
+  },
+  "T3": {
+   "increment": "T3-O2 short memory of enemies near held objectives",
+   "G": {"file": "s18_census", "key": ["S", "presence_all", "T3 any unit"], "of": 50},
+   "P": {"file": "s18_census", "key": ["opportunity_sides", "sides_with_opportunity", "T3"], "of": 16, "basis": "STAKE"},
+   "L": [2, "occasional: attackers out of view at the event but seen within 300 steps caused 15 of 205 (H0) and 4 of 158 (HH) damage events; its value for objective retention is unmeasured"],
+   "O": [4, "the seat's view plus simple bookkeeping of where enemies were last seen"],
+   "I": [3, "as an input of T13 it changes which baseline-v2 moves are withheld"],
+   "M": [3, "whether a remembered threat would have fired before a loss is a derived counterfactual over full-step captures"],
+   "R": [5, "no new action"],
+   "E": [1, "no engine step of its own; its value shows only as a comparison inside T13 games, with and without the memory"],
+   "stakes": ["s18.T3.H0.unseen_within"]
+  },
+  "T6": {
+   "increment": "T6-S stacked-column stagger: offline shadow, then a two-session probe",
+   "G": {"file": "s18_census", "key": ["S", "presence_all", "T6 any unit"], "of": 50},
+   "P": {"file": "s18_census", "key": ["opportunity_sides", "sides_with_opportunity", "scan stacked ground unit damaged"], "of": 16, "basis": "STAKE"},
+   "L": [3, "a local advantage for co-departing movers: stacked victims took 112 of 177 (H0) and 70 of 130 (HH) ground damage events, but the co-departing share is unmeasured and the stacking correction's size is not identified"],
+   "O": [5, "own hexes, emitted routes, visible enemies and published ranges are seat fields (Sprint 19's machinery)"],
+   "I": [3, "withholds some baseline-v2 MOVEs for one hex time"],
+   "M": [3, "the stagger is directly observed, but its effect is a derived exposure rate (stacked moving unit-steps inside envelopes, damage per exposed mover) over full-step captures"],
+   "R": [5, "only withholding of moves, executed in every gate study; no new action"],
+   "E": [3, "two sessions, but the endpoint that answers the tactical question is a derived rate"],
+   "stakes": ["s18.N9.H0.stacked", "s18.N9.HH.stacked"]
+  },
+  "T7-C": {
+   "increment": "T7-E3b controlled concealment-exit diagnostic",
+   "G": {"file": "s18_census", "key": ["S", "presence_all", "T7-C ground vehicle or infantry"], "of": 50},
+   "P": {"file": "s18_census", "key": ["opportunity_sides", "sides_with_opportunity", "T7-C"], "of": 16, "basis": "TRIGGER"},
+   "L": [1, "marginal: the benefit channel is empty (no damage on a concealable unit in H0, 4 events in HH) and baseline-v2 orders only 1 unit after the trigger in H0"],
+   "O": [5, "a fixed deterministic configuration and the seat's own fields"],
+   "I": [5, "acts only on an idle concealed unit; baseline-v2's decisions are untouched"],
+   "M": [5, "acceptance and the movement state are fields of one deterministic game"],
+   "R": [4, "move is listed for concealed units and the free exit is documented, but never executed"],
+   "E": [4, "one session answers the move exit directly; the fire exit may need a second configuration, and a negative closes only the exit question"],
+   "stakes": ["s18.T7C.HH.concealable_events"]
+  },
+  "T8": {
+   "increment": "T8-A helicopter altitude probe",
+   "G": {"file": "s18_census", "key": ["S", "presence_all", "T8 helicopter (3.6) or transport helicopter (3.8)"], "of": 50},
+   "P": {"file": "s18_census", "key": ["opportunity_sides", "sides_with_opportunity", "T8"], "of": 16, "basis": "CAPABILITY"},
+   "L": [2, "occasional: 13 aircraft damage events in H0 on 4 of 16 scenario-sides, none while moving; the altitude effect for attack helicopters is undocumented"],
+   "O": [5, "the helicopter's state, visible enemies and the altitude listing are seat fields"],
+   "I": [4, "one new behaviour for one archetype with an action type baseline-v2 never issues"],
+   "M": [4, "the transition is a field of a deterministic game, but its exposure effect needs an acting opponent"],
+   "R": [3, "listed, its effect on attack helicopters undocumented"],
+   "E": [4, "one session answers the transition; two more show exposure with directly observed damage events"],
+   "stakes": ["s18.N8.H0.aircraft_events"]
+  },
+  "T10": {
+   "increment": "T10-P1 remove-suppression probe",
+   "G": {"file": "s18_census", "key": ["S", "presence_all", "scan infantry (1.2)"], "of": 50},
+   "P": {"file": "s18_census", "key": ["opportunity_sides", "sides_with_opportunity", "scan remove-suppression listed while suppressed"], "of": 16, "basis": "TRIGGER"},
+   "L": [2, "occasional: about one infantry suppression onset per H0 side-game (15 over 16) and 4 in HH; a re-suppressed infantry loses a squad (25 of 25, post hoc)"],
+   "O": [5, "keep and the listing are seat fields"],
+   "I": [5, "an action type baseline-v2 never issues, on units it cannot command while suppressed"],
+   "M": [4, "keep and the restored listings are direct, but suppression needs an acting opponent"],
+   "R": [3, "listed, its effect undocumented"],
+   "E": [3, "three sessions for a few suppression events"],
+   "stakes": ["s18.N2.H0.infantry_onsets"]
+  },
+  "T12": {
+   "increment": "T12-O1 objective-zone dispersion: offline count, then one deterministic and two head-to-head sessions",
+   "G": {"file": "s18_census", "key": ["S", "presence_all", "T7-C ground vehicle or infantry"], "of": 50},
+   "P": {"file": "s18_admission", "key": ["tables", "H0", "sides_with_a_stationary_stacked_hit_on_an_objective"], "of": 16, "basis": "STAKE"},
+   "L": [3, "a local advantage for holders: stationary stacked holders took 40 of 177 H0 ground damage events (post hoc), but baseline-v2 sends vehicles on from held objectives at once, so idle stacked holders may be rare"],
+   "O": [5, "own hexes, the stack field and objective flags are seat fields"],
+   "I": [3, "withholds baseline-v2's later moves for dispersed units"],
+   "M": [4, "stack and flags are direct; denial and damage need an acting opponent"],
+   "R": [4, "moves executed; adjacent denial documented but never tested"],
+   "E": [3, "the deterministic session shows only execution; denial needs enemy capture attempts: three sessions"],
+   "stakes": ["s18.admission.H0.stationary_on_objective"]
+  },
+  "T13": {
+   "increment": "T13-D1 held-objective loss anatomy and garrison shadow (offline), then a two-session garrison probe",
+   "G": {"file": "s18_census", "key": ["S", "presence_all", "T7-C ground vehicle or infantry"], "of": 50},
+   "P": {"file": "s18_census", "key": ["opportunity_sides", "sides_with_opportunity", "scan objective lost after being held"], "of": 16, "basis": "STAKE"},
+   "L": [4, "objective control is the occupy score (median 80 against acting policies): 40 held-objective losses on 7 of 16 H0 scenario-sides and 26 in the 4 HH side-games against 25 first ownerships there, none with an own unit on the hex; offsetting cost, the withheld onward moves"],
+   "O": [5, "objective flags, own units' hexes, the emitted MOVE and visible enemy ground units are seat fields; the distance is a frozen constant"],
+   "I": [3, "withholds baseline-v2's MOVE for the last unit of a held objective's zone"],
+   "M": [4, "losses, the garrison's presence and survival and first ownerships are direct fields; an acting opponent is needed, and HH shows several losses per game"],
+   "R": [5, "only withholding of moves; the on-hex denial rule is documented and none of the 66 published losses had an own unit on the hex"],
+   "E": [4, "two sessions answer it with directly observed endpoints that need an acting opponent's approach; a negative closes on-hex retention, not adjacent denial or fire"],
+   "stakes": ["s18.N4.H0.losses", "s18.N4.HH.losses"]
+  }
+ }
+}
