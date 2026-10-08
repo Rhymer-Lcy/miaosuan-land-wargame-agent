@@ -433,5 +433,65 @@ class CommittedFilesTest(unittest.TestCase):
         self.assertEqual((OUT / "selection.json").read_text(encoding="utf-8"), s.dump(s.build()))
 
 
+@unittest.skipUnless((OUT / "selection.json").exists(), "written after the scores")
+class ResultsTest(unittest.TestCase):
+    """The committed results as reported in the Sprint 24 document."""
+
+    def setUp(self) -> None:
+        self.sel = json.loads((OUT / "selection.json").read_text(encoding="utf-8"))
+        self.exp = json.loads((OUT / "experiments.json").read_text(encoding="utf-8"))
+
+    def test_outcome(self) -> None:
+        s = self.sel
+        self.assertEqual((s["outcome"], s["selected"], s["stage"], s["runner_up"], s["margin_over_runner_up"]),
+                         ("NEXT_INCREMENT_SELECTED", "T13", "robust", "T6", 0.15))
+        self.assertEqual(s["ranking"], ["T13", "T6", "T12", "T7-C", "T10", "T8"])
+        self.assertEqual(s["band"], ["T13", "T6"])
+        self.assertEqual(s["ineligible"], {"T2": ["withholding interaction without an offline conflict measure first"],
+                                           "T3": ["E below 2"]})
+        self.assertEqual(s["weighted"], {"T10": 3.65, "T12": 3.8, "T13": 4.05, "T2": 2.65, "T3": 3.5, "T6": 3.9,
+                                         "T7-C": 3.7, "T8": 3.05})
+        self.assertEqual((s["selected_first_in"], s["variants_total"]), (26, 27))
+        self.assertEqual({k: v for k, v in s["variants"].items() if v != "T13"}, {"without L": "T7-C"})
+        self.assertEqual((s["perturbation_flips"], s["perturbations_total"]), (2, 20))
+        flips = sorted((p["candidate"], p["criterion"], p["step"]) for p in s["perturbations"] if p["flipped"])
+        self.assertEqual(flips, [("T13", "E", -1), ("T6", "E", 1)])
+        self.assertTrue(all(not c["caps_applied"] for c in s["candidates"].values()))
+
+    def test_every_evidence_item_is_cited_and_every_citation_exists(self) -> None:
+        cited = set(self.exp["frontier_evidence"])
+        for entry in self.exp["experiments"].values():
+            cited |= set(entry["evidence"])
+        for entry in self.exp["admission"].values():
+            cited |= set(entry["motivating_evidence"])
+        self.assertEqual(cited, set(self.exp["evidence"]))
+        self.assertEqual(self.sel["evidence_checked"]["items"], 63)
+
+    def test_numbers_in_the_entries_are_evidence_values(self) -> None:
+        # every number printed in an entry's text is a value of one of its own evidence items (or a number inside a
+        # checked quote's value), a sprint reference, or one of these declared constants
+        import re
+        constants = {0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 16, 50, 75, 150, 155, 300, 205, 158, 1910631192, 2130511121}
+        fields = ("hypothesis", "trigger", "action_change", "mechanism", "opportunity", "offline_analysis",
+                  "engine_step", "risk", "stop", "negative_teaches")
+        unexplained = []
+        for family, entry in self.exp["experiments"].items():
+            values = set()
+            for ident in entry["evidence"]:
+                v = self.exp["evidence"][ident]["value"]
+                if isinstance(v, (int, float)) and not isinstance(v, bool):
+                    values.add(v)
+                elif isinstance(v, str):
+                    values |= {int(x) for x in re.findall(r"\d+", v)}
+            for field in fields:
+                for raw in re.findall(r"(?<![\w.])(?<!Sprint )(?<!Sprints )(?<!and )\d[\d,]*(?:\.\d+)?", entry[field]):
+                    n = float(raw.replace(",", ""))
+                    n = int(n) if n.is_integer() else n
+                    if n not in values and n not in constants:
+                        unexplained.append((family, field, raw))
+        self.assertEqual(unexplained, [])
+        self.assertGreater(sum(len(e["evidence"]) for e in self.exp["experiments"].values()), 50)
+
+
 if __name__ == "__main__":
     unittest.main()
