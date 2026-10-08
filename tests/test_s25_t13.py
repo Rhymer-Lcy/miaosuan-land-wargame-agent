@@ -458,6 +458,27 @@ class PublicTest(unittest.TestCase):
         self.assertEqual(data["loss"]["objective"], "80-point objective A")
         self.assertEqual(data["loss"]["departure"]["onward"]["next_objective"], None)
 
+    def test_no_public_label_carries_a_number_word(self) -> None:
+        """Amendment A1: a label word made only of digits can equal a private hex or unit id and refuse the run."""
+        labels = [*st.V_CLASSES, *st.CATEGORIES, *st.ENEMY_INFO, st.ALIVE_OUT, st.DESTROYED, st.MISSING,
+                  st.UNREADABLE, *tg.TRIGGER_REASONS, *tg.RELEASE_REASONS, *st.DISPOSITIONS]
+        a, rows = analyse(leaving_side())
+        strings = []
+
+        def walk(node):
+            if isinstance(node, dict):
+                for v in node.values():
+                    walk(v)
+            elif isinstance(node, (list, tuple)):
+                for v in node:
+                    walk(v)
+            elif isinstance(node, str):
+                strings.append(node)
+        walk({"loss": st.public_loss(a, rows[0], 1), "side": st.side_summary(a), "pooled": st.pooled_table([a])})
+        for text in labels + strings:
+            self.assertFalse(any(w.strip(",.;:()").isdigit() for w in text.split()), text)
+        self.assertEqual(st.public_problems({"labels": labels}, range(10000)), [])
+
     def test_planted_private_values_are_caught(self) -> None:
         self.assertTrue(st.public_problems({"cur_hex": 5}, ()))
         self.assertTrue(st.public_problems({"note": "unit 17 left"}, {17}))
