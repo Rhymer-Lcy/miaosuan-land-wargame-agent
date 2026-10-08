@@ -216,7 +216,7 @@
  "sources": {
   "scripts/s24_select.py": "4c1b6203cad8393c1fce76ac9746be8138e5a8af8b4a52520243af7fceb248ab",
   "src/miaosuan_agent/evaluation/s24_selection.py": "3f3434545eaf40b008128d6979dc9b4b3c7ace16d9c979da99902325ebc06f23",
-  "tests/test_s24_selection.py": "89efec024c42fb57c774cacece6f9e06aa479f52dfc51ef56f555545c5f60a85"
+  "tests/test_s24_selection.py": "aa0e1fda483ec43b3b7bdc124ee7b3cea6e718f4a988ba187138d5b98bd6a3a8"
  },
  "tests": [
   "tests.test_s24_selection"
