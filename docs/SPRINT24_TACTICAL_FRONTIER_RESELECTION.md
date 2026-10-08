@@ -263,3 +263,205 @@ No tactic is shown to work or fail here. A selected experiment is a research pri
 scoring; a family not selected keeps its state. Published figures are re-used as they stand: H0 describes
 `baseline-v2`'s decisions on `baseline-v0` trajectories, HH is four games in one scenario, and no figure from recorded
 states after a divergence is an on-policy estimate.
+
+## Results (2026-10-08)
+
+Every figure below is read from the committed public files of `evaluation/s24-tactical-frontier-reselection/`, which
+`scripts/s24_select.py run --check` regenerates byte for byte, or from the pinned sources their evidence items cite.
+
+### R1. Order of work
+
+The owner's decisions were recorded first (`63a123e`). The registration (`14ac1e4` to
+`5509ad3377b9f1a6a8534a47d541da75caa8d139`, tree `7f8729e2f5209afea634ef0d1bc148b46a47cebb`) was pushed at
+2026-10-08T15:57:26+08:00 after the workstation suite passed on it (1,995 tests, 93 skipped, exit 0); a fresh clone
+from GitHub had the same commit and tree and byte-identical files, and regenerated the input pins and the mutation
+record. The candidate entries and their evidence items (`experiments.json`, `fd4eb30`) were then written, checked
+against their sources and pushed at 2026-10-08T16:05:50+08:00, before any score existed. The judgement scores
+(`scores.json`) followed, and `run` computed the selection once. No private record or capture was read, no figure
+was computed from private data, and no engine was called.
+
+### R2. The Sprint 23 qualification and T2
+
+Recorded as registered (sections 2 and 3, and the frontier's T2 row): ORIGINAL-PROTOCOL `T2_DESIGN_INVALID`,
+AMENDED-PROTOCOL `T2_UNRESOLVED_INTERACTION_RISK`; both prohibit an engine screen; Sprint 23's files are unchanged.
+T2-P1 stays `T2_P1_MECHANISM_SUPPORTED`; T2-X1 is SHELVED; the T2 family stays open, and its distinct increment
+scored here (T2-S) is not eligible (R4).
+
+### R3. Evidence changes since Sprint 18
+
+| Sprint | What changed | Level | Consequence for the frontier |
+|---|---|---|---|
+| 19 | T6-G never fires: 0 gate episodes in each of the four HH side-games; every threat-exposed order already started inside an envelope (`T6_G_OFFLINE_INADEQUATE_OPPORTUNITY`) | OFFLINE ACTION COUNTERFACTUAL | T6's timing branch is closed; T6 is scored on a distinct branch |
+| 20 | T11-O1 has no defensible kill probability (`T11_OFFLINE_MODEL_UNAVAILABLE`) | REGISTERED RESULT | T11 is not rescored as T11 |
+| 21 | the probability law of the direct-fire draw is not identified (`DIRECT_FIRE_SEMANTICS_UNDERIDENTIFIED`); post hoc, an already suppressed infantry loses a squad outside `damage` (25 of 25) | REGISTERED RESULT; POST-HOC DIAGNOSTIC | any endpoint that needs a kill probability is ineligible (rule 3); the cost of suppression for infantry is clearer |
+| 22 | embark, carriage and disembark run on the engine (`T2_P1_MECHANISM_SUPPORTED`; the infantry on the ground 75 steps after the disembark order); `baseline-v2` gives a vehicle that ends a move on an objective its side holds a new move at the same decision in 107 of 155 corpus arrivals | OBSERVED ENGINE MECHANISM; REGISTERED RESULT | transport is mechanically available; holding a vehicle on a held objective works against `baseline-v2`'s routing |
+| 23 | T2-X1 opportunities only at the opening; claimant share 25/30; post hoc, the carrier among the first owners of its next objective in 5 of the 25 claimant episodes | OFFLINE ACTION COUNTERFACTUAL; POST-HOC DIAGNOSTIC | T2-X1 shelved; wherever a withholding conflict can recur it must be measured offline first (rule 6) |
+
+Sprint 18's census remains the opportunity base: its figures are re-used, not recomputed.
+
+### R4. Candidates
+
+| Family | Next experiment | Next / follow sessions | K | X | Eligible |
+|---|---|---|---:|---:|---|
+| T2 | T2-S opening dismount of infantry that start on board | 1 / 0 | 3 | 2 | no: X2 without an offline conflict measure (no capture holds the configuration) |
+| T3 | T3-O2 short memory of enemies near held objectives | 0 / 0 | 1 | 0 | no: E below 2 (no engine step of its own) |
+| T6 | T6-S stacked-column stagger: offline shadow, then a two-session probe | 0 / 2 | 3 | 2 | yes |
+| T7-C | T7-E3b controlled concealment-exit diagnostic | 2 / 0 | 3 | 0 | yes |
+| T8 | T8-A helicopter altitude probe | 1 / 2 | 3 | 0 | yes |
+| T10 | T10-P1 remove-suppression probe | 3 / 0 | 3 | 0 | yes |
+| T12 | T12-O1 objective-zone dispersion: offline count, then one deterministic and two head-to-head sessions | 0 / 3 | 3 | 2 | yes |
+| T13 (new) | T13-D1 held-objective loss anatomy and garrison shadow (offline), then a two-session garrison probe | 0 / 2 | 3 | 2 | yes |
+
+**New family admitted: T13, objective retention** (post-capture denial): keep the last own ground unit in a held
+objective's denial zone (its hex and the six neighbours) while a visible enemy ground unit is near. Its admission entry
+gives each of the seven conditions. **Not admitted**, with the condition each fails (`experiments.json`,
+`not_admitted`): objective defence and local reserves (no mechanism beyond T13 and T12), infantry tactical positioning
+(holding infantry that cannot arrive restates the T9 batch allocator's rule, condition 6), deterministic fire allocation
+without a kill model (conditions 4 and 7: its benefit runs through kills or a scored comparison, and a suppressed unit
+can still occupy), local movement congestion prevention (condition 6: the deadlock is PS-1's problem, reopened only by
+the owner; 10 deadlock episodes in the 8-game corpus, post hoc), protection of surviving combat power (condition 4),
+close-combat avoidance (Sprint 18's reason and condition 4). Suppression recovery is T10; post-capture defence is T13.
+**Carried forward, not rescored:** T5, TO-1, T11 (section 6).
+
+### R5. Opportunity and interaction-risk evidence
+
+Every figure here is an evidence item read back from its pinned source (63 items: 46 REGISTERED RESULT, 3 OBSERVED
+ENGINE MECHANISM, 4 OFFLINE ACTION COUNTERFACTUAL, 10 POST-HOC DIAGNOSTIC; 56 keyed, 7 quoted). Counts are H0 / HH
+unless marked; H0 is 16 distinct scenario-sides, HH four side-games of two distinct openings.
+
+| Candidate | Stake and opportunity | Largest interaction risk |
+|---|---|---|
+| T13 | 40 / 26 losses of objectives the side had held, none with an own unit on the hex before (0 / 0); losses on 7 of 16 H0 scenario-sides; 25 first ownerships in HH; median occupy score 80 against acting policies (REGISTERED RESULT) | the hold competes with `baseline-v2`'s onward move (Sprint 23: 25/30 claimant carriers); post hoc, stationary units on objectives took 13 alone and 40 stacked of the 177 H0 ground damage events |
+| T6 | stacked victims in 112 of 177 / 70 of 130 ground damage events, on 13 of 16 H0 scenario-sides (REGISTERED RESULT); post hoc, 57 / 40 on stacked units moving off objectives | a withholding of one hex time; the stacking correction's effect size unidentified |
+| T12 | post hoc, 40 / 10 events on stationary stacked holders, on 10 of 16 H0 scenario-sides | the withholding interaction; vehicles leave held objectives at once (107 of 155 corpus arrivals) |
+| T7-C | the trigger fires on 11 of 16 H0 scenario-sides (234 shadow orders); damage on a concealable unit 0 / 4 events | an injected diagnostic command; says nothing about benefit |
+| T10 | infantry suppression onsets 15 / 4, on 6 of 16 H0 scenario-sides; remove suppression listed in 1,709 H0 unit-decisions, all while suppressed | an undocumented cost; few events per session |
+| T8 | altitude listed in 6,957 H0 decisions; 13 aircraft damage events in H0, none while moving, on 4 of 16 H0 scenario-sides | the effect on attack helicopters undocumented |
+| T2-S | 74 infantry on board at the start in 10 of 50 scenarios, none in the 8 frozen ones: no historical opportunity | the opening carrier hold, unmeasurable offline |
+| T3-O2 | out-of-view attackers caused 15 of 205 / 4 of 158 damage events | phantom threats |
+
+One reading the evidence items do not show by themselves: H0's 40 losses happened on `baseline-v0`'s recorded
+trajectories (H0 records `baseline-v0` playing itself; `baseline-v2`'s decisions are reconstructed on them), so only
+HH's 26 losses are from genuine `baseline-v2` seats. T13's next experiment therefore classifies each H0 loss by the
+recorded order and reports separately whether `baseline-v2`'s reconstructed decision issued the same move.
+
+### R6. Raw and weighted scores
+
+G and P computed (P after the basis penalty), the others judgement scores with the reasons in `scores.json`; no cap
+changed any score.
+
+| Candidate | G | L | O | I | M | R | P (basis) | W | E | C | Eligible |
+|---|---:|---:|---:|---:|---:|---:|---|---:|---:|---:|---|
+| T13 | 5 | 4 | 5 | 3 | 4 | 5 | 1 (STAKE, 7 of 16) | **4.05** | 4 | 1 | yes |
+| T6 | 5 | 3 | 5 | 3 | 3 | 5 | 3 (STAKE, 13 of 16) | 3.90 | 3 | 1 | yes |
+| T12 | 5 | 3 | 5 | 3 | 4 | 4 | 2 (STAKE, 10 of 16) | 3.80 | 3 | 0 | yes |
+| T7-C | 5 | 1 | 5 | 5 | 5 | 4 | 3 (TRIGGER, 11 of 16) | 3.70 | 4 | 1 | yes |
+| T10 | 5 | 2 | 5 | 5 | 4 | 3 | 2 (TRIGGER, 6 of 16) | 3.65 | 3 | 0 | yes |
+| T3 | 5 | 2 | 4 | 3 | 3 | 5 | 3 (STAKE, 12 of 16) | 3.50 | 1 | 5 | no (E) |
+| T8 | 3 | 2 | 5 | 4 | 4 | 3 | 1 (CAPABILITY, 4 of 16) | 3.05 | 4 | 0 | yes |
+| T2 | 1 | 2 | 5 | 3 | 5 | 4 | 0 (no H0 side) | 2.65 | 4 | 2 | no (X2) |
+
+G sources: 50 of 50 scenarios with ground units (T13, T12, T7-C) or any unit (T6, T3); infantry 47 (T10); helicopters 26
+(T8); infantry starting on board 10 (T2).
+
+### R7. Information per engine session and cost
+
+T13, T7-C and T8 have E 4; T6, T12 and T10 have E 3. T13's and T6's next experiments are offline (0 sessions) and each
+leads to a two-session head-to-head step; T12's leads to three, T7-C's diagnostic needs up to two, T8's one plus two,
+T10's three. Every engine step executes a new add-on or command (K 3), so the engineering class does not separate the
+eligible candidates; the cost economy C ranges from 0 to 1 among them.
+
+### R8. Sensitivity and robustness
+
+* **Main rule.** T13 leads on W (4.05); T6 is 0.15 behind, exactly the band, so the tie order applies and E decides
+  (4 against 3). T12 (0.25 behind) is outside the band.
+* **Weight variants (rule 1).** T13 is first in 26 of the 27; the exception is the variant without leverage, where
+  T7-C (L 1) is first. The threshold is 19.
+* **Judgement perturbations (rule 2).** Of the 20 single-point perturbations of T13's and T6's judgement scores, 2 move
+  the winner: T13's E lowered to 3 and T6's E raised to 4, each of which makes the two equal on E, sessions and K and
+  turns the outcome into a tie. Lowering T13's L to 3 does not: T6 would then lead on W, but within the band E still
+  decides. The limit is more than 1/3.
+* **What the selection rests on.** Not on T13's leverage score but on E inside the band: T13's next engine step
+  (frequent, directly observed held-objective losses and garrison holds) is judged more informative per session than
+  T6-S's (a derived exposure rate). A reader who scores those two E values equal obtains a FRONTIER_TIE between T13 and
+  T6, which the next experiment's offline shadows of both would separate.
+
+### R9. Outcome: NEXT_INCREMENT_SELECTED, T13-D1
+
+**Selected: T13-D1, the held-objective loss anatomy and garrison shadow**, an offline diagnostic with no engine
+session. The selection is a research priority under the rubric registered before scoring; nothing is promoted, and
+T13 enters the hypothesis register as `IDEA`.
+
+### R10. The next experiment, described (not executed)
+
+**Question.** Are held objectives lost because the last own ground unit is ordered out of the objective's denial zone,
+and would a garrison rule that keeps that unit in the zone while a visible enemy ground unit is near have touched those
+losses at an acceptable cost in onward captures?
+
+**Populations and evidence boundary.** H0 (the 8 replay-corpus games, 16 scenario-sides; the recorded actions are
+`baseline-v0`'s, and `baseline-v2` is reconstructed as in Sprint 18) and HH (the 4 Sprint 12 head-to-head timelines, the
+`baseline-v2` seats, 2 distinct openings), pinned by Sprint 18's frozen input file; HI has no loss (the inert side never
+occupies) and serves only as a check that the shadow never fires there without an enemy. Sprint 23's evidence
+boundary: certificates before a side's first divergence, first-divergence opportunities, later recorded-state
+opportunities descriptive only. Never: BOKE-2026, the stopped prevalence study.
+
+**Definitions to freeze in its registration.** Denial zone: the objective's hex and its six neighbours. Loss: Sprint
+18's N4 event (the side held the objective at the previous decision and not now). Departure classes for the last own
+ground unit to leave the zone before the enemy's occupation: V-ORDER (it left alive under a recorded MOVE; in H0 also
+whether `baseline-v2`'s reconstructed decision issued the same MOVE), V-LOSS (it was destroyed in the zone), V-OTHER
+(anything else, listed). For V-ORDER: steps from departure to loss; the nearest visible enemy ground unit at departure;
+whether the capturing enemy was in view, seen within 300 steps before (T3-O2's question) or never seen; the departing
+unit's next destination, held or unheld; whether it was among the first owners there. The garrison shadow: the trigger
+and hold of the T13 entry, with its distance (proposed: the largest published direct-fire range plus one hex) and its
+bound (proposed: 300 steps) fixed in the registration before any count.
+
+**Fidelity first.** The diagnostic must reproduce Sprint 18's published figures (H0 33,696 decisions, the 123
+`baseline-v2` differences, HH 11,524 decisions equal to the recorded seat, the 40 and 26 held-objective losses, none with an
+own unit on the hex) or stop as invalid.
+
+**Prospective stop conditions** (any one ends the line with no engine step):
+
+1. V-ORDER in fewer than half of the losses, H0 and HH separately and pooled (losses come from destruction: a fire or
+   formation problem);
+2. fewer than 4 losses the garrison shadow would have touched at a valid first divergence, or touched losses on fewer
+   than 2 distinct scenario-sides;
+3. the departing unit among the first owners of its next objective in more than half of the touched V-ORDER losses (the
+   hold's cost would be confounded with its benefit, as in T2-X1).
+
+Otherwise the disposition is ready for a separately registered two-session mechanism probe, returned to the owner for
+approval: 2130511121 head to head against `baseline-v2`, both seat orders, the garrison add-on on `baseline-v2`;
+endpoints: garrison episodes and holds, losses of a garrisoned objective while the garrison lives in the zone (none
+expected by the capture rule), losses after release or destruction, garrison losses, first-ownership steps against the
+four HH games; stops: a garrisoned objective lost with the garrison alive in the zone, garrisons destroyed in half or more
+of the episodes with an enemy approach, or any objective first owned later than in all four HH games.
+
+**Engineering.** One rules module and a driver that subclasses Sprint 18's census reader (as Sprints 19 to 23 did),
+with tests and mutation tests; a run of minutes on the evaluation server; K 1 for the diagnostic.
+
+**What a negative result teaches.** Held objectives are lost to destruction or to situations one garrison cannot cover,
+so retention needs fire or formation (T12) rather than holding; or the onward moves are worth more than retention,
+which bounds every hold-type tactic on `baseline-v2`. Either way the anatomy of objective losses, unmeasured so far, is
+learned.
+
+### R11. Expected engine-session cost
+
+Zero for the selected experiment. Two sessions for the mechanism probe it can lead to, only after a ready disposition,
+a separate registration and the owner's approval. Session 2797 is not opened by this sprint.
+
+### R12. Families not selected
+
+Their states are unchanged: T6 (`IDEA`; its stagger branch is the runner-up), T12, T7-C, T10, T8, T3 and T2 (`IDEA`;
+T2-P1 supported, T2-X1 shelved, T2-S ineligible because its opening hold cannot be measured offline and no historical
+side has the configuration).
+
+### R13. Process notes
+
+* The first mutation run caught 36 of 42 planted defects; the six survivors were test gaps at boundaries (the band edge,
+  the robustness threshold, the challenger choice, the flip-share edge, a number followed by a separator, the rules digest
+  in the pins), closed with configurations found by a small search before the registration; 42 of 42 since, and again
+  after the results were bound.
+* A commit subject of 73 characters was reworded before the first push (tree unchanged), and a word the privacy scanner
+  treats as a secret word was removed from the new files before the first commit.
+* Review before committing the candidate entries found two denominators printed without an evidence item and one side
+  count bound to the wrong census flag (aircraft damage, not the altitude listing); fixed, and a test now requires every
+  number in an entry's text to be one of its own evidence values or a declared constant.
