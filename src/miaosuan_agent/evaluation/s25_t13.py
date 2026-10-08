@@ -33,8 +33,10 @@ TOUCHED, PREFIX_UNSUPPORTED, POST_DIVERGENCE, NON_ACTIONABLE, AMBIGUOUS = (
     "touched at a valid first divergence", "first divergence without prefix support (opportunity only)",
     "later historical-state opportunity only", "non-actionable", "classification ambiguity")
 CATEGORIES = (TOUCHED, PREFIX_UNSUPPORTED, POST_DIVERGENCE, NON_ACTIONABLE, AMBIGUOUS)
-#: Enemy information at the departure order (section 12), ground enemies only, first match.
-ENEMY_INFO = ("visible, a qualifying threat", "visible, no qualifying threat", "seen within the previous 300 steps",
+#: Enemy information at the departure order (section 12), ground enemies only, first match. Amendment A1: the third
+#: label names the lookback window instead of its length, because a public text word equal to a private hex or unit
+#: identifier is refused by the sanitizer (the window itself, ``LOOKBACK``, is unchanged).
+ENEMY_INFO = ("visible, a qualifying threat", "visible, no qualifying threat", "seen within the lookback window",
               "seen earlier only", "never seen")
 LOOKBACK = 300
 #: Stop thresholds and disposition precedence (section 16).
