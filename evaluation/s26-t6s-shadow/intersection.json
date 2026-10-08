@@ -1,0 +1,44 @@
+{
+ "H0": {
+  "baseline-v2 did not emit the same MOVEs": 0,
+  "cases": 20,
+  "frozen trigger fails": 0,
+  "no qualifying visible threat": 2,
+  "ordered at one decision from different hexes": 0,
+  "ordered at several decisions": 0,
+  "same hex, different first route hexes": 0,
+  "trigger holds after a divergence or without prefix support": 18,
+  "trigger holds at a valid first divergence": 0
+ },
+ "HH": {
+  "baseline-v2 did not emit the same MOVEs": 0,
+  "cases": 8,
+  "frozen trigger fails": 0,
+  "no qualifying visible threat": 0,
+  "ordered at one decision from different hexes": 0,
+  "ordered at several decisions": 1,
+  "same hex, different first route hexes": 0,
+  "trigger holds after a divergence or without prefix support": 5,
+  "trigger holds at a valid first divergence": 2
+ },
+ "anchor_equal": true,
+ "cases": 28,
+ "inputs_sha256": "a73f86ebce0aa5716286ca0ef87428a2c76e3c0db732dfcd1036031b156a8cce",
+ "last_defender_instances": 81,
+ "note": "descriptive only; not part of any stop. Sprint 25's order decisions are the recorded stream's (H0: baseline-v0); the frozen trigger is evaluated on baseline-v2's list at that decision.",
+ "ordered_at_one_decision": 27,
+ "pooled": {
+  "baseline-v2 did not emit the same MOVEs": 0,
+  "cases": 28,
+  "frozen trigger fails": 0,
+  "no qualifying visible threat": 2,
+  "ordered at one decision from different hexes": 0,
+  "ordered at several decisions": 1,
+  "same hex, different first route hexes": 0,
+  "trigger holds after a divergence or without prefix support": 23,
+  "trigger holds at a valid first divergence": 2
+ },
+ "protocol_sha256": "85ab686de16a335dfaf343d62e12f3266f591fd42b1db38b3c1be14c1cfe8f75",
+ "schema": "miaosuan-s26-results/1",
+ "study_id": "s26-t6s-shadow"
+}

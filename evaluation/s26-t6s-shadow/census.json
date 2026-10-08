@@ -1,0 +1,1847 @@
+{
+ "H0": {
+  "all_members_exposed": 65,
+  "carriers_with_passengers": 30,
+  "census": {
+   "ground_move_orders": 391,
+   "move_orders": 509,
+   "same_hex_group_moves": 271,
+   "same_hex_groups": 113,
+   "same_hex_groups_all_one_first_hex": 99,
+   "shared_first_hex_groups": 101,
+   "shared_first_hex_groups_threat_exposed": 65
+  },
+  "damage": {
+   "followers_damaged_within_150": 13,
+   "followers_damaged_within_300": 21,
+   "followers_damaged_within_75": 3,
+   "members_damaged_within_150": 33,
+   "members_damaged_within_300": 54,
+   "members_damaged_within_75": 16
+  },
+  "destination_kinds_of_followers": [
+   [
+    "objective not held",
+    100
+   ]
+  ],
+  "different_hex_times": 0,
+  "distinct_units": 59,
+  "episodes": 65,
+  "exposure": {
+   "moving_alone_inside_envelope": 38283,
+   "moving_alone_unit_decisions": 106860,
+   "moving_stacked_inside_envelope": 45816,
+   "moving_stacked_unit_decisions": 67500,
+   "moving_unit_decisions": 174360
+  },
+  "follow_up_all_members_followed": 65,
+  "follow_up_co_located_moving_beyond_start": 60,
+  "follow_up_leader_departure_steps": {
+   "max": 144,
+   "median": 20,
+   "min": 12,
+   "n": 63
+  },
+  "follow_up_separated_after_the_start_hex": 5,
+  "follow_up_stacked_moving_inside_envelope_unit_decisions": 35080,
+  "followers": 100,
+  "games_with_an_episode": 3,
+  "group_sizes": [
+   [
+    2,
+    38
+   ],
+   [
+    3,
+    19
+   ],
+   [
+    4,
+    8
+   ]
+  ],
+  "leader_classes": [
+   [
+    "infantry",
+    3
+   ],
+   [
+    "vehicle",
+    62
+   ]
+  ],
+  "member_classes": [
+   [
+    "infantry",
+    6
+   ],
+   [
+    "vehicle",
+    159
+   ]
+  ],
+  "members": 165,
+  "members_stacked_at_start": 165,
+  "onward": {
+   "episodes_with_first_owner_risk": 15,
+   "followers_destination_first_owned_before": 40,
+   "followers_destination_never_owned": 3,
+   "followers_first_owner": 21,
+   "followers_later_lost": 52,
+   "followers_pushed_past_the_end": 0,
+   "followers_unreachable_at_free_flow": 2,
+   "followers_with_other_own_first_owners": 55,
+   "projected_wait_of_first_owners": {
+    "max": 120,
+    "median": 20,
+    "min": 20,
+    "n": 21
+   },
+   "steps_start_to_first_ownership_of_first_owners": {
+    "max": 301,
+    "median": 81,
+    "min": 61,
+    "n": 21
+   }
+  },
+  "projected_wait": {
+   "max": 144,
+   "median": 30.0,
+   "min": 20,
+   "n": 100
+  },
+  "same_destination": 65,
+  "scenario_sides_with_an_episode": 6,
+  "shared_route_prefix": {
+   "max": 15,
+   "median": 3,
+   "min": 2,
+   "n": 65
+  },
+  "side_games": 16,
+  "side_games_with_an_episode": 6
+ },
+ "HH": {
+  "all_members_exposed": 54,
+  "carriers_with_passengers": 24,
+  "census": {
+   "ground_move_orders": 302,
+   "move_orders": 416,
+   "same_hex_group_moves": 186,
+   "same_hex_groups": 78,
+   "same_hex_groups_all_one_first_hex": 74,
+   "shared_first_hex_groups": 76,
+   "shared_first_hex_groups_threat_exposed": 54
+  },
+  "damage": {
+   "followers_damaged_within_150": 13,
+   "followers_damaged_within_300": 28,
+   "followers_damaged_within_75": 10,
+   "members_damaged_within_150": 35,
+   "members_damaged_within_300": 61,
+   "members_damaged_within_75": 23
+  },
+  "destination_kinds_of_followers": [
+   [
+    "objective not held",
+    76
+   ]
+  ],
+  "different_hex_times": 0,
+  "distinct_units": 42,
+  "episodes": 54,
+  "exposure": {
+   "moving_alone_inside_envelope": 34099,
+   "moving_alone_unit_decisions": 74546,
+   "moving_stacked_inside_envelope": 51377,
+   "moving_stacked_unit_decisions": 60219,
+   "moving_unit_decisions": 134765
+  },
+  "follow_up_all_members_followed": 54,
+  "follow_up_co_located_moving_beyond_start": 47,
+  "follow_up_leader_departure_steps": {
+   "max": 252,
+   "median": 20,
+   "min": 1,
+   "n": 51
+  },
+  "follow_up_separated_after_the_start_hex": 7,
+  "follow_up_stacked_moving_inside_envelope_unit_decisions": 27075,
+  "followers": 76,
+  "games_with_an_episode": 4,
+  "group_sizes": [
+   [
+    2,
+    34
+   ],
+   [
+    3,
+    18
+   ],
+   [
+    4,
+    2
+   ]
+  ],
+  "leader_classes": [
+   [
+    "vehicle",
+    54
+   ]
+  ],
+  "member_classes": [
+   [
+    "vehicle",
+    130
+   ]
+  ],
+  "members": 130,
+  "members_stacked_at_start": 130,
+  "onward": {
+   "episodes_with_first_owner_risk": 11,
+   "followers_destination_first_owned_before": 26,
+   "followers_destination_never_owned": 1,
+   "followers_first_owner": 16,
+   "followers_later_lost": 60,
+   "followers_pushed_past_the_end": 0,
+   "followers_unreachable_at_free_flow": 0,
+   "followers_with_other_own_first_owners": 49,
+   "projected_wait_of_first_owners": {
+    "max": 40,
+    "median": 20.0,
+    "min": 20,
+    "n": 16
+   },
+   "steps_start_to_first_ownership_of_first_owners": {
+    "max": 81,
+    "median": 61.0,
+    "min": 61,
+    "n": 16
+   }
+  },
+  "projected_wait": {
+   "max": 120,
+   "median": 20.0,
+   "min": 20,
+   "n": 76
+  },
+  "same_destination": 54,
+  "scenario_sides_with_an_episode": 2,
+  "shared_route_prefix": {
+   "max": 13,
+   "median": 3.0,
+   "min": 3,
+   "n": 54
+  },
+  "side_games": 4,
+  "side_games_with_an_episode": 4
+ },
+ "evidence_boundary": "H0: baseline-v0 trajectories, baseline-v2 reconstructed on them (descriptive unless the recorded prefix equals baseline-v2); HH: genuine baseline-v2 seats, four games of one scenario, two openings. Before a side's first divergence the candidate equals baseline-v2; episodes after it are replays on off-policy recorded states, counted as historical opportunity only.",
+ "inputs_sha256": "a73f86ebce0aa5716286ca0ef87428a2c76e3c0db732dfcd1036031b156a8cce",
+ "moving_ground_damage_events": {
+  "H0": {
+   "alone": 52,
+   "stacked": 72
+  },
+  "HH": {
+   "alone": 57,
+   "stacked": 60
+  }
+ },
+ "pooled": {
+  "all_members_exposed": 119,
+  "carriers_with_passengers": 54,
+  "census": {
+   "ground_move_orders": 693,
+   "move_orders": 925,
+   "same_hex_group_moves": 457,
+   "same_hex_groups": 191,
+   "same_hex_groups_all_one_first_hex": 173,
+   "shared_first_hex_groups": 177,
+   "shared_first_hex_groups_threat_exposed": 119
+  },
+  "damage": {
+   "followers_damaged_within_150": 26,
+   "followers_damaged_within_300": 49,
+   "followers_damaged_within_75": 13,
+   "members_damaged_within_150": 68,
+   "members_damaged_within_300": 115,
+   "members_damaged_within_75": 39
+  },
+  "destination_kinds_of_followers": [
+   [
+    "objective not held",
+    176
+   ]
+  ],
+  "different_hex_times": 0,
+  "distinct_units": 101,
+  "episodes": 119,
+  "exposure": {
+   "moving_alone_inside_envelope": 72382,
+   "moving_alone_unit_decisions": 181406,
+   "moving_stacked_inside_envelope": 97193,
+   "moving_stacked_unit_decisions": 127719,
+   "moving_unit_decisions": 309125
+  },
+  "follow_up_all_members_followed": 119,
+  "follow_up_co_located_moving_beyond_start": 107,
+  "follow_up_leader_departure_steps": {
+   "max": 252,
+   "median": 20.0,
+   "min": 1,
+   "n": 114
+  },
+  "follow_up_separated_after_the_start_hex": 12,
+  "follow_up_stacked_moving_inside_envelope_unit_decisions": 62155,
+  "followers": 176,
+  "games_with_an_episode": 7,
+  "group_sizes": [
+   [
+    2,
+    72
+   ],
+   [
+    3,
+    37
+   ],
+   [
+    4,
+    10
+   ]
+  ],
+  "leader_classes": [
+   [
+    "infantry",
+    3
+   ],
+   [
+    "vehicle",
+    116
+   ]
+  ],
+  "member_classes": [
+   [
+    "infantry",
+    6
+   ],
+   [
+    "vehicle",
+    289
+   ]
+  ],
+  "members": 295,
+  "members_stacked_at_start": 295,
+  "onward": {
+   "episodes_with_first_owner_risk": 26,
+   "followers_destination_first_owned_before": 66,
+   "followers_destination_never_owned": 4,
+   "followers_first_owner": 37,
+   "followers_later_lost": 112,
+   "followers_pushed_past_the_end": 0,
+   "followers_unreachable_at_free_flow": 2,
+   "followers_with_other_own_first_owners": 104,
+   "projected_wait_of_first_owners": {
+    "max": 120,
+    "median": 20,
+    "min": 20,
+    "n": 37
+   },
+   "steps_start_to_first_ownership_of_first_owners": {
+    "max": 301,
+    "median": 81,
+    "min": 61,
+    "n": 37
+   }
+  },
+  "projected_wait": {
+   "max": 144,
+   "median": 20.0,
+   "min": 20,
+   "n": 176
+  },
+  "same_destination": 119,
+  "scenario_sides_with_an_episode": 6,
+  "shared_route_prefix": {
+   "max": 15,
+   "median": 3,
+   "min": 2,
+   "n": 119
+  },
+  "side_games": 20,
+  "side_games_with_an_episode": 10
+ },
+ "protocol_sha256": "85ab686de16a335dfaf343d62e12f3266f591fd42b1db38b3c1be14c1cfe8f75",
+ "schema": "miaosuan-s26-results/1",
+ "sides": [
+  {
+   "census": {
+    "ground_move_orders": 8,
+    "move_orders": 8,
+    "same_hex_group_moves": 5,
+    "same_hex_groups": 2,
+    "same_hex_groups_all_one_first_hex": 2,
+    "shared_first_hex_groups": 2
+   },
+   "decisions": 1801,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 0,
+   "distinct_leaders": 0,
+   "distinct_units_in_episodes": 0,
+   "episodes": 0,
+   "episodes_after_first_divergence": 0,
+   "episodes_at_first_divergence": 0,
+   "exposure": {
+    "moving_alone_inside_envelope": 95,
+    "moving_alone_unit_decisions": 2374,
+    "moving_stacked_inside_envelope": 193,
+    "moving_stacked_unit_decisions": 1332,
+    "moving_unit_decisions": 3706
+   },
+   "first_divergence": null,
+   "followers": 0,
+   "group_outcomes": {
+    "no_qualifying_threat": 2,
+    "single_mover": 3
+   },
+   "group_sizes": [],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 8
+   },
+   "play_decisions": 1800,
+   "population": "H0",
+   "projected_wait": {
+    "n": 0
+   },
+   "replay_ends": [],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [],
+   "scenario_side": "1910631192 red",
+   "side_game": "H0 1910631192 red",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 0,
+   "withheld_decisions": 0
+  },
+  {
+   "census": {
+    "ground_move_orders": 14,
+    "move_orders": 14,
+    "same_hex_group_moves": 12,
+    "same_hex_groups": 6,
+    "same_hex_groups_all_one_first_hex": 6,
+    "shared_first_hex_groups": 6
+   },
+   "decisions": 1801,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 0,
+   "distinct_leaders": 0,
+   "distinct_units_in_episodes": 0,
+   "episodes": 0,
+   "episodes_after_first_divergence": 0,
+   "episodes_at_first_divergence": 0,
+   "exposure": {
+    "moving_alone_unit_decisions": 4518,
+    "moving_stacked_inside_envelope": 544,
+    "moving_stacked_unit_decisions": 2308,
+    "moving_unit_decisions": 6826
+   },
+   "first_divergence": null,
+   "followers": 0,
+   "group_outcomes": {
+    "no_qualifying_threat": 6,
+    "single_mover": 2
+   },
+   "group_sizes": [],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 14
+   },
+   "play_decisions": 1800,
+   "population": "H0",
+   "projected_wait": {
+    "n": 0
+   },
+   "replay_ends": [],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [],
+   "scenario_side": "1910631192 blue",
+   "side_game": "H0 1910631192 blue",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 0,
+   "withheld_decisions": 0
+  },
+  {
+   "census": {
+    "ground_move_orders": 67,
+    "move_orders": 85,
+    "same_hex_group_moves": 58,
+    "same_hex_groups": 18,
+    "same_hex_groups_all_one_first_hex": 17,
+    "shared_first_hex_groups": 18,
+    "shared_first_hex_groups_threat_exposed": 15
+   },
+   "decisions": 2881,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 5,
+   "distinct_leaders": 3,
+   "distinct_units_in_episodes": 6,
+   "episodes": 15,
+   "episodes_after_first_divergence": 14,
+   "episodes_at_first_divergence": 1,
+   "exposure": {
+    "moving_alone_inside_envelope": 5182,
+    "moving_alone_unit_decisions": 9405,
+    "moving_stacked_inside_envelope": 9591,
+    "moving_stacked_unit_decisions": 10510,
+    "moving_unit_decisions": 19915
+   },
+   "first_divergence": {
+    "decision": 381,
+    "prefix_supported": true,
+    "step": 380
+   },
+   "followers": 34,
+   "group_outcomes": {
+    "no_qualifying_threat": 3,
+    "single_mover": 10,
+    "triggered": 15
+   },
+   "group_sizes": [
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     6
+    ]
+   ],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 67,
+    "not_ground": 18
+   },
+   "play_decisions": 2880,
+   "population": "H0",
+   "projected_wait": {
+    "max": 120,
+    "median": 40.0,
+    "min": 20,
+    "n": 34
+   },
+   "replay_ends": [
+    [
+     "complete",
+     15
+    ]
+   ],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [
+    [
+     "reference_left",
+     34
+    ]
+   ],
+   "scenario_side": "1930331196 red",
+   "side_game": "H0 1930331196 red",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 34,
+   "withheld_decisions": 15
+  },
+  {
+   "census": {
+    "ground_move_orders": 47,
+    "move_orders": 65,
+    "same_hex_group_moves": 36,
+    "same_hex_groups": 18,
+    "same_hex_groups_all_one_first_hex": 13,
+    "shared_first_hex_groups": 13,
+    "shared_first_hex_groups_threat_exposed": 9
+   },
+   "decisions": 2881,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 5,
+   "distinct_leaders": 5,
+   "distinct_units_in_episodes": 10,
+   "episodes": 9,
+   "episodes_after_first_divergence": 8,
+   "episodes_at_first_divergence": 1,
+   "exposure": {
+    "moving_alone_inside_envelope": 7449,
+    "moving_alone_unit_decisions": 18318,
+    "moving_stacked_inside_envelope": 8753,
+    "moving_stacked_unit_decisions": 11063,
+    "moving_unit_decisions": 29381
+   },
+   "first_divergence": {
+    "decision": 682,
+    "prefix_supported": false,
+    "step": 681
+   },
+   "followers": 9,
+   "group_outcomes": {
+    "no_qualifying_threat": 4,
+    "single_mover": 21,
+    "triggered": 9
+   },
+   "group_sizes": [
+    [
+     2,
+     9
+    ]
+   ],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 47,
+    "not_ground": 18
+   },
+   "play_decisions": 2880,
+   "population": "H0",
+   "projected_wait": {
+    "max": 144,
+    "median": 40,
+    "min": 20,
+    "n": 9
+   },
+   "replay_ends": [
+    [
+     "complete",
+     9
+    ]
+   ],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [
+    [
+     "reference_absent",
+     1
+    ],
+    [
+     "reference_left",
+     8
+    ]
+   ],
+   "scenario_side": "1930331196 blue",
+   "side_game": "H0 1930331196 blue",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 9,
+   "withheld_decisions": 9
+  },
+  {
+   "census": {
+    "ground_move_orders": 2,
+    "move_orders": 2
+   },
+   "decisions": 1801,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 0,
+   "distinct_leaders": 0,
+   "distinct_units_in_episodes": 0,
+   "episodes": 0,
+   "episodes_after_first_divergence": 0,
+   "episodes_at_first_divergence": 0,
+   "exposure": {
+    "moving_alone_inside_envelope": 216,
+    "moving_alone_unit_decisions": 414,
+    "moving_unit_decisions": 414
+   },
+   "first_divergence": null,
+   "followers": 0,
+   "group_outcomes": {
+    "single_mover": 2
+   },
+   "group_sizes": [],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 2
+   },
+   "play_decisions": 1800,
+   "population": "H0",
+   "projected_wait": {
+    "n": 0
+   },
+   "replay_ends": [],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [],
+   "scenario_side": "2010131194 red",
+   "side_game": "H0 2010131194 red",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 0,
+   "withheld_decisions": 0
+  },
+  {
+   "census": {
+    "ground_move_orders": 2,
+    "move_orders": 2
+   },
+   "decisions": 1801,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 0,
+   "distinct_leaders": 0,
+   "distinct_units_in_episodes": 0,
+   "episodes": 0,
+   "episodes_after_first_divergence": 0,
+   "episodes_at_first_divergence": 0,
+   "exposure": {
+    "moving_alone_inside_envelope": 260,
+    "moving_alone_unit_decisions": 458,
+    "moving_unit_decisions": 458
+   },
+   "first_divergence": null,
+   "followers": 0,
+   "group_outcomes": {
+    "single_mover": 2
+   },
+   "group_sizes": [],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 2
+   },
+   "play_decisions": 1800,
+   "population": "H0",
+   "projected_wait": {
+    "n": 0
+   },
+   "replay_ends": [],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [],
+   "scenario_side": "2010131194 blue",
+   "side_game": "H0 2010131194 blue",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 0,
+   "withheld_decisions": 0
+  },
+  {
+   "census": {
+    "ground_move_orders": 4,
+    "move_orders": 4,
+    "same_hex_group_moves": 3,
+    "same_hex_groups": 1,
+    "same_hex_groups_all_one_first_hex": 1,
+    "shared_first_hex_groups": 1
+   },
+   "decisions": 1801,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 0,
+   "distinct_leaders": 0,
+   "distinct_units_in_episodes": 0,
+   "episodes": 0,
+   "episodes_after_first_divergence": 0,
+   "episodes_at_first_divergence": 0,
+   "exposure": {
+    "moving_alone_inside_envelope": 99,
+    "moving_alone_unit_decisions": 2179,
+    "moving_stacked_inside_envelope": 238,
+    "moving_stacked_unit_decisions": 857,
+    "moving_unit_decisions": 3036
+   },
+   "first_divergence": null,
+   "followers": 0,
+   "group_outcomes": {
+    "no_qualifying_threat": 1,
+    "single_mover": 1
+   },
+   "group_sizes": [],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 4
+   },
+   "play_decisions": 1800,
+   "population": "H0",
+   "projected_wait": {
+    "n": 0
+   },
+   "replay_ends": [],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [],
+   "scenario_side": "2010211129 red",
+   "side_game": "H0 2010211129 red",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 0,
+   "withheld_decisions": 0
+  },
+  {
+   "census": {
+    "ground_move_orders": 8,
+    "move_orders": 8,
+    "same_hex_group_moves": 6,
+    "same_hex_groups": 3,
+    "same_hex_groups_all_one_first_hex": 3,
+    "shared_first_hex_groups": 3
+   },
+   "decisions": 1801,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 0,
+   "distinct_leaders": 0,
+   "distinct_units_in_episodes": 0,
+   "episodes": 0,
+   "episodes_after_first_divergence": 0,
+   "episodes_at_first_divergence": 0,
+   "exposure": {
+    "moving_alone_inside_envelope": 18,
+    "moving_alone_unit_decisions": 1954,
+    "moving_stacked_inside_envelope": 38,
+    "moving_stacked_unit_decisions": 562,
+    "moving_unit_decisions": 2516
+   },
+   "first_divergence": null,
+   "followers": 0,
+   "group_outcomes": {
+    "no_qualifying_threat": 3,
+    "single_mover": 2
+   },
+   "group_sizes": [],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 8
+   },
+   "play_decisions": 1800,
+   "population": "H0",
+   "projected_wait": {
+    "n": 0
+   },
+   "replay_ends": [],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [],
+   "scenario_side": "2010211129 blue",
+   "side_game": "H0 2010211129 blue",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 0,
+   "withheld_decisions": 0
+  },
+  {
+   "census": {
+    "ground_move_orders": 1,
+    "move_orders": 1
+   },
+   "decisions": 1001,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 0,
+   "distinct_leaders": 0,
+   "distinct_units_in_episodes": 0,
+   "episodes": 0,
+   "episodes_after_first_divergence": 0,
+   "episodes_at_first_divergence": 0,
+   "exposure": {
+    "moving_alone_inside_envelope": 20,
+    "moving_alone_unit_decisions": 279,
+    "moving_unit_decisions": 279
+   },
+   "first_divergence": null,
+   "followers": 0,
+   "group_outcomes": {
+    "single_mover": 1
+   },
+   "group_sizes": [],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 1
+   },
+   "play_decisions": 1000,
+   "population": "H0",
+   "projected_wait": {
+    "n": 0
+   },
+   "replay_ends": [],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [],
+   "scenario_side": "201033019601 red",
+   "side_game": "H0 201033019601 red",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 0,
+   "withheld_decisions": 0
+  },
+  {
+   "census": {
+    "ground_move_orders": 1,
+    "move_orders": 1
+   },
+   "decisions": 1001,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 0,
+   "distinct_leaders": 0,
+   "distinct_units_in_episodes": 0,
+   "episodes": 0,
+   "episodes_after_first_divergence": 0,
+   "episodes_at_first_divergence": 0,
+   "exposure": {
+    "moving_alone_inside_envelope": 96,
+    "moving_alone_unit_decisions": 355,
+    "moving_unit_decisions": 355
+   },
+   "first_divergence": null,
+   "followers": 0,
+   "group_outcomes": {
+    "single_mover": 1
+   },
+   "group_sizes": [],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 1
+   },
+   "play_decisions": 1000,
+   "population": "H0",
+   "projected_wait": {
+    "n": 0
+   },
+   "replay_ends": [],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [],
+   "scenario_side": "201033019601 blue",
+   "side_game": "H0 201033019601 blue",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 0,
+   "withheld_decisions": 0
+  },
+  {
+   "census": {
+    "ground_move_orders": 4,
+    "move_orders": 4,
+    "same_hex_group_moves": 3,
+    "same_hex_groups": 1,
+    "same_hex_groups_all_one_first_hex": 1,
+    "shared_first_hex_groups": 1
+   },
+   "decisions": 1801,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 0,
+   "distinct_leaders": 0,
+   "distinct_units_in_episodes": 0,
+   "episodes": 0,
+   "episodes_after_first_divergence": 0,
+   "episodes_at_first_divergence": 0,
+   "exposure": {
+    "moving_alone_inside_envelope": 694,
+    "moving_alone_unit_decisions": 2046,
+    "moving_stacked_inside_envelope": 500,
+    "moving_stacked_unit_decisions": 857,
+    "moving_unit_decisions": 2903
+   },
+   "first_divergence": null,
+   "followers": 0,
+   "group_outcomes": {
+    "no_qualifying_threat": 1,
+    "single_mover": 1
+   },
+   "group_sizes": [],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 4
+   },
+   "play_decisions": 1800,
+   "population": "H0",
+   "projected_wait": {
+    "n": 0
+   },
+   "replay_ends": [],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [],
+   "scenario_side": "2010431153 red",
+   "side_game": "H0 2010431153 red",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 0,
+   "withheld_decisions": 0
+  },
+  {
+   "census": {
+    "ground_move_orders": 8,
+    "move_orders": 8,
+    "same_hex_group_moves": 4,
+    "same_hex_groups": 2
+   },
+   "decisions": 1801,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 0,
+   "distinct_leaders": 0,
+   "distinct_units_in_episodes": 0,
+   "episodes": 0,
+   "episodes_after_first_divergence": 0,
+   "episodes_at_first_divergence": 0,
+   "exposure": {
+    "moving_alone_inside_envelope": 654,
+    "moving_alone_unit_decisions": 4592,
+    "moving_stacked_inside_envelope": 440,
+    "moving_stacked_unit_decisions": 756,
+    "moving_unit_decisions": 5348
+   },
+   "first_divergence": null,
+   "followers": 0,
+   "group_outcomes": {
+    "single_mover": 8
+   },
+   "group_sizes": [],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 8
+   },
+   "play_decisions": 1800,
+   "population": "H0",
+   "projected_wait": {
+    "n": 0
+   },
+   "replay_ends": [],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [],
+   "scenario_side": "2010431153 blue",
+   "side_game": "H0 2010431153 blue",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 0,
+   "withheld_decisions": 0
+  },
+  {
+   "census": {
+    "ground_move_orders": 29,
+    "move_orders": 37,
+    "same_hex_group_moves": 20,
+    "same_hex_groups": 9,
+    "same_hex_groups_all_one_first_hex": 7,
+    "shared_first_hex_groups": 7,
+    "shared_first_hex_groups_threat_exposed": 6
+   },
+   "decisions": 2881,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 5,
+   "distinct_leaders": 5,
+   "distinct_units_in_episodes": 8,
+   "episodes": 6,
+   "episodes_after_first_divergence": 5,
+   "episodes_at_first_divergence": 1,
+   "exposure": {
+    "moving_alone_inside_envelope": 3225,
+    "moving_alone_unit_decisions": 6250,
+    "moving_stacked_inside_envelope": 1739,
+    "moving_stacked_unit_decisions": 2142,
+    "moving_unit_decisions": 8392
+   },
+   "first_divergence": {
+    "decision": 282,
+    "prefix_supported": false,
+    "step": 281
+   },
+   "followers": 8,
+   "group_outcomes": {
+    "no_qualifying_threat": 1,
+    "single_mover": 13,
+    "triggered": 6
+   },
+   "group_sizes": [
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     2
+    ]
+   ],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 29,
+    "not_ground": 8
+   },
+   "play_decisions": 2880,
+   "population": "H0",
+   "projected_wait": {
+    "max": 40,
+    "median": 20.0,
+    "min": 20,
+    "n": 8
+   },
+   "replay_ends": [
+    [
+     "complete",
+     6
+    ]
+   ],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [
+    [
+     "reference_absent",
+     3
+    ],
+    [
+     "reference_left",
+     5
+    ]
+   ],
+   "scenario_side": "2120531121 red",
+   "side_game": "H0 2120531121 red",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 8,
+   "withheld_decisions": 6
+  },
+  {
+   "census": {
+    "ground_move_orders": 35,
+    "move_orders": 41,
+    "same_hex_group_moves": 24,
+    "same_hex_groups": 11,
+    "same_hex_groups_all_one_first_hex": 9,
+    "shared_first_hex_groups": 9,
+    "shared_first_hex_groups_threat_exposed": 5
+   },
+   "decisions": 2881,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 5,
+   "distinct_leaders": 4,
+   "distinct_units_in_episodes": 9,
+   "episodes": 5,
+   "episodes_after_first_divergence": 4,
+   "episodes_at_first_divergence": 1,
+   "exposure": {
+    "moving_alone_inside_envelope": 4451,
+    "moving_alone_unit_decisions": 17963,
+    "moving_stacked_inside_envelope": 4849,
+    "moving_stacked_unit_decisions": 6329,
+    "moving_unit_decisions": 24292
+   },
+   "first_divergence": {
+    "decision": 361,
+    "prefix_supported": false,
+    "step": 360
+   },
+   "followers": 7,
+   "group_outcomes": {
+    "no_qualifying_threat": 4,
+    "single_mover": 15,
+    "triggered": 5
+   },
+   "group_sizes": [
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     2
+    ]
+   ],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 35,
+    "not_ground": 6
+   },
+   "play_decisions": 2880,
+   "population": "H0",
+   "projected_wait": {
+    "max": 40,
+    "median": 20,
+    "min": 20,
+    "n": 7
+   },
+   "replay_ends": [
+    [
+     "complete",
+     5
+    ]
+   ],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [
+    [
+     "reference_left",
+     7
+    ]
+   ],
+   "scenario_side": "2120531121 blue",
+   "side_game": "H0 2120531121 blue",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 7,
+   "withheld_decisions": 5
+  },
+  {
+   "census": {
+    "ground_move_orders": 63,
+    "move_orders": 81,
+    "same_hex_group_moves": 38,
+    "same_hex_groups": 13,
+    "same_hex_groups_all_one_first_hex": 12,
+    "shared_first_hex_groups": 13,
+    "shared_first_hex_groups_threat_exposed": 9
+   },
+   "decisions": 2881,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 9,
+   "distinct_leaders": 5,
+   "distinct_units_in_episodes": 13,
+   "episodes": 9,
+   "episodes_after_first_divergence": 8,
+   "episodes_at_first_divergence": 1,
+   "exposure": {
+    "moving_alone_inside_envelope": 6895,
+    "moving_alone_unit_decisions": 17407,
+    "moving_stacked_inside_envelope": 7138,
+    "moving_stacked_unit_decisions": 9162,
+    "moving_unit_decisions": 26569
+   },
+   "first_divergence": {
+    "decision": 402,
+    "prefix_supported": false,
+    "step": 401
+   },
+   "followers": 17,
+   "group_outcomes": {
+    "no_qualifying_threat": 4,
+    "single_mover": 26,
+    "triggered": 9
+   },
+   "group_sizes": [
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 63,
+    "not_ground": 18
+   },
+   "play_decisions": 2880,
+   "population": "H0",
+   "projected_wait": {
+    "max": 60,
+    "median": 40,
+    "min": 20,
+    "n": 17
+   },
+   "replay_ends": [
+    [
+     "complete",
+     9
+    ]
+   ],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [
+    [
+     "reference_absent",
+     1
+    ],
+    [
+     "reference_left",
+     16
+    ]
+   ],
+   "scenario_side": "2130511121 red",
+   "side_game": "H0 2130511121 red",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 17,
+   "withheld_decisions": 9
+  },
+  {
+   "census": {
+    "ground_move_orders": 98,
+    "move_orders": 148,
+    "same_hex_group_moves": 62,
+    "same_hex_groups": 29,
+    "same_hex_groups_all_one_first_hex": 28,
+    "shared_first_hex_groups": 28,
+    "shared_first_hex_groups_threat_exposed": 21
+   },
+   "decisions": 2881,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 7,
+   "distinct_leaders": 7,
+   "distinct_units_in_episodes": 13,
+   "episodes": 21,
+   "episodes_after_first_divergence": 20,
+   "episodes_at_first_divergence": 1,
+   "exposure": {
+    "moving_alone_inside_envelope": 8929,
+    "moving_alone_unit_decisions": 18348,
+    "moving_stacked_inside_envelope": 11793,
+    "moving_stacked_unit_decisions": 21622,
+    "moving_unit_decisions": 39970
+   },
+   "first_divergence": {
+    "decision": 162,
+    "prefix_supported": false,
+    "step": 161
+   },
+   "followers": 25,
+   "group_outcomes": {
+    "no_qualifying_threat": 7,
+    "single_mover": 38,
+    "triggered": 21
+   },
+   "group_sizes": [
+    [
+     2,
+     17
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 98,
+    "not_ground": 50
+   },
+   "play_decisions": 2880,
+   "population": "H0",
+   "projected_wait": {
+    "max": 144,
+    "median": 20,
+    "min": 20,
+    "n": 25
+   },
+   "replay_ends": [
+    [
+     "complete",
+     21
+    ]
+   ],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [
+    [
+     "reference_left",
+     23
+    ],
+    [
+     "timeout",
+     2
+    ]
+   ],
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 25,
+   "withheld_decisions": 20
+  },
+  {
+   "census": {
+    "ground_move_orders": 83,
+    "move_orders": 131,
+    "same_hex_group_moves": 51,
+    "same_hex_groups": 24,
+    "same_hex_groups_all_one_first_hex": 23,
+    "shared_first_hex_groups": 23,
+    "shared_first_hex_groups_threat_exposed": 16
+   },
+   "decisions": 2881,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 6,
+   "distinct_leaders": 6,
+   "distinct_units_in_episodes": 10,
+   "episodes": 16,
+   "episodes_after_first_divergence": 15,
+   "episodes_at_first_divergence": 1,
+   "exposure": {
+    "moving_alone_inside_envelope": 7318,
+    "moving_alone_unit_decisions": 16848,
+    "moving_stacked_inside_envelope": 9122,
+    "moving_stacked_unit_decisions": 10532,
+    "moving_unit_decisions": 27380
+   },
+   "first_divergence": {
+    "decision": 162,
+    "prefix_supported": true,
+    "step": 161
+   },
+   "followers": 19,
+   "group_outcomes": {
+    "no_qualifying_threat": 7,
+    "single_mover": 34,
+    "triggered": 16
+   },
+   "group_sizes": [
+    [
+     2,
+     13
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 83,
+    "not_ground": 48
+   },
+   "play_decisions": 2880,
+   "population": "HH",
+   "projected_wait": {
+    "max": 120,
+    "median": 20,
+    "min": 20,
+    "n": 19
+   },
+   "replay_ends": [
+    [
+     "complete",
+     16
+    ]
+   ],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [
+    [
+     "reference_left",
+     17
+    ],
+    [
+     "timeout",
+     2
+    ]
+   ],
+   "scenario_side": "2130511121 blue",
+   "side_game": "HH p01 baseline-v2 blue",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 19,
+   "withheld_decisions": 16
+  },
+  {
+   "census": {
+    "ground_move_orders": 61,
+    "move_orders": 67,
+    "same_hex_group_moves": 39,
+    "same_hex_groups": 14,
+    "same_hex_groups_all_one_first_hex": 13,
+    "shared_first_hex_groups": 14,
+    "shared_first_hex_groups_threat_exposed": 10
+   },
+   "decisions": 2881,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 7,
+   "distinct_leaders": 5,
+   "distinct_units_in_episodes": 11,
+   "episodes": 10,
+   "episodes_after_first_divergence": 9,
+   "episodes_at_first_divergence": 1,
+   "exposure": {
+    "moving_alone_inside_envelope": 6445,
+    "moving_alone_unit_decisions": 17704,
+    "moving_stacked_inside_envelope": 6518,
+    "moving_stacked_unit_decisions": 9118,
+    "moving_unit_decisions": 26822
+   },
+   "first_divergence": {
+    "decision": 402,
+    "prefix_supported": true,
+    "step": 401
+   },
+   "followers": 17,
+   "group_outcomes": {
+    "no_qualifying_threat": 4,
+    "single_mover": 23,
+    "triggered": 10
+   },
+   "group_sizes": [
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 61,
+    "not_ground": 6
+   },
+   "play_decisions": 2880,
+   "population": "HH",
+   "projected_wait": {
+    "max": 60,
+    "median": 20,
+    "min": 20,
+    "n": 17
+   },
+   "replay_ends": [
+    [
+     "complete",
+     10
+    ]
+   ],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [
+    [
+     "reference_absent",
+     3
+    ],
+    [
+     "reference_left",
+     14
+    ]
+   ],
+   "scenario_side": "2130511121 red",
+   "side_game": "HH p02 baseline-v2 red",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 17,
+   "withheld_decisions": 10
+  },
+  {
+   "census": {
+    "ground_move_orders": 78,
+    "move_orders": 132,
+    "same_hex_group_moves": 46,
+    "same_hex_groups": 22,
+    "same_hex_groups_all_one_first_hex": 21,
+    "shared_first_hex_groups": 21,
+    "shared_first_hex_groups_threat_exposed": 14
+   },
+   "decisions": 2881,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 6,
+   "distinct_leaders": 6,
+   "distinct_units_in_episodes": 11,
+   "episodes": 14,
+   "episodes_after_first_divergence": 13,
+   "episodes_at_first_divergence": 1,
+   "exposure": {
+    "moving_alone_inside_envelope": 14825,
+    "moving_alone_unit_decisions": 22072,
+    "moving_stacked_inside_envelope": 29248,
+    "moving_stacked_unit_decisions": 30328,
+    "moving_unit_decisions": 52400
+   },
+   "first_divergence": {
+    "decision": 162,
+    "prefix_supported": true,
+    "step": 161
+   },
+   "followers": 16,
+   "group_outcomes": {
+    "no_qualifying_threat": 7,
+    "single_mover": 34,
+    "triggered": 14
+   },
+   "group_sizes": [
+    [
+     2,
+     12
+    ],
+    [
+     3,
+     2
+    ]
+   ],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 78,
+    "not_ground": 54
+   },
+   "play_decisions": 2880,
+   "population": "HH",
+   "projected_wait": {
+    "max": 60,
+    "median": 20.0,
+    "min": 20,
+    "n": 16
+   },
+   "replay_ends": [
+    [
+     "complete",
+     14
+    ]
+   ],
+   "replay_queue_exits": [],
+   "replay_release_reasons": [
+    [
+     "reference_left",
+     14
+    ],
+    [
+     "timeout",
+     2
+    ]
+   ],
+   "scenario_side": "2130511121 blue",
+   "side_game": "HH p03 baseline-v2 blue",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 16,
+   "withheld_decisions": 14
+  },
+  {
+   "census": {
+    "ground_move_orders": 80,
+    "move_orders": 86,
+    "same_hex_group_moves": 50,
+    "same_hex_groups": 18,
+    "same_hex_groups_all_one_first_hex": 17,
+    "shared_first_hex_groups": 18,
+    "shared_first_hex_groups_threat_exposed": 14
+   },
+   "decisions": 2881,
+   "decisions_with_two_groups_into_one_first_hex": 0,
+   "distinct_followers": 8,
+   "distinct_leaders": 6,
+   "distinct_units_in_episodes": 10,
+   "episodes": 14,
+   "episodes_after_first_divergence": 13,
+   "episodes_at_first_divergence": 1,
+   "exposure": {
+    "moving_alone_inside_envelope": 5511,
+    "moving_alone_unit_decisions": 17922,
+    "moving_stacked_inside_envelope": 6489,
+    "moving_stacked_unit_decisions": 10241,
+    "moving_unit_decisions": 28163
+   },
+   "first_divergence": {
+    "decision": 402,
+    "prefix_supported": true,
+    "step": 401
+   },
+   "followers": 24,
+   "group_outcomes": {
+    "no_qualifying_threat": 4,
+    "single_mover": 31,
+    "triggered": 14
+   },
+   "group_sizes": [
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "integrity": {
+    "at most one active episode per unit": true,
+    "candidate equals baseline-v2 before the first divergence": true,
+    "every episode keeps its leader's MOVE and withholds its followers": true,
+    "frame positions equal decision indices": true,
+    "one recorded list per decision": true,
+    "shadow exposure equals Sprint 18's predicate on every MOVE": true,
+    "withheld actions = start withholdings + repeats": true,
+    "withheld actions are MOVEs": true
+   },
+   "mover_reasons": {
+    "eligible": 80,
+    "not_ground": 6
+   },
+   "play_decisions": 2880,
+   "population": "HH",
+   "projected_wait": {
+    "max": 60,
+    "median": 20.0,
+    "min": 20,
+    "n": 24
+   },
+   "replay_ends": [
+    [
+     "complete",
+     14
+    ]
+   ],
+   "replay_queue_exits": [
+    [
+     "follower_left",
+     2
+    ]
+   ],
+   "replay_release_reasons": [
+    [
+     "reference_absent",
+     2
+    ],
+    [
+     "reference_left",
+     20
+    ]
+   ],
+   "scenario_side": "2130511121 red",
+   "side_game": "HH p04 baseline-v2 red",
+   "unexplained_action_differences": 0,
+   "withheld_actions": 24,
+   "withheld_decisions": 14
+  }
+ ],
+ "study_id": "s26-t6s-shadow"
+}

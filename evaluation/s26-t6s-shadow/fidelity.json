@@ -1,0 +1,186 @@
+{
+ "anchors": {
+  "H0 baseline-v2 move orders": {
+   "equal": true,
+   "published": 509,
+   "replay": 509
+  },
+  "H0 damage events": {
+   "equal": true,
+   "published": 205,
+   "replay": 205
+  },
+  "H0 damage events on moving ground units": {
+   "equal": true,
+   "published": 124,
+   "replay": 124
+  },
+  "H0 decisions": {
+   "equal": true,
+   "published": 33696,
+   "replay": 33696
+  },
+  "H0 ground damage events": {
+   "equal": true,
+   "published": 177,
+   "replay": 177
+  },
+  "H0 ground damage events on a stacked victim": {
+   "equal": true,
+   "published": 112,
+   "replay": 112
+  },
+  "H0 ground events on stacked units moving off objectives": {
+   "equal": true,
+   "published": 57,
+   "replay": 57
+  },
+  "H0 moving ground events, attacker seen before": {
+   "equal": true,
+   "published": 120,
+   "replay": 120
+  },
+  "H0 play decisions": {
+   "equal": true,
+   "published": 33680,
+   "replay": 33680
+  },
+  "H0 recorded actions differ from reconstructed baseline-v2 (separate pass)": {
+   "equal": true,
+   "published": 123,
+   "replay": 123
+  },
+  "H0 scenario-sides with a stacked ground victim": {
+   "equal": true,
+   "published": 13,
+   "replay": 13
+  },
+  "H0 side-games": {
+   "equal": true,
+   "published": 16,
+   "replay": 16
+  },
+  "H0 threat-exposed move orders": {
+   "equal": true,
+   "published": 230,
+   "replay": 230
+  },
+  "H0 threat-exposed orders followed by mover damage within the lookback window": {
+   "equal": true,
+   "published": 88,
+   "replay": 88
+  },
+  "H0 v2 differs from recorded v0": {
+   "equal": true,
+   "published": 123,
+   "replay": 123
+  },
+  "HH baseline-v2 move orders": {
+   "equal": true,
+   "published": 416,
+   "replay": 416
+  },
+  "HH baseline-v2 reconstruction equal to the recorded seat": {
+   "equal": true,
+   "published": 11524,
+   "replay": 11524
+  },
+  "HH damage events": {
+   "equal": true,
+   "published": 158,
+   "replay": 158
+  },
+  "HH damage events on moving ground units": {
+   "equal": true,
+   "published": 117,
+   "replay": 117
+  },
+  "HH gate episodes of the frozen T6-G gate": {
+   "equal": true,
+   "published": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "replay": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  "HH ground damage events": {
+   "equal": true,
+   "published": 130,
+   "replay": 130
+  },
+  "HH ground damage events on a stacked victim": {
+   "equal": true,
+   "published": 70,
+   "replay": 70
+  },
+  "HH ground events on stacked units moving off objectives": {
+   "equal": true,
+   "published": 40,
+   "replay": 40
+  },
+  "HH moving ground events, attacker seen before": {
+   "equal": true,
+   "published": 117,
+   "replay": 117
+  },
+  "HH side-games": {
+   "equal": true,
+   "published": 4,
+   "replay": 4
+  },
+  "HH threat-exposed move orders": {
+   "equal": true,
+   "published": 200,
+   "replay": 200
+  },
+  "HH threat-exposed orders followed by mover damage within the lookback window": {
+   "equal": true,
+   "published": 101,
+   "replay": 101
+  }
+ },
+ "blocks": {
+  "N6 H0 block equal to census.json": true,
+  "N6 HH block equal to census.json": true,
+  "N9 H0 block equal to census.json": true,
+  "N9 HH block equal to census.json": true,
+  "T6 H0 block equal to census.json": true,
+  "T6 HH block equal to census.json": true,
+  "admission H0 ground events by state equal to admission.json": true,
+  "admission HH ground events by state equal to admission.json": true
+ },
+ "inputs_sha256": "a73f86ebce0aa5716286ca0ef87428a2c76e3c0db732dfcd1036031b156a8cce",
+ "ok": true,
+ "protocol_sha256": "85ab686de16a335dfaf343d62e12f3266f591fd42b1db38b3c1be14c1cfe8f75",
+ "schema": "miaosuan-s26-results/1",
+ "side_integrity": {
+  "H0 1910631192 blue": true,
+  "H0 1910631192 red": true,
+  "H0 1930331196 blue": true,
+  "H0 1930331196 red": true,
+  "H0 2010131194 blue": true,
+  "H0 2010131194 red": true,
+  "H0 2010211129 blue": true,
+  "H0 2010211129 red": true,
+  "H0 201033019601 blue": true,
+  "H0 201033019601 red": true,
+  "H0 2010431153 blue": true,
+  "H0 2010431153 red": true,
+  "H0 2120531121 blue": true,
+  "H0 2120531121 red": true,
+  "H0 2130511121 blue": true,
+  "H0 2130511121 red": true,
+  "HH p01 baseline-v2 blue": true,
+  "HH p02 baseline-v2 red": true,
+  "HH p03 baseline-v2 blue": true,
+  "HH p04 baseline-v2 red": true
+ },
+ "study_id": "s26-t6s-shadow"
+}

@@ -1,0 +1,357 @@
+{
+ "certificates": [
+  {
+   "baseline_action_types": [
+    1,
+    1
+   ],
+   "candidate_action_types": [
+    1
+   ],
+   "classes": [
+    "vehicle x2"
+   ],
+   "decision": 381,
+   "decisions_before_identical": 381,
+   "episodes": 1,
+   "first_owner_risk": [
+    false
+   ],
+   "group_sizes": [
+    2
+   ],
+   "leader_moves_kept": true,
+   "on_policy_baseline_v2_witness": true,
+   "only_follower_moves_withheld": true,
+   "population": "H0",
+   "prefix_supported": true,
+   "side_game": "H0 1930331196 red",
+   "step": 380,
+   "unrelated_actions_unchanged": true
+  },
+  {
+   "baseline_action_types": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "candidate_action_types": [
+    1,
+    1,
+    1
+   ],
+   "classes": [
+    "vehicle x2"
+   ],
+   "decision": 682,
+   "decisions_before_identical": 682,
+   "episodes": 1,
+   "first_owner_risk": [
+    true
+   ],
+   "group_sizes": [
+    2
+   ],
+   "leader_moves_kept": true,
+   "on_policy_baseline_v2_witness": false,
+   "only_follower_moves_withheld": true,
+   "population": "H0",
+   "prefix_supported": false,
+   "side_game": "H0 1930331196 blue",
+   "step": 681,
+   "unrelated_actions_unchanged": true
+  },
+  {
+   "baseline_action_types": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "candidate_action_types": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "classes": [
+    "vehicle x3"
+   ],
+   "decision": 282,
+   "decisions_before_identical": 282,
+   "episodes": 1,
+   "first_owner_risk": [
+    true
+   ],
+   "group_sizes": [
+    3
+   ],
+   "leader_moves_kept": true,
+   "on_policy_baseline_v2_witness": false,
+   "only_follower_moves_withheld": true,
+   "population": "H0",
+   "prefix_supported": false,
+   "side_game": "H0 2120531121 red",
+   "step": 281,
+   "unrelated_actions_unchanged": true
+  },
+  {
+   "baseline_action_types": [
+    1,
+    1
+   ],
+   "candidate_action_types": [
+    1
+   ],
+   "classes": [
+    "vehicle x2"
+   ],
+   "decision": 361,
+   "decisions_before_identical": 361,
+   "episodes": 1,
+   "first_owner_risk": [
+    true
+   ],
+   "group_sizes": [
+    2
+   ],
+   "leader_moves_kept": true,
+   "on_policy_baseline_v2_witness": false,
+   "only_follower_moves_withheld": true,
+   "population": "H0",
+   "prefix_supported": false,
+   "side_game": "H0 2120531121 blue",
+   "step": 360,
+   "unrelated_actions_unchanged": true
+  },
+  {
+   "baseline_action_types": [
+    1,
+    1,
+    1
+   ],
+   "candidate_action_types": [
+    1
+   ],
+   "classes": [
+    "vehicle x3"
+   ],
+   "decision": 402,
+   "decisions_before_identical": 402,
+   "episodes": 1,
+   "first_owner_risk": [
+    false
+   ],
+   "group_sizes": [
+    3
+   ],
+   "leader_moves_kept": true,
+   "on_policy_baseline_v2_witness": false,
+   "only_follower_moves_withheld": true,
+   "population": "H0",
+   "prefix_supported": false,
+   "side_game": "H0 2130511121 red",
+   "step": 401,
+   "unrelated_actions_unchanged": true
+  },
+  {
+   "baseline_action_types": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "candidate_action_types": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "classes": [
+    "vehicle x2"
+   ],
+   "decision": 162,
+   "decisions_before_identical": 162,
+   "episodes": 1,
+   "first_owner_risk": [
+    true
+   ],
+   "group_sizes": [
+    2
+   ],
+   "leader_moves_kept": true,
+   "on_policy_baseline_v2_witness": false,
+   "only_follower_moves_withheld": true,
+   "population": "H0",
+   "prefix_supported": false,
+   "side_game": "H0 2130511121 blue",
+   "step": 161,
+   "unrelated_actions_unchanged": true
+  },
+  {
+   "baseline_action_types": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "candidate_action_types": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "classes": [
+    "vehicle x2"
+   ],
+   "decision": 162,
+   "decisions_before_identical": 162,
+   "episodes": 1,
+   "first_owner_risk": [
+    true
+   ],
+   "group_sizes": [
+    2
+   ],
+   "leader_moves_kept": true,
+   "on_policy_baseline_v2_witness": true,
+   "only_follower_moves_withheld": true,
+   "population": "HH",
+   "prefix_supported": true,
+   "side_game": "HH p01 baseline-v2 blue",
+   "step": 161,
+   "unrelated_actions_unchanged": true
+  },
+  {
+   "baseline_action_types": [
+    1,
+    1,
+    1
+   ],
+   "candidate_action_types": [
+    1
+   ],
+   "classes": [
+    "vehicle x3"
+   ],
+   "decision": 402,
+   "decisions_before_identical": 402,
+   "episodes": 1,
+   "first_owner_risk": [
+    true
+   ],
+   "group_sizes": [
+    3
+   ],
+   "leader_moves_kept": true,
+   "on_policy_baseline_v2_witness": true,
+   "only_follower_moves_withheld": true,
+   "population": "HH",
+   "prefix_supported": true,
+   "side_game": "HH p02 baseline-v2 red",
+   "step": 401,
+   "unrelated_actions_unchanged": true
+  },
+  {
+   "baseline_action_types": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "candidate_action_types": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "classes": [
+    "vehicle x2"
+   ],
+   "decision": 162,
+   "decisions_before_identical": 162,
+   "episodes": 1,
+   "first_owner_risk": [
+    true
+   ],
+   "group_sizes": [
+    2
+   ],
+   "leader_moves_kept": true,
+   "on_policy_baseline_v2_witness": true,
+   "only_follower_moves_withheld": true,
+   "population": "HH",
+   "prefix_supported": true,
+   "side_game": "HH p03 baseline-v2 blue",
+   "step": 161,
+   "unrelated_actions_unchanged": true
+  },
+  {
+   "baseline_action_types": [
+    1,
+    1,
+    1
+   ],
+   "candidate_action_types": [
+    1
+   ],
+   "classes": [
+    "vehicle x3"
+   ],
+   "decision": 402,
+   "decisions_before_identical": 402,
+   "episodes": 1,
+   "first_owner_risk": [
+    true
+   ],
+   "group_sizes": [
+    3
+   ],
+   "leader_moves_kept": true,
+   "on_policy_baseline_v2_witness": true,
+   "only_follower_moves_withheld": true,
+   "population": "HH",
+   "prefix_supported": true,
+   "side_game": "HH p04 baseline-v2 red",
+   "step": 401,
+   "unrelated_actions_unchanged": true
+  }
+ ],
+ "evidence_boundary": "H0: baseline-v0 trajectories, baseline-v2 reconstructed on them (descriptive unless the recorded prefix equals baseline-v2); HH: genuine baseline-v2 seats, four games of one scenario, two openings. Before a side's first divergence the candidate equals baseline-v2; episodes after it are replays on off-policy recorded states, counted as historical opportunity only.",
+ "inputs_sha256": "a73f86ebce0aa5716286ca0ef87428a2c76e3c0db732dfcd1036031b156a8cce",
+ "protocol_sha256": "85ab686de16a335dfaf343d62e12f3266f591fd42b1db38b3c1be14c1cfe8f75",
+ "schema": "miaosuan-s26-results/1",
+ "side_games_without_divergence": [
+  "H0 1910631192 red",
+  "H0 1910631192 blue",
+  "H0 2010131194 red",
+  "H0 2010131194 blue",
+  "H0 2010211129 red",
+  "H0 2010211129 blue",
+  "H0 201033019601 red",
+  "H0 201033019601 blue",
+  "H0 2010431153 red",
+  "H0 2010431153 blue"
+ ],
+ "study_id": "s26-t6s-shadow"
+}

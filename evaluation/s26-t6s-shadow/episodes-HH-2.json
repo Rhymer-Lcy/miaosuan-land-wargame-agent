@@ -1,0 +1,1634 @@
+{
+ "inputs_sha256": "a73f86ebce0aa5716286ca0ef87428a2c76e3c0db732dfcd1036031b156a8cce",
+ "part": "2/2",
+ "population": "HH",
+ "protocol_sha256": "85ab686de16a335dfaf343d62e12f3266f591fd42b1db38b3c1be14c1cfe8f75",
+ "rows": [
+  {
+   "carriers_with_passengers": 0,
+   "classes": "vehicle x2",
+   "counted_in_stop_c": false,
+   "damage": {
+    "followers_damaged_within_150": 0,
+    "followers_damaged_within_300": 0,
+    "followers_damaged_within_75": 0,
+    "members_damaged_within_150": 0,
+    "members_damaged_within_300": 0,
+    "members_damaged_within_75": 0
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     2
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 12,
+   "first_divergence": false,
+   "first_owner_risk": false,
+   "first_owner_risk_in_any_replica": false,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 0,
+    "co_located_moving_beyond_start": false,
+    "co_located_moving_decisions": 0,
+    "leader_recorded_departure_steps": null,
+    "members_followed_on_record": 2,
+    "stacked_moving_inside_envelope_unit_decisions": 600
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "80-point objective A",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": true,
+     "first_owned_before_start": false,
+     "first_owner": false,
+     "free_flow_arrival": 100,
+     "later_lost": false,
+     "never_owned": false,
+     "other_own_first_owners": true,
+     "projected_wait": 20,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, timeout, no baseline-v2 MOVE",
+     "replay_wait_steps": 51,
+     "steps_start_to_first_ownership": 41,
+     "steps_start_to_loss": null,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 2,
+   "members_stacked_at_start": 2,
+   "own_ground_on_start_hex": 4,
+   "population": "HH",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "projected_waits": [
+    20
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": true,
+   "route_lengths": [
+    3,
+    3
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 blue",
+   "shared_route_prefix": 3,
+   "side_game": "HH p03 baseline-v2 blue",
+   "start_step": 380
+  },
+  {
+   "carriers_with_passengers": 0,
+   "classes": "vehicle x2",
+   "counted_in_stop_c": true,
+   "damage": {
+    "followers_damaged_within_150": 0,
+    "followers_damaged_within_300": 0,
+    "followers_damaged_within_75": 0,
+    "members_damaged_within_150": 1,
+    "members_damaged_within_300": 1,
+    "members_damaged_within_75": 0
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     2
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 13,
+   "first_divergence": false,
+   "first_owner_risk": false,
+   "first_owner_risk_in_any_replica": false,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 2,
+    "co_located_moving_beyond_start": true,
+    "co_located_moving_decisions": 40,
+    "leader_recorded_departure_steps": 60,
+    "members_followed_on_record": 2,
+    "stacked_moving_inside_envelope_unit_decisions": 233
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "50-point objective A",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": false,
+     "first_owned_before_start": true,
+     "first_owner": false,
+     "free_flow_arrival": 160,
+     "later_lost": false,
+     "never_owned": false,
+     "other_own_first_owners": false,
+     "projected_wait": 60,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 60,
+     "steps_start_to_first_ownership": null,
+     "steps_start_to_loss": null,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 2,
+   "hex_times": [
+    60,
+    60
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 2,
+   "members_stacked_at_start": 2,
+   "own_ground_on_start_hex": 2,
+   "population": "HH",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "projected_waits": [
+    60
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": false,
+   "route_lengths": [
+    6,
+    6
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 blue",
+   "shared_route_prefix": 6,
+   "side_game": "HH p03 baseline-v2 blue",
+   "start_step": 421
+  },
+  {
+   "carriers_with_passengers": 0,
+   "classes": "vehicle x2",
+   "counted_in_stop_c": false,
+   "damage": {
+    "followers_damaged_within_150": 0,
+    "followers_damaged_within_300": 0,
+    "followers_damaged_within_75": 0,
+    "members_damaged_within_150": 1,
+    "members_damaged_within_300": 1,
+    "members_damaged_within_75": 1
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     2
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 14,
+   "first_divergence": false,
+   "first_owner_risk": false,
+   "first_owner_risk_in_any_replica": false,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 1,
+    "co_located_moving_beyond_start": true,
+    "co_located_moving_decisions": 4,
+    "leader_recorded_departure_steps": 20,
+    "members_followed_on_record": 2,
+    "stacked_moving_inside_envelope_unit_decisions": 271
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "50-point objective A",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": false,
+     "first_owned_before_start": true,
+     "first_owner": false,
+     "free_flow_arrival": 260,
+     "later_lost": false,
+     "never_owned": false,
+     "other_own_first_owners": false,
+     "projected_wait": 20,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": null,
+     "steps_start_to_loss": null,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 2,
+   "members_stacked_at_start": 2,
+   "own_ground_on_start_hex": 3,
+   "population": "HH",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "projected_waits": [
+    20
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": false,
+   "route_lengths": [
+    13,
+    13
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 blue",
+   "shared_route_prefix": 13,
+   "side_game": "HH p03 baseline-v2 blue",
+   "start_step": 460
+  },
+  {
+   "carriers_with_passengers": 1,
+   "classes": "vehicle x3",
+   "counted_in_stop_c": false,
+   "damage": {
+    "followers_damaged_within_150": 1,
+    "followers_damaged_within_300": 1,
+    "followers_damaged_within_75": 0,
+    "members_damaged_within_150": 2,
+    "members_damaged_within_300": 2,
+    "members_damaged_within_75": 0
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     3
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 1,
+   "first_divergence": true,
+   "first_owner_risk": true,
+   "first_owner_risk_in_any_replica": true,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 12,
+    "co_located_moving_beyond_start": true,
+    "co_located_moving_decisions": 275,
+    "leader_recorded_departure_steps": 20,
+    "members_followed_on_record": 3,
+    "stacked_moving_inside_envelope_unit_decisions": 840
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "80-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": true,
+     "first_owned_before_start": false,
+     "first_owner": true,
+     "free_flow_arrival": 80,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": true,
+     "projected_wait": 20,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": 81,
+     "steps_start_to_loss": 380,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    },
+    {
+     "chain_position": 2,
+     "destination": "80-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": true,
+     "first_owned_before_start": false,
+     "first_owner": true,
+     "free_flow_arrival": 80,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": true,
+     "projected_wait": 40,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": 81,
+     "steps_start_to_loss": 380,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 3,
+   "hex_times": [
+    20,
+    20,
+    20
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 3,
+   "members_stacked_at_start": 3,
+   "own_ground_on_start_hex": 3,
+   "population": "HH",
+   "post_divergence": false,
+   "prefix_supported": true,
+   "projected_waits": [
+    20,
+    40
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": false,
+   "route_lengths": [
+    4,
+    4,
+    4
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 red",
+   "shared_route_prefix": 4,
+   "side_game": "HH p04 baseline-v2 red",
+   "start_step": 401
+  },
+  {
+   "carriers_with_passengers": 2,
+   "classes": "vehicle x3",
+   "counted_in_stop_c": false,
+   "damage": {
+    "followers_damaged_within_150": 0,
+    "followers_damaged_within_300": 0,
+    "followers_damaged_within_75": 0,
+    "members_damaged_within_150": 0,
+    "members_damaged_within_300": 1,
+    "members_damaged_within_75": 0
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     3
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 2,
+   "first_divergence": false,
+   "first_owner_risk": false,
+   "first_owner_risk_in_any_replica": false,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 9,
+    "co_located_moving_beyond_start": true,
+    "co_located_moving_decisions": 237,
+    "leader_recorded_departure_steps": 20,
+    "members_followed_on_record": 3,
+    "stacked_moving_inside_envelope_unit_decisions": 770
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "50-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": true,
+     "first_owned_before_start": false,
+     "first_owner": false,
+     "free_flow_arrival": 140,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": true,
+     "projected_wait": 20,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": 103,
+     "steps_start_to_loss": 342,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    },
+    {
+     "chain_position": 2,
+     "destination": "50-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": true,
+     "first_owned_before_start": false,
+     "first_owner": false,
+     "free_flow_arrival": 140,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": true,
+     "projected_wait": 40,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": 103,
+     "steps_start_to_loss": 519,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 3,
+   "hex_times": [
+    20,
+    20,
+    20
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 3,
+   "members_stacked_at_start": 3,
+   "own_ground_on_start_hex": 4,
+   "population": "HH",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "projected_waits": [
+    20,
+    40
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": false,
+   "route_lengths": [
+    6,
+    6,
+    6
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 red",
+   "shared_route_prefix": 6,
+   "side_game": "HH p04 baseline-v2 red",
+   "start_step": 440
+  },
+  {
+   "carriers_with_passengers": 1,
+   "classes": "vehicle x3",
+   "counted_in_stop_c": false,
+   "damage": {
+    "followers_damaged_within_150": 0,
+    "followers_damaged_within_300": 1,
+    "followers_damaged_within_75": 0,
+    "members_damaged_within_150": 0,
+    "members_damaged_within_300": 2,
+    "members_damaged_within_75": 0
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     3
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 3,
+   "first_divergence": false,
+   "first_owner_risk": false,
+   "first_owner_risk_in_any_replica": false,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 8,
+    "co_located_moving_beyond_start": true,
+    "co_located_moving_decisions": 179,
+    "leader_recorded_departure_steps": 40,
+    "members_followed_on_record": 3,
+    "stacked_moving_inside_envelope_unit_decisions": 694
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "50-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": true,
+     "first_owned_before_start": false,
+     "first_owner": false,
+     "free_flow_arrival": 140,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": true,
+     "projected_wait": 20,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 40,
+     "steps_start_to_first_ownership": 83,
+     "steps_start_to_loss": 262,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    },
+    {
+     "chain_position": 2,
+     "destination": "50-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": true,
+     "first_owned_before_start": false,
+     "first_owner": false,
+     "free_flow_arrival": 140,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": true,
+     "projected_wait": 40,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 40,
+     "steps_start_to_first_ownership": 83,
+     "steps_start_to_loss": 220,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 3,
+   "hex_times": [
+    20,
+    20,
+    20
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 3,
+   "members_stacked_at_start": 3,
+   "own_ground_on_start_hex": 3,
+   "population": "HH",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "projected_waits": [
+    20,
+    40
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": false,
+   "route_lengths": [
+    6,
+    6,
+    6
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 red",
+   "shared_route_prefix": 6,
+   "side_game": "HH p04 baseline-v2 red",
+   "start_step": 460
+  },
+  {
+   "carriers_with_passengers": 1,
+   "classes": "vehicle x3",
+   "counted_in_stop_c": false,
+   "damage": {
+    "followers_damaged_within_150": 1,
+    "followers_damaged_within_300": 1,
+    "followers_damaged_within_75": 1,
+    "members_damaged_within_150": 2,
+    "members_damaged_within_300": 2,
+    "members_damaged_within_75": 2
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     3
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 4,
+   "first_divergence": false,
+   "first_owner_risk": true,
+   "first_owner_risk_in_any_replica": true,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 8,
+    "co_located_moving_beyond_start": true,
+    "co_located_moving_decisions": 255,
+    "leader_recorded_departure_steps": 20,
+    "members_followed_on_record": 3,
+    "stacked_moving_inside_envelope_unit_decisions": 828
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "50-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": true,
+     "first_owned_before_start": false,
+     "first_owner": true,
+     "free_flow_arrival": 60,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": true,
+     "projected_wait": 20,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": 61,
+     "steps_start_to_loss": 299,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    },
+    {
+     "chain_position": 2,
+     "destination": "50-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": true,
+     "first_owned_before_start": false,
+     "first_owner": true,
+     "free_flow_arrival": 60,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": true,
+     "projected_wait": 40,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": 61,
+     "steps_start_to_loss": 299,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 3,
+   "hex_times": [
+    20,
+    20,
+    20
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 3,
+   "members_stacked_at_start": 3,
+   "own_ground_on_start_hex": 3,
+   "population": "HH",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "projected_waits": [
+    20,
+    40
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": false,
+   "route_lengths": [
+    3,
+    3,
+    3
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 red",
+   "shared_route_prefix": 3,
+   "side_game": "HH p04 baseline-v2 red",
+   "start_step": 482
+  },
+  {
+   "carriers_with_passengers": 1,
+   "classes": "vehicle x3",
+   "counted_in_stop_c": true,
+   "damage": {
+    "followers_damaged_within_150": 0,
+    "followers_damaged_within_300": 1,
+    "followers_damaged_within_75": 0,
+    "members_damaged_within_150": 0,
+    "members_damaged_within_300": 2,
+    "members_damaged_within_75": 0
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     3
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 5,
+   "first_divergence": false,
+   "first_owner_risk": true,
+   "first_owner_risk_in_any_replica": true,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 8,
+    "co_located_moving_beyond_start": true,
+    "co_located_moving_decisions": 215,
+    "leader_recorded_departure_steps": 20,
+    "members_followed_on_record": 3,
+    "stacked_moving_inside_envelope_unit_decisions": 706
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "80-point objective C",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": true,
+     "first_owned_before_start": false,
+     "first_owner": true,
+     "free_flow_arrival": 60,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": true,
+     "projected_wait": 20,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": 61,
+     "steps_start_to_loss": 238,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    },
+    {
+     "chain_position": 2,
+     "destination": "80-point objective C",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": true,
+     "first_owned_before_start": false,
+     "first_owner": true,
+     "free_flow_arrival": 60,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": true,
+     "projected_wait": 40,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": 61,
+     "steps_start_to_loss": 238,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 3,
+   "hex_times": [
+    20,
+    20,
+    20
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 3,
+   "members_stacked_at_start": 3,
+   "own_ground_on_start_hex": 3,
+   "population": "HH",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "projected_waits": [
+    20,
+    40
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": false,
+   "route_lengths": [
+    3,
+    3,
+    3
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 red",
+   "shared_route_prefix": 3,
+   "side_game": "HH p04 baseline-v2 red",
+   "start_step": 543
+  },
+  {
+   "carriers_with_passengers": 2,
+   "classes": "vehicle x3",
+   "counted_in_stop_c": true,
+   "damage": {
+    "followers_damaged_within_150": 0,
+    "followers_damaged_within_300": 2,
+    "followers_damaged_within_75": 0,
+    "members_damaged_within_150": 1,
+    "members_damaged_within_300": 3,
+    "members_damaged_within_75": 1
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     3
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 6,
+   "first_divergence": false,
+   "first_owner_risk": false,
+   "first_owner_risk_in_any_replica": false,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 3,
+    "co_located_moving_beyond_start": true,
+    "co_located_moving_decisions": 96,
+    "leader_recorded_departure_steps": 23,
+    "members_followed_on_record": 3,
+    "stacked_moving_inside_envelope_unit_decisions": 525
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "80-point objective C",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": true,
+     "first_owned_before_start": false,
+     "first_owner": false,
+     "free_flow_arrival": 60,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": true,
+     "projected_wait": 20,
+     "pushed_past_the_end": false,
+     "replay_outcome": "left the queue, follower_left",
+     "replay_wait_steps": 22,
+     "steps_start_to_first_ownership": 24,
+     "steps_start_to_loss": 202,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    },
+    {
+     "chain_position": 2,
+     "destination": "80-point objective C",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": true,
+     "first_owned_before_start": false,
+     "first_owner": false,
+     "free_flow_arrival": 60,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": true,
+     "projected_wait": 40,
+     "pushed_past_the_end": false,
+     "replay_outcome": "left the queue, follower_left",
+     "replay_wait_steps": 22,
+     "steps_start_to_first_ownership": 24,
+     "steps_start_to_loss": 379,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 3,
+   "hex_times": [
+    20,
+    20,
+    20
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 3,
+   "members_stacked_at_start": 3,
+   "own_ground_on_start_hex": 4,
+   "population": "HH",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "projected_waits": [
+    20,
+    40
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": false,
+   "route_lengths": [
+    3,
+    3,
+    3
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 red",
+   "shared_route_prefix": 3,
+   "side_game": "HH p04 baseline-v2 red",
+   "start_step": 580
+  },
+  {
+   "carriers_with_passengers": 1,
+   "classes": "vehicle x3",
+   "counted_in_stop_c": true,
+   "damage": {
+    "followers_damaged_within_150": 0,
+    "followers_damaged_within_300": 1,
+    "followers_damaged_within_75": 0,
+    "members_damaged_within_150": 1,
+    "members_damaged_within_300": 2,
+    "members_damaged_within_75": 0
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     3
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 7,
+   "first_divergence": false,
+   "first_owner_risk": false,
+   "first_owner_risk_in_any_replica": false,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 6,
+    "co_located_moving_beyond_start": true,
+    "co_located_moving_decisions": 119,
+    "leader_recorded_departure_steps": 20,
+    "members_followed_on_record": 3,
+    "stacked_moving_inside_envelope_unit_decisions": 567
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "80-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": false,
+     "first_owned_before_start": true,
+     "first_owner": false,
+     "free_flow_arrival": 80,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": false,
+     "projected_wait": 20,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": null,
+     "steps_start_to_loss": 177,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    },
+    {
+     "chain_position": 2,
+     "destination": "80-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": false,
+     "first_owned_before_start": true,
+     "first_owner": false,
+     "free_flow_arrival": 80,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": false,
+     "projected_wait": 40,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": null,
+     "steps_start_to_loss": 177,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 3,
+   "hex_times": [
+    20,
+    20,
+    20
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 3,
+   "members_stacked_at_start": 3,
+   "own_ground_on_start_hex": 3,
+   "population": "HH",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "projected_waits": [
+    20,
+    40
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": false,
+   "route_lengths": [
+    4,
+    4,
+    4
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 red",
+   "shared_route_prefix": 4,
+   "side_game": "HH p04 baseline-v2 red",
+   "start_step": 604
+  },
+  {
+   "carriers_with_passengers": 1,
+   "classes": "vehicle x4",
+   "counted_in_stop_c": false,
+   "damage": {
+    "followers_damaged_within_150": 1,
+    "followers_damaged_within_300": 1,
+    "followers_damaged_within_75": 1,
+    "members_damaged_within_150": 2,
+    "members_damaged_within_300": 2,
+    "members_damaged_within_75": 2
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     4
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 8,
+   "first_divergence": false,
+   "first_owner_risk": false,
+   "first_owner_risk_in_any_replica": true,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 3,
+    "co_located_moving_beyond_start": true,
+    "co_located_moving_decisions": 80,
+    "leader_recorded_departure_steps": 20,
+    "members_followed_on_record": 4,
+    "stacked_moving_inside_envelope_unit_decisions": 470
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "80-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": false,
+     "first_owned_before_start": true,
+     "first_owner": false,
+     "free_flow_arrival": 60,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": false,
+     "projected_wait": 20,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": null,
+     "steps_start_to_loss": 102,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    },
+    {
+     "chain_position": 2,
+     "destination": "80-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": false,
+     "first_owned_before_start": true,
+     "first_owner": false,
+     "free_flow_arrival": 60,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": false,
+     "projected_wait": 40,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": null,
+     "steps_start_to_loss": 339,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    },
+    {
+     "chain_position": 3,
+     "destination": "80-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": false,
+     "first_owned_before_start": true,
+     "first_owner": false,
+     "free_flow_arrival": 60,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": false,
+     "projected_wait": 60,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": null,
+     "steps_start_to_loss": 60,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 4,
+   "hex_times": [
+    20,
+    20,
+    20,
+    20
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 4,
+   "members_stacked_at_start": 4,
+   "own_ground_on_start_hex": 4,
+   "population": "HH",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "projected_waits": [
+    20,
+    40,
+    60
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": false,
+   "route_lengths": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 red",
+   "shared_route_prefix": 3,
+   "side_game": "HH p04 baseline-v2 red",
+   "start_step": 620
+  },
+  {
+   "carriers_with_passengers": 2,
+   "classes": "vehicle x2",
+   "counted_in_stop_c": true,
+   "damage": {
+    "followers_damaged_within_150": 0,
+    "followers_damaged_within_300": 1,
+    "followers_damaged_within_75": 0,
+    "members_damaged_within_150": 1,
+    "members_damaged_within_300": 2,
+    "members_damaged_within_75": 0
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     2
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 9,
+   "first_divergence": false,
+   "first_owner_risk": false,
+   "first_owner_risk_in_any_replica": false,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 0,
+    "co_located_moving_beyond_start": false,
+    "co_located_moving_decisions": 0,
+    "leader_recorded_departure_steps": 20,
+    "members_followed_on_record": 2,
+    "stacked_moving_inside_envelope_unit_decisions": 170
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "80-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": false,
+     "first_owned_before_start": true,
+     "first_owner": false,
+     "free_flow_arrival": 80,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": false,
+     "projected_wait": 20,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": null,
+     "steps_start_to_loss": 317,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 2,
+   "members_stacked_at_start": 2,
+   "own_ground_on_start_hex": 4,
+   "population": "HH",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "projected_waits": [
+    20
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": false,
+   "route_lengths": [
+    4,
+    4
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 red",
+   "shared_route_prefix": 4,
+   "side_game": "HH p04 baseline-v2 red",
+   "start_step": 642
+  },
+  {
+   "carriers_with_passengers": 0,
+   "classes": "vehicle x2",
+   "counted_in_stop_c": true,
+   "damage": {
+    "followers_damaged_within_150": 0,
+    "followers_damaged_within_300": 0,
+    "followers_damaged_within_75": 0,
+    "members_damaged_within_150": 1,
+    "members_damaged_within_300": 1,
+    "members_damaged_within_75": 1
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     2
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 10,
+   "first_divergence": false,
+   "first_owner_risk": false,
+   "first_owner_risk_in_any_replica": false,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 2,
+    "co_located_moving_beyond_start": true,
+    "co_located_moving_decisions": 21,
+    "leader_recorded_departure_steps": 20,
+    "members_followed_on_record": 2,
+    "stacked_moving_inside_envelope_unit_decisions": 234
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "50-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": false,
+     "first_owned_before_start": true,
+     "first_owner": false,
+     "free_flow_arrival": 60,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": false,
+     "projected_wait": 20,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": null,
+     "steps_start_to_loss": 278,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 2,
+   "members_stacked_at_start": 2,
+   "own_ground_on_start_hex": 2,
+   "population": "HH",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "projected_waits": [
+    20
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": false,
+   "route_lengths": [
+    3,
+    3
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 red",
+   "shared_route_prefix": 3,
+   "side_game": "HH p04 baseline-v2 red",
+   "start_step": 681
+  },
+  {
+   "carriers_with_passengers": 1,
+   "classes": "vehicle x2",
+   "counted_in_stop_c": true,
+   "damage": {
+    "followers_damaged_within_150": 0,
+    "followers_damaged_within_300": 0,
+    "followers_damaged_within_75": 0,
+    "members_damaged_within_150": 1,
+    "members_damaged_within_300": 1,
+    "members_damaged_within_75": 1
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     2
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 11,
+   "first_divergence": false,
+   "first_owner_risk": false,
+   "first_owner_risk_in_any_replica": false,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 2,
+    "co_located_moving_beyond_start": true,
+    "co_located_moving_decisions": 40,
+    "leader_recorded_departure_steps": 20,
+    "members_followed_on_record": 2,
+    "stacked_moving_inside_envelope_unit_decisions": 118
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "50-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": false,
+     "first_owned_before_start": true,
+     "first_owner": false,
+     "free_flow_arrival": 60,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": false,
+     "projected_wait": 20,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": null,
+     "steps_start_to_loss": 60,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 2,
+   "members_stacked_at_start": 2,
+   "own_ground_on_start_hex": 2,
+   "population": "HH",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "projected_waits": [
+    20
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": false,
+   "route_lengths": [
+    3,
+    3
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 red",
+   "shared_route_prefix": 3,
+   "side_game": "HH p04 baseline-v2 red",
+   "start_step": 721
+  },
+  {
+   "carriers_with_passengers": 0,
+   "classes": "vehicle x2",
+   "counted_in_stop_c": true,
+   "damage": {
+    "followers_damaged_within_150": 0,
+    "followers_damaged_within_300": 0,
+    "followers_damaged_within_75": 0,
+    "members_damaged_within_150": 1,
+    "members_damaged_within_300": 1,
+    "members_damaged_within_75": 0
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     2
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 12,
+   "first_divergence": false,
+   "first_owner_risk": false,
+   "first_owner_risk_in_any_replica": false,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 5,
+    "co_located_moving_beyond_start": true,
+    "co_located_moving_decisions": 99,
+    "leader_recorded_departure_steps": 20,
+    "members_followed_on_record": 2,
+    "stacked_moving_inside_envelope_unit_decisions": 273
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "80-point objective C",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": false,
+     "first_owned_before_start": true,
+     "first_owner": false,
+     "free_flow_arrival": 60,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": false,
+     "projected_wait": 20,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": null,
+     "steps_start_to_loss": 217,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 2,
+   "members_stacked_at_start": 2,
+   "own_ground_on_start_hex": 2,
+   "population": "HH",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "projected_waits": [
+    20
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": false,
+   "route_lengths": [
+    3,
+    3
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 red",
+   "shared_route_prefix": 3,
+   "side_game": "HH p04 baseline-v2 red",
+   "start_step": 742
+  },
+  {
+   "carriers_with_passengers": 0,
+   "classes": "vehicle x2",
+   "counted_in_stop_c": true,
+   "damage": {
+    "followers_damaged_within_150": 0,
+    "followers_damaged_within_300": 0,
+    "followers_damaged_within_75": 0,
+    "members_damaged_within_150": 1,
+    "members_damaged_within_300": 1,
+    "members_damaged_within_75": 0
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     2
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 13,
+   "first_divergence": false,
+   "first_owner_risk": false,
+   "first_owner_risk_in_any_replica": false,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 3,
+    "co_located_moving_beyond_start": true,
+    "co_located_moving_decisions": 58,
+    "leader_recorded_departure_steps": 20,
+    "members_followed_on_record": 2,
+    "stacked_moving_inside_envelope_unit_decisions": 155
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "50-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": false,
+     "first_owned_before_start": true,
+     "first_owner": false,
+     "free_flow_arrival": 60,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": false,
+     "projected_wait": 20,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_left, no baseline-v2 MOVE",
+     "replay_wait_steps": 20,
+     "steps_start_to_first_ownership": null,
+     "steps_start_to_loss": 156,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 2,
+   "members_stacked_at_start": 2,
+   "own_ground_on_start_hex": 2,
+   "population": "HH",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "projected_waits": [
+    20
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": false,
+   "route_lengths": [
+    3,
+    3
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 red",
+   "shared_route_prefix": 3,
+   "side_game": "HH p04 baseline-v2 red",
+   "start_step": 803
+  },
+  {
+   "carriers_with_passengers": 0,
+   "classes": "vehicle x3",
+   "counted_in_stop_c": true,
+   "damage": {
+    "followers_damaged_within_150": 1,
+    "followers_damaged_within_300": 1,
+    "followers_damaged_within_75": 1,
+    "members_damaged_within_150": 2,
+    "members_damaged_within_300": 2,
+    "members_damaged_within_75": 2
+   },
+   "destination_kinds": [
+    [
+     "objective not held",
+     3
+    ]
+   ],
+   "different_hex_times": false,
+   "episode_ordinal": 14,
+   "first_divergence": false,
+   "first_owner_risk": false,
+   "first_owner_risk_in_any_replica": false,
+   "follow_up": {
+    "all_followed": true,
+    "co_located_hexes_beyond_start": 0,
+    "co_located_moving_beyond_start": false,
+    "co_located_moving_decisions": 0,
+    "leader_recorded_departure_steps": 19,
+    "members_followed_on_record": 3,
+    "stacked_moving_inside_envelope_unit_decisions": 56
+   },
+   "followers": [
+    {
+     "chain_position": 1,
+     "destination": "80-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": false,
+     "first_owned_before_start": true,
+     "first_owner": false,
+     "free_flow_arrival": 60,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": false,
+     "projected_wait": 20,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_absent, no baseline-v2 MOVE",
+     "replay_wait_steps": 19,
+     "steps_start_to_first_ownership": null,
+     "steps_start_to_loss": 20,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    },
+    {
+     "chain_position": 2,
+     "destination": "80-point objective B",
+     "destination_kind": "objective not held",
+     "first_owned_after_start": false,
+     "first_owned_before_start": true,
+     "first_owner": false,
+     "free_flow_arrival": 60,
+     "later_lost": true,
+     "never_owned": false,
+     "other_own_first_owners": false,
+     "projected_wait": 40,
+     "pushed_past_the_end": false,
+     "replay_outcome": "released, reference_absent, no baseline-v2 MOVE",
+     "replay_wait_steps": 19,
+     "steps_start_to_first_ownership": null,
+     "steps_start_to_loss": 95,
+     "unit_class": "vehicle",
+     "unreachable_free_flow": false
+    }
+   ],
+   "group_size": 3,
+   "hex_times": [
+    20,
+    20,
+    20
+   ],
+   "leader_class": "vehicle",
+   "members_exposed": 3,
+   "members_stacked_at_start": 3,
+   "own_ground_on_start_hex": 3,
+   "population": "HH",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "projected_waits": [
+    20,
+    40
+   ],
+   "replay_end": "complete",
+   "replay_repeats": 0,
+   "replay_timeout": false,
+   "route_lengths": [
+    3,
+    3,
+    3
+   ],
+   "same_destination": true,
+   "scenario_side": "2130511121 red",
+   "shared_route_prefix": 3,
+   "side_game": "HH p04 baseline-v2 red",
+   "start_step": 864
+  }
+ ],
+ "schema": "miaosuan-s26-results/1",
+ "study_id": "s26-t6s-shadow"
+}

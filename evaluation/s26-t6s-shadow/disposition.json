@@ -1,0 +1,38 @@
+{
+ "disposition": "T6_S_OFFLINE_PASS",
+ "fidelity_ok": true,
+ "inputs_sha256": "a73f86ebce0aa5716286ca0ef87428a2c76e3c0db732dfcd1036031b156a8cce",
+ "integrity_ok": true,
+ "protocol_sha256": "85ab686de16a335dfaf343d62e12f3266f591fd42b1db38b3c1be14c1cfe8f75",
+ "schema": "miaosuan-s26-results/1",
+ "stops": {
+  "A_hh_opportunity": {
+   "episodes_by_hh_side_game": {
+    "HH p01 baseline-v2 blue": 16,
+    "HH p02 baseline-v2 red": 10,
+    "HH p03 baseline-v2 blue": 14,
+    "HH p04 baseline-v2 red": 14
+   },
+   "hh_side_games": 4,
+   "met": false,
+   "minimum_per_side_game": 10
+  },
+  "B_h0_generality": {
+   "h0_scenario_sides": 16,
+   "h0_scenario_sides_with_an_episode": 6,
+   "met": false,
+   "minimum_scenario_sides": 4
+  },
+  "C_onward_capture_conflict": {
+   "episodes_distinct": 88,
+   "episodes_raw": 119,
+   "evaluable": true,
+   "first_owner_risk_episodes": 18,
+   "met": false,
+   "share": "18/88"
+  }
+ },
+ "stops_met": [],
+ "study_id": "s26-t6s-shadow",
+ "unexplained_action_differences": 0
+}
