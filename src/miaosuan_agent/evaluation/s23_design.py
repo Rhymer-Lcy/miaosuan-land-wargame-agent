@@ -340,7 +340,10 @@ def disposition(invalid: Sequence[str], episodes: Sequence[Mapping[str, Any]]) -
         return {"disposition": NO_OPPORTUNITY, "below_minimum": short, **counts}
     saturated = share(sum(1 for e in episodes if e["saturated_at_arrival"]), n)
     claimant = share(sum(1 for e in episodes if e["claimant_elsewhere"]), n)
-    shares = {"saturated_share": str(saturated), "claimant_share": str(claimant)}
+    # Amendment A1: published unreduced as "part/whole" (a reduced "0" or "1" collides with small private unit ids in
+    # the sanitizer); the comparisons below use the exact fractions, unchanged.
+    shares = {"saturated_share": f"{sum(1 for e in episodes if e['saturated_at_arrival'])}/{n}",
+              "claimant_share": f"{sum(1 for e in episodes if e['claimant_elsewhere'])}/{n}"}
     over = [name for name, value, ceiling in (("saturated_share", saturated, READINESS["max_saturated_share"]),
                                               ("claimant_share", claimant, READINESS["max_claimant_share"]))
             if value > Fraction(ceiling)]
