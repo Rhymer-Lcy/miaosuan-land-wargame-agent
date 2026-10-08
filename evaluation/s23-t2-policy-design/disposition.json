@@ -1,0 +1,28 @@
+{
+ "above_maximum": [
+  "claimant_share"
+ ],
+ "acting_opponent_episodes": 26,
+ "claimant_share": "25/30",
+ "disposition": "T2_UNRESOLVED_INTERACTION_RISK",
+ "first_divergence_episodes": 30,
+ "invalid_problem_count": 0,
+ "order": [
+  "T2_DESIGN_INVALID",
+  "T2_NO_GENERALIZABLE_OPPORTUNITY",
+  "T2_UNRESOLVED_INTERACTION_RISK",
+  "T2_READY_FOR_SMALL_EXPLORATORY_PROPOSAL"
+ ],
+ "readiness": {
+  "max_claimant_share": "1/2",
+  "max_saturated_share": "1/4",
+  "min_first_divergence_episodes": 4,
+  "min_first_divergence_episodes_acting": 2,
+  "min_scenarios": 2
+ },
+ "saturated_share": "0/30",
+ "scenarios": 6,
+ "schema": "miaosuan-s23-design/1/disposition",
+ "screen": null,
+ "study_id": "s23-t2-policy-design"
+}
