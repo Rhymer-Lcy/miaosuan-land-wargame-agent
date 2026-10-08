@@ -412,3 +412,207 @@ open), and exactly one next task is recommended.
 No tactic is shown to work or fail. An episode is an eligible historical target of the registered rule, not a delay the
 candidate made; replay waits describe recorded states; onward labels are historical, not counterfactual; nothing here
 estimates a damage, survival or score effect.
+
+## Results (2026-10-09)
+
+Every figure below is read from the committed public files of `evaluation/s26-t6s-shadow/`, which `scripts/s26_t6s.py
+run --check` regenerates byte for byte on the evaluation server, unless it is labelled post hoc.
+
+### R1. Order of work
+
+The registration (`c3fc731` to `20453dcafa870313ec4b9fe2e9f04f2b116ddf99`, tree
+`2e6703c616a6f7dac5ff5f87e54456fb2afd49d3`, twelve commits) was pushed at 2026-10-09T00:00:57+08:00 after the
+workstation suite passed on it (2,191 tests, 105 skipped) and the privacy scan of every reachable blob (1,105) matched
+the 106 accepted lines exactly. A fresh GitHub clone had the same commit and tree, its 13 registered files were
+byte-identical, and its suite passed (2,188 tests, 113 skipped). The evaluation server's main clone was fast-forwarded
+to it by bundle, `freeze --check` passed there, and `run` was started once; it wrote the nine result files and the
+private rows (finishing at 16:15:24Z by the server's clock). `run --check` then regenerated every public file and the
+private rows byte for byte. No engine was called and no definition, threshold or stop was changed after the run.
+
+### R2. Fidelity
+
+All 27 anchors and the 8 blocks are reproduced exactly (`fidelity.json`): H0 33,696 decisions and 33,680 play
+decisions, 123 recorded/`baseline-v2` differences (also by the separate pass); HH 11,524 of 11,524 reconstructions equal
+to the recorded seat; stacked ground victims 112 of 177 and 70 of 130; moving ground damage 124 of 205 and 117 of 158,
+attacker seen before 120 and 117; move orders 509 and 416; threat-exposed orders 230 and 200, then damaged 88 and 101;
+stacked units moving off objectives 57 and 40 (the whole admission table equal); 13 of 16 H0 scenario-sides with a
+stacked ground victim; T6-G gate episodes 0, 0, 0 and 0; 16 and 4 side-games; the T6, N9 and N6 blocks. All 20
+side-games pass every integrity check, and there is no unexplained action difference at any decision.
+
+### R3. Trigger census
+
+Decision-level counts (a co-departure listed again counts again; `census.json`):
+
+| | H0 | HH |
+|---|---:|---:|
+| `baseline-v2` MOVE orders | 509 | 416 |
+| ground MOVE orders | 391 | 302 |
+| same-hex co-departure groups (their MOVEs) | 113 (271) | 78 (186) |
+| of which all MOVEs share one first hex | 99 | 74 |
+| groups sharing a first hex | 101 | 76 |
+| of which with a threat-exposed member | 65 | 54 |
+
+Every ground MOVE passed the mover checks (the other MOVEs were aircraft: 118 and 114); no MOVE was excluded as already
+moving, unlisted, unreadable, in an active episode or not re-armed. The state machine therefore neither added nor
+removed anything: in every side-game the episodes equal the threat-exposed groups sharing a first hex.
+
+| Side-game | Episodes | after the first divergence | Distinct units | Followers | Projected wait (median, max) |
+|---|---:|---:|---:|---:|---|
+| H0 1930331196 red | 15 | 14 | 6 | 34 | 40, 120 |
+| H0 1930331196 blue | 9 | 8 | 10 | 9 | 40, 144 |
+| H0 2120531121 red | 6 | 5 | 8 | 8 | 20, 40 |
+| H0 2120531121 blue | 5 | 4 | 9 | 7 | 20, 40 |
+| H0 2130511121 red | 9 | 8 | 13 | 17 | 40, 60 |
+| H0 2130511121 blue | 21 | 20 | 13 | 25 | 20, 144 |
+| HH p01 baseline-v2 blue | 16 | 15 | 10 | 19 | 20, 120 |
+| HH p02 baseline-v2 red | 10 | 9 | 11 | 17 | 20, 60 |
+| HH p03 baseline-v2 blue | 14 | 13 | 11 | 16 | 20, 60 |
+| HH p04 baseline-v2 red | 14 | 13 | 10 | 24 | 20, 60 |
+
+The other ten H0 side-games (five scenarios, both sides) have no episode: they hold 1 to 14 ground MOVEs each, and
+their groups sharing a first hex, where there are any, had no threat-exposed member. In count units: 119 episodes (H0
+65, HH 54) in 7 games and 10 side-games; 6 H0 scenario-sides in 3 scenarios; 6 distinct starting setups over both
+populations (HH's two openings are H0's 2130511121 sides); 101 distinct units by side-game, 295 member instances, 176
+followers. Group sizes: two 72, three 37, four 10. Every member was stacked at the start (295 of 295); 289 were vehicles
+and 6 infantry (three infantry-only groups, in H0); within every group the members had equal hex times, the same
+destination and identical routes (2 to 15 hexes; three hexes in 68 groups). Carriers with passengers appear in 54
+member instances. No decision had two triggered groups converging on one first hex.
+
+### R4. First divergences
+
+Each of the 10 side-games with an episode diverges first at its first episode (`divergence.json`); in every certificate
+only follower MOVEs were withheld, the leaders' MOVEs were kept and every unrelated action is unchanged and in order.
+
+| Side-game | Decision | Step | Prefix supported | Group | First-owner risk |
+|---|---:|---:|---|---|---|
+| H0 1930331196 red | 381 | 380 | yes | vehicle x2 | no |
+| H0 1930331196 blue | 682 | 681 | no | vehicle x2 | yes |
+| H0 2120531121 red | 282 | 281 | no | vehicle x3 | yes |
+| H0 2120531121 blue | 361 | 360 | no | vehicle x2 | yes |
+| H0 2130511121 red | 402 | 401 | no | vehicle x3 | no |
+| H0 2130511121 blue | 162 | 161 | no | vehicle x2 | yes |
+| HH p01 baseline-v2 blue | 162 | 161 | yes | vehicle x2 | yes |
+| HH p02 baseline-v2 red | 402 | 401 | yes | vehicle x3 | yes |
+| HH p03 baseline-v2 blue | 162 | 161 | yes | vehicle x2 | yes |
+| HH p04 baseline-v2 red | 402 | 401 | yes | vehicle x3 | yes |
+
+The four HH certificates are valid action-level facts on the genuine `baseline-v2` seats, at two distinct openings
+(blue at step 161, red at step 401, each played twice). In H0 only 1930331196 red's is an on-policy `baseline-v2`
+witness; the other five H0 sides had already diverged from `baseline-v2` before their trigger. The remaining 109
+episodes are replays on off-policy recorded states.
+
+### R5. Stacked exposure (historical, descriptive)
+
+| | H0 | HH |
+|---|---:|---:|
+| moving own ground unit-decisions | 174,360 | 134,765 |
+| stacked | 67,500 | 60,219 |
+| stacked inside an applicable envelope | 45,816 | 51,377 |
+| alone | 106,860 | 74,546 |
+| alone inside an applicable envelope | 38,283 | 34,099 |
+| damage events on moving ground units, stacked victims / alone | 72 / 52 | 60 / 57 |
+
+All 119 episodes were followed on the record (every member's recorded action at the start was its `baseline-v2` MOVE).
+Within 300 steps the members were co-located while moving on a hex other than the start hex in 107 (H0 60, HH 47) and
+separated after the start hex in 12 (H0 5, HH 7); moving stacked member unit-decisions inside applicable envelopes in
+that window sum to 35,080 (H0) and 27,075 (HH), counted per episode. The leader's recorded departure from the start
+hex came a median 20 steps after the start (H0 12 to 144, HH 1 to 252). So the columns the rule would stagger did,
+historically, travel stacked inside envelopes beyond their start hex in most episodes: staggering has a plausible
+mechanical opportunity to reduce stacked moving exposure. Whether it would reduce damage is not measured here.
+
+### R6. Projected delays and historical damage
+
+The projected wait of the 176 followers is a median 20 steps (one vehicle hex time; 20 to 144; H0 median 30, HH 20). No
+follower's projected wait would carry its free-flow arrival past the game's end; 2 H0 followers could not arrive even at
+free flow. Members damaged within 75, 150 and 300 steps of the start: H0 16, 33 and 54, HH 23, 35 and 61; of the
+followers H0 3, 13 and 21, HH 10, 13 and 28. These are historical; a follower that waits stays exposed in place, and no
+damage difference is inferred.
+
+### R7. Onward first-owner risk
+
+Every follower was headed to an objective its side did not hold (176 of 176). Historically 37 followers (H0 21, HH 16)
+were among the first owners of their destination, a median 81 steps after the start (61 to 301; HH 61 to 81), against a
+projected wait of a median 20 (20 to 120); the destination of 66 had been first owned before the start and of 4 never;
+in 104 cases other own units were among the first owners; 112 followers were lost later in their game. At the episode
+level 26 of the 119 raw episodes are at risk (H0 15 of 65, HH 11 of 54). After replica de-duplication 88 distinct
+episodes remain (H0 65; HH 23, its other 31 repeating an earlier episode of a replica game), of which 18 are at risk
+(H0 16, one of them at risk only in its HH replica; HH 2).
+
+### R8. Relation to Sprint 25 (descriptive)
+
+Sprint 25's private rows reproduce its figures: 28 multi-defender order-vacating losses, 81 last-defender instances, 27
+ordered at one decision (`intersection.json`). First match: ordered at several decisions 1 (HH); no qualifying visible
+threat 2 (H0); the frozen trigger holds at a valid first divergence 2 (HH); it holds after a divergence or without
+prefix support 23 (H0 18, HH 5). No case was split across hexes or first hexes, and `baseline-v2` emitted the same MOVEs
+in every H0 case. The collective departures that emptied held objectives are, almost all, co-departures T6-S acts on;
+this does not show that staggering would keep an objective.
+
+### R9. Stop conditions
+
+| Stop | Registered quantity | Result | Met |
+|---|---|---|---|
+| A, HH opportunity | episodes in each HH side-game (at least 10) | 16, 10, 14, 14 | no |
+| B, H0 generality | H0 scenario-sides with an episode (at least 4) | 6 | no |
+| C, onward-capture conflict | distinct episodes at first-owner risk (more than one half fails) | 18/88 | no |
+
+STOP A passes at its threshold in HH p02 (exactly 10).
+
+### R10. Disposition: T6_S_OFFLINE_PASS
+
+Fidelity and every integrity check hold, no action difference is unexplained, and no stop is met. This means only that
+a small engine mechanism probe may be proposed. It does not establish reduced damage, improved survival or a better
+score. Nothing is promoted and session 2797 is not opened. The DRAFT two-session probe proposal is
+`docs/SPRINT26_T6S_PROBE_DRAFT.md`, returned to the owner and not executed.
+
+### R11. Post-hoc facts (read after the disposition; they change nothing)
+
+From the committed episode rows:
+
+* **The valid first divergences are all at risk.** Each of the four HH first divergences (two distinct openings)
+  withholds a follower that was a historical first owner of its destination, and in all four another own unit was a
+  first owner of it too. Every at-risk raw episode starts before step 900. The registered stop reads all episodes and
+  passes; on the genuine `baseline-v2` trajectory the first stagger meets a first ownership every time.
+* **Co-owners are the rule.** In 24 of the 26 raw at-risk episodes another own unit was also on the objective at its
+  first ownership. Whether a 20-step follower delay delays the ownership itself (under the published capture rule one
+  unit on the hex can occupy it) is what the probe's first-ownership endpoint measures.
+* **The opportunity is concentrated.** H0's episodes come from three of the eight scenarios, the three of 2,880 steps;
+  HH's from one scenario.
+
+### R12. What Sprint 26 shows
+
+1. **`baseline-v2` sends stacked columns along identical routes under visible threat, repeatedly.** 119 such
+   co-departures in 10 side-games; every member stacked at the start, every column with one route and one destination,
+   and most of them historically still stacked inside envelopes beyond their start hex.
+2. **The frozen stagger rule can act on them without touching anything else**, with zero unexplained differences and a
+   projected cost of about one hex time per follower.
+3. **The cost question is open at the opening.** Overall 18 of 88 distinct episodes withhold a historical first owner,
+   but every valid first divergence on the genuine `baseline-v2` seats does, with another own unit as a co-owner.
+
+### R13. Process notes
+
+* The first mutation run killed 59 of 59; a review after it found the independent check's over-strict timing condition
+  (section 21), fixed before registration with a test and a sixtieth mutant; 60 of 60 since.
+* The draft disclosure listed documents not yet read; they were read before registration (the T1-r diagnosis, PS-1's
+  engine probe results, Sprint 23's evidence boundary and readiness rule, the frontier rows) and the sentence names
+  exactly what was read.
+* The protocol's first draft carried words made only of digits in its stop texts; the thresholds became named numeric
+  fields before the freeze, and a test refuses such words in the protocol.
+* Several hand-written test expectations were wrong and were corrected against the rule before registration (a hex
+  inside an envelope, a reordered candidate's single problem, a follow-up count that includes the start hex, a chain
+  order, an active-episode scenario).
+* A shell heredoc failed to parse while these results were appended; nothing was written by it, and the text was
+  appended through a file instead.
+* **Errata in the registered text (not edited there).** A check of every quoted span after the run found two that are
+  not their sources' exact words. Section 2's "whether stacked" translates the observation reference's description of
+  `stack`, which is in Chinese. Section 17's "fewer than 10 per side-game" paraphrases Sprint 19's item, whose words are
+  "the gate fires fewer than 10 times per side-game" (Sprint 24's: "fewer than 10 trigger episodes per HH side-game").
+  Neither changes a definition, threshold or result.
+
+### R14. Recommendation (one)
+
+Owner review of the DRAFT two-session T6-S mechanism probe (`docs/SPRINT26_T6S_PROBE_DRAFT.md`) and, if approved, its
+separate registration: an executable T6-S add-on with its own identity, tests and card, run in 2130511121 in both seat
+orders against frozen `baseline-v2`. Why this one: the offline gate the owner set has passed on its registered terms;
+the probe is the smallest engine step that measures what this study cannot (actual waits, separation, and the
+first-ownership cost at the opening, where every valid first divergence carries the risk); and it needs two sessions.
+Session 2797 is not opened without that approval.
