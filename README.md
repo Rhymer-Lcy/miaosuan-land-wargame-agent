@@ -142,6 +142,11 @@ Sprint 22's registered one-session probe of infantry transport (`docs/SPRINT22_T
 ran the complete chain on engine 4.1.0 for one infantry-carrier pair: embark, carry to an objective the infantry could
 not reach on foot within the game, and disembark there, with the documented 75-step transitions (disposition
 T2_P1_MECHANISM_SUPPORTED). It is a mechanism result only; nothing was promoted.
+Sprint 23's offline design (`docs/SPRINT23_T2_POLICY_DESIGN.md`, no engine session) specified the smallest multi-pair
+transport policy (proposed, non-executable) and measured its opportunities on existing records: 30 opening episodes in
+6 scenarios, none later in any game, no saturated destination, but in 25 of 30 the carrier that must be held for
+disembark is one `baseline-v2` sends straight on to an objective its side does not hold (disposition
+T2_UNRESOLVED_INTERACTION_RISK). No screen was proposed and nothing was promoted.
 The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
@@ -212,6 +217,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/SPRINT20_T11_REPLAY.md` | Sprint 20's offline replay of the T11-O1 kill-first target rule: frozen rule and reservation semantics, classification of differences, the documentary kill-model assessment, fidelity, opportunity and coupling rules, results and disposition |
 | `docs/SPRINT21_DIRECT_FIRE_SEMANTICS.md` | Sprint 21's offline audit of direct-fire adjudication semantics in the existing judge records: frozen corpus and pairing, the K2 to K6 rules, sufficiency, results, post-hoc findings and disposition |
 | `docs/SPRINT22_T2_TRANSPORT_PROBE.md` | Sprint 22's registered T2-P1 transport mechanism probe: the transport-semantics audit, the frozen witness selection, the candidate and its state machine, the endpoints, the one engine session, results and disposition |
+| `docs/SPRINT23_T2_POLICY_DESIGN.md` | Sprint 23's offline T2 policy design: the proposed multi-pair candidate, matching, time model, admission, failure handling, the frozen readiness rule, the opportunity study and its disposition |
 | `docs/PLATFORM_CANARY.md` | the owner's manual upload and compatibility-check steps for the platform canary |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
