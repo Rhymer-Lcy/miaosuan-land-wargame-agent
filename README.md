@@ -169,6 +169,10 @@ objective) only after a side held every objective and `baseline-v2` had nothing 
 head-to-head seats never reached; the registered opportunity stop was met (disposition
 T12_O1_INADEQUATE_OPPORTUNITY). Nothing was promoted. The shared evaluation server's CPU policy is in
 `docs/SERVER_RESOURCE_POLICY.md`.
+Sprint 29 (`docs/SPRINT29_PLATFORM_FIRST.md`, no engine session) put platform readiness first: the frozen canary was
+re-verified and handed over for a manual test-slot upload, and a decision-level diagnosis traced the largest
+controllable loss to held objectives that `baseline-v2` vacates itself; a keep-one holder is proposed as the next live
+exploratory candidate, for the owner's approval. Nothing was implemented, played or promoted.
 The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
