@@ -613,3 +613,27 @@ ready, T6-S not supported, T12-O1 inadequate opportunity); T7-C is next and elig
 depend on the end-state finding of this sprint. Not recommended: any repair of T12-O1 (forbidden; a trigger confined to
 the end state cannot be widened without relaxing the idle requirement), an engine probe of dispersion (the stop is met),
 or work on the stacking block of R11 (the shelved T1-r and PS-1 line).
+
+### R15. Close-out
+
+* The results were pushed as `c8017037564f43386b90bf9fa9e7264cb562ad74` (tree `0d8ab0accd16f5cc15dc1adcbf077de908942ea0`)
+  at 2026-10-09T19:38:51+08:00; a fresh clone from GitHub had the same commit and tree and byte-identical files. The
+  evaluation server's run outputs were confirmed byte-identical to the committed blobs before its main clone was
+  fast-forwarded to the commit by bundle. All 18 sprint commits up to the results were audited as a set (author,
+  single-line ASCII subjects of at most 72 characters, no body).
+* Tests at that commit: the workstation tree ran 2,378 tests (105 skipped) with exit 0; a clean clone from GitHub
+  2,375 (113 skipped) with exit 0; the evaluation server's private tree 2,391 (7 skipped; 9,053 s) with
+  exit 0, serial and pinned to NUMA node 0, including this sprint's regeneration (`freeze --check`, `run --check`) and
+  mutation-record tests, with the ledger file byte-identical before and after.
+* Documentation gates: this sprint's private gate (`local/diagnostics/s28/doc_gate.py`) binds the results to the public
+  files and the copied logs and catches all its planted errors; all 30 current gates pass with their plants, and
+  the four retired `_v1` copies fail as at Sprint 27's close-out.
+* Privacy: the scan of every reachable blob at the results commit (1,171 blobs) gives 106 hit lines, identical to
+  the accepted set; no line was added or removed, and the 106-line accepted set passed its independent integrity check
+  again.
+* Platform canary: rebuilt on the workstation and the server, SHA-256
+  `a3d3b0229118c0a389d379b315a620465624222f93fcf39de115e8e9dde59511`, no smoke mismatch on either host.
+* Engine ledger: read-only verify after the server suite, 2,797 sessions opened and closed, none unclosed, state
+  chain continuous, the last event the close of session 2797; ledger file SHA-256 unchanged from the start of the
+  sprint; no session 2798. No engine installation, configuration or historical result was touched, and the server's
+  development worktree was removed.
