@@ -429,3 +429,187 @@ No tactic is shown to work or fail. Trigger and legal-tier counts describe recor
 happened; onward and damage labels are historical, not counterfactual; nothing here estimates a score effect, a damage
 reduction or the engine's acceptance of a one-hex MOVE, and nothing says that own units next to an empty centre deny
 capture.
+
+## Results (2026-10-09)
+
+Every figure below is read from the committed public files of `evaluation/s28-t12-o1/`, which `scripts/s28_t12.py run
+--check` regenerates byte for byte on the evaluation server, unless it is labelled post hoc.
+
+### R1. Order of work
+
+The registration (`bf837e7` to `86a62fb0fcfa0a307b7a73221ee4742109b210a0`, tree
+`936ad87e1b55d01e5223bff5396e2fd2a332035f`: the two commits of the server CPU policy and twelve registration commits)
+was pushed at 2026-10-09T19:10:25+08:00 after the workstation suite passed on it (2,378 tests, 114 skipped) and the
+privacy scan of every reachable blob (1,160) matched the 106 accepted lines exactly. A fresh GitHub clone had the same
+commit and tree, its 15 registered files were byte-identical, and its suite passed (2,375 tests, 122 skipped). The
+evaluation server's main clone was fast-forwarded to it by bundle. The pre-launch check found the server still in shared
+mode (the colleague's job pinned to NUMA node 1, no CPU, memory or I/O pressure); `freeze --check` passed in the main
+clone and `run` was started once, one process pinned to NUMA node 0; it wrote the eight result files and the private
+rows. `run --check` then regenerated every public file and the private rows byte for byte. No engine was called and no
+definition, threshold or stop was changed after the run.
+
+### R2. Fidelity
+
+All 18 anchors and the 10 blocks are reproduced exactly (`fidelity.json`): H0 33,696 decisions and 33,680 play
+decisions, 123 recorded/`baseline-v2` differences (also by the separate pass); HH 11,524 of 11,524 reconstructions equal
+to the recorded seat; 16 and 4 side-games; 509 and 416 `baseline-v2` MOVE orders; ground damage events on stationary
+units on an objective 40 stacked and 13 alone in H0, 10 and 3 in HH, from the census rows and by this study's own
+enumeration; 10 H0 side-games with a stationary stacked hit on an objective; the T6, N4, N5 and N6 blocks and the
+admission table. All 20 side-games pass every integrity check, and there is no unexplained action difference at any
+decision.
+
+### R3. The census
+
+Objective-decisions (decision-level counts; a group listed again counts again; `sides.json`, `census.json`):
+
+| | HH p01 blue | HH p02 red | HH p03 blue | HH p04 red | H0 (16 side-games) |
+|---|---:|---:|---:|---:|---:|
+| held objective-decisions | 16,508 | 857 | 17,316 | 1,697 | 52,825 |
+| two or more own ground units on the centre | 5,303 | 241 | 7,542 | 339 | 17,278 |
+| two or more through A (stationary) | 4,924 | 34 | 7,231 | 54 | 15,096 |
+| through B (no route) | 4,597 | 10 | 4,735 | 14 | 14,634 |
+| through C and D (no stop, state or transport transition) | 4,354 | 0 | 4,495 | 0 | 13,716 |
+| through E and F (not suppressed, no `baseline-v2` MOVE) | 4,303 | 0 | 4,495 | 0 | 13,387 |
+| through G = two or more idle = the trigger | 4,300 | 0 | 4,495 | 0 | 13,346 |
+| the legal tier (every batch complete) | 4,300 | 0 | 4,495 | 0 | 13,346 |
+| trigger with a visible enemy on a neighbour | 144 | 0 | 1,765 | 0 | 24 |
+
+Level F removed one more H0 objective-decision than level E and none in HH. Passability removed no neighbour (section
+8). Every objective-decision with two or more idle units had a passable
+neighbour with room, and every trigger decision reached the legal tier with a complete batch: where the trigger holds,
+legality does not bind. In the two red HH side-games no objective-decision ever had two units past level C.
+
+### R4. Episodes by side-game
+
+| Side-game | Trigger episodes (= legal episodes) | Repeated listings | Objectives | Dispersed units | First divergence (step) | Prefix supported |
+|---|---:|---:|---:|---:|---:|---|
+| H0 1910631192 blue | 1 | 922 | 1 | 1 | 877 | no |
+| H0 1930331196 red | 2 | 139 | 1 | 1 | 2,737 | no |
+| H0 2010131194 blue | 1 | 1,404 | 1 | 1 | 395 | no |
+| H0 2010211129 blue | 3 | 2,087 | 2 | 2 | 396 | no |
+| H0 2010431153 blue | 7 | 1,190 | 1 | 1 | 597 | no |
+| H0 2120531121 blue | 7 | 2,200 | 2 | 5 | 736 | no |
+| H0 2130511121 blue | 29 | 5,354 | 4 | 6 | 1,279 | no |
+| HH p01 baseline-v2 blue | 5 | 4,295 | 3 | 4 | 1,226 | yes |
+| HH p02 baseline-v2 red | 0 | 0 | 0 | 0 | none | |
+| HH p03 baseline-v2 blue | 3 | 4,492 | 3 | 3 | 1,115 | yes |
+| HH p04 baseline-v2 red | 0 | 0 | 0 | 0 | none | |
+
+The other nine H0 side-games have no episode. In count units: 58 episodes (H0 50, HH 8), 56 distinct (HH p03's episodes
+starting at steps 1,227 and 1,803 repeat p01's); 9 side-games; 7 scenario-sides (HH's one scenario-side coincides with
+H0's 2130511121 blue); 18 objectives and 24 dispersed units, counted by side-game; 22,083 repeated listings excluded.
+Episode lengths: a median of 74 decisions (14 to 1,765), H0 74 and HH 1,309.5.
+
+### R5. Legality, stacking and local conflicts
+
+At trigger decisions the unit-neighbour pairs were legally supported in 379,149 cases and refused only for a full
+neighbour (`stack_full`, 2,853, all in H0); MOVE was always listed, every one-hex path passed the gate's check and no
+unit lacked a movement mode (the roadblock scenario had no trigger). Of the legal pairs, 35,130 were excluded as own
+route hexes and 5,242 for a visible enemy; none was an objective hex. Every idle unit but the holder was dispersed (no
+`no_destination_left` and no `no_admissible_destination`; R3 conflicts 0); every dispersal destination was empty before
+and held one own ground unit after (72 of 72 dispersed unit-episodes); after the batch the centre held one own ground
+unit in 47 of the 58 episodes and two or three in 11 (non-idle units standing there too). No decision had two triggered
+objectives sharing a neighbour.
+
+### R6. First divergences
+
+Nine side-games diverge (H0 7, HH 2); the other eleven, both red HH side-games among them, never do. Every certificate
+records a held objective, a holder retained on the centre, only the registered one-hex MOVEs appended, every
+`baseline-v2` action preserved in order, no `baseline-v2` action for the dispersed units, and distinct, previously empty
+destinations. The two HH certificates are on-policy facts: p01 blue at step 1,226 (the 50-point objective C, three idle
+vehicles, two dispersed) and p03 blue at step 1,115 (the 80-point objective A, two idle units, one dispersed). All seven
+H0 first divergences fall after that side's first recorded/`baseline-v2` difference, so none is a valid action-level
+fact.
+
+### R7. Onward movement and the cost of the hold
+
+Over the 72 dispersed unit-episodes of the 58 legal episodes, `baseline-v2` issued no MOVE to a dispersed unit while the
+origin was held: no claimant, no first owner, no decision a hold would have suppressed. The holder was never ordered off
+the centre, and the origin stayed held to the end of the recorded game in every episode (58 of 58). Four of HH's nine
+dispersed unit-episodes concern units that were later lost. The interaction criteria I1, I2 and I3 are 0 in HH, in H0
+and pooled; they do not decide the disposition.
+
+### R8. Historical damage diagnostics
+
+| | H0 | HH |
+|---|---:|---:|
+| ground damage events on stationary units on an objective (stacked, alone) | 53 (40, 13) | 13 (10, 3) |
+| objective held by the victim's side at the event | 16 | 13 |
+| stacked and held | 14 | 10 |
+| of these, with an earlier trigger and legal tier in the same holding run | 9 | 6 |
+| attacker visible at the event / seen within the lookback window before it | 47 / 53 | 12 / 13 |
+| victim later lost | 48 | 13 |
+
+In each of the 9 and 6 cases the latest legal decision came a median of 1 step before the hit (at most 26 and 52), and
+the side's first divergence lies in that holding run before the hit: these hits fall on states the candidate would not
+have reached unchanged. Around the legal episodes, idle centre units were damaged within 300 steps after the start in H0
+5 times as units (7 events, all on stacked victims) and in HH once (1 event, stacked), and before the start in H0 8 times
+(9 events) and in HH never. No damage reduction is estimated.
+
+### R9. The registered stop and the gates
+
+| Rule | Registered quantity | Result | Met |
+|---|---|---|---|
+| Opportunity stop (primary) | trigger episodes per HH side-game, at least one each | p01 5, p02 0, p03 3, p04 0 | **yes** |
+| H0, each-side-game reading (reported only) | every H0 side-game at least one | 9 of 16 without | yes |
+| H0, average reading (reported only) | H0 trigger episodes at least the H0 side-games | 50 against 16 | no |
+| Legality gate | legal episodes per HH side-game, at least one each | p01 5, p02 0, p03 3, p04 0 | yes (not reached) |
+| I1, I2, I3 | majorities of claimants, holder departures, partial dispersions | 0 everywhere | no |
+
+### R10. Disposition: T12_O1_INADEQUATE_OPPORTUNITY
+
+Fidelity is intact, every side passes its integrity checks and no action difference is unexplained, so the study is
+valid; the registered opportunity stop is met because neither red HH side-game ever had two idle own ground units on a
+held objective. No mechanism probe is drafted, nothing is promoted, and session 2798 is not opened. The T12-O1 increment
+is not patched in this sprint.
+
+### R11. Post-hoc facts (read after the disposition; they change nothing)
+
+From `local/diagnostics/s28/posthoc.py` on the evaluation server (aggregates only):
+
+* **The trigger is an end state.** Every one of the 58 legal episodes began at a decision where the side held every
+  objective of the game (H0 1 of 1, 2 of 2, 5 of 5 or 7 of 7; HH 7 of 7 in all eight) and `baseline-v2` issued no MOVE
+  for any unit. Idle stacks form on held objectives only when nothing is left to capture, which is also why no dispersed
+  unit was ever sent on.
+* **Red never idles on a held centre.** In both red HH side-games the largest number of idle own ground units on any held
+  centre at any decision is 0 (4 in both blue side-games).
+* **Stationary units with a route are blocked by the stacking limit.** Of the centre units that pass level A and fail B
+  (a route but no speed), the next route hex held four own ground units in 1,688 of 1,703 cases in H0 and 11,413 of
+  11,425 in HH: the published stacking block that Sprints 2 and 4 diagnosed (T1-r, PS-1), outside T12's scope.
+
+### R12. What Sprint 28 shows
+
+1. **T12's trigger occurs only in the end state of `baseline-v2`'s games**: idle stacks on held objectives appear once
+   the side holds every objective and `baseline-v2` issues no move. In HH only the blue seats reached that state (from
+   step 1,115), the red seats never, so the registered stop fails on two of four genuine `baseline-v2` side-games.
+2. **Where the trigger holds, the tactic is easy to specify**: every one-hex relocation was listed and passed the gate's
+   path check, every batch was complete, every destination empty, and no local conflict arose.
+3. **The registered interaction risks were absent for the same reason**: with nothing left to capture, no dispersed unit
+   was ever sent on and no holder was ordered off. These are historical labels; they say nothing about a recapture fight.
+4. Sprint 24's negative lesson holds in its second form: holders rarely stack idle under `baseline-v2` except after the
+   side already holds everything.
+
+### R13. Process notes
+
+* The first mutation run killed 82 of 85 planted defects; the three survivors were test gaps, closed before the
+  registration (section 23).
+* A patch applied through a shell heredoc consumed a line-continuation backslash and joined two lines of the shadow; the
+  code stayed valid and behaved identically, the mutation script's exactly-once anchor check exposed it, and the line was
+  rewritten before the registration.
+* The pre-registration review moved the per-side summaries out of `census.json` into the splittable `sides.json`, so that
+  a public file could not exceed the size limit, which the registration maps to `T12_O1_OFFLINE_INVALID`.
+* The second smoke run stopped at the assembly because `protocol.json` did not yet exist; the freeze came first and the
+  third smoke run passed. No code changed between the two.
+
+### R14. Recommendation (one)
+
+Prepare, for the owner's approval, the registration of the next eligible increment of Sprint 24's frozen ranking:
+**T7-C, the T7-E3b controlled concealment-exit diagnostic** (its entry in
+`evaluation/s24-tactical-frontier-reselection/experiments.json`, W 3.70, E 4: at most two deterministic diagnostic
+sessions, the first for the move exit), with no session opened until the owner approves. Why this one: Sprint 24's
+ranking is frozen and its first three increments have now each been settled by a registered experiment (T13-D1 not
+ready, T6-S not supported, T12-O1 inadequate opportunity); T7-C is next and eligible, its offline analysis is already done
+(Sprints 7 and 18), and its question, whether a concealed unit's move ends concealment at once as documented, does not
+depend on the end-state finding of this sprint. Not recommended: any repair of T12-O1 (forbidden; a trigger confined to
+the end state cannot be widened without relaxing the idle requirement), an engine probe of dispersion (the stop is met),
+or work on the stacking block of R11 (the shelved T1-r and PS-1 line).
