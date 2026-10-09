@@ -1,0 +1,175 @@
+{
+ "killed": 31,
+ "mutations": [
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "speed ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "route ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "stop flag ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "stop transition time ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "state transition ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "transport transition ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "several actions tolerated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "route ending on the centre tolerated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "a remaining occupant ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "already-moving units counted as remaining"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "all-moving case acted on"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "shortest time selected"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "tie to the higher id"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "unreadable times ranked"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "unheld objectives treated as held"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "infantry not an occupant"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "non-play decisions edited"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "every eligible MOVE withheld"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k1.py",
+   "mutation": "memory tolerated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s30_preflight.py",
+   "mutation": "missed trigger not reported"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s30_preflight.py",
+   "mutation": "wrong holder accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s30_preflight.py",
+   "mutation": "non-MOVE removal accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s30_preflight.py",
+   "mutation": "free-flow rounding dropped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s30_preflight.py",
+   "mutation": "unsupported H0 prefix accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s30_preflight.py",
+   "mutation": "HI not genuine"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s30_preflight.py",
+   "mutation": "red opportunity not required"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s30_preflight.py",
+   "mutation": "one inert configuration enough"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s30_preflight.py",
+   "mutation": "independent findings ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s30_preflight.py",
+   "mutation": "inert priority by sort order"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s30_preflight.py",
+   "mutation": "verified without validity"
+  },
+  {
+   "killed": true,
+   "module": "evaluation/s30-planted/manifest.json",
+   "mutation": "a run card names the candidate"
+  }
+ ],
+ "schema": "miaosuan-s30-mutation/1",
+ "sources": {
+  "src/miaosuan_agent/evaluation/s30_preflight.py": "66f86cef5ee8d746ca88c997bc4b08429a9b0a7a989adad71e2ced46133d0a42",
+  "src/miaosuan_agent/experiments/t13_keep_one_k1.py": "7c39c648f5406a4a90fcd9695e85eb831241440e9d25f3c0c770fd2f78e80ac1",
+  "tests/test_s30_preflight.py": "f3f045a64e55ca4d2065185b7900ecfad6dbf4121c3cf9e856b79356cd638db1",
+  "tests/test_s30_results.py": "7ad9d14bd68c8bd9a2533dfb11f2e8453b5f6e800b6cee976604b7eabd2708a8",
+  "tests/test_t13_keep_one_k1.py": "bde15ecdf18a843d33e59233632e606dfba078d3d34e3ba399cf7cf9157aa399"
+ },
+ "tests": [
+  "tests.test_t13_keep_one_k1",
+  "tests.test_s30_preflight",
+  "tests.test_s30_results"
+ ],
+ "total": 31,
+ "unmutated_tests_pass": true
+}
