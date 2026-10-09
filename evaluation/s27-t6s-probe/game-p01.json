@@ -1,0 +1,1497 @@
+{
+ "candidate_side": "blue",
+ "descriptive": {
+  "completed_episode_duration_steps": {
+   "max": 144,
+   "median": 20.0,
+   "min": 20,
+   "n": 14
+  },
+  "e4_per_moving_unit_decision": 0.2851,
+  "episodes": 16,
+  "episodes_completed": 14,
+  "episodes_executed": 12,
+  "evidence_boundary": "one game of one scenario against one opponent policy; the references are historical seat-games against a different opponent; nothing here is a damage, survival or score effect of the rule",
+  "exposure": {
+   "moving_alone_inside_envelope": 17230,
+   "moving_alone_unit_decisions": 23318,
+   "moving_stacked_inside_envelope": 9708,
+   "moving_stacked_unit_decisions": 10730,
+   "moving_unit_decisions": 34048
+  },
+  "follower_damage_events_while_waiting_on_the_start_hex": 0,
+  "follower_moving_unit_decisions": 16499,
+  "followers_destroyed_before_departure": 0,
+  "moving_ground_damage": {
+   "moving_ground_damage_events": 32,
+   "moving_ground_damage_events_alone": 24,
+   "moving_ground_damage_events_stacked": 8
+  },
+  "moving_inside_envelope_unit_decisions": 26938,
+  "same_colour_reference_e4_per_moving_unit_decision": {
+   "HH p01 baseline-v2 blue": 0.3332,
+   "HH p03 baseline-v2 blue": 0.5582
+  },
+  "same_colour_reference_exposure": {
+   "HH p01 baseline-v2 blue": {
+    "moving_alone_inside_envelope": 7318,
+    "moving_alone_unit_decisions": 16848,
+    "moving_stacked_inside_envelope": 9122,
+    "moving_stacked_unit_decisions": 10532,
+    "moving_unit_decisions": 27380
+   },
+   "HH p03 baseline-v2 blue": {
+    "moving_alone_inside_envelope": 14825,
+    "moving_alone_unit_decisions": 22072,
+    "moving_stacked_inside_envelope": 29248,
+    "moving_stacked_unit_decisions": 30328,
+    "moving_unit_decisions": 52400
+   }
+  },
+  "same_colour_reference_moving_ground_damage": {
+   "HH p01 baseline-v2 blue": {
+    "moving_ground_damage_events": 30,
+    "moving_ground_damage_events_alone": 11,
+    "moving_ground_damage_events_stacked": 19
+   },
+   "HH p03 baseline-v2 blue": {
+    "moving_ground_damage_events": 15,
+    "moving_ground_damage_events_alone": 4,
+    "moving_ground_damage_events_stacked": 11
+   }
+  },
+  "stacked_share_of_moving_inside_envelope": "9708/26938"
+ },
+ "episodes": [
+  {
+   "classes": [
+    "vehicle",
+    "vehicle"
+   ],
+   "co_located_moving_beyond_start": true,
+   "co_located_moving_decisions": 107,
+   "co_located_moving_hexes_beyond_start": 6,
+   "completed": true,
+   "end": "complete",
+   "end_steps_after_start": 20,
+   "episode_ordinal": 1,
+   "executed": true,
+   "first_co_location_beyond_start_steps": 100,
+   "followers": [
+    {
+     "arrival_lag_behind_leader_steps": 20,
+     "class": "vehicle",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": true,
+     "departed_after_release": true,
+     "departure_steps": 40,
+     "destination": "50-point objective B",
+     "destination_first_owned_after_start": true,
+     "destination_first_owned_before_start": false,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": false,
+     "follower_arrival_steps": 80,
+     "follower_lost_later": true,
+     "leader_among_first_owners": true,
+     "moved_at_release": true,
+     "other_own_units_among_first_owners": false,
+     "outcome": "released",
+     "position": 1,
+     "projected_wait": 20,
+     "release_move_accepted": true,
+     "release_reason": "reference_left",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": 1,
+     "steps_start_to_destination_first_ownership": 61,
+     "wait_steps": 20
+    }
+   ],
+   "followers_released": 1,
+   "followers_released_reference_left": 1,
+   "followers_released_timeout": 0,
+   "followers_withheld_at_start": 1,
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_absent_before_departure": false,
+   "leader_departure_steps": 20,
+   "leader_move_accepted": true,
+   "leader_move_emitted": true,
+   "member_damage_events_by_state": {},
+   "repeats": 19,
+   "stacked_moving_inside_envelope_member_unit_decisions": 415,
+   "start_step": 161
+  },
+  {
+   "classes": [
+    "vehicle",
+    "vehicle"
+   ],
+   "co_located_moving_beyond_start": false,
+   "co_located_moving_decisions": 0,
+   "co_located_moving_hexes_beyond_start": 0,
+   "completed": true,
+   "end": "complete",
+   "end_steps_after_start": 20,
+   "episode_ordinal": 2,
+   "executed": true,
+   "first_co_location_beyond_start_steps": null,
+   "followers": [
+    {
+     "arrival_lag_behind_leader_steps": 20,
+     "class": "vehicle",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": true,
+     "departed_after_release": true,
+     "departure_steps": 40,
+     "destination": "50-point objective B",
+     "destination_first_owned_after_start": true,
+     "destination_first_owned_before_start": false,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": false,
+     "follower_arrival_steps": 80,
+     "follower_lost_later": false,
+     "leader_among_first_owners": false,
+     "moved_at_release": true,
+     "other_own_units_among_first_owners": true,
+     "outcome": "released",
+     "position": 1,
+     "projected_wait": 20,
+     "release_move_accepted": true,
+     "release_reason": "reference_left",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": 1,
+     "steps_start_to_destination_first_ownership": 42,
+     "wait_steps": 20
+    }
+   ],
+   "followers_released": 1,
+   "followers_released_reference_left": 1,
+   "followers_released_timeout": 0,
+   "followers_withheld_at_start": 1,
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_absent_before_departure": false,
+   "leader_departure_steps": 20,
+   "leader_move_accepted": true,
+   "leader_move_emitted": true,
+   "member_damage_events_by_state": {},
+   "repeats": 19,
+   "stacked_moving_inside_envelope_member_unit_decisions": 535,
+   "start_step": 180
+  },
+  {
+   "classes": [
+    "vehicle",
+    "vehicle"
+   ],
+   "co_located_moving_beyond_start": false,
+   "co_located_moving_decisions": 0,
+   "co_located_moving_hexes_beyond_start": 0,
+   "completed": true,
+   "end": "complete",
+   "end_steps_after_start": 20,
+   "episode_ordinal": 3,
+   "executed": true,
+   "first_co_location_beyond_start_steps": null,
+   "followers": [
+    {
+     "arrival_lag_behind_leader_steps": 20,
+     "class": "vehicle",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": true,
+     "departed_after_release": true,
+     "departure_steps": 40,
+     "destination": "50-point objective B",
+     "destination_first_owned_after_start": true,
+     "destination_first_owned_before_start": false,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": false,
+     "follower_arrival_steps": 80,
+     "follower_lost_later": false,
+     "leader_among_first_owners": false,
+     "moved_at_release": true,
+     "other_own_units_among_first_owners": true,
+     "outcome": "released",
+     "position": 1,
+     "projected_wait": 20,
+     "release_move_accepted": true,
+     "release_reason": "reference_left",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": 1,
+     "steps_start_to_destination_first_ownership": 22,
+     "wait_steps": 20
+    }
+   ],
+   "followers_released": 1,
+   "followers_released_reference_left": 1,
+   "followers_released_timeout": 0,
+   "followers_withheld_at_start": 1,
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_absent_before_departure": false,
+   "leader_departure_steps": 20,
+   "leader_move_accepted": true,
+   "leader_move_emitted": true,
+   "member_damage_events_by_state": {},
+   "repeats": 19,
+   "stacked_moving_inside_envelope_member_unit_decisions": 478,
+   "start_step": 200
+  },
+  {
+   "classes": [
+    "vehicle",
+    "vehicle"
+   ],
+   "co_located_moving_beyond_start": true,
+   "co_located_moving_decisions": 18,
+   "co_located_moving_hexes_beyond_start": 1,
+   "completed": true,
+   "end": "complete",
+   "end_steps_after_start": 20,
+   "episode_ordinal": 4,
+   "executed": true,
+   "first_co_location_beyond_start_steps": 122,
+   "followers": [
+    {
+     "arrival_lag_behind_leader_steps": 20,
+     "class": "vehicle",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": true,
+     "departed_after_release": true,
+     "departure_steps": 40,
+     "destination": "80-point objective B",
+     "destination_first_owned_after_start": true,
+     "destination_first_owned_before_start": false,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": false,
+     "follower_arrival_steps": 80,
+     "follower_lost_later": false,
+     "leader_among_first_owners": false,
+     "moved_at_release": true,
+     "other_own_units_among_first_owners": true,
+     "outcome": "released",
+     "position": 1,
+     "projected_wait": 20,
+     "release_move_accepted": true,
+     "release_reason": "reference_left",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": 1,
+     "steps_start_to_destination_first_ownership": 23,
+     "wait_steps": 20
+    }
+   ],
+   "followers_released": 1,
+   "followers_released_reference_left": 1,
+   "followers_released_timeout": 0,
+   "followers_withheld_at_start": 1,
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_absent_before_departure": false,
+   "leader_departure_steps": 20,
+   "leader_move_accepted": true,
+   "leader_move_emitted": true,
+   "member_damage_events_by_state": {},
+   "repeats": 19,
+   "stacked_moving_inside_envelope_member_unit_decisions": 480,
+   "start_step": 260
+  },
+  {
+   "classes": [
+    "vehicle",
+    "vehicle"
+   ],
+   "co_located_moving_beyond_start": true,
+   "co_located_moving_decisions": 164,
+   "co_located_moving_hexes_beyond_start": 1,
+   "completed": true,
+   "end": "complete",
+   "end_steps_after_start": 20,
+   "episode_ordinal": 5,
+   "executed": true,
+   "first_co_location_beyond_start_steps": 120,
+   "followers": [
+    {
+     "arrival_lag_behind_leader_steps": 362,
+     "class": "vehicle",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": true,
+     "departed_after_release": true,
+     "departure_steps": 40,
+     "destination": "80-point objective B",
+     "destination_first_owned_after_start": true,
+     "destination_first_owned_before_start": false,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": false,
+     "follower_arrival_steps": 422,
+     "follower_lost_later": false,
+     "leader_among_first_owners": false,
+     "moved_at_release": true,
+     "other_own_units_among_first_owners": true,
+     "outcome": "released",
+     "position": 1,
+     "projected_wait": 20,
+     "release_move_accepted": true,
+     "release_reason": "reference_left",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": 1,
+     "steps_start_to_destination_first_ownership": 3,
+     "wait_steps": 20
+    }
+   ],
+   "followers_released": 1,
+   "followers_released_reference_left": 1,
+   "followers_released_timeout": 0,
+   "followers_withheld_at_start": 1,
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_absent_before_departure": false,
+   "leader_departure_steps": 20,
+   "leader_move_accepted": true,
+   "leader_move_emitted": true,
+   "member_damage_events_by_state": {},
+   "repeats": 19,
+   "stacked_moving_inside_envelope_member_unit_decisions": 539,
+   "start_step": 280
+  },
+  {
+   "classes": [
+    "vehicle",
+    "vehicle"
+   ],
+   "co_located_moving_beyond_start": false,
+   "co_located_moving_decisions": 0,
+   "co_located_moving_hexes_beyond_start": 0,
+   "completed": true,
+   "end": "complete",
+   "end_steps_after_start": 20,
+   "episode_ordinal": 6,
+   "executed": true,
+   "first_co_location_beyond_start_steps": null,
+   "followers": [
+    {
+     "arrival_lag_behind_leader_steps": null,
+     "class": "vehicle",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": true,
+     "departed_after_release": true,
+     "departure_steps": 40,
+     "destination": "50-point objective D",
+     "destination_first_owned_after_start": true,
+     "destination_first_owned_before_start": false,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": false,
+     "follower_arrival_steps": 160,
+     "follower_lost_later": false,
+     "leader_among_first_owners": false,
+     "moved_at_release": true,
+     "other_own_units_among_first_owners": true,
+     "outcome": "released",
+     "position": 1,
+     "projected_wait": 20,
+     "release_move_accepted": true,
+     "release_reason": "reference_left",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": 1,
+     "steps_start_to_destination_first_ownership": 122,
+     "wait_steps": 20
+    }
+   ],
+   "followers_released": 1,
+   "followers_released_reference_left": 1,
+   "followers_released_timeout": 0,
+   "followers_withheld_at_start": 1,
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_absent_before_departure": false,
+   "leader_departure_steps": 20,
+   "leader_move_accepted": true,
+   "leader_move_emitted": true,
+   "member_damage_events_by_state": {
+    "absent": 1,
+    "moving alone": 1,
+    "moving stacked": 1
+   },
+   "repeats": 19,
+   "stacked_moving_inside_envelope_member_unit_decisions": 23,
+   "start_step": 320
+  },
+  {
+   "classes": [
+    "vehicle",
+    "vehicle",
+    "vehicle"
+   ],
+   "co_located_moving_beyond_start": true,
+   "co_located_moving_decisions": 191,
+   "co_located_moving_hexes_beyond_start": 3,
+   "completed": true,
+   "end": "complete",
+   "end_steps_after_start": 40,
+   "episode_ordinal": 7,
+   "executed": true,
+   "first_co_location_beyond_start_steps": 40,
+   "followers": [
+    {
+     "arrival_lag_behind_leader_steps": 0,
+     "class": "vehicle",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": true,
+     "departed_after_release": true,
+     "departure_steps": 40,
+     "destination": "50-point objective C",
+     "destination_first_owned_after_start": true,
+     "destination_first_owned_before_start": false,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": false,
+     "follower_arrival_steps": 224,
+     "follower_lost_later": false,
+     "leader_among_first_owners": false,
+     "moved_at_release": true,
+     "other_own_units_among_first_owners": true,
+     "outcome": "released",
+     "position": 1,
+     "projected_wait": 20,
+     "release_move_accepted": true,
+     "release_reason": "reference_left",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": 0,
+     "steps_start_to_destination_first_ownership": 24,
+     "wait_steps": 20
+    },
+    {
+     "arrival_lag_behind_leader_steps": null,
+     "class": "vehicle",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": true,
+     "departed_after_release": true,
+     "departure_steps": 60,
+     "destination": "50-point objective C",
+     "destination_first_owned_after_start": true,
+     "destination_first_owned_before_start": false,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": false,
+     "follower_arrival_steps": null,
+     "follower_lost_later": true,
+     "leader_among_first_owners": false,
+     "moved_at_release": true,
+     "other_own_units_among_first_owners": true,
+     "outcome": "released",
+     "position": 2,
+     "projected_wait": 40,
+     "release_move_accepted": true,
+     "release_reason": "reference_left",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": 2,
+     "steps_start_to_destination_first_ownership": 24,
+     "wait_steps": 40
+    }
+   ],
+   "followers_released": 2,
+   "followers_released_reference_left": 2,
+   "followers_released_timeout": 0,
+   "followers_withheld_at_start": 2,
+   "group_size": 3,
+   "hex_times": [
+    20,
+    20,
+    20
+   ],
+   "leader_absent_before_departure": false,
+   "leader_departure_steps": 20,
+   "leader_move_accepted": true,
+   "leader_move_emitted": true,
+   "member_damage_events_by_state": {
+    "absent": 1
+   },
+   "repeats": 58,
+   "stacked_moving_inside_envelope_member_unit_decisions": 507,
+   "start_step": 340
+  },
+  {
+   "classes": [
+    "vehicle",
+    "vehicle"
+   ],
+   "co_located_moving_beyond_start": true,
+   "co_located_moving_decisions": 72,
+   "co_located_moving_hexes_beyond_start": 5,
+   "completed": true,
+   "end": "complete",
+   "end_steps_after_start": 51,
+   "episode_ordinal": 8,
+   "executed": false,
+   "first_co_location_beyond_start_steps": 78,
+   "followers": [
+    {
+     "arrival_lag_behind_leader_steps": 21,
+     "class": "vehicle",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": true,
+     "departed_after_release": true,
+     "departure_steps": 78,
+     "destination": "50-point objective B",
+     "destination_first_owned_after_start": false,
+     "destination_first_owned_before_start": true,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": null,
+     "follower_arrival_steps": 179,
+     "follower_lost_later": false,
+     "leader_among_first_owners": null,
+     "moved_at_release": true,
+     "other_own_units_among_first_owners": null,
+     "outcome": "released",
+     "position": 1,
+     "projected_wait": 20,
+     "release_move_accepted": true,
+     "release_reason": "timeout",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": 0,
+     "steps_start_to_destination_first_ownership": null,
+     "wait_steps": 51
+    }
+   ],
+   "followers_released": 1,
+   "followers_released_reference_left": 0,
+   "followers_released_timeout": 1,
+   "followers_withheld_at_start": 1,
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_absent_before_departure": false,
+   "leader_departure_steps": 78,
+   "leader_move_accepted": true,
+   "leader_move_emitted": true,
+   "member_damage_events_by_state": {
+    "moving alone": 1
+   },
+   "repeats": 50,
+   "stacked_moving_inside_envelope_member_unit_decisions": 262,
+   "start_step": 564
+  },
+  {
+   "classes": [
+    "vehicle",
+    "vehicle"
+   ],
+   "co_located_moving_beyond_start": false,
+   "co_located_moving_decisions": 0,
+   "co_located_moving_hexes_beyond_start": 0,
+   "completed": true,
+   "end": "complete",
+   "end_steps_after_start": 20,
+   "episode_ordinal": 9,
+   "executed": true,
+   "first_co_location_beyond_start_steps": null,
+   "followers": [
+    {
+     "arrival_lag_behind_leader_steps": 20,
+     "class": "vehicle",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": true,
+     "departed_after_release": true,
+     "departure_steps": 40,
+     "destination": "80-point objective B",
+     "destination_first_owned_after_start": false,
+     "destination_first_owned_before_start": true,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": null,
+     "follower_arrival_steps": 80,
+     "follower_lost_later": true,
+     "leader_among_first_owners": null,
+     "moved_at_release": true,
+     "other_own_units_among_first_owners": null,
+     "outcome": "released",
+     "position": 1,
+     "projected_wait": 20,
+     "release_move_accepted": true,
+     "release_reason": "reference_left",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": 1,
+     "steps_start_to_destination_first_ownership": null,
+     "wait_steps": 20
+    }
+   ],
+   "followers_released": 1,
+   "followers_released_reference_left": 1,
+   "followers_released_timeout": 0,
+   "followers_withheld_at_start": 1,
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_absent_before_departure": false,
+   "leader_departure_steps": 20,
+   "leader_move_accepted": true,
+   "leader_move_emitted": true,
+   "member_damage_events_by_state": {
+    "absent": 1,
+    "moving alone": 1
+   },
+   "repeats": 19,
+   "stacked_moving_inside_envelope_member_unit_decisions": 82,
+   "start_step": 642
+  },
+  {
+   "classes": [
+    "vehicle",
+    "vehicle"
+   ],
+   "co_located_moving_beyond_start": false,
+   "co_located_moving_decisions": 0,
+   "co_located_moving_hexes_beyond_start": 0,
+   "completed": true,
+   "end": "complete",
+   "end_steps_after_start": 60,
+   "episode_ordinal": 10,
+   "executed": true,
+   "first_co_location_beyond_start_steps": null,
+   "followers": [
+    {
+     "arrival_lag_behind_leader_steps": 60,
+     "class": "vehicle",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": true,
+     "departed_after_release": true,
+     "departure_steps": 120,
+     "destination": "50-point objective B",
+     "destination_first_owned_after_start": false,
+     "destination_first_owned_before_start": true,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": null,
+     "follower_arrival_steps": 200,
+     "follower_lost_later": false,
+     "leader_among_first_owners": null,
+     "moved_at_release": true,
+     "other_own_units_among_first_owners": null,
+     "outcome": "released",
+     "position": 1,
+     "projected_wait": 60,
+     "release_move_accepted": true,
+     "release_reason": "reference_left",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": 3,
+     "steps_start_to_destination_first_ownership": null,
+     "wait_steps": 60
+    }
+   ],
+   "followers_released": 1,
+   "followers_released_reference_left": 1,
+   "followers_released_timeout": 0,
+   "followers_withheld_at_start": 1,
+   "group_size": 2,
+   "hex_times": [
+    60,
+    60
+   ],
+   "leader_absent_before_departure": false,
+   "leader_departure_steps": 60,
+   "leader_move_accepted": true,
+   "leader_move_emitted": true,
+   "member_damage_events_by_state": {
+    "absent": 1,
+    "moving alone": 1
+   },
+   "repeats": 59,
+   "stacked_moving_inside_envelope_member_unit_decisions": 63,
+   "start_step": 683
+  },
+  {
+   "classes": [
+    "vehicle",
+    "vehicle"
+   ],
+   "co_located_moving_beyond_start": true,
+   "co_located_moving_decisions": 2,
+   "co_located_moving_hexes_beyond_start": 2,
+   "completed": true,
+   "end": "complete",
+   "end_steps_after_start": 20,
+   "episode_ordinal": 11,
+   "executed": true,
+   "first_co_location_beyond_start_steps": 100,
+   "followers": [
+    {
+     "arrival_lag_behind_leader_steps": 20,
+     "class": "vehicle",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": true,
+     "departed_after_release": true,
+     "departure_steps": 40,
+     "destination": "80-point objective B",
+     "destination_first_owned_after_start": false,
+     "destination_first_owned_before_start": true,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": null,
+     "follower_arrival_steps": 80,
+     "follower_lost_later": false,
+     "leader_among_first_owners": null,
+     "moved_at_release": true,
+     "other_own_units_among_first_owners": null,
+     "outcome": "released",
+     "position": 1,
+     "projected_wait": 20,
+     "release_move_accepted": true,
+     "release_reason": "reference_left",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": 1,
+     "steps_start_to_destination_first_ownership": null,
+     "wait_steps": 20
+    }
+   ],
+   "followers_released": 1,
+   "followers_released_reference_left": 1,
+   "followers_released_timeout": 0,
+   "followers_withheld_at_start": 1,
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_absent_before_departure": false,
+   "leader_departure_steps": 20,
+   "leader_move_accepted": true,
+   "leader_move_emitted": true,
+   "member_damage_events_by_state": {
+    "moving stacked": 2
+   },
+   "repeats": 19,
+   "stacked_moving_inside_envelope_member_unit_decisions": 142,
+   "start_step": 1085
+  },
+  {
+   "classes": [
+    "infantry",
+    "infantry"
+   ],
+   "co_located_moving_beyond_start": false,
+   "co_located_moving_decisions": 0,
+   "co_located_moving_hexes_beyond_start": 0,
+   "completed": true,
+   "end": "complete",
+   "end_steps_after_start": 144,
+   "episode_ordinal": 12,
+   "executed": false,
+   "first_co_location_beyond_start_steps": null,
+   "followers": [
+    {
+     "arrival_lag_behind_leader_steps": null,
+     "class": "infantry",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": false,
+     "departed_after_release": false,
+     "departure_steps": null,
+     "destination": "50-point objective B",
+     "destination_first_owned_after_start": false,
+     "destination_first_owned_before_start": true,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": null,
+     "follower_arrival_steps": null,
+     "follower_lost_later": false,
+     "leader_among_first_owners": null,
+     "moved_at_release": false,
+     "other_own_units_among_first_owners": null,
+     "outcome": "released",
+     "position": 1,
+     "projected_wait": 144,
+     "release_move_accepted": null,
+     "release_reason": "reference_left",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": null,
+     "steps_start_to_destination_first_ownership": null,
+     "wait_steps": 144
+    }
+   ],
+   "followers_released": 1,
+   "followers_released_reference_left": 1,
+   "followers_released_timeout": 0,
+   "followers_withheld_at_start": 1,
+   "group_size": 2,
+   "hex_times": [
+    144,
+    144
+   ],
+   "leader_absent_before_departure": false,
+   "leader_departure_steps": 144,
+   "leader_move_accepted": true,
+   "leader_move_emitted": true,
+   "member_damage_events_by_state": {},
+   "repeats": 54,
+   "stacked_moving_inside_envelope_member_unit_decisions": 143,
+   "start_step": 1152
+  },
+  {
+   "classes": [
+    "vehicle",
+    "vehicle"
+   ],
+   "co_located_moving_beyond_start": false,
+   "co_located_moving_decisions": 0,
+   "co_located_moving_hexes_beyond_start": 0,
+   "completed": true,
+   "end": "complete",
+   "end_steps_after_start": 20,
+   "episode_ordinal": 13,
+   "executed": true,
+   "first_co_location_beyond_start_steps": null,
+   "followers": [
+    {
+     "arrival_lag_behind_leader_steps": 1551,
+     "class": "vehicle",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": true,
+     "departed_after_release": true,
+     "departure_steps": 40,
+     "destination": "50-point objective B",
+     "destination_first_owned_after_start": false,
+     "destination_first_owned_before_start": true,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": null,
+     "follower_arrival_steps": 1611,
+     "follower_lost_later": false,
+     "leader_among_first_owners": null,
+     "moved_at_release": true,
+     "other_own_units_among_first_owners": null,
+     "outcome": "released",
+     "position": 1,
+     "projected_wait": 20,
+     "release_move_accepted": true,
+     "release_reason": "reference_left",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": 1,
+     "steps_start_to_destination_first_ownership": null,
+     "wait_steps": 20
+    }
+   ],
+   "followers_released": 1,
+   "followers_released_reference_left": 1,
+   "followers_released_timeout": 0,
+   "followers_withheld_at_start": 1,
+   "group_size": 2,
+   "hex_times": [
+    20,
+    20
+   ],
+   "leader_absent_before_departure": false,
+   "leader_departure_steps": 20,
+   "leader_move_accepted": true,
+   "leader_move_emitted": true,
+   "member_damage_events_by_state": {},
+   "repeats": 19,
+   "stacked_moving_inside_envelope_member_unit_decisions": 112,
+   "start_step": 1165
+  },
+  {
+   "classes": [
+    "infantry",
+    "infantry"
+   ],
+   "co_located_moving_beyond_start": false,
+   "co_located_moving_decisions": 0,
+   "co_located_moving_hexes_beyond_start": 0,
+   "completed": false,
+   "end": "open_at_end",
+   "end_steps_after_start": 142,
+   "episode_ordinal": 14,
+   "executed": false,
+   "first_co_location_beyond_start_steps": null,
+   "followers": [
+    {
+     "arrival_lag_behind_leader_steps": null,
+     "class": "infantry",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": false,
+     "departed_after_release": false,
+     "departure_steps": null,
+     "destination": "50-point objective C",
+     "destination_first_owned_after_start": false,
+     "destination_first_owned_before_start": true,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": null,
+     "follower_arrival_steps": null,
+     "follower_lost_later": false,
+     "leader_among_first_owners": null,
+     "moved_at_release": null,
+     "other_own_units_among_first_owners": null,
+     "outcome": "pending at the end",
+     "position": 1,
+     "projected_wait": 144,
+     "release_move_accepted": null,
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": null,
+     "steps_start_to_destination_first_ownership": null,
+     "wait_steps": null
+    }
+   ],
+   "followers_released": 0,
+   "followers_released_reference_left": 0,
+   "followers_released_timeout": 0,
+   "followers_withheld_at_start": 1,
+   "group_size": 2,
+   "hex_times": [
+    144,
+    144
+   ],
+   "leader_absent_before_departure": false,
+   "leader_departure_steps": null,
+   "leader_move_accepted": true,
+   "leader_move_emitted": true,
+   "member_damage_events_by_state": {},
+   "repeats": 142,
+   "stacked_moving_inside_envelope_member_unit_decisions": 142,
+   "start_step": 2737
+  },
+  {
+   "classes": [
+    "vehicle",
+    "vehicle",
+    "vehicle",
+    "vehicle"
+   ],
+   "co_located_moving_beyond_start": true,
+   "co_located_moving_decisions": 43,
+   "co_located_moving_hexes_beyond_start": 1,
+   "completed": true,
+   "end": "complete",
+   "end_steps_after_start": 60,
+   "episode_ordinal": 15,
+   "executed": true,
+   "first_co_location_beyond_start_steps": 100,
+   "followers": [
+    {
+     "arrival_lag_behind_leader_steps": 20,
+     "class": "vehicle",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": true,
+     "departed_after_release": true,
+     "departure_steps": 40,
+     "destination": "50-point objective C",
+     "destination_first_owned_after_start": false,
+     "destination_first_owned_before_start": true,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": null,
+     "follower_arrival_steps": 140,
+     "follower_lost_later": false,
+     "leader_among_first_owners": null,
+     "moved_at_release": true,
+     "other_own_units_among_first_owners": null,
+     "outcome": "released",
+     "position": 1,
+     "projected_wait": 20,
+     "release_move_accepted": true,
+     "release_reason": "reference_left",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": 1,
+     "steps_start_to_destination_first_ownership": null,
+     "wait_steps": 20
+    },
+    {
+     "arrival_lag_behind_leader_steps": null,
+     "class": "vehicle",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": true,
+     "departed_after_release": true,
+     "departure_steps": 60,
+     "destination": "50-point objective C",
+     "destination_first_owned_after_start": false,
+     "destination_first_owned_before_start": true,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": null,
+     "follower_arrival_steps": null,
+     "follower_lost_later": false,
+     "leader_among_first_owners": null,
+     "moved_at_release": true,
+     "other_own_units_among_first_owners": null,
+     "outcome": "released",
+     "position": 2,
+     "projected_wait": 40,
+     "release_move_accepted": true,
+     "release_reason": "reference_left",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": 2,
+     "steps_start_to_destination_first_ownership": null,
+     "wait_steps": 40
+    },
+    {
+     "arrival_lag_behind_leader_steps": null,
+     "class": "vehicle",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": true,
+     "departed_after_release": true,
+     "departure_steps": 80,
+     "destination": "50-point objective C",
+     "destination_first_owned_after_start": false,
+     "destination_first_owned_before_start": true,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": null,
+     "follower_arrival_steps": null,
+     "follower_lost_later": false,
+     "leader_among_first_owners": null,
+     "moved_at_release": true,
+     "other_own_units_among_first_owners": null,
+     "outcome": "released",
+     "position": 3,
+     "projected_wait": 60,
+     "release_move_accepted": true,
+     "release_reason": "reference_left",
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": 3,
+     "steps_start_to_destination_first_ownership": null,
+     "wait_steps": 60
+    }
+   ],
+   "followers_released": 3,
+   "followers_released_reference_left": 3,
+   "followers_released_timeout": 0,
+   "followers_withheld_at_start": 3,
+   "group_size": 4,
+   "hex_times": [
+    20,
+    20,
+    20,
+    20
+   ],
+   "leader_absent_before_departure": false,
+   "leader_departure_steps": 20,
+   "leader_move_accepted": true,
+   "leader_move_emitted": true,
+   "member_damage_events_by_state": {},
+   "repeats": 115,
+   "stacked_moving_inside_envelope_member_unit_decisions": 222,
+   "start_step": 2737
+  },
+  {
+   "classes": [
+    "infantry",
+    "infantry",
+    "infantry"
+   ],
+   "co_located_moving_beyond_start": false,
+   "co_located_moving_decisions": 0,
+   "co_located_moving_hexes_beyond_start": 0,
+   "completed": false,
+   "end": "open_at_end",
+   "end_steps_after_start": 142,
+   "episode_ordinal": 16,
+   "executed": false,
+   "first_co_location_beyond_start_steps": null,
+   "followers": [
+    {
+     "arrival_lag_behind_leader_steps": null,
+     "class": "infantry",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": false,
+     "departed_after_release": false,
+     "departure_steps": null,
+     "destination": "50-point objective C",
+     "destination_first_owned_after_start": false,
+     "destination_first_owned_before_start": true,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": null,
+     "follower_arrival_steps": null,
+     "follower_lost_later": false,
+     "leader_among_first_owners": null,
+     "moved_at_release": null,
+     "other_own_units_among_first_owners": null,
+     "outcome": "pending at the end",
+     "position": 1,
+     "projected_wait": 144,
+     "release_move_accepted": null,
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": null,
+     "steps_start_to_destination_first_ownership": null,
+     "wait_steps": null
+    },
+    {
+     "arrival_lag_behind_leader_steps": null,
+     "class": "infantry",
+     "damage_events_while_waiting_on_the_start_hex": 0,
+     "departed": false,
+     "departed_after_release": false,
+     "departure_steps": null,
+     "destination": "50-point objective C",
+     "destination_first_owned_after_start": false,
+     "destination_first_owned_before_start": true,
+     "destroyed_before_departure": false,
+     "follower_among_first_owners": null,
+     "follower_arrival_steps": null,
+     "follower_lost_later": false,
+     "leader_among_first_owners": null,
+     "moved_at_release": null,
+     "other_own_units_among_first_owners": null,
+     "outcome": "pending at the end",
+     "position": 2,
+     "projected_wait": 288,
+     "release_move_accepted": null,
+     "same_destination_as_leader": true,
+     "separation_from_leader_at_departure_hexes": null,
+     "steps_start_to_destination_first_ownership": null,
+     "wait_steps": null
+    }
+   ],
+   "followers_released": 0,
+   "followers_released_reference_left": 0,
+   "followers_released_timeout": 0,
+   "followers_withheld_at_start": 2,
+   "group_size": 3,
+   "hex_times": [
+    144,
+    144,
+    144
+   ],
+   "leader_absent_before_departure": false,
+   "leader_departure_steps": null,
+   "leader_move_accepted": true,
+   "leader_move_emitted": true,
+   "member_damage_events_by_state": {},
+   "repeats": 284,
+   "stacked_moving_inside_envelope_member_unit_decisions": 142,
+   "start_step": 2737
+  }
+ ],
+ "fidelity": {
+  "candidate_equals_baseline_v2_before_the_first_withholding": true,
+  "candidate_memory_chain_differences": 0,
+  "candidate_offline_differences": 0,
+  "candidate_unregistered_differences": 0,
+  "decisions": 2881,
+  "frozen_rule_equal_decisions": 2881,
+  "frozen_rule_events_equal": true,
+  "independent_check_unexplained": 0,
+  "live_consistency_errors": 0,
+  "live_reconstructed_decisions": 5762,
+  "live_unregistered_differences": 0,
+  "one_snapshot_per_decision": true,
+  "opponent_memory_chain_differences": 0,
+  "opponent_offline_differences": 0
+ },
+ "game_id": "2130511121.H2.s27-t6s-probe-1.p01",
+ "ledger_sessions_after_base": 1,
+ "mechanism_observed": true,
+ "opening": {
+  "expected_step_from_sprint26": 161,
+  "first_episode_classes": [
+   "vehicle",
+   "vehicle"
+  ],
+  "first_episode_group_size": 2,
+  "first_withholding_decision": 162,
+  "first_withholding_step": 161,
+  "occurs_at_the_expected_step": true
+ },
+ "p1": {
+  "absolute_change_from_reference_mean": -9477,
+  "candidate_e4": 9708,
+  "candidate_over_reference_mean": 0.506,
+  "half_reference_mean": "19185/2",
+  "reference_mean": 19185,
+  "reference_sum": 38370,
+  "references": {
+   "HH p01 baseline-v2 blue": 9122,
+   "HH p03 baseline-v2 blue": 29248
+  },
+  "triggered": true
+ },
+ "p2": {
+  "objectives_without_reference": [],
+  "rows": [
+   {
+    "candidate_first_ownership_step": 161,
+    "differences_from_each_reference": {
+     "HH p01 baseline-v2 blue": 0,
+     "HH p03 baseline-v2 blue": 0
+    },
+    "objective": "50-point objective A",
+    "reference_step": 161,
+    "reference_steps": {
+     "HH p01 baseline-v2 blue": 161,
+     "HH p03 baseline-v2 blue": 161
+    },
+    "status": "at or before the reference",
+    "triggered": false
+   },
+   {
+    "candidate_first_ownership_step": 222,
+    "differences_from_each_reference": {
+     "HH p01 baseline-v2 blue": 0,
+     "HH p03 baseline-v2 blue": 0
+    },
+    "objective": "50-point objective B",
+    "reference_step": 222,
+    "reference_steps": {
+     "HH p01 baseline-v2 blue": 222,
+     "HH p03 baseline-v2 blue": 222
+    },
+    "status": "at or before the reference",
+    "triggered": false
+   },
+   {
+    "candidate_first_ownership_step": 364,
+    "differences_from_each_reference": {
+     "HH p01 baseline-v2 blue": 0,
+     "HH p03 baseline-v2 blue": 0
+    },
+    "objective": "50-point objective C",
+    "reference_step": 364,
+    "reference_steps": {
+     "HH p01 baseline-v2 blue": 364,
+     "HH p03 baseline-v2 blue": 364
+    },
+    "status": "at or before the reference",
+    "triggered": false
+   },
+   {
+    "candidate_first_ownership_step": 442,
+    "differences_from_each_reference": {
+     "HH p01 baseline-v2 blue": 0,
+     "HH p03 baseline-v2 blue": 0
+    },
+    "objective": "50-point objective D",
+    "reference_step": 442,
+    "reference_steps": {
+     "HH p01 baseline-v2 blue": 442,
+     "HH p03 baseline-v2 blue": 442
+    },
+    "status": "at or before the reference",
+    "triggered": false
+   },
+   {
+    "candidate_first_ownership_step": 421,
+    "differences_from_each_reference": {
+     "HH p01 baseline-v2 blue": 0,
+     "HH p03 baseline-v2 blue": 0
+    },
+    "objective": "80-point objective A",
+    "reference_step": 421,
+    "reference_steps": {
+     "HH p01 baseline-v2 blue": 421,
+     "HH p03 baseline-v2 blue": 421
+    },
+    "status": "at or before the reference",
+    "triggered": false
+   },
+   {
+    "candidate_first_ownership_step": 283,
+    "differences_from_each_reference": {
+     "HH p01 baseline-v2 blue": 0,
+     "HH p03 baseline-v2 blue": 0
+    },
+    "objective": "80-point objective B",
+    "reference_step": 283,
+    "reference_steps": {
+     "HH p01 baseline-v2 blue": 283,
+     "HH p03 baseline-v2 blue": 283
+    },
+    "status": "at or before the reference",
+    "triggered": false
+   },
+   {
+    "candidate_first_ownership_step": 161,
+    "differences_from_each_reference": {
+     "HH p01 baseline-v2 blue": 0,
+     "HH p03 baseline-v2 blue": 0
+    },
+    "objective": "80-point objective C",
+    "reference_step": 161,
+    "reference_steps": {
+     "HH p01 baseline-v2 blue": 161,
+     "HH p03 baseline-v2 blue": 161
+    },
+    "status": "at or before the reference",
+    "triggered": false
+   }
+  ],
+  "triggered": false
+ },
+ "p2_sensitivity_four_games": {
+  "note": "sensitivity only, not a stop; mixes seat colours whose distances to each objective differ",
+  "objectives_without_reference": [],
+  "rows": [
+   {
+    "candidate_first_ownership_step": 161,
+    "differences_from_each_reference": {
+     "HH p01 baseline-v2 blue": 0,
+     "HH p02 baseline-v2 red": -260,
+     "HH p03 baseline-v2 blue": 0,
+     "HH p04 baseline-v2 red": -260
+    },
+    "objective": "50-point objective A",
+    "reference_step": 421,
+    "reference_steps": {
+     "HH p01 baseline-v2 blue": 161,
+     "HH p02 baseline-v2 red": 421,
+     "HH p03 baseline-v2 blue": 161,
+     "HH p04 baseline-v2 red": 421
+    },
+    "status": "at or before the reference",
+    "triggered": false
+   },
+   {
+    "candidate_first_ownership_step": 222,
+    "differences_from_each_reference": {
+     "HH p01 baseline-v2 blue": 0,
+     "HH p02 baseline-v2 red": -321,
+     "HH p03 baseline-v2 blue": 0,
+     "HH p04 baseline-v2 red": -321
+    },
+    "objective": "50-point objective B",
+    "reference_step": 543,
+    "reference_steps": {
+     "HH p01 baseline-v2 blue": 222,
+     "HH p02 baseline-v2 red": 543,
+     "HH p03 baseline-v2 blue": 222,
+     "HH p04 baseline-v2 red": 543
+    },
+    "status": "at or before the reference",
+    "triggered": false
+   },
+   {
+    "candidate_first_ownership_step": 364,
+    "differences_from_each_reference": {
+     "HH p01 baseline-v2 blue": 0,
+     "HH p02 baseline-v2 red": -2373,
+     "HH p03 baseline-v2 blue": 0,
+     "HH p04 baseline-v2 red": -197
+    },
+    "objective": "50-point objective C",
+    "reference_step": 2737,
+    "reference_steps": {
+     "HH p01 baseline-v2 blue": 364,
+     "HH p02 baseline-v2 red": 2737,
+     "HH p03 baseline-v2 blue": 364,
+     "HH p04 baseline-v2 red": 561
+    },
+    "status": "at or before the reference",
+    "triggered": false
+   },
+   {
+    "candidate_first_ownership_step": 442,
+    "differences_from_each_reference": {
+     "HH p01 baseline-v2 blue": 0,
+     "HH p02 baseline-v2 red": 41,
+     "HH p03 baseline-v2 blue": 0,
+     "HH p04 baseline-v2 red": 41
+    },
+    "objective": "50-point objective D",
+    "reference_step": 442,
+    "reference_steps": {
+     "HH p01 baseline-v2 blue": 442,
+     "HH p02 baseline-v2 red": 401,
+     "HH p03 baseline-v2 blue": 442,
+     "HH p04 baseline-v2 red": 401
+    },
+    "status": "at or before the reference",
+    "triggered": false
+   },
+   {
+    "candidate_first_ownership_step": 421,
+    "differences_from_each_reference": {
+     "HH p01 baseline-v2 blue": 0,
+     "HH p02 baseline-v2 red": null,
+     "HH p03 baseline-v2 blue": 0,
+     "HH p04 baseline-v2 red": null
+    },
+    "objective": "80-point objective A",
+    "reference_step": 421,
+    "reference_steps": {
+     "HH p01 baseline-v2 blue": 421,
+     "HH p02 baseline-v2 red": null,
+     "HH p03 baseline-v2 blue": 421,
+     "HH p04 baseline-v2 red": null
+    },
+    "status": "at or before the reference",
+    "triggered": false
+   },
+   {
+    "candidate_first_ownership_step": 283,
+    "differences_from_each_reference": {
+     "HH p01 baseline-v2 blue": 0,
+     "HH p02 baseline-v2 red": -199,
+     "HH p03 baseline-v2 blue": 0,
+     "HH p04 baseline-v2 red": -199
+    },
+    "objective": "80-point objective B",
+    "reference_step": 482,
+    "reference_steps": {
+     "HH p01 baseline-v2 blue": 283,
+     "HH p02 baseline-v2 red": 482,
+     "HH p03 baseline-v2 blue": 283,
+     "HH p04 baseline-v2 red": 482
+    },
+    "status": "at or before the reference",
+    "triggered": false
+   },
+   {
+    "candidate_first_ownership_step": 161,
+    "differences_from_each_reference": {
+     "HH p01 baseline-v2 blue": 0,
+     "HH p02 baseline-v2 red": null,
+     "HH p03 baseline-v2 blue": 0,
+     "HH p04 baseline-v2 red": -443
+    },
+    "objective": "80-point objective C",
+    "reference_step": 604,
+    "reference_steps": {
+     "HH p01 baseline-v2 blue": 161,
+     "HH p02 baseline-v2 red": null,
+     "HH p03 baseline-v2 blue": 161,
+     "HH p04 baseline-v2 red": 604
+    },
+    "status": "at or before the reference",
+    "triggered": false
+   }
+  ],
+  "triggered": false
+ },
+ "position": 1,
+ "record_facts_not_used": {
+  "scores": {
+   "blue_attack": 451,
+   "blue_occupy": 390,
+   "blue_remain": 244,
+   "blue_remain_max": 603,
+   "blue_total": 1085,
+   "blue_win": 567,
+   "red_attack": 359,
+   "red_occupy": 50,
+   "red_remain": 109,
+   "red_remain_max": 560,
+   "red_total": 518,
+   "red_win": -567
+  }
+ },
+ "schema": "miaosuan-s27-probe/1/game",
+ "session": 2797,
+ "stage": "A",
+ "stage_gate": {
+  "reasons": [
+   "P1 exposure stop triggered"
+  ],
+  "stage_b_authorized": false
+ },
+ "status": "COMPLETED",
+ "steps": 2881,
+ "structural_stop_counts": {},
+ "structural_stops": [],
+ "study_id": "s27-t6s-probe"
+}

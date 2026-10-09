@@ -1,0 +1,30 @@
+{
+ "disposition": "T6S_P1_MECHANISM_NOT_SUPPORTED",
+ "ledger_problems": {},
+ "ledger_sessions_after_base": 1,
+ "meaning": "MECHANISM_SUPPORTED would mean only that the registered stagger executed and passed the P1 and P2 checks in both seat orders of this one scenario; it is not a score improvement, a damage or survival effect of the rule, a confirmation or readiness for promotion",
+ "order": [
+  "T6S_P1_INVALID",
+  "T6S_P1_MECHANISM_NOT_OBSERVED",
+  "T6S_P1_MECHANISM_NOT_SUPPORTED",
+  "T6S_P1_MECHANISM_SUPPORTED"
+ ],
+ "paired_probe_terminated_early": true,
+ "schema": "miaosuan-s27-probe/1/disposition",
+ "sessions": [
+  {
+   "candidate_side": "blue",
+   "completed": true,
+   "game_file_sha256": "0e3eb088ef62d6c306855fdd18151998ef8532ab132c636f8d8ec099ff6183ec",
+   "mechanism_observed": true,
+   "p1_triggered": true,
+   "p2_triggered": false,
+   "position": 1,
+   "session": 2797,
+   "structural_stops": []
+  }
+ ],
+ "sessions_opened": 1,
+ "stage_b_authorized": false,
+ "study_id": "s27-t6s-probe"
+}
