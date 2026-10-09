@@ -1,0 +1,446 @@
+{
+ "killed": 85,
+ "mutations": [
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "minimum idle three"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "stacking limit five"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "speed ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "observed route ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "stop flag ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "stop transition time ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "state transition ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "get-on transition ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "get-off transition ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "suppression ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "baseline MOVE tolerated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "other baseline action tolerated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "aircraft counted as ground"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "neighbours ignore the map edge"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "neighbours up to distance two"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "passability ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "trigger ignores the room"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "held units idle"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "listing not checked"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "roadblocks ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "roadblocks stop infantry"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "gate path check skipped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "stack full only above four"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "objective hexes admissible"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "enemy hexes admissible"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "route hexes admissible"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "observed routes not collected"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "baseline routes not collected"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "holder by unit id only"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "holder with the most destinations"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "holder dispersed too"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "room ignores this decision's moves"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "destination by cost first"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "destination ignores the cost"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "assignments not counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "count reset per objective"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "legal tier without a dispersal"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "objectives in decreasing order"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "unheld objectives examined"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "held MOVEs pass"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "no release on objective loss"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "no release on absence"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "appended before the baseline actions"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "two-hex dispersal route"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "held units examined as holders"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "hold not recorded"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t12_dispersion_shadow.py",
+   "mutation": "non-play decisions examined"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "check accepts any removal"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "check never releases"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "check without a holder"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "check ignores this decision's appended moves"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "check accepts route hexes"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "check idle ignores suppression"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "check accepts a roadblock"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "episodes merge across gaps"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "episode key without the idle units"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "claimant includes held objectives"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "onward reads past the release"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "first ownership before the order counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "holder departure ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "damage includes moving victims"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "the event decision counted as earlier"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "prefix always supported"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "idle level boundary off by one"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "majority at one half"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "stop needs two episodes"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "stop ignores a missing side-game"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "stop pooled over side-games"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "legality gate ignores a missing side-game"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "legality gate reads trigger episodes"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "legality before opportunity"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "interaction ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "unexplained differences ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "interaction read in HH only"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "interaction counts replicas"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s28_t12.py",
+   "mutation": "certificate ignores the prefix"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s28_t12.py",
+   "mutation": "recorded actions in file order"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s28_t12.py",
+   "mutation": "side colours swapped"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s28_t12.py",
+   "mutation": "split parts may exceed the limit"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s28_t12.py",
+   "mutation": "refusal not invalid"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s28_t12.py",
+   "mutation": "two seat ids tolerated"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s28_t12.py",
+   "mutation": "input pins ignored"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s28_t12.py",
+   "mutation": "source pins ignored"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s28_t12.py",
+   "mutation": "stacked anchor shifted"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s28_t12.py",
+   "mutation": "move-order anchor shifted"
+  }
+ ],
+ "schema": "miaosuan-s28-mutation/1",
+ "sources": {
+  "scripts/s28_t12.py": "524a4cea878637f94efe774cce08d8b60b51b231de0db736ec46da3ef6b0d9b2",
+  "src/miaosuan_agent/evaluation/s28_t12.py": "8adb1d55b7b2c1138aff3fed1d5df5862e4f9e7cd64b133d1eb3035f1caafe11",
+  "src/miaosuan_agent/experiments/t12_dispersion_shadow.py": "9949af2690d4e3ae3e7a70ead993d4195df1bd24edd4af993017b9bf48e32d0b",
+  "tests/test_s28_driver.py": "48bb50fee27036661d056417644a7e8b0c9b166dc405dc2aec9a483029b47438",
+  "tests/test_s28_t12.py": "8cb62aa71165831b4a93ad3147b663f3612163d2d3ac7f75c4ae4f09507f5109",
+  "tests/test_t12_dispersion_shadow.py": "a8d178967f88761b7d551f2ab645593ad59e6df50b2641fcaf6b595306fc5cad"
+ },
+ "tests": [
+  "tests.test_t12_dispersion_shadow",
+  "tests.test_s28_t12",
+  "tests.test_s28_driver"
+ ],
+ "total": 85,
+ "unmutated_tests_pass": true
+}
