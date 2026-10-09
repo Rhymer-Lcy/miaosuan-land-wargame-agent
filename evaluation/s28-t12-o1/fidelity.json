@@ -1,0 +1,133 @@
+{
+ "anchors": {
+  "H0 baseline-v2 move orders": {
+   "equal": true,
+   "published": 509,
+   "replay": 509
+  },
+  "H0 decisions": {
+   "equal": true,
+   "published": 33696,
+   "replay": 33696
+  },
+  "H0 of which stacked in this study's own enumeration": {
+   "equal": true,
+   "published": 40,
+   "replay": 40
+  },
+  "H0 play decisions": {
+   "equal": true,
+   "published": 33680,
+   "replay": 33680
+  },
+  "H0 recorded actions differ from reconstructed baseline-v2 (separate pass)": {
+   "equal": true,
+   "published": 123,
+   "replay": 123
+  },
+  "H0 side-games": {
+   "equal": true,
+   "published": 16,
+   "replay": 16
+  },
+  "H0 side-games with a stationary stacked hit on an objective": {
+   "equal": true,
+   "published": 10,
+   "replay": 10
+  },
+  "H0 stationary on-objective ground events in this study's own enumeration": {
+   "equal": true,
+   "published": 53,
+   "replay": 53
+  },
+  "H0 stationary on-objective ground events, alone": {
+   "equal": true,
+   "published": 13,
+   "replay": 13
+  },
+  "H0 stationary on-objective ground events, stacked": {
+   "equal": true,
+   "published": 40,
+   "replay": 40
+  },
+  "H0 v2 differs from recorded v0": {
+   "equal": true,
+   "published": 123,
+   "replay": 123
+  },
+  "HH baseline-v2 move orders": {
+   "equal": true,
+   "published": 416,
+   "replay": 416
+  },
+  "HH baseline-v2 reconstruction equal to the recorded seat": {
+   "equal": true,
+   "published": 11524,
+   "replay": 11524
+  },
+  "HH of which stacked in this study's own enumeration": {
+   "equal": true,
+   "published": 10,
+   "replay": 10
+  },
+  "HH side-games": {
+   "equal": true,
+   "published": 4,
+   "replay": 4
+  },
+  "HH stationary on-objective ground events in this study's own enumeration": {
+   "equal": true,
+   "published": 13,
+   "replay": 13
+  },
+  "HH stationary on-objective ground events, alone": {
+   "equal": true,
+   "published": 3,
+   "replay": 3
+  },
+  "HH stationary on-objective ground events, stacked": {
+   "equal": true,
+   "published": 10,
+   "replay": 10
+  }
+ },
+ "blocks": {
+  "N4 H0 block equal to census.json": true,
+  "N4 HH block equal to census.json": true,
+  "N5 H0 block equal to census.json": true,
+  "N5 HH block equal to census.json": true,
+  "N6 H0 block equal to census.json": true,
+  "N6 HH block equal to census.json": true,
+  "T6 H0 block equal to census.json": true,
+  "T6 HH block equal to census.json": true,
+  "admission H0 ground events by state equal to admission.json": true,
+  "admission HH ground events by state equal to admission.json": true
+ },
+ "inputs_sha256": "ad0d3083c3407e068ceaa0b68c7963313cb44b58846c3bc5284326dd3bdf1419",
+ "ok": true,
+ "protocol_sha256": "3c720145cdb1621dac7304b27c4a711a0d03fe8e3d9d37716b58fe6edecdb449",
+ "schema": "miaosuan-s28-results/1",
+ "side_integrity": {
+  "H0 1910631192 blue": true,
+  "H0 1910631192 red": true,
+  "H0 1930331196 blue": true,
+  "H0 1930331196 red": true,
+  "H0 2010131194 blue": true,
+  "H0 2010131194 red": true,
+  "H0 2010211129 blue": true,
+  "H0 2010211129 red": true,
+  "H0 201033019601 blue": true,
+  "H0 201033019601 red": true,
+  "H0 2010431153 blue": true,
+  "H0 2010431153 red": true,
+  "H0 2120531121 blue": true,
+  "H0 2120531121 red": true,
+  "H0 2130511121 blue": true,
+  "H0 2130511121 red": true,
+  "HH p01 baseline-v2 blue": true,
+  "HH p02 baseline-v2 red": true,
+  "HH p03 baseline-v2 blue": true,
+  "HH p04 baseline-v2 red": true
+ },
+ "study_id": "s28-t12-o1"
+}

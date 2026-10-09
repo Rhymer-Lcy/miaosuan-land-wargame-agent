@@ -1,0 +1,2914 @@
+{
+ "inputs_sha256": "ad0d3083c3407e068ceaa0b68c7963313cb44b58846c3bc5284326dd3bdf1419",
+ "part": "1/1",
+ "population": "H0",
+ "protocol_sha256": "3c720145cdb1621dac7304b27c4a711a0d03fe8e3d9d37716b58fe6edecdb449",
+ "rows": [
+  {
+   "centre_own_ground": 4,
+   "centre_own_ground_after": 3,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 1,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 1
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 1,
+   "first_divergence": true,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 923,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": false,
+   "prefix_supported": false,
+   "scenario_side": "1910631192 blue",
+   "side_game": "H0 1910631192 blue",
+   "start_step": 877
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 1,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 1
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 1,
+   "first_divergence": true,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 73,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "80-point objective B",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": false,
+   "prefix_supported": false,
+   "scenario_side": "1930331196 red",
+   "side_game": "H0 1930331196 red",
+   "start_step": 2737
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 1,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 1
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 2,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 68,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "80-point objective B",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "1930331196 red",
+   "side_game": "H0 1930331196 red",
+   "start_step": 2812
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 1,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 1
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 1,
+   "first_divergence": true,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 1405,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": false,
+   "prefix_supported": false,
+   "scenario_side": "2010131194 blue",
+   "side_game": "H0 2010131194 blue",
+   "start_step": 395
+  },
+  {
+   "centre_own_ground": 3,
+   "centre_own_ground_after": 2,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 1,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 2,
+    "damage_events_after_victim_stacked": 2,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 1,
+   "first_divergence": true,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 24,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "80-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": false,
+   "prefix_supported": false,
+   "scenario_side": "2010211129 blue",
+   "side_game": "H0 2010211129 blue",
+   "start_step": 396
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 1,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 2
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 2,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 1205,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "80-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2010211129 blue",
+   "side_game": "H0 2010211129 blue",
+   "start_step": 595
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "infantry"
+    }
+   ],
+   "episode_ordinal": 3,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "infantry",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 861,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2010211129 blue",
+   "side_game": "H0 2010211129 blue",
+   "start_step": 939
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 1,
+   "first_divergence": true,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 411,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "80-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": false,
+   "prefix_supported": false,
+   "scenario_side": "2010431153 blue",
+   "side_game": "H0 2010431153 blue",
+   "start_step": 597
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 2,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "80-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2010431153 blue",
+   "side_game": "H0 2010431153 blue",
+   "start_step": 1009
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 3,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 437,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "80-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2010431153 blue",
+   "side_game": "H0 2010431153 blue",
+   "start_step": 1084
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 4,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "80-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2010431153 blue",
+   "side_game": "H0 2010431153 blue",
+   "start_step": 1522
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 5,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "80-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2010431153 blue",
+   "side_game": "H0 2010431153 blue",
+   "start_step": 1597
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 6,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "80-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2010431153 blue",
+   "side_game": "H0 2010431153 blue",
+   "start_step": 1672
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 7,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 53,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "80-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2010431153 blue",
+   "side_game": "H0 2010431153 blue",
+   "start_step": 1747
+  },
+  {
+   "centre_own_ground": 4,
+   "centre_own_ground_after": 3,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 1,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 1,
+    "damage_events_after_victim_stacked": 1,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 1,
+   "first_divergence": true,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 17,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "objective_label": "80-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": false,
+   "prefix_supported": false,
+   "scenario_side": "2120531121 blue",
+   "side_game": "H0 2120531121 blue",
+   "start_step": 736
+  },
+  {
+   "centre_own_ground": 4,
+   "centre_own_ground_after": 3,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 1,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 2,
+    "damage_events_after_victim_stacked": 2,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 2,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 274,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "objective_label": "80-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2120531121 blue",
+   "side_game": "H0 2120531121 blue",
+   "start_step": 754
+  },
+  {
+   "centre_own_ground": 4,
+   "centre_own_ground_after": 2,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 1,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 1,
+    "damage_events_after_victim_stacked": 1,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    },
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 3,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 3,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "objective_label": "80-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     2
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2120531121 blue",
+   "side_game": "H0 2120531121 blue",
+   "start_step": 1029
+  },
+  {
+   "centre_own_ground": 4,
+   "centre_own_ground_after": 2,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 1,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 1,
+    "damage_events_after_victim_stacked": 1,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    },
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 4,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 3,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "objective_label": "80-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     2
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2120531121 blue",
+   "side_game": "H0 2120531121 blue",
+   "start_step": 1104
+  },
+  {
+   "centre_own_ground": 4,
+   "centre_own_ground_after": 3,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 5,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 73,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "80-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2120531121 blue",
+   "side_game": "H0 2120531121 blue",
+   "start_step": 1180
+  },
+  {
+   "centre_own_ground": 4,
+   "centre_own_ground_after": 3,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 6,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 1626,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "80-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2120531121 blue",
+   "side_game": "H0 2120531121 blue",
+   "start_step": 1254
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "infantry"
+    }
+   ],
+   "episode_ordinal": 7,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "infantry",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 69,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    1
+   ],
+   "objective_label": "80-point objective B",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2120531121 blue",
+   "side_game": "H0 2120531121 blue",
+   "start_step": 2811
+  },
+  {
+   "centre_own_ground": 4,
+   "centre_own_ground_after": 2,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    },
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 1,
+   "first_divergence": true,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 3,
+   "listed_decisions": 887,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    3
+   ],
+   "objective_label": "80-point objective B",
+   "outcomes": [
+    [
+     "dispersed",
+     2
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": false,
+   "prefix_supported": false,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 1279
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 1,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 1
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 2,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 69,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 1371
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 1,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 1
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 3,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 1441
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "infantry"
+    }
+   ],
+   "episode_ordinal": 4,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "infantry",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 1365,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "80-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 1515
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 1,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 1
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 5,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 1516
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 6,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 1591
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 7,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 1666
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 8,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 1741
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 9,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 1816
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 10,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 1891
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "infantry"
+    }
+   ],
+   "episode_ordinal": 11,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "infantry",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 933,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective A",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 1947
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 12,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 1966
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 13,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2041
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 14,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2116
+  },
+  {
+   "centre_own_ground": 4,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    },
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    },
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 15,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 4,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    4
+   ],
+   "objective_label": "80-point objective B",
+   "outcomes": [
+    [
+     "dispersed",
+     3
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2167
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 16,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2191
+  },
+  {
+   "centre_own_ground": 4,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    },
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    },
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 17,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 4,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    4
+   ],
+   "objective_label": "80-point objective B",
+   "outcomes": [
+    [
+     "dispersed",
+     3
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2242
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 18,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2266
+  },
+  {
+   "centre_own_ground": 4,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    },
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    },
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 19,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 4,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    4
+   ],
+   "objective_label": "80-point objective B",
+   "outcomes": [
+    [
+     "dispersed",
+     3
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2317
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 20,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2341
+  },
+  {
+   "centre_own_ground": 4,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    },
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    },
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 21,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 4,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    4
+   ],
+   "objective_label": "80-point objective B",
+   "outcomes": [
+    [
+     "dispersed",
+     3
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2392
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 22,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2416
+  },
+  {
+   "centre_own_ground": 4,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    },
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    },
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 23,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 4,
+   "listed_decisions": 413,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    4
+   ],
+   "objective_label": "80-point objective B",
+   "outcomes": [
+    [
+     "dispersed",
+     3
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2467
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 24,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2491
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 25,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2566
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 26,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2641
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 27,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2716
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 28,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 74,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2791
+  },
+  {
+   "centre_own_ground": 2,
+   "centre_own_ground_after": 1,
+   "counted_as_distinct": true,
+   "damage": {
+    "centre_units_damaged_after": 0,
+    "centre_units_damaged_before": 0,
+    "damage_events_after": 0,
+    "damage_events_after_victim_stacked": 0,
+    "damage_events_before": 0
+   },
+   "dispersed": [
+    {
+     "destination_own_ground_after": 1,
+     "destination_own_ground_before": 0,
+     "later_lost": false,
+     "onward_move": false,
+     "suppressed_move_decisions": 0,
+     "unit_class": "vehicle"
+    }
+   ],
+   "episode_ordinal": 29,
+   "first_divergence": false,
+   "hold_release_steps": null,
+   "hold_to_end": true,
+   "holder_class": "vehicle",
+   "holder_ordered_off_steps": null,
+   "holder_ordered_off_while_held": false,
+   "idle_centre_units": 2,
+   "listed_decisions": 14,
+   "neighbour_own_ground": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "objective_label": "50-point objective C",
+   "outcomes": [
+    [
+     "dispersed",
+     1
+    ],
+    [
+     "holder",
+     1
+    ]
+   ],
+   "population": "H0",
+   "post_divergence": true,
+   "prefix_supported": null,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "start_step": 2866
+  }
+ ],
+ "schema": "miaosuan-s28-results/1",
+ "study_id": "s28-t12-o1"
+}

@@ -1,0 +1,1420 @@
+{
+ "inputs_sha256": "ad0d3083c3407e068ceaa0b68c7963313cb44b58846c3bc5284326dd3bdf1419",
+ "part": "1/1",
+ "protocol_sha256": "3c720145cdb1621dac7304b27c4a711a0d03fe8e3d9d37716b58fe6edecdb449",
+ "rows": [
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {},
+    "batch_outcomes_unit_decisions": {},
+    "first_failing_idle_level_unit_decisions": {
+     "A_stationary": 196,
+     "C_no_transition": 44
+    },
+    "legal_reasons_unit_neighbour_pairs": {},
+    "objective_decisions": {
+     "centre_two_or_more_ground": 60,
+     "centre_two_or_more_through_A_stationary": 1,
+     "centre_two_or_more_through_B_no_route": 1,
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objective_decisions": 402,
+     "held_objectives": 2,
+     "idle_centre_unit_decisions": 0
+    },
+    "trigger_centre_own_ground": [],
+    "trigger_neighbour_own_ground_total": []
+   },
+   "decisions": 1801,
+   "first_divergence": null,
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 0,
+   "legal_distinct_groups": 0,
+   "legal_episodes": 0,
+   "legal_objectives": 0,
+   "legal_repeated_listings": 0,
+   "play_decisions": 1800,
+   "population": "H0",
+   "replay_added_actions": 0,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "1910631192 red",
+   "side_game": "H0 1910631192 red",
+   "trigger_episodes": 0,
+   "trigger_objectives": 0,
+   "trigger_repeated_listings": 0,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {
+     "admissible": 18280,
+     "own_route_hex": 3656
+    },
+    "batch_outcomes_unit_decisions": {
+     "dispersed": 2733,
+     "holder": 923
+    },
+    "first_failing_idle_level_unit_decisions": {
+     "A_stationary": 312,
+     "C_no_transition": 306,
+     "idle": 3656
+    },
+    "legal_reasons_unit_neighbour_pairs": {
+     "legal": 21936
+    },
+    "objective_decisions": {
+     "centre_two_or_more_ground": 1114,
+     "centre_two_or_more_through_A_stationary": 1001,
+     "centre_two_or_more_through_B_no_route": 1001,
+     "centre_two_or_more_through_C_no_transition": 923,
+     "centre_two_or_more_through_D_no_transport_transition": 923,
+     "centre_two_or_more_through_E_not_suppressed": 923,
+     "centre_two_or_more_through_F_no_baseline_move": 923,
+     "centre_two_or_more_through_G_no_baseline_action": 923,
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objective_decisions": 2296,
+     "held_objectives": 2,
+     "idle_centre_unit_decisions": 3656,
+     "legal_tier": 923,
+     "legal_tier_complete": 923,
+     "legal_unit_decisions": 3656,
+     "trigger": 923,
+     "trigger_with_a_legal_one_hex_move": 923,
+     "trigger_with_a_visible_enemy_on_a_neighbour": 0,
+     "trigger_with_an_admissible_destination": 923,
+     "two_or_more_idle": 923
+    },
+    "trigger_centre_own_ground": [
+     [
+      4,
+      923
+     ]
+    ],
+    "trigger_neighbour_own_ground_total": [
+     [
+      0,
+      923
+     ]
+    ]
+   },
+   "decisions": 1801,
+   "first_divergence": {
+    "decision": 878,
+    "prefix_supported": false,
+    "step": 877
+   },
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 1,
+   "legal_distinct_groups": 1,
+   "legal_episodes": 1,
+   "legal_objectives": 1,
+   "legal_repeated_listings": 922,
+   "play_decisions": 1800,
+   "population": "H0",
+   "replay_added_actions": 3,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "1910631192 blue",
+   "side_game": "H0 1910631192 blue",
+   "trigger_episodes": 1,
+   "trigger_objectives": 1,
+   "trigger_repeated_listings": 922,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {
+     "admissible": 1410,
+     "own_route_hex": 282
+    },
+    "batch_outcomes_unit_decisions": {
+     "dispersed": 141,
+     "holder": 141
+    },
+    "first_failing_idle_level_unit_decisions": {
+     "A_stationary": 1633,
+     "C_no_transition": 139,
+     "E_not_suppressed": 54,
+     "G_no_baseline_action": 3,
+     "idle": 298
+    },
+    "legal_reasons_unit_neighbour_pairs": {
+     "legal": 1692
+    },
+    "objective_decisions": {
+     "centre_two_or_more_ground": 546,
+     "centre_two_or_more_through_A_stationary": 161,
+     "centre_two_or_more_through_B_no_route": 161,
+     "centre_two_or_more_through_C_no_transition": 143,
+     "centre_two_or_more_through_D_no_transport_transition": 143,
+     "centre_two_or_more_through_E_not_suppressed": 143,
+     "centre_two_or_more_through_F_no_baseline_move": 143,
+     "centre_two_or_more_through_G_no_baseline_action": 141,
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objective_decisions": 6827,
+     "held_objectives": 5,
+     "idle_centre_unit_decisions": 298,
+     "legal_tier": 141,
+     "legal_tier_complete": 141,
+     "legal_unit_decisions": 282,
+     "trigger": 141,
+     "trigger_with_a_legal_one_hex_move": 141,
+     "trigger_with_a_visible_enemy_on_a_neighbour": 0,
+     "trigger_with_an_admissible_destination": 141,
+     "two_or_more_idle": 141
+    },
+    "trigger_centre_own_ground": [
+     [
+      2,
+      141
+     ]
+    ],
+    "trigger_neighbour_own_ground_total": [
+     [
+      0,
+      141
+     ]
+    ]
+   },
+   "decisions": 2881,
+   "first_divergence": {
+    "decision": 2738,
+    "prefix_supported": false,
+    "step": 2737
+   },
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 1,
+   "legal_distinct_groups": 1,
+   "legal_episodes": 2,
+   "legal_objectives": 1,
+   "legal_repeated_listings": 139,
+   "play_decisions": 2880,
+   "population": "H0",
+   "replay_added_actions": 1,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "1930331196 red",
+   "side_game": "H0 1930331196 red",
+   "trigger_episodes": 2,
+   "trigger_objectives": 1,
+   "trigger_repeated_listings": 139,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {},
+    "batch_outcomes_unit_decisions": {},
+    "first_failing_idle_level_unit_decisions": {
+     "A_stationary": 1422,
+     "C_no_transition": 98
+    },
+    "legal_reasons_unit_neighbour_pairs": {},
+    "objective_decisions": {
+     "centre_two_or_more_ground": 518,
+     "centre_two_or_more_through_A_stationary": 9,
+     "centre_two_or_more_through_B_no_route": 9,
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objective_decisions": 4696,
+     "held_objectives": 5,
+     "idle_centre_unit_decisions": 0
+    },
+    "trigger_centre_own_ground": [],
+    "trigger_neighbour_own_ground_total": []
+   },
+   "decisions": 2881,
+   "first_divergence": null,
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 0,
+   "legal_distinct_groups": 0,
+   "legal_episodes": 0,
+   "legal_objectives": 0,
+   "legal_repeated_listings": 0,
+   "play_decisions": 2880,
+   "population": "H0",
+   "replay_added_actions": 0,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "1930331196 blue",
+   "side_game": "H0 1930331196 blue",
+   "trigger_episodes": 0,
+   "trigger_objectives": 0,
+   "trigger_repeated_listings": 0,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {},
+    "batch_outcomes_unit_decisions": {},
+    "first_failing_idle_level_unit_decisions": {},
+    "legal_reasons_unit_neighbour_pairs": {},
+    "objective_decisions": {
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objectives": 0
+    },
+    "trigger_centre_own_ground": [],
+    "trigger_neighbour_own_ground_total": []
+   },
+   "decisions": 1801,
+   "first_divergence": null,
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 0,
+   "legal_distinct_groups": 0,
+   "legal_episodes": 0,
+   "legal_objectives": 0,
+   "legal_repeated_listings": 0,
+   "play_decisions": 1800,
+   "population": "H0",
+   "replay_added_actions": 0,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "2010131194 red",
+   "side_game": "H0 2010131194 red",
+   "trigger_episodes": 0,
+   "trigger_objectives": 0,
+   "trigger_repeated_listings": 0,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {
+     "admissible": 16860
+    },
+    "batch_outcomes_unit_decisions": {
+     "dispersed": 1405,
+     "holder": 1405
+    },
+    "first_failing_idle_level_unit_decisions": {
+     "C_no_transition": 118,
+     "E_not_suppressed": 100,
+     "idle": 2890
+    },
+    "legal_reasons_unit_neighbour_pairs": {
+     "legal": 16860
+    },
+    "objective_decisions": {
+     "centre_two_or_more_ground": 1554,
+     "centre_two_or_more_through_A_stationary": 1554,
+     "centre_two_or_more_through_B_no_route": 1554,
+     "centre_two_or_more_through_C_no_transition": 1485,
+     "centre_two_or_more_through_D_no_transport_transition": 1485,
+     "centre_two_or_more_through_E_not_suppressed": 1405,
+     "centre_two_or_more_through_F_no_baseline_move": 1405,
+     "centre_two_or_more_through_G_no_baseline_action": 1405,
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objective_decisions": 1554,
+     "held_objectives": 1,
+     "idle_centre_unit_decisions": 2890,
+     "legal_tier": 1405,
+     "legal_tier_complete": 1405,
+     "legal_unit_decisions": 2810,
+     "trigger": 1405,
+     "trigger_with_a_legal_one_hex_move": 1405,
+     "trigger_with_a_visible_enemy_on_a_neighbour": 0,
+     "trigger_with_an_admissible_destination": 1405,
+     "two_or_more_idle": 1405
+    },
+    "trigger_centre_own_ground": [
+     [
+      2,
+      1405
+     ]
+    ],
+    "trigger_neighbour_own_ground_total": [
+     [
+      0,
+      1405
+     ]
+    ]
+   },
+   "decisions": 1801,
+   "first_divergence": {
+    "decision": 396,
+    "prefix_supported": false,
+    "step": 395
+   },
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 1,
+   "legal_distinct_groups": 1,
+   "legal_episodes": 1,
+   "legal_objectives": 1,
+   "legal_repeated_listings": 1404,
+   "play_decisions": 1800,
+   "population": "H0",
+   "replay_added_actions": 1,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "2010131194 blue",
+   "side_game": "H0 2010131194 blue",
+   "trigger_episodes": 1,
+   "trigger_objectives": 1,
+   "trigger_repeated_listings": 1404,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {},
+    "batch_outcomes_unit_decisions": {},
+    "first_failing_idle_level_unit_decisions": {},
+    "legal_reasons_unit_neighbour_pairs": {},
+    "objective_decisions": {
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objectives": 0
+    },
+    "trigger_centre_own_ground": [],
+    "trigger_neighbour_own_ground_total": []
+   },
+   "decisions": 1801,
+   "first_divergence": null,
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 0,
+   "legal_distinct_groups": 0,
+   "legal_episodes": 0,
+   "legal_objectives": 0,
+   "legal_repeated_listings": 0,
+   "play_decisions": 1800,
+   "population": "H0",
+   "replay_added_actions": 0,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "2010211129 red",
+   "side_game": "H0 2010211129 red",
+   "trigger_episodes": 0,
+   "trigger_objectives": 0,
+   "trigger_repeated_listings": 0,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {
+     "admissible": 25032,
+     "visible_enemy": 48
+    },
+    "batch_outcomes_unit_decisions": {
+     "dispersed": 2090,
+     "holder": 2090
+    },
+    "first_failing_idle_level_unit_decisions": {
+     "A_stationary": 117,
+     "C_no_transition": 377,
+     "E_not_suppressed": 180,
+     "G_no_baseline_action": 2,
+     "idle": 4518
+    },
+    "legal_reasons_unit_neighbour_pairs": {
+     "legal": 25080
+    },
+    "objective_decisions": {
+     "centre_two_or_more_ground": 2456,
+     "centre_two_or_more_through_A_stationary": 2417,
+     "centre_two_or_more_through_B_no_route": 2417,
+     "centre_two_or_more_through_C_no_transition": 2266,
+     "centre_two_or_more_through_D_no_transport_transition": 2266,
+     "centre_two_or_more_through_E_not_suppressed": 2091,
+     "centre_two_or_more_through_F_no_baseline_move": 2091,
+     "centre_two_or_more_through_G_no_baseline_action": 2090,
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objective_decisions": 3177,
+     "held_objectives": 2,
+     "idle_centre_unit_decisions": 4518,
+     "legal_tier": 2090,
+     "legal_tier_complete": 2090,
+     "legal_unit_decisions": 4180,
+     "trigger": 2090,
+     "trigger_with_a_legal_one_hex_move": 2090,
+     "trigger_with_a_visible_enemy_on_a_neighbour": 24,
+     "trigger_with_an_admissible_destination": 2090,
+     "two_or_more_idle": 2090
+    },
+    "trigger_centre_own_ground": [
+     [
+      2,
+      2086
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "trigger_neighbour_own_ground_total": [
+     [
+      0,
+      2090
+     ]
+    ]
+   },
+   "decisions": 1801,
+   "first_divergence": {
+    "decision": 397,
+    "prefix_supported": false,
+    "step": 396
+   },
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 2,
+   "legal_distinct_groups": 2,
+   "legal_episodes": 3,
+   "legal_objectives": 2,
+   "legal_repeated_listings": 2087,
+   "play_decisions": 1800,
+   "population": "H0",
+   "replay_added_actions": 2,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "2010211129 blue",
+   "side_game": "H0 2010211129 blue",
+   "trigger_episodes": 3,
+   "trigger_objectives": 2,
+   "trigger_repeated_listings": 2087,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {},
+    "batch_outcomes_unit_decisions": {},
+    "first_failing_idle_level_unit_decisions": {
+     "C_no_transition": 73,
+     "G_no_baseline_action": 1,
+     "idle": 644
+    },
+    "legal_reasons_unit_neighbour_pairs": {},
+    "objective_decisions": {
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objective_decisions": 718,
+     "held_objectives": 1,
+     "idle_centre_unit_decisions": 644
+    },
+    "trigger_centre_own_ground": [],
+    "trigger_neighbour_own_ground_total": []
+   },
+   "decisions": 1001,
+   "first_divergence": null,
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 0,
+   "legal_distinct_groups": 0,
+   "legal_episodes": 0,
+   "legal_objectives": 0,
+   "legal_repeated_listings": 0,
+   "play_decisions": 1000,
+   "population": "H0",
+   "replay_added_actions": 0,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "201033019601 red",
+   "side_game": "H0 201033019601 red",
+   "trigger_episodes": 0,
+   "trigger_objectives": 0,
+   "trigger_repeated_listings": 0,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {},
+    "batch_outcomes_unit_decisions": {},
+    "first_failing_idle_level_unit_decisions": {},
+    "legal_reasons_unit_neighbour_pairs": {},
+    "objective_decisions": {
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objectives": 0
+    },
+    "trigger_centre_own_ground": [],
+    "trigger_neighbour_own_ground_total": []
+   },
+   "decisions": 1001,
+   "first_divergence": null,
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 0,
+   "legal_distinct_groups": 0,
+   "legal_episodes": 0,
+   "legal_objectives": 0,
+   "legal_repeated_listings": 0,
+   "play_decisions": 1000,
+   "population": "H0",
+   "replay_added_actions": 0,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "201033019601 blue",
+   "side_game": "H0 201033019601 blue",
+   "trigger_episodes": 0,
+   "trigger_objectives": 0,
+   "trigger_repeated_listings": 0,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {},
+    "batch_outcomes_unit_decisions": {},
+    "first_failing_idle_level_unit_decisions": {},
+    "legal_reasons_unit_neighbour_pairs": {},
+    "objective_decisions": {
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objectives": 0
+    },
+    "trigger_centre_own_ground": [],
+    "trigger_neighbour_own_ground_total": []
+   },
+   "decisions": 1801,
+   "first_divergence": null,
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 0,
+   "legal_distinct_groups": 0,
+   "legal_episodes": 0,
+   "legal_objectives": 0,
+   "legal_repeated_listings": 0,
+   "play_decisions": 1800,
+   "population": "H0",
+   "replay_added_actions": 0,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "2010431153 red",
+   "side_game": "H0 2010431153 red",
+   "trigger_episodes": 0,
+   "trigger_objectives": 0,
+   "trigger_repeated_listings": 0,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {
+     "admissible": 14364
+    },
+    "batch_outcomes_unit_decisions": {
+     "dispersed": 1197,
+     "holder": 1197
+    },
+    "first_failing_idle_level_unit_decisions": {
+     "A_stationary": 114,
+     "C_no_transition": 67,
+     "G_no_baseline_action": 6,
+     "idle": 2465
+    },
+    "legal_reasons_unit_neighbour_pairs": {
+     "legal": 14364
+    },
+    "objective_decisions": {
+     "centre_two_or_more_ground": 1268,
+     "centre_two_or_more_through_A_stationary": 1268,
+     "centre_two_or_more_through_B_no_route": 1268,
+     "centre_two_or_more_through_C_no_transition": 1203,
+     "centre_two_or_more_through_D_no_transport_transition": 1203,
+     "centre_two_or_more_through_E_not_suppressed": 1203,
+     "centre_two_or_more_through_F_no_baseline_move": 1203,
+     "centre_two_or_more_through_G_no_baseline_action": 1197,
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objective_decisions": 2726,
+     "held_objectives": 2,
+     "idle_centre_unit_decisions": 2465,
+     "legal_tier": 1197,
+     "legal_tier_complete": 1197,
+     "legal_unit_decisions": 2394,
+     "trigger": 1197,
+     "trigger_with_a_legal_one_hex_move": 1197,
+     "trigger_with_a_visible_enemy_on_a_neighbour": 0,
+     "trigger_with_an_admissible_destination": 1197,
+     "two_or_more_idle": 1197
+    },
+    "trigger_centre_own_ground": [
+     [
+      2,
+      1197
+     ]
+    ],
+    "trigger_neighbour_own_ground_total": [
+     [
+      0,
+      1197
+     ]
+    ]
+   },
+   "decisions": 1801,
+   "first_divergence": {
+    "decision": 598,
+    "prefix_supported": false,
+    "step": 597
+   },
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 1,
+   "legal_distinct_groups": 1,
+   "legal_episodes": 7,
+   "legal_objectives": 1,
+   "legal_repeated_listings": 1190,
+   "play_decisions": 1800,
+   "population": "H0",
+   "replay_added_actions": 1,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "2010431153 blue",
+   "side_game": "H0 2010431153 blue",
+   "trigger_episodes": 7,
+   "trigger_objectives": 1,
+   "trigger_repeated_listings": 1190,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {},
+    "batch_outcomes_unit_decisions": {},
+    "first_failing_idle_level_unit_decisions": {
+     "A_stationary": 310,
+     "C_no_transition": 17
+    },
+    "legal_reasons_unit_neighbour_pairs": {},
+    "objective_decisions": {
+     "centre_two_or_more_ground": 109,
+     "centre_two_or_more_through_A_stationary": 6,
+     "centre_two_or_more_through_B_no_route": 6,
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objective_decisions": 320,
+     "held_objectives": 2,
+     "idle_centre_unit_decisions": 0
+    },
+    "trigger_centre_own_ground": [],
+    "trigger_neighbour_own_ground_total": []
+   },
+   "decisions": 2881,
+   "first_divergence": null,
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 0,
+   "legal_distinct_groups": 0,
+   "legal_episodes": 0,
+   "legal_objectives": 0,
+   "legal_repeated_listings": 0,
+   "play_decisions": 2880,
+   "population": "H0",
+   "replay_added_actions": 0,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "2120531121 red",
+   "side_game": "H0 2120531121 red",
+   "trigger_episodes": 0,
+   "trigger_objectives": 0,
+   "trigger_repeated_listings": 0,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {
+     "admissible": 47220,
+     "own_route_hex": 276
+    },
+    "batch_outcomes_unit_decisions": {
+     "dispersed": 5709,
+     "holder": 2207
+    },
+    "first_failing_idle_level_unit_decisions": {
+     "A_stationary": 323,
+     "C_no_transition": 633,
+     "E_not_suppressed": 440,
+     "G_no_baseline_action": 80,
+     "idle": 7978
+    },
+    "legal_reasons_unit_neighbour_pairs": {
+     "legal": 47496
+    },
+    "objective_decisions": {
+     "centre_two_or_more_ground": 2521,
+     "centre_two_or_more_through_A_stationary": 2426,
+     "centre_two_or_more_through_B_no_route": 2426,
+     "centre_two_or_more_through_C_no_transition": 2272,
+     "centre_two_or_more_through_D_no_transport_transition": 2272,
+     "centre_two_or_more_through_E_not_suppressed": 2214,
+     "centre_two_or_more_through_F_no_baseline_move": 2214,
+     "centre_two_or_more_through_G_no_baseline_action": 2207,
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objective_decisions": 11962,
+     "held_objectives": 5,
+     "idle_centre_unit_decisions": 7978,
+     "legal_tier": 2207,
+     "legal_tier_complete": 2207,
+     "legal_unit_decisions": 7916,
+     "trigger": 2207,
+     "trigger_with_a_legal_one_hex_move": 2207,
+     "trigger_with_a_visible_enemy_on_a_neighbour": 0,
+     "trigger_with_an_admissible_destination": 2207,
+     "two_or_more_idle": 2207
+    },
+    "trigger_centre_own_ground": [
+     [
+      2,
+      69
+     ],
+     [
+      3,
+      118
+     ],
+     [
+      4,
+      2020
+     ]
+    ],
+    "trigger_neighbour_own_ground_total": [
+     [
+      0,
+      1699
+     ],
+     [
+      1,
+      298
+     ],
+     [
+      2,
+      210
+     ]
+    ]
+   },
+   "decisions": 2881,
+   "first_divergence": {
+    "decision": 737,
+    "prefix_supported": false,
+    "step": 736
+   },
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 5,
+   "legal_distinct_groups": 5,
+   "legal_episodes": 7,
+   "legal_objectives": 2,
+   "legal_repeated_listings": 2200,
+   "play_decisions": 2880,
+   "population": "H0",
+   "replay_added_actions": 4,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "2120531121 blue",
+   "side_game": "H0 2120531121 blue",
+   "trigger_episodes": 7,
+   "trigger_objectives": 2,
+   "trigger_repeated_listings": 2200,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {},
+    "batch_outcomes_unit_decisions": {},
+    "first_failing_idle_level_unit_decisions": {
+     "A_stationary": 863,
+     "B_no_route": 61,
+     "C_no_transition": 32,
+     "E_not_suppressed": 2,
+     "F_no_baseline_move": 4
+    },
+    "legal_reasons_unit_neighbour_pairs": {},
+    "objective_decisions": {
+     "centre_two_or_more_ground": 240,
+     "centre_two_or_more_through_A_stationary": 29,
+     "centre_two_or_more_through_B_no_route": 9,
+     "centre_two_or_more_through_C_no_transition": 2,
+     "centre_two_or_more_through_D_no_transport_transition": 2,
+     "centre_two_or_more_through_E_not_suppressed": 1,
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objective_decisions": 1544,
+     "held_objectives": 6,
+     "idle_centre_unit_decisions": 0
+    },
+    "trigger_centre_own_ground": [],
+    "trigger_neighbour_own_ground_total": []
+   },
+   "decisions": 2881,
+   "first_divergence": null,
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 0,
+   "legal_distinct_groups": 0,
+   "legal_episodes": 0,
+   "legal_objectives": 0,
+   "legal_repeated_listings": 0,
+   "play_decisions": 2880,
+   "population": "H0",
+   "replay_added_actions": 0,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "2130511121 red",
+   "side_game": "H0 2130511121 red",
+   "trigger_episodes": 0,
+   "trigger_objectives": 0,
+   "trigger_repeated_listings": 0,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {
+     "admissible": 77623,
+     "own_route_hex": 5948
+    },
+    "batch_outcomes_unit_decisions": {
+     "dispersed": 9021,
+     "holder": 5383
+    },
+    "first_failing_idle_level_unit_decisions": {
+     "A_stationary": 2486,
+     "B_no_route": 1642,
+     "C_no_transition": 1052,
+     "E_not_suppressed": 14,
+     "G_no_baseline_action": 52,
+     "idle": 15628
+    },
+    "legal_reasons_unit_neighbour_pairs": {
+     "legal": 83571,
+     "stack_full": 2853
+    },
+    "objective_decisions": {
+     "centre_two_or_more_ground": 6892,
+     "centre_two_or_more_through_A_stationary": 6224,
+     "centre_two_or_more_through_B_no_route": 5782,
+     "centre_two_or_more_through_C_no_transition": 5422,
+     "centre_two_or_more_through_D_no_transport_transition": 5422,
+     "centre_two_or_more_through_E_not_suppressed": 5408,
+     "centre_two_or_more_through_F_no_baseline_move": 5408,
+     "centre_two_or_more_through_G_no_baseline_action": 5383,
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objective_decisions": 16603,
+     "held_objectives": 7,
+     "idle_centre_unit_decisions": 15628,
+     "legal_tier": 5383,
+     "legal_tier_complete": 5383,
+     "legal_unit_decisions": 14404,
+     "trigger": 5383,
+     "trigger_with_a_legal_one_hex_move": 5383,
+     "trigger_with_a_visible_enemy_on_a_neighbour": 0,
+     "trigger_with_an_admissible_destination": 5383,
+     "two_or_more_idle": 5383
+    },
+    "trigger_centre_own_ground": [
+     [
+      2,
+      3211
+     ],
+     [
+      3,
+      576
+     ],
+     [
+      4,
+      1596
+     ]
+    ],
+    "trigger_neighbour_own_ground_total": [
+     [
+      0,
+      3643
+     ],
+     [
+      1,
+      144
+     ],
+     [
+      3,
+      305
+     ],
+     [
+      5,
+      576
+     ],
+     [
+      6,
+      715
+     ]
+    ]
+   },
+   "decisions": 2881,
+   "first_divergence": {
+    "decision": 1280,
+    "prefix_supported": false,
+    "step": 1279
+   },
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 6,
+   "legal_distinct_groups": 5,
+   "legal_episodes": 29,
+   "legal_objectives": 4,
+   "legal_repeated_listings": 5354,
+   "play_decisions": 2880,
+   "population": "H0",
+   "replay_added_actions": 7,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "2130511121 blue",
+   "side_game": "H0 2130511121 blue",
+   "trigger_episodes": 29,
+   "trigger_objectives": 4,
+   "trigger_repeated_listings": 5354,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {
+     "admissible": 80171,
+     "own_route_hex": 5081,
+     "visible_enemy": 572
+    },
+    "batch_outcomes_unit_decisions": {
+     "dispersed": 10004,
+     "holder": 4300
+    },
+    "first_failing_idle_level_unit_decisions": {
+     "A_stationary": 1578,
+     "B_no_route": 1236,
+     "C_no_transition": 891,
+     "E_not_suppressed": 200,
+     "G_no_baseline_action": 28,
+     "idle": 15010
+    },
+    "legal_reasons_unit_neighbour_pairs": {
+     "legal": 85824
+    },
+    "objective_decisions": {
+     "centre_two_or_more_ground": 5303,
+     "centre_two_or_more_through_A_stationary": 4924,
+     "centre_two_or_more_through_B_no_route": 4597,
+     "centre_two_or_more_through_C_no_transition": 4354,
+     "centre_two_or_more_through_D_no_transport_transition": 4354,
+     "centre_two_or_more_through_E_not_suppressed": 4303,
+     "centre_two_or_more_through_F_no_baseline_move": 4303,
+     "centre_two_or_more_through_G_no_baseline_action": 4300,
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objective_decisions": 16508,
+     "held_objectives": 7,
+     "idle_centre_unit_decisions": 15010,
+     "legal_tier": 4300,
+     "legal_tier_complete": 4300,
+     "legal_unit_decisions": 14304,
+     "trigger": 4300,
+     "trigger_with_a_legal_one_hex_move": 4300,
+     "trigger_with_a_visible_enemy_on_a_neighbour": 144,
+     "trigger_with_an_admissible_destination": 4300,
+     "two_or_more_idle": 4300
+    },
+    "trigger_centre_own_ground": [
+     [
+      2,
+      299
+     ],
+     [
+      3,
+      1829
+     ],
+     [
+      4,
+      2172
+     ]
+    ],
+    "trigger_neighbour_own_ground_total": [
+     [
+      0,
+      3215
+     ],
+     [
+      1,
+      949
+     ],
+     [
+      2,
+      136
+     ]
+    ]
+   },
+   "decisions": 2881,
+   "first_divergence": {
+    "decision": 1227,
+    "prefix_supported": true,
+    "step": 1226
+   },
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 4,
+   "legal_distinct_groups": 4,
+   "legal_episodes": 5,
+   "legal_objectives": 3,
+   "legal_repeated_listings": 4295,
+   "play_decisions": 2880,
+   "population": "HH",
+   "replay_added_actions": 8,
+   "replay_release_reasons": [
+    [
+     "unit_absent",
+     2
+    ]
+   ],
+   "replay_withheld_actions": 0,
+   "scenario_side": "2130511121 blue",
+   "side_game": "HH p01 baseline-v2 blue",
+   "trigger_episodes": 5,
+   "trigger_objectives": 3,
+   "trigger_repeated_listings": 4295,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {},
+    "batch_outcomes_unit_decisions": {},
+    "first_failing_idle_level_unit_decisions": {
+     "A_stationary": 770,
+     "B_no_route": 106,
+     "C_no_transition": 36
+    },
+    "legal_reasons_unit_neighbour_pairs": {},
+    "objective_decisions": {
+     "centre_two_or_more_ground": 241,
+     "centre_two_or_more_through_A_stationary": 34,
+     "centre_two_or_more_through_B_no_route": 10,
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objective_decisions": 857,
+     "held_objectives": 5,
+     "idle_centre_unit_decisions": 0
+    },
+    "trigger_centre_own_ground": [],
+    "trigger_neighbour_own_ground_total": []
+   },
+   "decisions": 2881,
+   "first_divergence": null,
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 0,
+   "legal_distinct_groups": 0,
+   "legal_episodes": 0,
+   "legal_objectives": 0,
+   "legal_repeated_listings": 0,
+   "play_decisions": 2880,
+   "population": "HH",
+   "replay_added_actions": 0,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "2130511121 red",
+   "side_game": "HH p02 baseline-v2 red",
+   "trigger_episodes": 0,
+   "trigger_objectives": 0,
+   "trigger_repeated_listings": 0,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {
+     "admissible": 57817,
+     "own_route_hex": 19887,
+     "visible_enemy": 4622
+    },
+    "batch_outcomes_unit_decisions": {
+     "dispersed": 9226,
+     "holder": 4495
+    },
+    "first_failing_idle_level_unit_decisions": {
+     "A_stationary": 1226,
+     "B_no_route": 9960,
+     "C_no_transition": 802,
+     "G_no_baseline_action": 9,
+     "idle": 14313
+    },
+    "legal_reasons_unit_neighbour_pairs": {
+     "legal": 82326
+    },
+    "objective_decisions": {
+     "centre_two_or_more_ground": 7542,
+     "centre_two_or_more_through_A_stationary": 7231,
+     "centre_two_or_more_through_B_no_route": 4735,
+     "centre_two_or_more_through_C_no_transition": 4495,
+     "centre_two_or_more_through_D_no_transport_transition": 4495,
+     "centre_two_or_more_through_E_not_suppressed": 4495,
+     "centre_two_or_more_through_F_no_baseline_move": 4495,
+     "centre_two_or_more_through_G_no_baseline_action": 4495,
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objective_decisions": 17316,
+     "held_objectives": 7,
+     "idle_centre_unit_decisions": 14313,
+     "legal_tier": 4495,
+     "legal_tier_complete": 4495,
+     "legal_unit_decisions": 13721,
+     "trigger": 4495,
+     "trigger_with_a_legal_one_hex_move": 4495,
+     "trigger_with_a_visible_enemy_on_a_neighbour": 1765,
+     "trigger_with_an_admissible_destination": 4495,
+     "two_or_more_idle": 4495
+    },
+    "trigger_centre_own_ground": [
+     [
+      2,
+      895
+     ],
+     [
+      3,
+      2160
+     ],
+     [
+      4,
+      1440
+     ]
+    ],
+    "trigger_neighbour_own_ground_total": [
+     [
+      0,
+      3349
+     ],
+     [
+      1,
+      1146
+     ]
+    ]
+   },
+   "decisions": 2881,
+   "first_divergence": {
+    "decision": 1116,
+    "prefix_supported": true,
+    "step": 1115
+   },
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 3,
+   "legal_distinct_groups": 3,
+   "legal_episodes": 3,
+   "legal_objectives": 3,
+   "legal_repeated_listings": 4492,
+   "play_decisions": 2880,
+   "population": "HH",
+   "replay_added_actions": 7,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "2130511121 blue",
+   "side_game": "HH p03 baseline-v2 blue",
+   "trigger_episodes": 3,
+   "trigger_objectives": 3,
+   "trigger_repeated_listings": 4492,
+   "unexplained_action_differences": 0
+  },
+  {
+   "census": {
+    "admissibility_of_legal_pairs": {},
+    "batch_outcomes_unit_decisions": {},
+    "first_failing_idle_level_unit_decisions": {
+     "A_stationary": 1189,
+     "B_no_route": 123,
+     "C_no_transition": 55
+    },
+    "legal_reasons_unit_neighbour_pairs": {},
+    "objective_decisions": {
+     "centre_two_or_more_ground": 339,
+     "centre_two_or_more_through_A_stationary": 54,
+     "centre_two_or_more_through_B_no_route": 14,
+     "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+     "held_objective_decisions": 1697,
+     "held_objectives": 6,
+     "idle_centre_unit_decisions": 0
+    },
+    "trigger_centre_own_ground": [],
+    "trigger_neighbour_own_ground_total": []
+   },
+   "decisions": 2881,
+   "first_divergence": null,
+   "integrity": {
+    "candidate equals baseline-v2 before the first divergence, stateful equals stateless there": true,
+    "every legal batch keeps a holder": true,
+    "every legal episode lies inside a trigger episode": true,
+    "first divergence is the first legal-tier decision": true,
+    "frame positions equal decision indices": true,
+    "no unit is on two centres": true,
+    "one extras map per decision": true,
+    "one recorded list per decision": true,
+    "withheld actions are MOVEs": true
+   },
+   "legal_dispersed_units_distinct": 0,
+   "legal_distinct_groups": 0,
+   "legal_episodes": 0,
+   "legal_objectives": 0,
+   "legal_repeated_listings": 0,
+   "play_decisions": 2880,
+   "population": "HH",
+   "replay_added_actions": 0,
+   "replay_release_reasons": [],
+   "replay_withheld_actions": 0,
+   "scenario_side": "2130511121 red",
+   "side_game": "HH p04 baseline-v2 red",
+   "trigger_episodes": 0,
+   "trigger_objectives": 0,
+   "trigger_repeated_listings": 0,
+   "unexplained_action_differences": 0
+  }
+ ],
+ "schema": "miaosuan-s28-results/1",
+ "study_id": "s28-t12-o1"
+}

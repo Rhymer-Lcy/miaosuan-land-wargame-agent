@@ -1,0 +1,293 @@
+{
+ "H0": {
+  "census": {
+   "admissibility_of_legal_pairs": {
+    "admissible": 200789,
+    "own_route_hex": 10162,
+    "visible_enemy": 48
+   },
+   "batch_outcomes_unit_decisions": {
+    "dispersed": 22296,
+    "holder": 13346
+   },
+   "first_failing_idle_level_unit_decisions": {
+    "A_stationary": 7776,
+    "B_no_route": 1703,
+    "C_no_transition": 2956,
+    "E_not_suppressed": 790,
+    "F_no_baseline_move": 4,
+    "G_no_baseline_action": 144,
+    "idle": 38077
+   },
+   "legal_reasons_unit_neighbour_pairs": {
+    "legal": 210999,
+    "stack_full": 2853
+   },
+   "objective_decisions": {
+    "centre_two_or_more_ground": 17278,
+    "centre_two_or_more_through_A_stationary": 15096,
+    "centre_two_or_more_through_B_no_route": 14634,
+    "centre_two_or_more_through_C_no_transition": 13716,
+    "centre_two_or_more_through_D_no_transport_transition": 13716,
+    "centre_two_or_more_through_E_not_suppressed": 13388,
+    "centre_two_or_more_through_F_no_baseline_move": 13387,
+    "centre_two_or_more_through_G_no_baseline_action": 13346,
+    "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+    "held_objective_decisions": 52825,
+    "held_objectives": 40,
+    "idle_centre_unit_decisions": 38077,
+    "legal_tier": 13346,
+    "legal_tier_complete": 13346,
+    "legal_unit_decisions": 35642,
+    "trigger": 13346,
+    "trigger_with_a_legal_one_hex_move": 13346,
+    "trigger_with_a_visible_enemy_on_a_neighbour": 24,
+    "trigger_with_an_admissible_destination": 13346,
+    "two_or_more_idle": 13346
+   }
+  },
+  "damage": {
+   "centre_units_damaged_after": 5,
+   "centre_units_damaged_before": 8,
+   "damage_events_after": 7,
+   "damage_events_after_victim_stacked": 7,
+   "damage_events_before": 9
+  },
+  "dispersed_units_distinct": 17,
+  "legal_episode_lengths": {
+   "max": 1626,
+   "median": 74.0,
+   "min": 14,
+   "n": 50
+  },
+  "legal_episodes": 50,
+  "legal_episodes_distinct": 50,
+  "objectives_with_a_legal_episode": 12,
+  "onward": {
+   "claimants": 0,
+   "dispersed_units": 63,
+   "episodes_hold_to_end": 50,
+   "episodes_holder_ordered_off_while_held": 0,
+   "first_owners": 0,
+   "later_lost": 0,
+   "onward_destination_kinds": [],
+   "steps_to_onward_move": {
+    "n": 0
+   },
+   "suppressed_move_decisions": {
+    "max": 0,
+    "median": 0,
+    "min": 0,
+    "n": 63
+   },
+   "with_an_onward_move": 0,
+   "with_other_own_first_owners": 0
+  },
+  "repeated_listings_excluded": {
+   "legal": 13296,
+   "trigger": 13296
+  },
+  "scenario_sides_with_a_legal_episode": 7,
+  "scenario_sides_with_a_trigger_episode": 7,
+  "side_games": 16,
+  "side_games_with_a_legal_episode": 7,
+  "side_games_with_a_trigger_episode": 7,
+  "trigger_episodes": 50,
+  "trigger_episodes_distinct": 50
+ },
+ "HH": {
+  "census": {
+   "admissibility_of_legal_pairs": {
+    "admissible": 137988,
+    "own_route_hex": 24968,
+    "visible_enemy": 5194
+   },
+   "batch_outcomes_unit_decisions": {
+    "dispersed": 19230,
+    "holder": 8795
+   },
+   "first_failing_idle_level_unit_decisions": {
+    "A_stationary": 4763,
+    "B_no_route": 11425,
+    "C_no_transition": 1784,
+    "E_not_suppressed": 200,
+    "G_no_baseline_action": 37,
+    "idle": 29323
+   },
+   "legal_reasons_unit_neighbour_pairs": {
+    "legal": 168150
+   },
+   "objective_decisions": {
+    "centre_two_or_more_ground": 13425,
+    "centre_two_or_more_through_A_stationary": 12243,
+    "centre_two_or_more_through_B_no_route": 9356,
+    "centre_two_or_more_through_C_no_transition": 8849,
+    "centre_two_or_more_through_D_no_transport_transition": 8849,
+    "centre_two_or_more_through_E_not_suppressed": 8798,
+    "centre_two_or_more_through_F_no_baseline_move": 8798,
+    "centre_two_or_more_through_G_no_baseline_action": 8795,
+    "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+    "held_objective_decisions": 36378,
+    "held_objectives": 25,
+    "idle_centre_unit_decisions": 29323,
+    "legal_tier": 8795,
+    "legal_tier_complete": 8795,
+    "legal_unit_decisions": 28025,
+    "trigger": 8795,
+    "trigger_with_a_legal_one_hex_move": 8795,
+    "trigger_with_a_visible_enemy_on_a_neighbour": 1909,
+    "trigger_with_an_admissible_destination": 8795,
+    "two_or_more_idle": 8795
+   }
+  },
+  "damage": {
+   "centre_units_damaged_after": 1,
+   "centre_units_damaged_before": 0,
+   "damage_events_after": 1,
+   "damage_events_after_victim_stacked": 1,
+   "damage_events_before": 0
+  },
+  "dispersed_units_distinct": 7,
+  "legal_episode_lengths": {
+   "max": 1765,
+   "median": 1309.5,
+   "min": 14,
+   "n": 8
+  },
+  "legal_episodes": 8,
+  "legal_episodes_distinct": 6,
+  "objectives_with_a_legal_episode": 6,
+  "onward": {
+   "claimants": 0,
+   "dispersed_units": 9,
+   "episodes_hold_to_end": 8,
+   "episodes_holder_ordered_off_while_held": 0,
+   "first_owners": 0,
+   "later_lost": 4,
+   "onward_destination_kinds": [],
+   "steps_to_onward_move": {
+    "n": 0
+   },
+   "suppressed_move_decisions": {
+    "max": 0,
+    "median": 0,
+    "min": 0,
+    "n": 9
+   },
+   "with_an_onward_move": 0,
+   "with_other_own_first_owners": 0
+  },
+  "repeated_listings_excluded": {
+   "legal": 8787,
+   "trigger": 8787
+  },
+  "scenario_sides_with_a_legal_episode": 1,
+  "scenario_sides_with_a_trigger_episode": 1,
+  "side_games": 4,
+  "side_games_with_a_legal_episode": 2,
+  "side_games_with_a_trigger_episode": 2,
+  "trigger_episodes": 8,
+  "trigger_episodes_distinct": 6
+ },
+ "evidence_boundary": "H0: baseline-v0 trajectories, baseline-v2 reconstructed on them (descriptive unless the recorded prefix equals baseline-v2); HH: genuine baseline-v2 seats, four games of one scenario, two openings. Before a side's first divergence the candidate equals baseline-v2; episodes after it lie on off-policy recorded states and are historical opportunity only. Onward and damage facts are historical labels, not causal estimates.",
+ "inputs_sha256": "ad0d3083c3407e068ceaa0b68c7963313cb44b58846c3bc5284326dd3bdf1419",
+ "pooled": {
+  "census": {
+   "admissibility_of_legal_pairs": {
+    "admissible": 338777,
+    "own_route_hex": 35130,
+    "visible_enemy": 5242
+   },
+   "batch_outcomes_unit_decisions": {
+    "dispersed": 41526,
+    "holder": 22141
+   },
+   "first_failing_idle_level_unit_decisions": {
+    "A_stationary": 12539,
+    "B_no_route": 13128,
+    "C_no_transition": 4740,
+    "E_not_suppressed": 990,
+    "F_no_baseline_move": 4,
+    "G_no_baseline_action": 181,
+    "idle": 67400
+   },
+   "legal_reasons_unit_neighbour_pairs": {
+    "legal": 379149,
+    "stack_full": 2853
+   },
+   "objective_decisions": {
+    "centre_two_or_more_ground": 30703,
+    "centre_two_or_more_through_A_stationary": 27339,
+    "centre_two_or_more_through_B_no_route": 23990,
+    "centre_two_or_more_through_C_no_transition": 22565,
+    "centre_two_or_more_through_D_no_transport_transition": 22565,
+    "centre_two_or_more_through_E_not_suppressed": 22186,
+    "centre_two_or_more_through_F_no_baseline_move": 22185,
+    "centre_two_or_more_through_G_no_baseline_action": 22141,
+    "decisions_with_two_triggered_objectives_sharing_a_neighbour": 0,
+    "held_objective_decisions": 89203,
+    "held_objectives": 65,
+    "idle_centre_unit_decisions": 67400,
+    "legal_tier": 22141,
+    "legal_tier_complete": 22141,
+    "legal_unit_decisions": 63667,
+    "trigger": 22141,
+    "trigger_with_a_legal_one_hex_move": 22141,
+    "trigger_with_a_visible_enemy_on_a_neighbour": 1933,
+    "trigger_with_an_admissible_destination": 22141,
+    "two_or_more_idle": 22141
+   }
+  },
+  "damage": {
+   "centre_units_damaged_after": 6,
+   "centre_units_damaged_before": 8,
+   "damage_events_after": 8,
+   "damage_events_after_victim_stacked": 8,
+   "damage_events_before": 9
+  },
+  "dispersed_units_distinct": 24,
+  "legal_episode_lengths": {
+   "max": 1765,
+   "median": 74.0,
+   "min": 14,
+   "n": 58
+  },
+  "legal_episodes": 58,
+  "legal_episodes_distinct": 56,
+  "objectives_with_a_legal_episode": 18,
+  "onward": {
+   "claimants": 0,
+   "dispersed_units": 72,
+   "episodes_hold_to_end": 58,
+   "episodes_holder_ordered_off_while_held": 0,
+   "first_owners": 0,
+   "later_lost": 4,
+   "onward_destination_kinds": [],
+   "steps_to_onward_move": {
+    "n": 0
+   },
+   "suppressed_move_decisions": {
+    "max": 0,
+    "median": 0.0,
+    "min": 0,
+    "n": 72
+   },
+   "with_an_onward_move": 0,
+   "with_other_own_first_owners": 0
+  },
+  "repeated_listings_excluded": {
+   "legal": 22083,
+   "trigger": 22083
+  },
+  "scenario_sides_with_a_legal_episode": 7,
+  "scenario_sides_with_a_trigger_episode": 7,
+  "side_games": 20,
+  "side_games_with_a_legal_episode": 9,
+  "side_games_with_a_trigger_episode": 9,
+  "trigger_episodes": 58,
+  "trigger_episodes_distinct": 56
+ },
+ "protocol_sha256": "3c720145cdb1621dac7304b27c4a711a0d03fe8e3d9d37716b58fe6edecdb449",
+ "schema": "miaosuan-s28-results/1",
+ "study_id": "s28-t12-o1"
+}

@@ -1,0 +1,147 @@
+{
+ "disposition": "T12_O1_INADEQUATE_OPPORTUNITY",
+ "fidelity_ok": true,
+ "inputs_sha256": "ad0d3083c3407e068ceaa0b68c7963313cb44b58846c3bc5284326dd3bdf1419",
+ "integrity_ok": true,
+ "interaction": {
+  "H0": {
+   "I1_tactical_isolation": false,
+   "I2_holder_ordered_off": false,
+   "I3_partial_dispersion": false,
+   "claimant_units": 0,
+   "dispersed_units": 63,
+   "distinct_legal_episodes": 50,
+   "episodes_holder_ordered_off_while_held": 0,
+   "episodes_partial_dispersion": 0,
+   "first_owner_units": 0
+  },
+  "HH": {
+   "I1_tactical_isolation": false,
+   "I2_holder_ordered_off": false,
+   "I3_partial_dispersion": false,
+   "claimant_units": 0,
+   "dispersed_units": 7,
+   "distinct_legal_episodes": 6,
+   "episodes_holder_ordered_off_while_held": 0,
+   "episodes_partial_dispersion": 0,
+   "first_owner_units": 0
+  },
+  "met": {
+   "I1_tactical_isolation": false,
+   "I2_holder_ordered_off": false,
+   "I3_partial_dispersion": false
+  },
+  "pooled": {
+   "I1_tactical_isolation": false,
+   "I2_holder_ordered_off": false,
+   "I3_partial_dispersion": false,
+   "claimant_units": 0,
+   "dispersed_units": 70,
+   "distinct_legal_episodes": 56,
+   "episodes_holder_ordered_off_while_held": 0,
+   "episodes_partial_dispersion": 0,
+   "first_owner_units": 0
+  }
+ },
+ "interaction_criteria_met": [],
+ "legality_gate_met": true,
+ "opportunity_stop_met": true,
+ "protocol_sha256": "3c720145cdb1621dac7304b27c4a711a0d03fe8e3d9d37716b58fe6edecdb449",
+ "readiness_risks": {
+  "H0": {
+   "R1_stationary_stacks_without_a_dispersal": {
+    "objective_decisions_two_or_more_stationary": 15096,
+    "reasons": {
+     "fewer than two idle units": 1750,
+     "stationary unit failing B_no_route": 1661,
+     "stationary unit failing C_no_transition": 1915,
+     "stationary unit failing E_not_suppressed": 357,
+     "stationary unit failing F_no_baseline_move": 4,
+     "stationary unit failing G_no_baseline_action": 59
+    },
+    "with_a_dispersal": 13346,
+    "without": 1750
+   },
+   "R2_holder_selection": "deterministic by construction; holder departures under baseline-v2 are criterion I2",
+   "R3_same_step_conflicts_unit_decisions": 0,
+   "R4_onward_moves": "criterion I1 (claimants) and the first-owner counts",
+   "R5_adjacency_denial": "unresolved offline by construction: the published capture rule has not been tested with a held objective whose centre is empty while own units stand next to it",
+   "R6_first_divergences": {
+    "prefix_supported": 0,
+    "side_games_with_one": 7
+   }
+  },
+  "HH": {
+   "R1_stationary_stacks_without_a_dispersal": {
+    "objective_decisions_two_or_more_stationary": 12243,
+    "reasons": {
+     "fewer than two idle units": 3448,
+     "stationary unit failing B_no_route": 11345,
+     "stationary unit failing C_no_transition": 910,
+     "stationary unit failing E_not_suppressed": 53,
+     "stationary unit failing G_no_baseline_action": 5
+    },
+    "with_a_dispersal": 8795,
+    "without": 3448
+   },
+   "R2_holder_selection": "deterministic by construction; holder departures under baseline-v2 are criterion I2",
+   "R3_same_step_conflicts_unit_decisions": 0,
+   "R4_onward_moves": "criterion I1 (claimants) and the first-owner counts",
+   "R5_adjacency_denial": "unresolved offline by construction: the published capture rule has not been tested with a held objective whose centre is empty while own units stand next to it",
+   "R6_first_divergences": {
+    "prefix_supported": 2,
+    "side_games_with_one": 2
+   }
+  }
+ },
+ "schema": "miaosuan-s28-results/1",
+ "stops": {
+  "h0_readings": {
+   "average_reading_met": false,
+   "each_side_game_reading_met": true,
+   "h0_side_games": 16,
+   "trigger_episodes_by_h0_side_game": {
+    "H0 1910631192 blue": 1,
+    "H0 1910631192 red": 0,
+    "H0 1930331196 blue": 0,
+    "H0 1930331196 red": 2,
+    "H0 2010131194 blue": 1,
+    "H0 2010131194 red": 0,
+    "H0 2010211129 blue": 3,
+    "H0 2010211129 red": 0,
+    "H0 201033019601 blue": 0,
+    "H0 201033019601 red": 0,
+    "H0 2010431153 blue": 7,
+    "H0 2010431153 red": 0,
+    "H0 2120531121 blue": 7,
+    "H0 2120531121 red": 0,
+    "H0 2130511121 blue": 29,
+    "H0 2130511121 red": 0
+   },
+   "use": "reported only; not part of the disposition"
+  },
+  "legality_gate": {
+   "legal_episodes_by_hh_side_game": {
+    "HH p01 baseline-v2 blue": 5,
+    "HH p02 baseline-v2 red": 0,
+    "HH p03 baseline-v2 blue": 3,
+    "HH p04 baseline-v2 red": 0
+   },
+   "met": true,
+   "rule": "met when any of the four HH side-games has no distinct legal-tier episode"
+  },
+  "opportunity_stop": {
+   "hh_side_games": 4,
+   "met": true,
+   "rule": "met when any of the four HH side-games has fewer than one distinct trigger episode, or the HH side-games are not all present",
+   "trigger_episodes_by_hh_side_game": {
+    "HH p01 baseline-v2 blue": 5,
+    "HH p02 baseline-v2 red": 0,
+    "HH p03 baseline-v2 blue": 3,
+    "HH p04 baseline-v2 red": 0
+   }
+  }
+ },
+ "study_id": "s28-t12-o1",
+ "unexplained_action_differences": 0
+}

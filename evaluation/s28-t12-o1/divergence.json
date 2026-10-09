@@ -1,0 +1,229 @@
+{
+ "certificates": [
+  {
+   "baseline_actions_preserved": true,
+   "decision": 878,
+   "decisions_before_identical": 878,
+   "destinations_distinct": 1,
+   "destinations_empty_before": 1,
+   "dispersed_units": 1,
+   "holder_retained": true,
+   "idle_centre_units": [
+    2
+   ],
+   "no_baseline_action_for_dispersed_units": true,
+   "objective_held": true,
+   "objectives": [
+    "50-point objective A"
+   ],
+   "on_policy_baseline_v2_witness": false,
+   "only_registered_moves_added": true,
+   "population": "H0",
+   "prefix_supported": false,
+   "side_game": "H0 1910631192 blue",
+   "step": 877
+  },
+  {
+   "baseline_actions_preserved": true,
+   "decision": 2738,
+   "decisions_before_identical": 2738,
+   "destinations_distinct": 1,
+   "destinations_empty_before": 1,
+   "dispersed_units": 1,
+   "holder_retained": true,
+   "idle_centre_units": [
+    2
+   ],
+   "no_baseline_action_for_dispersed_units": true,
+   "objective_held": true,
+   "objectives": [
+    "80-point objective B"
+   ],
+   "on_policy_baseline_v2_witness": false,
+   "only_registered_moves_added": true,
+   "population": "H0",
+   "prefix_supported": false,
+   "side_game": "H0 1930331196 red",
+   "step": 2737
+  },
+  {
+   "baseline_actions_preserved": true,
+   "decision": 396,
+   "decisions_before_identical": 396,
+   "destinations_distinct": 1,
+   "destinations_empty_before": 1,
+   "dispersed_units": 1,
+   "holder_retained": true,
+   "idle_centre_units": [
+    2
+   ],
+   "no_baseline_action_for_dispersed_units": true,
+   "objective_held": true,
+   "objectives": [
+    "50-point objective A"
+   ],
+   "on_policy_baseline_v2_witness": false,
+   "only_registered_moves_added": true,
+   "population": "H0",
+   "prefix_supported": false,
+   "side_game": "H0 2010131194 blue",
+   "step": 395
+  },
+  {
+   "baseline_actions_preserved": true,
+   "decision": 397,
+   "decisions_before_identical": 397,
+   "destinations_distinct": 1,
+   "destinations_empty_before": 1,
+   "dispersed_units": 1,
+   "holder_retained": true,
+   "idle_centre_units": [
+    2
+   ],
+   "no_baseline_action_for_dispersed_units": true,
+   "objective_held": true,
+   "objectives": [
+    "80-point objective A"
+   ],
+   "on_policy_baseline_v2_witness": false,
+   "only_registered_moves_added": true,
+   "population": "H0",
+   "prefix_supported": false,
+   "side_game": "H0 2010211129 blue",
+   "step": 396
+  },
+  {
+   "baseline_actions_preserved": true,
+   "decision": 598,
+   "decisions_before_identical": 598,
+   "destinations_distinct": 1,
+   "destinations_empty_before": 1,
+   "dispersed_units": 1,
+   "holder_retained": true,
+   "idle_centre_units": [
+    2
+   ],
+   "no_baseline_action_for_dispersed_units": true,
+   "objective_held": true,
+   "objectives": [
+    "80-point objective A"
+   ],
+   "on_policy_baseline_v2_witness": false,
+   "only_registered_moves_added": true,
+   "population": "H0",
+   "prefix_supported": false,
+   "side_game": "H0 2010431153 blue",
+   "step": 597
+  },
+  {
+   "baseline_actions_preserved": true,
+   "decision": 737,
+   "decisions_before_identical": 737,
+   "destinations_distinct": 1,
+   "destinations_empty_before": 1,
+   "dispersed_units": 1,
+   "holder_retained": true,
+   "idle_centre_units": [
+    2
+   ],
+   "no_baseline_action_for_dispersed_units": true,
+   "objective_held": true,
+   "objectives": [
+    "80-point objective A"
+   ],
+   "on_policy_baseline_v2_witness": false,
+   "only_registered_moves_added": true,
+   "population": "H0",
+   "prefix_supported": false,
+   "side_game": "H0 2120531121 blue",
+   "step": 736
+  },
+  {
+   "baseline_actions_preserved": true,
+   "decision": 1280,
+   "decisions_before_identical": 1280,
+   "destinations_distinct": 2,
+   "destinations_empty_before": 2,
+   "dispersed_units": 2,
+   "holder_retained": true,
+   "idle_centre_units": [
+    3
+   ],
+   "no_baseline_action_for_dispersed_units": true,
+   "objective_held": true,
+   "objectives": [
+    "80-point objective B"
+   ],
+   "on_policy_baseline_v2_witness": false,
+   "only_registered_moves_added": true,
+   "population": "H0",
+   "prefix_supported": false,
+   "side_game": "H0 2130511121 blue",
+   "step": 1279
+  },
+  {
+   "baseline_actions_preserved": true,
+   "decision": 1227,
+   "decisions_before_identical": 1227,
+   "destinations_distinct": 2,
+   "destinations_empty_before": 2,
+   "dispersed_units": 2,
+   "holder_retained": true,
+   "idle_centre_units": [
+    3
+   ],
+   "no_baseline_action_for_dispersed_units": true,
+   "objective_held": true,
+   "objectives": [
+    "50-point objective C"
+   ],
+   "on_policy_baseline_v2_witness": true,
+   "only_registered_moves_added": true,
+   "population": "HH",
+   "prefix_supported": true,
+   "side_game": "HH p01 baseline-v2 blue",
+   "step": 1226
+  },
+  {
+   "baseline_actions_preserved": true,
+   "decision": 1116,
+   "decisions_before_identical": 1116,
+   "destinations_distinct": 1,
+   "destinations_empty_before": 1,
+   "dispersed_units": 1,
+   "holder_retained": true,
+   "idle_centre_units": [
+    2
+   ],
+   "no_baseline_action_for_dispersed_units": true,
+   "objective_held": true,
+   "objectives": [
+    "80-point objective A"
+   ],
+   "on_policy_baseline_v2_witness": true,
+   "only_registered_moves_added": true,
+   "population": "HH",
+   "prefix_supported": true,
+   "side_game": "HH p03 baseline-v2 blue",
+   "step": 1115
+  }
+ ],
+ "evidence_boundary": "H0: baseline-v0 trajectories, baseline-v2 reconstructed on them (descriptive unless the recorded prefix equals baseline-v2); HH: genuine baseline-v2 seats, four games of one scenario, two openings. Before a side's first divergence the candidate equals baseline-v2; episodes after it lie on off-policy recorded states and are historical opportunity only. Onward and damage facts are historical labels, not causal estimates.",
+ "inputs_sha256": "ad0d3083c3407e068ceaa0b68c7963313cb44b58846c3bc5284326dd3bdf1419",
+ "protocol_sha256": "3c720145cdb1621dac7304b27c4a711a0d03fe8e3d9d37716b58fe6edecdb449",
+ "schema": "miaosuan-s28-results/1",
+ "side_games_without_divergence": [
+  "H0 1910631192 red",
+  "H0 1930331196 blue",
+  "H0 2010131194 red",
+  "H0 2010211129 red",
+  "H0 201033019601 red",
+  "H0 201033019601 blue",
+  "H0 2010431153 red",
+  "H0 2120531121 red",
+  "H0 2130511121 red",
+  "HH p02 baseline-v2 red",
+  "HH p04 baseline-v2 red"
+ ],
+ "study_id": "s28-t12-o1"
+}
