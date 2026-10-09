@@ -23,8 +23,8 @@ item H1, restated with the Sprint 30 owner brief):
   ``move_to_stop_remain_time`` and ``change_state_remain_time`` not positive); ``D_no_transport_transition``
   (``get_on_remain_time`` and ``get_off_remain_time`` not positive); ``E_single_departing_move`` (``baseline-v2`` emits
   exactly one action for it, a MOVE with a non-empty route of integer hexes that does not end on the centre). Levels A
-  to D are Sprint 28's idle levels of the same names (``experiments/t12_dispersion_shadow.py``), restated here so that
-  the candidate's source set holds no analysis module; a missing field counts as not positive and not 0, the observed
+  to D are Sprint 28's idle levels of the same names (``docs/SPRINT28_T12_O1.md``), restated here so that the
+  candidate's source set holds no analysis module; a missing field counts as not positive and not 0, the observed
   absence of a transition.
 * **Selection.** Among the eligible holders, the one with the longest free-flow travel time of its ``baseline-v2`` MOVE
   (the sum along the MOVE's route of the per-hex times of ``experiments.t9_batch.path_times``: ``720 / basic_speed *
