@@ -1,0 +1,86 @@
+{
+ "baseline_v2_policy_source_sha256": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
+ "candidate": "t6s-column-stagger-p1",
+ "candidate_policy_source_sha256": "9d74eb78208ff7ad10b33b3974f2831754122dba2bff1684177d6fbd4b44e29e",
+ "card_canonical_sha256": "05a70944b8ad42d7f2cecc606e8a1c9d5fee9f3b990d8cdb53e80d2b5f576d85",
+ "card_id": "s27-t6s-probe-1",
+ "expected_sessions": [
+  2797,
+  2798
+ ],
+ "hh_pins": [
+  {
+   "game": "2130511121.H1.s12-v3-primary-1.p01",
+   "record": {
+    "file": "local/evaluation/s12-v3-primary-1/games/2130511121.H1.s12-v3-primary-1.p01.json",
+    "sha256": "34bc35a81254bf209d8be4d8d6641c7900345054f7ea5d3ccf46f9b4c5ac37b7"
+   },
+   "timeline": {
+    "file": "local/evaluation/s12-v3-primary-1/capture/2130511121.H1.s12-v3-primary-1.p01.timeline.pkl",
+    "sha256": "e538388b4fb2758497041293c06f3029c9a50863ef019e2d647f43e5644def2b"
+   },
+   "timeline_index": {
+    "file": "local/evaluation/s12-v3-primary-1/capture/2130511121.H1.s12-v3-primary-1.p01.timeline.json",
+    "sha256": "5ff0c1f76260d11969b26bbee790ee5468d1ec6b673a0a2a737cfb32fb47f3f2"
+   }
+  },
+  {
+   "game": "2130511121.H2.s12-v3-primary-1.p02",
+   "record": {
+    "file": "local/evaluation/s12-v3-primary-1/games/2130511121.H2.s12-v3-primary-1.p02.json",
+    "sha256": "598796293456d75b5ece4232a939ff8cdd8f75ed2d613677c35a5c3c54fec30c"
+   },
+   "timeline": {
+    "file": "local/evaluation/s12-v3-primary-1/capture/2130511121.H2.s12-v3-primary-1.p02.timeline.pkl",
+    "sha256": "998c2b0bbf76b073d3dd3bb6b0216e8655a1f533b26f182cac421ec4ce171732"
+   },
+   "timeline_index": {
+    "file": "local/evaluation/s12-v3-primary-1/capture/2130511121.H2.s12-v3-primary-1.p02.timeline.json",
+    "sha256": "b74a61967fa63b1f7b7d5d26d04f2d1fe34b0878b85fdacd0b00086d4ee4fabf"
+   }
+  },
+  {
+   "game": "2130511121.H1.s12-v3-primary-1.p03",
+   "record": {
+    "file": "local/evaluation/s12-v3-primary-1/games/2130511121.H1.s12-v3-primary-1.p03.json",
+    "sha256": "17d9b1ffa5dba84a7ddde32b003a4194cc269e57137f8c9e3b9d69eb74aaad15"
+   },
+   "timeline": {
+    "file": "local/evaluation/s12-v3-primary-1/capture/2130511121.H1.s12-v3-primary-1.p03.timeline.pkl",
+    "sha256": "1279b5b8983f0ac602a45004483b2716b722b65fe9fcbe29c0640348574a0b87"
+   },
+   "timeline_index": {
+    "file": "local/evaluation/s12-v3-primary-1/capture/2130511121.H1.s12-v3-primary-1.p03.timeline.json",
+    "sha256": "d54456228e8ca2e37f9c602c9a6e1379cdb698d9624e13d7cd1156de2673fdbe"
+   }
+  },
+  {
+   "game": "2130511121.H2.s12-v3-primary-1.p04",
+   "record": {
+    "file": "local/evaluation/s12-v3-primary-1/games/2130511121.H2.s12-v3-primary-1.p04.json",
+    "sha256": "50ccb5eaab67c339245bafe3cbd23a1adef725db78c7d1bbe3b7474e73d47c8a"
+   },
+   "timeline": {
+    "file": "local/evaluation/s12-v3-primary-1/capture/2130511121.H2.s12-v3-primary-1.p04.timeline.pkl",
+    "sha256": "114b25417a37989737989c833220eed6fda84d3b2f0211af2533e92fbea65d7b"
+   },
+   "timeline_index": {
+    "file": "local/evaluation/s12-v3-primary-1/capture/2130511121.H2.s12-v3-primary-1.p04.timeline.json",
+    "sha256": "9798694150d91ad297460f5aaccfbe3e66e4d5ec95aa2a5a0d8f628eeb666bff"
+   }
+  }
+ ],
+ "ledger_base_session": 2796,
+ "references_sha256": "d44c64b1963bae4d2101633bfeb96f565f5b7841754b1235ef33aa77c4cad406",
+ "rehearsal_sha256": "d7ece5b0fecbb510614d66105761b1ef74b02db7d5b47bd4fe612cb2cce289b4",
+ "rules_sha256": "b6c09ea25760b34d95cb73bddeab4280ddb4a4dea5004690cef9ada82ace112c",
+ "schema": "miaosuan-s27-probe/1/inputs",
+ "sprint26_census_sha256": "300a23eab38bfe14164ee171090fda0a7a220507d7a00faadfadf30c6af53b16",
+ "sprint26_inputs_sha256": "a73f86ebce0aa5716286ca0ef87428a2c76e3c0db732dfcd1036031b156a8cce",
+ "sprint26_protocol_sha256": "85ab686de16a335dfaf343d62e12f3266f591fd42b1db38b3c1be14c1cfe8f75",
+ "stages": {
+  "A": 1,
+  "B": 2
+ },
+ "study_id": "s27-t6s-probe"
+}
