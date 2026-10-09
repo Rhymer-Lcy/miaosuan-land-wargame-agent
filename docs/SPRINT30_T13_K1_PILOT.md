@@ -127,3 +127,196 @@ C3 (blue) and 2130511121 C1 (both seats), and writes `evaluation/s30-t13-k1/cont
 attack, remain and total values and the margin (the seat's total minus the opponent's, checked against the engine's
 own margin field), with minimum, maximum and mean. The pilot's thresholds (section 6) are read from that file, never
 typed from memory.
+
+## 6. Pilot card: not registered
+
+The preflight's stop fired (section 7), so no pilot card was built, no candidate digest was pinned in a run card, the
+pilot's harm stops and dispositions were never registered, and no engine session was opened. The draft full-step
+observer for the pilot (a seat-local reconstruction of every decision of both seats, after Sprint 27's) was not
+committed; it is kept privately for a later pilot.
+
+## Amendment A1 (after the preflight run)
+
+After the preflight had run, the full workstation suite failed one test: Sprint 28's frozen identity test allows only
+Sprint 28's own files to name its shadow module, and the candidate's docstring named that module (where section 3 cites
+Sprint 28's idle levels), as did the candidate test that compared the two. Sprint 28's test is not edited, and neither
+are sections 1 to 5. The correction:
+
+* the candidate's docstring cites Sprint 28's report instead of the module path; nothing else in the file changed (the
+  module's syntax trees with every docstring removed are identical before and after);
+* the candidate test compares the four level names, their order and the transition fields with Sprint 28's registered
+  `evaluation/s28-t12-o1/protocol.json`, and checks each level's boundary on the same cases with the expected level
+  written out, instead of importing Sprint 28's module; "a test compares the two" in section 3 refers to this test;
+* the candidate's file digest is pinned in the preflight inputs, so the inputs were frozen again (one line changed:
+  that digest) and the preflight was run again. Both public files are identical to the first run's apart from the
+  inputs digest they carry, the private rows are byte-identical, and the disposition is unchanged. The mutation record
+  was regenerated on the amended sources.
+
+The first run's outputs are kept privately. The candidate's policy source (`baseline-v2`'s 22 files, the add-on wrapper,
+`experiments/t9_batch.py` and the candidate module) is
+`56f3f147cb8ef23ef37e6ed815357b57d5882591079eec489d6affd3d9072b21` after the amendment
+(`2b04907f8f667b5eb80c36112a71ef8ee1a114850b03b65244062e395d08e6e6` before); it was never pinned in a run card. Process
+lesson: the targeted policy tests run before the registration push did not include Sprint 28's identity test; the full
+suite runs before any registration push.
+
+## 7. Preflight results (2026-10-10)
+
+Every figure in R1 to R5 is read from the committed `evaluation/s30-t13-k1/preflight.json` and `controls.json`, which
+`scripts/s30_preflight.py run --check` regenerates byte for byte on the evaluation server; R6 is post hoc and labelled.
+
+### R1. Order of work
+
+Sections 1 to 5, the candidate, the preflight rules and driver, their tests and the frozen inputs were pushed on the
+branch at 2026-10-10T02:20:36+08:00 (`87a93ac8c1ea1f9eed6a632f45b4a2158488a042`). The evaluation server's worktree was
+fast-forwarded to that commit and the preflight was run once (8 worker processes on node 0); a second run with
+`--check` reproduced both public files and the private rows byte for byte. No definition, threshold or stop was changed
+after the run. Amendment A1 then re-froze the inputs and repeated the run with identical results apart from the
+inputs digest; the committed files are the repeated run's.
+
+### R2. Fidelity
+
+All anchors are reproduced exactly: H0 33,696 decisions, 33,680 play decisions and 123 decisions where reconstructed
+`baseline-v2` differs from the record; HH 11,524 and HI 8,643 decisions, every one equal to the recorded seat; 16, 4
+and 3 side-games. The independent restatement of the rule found nothing at any decision of any side-game (0 findings):
+every withholding the candidate made was explained, and no trigger with an eligible holder was missed.
+
+### R3. What the rule found, by population
+
+Counts are objective-decisions (one held objective at one play decision of one side) unless stated otherwise.
+
+| | HH | HI | H0 |
+|---|---:|---:|---:|
+| side-games | 4 | 3 | 16 |
+| no own ground unit on the centre | 20,074 | 20,677 | 31,186 |
+| an occupant remains (no change) | 10,544 | 13,149 | 16,959 |
+| every occupant already moving (uncovered) | 5,637 | 838 | 4,541 |
+| every occupant departing, none eligible | 123 | 43 | 137 |
+| withheld | 0 | 0 | 2 |
+| departure episodes | 66 | 21 | 78 |
+| of which first outcome: none eligible | 66 | 21 | 75 |
+| of which first outcome: every occupant already moving | 0 | 0 | 1 |
+| of which first outcome: withheld | 0 | 0 | 2 |
+| ordered occupants, failing level `C_no_transition` (objective-decisions summed) | 199 | 73 | 239 |
+| ordered occupants, eligible (objective-decisions summed) | 0 | 0 | 6 |
+| side-games with a first divergence | 0 | 0 | 1 |
+| valid first divergences, verified opportunities | 0 | 0 | 0 |
+
+The genuine side-games one by one (departure episodes; objective-decisions with every occupant departing and none
+eligible): HH p01 `baseline-v2` blue 19 and 38, p02 red 11 and 19, p03 blue 16 and 35, p04 red 20 and 31; HI
+1930331196 C2 red 7 and 18, 1930331196 C3 blue 9 and 10, 2120531121 C3 blue 5 and 15. None has a first divergence.
+
+H0's only first divergence (2130511121 red, step 803, two withholdings on the record) lies after that seat's recorded
+`baseline-v0` actions first differ from `baseline-v2`'s, so it is not a valid action-level fact.
+
+### R4. Disposition: `K1_PREFLIGHT_INADEQUATE`
+
+No verified first-divergence opportunity among the HH red side-games, none among the HH blue side-games, and none in any
+HI configuration, so no inert configuration could be selected. Under the frozen stop **no engine session was opened**:
+the ledger still ends at session 2797 and session 2798 is unopened. The pilot's dispositions (`H1_PILOT_INVALID`,
+`H1_PILOT_REJECT`, `H1_PILOT_INCONCLUSIVE`, `H1_PILOT_PROMISING`) were never reached: the pilot did not start, and this
+is not a four-game result of any kind.
+
+### R5. Historical controls (descriptive; no pilot read them)
+
+| Configuration (`baseline-v2` seat) | Occupy over 15 games | Margin minimum | Margin mean | Margin maximum |
+|---|---|---:|---:|---:|
+| 2120531121 C3 blue (inert opponent) | 310 in all 15 | 559 | 1765/3 | 599 |
+| 1930331196 C2 red (inert opponent) | 310 in all 15 | 258 | 4094/15 | 274 |
+| 1930331196 C3 blue (inert opponent) | 310 in all 15 | 570 | 570 | 570 |
+| 2130511121 C1 red (mirror) | 0 in 9, 50 in 6 | -1,055 | -13049/15 | -719 |
+| 2130511121 C1 blue (mirror) | 390 in 6, 440 in 9 | 719 | 13049/15 | 1,055 |
+
+The mirror margin's standard deviation is 114.66 (sample) and 110.78 (population); Sprint 29 printed it as 115. Margins
+equal the engine's own margin field in every record.
+
+### R6. Why no holder was eligible (post hoc, read after the disposition; changes nothing)
+
+`local/diagnostics/s30/posthoc.py` re-read the same pinned populations and, at the start of every departure episode
+with no eligible holder, looked at each occupant `baseline-v2` ordered off the centre:
+
+| | HH | HI | H0 |
+|---|---:|---:|---:|
+| ordered occupants at those episode starts | 110 | 38 | 135 |
+| failing level `C_no_transition` | 110 | 38 | 135 |
+| of which `stop` flag 0 and `move_to_stop_remain_time` positive | 110 | 38 | 135 |
+| of which `change_state_remain_time` positive | 0 | 0 | 0 |
+| remaining stop transition, median (minimum to maximum), steps | 74 (17 to 75) | 75 (73 to 75) | 74 (4 to 75) |
+| steps since arriving on the centre, median (maximum) | 1 (58) | 0 (2) | 1 (71) |
+| the side's flag on that centre turned to its colour during the unit's stay | 71 | 17 | 105 |
+
+So `baseline-v2` sends its units onward the moment they stand on an objective it holds, usually within a step of arrival
+and often after their own arrival had captured it (last row), while every one of them is still in the 75-step stop
+transition that follows a move. A unit that has completed that transition on a held objective is one `baseline-v2` is
+not ordering away: those objectives fall under "an occupant remains". Under the brief's requirement of "no pending
+movement or stop transition", the eligibility clause and the departures that lose objectives are mutually exclusive in
+every population examined.
+
+**Counterfactual reading, post hoc only**: if a unit with no route whose only transition is the stop transition were
+an eligible holder (a state change would still disqualify), the same rule would have its first divergence at a valid
+prefix in all four HH side-games (blue at step 161 on the 50-point objective A in p01 and p03; red at step 401 on the
+50-point objective D in p02 and p04; withholding decisions on the record: p01 31, p02 17, p03 28, p04 28) and in all
+three HI configurations (1930331196 C2 at step 361, 2120531121 C3 at step 341, 1930331196 C3 at step 521), and at a
+first divergence in 10 H0 side-games, 4 of them valid. These are opportunity counts on recorded states, not effects.
+Engine evidence on the mechanism such a reading would rely on is limited to one vehicle in one game: in Sprint 22's
+session 2796 the carrier's `baseline-v2` MOVE was withheld for 75 decisions after its arrival, while it settled, and
+it stayed on its destination (`docs/SPRINT22_T2_TRANSPORT_PROBE.md`).
+
+### R7. Tests and mutation
+
+* Candidate tests (`tests/test_t13_keep_one_k1.py`, 32 tests): the trigger and each objective outcome, every
+  eligibility level at its boundary, missing fields, unheld objectives, the non-play stage, selection by travel time,
+  its tie rule and unreadable times, two objectives at one decision, artillery, infantry, aircraft, enemies and
+  passengers, unchanged inputs and action order, malformed observations and the fail-closed wrapper, the registered
+  travel relation, the executable policy with the real `baseline-v2` in a held-objective stand-in world
+  (`tests/fixtures/s30_engine.py`), identity, imports, and the restatement of Sprint 28's idle levels.
+* Preflight tests (`tests/test_s30_preflight.py`, 13 tests), results binding (`tests/test_s30_results.py`, 6 tests)
+  and the server regeneration test (`tests/test_real_s30.py`).
+* Mutation (`scripts/mutate_s30.py`, record `evaluation/s30-t13-k1/mutation.json`): the first run caught 30 of 31
+  planted defects; the survivor (infantry not counted as an occupant) was a test gap, closed by a test; the final run
+  on the committed tests caught 31 of 31 after the unmutated tests passed in the copy.
+* While building the preflight, review before the run caught three public texts with words made only of digits (the
+  sanitizer would have refused them) and per-side episode lists that could exceed the public size limit; three test
+  plants were found ineffective by their own failing tests and corrected. After the run, a commit order in which one
+  test expected a file added two commits later was re-cut before any push, and every re-cut commit was tested.
+
+### R8. Evidence limits
+
+The genuine populations are seven side-games in three scenarios; HH's opponent was the T9-v3 candidate, not
+`baseline-v2`. The preflight measures whether the frozen rule can act, not whether a garrison helps. Nothing here
+estimates a score effect; nothing is promoted or uploaded.
+
+### R9. Close-out
+
+* **Engine**: no session was opened. Read-only verify on the evaluation server after the work: 2,797 sessions opened
+  and closed, none unclosed, integrity ok, state chain continuous, the last event the close of session 2797; ledger file
+  SHA-256 `70ae38f21e0ac2c0d9c2772a8fe73b5b3a6dbdcc8f4e62af8dbc4443d4df8036`, unchanged. No installation, state file or
+  engine configuration was touched.
+* **Platform canary**: rebuilt from this branch into a scratch folder,
+  `a3d3b0229118c0a389d379b315a620465624222f93fcf39de115e8e9dde59511`, isolated smoke 62 steps with 0 mismatches; the
+  shared checkout's copy has the same digest. This sprint changed neither the package, its builder nor the adapter.
+* **Tests**: the workstation suite in this branch's worktree (which has no ignored private folders, so more tests
+  skip) ran 2,427 tests, 114 skipped, exit 0. On the server the Sprint 30 tests, Sprint 28's shadow tests and the
+  documentation-policy tests ran 99 tests, OK, including the byte-for-byte regeneration of the preflight. The
+  multi-hour private server suite was not rerun: apart from documentation, the sprint added files and amended only its
+  own candidate's docstring.
+* **Document check** (`local/diagnostics/s30/doc_check.py`): every anchored clause and table row rebuilt from the
+  committed files, the private post-hoc output and the logs; every number printed here derived or declared; 10 of 10
+  planted single-number errors caught.
+* **Privacy**: the scan of every reachable blob before each push is compared as a multiset with the 106 accepted hit
+  lines; the results are in the hand-over and in the private logs.
+* **Concurrent work**: the platform-compatibility changes in the shared checkout (two modified files) and its server
+  folder were not touched; the server checkout stayed on `main` at `08aff3f`, clean; `main` was not changed on
+  GitHub. Only the branch `sprint30-t13-k1` was pushed. Its final head, identical on the workstation, GitHub and the
+  server, is given in the hand-over; the server worktree is removed after that check, and the private evidence stays
+  under the ignored `local/` folders.
+
+### R10. Recommended next task (one)
+
+**The owner's decision on the stop transition, then this preflight on a new identity before any engine use.** The
+question Sprint 30 leaves open belongs to the owner: may a unit with no route whose only transition is the stop
+transition that follows a move (stop flag 0, `move_to_stop_remain_time` positive) be kept as the holder? If yes, a new
+candidate T13-K2 differs from K1 only in level C (a state change still disqualifies), gets its own identity, and is run
+through this sprint's frozen preflight unchanged before any session; R6's post-hoc count suggests valid first
+divergences in all seven genuine side-games, but only the rerun counts. If it passes, the four-game pilot of this brief
+follows under a new authorization, with its card, harm stops and dispositions written before session 2798. If no,
+T13-K1 stays not run.
