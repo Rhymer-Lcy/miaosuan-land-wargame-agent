@@ -318,6 +318,13 @@ T1 would score 4.20, still above T7. This is a research priority, not evidence t
     T12_O1_INADEQUATE_OPPORTUNITY, nothing promoted. The owner also set a standing CPU policy for the shared server
     (`docs/SERVER_RESOURCE_POLICY.md`). Next: the registration of Sprint 24's next-ranked increment, T7-C's
     controlled concealment-exit diagnostic, for the owner's approval; no engine use before it.
+29. **Done (Sprint 29)**: platform first (`docs/SPRINT29_PLATFORM_FIRST.md`), no engine session. The owner changed the
+    priority: the frozen canary was re-verified (byte-identical rebuilds on both hosts, isolated smoke and replay corpus
+    under CPython 3.10.20, an independent verifier) and handed over for a manual AI-code test slot upload, with an
+    intake format for platform games. The T7-E3b diagnostic was not run. A decision-level diagnosis found the largest
+    controllable loss in objectives `baseline-v2` vacates itself (it never leaves a garrison) and proposed at most three
+    live candidates: keep-one holder (T13-K1, recommended), stop to engage (T7-B1) and carry to garrison (T2-G1), with a
+    two-stage exploratory screen of 20 sessions for the owner's approval. Nothing was implemented, played or promoted.
 
 A tactic that earns ADVANCE gets a confirmatory design sized from its screen's noise; one that does not is recorded
 with its disposition and left. Platform evidence runs alongside: the canary first, then each candidate that a local
@@ -344,7 +351,8 @@ screen supports.
   `a3d3b0229118c0a389d379b315a620465624222f93fcf39de115e8e9dde59511`, byte-identical when built on the workstation and
   on the server; the packaged agent's actions equal the repository agent's on synthetic games and on all 33,696 steps
   of the 8-game replay corpus under CPython 3.10.20 with NumPy 1.26.2. The upload is a manual step on the platform;
-  nothing is uploaded from this repository.
+  nothing is uploaded from this repository. Re-verified on 2026-10-09 (Sprint 29) and handed over with the intake format
+  of `docs/SPRINT29_PLATFORM_FIRST.md`, section 4; still no platform test.
 * For each meaningful platform loss, a failure ledger entry: deployment, reconnaissance, movement, fire allocation,
   indirect fire, transport, objective timing, survival, special equipment, or unknown. Repeated patterns become
   preregistered hypotheses; nothing is patched silently after a loss.
