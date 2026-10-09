@@ -159,6 +159,10 @@ Sprint 26's registered offline shadow of the runner-up, a stacked-column stagger
 engine session), found `baseline-v2` sending stacked columns along identical routes under visible threat repeatedly,
 and the frozen rule (hold each follower one hex time) passed its opportunity, generality and onward-capture stops
 (disposition T6_S_OFFLINE_PASS). A DRAFT two-session probe awaits the owner's review; nothing was executed or promoted.
+Sprint 27's owner-approved probe of that rule (`docs/SPRINT27_T6S_PROBE.md`) played one session, the candidate blue
+against `baseline-v2`: the stagger executed exactly as registered and no objective was first owned later than its
+same-colour reference, but stacked moving exposure inside envelopes was not halved, so the registered gate kept the
+second session closed (disposition T6S_P1_MECHANISM_NOT_SUPPORTED, a one-session outcome). Nothing was promoted.
 The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
@@ -234,6 +238,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/SPRINT25_T13_D1.md` | Sprint 25's offline T13-D1 study: the privacy owner decision, the frozen loss and departure definitions, the non-executable garrison shadow, the stops, Amendment A1, the loss anatomy, results and disposition |
 | `docs/SPRINT26_T6S_SHADOW.md` | Sprint 26's offline T6-S study: the privacy baseline check, the timing reading, the non-executable stagger shadow, chain order, wait bound, the stops, results and disposition |
 | `docs/SPRINT26_T6S_PROBE_DRAFT.md` | the DRAFT two-session T6-S mechanism probe returned to the owner; not registered, not executed |
+| `docs/SPRINT27_T6S_PROBE.md` | Sprint 27's registered T6-S two-seat mechanism probe: the owner-approved same-colour P2 reference, the executable candidate with Sprint 26's rule verbatim, the stage gate, the stops, session 2797's results and the disposition |
 | `docs/PLATFORM_CANARY.md` | the owner's manual upload and compatibility-check steps for the platform canary |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
