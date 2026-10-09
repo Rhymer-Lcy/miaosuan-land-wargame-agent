@@ -311,7 +311,18 @@ victory probability is used anywhere.
 
 ## 12. Close-out
 
-Recorded in the close-out commit that follows this file.
+* Sprint commits on top of `78a1c42`: the report `877c3d4`, the canary handoff `9701a64`, the frontier roadmap
+  `abbb9a6` and the README note `f0198bb4` (tree `1f26fc4e`), then this close-out section; documentation only.
+* Workstation suite at `f0198bb4`: 2,378 tests, 105 skipped, exit 0 (the same counts as at the Sprint 28 close-out).
+  The documentation-policy tests pass; the canary package tests pass.
+* Report numbers: `local/diagnostics/s29/doc_check.py` re-derives every anchored figure from its source and accounts
+  for every number printed here; on its first run it found two errors (an inert standard deviation of 50.14 printed as
+  "50 or less", and a standard error of 55.4 printed as "about 56"), both corrected before the first commit; 7 of 7
+  planted single-number errors are caught.
+* Privacy: the pre-push scan of every reachable blob (1,176 blobs) gives 106 hit lines, identical as a multiset to the
+  Sprint 28 close-out baseline: nothing added, nothing removed.
+* Canary unchanged (`a3d3b022...`, both hosts); ledger 2,797 sessions, none unclosed, session 2798 unopened.
+* The final HEAD, which adds this section, is identical on the workstation, GitHub and the evaluation server.
 
 ## 13. Recommended next task (one)
 
