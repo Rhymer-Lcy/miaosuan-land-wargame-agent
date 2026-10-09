@@ -173,6 +173,10 @@ Sprint 29 (`docs/SPRINT29_PLATFORM_FIRST.md`, no engine session) put platform re
 re-verified and handed over for a manual test-slot upload, and a decision-level diagnosis traced the largest
 controllable loss to held objectives that `baseline-v2` vacates itself; a keep-one holder is proposed as the next live
 exploratory candidate, for the owner's approval. Nothing was implemented, played or promoted.
+Sprint 30 (`docs/SPRINT30_T13_K1_PILOT.md`, no engine session) built that keep-one holder as an exploratory
+candidate and stopped at its historical preflight: `baseline-v2` orders units off a held objective while they are still
+in their post-arrival stop transition, which the brief's eligibility excludes, so the rule never acts on a genuine
+`baseline-v2` trajectory (K1_PREFLIGHT_INADEQUATE). Nothing was played or promoted.
 The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
