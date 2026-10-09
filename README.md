@@ -163,6 +163,12 @@ Sprint 27's owner-approved probe of that rule (`docs/SPRINT27_T6S_PROBE.md`) pla
 against `baseline-v2`: the stagger executed exactly as registered and no objective was first owned later than its
 same-colour reference, but stacked moving exposure inside envelopes was not halved, so the registered gate kept the
 second session closed (disposition T6S_P1_MECHANISM_NOT_SUPPORTED, a one-session outcome). Nothing was promoted.
+Sprint 28's registered offline qualification of the next-ranked increment, objective-zone dispersion
+(`docs/SPRINT28_T12_O1.md`, no engine session), found the frozen trigger (two or more idle units stacked on a held
+objective) only after a side held every objective and `baseline-v2` had nothing left to order, which the red
+head-to-head seats never reached; the registered opportunity stop was met (disposition
+T12_O1_INADEQUATE_OPPORTUNITY). Nothing was promoted. The shared evaluation server's CPU policy is in
+`docs/SERVER_RESOURCE_POLICY.md`.
 The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
@@ -240,6 +246,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/SPRINT26_T6S_SHADOW.md` | Sprint 26's offline T6-S study: the privacy baseline check, the timing reading, the non-executable stagger shadow, chain order, wait bound, the stops, results and disposition |
 | `docs/SPRINT26_T6S_PROBE_DRAFT.md` | the DRAFT two-session T6-S mechanism probe returned to the owner; not registered, not executed |
 | `docs/SPRINT27_T6S_PROBE.md` | Sprint 27's registered T6-S two-seat mechanism probe: the owner-approved same-colour P2 reference, the executable candidate with Sprint 26's rule verbatim, the stage gate, the stops, session 2797's results and the disposition |
+| `docs/SPRINT28_T12_O1.md` | Sprint 28's offline T12-O1 qualification: the server CPU allocation, the frozen idle definition, the one-hex legality reading, the non-executable dispersion shadow, the stop, the interaction criteria, results and disposition |
 | `docs/PLATFORM_CANARY.md` | the owner's manual upload and compatibility-check steps for the platform canary |
 | `evaluation/<name>/` | each registered evaluation's manifest and sanitized results |
 | `evaluation/latency-diagnostic-1/` | the registered latency diagnostic plan and its privacy-safe aggregates |
