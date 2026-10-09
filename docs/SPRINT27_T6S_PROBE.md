@@ -521,3 +521,28 @@ objective-zone dispersion (W 3.80): its trigger count on H0 and HH, with its sto
 session. Why this one: Sprint 24's prospectively registered ranking puts it next now that T13 and T6 have each been
 closed by their own registered stops; its first step is offline and cheap; and it needs no new engine use until its
 own offline gate passes. T6's route-choice branch stays open and is not reopened here.
+
+### R14. Close-out
+
+* The results were pushed as `e934a8246fe279d166fdcd6e3c96c946eb4ef696` (tree
+  `c64360dda32bdc9a99fcd50802803229dad84406`, five commits audited as a set) at 2026-10-09T15:24:20+08:00; a fresh
+  clone from GitHub had the same commit and tree and byte-identical files. The evaluation server's untracked analysis
+  outputs were checked equal to their committed blobs before its main clone was fast-forwarded to the commit by
+  bundle; on that commit the stage-A game file and the disposition regenerate byte for byte.
+* Tests at that commit: the workstation tree ran 2,284 tests (102 skipped) with exit 0; a clean clone from GitHub
+  2,281 (110 skipped) with exit 0; the evaluation server's private tree 2,297 (7 skipped; 8,670 s) with exit 0, the
+  exit code persisted by the suite's launcher and the tested commit recorded beside it, with the ledger file
+  byte-identical before and after.
+* Documentation gates: this sprint's private gate (`local/diagnostics/s27/doc_gate.py`) binds the registration and
+  the results to the public files and the copied logs and catches all its planted errors; every current gate passes
+  with its plants, and the four retired `_v1` copies fail as at Sprint 26's close-out.
+* Privacy: the 106-line accepted set passed its independent integrity check again, and the scan of every reachable
+  blob at the results commit (1,144 blobs) gives 106 hit lines, identical to the accepted set; no line was added or
+  removed.
+* Platform canary: rebuilt on the workstation and the server, SHA-256
+  `a3d3b0229118c0a389d379b315a620465624222f93fcf39de115e8e9dde59511`, no smoke mismatch on either host.
+* Engine ledger: read-only verify after the server suite, 2,797 sessions opened and closed, none unclosed, integrity
+  ok, state chain continuous, the last event the close of session 2797; no session 2798. No engine installation,
+  configuration or historical result was touched, and the server's development worktree was removed.
+* The registered disposition stands as `T6S_P1_MECHANISM_NOT_SUPPORTED`, a one-session outcome of a paired probe
+  terminated early by its registered gate.
