@@ -1,6 +1,6 @@
 # DRAFT: T6-S two-session mechanism probe (for the owner's review)
 
-**DRAFT — NOT REGISTERED — NOT EXECUTED — NO ENGINE SESSION AUTHORIZED — NO RUN CARD — NOTHING PROMOTED**
+**DRAFT — UNAPPROVED — NOT REGISTERED — NOT EXECUTED — NO ENGINE SESSION AUTHORIZED — NO RUN CARD — NOTHING PROMOTED**
 
 This draft follows Sprint 26's registered offline disposition `T6_S_OFFLINE_PASS` (`docs/SPRINT26_T6S_SHADOW.md`,
 R10). It is returned to the owner. No executable candidate, run card or capture configuration exists for it; session
