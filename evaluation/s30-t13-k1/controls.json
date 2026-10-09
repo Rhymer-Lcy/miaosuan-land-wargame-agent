@@ -581,7 +581,7 @@
    }
   }
  },
- "inputs_sha256": "19d07056155e5f5a862891297d354f4e117c35d728c323ded23f2b0ccb687cb1",
+ "inputs_sha256": "aa16b79c78a7c973d1a51965823baec36dad1120540525f72e170eebbb7fab6c",
  "schema": "miaosuan-s30-controls/1",
  "source": "the registered shoot-reservation experiment's group C games (baseline-v2), fifteen per configuration; margin = the seat's total minus the opponent's total (the engine's <side>_win)"
 }
