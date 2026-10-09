@@ -186,6 +186,7 @@ git-ignored `local/` tree; nothing in the package or the test suite requires it.
 | `docs/ENGINE_SMOKE_TEST.md` | observed engine behaviour and interface contract from the first controlled run |
 | `docs/CONTRACT.md` | observed contract of SDK 4.1.0, accepted boundary, canonical representation, fixture policy |
 | `docs/ENGINE_INSTALL.md` | persistent engine installation: rules, session ledger, host clock |
+| `docs/SERVER_RESOURCE_POLICY.md` | the shared evaluation server's CPU policy: verified topology, shared and idle-peer modes, pre-launch checks, process safety |
 | `docs/BASELINE.md` | identity, decision pipeline, action semantics, safety gate and limitations of `baseline-v0` |
 | `docs/EVALUATION.md` | the registered evaluation protocol of `baseline-v0` and its results |
 | `docs/BASELINE_V1.md` | identity of `baseline-v1`: the one change, its digests and its limitations |
@@ -334,6 +335,9 @@ published (`evaluation/baseline-v0/results.json`).
 4. The platform accepts an upload only as a zip holding a single top-level package `ai` that
    exposes class `Agent`. Development happens in `src/miaosuan_agent/`; the `ai/` tree will be
    generated for upload (section 6).
+5. The evaluation server is shared with a colleague. Every job follows `docs/SERVER_RESOURCE_POLICY.md`: one
+   NUMA node (16 physical cores, 32 logical CPUs) per person while both are active, the pre-launch checks, and
+   termination of exact own PIDs only.
 
 ## Names
 
