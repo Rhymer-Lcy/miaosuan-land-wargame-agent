@@ -100,7 +100,8 @@ class WhitelistTest(unittest.TestCase):
         users = sorted(p.relative_to(ROOT).as_posix() for folder in ("src", "scripts")
                        for p in (ROOT / folder).rglob("*.py")
                        if "t13_keep_one_k1" in p.read_text(encoding="utf-8") and p.name != "t13_keep_one_k1.py")
-        self.assertEqual(users, ["scripts/s30_preflight.py", "src/miaosuan_agent/evaluation/s30_preflight.py"])
+        self.assertEqual(users, ["scripts/mutate_s30.py", "scripts/s30_preflight.py",
+                                 "src/miaosuan_agent/evaluation/s30_preflight.py"])
         for name in ("build_run_card.py", "run_explore.sh", "run_explore_game.py", "run_evaluation.py"):
             self.assertNotIn("t13_keep_one_k1", (ROOT / "scripts" / name).read_text(encoding="utf-8"), name)
 
