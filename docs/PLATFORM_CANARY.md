@@ -14,6 +14,10 @@ from local-engine evidence (`docs/TACTICAL_FRONTIER.md`, "Platform canary and fe
 | Policy | `baseline-v2`, policy source `7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae` |
 | Contents | one top-level `ai` package with `agent.py` defining `Agent`, the frozen policy vendored byte for byte, standard library only |
 
+Re-verified 2026-10-09 (Sprint 29, `docs/SPRINT29_PLATFORM_FIRST.md`, section 2): rebuilt byte-identically on the
+workstation and on the evaluation server, the isolated smoke and the replay corpus without a mismatch under CPython
+3.10.20, and an independent verifier passed.
+
 Check the digest before uploading (PowerShell: `Get-FileHash dist\miaosuan-baseline-v2-canary.zip`; Linux:
 `sha256sum dist/miaosuan-baseline-v2-canary.zip`). If it differs, do not upload; rebuild and compare again.
 
@@ -33,7 +37,10 @@ Run whatever the test slot offers, in this order, and note each outcome:
 2. A human-machine test (人机测试) of a few minutes is enough to see whether the agent deploys, moves and fires.
 
 Signs of an environment problem (record them as compatibility, not tactics): the slot reports an import or start-up
-error; the agent never ends its deployment; its units never move; the log shows exceptions or timeouts. The online
+error; the agent never ends its deployment; its units never move; the log shows exceptions or timeouts, or lines
+beginning `[baseline-v2] contract error:` or `[baseline-v2] step error:`. Units that fire and occupy but never leave
+their start hexes point to movement-cost data missing from the setup information, which the package does not report
+(`docs/SPRINT29_PLATFORM_FIRST.md`, section 2.1, U2). The online
 engine advances on its own clock and does not wait for the agent; slow decisions arrive late and are judged invalid,
 and intermediate states can be skipped. Locally the slowest `baseline-v2` decisions exceed 1 s only in the largest
 scenario (`docs/LATENCY_DIAGNOSTIC.md`).
@@ -41,7 +48,8 @@ scenario (`docs/LATENCY_DIAGNOSTIC.md`).
 ## 4. What to send back
 
 For each platform game: the date, the scenario name or id, the opponent (machine, human, which AI), the side played,
-the result and final score if shown, and the downloadable log and replay ("日志及复盘下载"). Screenshots of errors
+the result and final score if shown, and the downloadable log and replay ("日志及复盘下载"). The full intake record is
+section 4 of `docs/SPRINT29_PLATFORM_FIRST.md`. Screenshots of errors
 help. Replays and logs stay private (`local/`, never committed); only the classification below is published.
 
 ## 5. How the feedback is used
