@@ -1,0 +1,118 @@
+{
+ "anchors": {
+  "H0 baseline-v2 move orders": 509,
+  "H0 decisions": 33696,
+  "H0 play decisions": 33680,
+  "H0 side-games": 16,
+  "H0 side-games with a stationary stacked hit on an objective": 10,
+  "H0 stationary on-objective ground events, alone": 13,
+  "H0 stationary on-objective ground events, stacked": 40,
+  "H0 v2 differs from recorded v0": 123,
+  "HH baseline-v2 move orders": 416,
+  "HH baseline-v2 reconstruction equal": 11524,
+  "HH side-games": 4,
+  "HH stationary on-objective ground events, alone": 3,
+  "HH stationary on-objective ground events, stacked": 10
+ },
+ "blocks": [
+  "census N4, N5, N6 and T6 blocks (H0 and HH) equal to Sprint 18's census.json",
+  "admission ground events by state (H0 and HH) equal to Sprint 18's admission.json"
+ ],
+ "damage_window_steps": 300,
+ "dispositions_first_match": [
+  "T12_O1_OFFLINE_INVALID",
+  "T12_O1_INADEQUATE_OPPORTUNITY",
+  "T12_O1_LEGALITY_UNRESOLVED",
+  "T12_O1_INTERACTION_NOT_READY",
+  "T12_O1_READY_FOR_MECHANISM_PROPOSAL"
+ ],
+ "distinct_episode_key": "scenario-side, objective, start step and the idle centre units at the start",
+ "engine_sessions": 0,
+ "episode": "a maximal run of consecutive play decisions at which one objective meets the tier; tiers: trigger (theoretical) and legal (the frozen batch disperses at least one unit)",
+ "interaction_criteria": {
+  "I1_tactical_isolation": "dispersed units (first replica of each distinct legal episode) that receive a baseline-v2 MOVE to an objective the side does not hold while the origin objective is still held, more than half of the dispersed units",
+  "I2_holder_ordered_off": "distinct legal episodes whose holder receives a baseline-v2 MOVE while the origin objective is still held, more than half of the episodes",
+  "I3_partial_dispersion": "distinct legal episodes in which an idle non-holder stays for lack of an admissible destination or of room, more than half of the episodes",
+  "met": "a criterion is met when it is met in HH, in H0 or pooled, each with a non-empty denominator"
+ },
+ "legality_gate": "met when any of the four HH side-games has no distinct legal-tier episode",
+ "opportunity_stop": {
+  "h0": "reported under two readings (each side-game; total against side-games), not part of the disposition",
+  "minimum_per_hh_side_game": 1,
+  "rule": "met when any of the four HH side-games has fewer than one distinct trigger episode, or the HH side-games are not all present"
+ },
+ "own_ground_unit": "own operator of type 1 or 2 (artillery included) with an integer hex; passengers are not operators",
+ "public_file_limit_bytes": 90000,
+ "schema": "miaosuan-s28-protocol/1",
+ "shadow": {
+  "action": "one appended MOVE per dispersed unit with a one-hex route, after baseline-v2's unchanged actions",
+  "admissible_reasons_first_match": [
+   "admissible",
+   "objective_hex",
+   "visible_enemy",
+   "own_route_hex"
+  ],
+  "batch_outcomes": [
+   "holder",
+   "dispersed",
+   "no_destination_left",
+   "no_admissible_destination"
+  ],
+  "destination": "the admissible destination with the fewest own ground units after the moves already assigned at this decision, then the lowest entry cost in the unit's mode, then the lowest hex, while the count stays within the stacking limit; objectives in increasing hex order share one count per decision",
+  "executable": false,
+  "hold": "every baseline-v2 MOVE of a dispersed unit is withheld until the objective is not held or the unit is absent",
+  "holder": "the idle centre unit with the fewest admissible destinations, then the lowest unit id",
+  "identity": "t12-o1-dispersion-shadow",
+  "idle_levels_in_order": [
+   "A_stationary",
+   "B_no_route",
+   "C_no_transition",
+   "D_no_transport_transition",
+   "E_not_suppressed",
+   "F_no_baseline_move",
+   "G_no_baseline_action"
+  ],
+  "legal_reasons_first_match": [
+   "legal",
+   "move_not_listed",
+   "no_movement_mode",
+   "gate_path_refused",
+   "stack_full"
+  ],
+  "minimum_idle_units": 2,
+  "passable_modes": [
+   0,
+   1,
+   2
+  ],
+  "release_reasons_first_match": [
+   "objective_not_held",
+   "unit_absent"
+  ],
+  "stacking_limit": 4,
+  "status": "ANALYSIS SHADOW - NON-EXECUTABLE",
+  "transition_fields": [
+   "stop",
+   "move_to_stop_remain_time",
+   "change_state_remain_time",
+   "get_on_remain_time",
+   "get_off_remain_time"
+  ],
+  "trigger": "a held objective with at least minimum_idle_units idle own ground units on its centre, none under an active hold, and a neighbour (distance 1, inside the map) that is a cost-graph neighbour of the centre in a passable mode and holds fewer than stacking_limit own ground units"
+ },
+ "sources": {
+  "scripts/s18_admission.py": "b03fa0a4c62afd63e5bb2fe0468a10ecc3c9601cd28454f0002018a2feba7c5f",
+  "scripts/s18_census.py": "b8d56b890d80a2730e1e37d06ce468bd7f568c95a237d4af0639dc8e33b77d30",
+  "scripts/s28_t12.py": "524a4cea878637f94efe774cce08d8b60b51b231de0db736ec46da3ef6b0d9b2",
+  "src/miaosuan_agent/boundary/terrain.py": "4120294873cc298bc926d2c76760c7158117403373d874e264f8fafe5e5c6ec7",
+  "src/miaosuan_agent/decision/gate.py": "fc113cc26b38e1e235fb4c404c63b8fb42927b89ed7418dfffc8af8fd8b65e18",
+  "src/miaosuan_agent/decision/routing.py": "51ac79b5b977ec6c9d5ced2debd6b42d254750f792b9dbe3668abf4679ca711c",
+  "src/miaosuan_agent/evaluation/s12_screen.py": "bb69cc96e4e35daade0ec9eca98dcaf84a3e0c5973f9d91a028781000570a67e",
+  "src/miaosuan_agent/evaluation/s12_timeline.py": "5e2ae9e1357b77d8baaeb639a7eac091dfa64d9164a6f6d4d447bc6d7c7f5632",
+  "src/miaosuan_agent/evaluation/s18_census.py": "d48d741997b54a0659260f6df1716aff59983d96359eb8c79d31bd9ebbec3771",
+  "src/miaosuan_agent/evaluation/s28_t12.py": "8adb1d55b7b2c1138aff3fed1d5df5862e4f9e7cd64b133d1eb3035f1caafe11",
+  "src/miaosuan_agent/evaluation/t7_visibility.py": "add2b446ec8ff847fd941a8a0952971200858db2305cdbdded0b6263f42e27ff",
+  "src/miaosuan_agent/experiments/t12_dispersion_shadow.py": "9949af2690d4e3ae3e7a70ead993d4195df1bd24edd4af993017b9bf48e32d0b"
+ },
+ "study_id": "s28-t12-o1"
+}
