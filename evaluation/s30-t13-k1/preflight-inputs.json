@@ -294,7 +294,7 @@
   "src/miaosuan_agent/evaluation/s27_probe.py": "031d344e6584a5ca9342b2de8ac0a15f7d5d23fbac588197cd4a55d601113ec4",
   "src/miaosuan_agent/evaluation/s30_preflight.py": "66f86cef5ee8d746ca88c997bc4b08429a9b0a7a989adad71e2ced46133d0a42",
   "src/miaosuan_agent/experiments/exploratory_addon.py": "803f110696670adedb1531cf490dc331176abdfef8b665071ecd30d4168425f1",
-  "src/miaosuan_agent/experiments/t13_keep_one_k1.py": "7c39c648f5406a4a90fcd9695e85eb831241440e9d25f3c0c770fd2f78e80ac1",
+  "src/miaosuan_agent/experiments/t13_keep_one_k1.py": "5ab3c284d1e575b60ddf90dd53bf51a37fbbe03ae8c293999954afed027857ec",
   "src/miaosuan_agent/experiments/t9_batch.py": "ba0e3fcd5e7b9c223b5d22129f37c06fb3bcb7ab071b0a825de6552f3edd7510"
  },
  "study_id": "s30-t13-k1"
