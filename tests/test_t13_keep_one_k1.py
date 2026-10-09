@@ -378,16 +378,20 @@ class IdentityTest(unittest.TestCase):
                                                "no_eligible_holder", "no_travel_time", "withheld"))
 
     def test_levels_a_to_d_restate_sprint28s_idle_levels(self) -> None:
-        from miaosuan_agent.experiments import t12_dispersion_shadow as t12
-        self.assertEqual(k1.ELIGIBILITY[:4], t12.IDLE_LEVELS[:4])
-        self.assertEqual(k1.TRANSITION_FIELDS, t12.TRANSITION_FIELDS)
-        cases = [{}, {"speed": 1}, {"move_path": [1]}, {"stop": 0}, {"move_to_stop_remain_time": 3},
-                 {"change_state_remain_time": 2}, {"get_on_remain_time": 1}, {"get_off_remain_time": 4}]
-        for fields in cases:
-            u = dict(unit(1), **fields)
-            theirs = t12.idle_level(u, {k: u.get(k) for k in t12.TRANSITION_FIELDS}, {1: (1,)}, 1)
-            mine = k1.eligibility(u, [(0, move(1))], C)
-            self.assertEqual(mine, "eligible" if theirs == "F_no_baseline_move" else theirs, fields)
+        """Against Sprint 28's registered protocol (its frozen identity test forbids other files from naming its shadow
+        module): the same first four level names in the same order, the same transition fields, and each level's
+        boundary as Sprint 28's registration defines it."""
+        import json
+        protocol = json.loads((ROOT / "evaluation" / "s28-t12-o1" / "protocol.json").read_text(encoding="utf-8"))
+        self.assertEqual(list(k1.ELIGIBILITY[:4]), protocol["shadow"]["idle_levels_in_order"][:4])
+        self.assertEqual(list(k1.TRANSITION_FIELDS), protocol["shadow"]["transition_fields"])
+        cases = [({}, "eligible"), ({"speed": 1}, "A_stationary"), ({"move_path": [1]}, "B_no_route"),
+                 ({"stop": 0}, "C_no_transition"), ({"move_to_stop_remain_time": 3}, "C_no_transition"),
+                 ({"change_state_remain_time": 2}, "C_no_transition"),
+                 ({"get_on_remain_time": 1}, "D_no_transport_transition"),
+                 ({"get_off_remain_time": 4}, "D_no_transport_transition")]
+        for fields, expected in cases:
+            self.assertEqual(k1.eligibility(dict(unit(1), **fields), [(0, move(1))], C), expected, fields)
 
     def test_imports_are_the_router_the_free_flow_relation_and_the_wrapper_only(self) -> None:
         text = (ROOT / "src" / "miaosuan_agent" / "experiments" / "t13_keep_one_k1.py").read_text(encoding="utf-8")
