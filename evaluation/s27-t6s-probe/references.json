@@ -1,0 +1,247 @@
+{
+ "anchors": {
+  "HH baseline-v2 reconstruction equal to the recorded seat at every decision": true,
+  "HH side-games": true,
+  "P1 references equal the frozen rules": true,
+  "P2 references equal the frozen rules": true,
+  "every HH exposure equals Sprint 26's published per-side exposure": true,
+  "every HH side carries the registered seven objective labels": true
+ },
+ "evidence_boundary": "historical and descriptive: the four HH games (card s12-v3-primary-1) played baseline-v2 against a different candidate (the batch-capacity allocator), so these are exploratory benchmarks, not a randomized or paired control",
+ "ok": true,
+ "p1_references": {
+  "blue": {
+   "HH p01 baseline-v2 blue": 9122,
+   "HH p03 baseline-v2 blue": 29248
+  },
+  "red": {
+   "HH p02 baseline-v2 red": 6518,
+   "HH p04 baseline-v2 red": 6489
+  }
+ },
+ "p2_references": {
+  "blue": {
+   "50-point objective A": {
+    "HH p01 baseline-v2 blue": 161,
+    "HH p03 baseline-v2 blue": 161
+   },
+   "50-point objective B": {
+    "HH p01 baseline-v2 blue": 222,
+    "HH p03 baseline-v2 blue": 222
+   },
+   "50-point objective C": {
+    "HH p01 baseline-v2 blue": 364,
+    "HH p03 baseline-v2 blue": 364
+   },
+   "50-point objective D": {
+    "HH p01 baseline-v2 blue": 442,
+    "HH p03 baseline-v2 blue": 442
+   },
+   "80-point objective A": {
+    "HH p01 baseline-v2 blue": 421,
+    "HH p03 baseline-v2 blue": 421
+   },
+   "80-point objective B": {
+    "HH p01 baseline-v2 blue": 283,
+    "HH p03 baseline-v2 blue": 283
+   },
+   "80-point objective C": {
+    "HH p01 baseline-v2 blue": 161,
+    "HH p03 baseline-v2 blue": 161
+   }
+  },
+  "red": {
+   "50-point objective A": {
+    "HH p02 baseline-v2 red": 421,
+    "HH p04 baseline-v2 red": 421
+   },
+   "50-point objective B": {
+    "HH p02 baseline-v2 red": 543,
+    "HH p04 baseline-v2 red": 543
+   },
+   "50-point objective C": {
+    "HH p02 baseline-v2 red": 2737,
+    "HH p04 baseline-v2 red": 561
+   },
+   "50-point objective D": {
+    "HH p02 baseline-v2 red": 401,
+    "HH p04 baseline-v2 red": 401
+   },
+   "80-point objective A": {
+    "HH p02 baseline-v2 red": null,
+    "HH p04 baseline-v2 red": null
+   },
+   "80-point objective B": {
+    "HH p02 baseline-v2 red": 482,
+    "HH p04 baseline-v2 red": 482
+   },
+   "80-point objective C": {
+    "HH p02 baseline-v2 red": null,
+    "HH p04 baseline-v2 red": 604
+   }
+  }
+ },
+ "schema": "miaosuan-s27-probe/1/references",
+ "sides": {
+  "HH p01 baseline-v2 blue": {
+   "colour": "blue",
+   "decisions": 2881,
+   "exposure": {
+    "moving_alone_inside_envelope": 7318,
+    "moving_alone_unit_decisions": 16848,
+    "moving_stacked_inside_envelope": 9122,
+    "moving_stacked_unit_decisions": 10532,
+    "moving_unit_decisions": 27380
+   },
+   "exposure_equal_to_sprint26_published": true,
+   "first_divergence_sprint26": {
+    "decision": 162,
+    "prefix_supported": true,
+    "step": 161
+   },
+   "first_ownership_steps": {
+    "50-point objective A": 161,
+    "50-point objective B": 222,
+    "50-point objective C": 364,
+    "50-point objective D": 442,
+    "80-point objective A": 421,
+    "80-point objective B": 283,
+    "80-point objective C": 161
+   },
+   "moving_ground_damage_events": 30,
+   "moving_ground_damage_events_alone": 11,
+   "moving_ground_damage_events_stacked": 19,
+   "objective_labels": [
+    "50-point objective A",
+    "50-point objective B",
+    "50-point objective C",
+    "50-point objective D",
+    "80-point objective A",
+    "80-point objective B",
+    "80-point objective C"
+   ],
+   "play_decisions": 2880
+  },
+  "HH p02 baseline-v2 red": {
+   "colour": "red",
+   "decisions": 2881,
+   "exposure": {
+    "moving_alone_inside_envelope": 6445,
+    "moving_alone_unit_decisions": 17704,
+    "moving_stacked_inside_envelope": 6518,
+    "moving_stacked_unit_decisions": 9118,
+    "moving_unit_decisions": 26822
+   },
+   "exposure_equal_to_sprint26_published": true,
+   "first_divergence_sprint26": {
+    "decision": 402,
+    "prefix_supported": true,
+    "step": 401
+   },
+   "first_ownership_steps": {
+    "50-point objective A": 421,
+    "50-point objective B": 543,
+    "50-point objective C": 2737,
+    "50-point objective D": 401,
+    "80-point objective A": null,
+    "80-point objective B": 482,
+    "80-point objective C": null
+   },
+   "moving_ground_damage_events": 34,
+   "moving_ground_damage_events_alone": 17,
+   "moving_ground_damage_events_stacked": 17,
+   "objective_labels": [
+    "50-point objective A",
+    "50-point objective B",
+    "50-point objective C",
+    "50-point objective D",
+    "80-point objective A",
+    "80-point objective B",
+    "80-point objective C"
+   ],
+   "play_decisions": 2880
+  },
+  "HH p03 baseline-v2 blue": {
+   "colour": "blue",
+   "decisions": 2881,
+   "exposure": {
+    "moving_alone_inside_envelope": 14825,
+    "moving_alone_unit_decisions": 22072,
+    "moving_stacked_inside_envelope": 29248,
+    "moving_stacked_unit_decisions": 30328,
+    "moving_unit_decisions": 52400
+   },
+   "exposure_equal_to_sprint26_published": true,
+   "first_divergence_sprint26": {
+    "decision": 162,
+    "prefix_supported": true,
+    "step": 161
+   },
+   "first_ownership_steps": {
+    "50-point objective A": 161,
+    "50-point objective B": 222,
+    "50-point objective C": 364,
+    "50-point objective D": 442,
+    "80-point objective A": 421,
+    "80-point objective B": 283,
+    "80-point objective C": 161
+   },
+   "moving_ground_damage_events": 15,
+   "moving_ground_damage_events_alone": 4,
+   "moving_ground_damage_events_stacked": 11,
+   "objective_labels": [
+    "50-point objective A",
+    "50-point objective B",
+    "50-point objective C",
+    "50-point objective D",
+    "80-point objective A",
+    "80-point objective B",
+    "80-point objective C"
+   ],
+   "play_decisions": 2880
+  },
+  "HH p04 baseline-v2 red": {
+   "colour": "red",
+   "decisions": 2881,
+   "exposure": {
+    "moving_alone_inside_envelope": 5511,
+    "moving_alone_unit_decisions": 17922,
+    "moving_stacked_inside_envelope": 6489,
+    "moving_stacked_unit_decisions": 10241,
+    "moving_unit_decisions": 28163
+   },
+   "exposure_equal_to_sprint26_published": true,
+   "first_divergence_sprint26": {
+    "decision": 402,
+    "prefix_supported": true,
+    "step": 401
+   },
+   "first_ownership_steps": {
+    "50-point objective A": 421,
+    "50-point objective B": 543,
+    "50-point objective C": 561,
+    "50-point objective D": 401,
+    "80-point objective A": null,
+    "80-point objective B": 482,
+    "80-point objective C": 604
+   },
+   "moving_ground_damage_events": 38,
+   "moving_ground_damage_events_alone": 25,
+   "moving_ground_damage_events_stacked": 13,
+   "objective_labels": [
+    "50-point objective A",
+    "50-point objective B",
+    "50-point objective C",
+    "50-point objective D",
+    "80-point objective A",
+    "80-point objective B",
+    "80-point objective C"
+   ],
+   "play_decisions": 2880
+  }
+ },
+ "sprint26_census_sha256": "300a23eab38bfe14164ee171090fda0a7a220507d7a00faadfadf30c6af53b16",
+ "sprint26_inputs_sha256": "a73f86ebce0aa5716286ca0ef87428a2c76e3c0db732dfcd1036031b156a8cce",
+ "sprint26_protocol_sha256": "85ab686de16a335dfaf343d62e12f3266f591fd42b1db38b3c1be14c1cfe8f75",
+ "study_id": "s27-t6s-probe"
+}

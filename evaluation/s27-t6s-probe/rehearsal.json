@@ -1,0 +1,165 @@
+{
+ "copied_rule_text_problems": [],
+ "frames_equivalence_by_side": {
+  "H0 1910631192 blue": {
+   "decisions": 1801,
+   "differing_decisions": 0,
+   "population": "H0"
+  },
+  "H0 1910631192 red": {
+   "decisions": 1801,
+   "differing_decisions": 0,
+   "population": "H0"
+  },
+  "H0 1930331196 blue": {
+   "decisions": 2881,
+   "differing_decisions": 0,
+   "population": "H0"
+  },
+  "H0 1930331196 red": {
+   "decisions": 2881,
+   "differing_decisions": 0,
+   "population": "H0"
+  },
+  "H0 2010131194 blue": {
+   "decisions": 1801,
+   "differing_decisions": 0,
+   "population": "H0"
+  },
+  "H0 2010131194 red": {
+   "decisions": 1801,
+   "differing_decisions": 0,
+   "population": "H0"
+  },
+  "H0 2010211129 blue": {
+   "decisions": 1801,
+   "differing_decisions": 0,
+   "population": "H0"
+  },
+  "H0 2010211129 red": {
+   "decisions": 1801,
+   "differing_decisions": 0,
+   "population": "H0"
+  },
+  "H0 201033019601 blue": {
+   "decisions": 1001,
+   "differing_decisions": 0,
+   "population": "H0"
+  },
+  "H0 201033019601 red": {
+   "decisions": 1001,
+   "differing_decisions": 0,
+   "population": "H0"
+  },
+  "H0 2010431153 blue": {
+   "decisions": 1801,
+   "differing_decisions": 0,
+   "population": "H0"
+  },
+  "H0 2010431153 red": {
+   "decisions": 1801,
+   "differing_decisions": 0,
+   "population": "H0"
+  },
+  "H0 2120531121 blue": {
+   "decisions": 2881,
+   "differing_decisions": 0,
+   "population": "H0"
+  },
+  "H0 2120531121 red": {
+   "decisions": 2881,
+   "differing_decisions": 0,
+   "population": "H0"
+  },
+  "H0 2130511121 blue": {
+   "decisions": 2881,
+   "differing_decisions": 0,
+   "population": "H0"
+  },
+  "H0 2130511121 red": {
+   "decisions": 2881,
+   "differing_decisions": 0,
+   "population": "H0"
+  },
+  "HH p01 baseline-v2 blue": {
+   "decisions": 2881,
+   "differing_decisions": 0,
+   "population": "HH"
+  },
+  "HH p02 baseline-v2 red": {
+   "decisions": 2881,
+   "differing_decisions": 0,
+   "population": "HH"
+  },
+  "HH p03 baseline-v2 blue": {
+   "decisions": 2881,
+   "differing_decisions": 0,
+   "population": "HH"
+  },
+  "HH p04 baseline-v2 red": {
+   "decisions": 2881,
+   "differing_decisions": 0,
+   "population": "HH"
+  }
+ },
+ "hh_executable_candidate_by_side": {
+  "HH p01 baseline-v2 blue": {
+   "addon_errors": 0,
+   "baseline_v2_differs_from_recorded": 0,
+   "decisions": 2881,
+   "differing_decisions": 0,
+   "first_divergence_decision": 162,
+   "first_divergence_equals_sprint26": true,
+   "first_divergence_step": 161
+  },
+  "HH p02 baseline-v2 red": {
+   "addon_errors": 0,
+   "baseline_v2_differs_from_recorded": 0,
+   "decisions": 2881,
+   "differing_decisions": 0,
+   "first_divergence_decision": 402,
+   "first_divergence_equals_sprint26": true,
+   "first_divergence_step": 401
+  },
+  "HH p03 baseline-v2 blue": {
+   "addon_errors": 0,
+   "baseline_v2_differs_from_recorded": 0,
+   "decisions": 2881,
+   "differing_decisions": 0,
+   "first_divergence_decision": 162,
+   "first_divergence_equals_sprint26": true,
+   "first_divergence_step": 161
+  },
+  "HH p04 baseline-v2 red": {
+   "addon_errors": 0,
+   "baseline_v2_differs_from_recorded": 0,
+   "decisions": 2881,
+   "differing_decisions": 0,
+   "first_divergence_decision": 402,
+   "first_divergence_equals_sprint26": true,
+   "first_divergence_step": 401
+  }
+ },
+ "note": "Sprint 26's frozen rule enters only through Sprint 26's own analysis (run_shadow on its loader); its text is located through Sprint 26's protocol pins",
+ "ok": true,
+ "scenarios": [
+  "1910631192",
+  "1930331196",
+  "2010131194",
+  "2010211129",
+  "201033019601",
+  "2010431153",
+  "2120531121",
+  "2130511121"
+ ],
+ "schema": "miaosuan-s27-probe/1/rehearsal",
+ "study_id": "s27-t6s-probe",
+ "totals": {
+  "frames_decisions": 45220,
+  "frames_differing": 0,
+  "hh_addon_errors": 0,
+  "hh_baseline_v2_differs_from_recorded": 0,
+  "hh_raw_decisions": 11524,
+  "hh_raw_differing": 0
+ }
+}
