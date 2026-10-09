@@ -224,6 +224,12 @@ class ObjectivesAndUnitsTest(unittest.TestCase):
         result = decide([unit(1, sub=3), unit(2)], [move(2)])
         self.assertEqual(statuses(result), [(C, "holder_remains")])
 
+    def test_infantry_counts_and_can_hold(self) -> None:
+        result = decide([unit(1, type_=INF, tau=144), unit(2)], [move(1), move(2)])
+        self.assertEqual((result.checks[0].selected, result.withheld), (1, (0,)))
+        result = decide([unit(1, type_=INF), unit(2)], [move(2)])
+        self.assertEqual(statuses(result), [(C, "holder_remains")])
+
     def test_aircraft_enemies_and_passengers_are_not_occupants(self) -> None:
         observation = raw([unit(1), unit(5, type_=AIR), unit(6, color=RED)])
         observation["passengers"] = [unit(7)]
