@@ -1,0 +1,406 @@
+{
+ "copied_rule_mutations": 4,
+ "killed": 64,
+ "killed_with_the_card_rebuilt": 64,
+ "mutations": [
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "copied rule: wait bound slack"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "copied rule: minimum group"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "copied rule: release on the start hex"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "copied rule: leader by unit id only"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "seat inputs: own and enemy colours swapped"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "seat inputs: unreadable unit ids kept"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "unit view: route not a tuple"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "listings: string keys not read"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "encode: spent units dropped"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "encode: pending followers dropped"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "encode: empty memory not empty"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "decode: positions not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "decode: spent pairs read swapped"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "decode: one-member chain accepted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "decode: pending outside the chain accepted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "decode: round trip not required"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "add-on: memory not carried"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "add-on: next memory is the input memory"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "add-on: change records lose the index"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "add-on: group outcomes not counted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py",
+   "mutation": "add-on: no failure without cost data"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "ledger: schedule position not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "ledger: card digest not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "ledger: candidate digest not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "ledger: a game opened twice not found"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "ledger: unclosed sessions not found"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "ledger: recovery not flagged"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "ledger: integrity not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "ledger: state chain not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "ledger: session order not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "stages: stage A tolerates a session"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "stages: stage B prerequisites skipped"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "game stops: opponent digest not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "game stops: seats not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "game stops: one seat reconstructed suffices"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "game stops: max_step not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "game stops: unregistered differences ignored"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "differences: a withheld non-MOVE accepted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "differences: order not checked"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "P1: equality triggers"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "P1: against the mean, not half of it"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "P2: earliest reference instead of the latest"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "P2: never owned passes"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "P2: equality triggers"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "P2: an objective without reference triggers when never owned"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "fidelity: frozen-rule equality not required"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "fidelity: rule events not required"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "fidelity: prefix not required"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "mechanism: any release reason counts"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "mechanism: completion not required"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "mechanism: every follower required"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "mechanism: departures ignore absence"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "mechanism: separation from the follower itself"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "mechanism: co-location counts the start hex"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "mechanism: an error echo counts as accepted"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "gate: mechanism not required"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "gate: P2 not required"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "disposition: not observed before invalid"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "disposition: an authorized stage B may be skipped"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_probe.py",
+   "mutation": "disposition: one session can be supported"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_capture.py",
+   "mutation": "observer: candidate memory chain not compared"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_capture.py",
+   "mutation": "observer: opponent policy not compared"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_capture.py",
+   "mutation": "observer: opponent memory not compared"
+  },
+  {
+   "card_rebuilt": true,
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s27_capture.py",
+   "mutation": "observer: rule withholding forgotten"
+  }
+ ],
+ "schema": "miaosuan-s27-mutation/1",
+ "sources": {
+  "src/miaosuan_agent/evaluation/s27_capture.py": "dbaf92f7e9fd9f30b3bdff485add479537a59c4f558269a0a1e408fa9364159e",
+  "src/miaosuan_agent/evaluation/s27_probe.py": "031d344e6584a5ca9342b2de8ac0a15f7d5d23fbac588197cd4a55d601113ec4",
+  "src/miaosuan_agent/experiments/t6s_column_stagger_p1.py": "9ba724d66a0071ef75cb11dadf3a78429f73fe8f0ea108c2450c87eff39c2074",
+  "tests/fixtures/s27_engine.py": "60eb0af4962c6410e5724fedd9b53f17c04151819681070c633c7e0582ed64d5",
+  "tests/test_s27_probe.py": "bdce35e2e25a7e8a579e0d50692afcc9b63c02639a973cc94684083b7a17c1c4",
+  "tests/test_t6s_column_stagger_p1.py": "c26f65c98e2d46e7b672634d270d2acb3a1c6fb682c833c17860f516868f8462"
+ },
+ "tests": [
+  "tests.test_t6s_column_stagger_p1",
+  "tests.test_s27_probe"
+ ],
+ "total": 64,
+ "unmutated_tests_pass": true
+}
