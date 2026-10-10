@@ -1,0 +1,204 @@
+{
+ "candidate_side": "blue",
+ "card": "s33-t7-b1-live-1",
+ "completed": true,
+ "condition": "C3",
+ "facts": {
+  "candidate_side": "blue",
+  "deadlock_runs": [
+   0,
+   0,
+   0
+  ],
+  "first_stop_at_recorded_step": true,
+  "first_stop_step": 380,
+  "own_ground_units_at_start": 24,
+  "recorded_first_divergence_step": 380,
+  "refused_actions": 0,
+  "scores": {
+   "attack": 108,
+   "margin": 599,
+   "occupy": 310,
+   "opponent_total": 226,
+   "remain": 407,
+   "total": 825
+  },
+  "stop_rows": [
+   {
+    "adverse": [],
+    "censored": null,
+    "cleared_offset": 20,
+    "completed_offset": 95,
+    "endpoints": {
+     "baseline_actions_before_effect": 0,
+     "blocked_frames": 0,
+     "completion_offset": 75,
+     "damage_in_window": 1,
+     "deferred_indefinite": false,
+     "entry_offset": 20,
+     "expected_entry_offset": 20,
+     "flag_after_clear": true,
+     "flag_first_offset": 1,
+     "flag_frames": 94,
+     "flag_last_offset": 94,
+     "judge_records_after_completion": 1,
+     "judge_records_in_window": 1,
+     "resume_order_offset": 96,
+     "resume_order_refused": false,
+     "resumed": true,
+     "shot_emitted": true,
+     "shot_refused": false,
+     "stop_echoed_clean": true,
+     "stop_emitted_exact": true,
+     "stop_listed": true,
+     "stop_refused": false,
+     "transition_started": true
+    },
+    "fire_evaluable": true,
+    "fire_listed": true,
+    "h0": 20,
+    "move_relisted": true,
+    "s32_adverse": [
+     "deferred"
+    ],
+    "shot_accepted": true,
+    "step": 380,
+    "where": "next_hex"
+   },
+   {
+    "adverse": [],
+    "censored": null,
+    "cleared_offset": 19,
+    "completed_offset": 94,
+    "endpoints": {
+     "baseline_actions_before_effect": 0,
+     "blocked_frames": 0,
+     "completion_offset": 75,
+     "damage_in_window": 0,
+     "deferred_indefinite": false,
+     "entry_offset": 19,
+     "expected_entry_offset": 19,
+     "flag_after_clear": true,
+     "flag_first_offset": 1,
+     "flag_frames": 93,
+     "flag_last_offset": 93,
+     "judge_records_after_completion": 0,
+     "judge_records_in_window": 0,
+     "resume_order_offset": 94,
+     "resume_order_refused": false,
+     "resumed": true,
+     "shot_emitted": false,
+     "shot_refused": false,
+     "stop_echoed_clean": true,
+     "stop_emitted_exact": true,
+     "stop_listed": true,
+     "stop_refused": false,
+     "transition_started": true
+    },
+    "fire_evaluable": false,
+    "fire_listed": false,
+    "h0": 19,
+    "move_relisted": true,
+    "s32_adverse": [
+     "deferred"
+    ],
+    "shot_accepted": null,
+    "step": 421,
+    "where": "next_hex"
+   },
+   {
+    "adverse": [],
+    "censored": null,
+    "cleared_offset": 19,
+    "completed_offset": 94,
+    "endpoints": {
+     "baseline_actions_before_effect": 0,
+     "blocked_frames": 0,
+     "completion_offset": 75,
+     "damage_in_window": 0,
+     "deferred_indefinite": false,
+     "entry_offset": 19,
+     "expected_entry_offset": 19,
+     "flag_after_clear": true,
+     "flag_first_offset": 1,
+     "flag_frames": 93,
+     "flag_last_offset": 93,
+     "judge_records_after_completion": 0,
+     "judge_records_in_window": 0,
+     "resume_order_offset": 94,
+     "resume_order_refused": false,
+     "resumed": true,
+     "shot_emitted": false,
+     "shot_refused": false,
+     "stop_echoed_clean": true,
+     "stop_emitted_exact": true,
+     "stop_listed": true,
+     "stop_refused": false,
+     "transition_started": true
+    },
+    "fire_evaluable": false,
+    "fire_listed": false,
+    "h0": 19,
+    "move_relisted": true,
+    "s32_adverse": [
+     "deferred"
+    ],
+    "shot_accepted": null,
+    "step": 441,
+    "where": "next_hex"
+   }
+  ],
+  "stops": 3,
+  "units_lost_total": 0,
+  "verdict": {
+   "adverse": [],
+   "censored": 0,
+   "completed": 3,
+   "demonstrated": [
+    "STOP_EXECUTION",
+    "MOVEMENT_RESUMED",
+    "SHOOTING_LISTED",
+    "SHOT_ACCEPTED"
+   ],
+   "fire_evaluable": 1,
+   "fire_listed": 1,
+   "flags_observed": 3,
+   "gate_open": true,
+   "harm": [],
+   "in_place": 0,
+   "longest_deadlock_run": 0,
+   "next_hex": 3,
+   "s32_verdict": "ADVERSE",
+   "shots_accepted": 1,
+   "shots_emitted": 1,
+   "stops": 3,
+   "verdict": "OBSERVED"
+  }
+ },
+ "game_id": "2120531121.C3.s33-t7-b1-live-1.p01",
+ "gate": {
+  "next_session_authorized": true,
+  "reasons": []
+ },
+ "opponent": "inert control",
+ "position": 1,
+ "registered_references": {
+  "harm": {
+   "configuration": "2120531121 C3 baseline-v2 blue",
+   "margin_floor": 509,
+   "margin_minimum": 559,
+   "occupy": 310
+  },
+  "opportunity": {
+   "distance": 18,
+   "first_divergence_step": 380,
+   "range": 20,
+   "reaching_weapon": "vehicle-mounted missile"
+  }
+ },
+ "scenario_id": "2120531121",
+ "schema": "miaosuan-s33-game/1",
+ "session": 2801,
+ "steps": 2881,
+ "structural_stops": {}
+}

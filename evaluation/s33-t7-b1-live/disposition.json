@@ -1,0 +1,41 @@
+{
+ "card": "s33-t7-b1-live-1",
+ "demonstrated": [
+  "STOP_EXECUTION",
+  "MOVEMENT_RESUMED",
+  "SHOOTING_LISTED",
+  "SHOT_ACCEPTED"
+ ],
+ "disposition": "T7B1_MECH_SUPPORTED",
+ "evidence_level": "STOP_AND_SHOT_ACCEPTED",
+ "games": 2,
+ "gates": {
+  "p01": {
+   "next_session_authorized": true,
+   "reasons": []
+  },
+  "p02": {
+   "next_session_authorized": true,
+   "reasons": []
+  }
+ },
+ "ledger": {
+  "ok": true,
+  "problems": {
+   "S1": [],
+   "S2": []
+  },
+  "sessions_after_base": 2
+ },
+ "order": [
+  "T7B1_MECH_INVALID",
+  "T7B1_MECH_REJECT",
+  "T7B1_MECH_NOT_ENGAGING",
+  "T7B1_MECH_UNTESTED",
+  "T7B1_MECH_STOP_ONLY",
+  "T7B1_MECH_SUPPORTED"
+ ],
+ "s32_disposition": "T7B1_MECH_INVALID",
+ "schema": "miaosuan-s33-live/1",
+ "sessions_opened": 2
+}
