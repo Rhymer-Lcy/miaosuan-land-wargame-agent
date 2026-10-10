@@ -98,3 +98,6 @@ ABLATIONS: Dict[str, CoalitionConfig] = {
     "cm-r1-attribution": replace(CM, name="cm-r1-attribution", revision=1, attribution="first"),
 }
 VARIANTS: Dict[str, CoalitionConfig] = {"CA": CA, "CM": CM, **ABLATIONS}
+#: The live candidate, frozen by the registered offline selection of revision 2
+#: (evaluation/s35-coalition-agent/selection.json).
+LIVE = CM
