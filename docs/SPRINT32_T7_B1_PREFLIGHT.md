@@ -334,3 +334,50 @@ built and no runner or observer is written.
   counts opportunities, not effects.
 * Recorded-trajectory descriptions say what happened without a stop; they are not effects of a stop.
 * The inert population is three games; the two proposed configurations have none.
+
+### R11. Close-out
+
+* **Engine**: no session was opened. Read-only verify on the evaluation server: 2,800 sessions opened and closed, none
+  unclosed, integrity ok, state chain continuous, the last event the close of session 2800; ledger file SHA-256
+  `fde702863518b42eb983a206eab2fd3c870966cce338e61b8cfce129e3ebb799`, as at the Sprint 31 close-out. No installation,
+  state file or configuration was touched. Session 2801 is unopened.
+* **Platform canary**: rebuilt from this branch into a scratch folder on the workstation,
+  `a3d3b0229118c0a389d379b315a620465624222f93fcf39de115e8e9dde59511`, isolated smoke 62 steps with 0 mismatches; the
+  builder, the adapter and every `baseline-v2` lineage module are unchanged since the Sprint 31 head.
+* **Tests**: the workstation suite at the results (`df017e7`) ran 2,558 tests, 114 skipped, exit 0 (Sprint 31's 2,506
+  plus this sprint's 52); on the evaluation server (CPython 3.10.20) the three new test modules, the documentation policy
+  and Sprint 31's K2 and preflight modules ran 114 tests, OK; there `s32_preflight.py freeze --check` and
+  `run --check` both reported identical outputs. The multi-hour private server suite was not rerun: no existing source
+  file changed.
+* **Document checks** (private): `local/diagnostics/s32/doc_check.py` rebuilds 47 clauses and table rows of sections
+  3.3 and 6 from the committed results, the mutation records, the structure-probe and post-hoc logs and the test files,
+  accounts for every number printed there, and caught 14 of 14 planted single-number errors;
+  `local/diagnostics/s32/quote_check.py` found all 8 quoted Chinese passages verbatim in the archived rules snapshot and
+  caught a planted alteration.
+* **Privacy**: the scan of every blob reachable from the refs this sprint publishes (1,249 blobs before this section)
+  gives 106 hit lines, identical as a multiset to the accepted baseline. A local branch of the concurrent
+  platform-compatibility work, which this sprint neither made nor pushes, carries hits of its own and is outside that
+  scope.
+* **Isolation**: `main` stays at `08aff3f` on the workstation, GitHub and the server; the shared workstation checkout's
+  two uncommitted files and the server checkout were not touched; both earlier sprint branches are unchanged; only
+  `sprint32-t7-b1` was pushed. Its 15 commits up to the results follow the repository's message convention. The server
+  worktree is removed after the final check; the private rows, logs and probes stay under the ignored `local/` folders.
+
+### R12. Readiness and the next step
+
+**NOT READY FOR OWNER AUTHORIZATION.** The blocker is evidential, not technical: the candidate, its tests and the
+mechanism-check rules exist, but no recorded game shows that the owner's two configurations (2130511121 against the
+inert control, both seats) offer the trigger, and the only recorded inert configuration with a red `baseline-v2` seat
+offers none. No session is requested.
+
+**Recommended next task (one): the owner's review of `S32_PREFLIGHT_INADEQUATE`.** Each way forward changes something
+the owner fixed and needs its own decision; none is put forward here:
+
+* a mechanism check in the two verified blue inert configurations instead (2120531121 C3 with its first stop expected
+  at step 380, 1930331196 C3 at step 620, if the games reproduce their recorded prefixes, as Sprint 27's game
+  reproduced its predicted first divergence); the documented stop rule makes no distinction by seat colour, but the
+  owner asked for both seats;
+* one engine session spent first on a full-step capture of `baseline-v2` against the inert control in 2130511121, to
+  settle whether that configuration offers the trigger at all;
+* a head-to-head configuration in 2130511121, where the trigger is verified (steps 80 and 162) but the stopped units
+  stand under fire and the games are not deterministic.
