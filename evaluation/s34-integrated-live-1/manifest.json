@@ -1,0 +1,671 @@
+{
+ "budget": {
+  "batch_sessions": 24,
+  "ledger_base_session": 2802,
+  "sprint_session_cap": 24
+ },
+ "candidate": "s34-integrated-mission-orchestrator-1",
+ "caps": {
+  "steps": "max_time + 1 + 100",
+  "wall_seconds": 1800
+ },
+ "card_id": "s34-integrated-live-1",
+ "controls": "baseline-v2's own games of the same scenario, condition and seat (references.json); unpaired",
+ "eligible_for_promotion": false,
+ "evaluation_id": "s34-integrated-live-1",
+ "execution": {
+  "runtime": "baseline-v1-runtime-r2",
+  "workers": 1
+ },
+ "games": [
+  {
+   "batch": "A1",
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "H1",
+   "expected_session": 2803,
+   "game_id": "2130511121.H1.s34-integrated-live-1.p01",
+   "position": 1,
+   "red": "s34-integrated-mission-orchestrator-1",
+   "repetition": 1,
+   "scenario_id": "2130511121",
+   "screen_position": 1,
+   "stage": "A"
+  },
+  {
+   "batch": "A1",
+   "blue": "s34-integrated-mission-orchestrator-1",
+   "condition": "H2",
+   "expected_session": 2804,
+   "game_id": "2130511121.H2.s34-integrated-live-1.p02",
+   "position": 2,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 1,
+   "scenario_id": "2130511121",
+   "screen_position": 2,
+   "stage": "A"
+  },
+  {
+   "batch": "A1",
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "H1",
+   "expected_session": 2805,
+   "game_id": "2120531121.H1.s34-integrated-live-1.p03",
+   "position": 3,
+   "red": "s34-integrated-mission-orchestrator-1",
+   "repetition": 1,
+   "scenario_id": "2120531121",
+   "screen_position": 3,
+   "stage": "A"
+  },
+  {
+   "batch": "A1",
+   "blue": "s34-integrated-mission-orchestrator-1",
+   "condition": "H2",
+   "expected_session": 2806,
+   "game_id": "2120531121.H2.s34-integrated-live-1.p04",
+   "position": 4,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 1,
+   "scenario_id": "2120531121",
+   "screen_position": 4,
+   "stage": "A"
+  },
+  {
+   "batch": "A1",
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "H1",
+   "expected_session": 2807,
+   "game_id": "1930331196.H1.s34-integrated-live-1.p05",
+   "position": 5,
+   "red": "s34-integrated-mission-orchestrator-1",
+   "repetition": 1,
+   "scenario_id": "1930331196",
+   "screen_position": 5,
+   "stage": "A"
+  },
+  {
+   "batch": "A1",
+   "blue": "s34-integrated-mission-orchestrator-1",
+   "condition": "H2",
+   "expected_session": 2808,
+   "game_id": "1930331196.H2.s34-integrated-live-1.p06",
+   "position": 6,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 1,
+   "scenario_id": "1930331196",
+   "screen_position": 6,
+   "stage": "A"
+  },
+  {
+   "batch": "A1",
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "H1",
+   "expected_session": 2809,
+   "game_id": "1910631192.H1.s34-integrated-live-1.p07",
+   "position": 7,
+   "red": "s34-integrated-mission-orchestrator-1",
+   "repetition": 1,
+   "scenario_id": "1910631192",
+   "screen_position": 7,
+   "stage": "A"
+  },
+  {
+   "batch": "A1",
+   "blue": "s34-integrated-mission-orchestrator-1",
+   "condition": "H2",
+   "expected_session": 2810,
+   "game_id": "1910631192.H2.s34-integrated-live-1.p08",
+   "position": 8,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 1,
+   "scenario_id": "1910631192",
+   "screen_position": 8,
+   "stage": "A"
+  },
+  {
+   "batch": "A2",
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "H1",
+   "expected_session": 2811,
+   "game_id": "2130511121.H1.s34-integrated-live-1.p09",
+   "position": 9,
+   "red": "s34-integrated-mission-orchestrator-1",
+   "repetition": 2,
+   "scenario_id": "2130511121",
+   "screen_position": 9,
+   "stage": "A"
+  },
+  {
+   "batch": "A2",
+   "blue": "s34-integrated-mission-orchestrator-1",
+   "condition": "H2",
+   "expected_session": 2812,
+   "game_id": "2130511121.H2.s34-integrated-live-1.p10",
+   "position": 10,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 2,
+   "scenario_id": "2130511121",
+   "screen_position": 10,
+   "stage": "A"
+  },
+  {
+   "batch": "A2",
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "H1",
+   "expected_session": 2813,
+   "game_id": "2120531121.H1.s34-integrated-live-1.p11",
+   "position": 11,
+   "red": "s34-integrated-mission-orchestrator-1",
+   "repetition": 2,
+   "scenario_id": "2120531121",
+   "screen_position": 11,
+   "stage": "A"
+  },
+  {
+   "batch": "A2",
+   "blue": "s34-integrated-mission-orchestrator-1",
+   "condition": "H2",
+   "expected_session": 2814,
+   "game_id": "2120531121.H2.s34-integrated-live-1.p12",
+   "position": 12,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 2,
+   "scenario_id": "2120531121",
+   "screen_position": 12,
+   "stage": "A"
+  },
+  {
+   "batch": "A2",
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "H1",
+   "expected_session": 2815,
+   "game_id": "1930331196.H1.s34-integrated-live-1.p13",
+   "position": 13,
+   "red": "s34-integrated-mission-orchestrator-1",
+   "repetition": 2,
+   "scenario_id": "1930331196",
+   "screen_position": 13,
+   "stage": "A"
+  },
+  {
+   "batch": "A2",
+   "blue": "s34-integrated-mission-orchestrator-1",
+   "condition": "H2",
+   "expected_session": 2816,
+   "game_id": "1930331196.H2.s34-integrated-live-1.p14",
+   "position": 14,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 2,
+   "scenario_id": "1930331196",
+   "screen_position": 14,
+   "stage": "A"
+  },
+  {
+   "batch": "A2",
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "H1",
+   "expected_session": 2817,
+   "game_id": "1910631192.H1.s34-integrated-live-1.p15",
+   "position": 15,
+   "red": "s34-integrated-mission-orchestrator-1",
+   "repetition": 2,
+   "scenario_id": "1910631192",
+   "screen_position": 15,
+   "stage": "A"
+  },
+  {
+   "batch": "A2",
+   "blue": "s34-integrated-mission-orchestrator-1",
+   "condition": "H2",
+   "expected_session": 2818,
+   "game_id": "1910631192.H2.s34-integrated-live-1.p16",
+   "position": 16,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "repetition": 2,
+   "scenario_id": "1910631192",
+   "screen_position": 16,
+   "stage": "A"
+  },
+  {
+   "batch": "B1",
+   "blue": "inert-v0",
+   "condition": "C2",
+   "expected_session": 2819,
+   "game_id": "2120531121.C2.s34-integrated-live-1.p17",
+   "position": 17,
+   "red": "s34-integrated-mission-orchestrator-1",
+   "repetition": 1,
+   "scenario_id": "2120531121",
+   "screen_position": 17,
+   "stage": "B"
+  },
+  {
+   "batch": "B1",
+   "blue": "s34-integrated-mission-orchestrator-1",
+   "condition": "C3",
+   "expected_session": 2820,
+   "game_id": "2120531121.C3.s34-integrated-live-1.p18",
+   "position": 18,
+   "red": "inert-v0",
+   "repetition": 1,
+   "scenario_id": "2120531121",
+   "screen_position": 18,
+   "stage": "B"
+  },
+  {
+   "batch": "B1",
+   "blue": "inert-v0",
+   "condition": "C2",
+   "expected_session": 2821,
+   "game_id": "1930331196.C2.s34-integrated-live-1.p19",
+   "position": 19,
+   "red": "s34-integrated-mission-orchestrator-1",
+   "repetition": 1,
+   "scenario_id": "1930331196",
+   "screen_position": 19,
+   "stage": "B"
+  },
+  {
+   "batch": "B1",
+   "blue": "s34-integrated-mission-orchestrator-1",
+   "condition": "C3",
+   "expected_session": 2822,
+   "game_id": "1930331196.C3.s34-integrated-live-1.p20",
+   "position": 20,
+   "red": "inert-v0",
+   "repetition": 1,
+   "scenario_id": "1930331196",
+   "screen_position": 20,
+   "stage": "B"
+  },
+  {
+   "batch": "B2",
+   "blue": "inert-v0",
+   "condition": "C2",
+   "expected_session": 2823,
+   "game_id": "2120531121.C2.s34-integrated-live-1.p21",
+   "position": 21,
+   "red": "s34-integrated-mission-orchestrator-1",
+   "repetition": 2,
+   "scenario_id": "2120531121",
+   "screen_position": 21,
+   "stage": "B"
+  },
+  {
+   "batch": "B2",
+   "blue": "s34-integrated-mission-orchestrator-1",
+   "condition": "C3",
+   "expected_session": 2824,
+   "game_id": "2120531121.C3.s34-integrated-live-1.p22",
+   "position": 22,
+   "red": "inert-v0",
+   "repetition": 2,
+   "scenario_id": "2120531121",
+   "screen_position": 22,
+   "stage": "B"
+  },
+  {
+   "batch": "B2",
+   "blue": "inert-v0",
+   "condition": "C2",
+   "expected_session": 2825,
+   "game_id": "1930331196.C2.s34-integrated-live-1.p23",
+   "position": 23,
+   "red": "s34-integrated-mission-orchestrator-1",
+   "repetition": 2,
+   "scenario_id": "1930331196",
+   "screen_position": 23,
+   "stage": "B"
+  },
+  {
+   "batch": "B2",
+   "blue": "s34-integrated-mission-orchestrator-1",
+   "condition": "C3",
+   "expected_session": 2826,
+   "game_id": "1930331196.C3.s34-integrated-live-1.p24",
+   "position": 24,
+   "red": "inert-v0",
+   "repetition": 2,
+   "scenario_id": "1930331196",
+   "screen_position": 24,
+   "stage": "B"
+  }
+ ],
+ "inputs": {
+  "shoot_manifest_sha256": "01c9c9675af4b0859fc55e54a5dc86513b624208bf13131e7b510b87a3122afd"
+ },
+ "mechanism": "a whole-force decision cycle: allocation of every free mobile ground unit to objective slots, routes under friendly-traffic capacity, retention, transport, fire and indirect fire, independently validated; baseline-v2 decides a step only as a recorded fallback",
+ "next_step_rule": "after every batch the gate of evaluation.s34_live.batch_gate; the disposition of evaluation.s34_live.disposition",
+ "observations": "scores and margins, objectives first owned, held, lost and recaptured, force losses, traffic waits, refusals, fire, module activity, reconstruction and attribution against baseline-v2",
+ "players": [
+  {
+   "faction": 0,
+   "role": 1,
+   "seat": 1,
+   "user_id": 0,
+   "user_name": "demo"
+  },
+  {
+   "faction": 1,
+   "role": 1,
+   "seat": 11,
+   "user_id": 0,
+   "user_name": "demo"
+  }
+ ],
+ "policies": {
+  "baseline-v2-candidate-shoot-target-reservation": {
+   "label": "baseline-v2 (frozen)",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ],
+    "sha256": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ]
+   }
+  },
+  "s34-integrated-mission-orchestrator-1": {
+   "label": "Sprint 34 integrated agent, variant mission-orchestrator",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py",
+     "integrated/__init__.py",
+     "integrated/agent.py",
+     "integrated/allocation.py",
+     "integrated/assignment.py",
+     "integrated/config.py",
+     "integrated/facts.py",
+     "integrated/fire.py",
+     "integrated/memory.py",
+     "integrated/movement.py",
+     "integrated/policy.py",
+     "integrated/traffic.py",
+     "integrated/transport.py",
+     "integrated/validate.py",
+     "integrated/world.py"
+    ],
+    "sha256": "b107d23ecdb57d9efb42610818eae60b64311480529d26dfdb6e2976ebcdad3b",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py",
+     "integrated"
+    ]
+   }
+  }
+ },
+ "purpose": "exploratory",
+ "randomness": {
+  "global_seed": 20260929,
+  "procedure": "each game runs in a fresh process; the harness seeds Python's and NumPy's global generators with global_seed before the engine is constructed and records whether the engine consumes them; no undocumented engine interface is used",
+  "python_hash_seed": 0
+ },
+ "runtime_environment": {
+  "OPENBLAS_NUM_THREADS": "1"
+ },
+ "safety_checks": "structural stops S1 to S6 per game; severe harm per Stage A batch; Stage B only when Stage A's gate is open; one game per session, serially, exclusive sessions",
+ "scenarios": [
+  {
+   "alternates": [
+    "2120511121",
+    "2130511421",
+    "2230531121",
+    "2230531221",
+    "2130511321",
+    "2130511121",
+    "2130511221"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+    "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+    "scenario": "a4536a361ac9dd879ad326d8c5f40583433c3299f5184b4af06ddb110ab297cf",
+    "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "operators": 54,
+   "red": 28,
+   "rule": "S2 fewest operators on map 21",
+   "scenario_id": "2120531121"
+  },
+  {
+   "alternates": [
+    "1930631192",
+    "2230631192"
+   ],
+   "blue": 6,
+   "cities": 2,
+   "inputs_sha256": {
+    "basic": "8d4bf628205d08abfcc87b0672142e0e1e0b86dd205a6611fc1034de4c12f27a",
+    "cost": "b7a6ffb937be31a76ad61426a64212c90ee8c3b378eb04658162ee5825310c3c",
+    "scenario": "4a44b94fba790b4535e03c1991bcc81253d0d61a228214c0c6b00caf0b0d8022",
+    "see": "c8e346d02bcc338a96894b9e4e1ed8d09eed4b15a9baeca96d17c2edcc3eaa19"
+   },
+   "map_id": "92",
+   "max_time": 1800,
+   "operators": 12,
+   "red": 6,
+   "rule": "S2 fewest operators on map 92",
+   "scenario_id": "1910631192"
+  },
+  {
+   "alternates": [
+    "2020331196",
+    "2120331196",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2140331196"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "206c437995216aed6dd14a310d3a2ada0f7148dd8d40e4ec52c900b224d06f15",
+    "cost": "b136cc86cae77d53482f2b2ff3df0087278d51628e1a4cf453307d8da008997f",
+    "scenario": "a15d3b3bf499694d93a981511c16b5c1c9247487ac1cf1d88b2bf1bd2c75c1b1",
+    "see": "e69b9e85d77cc8de4600c42b48939ea625236a7a3b705090fa9b3745775009e2"
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "operators": 52,
+   "red": 26,
+   "rule": "S2 fewest operators on map 96",
+   "scenario_id": "1930331196"
+  },
+  {
+   "alternates": [
+    "2130511221",
+    "2140131194",
+    "2140331196",
+    "2130511321",
+    "1930631192",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2230531221",
+    "2230631192",
+    "2030111194",
+    "2130511421",
+    "2230531121",
+    "2120131294",
+    "2120511121",
+    "2120131194",
+    "2120331196",
+    "2020331196",
+    "2110431753",
+    "2010441253",
+    "2110431153",
+    "2110431253",
+    "2110431353",
+    "2110431453",
+    "2110431553",
+    "2110431653",
+    "201033029601",
+    "201033039601",
+    "211033019601",
+    "2010141294"
+   ],
+   "blue": 44,
+   "cities": 7,
+   "inputs_sha256": {
+    "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+    "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+    "scenario": "9611e334d4fd6f2eda5957a26116bf8ec21c3e04754ed349d9a0fa0e9dc68070",
+    "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "operators": 89,
+   "red": 45,
+   "rule": "S3 largest force",
+   "scenario_id": "2130511121"
+  }
+ ],
+ "schema": "miaosuan-exploratory-run-card/1",
+ "screen": {
+  "batches": {
+   "A1": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "A2": [
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+   ],
+   "B1": [
+    17,
+    18,
+    19,
+    20
+   ],
+   "B2": [
+    21,
+    22,
+    23,
+    24
+   ]
+  },
+  "dispositions": [
+   "S34_ENGINEERING_BLOCKED",
+   "S34_LIVE_INVALID",
+   "S34_INTEGRATED_REJECT",
+   "S34_INTEGRATED_INCONCLUSIVE",
+   "S34_INTEGRATED_PROMISING"
+  ],
+  "expected_sessions": [
+   2803,
+   2804,
+   2805,
+   2806,
+   2807,
+   2808,
+   2809,
+   2810,
+   2811,
+   2812,
+   2813,
+   2814,
+   2815,
+   2816,
+   2817,
+   2818,
+   2819,
+   2820,
+   2821,
+   2822,
+   2823,
+   2824,
+   2825,
+   2826
+  ],
+  "frozen_files": {
+   "evaluation/s34-integrated-agent/references.json": "40232beaf2086672295c282add8712d787d39ceb2a0a03b86410fb7b3438f10a",
+   "evaluation/s34-integrated-agent/selection.json": "ebeaaf6dacfd8254d37913ac6fdefdd5f3bc2acb284622bcc31367b7fb1389d8",
+   "scripts/build_s34_card.py": "7e6894bf5576130723ee370936eafa833761771904007575f845f58b94b39c93",
+   "scripts/run_s34.py": "4393bb4fb54acaf862ebdb022400e339cb45032e945a13998f37bcb33bf2a3e0",
+   "scripts/run_s34_game.py": "b4e82c3a617da2e99ae7ad916c6f12cc4820cc8935e787f268832d3ae3ee2267",
+   "scripts/s34_analysis.py": "190fc08b374dcc1910998e4c9900715d72d07595b0ebc742f037714c54549913",
+   "src/miaosuan_agent/evaluation/s34_capture.py": "1b4e02ccfdfb9516faede645054ec65211d8635b276b9bd885796e8880b11cb4",
+   "src/miaosuan_agent/evaluation/s34_live.py": "7e7e24021a53a0ec5a2176394ae9eb158054117d62545a4082180da5c89b91d2"
+  },
+  "id": "s34-integrated-live",
+  "live_config": "mission-orchestrator",
+  "rules": "s34-integrated-live-rules-1",
+  "rules_sha256": "7e7e24021a53a0ec5a2176394ae9eb158054117d62545a4082180da5c89b91d2"
+ },
+ "status": "EXPLORATORY TRACK - REGISTERED MULTI-SCENARIO EVALUATION OF AN INTEGRATED AGENT - NOT A CONFIRMATION - NOT ELIGIBLE FOR PROMOTION",
+ "track": "EXPLORATORY",
+ "version": "Sprint 34 integrated tactical agent (docs/SPRINT34_INTEGRATED_AGENT.md)"
+}
