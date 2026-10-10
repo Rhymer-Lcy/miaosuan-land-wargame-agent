@@ -213,3 +213,124 @@ configurations (2130511121 C2 and C3, 2120531121 C3, 1930331196 C2 and C3).
   zero-valued fields, so a field dropped from that list was dropped from the test as well; the tests now name the ten
   fields themselves) and one mutation was equivalent (admitting aircraft as targets changes nothing, because no aircraft
   range is published) and was replaced by admitting own units as targets. The final run caught 38 of 38.
+
+## 6. Preflight results (2026-10-10)
+
+Read from the committed `evaluation/s32-t7-b1/preflight.json`, which `scripts/s32_preflight.py run --check` regenerates
+byte for byte on the evaluation server.
+
+### R1. Order of work
+
+Sections 1 to 5, the candidate, the preflight and mechanism-check rules, their tests, both mutation records and the
+frozen inputs were pushed at 2026-10-10T11:52:01+08:00 (`a53d66a243557da172cda246380054cf1529868b`, tree
+`7a11886c43ea038a1d754ea92996bd6cda639533`). The server worktree was fast-forwarded to that commit (its own frozen
+input file was byte-identical to the committed one) and the preflight was run once: one process with 8 workers pinned
+to NUMA node 0, 78 s. No engine process was started.
+
+### R2. Fidelity
+
+Every anchor reproduced: H0 33,696 decisions, 33,680 play decisions and 123 differences from the recorded
+`baseline-v0`; HH 11,524, HI 8,643 and HX 5,762 decisions, each equal to the recorded seat; 4, 2, 3 and 16 side-games
+(HH, HX, HI, H0). The independent restatement agreed with the candidate at every play decision of every side: 0
+findings. No field was unreadable and no stop listing ambiguous.
+
+### R3. Opportunities by population (never pooled)
+
+| | HH | HX | HI | H0 |
+|---|---:|---:|---:|---:|
+| side-games | 4 | 2 | 3 | 16 |
+| eligible unit-decisions | 2,667 | 2,410 | 154 | 5,035 |
+| opportunity episodes (one unit, consecutive decisions) | 100 | 55 | 8 | 116 |
+| distinct units, equal to the candidate's stops (one per unit) | 27 | 21 | 5 | 48 |
+| side-games with a stop | 4 | 2 | 2 | 10 |
+| valid first divergences | 4 | 2 | 2 | 5 |
+| unit-decisions waiting with a path (excluded at level C) | 26,983 | 9,219 | 19,389 | 13,673 |
+
+Over all stops (first and later), every target was a vehicle in HH, HX and HI (46 of 48 in H0), and the reaching weapon
+was a missile or a rocket launcher in every HH, HX and HI stop. On the record, where the units kept moving, no stopped
+unit was listed a shot inside its window (0 in every population), as section 3.3 predicts for a traversing non-tank
+unit.
+
+### R4. First divergences of the genuine sides
+
+| Side | Step | Unit | Reaching weapon | Distance (range) | `h0` | Others at the stop hex | Target in view and range through the window | Path to an unheld objective; first owned in the window |
+|---|---:|---|---|---|---:|---:|---|---|
+| HH p01 and p03, HX s31-p03 (blue) | 162 | vehicle, sub_type 1 | vehicle-mounted missile | 19 (20) | 19 | 1 | no | yes; yes |
+| HH p02 and p04, HX s27-p01 (red) | 80 | vehicle, sub_type 1 | heavy missile | 20 (20) | 20 | 2 | yes | yes; no |
+| HI 2120531121 C3 (blue) | 380 | vehicle, sub_type 1 | vehicle-mounted missile | 18 (20) | 20 | 1 | yes | no |
+| HI 1930331196 C3 (blue) | 620 | vehicle, sub_type 1 | vehicle-mounted missile | 20 (20) | 20 | 1 | yes | no |
+| HI 1930331196 C2 (red) | none | | | | | | | |
+
+The three blue and the three red head-to-head sides in 2130511121 give the same first divergence against three
+different opponents. In the inert games the first stop comes late (steps 380 and 620), at the edge of a 20-hex missile
+range, and the HI population has 5 stops in all; the red inert side has no eligible unit-decision at all (its own unit-
+decisions fail level I 12,110 times, and 3,908 are waiting units).
+
+### R5. Record-level description of the inert configurations (descriptive)
+
+Fifteen group C games per configuration (`baseline-v2` against the inert control; records only):
+
+| Configuration | Shots per game (min, median, max) | First shot step | Moves per game | Occupy | Margin (min, mean, max) |
+|---|---|---:|---:|---:|---|
+| 2130511121 C2, `baseline-v2` red | 29, 32, 36 | 101 | 72 | 440 | 753, 2359/3, 793 |
+| 2130511121 C3, `baseline-v2` blue | 5, 8, 8 | 525 | 104 | 440 | 571, 9347/15, 659 |
+| 2120531121 C3, `baseline-v2` blue | 13, 21, 29 | 168 | 47 | 310 | 559, 1765/3, 599 |
+| 1930331196 C2, `baseline-v2` red | 1, 2, 4 | 611 | 47 | 310 | 258, 4094/15, 274 |
+| 1930331196 C3, `baseline-v2` blue | 8, 10, 12 | 212 | 50 | 310 | 570, 570, 570 |
+
+Every game of every configuration has a shot, and within each configuration the first shot falls at the same step and
+the move count is the same in all fifteen games. The shots show that some own unit had an enemy in view and in range;
+they cannot show that a moving non-tank unit did: in 2120531121 C3 and 1930331196 C3, whose full-step records exist,
+the first stop opportunity (steps 380 and 620) comes long after the first shot (168 and 212), and 1930331196 C2 has a
+shot in every game but no stop opportunity in its full-step record.
+
+### R6. Disposition: `S32_PREFLIGHT_INADEQUATE`
+
+| Configuration | Status |
+|---|---|
+| 2130511121 C2, `baseline-v2` red (proposed) | `NO_FULL_STEP_RECORD` |
+| 2130511121 C3, `baseline-v2` blue (proposed) | `NO_FULL_STEP_RECORD` |
+| 2120531121 C3, `baseline-v2` blue | `VERIFIED` (first divergence at step 380) |
+| 1930331196 C3, `baseline-v2` blue | `VERIFIED` (first divergence at step 620) |
+| 1930331196 C2, `baseline-v2` red | `NO_OPPORTUNITY` |
+
+Neither proposed configuration can be verified from a full-step record, and no inert configuration verifies a red
+`baseline-v2` seat, so the registered rule gives `S32_PREFLIGHT_INADEQUATE`: **no live test is proposed and no session
+is requested.**
+
+### R7. What the head-to-head opportunities rest on (post hoc, read after the disposition; changes nothing)
+
+`local/diagnostics/s32/posthoc.py` on the all-seeing states of the six HH and HX timelines: in all six first divergences
+the target had moved before the stop (the opponent's units were moving from step 1); the red sides had not fired
+before their stop at step 80, the blue sides had fired twice before theirs at step 162; no objective flag had changed
+before step 80, and a flag had first changed at step 161. So the 2130511121 opportunities seen against active opponents involve
+targets that had come forward; against the inert control, whose units never move, these records do not show the same
+geometry arising, and cannot show that it would not.
+
+### R8. Candidate, tests and mutation
+
+The candidate (section 4) is implemented and tested and has no engine use. Tests: `tests/test_t7_b1_stop_engage.py`
+(26), `tests/test_s32_preflight.py` (10), `tests/test_s32_mechanism.py` (16). Mutation: the preflight phase caught 38 of
+38 after a first run of 34 (section 5); the mechanism phase caught 23 of 23 after a first run of 22, whose survivor was
+a test gap (the gate test recomputed the open-gate rule instead of reading the verdict function's own flag), closed.
+
+### R9. The mechanism check, prepared but not proposed
+
+`src/miaosuan_agent/evaluation/s32_mechanism.py` fixes the windows of section 3.5 (tolerance 2 steps; the path cleared
+by `s0 + h0 + 2`; completion within `P + 75` plus or minus 2 of the clearing step `P`; firing opportunity, shot and
+re-listed movement within 2 steps of completion), its adverse outcomes (rejected, deferred, path not cleared, overrun,
+no transition, transition timing, unable to resume), its censoring (destruction, game end, suppression at completion),
+the deadlock bound (300 frames at a full stop hex), the harm stops (occupy below the constant control value, margin
+more than 50 below the control minimum), the per-game verdicts (`STRUCTURAL`, `ADVERSE`, `HARM`, `NOT_ENGAGING`,
+`UNTESTED`, `STOP_ONLY`, `OBSERVED`; the next game opens only after one of the last three) and the disposition
+(`T7B1_MECH_INVALID`, `T7B1_MECH_REJECT`, `T7B1_MECH_NOT_ENGAGING`, `T7B1_MECH_SUPPORTED`, `T7B1_MECH_STOP_ONLY`,
+`T7B1_MECH_UNTESTED`, first match in that order). The rules are kept so that a later, owner-approved configuration can
+be registered without writing new ones. Under this sprint's disposition no configuration is put forward, no run card is
+built and no runner or observer is written.
+
+### R10. Evidence limits
+
+* No record contains a stop on a traversing unit: every engine behaviour of section 3.5 remains UNKNOWN; the preflight
+  counts opportunities, not effects.
+* Recorded-trajectory descriptions say what happened without a stop; they are not effects of a stop.
+* The inert population is three games; the two proposed configurations have none.
