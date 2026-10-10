@@ -1,0 +1,143 @@
+{
+ "killed": 25,
+ "mutations": [
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "inert occupy boundary"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "inert margin boundary"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "mirror margin boundary"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "mirror occupy ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "opening objectives ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "M1 ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "M2 ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "M3 boundary"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "retention without the empty path"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "release not detected"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "interference at three units"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "gate ignores harm"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "promising at the red maximum"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "promising margin strict"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "session after a closed gate tolerated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "early stop with an open gate tolerated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "ledger games ordered by id"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "position count ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "reconstruction count ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "independent findings ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "controls pin ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_pilot.py",
+   "mutation": "objective losses not counted"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s31_analysis.py",
+   "mutation": "closed earlier gate tolerated"
+  },
+  {
+   "killed": true,
+   "module": "scripts/s31_analysis.py",
+   "mutation": "unregenerated analysis tolerated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_capture.py",
+   "mutation": "candidate memory not checked"
+  }
+ ],
+ "phase": "pilot",
+ "schema": "miaosuan-s31-mutation/1",
+ "sources": {
+  "scripts/s31_analysis.py": "2e558e9b5a21824304b49c53c4187d7624e98ac5f890bf1c188e9a12de946ee4",
+  "src/miaosuan_agent/evaluation/s31_capture.py": "c548e2ea5f2215c984492b609c49cbdc96791fb06d69bd802dc68da4907e655f",
+  "src/miaosuan_agent/evaluation/s31_pilot.py": "5e29fca54346fe800fb9ec1787ce14b32eef13802be967f0bc68c10b27b19c65",
+  "tests/test_s31_pilot.py": "d7dd716329d595782b2015ac40ff64e47bafe258db5a39bee2de5aeb27cc8bad"
+ },
+ "tests": [
+  "tests.test_s31_pilot"
+ ],
+ "total": 25,
+ "unmutated_tests_pass": true
+}
