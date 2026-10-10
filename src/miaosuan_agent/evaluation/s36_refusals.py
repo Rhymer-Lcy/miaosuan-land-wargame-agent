@@ -32,15 +32,15 @@ policy does not declare. They are counted from the game facts.
 * structural (any one closes the study at once): ``A >= 1``, ``B >= 1``, ``C >= 1``, ``E >= 2`` in one game, or
   ``E >= 3`` over the study so far; an echo-count mismatch (the engine echoed a different number of the seat's actions
   than it emitted) makes the denominator untrustworthy and is structural too;
-* systemic (a pattern, closes the study as an agent failure when the game is the candidate's): for the fire actions
-  (shots and guided shots) and the other unit actions separately, ``D`` refusals at least ``SYSTEMIC_MIN`` and their
-  upper binomial tail under the calibrated reference race rate below ``SYSTEMIC_ALPHA``; or ``R`` refusals at least
-  ``SYSTEMIC_MIN`` with the same tail test under the reference redundancy rate; or one unit refused ``REPEAT_ACTOR``
-  times or more in one game.
+* systemic (a pattern): for the fire actions (shots and guided shots) and the other unit actions separately, ``D``
+  refusals at least ``SYSTEMIC_MIN`` whose upper binomial tail under the calibrated reference race rate is below
+  ``SYSTEMIC_ALPHA`` (below ``MIN_DENOMINATOR`` actions of the group, ``SYSTEMIC_MIN`` alone decides); ``R`` refusals
+  at least ``REDUNDANT_MIN`` (the reference redundancy rate is zero); or one unit refused ``REPEAT_ACTOR`` times or more
+  in one game.
 
-The reference rates, ``SYSTEMIC_MIN``, ``SYSTEMIC_ALPHA`` and ``REPEAT_ACTOR`` are set from the complete historical
-population (``scripts/s36_refusal_audit.py``, ``evaluation/s36-tactical-recovery/refusal-audit.json``), never from a
-Sprint 36 engine game.
+The reference rates, ``SYSTEMIC_MIN``, ``REDUNDANT_MIN``, ``SYSTEMIC_ALPHA``, ``MIN_DENOMINATOR`` and ``REPEAT_ACTOR``
+are set from the complete historical population (``scripts/s36_refusal_audit.py``,
+``evaluation/s36-tactical-recovery/refusal-audit.json``), never from a Sprint 36 engine game.
 """
 
 from __future__ import annotations
