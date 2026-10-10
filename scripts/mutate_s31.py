@@ -79,6 +79,55 @@ PHASES = {
              "    with swapped(pf, independent_problems=independent_problems):"),
         ],
     },
+    "pilot": {
+        "tests": ("tests.test_s31_pilot",),
+        "out": OUT / "mutation-pilot.json",
+        "rebuild_card": True,
+        "mutations": [
+            (PILOT, "inert occupy boundary", 'if s["occupy"] < inert["occupy"]:', 'if s["occupy"] <= inert["occupy"]:'),
+            (PILOT, "inert margin boundary", 'if s["margin"] < inert["margin_floor"]:',
+             'if s["margin"] <= inert["margin_floor"]:'),
+            (PILOT, "mirror margin boundary", 'if s["margin"] < h2h["margin_minimum"]:',
+             'if s["margin"] <= h2h["margin_minimum"]:'),
+            (PILOT, "mirror occupy ignored", 'if s["occupy"] < h2h["occupy_minimum"]:', "if False:"),
+            (PILOT, "opening objectives ignored", "    if never:", "    if False:"),
+            (PILOT, "M1 ignored", 'if m["departures_without_release"]:', "if False:"),
+            (PILOT, "M2 ignored", 'if m["executed_episodes"] == 0:', "if False:"),
+            (PILOT, "M3 boundary", '>= RULES["mechanism"]["interference_limit_steps"]',
+             '> RULES["mechanism"]["interference_limit_steps"]'),
+            (PILOT, "retention without the empty path",
+             'elif own[k + 1][u].get("cur_hex") == c and not own[k + 1][u].get("move_path"):',
+             'elif own[k + 1][u].get("cur_hex") == c:'),
+            (PILOT, "release not detected", "elif u in moved[k - 1]:", "elif False:"),
+            (PILOT, "interference at three units", 'and count[u.get("move_path")[0]] >= 4',
+             'and count[u.get("move_path")[0]] >= 3'),
+            (PILOT, "gate ignores harm", "    if harm:", "    if False:"),
+            (PILOT, "promising at the red maximum", 'if not red["scores"]["occupy"] > h2h["occupy_maximum"]:',
+             'if not red["scores"]["occupy"] >= h2h["occupy_maximum"]:'),
+            (PILOT, "promising margin strict", 'if not Fraction(red["scores"]["margin"]) >= Fraction(h2h["margin_mean"]):',
+             'if not Fraction(red["scores"]["margin"]) > Fraction(h2h["margin_mean"]):'),
+            (PILOT, "session after a closed gate tolerated", 'if closed and closed[0] != games_[-1]["position"]:',
+             "if False:"),
+            (PILOT, "early stop with an open gate tolerated", "if not closed and len(games_) < SESSION_CEILING:",
+             "if False:"),
+            (PILOT, "ledger games ordered by id", "key=lambda kv: int(kv[1])", "key=lambda kv: kv[0]"),
+            (PILOT, "position count ignored", 'if audit["sessions"] != position - 1 or', "if False and"),
+            (PILOT, "reconstruction count ignored",
+             'if timeline.get("reconstructed_decisions") != policy_seats * len(steps) or',
+             'if False and timeline.get("reconstructed_decisions") != policy_seats * len(steps) or'),
+            (PILOT, "independent findings ignored",
+             '("independent_problems", "decisions with an independent-check finding")',
+             '("independent_problemz", "decisions with an independent-check finding")'),
+            (PILOT, "controls pin ignored", "if screen.get(key) != digest or not path.exists()",
+             "if False and not path.exists()"),
+            (PILOT, "objective losses not counted", "            if held and not now:", "            if False:"),
+            (Path("scripts/s31_analysis.py"), "closed earlier gate tolerated",
+             'if not gate["next_session_authorized"]:', "if False:"),
+            (Path("scripts/s31_analysis.py"), "unregenerated analysis tolerated",
+             'if path.read_text(encoding="utf-8") != text:', "if False:"),
+            (CAPTURE, "candidate memory not checked", '"addon_memory": addon_memory == ()}', '"addon_memory": True}'),
+        ],
+    },
 }
 
 
@@ -89,18 +138,22 @@ def env_for(root: Path) -> dict:
     return env
 
 
-def prepare(root: Path, replacements) -> None:
+def prepare(root: Path, replacements, rebuild_card: bool = False) -> None:
     for name in ("src", "tests", "scripts", "evaluation"):
         shutil.copytree(REPO_ROOT / name, root / name, ignore=shutil.ignore_patterns("__pycache__"))
     for source, text in replacements.items():
         (root / source).parent.mkdir(parents=True, exist_ok=True)
         (root / source).write_text(text, encoding="utf-8", newline="\n")
+    if rebuild_card:  # re-pin the card inside the copy, so that no mutant is killed by the digest pin alone
+        (root / "evaluation" / "s31-t13-k2-pilot-1" / "manifest.json").unlink()
+        subprocess.run([sys.executable, str(root / "scripts" / "build_s31_card.py")], cwd=root, env=env_for(root),
+                       capture_output=True, text=True, timeout=600)
 
 
-def tests_pass(tests, replacements) -> tuple:
+def tests_pass(tests, replacements, rebuild_card: bool = False) -> tuple:
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
-        prepare(root, replacements)
+        prepare(root, replacements, rebuild_card)
         done = subprocess.run([sys.executable, "-m", "unittest", *tests], cwd=root, env=env_for(root),
                               capture_output=True, text=True, timeout=1800)
     return done.returncode == 0, done.stdout[-1500:] + done.stderr[-1500:]
@@ -133,12 +186,13 @@ def main() -> int:
     if len(set(names)) != len(names):
         raise SystemExit("two mutations share a name")
     plans = [mutated(m) for m in mutations]
-    passed, log = tests_pass(tests, {})
+    rebuild = phase.get("rebuild_card", False)
+    passed, log = tests_pass(tests, {}, rebuild)
     if not passed:
         raise SystemExit("the unmutated tests fail in the temporary copy; kills would be vacuous\n" + log)
     results = []
     for (source, name, _, _), plan in zip(mutations, plans):
-        ok, _ = tests_pass(tests, plan)
+        ok, _ = tests_pass(tests, plan, rebuild)
         results.append({"mutation": name, "module": source.as_posix(), "killed": not ok})
     sources = sorted({m[0] for m in mutations if (REPO_ROOT / m[0]).exists()} |
                      {Path(f"{t.replace('.', '/')}.py") for t in tests}, key=lambda p: p.as_posix())
