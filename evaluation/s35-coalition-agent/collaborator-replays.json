@@ -1,0 +1,3523 @@
+{
+ "divergence": [
+  {
+   "differing_keys": [
+    "operators",
+    "passengers",
+    "actions"
+   ],
+   "first_differing_frame": 3,
+   "pair": [
+    "8700",
+    "0047"
+   ],
+   "step": 1
+  },
+  {
+   "differing_keys": [
+    "operators",
+    "passengers",
+    "role_and_grouping_info",
+    "valid_actions",
+    "actions"
+   ],
+   "first_differing_frame": 1,
+   "pair": [
+    "8567",
+    "8700"
+   ],
+   "step": 0
+  }
+ ],
+ "note": "sanitized aggregates of three third-party replays; seat attribution is the owner's designation (both seats are named alike in the replays); EMISSION = echoed action, ACCEPTANCE = echo without an error, EFFECT = observed state change or judge record",
+ "replays": {
+  "0047": {
+   "alive_at_end": [
+    {
+     "key": [
+      "blue",
+      "artillery"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "helicopter"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "squad"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "uav"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "artillery"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "ifv"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "squad"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "uav"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "ugv"
+     ],
+     "n": 3
+    }
+   ],
+   "attribution": null,
+   "attribution_status": "UNATTRIBUTED",
+   "disembark_effects_play": [
+    {
+     "key": [
+      "red",
+      "loitering_munition"
+     ],
+     "n": 6
+    }
+   ],
+   "embark_effects_play": [],
+   "emitted": [
+    {
+     "key": [
+      "blue",
+      2,
+      "move"
+     ],
+     "n": 34
+    },
+    {
+     "key": [
+      "blue",
+      2,
+      "occupy"
+     ],
+     "n": 5
+    },
+    {
+     "key": [
+      "blue",
+      2,
+      "shoot"
+     ],
+     "n": 49
+    },
+    {
+     "key": [
+      "red",
+      1,
+      "get_on"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "cancel_indirect_fire"
+     ],
+     "n": 136
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "change_state"
+     ],
+     "n": 26
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "get_off"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "get_on"
+     ],
+     "n": 12
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "graphic_marker"
+     ],
+     "n": 436
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "guided_shoot"
+     ],
+     "n": 4
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "indirect_fire_plan"
+     ],
+     "n": 162
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "move"
+     ],
+     "n": 826
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "shoot"
+     ],
+     "n": 32
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "stop"
+     ],
+     "n": 58
+    }
+   ],
+   "final_scores": {
+    "blue_occupy": 310,
+    "blue_remain": 19,
+    "blue_total": 459,
+    "blue_win": -122,
+    "red_occupy": 0,
+    "red_remain": 193,
+    "red_total": 581,
+    "red_win": 122
+   },
+   "frames": 2883,
+   "graphic_markers_by_seat": {
+    "red": 436
+   },
+   "hex_transitions": [
+    {
+     "key": [
+      "blue",
+      "helicopter"
+     ],
+     "n": 37
+    },
+    {
+     "key": [
+      "blue",
+      "ifv"
+     ],
+     "n": 168
+    },
+    {
+     "key": [
+      "blue",
+      "squad"
+     ],
+     "n": 98
+    },
+    {
+     "key": [
+      "blue",
+      "tank"
+     ],
+     "n": 156
+    },
+    {
+     "key": [
+      "blue",
+      "uav"
+     ],
+     "n": 37
+    },
+    {
+     "key": [
+      "red",
+      "helicopter"
+     ],
+     "n": 355
+    },
+    {
+     "key": [
+      "red",
+      "ifv"
+     ],
+     "n": 93
+    },
+    {
+     "key": [
+      "red",
+      "loitering_munition"
+     ],
+     "n": 149
+    },
+    {
+     "key": [
+      "red",
+      "tank"
+     ],
+     "n": 64
+    },
+    {
+     "key": [
+      "red",
+      "uav"
+     ],
+     "n": 161
+    }
+   ],
+   "initial_units": [
+    {
+     "key": [
+      "blue",
+      "artillery"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "helicopter"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "ifv"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "squad"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "tank"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "uav"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "artillery"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "helicopter"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "ifv"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "loitering_munition"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "squad"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "tank"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "uav"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "ugv"
+     ],
+     "n": 3
+    }
+   ],
+   "judge_damage": [
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "helicopter"
+     ],
+     "n": 0
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "tank"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "ifv",
+      "red",
+      "helicopter"
+     ],
+     "n": 0
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "ifv",
+      "red",
+      "tank"
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "squad",
+      "red",
+      "helicopter"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "tank"
+     ],
+     "n": 9
+    },
+    {
+     "key": [
+      "red",
+      "guided",
+      "ifv",
+      "blue",
+      "ifv"
+     ],
+     "n": 5
+    },
+    {
+     "key": [
+      "red",
+      "guided",
+      "ifv",
+      "blue",
+      "tank"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "helicopter"
+     ],
+     "n": 0
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "ifv"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "squad"
+     ],
+     "n": 0
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "tank"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "uav"
+     ],
+     "n": 0
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "loitering_munition",
+      "blue",
+      "ifv"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "loitering_munition",
+      "blue",
+      "tank"
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "tank",
+      "blue",
+      "ifv"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "tank",
+      "blue",
+      "tank"
+     ],
+     "n": 5
+    },
+    {
+     "key": [
+      "red",
+      "indirect",
+      "artillery",
+      "blue",
+      "ifv"
+     ],
+     "n": 4
+    },
+    {
+     "key": [
+      "red",
+      "indirect",
+      "artillery",
+      "blue",
+      "squad"
+     ],
+     "n": 15
+    },
+    {
+     "key": [
+      "red",
+      "indirect",
+      "artillery",
+      "blue",
+      "tank"
+     ],
+     "n": 4
+    }
+   ],
+   "judge_records": [
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "helicopter",
+      false
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "tank",
+      false
+     ],
+     "n": 5
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "tank",
+      true
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "ifv",
+      "red",
+      "helicopter",
+      false
+     ],
+     "n": 8
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "ifv",
+      "red",
+      "tank",
+      false
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "ifv",
+      "red",
+      "tank",
+      true
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "squad",
+      "red",
+      "helicopter",
+      false
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "squad",
+      "red",
+      "helicopter",
+      true
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "tank",
+      false
+     ],
+     "n": 17
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "tank",
+      true
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "guided",
+      "ifv",
+      "blue",
+      "ifv",
+      true
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "red",
+      "guided",
+      "ifv",
+      "blue",
+      "tank",
+      true
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "helicopter",
+      false
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "ifv",
+      false
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "ifv",
+      true
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "squad",
+      false
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "tank",
+      false
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "tank",
+      true
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "uav",
+      false
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "loitering_munition",
+      "blue",
+      "ifv",
+      true
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "loitering_munition",
+      "blue",
+      "tank",
+      false
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "loitering_munition",
+      "blue",
+      "tank",
+      true
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "tank",
+      "blue",
+      "ifv",
+      false
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "tank",
+      "blue",
+      "ifv",
+      true
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "tank",
+      "blue",
+      "tank",
+      false
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "tank",
+      "blue",
+      "tank",
+      true
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "indirect",
+      "artillery",
+      "blue",
+      "ifv",
+      false
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "indirect",
+      "artillery",
+      "blue",
+      "ifv",
+      true
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "indirect",
+      "artillery",
+      "blue",
+      "squad",
+      false
+     ],
+     "n": 17
+    },
+    {
+     "key": [
+      "red",
+      "indirect",
+      "artillery",
+      "blue",
+      "squad",
+      true
+     ],
+     "n": 10
+    },
+    {
+     "key": [
+      "red",
+      "indirect",
+      "artillery",
+      "blue",
+      "tank",
+      false
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "indirect",
+      "artillery",
+      "blue",
+      "tank",
+      true
+     ],
+     "n": 4
+    }
+   ],
+   "objectives": [
+    {
+     "blue_steps_owned": 2260,
+     "final_owner": "blue",
+     "first_owned_step": 621,
+     "first_owner": "blue",
+     "flips": 1,
+     "label": "objective 1 (80)",
+     "red_steps_owned": 0
+    },
+    {
+     "blue_steps_owned": 2580,
+     "final_owner": "blue",
+     "first_owned_step": 301,
+     "first_owner": "blue",
+     "flips": 1,
+     "label": "objective 2 (80)",
+     "red_steps_owned": 0
+    },
+    {
+     "blue_steps_owned": 2260,
+     "final_owner": "blue",
+     "first_owned_step": 621,
+     "first_owner": "blue",
+     "flips": 1,
+     "label": "objective 3 (50)",
+     "red_steps_owned": 0
+    },
+    {
+     "blue_steps_owned": 2538,
+     "final_owner": "blue",
+     "first_owned_step": 343,
+     "first_owner": "blue",
+     "flips": 1,
+     "label": "objective 4 (50)",
+     "red_steps_owned": 0
+    },
+    {
+     "blue_steps_owned": 2199,
+     "final_owner": "blue",
+     "first_owned_step": 682,
+     "first_owner": "blue",
+     "flips": 1,
+     "label": "objective 5 (50)",
+     "red_steps_owned": 0
+    }
+   ],
+   "refusal_codes": {
+    "203": "CantControlDiedOperator",
+    "1300": "CantCancelJMPlanCauseNoPlan"
+   },
+   "refused": [
+    {
+     "key": [
+      "blue",
+      "shoot",
+      203
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "cancel_indirect_fire",
+      1300
+     ],
+     "n": 2
+    }
+   ],
+   "same_colour_judge_records": {
+    "blue->blue": 0,
+    "red->red": 0
+   },
+   "scenario_id": 2020331196,
+   "sha256": "d1d8ef2a795be245fb992075cb49b3db140b02e8ed405d0fae7f0e3e3897dd30",
+   "stage1_effects": [
+    {
+     "key": [
+      "red",
+      "squad",
+      "embark"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "ugv",
+      "embark"
+     ],
+     "n": 3
+    }
+   ],
+   "terrain_id": 123,
+   "unit_actions_by_actor_class": [
+    {
+     "key": [
+      "blue",
+      "move",
+      "helicopter"
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "blue",
+      "move",
+      "ifv"
+     ],
+     "n": 12
+    },
+    {
+     "key": [
+      "blue",
+      "move",
+      "squad"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "move",
+      "tank"
+     ],
+     "n": 12
+    },
+    {
+     "key": [
+      "blue",
+      "move",
+      "uav"
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "blue",
+      "occupy",
+      "ifv"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "occupy",
+      "tank"
+     ],
+     "n": 4
+    },
+    {
+     "key": [
+      "blue",
+      "shoot",
+      "helicopter"
+     ],
+     "n": 14
+    },
+    {
+     "key": [
+      "blue",
+      "shoot",
+      "ifv"
+     ],
+     "n": 9
+    },
+    {
+     "key": [
+      "blue",
+      "shoot",
+      "squad"
+     ],
+     "n": 4
+    },
+    {
+     "key": [
+      "blue",
+      "shoot",
+      "tank"
+     ],
+     "n": 22
+    },
+    {
+     "key": [
+      "red",
+      "cancel_indirect_fire",
+      "artillery"
+     ],
+     "n": 136
+    },
+    {
+     "key": [
+      "red",
+      "change_state",
+      "artillery"
+     ],
+     "n": 12
+    },
+    {
+     "key": [
+      "red",
+      "change_state",
+      "ifv"
+     ],
+     "n": 13
+    },
+    {
+     "key": [
+      "red",
+      "change_state",
+      "tank"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "get_off",
+      "ifv"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "get_on",
+      "squad"
+     ],
+     "n": 9
+    },
+    {
+     "key": [
+      "red",
+      "get_on",
+      "ugv"
+     ],
+     "n": 9
+    },
+    {
+     "key": [
+      "red",
+      "guided_shoot",
+      "uav"
+     ],
+     "n": 4
+    },
+    {
+     "key": [
+      "red",
+      "indirect_fire_plan",
+      "artillery"
+     ],
+     "n": 162
+    },
+    {
+     "key": [
+      "red",
+      "move",
+      "helicopter"
+     ],
+     "n": 356
+    },
+    {
+     "key": [
+      "red",
+      "move",
+      "ifv"
+     ],
+     "n": 93
+    },
+    {
+     "key": [
+      "red",
+      "move",
+      "loitering_munition"
+     ],
+     "n": 149
+    },
+    {
+     "key": [
+      "red",
+      "move",
+      "tank"
+     ],
+     "n": 66
+    },
+    {
+     "key": [
+      "red",
+      "move",
+      "uav"
+     ],
+     "n": 162
+    },
+    {
+     "key": [
+      "red",
+      "shoot",
+      "helicopter"
+     ],
+     "n": 14
+    },
+    {
+     "key": [
+      "red",
+      "shoot",
+      "loitering_munition"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "shoot",
+      "tank"
+     ],
+     "n": 12
+    },
+    {
+     "key": [
+      "red",
+      "stop",
+      "helicopter"
+     ],
+     "n": 18
+    },
+    {
+     "key": [
+      "red",
+      "stop",
+      "ifv"
+     ],
+     "n": 23
+    },
+    {
+     "key": [
+      "red",
+      "stop",
+      "loitering_munition"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "stop",
+      "tank"
+     ],
+     "n": 11
+    }
+   ]
+  },
+  "8567": {
+   "alive_at_end": [
+    {
+     "key": [
+      "blue",
+      "artillery"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "helicopter"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "ifv"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "squad"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "tank"
+     ],
+     "n": 5
+    },
+    {
+     "key": [
+      "blue",
+      "uav"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "artillery"
+     ],
+     "n": 6
+    }
+   ],
+   "attribution": {
+    "collaborator": "blue",
+    "owner": "red"
+   },
+   "attribution_status": "OWNER_DESIGNATED",
+   "disembark_effects_play": [
+    {
+     "key": [
+      "blue",
+      "squad"
+     ],
+     "n": 6
+    }
+   ],
+   "embark_effects_play": [],
+   "emitted": [
+    {
+     "key": [
+      "blue",
+      1,
+      "get_on"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      2,
+      "cancel_indirect_fire"
+     ],
+     "n": 137
+    },
+    {
+     "key": [
+      "blue",
+      2,
+      "change_state"
+     ],
+     "n": 251
+    },
+    {
+     "key": [
+      "blue",
+      2,
+      "get_off"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      2,
+      "get_on"
+     ],
+     "n": 12
+    },
+    {
+     "key": [
+      "blue",
+      2,
+      "graphic_marker"
+     ],
+     "n": 402
+    },
+    {
+     "key": [
+      "blue",
+      2,
+      "indirect_fire_plan"
+     ],
+     "n": 159
+    },
+    {
+     "key": [
+      "blue",
+      2,
+      "move"
+     ],
+     "n": 1143
+    },
+    {
+     "key": [
+      "blue",
+      2,
+      "occupy"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "blue",
+      2,
+      "shoot"
+     ],
+     "n": 56
+    },
+    {
+     "key": [
+      "blue",
+      2,
+      "stop"
+     ],
+     "n": 141
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "move"
+     ],
+     "n": 33
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "occupy"
+     ],
+     "n": 4
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "shoot"
+     ],
+     "n": 10
+    }
+   ],
+   "final_scores": {
+    "blue_occupy": 210,
+    "blue_remain": 377,
+    "blue_total": 910,
+    "blue_win": 780,
+    "red_occupy": 100,
+    "red_remain": 0,
+    "red_total": 130,
+    "red_win": -780
+   },
+   "frames": 2883,
+   "graphic_markers_by_seat": {
+    "blue": 402
+   },
+   "hex_transitions": [
+    {
+     "key": [
+      "blue",
+      "helicopter"
+     ],
+     "n": 339
+    },
+    {
+     "key": [
+      "blue",
+      "ifv"
+     ],
+     "n": 185
+    },
+    {
+     "key": [
+      "blue",
+      "squad"
+     ],
+     "n": 112
+    },
+    {
+     "key": [
+      "blue",
+      "tank"
+     ],
+     "n": 347
+    },
+    {
+     "key": [
+      "blue",
+      "uav"
+     ],
+     "n": 158
+    },
+    {
+     "key": [
+      "red",
+      "helicopter"
+     ],
+     "n": 39
+    },
+    {
+     "key": [
+      "red",
+      "ifv"
+     ],
+     "n": 85
+    },
+    {
+     "key": [
+      "red",
+      "squad"
+     ],
+     "n": 42
+    },
+    {
+     "key": [
+      "red",
+      "tank"
+     ],
+     "n": 84
+    },
+    {
+     "key": [
+      "red",
+      "uav"
+     ],
+     "n": 36
+    },
+    {
+     "key": [
+      "red",
+      "ugv"
+     ],
+     "n": 84
+    }
+   ],
+   "initial_units": [
+    {
+     "key": [
+      "blue",
+      "artillery"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "helicopter"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "ifv"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "squad"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "tank"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "uav"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "artillery"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "helicopter"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "ifv"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "loitering_munition"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "squad"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "tank"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "uav"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "ugv"
+     ],
+     "n": 3
+    }
+   ],
+   "judge_damage": [
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "ifv"
+     ],
+     "n": 0
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "squad"
+     ],
+     "n": 0
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "tank"
+     ],
+     "n": 0
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "ugv"
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "squad",
+      "red",
+      "helicopter"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "squad",
+      "red",
+      "uav"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "ifv"
+     ],
+     "n": 12
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "squad"
+     ],
+     "n": 0
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "tank"
+     ],
+     "n": 13
+    },
+    {
+     "key": [
+      "blue",
+      "indirect",
+      "artillery",
+      "red",
+      "squad"
+     ],
+     "n": 8
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "tank"
+     ],
+     "n": 0
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "tank",
+      "blue",
+      "tank"
+     ],
+     "n": 3
+    }
+   ],
+   "judge_records": [
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "ifv",
+      false
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "squad",
+      false
+     ],
+     "n": 9
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "tank",
+      false
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "ugv",
+      true
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "squad",
+      "red",
+      "helicopter",
+      true
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "squad",
+      "red",
+      "uav",
+      true
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "ifv",
+      false
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "ifv",
+      true
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "squad",
+      false
+     ],
+     "n": 22
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "tank",
+      false
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "tank",
+      true
+     ],
+     "n": 8
+    },
+    {
+     "key": [
+      "blue",
+      "indirect",
+      "artillery",
+      "red",
+      "squad",
+      false
+     ],
+     "n": 15
+    },
+    {
+     "key": [
+      "blue",
+      "indirect",
+      "artillery",
+      "red",
+      "squad",
+      true
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "tank",
+      false
+     ],
+     "n": 4
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "tank",
+      "blue",
+      "tank",
+      false
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "tank",
+      "blue",
+      "tank",
+      true
+     ],
+     "n": 3
+    }
+   ],
+   "objectives": [
+    {
+     "blue_steps_owned": 193,
+     "final_owner": "blue",
+     "first_owned_step": 462,
+     "first_owner": "red",
+     "flips": 2,
+     "label": "objective 1 (80)",
+     "red_steps_owned": 2226
+    },
+    {
+     "blue_steps_owned": 2054,
+     "final_owner": "blue",
+     "first_owned_step": 827,
+     "first_owner": "blue",
+     "flips": 1,
+     "label": "objective 2 (80)",
+     "red_steps_owned": 0
+    },
+    {
+     "blue_steps_owned": 0,
+     "final_owner": "red",
+     "first_owned_step": 361,
+     "first_owner": "red",
+     "flips": 1,
+     "label": "objective 3 (50)",
+     "red_steps_owned": 2520
+    },
+    {
+     "blue_steps_owned": 1469,
+     "final_owner": "blue",
+     "first_owned_step": 741,
+     "first_owner": "red",
+     "flips": 2,
+     "label": "objective 4 (50)",
+     "red_steps_owned": 671
+    },
+    {
+     "blue_steps_owned": 0,
+     "final_owner": "red",
+     "first_owned_step": 401,
+     "first_owner": "red",
+     "flips": 1,
+     "label": "objective 5 (50)",
+     "red_steps_owned": 2480
+    }
+   ],
+   "refusal_codes": {
+    "303": "CantActionWhenChangingState",
+    "1300": "CantCancelJMPlanCauseNoPlan"
+   },
+   "refused": [
+    {
+     "key": [
+      "blue",
+      "cancel_indirect_fire",
+      1300
+     ],
+     "n": 4
+    },
+    {
+     "key": [
+      "blue",
+      "indirect_fire_plan",
+      303
+     ],
+     "n": 5
+    }
+   ],
+   "same_colour_judge_records": {
+    "blue->blue": 0,
+    "red->red": 0
+   },
+   "scenario_id": 2020331196,
+   "sha256": "4a77e34cf11980166998f1c5d2488ea4aef7b2976903abb688076a0a9b89929a",
+   "stage1_effects": [
+    {
+     "key": [
+      "blue",
+      "squad",
+      "embark"
+     ],
+     "n": 6
+    }
+   ],
+   "terrain_id": 123,
+   "unit_actions_by_actor_class": [
+    {
+     "key": [
+      "blue",
+      "cancel_indirect_fire",
+      "artillery"
+     ],
+     "n": 137
+    },
+    {
+     "key": [
+      "blue",
+      "change_state",
+      "artillery"
+     ],
+     "n": 23
+    },
+    {
+     "key": [
+      "blue",
+      "change_state",
+      "ifv"
+     ],
+     "n": 22
+    },
+    {
+     "key": [
+      "blue",
+      "change_state",
+      "squad"
+     ],
+     "n": 197
+    },
+    {
+     "key": [
+      "blue",
+      "change_state",
+      "tank"
+     ],
+     "n": 9
+    },
+    {
+     "key": [
+      "blue",
+      "get_off",
+      "ifv"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "get_on",
+      "squad"
+     ],
+     "n": 18
+    },
+    {
+     "key": [
+      "blue",
+      "indirect_fire_plan",
+      "artillery"
+     ],
+     "n": 159
+    },
+    {
+     "key": [
+      "blue",
+      "move",
+      "helicopter"
+     ],
+     "n": 339
+    },
+    {
+     "key": [
+      "blue",
+      "move",
+      "ifv"
+     ],
+     "n": 185
+    },
+    {
+     "key": [
+      "blue",
+      "move",
+      "squad"
+     ],
+     "n": 111
+    },
+    {
+     "key": [
+      "blue",
+      "move",
+      "tank"
+     ],
+     "n": 350
+    },
+    {
+     "key": [
+      "blue",
+      "move",
+      "uav"
+     ],
+     "n": 158
+    },
+    {
+     "key": [
+      "blue",
+      "occupy",
+      "tank"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "blue",
+      "shoot",
+      "helicopter"
+     ],
+     "n": 14
+    },
+    {
+     "key": [
+      "blue",
+      "shoot",
+      "squad"
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "blue",
+      "shoot",
+      "tank"
+     ],
+     "n": 40
+    },
+    {
+     "key": [
+      "blue",
+      "stop",
+      "helicopter"
+     ],
+     "n": 21
+    },
+    {
+     "key": [
+      "blue",
+      "stop",
+      "ifv"
+     ],
+     "n": 29
+    },
+    {
+     "key": [
+      "blue",
+      "stop",
+      "tank"
+     ],
+     "n": 91
+    },
+    {
+     "key": [
+      "red",
+      "move",
+      "helicopter"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "move",
+      "ifv"
+     ],
+     "n": 8
+    },
+    {
+     "key": [
+      "red",
+      "move",
+      "squad"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "move",
+      "tank"
+     ],
+     "n": 9
+    },
+    {
+     "key": [
+      "red",
+      "move",
+      "uav"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "move",
+      "ugv"
+     ],
+     "n": 7
+    },
+    {
+     "key": [
+      "red",
+      "occupy",
+      "ifv"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "occupy",
+      "tank"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "shoot",
+      "helicopter"
+     ],
+     "n": 4
+    },
+    {
+     "key": [
+      "red",
+      "shoot",
+      "tank"
+     ],
+     "n": 6
+    }
+   ]
+  },
+  "8700": {
+   "alive_at_end": [
+    {
+     "key": [
+      "blue",
+      "artillery"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "helicopter"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "squad"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "uav"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "artillery"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "ifv"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "squad"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "ugv"
+     ],
+     "n": 1
+    }
+   ],
+   "attribution": {
+    "collaborator": "red",
+    "owner": "blue"
+   },
+   "attribution_status": "OWNER_DESIGNATED",
+   "disembark_effects_play": [
+    {
+     "key": [
+      "red",
+      "loitering_munition"
+     ],
+     "n": 6
+    }
+   ],
+   "embark_effects_play": [],
+   "emitted": [
+    {
+     "key": [
+      "blue",
+      2,
+      "move"
+     ],
+     "n": 50
+    },
+    {
+     "key": [
+      "blue",
+      2,
+      "occupy"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      2,
+      "shoot"
+     ],
+     "n": 52
+    },
+    {
+     "key": [
+      "red",
+      1,
+      "get_on"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "cancel_indirect_fire"
+     ],
+     "n": 154
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "change_state"
+     ],
+     "n": 26
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "get_off"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "get_on"
+     ],
+     "n": 12
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "graphic_marker"
+     ],
+     "n": 493
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "guided_shoot"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "indirect_fire_plan"
+     ],
+     "n": 234
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "move"
+     ],
+     "n": 575
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "occupy"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "shoot"
+     ],
+     "n": 24
+    },
+    {
+     "key": [
+      "red",
+      2,
+      "stop"
+     ],
+     "n": 30
+    }
+   ],
+   "final_scores": {
+    "blue_occupy": 310,
+    "blue_remain": 83,
+    "blue_total": 700,
+    "blue_win": 360,
+    "red_occupy": 0,
+    "red_remain": 16,
+    "red_total": 340,
+    "red_win": -360
+   },
+   "frames": 2883,
+   "graphic_markers_by_seat": {
+    "red": 493
+   },
+   "hex_transitions": [
+    {
+     "key": [
+      "blue",
+      "helicopter"
+     ],
+     "n": 45
+    },
+    {
+     "key": [
+      "blue",
+      "ifv"
+     ],
+     "n": 194
+    },
+    {
+     "key": [
+      "blue",
+      "squad"
+     ],
+     "n": 106
+    },
+    {
+     "key": [
+      "blue",
+      "tank"
+     ],
+     "n": 201
+    },
+    {
+     "key": [
+      "blue",
+      "uav"
+     ],
+     "n": 45
+    },
+    {
+     "key": [
+      "red",
+      "helicopter"
+     ],
+     "n": 185
+    },
+    {
+     "key": [
+      "red",
+      "ifv"
+     ],
+     "n": 74
+    },
+    {
+     "key": [
+      "red",
+      "loitering_munition"
+     ],
+     "n": 145
+    },
+    {
+     "key": [
+      "red",
+      "tank"
+     ],
+     "n": 71
+    },
+    {
+     "key": [
+      "red",
+      "uav"
+     ],
+     "n": 97
+    }
+   ],
+   "initial_units": [
+    {
+     "key": [
+      "blue",
+      "artillery"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "helicopter"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "ifv"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "squad"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "tank"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "uav"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "artillery"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "helicopter"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "ifv"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "loitering_munition"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "squad"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "tank"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "uav"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "ugv"
+     ],
+     "n": 3
+    }
+   ],
+   "judge_damage": [
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "helicopter"
+     ],
+     "n": 0
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "tank"
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "uav"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "ifv",
+      "red",
+      "helicopter"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "ifv",
+      "red",
+      "ifv"
+     ],
+     "n": 10
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "ifv"
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "tank"
+     ],
+     "n": 11
+    },
+    {
+     "key": [
+      "red",
+      "guided",
+      "ifv",
+      "blue",
+      "tank"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "ifv"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "tank"
+     ],
+     "n": 4
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "loitering_munition",
+      "blue",
+      "ifv"
+     ],
+     "n": 5
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "loitering_munition",
+      "blue",
+      "tank"
+     ],
+     "n": 5
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "tank",
+      "blue",
+      "ifv"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "tank",
+      "blue",
+      "tank"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "indirect",
+      "artillery",
+      "blue",
+      "ifv"
+     ],
+     "n": 7
+    },
+    {
+     "key": [
+      "red",
+      "indirect",
+      "artillery",
+      "blue",
+      "tank"
+     ],
+     "n": 5
+    }
+   ],
+   "judge_records": [
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "helicopter",
+      false
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "tank",
+      false
+     ],
+     "n": 8
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "tank",
+      true
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "uav",
+      false
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "helicopter",
+      "red",
+      "uav",
+      true
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "ifv",
+      "red",
+      "helicopter",
+      false
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "ifv",
+      "red",
+      "helicopter",
+      true
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "ifv",
+      "red",
+      "ifv",
+      false
+     ],
+     "n": 4
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "ifv",
+      "red",
+      "ifv",
+      true
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "ifv",
+      false
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "ifv",
+      true
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "tank",
+      false
+     ],
+     "n": 10
+    },
+    {
+     "key": [
+      "blue",
+      "direct",
+      "tank",
+      "red",
+      "tank",
+      true
+     ],
+     "n": 7
+    },
+    {
+     "key": [
+      "red",
+      "guided",
+      "ifv",
+      "blue",
+      "tank",
+      true
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "ifv",
+      false
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "ifv",
+      true
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "tank",
+      false
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "helicopter",
+      "blue",
+      "tank",
+      true
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "loitering_munition",
+      "blue",
+      "ifv",
+      true
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "loitering_munition",
+      "blue",
+      "tank",
+      true
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "tank",
+      "blue",
+      "ifv",
+      true
+     ],
+     "n": 4
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "tank",
+      "blue",
+      "tank",
+      false
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "direct",
+      "tank",
+      "blue",
+      "tank",
+      true
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "indirect",
+      "artillery",
+      "blue",
+      "ifv",
+      false
+     ],
+     "n": 7
+    },
+    {
+     "key": [
+      "red",
+      "indirect",
+      "artillery",
+      "blue",
+      "ifv",
+      true
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "indirect",
+      "artillery",
+      "blue",
+      "tank",
+      false
+     ],
+     "n": 8
+    },
+    {
+     "key": [
+      "red",
+      "indirect",
+      "artillery",
+      "blue",
+      "tank",
+      true
+     ],
+     "n": 4
+    }
+   ],
+   "objectives": [
+    {
+     "blue_steps_owned": 2260,
+     "final_owner": "blue",
+     "first_owned_step": 621,
+     "first_owner": "blue",
+     "flips": 1,
+     "label": "objective 1 (80)",
+     "red_steps_owned": 0
+    },
+    {
+     "blue_steps_owned": 2580,
+     "final_owner": "blue",
+     "first_owned_step": 301,
+     "first_owner": "blue",
+     "flips": 1,
+     "label": "objective 2 (80)",
+     "red_steps_owned": 0
+    },
+    {
+     "blue_steps_owned": 2096,
+     "final_owner": "blue",
+     "first_owned_step": 664,
+     "first_owner": "blue",
+     "flips": 3,
+     "label": "objective 3 (50)",
+     "red_steps_owned": 121
+    },
+    {
+     "blue_steps_owned": 2539,
+     "final_owner": "blue",
+     "first_owned_step": 342,
+     "first_owner": "blue",
+     "flips": 1,
+     "label": "objective 4 (50)",
+     "red_steps_owned": 0
+    },
+    {
+     "blue_steps_owned": 2199,
+     "final_owner": "blue",
+     "first_owned_step": 682,
+     "first_owner": "blue",
+     "flips": 1,
+     "label": "objective 5 (50)",
+     "red_steps_owned": 0
+    }
+   ],
+   "refusal_codes": {
+    "203": "CantControlDiedOperator",
+    "303": "CantActionWhenChangingState",
+    "1300": "CantCancelJMPlanCauseNoPlan"
+   },
+   "refused": [
+    {
+     "key": [
+      "blue",
+      "move",
+      203
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "cancel_indirect_fire",
+      1300
+     ],
+     "n": 4
+    },
+    {
+     "key": [
+      "red",
+      "indirect_fire_plan",
+      303
+     ],
+     "n": 70
+    }
+   ],
+   "same_colour_judge_records": {
+    "blue->blue": 0,
+    "red->red": 0
+   },
+   "scenario_id": 2020331196,
+   "sha256": "a111799acb64e06da8a3ad621a301ef8f7f05dc6de0d23d4ec397f0bbd8b07c8",
+   "stage1_effects": [
+    {
+     "key": [
+      "red",
+      "squad",
+      "embark"
+     ],
+     "n": 3
+    },
+    {
+     "key": [
+      "red",
+      "ugv",
+      "embark"
+     ],
+     "n": 3
+    }
+   ],
+   "terrain_id": 123,
+   "unit_actions_by_actor_class": [
+    {
+     "key": [
+      "blue",
+      "move",
+      "helicopter"
+     ],
+     "n": 4
+    },
+    {
+     "key": [
+      "blue",
+      "move",
+      "ifv"
+     ],
+     "n": 17
+    },
+    {
+     "key": [
+      "blue",
+      "move",
+      "squad"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "move",
+      "tank"
+     ],
+     "n": 19
+    },
+    {
+     "key": [
+      "blue",
+      "move",
+      "uav"
+     ],
+     "n": 4
+    },
+    {
+     "key": [
+      "blue",
+      "occupy",
+      "tank"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "blue",
+      "shoot",
+      "helicopter"
+     ],
+     "n": 14
+    },
+    {
+     "key": [
+      "blue",
+      "shoot",
+      "ifv"
+     ],
+     "n": 17
+    },
+    {
+     "key": [
+      "blue",
+      "shoot",
+      "tank"
+     ],
+     "n": 21
+    },
+    {
+     "key": [
+      "red",
+      "cancel_indirect_fire",
+      "artillery"
+     ],
+     "n": 154
+    },
+    {
+     "key": [
+      "red",
+      "change_state",
+      "artillery"
+     ],
+     "n": 16
+    },
+    {
+     "key": [
+      "red",
+      "change_state",
+      "ifv"
+     ],
+     "n": 9
+    },
+    {
+     "key": [
+      "red",
+      "change_state",
+      "tank"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "get_off",
+      "ifv"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "get_on",
+      "squad"
+     ],
+     "n": 9
+    },
+    {
+     "key": [
+      "red",
+      "get_on",
+      "ugv"
+     ],
+     "n": 9
+    },
+    {
+     "key": [
+      "red",
+      "guided_shoot",
+      "uav"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "indirect_fire_plan",
+      "artillery"
+     ],
+     "n": 234
+    },
+    {
+     "key": [
+      "red",
+      "move",
+      "helicopter"
+     ],
+     "n": 186
+    },
+    {
+     "key": [
+      "red",
+      "move",
+      "ifv"
+     ],
+     "n": 74
+    },
+    {
+     "key": [
+      "red",
+      "move",
+      "loitering_munition"
+     ],
+     "n": 145
+    },
+    {
+     "key": [
+      "red",
+      "move",
+      "tank"
+     ],
+     "n": 73
+    },
+    {
+     "key": [
+      "red",
+      "move",
+      "uav"
+     ],
+     "n": 97
+    },
+    {
+     "key": [
+      "red",
+      "occupy",
+      "tank"
+     ],
+     "n": 1
+    },
+    {
+     "key": [
+      "red",
+      "shoot",
+      "helicopter"
+     ],
+     "n": 8
+    },
+    {
+     "key": [
+      "red",
+      "shoot",
+      "loitering_munition"
+     ],
+     "n": 6
+    },
+    {
+     "key": [
+      "red",
+      "shoot",
+      "tank"
+     ],
+     "n": 10
+    },
+    {
+     "key": [
+      "red",
+      "stop",
+      "helicopter"
+     ],
+     "n": 8
+    },
+    {
+     "key": [
+      "red",
+      "stop",
+      "ifv"
+     ],
+     "n": 10
+    },
+    {
+     "key": [
+      "red",
+      "stop",
+      "loitering_munition"
+     ],
+     "n": 2
+    },
+    {
+     "key": [
+      "red",
+      "stop",
+      "tank"
+     ],
+     "n": 10
+    }
+   ]
+  }
+ },
+ "schema": "miaosuan-s35-collaborator-replays/1"
+}
