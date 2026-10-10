@@ -1,0 +1,3492 @@
+{
+ "disposition": "S32_PREFLIGHT_INADEQUATE",
+ "engine_sessions": 0,
+ "evidence_boundary": "HH, HX and HI are genuine baseline-v2 trajectories (HH's opponent was the T9-v3 candidate, HX's the T6-S and K2 candidates, HI's the inert control); H0 is baseline-v0's trajectory with baseline-v2 reconstructed. A first divergence (a side's first stop) is a valid action-level fact in HH, HX and HI, and in H0 only on a supported prefix. Every later stop lies on recorded states that a game with the candidate would not reach and is a descriptive diagnostic only. Recorded-trajectory descriptions say what happened without a stop; they are not effects of a stop. No engine behaviour of a stop on a traversing unit is observed anywhere in these records.",
+ "fidelity": {
+  "H0 decisions": {
+   "equal": true,
+   "preflight": 33696,
+   "published": 33696
+  },
+  "H0 play decisions": {
+   "equal": true,
+   "preflight": 33680,
+   "published": 33680
+  },
+  "H0 v2 differs from recorded v0": {
+   "equal": true,
+   "preflight": 123,
+   "published": 123
+  },
+  "HH baseline-v2 reconstruction equal to the recorded seat at every decision": {
+   "equal": true,
+   "preflight": true,
+   "published": true
+  },
+  "HH decisions": {
+   "equal": true,
+   "preflight": 11524,
+   "published": 11524
+  },
+  "HI baseline-v2 reconstruction equal to the recorded seat at every decision": {
+   "equal": true,
+   "preflight": true,
+   "published": true
+  },
+  "HI decisions": {
+   "equal": true,
+   "preflight": 8643,
+   "published": 8643
+  },
+  "HX baseline-v2 reconstruction equal to the recorded seat at every decision": {
+   "equal": true,
+   "preflight": true,
+   "published": true
+  },
+  "HX decisions": {
+   "equal": true,
+   "preflight": 5762,
+   "published": 5762
+  },
+  "side-games HH, HX, HI, H0": {
+   "equal": true,
+   "preflight": [
+    4,
+    2,
+    3,
+    16
+   ],
+   "published": [
+    4,
+    2,
+    3,
+    16
+   ]
+  }
+ },
+ "inputs_sha256": "3585a00d3664db61c5af0345d48cb1ffebcb459c92ab50e9e88687fdd472fd79",
+ "populations": {
+  "H0": {
+   "distinct_units": 48,
+   "eligible_unit_decisions": 5035,
+   "opportunity_episodes": 116,
+   "scenario_sides_with_a_verified_opportunity": [
+    "1910631192 red",
+    "2010211129 red",
+    "2010431153 blue",
+    "2010431153 red",
+    "2130511121 red"
+   ],
+   "side_games": 16,
+   "side_games_with_a_stop": 10,
+   "stops": {
+    "distance_from_stop_hex": {
+     "max": 20,
+     "median": 7.5,
+     "min": 1
+    },
+    "hex_steps": {
+     "max": 144,
+     "median": 20.0,
+     "min": 1
+    },
+    "others_on_or_routed_through_stop_hex": {
+     "others_0": 10,
+     "others_1": 18,
+     "others_2": 20
+    },
+    "path_ends_at_unheld_objective": 38,
+    "path_hexes": {
+     "max": 18,
+     "median": 6.0,
+     "min": 2
+    },
+    "shoot_listed_in_window_on_record": 0,
+    "side_first_owned_it_in_window": 12,
+    "steps_left_before_end": {
+     "max": 2800,
+     "median": 1865.0,
+     "min": 288
+    },
+    "stops": 48,
+    "target_classes": {
+     "infantry": 2,
+     "vehicle": 46
+    },
+    "unit_classes": {
+     "infantry": 17,
+     "vehicle_st1": 26,
+     "vehicle_st4": 5
+    },
+    "unit_damaged_in_window": 5,
+    "unit_lost_in_window": 6,
+    "weapons": {
+     "heavy missile": 8,
+     "portable medium missile": 1,
+     "portable missile": 13,
+     "rapid-fire gun": 3,
+     "rocket launcher": 4,
+     "vehicle light weapons": 2,
+     "vehicle-mounted missile": 17
+    },
+    "witness_target_in_view_and_range_through_window": 27
+   },
+   "unit_decision_levels": {
+    "A_ground_controllable": 55892,
+    "B_no_move_and_fire": 33591,
+    "C_traversing": 152926,
+    "E_no_other_state": 2832,
+    "F_route_continues": 9855,
+    "I_target_in_range": 113119,
+    "J_next_hex_room": 5486,
+    "K_time_left": 444,
+    "stop": 5035
+   },
+   "valid_first_divergences": 5,
+   "verified_opportunities": 5,
+   "waiting_with_path_unit_decisions": 13673
+  },
+  "HH": {
+   "distinct_units": 27,
+   "eligible_unit_decisions": 2667,
+   "opportunity_episodes": 100,
+   "scenario_sides_with_a_verified_opportunity": [
+    "2130511121 blue",
+    "2130511121 red"
+   ],
+   "side_games": 4,
+   "side_games_with_a_stop": 4,
+   "stops": {
+    "distance_from_stop_hex": {
+     "max": 20,
+     "median": 10,
+     "min": 1
+    },
+    "hex_steps": {
+     "max": 144,
+     "median": 19,
+     "min": 1
+    },
+    "others_on_or_routed_through_stop_hex": {
+     "others_0": 5,
+     "others_1": 6,
+     "others_2": 16
+    },
+    "path_ends_at_unheld_objective": 23,
+    "path_hexes": {
+     "max": 18,
+     "median": 5,
+     "min": 3
+    },
+    "shoot_listed_in_window_on_record": 0,
+    "side_first_owned_it_in_window": 14,
+    "steps_left_before_end": {
+     "max": 2800,
+     "median": 2600,
+     "min": 2198
+    },
+    "stops": 27,
+    "target_classes": {
+     "vehicle": 27
+    },
+    "unit_classes": {
+     "infantry": 4,
+     "vehicle_st1": 19,
+     "vehicle_st4": 4
+    },
+    "unit_damaged_in_window": 0,
+    "unit_lost_in_window": 1,
+    "weapons": {
+     "heavy missile": 5,
+     "portable medium missile": 4,
+     "rocket launcher": 4,
+     "vehicle-mounted missile": 14
+    },
+    "witness_target_in_view_and_range_through_window": 14
+   },
+   "unit_decision_levels": {
+    "A_ground_controllable": 76234,
+    "B_no_move_and_fire": 16890,
+    "C_traversing": 127666,
+    "E_no_other_state": 2511,
+    "F_route_continues": 6737,
+    "I_target_in_range": 74015,
+    "J_next_hex_room": 4860,
+    "K_time_left": 243,
+    "stop": 2667
+   },
+   "valid_first_divergences": 4,
+   "verified_opportunities": 4,
+   "waiting_with_path_unit_decisions": 26983
+  },
+  "HI": {
+   "distinct_units": 5,
+   "eligible_unit_decisions": 154,
+   "opportunity_episodes": 8,
+   "scenario_sides_with_a_verified_opportunity": [
+    "1930331196 blue",
+    "2120531121 blue"
+   ],
+   "side_games": 3,
+   "side_games_with_a_stop": 2,
+   "stops": {
+    "distance_from_stop_hex": {
+     "max": 20,
+     "median": 18,
+     "min": 18
+    },
+    "hex_steps": {
+     "max": 20,
+     "median": 20,
+     "min": 19
+    },
+    "others_on_or_routed_through_stop_hex": {
+     "others_1": 4,
+     "others_2": 1
+    },
+    "path_ends_at_unheld_objective": 2,
+    "path_hexes": {
+     "max": 3,
+     "median": 3,
+     "min": 2
+    },
+    "shoot_listed_in_window_on_record": 0,
+    "side_first_owned_it_in_window": 2,
+    "steps_left_before_end": {
+     "max": 2500,
+     "median": 2439,
+     "min": 2260
+    },
+    "stops": 5,
+    "target_classes": {
+     "vehicle": 5
+    },
+    "unit_classes": {
+     "vehicle_st1": 5
+    },
+    "unit_damaged_in_window": 0,
+    "unit_lost_in_window": 0,
+    "weapons": {
+     "vehicle-mounted missile": 5
+    },
+    "witness_target_in_view_and_range_through_window": 5
+   },
+   "unit_decision_levels": {
+    "A_ground_controllable": 17280,
+    "B_no_move_and_fire": 43200,
+    "C_traversing": 92893,
+    "F_route_continues": 2688,
+    "I_target_in_range": 50795,
+    "J_next_hex_room": 350,
+    "stop": 154
+   },
+   "valid_first_divergences": 2,
+   "verified_opportunities": 2,
+   "waiting_with_path_unit_decisions": 19389
+  },
+  "HX": {
+   "distinct_units": 21,
+   "eligible_unit_decisions": 2410,
+   "opportunity_episodes": 55,
+   "scenario_sides_with_a_verified_opportunity": [
+    "2130511121 blue",
+    "2130511121 red"
+   ],
+   "side_games": 2,
+   "side_games_with_a_stop": 2,
+   "stops": {
+    "distance_from_stop_hex": {
+     "max": 20,
+     "median": 4,
+     "min": 1
+    },
+    "hex_steps": {
+     "max": 144,
+     "median": 19,
+     "min": 1
+    },
+    "others_on_or_routed_through_stop_hex": {
+     "others_0": 3,
+     "others_1": 7,
+     "others_2": 11
+    },
+    "path_ends_at_unheld_objective": 16,
+    "path_hexes": {
+     "max": 18,
+     "median": 4,
+     "min": 2
+    },
+    "shoot_listed_in_window_on_record": 0,
+    "side_first_owned_it_in_window": 10,
+    "steps_left_before_end": {
+     "max": 2800,
+     "median": 2460,
+     "min": 2016
+    },
+    "stops": 21,
+    "target_classes": {
+     "vehicle": 21
+    },
+    "unit_classes": {
+     "infantry": 6,
+     "vehicle_st1": 11,
+     "vehicle_st4": 4
+    },
+    "unit_damaged_in_window": 2,
+    "unit_lost_in_window": 0,
+    "weapons": {
+     "heavy missile": 4,
+     "portable medium missile": 4,
+     "rocket launcher": 6,
+     "vehicle-mounted missile": 7
+    },
+    "witness_target_in_view_and_range_through_window": 4
+   },
+   "unit_decision_levels": {
+    "A_ground_controllable": 41552,
+    "B_no_move_and_fire": 7430,
+    "C_traversing": 64142,
+    "E_no_other_state": 1245,
+    "F_route_continues": 4093,
+    "I_target_in_range": 37888,
+    "J_next_hex_room": 2867,
+    "K_time_left": 142,
+    "stop": 2410
+   },
+   "valid_first_divergences": 2,
+   "verified_opportunities": 2,
+   "waiting_with_path_unit_decisions": 9219
+  }
+ },
+ "proposed_configurations": {
+  "2130511121 C2 baseline-v2 red": "NO_FULL_STEP_RECORD",
+  "2130511121 C3 baseline-v2 blue": "NO_FULL_STEP_RECORD"
+ },
+ "reasons": [
+  "2130511121 C2 baseline-v2 red: NO_FULL_STEP_RECORD",
+  "2130511121 C3 baseline-v2 blue: NO_FULL_STEP_RECORD",
+  "no verified inert configuration for a baseline-v2 red"
+ ],
+ "record_level_inert_configurations": {
+  "configurations": {
+   "1930331196 C2 baseline-v2 red": {
+    "first_shot_step": {
+     "max": 611,
+     "median": 611,
+     "min": 611
+    },
+    "games": 15,
+    "games_with_a_shot": 15,
+    "margin": {
+     "max": 274,
+     "mean": "4094/15",
+     "min": 258
+    },
+    "moves_per_game": {
+     "max": 47,
+     "median": 47,
+     "min": 47
+    },
+    "occupy": {
+     "max": 310,
+     "min": 310
+    },
+    "shots_per_game": {
+     "max": 4,
+     "median": 2,
+     "min": 1
+    }
+   },
+   "1930331196 C3 baseline-v2 blue": {
+    "first_shot_step": {
+     "max": 212,
+     "median": 212,
+     "min": 212
+    },
+    "games": 15,
+    "games_with_a_shot": 15,
+    "margin": {
+     "max": 570,
+     "mean": 570,
+     "min": 570
+    },
+    "moves_per_game": {
+     "max": 50,
+     "median": 50,
+     "min": 50
+    },
+    "occupy": {
+     "max": 310,
+     "min": 310
+    },
+    "shots_per_game": {
+     "max": 12,
+     "median": 10,
+     "min": 8
+    }
+   },
+   "2120531121 C3 baseline-v2 blue": {
+    "first_shot_step": {
+     "max": 168,
+     "median": 168,
+     "min": 168
+    },
+    "games": 15,
+    "games_with_a_shot": 15,
+    "margin": {
+     "max": 599,
+     "mean": "1765/3",
+     "min": 559
+    },
+    "moves_per_game": {
+     "max": 47,
+     "median": 47,
+     "min": 47
+    },
+    "occupy": {
+     "max": 310,
+     "min": 310
+    },
+    "shots_per_game": {
+     "max": 29,
+     "median": 21,
+     "min": 13
+    }
+   },
+   "2130511121 C2 baseline-v2 red": {
+    "first_shot_step": {
+     "max": 101,
+     "median": 101,
+     "min": 101
+    },
+    "games": 15,
+    "games_with_a_shot": 15,
+    "margin": {
+     "max": 793,
+     "mean": "2359/3",
+     "min": 753
+    },
+    "moves_per_game": {
+     "max": 72,
+     "median": 72,
+     "min": 72
+    },
+    "occupy": {
+     "max": 440,
+     "min": 440
+    },
+    "shots_per_game": {
+     "max": 36,
+     "median": 32,
+     "min": 29
+    }
+   },
+   "2130511121 C3 baseline-v2 blue": {
+    "first_shot_step": {
+     "max": 525,
+     "median": 525,
+     "min": 525
+    },
+    "games": 15,
+    "games_with_a_shot": 15,
+    "margin": {
+     "max": 659,
+     "mean": "9347/15",
+     "min": 571
+    },
+    "moves_per_game": {
+     "max": 104,
+     "median": 104,
+     "min": 104
+    },
+    "occupy": {
+     "max": 440,
+     "min": 440
+    },
+    "shots_per_game": {
+     "max": 8,
+     "median": 8,
+     "min": 5
+    }
+   }
+  },
+  "source": "the registered shoot-reservation experiment's group C games (baseline-v2 against the inert control), fifteen per configuration; game records only (no full-step observation): issued shots and moves of the baseline-v2 seat, the step of its first shot, its occupy score and margin"
+ },
+ "schema": "miaosuan-s32-preflight/1",
+ "sides": [
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "blue",
+   "condition": "H1",
+   "decisions": 2881,
+   "distinct_units": 9,
+   "eligible_unit_decisions": 533,
+   "episode_lengths": {
+    "max": 99,
+    "median": 11,
+    "min": 1
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 163,
+    "distance": 19,
+    "hex_steps": 19,
+    "objective": "50-point objective B",
+    "others": 1,
+    "path_ends_at_unheld_objective": true,
+    "path_hexes": 3,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": true,
+    "step": 162,
+    "steps_left": 2718,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": false,
+    "unit_lost_in_window": false,
+    "valid": true,
+    "weapon": "vehicle-mounted missile",
+    "window_steps": 97,
+    "witness_target_in_view_and_range_through_window": false
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 19,
+      "median": 19,
+      "min": 19
+     },
+     "hex_steps": {
+      "max": 19,
+      "median": 19,
+      "min": 19
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_1": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 3,
+      "median": 3,
+      "min": 3
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 1,
+     "steps_left_before_end": {
+      "max": 2718,
+      "median": 2718,
+      "min": 2718
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "vehicle-mounted missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 0
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 17,
+      "median": 10.0,
+      "min": 4
+     },
+     "hex_steps": {
+      "max": 144,
+      "median": 14.0,
+      "min": 1
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_0": 2,
+      "others_1": 1,
+      "others_2": 5
+     },
+     "path_ends_at_unheld_objective": 5,
+     "path_hexes": {
+      "max": 6,
+      "median": 4.0,
+      "min": 3
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 4,
+     "steps_left_before_end": {
+      "max": 2699,
+      "median": 2600.0,
+      "min": 2448
+     },
+     "stops": 8,
+     "target_classes": {
+      "vehicle": 8
+     },
+     "unit_classes": {
+      "infantry": 2,
+      "vehicle_st1": 6
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "rocket launcher": 2,
+      "vehicle-mounted missile": 6
+     },
+     "witness_target_in_view_and_range_through_window": 3
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "HH p01 baseline-v2 blue",
+   "opportunity_episodes": 27,
+   "play_decisions": 2880,
+   "population": "HH",
+   "scenario": "2130511121",
+   "stops": 9,
+   "unit_decision_levels": {
+    "A_ground_controllable": 22075,
+    "B_no_move_and_fire": 2505,
+    "C_traversing": 36929,
+    "E_no_other_state": 825,
+    "F_route_continues": 2562,
+    "I_target_in_range": 16766,
+    "J_next_hex_room": 743,
+    "stop": 533
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": true,
+   "waiting_with_path_unit_decisions": 3478
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "red",
+   "condition": "H2",
+   "decisions": 2881,
+   "distinct_units": 4,
+   "eligible_unit_decisions": 513,
+   "episode_lengths": {
+    "max": 80,
+    "median": 20,
+    "min": 6
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 81,
+    "distance": 20,
+    "hex_steps": 20,
+    "objective": "50-point objective A",
+    "others": 2,
+    "path_ends_at_unheld_objective": true,
+    "path_hexes": 18,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": false,
+    "step": 80,
+    "steps_left": 2800,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": false,
+    "unit_lost_in_window": false,
+    "valid": true,
+    "weapon": "heavy missile",
+    "window_steps": 98,
+    "witness_target_in_view_and_range_through_window": true
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 20,
+      "median": 20,
+      "min": 20
+     },
+     "hex_steps": {
+      "max": 20,
+      "median": 20,
+      "min": 20
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_2": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 18,
+      "median": 18,
+      "min": 18
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 2800,
+      "median": 2800,
+      "min": 2800
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "heavy missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 1
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 16,
+      "median": 10,
+      "min": 3
+     },
+     "hex_steps": {
+      "max": 20,
+      "median": 19,
+      "min": 19
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_0": 1,
+      "others_2": 2
+     },
+     "path_ends_at_unheld_objective": 3,
+     "path_hexes": {
+      "max": 11,
+      "median": 6,
+      "min": 6
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 1,
+     "steps_left_before_end": {
+      "max": 2700,
+      "median": 2599,
+      "min": 2340
+     },
+     "stops": 3,
+     "target_classes": {
+      "vehicle": 3
+     },
+     "unit_classes": {
+      "vehicle_st1": 1,
+      "vehicle_st4": 2
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 1,
+     "weapons": {
+      "heavy missile": 1,
+      "portable medium missile": 2
+     },
+     "witness_target_in_view_and_range_through_window": 3
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "HH p02 baseline-v2 red",
+   "opportunity_episodes": 15,
+   "play_decisions": 2880,
+   "population": "HH",
+   "scenario": "2130511121",
+   "stops": 4,
+   "unit_decision_levels": {
+    "A_ground_controllable": 17280,
+    "B_no_move_and_fire": 2523,
+    "C_traversing": 17884,
+    "E_no_other_state": 705,
+    "F_route_continues": 801,
+    "I_target_in_range": 20175,
+    "J_next_hex_room": 1552,
+    "K_time_left": 180,
+    "stop": 513
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": true,
+   "waiting_with_path_unit_decisions": 432
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "blue",
+   "condition": "H1",
+   "decisions": 2881,
+   "distinct_units": 9,
+   "eligible_unit_decisions": 783,
+   "episode_lengths": {
+    "max": 145,
+    "median": 13.0,
+    "min": 1
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 163,
+    "distance": 19,
+    "hex_steps": 19,
+    "objective": "50-point objective B",
+    "others": 1,
+    "path_ends_at_unheld_objective": true,
+    "path_hexes": 3,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": true,
+    "step": 162,
+    "steps_left": 2718,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": false,
+    "unit_lost_in_window": false,
+    "valid": true,
+    "weapon": "vehicle-mounted missile",
+    "window_steps": 97,
+    "witness_target_in_view_and_range_through_window": false
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 19,
+      "median": 19,
+      "min": 19
+     },
+     "hex_steps": {
+      "max": 19,
+      "median": 19,
+      "min": 19
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_1": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 3,
+      "median": 3,
+      "min": 3
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 1,
+     "steps_left_before_end": {
+      "max": 2718,
+      "median": 2718,
+      "min": 2718
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "vehicle-mounted missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 0
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 17,
+      "median": 8.5,
+      "min": 4
+     },
+     "hex_steps": {
+      "max": 144,
+      "median": 15.5,
+      "min": 1
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_0": 2,
+      "others_1": 2,
+      "others_2": 4
+     },
+     "path_ends_at_unheld_objective": 7,
+     "path_hexes": {
+      "max": 6,
+      "median": 5.0,
+      "min": 3
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 5,
+     "steps_left_before_end": {
+      "max": 2699,
+      "median": 2600.0,
+      "min": 2448
+     },
+     "stops": 8,
+     "target_classes": {
+      "vehicle": 8
+     },
+     "unit_classes": {
+      "infantry": 2,
+      "vehicle_st1": 6
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "rocket launcher": 2,
+      "vehicle-mounted missile": 6
+     },
+     "witness_target_in_view_and_range_through_window": 4
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "HH p03 baseline-v2 blue",
+   "opportunity_episodes": 26,
+   "play_decisions": 2880,
+   "population": "HH",
+   "scenario": "2130511121",
+   "stops": 9,
+   "unit_decision_levels": {
+    "A_ground_controllable": 24303,
+    "B_no_move_and_fire": 9148,
+    "C_traversing": 55347,
+    "E_no_other_state": 263,
+    "F_route_continues": 2336,
+    "I_target_in_range": 16177,
+    "J_next_hex_room": 792,
+    "stop": 783
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": true,
+   "waiting_with_path_unit_decisions": 22923
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "red",
+   "condition": "H2",
+   "decisions": 2881,
+   "distinct_units": 5,
+   "eligible_unit_decisions": 838,
+   "episode_lengths": {
+    "max": 80,
+    "median": 19.0,
+    "min": 1
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 81,
+    "distance": 20,
+    "hex_steps": 20,
+    "objective": "50-point objective A",
+    "others": 2,
+    "path_ends_at_unheld_objective": true,
+    "path_hexes": 18,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": false,
+    "step": 80,
+    "steps_left": 2800,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": false,
+    "unit_lost_in_window": false,
+    "valid": true,
+    "weapon": "heavy missile",
+    "window_steps": 98,
+    "witness_target_in_view_and_range_through_window": true
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 20,
+      "median": 20,
+      "min": 20
+     },
+     "hex_steps": {
+      "max": 20,
+      "median": 20,
+      "min": 20
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_2": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 18,
+      "median": 18,
+      "min": 18
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 2800,
+      "median": 2800,
+      "min": 2800
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "heavy missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 1
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 16,
+      "median": 6.5,
+      "min": 1
+     },
+     "hex_steps": {
+      "max": 20,
+      "median": 19.0,
+      "min": 6
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_1": 1,
+      "others_2": 3
+     },
+     "path_ends_at_unheld_objective": 4,
+     "path_hexes": {
+      "max": 11,
+      "median": 4.5,
+      "min": 3
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 2,
+     "steps_left_before_end": {
+      "max": 2700,
+      "median": 2441.5,
+      "min": 2198
+     },
+     "stops": 4,
+     "target_classes": {
+      "vehicle": 4
+     },
+     "unit_classes": {
+      "vehicle_st1": 2,
+      "vehicle_st4": 2
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "heavy missile": 2,
+      "portable medium missile": 2
+     },
+     "witness_target_in_view_and_range_through_window": 2
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "HH p04 baseline-v2 red",
+   "opportunity_episodes": 32,
+   "play_decisions": 2880,
+   "population": "HH",
+   "scenario": "2130511121",
+   "stops": 5,
+   "unit_decision_levels": {
+    "A_ground_controllable": 12576,
+    "B_no_move_and_fire": 2714,
+    "C_traversing": 17506,
+    "E_no_other_state": 718,
+    "F_route_continues": 1038,
+    "I_target_in_range": 20897,
+    "J_next_hex_room": 1773,
+    "K_time_left": 63,
+    "stop": 838
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": true,
+   "waiting_with_path_unit_decisions": 150
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "red",
+   "condition": "H2",
+   "decisions": 2881,
+   "distinct_units": 8,
+   "eligible_unit_decisions": 1415,
+   "episode_lengths": {
+    "max": 99,
+    "median": 39.0,
+    "min": 19
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 81,
+    "distance": 20,
+    "hex_steps": 20,
+    "objective": "50-point objective A",
+    "others": 2,
+    "path_ends_at_unheld_objective": true,
+    "path_hexes": 18,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": false,
+    "step": 80,
+    "steps_left": 2800,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": false,
+    "unit_lost_in_window": false,
+    "valid": true,
+    "weapon": "heavy missile",
+    "window_steps": 98,
+    "witness_target_in_view_and_range_through_window": true
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 20,
+      "median": 20,
+      "min": 20
+     },
+     "hex_steps": {
+      "max": 20,
+      "median": 20,
+      "min": 20
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_2": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 18,
+      "median": 18,
+      "min": 18
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 2800,
+      "median": 2800,
+      "min": 2800
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "heavy missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 1
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 16,
+      "median": 1,
+      "min": 1
+     },
+     "hex_steps": {
+      "max": 20,
+      "median": 20,
+      "min": 19
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_0": 1,
+      "others_1": 2,
+      "others_2": 4
+     },
+     "path_ends_at_unheld_objective": 7,
+     "path_hexes": {
+      "max": 11,
+      "median": 4,
+      "min": 3
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 5,
+     "steps_left_before_end": {
+      "max": 2700,
+      "median": 2101,
+      "min": 2079
+     },
+     "stops": 7,
+     "target_classes": {
+      "vehicle": 7
+     },
+     "unit_classes": {
+      "vehicle_st1": 3,
+      "vehicle_st4": 4
+     },
+     "unit_damaged_in_window": 1,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "heavy missile": 3,
+      "portable medium missile": 4
+     },
+     "witness_target_in_view_and_range_through_window": 2
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "HX s27-p01 baseline-v2 red",
+   "opportunity_episodes": 30,
+   "play_decisions": 2880,
+   "population": "HX",
+   "scenario": "2130511121",
+   "stops": 8,
+   "unit_decision_levels": {
+    "A_ground_controllable": 17005,
+    "B_no_move_and_fire": 2384,
+    "C_traversing": 18340,
+    "E_no_other_state": 830,
+    "F_route_continues": 1125,
+    "I_target_in_range": 20267,
+    "J_next_hex_room": 2052,
+    "K_time_left": 142,
+    "stop": 1415
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": true,
+   "waiting_with_path_unit_decisions": 676
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "blue",
+   "condition": "H1",
+   "decisions": 2881,
+   "distinct_units": 13,
+   "eligible_unit_decisions": 995,
+   "episode_lengths": {
+    "max": 235,
+    "median": 12,
+    "min": 1
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 163,
+    "distance": 19,
+    "hex_steps": 19,
+    "objective": "50-point objective B",
+    "others": 1,
+    "path_ends_at_unheld_objective": true,
+    "path_hexes": 3,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": true,
+    "step": 162,
+    "steps_left": 2718,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": false,
+    "unit_lost_in_window": false,
+    "valid": true,
+    "weapon": "vehicle-mounted missile",
+    "window_steps": 97,
+    "witness_target_in_view_and_range_through_window": false
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 19,
+      "median": 19,
+      "min": 19
+     },
+     "hex_steps": {
+      "max": 19,
+      "median": 19,
+      "min": 19
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_1": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 3,
+      "median": 3,
+      "min": 3
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 1,
+     "steps_left_before_end": {
+      "max": 2718,
+      "median": 2718,
+      "min": 2718
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "vehicle-mounted missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 0
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 17,
+      "median": 5.5,
+      "min": 4
+     },
+     "hex_steps": {
+      "max": 144,
+      "median": 19.0,
+      "min": 1
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_0": 2,
+      "others_1": 4,
+      "others_2": 6
+     },
+     "path_ends_at_unheld_objective": 7,
+     "path_hexes": {
+      "max": 6,
+      "median": 4.0,
+      "min": 2
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 4,
+     "steps_left_before_end": {
+      "max": 2699,
+      "median": 2529.5,
+      "min": 2016
+     },
+     "stops": 12,
+     "target_classes": {
+      "vehicle": 12
+     },
+     "unit_classes": {
+      "infantry": 6,
+      "vehicle_st1": 6
+     },
+     "unit_damaged_in_window": 1,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "rocket launcher": 6,
+      "vehicle-mounted missile": 6
+     },
+     "witness_target_in_view_and_range_through_window": 1
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "HX s31-p03 baseline-v2 blue",
+   "opportunity_episodes": 25,
+   "play_decisions": 2880,
+   "population": "HX",
+   "scenario": "2130511121",
+   "stops": 13,
+   "unit_decision_levels": {
+    "A_ground_controllable": 24547,
+    "B_no_move_and_fire": 5046,
+    "C_traversing": 45802,
+    "E_no_other_state": 415,
+    "F_route_continues": 2968,
+    "I_target_in_range": 17621,
+    "J_next_hex_room": 815,
+    "stop": 995
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": true,
+   "waiting_with_path_unit_decisions": 8543
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "red",
+   "condition": "C2",
+   "decisions": 2881,
+   "distinct_units": 0,
+   "eligible_unit_decisions": 0,
+   "episode_lengths": null,
+   "first_divergence": null,
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": null,
+     "hex_steps": null,
+     "others_on_or_routed_through_stop_hex": {},
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": null,
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": null,
+     "stops": 0,
+     "target_classes": {},
+     "unit_classes": {},
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {},
+     "witness_target_in_view_and_range_through_window": 0
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": null,
+     "hex_steps": null,
+     "others_on_or_routed_through_stop_hex": {},
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": null,
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": null,
+     "stops": 0,
+     "target_classes": {},
+     "unit_classes": {},
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {},
+     "witness_target_in_view_and_range_through_window": 0
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "HI 1930331196 C2 baseline-v2 red",
+   "opportunity_episodes": 0,
+   "play_decisions": 2880,
+   "population": "HI",
+   "scenario": "1930331196",
+   "stops": 0,
+   "unit_decision_levels": {
+    "A_ground_controllable": 5760,
+    "B_no_move_and_fire": 8640,
+    "C_traversing": 29978,
+    "F_route_continues": 1112,
+    "I_target_in_range": 12110
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": false,
+   "waiting_with_path_unit_decisions": 3908
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "blue",
+   "condition": "C3",
+   "decisions": 2881,
+   "distinct_units": 2,
+   "eligible_unit_decisions": 40,
+   "episode_lengths": {
+    "max": 20,
+    "median": 20.0,
+    "min": 20
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 621,
+    "distance": 20,
+    "hex_steps": 20,
+    "objective": "80-point objective A",
+    "others": 1,
+    "path_ends_at_unheld_objective": false,
+    "path_hexes": 3,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": false,
+    "step": 620,
+    "steps_left": 2260,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": false,
+    "unit_lost_in_window": false,
+    "valid": true,
+    "weapon": "vehicle-mounted missile",
+    "window_steps": 98,
+    "witness_target_in_view_and_range_through_window": true
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 20,
+      "median": 20,
+      "min": 20
+     },
+     "hex_steps": {
+      "max": 20,
+      "median": 20,
+      "min": 20
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_1": 1
+     },
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": {
+      "max": 3,
+      "median": 3,
+      "min": 3
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 2260,
+      "median": 2260,
+      "min": 2260
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "vehicle-mounted missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 1
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 20,
+      "median": 20,
+      "min": 20
+     },
+     "hex_steps": {
+      "max": 20,
+      "median": 20,
+      "min": 20
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_1": 1
+     },
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": {
+      "max": 3,
+      "median": 3,
+      "min": 3
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 2260,
+      "median": 2260,
+      "min": 2260
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "vehicle-mounted missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 1
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "HI 1930331196 C3 baseline-v2 blue",
+   "opportunity_episodes": 2,
+   "play_decisions": 2880,
+   "population": "HI",
+   "scenario": "1930331196",
+   "stops": 2,
+   "unit_decision_levels": {
+    "A_ground_controllable": 5760,
+    "B_no_move_and_fire": 17280,
+    "C_traversing": 31536,
+    "F_route_continues": 480,
+    "I_target_in_range": 19552,
+    "J_next_hex_room": 232,
+    "stop": 40
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": true,
+   "waiting_with_path_unit_decisions": 6274
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "blue",
+   "condition": "C3",
+   "decisions": 2881,
+   "distinct_units": 3,
+   "eligible_unit_decisions": 114,
+   "episode_lengths": {
+    "max": 20,
+    "median": 19.0,
+    "min": 18
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 381,
+    "distance": 18,
+    "hex_steps": 20,
+    "objective": "50-point objective C",
+    "others": 1,
+    "path_ends_at_unheld_objective": false,
+    "path_hexes": 2,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": false,
+    "step": 380,
+    "steps_left": 2500,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": false,
+    "unit_lost_in_window": false,
+    "valid": true,
+    "weapon": "vehicle-mounted missile",
+    "window_steps": 98,
+    "witness_target_in_view_and_range_through_window": true
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 18,
+      "median": 18,
+      "min": 18
+     },
+     "hex_steps": {
+      "max": 20,
+      "median": 20,
+      "min": 20
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_1": 1
+     },
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": {
+      "max": 2,
+      "median": 2,
+      "min": 2
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 2500,
+      "median": 2500,
+      "min": 2500
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "vehicle-mounted missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 1
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 18,
+      "median": 18.0,
+      "min": 18
+     },
+     "hex_steps": {
+      "max": 19,
+      "median": 19.0,
+      "min": 19
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_1": 1,
+      "others_2": 1
+     },
+     "path_ends_at_unheld_objective": 2,
+     "path_hexes": {
+      "max": 3,
+      "median": 3.0,
+      "min": 3
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 2,
+     "steps_left_before_end": {
+      "max": 2459,
+      "median": 2449.0,
+      "min": 2439
+     },
+     "stops": 2,
+     "target_classes": {
+      "vehicle": 2
+     },
+     "unit_classes": {
+      "vehicle_st1": 2
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "vehicle-mounted missile": 2
+     },
+     "witness_target_in_view_and_range_through_window": 2
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "HI 2120531121 C3 baseline-v2 blue",
+   "opportunity_episodes": 6,
+   "play_decisions": 2880,
+   "population": "HI",
+   "scenario": "2120531121",
+   "stops": 3,
+   "unit_decision_levels": {
+    "A_ground_controllable": 5760,
+    "B_no_move_and_fire": 17280,
+    "C_traversing": 31379,
+    "F_route_continues": 1096,
+    "I_target_in_range": 19133,
+    "J_next_hex_room": 118,
+    "stop": 114
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": true,
+   "waiting_with_path_unit_decisions": 9207
+  },
+  {
+   "baseline_v2_differs_from_recorded": 6,
+   "colour": "blue",
+   "condition": "C1",
+   "decisions": 1801,
+   "distinct_units": 0,
+   "eligible_unit_decisions": 0,
+   "episode_lengths": null,
+   "first_divergence": null,
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": null,
+     "hex_steps": null,
+     "others_on_or_routed_through_stop_hex": {},
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": null,
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": null,
+     "stops": 0,
+     "target_classes": {},
+     "unit_classes": {},
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {},
+     "witness_target_in_view_and_range_through_window": 0
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": null,
+     "hex_steps": null,
+     "others_on_or_routed_through_stop_hex": {},
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": null,
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": null,
+     "stops": 0,
+     "target_classes": {},
+     "unit_classes": {},
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {},
+     "witness_target_in_view_and_range_through_window": 0
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "H0 1910631192 blue",
+   "opportunity_episodes": 0,
+   "play_decisions": 1800,
+   "population": "H0",
+   "scenario": "1910631192",
+   "stops": 0,
+   "unit_decision_levels": {
+    "B_no_move_and_fire": 3600,
+    "C_traversing": 1968,
+    "F_route_continues": 200,
+    "I_target_in_range": 4834,
+    "J_next_hex_room": 198
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": false,
+   "waiting_with_path_unit_decisions": 0
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "red",
+   "condition": "C1",
+   "decisions": 1801,
+   "distinct_units": 2,
+   "eligible_unit_decisions": 152,
+   "episode_lengths": {
+    "max": 76,
+    "median": 76.0,
+    "min": 76
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 522,
+    "distance": 1,
+    "hex_steps": 59,
+    "objective": "50-point objective A",
+    "others": 2,
+    "path_ends_at_unheld_objective": true,
+    "path_hexes": 3,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": true,
+    "step": 521,
+    "steps_left": 1279,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": false,
+    "unit_lost_in_window": true,
+    "valid": true,
+    "weapon": "heavy missile",
+    "window_steps": 137,
+    "witness_target_in_view_and_range_through_window": false
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 1,
+      "median": 1,
+      "min": 1
+     },
+     "hex_steps": {
+      "max": 59,
+      "median": 59,
+      "min": 59
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_2": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 3,
+      "median": 3,
+      "min": 3
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 1,
+     "steps_left_before_end": {
+      "max": 1279,
+      "median": 1279,
+      "min": 1279
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 1,
+     "weapons": {
+      "heavy missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 0
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 1,
+      "median": 1,
+      "min": 1
+     },
+     "hex_steps": {
+      "max": 59,
+      "median": 59,
+      "min": 59
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_2": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 3,
+      "median": 3,
+      "min": 3
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 1,
+     "steps_left_before_end": {
+      "max": 1279,
+      "median": 1279,
+      "min": 1279
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st4": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 1,
+     "weapons": {
+      "rapid-fire gun": 1
+     },
+     "witness_target_in_view_and_range_through_window": 0
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "H0 1910631192 red",
+   "opportunity_episodes": 2,
+   "play_decisions": 1800,
+   "population": "H0",
+   "scenario": "1910631192",
+   "stops": 2,
+   "unit_decision_levels": {
+    "B_no_move_and_fire": 762,
+    "C_traversing": 5,
+    "F_route_continues": 120,
+    "I_target_in_range": 2717,
+    "stop": 152
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": true,
+   "waiting_with_path_unit_decisions": 0
+  },
+  {
+   "baseline_v2_differs_from_recorded": 7,
+   "colour": "blue",
+   "condition": "C1",
+   "decisions": 2881,
+   "distinct_units": 10,
+   "eligible_unit_decisions": 750,
+   "episode_lengths": {
+    "max": 100,
+    "median": 24.5,
+    "min": 1
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 652,
+    "distance": 4,
+    "hex_steps": 9,
+    "objective": "80-point objective A",
+    "others": 1,
+    "path_ends_at_unheld_objective": true,
+    "path_hexes": 2,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": true,
+    "step": 651,
+    "steps_left": 2229,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": true,
+    "unit_lost_in_window": true,
+    "valid": false,
+    "weapon": "vehicle-mounted missile",
+    "window_steps": 87,
+    "witness_target_in_view_and_range_through_window": true
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 4,
+      "median": 4,
+      "min": 4
+     },
+     "hex_steps": {
+      "max": 9,
+      "median": 9,
+      "min": 9
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_1": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 2,
+      "median": 2,
+      "min": 2
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 1,
+     "steps_left_before_end": {
+      "max": 2229,
+      "median": 2229,
+      "min": 2229
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 1,
+     "unit_lost_in_window": 1,
+     "weapons": {
+      "vehicle-mounted missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 1
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 10,
+      "median": 9,
+      "min": 3
+     },
+     "hex_steps": {
+      "max": 144,
+      "median": 36,
+      "min": 6
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_1": 7,
+      "others_2": 2
+     },
+     "path_ends_at_unheld_objective": 3,
+     "path_hexes": {
+      "max": 11,
+      "median": 10,
+      "min": 2
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 1,
+     "steps_left_before_end": {
+      "max": 2229,
+      "median": 1786,
+      "min": 720
+     },
+     "stops": 9,
+     "target_classes": {
+      "vehicle": 9
+     },
+     "unit_classes": {
+      "infantry": 6,
+      "vehicle_st1": 3
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "portable missile": 6,
+      "vehicle-mounted missile": 3
+     },
+     "witness_target_in_view_and_range_through_window": 5
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "H0 1930331196 blue",
+   "opportunity_episodes": 28,
+   "play_decisions": 2880,
+   "population": "H0",
+   "scenario": "1930331196",
+   "stops": 10,
+   "unit_decision_levels": {
+    "A_ground_controllable": 5746,
+    "B_no_move_and_fire": 5007,
+    "C_traversing": 17646,
+    "E_no_other_state": 535,
+    "F_route_continues": 1156,
+    "I_target_in_range": 20746,
+    "J_next_hex_room": 890,
+    "K_time_left": 363,
+    "stop": 750
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": false,
+   "waiting_with_path_unit_decisions": 0
+  },
+  {
+   "baseline_v2_differs_from_recorded": 18,
+   "colour": "red",
+   "condition": "C1",
+   "decisions": 2881,
+   "distinct_units": 5,
+   "eligible_unit_decisions": 812,
+   "episode_lengths": {
+    "max": 251,
+    "median": 39.0,
+    "min": 5
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 1780,
+    "distance": 5,
+    "hex_steps": 39,
+    "objective": "50-point objective A",
+    "others": 2,
+    "path_ends_at_unheld_objective": true,
+    "path_hexes": 9,
+    "range": 10,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": false,
+    "step": 1779,
+    "steps_left": 1101,
+    "target_class": "infantry",
+    "unit_damaged_in_window": false,
+    "unit_lost_in_window": false,
+    "valid": false,
+    "weapon": "vehicle light weapons",
+    "window_steps": 117,
+    "witness_target_in_view_and_range_through_window": false
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 5,
+      "median": 5,
+      "min": 5
+     },
+     "hex_steps": {
+      "max": 39,
+      "median": 39,
+      "min": 39
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_2": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 9,
+      "median": 9,
+      "min": 9
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 1101,
+      "median": 1101,
+      "min": 1101
+     },
+     "stops": 1,
+     "target_classes": {
+      "infantry": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "vehicle light weapons": 1
+     },
+     "witness_target_in_view_and_range_through_window": 0
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 7,
+      "median": 5.0,
+      "min": 1
+     },
+     "hex_steps": {
+      "max": 144,
+      "median": 35.0,
+      "min": 3
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_0": 2,
+      "others_1": 1,
+      "others_2": 1
+     },
+     "path_ends_at_unheld_objective": 2,
+     "path_hexes": {
+      "max": 9,
+      "median": 4.0,
+      "min": 3
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 1101,
+      "median": 879.5,
+      "min": 435
+     },
+     "stops": 4,
+     "target_classes": {
+      "infantry": 1,
+      "vehicle": 3
+     },
+     "unit_classes": {
+      "infantry": 3,
+      "vehicle_st4": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "portable missile": 3,
+      "vehicle light weapons": 1
+     },
+     "witness_target_in_view_and_range_through_window": 3
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "H0 1930331196 red",
+   "opportunity_episodes": 18,
+   "play_decisions": 2880,
+   "population": "H0",
+   "scenario": "1930331196",
+   "stops": 5,
+   "unit_decision_levels": {
+    "A_ground_controllable": 5760,
+    "B_no_move_and_fire": 4741,
+    "C_traversing": 18269,
+    "E_no_other_state": 95,
+    "F_route_continues": 1330,
+    "I_target_in_range": 12540,
+    "J_next_hex_room": 470,
+    "K_time_left": 50,
+    "stop": 812
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": false,
+   "waiting_with_path_unit_decisions": 44
+  },
+  {
+   "baseline_v2_differs_from_recorded": 1,
+   "colour": "blue",
+   "condition": "C1",
+   "decisions": 1801,
+   "distinct_units": 0,
+   "eligible_unit_decisions": 0,
+   "episode_lengths": null,
+   "first_divergence": null,
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": null,
+     "hex_steps": null,
+     "others_on_or_routed_through_stop_hex": {},
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": null,
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": null,
+     "stops": 0,
+     "target_classes": {},
+     "unit_classes": {},
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {},
+     "witness_target_in_view_and_range_through_window": 0
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": null,
+     "hex_steps": null,
+     "others_on_or_routed_through_stop_hex": {},
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": null,
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": null,
+     "stops": 0,
+     "target_classes": {},
+     "unit_classes": {},
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {},
+     "witness_target_in_view_and_range_through_window": 0
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "H0 2010131194 blue",
+   "opportunity_episodes": 0,
+   "play_decisions": 1800,
+   "population": "H0",
+   "scenario": "2010131194",
+   "stops": 0,
+   "unit_decision_levels": {
+    "B_no_move_and_fire": 3600
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": false,
+   "waiting_with_path_unit_decisions": 0
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "red",
+   "condition": "C1",
+   "decisions": 1801,
+   "distinct_units": 0,
+   "eligible_unit_decisions": 0,
+   "episode_lengths": null,
+   "first_divergence": null,
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": null,
+     "hex_steps": null,
+     "others_on_or_routed_through_stop_hex": {},
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": null,
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": null,
+     "stops": 0,
+     "target_classes": {},
+     "unit_classes": {},
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {},
+     "witness_target_in_view_and_range_through_window": 0
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": null,
+     "hex_steps": null,
+     "others_on_or_routed_through_stop_hex": {},
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": null,
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": null,
+     "stops": 0,
+     "target_classes": {},
+     "unit_classes": {},
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {},
+     "witness_target_in_view_and_range_through_window": 0
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "H0 2010131194 red",
+   "opportunity_episodes": 0,
+   "play_decisions": 1800,
+   "population": "H0",
+   "scenario": "2010131194",
+   "stops": 0,
+   "unit_decision_levels": {
+    "B_no_move_and_fire": 441
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": false,
+   "waiting_with_path_unit_decisions": 0
+  },
+  {
+   "baseline_v2_differs_from_recorded": 1,
+   "colour": "blue",
+   "condition": "C1",
+   "decisions": 1801,
+   "distinct_units": 0,
+   "eligible_unit_decisions": 0,
+   "episode_lengths": null,
+   "first_divergence": null,
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": null,
+     "hex_steps": null,
+     "others_on_or_routed_through_stop_hex": {},
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": null,
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": null,
+     "stops": 0,
+     "target_classes": {},
+     "unit_classes": {},
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {},
+     "witness_target_in_view_and_range_through_window": 0
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": null,
+     "hex_steps": null,
+     "others_on_or_routed_through_stop_hex": {},
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": null,
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": null,
+     "stops": 0,
+     "target_classes": {},
+     "unit_classes": {},
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {},
+     "witness_target_in_view_and_range_through_window": 0
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "H0 2010211129 blue",
+   "opportunity_episodes": 0,
+   "play_decisions": 1800,
+   "population": "H0",
+   "scenario": "2010211129",
+   "stops": 0,
+   "unit_decision_levels": {
+    "B_no_move_and_fire": 400,
+    "C_traversing": 5002,
+    "F_route_continues": 368,
+    "I_target_in_range": 1830
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": false,
+   "waiting_with_path_unit_decisions": 0
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "red",
+   "condition": "C1",
+   "decisions": 1801,
+   "distinct_units": 2,
+   "eligible_unit_decisions": 118,
+   "episode_lengths": {
+    "max": 40,
+    "median": 29.5,
+    "min": 19
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 302,
+    "distance": 5,
+    "hex_steps": 19,
+    "objective": "80-point objective A",
+    "others": 2,
+    "path_ends_at_unheld_objective": true,
+    "path_hexes": 6,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": false,
+    "step": 301,
+    "steps_left": 1499,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": false,
+    "unit_lost_in_window": false,
+    "valid": true,
+    "weapon": "heavy missile",
+    "window_steps": 97,
+    "witness_target_in_view_and_range_through_window": true
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 5,
+      "median": 5,
+      "min": 5
+     },
+     "hex_steps": {
+      "max": 19,
+      "median": 19,
+      "min": 19
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_2": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 6,
+      "median": 6,
+      "min": 6
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 1499,
+      "median": 1499,
+      "min": 1499
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "heavy missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 1
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 5,
+      "median": 5,
+      "min": 5
+     },
+     "hex_steps": {
+      "max": 19,
+      "median": 19,
+      "min": 19
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_2": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 6,
+      "median": 6,
+      "min": 6
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 1499,
+      "median": 1499,
+      "min": 1499
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st4": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "rapid-fire gun": 1
+     },
+     "witness_target_in_view_and_range_through_window": 1
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "H0 2010211129 red",
+   "opportunity_episodes": 4,
+   "play_decisions": 1800,
+   "population": "H0",
+   "scenario": "2010211129",
+   "stops": 2,
+   "unit_decision_levels": {
+    "B_no_move_and_fire": 425,
+    "C_traversing": 63,
+    "F_route_continues": 40,
+    "I_target_in_range": 2439,
+    "J_next_hex_room": 40,
+    "stop": 118
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": true,
+   "waiting_with_path_unit_decisions": 0
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "blue",
+   "condition": "C1",
+   "decisions": 1001,
+   "distinct_units": 0,
+   "eligible_unit_decisions": 0,
+   "episode_lengths": null,
+   "first_divergence": null,
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": null,
+     "hex_steps": null,
+     "others_on_or_routed_through_stop_hex": {},
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": null,
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": null,
+     "stops": 0,
+     "target_classes": {},
+     "unit_classes": {},
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {},
+     "witness_target_in_view_and_range_through_window": 0
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": null,
+     "hex_steps": null,
+     "others_on_or_routed_through_stop_hex": {},
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": null,
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": null,
+     "stops": 0,
+     "target_classes": {},
+     "unit_classes": {},
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {},
+     "witness_target_in_view_and_range_through_window": 0
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "H0 201033019601 blue",
+   "opportunity_episodes": 0,
+   "play_decisions": 1000,
+   "population": "H0",
+   "scenario": "201033019601",
+   "stops": 0,
+   "unit_decision_levels": {
+    "B_no_move_and_fire": 356
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": false,
+   "waiting_with_path_unit_decisions": 0
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "red",
+   "condition": "C1",
+   "decisions": 1001,
+   "distinct_units": 0,
+   "eligible_unit_decisions": 0,
+   "episode_lengths": null,
+   "first_divergence": null,
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": null,
+     "hex_steps": null,
+     "others_on_or_routed_through_stop_hex": {},
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": null,
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": null,
+     "stops": 0,
+     "target_classes": {},
+     "unit_classes": {},
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {},
+     "witness_target_in_view_and_range_through_window": 0
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": null,
+     "hex_steps": null,
+     "others_on_or_routed_through_stop_hex": {},
+     "path_ends_at_unheld_objective": 0,
+     "path_hexes": null,
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": null,
+     "stops": 0,
+     "target_classes": {},
+     "unit_classes": {},
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {},
+     "witness_target_in_view_and_range_through_window": 0
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "H0 201033019601 red",
+   "opportunity_episodes": 0,
+   "play_decisions": 1000,
+   "population": "H0",
+   "scenario": "201033019601",
+   "stops": 0,
+   "unit_decision_levels": {
+    "B_no_move_and_fire": 1000
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": false,
+   "waiting_with_path_unit_decisions": 0
+  },
+  {
+   "baseline_v2_differs_from_recorded": 7,
+   "colour": "blue",
+   "condition": "C1",
+   "decisions": 1801,
+   "distinct_units": 2,
+   "eligible_unit_decisions": 255,
+   "episode_lengths": {
+    "max": 160,
+    "median": 55,
+    "min": 40
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 141,
+    "distance": 16,
+    "hex_steps": 20,
+    "objective": "80-point objective A",
+    "others": 1,
+    "path_ends_at_unheld_objective": true,
+    "path_hexes": 12,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": false,
+    "step": 140,
+    "steps_left": 1660,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": false,
+    "unit_lost_in_window": false,
+    "valid": true,
+    "weapon": "vehicle-mounted missile",
+    "window_steps": 98,
+    "witness_target_in_view_and_range_through_window": true
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 16,
+      "median": 16,
+      "min": 16
+     },
+     "hex_steps": {
+      "max": 20,
+      "median": 20,
+      "min": 20
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_1": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 12,
+      "median": 12,
+      "min": 12
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 1660,
+      "median": 1660,
+      "min": 1660
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "vehicle-mounted missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 1
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 4,
+      "median": 4,
+      "min": 4
+     },
+     "hex_steps": {
+      "max": 59,
+      "median": 59,
+      "min": 59
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_1": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 7,
+      "median": 7,
+      "min": 7
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 1,
+     "steps_left_before_end": {
+      "max": 1379,
+      "median": 1379,
+      "min": 1379
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 1,
+     "weapons": {
+      "vehicle-mounted missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 0
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "H0 2010431153 blue",
+   "opportunity_episodes": 3,
+   "play_decisions": 1800,
+   "population": "H0",
+   "scenario": "2010431153",
+   "stops": 2,
+   "unit_decision_levels": {
+    "B_no_move_and_fire": 2196,
+    "C_traversing": 1425,
+    "F_route_continues": 244,
+    "I_target_in_range": 3952,
+    "stop": 255
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": true,
+   "waiting_with_path_unit_decisions": 0
+  },
+  {
+   "baseline_v2_differs_from_recorded": 1,
+   "colour": "red",
+   "condition": "C1",
+   "decisions": 1801,
+   "distinct_units": 3,
+   "eligible_unit_decisions": 525,
+   "episode_lengths": {
+    "max": 220,
+    "median": 122.5,
+    "min": 60
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 181,
+    "distance": 14,
+    "hex_steps": 20,
+    "objective": "80-point objective A",
+    "others": 1,
+    "path_ends_at_unheld_objective": true,
+    "path_hexes": 8,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": false,
+    "step": 180,
+    "steps_left": 1620,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": false,
+    "unit_lost_in_window": false,
+    "valid": true,
+    "weapon": "heavy missile",
+    "window_steps": 98,
+    "witness_target_in_view_and_range_through_window": true
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 14,
+      "median": 14,
+      "min": 14
+     },
+     "hex_steps": {
+      "max": 20,
+      "median": 20,
+      "min": 20
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_1": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 8,
+      "median": 8,
+      "min": 8
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 1620,
+      "median": 1620,
+      "min": 1620
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "heavy missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 1
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 10,
+      "median": 10.0,
+      "min": 10
+     },
+     "hex_steps": {
+      "max": 144,
+      "median": 82.0,
+      "min": 20
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_0": 1,
+      "others_1": 1
+     },
+     "path_ends_at_unheld_objective": 2,
+     "path_hexes": {
+      "max": 11,
+      "median": 8.5,
+      "min": 6
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 1580,
+      "median": 1258.0,
+      "min": 936
+     },
+     "stops": 2,
+     "target_classes": {
+      "vehicle": 2
+     },
+     "unit_classes": {
+      "infantry": 1,
+      "vehicle_st4": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "portable missile": 1,
+      "rapid-fire gun": 1
+     },
+     "witness_target_in_view_and_range_through_window": 1
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "H0 2010431153 red",
+   "opportunity_episodes": 4,
+   "play_decisions": 1800,
+   "population": "H0",
+   "scenario": "2010431153",
+   "stops": 3,
+   "unit_decision_levels": {
+    "B_no_move_and_fire": 456,
+    "C_traversing": 429,
+    "E_no_other_state": 211,
+    "F_route_continues": 40,
+    "I_target_in_range": 1524,
+    "J_next_hex_room": 80,
+    "stop": 525
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": true,
+   "waiting_with_path_unit_decisions": 164
+  },
+  {
+   "baseline_v2_differs_from_recorded": 29,
+   "colour": "blue",
+   "condition": "C1",
+   "decisions": 2881,
+   "distinct_units": 3,
+   "eligible_unit_decisions": 504,
+   "episode_lengths": {
+    "max": 140,
+    "median": 39.0,
+    "min": 20
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 212,
+    "distance": 17,
+    "hex_steps": 9,
+    "objective": "50-point objective B",
+    "others": 2,
+    "path_ends_at_unheld_objective": true,
+    "path_hexes": 11,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": false,
+    "step": 211,
+    "steps_left": 2669,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": false,
+    "unit_lost_in_window": false,
+    "valid": false,
+    "weapon": "vehicle-mounted missile",
+    "window_steps": 87,
+    "witness_target_in_view_and_range_through_window": true
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 17,
+      "median": 17,
+      "min": 17
+     },
+     "hex_steps": {
+      "max": 9,
+      "median": 9,
+      "min": 9
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_2": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 11,
+      "median": 11,
+      "min": 11
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 2669,
+      "median": 2669,
+      "min": 2669
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "vehicle-mounted missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 1
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 16,
+      "median": 12.5,
+      "min": 9
+     },
+     "hex_steps": {
+      "max": 20,
+      "median": 20.0,
+      "min": 20
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_1": 2
+     },
+     "path_ends_at_unheld_objective": 2,
+     "path_hexes": {
+      "max": 11,
+      "median": 7.5,
+      "min": 4
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 1,
+     "steps_left_before_end": {
+      "max": 2660,
+      "median": 2600.0,
+      "min": 2540
+     },
+     "stops": 2,
+     "target_classes": {
+      "vehicle": 2
+     },
+     "unit_classes": {
+      "vehicle_st1": 2
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "vehicle-mounted missile": 2
+     },
+     "witness_target_in_view_and_range_through_window": 2
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "H0 2120531121 blue",
+   "opportunity_episodes": 10,
+   "play_decisions": 2880,
+   "population": "H0",
+   "scenario": "2120531121",
+   "stops": 3,
+   "unit_decision_levels": {
+    "A_ground_controllable": 5760,
+    "B_no_move_and_fire": 2786,
+    "C_traversing": 26981,
+    "F_route_continues": 1631,
+    "I_target_in_range": 18305,
+    "J_next_hex_room": 597,
+    "stop": 504
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": false,
+   "waiting_with_path_unit_decisions": 555
+  },
+  {
+   "baseline_v2_differs_from_recorded": 9,
+   "colour": "red",
+   "condition": "C1",
+   "decisions": 2881,
+   "distinct_units": 5,
+   "eligible_unit_decisions": 423,
+   "episode_lengths": {
+    "max": 165,
+    "median": 33.0,
+    "min": 8
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 181,
+    "distance": 19,
+    "hex_steps": 20,
+    "objective": "50-point objective A",
+    "others": 2,
+    "path_ends_at_unheld_objective": true,
+    "path_hexes": 6,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": false,
+    "step": 180,
+    "steps_left": 2700,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": true,
+    "unit_lost_in_window": false,
+    "valid": false,
+    "weapon": "heavy missile",
+    "window_steps": 98,
+    "witness_target_in_view_and_range_through_window": false
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 19,
+      "median": 19,
+      "min": 19
+     },
+     "hex_steps": {
+      "max": 20,
+      "median": 20,
+      "min": 20
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_2": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 6,
+      "median": 6,
+      "min": 6
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 2700,
+      "median": 2700,
+      "min": 2700
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 1,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "heavy missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 0
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 10,
+      "median": 8.0,
+      "min": 1
+     },
+     "hex_steps": {
+      "max": 144,
+      "median": 144.0,
+      "min": 19
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_0": 3,
+      "others_2": 1
+     },
+     "path_ends_at_unheld_objective": 4,
+     "path_hexes": {
+      "max": 10,
+      "median": 5.0,
+      "min": 2
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 1,
+     "steps_left_before_end": {
+      "max": 2598,
+      "median": 1944.0,
+      "min": 1066
+     },
+     "stops": 4,
+     "target_classes": {
+      "vehicle": 4
+     },
+     "unit_classes": {
+      "infantry": 3,
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 2,
+     "unit_lost_in_window": 2,
+     "weapons": {
+      "heavy missile": 1,
+      "portable missile": 3
+     },
+     "witness_target_in_view_and_range_through_window": 3
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "H0 2120531121 red",
+   "opportunity_episodes": 8,
+   "play_decisions": 2880,
+   "population": "H0",
+   "scenario": "2120531121",
+   "stops": 5,
+   "unit_decision_levels": {
+    "A_ground_controllable": 7229,
+    "B_no_move_and_fire": 1114,
+    "C_traversing": 17794,
+    "E_no_other_state": 656,
+    "F_route_continues": 297,
+    "I_target_in_range": 5228,
+    "J_next_hex_room": 542,
+    "stop": 423
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": false,
+   "waiting_with_path_unit_decisions": 167
+  },
+  {
+   "baseline_v2_differs_from_recorded": 33,
+   "colour": "blue",
+   "condition": "C1",
+   "decisions": 2881,
+   "distinct_units": 10,
+   "eligible_unit_decisions": 713,
+   "episode_lengths": {
+    "max": 124,
+    "median": 11.5,
+    "min": 1
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 163,
+    "distance": 19,
+    "hex_steps": 19,
+    "objective": "50-point objective B",
+    "others": 1,
+    "path_ends_at_unheld_objective": true,
+    "path_hexes": 3,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": true,
+    "step": 162,
+    "steps_left": 2718,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": false,
+    "unit_lost_in_window": false,
+    "valid": false,
+    "weapon": "vehicle-mounted missile",
+    "window_steps": 97,
+    "witness_target_in_view_and_range_through_window": false
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 19,
+      "median": 19,
+      "min": 19
+     },
+     "hex_steps": {
+      "max": 19,
+      "median": 19,
+      "min": 19
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_1": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 3,
+      "median": 3,
+      "min": 3
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 1,
+     "steps_left_before_end": {
+      "max": 2718,
+      "median": 2718,
+      "min": 2718
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "vehicle-mounted missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 0
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 17,
+      "median": 7,
+      "min": 2
+     },
+     "hex_steps": {
+      "max": 144,
+      "median": 19,
+      "min": 1
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_0": 3,
+      "others_1": 2,
+      "others_2": 4
+     },
+     "path_ends_at_unheld_objective": 7,
+     "path_hexes": {
+      "max": 6,
+      "median": 5,
+      "min": 2
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 4,
+     "steps_left_before_end": {
+      "max": 2699,
+      "median": 2600,
+      "min": 1858
+     },
+     "stops": 9,
+     "target_classes": {
+      "vehicle": 9
+     },
+     "unit_classes": {
+      "infantry": 2,
+      "vehicle_st1": 7
+     },
+     "unit_damaged_in_window": 1,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "rocket launcher": 2,
+      "vehicle-mounted missile": 7
+     },
+     "witness_target_in_view_and_range_through_window": 2
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "H0 2130511121 blue",
+   "opportunity_episodes": 26,
+   "play_decisions": 2880,
+   "population": "H0",
+   "scenario": "2130511121",
+   "stops": 10,
+   "unit_decision_levels": {
+    "A_ground_controllable": 21135,
+    "B_no_move_and_fire": 4446,
+    "C_traversing": 44665,
+    "E_no_other_state": 853,
+    "F_route_continues": 3232,
+    "I_target_in_range": 19057,
+    "J_next_hex_room": 1115,
+    "stop": 713
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": false,
+   "waiting_with_path_unit_decisions": 12253
+  },
+  {
+   "baseline_v2_differs_from_recorded": 11,
+   "colour": "red",
+   "condition": "C1",
+   "decisions": 2881,
+   "distinct_units": 6,
+   "eligible_unit_decisions": 783,
+   "episode_lengths": {
+    "max": 214,
+    "median": 34,
+    "min": 19
+   },
+   "first_divergence": {
+    "class": "vehicle_st1",
+    "decision": 81,
+    "distance": 20,
+    "hex_steps": 20,
+    "objective": "50-point objective A",
+    "others": 2,
+    "path_ends_at_unheld_objective": true,
+    "path_hexes": 18,
+    "range": 20,
+    "shoot_listed_in_window_on_record": false,
+    "side_first_owned_it_in_window": false,
+    "step": 80,
+    "steps_left": 2800,
+    "target_class": "vehicle",
+    "unit_damaged_in_window": false,
+    "unit_lost_in_window": false,
+    "valid": true,
+    "weapon": "heavy missile",
+    "window_steps": 98,
+    "witness_target_in_view_and_range_through_window": true
+   },
+   "first_divergence_stop_and_later_stops": {
+    "first": {
+     "distance_from_stop_hex": {
+      "max": 20,
+      "median": 20,
+      "min": 20
+     },
+     "hex_steps": {
+      "max": 20,
+      "median": 20,
+      "min": 20
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_2": 1
+     },
+     "path_ends_at_unheld_objective": 1,
+     "path_hexes": {
+      "max": 18,
+      "median": 18,
+      "min": 18
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 2800,
+      "median": 2800,
+      "min": 2800
+     },
+     "stops": 1,
+     "target_classes": {
+      "vehicle": 1
+     },
+     "unit_classes": {
+      "vehicle_st1": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "heavy missile": 1
+     },
+     "witness_target_in_view_and_range_through_window": 1
+    },
+    "later_off_policy": {
+     "distance_from_stop_hex": {
+      "max": 16,
+      "median": 4,
+      "min": 2
+     },
+     "hex_steps": {
+      "max": 144,
+      "median": 20,
+      "min": 14
+     },
+     "others_on_or_routed_through_stop_hex": {
+      "others_0": 1,
+      "others_2": 4
+     },
+     "path_ends_at_unheld_objective": 5,
+     "path_hexes": {
+      "max": 11,
+      "median": 5,
+      "min": 3
+     },
+     "shoot_listed_in_window_on_record": 0,
+     "side_first_owned_it_in_window": 0,
+     "steps_left_before_end": {
+      "max": 2700,
+      "median": 2294,
+      "min": 288
+     },
+     "stops": 5,
+     "target_classes": {
+      "vehicle": 5
+     },
+     "unit_classes": {
+      "infantry": 2,
+      "vehicle_st1": 2,
+      "vehicle_st4": 1
+     },
+     "unit_damaged_in_window": 0,
+     "unit_lost_in_window": 0,
+     "weapons": {
+      "heavy missile": 2,
+      "portable medium missile": 1,
+      "rocket launcher": 2
+     },
+     "witness_target_in_view_and_range_through_window": 4
+    }
+   },
+   "independent_check_findings": 0,
+   "label": "H0 2130511121 red",
+   "opportunity_episodes": 13,
+   "play_decisions": 2880,
+   "population": "H0",
+   "scenario": "2130511121",
+   "stops": 6,
+   "unit_decision_levels": {
+    "A_ground_controllable": 10262,
+    "B_no_move_and_fire": 2261,
+    "C_traversing": 18679,
+    "E_no_other_state": 482,
+    "F_route_continues": 1197,
+    "I_target_in_range": 19947,
+    "J_next_hex_room": 1554,
+    "K_time_left": 31,
+    "stop": 783
+   },
+   "unreadable_or_ambiguous": {},
+   "verified_opportunity": true,
+   "waiting_with_path_unit_decisions": 490
+  }
+ ],
+ "study_id": "s32-t7-b1",
+ "verified_inert_configurations": {
+  "blue": [
+   "1930331196 C3",
+   "2120531121 C3"
+  ],
+  "red": []
+ }
+}
