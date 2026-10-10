@@ -132,8 +132,9 @@ class Agent(BaseAgent):
 '''
 #: Wrapper variants. ``canary`` is the frozen canary's entry point above (its archive bytes must not change);
 #: ``compat1`` wraps the same frozen policy in a transport-compatibility layer and changes no policy file.
-VARIANTS = ("canary", "compat1")
-VARIANT_NAMES = {"canary": "miaosuan-baseline-v2-canary", "compat1": "miaosuan-baseline-v2-compat1"}
+VARIANTS = ("canary", "compat1", "compat2")
+VARIANT_NAMES = {"canary": "miaosuan-baseline-v2-canary", "compat1": "miaosuan-baseline-v2-compat1",
+                 "compat2": "miaosuan-baseline-v2-compat2"}
 AGENT_COMPAT1 = '''"""Platform entry point: the frozen __IDENTITY__ policy (policy source __DIGEST__), wrapper compat1.
 
 The policy and every vendored module are the canary's, unchanged. This wrapper adapts only the form of the inputs and
@@ -302,6 +303,406 @@ class Agent(BaseAgent):
         self._setup_error = None
         self._observed = False
 '''
+AGENT_COMPAT2 = r'''"""Platform entry point: the frozen __IDENTITY__ policy (policy source __DIGEST__), wrapper compat2.
+
+The policy and every vendored module are the canary's, unchanged. compat2 is a strict adapter between the online
+platform's seat representation and the frozen policy's. It follows an online test match in which the platform passed
+``setup_info.seat`` as the string ``"p3"``: compat1's setup failed on it, and the agent returned no action all game.
+
+Seat identity, the only identity translated:
+
+* external seat: ``setup_info["seat"]`` exactly as passed. Accepted: an int (the local engine's form) or ``"p<N>"``
+  with N a canonical decimal of at least 1 (the online form). Anything else fails setup.
+* internal seat: the int itself, or N for ``"p<N>"``; the frozen policy sees only the internal seat.
+* outbound ``actor``: the external seat, verbatim. The platform's documented reference agent stores
+  ``self.seat = setup_info["seat"]``, issues ``"actor": self.seat`` and reads
+  ``observation["role_and_grouping_info"][self.seat]``. An action whose actor is not the internal seat is dropped.
+* ``role_and_grouping_info`` keys: an int, its decimal-string JSON form, ``"p<N>"`` (to N), or the platform's
+  non-player entry ``"god"`` (to the reserved internal seat -1, accepted only with faction -1, role -1 and no units).
+  Any other key, or two keys for one internal seat, is a contract error for that step. A non-int ``user_id`` (the
+  platform sends strings; the policy never reads it) is left out of the internal view only.
+
+Other inputs: mappings whose keys are all decimal strings (a JSON transport) are re-keyed by int, as in compat1,
+``cost_data`` included. Nothing else is changed. Input that needs no change reaches the policy as the same object, so
+on the local engine's form every action is the canary's.
+
+Status: ``setup()`` ends ``ready`` or ``failed``. A failure is reported with the exception class, the field path
+(indices masked) and a category, and is never reported as success. While not ``ready`` a step returns no action,
+except the labelled FALLBACK that only ends the seat's deployment when the external seat itself was valid; the same
+fallback answers a deployment step that failed its contract. Diagnostics are bounded: the setup result, the first
+observation, the first deployment and play decisions, the first MOVE, zero controllable units, a missing router,
+distinct errors and invalid outputs; at most 50 lines per game. No input value except the form of the external seat
+is printed. Every line starts with ``[__IDENTITY__/compat2]``.
+"""
+
+import re
+import sys
+from collections import Counter
+from typing import Any, Dict, List, Mapping, Optional, Tuple
+
+from .base_agent import BaseAgent
+from .__PACKAGE__.experiments.shoot_reservation import __AGENT_CLASS__
+
+IDENTITY = "__IDENTITY__"
+WRAPPER = "compat2"
+POLICY_SOURCE_SHA256 = "__DIGEST__"
+END_DEPLOYMENT = 333
+MOVE = 1
+DEPLOYMENT_STAGE = 1
+PLAY_STAGE = 2
+NON_PLAYER_KEY = "god"
+NON_PLAYER_INTERNAL = -1
+MAX_LINES = 50
+_DECIMAL = re.compile(r"0|-?[1-9][0-9]*")
+_PLAYER = re.compile(r"p([1-9][0-9]*)")
+_INDEX = re.compile(r"\[[^\]]*\]")
+_DIGITS = re.compile(r"[0-9]+")
+_CONTRACT = re.compile(r"^(?P<cls>\w+): (?P<path>.*?): expected (?P<expected>.*?), got ")
+
+
+class SeatError(ValueError):
+    """A seat identifier or seat table the adapter does not accept. The message names a field, never a value."""
+
+    def __init__(self, path: str, expected: str) -> None:
+        self.path, self.expected = path, expected
+        super().__init__(f"{path}: expected {expected}")
+
+
+def _is_int(value: Any) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
+def _decimal(value: Any) -> bool:
+    return isinstance(value, str) and _DECIMAL.fullmatch(value) is not None
+
+
+def _int_keys(value: Any) -> Tuple[Any, bool]:
+    """``value`` with every all-decimal-string-keyed mapping re-keyed by int, and whether anything changed.
+
+    An unchanged value is returned as the same object.
+    """
+    if isinstance(value, Mapping):
+        items = list(value.items())
+        rekey = bool(items) and all(_decimal(key) for key, _ in items)
+        changed = rekey
+        converted = []
+        for key, item in items:
+            new, sub = _int_keys(item)
+            changed = changed or sub
+            converted.append((int(key) if rekey else key, new))
+        return (dict(converted), True) if changed else (value, False)
+    if isinstance(value, (list, tuple)):
+        converted = []
+        changed = False
+        for item in value:
+            new, sub = _int_keys(item)
+            changed = changed or sub
+            converted.append(new)
+        if not changed:
+            return value, False
+        return (converted if isinstance(value, list) else tuple(converted)), True
+    return value, False
+
+
+def internal_seat(external: Any) -> int:
+    """The internal seat of an external seat identifier, or SeatError."""
+    if _is_int(external):
+        return external
+    if isinstance(external, str):
+        match = _PLAYER.fullmatch(external)
+        if match:
+            return int(match.group(1))
+    raise SeatError("setup_info.seat", "an int or 'p<N>' with N >= 1")
+
+
+def seat_form(external: Any) -> str:
+    if isinstance(external, str):
+        return "'p<N>'" if _PLAYER.fullmatch(external) else "str (unrecognised)"
+    return type(external).__name__
+
+
+def _seat_key(key: Any, entry: Any) -> int:
+    path = "role_and_grouping_info"
+    if _is_int(key):
+        return key
+    if isinstance(key, str):
+        if _decimal(key):
+            return int(key)
+        match = _PLAYER.fullmatch(key)
+        if match:
+            return int(match.group(1))
+        if key == NON_PLAYER_KEY:
+            if (isinstance(entry, Mapping) and _is_int(entry.get("faction")) and entry.get("faction") == -1
+                    and _is_int(entry.get("role")) and entry.get("role") == -1 and not entry.get("operators")):
+                return NON_PLAYER_INTERNAL
+            raise SeatError(path, "the non-player entry with faction -1, role -1 and no units")
+    raise SeatError(path, "seat keys that are ints, 'p<N>' or the non-player entry")
+
+
+def adapt_seats(observation: Any) -> Tuple[Any, bool]:
+    """The observation with its seat table keyed by internal seat, and whether anything changed."""
+    if not isinstance(observation, Mapping):
+        return observation, False
+    table = observation.get("role_and_grouping_info")
+    if not isinstance(table, Mapping):
+        return observation, False
+    adapted: Dict[int, Any] = {}
+    changed = False
+    for key, entry in table.items():
+        internal = _seat_key(key, entry)
+        if internal in adapted:
+            raise SeatError("role_and_grouping_info", "one key per internal seat (two keys collide)")
+        if not (_is_int(key) and key == internal):
+            changed = True
+        if isinstance(entry, Mapping) and "user_id" in entry and not _is_int(entry["user_id"]):
+            entry = {name: value for name, value in entry.items() if name != "user_id"}
+            changed = True
+        adapted[internal] = entry
+    if not changed:
+        return observation, False
+    out = dict(observation)
+    out["role_and_grouping_info"] = adapted
+    return out, True
+
+
+def _key_forms(table: Any) -> List[str]:
+    forms: Counter = Counter()
+    for key in (table if isinstance(table, Mapping) else ()):
+        if _is_int(key):
+            forms["int"] += 1
+        elif _decimal(key):
+            forms["decimal str"] += 1
+        elif isinstance(key, str) and _PLAYER.fullmatch(key):
+            forms["'p<N>'"] += 1
+        elif key == NON_PLAYER_KEY:
+            forms["non-player"] += 1
+        else:
+            forms["other"] += 1
+    return [f"{form} x{count}" for form, count in sorted(forms.items())]
+
+
+def _sanitise_path(path: str) -> str:
+    return _INDEX.sub("[*]", path)
+
+
+def _describe(exc: BaseException) -> Tuple[str, str]:
+    """(class and sanitised path, category) of an exception, without any value from the input."""
+    path = getattr(exc, "path", None)
+    if isinstance(path, str):
+        path = _sanitise_path(path)
+    else:
+        path = "<no field>"
+    if "cost_data" in path:
+        category = "cost_data"
+    elif path.endswith(".seat") or path == "role_and_grouping_info" or "role_and_grouping_info" in path:
+        category = "seat"
+    elif path.endswith(".faction"):
+        category = "faction"
+    elif isinstance(exc, (SeatError,)) or type(exc).__name__ == "ContractError":
+        category = "contract"
+    else:
+        category = "internal"
+    expected = getattr(exc, "expected", None)
+    where = f"{type(exc).__name__} at {path}" + (f": expected {expected}" if isinstance(expected, str) else "")
+    return where, category
+
+
+def _describe_trace_error(error: str) -> str:
+    match = _CONTRACT.match(error)
+    if match:
+        return f"{match.group('cls')} at {_sanitise_path(match.group('path'))}: expected {match.group('expected')}"
+    return _DIGITS.sub("N", error.split(":", 1)[0])
+
+
+class Agent(BaseAgent):
+    def __init__(self) -> None:
+        self._agent = __AGENT_CLASS__()
+        self._clear()
+
+    # -- state and diagnostics ---------------------------------------------------------------------
+
+    def _clear(self) -> None:
+        self.status = "uninitialized"
+        self._external: Any = None
+        self._internal: Optional[int] = None
+        self._lines: set = set()
+        self._limited = False
+        self._once: set = set()
+
+    def _report(self, message: str) -> None:
+        if message in self._lines:
+            return
+        if len(self._lines) >= MAX_LINES:
+            if not self._limited:
+                self._limited = True
+                print(f"[{IDENTITY}/{WRAPPER}] diagnostic limit reached; further lines suppressed",
+                      file=sys.stderr, flush=True)
+            return
+        self._lines.add(message)
+        print(f"[{IDENTITY}/{WRAPPER}] {message}", file=sys.stderr, flush=True)
+
+    def _first(self, key: str) -> bool:
+        if key in self._once:
+            return False
+        self._once.add(key)
+        return True
+
+    # -- interface ---------------------------------------------------------------------------------
+
+    def setup(self, setup_info: Dict[str, Any]) -> None:
+        try:
+            self._agent.reset()
+        except Exception:  # noqa: BLE001 - a fresh agent has nothing to reset
+            pass
+        self._clear()
+        self.status = "failed"
+        try:
+            if not isinstance(setup_info, Mapping):
+                raise SeatError("setup_info", "a mapping")
+            external = setup_info.get("seat")
+            form = seat_form(external)
+            internal = internal_seat(external)
+            faction = setup_info.get("faction")
+            if not _is_int(faction) or faction not in (0, 1):
+                raise SeatError("setup_info.faction", "0 or 1")
+            info = dict(setup_info)
+            info["seat"] = internal
+            raw_costs = setup_info.get("cost_data")
+            if raw_costs is None:
+                cost_status = "ABSENT"
+            else:
+                converted, rekeyed = _int_keys(raw_costs)
+                if rekeyed:
+                    info["cost_data"] = converted
+                cost_status = "present, JSON keys converted" if rekeyed else "present"
+            self._external, self._internal = external, internal
+            self._agent.setup(info)
+            costs = getattr(self._agent, "costs", None)
+            router = getattr(getattr(self._agent, "policy", None), "router", None)
+            if costs is not None:
+                cost_status += f", parsed ({len(costs.edges)} modes, {costs.rows}x{costs.cols} hexes)"
+            self.status = "ready"
+            self._report(f"setup OK: external seat {form} mapped to the internal seat; faction {faction}; "
+                         f"cost_data {cost_status}; movement router {'ready' if router is not None else 'UNAVAILABLE'}; "
+                         f"policy {IDENTITY} initialised")
+            if router is None:
+                self._report("movement router UNAVAILABLE: no MOVE can be generated in this game")
+        except Exception as exc:  # noqa: BLE001 - reported as a failure, never as success
+            self.status = "failed"
+            where, category = _describe(exc)
+            self._report(f"SETUP FAILED: {where}; category {category}; the agent is NOT initialised")
+
+    def _seat_entry(self, observation: Any) -> Optional[Mapping]:
+        table = observation.get("role_and_grouping_info") if isinstance(observation, Mapping) else None
+        if not isinstance(table, Mapping) or self._internal is None:
+            return None
+        for key, entry in table.items():
+            try:
+                if _seat_key(key, entry) == self._internal:
+                    return entry if isinstance(entry, Mapping) else None
+            except SeatError:
+                continue
+        return None
+
+    def _fallback(self, observation: Any, reason: str) -> List[Dict[str, Any]]:
+        """FALLBACK: end the seat's deployment while that is still possible; otherwise no action."""
+        if self._external is None or self._internal is None:
+            return []
+        try:
+            stage = observation["time"]["stage"]
+            if stage != DEPLOYMENT_STAGE and stage != str(DEPLOYMENT_STAGE):
+                return []
+            entry = self._seat_entry(observation)
+            if entry is not None and entry.get("end_deployment") is True:
+                return []
+        except Exception:  # noqa: BLE001 - an unreadable stage means no action
+            return []
+        self._report(f"FALLBACK ({reason}): ending the seat's deployment only; this is not a policy decision")
+        return [{"actor": self._external, "type": END_DEPLOYMENT}]
+
+    def _first_observation(self, raw: Any) -> None:
+        if not self._first("observation") or not isinstance(raw, Mapping):
+            return
+        table = raw.get("role_and_grouping_info")
+        entry = self._seat_entry(raw)
+        if entry is None:
+            self._report(f"first observation: seat keys {_key_forms(table)}; NO entry for this seat")
+            return
+        faction = entry.get("faction")
+        consistent = "consistent" if faction == self._agent.faction else "INCONSISTENT"
+        units = entry.get("operators")
+        count = len(units) if isinstance(units, (list, tuple)) else "unreadable"
+        self._report(f"first observation: seat keys {_key_forms(table)}; own entry found; faction {consistent} with "
+                     f"setup; {count} units listed for the seat")
+
+    def _observe(self, trace: Any, actions: List[Dict[str, Any]]) -> None:
+        stage = getattr(trace, "stage", None)
+        types = Counter(int(t) for t, _ in getattr(trace, "emitted", ()) or ())
+        if stage == DEPLOYMENT_STAGE and self._first("deployment"):
+            self._report(f"first deployment decision: emitted types {dict(sorted(types.items()))}")
+        if stage == PLAY_STAGE and self._first("play"):
+            units = getattr(trace, "units", ()) or ()
+            moves = sum(1 for u in units if getattr(u, "rule", None) == "move")
+            reasons = Counter(_DIGITS.sub("N", u.no_op_reason) for u in units if getattr(u, "no_op_reason", None))
+            self._report(f"first play decision: {len(units)} controllable units; {moves} MOVE selected; emitted types "
+                         f"{dict(sorted(types.items()))}; no-action reasons {dict(sorted(reasons.items()))}")
+            if not units:
+                self._report("ZERO controllable units for this seat")
+        for _, _, reason in getattr(trace, "rejected", ()) or ():
+            self._report(f"policy gate rejected an action: {_DIGITS.sub('N', str(reason))}")
+        if types.get(MOVE) and self._first("move"):
+            self._report(f"first MOVE emitted at step {getattr(trace, 'step', '?')} ({types[MOVE]} in that step)")
+
+    def _outbound(self, actions: List[Any]) -> List[Dict[str, Any]]:
+        out = []
+        for action in actions:
+            if not isinstance(action, Mapping) or not _is_int(action.get("actor")) or action.get("actor") != self._internal:
+                self._report("INVALID OUTPUT dropped: an action whose actor is not this seat")
+                continue
+            converted = dict(action)
+            converted["actor"] = self._external
+            out.append(converted)
+        if out and self._first("format"):
+            first = out[0]
+            self._report(f"first submitted action: type {first.get('type')}, keys {sorted(first)}, "
+                         f"actor {seat_form(first['actor'])}")
+        return out
+
+    def step(self, observation: Dict[str, Any]) -> List[Dict[str, Any]]:
+        if self.status != "ready":
+            if self._first("not-ready"):
+                self._report(f"step while {self.status}: no policy decision")
+            return self._fallback(observation, f"setup {self.status}")
+        try:
+            converted, _ = _int_keys(observation)
+            adapted, _ = adapt_seats(converted)
+        except Exception as exc:  # noqa: BLE001
+            where, category = _describe(exc)
+            self._report(f"input error: {where}; category {category}")
+            return self._fallback(observation, "unreadable input")
+        self._first_observation(observation)
+        try:
+            actions = self._agent.step(adapted)
+        except Exception as exc:  # noqa: BLE001 - reported, and the agent keeps playing
+            where, category = _describe(exc)
+            self._report(f"step error: {where}; category {category}")
+            return self._fallback(adapted, "step error")
+        trace = self._agent.last_trace
+        error = getattr(trace, "error", None)
+        if error:
+            self._report(f"contract error: {_describe_trace_error(str(error))}")
+            if not actions:
+                return self._fallback(adapted, "contract error")
+        self._observe(trace, actions)
+        return self._outbound(actions)
+
+    def reset(self) -> None:
+        try:
+            self._agent.reset()
+        except Exception as exc:  # noqa: BLE001
+            self._report(f"reset error: {type(exc).__name__}")
+        self._clear()
+'''
 
 
 # ----------------------------------------------------------------------------------------------
@@ -397,8 +798,8 @@ def agent_source(variant: str = "canary") -> str:
     if variant == "canary":
         return AGENT.format(identity=POLICY_IDENTITY, digest=POLICY_SOURCE_SHA256, package=PACKAGE,
                             agent_class=AGENT_CLASS)
-    if variant == "compat1":
-        source = AGENT_COMPAT1
+    if variant in ("compat1", "compat2"):
+        source = AGENT_COMPAT1 if variant == "compat1" else AGENT_COMPAT2
         for marker, value in (("__IDENTITY__", POLICY_IDENTITY), ("__DIGEST__", POLICY_SOURCE_SHA256),
                              ("__PACKAGE__", PACKAGE), ("__AGENT_CLASS__", AGENT_CLASS)):
             source = source.replace(marker, value)
@@ -577,6 +978,47 @@ def json_form(inputs: Dict[str, Any]) -> Dict[str, Any]:
             "steps": [(seat, round_trip(observation), expected) for seat, observation, expected in inputs["steps"]]}
 
 
+#: The non-player seat entry as the online platform delivers it (match evidence: faction -1, role -1, no units).
+PLATFORM_NON_PLAYER = {"faction": -1, "role": -1, "operators": [], "user_id": "god", "user_name": "god",
+                       "end_deployment": True}
+
+
+def platform_seat(seat: Any) -> str:
+    return f"p{seat}"
+
+
+def platform_form(inputs: Dict[str, Any]) -> Dict[str, Any]:
+    """SYNTHETIC: engine-form inputs re-expressed in the seat representation the online platform used (seat "p<N>",
+    seat-table keys "p<N>" plus the non-player "god" entry, string user ids, a string scenario id with a suffix, an
+    extra top-level field, JSON keys). Every other value is the engine's. The expected actions are the engine-form
+    ones with ``actor`` replaced by the platform seat; nothing else in them changes."""
+    def observation(raw: Any) -> Dict[str, Any]:
+        ob = json.loads(json.dumps(raw, default=_plain))
+        table = {}
+        for key, entry in ob["role_and_grouping_info"].items():
+            entry = dict(entry)
+            if "user_id" in entry:
+                entry["user_id"] = str(entry["user_id"])
+            table[platform_seat(key)] = entry
+        table["god"] = dict(PLATFORM_NON_PLAYER)
+        ob["role_and_grouping_info"] = table
+        ob["scenario_id"] = f"{ob.get('scenario_id')}-1"
+        ob["extra"] = {"global_jam_switch": 0}
+        return ob
+
+    def setup(raw: Dict[str, Any]) -> Dict[str, Any]:
+        info = json.loads(json.dumps(raw, default=_plain))
+        info["seat"] = platform_seat(raw["seat"])
+        if "user_id" in info:
+            info["user_id"] = str(info["user_id"])
+        info["state"] = {}
+        return info
+
+    return {"setups": {seat: setup(info) for seat, info in inputs["setups"].items()},
+            "steps": [(seat, observation(ob), [dict(a, actor=platform_seat(a["actor"])) for a in expected])
+                      for seat, ob, expected in inputs["steps"]]}
+
+
 def corpus_inputs() -> List[Dict[str, Any]]:
     """Every recorded observation of the private replay corpus, with the repository agent's actions on it."""
     import gzip
@@ -635,10 +1077,17 @@ def main() -> int:
             if result["mismatches"] or not result["steps"]:
                 raise SystemExit(f"package smoke, JSON form: {result}")
             report["smoke_json_form"] = result
+        if args.variant == "compat2":
+            result = smoke(data, platform_form(synthetic_inputs()), args.python)
+            if result["mismatches"] or not result["steps"]:
+                raise SystemExit(f"package smoke, platform form: {result}")
+            report["smoke_platform_form"] = result
     if args.replay_corpus:
         forms = (("replay_corpus", lambda game: game),)
         if args.variant != "canary":
             forms += (("replay_corpus_json_form", json_form),)
+        if args.variant == "compat2":
+            forms += (("replay_corpus_platform_form", platform_form),)
         games = corpus_inputs()
         for label, form in forms:
             totals = {"games": 0, "steps": 0, "mismatches": 0}
