@@ -1,0 +1,307 @@
+# Sprint 35: coalition-aware integrated agent
+
+Date: 2026-10-10 (UTC+8). Track: `EXPLORATORY` (`docs/EXPLORATORY_TRACK.md`). Branch `sprint35-coalition-agent`, created
+from the Sprint 34 head `f56123019fccda58431638babe7348e17749340e`; `main`, every earlier sprint branch and the
+independently maintained `platform-compat2` branch are not modified. The Sprint 34 package
+`src/miaosuan_agent/integrated/` is imported and never edited: its source digest is the identity of the frozen control.
+
+This sprint builds the successor the Sprint 34 disposition called for: an agent that decides, per objective and with
+capability-weighted estimates of known force, whether to hold, reinforce, delay or skip, keeps the last defenders of a
+threatened objective, and forms coalitions instead of sending detachments one by one. No engine session is authorized
+yet; everything below is offline, and the live design (section 11) is a proposal for the owner's approval.
+
+## 1. Authorization and verified state at the start
+
+The owner's Sprint 35 prompt authorizes offline work, archival of the supplied ZIP files and the preparation of a live
+experiment; a budget of at most 48 sessions, 2827 to 2874 inclusive, is proposed and is not authorized. State verified
+before any work:
+
+| Item | Verified value |
+|---|---|
+| `main` (workstation, GitHub, evaluation server) | `08aff3fd47c2ec9e505276ff93eaef0ddb09ef85` |
+| Sprint 34 branch `sprint34-integrated-agent` (workstation, GitHub, server) | `f56123019fccda58431638babe7348e17749340e` |
+| `platform-compat2` | `a909557bb43648c5c879c19ad8f8ba362e8f4892`, untouched |
+| `baseline-v2` policy source | `7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae` (recomputed) |
+| Sprint 34 live candidate policy source | `b107d23ecdb57d9efb42610818eae60b64311480529d26dfdb6e2976ebcdad3b` (recomputed) |
+| Sprint 34 live card | canonical SHA-256 `4bb778eda0d7aeaed867fdefb06ad98ec9a5c7ee8bb58550c4b007034cfa5304`, rebuilds byte-identically |
+| Engine ledger | 2826 sessions opened and closed, none open, integrity ok; SHA-256 `2359e9cf094681c38ac8ddcd14a4a39c7ecafd660a73f07e53b9344c950b624c` |
+| Sprint 34 public results | `evaluation/s34-integrated-live-1/results.json` and every stored per-game analysis regenerate byte-identically from the private records |
+
+The shared primary checkout carries another session's uncommitted platform-builder edits; they were left as found and
+all Sprint 35 work is in a separate worktree. On the evaluation server Sprint 35 runs in its own worktree on NUMA node 0
+(`docs/SERVER_RESOURCE_POLICY.md`).
+
+## 2. Collaborator evidence
+
+### 2.1 Archival
+
+Four ZIP files were found at the repository root, matching the four known SHA-256 values exactly; each passed a ZIP
+integrity test, was copied with exclusive creation into the private, git-ignored folder
+`local/references/teammate/20261010/` (subfolders `agent-source`, `comparison-replays`, `supplementary-replays`) under a
+descriptive name, re-hashed and byte-compared, and only then removed from the root. No member was modified, no existing
+file was overwritten, and the preliminary SDK handoff under `local/handoffs/teammate/` was not touched. A provenance
+manifest (original name and location, destination, hash, size, scenario, attribution, evidence status, verification)
+is kept beside them. None of it is committed.
+
+| Original file | SHA-256 | Kind | Evidence status |
+|---|---|---|---|
+| `ai.zip` | `fda7decf3d494b0e4c5a908250101e027c2438684e22191d040a8a881a8ec978` | agent source, an earlier version | source supplied, version unverified |
+| `replay_1791618567.6015677.zip` | `4a77e34cf11980166998f1c5d2488ea4aef7b2976903abb688076a0a9b89929a` | replay 8567 | owner-designated comparison |
+| `replay_1791618700.9385283.zip` | `a111799acb64e06da8a3ad621a301ef8f7f05dc6de0d23d4ec397f0bbd8b07c8` | replay 8700 | owner-designated comparison |
+| `replay_1791620047.5100904(1).zip` | `d1d8ef2a795be245fb992075cb49b3db140b02e8ed405d0fae7f0e3e3897dd30` | replay 0047 | supplementary, unattributed |
+
+### 2.2 The source package
+
+The supplied package is the SDK's demonstration agent extended with four modules (artillery, unmanned aerial vehicle,
+infantry, infantry fighting vehicle) and setup bookkeeping. Findings against the owner's questions:
+
+* **Entry point (C).** `ai/agent.py` defines `step()` and `step2()`; the four modules are called only from `step2()`, and
+  `step()` never calls it. `step()` sends a chat message (action 204) at every step; `step2()` sends graphic markers
+  (action 205) for remembered enemies.
+* **Deployed package versus the archive (D).** In all three replays the seat the owner attributes to the collaborator
+  sends graphic markers (402, 493 and 436) and no chat message; the other seat sends neither. So the executed entry point
+  was `step2()` or a modified `step()`, not the archived `step()`. In the archive the markers' list is never filled (the
+  code filling it is commented out), so the executed package also differs from the archive in that respect.
+  Package identity: **UNVERIFIED**; the archive is an earlier version, as the owner said.
+* **Functions enabled (E).** In the archive the infantry fighting vehicle module's priority table has its shot
+  commented out, and in all three replays the collaborator's infantry fighting vehicles never emit a direct shot; they
+  take part in fire only as the carriers of guided shots. The reported enabling of infantry fighting vehicle attacks is
+  therefore not present in these replays.
+* **Information used (I).** At setup the package reads `setup_info["state"][-1]["operators"]`. In the SDK's offline
+  runner (`run_offline_games.py`) `setup_info["state"]` is the list of the three seats' states and its last element is
+  the all-seeing (director) state; the package records every enemy operator's strength, passengers and air-defence
+  weapons from it. Whether the competition platform passes the same object is not established; on the SDK runner the
+  agent starts with information about the enemy that its own observation does not contain.
+* **Randomness (G).** Movement destinations, embark targets and several state changes are drawn with `random`; replays
+  8700 and 0047 (collaborator red in both, by the marker evidence) first differ at step 1 in the collaborator seat's own
+  orders. A single game of this agent is one draw.
+* **Opponent (H).** In the replays the opponent seat sends only moves, occupations and shots, which is consistent with a
+  `baseline-v2`-like agent and inconsistent with the SDK demonstration agent (which also sends state changes, stops and
+  embarks at random); consistency is not identity, so the opponent of each replay is the owner's designation. The
+  screenshot showing red +404 is not any of these replays (their red margins are -780, -360 and +122) and has no
+  provenance; it is not used.
+
+### 2.3 The comparison replays (scenario 2020331196, terrain 123)
+
+`scripts/s35_collaborator_replays.py` reads the replays' all-seeing frames and publishes aggregates only
+(`evaluation/s35-coalition-agent/collaborator-replays.json`); emitted actions, accepted actions and observed effects are
+kept apart. The runner echoes every submitted action, with an error code when the engine refuses it.
+
+| | 8567 (collaborator blue) | 8700 (collaborator red) | 0047 (unattributed; markers from red) |
+|---|---|---|---|
+| Final margin of the collaborator's seat | +780 | -360 | +122 (red) |
+| Deployment-stage embark (emitted, effect within the stage) | 6 squads | 3 squads, 3 unmanned ground vehicles | 3 squads, 3 unmanned ground vehicles |
+| Disembark during play (effect) | 6 squads | 6 loitering munitions launched, no squad or vehicle | 6 loitering munitions launched |
+| Indirect fire plans / cancellations / refused plans | 159 / 137 / 5 | 234 / 154 / 70 | 162 / 136 / 0 |
+| Indirect-fire judge records (with damage) | 21 (6) | 25 (10) | 46 (17) |
+| Guided shots emitted / judge records with damage | 0 / 0 | 1 / 1 | 4 / 4 |
+| Infantry fighting vehicle direct shots emitted | 0 | 0 | 0 |
+| Same-colour judge records | 0 | 0 | 0 |
+
+What the replays establish: on this engine a squad or unmanned ground vehicle can board a carrier during the deployment
+stage, with the effect visible before play starts; a guided shot by a guiding unit, with an infantry fighting vehicle's
+missile, is accepted and judged; cancelling an indirect-fire plan works (refused only when no plan exists). What they do
+not establish: the tactical value of any module, because each is one stochastic game in one asymmetric scenario, and the
+module that produced an action is inferred from the archive, which is not the executed package. No head-to-head result
+against the collaborator's current agent exists, and none is claimed.
+
+## 3. Sprint 34 reproduced, and its losses read episode by episode
+
+Sprint 34's figures were regenerated first (section 1). Then three post hoc studies of its 16 Stage A games, all
+descriptive, from the private records on the evaluation server, published as aggregates:
+
+**Loss episodes** (`scripts/s35_loss_episodes.py`, `evaluation/s35-coalition-agent/loss-episodes.json`). The 57 losses of
+a held objective are reproduced: at the last held step every zone held no own ground unit and 2 to 4 enemy ground units
+in 42 of them; 150 steps earlier 41 zones held 1 to 3 own units. Following the last own units that stood in the zone
+(without a move path) to their end: in 38 episodes they were destroyed, in 18 they were ordered away alive by Sprint 34's
+own allocation (to hold another objective 9, to capture one 7, for transport 2), in 1 none had stood there within 1,800
+steps. These last defenders were single units: 20 infantry fighting vehicles, 14 tanks, 11 unmanned ground vehicles, 2
+squads and 9 others. The seat saw the attackers coming: in all 57 episodes an enemy ground unit was visible within 8
+hexes of the objective in the 600 steps before the loss. Over 3,306 sampled held-objective states (every 25 steps), the
+rule "more visible enemy ground units within 8 hexes than own ground units in the zone" flagged 446 of the 495 states
+lost within 300 steps and 513 of the 2,811 that were not. In 56 of the 57 episodes some own unit could have reached
+the objective in time at free-flow speed, but in only 10 was that unit free or in reserve. The objective fell a median
+of 41 steps after the first enemy ground unit entered the zone.
+
+**Unit losses** (`scripts/s35_unit_losses.py`, `evaluation/s35-coalition-agent/unit-losses.json`). 156 own ground units
+were destroyed in the 16 games: 55 standing in a held objective's zone, 30 aboard a carrier (the transport module's
+lift plan covered 29 of them), 28 moving elsewhere. The exchange was unfavourable in 1930331196 (own 24 lost against 11
+as red, 25 against 19 as blue) and favourable in 2130511121 (30 against 37 as red, 21 against 48 as blue).
+
+**Capability rates** (`scripts/s35_capability_weights.py`, `evaluation/s35-coalition-agent/capability.json`). Direct-fire
+damage dealt per 1,000 alive unit-steps over the 24 live games: tank 2.2945, infantry fighting vehicle 0.5593, unmanned
+ground vehicle 0.4242, squad 0.0886. Squads received direct and indirect damage at about a tenth of the vehicles' rate per
+unit-step in these games.
+
+Diagnosis. An objective is lost only when no own ground unit is left in its zone, because occupation is not listed while
+an enemy ground unit is in it (Sprint 34, section 3). Sprint 34 lost objectives in two ways: by moving the last defender
+elsewhere (18), and by leaving one vehicle to face several (38). The first is a decision error a retention rule removes.
+The second is a concentration failure, but not one a head count can repair: the defenders were destroyed by tanks and
+vehicles whose capability differs fivefold, reinforcements existed but were committed elsewhere, and in many cases no
+reinforcement could have been decisive; the right answer is then to keep a survivable, cheap holder and save the
+expensive units. Transport cost units: a destroyed carrier took its passenger with it in 30 cases.
+
+## 4. Capability inventory
+
+Listing frequency from both seats' observations in the 24 Sprint 34 live games
+(`scripts/s35_capability_inventory.py`, `evaluation/s35-coalition-agent/capability-inventory.json`).
+
+| Capability | Input contract | Listed (Sprint 34 games) | Engine evidence | Status in Sprint 35 |
+|---|---|---|---|---|
+| Move, occupy, direct fire | Sprint 34 | always | engine-verified (Sprint 34) | IMPLEMENTED, ENGINE-VERIFIED, TACTICALLY EVALUATED (Sprint 34) |
+| Embark / disembark in play | Sprint 34 | squads and unmanned ground vehicles with a carrier | engine-verified (Sprints 22, 34) | IMPLEMENTED, ENGINE-VERIFIED; variant B limits it to objectives without a known threat |
+| Indirect fire (stationary targets) | weapon option | artillery, every decision | engine-verified (Sprints 8, 34) | IMPLEMENTED, ENGINE-VERIFIED |
+| Indirect fire at a predicted arrival hex | weapon option, `jm_pos` | as above | the order is engine-verified; aiming at a predicted position is not | EXPERIMENTAL (variant B, own feature gate) |
+| Guided fire (action 9) | target, weapon, guided carrier | 1,309 to 4,148 options per game against the inert control (red: squads and unmanned ground vehicles guiding an infantry fighting vehicle's missile); 4 to 24 in two head-to-head games | accepted and judged with damage in the collaborator replays (5 of 5); never issued by this project | EXPERIMENTAL (variant B, own feature gate) |
+| Cancel indirect fire (action 13) | none | while a plan is live | works in the collaborator replays | DISABLED: no rule needs it (orders are never planned on moving targets in variant A) |
+| Deployment-stage embark | target carrier | squads and unmanned ground vehicles, all four scenarios | effect within the deployment stage in the collaborator replays | DISABLED: passengers aboard were 30 of 156 own ground losses; starting aboard adds that exposure from step 1 and no evidence of a benefit exists |
+| Split (action 14) in deployment | none | 3 of 4 scenarios | Sprint 1: accepted in 3 of 8 scenarios, blocks columns | DISABLED (Sprint 2 diagnosis) |
+| Stop, concealment, weapon lock | Sprint 34 | - | mechanism results (Sprints 6, 33) | DISABLED (no measured benefit) |
+| Loitering munition launch | disembark of a munition | red in some scenarios | launched in the collaborator replays | UNSUPPORTED: the agent never launches one |
+
+## 5. Evidence to architecture
+
+| Problem | Evidence | Sprint 35 design |
+|---|---|---|
+| Last defender sent elsewhere | 18 of 57 losses | retention: the standing defenders of a threatened held objective leave the free pool (secure: those reaching the requirement and the best holder; defend and delay: all, unless a justified withdrawal) |
+| One vehicle left against several | 38 of 57 losses | capability-weighted threat and defence per objective; reinforcement places only when defenders plus units arriving before the enemy reach the commit ratio; otherwise delay with a cheap holder and withdrawal of the valuable defenders |
+| Threats counted against every objective at once | the first draft's model games (section 9) | each known enemy counts against one objective: the one its visible path ends at, else the one it reaches first |
+| Detachments sent one by one into a contested objective | Sprint 34 capture slots 1.0 / 0.5 / 0.3 | coalition capture: places for the smallest group reaching the capture ratio, else skip |
+| Passengers lost with their carrier | 30 of 156 losses | variant B: lifts only to objectives without a known threat |
+| Artillery firing at whatever is stationary | Sprint 34 targeting | variant B: targets threatening a held objective first; arrival fire on the enemy's path end |
+| Guided fire unused | listed thousands of times, never issued | variant B: guided fire with exact-option validation |
+| Column deadlock | 0 waits in Sprint 34's 24 games | unchanged: every move still goes through Sprint 34's traffic ledger and route planner |
+
+## 6. Architecture
+
+Package `src/miaosuan_agent/coalition/` (Sprint 34's `integrated/` imported, unchanged):
+
+```
+observation -> world view (integrated.world) + enemy maximum strength from the observation
+            -> memory upkeep: Sprint 34's + class-aware sightings (coalition.memory)
+            -> lift life cycle (integrated.transport)
+            -> traffic ledger, hazards, threat route costs (integrated.traffic, integrated.fire)
+            -> known threats with confidence; attribution of each enemy to one objective (coalition.capability)
+            -> objective stances: quiet, secure, defend, delay, capture, coalition, skip (coalition.coalition)
+               kept defenders and withdrawing units leave the free pool
+            -> allocation over the stance places (coalition.allocator; Sprint 34's greedy solver and lift pairs)
+            -> recovery and dispersal (Sprint 34's)
+            -> arbitration: occupy > lift order > direct fire > guided fire (B) > move > stay
+            -> indirect fire: Sprint 34's rule (A) or stance-driven support and arrival fire (B) (coalition.support)
+            -> validation: Sprint 34's validator plus guided fire (coalition.validate)
+            -> actions + memory (stances, sightings)
+```
+
+The stance rules are in the module docstring of `coalition/coalition.py`; the force estimate in
+`coalition/capability.py`. The memory adds one stance record per objective and at most 96 class-aware sightings, each
+expiring after 600 steps, so it stays bounded. Any exception other than a contract violation falls back to
+`baseline-v2`'s decision, recorded, as in Sprint 34.
+
+| | Variant A `coalition-allocator` (CA) | Variant B `coalition-mission-planner` (CM) |
+|---|---|---|
+| base | Sprint 34 MO configuration | the same |
+| stances, retention, reinforcement, withdrawal, coalition capture, reserve | yes | yes |
+| indirect fire | Sprint 34's guarded rule | stance priority + arrival fire, same guards |
+| guided fire | no | yes |
+| transport | Sprint 34's | only to objectives without a known threat |
+
+Ablations (`coalition/config.py`): each core feature of A switched off alone; each feature of B switched off alone; B
+without transport.
+
+## 7. Design choices and their reasons
+
+* Class weights: the damage rates of section 3 divided by the tank's and rounded to 0.05 (tank 1.0, infantry fighting
+  vehicle 0.25, unmanned ground vehicle 0.2, squad 0.05; other ground classes 0.15); every own ground unit weighs at
+  least 0.05, because any one of them in the zone prevents occupation. Power = weight times remaining strength fraction.
+* Remembered sightings lose confidence linearly over 600 steps (Sprint 34's sighting lifetime) and keep the class and
+  strength last seen.
+* Threat horizon 600 steps of optimistic arrival; attribution to one objective per enemy.
+* Defend ratio 1.0: defenders standing still fire first and only tanks fire on the move (Sprint 34 facts), so parity in
+  weighted power is taken as enough to hold; commit ratio 0.6: reinforcement is sent only when defenders and arrivals
+  together reach most of the threat, so that units are not fed one by one into a fight that is lost anyway.
+* Capture ratio 1.2: an attacker must move into the defenders' fire.
+* Reinforcement deadline: the enemy's optimistic arrival plus 40 steps (the 41-step median of section 3).
+* Withdrawal: only from a delay stance, only when at least half of the threat is visible now (never on memory alone),
+  only for a unit worth more than the holder who stays, and only to a held objective not itself in delay.
+* Dwell 75 steps before a defend or secure stance may drop to delay; upgrades are immediate.
+* Reserve: two places of weight 0.25 at each secure or defend objective.
+* Arrival fire window: path end reached between 150 and 375 steps after the order (flight, then within the 225 steps of
+  explosion that remain after the 75-step arrival transition starts).
+
+None of these values was tuned on an engine outcome. The first draft counted every enemy against every objective; in the
+model world that made the agent skip almost every contested objective (section 9), and attribution was introduced
+before any registered comparison.
+
+## 8. Offline comparison protocol and selection rule (registered before the comparison ran)
+
+Rules `src/miaosuan_agent/evaluation/s35_offline.py`, driver `scripts/s35_offline.py`, tests `tests/test_s35_offline.py`.
+Agents: `CA`, `CM`, and the control `S34-MO` (the frozen Sprint 34 live candidate). Populations:
+
+* `M-inert`, `M-v2`: every scenario eligible under Sprint 34's registered naming rule, both seats, each agent against
+  the inert control and against `baseline-v2`, in Sprint 34's model world (no combat damage); the ablations against
+  `baseline-v2` in the five Stage A scenarios of section 11;
+* `G`: genuine engine observations - Sprint 34's offline population (the pinned replay corpus, both seats, and sixteen
+  full-step timelines) plus the 24 Sprint 34 live games, every seat that is not the inert control - re-decided by each
+  agent with its own memory chain;
+* `P`: the 57 loss episodes, on the Sprint 34 candidate's recorded observations of the sixteen Stage A games, re-decided
+  by each agent over the whole game.
+
+Measured: legality by the agent's validator and by an independent check (the frozen project gate for move, shoot and
+occupation; the listing and exact option for embark, disembark, indirect and guided fire), fallbacks, contract errors,
+model replay identity, model waits, latency, decisions differing from `S34-MO`'s on the same observation, model
+objective value, friendly exposure; in `P`, whether the objective's stance at the decision 150 steps before the loss was
+secure, defend or delay (recognised), whether the last defenders Sprint 34 ordered away were kept (no move of that unit
+ending outside the zone at that decision), and whether the agent responded in the 300 steps before the loss.
+
+Fidelity condition: `S34-MO`'s re-decisions on its own recorded games must reproduce its recorded actions at every
+decision; otherwise `P` is invalid and nothing is selected.
+
+Gates, each required of a candidate: G1 no rejected, refused or independently illegal action; G2 no fallback or contract
+error; G3 every model replay check identical; G4 no model wait of 300 steps or more; G5 genuine p99 latency at most
+100 ms and maximum at most 1,000 ms, model maximum at most 1,000 ms; G6 decisions differing from `S34-MO` in at least 1%
+of genuine play decisions; G7 no model friendly exposure; G8 every population played; G9 threat recognised 150 steps
+before the loss in at least half of the episodes; G10 last defenders kept in at least half of the departure episodes;
+G11 model objective value at least 90% of `S34-MO`'s in each model population (no collapse of the movement race; the
+model has no combat, so this is a floor, never a ranking).
+
+Rule: if both candidates pass every gate, `CM` is selected when its model objective value is at least 98% of `CA`'s in
+both model populations, otherwise `CA`; if one passes, it; if neither, nothing (`S35_ENGINEERING_BLOCKED` unless a
+corrected revision, documented as such, passes). The 98% clause repeats Sprint 34's reasoning: B's extra modules have
+engine-listed or engine-verified mechanisms but no value the model can show, while any movement they cost is
+measurable. Ablations are reported, never selected. The model is not used to rank concentration or fire support.
+
+## 9. Adversarial and module tests
+
+`tests/test_s35_coalition.py` (synthetic 12 x 12 states, each expectation computed by hand in the test). Owner's list:
+
+| # | Situation | Test |
+|---|---|---|
+| 1 | high-value objective held by several enemies | weak force skips it and sends nobody; two tanks form a coalition |
+| 2 | enemy mass heading for one of several objectives | the threatened one is skipped, the force goes to the other |
+| 3, 4 | objective captured but hard to keep; small force against a larger known one | delay: the only defender is kept, no reinforcement is fed in |
+| 5 | unequal capability | three squads do not threaten one tank; one tank does threaten three squads |
+| 6 | hidden enemy, stale sighting | threat halves at 300 steps and vanishes at 600 |
+| 7 | reserve for one objective without losing another | the free tank reinforces; the other objective's holder stays |
+| 8 | two competing reinforcement requests | one unit, one destination, deterministic |
+| 9 | infantry-carrier pair with a conflicting task | a kept squad is not lifted |
+| 10 | carriers toward a saturated hex | reinforcements stand in the zone, at most two per hex, never a fourth on the objective hex |
+| 11 | impact area on a newly planned route | no indirect fire within clearance of a planned stand |
+| 12 | target gone before the attack | no target, no order |
+| 13 | unit on an irrevocable route | never re-ordered |
+| 14 | invalid or missing option | guided options with attack level 0 or a missing weapon are ignored; the validator rejects any changed field |
+| 15 | deployment-stage split | the deployment decision emits only the completion |
+| 16 | disembarked infantry with no task | stays |
+| 17, 18 | few operators; many heterogeneous operators | one unit moves; 40 against 30 units: no fallback, no rejection, at most four planned per hex |
+| 19 | no artillery or transport | only moves |
+| 20 | online decision-time budget | the 40-unit state decides in under one second |
+
+Further tests: retention against a better-scoring slot (and its ablation), the dwell, withdrawal only on visible threat,
+attribution of each enemy to one objective, variant A's indirect fire identical to Sprint 34's, decision purity and
+replay, bounded canonical memory, guided-fire target and carrier reservation, arrival-fire window, threat-priority
+targeting.
+
+Development history recorded before the registered comparison: the first draft (threat of every known enemy against
+every objective) was run once in the model world against `baseline-v2` in the five Stage A scenarios; it skipped almost
+every contested objective (as blue in 2130511121 it held 80 objective points where `S34-MO` held 440). Attribution and
+the reinforcement grace were introduced, and the same development run then showed the movement race restored. These
+development runs are not part of the registered comparison and are not evidence of tactical value.
