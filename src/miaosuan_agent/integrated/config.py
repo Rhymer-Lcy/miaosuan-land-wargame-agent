@@ -80,3 +80,5 @@ ABLATIONS: Dict[str, Config] = {
     "mo-hungarian-no-transport": replace(MO, name="mo-hungarian-no-transport", solver="hungarian", transport=False),
 }
 VARIANTS: Dict[str, Config] = {"CT": CT, "MO": MO, **ABLATIONS}
+#: The live candidate, frozen by the registered offline selection (evaluation/s34-integrated-agent/selection.json).
+LIVE = MO
