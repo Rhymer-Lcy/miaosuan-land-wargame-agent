@@ -1,0 +1,2993 @@
+{
+ "card": "s35-coalition-live-1",
+ "disposition": {
+  "configurations_compared": 9,
+  "d": {
+   "1910631192 blue": -2.223272,
+   "1910631192 red": -0.188123,
+   "1930331196 blue": -2.599036,
+   "1930331196 red": 0.308884,
+   "2010431153 red": 0.0,
+   "2120531121 blue": 0.276167,
+   "2120531121 red": 1.367193,
+   "2130511121 blue": -2.127949,
+   "2130511121 red": 6.854787
+  },
+  "d_s": {
+   "1910631192": -1.205698,
+   "1930331196": -1.145076,
+   "2120531121": 0.82168,
+   "2130511121": 2.363419
+  },
+  "dbar": null,
+  "dbar_interval": null,
+  "disposition": "S35_INTEGRATED_INCONCLUSIVE",
+  "stage_a_games": 19,
+  "stage_b_games": 0,
+  "stage_b_margins_within_slack": 0,
+  "stage_b_objective_below_reference_min": 0,
+  "stage_b_remain_below_reference_min": 0,
+  "why": "neither reject nor promising",
+  "zbar_candidate": 0.188853,
+  "zbar_control": 0.017757
+ },
+ "games": [
+  {
+   "actions_by_type": {
+    "1": 82,
+    "2": 89,
+    "3": 4,
+    "333": 1,
+    "4": 4,
+    "5": 7,
+    "8": 20,
+    "9": 1
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 527,
+    "occupy": 50,
+    "remain": 142,
+    "total": 719,
+    "win": -165
+   },
+   "candidate_side": "red",
+   "condition": "H1",
+   "contract_errors": 0,
+   "decisions": 2881,
+   "decisions_differing_from_v2": 2880,
+   "differing_by_module": {
+    "allocation": 15,
+    "artillery": 20,
+    "coalition": 5133,
+    "fire": 24,
+    "guided": 1,
+    "reserve": 14326,
+    "support": 44,
+    "transport": 12
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 63,
+    "friendly_damage": 0,
+    "judged_attacks": 150
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 2 sub_type 0": 4,
+     "type 2 sub_type 1": 4,
+     "type 2 sub_type 10": 1,
+     "type 2 sub_type 14": 1,
+     "type 2 sub_type 15": 2,
+     "type 2 sub_type 4": 4,
+     "type 2 sub_type 9": 3,
+     "type 3 sub_type 7": 8
+    },
+    "units_at_start": 45,
+    "units_lost": 27,
+    "value_lost": 114,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 482.151,
+   "latency_ms_p99": 25.062,
+   "memory_bytes_max": 2671,
+   "module_actions": {
+    "allocation:1": 20,
+    "artillery:8": 20,
+    "coalition:1": 2,
+    "fire:2": 89,
+    "guided:9": 1,
+    "occupy:5": 7,
+    "support:1": 60,
+    "transport:3": 4,
+    "transport:4": 4
+   },
+   "objectives": {
+    "final_enemy": 6,
+    "final_owned": 1,
+    "first_owned_before_enemy": 1,
+    "first_owned_count": 6,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": 283,
+      "own": 601
+     },
+     "objective 2 (80)": {
+      "enemy": 421,
+      "own": null
+     },
+     "objective 3 (80)": {
+      "enemy": 161,
+      "own": 762
+     },
+     "objective 4 (50)": {
+      "enemy": 222,
+      "own": 521
+     },
+     "objective 5 (50)": {
+      "enemy": 161,
+      "own": 441
+     },
+     "objective 6 (50)": {
+      "enemy": 364,
+      "own": 883
+     },
+     "objective 7 (50)": {
+      "enemy": 627,
+      "own": 401
+     }
+    },
+    "losses": 6,
+    "objectives": 7,
+    "recaptures": 1
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 418,
+    "occupy": 390,
+    "remain": 76,
+    "total": 884,
+    "win": 165
+   },
+   "opponent_force": {
+    "longest_wait": 433,
+    "lost_by_class": {
+     "type 1 sub_type 2": 1,
+     "type 2 sub_type 0": 4,
+     "type 2 sub_type 1": 8,
+     "type 2 sub_type 10": 1,
+     "type 2 sub_type 13": 1,
+     "type 2 sub_type 15": 3,
+     "type 2 sub_type 3": 1,
+     "type 3 sub_type 5": 2,
+     "type 3 sub_type 6": 2,
+     "type 3 sub_type 8": 2,
+     "type 4 sub_type 11": 3,
+     "type 4 sub_type 12": 3
+    },
+    "units_at_start": 44,
+    "units_lost": 31,
+    "value_lost": 181,
+    "wait_unit_steps": 1389
+   },
+   "policy": "s35-coalition-coalition-mission-planner-2",
+   "position": 1,
+   "reconstructed": 2881,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 50.0,
+     "mean": 20.0,
+     "min": 0.0,
+     "n": 15,
+     "sd": 25.354628
+    },
+    "remain": {
+     "max": 94.0,
+     "mean": 43.666667,
+     "min": 12.0,
+     "n": 15,
+     "sd": 23.25224
+    },
+    "win": {
+     "max": -719.0,
+     "mean": -869.933333,
+     "min": -1055.0,
+     "n": 15,
+     "sd": 114.664396
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {},
+    "refused": 0,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 29,
+   "replay_mismatches": 0,
+   "scenario_id": "2130511121",
+   "session": "2827",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "tag": "s35",
+   "unit_actions": 207,
+   "validation_rejections": 0,
+   "z": 6.147796
+  },
+  {
+   "actions_by_type": {
+    "1": 101,
+    "2": 43,
+    "3": 4,
+    "333": 1,
+    "4": 4,
+    "5": 10,
+    "8": 13
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 248,
+    "occupy": 0,
+    "remain": 78,
+    "total": 326,
+    "win": -951
+   },
+   "candidate_side": "red",
+   "condition": "H1",
+   "contract_errors": 0,
+   "decisions": 2881,
+   "decisions_differing_from_v2": 2880,
+   "differing_by_module": {
+    "allocation": 870,
+    "artillery": 13,
+    "fire": 10,
+    "reserve": 14158,
+    "support": 62,
+    "transport": 12
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 35,
+    "friendly_damage": 0,
+    "judged_attacks": 69
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 2 sub_type 0": 4,
+     "type 2 sub_type 1": 4,
+     "type 2 sub_type 10": 1,
+     "type 2 sub_type 14": 1,
+     "type 2 sub_type 15": 3,
+     "type 2 sub_type 4": 4,
+     "type 2 sub_type 9": 3,
+     "type 3 sub_type 6": 2,
+     "type 3 sub_type 7": 8,
+     "type 3 sub_type 8": 2
+    },
+    "units_at_start": 45,
+    "units_lost": 32,
+    "value_lost": 156,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 218.825,
+   "latency_ms_p99": 24.935,
+   "memory_bytes_max": 1878,
+   "module_actions": {
+    "allocation:1": 33,
+    "artillery:8": 13,
+    "fire:2": 43,
+    "occupy:5": 10,
+    "support:1": 68,
+    "transport:3": 4,
+    "transport:4": 4
+   },
+   "objectives": {
+    "final_enemy": 7,
+    "final_owned": 0,
+    "first_owned_before_enemy": 1,
+    "first_owned_count": 7,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": 283,
+      "own": 684
+     },
+     "objective 2 (80)": {
+      "enemy": 467,
+      "own": 582
+     },
+     "objective 3 (80)": {
+      "enemy": 161,
+      "own": 742
+     },
+     "objective 4 (50)": {
+      "enemy": 222,
+      "own": 521
+     },
+     "objective 5 (50)": {
+      "enemy": 161,
+      "own": 441
+     },
+     "objective 6 (50)": {
+      "enemy": 364,
+      "own": 1063
+     },
+     "objective 7 (50)": {
+      "enemy": 1112,
+      "own": 401
+     }
+    },
+    "losses": 10,
+    "objectives": 7,
+    "recaptures": 3
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 482,
+    "occupy": 440,
+    "remain": 355,
+    "total": 1277,
+    "win": 951
+   },
+   "opponent_force": {
+    "longest_wait": 1689,
+    "lost_by_class": {
+     "type 2 sub_type 0": 3,
+     "type 2 sub_type 1": 1,
+     "type 2 sub_type 10": 1,
+     "type 2 sub_type 15": 2,
+     "type 2 sub_type 3": 1,
+     "type 3 sub_type 6": 2,
+     "type 4 sub_type 11": 2,
+     "type 4 sub_type 12": 2
+    },
+    "units_at_start": 44,
+    "units_lost": 14,
+    "value_lost": 78,
+    "wait_unit_steps": 14506
+   },
+   "policy": "s34-integrated-mission-orchestrator-1",
+   "position": 2,
+   "reconstructed": 2881,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 50.0,
+     "mean": 20.0,
+     "min": 0.0,
+     "n": 15,
+     "sd": 25.354628
+    },
+    "remain": {
+     "max": 94.0,
+     "mean": 43.666667,
+     "min": 12.0,
+     "n": 15,
+     "sd": 23.25224
+    },
+    "win": {
+     "max": -719.0,
+     "mean": -869.933333,
+     "min": -1055.0,
+     "n": 15,
+     "sd": 114.664396
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {},
+    "refused": 0,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 29,
+   "replay_mismatches": 0,
+   "scenario_id": "2130511121",
+   "session": "2828",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "tag": "s34",
+   "unit_actions": 175,
+   "validation_rejections": 0,
+   "z": -0.706991
+  },
+  {
+   "actions_by_type": {
+    "1": 104,
+    "2": 127,
+    "3": 9,
+    "333": 1,
+    "4": 8,
+    "5": 11
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 530,
+    "occupy": 440,
+    "remain": 336,
+    "total": 1306,
+    "win": 1009
+   },
+   "candidate_side": "blue",
+   "condition": "H2",
+   "contract_errors": 0,
+   "decisions": 2881,
+   "decisions_differing_from_v2": 793,
+   "differing_by_module": {
+    "allocation": 1654,
+    "dispersal": 4,
+    "fire": 36,
+    "occupy": 1,
+    "reserve": 3181,
+    "support": 32,
+    "transport": 325
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 42,
+    "friendly_damage": 0,
+    "judged_attacks": 150
+   },
+   "force": {
+    "longest_wait": 34,
+    "lost_by_class": {
+     "type 1 sub_type 2": 3,
+     "type 2 sub_type 0": 2,
+     "type 2 sub_type 1": 2,
+     "type 2 sub_type 13": 1,
+     "type 2 sub_type 15": 1,
+     "type 4 sub_type 11": 1,
+     "type 4 sub_type 12": 2
+    },
+    "units_at_start": 44,
+    "units_lost": 12,
+    "value_lost": 65,
+    "wait_unit_steps": 34
+   },
+   "latency_ms_max": 434.77,
+   "latency_ms_p99": 16.949,
+   "memory_bytes_max": 1494,
+   "module_actions": {
+    "allocation:1": 30,
+    "dispersal:1": 4,
+    "fire:2": 127,
+    "occupy:5": 11,
+    "support:1": 64,
+    "transport:1": 6,
+    "transport:3": 9,
+    "transport:4": 8
+   },
+   "objectives": {
+    "final_enemy": 0,
+    "final_owned": 7,
+    "first_owned_before_enemy": 7,
+    "first_owned_count": 7,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": 737,
+      "own": 221
+     },
+     "objective 2 (80)": {
+      "enemy": null,
+      "own": 321
+     },
+     "objective 3 (80)": {
+      "enemy": null,
+      "own": 302
+     },
+     "objective 4 (50)": {
+      "enemy": 656,
+      "own": 201
+     },
+     "objective 5 (50)": {
+      "enemy": 421,
+      "own": 261
+     },
+     "objective 6 (50)": {
+      "enemy": null,
+      "own": 416
+     },
+     "objective 7 (50)": {
+      "enemy": 426,
+      "own": 316
+     }
+    },
+    "losses": 4,
+    "objectives": 7,
+    "recaptures": 4
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 267,
+    "occupy": 0,
+    "remain": 30,
+    "total": 297,
+    "win": -1009
+   },
+   "opponent_force": {
+    "longest_wait": 314,
+    "lost_by_class": {
+     "type 1 sub_type 2": 2,
+     "type 2 sub_type 0": 4,
+     "type 2 sub_type 1": 4,
+     "type 2 sub_type 10": 1,
+     "type 2 sub_type 14": 1,
+     "type 2 sub_type 15": 3,
+     "type 2 sub_type 4": 4,
+     "type 2 sub_type 9": 3,
+     "type 3 sub_type 6": 2,
+     "type 3 sub_type 7": 8,
+     "type 3 sub_type 8": 2
+    },
+    "units_at_start": 45,
+    "units_lost": 34,
+    "value_lost": 164,
+    "wait_unit_steps": 620
+   },
+   "policy": "s34-integrated-mission-orchestrator-1",
+   "position": 3,
+   "reconstructed": 2881,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 440.0,
+     "mean": 420.0,
+     "min": 390.0,
+     "n": 15,
+     "sd": 25.354628
+    },
+    "remain": {
+     "max": 369.0,
+     "mean": 300.133333,
+     "min": 200.0,
+     "n": 15,
+     "sd": 43.320841
+    },
+    "win": {
+     "max": 1055.0,
+     "mean": 869.933333,
+     "min": 719.0,
+     "n": 15,
+     "sd": 114.664396
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {},
+    "refused": 0,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 29,
+   "replay_mismatches": 0,
+   "scenario_id": "2130511121",
+   "session": "2829",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "tag": "s34",
+   "unit_actions": 259,
+   "validation_rejections": 0,
+   "z": 1.212815
+  },
+  {
+   "actions_by_type": {
+    "1": 134,
+    "2": 99,
+    "3": 9,
+    "333": 1,
+    "4": 7,
+    "5": 12,
+    "8": 1
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 496,
+    "occupy": 440,
+    "remain": 248,
+    "total": 1184,
+    "win": 765
+   },
+   "candidate_side": "blue",
+   "condition": "H2",
+   "contract_errors": 0,
+   "decisions": 2881,
+   "decisions_differing_from_v2": 1094,
+   "differing_by_module": {
+    "allocation": 670,
+    "artillery": 1,
+    "coalition": 3348,
+    "dispersal": 1,
+    "fire": 14,
+    "occupy": 1,
+    "reserve": 1767,
+    "support": 66,
+    "transport": 75
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 43,
+    "friendly_damage": 0,
+    "judged_attacks": 124
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 1 sub_type 2": 3,
+     "type 2 sub_type 0": 2,
+     "type 2 sub_type 1": 7,
+     "type 2 sub_type 13": 1,
+     "type 2 sub_type 15": 1,
+     "type 4 sub_type 11": 1,
+     "type 4 sub_type 12": 1
+    },
+    "units_at_start": 44,
+    "units_lost": 16,
+    "value_lost": 103,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 218.6,
+   "latency_ms_p99": 18.616,
+   "memory_bytes_max": 2335,
+   "module_actions": {
+    "allocation:1": 18,
+    "artillery:8": 1,
+    "coalition:1": 26,
+    "dispersal:1": 1,
+    "fire:2": 99,
+    "occupy:5": 12,
+    "support:1": 86,
+    "transport:1": 3,
+    "transport:3": 9,
+    "transport:4": 7
+   },
+   "objectives": {
+    "final_enemy": 0,
+    "final_owned": 7,
+    "first_owned_before_enemy": 7,
+    "first_owned_count": 7,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": 507,
+      "own": 221
+     },
+     "objective 2 (80)": {
+      "enemy": null,
+      "own": 321
+     },
+     "objective 3 (80)": {
+      "enemy": null,
+      "own": 302
+     },
+     "objective 4 (50)": {
+      "enemy": 700,
+      "own": 201
+     },
+     "objective 5 (50)": {
+      "enemy": 509,
+      "own": 261
+     },
+     "objective 6 (50)": {
+      "enemy": null,
+      "own": 322
+     },
+     "objective 7 (50)": {
+      "enemy": 426,
+      "own": 316
+     }
+    },
+    "losses": 5,
+    "objectives": 7,
+    "recaptures": 5
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 355,
+    "occupy": 0,
+    "remain": 64,
+    "total": 419,
+    "win": -765
+   },
+   "opponent_force": {
+    "longest_wait": 241,
+    "lost_by_class": {
+     "type 2 sub_type 0": 4,
+     "type 2 sub_type 1": 4,
+     "type 2 sub_type 10": 1,
+     "type 2 sub_type 14": 1,
+     "type 2 sub_type 15": 3,
+     "type 2 sub_type 4": 4,
+     "type 2 sub_type 9": 3,
+     "type 3 sub_type 5": 2,
+     "type 3 sub_type 6": 2,
+     "type 3 sub_type 7": 8,
+     "type 3 sub_type 8": 2
+    },
+    "units_at_start": 45,
+    "units_lost": 34,
+    "value_lost": 158,
+    "wait_unit_steps": 1166
+   },
+   "policy": "s35-coalition-coalition-mission-planner-2",
+   "position": 4,
+   "reconstructed": 2881,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 440.0,
+     "mean": 420.0,
+     "min": 390.0,
+     "n": 15,
+     "sd": 25.354628
+    },
+    "remain": {
+     "max": 369.0,
+     "mean": 300.133333,
+     "min": 200.0,
+     "n": 15,
+     "sd": 43.320841
+    },
+    "win": {
+     "max": 1055.0,
+     "mean": 869.933333,
+     "min": 719.0,
+     "n": 15,
+     "sd": 114.664396
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {
+     "type 2 code 203": 1
+    },
+    "refused": 1,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 29,
+   "replay_mismatches": 0,
+   "scenario_id": "2130511121",
+   "session": "2830",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "tag": "s35",
+   "unit_actions": 262,
+   "validation_rejections": 0,
+   "z": -0.915134
+  },
+  {
+   "actions_by_type": {
+    "1": 30,
+    "2": 30,
+    "3": 3,
+    "333": 1,
+    "4": 2,
+    "5": 4,
+    "8": 14
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 250,
+    "occupy": 0,
+    "remain": 0,
+    "total": 250,
+    "win": -551
+   },
+   "candidate_side": "red",
+   "condition": "H1",
+   "contract_errors": 0,
+   "decisions": 2881,
+   "decisions_differing_from_v2": 228,
+   "differing_by_module": {
+    "allocation": 124,
+    "artillery": 14,
+    "fire": 13,
+    "support": 16,
+    "transport": 303
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 23,
+    "friendly_damage": 0,
+    "judged_attacks": 52
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 1 sub_type 2": 3,
+     "type 2 sub_type 0": 3,
+     "type 2 sub_type 1": 3,
+     "type 2 sub_type 4": 3,
+     "type 3 sub_type 5": 2,
+     "type 3 sub_type 6": 2,
+     "type 3 sub_type 7": 6
+    },
+    "units_at_start": 28,
+    "units_lost": 22,
+    "value_lost": 100,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 135.623,
+   "latency_ms_p99": 17.833,
+   "memory_bytes_max": 1009,
+   "module_actions": {
+    "allocation:1": 7,
+    "artillery:8": 14,
+    "fire:2": 30,
+    "occupy:5": 4,
+    "support:1": 20,
+    "transport:1": 3,
+    "transport:3": 3,
+    "transport:4": 2
+   },
+   "objectives": {
+    "final_enemy": 5,
+    "final_owned": 0,
+    "first_owned_before_enemy": 4,
+    "first_owned_count": 4,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": 602,
+      "own": 396
+     },
+     "objective 2 (80)": {
+      "enemy": 546,
+      "own": 441
+     },
+     "objective 3 (50)": {
+      "enemy": 421,
+      "own": 341
+     },
+     "objective 4 (50)": {
+      "enemy": 501,
+      "own": 301
+     },
+     "objective 5 (50)": {
+      "enemy": 361,
+      "own": null
+     }
+    },
+    "losses": 4,
+    "objectives": 5,
+    "recaptures": 0
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 334,
+    "occupy": 310,
+    "remain": 157,
+    "total": 801,
+    "win": 551
+   },
+   "opponent_force": {
+    "longest_wait": 2034,
+    "lost_by_class": {
+     "type 2 sub_type 0": 5,
+     "type 2 sub_type 1": 2
+    },
+    "units_at_start": 26,
+    "units_lost": 7,
+    "value_lost": 66,
+    "wait_unit_steps": 2305
+   },
+   "policy": "s34-integrated-mission-orchestrator-1",
+   "position": 5,
+   "reconstructed": 2881,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 310.0,
+     "mean": 112.666667,
+     "min": 0.0,
+     "n": 15,
+     "sd": 126.234853
+    },
+    "remain": {
+     "max": 182.0,
+     "mean": 51.133333,
+     "min": 0.0,
+     "n": 15,
+     "sd": 65.070145
+    },
+    "win": {
+     "max": 489.0,
+     "mean": -245.0,
+     "min": -871.0,
+     "n": 15,
+     "sd": 586.603297
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {},
+    "refused": 0,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 29,
+   "replay_mismatches": 0,
+   "scenario_id": "2120531121",
+   "session": "2831",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "tag": "s34",
+   "unit_actions": 83,
+   "validation_rejections": 0,
+   "z": -0.521647
+  },
+  {
+   "actions_by_type": {
+    "1": 62,
+    "2": 56,
+    "3": 3,
+    "333": 1,
+    "4": 3,
+    "5": 8,
+    "8": 14
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 346,
+    "occupy": 230,
+    "remain": 75,
+    "total": 651,
+    "win": 251
+   },
+   "candidate_side": "red",
+   "condition": "H1",
+   "contract_errors": 0,
+   "decisions": 2881,
+   "decisions_differing_from_v2": 1663,
+   "differing_by_module": {
+    "allocation": 516,
+    "artillery": 14,
+    "coalition": 2921,
+    "fire": 5,
+    "reserve": 1624,
+    "support": 36,
+    "transport": 136
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 28,
+    "friendly_damage": 0,
+    "judged_attacks": 90
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 1 sub_type 2": 1,
+     "type 2 sub_type 0": 3,
+     "type 2 sub_type 1": 2,
+     "type 2 sub_type 4": 3,
+     "type 3 sub_type 7": 4
+    },
+    "units_at_start": 28,
+    "units_lost": 13,
+    "value_lost": 63,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 135.628,
+   "latency_ms_p99": 18.568,
+   "memory_bytes_max": 1549,
+   "module_actions": {
+    "allocation:1": 9,
+    "artillery:8": 14,
+    "coalition:1": 3,
+    "fire:2": 56,
+    "occupy:5": 8,
+    "support:1": 48,
+    "transport:1": 2,
+    "transport:3": 3,
+    "transport:4": 3
+   },
+   "objectives": {
+    "final_enemy": 1,
+    "final_owned": 4,
+    "first_owned_before_enemy": 4,
+    "first_owned_count": 5,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": null,
+      "own": 341
+     },
+     "objective 2 (80)": {
+      "enemy": 521,
+      "own": 441
+     },
+     "objective 3 (50)": {
+      "enemy": 446,
+      "own": 341
+     },
+     "objective 4 (50)": {
+      "enemy": 647,
+      "own": 301
+     },
+     "objective 5 (50)": {
+      "enemy": 361,
+      "own": 1659
+     }
+    },
+    "losses": 4,
+    "objectives": 5,
+    "recaptures": 3
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 259,
+    "occupy": 80,
+    "remain": 61,
+    "total": 400,
+    "win": -251
+   },
+   "opponent_force": {
+    "longest_wait": 177,
+    "lost_by_class": {
+     "type 1 sub_type 2": 1,
+     "type 2 sub_type 0": 6,
+     "type 2 sub_type 1": 6,
+     "type 3 sub_type 6": 1
+    },
+    "units_at_start": 26,
+    "units_lost": 14,
+    "value_lost": 122,
+    "wait_unit_steps": 435
+   },
+   "policy": "s35-coalition-coalition-mission-planner-2",
+   "position": 6,
+   "reconstructed": 2881,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 310.0,
+     "mean": 112.666667,
+     "min": 0.0,
+     "n": 15,
+     "sd": 126.234853
+    },
+    "remain": {
+     "max": 182.0,
+     "mean": 51.133333,
+     "min": 0.0,
+     "n": 15,
+     "sd": 65.070145
+    },
+    "win": {
+     "max": 489.0,
+     "mean": -245.0,
+     "min": -871.0,
+     "n": 15,
+     "sd": 586.603297
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {},
+    "refused": 0,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 29,
+   "replay_mismatches": 0,
+   "scenario_id": "2120531121",
+   "session": "2832",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "tag": "s35",
+   "unit_actions": 146,
+   "validation_rejections": 0,
+   "z": 0.845546
+  },
+  {
+   "actions_by_type": {
+    "1": 59,
+    "2": 104,
+    "3": 6,
+    "333": 1,
+    "4": 7,
+    "5": 5,
+    "8": 12
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 334,
+    "occupy": 310,
+    "remain": 367,
+    "total": 1011,
+    "win": 971
+   },
+   "candidate_side": "blue",
+   "condition": "H2",
+   "contract_errors": 0,
+   "decisions": 2881,
+   "decisions_differing_from_v2": 486,
+   "differing_by_module": {
+    "allocation": 7,
+    "artillery": 12,
+    "coalition": 470,
+    "dispersal": 4,
+    "fire": 8,
+    "reserve": 1614,
+    "support": 17,
+    "transport": 95
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 31,
+    "friendly_damage": 0,
+    "judged_attacks": 122
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {},
+    "units_at_start": 26,
+    "units_lost": 0,
+    "value_lost": 0,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 288.918,
+   "latency_ms_p99": 14.086,
+   "memory_bytes_max": 1655,
+   "module_actions": {
+    "allocation:1": 12,
+    "artillery:8": 12,
+    "coalition:1": 21,
+    "dispersal:1": 4,
+    "fire:2": 104,
+    "occupy:5": 5,
+    "support:1": 19,
+    "transport:1": 3,
+    "transport:3": 6,
+    "transport:4": 7
+   },
+   "objectives": {
+    "final_enemy": 0,
+    "final_owned": 5,
+    "first_owned_before_enemy": 2,
+    "first_owned_count": 5,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": null,
+      "own": 461
+     },
+     "objective 2 (80)": {
+      "enemy": 536,
+      "own": 577
+     },
+     "objective 3 (50)": {
+      "enemy": 342,
+      "own": 407
+     },
+     "objective 4 (50)": {
+      "enemy": 281,
+      "own": 461
+     },
+     "objective 5 (50)": {
+      "enemy": null,
+      "own": 361
+     }
+    },
+    "losses": 0,
+    "objectives": 5,
+    "recaptures": 0
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 40,
+    "occupy": 0,
+    "remain": 0,
+    "total": 40,
+    "win": -971
+   },
+   "opponent_force": {
+    "longest_wait": 86,
+    "lost_by_class": {
+     "type 1 sub_type 2": 3,
+     "type 2 sub_type 0": 3,
+     "type 2 sub_type 1": 3,
+     "type 2 sub_type 3": 3,
+     "type 2 sub_type 4": 3,
+     "type 3 sub_type 5": 2,
+     "type 3 sub_type 6": 2,
+     "type 3 sub_type 7": 6
+    },
+    "units_at_start": 28,
+    "units_lost": 25,
+    "value_lost": 100,
+    "wait_unit_steps": 276
+   },
+   "policy": "s35-coalition-coalition-mission-planner-2",
+   "position": 7,
+   "reconstructed": 2881,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 310.0,
+     "mean": 197.333333,
+     "min": 0.0,
+     "n": 15,
+     "sd": 126.234853
+    },
+    "remain": {
+     "max": 317.0,
+     "mean": 167.8,
+     "min": 48.0,
+     "n": 15,
+     "sd": 112.998862
+    },
+    "win": {
+     "max": 871.0,
+     "mean": 245.0,
+     "min": -489.0,
+     "n": 15,
+     "sd": 586.603297
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {},
+    "refused": 0,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 29,
+   "replay_mismatches": 0,
+   "scenario_id": "2120531121",
+   "session": "2833",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "tag": "s35",
+   "unit_actions": 193,
+   "validation_rejections": 0,
+   "z": 1.237634
+  },
+  {
+   "actions_by_type": {
+    "1": 42,
+    "2": 97,
+    "3": 8,
+    "333": 1,
+    "4": 8,
+    "5": 5,
+    "8": 7
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 333,
+    "occupy": 310,
+    "remain": 287,
+    "total": 930,
+    "win": 809
+   },
+   "candidate_side": "blue",
+   "condition": "H2",
+   "contract_errors": 0,
+   "decisions": 2881,
+   "decisions_differing_from_v2": 477,
+   "differing_by_module": {
+    "allocation": 94,
+    "artillery": 7,
+    "dispersal": 3,
+    "fire": 11,
+    "reserve": 948,
+    "support": 14,
+    "transport": 202
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 34,
+    "friendly_damage": 0,
+    "judged_attacks": 115
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 2 sub_type 0": 4
+    },
+    "units_at_start": 26,
+    "units_lost": 4,
+    "value_lost": 40,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 135.1,
+   "latency_ms_p99": 13.375,
+   "memory_bytes_max": 1141,
+   "module_actions": {
+    "allocation:1": 17,
+    "artillery:8": 7,
+    "dispersal:1": 3,
+    "fire:2": 97,
+    "occupy:5": 5,
+    "support:1": 16,
+    "transport:1": 6,
+    "transport:3": 8,
+    "transport:4": 8
+   },
+   "objectives": {
+    "final_enemy": 0,
+    "final_owned": 5,
+    "first_owned_before_enemy": 3,
+    "first_owned_count": 5,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": null,
+      "own": 461
+     },
+     "objective 2 (80)": {
+      "enemy": null,
+      "own": 598
+     },
+     "objective 3 (50)": {
+      "enemy": 342,
+      "own": 496
+     },
+     "objective 4 (50)": {
+      "enemy": 281,
+      "own": 461
+     },
+     "objective 5 (50)": {
+      "enemy": null,
+      "own": 361
+     }
+    },
+    "losses": 0,
+    "objectives": 5,
+    "recaptures": 0
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 120,
+    "occupy": 0,
+    "remain": 1,
+    "total": 121,
+    "win": -809
+   },
+   "opponent_force": {
+    "longest_wait": 84,
+    "lost_by_class": {
+     "type 1 sub_type 2": 3,
+     "type 2 sub_type 0": 3,
+     "type 2 sub_type 1": 3,
+     "type 2 sub_type 3": 6,
+     "type 2 sub_type 4": 3,
+     "type 3 sub_type 5": 1,
+     "type 3 sub_type 6": 2,
+     "type 3 sub_type 7": 6
+    },
+    "units_at_start": 28,
+    "units_lost": 27,
+    "value_lost": 99,
+    "wait_unit_steps": 243
+   },
+   "policy": "s34-integrated-mission-orchestrator-1",
+   "position": 8,
+   "reconstructed": 2881,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 310.0,
+     "mean": 197.333333,
+     "min": 0.0,
+     "n": 15,
+     "sd": 126.234853
+    },
+    "remain": {
+     "max": 317.0,
+     "mean": 167.8,
+     "min": 48.0,
+     "n": 15,
+     "sd": 112.998862
+    },
+    "win": {
+     "max": 871.0,
+     "mean": 245.0,
+     "min": -489.0,
+     "n": 15,
+     "sd": 586.603297
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {},
+    "refused": 0,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 29,
+   "replay_mismatches": 0,
+   "scenario_id": "2120531121",
+   "session": "2834",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "tag": "s34",
+   "unit_actions": 167,
+   "validation_rejections": 0,
+   "z": 0.961467
+  },
+  {
+   "actions_by_type": {
+    "1": 28,
+    "2": 34,
+    "3": 3,
+    "333": 1,
+    "4": 1,
+    "5": 6,
+    "8": 6
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 217,
+    "occupy": 0,
+    "remain": 0,
+    "total": 217,
+    "win": -606
+   },
+   "candidate_side": "red",
+   "condition": "H1",
+   "contract_errors": 0,
+   "decisions": 2881,
+   "decisions_differing_from_v2": 826,
+   "differing_by_module": {
+    "allocation": 24,
+    "artillery": 6,
+    "coalition": 1350,
+    "dispersal": 1,
+    "fire": 2,
+    "occupy": 1,
+    "reserve": 59,
+    "support": 7,
+    "transport": 52
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 19,
+    "friendly_damage": 0,
+    "judged_attacks": 44
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 1 sub_type 2": 3,
+     "type 2 sub_type 0": 3,
+     "type 2 sub_type 1": 3,
+     "type 2 sub_type 4": 3,
+     "type 3 sub_type 5": 1,
+     "type 3 sub_type 6": 1,
+     "type 3 sub_type 7": 6
+    },
+    "units_at_start": 26,
+    "units_lost": 20,
+    "value_lost": 89,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 144.542,
+   "latency_ms_p99": 17.347,
+   "memory_bytes_max": 1346,
+   "module_actions": {
+    "allocation:1": 9,
+    "artillery:8": 6,
+    "coalition:1": 3,
+    "dispersal:1": 1,
+    "fire:2": 34,
+    "occupy:5": 6,
+    "support:1": 12,
+    "transport:1": 3,
+    "transport:3": 3,
+    "transport:4": 1
+   },
+   "objectives": {
+    "final_enemy": 5,
+    "final_owned": 0,
+    "first_owned_before_enemy": 5,
+    "first_owned_count": 5,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": 536,
+      "own": 461
+     },
+     "objective 2 (80)": {
+      "enemy": 1121,
+      "own": 621
+     },
+     "objective 3 (50)": {
+      "enemy": 597,
+      "own": 381
+     },
+     "objective 4 (50)": {
+      "enemy": 742,
+      "own": 501
+     },
+     "objective 5 (50)": {
+      "enemy": 678,
+      "own": 441
+     }
+    },
+    "losses": 6,
+    "objectives": 5,
+    "recaptures": 1
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 323,
+    "occupy": 310,
+    "remain": 190,
+    "total": 823,
+    "win": 606
+   },
+   "opponent_force": {
+    "longest_wait": 1391,
+    "lost_by_class": {
+     "type 2 sub_type 0": 3,
+     "type 2 sub_type 1": 4,
+     "type 3 sub_type 5": 1,
+     "type 3 sub_type 6": 1
+    },
+    "units_at_start": 26,
+    "units_lost": 9,
+    "value_lost": 73,
+    "wait_unit_steps": 1419
+   },
+   "policy": "s35-coalition-coalition-mission-planner-2",
+   "position": 9,
+   "reconstructed": 2881,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 310.0,
+     "mean": 195.333333,
+     "min": 0.0,
+     "n": 15,
+     "sd": 118.7354
+    },
+    "remain": {
+     "max": 205.0,
+     "mean": 98.866667,
+     "min": 12.0,
+     "n": 15,
+     "sd": 69.021598
+    },
+    "win": {
+     "max": 756.0,
+     "mean": 179.6,
+     "min": -508.0,
+     "n": 15,
+     "sd": 453.244935
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {},
+    "refused": 0,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 29,
+   "replay_mismatches": 0,
+   "scenario_id": "1930331196",
+   "session": "2835",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "tag": "s35",
+   "unit_actions": 78,
+   "validation_rejections": 0,
+   "z": -1.733279
+  },
+  {
+   "actions_by_type": {
+    "1": 22,
+    "2": 24,
+    "3": 3,
+    "333": 1,
+    "5": 5,
+    "8": 9
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 136,
+    "occupy": 0,
+    "remain": 11,
+    "total": 147,
+    "win": -746
+   },
+   "candidate_side": "red",
+   "condition": "H1",
+   "contract_errors": 0,
+   "decisions": 2881,
+   "decisions_differing_from_v2": 299,
+   "differing_by_module": {
+    "allocation": 458,
+    "artillery": 9,
+    "occupy": 1,
+    "support": 6,
+    "transport": 92
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 12,
+    "friendly_damage": 0,
+    "judged_attacks": 43
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 1 sub_type 2": 3,
+     "type 2 sub_type 0": 3,
+     "type 2 sub_type 1": 3,
+     "type 2 sub_type 4": 3,
+     "type 3 sub_type 7": 6
+    },
+    "units_at_start": 26,
+    "units_lost": 18,
+    "value_lost": 78,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 143.292,
+   "latency_ms_p99": 18.046,
+   "memory_bytes_max": 926,
+   "module_actions": {
+    "allocation:1": 9,
+    "artillery:8": 9,
+    "fire:2": 24,
+    "occupy:5": 5,
+    "support:1": 10,
+    "transport:1": 3,
+    "transport:3": 3
+   },
+   "objectives": {
+    "final_enemy": 5,
+    "final_owned": 0,
+    "first_owned_before_enemy": 5,
+    "first_owned_count": 5,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": 541,
+      "own": 461
+     },
+     "objective 2 (80)": {
+      "enemy": 801,
+      "own": 621
+     },
+     "objective 3 (50)": {
+      "enemy": 602,
+      "own": 381
+     },
+     "objective 4 (50)": {
+      "enemy": 703,
+      "own": 501
+     },
+     "objective 5 (50)": {
+      "enemy": 701,
+      "own": 441
+     }
+    },
+    "losses": 5,
+    "objectives": 5,
+    "recaptures": 0
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 312,
+    "occupy": 310,
+    "remain": 271,
+    "total": 893,
+    "win": 746
+   },
+   "opponent_force": {
+    "longest_wait": 721,
+    "lost_by_class": {
+     "type 2 sub_type 0": 4
+    },
+    "units_at_start": 26,
+    "units_lost": 4,
+    "value_lost": 40,
+    "wait_unit_steps": 2620
+   },
+   "policy": "s34-integrated-mission-orchestrator-1",
+   "position": 10,
+   "reconstructed": 2881,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 310.0,
+     "mean": 195.333333,
+     "min": 0.0,
+     "n": 15,
+     "sd": 118.7354
+    },
+    "remain": {
+     "max": 205.0,
+     "mean": 98.866667,
+     "min": 12.0,
+     "n": 15,
+     "sd": 69.021598
+    },
+    "win": {
+     "max": 756.0,
+     "mean": 179.6,
+     "min": -508.0,
+     "n": 15,
+     "sd": 453.244935
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {},
+    "refused": 0,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 29,
+   "replay_mismatches": 0,
+   "scenario_id": "1930331196",
+   "session": "2836",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "tag": "s34",
+   "unit_actions": 63,
+   "validation_rejections": 0,
+   "z": -2.042163
+  },
+  {
+   "actions_by_type": {
+    "1": 59,
+    "2": 72,
+    "3": 10,
+    "333": 1,
+    "4": 9,
+    "5": 6,
+    "8": 3
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 315,
+    "occupy": 310,
+    "remain": 233,
+    "total": 858,
+    "win": 676
+   },
+   "candidate_side": "blue",
+   "condition": "H2",
+   "contract_errors": 0,
+   "decisions": 2881,
+   "decisions_differing_from_v2": 729,
+   "differing_by_module": {
+    "allocation": 66,
+    "artillery": 3,
+    "dispersal": 7,
+    "fire": 5,
+    "reserve": 1682,
+    "support": 20,
+    "transport": 127
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 18,
+    "friendly_damage": 0,
+    "judged_attacks": 94
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 1 sub_type 2": 1,
+     "type 2 sub_type 0": 3,
+     "type 2 sub_type 1": 2
+    },
+    "units_at_start": 26,
+    "units_lost": 6,
+    "value_lost": 50,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 143.339,
+   "latency_ms_p99": 12.464,
+   "memory_bytes_max": 1074,
+   "module_actions": {
+    "allocation:1": 21,
+    "artillery:8": 3,
+    "dispersal:1": 7,
+    "fire:2": 72,
+    "occupy:5": 6,
+    "support:1": 24,
+    "transport:1": 7,
+    "transport:3": 10,
+    "transport:4": 9
+   },
+   "objectives": {
+    "final_enemy": 0,
+    "final_owned": 5,
+    "first_owned_before_enemy": 2,
+    "first_owned_count": 5,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": 566,
+      "own": 646
+     },
+     "objective 2 (80)": {
+      "enemy": null,
+      "own": 682
+     },
+     "objective 3 (50)": {
+      "enemy": 361,
+      "own": 701
+     },
+     "objective 4 (50)": {
+      "enemy": 917,
+      "own": 701
+     },
+     "objective 5 (50)": {
+      "enemy": 442,
+      "own": 676
+     }
+    },
+    "losses": 1,
+    "objectives": 5,
+    "recaptures": 1
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 174,
+    "occupy": 0,
+    "remain": 8,
+    "total": 182,
+    "win": -676
+   },
+   "opponent_force": {
+    "longest_wait": 197,
+    "lost_by_class": {
+     "type 1 sub_type 2": 2,
+     "type 2 sub_type 0": 3,
+     "type 2 sub_type 1": 3,
+     "type 2 sub_type 4": 3,
+     "type 3 sub_type 5": 1,
+     "type 3 sub_type 6": 1,
+     "type 3 sub_type 7": 6
+    },
+    "units_at_start": 26,
+    "units_lost": 19,
+    "value_lost": 85,
+    "wait_unit_steps": 568
+   },
+   "policy": "s34-integrated-mission-orchestrator-1",
+   "position": 11,
+   "reconstructed": 2881,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 310.0,
+     "mean": 114.666667,
+     "min": 0.0,
+     "n": 15,
+     "sd": 118.7354
+    },
+    "remain": {
+     "max": 203.0,
+     "mean": 91.4,
+     "min": 24.0,
+     "n": 15,
+     "sd": 54.604814
+    },
+    "win": {
+     "max": 508.0,
+     "mean": -179.6,
+     "min": -756.0,
+     "n": 15,
+     "sd": 453.244935
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {
+     "type 2 code 516": 1
+    },
+    "refused": 1,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 29,
+   "replay_mismatches": 0,
+   "scenario_id": "1930331196",
+   "session": "2837",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "tag": "s34",
+   "unit_actions": 159,
+   "validation_rejections": 0,
+   "z": 1.887721
+  },
+  {
+   "actions_by_type": {
+    "1": 51,
+    "2": 33,
+    "3": 6,
+    "333": 1,
+    "4": 4,
+    "5": 8,
+    "8": 3
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 244,
+    "occupy": 0,
+    "remain": 25,
+    "total": 269,
+    "win": -502
+   },
+   "candidate_side": "blue",
+   "condition": "H2",
+   "contract_errors": 0,
+   "decisions": 2881,
+   "decisions_differing_from_v2": 2616,
+   "differing_by_module": {
+    "allocation": 219,
+    "artillery": 3,
+    "coalition": 1847,
+    "fire": 6,
+    "reserve": 5280,
+    "support": 18,
+    "transport": 70
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 20,
+    "friendly_damage": 0,
+    "judged_attacks": 51
+   },
+   "force": {
+    "longest_wait": 107,
+    "lost_by_class": {
+     "type 1 sub_type 2": 4,
+     "type 2 sub_type 0": 6,
+     "type 2 sub_type 1": 6,
+     "type 3 sub_type 6": 1
+    },
+    "units_at_start": 26,
+    "units_lost": 17,
+    "value_lost": 134,
+    "wait_unit_steps": 107
+   },
+   "latency_ms_max": 143.835,
+   "latency_ms_p99": 12.947,
+   "memory_bytes_max": 1375,
+   "module_actions": {
+    "allocation:1": 16,
+    "artillery:8": 3,
+    "coalition:1": 5,
+    "fire:2": 33,
+    "occupy:5": 8,
+    "support:1": 26,
+    "transport:1": 4,
+    "transport:3": 6,
+    "transport:4": 4
+   },
+   "objectives": {
+    "final_enemy": 5,
+    "final_owned": 0,
+    "first_owned_before_enemy": 2,
+    "first_owned_count": 5,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": 521,
+      "own": 641
+     },
+     "objective 2 (80)": {
+      "enemy": 903,
+      "own": 682
+     },
+     "objective 3 (50)": {
+      "enemy": 361,
+      "own": 701
+     },
+     "objective 4 (50)": {
+      "enemy": 822,
+      "own": 701
+     },
+     "objective 5 (50)": {
+      "enemy": 442,
+      "own": 676
+     }
+    },
+    "losses": 8,
+    "objectives": 5,
+    "recaptures": 3
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 382,
+    "occupy": 310,
+    "remain": 79,
+    "total": 771,
+    "win": 502
+   },
+   "opponent_force": {
+    "longest_wait": 278,
+    "lost_by_class": {
+     "type 2 sub_type 0": 2,
+     "type 2 sub_type 1": 3,
+     "type 2 sub_type 4": 3,
+     "type 3 sub_type 6": 1,
+     "type 3 sub_type 7": 6
+    },
+    "units_at_start": 26,
+    "units_lost": 15,
+    "value_lost": 66,
+    "wait_unit_steps": 647
+   },
+   "policy": "s35-coalition-coalition-mission-planner-2",
+   "position": 12,
+   "reconstructed": 2881,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 310.0,
+     "mean": 114.666667,
+     "min": 0.0,
+     "n": 15,
+     "sd": 118.7354
+    },
+    "remain": {
+     "max": 203.0,
+     "mean": 91.4,
+     "min": 24.0,
+     "n": 15,
+     "sd": 54.604814
+    },
+    "win": {
+     "max": 508.0,
+     "mean": -179.6,
+     "min": -756.0,
+     "n": 15,
+     "sd": 453.244935
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {},
+    "refused": 0,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 29,
+   "replay_mismatches": 0,
+   "scenario_id": "1930331196",
+   "session": "2838",
+   "status": "COMPLETED",
+   "steps": 2881,
+   "tag": "s35",
+   "unit_actions": 105,
+   "validation_rejections": 0,
+   "z": -0.711315
+  },
+  {
+   "actions_by_type": {
+    "1": 4,
+    "2": 1,
+    "3": 1,
+    "333": 1,
+    "4": 1,
+    "5": 2
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 66,
+    "occupy": 0,
+    "remain": 0,
+    "total": 66,
+    "win": -234
+   },
+   "candidate_side": "red",
+   "condition": "H1",
+   "contract_errors": 0,
+   "decisions": 1801,
+   "decisions_differing_from_v2": 165,
+   "differing_by_module": {
+    "allocation": 45,
+    "transport": 122
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 4,
+    "friendly_damage": 0,
+    "judged_attacks": 4
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 1 sub_type 2": 1,
+     "type 2 sub_type 0": 1,
+     "type 2 sub_type 1": 1,
+     "type 2 sub_type 4": 1,
+     "type 3 sub_type 7": 2
+    },
+    "units_at_start": 6,
+    "units_lost": 6,
+    "value_lost": 26,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 61.491,
+   "latency_ms_p99": 5.077,
+   "memory_bytes_max": 350,
+   "module_actions": {
+    "allocation:1": 3,
+    "fire:2": 1,
+    "occupy:5": 2,
+    "transport:1": 1,
+    "transport:3": 1,
+    "transport:4": 1
+   },
+   "objectives": {
+    "final_enemy": 2,
+    "final_owned": 0,
+    "first_owned_before_enemy": 1,
+    "first_owned_count": 2,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": 687,
+      "own": 461
+     },
+     "objective 2 (50)": {
+      "enemy": 506,
+      "own": 666
+     }
+    },
+    "losses": 2,
+    "objectives": 2,
+    "recaptures": 0
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 104,
+    "occupy": 130,
+    "remain": 66,
+    "total": 300,
+    "win": 234
+   },
+   "opponent_force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 2 sub_type 0": 1
+    },
+    "units_at_start": 6,
+    "units_lost": 1,
+    "value_lost": 10,
+    "wait_unit_steps": 0
+   },
+   "policy": "s34-integrated-mission-orchestrator-1",
+   "position": 13,
+   "reconstructed": 1801,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 130.0,
+     "mean": 52.0,
+     "min": 0.0,
+     "n": 15,
+     "sd": 65.922032
+    },
+    "remain": {
+     "max": 63.0,
+     "mean": 25.133333,
+     "min": 16.0,
+     "n": 15,
+     "sd": 14.778685
+    },
+    "win": {
+     "max": 236.0,
+     "mean": -85.866667,
+     "min": -334.0,
+     "n": 15,
+     "sd": 233.889433
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {},
+    "refused": 0,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 19,
+   "replay_mismatches": 0,
+   "scenario_id": "1910631192",
+   "session": "2839",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "tag": "s34",
+   "unit_actions": 9,
+   "validation_rejections": 0,
+   "z": -0.633348
+  },
+  {
+   "actions_by_type": {
+    "1": 3,
+    "2": 2,
+    "3": 1,
+    "333": 1,
+    "5": 1
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 44,
+    "occupy": 0,
+    "remain": 0,
+    "total": 44,
+    "win": -278
+   },
+   "candidate_side": "red",
+   "condition": "H1",
+   "contract_errors": 0,
+   "decisions": 1801,
+   "decisions_differing_from_v2": 201,
+   "differing_by_module": {
+    "allocation": 1,
+    "coalition": 246,
+    "reserve": 20,
+    "transport": 2
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 2,
+    "friendly_damage": 0,
+    "judged_attacks": 4
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 1 sub_type 2": 1,
+     "type 2 sub_type 0": 1,
+     "type 2 sub_type 1": 1,
+     "type 2 sub_type 4": 1,
+     "type 3 sub_type 7": 2
+    },
+    "units_at_start": 6,
+    "units_lost": 6,
+    "value_lost": 26,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 61.305,
+   "latency_ms_p99": 6.341,
+   "memory_bytes_max": 495,
+   "module_actions": {
+    "allocation:1": 2,
+    "fire:2": 2,
+    "occupy:5": 1,
+    "transport:1": 1,
+    "transport:3": 1
+   },
+   "objectives": {
+    "final_enemy": 2,
+    "final_owned": 0,
+    "first_owned_before_enemy": 1,
+    "first_owned_count": 1,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": 662,
+      "own": 461
+     },
+     "objective 2 (50)": {
+      "enemy": 481,
+      "own": null
+     }
+    },
+    "losses": 1,
+    "objectives": 2,
+    "recaptures": 0
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 104,
+    "occupy": 130,
+    "remain": 88,
+    "total": 322,
+    "win": 278
+   },
+   "opponent_force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 2 sub_type 1": 1
+    },
+    "units_at_start": 6,
+    "units_lost": 1,
+    "value_lost": 8,
+    "wait_unit_steps": 0
+   },
+   "policy": "s35-coalition-coalition-mission-planner-2",
+   "position": 14,
+   "reconstructed": 1801,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 130.0,
+     "mean": 52.0,
+     "min": 0.0,
+     "n": 15,
+     "sd": 65.922032
+    },
+    "remain": {
+     "max": 63.0,
+     "mean": 25.133333,
+     "min": 16.0,
+     "n": 15,
+     "sd": 14.778685
+    },
+    "win": {
+     "max": 236.0,
+     "mean": -85.866667,
+     "min": -334.0,
+     "n": 15,
+     "sd": 233.889433
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {},
+    "refused": 0,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 19,
+   "replay_mismatches": 0,
+   "scenario_id": "1910631192",
+   "session": "2840",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "tag": "s35",
+   "unit_actions": 7,
+   "validation_rejections": 0,
+   "z": -0.821471
+  },
+  {
+   "actions_by_type": {
+    "1": 7,
+    "2": 5,
+    "3": 2,
+    "333": 1,
+    "5": 2
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 34,
+    "occupy": 0,
+    "remain": 0,
+    "total": 34,
+    "win": -298
+   },
+   "candidate_side": "blue",
+   "condition": "H2",
+   "contract_errors": 0,
+   "decisions": 1801,
+   "decisions_differing_from_v2": 228,
+   "differing_by_module": {
+    "allocation": 2,
+    "coalition": 431,
+    "dispersal": 1,
+    "transport": 5
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 3,
+    "friendly_damage": 0,
+    "judged_attacks": 7
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 1 sub_type 2": 2,
+     "type 2 sub_type 0": 2,
+     "type 2 sub_type 1": 2
+    },
+    "units_at_start": 6,
+    "units_lost": 6,
+    "value_lost": 44,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 61.109,
+   "latency_ms_p99": 4.202,
+   "memory_bytes_max": 563,
+   "module_actions": {
+    "allocation:1": 4,
+    "dispersal:1": 1,
+    "fire:2": 5,
+    "occupy:5": 2,
+    "transport:1": 2,
+    "transport:3": 2
+   },
+   "objectives": {
+    "final_enemy": 2,
+    "final_owned": 0,
+    "first_owned_before_enemy": 1,
+    "first_owned_count": 2,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": 441,
+      "own": 581
+     },
+     "objective 2 (50)": {
+      "enemy": 602,
+      "own": 461
+     }
+    },
+    "losses": 2,
+    "objectives": 2,
+    "recaptures": 0
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 132,
+    "occupy": 130,
+    "remain": 70,
+    "total": 332,
+    "win": 298
+   },
+   "opponent_force": {
+    "longest_wait": 0,
+    "lost_by_class": {},
+    "units_at_start": 6,
+    "units_lost": 0,
+    "value_lost": 0,
+    "wait_unit_steps": 0
+   },
+   "policy": "s35-coalition-coalition-mission-planner-2",
+   "position": 15,
+   "reconstructed": 1801,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 130.0,
+     "mean": 78.0,
+     "min": 0.0,
+     "n": 15,
+     "sd": 65.922032
+    },
+    "remain": {
+     "max": 132.0,
+     "mean": 69.066667,
+     "min": 24.0,
+     "n": 15,
+     "sd": 41.007781
+    },
+    "win": {
+     "max": 334.0,
+     "mean": 85.866667,
+     "min": -236.0,
+     "n": 15,
+     "sd": 233.889433
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {},
+    "refused": 0,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 19,
+   "replay_mismatches": 0,
+   "scenario_id": "1910631192",
+   "session": "2841",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "tag": "s35",
+   "unit_actions": 16,
+   "validation_rejections": 0,
+   "z": -1.641231
+  },
+  {
+   "actions_by_type": {
+    "1": 7,
+    "2": 5,
+    "3": 2,
+    "333": 1,
+    "4": 2,
+    "5": 3
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 88,
+    "occupy": 130,
+    "remain": 76,
+    "total": 294,
+    "win": 222
+   },
+   "candidate_side": "blue",
+   "condition": "H2",
+   "contract_errors": 0,
+   "decisions": 1801,
+   "decisions_differing_from_v2": 133,
+   "differing_by_module": {
+    "allocation": 103,
+    "transport": 100
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 6,
+    "friendly_damage": 0,
+    "judged_attacks": 10
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 1 sub_type 2": 1,
+     "type 2 sub_type 1": 1
+    },
+    "units_at_start": 6,
+    "units_lost": 2,
+    "value_lost": 12,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 60.679,
+   "latency_ms_p99": 4.059,
+   "memory_bytes_max": 427,
+   "module_actions": {
+    "allocation:1": 5,
+    "fire:2": 5,
+    "occupy:5": 3,
+    "transport:1": 2,
+    "transport:3": 2,
+    "transport:4": 2
+   },
+   "objectives": {
+    "final_enemy": 0,
+    "final_owned": 2,
+    "first_owned_before_enemy": 1,
+    "first_owned_count": 2,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": 441,
+      "own": 581
+     },
+     "objective 2 (50)": {
+      "enemy": 602,
+      "own": 461
+     }
+    },
+    "losses": 1,
+    "objectives": 2,
+    "recaptures": 1
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 56,
+    "occupy": 0,
+    "remain": 16,
+    "total": 72,
+    "win": -222
+   },
+   "opponent_force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 2 sub_type 0": 1,
+     "type 2 sub_type 1": 1,
+     "type 2 sub_type 4": 1,
+     "type 3 sub_type 7": 2
+    },
+    "units_at_start": 6,
+    "units_lost": 5,
+    "value_lost": 22,
+    "wait_unit_steps": 0
+   },
+   "policy": "s34-integrated-mission-orchestrator-1",
+   "position": 16,
+   "reconstructed": 1801,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 130.0,
+     "mean": 78.0,
+     "min": 0.0,
+     "n": 15,
+     "sd": 65.922032
+    },
+    "remain": {
+     "max": 132.0,
+     "mean": 69.066667,
+     "min": 24.0,
+     "n": 15,
+     "sd": 41.007781
+    },
+    "win": {
+     "max": 334.0,
+     "mean": 85.866667,
+     "min": -236.0,
+     "n": 15,
+     "sd": 233.889433
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {},
+    "refused": 0,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 19,
+   "replay_mismatches": 0,
+   "scenario_id": "1910631192",
+   "session": "2842",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "tag": "s34",
+   "unit_actions": 19,
+   "validation_rejections": 0,
+   "z": 0.582041
+  },
+  {
+   "actions_by_type": {
+    "1": 4,
+    "2": 4,
+    "3": 1,
+    "333": 1,
+    "5": 1
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 10,
+    "occupy": 0,
+    "remain": 0,
+    "total": 10,
+    "win": -346
+   },
+   "candidate_side": "red",
+   "condition": "H1",
+   "contract_errors": 0,
+   "decisions": 1801,
+   "decisions_differing_from_v2": 47,
+   "differing_by_module": {
+    "allocation": 2,
+    "coalition": 44,
+    "fire": 1,
+    "transport": 2
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 1,
+    "friendly_damage": 0,
+    "judged_attacks": 4
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 1 sub_type 2": 1,
+     "type 2 sub_type 0": 1,
+     "type 2 sub_type 1": 1,
+     "type 2 sub_type 4": 1,
+     "type 3 sub_type 7": 2
+    },
+    "units_at_start": 6,
+    "units_lost": 6,
+    "value_lost": 26,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 61.652,
+   "latency_ms_p99": 6.409,
+   "memory_bytes_max": 498,
+   "module_actions": {
+    "allocation:1": 3,
+    "fire:2": 4,
+    "occupy:5": 1,
+    "transport:1": 1,
+    "transport:3": 1
+   },
+   "objectives": {
+    "final_enemy": 2,
+    "final_owned": 0,
+    "first_owned_before_enemy": 0,
+    "first_owned_count": 1,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": 457,
+      "own": null
+     },
+     "objective 2 (50)": {
+      "enemy": 342,
+      "own": 521
+     }
+    },
+    "losses": 1,
+    "objectives": 2,
+    "recaptures": 0
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 104,
+    "occupy": 130,
+    "remain": 122,
+    "total": 356,
+    "win": 346
+   },
+   "opponent_force": {
+    "longest_wait": 73,
+    "lost_by_class": {},
+    "units_at_start": 6,
+    "units_lost": 0,
+    "value_lost": 0,
+    "wait_unit_steps": 146
+   },
+   "policy": "s35-coalition-coalition-mission-planner-2",
+   "position": 17,
+   "reconstructed": 1801,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 130.0,
+     "mean": 8.666667,
+     "min": 0.0,
+     "n": 15,
+     "sd": 33.565856
+    },
+    "remain": {
+     "max": 84.0,
+     "mean": 9.6,
+     "min": 0.0,
+     "n": 15,
+     "sd": 21.423618
+    },
+    "win": {
+     "max": 302.0,
+     "mean": -235.066667,
+     "min": -366.0,
+     "n": 15,
+     "sd": 156.493481
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {},
+    "refused": 0,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 19,
+   "replay_mismatches": 0,
+   "scenario_id": "2010431153",
+   "session": "2843",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "tag": "s35",
+   "unit_actions": 10,
+   "validation_rejections": 0,
+   "z": -0.708869
+  },
+  {
+   "actions_by_type": {
+    "1": 3,
+    "2": 2,
+    "3": 1,
+    "333": 1
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 10,
+    "occupy": 0,
+    "remain": 0,
+    "total": 10,
+    "win": -346
+   },
+   "candidate_side": "red",
+   "condition": "H1",
+   "contract_errors": 0,
+   "decisions": 1801,
+   "decisions_differing_from_v2": 1,
+   "differing_by_module": {
+    "allocation": 1,
+    "transport": 2
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 1,
+    "friendly_damage": 0,
+    "judged_attacks": 2
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 1 sub_type 2": 1,
+     "type 2 sub_type 0": 1,
+     "type 2 sub_type 1": 1,
+     "type 2 sub_type 4": 1,
+     "type 3 sub_type 7": 2
+    },
+    "units_at_start": 6,
+    "units_lost": 6,
+    "value_lost": 26,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 62.203,
+   "latency_ms_p99": 6.004,
+   "memory_bytes_max": 318,
+   "module_actions": {
+    "allocation:1": 2,
+    "fire:2": 2,
+    "transport:1": 1,
+    "transport:3": 1
+   },
+   "objectives": {
+    "final_enemy": 2,
+    "final_owned": 0,
+    "first_owned_before_enemy": 0,
+    "first_owned_count": 0,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": 382,
+      "own": null
+     },
+     "objective 2 (50)": {
+      "enemy": 342,
+      "own": null
+     }
+    },
+    "losses": 0,
+    "objectives": 2,
+    "recaptures": 0
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 104,
+    "occupy": 130,
+    "remain": 122,
+    "total": 356,
+    "win": 346
+   },
+   "opponent_force": {
+    "longest_wait": 0,
+    "lost_by_class": {},
+    "units_at_start": 6,
+    "units_lost": 0,
+    "value_lost": 0,
+    "wait_unit_steps": 0
+   },
+   "policy": "s34-integrated-mission-orchestrator-1",
+   "position": 18,
+   "reconstructed": 1801,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 130.0,
+     "mean": 8.666667,
+     "min": 0.0,
+     "n": 15,
+     "sd": 33.565856
+    },
+    "remain": {
+     "max": 84.0,
+     "mean": 9.6,
+     "min": 0.0,
+     "n": 15,
+     "sd": 21.423618
+    },
+    "win": {
+     "max": 302.0,
+     "mean": -235.066667,
+     "min": -366.0,
+     "n": 15,
+     "sd": 156.493481
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {},
+    "refused": 0,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 19,
+   "replay_mismatches": 0,
+   "scenario_id": "2010431153",
+   "session": "2844",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "tag": "s34",
+   "unit_actions": 6,
+   "validation_rejections": 0,
+   "z": -0.708869
+  },
+  {
+   "actions_by_type": {
+    "1": 9,
+    "2": 14,
+    "3": 3,
+    "333": 1,
+    "4": 3,
+    "5": 2
+   },
+   "batch": "A1",
+   "candidate": {
+    "attack": 92,
+    "occupy": 130,
+    "remain": 90,
+    "total": 312,
+    "win": 258
+   },
+   "candidate_side": "blue",
+   "condition": "H2",
+   "contract_errors": 0,
+   "decisions": 1801,
+   "decisions_differing_from_v2": 13,
+   "differing_by_module": {
+    "allocation": 5,
+    "dispersal": 1,
+    "fire": 2,
+    "occupy": 1,
+    "transport": 9
+   },
+   "fallbacks": 0,
+   "fire": {
+    "damaging_attacks": 5,
+    "friendly_damage": 0,
+    "judged_attacks": 12
+   },
+   "force": {
+    "longest_wait": 0,
+    "lost_by_class": {
+     "type 2 sub_type 0": 1
+    },
+    "units_at_start": 6,
+    "units_lost": 1,
+    "value_lost": 10,
+    "wait_unit_steps": 0
+   },
+   "latency_ms_max": 61.807,
+   "latency_ms_p99": 4.137,
+   "memory_bytes_max": 427,
+   "module_actions": {
+    "allocation:1": 5,
+    "dispersal:1": 1,
+    "fire:2": 14,
+    "occupy:5": 2,
+    "transport:1": 3,
+    "transport:3": 3,
+    "transport:4": 3
+   },
+   "objectives": {
+    "final_enemy": 0,
+    "final_owned": 2,
+    "first_owned_before_enemy": 1,
+    "first_owned_count": 2,
+    "first_owned_step": {
+     "objective 1 (80)": {
+      "enemy": 377,
+      "own": 456
+     },
+     "objective 2 (50)": {
+      "enemy": null,
+      "own": 421
+     }
+    },
+    "losses": 0,
+    "objectives": 2,
+    "recaptures": 0
+   },
+   "observer_errors": 0,
+   "opponent": {
+    "attack": 42,
+    "occupy": 0,
+    "remain": 12,
+    "total": 54,
+    "win": -258
+   },
+   "opponent_force": {
+    "longest_wait": 169,
+    "lost_by_class": {
+     "type 2 sub_type 0": 1,
+     "type 2 sub_type 1": 1,
+     "type 2 sub_type 4": 1,
+     "type 3 sub_type 7": 2
+    },
+    "units_at_start": 6,
+    "units_lost": 5,
+    "value_lost": 22,
+    "wait_unit_steps": 218
+   },
+   "policy": "s34-integrated-mission-orchestrator-1",
+   "position": 19,
+   "reconstructed": 1801,
+   "reconstruction_mismatches": 0,
+   "reference": {
+    "occupy": {
+     "max": 130.0,
+     "mean": 121.333333,
+     "min": 0.0,
+     "n": 15,
+     "sd": 33.565856
+    },
+    "remain": {
+     "max": 132.0,
+     "mean": 84.8,
+     "min": 12.0,
+     "n": 15,
+     "sd": 29.362756
+    },
+    "win": {
+     "max": 366.0,
+     "mean": 235.066667,
+     "min": -302.0,
+     "n": 15,
+     "sd": 156.493481
+    }
+   },
+   "refusals": {
+    "by_type_and_code": {
+     "type 2 code 203": 1,
+     "type 2 code 516": 1
+    },
+    "refused": 2,
+    "refused_non_shoot": 0
+   },
+   "replay_checks": 19,
+   "replay_mismatches": 0,
+   "scenario_id": "2010431153",
+   "session": "2845",
+   "status": "COMPLETED",
+   "steps": 1801,
+   "tag": "s34",
+   "unit_actions": 31,
+   "validation_rejections": 0,
+   "z": 0.146545
+  }
+ ],
+ "gates": [],
+ "rules": "s35-coalition-live-rules-1"
+}

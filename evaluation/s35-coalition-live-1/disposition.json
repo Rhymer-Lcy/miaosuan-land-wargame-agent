@@ -1,0 +1,52 @@
+{
+ "disposition": {
+  "disposition": "S35_LIVE_INVALID",
+  "why": "a structural stop fired"
+ },
+ "games_played": 19,
+ "interrupted_batch": "A1",
+ "interrupted_batch_gate": {
+  "batch": "A1",
+  "open": false,
+  "reason": "structural stop",
+  "stops": {
+   "19": {
+    "S6": [
+     "2 refused of 31 unit actions"
+    ]
+   }
+  }
+ },
+ "last_position": 19,
+ "note": "registered functions applied unchanged to the games played; reporting only",
+ "schema": "miaosuan-s35-disposition/1",
+ "sessions": [
+  "2827",
+  "2828",
+  "2829",
+  "2830",
+  "2831",
+  "2832",
+  "2833",
+  "2834",
+  "2835",
+  "2836",
+  "2837",
+  "2838",
+  "2839",
+  "2840",
+  "2841",
+  "2842",
+  "2843",
+  "2844",
+  "2845"
+ ],
+ "stored_gates": [],
+ "structural_stops": {
+  "19": {
+   "S6": [
+    "2 refused of 31 unit actions"
+   ]
+  }
+ }
+}
