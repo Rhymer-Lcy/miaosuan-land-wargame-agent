@@ -271,3 +271,95 @@ Recorded at registration (section 9 lists the results).
 * **Platform canary** rebuilt from this branch into a scratch folder:
   `a3d3b0229118c0a389d379b315a620465624222f93fcf39de115e8e9dde59511` (107,646 bytes, 26 files), isolated smoke 62 steps
   with 0 mismatches.
+
+## 10. Order of work (written after session 2802)
+
+The registration (sections 1 to 9, the code, the card and the mutation record) was committed as
+`d97e4227a8921f17299e18534b663508faf33b11` (tree `1198fe0e548fe6018f126335472209cba9c3cb01`) and pushed at about
+2026-10-10T13:47+08:00; GitHub and the server worktree then held the same commit and tree, the server worktree was
+clean and rebuilt the card byte for byte, and the scan of every blob reachable from the published refs (1,264 blobs)
+gave 106 hit lines, identical as a multiset to the accepted baseline. Both games were then played with
+`scripts/run_s33_pilot.py --position n`, pinned to NUMA node 0, while a colleague's job held node 1. Ledger events
+(the evaluation server's host clock, UTC): session 2801 opened 05:55:07 and closed 05:57:06; session 2802 opened
+05:59:02 and closed 06:00:47. Between them the runner re-read the ledger and regenerated game one's stored analysis
+byte for byte before opening session 2802, as section 7.4 requires. No game was retried or replaced; no session 2803
+was opened.
+
+## 11. Game results (written after session 2802)
+
+Read from the committed `evaluation/s33-t7-b1-live/game-p01.json`, `game-p02.json` and `disposition.json`, which
+`scripts/s33_analysis.py report --check` regenerates byte for byte from the private records and captures.
+
+| | Session 2801, 2120531121 C3 | Session 2802, 1930331196 C3 |
+|---|---|---|
+| Completion | 2,881 steps, no structural stop | 2,881 steps, no structural stop |
+| Stops emitted (each listed, in the exact documented form, echoed without error) | 3 | 2 |
+| First stop | step 380, the recorded first divergence | step 620 (two units), the recorded first divergence |
+| Rejected, deferred indefinitely, overrun, in place | none | none |
+| Next hex entered at the predicted step `s0 + h0`; path cleared in that frame | 3 of 3 (`h0` 20, 19, 19) | 2 of 2 (`h0` 20, 20) |
+| Transition started at the clearing frame (`move_to_stop_remain_time` 75, `stop` 0) and completed exactly 75 steps later | 3 of 3 | 2 of 2 |
+| `flag_force_stop` | 1 from the step after the order until the step before completion (94, 93 and 93 frames), 0 at completion | the same (94 frames each) |
+| Movement relisted at completion | 3 of 3 | 2 of 2 |
+| Movement resumed (a `baseline-v2` MOVE accepted, the unit traversing again) | 3 of 3, the MOVE emitted 0 to 1 steps after completion | 2 of 2, at completion |
+| In-range visible enemy at completion (firing opportunity evaluable) | 1 of 3 | 0 of 2 |
+| Shot listed, emitted and accepted (echo without error, judge record naming the unit, damage) | 1 of 1 evaluable | none (no opportunity) |
+| Deadlock runs; other own units blocked at a stop hex; `baseline-v2` actions for a unit before its stop took effect | 0; 0; 0 | 0; 0; 0 |
+| Occupy (control 310); margin (harm floor) | 310; 599 (509) | 310; 570 (520) |
+| Own ground units lost | 0 of 24 | 0 of 24 |
+| Refused actions of the candidate seat | 0 | 1 (a `baseline-v2` shot at a unit already destroyed, error 516; not a stopped unit) |
+| Sprint 33 verdict (Sprint 32's preserved verdict) | `OBSERVED` (`ADVERSE`: `deferred`) | `STOP_ONLY` (`ADVERSE`: `deferred`) |
+| Gate | open | open (the check stops after session 2802 regardless) |
+
+## 12. Disposition: `T7B1_MECH_SUPPORTED`, evidence level `STOP_AND_SHOT_ACCEPTED`
+
+First match over the two games (`OBSERVED`, `STOP_ONLY`): no structural stop, no adverse or harm verdict, no
+`NOT_ENGAGING` game, and an `OBSERVED` game. Endpoints demonstrated by at least one completed, uncensored stop without
+an adverse outcome: `STOP_EXECUTION`, `MOVEMENT_RESUMED`, `SHOOTING_LISTED`, `SHOT_ACCEPTED`.
+
+What this establishes, on engine 4.1.0 in these two inert configurations: all five stops of non-tank vehicles moving
+with a target in range were accepted, took effect exactly where and when the documented rule puts them (the hex being
+entered, at the step the progress fields predict), cleared the rest of the route, served exactly the 75-step
+transition, and left the unit able to move (all five moved again on `baseline-v2`'s next order) with no deadlock and no
+blocked friendly unit; in the one stop with a visible target in range at completion, a shot was listed, emitted and
+accepted with damage. Engagement rests on that single stop. The other four completed stops are evidence for stop
+semantics only.
+
+What it does not establish: any tactical or score benefit (the scores are a harm screen: both games equal or exceed
+their control minimum, and the inert opponent never fights back); behaviour against an active opponent, under fire, in
+other scenarios, for infantry, or with more than one stop per unit; promotion; or a basis for a wider A/B test.
+
+**Sprint 32's preserved classification.** Every stop carried `flag_force_stop` 1 after its path cleared, so Sprint 32's
+rule reads each one as `deferred`: its verdicts are `ADVERSE` in both games, its gate would have closed after session
+2801 (disposition `T7B1_MECH_REJECT` on that game alone), and over the two games actually played its disposition is
+`T7B1_MECH_INVALID` (a game behind its closed gate). Sprint 33's registered `deferred_indefinite` (the flag together
+with a non-empty path at or after the clearing deadline) did not occur. The published `order` field of
+`disposition.json` lists the six labels in the constant order of `evaluation/s32_mechanism.DISPOSITIONS`, not in the
+first-match order, which is section 7.5's.
+
+## 13. Post hoc reading (after the disposition; changes nothing)
+
+`local/diagnostics/s33/posthoc.py` on the private captures:
+
+* **The flag outlasts the path.** Section 6.2 expected the flag to fall when the path clears; it fell at transition
+  completion instead (1 at the clearing frame, 0 at completion, in all five stops). The registered definition did not
+  depend on that expectation and needed no change; the rationale's description of the flag was wrong in that detail.
+* **Listing during the transition.** Throughout every transition the unit listed action 6 only; the rules text says no
+  operation is possible in that period. Nothing here tested whether that action is accepted.
+* **Why four stops had no firing opportunity.** In the second and third stops of session 2801 and both of session
+  2802 the target named at the order stayed in place within published range of the stop hex (17 and 20 hexes), but
+  left the unit's own `see_enemy_bop_ids` once the unit stood on the stop hex, and no other enemy was visible to it.
+  The candidate checks range from the stop hex but visibility from where the unit is at the order; visibility from
+  the stop hex is not seat-observable in advance. This is a design limit of the candidate, not a stop failure.
+* **The accepted shot.** In the first stop of session 2801 the target was visible at 18 hexes at completion; the shot
+  was emitted at completion, and the target was no longer present one step later.
+
+## 14. Limits
+
+* Two games, five stops, one engaged target, all against an inert opponent in blue seats; one candidate rule and one
+  unit class (vehicle with a vehicle-mounted missile).
+* The engagement endpoint is demonstrated once; the firing opportunity disappeared in four of five stops for a
+  visibility reason the candidate does not model.
+* Combat outcomes in these games are random while movement reproduced (section 6.4); a different damage roll can
+  change later trajectories.
+* The movement and transition timing agrees exactly with the natural-arrival records, but the stop's own engine
+  semantics were observed only in these five instances.
