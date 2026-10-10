@@ -1,0 +1,1248 @@
+{
+ "disposition": "K2_PREFLIGHT_PASS",
+ "engine_sessions": 0,
+ "evidence_boundary": "Sprint 30's evidence boundary, unchanged: HH and HI are genuine baseline-v2 trajectories (HH's opponent was the T9-v3 candidate, not baseline-v2; HI's the inert control); H0 is baseline-v0's trajectory with baseline-v2 reconstructed. A first divergence is a valid action-level fact in HH and HI, and in H0 only on a supported prefix. Withholdings after a side's first divergence lie on recorded states the candidate would not reach and are post-divergence diagnostics only. Onward labels are historical.",
+ "fidelity": {
+  "H0 decisions": {
+   "equal": true,
+   "preflight": 33696,
+   "published": 33696
+  },
+  "H0 play decisions": {
+   "equal": true,
+   "preflight": 33680,
+   "published": 33680
+  },
+  "H0 v2 differs from recorded v0": {
+   "equal": true,
+   "preflight": 123,
+   "published": 123
+  },
+  "HH baseline-v2 reconstruction equal to the recorded seat at every decision": {
+   "equal": true,
+   "preflight": true,
+   "published": true
+  },
+  "HH decisions": {
+   "equal": true,
+   "preflight": 11524,
+   "published": 11524
+  },
+  "HI baseline-v2 reconstruction equal to the recorded seat at every decision": {
+   "equal": true,
+   "preflight": true,
+   "published": true
+  },
+  "HI decisions": {
+   "equal": true,
+   "preflight": 8643,
+   "published": 8643
+  },
+  "side-games H0, HH, HI": {
+   "equal": true,
+   "preflight": [
+    16,
+    4,
+    3
+   ],
+   "published": [
+    16,
+    4,
+    3
+   ]
+  }
+ },
+ "genuine_opportunities": {
+  "HH p01 baseline-v2 blue": {
+   "first_divergence_step": 161,
+   "holder_class": "vehicle",
+   "objective": "50-point objective A",
+   "post_divergence_withholding_decisions": 30,
+   "verified_opportunity": true,
+   "withholding_decisions": 31
+  },
+  "HH p02 baseline-v2 red": {
+   "first_divergence_step": 401,
+   "holder_class": "vehicle",
+   "objective": "50-point objective D",
+   "post_divergence_withholding_decisions": 16,
+   "verified_opportunity": true,
+   "withholding_decisions": 17
+  },
+  "HH p03 baseline-v2 blue": {
+   "first_divergence_step": 161,
+   "holder_class": "vehicle",
+   "objective": "50-point objective A",
+   "post_divergence_withholding_decisions": 27,
+   "verified_opportunity": true,
+   "withholding_decisions": 28
+  },
+  "HH p04 baseline-v2 red": {
+   "first_divergence_step": 401,
+   "holder_class": "vehicle",
+   "objective": "50-point objective D",
+   "post_divergence_withholding_decisions": 27,
+   "verified_opportunity": true,
+   "withholding_decisions": 28
+  },
+  "HI 1930331196 C2 baseline-v2 red": {
+   "first_divergence_step": 361,
+   "holder_class": "vehicle",
+   "objective": "50-point objective A",
+   "post_divergence_withholding_decisions": 14,
+   "verified_opportunity": true,
+   "withholding_decisions": 15
+  },
+  "HI 1930331196 C3 baseline-v2 blue": {
+   "first_divergence_step": 521,
+   "holder_class": "vehicle",
+   "objective": "80-point objective A",
+   "post_divergence_withholding_decisions": 9,
+   "verified_opportunity": true,
+   "withholding_decisions": 10
+  },
+  "HI 2120531121 C3 baseline-v2 blue": {
+   "first_divergence_step": 341,
+   "holder_class": "vehicle",
+   "objective": "50-point objective C",
+   "post_divergence_withholding_decisions": 12,
+   "verified_opportunity": true,
+   "withholding_decisions": 13
+  }
+ },
+ "inputs_sha256": "631009063c08d5e9b991bc936c4d86ea9f4d6ad3fc3c83accec7a84edf1ecc38",
+ "pilot_inert_configurations": [
+  [
+   "2120531121",
+   "C3"
+  ],
+  [
+   "1930331196",
+   "C2"
+  ]
+ ],
+ "populations": {
+  "H0": {
+   "departure_episodes": 78,
+   "departure_episodes_by_first_outcome": {
+    "all_moving": 1,
+    "withheld": 77
+   },
+   "departure_episodes_with_a_withholding": 77,
+   "objective_decision_outcomes": {
+    "all_moving": 4541,
+    "holder_remains": 16959,
+    "no_centre_occupant": 31186,
+    "withheld": 139
+   },
+   "ordered_occupant_levels": {
+    "eligible": 245
+   },
+   "scenario_sides_with_a_verified_opportunity": [
+    "1910631192 red",
+    "1930331196 red",
+    "2010211129 blue",
+    "2010431153 blue"
+   ],
+   "side_games": 16,
+   "side_games_with_a_first_divergence": 10,
+   "stationary_eligible_units_ordered_at_episode_start": 141,
+   "units_already_moving_at_episode_start": 2,
+   "valid_first_divergences": 4,
+   "verified_opportunities": 4
+  },
+  "HH": {
+   "departure_episodes": 66,
+   "departure_episodes_by_first_outcome": {
+    "withheld": 66
+   },
+   "departure_episodes_with_a_withholding": 66,
+   "objective_decision_outcomes": {
+    "all_moving": 5637,
+    "holder_remains": 10544,
+    "no_centre_occupant": 20074,
+    "withheld": 123
+   },
+   "ordered_occupant_levels": {
+    "eligible": 199
+   },
+   "scenario_sides_with_a_verified_opportunity": [
+    "2130511121 blue",
+    "2130511121 red"
+   ],
+   "side_games": 4,
+   "side_games_with_a_first_divergence": 4,
+   "stationary_eligible_units_ordered_at_episode_start": 110,
+   "units_already_moving_at_episode_start": 1,
+   "valid_first_divergences": 4,
+   "verified_opportunities": 4
+  },
+  "HI": {
+   "departure_episodes": 21,
+   "departure_episodes_by_first_outcome": {
+    "withheld": 21
+   },
+   "departure_episodes_with_a_withholding": 21,
+   "objective_decision_outcomes": {
+    "all_moving": 838,
+    "holder_remains": 13149,
+    "no_centre_occupant": 20677,
+    "withheld": 43
+   },
+   "ordered_occupant_levels": {
+    "eligible": 73
+   },
+   "scenario_sides_with_a_verified_opportunity": [
+    "1930331196 blue",
+    "1930331196 red",
+    "2120531121 blue"
+   ],
+   "side_games": 3,
+   "side_games_with_a_first_divergence": 3,
+   "stationary_eligible_units_ordered_at_episode_start": 38,
+   "units_already_moving_at_episode_start": 1,
+   "valid_first_divergences": 3,
+   "verified_opportunities": 3
+  }
+ },
+ "reasons": [],
+ "schema": "miaosuan-s31-preflight/1",
+ "sides": [
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "blue",
+   "condition": "H1",
+   "decisions": 2881,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "withheld": 19
+    },
+    "count": 19,
+    "stationary_eligible_units_ordered_at_start": 27,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 19
+   },
+   "first_divergence": {
+    "decision": 162,
+    "destination": "50-point objective B",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 1,
+    "first_enemy_seen_step": 20,
+    "first_own_shot_step": 119,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": false,
+    "holder_travel_steps": 140,
+    "objective": "50-point objective A",
+    "occupants": 1,
+    "potential_congestion": true,
+    "prefix_before_any_enemy_was_seen": false,
+    "recorded_objective_lost_steps_after": 260,
+    "routes_through_centre": 8,
+    "step": 161,
+    "valid": true
+   },
+   "independent_check_findings": 0,
+   "label": "HH p01 baseline-v2 blue",
+   "ordered_occupant_levels": {
+    "eligible": 57
+   },
+   "outcomes": {
+    "all_moving": 1248,
+    "holder_remains": 5232,
+    "no_centre_occupant": 9990,
+    "withheld": 38
+   },
+   "play_decisions": 2880,
+   "population": "HH",
+   "post_divergence_withholding_decisions": 30,
+   "scenario": "2130511121",
+   "verified_opportunity": true,
+   "withholding_decisions": 31,
+   "withholdings": 38
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "red",
+   "condition": "H2",
+   "decisions": 2881,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "withheld": 11
+    },
+    "count": 11,
+    "stationary_eligible_units_ordered_at_start": 23,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 11
+   },
+   "first_divergence": {
+    "decision": 402,
+    "destination": "80-point objective B",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 3,
+    "first_enemy_seen_step": 16,
+    "first_own_shot_step": 100,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": true,
+    "holder_travel_steps": 80,
+    "objective": "50-point objective D",
+    "occupants": 3,
+    "potential_congestion": false,
+    "prefix_before_any_enemy_was_seen": false,
+    "recorded_objective_lost_steps_after": 121,
+    "routes_through_centre": 0,
+    "step": 401,
+    "valid": true
+   },
+   "independent_check_findings": 0,
+   "label": "HH p02 baseline-v2 red",
+   "ordered_occupant_levels": {
+    "eligible": 36
+   },
+   "outcomes": {
+    "all_moving": 472,
+    "no_centre_occupant": 366,
+    "withheld": 19
+   },
+   "play_decisions": 2880,
+   "population": "HH",
+   "post_divergence_withholding_decisions": 16,
+   "scenario": "2130511121",
+   "verified_opportunity": true,
+   "withholding_decisions": 17,
+   "withholdings": 19
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "blue",
+   "condition": "H1",
+   "decisions": 2881,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "withheld": 16
+    },
+    "count": 16,
+    "stationary_eligible_units_ordered_at_start": 23,
+    "units_already_moving_at_start": 1,
+    "with_a_withholding": 16
+   },
+   "first_divergence": {
+    "decision": 162,
+    "destination": "50-point objective B",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 1,
+    "first_enemy_seen_step": 20,
+    "first_own_shot_step": 119,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": false,
+    "holder_travel_steps": 140,
+    "objective": "50-point objective A",
+    "occupants": 1,
+    "potential_congestion": true,
+    "prefix_before_any_enemy_was_seen": false,
+    "recorded_objective_lost_steps_after": 260,
+    "routes_through_centre": 8,
+    "step": 161,
+    "valid": true
+   },
+   "independent_check_findings": 0,
+   "label": "HH p03 baseline-v2 blue",
+   "ordered_occupant_levels": {
+    "eligible": 51
+   },
+   "outcomes": {
+    "all_moving": 3277,
+    "holder_remains": 5312,
+    "no_centre_occupant": 8692,
+    "withheld": 35
+   },
+   "play_decisions": 2880,
+   "population": "HH",
+   "post_divergence_withholding_decisions": 27,
+   "scenario": "2130511121",
+   "verified_opportunity": true,
+   "withholding_decisions": 28,
+   "withholdings": 35
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "red",
+   "condition": "H2",
+   "decisions": 2881,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "withheld": 20
+    },
+    "count": 20,
+    "stationary_eligible_units_ordered_at_start": 37,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 20
+   },
+   "first_divergence": {
+    "decision": 402,
+    "destination": "80-point objective B",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 3,
+    "first_enemy_seen_step": 16,
+    "first_own_shot_step": 100,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": true,
+    "holder_travel_steps": 80,
+    "objective": "50-point objective D",
+    "occupants": 3,
+    "potential_congestion": false,
+    "prefix_before_any_enemy_was_seen": false,
+    "recorded_objective_lost_steps_after": 80,
+    "routes_through_centre": 0,
+    "step": 401,
+    "valid": true
+   },
+   "independent_check_findings": 0,
+   "label": "HH p04 baseline-v2 red",
+   "ordered_occupant_levels": {
+    "eligible": 55
+   },
+   "outcomes": {
+    "all_moving": 640,
+    "no_centre_occupant": 1026,
+    "withheld": 31
+   },
+   "play_decisions": 2880,
+   "population": "HH",
+   "post_divergence_withholding_decisions": 27,
+   "scenario": "2130511121",
+   "verified_opportunity": true,
+   "withholding_decisions": 28,
+   "withholdings": 31
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "red",
+   "condition": "C2",
+   "decisions": 2881,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "withheld": 7
+    },
+    "count": 7,
+    "stationary_eligible_units_ordered_at_start": 10,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 7
+   },
+   "first_divergence": {
+    "decision": 362,
+    "destination": "50-point objective C",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 1,
+    "first_enemy_seen_step": 535,
+    "first_own_shot_step": 610,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": true,
+    "holder_travel_steps": 80,
+    "objective": "50-point objective A",
+    "occupants": 1,
+    "potential_congestion": true,
+    "prefix_before_any_enemy_was_seen": true,
+    "recorded_objective_lost_steps_after": null,
+    "routes_through_centre": 10,
+    "step": 361,
+    "valid": true
+   },
+   "independent_check_findings": 0,
+   "label": "HI 1930331196 C2 baseline-v2 red",
+   "ordered_occupant_levels": {
+    "eligible": 29
+   },
+   "outcomes": {
+    "all_moving": 351,
+    "holder_remains": 4552,
+    "no_centre_occupant": 6484,
+    "withheld": 18
+   },
+   "play_decisions": 2880,
+   "population": "HI",
+   "post_divergence_withholding_decisions": 14,
+   "scenario": "1930331196",
+   "verified_opportunity": true,
+   "withholding_decisions": 15,
+   "withholdings": 18
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "blue",
+   "condition": "C3",
+   "decisions": 2881,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "withheld": 9
+    },
+    "count": 9,
+    "stationary_eligible_units_ordered_at_start": 20,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 9
+   },
+   "first_divergence": {
+    "decision": 522,
+    "destination": "50-point objective A",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 2,
+    "first_enemy_seen_step": 108,
+    "first_own_shot_step": 211,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": true,
+    "holder_travel_steps": 60,
+    "objective": "80-point objective A",
+    "occupants": 2,
+    "potential_congestion": true,
+    "prefix_before_any_enemy_was_seen": false,
+    "recorded_objective_lost_steps_after": null,
+    "routes_through_centre": 8,
+    "step": 521,
+    "valid": true
+   },
+   "independent_check_findings": 0,
+   "label": "HI 1930331196 C3 baseline-v2 blue",
+   "ordered_occupant_levels": {
+    "eligible": 22
+   },
+   "outcomes": {
+    "all_moving": 209,
+    "holder_remains": 3998,
+    "no_centre_occupant": 6934,
+    "withheld": 10
+   },
+   "play_decisions": 2880,
+   "population": "HI",
+   "post_divergence_withholding_decisions": 9,
+   "scenario": "1930331196",
+   "verified_opportunity": true,
+   "withholding_decisions": 10,
+   "withholdings": 10
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "blue",
+   "condition": "C3",
+   "decisions": 2881,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "withheld": 5
+    },
+    "count": 5,
+    "stationary_eligible_units_ordered_at_start": 8,
+    "units_already_moving_at_start": 1,
+    "with_a_withholding": 5
+   },
+   "first_divergence": {
+    "decision": 342,
+    "destination": "80-point objective B",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 1,
+    "first_enemy_seen_step": 60,
+    "first_own_shot_step": 167,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": true,
+    "holder_travel_steps": 140,
+    "objective": "50-point objective C",
+    "occupants": 1,
+    "potential_congestion": true,
+    "prefix_before_any_enemy_was_seen": false,
+    "recorded_objective_lost_steps_after": null,
+    "routes_through_centre": 7,
+    "step": 341,
+    "valid": true
+   },
+   "independent_check_findings": 0,
+   "label": "HI 2120531121 C3 baseline-v2 blue",
+   "ordered_occupant_levels": {
+    "eligible": 22
+   },
+   "outcomes": {
+    "all_moving": 278,
+    "holder_remains": 4599,
+    "no_centre_occupant": 7259,
+    "withheld": 15
+   },
+   "play_decisions": 2880,
+   "population": "HI",
+   "post_divergence_withholding_decisions": 12,
+   "scenario": "2120531121",
+   "verified_opportunity": true,
+   "withholding_decisions": 13,
+   "withholdings": 15
+  },
+  {
+   "baseline_v2_differs_from_recorded": 6,
+   "colour": "blue",
+   "condition": "C1",
+   "decisions": 1801,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "withheld": 2
+    },
+    "count": 2,
+    "stationary_eligible_units_ordered_at_start": 4,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 2
+   },
+   "first_divergence": {
+    "decision": 462,
+    "destination": "80-point objective A",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 2,
+    "first_enemy_seen_step": 521,
+    "first_own_shot_step": 521,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": true,
+    "holder_travel_steps": 180,
+    "objective": "50-point objective A",
+    "occupants": 2,
+    "potential_congestion": true,
+    "prefix_before_any_enemy_was_seen": true,
+    "recorded_objective_lost_steps_after": 141,
+    "routes_through_centre": 4,
+    "step": 461,
+    "valid": false
+   },
+   "independent_check_findings": 0,
+   "label": "H0 1910631192 blue",
+   "ordered_occupant_levels": {
+    "eligible": 8
+   },
+   "outcomes": {
+    "all_moving": 113,
+    "holder_remains": 997,
+    "no_centre_occupant": 1182,
+    "withheld": 4
+   },
+   "play_decisions": 1800,
+   "population": "H0",
+   "post_divergence_withholding_decisions": 3,
+   "scenario": "1910631192",
+   "verified_opportunity": false,
+   "withholding_decisions": 4,
+   "withholdings": 4
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "red",
+   "condition": "C1",
+   "decisions": 1801,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "withheld": 2
+    },
+    "count": 2,
+    "stationary_eligible_units_ordered_at_start": 2,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 2
+   },
+   "first_divergence": {
+    "decision": 442,
+    "destination": "50-point objective A",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 1,
+    "first_enemy_seen_step": 521,
+    "first_own_shot_step": 521,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": true,
+    "holder_travel_steps": 160,
+    "objective": "80-point objective A",
+    "occupants": 1,
+    "potential_congestion": false,
+    "prefix_before_any_enemy_was_seen": true,
+    "recorded_objective_lost_steps_after": 201,
+    "routes_through_centre": 3,
+    "step": 441,
+    "valid": true
+   },
+   "independent_check_findings": 0,
+   "label": "H0 1910631192 red",
+   "ordered_occupant_levels": {
+    "eligible": 4
+   },
+   "outcomes": {
+    "all_moving": 96,
+    "holder_remains": 40,
+    "no_centre_occupant": 263,
+    "withheld": 3
+   },
+   "play_decisions": 1800,
+   "population": "H0",
+   "post_divergence_withholding_decisions": 2,
+   "scenario": "1910631192",
+   "verified_opportunity": true,
+   "withholding_decisions": 3,
+   "withholdings": 3
+  },
+  {
+   "baseline_v2_differs_from_recorded": 7,
+   "colour": "blue",
+   "condition": "C1",
+   "decisions": 2881,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "all_moving": 1,
+     "withheld": 14
+    },
+    "count": 15,
+    "stationary_eligible_units_ordered_at_start": 17,
+    "units_already_moving_at_start": 2,
+    "with_a_withholding": 14
+   },
+   "first_divergence": {
+    "decision": 682,
+    "destination": "50-point objective A",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 2,
+    "first_enemy_seen_step": 80,
+    "first_own_shot_step": 211,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": false,
+    "holder_travel_steps": 60,
+    "objective": "80-point objective A",
+    "occupants": 2,
+    "potential_congestion": false,
+    "prefix_before_any_enemy_was_seen": false,
+    "recorded_objective_lost_steps_after": 715,
+    "routes_through_centre": 2,
+    "step": 681,
+    "valid": false
+   },
+   "independent_check_findings": 0,
+   "label": "H0 1930331196 blue",
+   "ordered_occupant_levels": {
+    "eligible": 29
+   },
+   "outcomes": {
+    "all_moving": 778,
+    "holder_remains": 69,
+    "no_centre_occupant": 3829,
+    "withheld": 20
+   },
+   "play_decisions": 2880,
+   "population": "H0",
+   "post_divergence_withholding_decisions": 19,
+   "scenario": "1930331196",
+   "verified_opportunity": false,
+   "withholding_decisions": 20,
+   "withholdings": 20
+  },
+  {
+   "baseline_v2_differs_from_recorded": 18,
+   "colour": "red",
+   "condition": "C1",
+   "decisions": 2881,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "withheld": 17
+    },
+    "count": 17,
+    "stationary_eligible_units_ordered_at_start": 49,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 17
+   },
+   "first_divergence": {
+    "decision": 362,
+    "destination": "50-point objective C",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 1,
+    "first_enemy_seen_step": 80,
+    "first_own_shot_step": 187,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": true,
+    "holder_travel_steps": 80,
+    "objective": "50-point objective A",
+    "occupants": 1,
+    "potential_congestion": true,
+    "prefix_before_any_enemy_was_seen": false,
+    "recorded_objective_lost_steps_after": 381,
+    "routes_through_centre": 10,
+    "step": 361,
+    "valid": true
+   },
+   "independent_check_findings": 0,
+   "label": "H0 1930331196 red",
+   "ordered_occupant_levels": {
+    "eligible": 55
+   },
+   "outcomes": {
+    "all_moving": 744,
+    "holder_remains": 290,
+    "no_centre_occupant": 5772,
+    "withheld": 21
+   },
+   "play_decisions": 2880,
+   "population": "H0",
+   "post_divergence_withholding_decisions": 19,
+   "scenario": "1930331196",
+   "verified_opportunity": true,
+   "withholding_decisions": 20,
+   "withholdings": 21
+  },
+  {
+   "baseline_v2_differs_from_recorded": 1,
+   "colour": "blue",
+   "condition": "C1",
+   "decisions": 1801,
+   "departure_episodes": {
+    "by_first_outcome": {},
+    "count": 0,
+    "stationary_eligible_units_ordered_at_start": 0,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 0
+   },
+   "first_divergence": null,
+   "independent_check_findings": 0,
+   "label": "H0 2010131194 blue",
+   "ordered_occupant_levels": {},
+   "outcomes": {
+    "holder_remains": 1554
+   },
+   "play_decisions": 1800,
+   "population": "H0",
+   "post_divergence_withholding_decisions": 0,
+   "scenario": "2010131194",
+   "verified_opportunity": false,
+   "withholding_decisions": 0,
+   "withholdings": 0
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "red",
+   "condition": "C1",
+   "decisions": 1801,
+   "departure_episodes": {
+    "by_first_outcome": {},
+    "count": 0,
+    "stationary_eligible_units_ordered_at_start": 0,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 0
+   },
+   "first_divergence": null,
+   "independent_check_findings": 0,
+   "label": "H0 2010131194 red",
+   "ordered_occupant_levels": {},
+   "outcomes": {},
+   "play_decisions": 1800,
+   "population": "H0",
+   "post_divergence_withholding_decisions": 0,
+   "scenario": "2010131194",
+   "verified_opportunity": false,
+   "withholding_decisions": 0,
+   "withholdings": 0
+  },
+  {
+   "baseline_v2_differs_from_recorded": 1,
+   "colour": "blue",
+   "condition": "C1",
+   "decisions": 1801,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "withheld": 1
+    },
+    "count": 1,
+    "stationary_eligible_units_ordered_at_start": 1,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 1
+   },
+   "first_divergence": {
+    "decision": 122,
+    "destination": "80-point objective A",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 1,
+    "first_enemy_seen_step": 301,
+    "first_own_shot_step": 320,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": true,
+    "holder_travel_steps": 180,
+    "objective": "50-point objective A",
+    "occupants": 1,
+    "potential_congestion": true,
+    "prefix_before_any_enemy_was_seen": true,
+    "recorded_objective_lost_steps_after": null,
+    "routes_through_centre": 4,
+    "step": 121,
+    "valid": true
+   },
+   "independent_check_findings": 0,
+   "label": "H0 2010211129 blue",
+   "ordered_occupant_levels": {
+    "eligible": 3
+   },
+   "outcomes": {
+    "all_moving": 57,
+    "holder_remains": 2578,
+    "no_centre_occupant": 540,
+    "withheld": 2
+   },
+   "play_decisions": 1800,
+   "population": "H0",
+   "post_divergence_withholding_decisions": 1,
+   "scenario": "2010211129",
+   "verified_opportunity": true,
+   "withholding_decisions": 2,
+   "withholdings": 2
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "red",
+   "condition": "C1",
+   "decisions": 1801,
+   "departure_episodes": {
+    "by_first_outcome": {},
+    "count": 0,
+    "stationary_eligible_units_ordered_at_start": 0,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 0
+   },
+   "first_divergence": null,
+   "independent_check_findings": 0,
+   "label": "H0 2010211129 red",
+   "ordered_occupant_levels": {},
+   "outcomes": {},
+   "play_decisions": 1800,
+   "population": "H0",
+   "post_divergence_withholding_decisions": 0,
+   "scenario": "2010211129",
+   "verified_opportunity": false,
+   "withholding_decisions": 0,
+   "withholdings": 0
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "blue",
+   "condition": "C1",
+   "decisions": 1001,
+   "departure_episodes": {
+    "by_first_outcome": {},
+    "count": 0,
+    "stationary_eligible_units_ordered_at_start": 0,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 0
+   },
+   "first_divergence": null,
+   "independent_check_findings": 0,
+   "label": "H0 201033019601 blue",
+   "ordered_occupant_levels": {},
+   "outcomes": {},
+   "play_decisions": 1000,
+   "population": "H0",
+   "post_divergence_withholding_decisions": 0,
+   "scenario": "201033019601",
+   "verified_opportunity": false,
+   "withholding_decisions": 0,
+   "withholdings": 0
+  },
+  {
+   "baseline_v2_differs_from_recorded": 0,
+   "colour": "red",
+   "condition": "C1",
+   "decisions": 1001,
+   "departure_episodes": {
+    "by_first_outcome": {},
+    "count": 0,
+    "stationary_eligible_units_ordered_at_start": 0,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 0
+   },
+   "first_divergence": null,
+   "independent_check_findings": 0,
+   "label": "H0 201033019601 red",
+   "ordered_occupant_levels": {},
+   "outcomes": {
+    "holder_remains": 718
+   },
+   "play_decisions": 1000,
+   "population": "H0",
+   "post_divergence_withholding_decisions": 0,
+   "scenario": "201033019601",
+   "verified_opportunity": false,
+   "withholding_decisions": 0,
+   "withholdings": 0
+  },
+  {
+   "baseline_v2_differs_from_recorded": 7,
+   "colour": "blue",
+   "condition": "C1",
+   "decisions": 1801,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "withheld": 2
+    },
+    "count": 2,
+    "stationary_eligible_units_ordered_at_start": 2,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 2
+   },
+   "first_divergence": {
+    "decision": 343,
+    "destination": "80-point objective A",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 1,
+    "first_enemy_seen_step": 140,
+    "first_own_shot_step": 140,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": true,
+    "holder_travel_steps": 180,
+    "objective": "50-point objective A",
+    "occupants": 1,
+    "potential_congestion": false,
+    "prefix_before_any_enemy_was_seen": false,
+    "recorded_objective_lost_steps_after": null,
+    "routes_through_centre": 3,
+    "step": 342,
+    "valid": true
+   },
+   "independent_check_findings": 0,
+   "label": "H0 2010431153 blue",
+   "ordered_occupant_levels": {
+    "eligible": 2
+   },
+   "outcomes": {
+    "all_moving": 114,
+    "holder_remains": 1268,
+    "no_centre_occupant": 1342,
+    "withheld": 2
+   },
+   "play_decisions": 1800,
+   "population": "H0",
+   "post_divergence_withholding_decisions": 1,
+   "scenario": "2010431153",
+   "verified_opportunity": true,
+   "withholding_decisions": 2,
+   "withholdings": 2
+  },
+  {
+   "baseline_v2_differs_from_recorded": 1,
+   "colour": "red",
+   "condition": "C1",
+   "decisions": 1801,
+   "departure_episodes": {
+    "by_first_outcome": {},
+    "count": 0,
+    "stationary_eligible_units_ordered_at_start": 0,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 0
+   },
+   "first_divergence": null,
+   "independent_check_findings": 0,
+   "label": "H0 2010431153 red",
+   "ordered_occupant_levels": {},
+   "outcomes": {},
+   "play_decisions": 1800,
+   "population": "H0",
+   "post_divergence_withholding_decisions": 0,
+   "scenario": "2010431153",
+   "verified_opportunity": false,
+   "withholding_decisions": 0,
+   "withholdings": 0
+  },
+  {
+   "baseline_v2_differs_from_recorded": 29,
+   "colour": "blue",
+   "condition": "C1",
+   "decisions": 2881,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "withheld": 5
+    },
+    "count": 5,
+    "stationary_eligible_units_ordered_at_start": 7,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 5
+   },
+   "first_divergence": {
+    "decision": 342,
+    "destination": "80-point objective B",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 1,
+    "first_enemy_seen_step": 40,
+    "first_own_shot_step": 167,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": false,
+    "holder_travel_steps": 140,
+    "objective": "50-point objective C",
+    "occupants": 1,
+    "potential_congestion": true,
+    "prefix_before_any_enemy_was_seen": false,
+    "recorded_objective_lost_steps_after": null,
+    "routes_through_centre": 7,
+    "step": 341,
+    "valid": false
+   },
+   "independent_check_findings": 0,
+   "label": "H0 2120531121 blue",
+   "ordered_occupant_levels": {
+    "eligible": 17
+   },
+   "outcomes": {
+    "all_moving": 178,
+    "holder_remains": 2421,
+    "no_centre_occupant": 9353,
+    "withheld": 10
+   },
+   "play_decisions": 2880,
+   "population": "H0",
+   "post_divergence_withholding_decisions": 9,
+   "scenario": "2120531121",
+   "verified_opportunity": false,
+   "withholding_decisions": 10,
+   "withholdings": 10
+  },
+  {
+   "baseline_v2_differs_from_recorded": 9,
+   "colour": "red",
+   "condition": "C1",
+   "decisions": 2881,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "withheld": 2
+    },
+    "count": 2,
+    "stationary_eligible_units_ordered_at_start": 5,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 2
+   },
+   "first_divergence": {
+    "decision": 282,
+    "destination": "50-point objective B",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 3,
+    "first_enemy_seen_step": 40,
+    "first_own_shot_step": 135,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": false,
+    "holder_travel_steps": 60,
+    "objective": "50-point objective A",
+    "occupants": 3,
+    "potential_congestion": true,
+    "prefix_before_any_enemy_was_seen": false,
+    "recorded_objective_lost_steps_after": 221,
+    "routes_through_centre": 8,
+    "step": 281,
+    "valid": false
+   },
+   "independent_check_findings": 0,
+   "label": "H0 2120531121 red",
+   "ordered_occupant_levels": {
+    "eligible": 17
+   },
+   "outcomes": {
+    "all_moving": 148,
+    "no_centre_occupant": 163,
+    "withheld": 9
+   },
+   "play_decisions": 2880,
+   "population": "H0",
+   "post_divergence_withholding_decisions": 8,
+   "scenario": "2120531121",
+   "verified_opportunity": false,
+   "withholding_decisions": 9,
+   "withholdings": 9
+  },
+  {
+   "baseline_v2_differs_from_recorded": 33,
+   "colour": "blue",
+   "condition": "C1",
+   "decisions": 2881,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "withheld": 21
+    },
+    "count": 21,
+    "stationary_eligible_units_ordered_at_start": 34,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 21
+   },
+   "first_divergence": {
+    "decision": 162,
+    "destination": "50-point objective B",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 1,
+    "first_enemy_seen_step": 20,
+    "first_own_shot_step": 119,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": false,
+    "holder_travel_steps": 140,
+    "objective": "50-point objective A",
+    "occupants": 1,
+    "potential_congestion": true,
+    "prefix_before_any_enemy_was_seen": false,
+    "recorded_objective_lost_steps_after": 260,
+    "routes_through_centre": 8,
+    "step": 161,
+    "valid": false
+   },
+   "independent_check_findings": 0,
+   "label": "H0 2130511121 blue",
+   "ordered_occupant_levels": {
+    "eligible": 72
+   },
+   "outcomes": {
+    "all_moving": 1897,
+    "holder_remains": 7024,
+    "no_centre_occupant": 7635,
+    "withheld": 47
+   },
+   "play_decisions": 2880,
+   "population": "H0",
+   "post_divergence_withholding_decisions": 36,
+   "scenario": "2130511121",
+   "verified_opportunity": false,
+   "withholding_decisions": 37,
+   "withholdings": 47
+  },
+  {
+   "baseline_v2_differs_from_recorded": 11,
+   "colour": "red",
+   "condition": "C1",
+   "decisions": 2881,
+   "departure_episodes": {
+    "by_first_outcome": {
+     "withheld": 11
+    },
+    "count": 11,
+    "stationary_eligible_units_ordered_at_start": 20,
+    "units_already_moving_at_start": 0,
+    "with_a_withholding": 11
+   },
+   "first_divergence": {
+    "decision": 402,
+    "destination": "80-point objective B",
+    "destination_owned_at_or_before_the_decision": false,
+    "eligible": 3,
+    "first_enemy_seen_step": 16,
+    "first_own_shot_step": 100,
+    "holder_class": "vehicle",
+    "holder_first_owner_of_its_destination_on_the_record": false,
+    "holder_travel_steps": 80,
+    "objective": "50-point objective D",
+    "occupants": 3,
+    "potential_congestion": false,
+    "prefix_before_any_enemy_was_seen": false,
+    "recorded_objective_lost_steps_after": 41,
+    "routes_through_centre": 0,
+    "step": 401,
+    "valid": false
+   },
+   "independent_check_findings": 0,
+   "label": "H0 2130511121 red",
+   "ordered_occupant_levels": {
+    "eligible": 38
+   },
+   "outcomes": {
+    "all_moving": 416,
+    "no_centre_occupant": 1107,
+    "withheld": 21
+   },
+   "play_decisions": 2880,
+   "population": "H0",
+   "post_divergence_withholding_decisions": 18,
+   "scenario": "2130511121",
+   "verified_opportunity": false,
+   "withholding_decisions": 19,
+   "withholdings": 21
+  }
+ ],
+ "study_id": "s31-t13-k2"
+}
