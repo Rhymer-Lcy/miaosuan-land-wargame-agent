@@ -1,0 +1,283 @@
+{
+ "killed": 50,
+ "mutations": [
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/capability.py",
+   "mutation": "remembered threat never fades"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/capability.py",
+   "mutation": "enemy-held objectives not excluded"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/capability.py",
+   "mutation": "threat horizon ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/config.py",
+   "mutation": "other classes weighted differently"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/capability.py",
+   "mutation": "holder rank not infantry first"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/coalition.py",
+   "mutation": "secure without enough defence"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/coalition.py",
+   "mutation": "commit ratio ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/coalition.py",
+   "mutation": "dwell ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/coalition.py",
+   "mutation": "withdrawal on remembered threat"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/coalition.py",
+   "mutation": "cheaper units withdrawn"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/coalition.py",
+   "mutation": "coalition below the capture ratio"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/coalition.py",
+   "mutation": "secure keeps every defender"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/coalition.py",
+   "mutation": "defenders not kept when defending"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/coalition.py",
+   "mutation": "inbound arrivals not counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/coalition.py",
+   "mutation": "reinforcement grace dropped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/allocator.py",
+   "mutation": "reinforcement deadline ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/allocator.py",
+   "mutation": "safe transport ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/allocator.py",
+   "mutation": "power not valued"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/coalition.py",
+   "mutation": "skip becomes capture"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/policy.py",
+   "mutation": "kept units stay in the pool"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/policy.py",
+   "mutation": "guided carrier acts"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/policy.py",
+   "mutation": "withdrawals not ordered"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/support.py",
+   "mutation": "impact near own units"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/support.py",
+   "mutation": "arrival window ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/support.py",
+   "mutation": "guided target not reserved"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/support.py",
+   "mutation": "guided attack level 0 accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/support.py",
+   "mutation": "threat priority ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/validate.py",
+   "mutation": "guided option not checked"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/validate.py",
+   "mutation": "guided carrier acting allowed"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/validate.py",
+   "mutation": "guided gate ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/coalition/memory.py",
+   "mutation": "sightings never capped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_live.py",
+   "mutation": "latency stop widened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_live.py",
+   "mutation": "memory stop widened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_live.py",
+   "mutation": "deadlock threshold widened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_live.py",
+   "mutation": "friendly damage tolerated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_live.py",
+   "mutation": "control not subtracted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_live.py",
+   "mutation": "reject threshold loosened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_live.py",
+   "mutation": "promising threshold loosened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_live.py",
+   "mutation": "breadth loosened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_live.py",
+   "mutation": "collapse threshold loosened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_live.py",
+   "mutation": "stage B remaining force ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_live.py",
+   "mutation": "order not interleaved"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_live.py",
+   "mutation": "severe harm at the minimum"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_live.py",
+   "mutation": "A2 gate ignores Dbar"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_live.py",
+   "mutation": "control games gated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_offline.py",
+   "mutation": "alert share loosened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_offline.py",
+   "mutation": "retention share loosened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_offline.py",
+   "mutation": "model floor loosened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_offline.py",
+   "mutation": "fidelity not required"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s35_capture.py",
+   "mutation": "memory size never recorded"
+  }
+ ],
+ "schema": "miaosuan-s35-mutation/1",
+ "sources": {
+  "src/miaosuan_agent/coalition/allocator.py": "1889c4f8ae2a5555c20f784ad7338dad05f824e2e8c9e891030a9046b95bd199",
+  "src/miaosuan_agent/coalition/capability.py": "646de5a4818a3c48a8ef75ca76b91600f47008bfd35fab90835d5465220c52a3",
+  "src/miaosuan_agent/coalition/coalition.py": "24d480ea5bedecd2ee6faac94e3c10811ead45a64dff730787b659a0e6e517e3",
+  "src/miaosuan_agent/coalition/config.py": "3a6672f87a6f7a5aad119a31c1477891be02cddc6ac28c9492434e9654b66a02",
+  "src/miaosuan_agent/coalition/memory.py": "cb22dd1ca9b35c83742e0f7baf57e0a5577ec8bd9af6badd65e30fd18197b901",
+  "src/miaosuan_agent/coalition/policy.py": "c89cb0bcd1418fdac08012b751a07dade88cc1291873ad57dbb4aef608a86b19",
+  "src/miaosuan_agent/coalition/support.py": "e4d647d73e4d769016773ca1a99e201a897e5aa4db5824b85a0955b3e0d18fab",
+  "src/miaosuan_agent/coalition/validate.py": "4ead502dcf1bbad5e14aad5b9f9eab1b5360b29244e2954fdc89a0d970f1f474",
+  "src/miaosuan_agent/evaluation/s35_capture.py": "7c55e2afeb487b0b4805d06f4c2938a0898779b8bd963894f92685998bb6de8a",
+  "src/miaosuan_agent/evaluation/s35_live.py": "b742afa9abb09e3aa2e4c28fa0a9a152026821bdc5e612059bc67645dcebfc45",
+  "src/miaosuan_agent/evaluation/s35_offline.py": "1458aed299db23939bdd79ebce394f4399f795995ecf04f6741a90c9783ef880",
+  "tests/test_s35_card.py": "f35259458c78d3b041e4302b95aaaa72f06928ad6627f20032879789fb97f057",
+  "tests/test_s35_coalition.py": "1b248c75cac5b2b1f435f717ffc5c537d0b7d9e7ac40bbbc8bcaaa60df55265f",
+  "tests/test_s35_gaps.py": "e01774467336dce647185347094f7bc0bc881c1754d32f2fd8ae7b2335112fc5",
+  "tests/test_s35_live.py": "204b46d835e2bd6ef9759de4f04ad61cbc46acbe8fbf3a855c783de8333548c1",
+  "tests/test_s35_offline.py": "c87830c206ef3f3150e2dff2547ccccc9061d8fc990e3c8431889f7ab998734d"
+ },
+ "tests": [
+  "tests.test_s35_coalition",
+  "tests.test_s35_offline",
+  "tests.test_s35_live",
+  "tests.test_s35_card",
+  "tests.test_s35_gaps"
+ ],
+ "total": 50,
+ "unmutated_tests_pass": true
+}
