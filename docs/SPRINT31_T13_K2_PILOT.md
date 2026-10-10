@@ -302,6 +302,39 @@ head-to-head stop compared one game with references from games against another o
 mechanism executes on the engine without harming the inert-control score; they cannot show a benefit, since the inert
 side never contests an objective.
 
+### R8. Close-out
+
+* **Engine**: sessions 2798, 2799 and 2800 opened and closed under the card; session 2801 not opened and no session
+  2802. Read-only verify on the evaluation server: 2,800 sessions opened and closed, none unclosed, integrity ok, state
+  chain continuous, the last event the close of session 2800; ledger file SHA-256
+  `fde702863518b42eb983a206eab2fd3c870966cce338e61b8cfce129e3ebb799`. No installation, state file or configuration was
+  touched.
+* **Platform canary**: rebuilt from this branch into a scratch folder,
+  `a3d3b0229118c0a389d379b315a620465624222f93fcf39de115e8e9dde59511`, isolated smoke 62 steps with 0 mismatches; the
+  shared checkout's copy has the same digest. Neither the package, its builder nor the adapter changed.
+* **Tests**: the workstation suite at the results ran 2,506 tests, 114 skipped, exit 0 (the worktree has no ignored
+  private folders, so more tests skip); the clean GitHub clone of the registration the same counts. The stored game
+  analyses and the public report regenerate byte for byte on the server. The multi-hour private server suite was not
+  rerun: no existing source file changed.
+* **Document check** (`local/diagnostics/s31/doc_check.py`): every anchored clause and table row rebuilt from the
+  committed results, the private logs and the test files; every printed number derived or declared; 9 of 9 planted
+  single-number errors caught.
+* **Privacy and concurrent work**: the scan of every reachable blob before each push is compared as a multiset with the
+  106 accepted hit lines (results in the hand-over). The platform-compatibility files in the shared checkout and its
+  server folder were not touched; the server checkout stayed on `main` at `08aff3f`; `main` was not changed; only the
+  branch `sprint31-t13-k2` was pushed. Its final head is given in the hand-over; the server worktree is removed after the
+  final check, and the private captures stay under the ignored `local/` folders.
+
+### R9. Recommended next task (one)
+
+**The owner's review of the K2 result, then, if it is accepted, the registration of Sprint 29's H2 stop-to-engage
+mechanism check (T7-B1, two deterministic sessions) with no session before approval.** The garrison works as an engine
+mechanism, but in the only head-to-head game it retained nothing (red held no objective at the end and six of its eight
+holders were destroyed on their objectives), so a further K2 test is not the best use of sessions; game 3's losses
+(21 of 31 own ground units) point instead at the unprotected units that H2 addresses. If the owner instead wants the
+REJECT's attribution settled, the prerequisite is a same-opponent reference (first-ownership steps from full-step
+`baseline-v2` mirror games in 2130511121), which no existing record provides.
+
 ## Amendment A1 (after the pilot): the public report
 
 The registered report command (`scripts/s31_analysis.py report`) refused to write, as its sanitizer is designed to: it
