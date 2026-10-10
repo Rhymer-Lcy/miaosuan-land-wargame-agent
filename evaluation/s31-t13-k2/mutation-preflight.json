@@ -1,0 +1,134 @@
+{
+ "killed": 23,
+ "mutations": [
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k2.py",
+   "mutation": "no stop transition read as settling"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k2.py",
+   "mutation": "missing settle fields tolerated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k2.py",
+   "mutation": "timer upper bound dropped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k2.py",
+   "mutation": "timer lower bound dropped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k2.py",
+   "mutation": "deferred stop order tolerated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k2.py",
+   "mutation": "moving speed tolerated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k2.py",
+   "mutation": "stop flag 1 tolerated in settling"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k2.py",
+   "mutation": "state change tolerated in settling"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k2.py",
+   "mutation": "embark tolerated in settling"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k2.py",
+   "mutation": "settling limit widened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k2.py",
+   "mutation": "ambiguous state admitted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k2.py",
+   "mutation": "state change ignored for settled units"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t13_keep_one_k2.py",
+   "mutation": "K1 level C restored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_preflight.py",
+   "mutation": "restated fields tolerated missing"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_preflight.py",
+   "mutation": "restated deferred stop tolerated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_preflight.py",
+   "mutation": "restated timer bound dropped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_preflight.py",
+   "mutation": "restated state change for settled units ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_preflight.py",
+   "mutation": "independent findings ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_preflight.py",
+   "mutation": "HH colour opportunity not required"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_preflight.py",
+   "mutation": "fixed inert configuration not required"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_preflight.py",
+   "mutation": "inert configurations by priority"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_preflight.py",
+   "mutation": "names not restored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s31_preflight.py",
+   "mutation": "K1 rule in the analysis"
+  }
+ ],
+ "phase": "preflight",
+ "schema": "miaosuan-s31-mutation/1",
+ "sources": {
+  "src/miaosuan_agent/evaluation/s31_preflight.py": "ec4bbc83d4382f901badb0ca2811e7a666063ad2250b7b06d1f14ec704d9a234",
+  "src/miaosuan_agent/experiments/t13_keep_one_k2.py": "782e4864f1e3dfe7a9108b11079df863f129794b07595f3a9acd71f4ded101ce",
+  "tests/test_s31_preflight.py": "f2707a0518a8756f10fc7a289058865b9c99ed839641ac7eba43248cdb275e35",
+  "tests/test_t13_keep_one_k2.py": "e0cf6d0937790103e4ea235ba5b2898ceee553b2ab5805504d227242a1cabdfd"
+ },
+ "tests": [
+  "tests.test_t13_keep_one_k2",
+  "tests.test_s31_preflight"
+ ],
+ "total": 23,
+ "unmutated_tests_pass": true
+}
