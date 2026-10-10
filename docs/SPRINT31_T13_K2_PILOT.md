@@ -195,3 +195,118 @@ runner, game entry, observers and analysis end to end on the server: a recorded 
 analysis regenerates, an executed garrison with the transition completed and no mechanism failure, the gate closed on
 the stand-in's harm, the next position refused behind it, the seats of positions 2 and 3, 5,762 reconstructed decisions
 with no finding, and every refusal.
+
+## 7. K2 preflight results (2026-10-10)
+
+Read from the committed `evaluation/s31-t13-k2/preflight.json`, which `scripts/s31_preflight.py run --check`
+regenerates byte for byte on the evaluation server. Sections 1 to 5, the code and the frozen inputs were pushed at
+2026-10-10T10:04:23+08:00 (`8c9ed0ba6fc53e621561997cce29cc2cbc6f9b1a`, tree `961106bd387334ffcf320ed0d36af6dbf58b3461`);
+a fresh GitHub clone had the same commit, tree and files; the preflight was then run once.
+
+* **Fidelity**: every anchor reproduced (H0 33,696 decisions, 33,680 play decisions, 123 differences; HH 11,524 and HI
+  8,643 decisions equal to the recorded seat; 16, 4 and 3 side-games); 0 independent-check findings.
+* **Disposition `K2_PREFLIGHT_PASS`.** Every departure episode of the genuine populations now begins with a
+  withholding (HH 66 of 66, HI 21 of 21; H0 77 of 78). Verified first divergences: HH blue p01 and p03 at step 161 (the
+  50-point objective A), HH red p02 and p04 at step 401 (the 50-point objective D), HI 2120531121 C3 at step 341 (the
+  50-point objective C), 1930331196 C2 at step 361 (the 50-point objective A) and 1930331196 C3 at step 521; H0 has 4
+  valid first divergences.
+* **Onward labels** (historical): in both fixed inert configurations and in both HH red games the kept unit was, on the
+  record, among the first owners of the objective its withheld MOVE pointed to; in the HH blue games it was not.
+
+## 8. Pilot results (2026-10-10)
+
+### R1. Order of work
+
+Section 6, the pilot's code, tests, mutation record and card were pushed at 2026-10-10T10:31:34+08:00
+(`46f265092e3ea59600713617d27494edc3fc93da`, tree `a2834ac9a87dd53518422eaf588c984ce3e78e09`); a fresh GitHub clone had
+the same commit and tree, every Sprint 31 file byte-identical, the card rebuilding byte for byte, and its full suite
+passing (2,506 tests, 114 skipped). The server worktree was fast-forwarded to that commit; there the card check, the
+preflight regeneration, the stand-in rehearsal on the committed tree and 204 focused tests passed, and a read-only
+verify showed 2,797 sessions, none unclosed. Each game was then started with `scripts/run_s31_pilot.py --position n`,
+serially, pinned to NUMA node 0; every record names the registered commit.
+
+### R2. Sessions and stage decisions
+
+| Position | Session | Game | Steps | Wall (s) | Structural stops | Mechanism failures | Harm stops | Gate |
+|---:|---:|---|---:|---:|---|---|---|---|
+| 1 | 2798 | 2120531121 C3, candidate blue against the inert control | 2,881 | 112.1 | none | none | none | open |
+| 2 | 2799 | 1930331196 C2, candidate red against the inert control | 2,881 | 119.9 | none | none | none | open |
+| 3 | 2800 | 2130511121 H1, candidate red against `baseline-v2` blue | 2,881 | 148.2 | none | none | an opening objective never first-owned (the 80-point objective B) | **closed** |
+
+**Three sessions ran; session 2801 (the candidate blue) was not opened, and no session 2802 exists.** This is not a
+four-game result. In every game the live reconstruction agreed with every decision of every policy seat (2,881, 2,881
+and 5,762 decisions), with 0 memory-chain differences, 0 unregistered differences from `baseline-v2`, 0
+independent-check findings, 0 contract errors, 0 replay mismatches and 0 refused candidate actions; the ledger audit
+after each game found nothing.
+
+### R3. The mechanism on the engine
+
+| | Game 1 | Game 2 | Game 3 |
+|---|---:|---:|---:|
+| withholding decisions | 240 | 580 | 530 |
+| withheld MOVEs | 616 | 1,579 | 1,085 |
+| of which the holder was still settling | 320 | 476 | 425 |
+| retained at the next decision | 616 | 1,579 | 1,079 |
+| holder absent at the next decision | 0 | 0 | 6 |
+| departures without release (M1) | 0 | 0 | 0 |
+| garrison episodes (all executed) | 6 | 10 | 8 |
+| ended: released / holder destroyed / open at the end | 2 / 0 / 4 | 6 / 0 / 4 | 2 / 6 / 0 |
+| holders that completed the stop transition on the centre | 4 | 5 | 5 |
+| longest interference run (decisions) | 0 | 20 | 20 |
+
+Every release was a change of holder at the same objective (the rule selected another eligible occupant). A
+withheld MOVE never failed to keep its holder: every withholding was followed by the holder still on the centre with an
+empty path, or by its absence after destruction. Settling holders completed their 75-step transition on the centre and
+stayed stationary afterwards, while `baseline-v2` kept ordering them on (each withholding is a repeated MOVE).
+
+### R4. Objectives and scores against the controls
+
+| | Game 1 (blue, inert) | Game 2 (red, inert) | Game 3 (red, `baseline-v2`) |
+|---|---|---|---|
+| occupy (control) | 310 (310 in all 15) | 310 (310 in all 15) | 0 (0 to 50, mean 20) |
+| margin (control minimum, mean, maximum) | 599 (559, 1765/3, 599) | 258 (258, 4094/15, 274) | -861 (-1,055, -13049/15, -719) |
+| attack, remain, total | 108, 407, 825 | 16, 323, 649 | 276, 95, 371 |
+| objectives first-owned / held at the end | 5 / 5 | 5 / 5 | 4 / 0 |
+| ownership losses, recaptures | 0, 0 | 0, 0 | 4, 0 |
+| own ground units lost | 0 | 0 | 21 of 31 |
+
+Game 3 against its fifteen mirror controls (same scenario and seat, `baseline-v2` against itself): total 371 (274 to
+442, mean 5498/15), attack 276 (234 to 403), remain 95 (12 to 94: above every control). Red first-owned the 50-point
+objectives D (step 401), A (421) and B (581) and the 80-point objective A (761), lost all four, and never first-owned
+the 50-point objective C or the 80-point objectives B and C. None of the four losses happened while a holder stood on
+the objective; one (the 80-point objective A) was lost when its holder was destroyed. One game per seat is a
+diagnostic, not a comparison.
+
+### R5. Disposition: `K2_PILOT_REJECT`
+
+The gate after game 3 closed on a registered harm stop (`evaluation/s31-t13-k2/disposition.json`): red never
+first-owned the 80-point objective B, one of its four registered opening objectives. No mechanism failure and no
+structural stop occurred in any game. Nothing is promoted or uploaded, and no further session is opened. K2 is not
+repaired here.
+
+### R6. What the failure was (post hoc, read after the disposition; changes nothing)
+
+`local/diagnostics/s31/posthoc_p03.py` on game 3's private capture: blue (`baseline-v2`) first-owned the 80-point
+objective B at step 283 and held it to the end; red's first order toward it came at step 401. Nine red units received
+a `baseline-v2` MOVE to it: the MOVEs of three were withheld by K2 (they held the 50-point objectives D and B), six were
+sent; one reached the hex, and eight of the nine were destroyed before reaching it. So the registered reference, taken
+from the Sprint 12 games in which red faced the T9-v3 candidate rather than `baseline-v2`, assumed a capture that
+`baseline-v2` blue had already made before K2 could act: the stop fired as registered, but the evidence does not show
+that withholding those three MOVEs is what lost the objective. Also descriptive: K2 holders are exposed (six of game 3's
+eight holders were destroyed while holding), and holding did not prevent any of red's four losses.
+
+### R7. Evidence limits
+
+Three games: two against the inert control (one configuration each) and one head-to-head game in one seat. The
+head-to-head stop compared one game with references from games against another opponent. The inert games show that the
+mechanism executes on the engine without harming the inert-control score; they cannot show a benefit, since the inert
+side never contests an objective.
+
+## Amendment A1 (after the pilot): the public report
+
+The registered report command (`scripts/s31_analysis.py report`) refused to write, as its sanitizer is designed to: it
+published each game's session as a string of digits and keyed the gates by "position n", words made only of digits (the
+trap of Sprints 20, 23 and 25). The card pins that script, so it is not edited. `scripts/s31_report.py` calls the
+registered functions unchanged (`analyse`, `ledger_audit`, `disposition`, `public_game`) and changes only the
+presentation: the session is published as a number and the gates are keyed `p01` to `p03`. The stored analyses
+regenerate byte for byte, and the report regenerates with `--check`. No stop, gate or disposition logic changed.
