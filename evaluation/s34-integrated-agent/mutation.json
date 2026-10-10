@@ -1,0 +1,238 @@
+{
+ "killed": 41,
+ "mutations": [
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/traffic.py",
+   "mutation": "full planned stands stay open"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/traffic.py",
+   "mutation": "a full first hex counts as open"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/traffic.py",
+   "mutation": "destination cap off by one"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/traffic.py",
+   "mutation": "issued moves not registered"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/traffic.py",
+   "mutation": "blockers never reported"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/allocation.py",
+   "mutation": "late arrivals feasible"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/allocation.py",
+   "mutation": "committed movers ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/allocation.py",
+   "mutation": "objective room ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/allocation.py",
+   "mutation": "infeasible movers counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/config.py",
+   "mutation": "a single capture slot when clear"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/allocation.py",
+   "mutation": "lift gain ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/policy.py",
+   "mutation": "fire before occupation"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/policy.py",
+   "mutation": "recovery never steps aside"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/policy.py",
+   "mutation": "destination cap not checked"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/policy.py",
+   "mutation": "impact zones not avoided"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/policy.py",
+   "mutation": "first hex not checked"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/policy.py",
+   "mutation": "fallback not counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/policy.py",
+   "mutation": "re-lift cooldown ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/policy.py",
+   "mutation": "boarding carrier sent on"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/fire.py",
+   "mutation": "targets not reserved"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/fire.py",
+   "mutation": "indirect fire near own units"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/fire.py",
+   "mutation": "attack level 0 accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/validate.py",
+   "mutation": "actor not checked"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/validate.py",
+   "mutation": "listing not checked"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/validate.py",
+   "mutation": "options not checked"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/validate.py",
+   "mutation": "path adjacency not checked"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/validate.py",
+   "mutation": "two actions per unit"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/transport.py",
+   "mutation": "unexecuted embark kept forever"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/transport.py",
+   "mutation": "unloading away from the objective"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/integrated/memory.py",
+   "mutation": "sightings never capped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s34_live.py",
+   "mutation": "reconstruction mismatches ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s34_live.py",
+   "mutation": "refusal share widened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s34_live.py",
+   "mutation": "severe harm at the minimum"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s34_live.py",
+   "mutation": "gate ignores structural stops"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s34_live.py",
+   "mutation": "reject threshold loosened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s34_live.py",
+   "mutation": "promising threshold loosened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s34_live.py",
+   "mutation": "ledger state change ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s34_live.py",
+   "mutation": "losses never counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s34_offline.py",
+   "mutation": "deadlock gate widened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s34_offline.py",
+   "mutation": "non-inferiority loosened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s34_capture.py",
+   "mutation": "reconstruction never compared"
+  }
+ ],
+ "schema": "miaosuan-s34-mutation/1",
+ "sources": {
+  "src/miaosuan_agent/evaluation/s34_capture.py": "1b4e02ccfdfb9516faede645054ec65211d8635b276b9bd885796e8880b11cb4",
+  "src/miaosuan_agent/evaluation/s34_live.py": "7e7e24021a53a0ec5a2176394ae9eb158054117d62545a4082180da5c89b91d2",
+  "src/miaosuan_agent/evaluation/s34_offline.py": "dfc0d98a89c35e03f6047f939495e7d97ae08eee3b7388e04468dac6c4cfb036",
+  "src/miaosuan_agent/integrated/allocation.py": "5271d3fbe3a4441b3cd5a9934ee98aabf90941148734b26ed854aaa064ae84de",
+  "src/miaosuan_agent/integrated/config.py": "a1fed0c0c23927ec8967bb930a5ae18ae33f9dd1bc701a86521f208a92fa5fa6",
+  "src/miaosuan_agent/integrated/fire.py": "ad38527332ede1f8e06e06f4f0aa6c0553e9ef2b675751a0171e22c3b5c30a4f",
+  "src/miaosuan_agent/integrated/memory.py": "41e8bcdfb9eb7919cb8a3c304f2b682d36e6077cc8e8047a9768858454131ae4",
+  "src/miaosuan_agent/integrated/policy.py": "82bff29dd2ec564b91ead8de67a40c894f5d4f1bec92776f1863c9b098ec0640",
+  "src/miaosuan_agent/integrated/traffic.py": "191252440c8fccdc533bc0cd08941965a1452bd7f39ad5858d75a59df4505cac",
+  "src/miaosuan_agent/integrated/transport.py": "8ba7754e9d1851b9680bb91c8ad6dc59d1e696e9df5ae813c7c709694ca6c966",
+  "src/miaosuan_agent/integrated/validate.py": "45f3ec844a8f3a1a5d61c17c07f5cc56d7cd328342a5dea82ff0f4b951e0e3f9",
+  "tests/test_s34_gaps.py": "7904e320e0e27bf04439917f60c308f41446da2a568d089b5efebf9f06d7e747",
+  "tests/test_s34_integrated.py": "3f0d82608dc1efe8d24f21f1b83f43bda7c816af3dec710daea7335b6fb2e8a1",
+  "tests/test_s34_live.py": "324badda9b1eb609f01477f58403f335290829b4aaa9813a618bc9d40993ccf7",
+  "tests/test_s34_offline.py": "750ad78aaac572c68addd7cbb92c95cbbf7fc139176424279c9fedce7e8c73e9",
+  "tests/test_s34_world.py": "11fae3e3a392b55fa33e8128bc2a9c2d922ce0f266721312cc46a5b161321569"
+ },
+ "tests": [
+  "tests.test_s34_integrated",
+  "tests.test_s34_world",
+  "tests.test_s34_offline",
+  "tests.test_s34_live",
+  "tests.test_s34_gaps"
+ ],
+ "total": 41,
+ "unmutated_tests_pass": true
+}
