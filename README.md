@@ -182,6 +182,15 @@ blocked its own columns and held every objective against the inert control, but 
 clearly in one scenario only and lost isolated holders elsewhere (disposition S34_INTEGRATED_INCONCLUSIVE). Nothing
 was promoted or packaged.
 
+Sprint 35 (`docs/SPRINT35_COALITION_AGENT.md`, branch `sprint35-coalition-agent`, 19 engine sessions of 48 authorized)
+built a coalition-aware revision in a separate package (`src/miaosuan_agent/coalition/`, Sprint 34's package untouched as
+the control): capability-weighted threat per objective, last-defender retention, reinforcement deadlines, justified
+withdrawal and coalition capture, plus stance-driven fire support, guided fire and threat-limited transport. A registered
+offline comparison rejected its first revision on one gate and selected the corrected second one; the live study against
+`baseline-v2` with a fresh Sprint 34 control stopped at its nineteenth game on a refusal-share rule that fires on a
+single refused shot in a small game (disposition S35_LIVE_INVALID). In those games retention worked mechanically but the
+kept defenders were destroyed with their objectives. Nothing was promoted, merged or uploaded.
+
 ## Third-party material is not in this repository
 
 The platform's community SDK (engine wheel, map and scenario data, demo code, documentation) carries
