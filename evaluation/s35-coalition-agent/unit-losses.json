@@ -1,0 +1,83 @@
+{
+ "by_scenario_side": {
+  "1910631192 blue": {
+   "enemy_lost": 6,
+   "enemy_lost_value": 44.0,
+   "own_lost": 4,
+   "own_lost_value": 24.0
+  },
+  "1910631192 red": {
+   "enemy_lost": 3,
+   "enemy_lost_value": 28.0,
+   "own_lost": 8,
+   "own_lost_value": 52.0
+  },
+  "1930331196 blue": {
+   "enemy_lost": 19,
+   "enemy_lost_value": 133.0,
+   "own_lost": 25,
+   "own_lost_value": 196.0
+  },
+  "1930331196 red": {
+   "enemy_lost": 11,
+   "enemy_lost_value": 104.0,
+   "own_lost": 24,
+   "own_lost_value": 156.0
+  },
+  "2120531121 blue": {
+   "enemy_lost": 26,
+   "enemy_lost_value": 144.0,
+   "own_lost": 20,
+   "own_lost_value": 164.0
+  },
+  "2120531121 red": {
+   "enemy_lost": 20,
+   "enemy_lost_value": 180.0,
+   "own_lost": 24,
+   "own_lost_value": 156.0
+  },
+  "2130511121 blue": {
+   "enemy_lost": 48,
+   "enemy_lost_value": 272.0,
+   "own_lost": 21,
+   "own_lost_value": 144.0
+  },
+  "2130511121 red": {
+   "enemy_lost": 37,
+   "enemy_lost_value": 209.0,
+   "own_lost": 30,
+   "own_lost_value": 174.0
+  }
+ },
+ "note": "post hoc, descriptive; truth from the all-seeing compact timeline, plans from the candidate's recorded trace, seen from the candidate seat's own observation",
+ "own_losses_total": {
+  "class: ifv": 42,
+  "class: other": 16,
+  "class: squad": 32,
+  "class: tank": 45,
+  "class: ugv": 21,
+  "local_ratio: enemy<=own": 84,
+  "local_ratio: enemy>own": 72,
+  "plan: allocation/capture": 15,
+  "plan: allocation/hold": 26,
+  "plan: fire/shoot": 1,
+  "plan: no plan recorded": 30,
+  "plan: none/": 1,
+  "plan: none/moving": 52,
+  "plan: reserve/reserve": 1,
+  "plan: transport/carry": 1,
+  "plan: transport/lift": 29,
+  "seen8_75_before: 1-2": 11,
+  "seen8_75_before: 3+": 133,
+  "seen8_75_before: none": 12,
+  "stacked: alone": 135,
+  "stacked: stacked": 21,
+  "where: aboard": 30,
+  "where: elsewhere, moving": 28,
+  "where: objective zone held, moving": 17,
+  "where: objective zone held, standing": 55,
+  "where: objective zone not held, moving": 15,
+  "where: objective zone not held, standing": 11
+ },
+ "schema": "miaosuan-s35-unit-losses/1"
+}

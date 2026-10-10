@@ -1,0 +1,462 @@
+{
+ "aggregate": {
+  "departure_orders_by_module_kind": {
+   "allocation/capture": 3,
+   "allocation/hold": 3,
+   "transport/carry": 2
+  },
+  "enemy_at_loss_vs_garrison_150_before": {
+   "enemy_b1_gt_own_b150": 46,
+   "enemy_b1_le_own_b150": 11
+  },
+  "episode_kind": {
+   "defenders_destroyed_in_zone": 20,
+   "defenders_left_alive": 13,
+   "mixed": 8,
+   "no_own_unit_in_zone_150_before": 16
+  },
+  "episodes": 57,
+  "episodes_by_game": {
+   "p01": 4,
+   "p02": 7,
+   "p03": 5,
+   "p04": 5,
+   "p05": 5,
+   "p06": 5,
+   "p07": 2,
+   "p08": 1,
+   "p09": 5,
+   "p10": 1,
+   "p11": 5,
+   "p12": 0,
+   "p13": 7,
+   "p14": 3,
+   "p15": 1,
+   "p16": 1
+  },
+  "episodes_with_enemy_seen_within_8_in_600_before": 57,
+  "fate_of_units_in_zone_b150": {
+   "aboard": 1,
+   "alive_outside_zone": 22,
+   "destroyed_after_leaving": 7,
+   "destroyed_in_zone": 30
+  },
+  "games": 16,
+  "held_state_samples": 3306,
+  "held_state_samples_lost_within_horizon": 495,
+  "last_defenders_classes": {
+   "ifv": 20,
+   "other": 9,
+   "squad": 2,
+   "tank": 14,
+   "ugv": 11
+  },
+  "last_defenders_end": {
+   "destroyed": 38,
+   "ordered away: allocation/capture": 7,
+   "ordered away: allocation/hold": 9,
+   "ordered away: transport/carry": 2
+  },
+  "last_defenders_episode_kind": {
+   "all last defenders destroyed": 38,
+   "all last defenders left alive": 18,
+   "no standing defender within 1800 steps": 1
+  },
+  "last_defenders_steps_before_loss": [
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   16,
+   21,
+   22,
+   35,
+   45,
+   50,
+   51,
+   57,
+   60,
+   80,
+   81,
+   81,
+   85,
+   88,
+   88,
+   91,
+   97,
+   101,
+   146,
+   150,
+   161,
+   162,
+   163,
+   171,
+   181,
+   183,
+   193,
+   217,
+   225,
+   398,
+   442,
+   560
+  ],
+  "new_flag": {
+   "enemy": 57
+  },
+  "note": "post hoc and descriptive (Sprint 35); truth = all-seeing compact timeline, seen = the candidate seat's own observation; reserve reach uses free-flow time, a lower bound on arrival",
+  "predictor_tables": {
+   "own_in_zone_0": {
+    "flag_and_lost": 135,
+    "flag_not_lost": 294,
+    "no_flag_lost": 360,
+    "no_flag_not_lost": 2517
+   },
+   "own_in_zone_le_1": {
+    "flag_and_lost": 358,
+    "flag_not_lost": 1267,
+    "no_flag_lost": 137,
+    "no_flag_not_lost": 1544
+   },
+   "seen_r4_ge_1": {
+    "flag_and_lost": 364,
+    "flag_not_lost": 282,
+    "no_flag_lost": 131,
+    "no_flag_not_lost": 2529
+   },
+   "seen_r8_ge_1": {
+    "flag_and_lost": 464,
+    "flag_not_lost": 916,
+    "no_flag_lost": 31,
+    "no_flag_not_lost": 1895
+   },
+   "seen_r8_ge_2_and_gt_own": {
+    "flag_and_lost": 442,
+    "flag_not_lost": 480,
+    "no_flag_lost": 53,
+    "no_flag_not_lost": 2331
+   },
+   "seen_r8_gt_own_in_zone": {
+    "flag_and_lost": 446,
+    "flag_not_lost": 513,
+    "no_flag_lost": 49,
+    "no_flag_not_lost": 2298
+   }
+  },
+  "reserve_reach": {
+   "episodes_where_only_holders_of_other_objectives_could_arrive": 1,
+   "episodes_with_any_unit_able_to_arrive": 56,
+   "episodes_with_free_or_reserve_unit_able_to_arrive": 10
+  },
+  "seen_r4_b1": {
+   "0": 6,
+   "1": 7,
+   "2": 9,
+   "3": 10,
+   "4": 10,
+   "5": 1,
+   "6": 6,
+   "7": 2,
+   "8": 4,
+   "10": 1,
+   "13": 1
+  },
+  "seen_r4_b150": {
+   "0": 26,
+   "1": 4,
+   "2": 8,
+   "3": 8,
+   "4": 8,
+   "6": 1,
+   "10": 1,
+   "11": 1
+  },
+  "seen_r4_b300": {
+   "0": 37,
+   "1": 4,
+   "2": 4,
+   "3": 6,
+   "4": 2,
+   "8": 3,
+   "13": 1
+  },
+  "seen_r4_b75": {
+   "0": 2,
+   "1": 5,
+   "2": 18,
+   "3": 15,
+   "4": 6,
+   "5": 1,
+   "6": 6,
+   "7": 1,
+   "10": 1,
+   "11": 1,
+   "13": 1
+  },
+  "seen_r8_b1": {
+   "0": 6,
+   "1": 6,
+   "2": 6,
+   "3": 6,
+   "4": 8,
+   "6": 3,
+   "7": 2,
+   "8": 6,
+   "9": 2,
+   "10": 5,
+   "11": 1,
+   "12": 1,
+   "13": 1,
+   "14": 1,
+   "15": 1,
+   "17": 1,
+   "18": 1
+  },
+  "seen_r8_b150": {
+   "0": 7,
+   "1": 2,
+   "2": 6,
+   "3": 6,
+   "4": 8,
+   "5": 7,
+   "6": 3,
+   "7": 2,
+   "8": 5,
+   "9": 1,
+   "10": 1,
+   "11": 3,
+   "13": 1,
+   "14": 2,
+   "15": 2,
+   "18": 1
+  },
+  "seen_r8_b300": {
+   "0": 21,
+   "2": 6,
+   "3": 8,
+   "4": 1,
+   "5": 4,
+   "6": 2,
+   "7": 1,
+   "8": 4,
+   "9": 2,
+   "11": 2,
+   "12": 1,
+   "13": 1,
+   "14": 1,
+   "17": 1,
+   "18": 1,
+   "19": 1
+  },
+  "seen_r8_b75": {
+   "0": 2,
+   "1": 3,
+   "2": 5,
+   "3": 11,
+   "4": 8,
+   "5": 4,
+   "6": 6,
+   "7": 2,
+   "8": 6,
+   "10": 4,
+   "11": 1,
+   "13": 2,
+   "16": 1,
+   "17": 1,
+   "18": 1
+  },
+  "truth_enemy_in_zone_b1": {
+   "1": 11,
+   "2": 15,
+   "3": 14,
+   "4": 13,
+   "5": 2,
+   "7": 2
+  },
+  "truth_enemy_in_zone_b150": {
+   "0": 51,
+   "1": 5,
+   "2": 1
+  },
+  "truth_enemy_in_zone_b300": {
+   "0": 51,
+   "1": 3,
+   "2": 2,
+   "7": 1
+  },
+  "truth_enemy_in_zone_b75": {
+   "0": 46,
+   "1": 4,
+   "2": 5,
+   "3": 2
+  },
+  "truth_own_in_zone_b1": {
+   "0": 57
+  },
+  "truth_own_in_zone_b150": {
+   "0": 16,
+   "1": 23,
+   "2": 17,
+   "3": 1
+  },
+  "truth_own_in_zone_b300": {
+   "0": 33,
+   "1": 13,
+   "2": 9,
+   "3": 1,
+   "4": 1
+  },
+  "truth_own_in_zone_b75": {
+   "0": 17,
+   "1": 32,
+   "2": 7,
+   "3": 1
+  },
+  "warning_steps": [
+   100,
+   125,
+   125,
+   125,
+   150,
+   175,
+   175,
+   175,
+   175,
+   175,
+   200,
+   200,
+   200,
+   200,
+   225,
+   250,
+   275,
+   300,
+   300,
+   300,
+   300,
+   325,
+   350,
+   350,
+   350,
+   400,
+   425,
+   425,
+   425,
+   425,
+   450,
+   475,
+   525,
+   525,
+   550,
+   550,
+   550,
+   575,
+   575,
+   575,
+   600,
+   600,
+   600,
+   600,
+   600,
+   600,
+   600,
+   600,
+   600,
+   600,
+   600,
+   600,
+   600,
+   600,
+   600,
+   600,
+   600
+  ]
+ },
+ "by_scenario_side": {
+  "1910631192 blue": {
+   "episodes": 2,
+   "kinds": {
+    "defenders_left_alive": 2
+   }
+  },
+  "1910631192 red": {
+   "episodes": 3,
+   "kinds": {
+    "defenders_destroyed_in_zone": 2,
+    "no_own_unit_in_zone_150_before": 1
+   }
+  },
+  "1930331196 blue": {
+   "episodes": 8,
+   "kinds": {
+    "defenders_destroyed_in_zone": 3,
+    "defenders_left_alive": 3,
+    "mixed": 1,
+    "no_own_unit_in_zone_150_before": 1
+   }
+  },
+  "1930331196 red": {
+   "episodes": 12,
+   "kinds": {
+    "defenders_destroyed_in_zone": 4,
+    "defenders_left_alive": 2,
+    "mixed": 3,
+    "no_own_unit_in_zone_150_before": 3
+   }
+  },
+  "2120531121 blue": {
+   "episodes": 5,
+   "kinds": {
+    "defenders_destroyed_in_zone": 3,
+    "mixed": 1,
+    "no_own_unit_in_zone_150_before": 1
+   }
+  },
+  "2120531121 red": {
+   "episodes": 10,
+   "kinds": {
+    "defenders_destroyed_in_zone": 4,
+    "defenders_left_alive": 1,
+    "no_own_unit_in_zone_150_before": 5
+   }
+  },
+  "2130511121 blue": {
+   "episodes": 8,
+   "kinds": {
+    "defenders_destroyed_in_zone": 2,
+    "defenders_left_alive": 3,
+    "mixed": 1,
+    "no_own_unit_in_zone_150_before": 2
+   }
+  },
+  "2130511121 red": {
+   "episodes": 9,
+   "kinds": {
+    "defenders_destroyed_in_zone": 2,
+    "defenders_left_alive": 2,
+    "mixed": 2,
+    "no_own_unit_in_zone_150_before": 3
+   }
+  }
+ },
+ "schema": "miaosuan-s35-loss-episodes/1"
+}
