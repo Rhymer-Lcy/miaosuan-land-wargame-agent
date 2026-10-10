@@ -1,0 +1,68 @@
+{
+ "agents": {
+  "CA": {
+   "alerted": 26,
+   "departures": 18,
+   "departures_kept": 17,
+   "episodes": 57,
+   "responded": 26,
+   "stance_b150": {
+    "capture": 1,
+    "coalition": 1,
+    "defend": 8,
+    "delay": 11,
+    "quiet": 22,
+    "secure": 7,
+    "skip": 7
+   }
+  },
+  "CM": {
+   "alerted": 26,
+   "departures": 18,
+   "departures_kept": 17,
+   "episodes": 57,
+   "responded": 25,
+   "stance_b150": {
+    "capture": 1,
+    "coalition": 1,
+    "defend": 8,
+    "delay": 11,
+    "quiet": 22,
+    "secure": 7,
+    "skip": 7
+   }
+  },
+  "S34-MO": {
+   "alerted": 0,
+   "departures": 18,
+   "departures_kept": 0,
+   "episodes": 57,
+   "responded": 26,
+   "stance_b150": {
+    "none": 57
+   }
+  }
+ },
+ "control_fidelity": {
+  "decisions": 41776,
+  "differing": 0
+ },
+ "episodes_by_game": {
+  "p01": 4,
+  "p02": 7,
+  "p03": 5,
+  "p04": 5,
+  "p05": 5,
+  "p06": 5,
+  "p07": 2,
+  "p08": 1,
+  "p09": 5,
+  "p10": 1,
+  "p11": 5,
+  "p12": 0,
+  "p13": 7,
+  "p14": 3,
+  "p15": 1,
+  "p16": 1
+ }
+}

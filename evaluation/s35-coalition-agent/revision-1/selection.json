@@ -1,0 +1,46 @@
+{
+ "control_fidelity": {
+  "decisions": 41776,
+  "differing": 0
+ },
+ "gates": {
+  "CA": {
+   "G1 no rejected, refused or independently illegal action": true,
+   "G10 last defenders kept": true,
+   "G11 no collapse of the movement race": true,
+   "G2 no fallback or contract error": true,
+   "G3 model replay identical": true,
+   "G4 no deadlock wait": true,
+   "G5 latency": true,
+   "G6 differs from the Sprint 34 control": true,
+   "G7 no friendly exposure": true,
+   "G8 every population played": true,
+   "G9 threat recognised before the loss": false
+  },
+  "CM": {
+   "G1 no rejected, refused or independently illegal action": true,
+   "G10 last defenders kept": true,
+   "G11 no collapse of the movement race": true,
+   "G2 no fallback or contract error": true,
+   "G3 model replay identical": true,
+   "G4 no deadlock wait": true,
+   "G5 latency": true,
+   "G6 differs from the Sprint 34 control": true,
+   "G7 no friendly exposure": true,
+   "G8 every population played": true,
+   "G9 threat recognised before the loss": false
+  }
+ },
+ "progress": {
+  "CA": {
+   "M-inert": 21130,
+   "M-v2": 19490
+  },
+  "CM": {
+   "M-inert": 21130,
+   "M-v2": 19490
+  }
+ },
+ "rule": "no candidate passed every gate",
+ "selected": null
+}
