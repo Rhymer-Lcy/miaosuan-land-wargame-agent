@@ -105,17 +105,26 @@ class ZoneThreat:
 
 
 def attribute(threat_list: Sequence[Threat], objectives: Sequence[Tuple[int, FrozenSet[int]]],
-              config: CoalitionConfig) -> Dict[int, List[Tuple[Threat, float]]]:
-    """Each known enemy counts against one objective, never against all of them: the objective whose zone its visible
-    path ends in, else the objective it can reach first (optimistic arrival; ties count against each tied objective),
-    and only when that arrival is within ``threat_horizon``. ``objectives`` = (hex, zone) pairs; returns
-    hex -> [(threat, arrival)]."""
+              config: CoalitionConfig, enemy_held: FrozenSet[int] = frozenset()) -> Dict[int, List[Tuple[Threat, float]]]:
+    """Each known enemy counts against one objective, never against all of them, and only when its optimistic arrival
+    there is within ``threat_horizon``. ``objectives`` = (hex, zone) pairs; returns hex -> [(threat, arrival)].
+
+    Revision 2 (``config.attribution == "unheld"``, the default): an enemy is a threat to an objective its own side does
+    not hold (``enemy_held`` lists the ones it holds): the objective its visible path ends at if its side does not hold
+    it, else the one of those it can reach first (ties count against each). An enemy standing at an objective its side
+    holds is therefore counted against the next objective it can take, which is how ``baseline-v2`` moves (it sends
+    idle units from held objectives to the nearest one it does not hold). If its side holds every objective, all count.
+    Revision 1 (``"first"``, registered first and corrected after its registered comparison): the objective its path
+    ends at, else the one it reaches first, whoever holds it."""
     out: Dict[int, List[Tuple[Threat, float]]] = {hex_: [] for hex_, _ in objectives}
+    pool = [(hex_, zone) for hex_, zone in objectives if hex_ not in enemy_held] if config.attribution == "unheld" \
+        else list(objectives)
+    pool = pool or list(objectives)
     for t in threat_list:
-        etas = [(enemy_eta(t.known, zone, hex_), hex_) for hex_, zone in objectives]
+        etas = [(enemy_eta(t.known, zone, hex_), hex_) for hex_, zone in pool]
         if not etas:
             continue
-        heading = [hex_ for hex_, zone in objectives if t.known.path and t.known.path[-1] in zone]
+        heading = [hex_ for hex_, zone in pool if t.known.path and t.known.path[-1] in zone]
         if heading:
             chosen = [(e, h) for e, h in etas if h in heading]
         else:

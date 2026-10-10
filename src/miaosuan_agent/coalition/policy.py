@@ -51,7 +51,7 @@ WITHDRAW = "withdraw"
 
 
 def candidate_id(config: CoalitionConfig) -> str:
-    return f"{CANDIDATE_PREFIX}-{config.name}-1"
+    return f"{CANDIDATE_PREFIX}-{config.name}-{config.revision}"
 
 
 def _stance_rows(assessments: Sequence[K.Assessment]) -> Tuple[str, ...]:
@@ -127,7 +127,8 @@ class CoalitionPolicy(CommanderPolicy):
         pictures = allocator.pictures(world, known, free_ids)
         threat_list = C.threats(world, memory.seen, max_blood, co)
         assessments = K.assess(world, memory, allocator, co, pictures, threat_list, free)
-        assigned = C.attribute(threat_list, [(o.hex, o.zone) for o in world.objectives], co)
+        enemy_held = frozenset(o.hex for o in world.objectives if o.flag == 1 - world.faction)
+        assigned = C.attribute(threat_list, [(o.hex, o.zone) for o in world.objectives], co, enemy_held)
         threat_members = {hex_: C.zone_threat(rows).members for hex_, rows in assigned.items()}
         kept: Dict[int, int] = {}
         withdrawing: Dict[int, int] = {}

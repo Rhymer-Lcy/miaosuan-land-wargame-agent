@@ -35,6 +35,11 @@ FLOOR_WEIGHT = 0.05
 class CoalitionConfig:
     name: str
     base: Config = MO
+    #: Revision of the identity: 1 registered first; 2 corrects the threat attribution after revision 1 failed its
+    #: registered gate G9 (docs/SPRINT35_COALITION_AGENT.md section 10).
+    revision: int = 2
+    #: Threat attribution: "unheld" (revision 2) or "first" (revision 1), see ``capability.attribute``.
+    attribution: str = "unheld"
     #: A held objective is secure when its defenders' power is at least ``defend_ratio`` times the threat.
     defend_ratio: float = 1.0
     #: Reinforcement is committed only if defenders plus reachable reinforcements reach ``commit_ratio`` times the threat.
@@ -89,5 +94,7 @@ ABLATIONS: Dict[str, CoalitionConfig] = {
     "cm-no-safe-transport": replace(CM, name="cm-no-safe-transport", safe_transport=False),
     "cm-no-transport": replace(CM, name="cm-no-transport", base=replace(MO, name="mission-orchestrator-no-transport",
                                                                           transport=False)),
+    "ca-r1-attribution": replace(CA, name="ca-r1-attribution", revision=1, attribution="first"),
+    "cm-r1-attribution": replace(CM, name="cm-r1-attribution", revision=1, attribution="first"),
 }
 VARIANTS: Dict[str, CoalitionConfig] = {"CA": CA, "CM": CM, **ABLATIONS}

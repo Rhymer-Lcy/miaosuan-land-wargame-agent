@@ -9,8 +9,8 @@ had seen within eight hexes hundreds of steps earlier. An objective is lost only
 zone (occupation is not listed while an enemy ground unit is in the zone), so a defence needs survivors, not numbers
 alone.
 
-Each known enemy counts against one objective only (``capability.attribute``: the one its visible path ends at, else
-the one it can reach first). Each decision every objective gets one stance, from that capability-weighted threat, the
+Each known enemy counts against one objective only (``capability.attribute``; revision 2: among the objectives its
+side does not hold, the one its visible path ends at, else the one it can reach first). Each decision every objective gets one stance, from that capability-weighted threat, the
 power of the own units standing in its zone, and the free units that could arrive in time:
 
 * held, no known threat: ``quiet`` - one holder place (Sprint 34's quiet hold); its standing units stay free;
@@ -38,7 +38,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Dict, FrozenSet, List, Mapping, Optional, Sequence, Set, Tuple
 
-from ..integrated.allocation import OWN, Allocator, Picture
+from ..integrated.allocation import ENEMY, OWN, Allocator, Picture
 from ..integrated.world import Unit, World
 from . import capability as C
 from .config import CoalitionConfig
@@ -103,7 +103,8 @@ def assess(world: World, memory: CoalitionMemory, allocator: Allocator, config: 
     cfg = config
     zones = {o.hex: o.zone for o in world.objectives}
     free_ids = frozenset(u.obj_id for u in free)
-    assigned = C.attribute(threat_list, [(p.hex, zones[p.hex]) for p in pictures], cfg)
+    enemy_held = frozenset(p.hex for p in pictures if p.status == ENEMY)
+    assigned = C.attribute(threat_list, [(p.hex, zones[p.hex]) for p in pictures], cfg, enemy_held)
     threat = {p.hex: C.zone_threat(assigned[p.hex]) for p in pictures}
     standing = {p.hex: C.defenders(world, zones[p.hex]) for p in pictures}
     # pass 0: every controllable unit standing in a threatened held zone is spoken for there

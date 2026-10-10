@@ -104,6 +104,19 @@ class CapabilityTests(unittest.TestCase):
         self.assertEqual((F.hex_distance(405, 505), F.hex_distance(405, 909)), (1, 7))
         self.assertLess(F.hex_distance(101, 505), F.hex_distance(101, 909))
 
+    def test_revision_2_counts_an_enemy_at_its_own_objective_against_the_next_one(self):
+        # an enemy tank standing on 909, an objective its side holds; our held objective 505 is 6 hexes away (arrival 100 steps)
+        own = [ifv(1, RED, 505)]
+        enemy = [tank(901, BLUE, 909)]
+        cities = [S.city(505, RED, 80), S.city(909, BLUE, 50)]
+        obs = S.obs(RED, own + enemy, {1: MOVE_ONLY}, cities=cities)
+        self.assertEqual(F.hex_distance(909, 505), 6)
+        now = assess(obs)[505]
+        self.assertAlmostEqual(now.threat, 1.0)            # counted against 505
+        self.assertEqual(now.stance, K.DELAY)
+        before = assess(obs, config=VARIANTS["ca-r1-attribution"])[505]
+        self.assertEqual(before.stance, K.QUIET)           # revision 1: counted against 909 (arrival 0) only
+
     def test_remembered_threat_decays_and_expires(self):
         # situation 6: a hidden enemy known only from a stale sighting
         own = [tank(1, RED, 505)]
@@ -414,8 +427,10 @@ class AgentTests(unittest.TestCase):
         self.assertIn("stances", m.to_dict())
 
     def test_identities(self):
-        self.assertEqual(candidate_id(CA), "s35-coalition-coalition-allocator-1")
-        self.assertEqual(candidate_id(CM), "s35-coalition-coalition-mission-planner-1")
+        self.assertEqual(candidate_id(CA), "s35-coalition-coalition-allocator-2")
+        self.assertEqual(candidate_id(CM), "s35-coalition-coalition-mission-planner-2")
+        self.assertEqual(candidate_id(VARIANTS["ca-r1-attribution"]), "s35-coalition-ca-r1-attribution-1")
+        self.assertEqual((CA.revision, CA.attribution, CM.revision, CM.attribution), (2, "unheld", 2, "unheld"))
         self.assertIs(CA.base, MO)
         self.assertFalse(CA.guided_fire or CA.arrival_fire or CA.fire_support or CA.safe_transport)
         self.assertTrue(CM.guided_fire and CM.arrival_fire and CM.fire_support and CM.safe_transport)
