@@ -1,0 +1,354 @@
+{
+ "budget": {
+  "batch_sessions": 2,
+  "ledger_base_session": 2800,
+  "sprint_session_cap": 2
+ },
+ "candidate": "t7-b1-stop-engage-1",
+ "caps": {
+  "steps": "max_time + 1 + 100",
+  "wall_seconds": 1800
+ },
+ "card_id": "s33-t7-b1-live-1",
+ "configurations": "2120531121 C3 then 1930331196 C3, the candidate blue against the inert control in both",
+ "controls": "historical and descriptive: Sprint 30's committed baseline-v2 controls against the inert control (fifteen games per configuration); no new control game",
+ "eligible_for_promotion": false,
+ "evaluation_id": "s33-t7-b1-live-1",
+ "execution": {
+  "runtime": "baseline-v1-runtime-r2",
+  "workers": 1
+ },
+ "games": [
+  {
+   "blue": "t7-b1-stop-engage-1",
+   "condition": "C3",
+   "game_id": "2120531121.C3.s33-t7-b1-live-1.p01",
+   "position": 1,
+   "red": "inert-v0",
+   "scenario_id": "2120531121",
+   "screen_position": 1
+  },
+  {
+   "blue": "t7-b1-stop-engage-1",
+   "condition": "C3",
+   "game_id": "1930331196.C3.s33-t7-b1-live-1.p02",
+   "position": 2,
+   "red": "inert-v0",
+   "scenario_id": "1930331196",
+   "screen_position": 2
+  }
+ ],
+ "inputs": {
+  "shoot_manifest_sha256": "01c9c9675af4b0859fc55e54a5dc86513b624208bf13131e7b510b87a3122afd"
+ },
+ "intended_observations": [
+  "the exploratory capture and the Sprint 33 full-step timeline with the seat-local reconstruction, the action-fidelity check and the independent check at every decision"
+ ],
+ "mechanism": "baseline-v2 plays the seat on its own observation at every decision; the add-on appends a documented stop (action 10) for a traversing non-tank ground unit that baseline-v2 leaves without an action, with an enemy ground unit in its own view within published range of the hex where the stop takes effect, at most once per unit and game",
+ "next_step_rule": "the registered gate after game one (s33_pilot.gate); after game two the disposition",
+ "players": [
+  {
+   "faction": 0,
+   "role": 1,
+   "seat": 1,
+   "user_id": 0,
+   "user_name": "demo"
+  },
+  {
+   "faction": 1,
+   "role": 1,
+   "seat": 11,
+   "user_id": 0,
+   "user_name": "demo"
+  }
+ ],
+ "policies": {
+  "baseline-v2-candidate-shoot-target-reservation": {
+   "label": "baseline-v2 (frozen)",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ],
+    "sha256": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ]
+   }
+  },
+  "t7-b1-stop-engage-1": {
+   "label": "T7-B1 stop-to-engage (Sprint 32 exploratory candidate, unchanged)",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/exploratory_addon.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py",
+     "experiments/t7_b1_stop_engage.py"
+    ],
+    "sha256": "97658f4d89e47eb247704f1995754a1e81d32e8b60dcce9ae4ed61c6e068fd84",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py",
+     "experiments/exploratory_addon.py",
+     "experiments/t7_b1_stop_engage.py"
+    ]
+   }
+  }
+ },
+ "purpose": "exploratory",
+ "randomness": {
+  "global_seed": 20260929,
+  "procedure": "each game runs in a fresh process; the harness seeds Python's and NumPy's global generators with global_seed before the engine is constructed and records whether the engine consumes them; no undocumented engine interface is used",
+  "python_hash_seed": 0
+ },
+ "runtime_environment": {
+  "OPENBLAS_NUM_THREADS": "1"
+ },
+ "safety_checks": [
+  "structural stops after every game (S1, S2, S3, S4, S6, S7)",
+  "the per-stop mechanism classification, the deadlock bound and the harm screen, then the registered gate before session 2802",
+  "at most two sessions after closed session 2800, in schedule order, exclusive diagnostic sessions",
+  "every frozen implementation file pinned by digest; baseline-v2's policy source to 7cbaf032..."
+ ],
+ "scenarios": [
+  {
+   "alternates": [
+    "2120511121",
+    "2130511421",
+    "2230531121",
+    "2230531221",
+    "2130511321",
+    "2130511121",
+    "2130511221"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+    "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+    "scenario": "a4536a361ac9dd879ad326d8c5f40583433c3299f5184b4af06ddb110ab297cf",
+    "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "operators": 54,
+   "red": 28,
+   "rule": "S2 fewest operators on map 21",
+   "scenario_id": "2120531121"
+  },
+  {
+   "alternates": [
+    "2020331196",
+    "2120331196",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2140331196"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "206c437995216aed6dd14a310d3a2ada0f7148dd8d40e4ec52c900b224d06f15",
+    "cost": "b136cc86cae77d53482f2b2ff3df0087278d51628e1a4cf453307d8da008997f",
+    "scenario": "a15d3b3bf499694d93a981511c16b5c1c9247487ac1cf1d88b2bf1bd2c75c1b1",
+    "see": "e69b9e85d77cc8de4600c42b48939ea625236a7a3b705090fa9b3745775009e2"
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "operators": 52,
+   "red": 26,
+   "rule": "S2 fewest operators on map 96",
+   "scenario_id": "1930331196"
+  }
+ ],
+ "schema": "miaosuan-exploratory-run-card/1",
+ "screen": {
+  "controls_sha256": "27dffdfdfa2f920a921cb68da389bed80bb7a6e01950de7ffaac54b34c186e93",
+  "dispositions": [
+   "T7B1_MECH_INVALID",
+   "T7B1_MECH_REJECT",
+   "T7B1_MECH_NOT_ENGAGING",
+   "T7B1_MECH_UNTESTED",
+   "T7B1_MECH_STOP_ONLY",
+   "T7B1_MECH_SUPPORTED"
+  ],
+  "expected_sessions": [
+   2801,
+   2802
+  ],
+  "frozen_files": {
+   "scripts/build_s33_card.py": "9b4b3d13162d747ec42ffcef75ea408d70cab191e0d625865645ffc13b4e3857",
+   "scripts/run_evaluation.py": "d920f8e35c71edc078a8b17256c12aa4fe45a871244db78783dc1513a048aab2",
+   "scripts/run_s12_stage.py": "c8f092f4dc7f56a51614309fead4f24eacdb2761f4edd06cf08a2bf6939645c4",
+   "scripts/run_s33_game.py": "35b8c833717965b9486dd42651c19f7fb06c0aeaff729e6ba6e034321f0c2696",
+   "scripts/run_s33_pilot.py": "b655a8ded2b304ea5ce544cb8d7b85f0aeb732dca4cf04ab4c2bc5c1e1f0e54f",
+   "scripts/s33_analysis.py": "a462aeccbe0e98baa3b0f0708b9691f0bfad38dedc14aa853cb2f2f94cbc2fca",
+   "src/miaosuan_agent/evaluation/exploratory.py": "5cbc6296314706a6f46f740f5e66e454385c9828f0dfbaa14f7db68503aad8d3",
+   "src/miaosuan_agent/evaluation/game.py": "50a1c5a2b672d418941cbfb90ac90c11625102c18ce00474e22c379114b025a2",
+   "src/miaosuan_agent/evaluation/residual516.py": "cb397781063722a67e34f98ef3130bf0adc6a34432666586ddfdd182de1ef437",
+   "src/miaosuan_agent/evaluation/s12_screen.py": "bb69cc96e4e35daade0ec9eca98dcaf84a3e0c5973f9d91a028781000570a67e",
+   "src/miaosuan_agent/evaluation/s12_timeline.py": "5e2ae9e1357b77d8baaeb639a7eac091dfa64d9164a6f6d4d447bc6d7c7f5632",
+   "src/miaosuan_agent/evaluation/s27_probe.py": "031d344e6584a5ca9342b2de8ac0a15f7d5d23fbac588197cd4a55d601113ec4",
+   "src/miaosuan_agent/evaluation/s32_mechanism.py": "bcdfa49b1776789069e34074a3b46300ccf17f1a43b6714155587a45c5a9e396",
+   "src/miaosuan_agent/evaluation/s32_preflight.py": "8ea2d068f2cc039f41a83174893a025f8ea9da92deb715d071768d233375b6b1",
+   "src/miaosuan_agent/evaluation/s33_capture.py": "7a402cb90f77a5040bcf6d34dcf256063b5386d2d2dc9a56ca00c525c70b8a98",
+   "src/miaosuan_agent/evaluation/s33_mechanism.py": "cee3b8a832c0a8bd040dd808c68859a8966f69f3dfbaa556a30beb9d47b725d8",
+   "src/miaosuan_agent/evaluation/s33_pilot.py": "ff4517b730071e5582ae1b9056184de7c538ed44c47a605224dc388efd77f517",
+   "src/miaosuan_agent/evaluation/t7_candidates.py": "50c77f37d7561282a257da6c3640e23ded5a2abdccb83b7d507c8811e5c312ab",
+   "src/miaosuan_agent/evaluation/t7_visibility.py": "add2b446ec8ff847fd941a8a0952971200858db2305cdbdded0b6263f42e27ff",
+   "src/miaosuan_agent/experiments/exploratory_addon.py": "803f110696670adedb1531cf490dc331176abdfef8b665071ecd30d4168425f1",
+   "src/miaosuan_agent/experiments/t7_b1_stop_engage.py": "d7fff57a49850d877917360327a34983e05d8ffac3e4a2710f08571d71ade0dd",
+   "tests/fixtures/s33_engine.py": "01ffbeff15336f7d2d7bab358aeb2c260a81ca77b33b4ca15b59f44326668caf",
+   "tests/test_s32_mechanism.py": "0d71805bb26da0aed6892780ad186840d270d521fc2554d15798786657326cdb",
+   "tests/test_s33_mechanism.py": "ff7aed4a38c94793c55187e8ed14dd5cbad86e974a327b7e542b904ec15a3252",
+   "tests/test_s33_pilot.py": "2e2aa2c6dfbe3fc55d7f45ad1a46a5bec97853252fd8f05056547432c0b06e17",
+   "tests/test_t7_b1_stop_engage.py": "cdad843028940c8ac56cf19050e516caee1ed3cee10915593f2732ed4653df54"
+  },
+  "id": "s33-t7-b1-live",
+  "mechanism_rules": "s33-t7-b1-mechanism-1",
+  "preflight_sha256": "ec94e9847fe5ceedfcde210b61040b5572696af3b28b3a5829ee065684b946f0",
+  "rules": {
+   "controls": "evaluation/s30-t13-k1/controls.json (Sprint 30, SHA-256 27dffdfdfa2f920a921cb68da389bed80bb7a6e01950de7ffaac54b34c186e93): baseline-v2's group C games of the registered shoot-reservation experiment against the inert control, fifteen per configuration; margin = own total minus the opponent's total, equal to the engine's margin field",
+   "disposition": "first match over the opened games (evaluation/s32_mechanism.disposition on Sprint 33's verdicts): T7B1_MECH_INVALID, T7B1_MECH_REJECT, T7B1_MECH_NOT_ENGAGING, T7B1_MECH_SUPPORTED, T7B1_MECH_STOP_ONLY, T7B1_MECH_UNTESTED; an incomplete game or a ledger problem is INVALID",
+   "gate": "session 2802 opens only when game one completed with no structural stop and its Sprint 33 verdict is UNTESTED, STOP_ONLY or OBSERVED; STRUCTURAL, ADVERSE (an adverse stop outcome or a deadlock), HARM or NOT_ENGAGING closes it; after session 2802 the check stops whatever the result",
+   "inert_harm": {
+    "positions": {
+     "1": {
+      "configuration": "2120531121 C3 baseline-v2 blue",
+      "margin_floor": 509,
+      "margin_minimum": 559,
+      "occupy": 310
+     },
+     "2": {
+      "configuration": "1930331196 C3 baseline-v2 blue",
+      "margin_floor": 520,
+      "margin_minimum": 570,
+      "occupy": 310
+     }
+    },
+    "rule": "REJECT (verdict HARM) when the candidate's occupy score is below the configuration's baseline-v2 occupy score (constant over its fifteen games), or its margin is below the baseline-v2 margin minimum minus 50; the boundaries themselves pass; a safety screen, not an improvement test"
+   },
+   "max_step": 2880,
+   "mechanism": {
+    "adverse": [
+     "rejected",
+     "deferred_indefinite",
+     "path_not_cleared",
+     "overrun",
+     "no_transition",
+     "transition_timing",
+     "unable_to_resume"
+    ],
+    "base": "evaluation/s32_mechanism.py, unchanged: tolerance 2 steps; feedback window 2 steps; path cleared by s0 + h0 + 2 at the latest; completion within the clearing step + 75 plus or minus 2; movement relisted, shooting listed and the shot within 2 steps of completion; a shot accepted when echoed without error and named as attacker by a judge record in its step or the next; deadlock run 300 frames",
+    "censored": "the unit absent before the path cleared or during the transition, the game over before an event's deadline, or the unit suppressed at completion; never positive evidence and never adverse",
+    "correction": "Sprint 32's 'deferred' (flag_force_stop 1 at any later frame) is replaced by 'deferred_indefinite' (flag_force_stop 1 with a non-empty path at a frame at or after the clearing deadline); the transient flag is reported",
+    "evidence_levels": {
+     "T7B1_MECH_STOP_ONLY": [
+      "STOP_EXECUTION",
+      "STOP_AND_MOVEMENT_RESUMPTION"
+     ],
+     "T7B1_MECH_SUPPORTED": [
+      "STOP_AND_SHOOTING_LISTED",
+      "STOP_AND_SHOT_ACCEPTED"
+     ]
+    },
+    "preserved": "Sprint 32's own per-stop adverse list, game verdict and disposition are computed and reported beside Sprint 33's",
+    "rules": "s33-t7-b1-mechanism-1",
+    "verdicts": [
+     "STRUCTURAL",
+     "ADVERSE",
+     "HARM",
+     "NOT_ENGAGING",
+     "UNTESTED",
+     "STOP_ONLY",
+     "OBSERVED"
+    ]
+   },
+   "opportunity": {
+    "positions": {
+     "1": {
+      "distance": 18,
+      "first_divergence_step": 380,
+      "range": 20,
+      "reaching_weapon": "vehicle-mounted missile"
+     },
+     "2": {
+      "distance": 20,
+      "first_divergence_step": 620,
+      "range": 20,
+      "reaching_weapon": "vehicle-mounted missile"
+     }
+    },
+    "source": "evaluation/s32-t7-b1/preflight.json: the first divergence of each configuration's genuine full-step baseline-v2 record",
+    "use": "descriptive only: whether the live game's first stop falls at the recorded step is reported; no stop or gate depends on it, and no later step is predicted"
+   },
+   "untested_continuation": "an UNTESTED first game does not close the gate because the second configuration's opportunity is verified from its own genuine full-step record (step 620 in 1930331196 C3), independently of the first configuration"
+  },
+  "rules_sha256": "9c9094093e793d7d48780752b1f8d224dad3f4cd1ecd46bc16710bc34483e9bf",
+  "stage": "mechanism",
+  "structural_stops": [
+   "S1",
+   "S2",
+   "S3",
+   "S4",
+   "S6",
+   "S7"
+  ]
+ },
+ "status": "EXPLORATORY TRACK - REGISTERED TWO-GAME MECHANISM QUALIFICATION - NOT A CONFIRMATION - NOT ELIGIBLE FOR PROMOTION",
+ "track": "EXPLORATORY",
+ "version": "t7-b1-stop-engage-1, Sprint 33 live stop mechanism check (docs/SPRINT33_T7_B1_LIVE.md)"
+}
