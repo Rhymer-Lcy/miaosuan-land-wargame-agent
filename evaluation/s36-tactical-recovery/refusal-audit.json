@@ -1,0 +1,288 @@
+{
+ "constants": {
+  "min_denominator": 10,
+  "redundant_min": 2,
+  "repeat_actor": 3,
+  "systemic_alpha": 1e-06,
+  "systemic_min": 3,
+  "unexplained_per_game": 2,
+  "unexplained_per_study": 3
+ },
+ "echo_matches_unit_actions": {
+  "baseline-v0 | equal": 76,
+  "baseline-v1 (no shoot-target reservation) | equal": 808,
+  "deployment-split screen | different": 154,
+  "other exploratory candidates | different": 1,
+  "other exploratory candidates | equal": 203,
+  "reference (baseline-v2, Sprint 34 and Sprint 35 live candidates) | equal": 1427
+ },
+ "gate": "s36-refusal-gate-1",
+ "note": "empirical trigger frequencies on recorded games, not false-positive rates: no external ground truth classifies these games as healthy or defective, except the documented defect classes named in docs/SPRINT36_TACTICAL_RECOVERY.md section 3",
+ "population": {
+  "game_records": 2030,
+  "reference_fire_actions": 28195,
+  "reference_other_actions": 58199,
+  "reference_seat_games": 1427,
+  "seat_games": 4060,
+  "seat_games_under_test_completed": 2669,
+  "with_refusal_facts": 2521
+ },
+ "reference_rates": {
+  "race_fire": 0.00776733,
+  "race_other": 6.873e-05,
+  "redundant_fire": 0.0,
+  "redundant_other": 0.0
+ },
+ "reference_trigger_frequency_by_scenario": {
+  "1910631192": {
+   "absolute_3": 1,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 0,
+   "s36_systemic": 0,
+   "seat_games": 161,
+   "sprint35_s6": 32
+  },
+  "1930331196": {
+   "absolute_3": 10,
+   "rate_2pct_min_100": 7,
+   "s36_structural": 0,
+   "s36_systemic": 0,
+   "seat_games": 226,
+   "sprint35_s6": 13
+  },
+  "2010131194": {
+   "absolute_3": 0,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 0,
+   "s36_systemic": 0,
+   "seat_games": 144,
+   "sprint35_s6": 0
+  },
+  "2010211129": {
+   "absolute_3": 0,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 0,
+   "s36_systemic": 0,
+   "seat_games": 144,
+   "sprint35_s6": 16
+  },
+  "201033019601": {
+   "absolute_3": 0,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 0,
+   "s36_systemic": 0,
+   "seat_games": 144,
+   "sprint35_s6": 15
+  },
+  "2010431153": {
+   "absolute_3": 0,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 0,
+   "s36_systemic": 0,
+   "seat_games": 150,
+   "sprint35_s6": 4
+  },
+  "2120531121": {
+   "absolute_3": 0,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 0,
+   "s36_systemic": 0,
+   "seat_games": 196,
+   "sprint35_s6": 0
+  },
+  "2130511121": {
+   "absolute_3": 0,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 0,
+   "s36_systemic": 0,
+   "seat_games": 262,
+   "sprint35_s6": 0
+  }
+ },
+ "reference_unit_actions_by_scale": {
+  "101 to 300": {
+   "max": 289,
+   "min": 102,
+   "seat_games": 351
+  },
+  "31 to 100": {
+   "max": 100,
+   "min": 31,
+   "seat_games": 367
+  },
+  "over 300": {
+   "max": 338,
+   "min": 338,
+   "seat_games": 1
+  },
+  "up to 30 unit actions": {
+   "max": 30,
+   "min": 2,
+   "seat_games": 708
+  }
+ },
+ "refusal_facts_by_class": {
+  "type 1 code 203 CantControlDiedOperator: D": 2,
+  "type 1 code 404 CantMoveKeptPeople: E": 4,
+  "type 14 code 103 ErrorActionType: A": 3626,
+  "type 2 code 203 CantControlDiedOperator: D": 234,
+  "type 2 code 516 CantShootToDiedBop: D": 99,
+  "type 2 code 516 CantShootToDiedBop: R": 328,
+  "type 5 code 203 CantControlDiedOperator: D": 8
+ },
+ "schema": "miaosuan-s36-refusal-audit/1",
+ "sprint35_position19_control": [
+  {
+   "by_fact": {
+    "type 2 code 203 CantControlDiedOperator: D": 1,
+    "type 2 code 516 CantShootToDiedBop: D": 1
+   },
+   "classes": {
+    "D_fire": 2
+   },
+   "fire_actions": 14,
+   "s36": {
+    "structural": [],
+    "systemic": []
+   },
+   "sprint35_s6": true,
+   "unit_actions": 31
+  }
+ ],
+ "taxonomy": "s36-refusal-taxonomy-1",
+ "taxonomy_counts": {
+  "baseline-v1 (no shoot-target reservation): D_fire": 75,
+  "baseline-v1 (no shoot-target reservation): D_other": 2,
+  "baseline-v1 (no shoot-target reservation): E_other": 1,
+  "baseline-v1 (no shoot-target reservation): R_fire": 328,
+  "deployment-split screen: A_other": 3626,
+  "deployment-split screen: D_fire": 23,
+  "deployment-split screen: D_other": 4,
+  "other exploratory candidates: D_fire": 16,
+  "reference (baseline-v2, Sprint 34 and Sprint 35 live candidates): D_fire": 219,
+  "reference (baseline-v2, Sprint 34 and Sprint 35 live candidates): D_other": 4,
+  "reference (baseline-v2, Sprint 34 and Sprint 35 live candidates): E_other": 3
+ },
+ "trigger_frequency_by_group_and_scale": {
+  "baseline-v1 (no shoot-target reservation) | 101 to 300": {
+   "absolute_3": 37,
+   "rate_2pct_min_100": 23,
+   "s36_structural": 0,
+   "s36_systemic": 54,
+   "seat_games": 147,
+   "sprint35_s6": 23
+  },
+  "baseline-v1 (no shoot-target reservation) | 31 to 100": {
+   "absolute_3": 5,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 0,
+   "s36_systemic": 15,
+   "seat_games": 150,
+   "sprint35_s6": 24
+  },
+  "baseline-v1 (no shoot-target reservation) | up to 30 unit actions": {
+   "absolute_3": 0,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 0,
+   "s36_systemic": 0,
+   "seat_games": 439,
+   "sprint35_s6": 46
+  },
+  "deployment-split screen | 101 to 300": {
+   "absolute_3": 14,
+   "rate_2pct_min_100": 10,
+   "s36_structural": 40,
+   "s36_systemic": 10,
+   "seat_games": 40,
+   "sprint35_s6": 10
+  },
+  "deployment-split screen | 31 to 100": {
+   "absolute_3": 15,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 31,
+   "s36_systemic": 15,
+   "seat_games": 31,
+   "sprint35_s6": 18
+  },
+  "deployment-split screen | over 300": {
+   "absolute_3": 0,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 9,
+   "s36_systemic": 0,
+   "seat_games": 9,
+   "sprint35_s6": 0
+  },
+  "deployment-split screen | up to 30 unit actions": {
+   "absolute_3": 70,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 74,
+   "s36_systemic": 70,
+   "seat_games": 74,
+   "sprint35_s6": 70
+  },
+  "other exploratory candidates | 101 to 300": {
+   "absolute_3": 0,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 0,
+   "s36_systemic": 0,
+   "seat_games": 66,
+   "sprint35_s6": 0
+  },
+  "other exploratory candidates | 31 to 100": {
+   "absolute_3": 1,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 1,
+   "s36_systemic": 1,
+   "seat_games": 105,
+   "sprint35_s6": 1
+  },
+  "other exploratory candidates | over 300": {
+   "absolute_3": 0,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 0,
+   "s36_systemic": 0,
+   "seat_games": 2,
+   "sprint35_s6": 0
+  },
+  "other exploratory candidates | up to 30 unit actions": {
+   "absolute_3": 0,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 0,
+   "s36_systemic": 0,
+   "seat_games": 31,
+   "sprint35_s6": 0
+  },
+  "reference (baseline-v2, Sprint 34 and Sprint 35 live candidates) | 101 to 300": {
+   "absolute_3": 7,
+   "rate_2pct_min_100": 7,
+   "s36_structural": 0,
+   "s36_systemic": 0,
+   "seat_games": 351,
+   "sprint35_s6": 7
+  },
+  "reference (baseline-v2, Sprint 34 and Sprint 35 live candidates) | 31 to 100": {
+   "absolute_3": 4,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 0,
+   "s36_systemic": 0,
+   "seat_games": 367,
+   "sprint35_s6": 14
+  },
+  "reference (baseline-v2, Sprint 34 and Sprint 35 live candidates) | over 300": {
+   "absolute_3": 0,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 0,
+   "s36_systemic": 0,
+   "seat_games": 1,
+   "sprint35_s6": 0
+  },
+  "reference (baseline-v2, Sprint 34 and Sprint 35 live candidates) | up to 30 unit actions": {
+   "absolute_3": 0,
+   "rate_2pct_min_100": 0,
+   "s36_structural": 0,
+   "s36_systemic": 0,
+   "seat_games": 708,
+   "sprint35_s6": 59
+  }
+ }
+}
