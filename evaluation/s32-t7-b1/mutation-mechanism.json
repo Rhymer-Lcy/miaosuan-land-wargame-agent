@@ -1,0 +1,131 @@
+{
+ "killed": 23,
+ "mutations": [
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "rejection ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "deferral ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "clearing deadline widened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "overrun tolerated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "transition start not required"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "transition window opened early"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "transition window closed late"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "movement re-listing not required"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "firing opportunity without range"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "shot listing read from movement"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "shot accepted without a judgement"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "suppression not censored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "deadlock without a full hex"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "deadlock run lengthened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "harm margin widened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "occupy harm ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "not engaging ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "censored stops counted as completed"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "gate open after harm"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "game behind a closed gate accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "incomplete check accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "stop only read as supported"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_mechanism.py",
+   "mutation": "lost unit not censored"
+  }
+ ],
+ "phase": "mechanism",
+ "schema": "miaosuan-s32-mutation/1",
+ "sources": {
+  "src/miaosuan_agent/evaluation/s32_mechanism.py": "bcdfa49b1776789069e34074a3b46300ccf17f1a43b6714155587a45c5a9e396",
+  "tests/test_s32_mechanism.py": "0d71805bb26da0aed6892780ad186840d270d521fc2554d15798786657326cdb"
+ },
+ "tests": [
+  "tests.test_s32_mechanism"
+ ],
+ "total": 23,
+ "unmutated_tests_pass": true
+}

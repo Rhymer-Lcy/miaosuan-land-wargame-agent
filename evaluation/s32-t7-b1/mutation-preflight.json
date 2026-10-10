@@ -1,0 +1,209 @@
+{
+ "killed": 38,
+ "mutations": [
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "tank main guns admitted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "move-and-fire field not required 0"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "waiting units admitted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "progress upper bound dropped"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "parameterised stop listing admitted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "stop flag not required 0"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "deferred stop admitted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "suppressed units admitted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "locked weapons admitted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "last hex admitted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "baseline-v2 action overridden"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "repeated stops allowed"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "unit visibility ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "range measured from the current hex"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "range bound off by one"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "room limit widened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "routed units not counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "baseline-v2 moves not counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "transition left out of the time check"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "hex steps not rounded up"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "memory not updated"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "own check tolerates a changed baseline action"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "own check tolerates an unlisted stop"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "uncontrolled units admitted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "own units read as targets"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/experiments/t7_b1_stop_engage.py",
+   "mutation": "stops placed before baseline-v2's actions"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_preflight.py",
+   "mutation": "independent findings ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_preflight.py",
+   "mutation": "H0 first divergence without a supported prefix"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_preflight.py",
+   "mutation": "episodes closed at every decision"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_preflight.py",
+   "mutation": "configuration status from any population"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_preflight.py",
+   "mutation": "PASS with one proposed configuration"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_preflight.py",
+   "mutation": "alternative with one seat colour"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_preflight.py",
+   "mutation": "restated room limit widened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_preflight.py",
+   "mutation": "restated time margin narrowed"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_preflight.py",
+   "mutation": "restated visibility ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_preflight.py",
+   "mutation": "witness ignores the range"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_preflight.py",
+   "mutation": "window without the transition"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s32_preflight.py",
+   "mutation": "stops counted without the candidate's memory"
+  }
+ ],
+ "phase": "preflight",
+ "schema": "miaosuan-s32-mutation/1",
+ "sources": {
+  "src/miaosuan_agent/evaluation/s32_preflight.py": "8ea2d068f2cc039f41a83174893a025f8ea9da92deb715d071768d233375b6b1",
+  "src/miaosuan_agent/experiments/t7_b1_stop_engage.py": "d7fff57a49850d877917360327a34983e05d8ffac3e4a2710f08571d71ade0dd",
+  "tests/test_s32_preflight.py": "bb4385182f01f4d85b3ef1000685331f5ef995da16e46034c7983247eedfea29",
+  "tests/test_t7_b1_stop_engage.py": "cdad843028940c8ac56cf19050e516caee1ed3cee10915593f2732ed4653df54"
+ },
+ "tests": [
+  "tests.test_t7_b1_stop_engage",
+  "tests.test_s32_preflight"
+ ],
+ "total": 38,
+ "unmutated_tests_pass": true
+}
