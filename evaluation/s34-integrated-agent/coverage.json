@@ -1,0 +1,4880 @@
+{
+ "archive_sha256": "ed4c9fc03cb6eb1e64821d2efbc61024d90735e3dc489dc7ffe0515e653ea725",
+ "note": "engine-free: listings come from the Sprint 34 model world, not the engine; no scenario was played on the engine to build this matrix",
+ "scenarios": [
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "tank": 2
+    },
+    "red": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "loitering munition": 2,
+     "tank": 1,
+     "unmanned ground vehicle": 1
+    }
+   },
+   "contract_limitations": [
+    "not playable on the old SDK pairing: E1 no supplied map named by the scenario id"
+   ],
+   "eligibility_reasons": [
+    "E1 no supplied map named by the scenario id"
+   ],
+   "eligible": false,
+   "map_id": null,
+   "max_time": 1800,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 6,
+    "red": 6
+   },
+   "scenario_id": "1231"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "tank": 2
+    },
+    "red": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "loitering munition": 2,
+     "tank": 1,
+     "unmanned ground vehicle": 1
+    }
+   },
+   "contract_limitations": [
+    "not playable on the old SDK pairing: E1 no supplied map named by the scenario id"
+   ],
+   "eligibility_reasons": [
+    "E1 no supplied map named by the scenario id"
+   ],
+   "eligible": false,
+   "map_id": null,
+   "max_time": 1800,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 6,
+    "red": 6
+   },
+   "scenario_id": "1531"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "tank": 2
+    },
+    "red": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "loitering munition": 2,
+     "tank": 1,
+     "unmanned ground vehicle": 1
+    }
+   },
+   "contract_limitations": [
+    "not playable on the old SDK pairing: E1 no supplied map named by the scenario id"
+   ],
+   "eligibility_reasons": [
+    "E1 no supplied map named by the scenario id"
+   ],
+   "eligible": false,
+   "map_id": null,
+   "max_time": 1800,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 6,
+    "red": 6
+   },
+   "scenario_id": "1631"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 8
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [
+    "not playable on the old SDK pairing: E1 no supplied map named by the scenario id"
+   ],
+   "eligibility_reasons": [
+    "E1 no supplied map named by the scenario id"
+   ],
+   "eligible": false,
+   "map_id": null,
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 5,
+    "values": [
+     80,
+     80,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 30,
+    "red": 34
+   },
+   "scenario_id": "3231"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 8
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [
+    "not playable on the old SDK pairing: E1 no supplied map named by the scenario id"
+   ],
+   "eligibility_reasons": [
+    "E1 no supplied map named by the scenario id"
+   ],
+   "eligible": false,
+   "map_id": null,
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 30,
+    "red": 34
+   },
+   "scenario_id": "3531"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 8
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [
+    "not playable on the old SDK pairing: E1 no supplied map named by the scenario id"
+   ],
+   "eligibility_reasons": [
+    "E1 no supplied map named by the scenario id"
+   ],
+   "eligible": false,
+   "map_id": null,
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 30,
+    "red": 34
+   },
+   "scenario_id": "3631"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "tank": 2
+    },
+    "red": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "loitering munition": 2,
+     "tank": 1,
+     "unmanned ground vehicle": 1
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 42.8,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 32.2,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 68.3,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 52.8,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "92",
+   "max_time": 1800,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 6,
+    "red": 6
+   },
+   "reachable_objectives": {
+    "blue": 2,
+    "red": 2
+   },
+   "scenario_id": "1910631192"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 1,
+     "infantry fighting vehicle": 6,
+     "infantry squad": 6,
+     "tank": 6,
+     "unmanned aerial vehicle": 1
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 1,
+     "infantry fighting vehicle": 3,
+     "infantry squad": 3,
+     "loitering munition": 6,
+     "tank": 3,
+     "unmanned aerial vehicle": 1,
+     "unmanned ground vehicle": 3
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 12
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 135.9,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 11
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 131.7,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 6,
+       "type_3": 6
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 146.4,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 8,
+       "type_3": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 147.3,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 5,
+    "values": [
+     80,
+     80,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 26,
+    "red": 26
+   },
+   "reachable_objectives": {
+    "blue": 5,
+    "red": 5
+   },
+   "scenario_id": "1930331196"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 8,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 18
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 197.1,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 16
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 198.0,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 10,
+       "type_3": 8
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 178.1,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 12,
+       "type_3": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 185.9,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "92",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 34,
+    "red": 34
+   },
+   "reachable_objectives": {
+    "blue": 7,
+    "red": 7
+   },
+   "scenario_id": "1930631192"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": false,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": false,
+    "transport": false
+   },
+   "classes": {
+    "blue": {
+     "tank": 2
+    },
+    "red": {
+     "tank": 2
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 19.0,
+      "objectives": 1,
+      "objectives_targeted": 1,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 16.2,
+      "objectives": 1,
+      "objectives_targeted": 1,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 22.4,
+      "objectives": 1,
+      "objectives_targeted": 1,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 17.9,
+      "objectives": 1,
+      "objectives_targeted": 1,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "94",
+   "max_time": 1800,
+   "movement_modes": [
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 1,
+    "values": [
+     50
+    ]
+   },
+   "operators": {
+    "blue": 2,
+    "red": 2
+   },
+   "reachable_objectives": {
+    "blue": 1,
+    "red": 1
+   },
+   "scenario_id": "2010131194"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": false,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": false,
+    "transport": false
+   },
+   "classes": {
+    "blue": {
+     "tank": 2
+    },
+    "red": {
+     "tank": 2
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 16.9,
+      "objectives": 1,
+      "objectives_targeted": 1,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 20.4,
+      "objectives": 1,
+      "objectives_targeted": 1,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 20.6,
+      "objectives": 1,
+      "objectives_targeted": 1,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 19.4,
+      "objectives": 1,
+      "objectives_targeted": 1,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "94",
+   "max_time": 1800,
+   "movement_modes": [
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 1,
+    "values": [
+     50
+    ]
+   },
+   "operators": {
+    "blue": 2,
+    "red": 2
+   },
+   "reachable_objectives": {
+    "blue": 1,
+    "red": 1
+   },
+   "scenario_id": "2010141294"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "tank": 1
+    },
+    "red": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "loitering munition": 2,
+     "tank": 1,
+     "unmanned ground vehicle": 1
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 47.2,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 53.2,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 1,
+       "type_3": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 53.2,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 56.6,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "29",
+   "max_time": 1800,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 5,
+    "red": 6
+   },
+   "reachable_objectives": {
+    "blue": 2,
+    "red": 2
+   },
+   "scenario_id": "2010211129"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "tank": 2
+    },
+    "red": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "loitering munition": 2,
+     "tank": 1,
+     "unmanned ground vehicle": 1
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 51.2,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 78.4,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 52.9,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 59.2,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "53",
+   "max_time": 1800,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 6,
+    "red": 6
+   },
+   "reachable_objectives": {
+    "blue": 2,
+    "red": 2
+   },
+   "scenario_id": "2010431153"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "tank": 2
+    },
+    "red": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "loitering munition": 2,
+     "tank": 1,
+     "unmanned ground vehicle": 1
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_2": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 36.9,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 1,
+       "type_2": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 40.4,
+      "objectives": 2,
+      "objectives_targeted": 1,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 35.6,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 1,
+       "type_2": 1,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 37.0,
+      "objectives": 2,
+      "objectives_targeted": 1,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "53",
+   "max_time": 1800,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 6,
+    "red": 6
+   },
+   "reachable_objectives": {
+    "blue": 2,
+    "red": 2
+   },
+   "scenario_id": "2010441253"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 1,
+     "infantry fighting vehicle": 6,
+     "infantry squad": 6,
+     "tank": 6,
+     "unmanned aerial vehicle": 1
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 1,
+     "infantry fighting vehicle": 3,
+     "infantry squad": 3,
+     "loitering munition": 6,
+     "tank": 3,
+     "unmanned aerial vehicle": 1,
+     "unmanned ground vehicle": 3
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 12
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 137.4,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 11
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 77.0,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 6,
+       "type_3": 6
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 137.8,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 8,
+       "type_3": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 131.9,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 5,
+    "values": [
+     80,
+     80,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 26,
+    "red": 26
+   },
+   "reachable_objectives": {
+    "blue": 5,
+    "red": 5
+   },
+   "scenario_id": "2020331196"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 18
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 156.8,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 16
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 175.6,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 8,
+       "type_3": 8,
+       "type_8": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 166.7,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 12,
+       "type_3": 4,
+       "type_8": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 285.0,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "94",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 30,
+    "red": 34
+   },
+   "reachable_objectives": {
+    "blue": 7,
+    "red": 7
+   },
+   "scenario_id": "2030111194"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 8,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 18
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 100.9,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 16
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 102.2,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 10,
+       "type_3": 8
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 176.8,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 12,
+       "type_3": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 99.8,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 34,
+    "red": 34
+   },
+   "reachable_objectives": {
+    "blue": 7,
+    "red": 7
+   },
+   "scenario_id": "2030331196"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 8,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 18
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 183.1,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 16
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 168.2,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 10,
+       "type_3": 8
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 170.7,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 12,
+       "type_3": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 168.5,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 34,
+    "red": 34
+   },
+   "reachable_objectives": {
+    "blue": 7,
+    "red": 7
+   },
+   "scenario_id": "2030341296"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "tank": 2
+    },
+    "red": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "loitering munition": 2,
+     "tank": 1,
+     "unmanned ground vehicle": 1
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 49.6,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 61.9,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 50.1,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 54.0,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "53",
+   "max_time": 1800,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 6,
+    "red": 6
+   },
+   "reachable_objectives": {
+    "blue": 2,
+    "red": 2
+   },
+   "scenario_id": "2110431153"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "tank": 2
+    },
+    "red": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "loitering munition": 2,
+     "tank": 1,
+     "unmanned ground vehicle": 1
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 46.2,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 54.8,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 29.9,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 29.1,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "53",
+   "max_time": 1800,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 6,
+    "red": 6
+   },
+   "reachable_objectives": {
+    "blue": 2,
+    "red": 2
+   },
+   "scenario_id": "2110431253"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "tank": 2
+    },
+    "red": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "loitering munition": 2,
+     "tank": 1,
+     "unmanned ground vehicle": 1
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 1,
+       "type_2": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 55.4,
+      "objectives": 2,
+      "objectives_targeted": 1,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 1,
+       "type_2": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 31.7,
+      "objectives": 2,
+      "objectives_targeted": 1,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_2": 2,
+       "type_3": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 57.0,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 1,
+       "type_2": 1,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 55.4,
+      "objectives": 2,
+      "objectives_targeted": 1,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "53",
+   "max_time": 1800,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 6,
+    "red": 6
+   },
+   "reachable_objectives": {
+    "blue": 2,
+    "red": 2
+   },
+   "scenario_id": "2110431353"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "tank": 2
+    },
+    "red": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "loitering munition": 2,
+     "tank": 1,
+     "unmanned ground vehicle": 1
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 61.0,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 49.9,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 52.6,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 49.9,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "53",
+   "max_time": 1800,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 6,
+    "red": 6
+   },
+   "reachable_objectives": {
+    "blue": 2,
+    "red": 2
+   },
+   "scenario_id": "2110431453"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "tank": 2
+    },
+    "red": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "loitering munition": 2,
+     "tank": 1,
+     "unmanned ground vehicle": 1
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 54.1,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 50.2,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 55.6,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 66.6,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "53",
+   "max_time": 1800,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 6,
+    "red": 6
+   },
+   "reachable_objectives": {
+    "blue": 2,
+    "red": 2
+   },
+   "scenario_id": "2110431553"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "tank": 2
+    },
+    "red": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "loitering munition": 2,
+     "tank": 1,
+     "unmanned ground vehicle": 1
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 55.9,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 54.1,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 51.0,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 56.9,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "53",
+   "max_time": 1800,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 6,
+    "red": 6
+   },
+   "reachable_objectives": {
+    "blue": 2,
+    "red": 2
+   },
+   "scenario_id": "2110431653"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "tank": 2
+    },
+    "red": {
+     "artillery": 2,
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "loitering munition": 2,
+     "tank": 1,
+     "unmanned ground vehicle": 1
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 53.1,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 57.4,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 49.3,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 2,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 52.7,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "53",
+   "max_time": 1800,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     80
+    ]
+   },
+   "operators": {
+    "blue": 6,
+    "red": 8
+   },
+   "reachable_objectives": {
+    "blue": 2,
+    "red": 2
+   },
+   "scenario_id": "2110431753"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 1,
+     "infantry fighting vehicle": 6,
+     "infantry squad": 6,
+     "tank": 6,
+     "unmanned aerial vehicle": 1
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 3,
+     "infantry squad": 3,
+     "loitering munition": 6,
+     "tank": 3,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 3
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 12
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 112.0,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 13
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 114.6,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 6,
+       "type_3": 6
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 122.5,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 10,
+       "type_3": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 110.5,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "94",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 5,
+    "values": [
+     80,
+     80,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 26,
+    "red": 28
+   },
+   "reachable_objectives": {
+    "blue": 5,
+    "red": 5
+   },
+   "scenario_id": "2120131194"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 5,
+     "helicopter": 2,
+     "infantry fighting vehicle": 6,
+     "infantry squad": 6,
+     "tank": 6,
+     "type 1 sub_type 16": 1,
+     "type 2 sub_type 13": 1,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 5,
+     "helicopter": 2,
+     "infantry fighting vehicle": 3,
+     "infantry squad": 3,
+     "loitering munition": 6,
+     "tank": 3,
+     "type 1 sub_type 16": 1,
+     "type 2 sub_type 14": 1,
+     "type 2 sub_type 15": 3,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 3
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 14
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 121.1,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 14
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 122.0,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 8,
+       "type_3": 6
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 118.3,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 11,
+       "type_3": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 118.0,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "94",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 5,
+    "values": [
+     80,
+     80,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 29,
+    "red": 32
+   },
+   "reachable_objectives": {
+    "blue": 5,
+    "red": 5
+   },
+   "scenario_id": "2120131294"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 1,
+     "infantry fighting vehicle": 6,
+     "infantry squad": 6,
+     "tank": 6,
+     "unmanned aerial vehicle": 1
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 3,
+     "infantry squad": 3,
+     "loitering munition": 6,
+     "tank": 3,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 3
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 12
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 127.0,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 13
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 140.9,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 6,
+       "type_3": 6
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 123.6,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 10,
+       "type_3": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 127.2,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 5,
+    "values": [
+     80,
+     80,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 26,
+    "red": 28
+   },
+   "reachable_objectives": {
+    "blue": 5,
+    "red": 5
+   },
+   "scenario_id": "2120331196"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 5,
+     "helicopter": 2,
+     "infantry fighting vehicle": 6,
+     "infantry squad": 6,
+     "tank": 3,
+     "type 2 sub_type 13": 2,
+     "type 4 sub_type 12": 3,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 5,
+     "helicopter": 2,
+     "infantry fighting vehicle": 3,
+     "infantry squad": 3,
+     "loitering munition": 6,
+     "tank": 3,
+     "type 2 sub_type 14": 2,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 3
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 14
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 127.6,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 13,
+       "type_2": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 132.3,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 8,
+       "type_3": 6,
+       "type_8": 5
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 137.6,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 11,
+       "type_2": 1,
+       "type_3": 3,
+       "type_8": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 201.8,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 5,
+    "values": [
+     80,
+     80,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 29,
+    "red": 29
+   },
+   "reachable_objectives": {
+    "blue": 5,
+    "red": 5
+   },
+   "scenario_id": "2120511121"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 1,
+     "infantry fighting vehicle": 6,
+     "infantry squad": 6,
+     "tank": 6,
+     "unmanned aerial vehicle": 1
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 3,
+     "infantry squad": 3,
+     "loitering munition": 6,
+     "tank": 3,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 3
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 12
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 163.1,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 13
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 121.9,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 6,
+       "type_3": 6
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 116.2,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 10,
+       "type_3": 3
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 120.8,
+      "objectives": 5,
+      "objectives_targeted": 5,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 5,
+    "values": [
+     80,
+     80,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 26,
+    "red": 28
+   },
+   "reachable_objectives": {
+    "blue": 5,
+    "red": 5
+   },
+   "scenario_id": "2120531121"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 8,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 18
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 173.3,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 16
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 189.6,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 10,
+       "type_3": 8
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 187.6,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 12,
+       "type_3": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 211.3,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 34,
+    "red": 34
+   },
+   "reachable_objectives": {
+    "blue": 7,
+    "red": 7
+   },
+   "scenario_id": "2130331196"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 8,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 18
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 240.9,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 16
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 177.0,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 10,
+       "type_3": 8
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 172.8,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 12,
+       "type_3": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 166.5,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 34,
+    "red": 34
+   },
+   "reachable_objectives": {
+    "blue": 7,
+    "red": 7
+   },
+   "scenario_id": "2130331296"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 4,
+     "transport helicopter": 2,
+     "type 1 sub_type 16": 1,
+     "type 2 sub_type 10": 1,
+     "type 2 sub_type 13": 1,
+     "type 2 sub_type 15": 3,
+     "type 4 sub_type 11": 3,
+     "type 4 sub_type 12": 3,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "transport helicopter": 2,
+     "type 1 sub_type 16": 1,
+     "type 2 sub_type 10": 1,
+     "type 2 sub_type 14": 1,
+     "type 2 sub_type 15": 3,
+     "type 2 sub_type 9": 3,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 20
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 210.9,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 20
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 168.5,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 12,
+       "type_3": 8,
+       "type_8": 6
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 175.6,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 16,
+       "type_3": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 174.3,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 44,
+    "red": 45
+   },
+   "reachable_objectives": {
+    "blue": 7,
+    "red": 7
+   },
+   "scenario_id": "2130511121"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 4,
+     "transport helicopter": 2,
+     "type 1 sub_type 16": 1,
+     "type 2 sub_type 10": 1,
+     "type 2 sub_type 13": 1,
+     "type 2 sub_type 15": 3,
+     "type 4 sub_type 11": 3,
+     "type 4 sub_type 12": 3,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "transport helicopter": 2,
+     "type 1 sub_type 16": 1,
+     "type 2 sub_type 10": 1,
+     "type 2 sub_type 14": 1,
+     "type 2 sub_type 15": 3,
+     "type 2 sub_type 9": 3,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 19
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 189.5,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 19
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 211.7,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 12,
+       "type_3": 8,
+       "type_8": 6
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 276.5,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 16,
+       "type_3": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 179.2,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 44,
+    "red": 45
+   },
+   "reachable_objectives": {
+    "blue": 7,
+    "red": 7
+   },
+   "scenario_id": "2130511221"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 4,
+     "transport helicopter": 2,
+     "type 2 sub_type 10": 1,
+     "type 2 sub_type 13": 2,
+     "type 2 sub_type 15": 3,
+     "type 4 sub_type 12": 3,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "transport helicopter": 2,
+     "type 2 sub_type 10": 1,
+     "type 2 sub_type 14": 2,
+     "type 2 sub_type 15": 3,
+     "type 2 sub_type 9": 3,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 20
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 170.5,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 19,
+       "type_2": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 159.2,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 12,
+       "type_3": 8,
+       "type_8": 6
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 221.0,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 16,
+       "type_2": 1,
+       "type_3": 4,
+       "type_8": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 263.3,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 41,
+    "red": 45
+   },
+   "reachable_objectives": {
+    "blue": 7,
+    "red": 7
+   },
+   "scenario_id": "2130511321"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 16
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 152.3,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 16
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 157.3,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 8,
+       "type_3": 8
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 162.7,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 12,
+       "type_3": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 173.5,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 30,
+    "red": 34
+   },
+   "reachable_objectives": {
+    "blue": 7,
+    "red": 7
+   },
+   "scenario_id": "2130511421"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 8,
+     "transport helicopter": 2,
+     "type 1 sub_type 16": 1,
+     "type 2 sub_type 10": 1,
+     "type 2 sub_type 13": 1,
+     "type 2 sub_type 15": 3,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "transport helicopter": 2,
+     "type 1 sub_type 16": 1,
+     "type 2 sub_type 10": 1,
+     "type 2 sub_type 14": 1,
+     "type 2 sub_type 15": 3,
+     "type 2 sub_type 9": 3,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 20
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 150.3,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 20
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 201.5,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 12,
+       "type_3": 8
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 151.4,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 16,
+       "type_3": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 169.2,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "94",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 42,
+    "red": 45
+   },
+   "reachable_objectives": {
+    "blue": 7,
+    "red": 7
+   },
+   "scenario_id": "2140131194"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 8,
+     "transport helicopter": 2,
+     "type 1 sub_type 16": 1,
+     "type 2 sub_type 10": 1,
+     "type 2 sub_type 13": 1,
+     "type 2 sub_type 15": 3,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "transport helicopter": 2,
+     "type 1 sub_type 16": 1,
+     "type 2 sub_type 10": 1,
+     "type 2 sub_type 14": 1,
+     "type 2 sub_type 15": 3,
+     "type 2 sub_type 9": 3,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 20
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 101.1,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 20
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 101.9,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 12,
+       "type_3": 8
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 122.4,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 16,
+       "type_3": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 101.8,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 42,
+    "red": 45
+   },
+   "reachable_objectives": {
+    "blue": 7,
+    "red": 7
+   },
+   "scenario_id": "2140331196"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "tank": 1,
+     "unmanned aerial vehicle": 1
+    },
+    "red": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "tank": 3,
+     "unmanned aerial vehicle": 1
+    }
+   },
+   "contract_limitations": [
+    "not playable on the old SDK pairing: E1 no supplied map named by the scenario id"
+   ],
+   "eligibility_reasons": [
+    "E1 no supplied map named by the scenario id"
+   ],
+   "eligible": false,
+   "map_id": null,
+   "max_time": 1800,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 6,
+    "red": 8
+   },
+   "scenario_id": "2201010101"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "infantry fighting vehicle": 6,
+     "infantry squad": 6,
+     "tank": 3,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "infantry fighting vehicle": 6,
+     "infantry squad": 6,
+     "tank": 6,
+     "unmanned aerial vehicle": 2
+    }
+   },
+   "contract_limitations": [
+    "not playable on the old SDK pairing: E1 no supplied map named by the scenario id"
+   ],
+   "eligibility_reasons": [
+    "E1 no supplied map named by the scenario id"
+   ],
+   "eligible": false,
+   "map_id": null,
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 23,
+    "red": 26
+   },
+   "scenario_id": "2201010105"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "tank": 3,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    },
+    "red": {
+     "artillery": 6,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 6,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [
+    "not playable on the old SDK pairing: E1 no supplied map named by the scenario id"
+   ],
+   "eligibility_reasons": [
+    "E1 no supplied map named by the scenario id"
+   ],
+   "eligible": false,
+   "map_id": null,
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 5,
+    "values": [
+     80,
+     80,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 23,
+    "red": 34
+   },
+   "scenario_id": "2201010109"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 3,
+     "infantry squad": 3,
+     "tank": 2,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 3
+    },
+    "red": {
+     "infantry fighting vehicle": 2,
+     "infantry squad": 2,
+     "loitering munition": 4,
+     "tank": 3,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 2
+    }
+   },
+   "contract_limitations": [
+    "not playable on the old SDK pairing: E1 no supplied map named by the scenario id"
+   ],
+   "eligibility_reasons": [
+    "E1 no supplied map named by the scenario id"
+   ],
+   "eligible": false,
+   "map_id": null,
+   "max_time": 1800,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 13,
+    "red": 15
+   },
+   "scenario_id": "2201010110"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 8,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 18
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 97.3,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 16
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 99.3,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 10,
+       "type_3": 8
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 98.6,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 12,
+       "type_3": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 120.0,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 34,
+    "red": 34
+   },
+   "reachable_objectives": {
+    "blue": 7,
+    "red": 7
+   },
+   "scenario_id": "2230331196"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 16
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 94.5,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 16
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 92.3,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 8,
+       "type_3": 8
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 110.9,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 12,
+       "type_3": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 95.0,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 30,
+    "red": 34
+   },
+   "reachable_objectives": {
+    "blue": 7,
+    "red": 7
+   },
+   "scenario_id": "2230531121"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 8,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 18
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 91.6,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 16
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 97.3,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 10,
+       "type_3": 8
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 151.4,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 12,
+       "type_3": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 111.2,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 34,
+    "red": 34
+   },
+   "reachable_objectives": {
+    "blue": 7,
+    "red": 7
+   },
+   "scenario_id": "2230531221"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": true,
+    "direct_fire": true,
+    "indirect_fire": true,
+    "starts_aboard": true,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 8,
+     "infantry squad": 8,
+     "tank": 8,
+     "unmanned aerial vehicle": 2
+    },
+    "red": {
+     "artillery": 6,
+     "helicopter": 2,
+     "infantry fighting vehicle": 4,
+     "infantry squad": 4,
+     "loitering munition": 8,
+     "tank": 4,
+     "unmanned aerial vehicle": 2,
+     "unmanned ground vehicle": 4
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 18
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 104.6,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 16
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 99.3,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 10,
+       "type_3": 8
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 101.6,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 12,
+       "type_3": 4
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 119.0,
+      "objectives": 7,
+      "objectives_targeted": 7,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "92",
+   "max_time": 2880,
+   "movement_modes": [
+    "AIR",
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 7,
+    "values": [
+     80,
+     80,
+     80,
+     50,
+     50,
+     50,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 34,
+    "red": 34
+   },
+   "reachable_objectives": {
+    "blue": 7,
+    "red": 7
+   },
+   "scenario_id": "2230631192"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": false,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": false,
+    "transport": false
+   },
+   "classes": {
+    "blue": {
+     "tank": 1
+    },
+    "red": {
+     "tank": 1
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 10.3,
+      "objectives": 1,
+      "objectives_targeted": 1,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 10.4,
+      "objectives": 1,
+      "objectives_targeted": 1,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 10.3,
+      "objectives": 1,
+      "objectives_targeted": 1,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 11.3,
+      "objectives": 1,
+      "objectives_targeted": 1,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "9601",
+   "max_time": 1000,
+   "movement_modes": [
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 1,
+    "values": [
+     80
+    ]
+   },
+   "operators": {
+    "blue": 1,
+    "red": 1
+   },
+   "reachable_objectives": {
+    "blue": 1,
+    "red": 1
+   },
+   "scenario_id": "201033019601"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": false,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": false,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "tank": 1
+    },
+    "red": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "tank": 1
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 28.8,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 29.0,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 1,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 30.4,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 1,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 32.0,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "9601",
+   "max_time": 1800,
+   "movement_modes": [
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 3,
+    "red": 3
+   },
+   "reachable_objectives": {
+    "blue": 2,
+    "red": 2
+   },
+   "scenario_id": "201033029601"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": false,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": false,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "tank": 1
+    },
+    "red": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "tank": 1
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 48.1,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 49.6,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 1,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 29.6,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 1,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 28.6,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "9601",
+   "max_time": 1800,
+   "movement_modes": [
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 3,
+    "red": 3
+   },
+   "reachable_objectives": {
+    "blue": 2,
+    "red": 2
+   },
+   "scenario_id": "201033039601"
+  },
+  {
+   "capabilities": {
+    "aircraft_support": false,
+    "direct_fire": true,
+    "indirect_fire": false,
+    "starts_aboard": false,
+    "transport": true
+   },
+   "classes": {
+    "blue": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "tank": 1
+    },
+    "red": {
+     "infantry fighting vehicle": 1,
+     "infantry squad": 1,
+     "tank": 1
+    }
+   },
+   "contract_limitations": [],
+   "eligibility_reasons": [],
+   "eligible": true,
+   "first_decision": {
+    "capacity-traffic": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 29.7,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 2
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 28.5,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    },
+    "mission-orchestrator": {
+     "blue": {
+      "actions_by_type": {
+       "type_1": 1,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 28.5,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     },
+     "red": {
+      "actions_by_type": {
+       "type_1": 1,
+       "type_3": 1
+      },
+      "contract_error": false,
+      "fallback": false,
+      "first_decision_ms": 30.7,
+      "objectives": 2,
+      "objectives_targeted": 2,
+      "rejections": 0
+     }
+    }
+   },
+   "map_id": "9601",
+   "max_time": 1800,
+   "movement_modes": [
+    "INFANTRY",
+    "VEHICLE"
+   ],
+   "objectives": {
+    "count": 2,
+    "values": [
+     80,
+     50
+    ]
+   },
+   "operators": {
+    "blue": 3,
+    "red": 3
+   },
+   "reachable_objectives": {
+    "blue": 2,
+    "red": 2
+   },
+   "scenario_id": "211033019601"
+  }
+ ],
+ "schema": "miaosuan-s34-coverage/1",
+ "summary": {
+  "capability_scenarios": {
+   "aircraft_support": 34,
+   "direct_fire": 40,
+   "indirect_fire": 24,
+   "starts_aboard": 34,
+   "transport": 37
+  },
+  "eligible": 40,
+  "eligible_maps": 7,
+  "first_decision_problems": 0,
+  "maps": 7,
+  "scenarios": 50,
+  "sides_targeting_no_objective": {
+   "capacity-traffic": 0,
+   "mission-orchestrator": 0
+  }
+ }
+}
