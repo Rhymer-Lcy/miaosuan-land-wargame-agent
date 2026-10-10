@@ -523,3 +523,88 @@ candidate, the control, the schedule, the gates and the dispositions are frozen 
 after a session opens. Nothing was promoted, merged into `main` or uploaded, and `platform-compat2` is untouched.
 
 The one question for the owner: **Authorize up to 48 Sprint 35 engine sessions, 2827–2874, under the frozen gates?**
+
+## 16. Live results (sessions 2827 to 2845)
+
+The owner authorized the 48 sessions on 2026-10-11 (card `0b90ae26...`, candidate `ea38c042...`, head `a031c25`). Before
+session 2827 the ledger (2826, SHA-256 `2359e9cf...`, none open), the three policy digests, both cards, the clean server
+worktree, free engine locks, the canary (`a3d3b022`, rebuilt on the server at the approved head) and the server load (the
+other user's job pinned to NUMA node 1) were verified again. The registered runner played positions in the frozen order,
+one exclusive session each, on NUMA node 0, from 2026-10-11T00:12:19+08:00.
+
+Positions 1 to 18 completed with no structural stop. **Position 19** (session 2845, the Sprint 34 control as blue
+against `baseline-v2` in 2010431153) completed, and the runner stopped on **S6**: 2 of the control's 31 unit actions were
+refused (one shot at a unit already destroyed, code 203; one shot refused with code 516), 6.5% against the 2% limit; no
+non-shoot action was refused, no decision fell back and every decision was reconstructed. The study closed at once, as
+registered: no retry, no replacement, sessions 2846 to 2874 were not opened. The ledger holds 2845 sessions, all closed,
+integrity ok (SHA-256 `f396b2a137100dedc1c912bffc412a2c92e77ed06fe85988db972feb0919a927`).
+
+**Registered disposition: `S35_LIVE_INVALID`** (a structural stop fired). Two defects of this sprint's registration,
+neither changing that disposition:
+
+* **S6 on small games.** S6 was carried over from Sprint 34 unchanged, where it was calibrated on games with hundreds of
+  unit actions. In 1910631192 and 2010431153 a policy issues 6 to 31 unit actions per game, so a single refused shot
+  (3% to 17%) exceeds 2%: the rule fires on one ordinary shot refusal. I did not measure its false-alarm rate on small
+  games before registering it (the four small-scenario games of Sprint 34 happened to have no refusal). The stop was
+  caused by the control, not by the candidate, and is a measurement-rule failure, not an engine or agent failure.
+* **The report's disposition.** `scripts/s35_analysis.py report` passes only stored batch gates to
+  `s35_live.disposition`; a stop inside a batch stores no gate, so `results.json` prints `S35_INTEGRATED_INCONCLUSIVE`.
+  `scripts/s35_disposition.py` (reporting only) applies the registered `batch_gate` and `disposition` unchanged to the
+  19 played games and writes `evaluation/s35-coalition-live-1/disposition.json`: `S35_LIVE_INVALID`. The function is
+  Sprint 34's, where no stop ever fired. The same script writes the public `results.json` (the registered report) with
+  each game's mean held value left out: one value matched a pattern of the project's pre-push privacy scan, whose
+  accepted baseline is not changed for it; the private analysis files keep it.
+
+**Integrity of the 19 games.** Every decision of both policies reconstructed by the observer (0 mismatches), 0
+fallbacks, 0 contract errors, no damaging attack on own units, candidate decision latency p99 at most 25.062 ms and
+maximum 482.151 ms, candidate memory at most 2,671 bytes.
+
+**Results, descriptive only** (one game per configuration; the study is invalid and incomplete, the candidate's blue
+game in 2010431153 was never played, so nothing here is a registered comparison; `z` against `baseline-v2`'s own games):
+
+| Scenario | Seat | Candidate margin (z) | Control margin (z) | Candidate occupy / losses / own lost | Control occupy / losses / own lost |
+|---|---|---|---|---|---|
+| 2130511121 | red | -165 (6.148) | -951 (-0.707) | 50 / 6 / 27 of 45 | 0 / 10 / 32 of 45 |
+| 2130511121 | blue | 765 (-0.915) | 1,009 (1.213) | 440 / 5 / 16 of 44 | 440 / 4 / 12 of 44 |
+| 2120531121 | red | 251 (0.846) | -551 (-0.522) | 230 / 4 / 13 of 28 | 0 / 4 / 22 of 28 |
+| 2120531121 | blue | 971 (1.238) | 809 (0.961) | 310 / 0 / 0 of 26 | 310 / 0 / 4 of 26 |
+| 1930331196 | red | -606 (-1.733) | -746 (-2.042) | 0 / 6 / 20 of 26 | 0 / 5 / 18 of 26 |
+| 1930331196 | blue | -502 (-0.711) | 676 (1.888) | 0 / 8 / 17 of 26 | 310 / 1 / 6 of 26 |
+| 1910631192 | red | -278 (-0.821) | -234 (-0.633) | 0 / 1 / 6 of 6 | 0 / 2 / 6 of 6 |
+| 1910631192 | blue | -298 (-1.641) | 222 (0.582) | 0 / 2 / 6 of 6 | 130 / 1 / 2 of 6 |
+| 2010431153 | red | -346 (-0.709) | -346 (-0.709) | 0 / 1 / 6 of 6 | 0 / 0 / 6 of 6 |
+| 2010431153 | blue | not played | 258 (0.147) | | 130 / 0 / 1 of 6 |
+
+Over its 9 games the candidate's mean `z` was 0.189 against the control's 0.018 over 10; it lost 33 held objectives
+(the control 27 in 10 games) and 111 of 213 units (the control 109 of 219). It did better than the control as red in
+2130511121 and 2120531121, and much worse as blue in 2130511121, 1930331196 and 1910631192: a failure to generalise
+across seats, from one game each. Candidate ground units waited 107 unit-steps in front of full hexes in its blue game
+in 1930331196, the first waits of the integrated line; the control waited 34 in 2130511121.
+
+**What the modules did** (post hoc, `local/diagnostics/s35/posthoc_live.py`, private; descriptive). Retention worked as
+built: at the candidate's 33 objective losses the last standing defenders were destroyed 28 times and left alive 5
+times (the control: 19 and 8). But keeping them did not save the objectives: 41 of the candidate's 84 lost ground units
+died while kept in a zone by the stance logic (`coalition/hold`), and those zones fell anyway. The delay stance keeps
+every defender unless a withdrawal is justified (visible threat, a destination, a cheaper holder), and those conditions
+were seldom all met, so outmatched defenders stayed and died. Fewer units were lost aboard carriers (11 against 12; lift
+plans covered 4 lost units against the control's 12). The candidate's stance mix was dominated by capture, quiet,
+delay and skip; its guided fire acted once in 9 games.
+
+The disclosed limits of section 12 stand: the threat model counts motionless enemies as threats (20 of 80 model
+scenario-sides short against the inert control), and the model world cannot show combat value.
+
+## 17. Disposition, budget and next step
+
+**Disposition: `S35_LIVE_INVALID`.** 19 of the 48 authorized sessions were used (2827 to 2845); sessions 2846 to 2874
+were not opened and are not carried forward; no session after 2874 exists. Nothing was promoted, merged into `main` or
+uploaded; `platform-compat2` and every earlier disposition are unchanged.
+
+What the games suggest, as hypotheses only: holding a zone with every defender against a stronger arriving force loses
+the units and the objective together; the candidate's gains came as red where the opponent attacks prepared positions,
+its losses as blue where it must contest objectives.
+
+**Next (one recommendation, for the owner's approval):** an offline revision study, no engine session, that (a) corrects
+S6 into an absolute rule that does not fire on a single refused shot in a small game, measured for its false-alarm
+rate on every recorded game before it is registered, and (b) replaces "keep every defender" with "keep one cheap
+holder, move the rest out of the attackers' reach unless the coalition requirement is met", qualified on the 19
+recorded Sprint 35 games and Sprint 34's 24 before any new budget is requested.
