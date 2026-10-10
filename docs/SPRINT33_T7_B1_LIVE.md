@@ -363,3 +363,30 @@ first-match order, which is section 7.5's.
   change later trajectories.
 * The movement and transition timing agrees exactly with the natural-arrival records, but the stop's own engine
   semantics were observed only in these five instances.
+
+## 15. Close-out
+
+* **Engine**: read-only verify on the evaluation server after session 2802: 2,802 sessions opened and closed, none
+  unclosed, integrity ok, state chain continuous, the last event the close of session 2802; ledger file SHA-256
+  `b91d0538c96a855513de98226b28d21c4484785cc6dab1dadc5b50d6d3c69dbe`. No installation, state file or configuration was
+  touched. No session 2803 exists.
+* **Reproducibility**: both stored analyses (`scripts/s33_analysis.py game --position n --check`) and the public
+  report (`report --check`) regenerate byte for byte from the private records and captures on the server.
+* **Platform canary** rebuilt from the results commit into a scratch folder:
+  `a3d3b0229118c0a389d379b315a620465624222f93fcf39de115e8e9dde59511`, isolated smoke 62 steps with 0 mismatches; the
+  builder, the adapter and every `baseline-v2` lineage module are unchanged since Sprint 32.
+* **Tests**: the workstation suite at the results commit ran 2,601 tests, 114 skipped, exit 0.
+* **Document checks** (private, `local/diagnostics/s33/doc_check.py`): 39 clauses of sections 1, 5, 6, 7.3 and 9 to 12
+  rebuilt from the logs, records and committed results, every one present, and 19 of 19 planted single-number errors
+  caught.
+* **Privacy**: the scan of every blob reachable from the published refs (1,270 blobs before this section) gives 106
+  hit lines, identical as a multiset to the accepted baseline; the concurrent `platform-compat2` branch is outside that
+  scope, as in Sprint 32. Raw observations, unit identifiers, hexes and captures stay under the ignored `local/`.
+* **Isolation**: `main` stays at `08aff3f`; `platform-compat2`, the shared workstation checkout's two uncommitted
+  files, the server checkout and every earlier sprint branch are untouched; only `sprint33-t7-b1-live` was pushed and
+  nothing was merged or uploaded. The server worktree is removed after the final check; its branch ref stays in the
+  server clone.
+
+**Recommended next action (one): the owner's review of `T7B1_MECH_SUPPORTED` together with its limits (section 14),
+before any further T7-B1 work.** No engine session is requested. The visibility limit of section 13 would need a new,
+separately identified candidate and its own offline qualification; nothing here proposes one.
