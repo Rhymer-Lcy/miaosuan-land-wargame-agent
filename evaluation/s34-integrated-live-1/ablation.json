@@ -1,0 +1,1274 @@
+{
+ "configs": [
+  "CT",
+  "mo-no-transport",
+  "mo-no-artillery",
+  "mo-no-threat-routing",
+  "mo-no-economy",
+  "mo-no-recovery"
+ ],
+ "games": [
+  {
+   "condition": "H1",
+   "configs": {
+    "CT": {
+     "decisions_differing": 33,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 33,
+      "artillery": 11,
+      "fire": 13,
+      "transport": 12
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 10,
+     "first_divergence_step": 92,
+     "units_differing_by_live_module": {
+      "artillery": 11
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 4,
+     "first_divergence_step": 661,
+     "units_differing_by_live_module": {
+      "allocation": 8
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 7,
+     "first_divergence_step": 80,
+     "units_differing_by_live_module": {
+      "allocation": 9
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 2,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 8,
+      "transport": 12
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 1,
+   "scenario_id": "2130511121"
+  },
+  {
+   "condition": "H2",
+   "configs": {
+    "CT": {
+     "decisions_differing": 99,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 22,
+      "fire": 29,
+      "reserve": 10,
+      "transport": 86
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-economy": {
+     "decisions_differing": 9,
+     "first_divergence_step": 334,
+     "units_differing_by_live_module": {
+      "allocation": 12,
+      "reserve": 4
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 4,
+     "first_divergence_step": 75,
+     "units_differing_by_live_module": {
+      "allocation": 3,
+      "transport": 4
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 63,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 5,
+      "artillery": 1,
+      "transport": 85
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 2,
+   "scenario_id": "2130511121"
+  },
+  {
+   "condition": "H1",
+   "configs": {
+    "CT": {
+     "decisions_differing": 69,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 6,
+      "artillery": 22,
+      "fire": 11,
+      "transport": 45
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 22,
+     "first_divergence_step": 68,
+     "units_differing_by_live_module": {
+      "artillery": 22
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 1,
+     "first_divergence_step": 546,
+     "units_differing_by_live_module": {
+      "allocation": 2
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-transport": {
+     "decisions_differing": 37,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 6,
+      "transport": 43
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 3,
+   "scenario_id": "2120531121"
+  },
+  {
+   "condition": "H2",
+   "configs": {
+    "CT": {
+     "decisions_differing": 180,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 5,
+      "artillery": 7,
+      "fire": 2,
+      "reserve": 2,
+      "support": 2,
+      "transport": 221
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 7,
+     "first_divergence_step": 76,
+     "units_differing_by_live_module": {
+      "artillery": 7
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 1,
+     "first_divergence_step": 75,
+     "units_differing_by_live_module": {
+      "transport": 1
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 172,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 3,
+      "reserve": 2,
+      "support": 2,
+      "transport": 220
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 4,
+   "scenario_id": "2120531121"
+  },
+  {
+   "condition": "H1",
+   "configs": {
+    "CT": {
+     "decisions_differing": 17,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 7,
+      "artillery": 10,
+      "fire": 2,
+      "transport": 9
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 10,
+     "first_divergence_step": 683,
+     "units_differing_by_live_module": {
+      "artillery": 10
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 3,
+     "first_divergence_step": 440,
+     "units_differing_by_live_module": {
+      "allocation": 3
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 2,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 4,
+      "transport": 7
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 5,
+   "scenario_id": "1930331196"
+  },
+  {
+   "condition": "H2",
+   "configs": {
+    "CT": {
+     "decisions_differing": 378,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 7,
+      "artillery": 5,
+      "fire": 2,
+      "reserve": 2,
+      "transport": 512
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 5,
+     "first_divergence_step": 927,
+     "units_differing_by_live_module": {
+      "artillery": 5
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 1,
+     "first_divergence_step": 1181,
+     "units_differing_by_live_module": {
+      "allocation": 2
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 4,
+     "first_divergence_step": 280,
+     "units_differing_by_live_module": {
+      "allocation": 4
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 416,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 97,
+      "reserve": 2,
+      "transport": 512
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 6,
+   "scenario_id": "1930331196"
+  },
+  {
+   "condition": "H1",
+   "configs": {
+    "CT": {
+     "decisions_differing": 46,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 1,
+      "transport": 47
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-economy": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-transport": {
+     "decisions_differing": 46,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 1,
+      "transport": 47
+     }
+    }
+   },
+   "decisions": 1801,
+   "position": 7,
+   "scenario_id": "1910631192"
+  },
+  {
+   "condition": "H2",
+   "configs": {
+    "CT": {
+     "decisions_differing": 4,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "fire": 1,
+      "transport": 6
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-economy": {
+     "decisions_differing": 1,
+     "first_divergence_step": 912,
+     "units_differing_by_live_module": {
+      "allocation": 2
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-transport": {
+     "decisions_differing": 3,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "transport": 6
+     }
+    }
+   },
+   "decisions": 1801,
+   "position": 8,
+   "scenario_id": "1910631192"
+  },
+  {
+   "condition": "H1",
+   "configs": {
+    "CT": {
+     "decisions_differing": 132,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 96,
+      "artillery": 31,
+      "fire": 23,
+      "transport": 12
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 31,
+     "first_divergence_step": 92,
+     "units_differing_by_live_module": {
+      "artillery": 31
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 78,
+     "first_divergence_step": 582,
+     "units_differing_by_live_module": {
+      "allocation": 78
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 4,
+     "first_divergence_step": 80,
+     "units_differing_by_live_module": {
+      "allocation": 6
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 2,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 8,
+      "transport": 12
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 9,
+   "scenario_id": "2130511121"
+  },
+  {
+   "condition": "H2",
+   "configs": {
+    "CT": {
+     "decisions_differing": 48,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 13,
+      "dispersal": 2,
+      "fire": 8,
+      "reserve": 2,
+      "transport": 59
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-economy": {
+     "decisions_differing": 5,
+     "first_divergence_step": 426,
+     "units_differing_by_live_module": {
+      "allocation": 5,
+      "dispersal": 2,
+      "reserve": 3
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 3,
+     "first_divergence_step": 75,
+     "units_differing_by_live_module": {
+      "allocation": 2,
+      "transport": 4
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 37,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 3,
+      "transport": 60
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 10,
+   "scenario_id": "2130511121"
+  },
+  {
+   "condition": "H1",
+   "configs": {
+    "CT": {
+     "decisions_differing": 87,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 6,
+      "artillery": 16,
+      "fire": 15,
+      "transport": 66
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 16,
+     "first_divergence_step": 68,
+     "units_differing_by_live_module": {
+      "artillery": 16
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 1,
+     "first_divergence_step": 341,
+     "units_differing_by_live_module": {
+      "allocation": 1
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 58,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 5,
+      "transport": 64
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 11,
+   "scenario_id": "2120531121"
+  },
+  {
+   "condition": "H2",
+   "configs": {
+    "CT": {
+     "decisions_differing": 178,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 11,
+      "artillery": 11,
+      "dispersal": 1,
+      "fire": 9,
+      "reserve": 2,
+      "support": 2,
+      "transport": 175
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 11,
+     "first_divergence_step": 76,
+     "units_differing_by_live_module": {
+      "artillery": 11
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 5,
+     "first_divergence_step": 625,
+     "units_differing_by_live_module": {
+      "allocation": 4,
+      "dispersal": 3,
+      "fire": 2
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 3,
+     "first_divergence_step": 75,
+     "units_differing_by_live_module": {
+      "allocation": 2,
+      "transport": 1
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 157,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 5,
+      "reserve": 2,
+      "support": 2,
+      "transport": 174
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 12,
+   "scenario_id": "2120531121"
+  },
+  {
+   "condition": "H1",
+   "configs": {
+    "CT": {
+     "decisions_differing": 17,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 7,
+      "artillery": 8,
+      "fire": 3,
+      "transport": 9
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 8,
+     "first_divergence_step": 682,
+     "units_differing_by_live_module": {
+      "artillery": 8
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 3,
+     "first_divergence_step": 440,
+     "units_differing_by_live_module": {
+      "allocation": 3
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 2,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 3,
+      "transport": 7
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 13,
+   "scenario_id": "1930331196"
+  },
+  {
+   "condition": "H2",
+   "configs": {
+    "CT": {
+     "decisions_differing": 292,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 15,
+      "artillery": 3,
+      "fire": 4,
+      "reserve": 3,
+      "transport": 292
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 2,
+     "first_divergence_step": 781,
+     "units_differing_by_live_module": {
+      "artillery": 3
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 5,
+     "first_divergence_step": 1511,
+     "units_differing_by_live_module": {
+      "allocation": 6,
+      "dispersal": 1,
+      "reserve": 1
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 10,
+     "first_divergence_step": 280,
+     "units_differing_by_live_module": {
+      "allocation": 9,
+      "transport": 2
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 276,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 5,
+      "reserve": 2,
+      "transport": 292
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 14,
+   "scenario_id": "1930331196"
+  },
+  {
+   "condition": "H1",
+   "configs": {
+    "CT": {
+     "decisions_differing": 1,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 1,
+      "transport": 2
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-economy": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-transport": {
+     "decisions_differing": 1,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 1,
+      "transport": 2
+     }
+    }
+   },
+   "decisions": 1801,
+   "position": 15,
+   "scenario_id": "1910631192"
+  },
+  {
+   "condition": "H2",
+   "configs": {
+    "CT": {
+     "decisions_differing": 2,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "transport": 5
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-economy": {
+     "decisions_differing": 1,
+     "first_divergence_step": 825,
+     "units_differing_by_live_module": {
+      "allocation": 1,
+      "fire": 2
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-transport": {
+     "decisions_differing": 2,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "transport": 5
+     }
+    }
+   },
+   "decisions": 1801,
+   "position": 16,
+   "scenario_id": "1910631192"
+  },
+  {
+   "condition": "C2",
+   "configs": {
+    "CT": {
+     "decisions_differing": 31,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 6,
+      "artillery": 26,
+      "dispersal": 2,
+      "fire": 4,
+      "reserve": 2,
+      "transport": 11
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 23,
+     "first_divergence_step": 48,
+     "units_differing_by_live_module": {
+      "artillery": 26
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 2,
+     "first_divergence_step": 545,
+     "units_differing_by_live_module": {
+      "allocation": 1,
+      "dispersal": 2,
+      "reserve": 1
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 1,
+     "first_divergence_step": 301,
+     "units_differing_by_live_module": {
+      "allocation": 1
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 3,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 5,
+      "transport": 9
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 17,
+   "scenario_id": "2120531121"
+  },
+  {
+   "condition": "C3",
+   "configs": {
+    "CT": {
+     "decisions_differing": 38,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 5,
+      "artillery": 15,
+      "dispersal": 4,
+      "reserve": 5,
+      "transport": 33
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 15,
+     "first_divergence_step": 60,
+     "units_differing_by_live_module": {
+      "artillery": 15
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 3,
+     "first_divergence_step": 1277,
+     "units_differing_by_live_module": {
+      "allocation": 2,
+      "dispersal": 2,
+      "reserve": 2
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 1,
+     "first_divergence_step": 75,
+     "units_differing_by_live_module": {
+      "transport": 1
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 19,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 5,
+      "reserve": 2,
+      "transport": 31
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 18,
+   "scenario_id": "2120531121"
+  },
+  {
+   "condition": "C2",
+   "configs": {
+    "CT": {
+     "decisions_differing": 14,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 6,
+      "artillery": 1,
+      "dispersal": 2,
+      "reserve": 2,
+      "transport": 18
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 1,
+     "first_divergence_step": 493,
+     "units_differing_by_live_module": {
+      "artillery": 1
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 3,
+     "first_divergence_step": 741,
+     "units_differing_by_live_module": {
+      "allocation": 3,
+      "dispersal": 2,
+      "reserve": 1
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-transport": {
+     "decisions_differing": 10,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 5,
+      "transport": 16
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 19,
+   "scenario_id": "1930331196"
+  },
+  {
+   "condition": "C3",
+   "configs": {
+    "CT": {
+     "decisions_differing": 35,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 4,
+      "artillery": 4,
+      "dispersal": 4,
+      "fire": 2,
+      "reserve": 4,
+      "transport": 38
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 4,
+     "first_divergence_step": 108,
+     "units_differing_by_live_module": {
+      "artillery": 4
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 7,
+     "first_divergence_step": 965,
+     "units_differing_by_live_module": {
+      "allocation": 3,
+      "dispersal": 3,
+      "reserve": 2,
+      "transport": 3
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 4,
+     "first_divergence_step": 786,
+     "units_differing_by_live_module": {
+      "dispersal": 1,
+      "transport": 3
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 25,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 6,
+      "reserve": 2,
+      "transport": 35
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 20,
+   "scenario_id": "1930331196"
+  },
+  {
+   "condition": "C2",
+   "configs": {
+    "CT": {
+     "decisions_differing": 35,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 6,
+      "artillery": 39,
+      "dispersal": 2,
+      "reserve": 2,
+      "transport": 11
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 28,
+     "first_divergence_step": 48,
+     "units_differing_by_live_module": {
+      "artillery": 39
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 2,
+     "first_divergence_step": 545,
+     "units_differing_by_live_module": {
+      "allocation": 1,
+      "dispersal": 2,
+      "reserve": 1
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 1,
+     "first_divergence_step": 301,
+     "units_differing_by_live_module": {
+      "allocation": 1
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 3,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 5,
+      "transport": 9
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 21,
+   "scenario_id": "2120531121"
+  },
+  {
+   "condition": "C3",
+   "configs": {
+    "CT": {
+     "decisions_differing": 39,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 5,
+      "artillery": 16,
+      "dispersal": 4,
+      "reserve": 4,
+      "transport": 33
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 16,
+     "first_divergence_step": 60,
+     "units_differing_by_live_module": {
+      "artillery": 16
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 3,
+     "first_divergence_step": 1277,
+     "units_differing_by_live_module": {
+      "allocation": 2,
+      "dispersal": 2,
+      "reserve": 2
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 1,
+     "first_divergence_step": 75,
+     "units_differing_by_live_module": {
+      "transport": 1
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 19,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 5,
+      "reserve": 2,
+      "transport": 32
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 22,
+   "scenario_id": "2120531121"
+  },
+  {
+   "condition": "C2",
+   "configs": {
+    "CT": {
+     "decisions_differing": 14,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 6,
+      "artillery": 1,
+      "dispersal": 2,
+      "reserve": 2,
+      "transport": 18
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 1,
+     "first_divergence_step": 493,
+     "units_differing_by_live_module": {
+      "artillery": 1
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 3,
+     "first_divergence_step": 741,
+     "units_differing_by_live_module": {
+      "allocation": 3,
+      "dispersal": 2,
+      "reserve": 1
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-transport": {
+     "decisions_differing": 10,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 5,
+      "transport": 16
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 23,
+   "scenario_id": "1930331196"
+  },
+  {
+   "condition": "C3",
+   "configs": {
+    "CT": {
+     "decisions_differing": 35,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 4,
+      "artillery": 6,
+      "dispersal": 4,
+      "reserve": 4,
+      "transport": 38
+     }
+    },
+    "mo-no-artillery": {
+     "decisions_differing": 6,
+     "first_divergence_step": 108,
+     "units_differing_by_live_module": {
+      "artillery": 6
+     }
+    },
+    "mo-no-economy": {
+     "decisions_differing": 7,
+     "first_divergence_step": 965,
+     "units_differing_by_live_module": {
+      "allocation": 3,
+      "dispersal": 3,
+      "reserve": 2,
+      "transport": 3
+     }
+    },
+    "mo-no-recovery": {
+     "decisions_differing": 0,
+     "first_divergence_step": null,
+     "units_differing_by_live_module": {}
+    },
+    "mo-no-threat-routing": {
+     "decisions_differing": 6,
+     "first_divergence_step": 786,
+     "units_differing_by_live_module": {
+      "dispersal": 2,
+      "transport": 4
+     }
+    },
+    "mo-no-transport": {
+     "decisions_differing": 25,
+     "first_divergence_step": 0,
+     "units_differing_by_live_module": {
+      "allocation": 6,
+      "reserve": 2,
+      "transport": 36
+     }
+    }
+   },
+   "decisions": 2881,
+   "position": 24,
+   "scenario_id": "1930331196"
+  }
+ ],
+ "note": "action-level re-decisions of the live candidate's recorded observations; no outcome is implied",
+ "schema": "miaosuan-s34-ablation/1"
+}
