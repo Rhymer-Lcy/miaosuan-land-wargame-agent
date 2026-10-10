@@ -1,0 +1,195 @@
+{
+ "card_rebuilt_in_each_copy": true,
+ "killed": 35,
+ "mutations": [
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_mechanism.py",
+   "mutation": "correction disabled (Sprint 32's deferred kept)"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_mechanism.py",
+   "mutation": "indefinite deferral never adverse"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_mechanism.py",
+   "mutation": "indefinite deadline widened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_mechanism.py",
+   "mutation": "indefinite deferral without a path"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_mechanism.py",
+   "mutation": "inexact stop form accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_mechanism.py",
+   "mutation": "refused stop read as clean"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_mechanism.py",
+   "mutation": "accepted shot read from the listing"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_mechanism.py",
+   "mutation": "supported always at the accepted-shot level"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_mechanism.py",
+   "mutation": "stop only always at the resumption level"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_mechanism.py",
+   "mutation": "censored stops qualify"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_mechanism.py",
+   "mutation": "resumption without a move order"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_mechanism.py",
+   "mutation": "preserved verdict read from the correction"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_mechanism.py",
+   "mutation": "blocked frames count moving units"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_mechanism.py",
+   "mutation": "baseline actions counted after the effect"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_pilot.py",
+   "mutation": "harm margin floor lowered"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_pilot.py",
+   "mutation": "harm occupy lowered"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_pilot.py",
+   "mutation": "gate open after a closing verdict"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_pilot.py",
+   "mutation": "gate ignores structural stops"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_pilot.py",
+   "mutation": "a third session expected"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_pilot.py",
+   "mutation": "ledger ignores the candidate digest"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_pilot.py",
+   "mutation": "ledger ignores the state chain"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_pilot.py",
+   "mutation": "ledger accepts a recovered session"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_pilot.py",
+   "mutation": "repeated stops not structural"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_pilot.py",
+   "mutation": "observer stop count not compared"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_pilot.py",
+   "mutation": "timeline stop actions not compared"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_pilot.py",
+   "mutation": "incomplete game accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_pilot.py",
+   "mutation": "structural game not mapped to invalid"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_pilot.py",
+   "mutation": "judge records dropped from the frames"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_pilot.py",
+   "mutation": "hex steps read off by one"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_pilot.py",
+   "mutation": "harm screen not applied"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_capture.py",
+   "mutation": "changed baseline action accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_capture.py",
+   "mutation": "unregistered additions accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_capture.py",
+   "mutation": "add-on memory chain not checked"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_capture.py",
+   "mutation": "repeated stops not detected"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s33_capture.py",
+   "mutation": "independent check ignored"
+  }
+ ],
+ "schema": "miaosuan-s33-mutation/1",
+ "sources": {
+  "src/miaosuan_agent/evaluation/s33_capture.py": "7a402cb90f77a5040bcf6d34dcf256063b5386d2d2dc9a56ca00c525c70b8a98",
+  "src/miaosuan_agent/evaluation/s33_mechanism.py": "cee3b8a832c0a8bd040dd808c68859a8966f69f3dfbaa556a30beb9d47b725d8",
+  "src/miaosuan_agent/evaluation/s33_pilot.py": "ff4517b730071e5582ae1b9056184de7c538ed44c47a605224dc388efd77f517",
+  "tests/test_s33_mechanism.py": "ff7aed4a38c94793c55187e8ed14dd5cbad86e974a327b7e542b904ec15a3252",
+  "tests/test_s33_pilot.py": "2e2aa2c6dfbe3fc55d7f45ad1a46a5bec97853252fd8f05056547432c0b06e17"
+ },
+ "tests": [
+  "tests.test_s33_mechanism",
+  "tests.test_s33_pilot"
+ ],
+ "total": 35,
+ "unmutated_tests_pass": true
+}
