@@ -1,0 +1,123 @@
+{
+ "candidate_games_s35": 9,
+ "configurations": 10,
+ "control_games": 26,
+ "control_shares": {
+  "1910631192 blue": [
+   0.606557,
+   0.606557,
+   0.606557
+  ],
+  "1910631192 red": [
+   -0.540984,
+   -0.846995,
+   -0.639344
+  ],
+  "1930331196 blue": [
+   -0.484615,
+   0.432692,
+   0.65
+  ],
+  "1930331196 red": [
+   -0.817308,
+   -0.415385,
+   -0.717308
+  ],
+  "2010431153 blue": [
+   0.704918
+  ],
+  "2010431153 red": [
+   -0.945355
+  ],
+  "2120531121 blue": [
+   -0.3549,
+   0.714558,
+   0.769743
+  ],
+  "2120531121 red": [
+   -0.375833,
+   -0.505233,
+   -0.524263
+  ],
+  "2130511121 blue": [
+   0.507174,
+   0.769183,
+   0.629445
+  ],
+  "2130511121 red": [
+   0.737991,
+   -0.483468,
+   -0.593263
+  ]
+ },
+ "degrees_of_freedom": 16,
+ "derived": {
+  "early_futility": -0.4822,
+  "null_sd_dbar": 0.1324,
+  "null_sd_dbar_a1": 0.1872,
+  "share_sd": 0.4187,
+  "unfavourable_dbar": -0.2595
+ },
+ "schema": "miaosuan-s36-live-calibration/1",
+ "severe_harm_rule_triggers": {
+  "candidate_s35_below_min_minus_3sd": 0,
+  "candidate_s35_below_reference_min": 2,
+  "control_below_min_minus_3sd": 0,
+  "control_below_reference_min": 2
+ },
+ "source": "Sprint 34 control: 16 Sprint 34 Stage A games and 10 Sprint 35 control games; Sprint 35 candidate: 9 games (development data, descriptive only)",
+ "sprint35_descriptive_difference": {
+  "mean_share_difference": -0.112519,
+  "mean_z_difference": -0.398533,
+  "note": "one game per configuration and policy, nine configurations, development data: not a registered comparison",
+  "per_configuration": {
+   "1910631192 blue": {
+    "share_difference": -1.420765,
+    "z_difference": -2.223272
+   },
+   "1910631192 red": {
+    "share_difference": -0.083789,
+    "z_difference": -0.131116
+   },
+   "1930331196 blue": {
+    "share_difference": -0.682051,
+    "z_difference": -1.565011
+   },
+   "1930331196 red": {
+    "share_difference": 0.067308,
+    "z_difference": 0.154442
+   },
+   "2010431153 red": {
+    "share_difference": 0.0,
+    "z_difference": 0.0
+   },
+   "2120531121 blue": {
+    "share_difference": 0.547415,
+    "z_difference": 0.980788
+   },
+   "2120531121 red": {
+    "share_difference": 0.707263,
+    "z_difference": 1.267182
+   },
+   "2130511121 blue": {
+    "share_difference": -0.158037,
+    "z_difference": -2.209346
+   },
+   "2130511121 red": {
+    "share_difference": 0.009981,
+    "z_difference": 0.139538
+   }
+  }
+ },
+ "stakes": {
+  "1910631192": 366.0,
+  "1930331196": 1040.0,
+  "2010431153": 366.0,
+  "2120531121": 1051.0,
+  "2130511121": 1603.0
+ },
+ "z_scale_artifact": {
+  "its_configuration": "2130511121 red",
+  "largest_control_z": 17.903843
+ }
+}
