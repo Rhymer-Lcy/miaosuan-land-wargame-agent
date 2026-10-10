@@ -26,7 +26,8 @@ K = Path("src/miaosuan_agent/coalition")
 E = Path("src/miaosuan_agent/evaluation")
 OUT = REPO_ROOT / "evaluation" / "s35-coalition-agent" / "mutation.json"
 CARD = Path("evaluation/s35-coalition-live-1/manifest.json")
-TESTS = ("tests.test_s35_coalition", "tests.test_s35_offline", "tests.test_s35_live", "tests.test_s35_card")
+TESTS = ("tests.test_s35_coalition", "tests.test_s35_offline", "tests.test_s35_live", "tests.test_s35_card",
+         "tests.test_s35_gaps")
 MUTATIONS = [
     # force estimate and attribution
     (K / "capability.py", "remembered threat never fades",
@@ -34,8 +35,7 @@ MUTATIONS = [
     (K / "capability.py", "enemy-held objectives not excluded",
      "if hex_ not in enemy_held] if config.attribution", "if True] if config.attribution"),
     (K / "capability.py", "threat horizon ignored", "            if arrival <= config.threat_horizon:", "            if True:"),
-    (K / "capability.py", "no power floor", "    return max(FLOOR_WEIGHT, CLASS_WEIGHT.get(sub_type, OTHER_WEIGHT))",
-     "    return CLASS_WEIGHT.get(sub_type, OTHER_WEIGHT)"),
+    (K / "config.py", "other classes weighted differently", "OTHER_WEIGHT = 0.15", "OTHER_WEIGHT = 0.25"),
     (K / "capability.py", "holder rank not infantry first",
      "    return (0 if unit.type == F.INFANTRY else 1, unit.value, unit.obj_id)", "    return (unit.value, unit.obj_id)"),
     # stances
@@ -68,8 +68,8 @@ MUTATIONS = [
     (K / "allocator.py", "power not valued",
      "        value = place.weight * picture.value * (0.5 + C.unit_power(unit)) - cfg.time_cost * eta",
      "        value = place.weight * picture.value - cfg.time_cost * eta"),
-    (K / "allocator.py", "skip offers places", "            elif a.stance == COALITION:",
-     "            elif a.stance in (COALITION, \"skip\"):"),
+    (K / "coalition.py", "skip becomes capture", "            stance[p.hex], notes[p.hex] = SKIP, \"no coalition",
+     "            stance[p.hex], notes[p.hex] = CAPTURE, \"no coalition"),
     # policy
     (K / "policy.py", "kept units stay in the pool",
      "        pool = [u for u in free if u.obj_id not in kept and u.obj_id not in withdrawing]", "        pool = list(free)"),
