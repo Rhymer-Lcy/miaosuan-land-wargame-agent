@@ -1,0 +1,61 @@
+{
+ "damage_received": {
+  "artillery direct": 32,
+  "artillery indirect": 42,
+  "helicopter direct": 18,
+  "ifv direct": 353,
+  "ifv indirect": 49,
+  "other direct": 241,
+  "other indirect": 1,
+  "squad direct": 17,
+  "squad indirect": 32,
+  "tank direct": 407,
+  "tank indirect": 9,
+  "uav direct": 14,
+  "ugv direct": 115,
+  "ugv indirect": 6
+ },
+ "direct_damage_per_1000_alive_unit_steps": {
+  "artillery": 0.0,
+  "ifv": 0.5593,
+  "other": 0.3861,
+  "squad": 0.0886,
+  "tank": 2.2945,
+  "ugv": 0.4242
+ },
+ "direct_fire_damage": {
+  "helicopter": 175,
+  "ifv": 217,
+  "other": 31,
+  "squad": 37,
+  "tank": 700,
+  "ugv": 37
+ },
+ "direct_fire_records": {
+  "helicopter": 410,
+  "ifv": 331,
+  "other": 84,
+  "squad": 72,
+  "tank": 722,
+  "ugv": 47
+ },
+ "direct_fire_records_with_damage": {
+  "helicopter": 121,
+  "ifv": 112,
+  "other": 23,
+  "squad": 29,
+  "tank": 396,
+  "ugv": 23
+ },
+ "exposure_unit_steps": {
+  "artillery": 664118,
+  "ifv": 387987,
+  "other": 80294,
+  "squad": 417655,
+  "tank": 305078,
+  "ugv": 87232
+ },
+ "games": 24,
+ "note": "descriptive rates of these policies on these scenarios, not kill probabilities",
+ "schema": "miaosuan-s35-capability/1"
+}
