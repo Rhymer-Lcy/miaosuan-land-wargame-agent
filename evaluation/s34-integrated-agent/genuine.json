@@ -1,0 +1,217 @@
+{
+ "CT": {
+  "actions_by_type": {
+   "type_1": 245990,
+   "type_2": 1425,
+   "type_333": 38,
+   "type_5": 245
+  },
+  "by_population": {
+   "H0": {
+    "contract_errors": 0,
+    "decisions": 33696,
+    "decisions_differing": 11811,
+    "fallbacks": 0,
+    "independent_illegal": 0,
+    "play_decisions": 33680,
+    "rejections": 0
+   },
+   "HH": {
+    "contract_errors": 0,
+    "decisions": 34572,
+    "decisions_differing": 23076,
+    "fallbacks": 0,
+    "independent_illegal": 0,
+    "play_decisions": 34560,
+    "rejections": 0
+   },
+   "HI": {
+    "contract_errors": 0,
+    "decisions": 28810,
+    "decisions_differing": 23508,
+    "fallbacks": 0,
+    "independent_illegal": 0,
+    "play_decisions": 28800,
+    "rejections": 0
+   }
+  },
+  "contract_errors": 0,
+  "decisions": 97078,
+  "decisions_differing": 58395,
+  "differing_by_module": {
+   "allocation": 108505,
+   "dispersal": 51257,
+   "occupy": 8,
+   "recovery": 11777,
+   "reserve": 11229,
+   "support": 77545
+  },
+  "fallbacks": 0,
+  "games": 24,
+  "independent_illegal": 0,
+  "latency_ms_max": 214.993,
+  "latency_ms_p99": 5.646,
+  "play_decisions": 97040,
+  "rejections": 0
+ },
+ "MO": {
+  "actions_by_type": {
+   "type_1": 242708,
+   "type_2": 1425,
+   "type_3": 209,
+   "type_333": 38,
+   "type_5": 245,
+   "type_8": 280
+  },
+  "by_population": {
+   "H0": {
+    "contract_errors": 0,
+    "decisions": 33696,
+    "decisions_differing": 11582,
+    "fallbacks": 0,
+    "independent_illegal": 0,
+    "play_decisions": 33680,
+    "rejections": 0
+   },
+   "HH": {
+    "contract_errors": 0,
+    "decisions": 34572,
+    "decisions_differing": 22943,
+    "fallbacks": 0,
+    "independent_illegal": 0,
+    "play_decisions": 34560,
+    "rejections": 0
+   },
+   "HI": {
+    "contract_errors": 0,
+    "decisions": 28810,
+    "decisions_differing": 23534,
+    "fallbacks": 0,
+    "independent_illegal": 0,
+    "play_decisions": 28800,
+    "rejections": 0
+   }
+  },
+  "contract_errors": 0,
+  "decisions": 97078,
+  "decisions_differing": 58059,
+  "differing_by_module": {
+   "allocation": 106196,
+   "artillery": 280,
+   "dispersal": 51228,
+   "fire": 167,
+   "occupy": 8,
+   "recovery": 10609,
+   "reserve": 11084,
+   "support": 76835,
+   "transport": 448
+  },
+  "fallbacks": 0,
+  "games": 24,
+  "independent_illegal": 0,
+  "latency_ms_max": 208.527,
+  "latency_ms_p99": 23.751,
+  "play_decisions": 97040,
+  "rejections": 0
+ },
+ "inputs": {
+  "files": [
+   {
+    "path": "local/replay-corpus/1910631192.C1.r1.jsonl.gz",
+    "sha256": "e3a726e67080427106c84bfa5a6b2032fa2fb1c2d5fc9573cff974fab565d967"
+   },
+   {
+    "path": "local/replay-corpus/1930331196.C1.r1.jsonl.gz",
+    "sha256": "3b849c3b68487946b07929d7aaa01335b8fbb0c4e66fe01b00737804273b9b9e"
+   },
+   {
+    "path": "local/replay-corpus/2010131194.C1.r1.jsonl.gz",
+    "sha256": "84494aedadab8ed8dddccfea820eea4fccef793e5f92446ac51fe928cdbff8c0"
+   },
+   {
+    "path": "local/replay-corpus/2010211129.C1.r1.jsonl.gz",
+    "sha256": "8eef32e046e4004327799548267ed619282aa41f6617d36c7476d780b6a5633f"
+   },
+   {
+    "path": "local/replay-corpus/201033019601.C1.r1.jsonl.gz",
+    "sha256": "fee4eadc751d41f2bf58099b7383a63ec650fa0cc50d971b55622cd89797da37"
+   },
+   {
+    "path": "local/replay-corpus/2010431153.C1.r1.jsonl.gz",
+    "sha256": "6f8e30e608398811beadfdbb0d35a3b1e23e72fcf7ad803bd40097a73eedc322"
+   },
+   {
+    "path": "local/replay-corpus/2120531121.C1.r1.jsonl.gz",
+    "sha256": "9f38cd844e5fec2ab660c98090f62d8cea8fac1078f8374bea3bce3d47e5def0"
+   },
+   {
+    "path": "local/replay-corpus/2130511121.C1.r1.jsonl.gz",
+    "sha256": "e25562afc5ba0a545e045ed0db79dbba0b7fdd98962cb517eb8f722448420f3c"
+   },
+   {
+    "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H1.s12-v3-primary-1.p01.timeline.pkl",
+    "sha256": "e538388b4fb2758497041293c06f3029c9a50863ef019e2d647f43e5644def2b"
+   },
+   {
+    "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H2.s12-v3-primary-1.p02.timeline.pkl",
+    "sha256": "998c2b0bbf76b073d3dd3bb6b0216e8655a1f533b26f182cac421ec4ce171732"
+   },
+   {
+    "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H1.s12-v3-primary-1.p03.timeline.pkl",
+    "sha256": "1279b5b8983f0ac602a45004483b2716b722b65fe9fcbe29c0640348574a0b87"
+   },
+   {
+    "path": "local/evaluation/s12-v3-primary-1/capture/2130511121.H2.s12-v3-primary-1.p04.timeline.pkl",
+    "sha256": "114b25417a37989737989c833220eed6fda84d3b2f0211af2533e92fbea65d7b"
+   },
+   {
+    "path": "local/evaluation/s16-v3-mechanism-capture-1/capture/1930331196.C3.s16-v3-mechanism-capture-1.p01.timeline.pkl",
+    "sha256": "22ce490e7a467aa676e7b1a6340074bec08e8d33d34bb0e78416032d3b323d45"
+   },
+   {
+    "path": "local/evaluation/s16-v3-mechanism-capture-1/capture/1930331196.C2.s16-v3-mechanism-capture-1.p02.timeline.pkl",
+    "sha256": "b5d9950285ff4aaf3a5c02bd3648e9dcdddf111700d34830e6479566bbc28b29"
+   },
+   {
+    "path": "local/evaluation/s16-v3-mechanism-capture-1/capture/2120531121.C3.s16-v3-mechanism-capture-1.p03.timeline.pkl",
+    "sha256": "8e0c77cb3488e881649e97ebe915c5076f607a4b5d8d3565b2d6f7b4ccc071ae"
+   },
+   {
+    "path": "local/evaluation/s17-post-stage-v6-probe-1/capture/1930331196.C2.s17-post-stage-v6-probe-1.p01.timeline.pkl",
+    "sha256": "f9cbc432a1ce83090936f265d71d8bbedd2b1ffcd6bbb6b2fb1ddf1361b4605a"
+   },
+   {
+    "path": "local/evaluation/s17-post-stage-v6-probe-1/capture/2120531121.C3.s17-post-stage-v6-probe-1.p02.timeline.pkl",
+    "sha256": "ceff7561252611b903f8accfb787718e93b730b9a15029869de8e48a868ca2c9"
+   },
+   {
+    "path": "local/evaluation/s22-t2-transport-probe-1/capture/1930331196.C3.s22-t2-transport-probe-1.p01.timeline.pkl",
+    "sha256": "f86d47d77303559a4396d178ead04c8cd761810a583326f2110ddf1d33d2e6b2"
+   },
+   {
+    "path": "local/evaluation/s27-t6s-probe-1/capture/2130511121.H2.s27-t6s-probe-1.p01.timeline.pkl",
+    "sha256": "023a8bdc952d7629a93a0d1fd3dc154e3a286b11a09d2be617dd7d5f1a6138fd"
+   },
+   {
+    "path": "local/evaluation/s31-t13-k2-pilot-1/capture/2120531121.C3.s31-t13-k2-pilot-1.p01.timeline.pkl",
+    "sha256": "9713af3532c42a0bd9efe8a99cbe2efd21b2b5d401c3042685fe0160848c71ed"
+   },
+   {
+    "path": "local/evaluation/s31-t13-k2-pilot-1/capture/1930331196.C2.s31-t13-k2-pilot-1.p02.timeline.pkl",
+    "sha256": "412d0252dd91bc80425cfa0a1b5576bb042a58808a0c59632e59ccd2cc1c7bb9"
+   },
+   {
+    "path": "local/evaluation/s31-t13-k2-pilot-1/capture/2130511121.H1.s31-t13-k2-pilot-1.p03.timeline.pkl",
+    "sha256": "69c00977c053804a248d4848318260af4f3e455608df0f2d17e565d7f4cb60b1"
+   },
+   {
+    "path": "local/evaluation/s33-t7-b1-live-1/capture/2120531121.C3.s33-t7-b1-live-1.p01.timeline.pkl",
+    "sha256": "b7155906ffacf74bdb4fc936d1955b9216a164085aa1e62d625ac36070dca10e"
+   },
+   {
+    "path": "local/evaluation/s33-t7-b1-live-1/capture/1930331196.C3.s33-t7-b1-live-1.p02.timeline.pkl",
+    "sha256": "5c262f158bf85f4d3c638332df8f8db42161355ec10d0188655c729f15403350"
+   }
+  ]
+ }
+}

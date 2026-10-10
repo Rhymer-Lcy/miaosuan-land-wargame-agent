@@ -1,0 +1,36 @@
+{
+ "gates": {
+  "CT": {
+   "G1 no rejected or refused action": true,
+   "G2 no fallback or contract error": true,
+   "G3 replay identical": true,
+   "G4 no deadlock wait": true,
+   "G5 latency": true,
+   "G6 nontrivial action differences": true,
+   "G7 no friendly exposure": true,
+   "G8 every population played": true
+  },
+  "MO": {
+   "G1 no rejected or refused action": true,
+   "G2 no fallback or contract error": true,
+   "G3 replay identical": true,
+   "G4 no deadlock wait": true,
+   "G5 latency": true,
+   "G6 nontrivial action differences": true,
+   "G7 no friendly exposure": true,
+   "G8 every population played": true
+  }
+ },
+ "progress": {
+  "CT": {
+   "M-inert": 22480,
+   "M-v2": 18190
+  },
+  "MO": {
+   "M-inert": 22480,
+   "M-v2": 18300
+  }
+ },
+ "rule": "both passed; MO within 2% of CT's model objective value in both populations",
+ "selected": "MO"
+}
