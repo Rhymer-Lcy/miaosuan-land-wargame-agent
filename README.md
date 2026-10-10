@@ -177,6 +177,9 @@ Sprint 30 (`docs/SPRINT30_T13_K1_PILOT.md`, no engine session) built that keep-o
 candidate and stopped at its historical preflight: `baseline-v2` orders units off a held objective while they are still
 in their post-arrival stop transition, which the brief's eligibility excludes, so the rule never acts on a genuine
 `baseline-v2` trajectory (K1_PREFLIGHT_INADEQUATE). Nothing was played or promoted.
+Sprint 31 (`docs/SPRINT31_T13_K2_PILOT.md`) admitted holders in that transition (T13-K2): its preflight passed and
+three of four authorized engine sessions ran; the garrison worked on the engine without harm against the inert
+control, but the red head-to-head game ended on a registered harm stop (K2_PILOT_REJECT). Nothing was promoted.
 The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
