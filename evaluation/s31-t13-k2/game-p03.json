@@ -1,0 +1,275 @@
+{
+ "candidate_side": "red",
+ "card": "s31-t13-k2-pilot-1",
+ "completed": true,
+ "condition": "H1",
+ "facts": {
+  "candidate_side": "red",
+  "mechanism": {
+   "departures_without_release": 0,
+   "episode_rows": [
+    {
+     "destination_first_owned_step": 581,
+     "destination_label": "50-point objective B",
+     "destination_owned_before_start": false,
+     "duration_steps": 81,
+     "end": "holder_absent",
+     "end_step": 502,
+     "executed": true,
+     "objective_label": "50-point objective A",
+     "objective_lost_with_holder": 0,
+     "on_centre_decisions": 80,
+     "release": null,
+     "retained": 79,
+     "settling_at_start": true,
+     "start_step": 421,
+     "transition_completed_on_centre": true,
+     "withholdings": 80
+    },
+    {
+     "destination_first_owned_step": null,
+     "destination_label": "80-point objective B",
+     "destination_owned_before_start": false,
+     "duration_steps": 15,
+     "end": "holder_absent",
+     "end_step": 596,
+     "executed": true,
+     "objective_label": "50-point objective B",
+     "objective_lost_with_holder": 0,
+     "on_centre_decisions": 14,
+     "release": null,
+     "retained": 14,
+     "settling_at_start": true,
+     "start_step": 581,
+     "transition_completed_on_centre": false,
+     "withholdings": 15
+    },
+    {
+     "destination_first_owned_step": null,
+     "destination_label": "80-point objective B",
+     "destination_owned_before_start": false,
+     "duration_steps": 270,
+     "end": "holder_absent",
+     "end_step": 671,
+     "executed": true,
+     "objective_label": "50-point objective D",
+     "objective_lost_with_holder": 0,
+     "on_centre_decisions": 269,
+     "release": null,
+     "retained": 266,
+     "settling_at_start": true,
+     "start_step": 401,
+     "transition_completed_on_centre": true,
+     "withholdings": 267
+    },
+    {
+     "destination_first_owned_step": null,
+     "destination_label": "50-point objective C",
+     "destination_owned_before_start": false,
+     "duration_steps": 19,
+     "end": "released",
+     "end_step": 780,
+     "executed": true,
+     "objective_label": "80-point objective A",
+     "objective_lost_with_holder": 0,
+     "on_centre_decisions": 19,
+     "release": "another_holder_selected",
+     "retained": 19,
+     "settling_at_start": true,
+     "start_step": 761,
+     "transition_completed_on_centre": false,
+     "withholdings": 19
+    },
+    {
+     "destination_first_owned_step": null,
+     "destination_label": "50-point objective C",
+     "destination_owned_before_start": false,
+     "duration_steps": 20,
+     "end": "released",
+     "end_step": 800,
+     "executed": true,
+     "objective_label": "80-point objective A",
+     "objective_lost_with_holder": 0,
+     "on_centre_decisions": 20,
+     "release": "another_holder_selected",
+     "retained": 20,
+     "settling_at_start": true,
+     "start_step": 780,
+     "transition_completed_on_centre": false,
+     "withholdings": 20
+    },
+    {
+     "destination_first_owned_step": 581,
+     "destination_label": "50-point objective B",
+     "destination_owned_before_start": false,
+     "duration_steps": 293,
+     "end": "holder_absent",
+     "end_step": 811,
+     "executed": true,
+     "objective_label": "50-point objective A",
+     "objective_lost_with_holder": 0,
+     "on_centre_decisions": 292,
+     "release": null,
+     "retained": 289,
+     "settling_at_start": true,
+     "start_step": 518,
+     "transition_completed_on_centre": true,
+     "withholdings": 290
+    },
+    {
+     "destination_first_owned_step": null,
+     "destination_label": "80-point objective B",
+     "destination_owned_before_start": false,
+     "duration_steps": 267,
+     "end": "holder_absent",
+     "end_step": 886,
+     "executed": true,
+     "objective_label": "50-point objective B",
+     "objective_lost_with_holder": 0,
+     "on_centre_decisions": 266,
+     "release": null,
+     "retained": 263,
+     "settling_at_start": true,
+     "start_step": 619,
+     "transition_completed_on_centre": true,
+     "withholdings": 264
+    },
+    {
+     "destination_first_owned_step": null,
+     "destination_label": "50-point objective C",
+     "destination_owned_before_start": false,
+     "duration_steps": 133,
+     "end": "holder_absent",
+     "end_step": 933,
+     "executed": true,
+     "objective_label": "80-point objective A",
+     "objective_lost_with_holder": 0,
+     "on_centre_decisions": 132,
+     "release": null,
+     "retained": 129,
+     "settling_at_start": true,
+     "start_step": 800,
+     "transition_completed_on_centre": true,
+     "withholdings": 130
+    }
+   ],
+   "episodes": 8,
+   "episodes_by_end": {
+    "holder_absent": 6,
+    "released": 2
+   },
+   "executed_episodes": 8,
+   "holders_destroyed_while_holding": 6,
+   "longest_interference_run_steps": 20,
+   "next_decision_outcomes": {
+    "absent": 6,
+    "retained": 1079
+   },
+   "transition_completed_on_centre": 5,
+   "withheld_from_settling_holders": 425,
+   "withheld_moves": 1085,
+   "withholding_decisions": 530
+  },
+  "objectives": {
+   "50-point objective A": {
+    "first_ownership_step": 421,
+    "held_at_end": false,
+    "losses": 1,
+    "losses_with_a_holder_episode": 0,
+    "recaptures": 0
+   },
+   "50-point objective B": {
+    "first_ownership_step": 581,
+    "held_at_end": false,
+    "losses": 1,
+    "losses_with_a_holder_episode": 0,
+    "recaptures": 0
+   },
+   "50-point objective C": {
+    "first_ownership_step": null,
+    "held_at_end": false,
+    "losses": 0,
+    "losses_with_a_holder_episode": 0,
+    "recaptures": 0
+   },
+   "50-point objective D": {
+    "first_ownership_step": 401,
+    "held_at_end": false,
+    "losses": 1,
+    "losses_with_a_holder_episode": 0,
+    "recaptures": 0
+   },
+   "80-point objective A": {
+    "first_ownership_step": 761,
+    "held_at_end": false,
+    "losses": 1,
+    "losses_with_a_holder_episode": 1,
+    "recaptures": 0
+   },
+   "80-point objective B": {
+    "first_ownership_step": null,
+    "held_at_end": false,
+    "losses": 0,
+    "losses_with_a_holder_episode": 0,
+    "recaptures": 0
+   },
+   "80-point objective C": {
+    "first_ownership_step": null,
+    "held_at_end": false,
+    "losses": 0,
+    "losses_with_a_holder_episode": 0,
+    "recaptures": 0
+   }
+  },
+  "objectives_held_at_end": [],
+  "own_ground_units_at_start": 31,
+  "ownership_losses": 4,
+  "recaptures": 0,
+  "refused_actions": 0,
+  "scores": {
+   "attack": 276,
+   "margin": -861,
+   "occupy": 0,
+   "opponent_occupy": 440,
+   "opponent_total": 1232,
+   "remain": 95,
+   "total": 371
+  },
+  "units_lost": {
+   "infantry": 1,
+   "vehicle": 20
+  },
+  "units_lost_total": 21
+ },
+ "game_id": "2130511121.H1.s31-t13-k2-pilot-1.p03",
+ "gate": {
+  "next_session_authorized": false,
+  "reasons": [
+   "harm stops: opening objectives never first-owned: ['80-point objective B']"
+  ]
+ },
+ "harm_stops": [
+  "opening objectives never first-owned: ['80-point objective B']"
+ ],
+ "mechanism_failures": {},
+ "opponent": "baseline-v2",
+ "position": 3,
+ "registered_references": {
+  "margin_mean": "-13049/15",
+  "margin_minimum": -1055,
+  "occupy_maximum": 50,
+  "occupy_minimum": 0,
+  "opening_objectives": [
+   "50-point objective A",
+   "50-point objective B",
+   "50-point objective D",
+   "80-point objective B"
+  ],
+  "seat": "red"
+ },
+ "scenario_id": "2130511121",
+ "schema": "miaosuan-s31-game/1",
+ "session": 2800,
+ "steps": 2881,
+ "structural_stops": {}
+}

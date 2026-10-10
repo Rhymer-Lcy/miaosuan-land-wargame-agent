@@ -1,0 +1,41 @@
+{
+ "card": "s31-t13-k2-pilot-1",
+ "disposition": "K2_PILOT_REJECT",
+ "gates": {
+  "p01": {
+   "next_session_authorized": true,
+   "reasons": []
+  },
+  "p02": {
+   "next_session_authorized": true,
+   "reasons": []
+  },
+  "p03": {
+   "next_session_authorized": false,
+   "reasons": [
+    "harm stops: opening objectives never first-owned: ['80-point objective B']"
+   ]
+  }
+ },
+ "harm": [
+  "opening objectives never first-owned: ['80-point objective B']"
+ ],
+ "ledger": {
+  "ok": true,
+  "problems": {
+   "S1": [],
+   "S2": []
+  },
+  "sessions_after_base": 3
+ },
+ "mechanism": {},
+ "order": [
+  "K2_PILOT_INVALID",
+  "K2_PILOT_REJECT",
+  "K2_PILOT_INCONCLUSIVE",
+  "K2_PILOT_PROMISING"
+ ],
+ "position": 3,
+ "schema": "miaosuan-s31-pilot/1",
+ "sessions_opened": 3
+}
