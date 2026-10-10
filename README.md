@@ -184,6 +184,11 @@ Sprint 32 (`docs/SPRINT32_T7_B1_PREFLIGHT.md`, no engine session) qualified stop
 candidate and the rules of a two-session mechanism check exist, but the historical preflight could not verify an
 opportunity in the proposed inert configurations or for any red seat against the inert control
 (S32_PREFLIGHT_INADEQUATE), so no session was requested. Nothing was played or promoted.
+Sprint 33 (`docs/SPRINT33_T7_B1_LIVE.md`) ran the owner-selected live mechanism check in the two verified blue
+configurations against the inert control (sessions 2801 and 2802): all five stops of moving vehicles took effect at the
+documented hex and step, served exactly the 75-step transition and left the units able to move again, and the one stop
+with a visible target in range at completion fired an accepted shot (T7B1_MECH_SUPPORTED, evidence level
+STOP_AND_SHOT_ACCEPTED). A mechanism result only: nothing was promoted and no wider test follows from it.
 The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
