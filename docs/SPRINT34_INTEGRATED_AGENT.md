@@ -170,3 +170,110 @@ selected. If neither passes, the disposition is `S34_ENGINEERING_BLOCKED` unless
 such, passes. The 98% clause exists because MO's extra modules (transport, indirect fire, threat costs) have
 engine-verified mechanisms but no benefit the model can show (it has no combat), while their cost in movement is
 measurable: MO must not lose measurable movement performance to be preferred. Ablations are reported, never selected.
+
+## 9. Offline comparison results and the selected candidate
+
+Run on the evaluation server (NUMA node 0) from commit `598aef7` (the registration of section 8), with the candidate
+code unchanged since; outputs `evaluation/s34-integrated-agent/{model,genuine,selection}.json`. 664 model games, none
+crashed; 24 genuine games (8 replay-corpus games, 16 timelines), 97,078 decisions re-decided per variant.
+
+| Measure | CT | MO | `baseline-v2` |
+|---|---|---|---|
+| M-inert: objective value (80 games; all objectives 22,480) | 22,480 | 22,480 | 22,190 |
+| M-v2: objective value of the variant's side (80 games) | 18,190 | 18,300 | 8,760 (mirror, 80 games) |
+| M-inert: longest wait in front of a full hex (steps) | 20 | 19 | 2,661 |
+| M-inert: waiting unit-steps | 271 | 38 | 862,560 |
+| M-inert: embark orders / indirect-fire orders | 0 / 0 | 602 / 1,838 | 0 / 0 |
+| genuine: rejected or independently illegal actions | 0 | 0 | |
+| genuine: fallbacks / contract errors | 0 / 0 | 0 / 0 | |
+| genuine: play decisions differing from `baseline-v2` | 58,395 of 97,040 | 58,059 of 97,040 | |
+| genuine: latency p99 / maximum (ms) | 5.646 / 214.993 | 23.751 / 208.527 | |
+| model replay checks identical | 1,930 of 1,930 | 1,930 of 1,930 | |
+
+Both variants passed all eight gates. MO's model objective value equals CT's against the inert control and exceeds it
+against `baseline-v2`, so the registered rule selects **MO**. Frozen as `integrated.config.LIVE`; identity
+`s34-integrated-mission-orchestrator-1`, policy source `b107d23ecdb57d9efb42610818eae60b64311480529d26dfdb6e2976ebcdad3b`
+(`baseline-v2`'s frozen sources plus `integrated/`); the only change to the compared code is the line that names it.
+
+Limits of this evidence, stated before any engine result:
+
+* in the genuine replay a variant's own orders never execute (the trajectory is `baseline-v2`'s), so it re-issues
+  them at every decision; its move counts there (about 2.5 per decision) are an artefact of replay, not behaviour; in
+  the model world, where orders execute, the variants issue tens of moves per game;
+* in the eight frozen scenarios against `baseline-v2`, the model ablation without transport held 2,220 objective
+  points against MO's 2,140 (16 games each): lifts cost race time in a model that has no combat to reward cheap
+  holders; transport stays in the candidate as the registered rule selected, and this cost is a hypothesis the live
+  games can contradict;
+* the model's `baseline-v2` blocks are model behaviour: the engine's own `baseline-v2` captured every objective in
+  the Stage B configurations (references, section 10), so the model overstates its blocks there.
+
+## 10. Live protocol (registered before session 2803)
+
+Card `evaluation/s34-integrated-live-1/manifest.json` (canonical SHA-256
+`4bb778eda0d7aeaed867fdefb06ad98ec9a5c7ee8bb58550c4b007034cfa5304`), rules `evaluation/s34_live.py`
+(`s34-integrated-live-rules-1`, SHA-256 `7e7e24021a53a0ec5a2176394ae9eb158054117d62545a4082180da5c89b91d2`), runner
+`scripts/run_s34.py --position N`, one game per exclusive session, serially, on NUMA node 0.
+
+**Schedule** (fixed before any game; position n opens session 2802 + n):
+
+| Batch | Positions | Sessions | Games |
+|---|---|---|---|
+| A1 | 1 to 8 | 2803 to 2810 | first repetition: in 2130511121, 2120531121, 1930331196, 1910631192 in that order, the candidate red against `baseline-v2` (H1), then blue against it (H2) |
+| A2 | 9 to 16 | 2811 to 2818 | the same eight configurations, second repetition |
+| B1 | 17 to 20 | 2819 to 2822 | 2120531121 C2 (candidate red against the inert control), C3 (inert red against the candidate blue), then 1930331196 C2, C3 |
+| B2 | 21 to 24 | 2823 to 2826 | the same four configurations, second repetition |
+
+**References** (`evaluation/s34-integrated-agent/references.json`: `baseline-v2`'s own games, same scenario, condition
+and seat, 15 per configuration; margin = the seat's `win` score). The comparison is unpaired and historical, never a
+paired causal estimate.
+
+| Configuration | Seat | Margin mean | SD | Min | Max | Objective score mean (min) |
+|---|---|---|---|---|---|---|
+| 2130511121 C1 | red | -869.9 | 114.66 | -1,055 | -719 | 20 (0) |
+| 2120531121 C1 | red | -245.0 | 586.60 | -871 | 489 | 112.7 (0) |
+| 1930331196 C1 | red | 179.6 | 453.24 | -508 | 756 | 195.3 (0) |
+| 1910631192 C1 | red | -85.9 | 233.89 | -334 | 236 | 52 (0) |
+| 2120531121 C2 | red | 357.0 | 50.14 | 297 | 457 | 310 (310) |
+| 2120531121 C3 | blue | 588.3 | 14.86 | 559 | 599 | 310 (310) |
+| 1930331196 C2 | red | 272.9 | 4.13 | 258 | 274 | 310 (310) |
+| 1930331196 C3 | blue | 570.0 | 0.00 | 570 | 570 | 310 (310) |
+
+In a C1 game the blue margin is the negative of the red one, so the blue reference is the mirror of the red row
+(blue objective scores: 2130511121 mean 420, minimum 390; the other three minimum 0).
+
+**Structural stops** (any one closes the study at once; disposition `S34_LIVE_INVALID`): S1 the game did not
+complete; S2 the ledger is not exactly the schedule's games so far, in order, closed with integrity ok and the state
+file and home unchanged; S3 a tracked file, the SDK archive or a policy source changed during the game; S4 a contract
+error of the candidate, an in-game replay mismatch or an observer error; S5 the observer's fresh reconstruction of any
+candidate decision differs from the live one, or more than 1% of the candidate's decisions fell back; S6 the engine
+refused more than 2% of the candidate's unit actions, or more than five of its non-shoot actions.
+
+**Severe harm** (Stage A, closes the gate; disposition `S34_INTEGRATED_REJECT`): after A1, a candidate margin more than
+three reference standard deviations below the reference minimum; after A2, a configuration whose two candidate
+margins are both below the reference minimum (under `baseline-v2`'s own distribution about 1 in 256 per
+configuration). An ordinary loss inside the historical range is recorded and analysed, never a stop.
+
+**Gates**: after each game its structural stops; after each batch `s34_live.batch_gate`. Stage B runs only when the
+A2 gate is open. No retry, no replacement, no game outside the schedule, no session after 2826.
+
+**Dispositions** (first match): `S34_LIVE_INVALID`; `S34_INTEGRATED_REJECT` (severe harm; or the mean standardized
+margin of the 16 Stage A games, `Zbar`, at or below -0.5; or a Stage B objective score below the reference minimum in
+three or more of its eight games); `S34_INTEGRATED_PROMISING` (both stages complete, `Zbar` at least +0.5, a positive
+mean `z` in at least three of the four scenarios, no Stage B objective score below the reference minimum, and a Stage B
+margin at least the reference minimum minus 50 in at least seven of eight games); otherwise
+`S34_INTEGRATED_INCONCLUSIVE`. `z = (margin - reference mean) / reference SD` for Stage A games. With two games per
+seat the result is exploratory: `PROMISING` means a larger independent confirmation is justified, not that the
+candidate is better, and never a promotion or a platform deployment. `S34_ENGINEERING_BLOCKED` would have applied had
+no session been opened.
+
+**Measured per game** (descriptive): scores and margin, objectives first owned (and whether before the opponent),
+mean held objective value, objectives lost and recaptured, force lost by class, waits in front of full hexes,
+refusals by type and code, judged attacks and friendly damage, actions and module activity, decisions differing from
+a shadow `baseline-v2` by module, reconstruction checks, fallbacks and latency.
+
+**Rehearsed** before registration on the stand-in engine (the model world behind the engine interface) from the
+committed tree: positions 1 to 8 with the real references (the A1 gate closed on severe harm, as 150-step model games
+must), and positions 1 to 24 in a copy with permissive references (every gate open, exit 5 at the end of the
+schedule, a replayed position refused). Mutation test: 41 of 41 planted defects killed
+(`evaluation/s34-integrated-agent/mutation.json`; the first run killed 26 of 41 and the 15 gaps were closed by
+`tests/test_s34_gaps.py`, one equivalent mutant replaced).
