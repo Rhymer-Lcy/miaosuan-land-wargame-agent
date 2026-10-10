@@ -180,6 +180,10 @@ in their post-arrival stop transition, which the brief's eligibility excludes, s
 Sprint 31 (`docs/SPRINT31_T13_K2_PILOT.md`) admitted holders in that transition (T13-K2): its preflight passed and
 three of four authorized engine sessions ran; the garrison worked on the engine without harm against the inert
 control, but the red head-to-head game ended on a registered harm stop (K2_PILOT_REJECT). Nothing was promoted.
+Sprint 32 (`docs/SPRINT32_T7_B1_PREFLIGHT.md`, no engine session) qualified stop to engage (T7-B1) offline: the
+candidate and the rules of a two-session mechanism check exist, but the historical preflight could not verify an
+opportunity in the proposed inert configurations or for any red seat against the inert control
+(S32_PREFLIGHT_INADEQUATE), so no session was requested. Nothing was played or promoted.
 The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
 
 ## Third-party material is not in this repository
