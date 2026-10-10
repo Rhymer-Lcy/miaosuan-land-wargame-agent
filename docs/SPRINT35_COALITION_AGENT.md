@@ -428,3 +428,98 @@ and nothing is promoted, merged or uploaded.
 losses and recaptures, force lost by class, waits, refusals by type and code, judged attacks and friendly damage, module
 and stance activity, decisions differing from a shadow `baseline-v2`, reconstruction checks, fallbacks, latency, memory
 size.
+
+## 12. Revision 2: registered result and the frozen candidate
+
+The registered comparison (sections 8 and 10) ran once from `834a10a9f301f169739a47d83f967519bd6d8aa1` on the evaluation
+server; outputs `evaluation/s35-coalition-agent/{model,genuine,precursors,selection}.json`. 580 model games, none crashed;
+48 genuine games, 203,678 decisions re-decided per agent; the 57 loss episodes, with the control reproducing its recorded
+actions at all 41,776 decisions.
+
+| Measure | CA | CM | `S34-MO` |
+|---|---|---|---|
+| M-inert: objective value (80 games; all objectives 22,480) | 21,130 | 21,130 | 22,480 |
+| M-v2: objective value of the agent's side (80 games) | 19,650 | 19,730 | 18,300 |
+| model: longest wait in front of a full hex (steps) | 35 | 38 | 19 |
+| model: replay checks identical | 1,930 of 1,930 | 1,930 of 1,930 | 1,930 of 1,930 |
+| genuine: rejected or independently illegal actions / fallbacks / contract errors | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 |
+| genuine: play decisions differing from `S34-MO` | 69,912 of 203,600 | 70,071 of 203,600 | 0 |
+| genuine: latency p99 / maximum (ms) | 27.672 / 241.791 | 27.022 / 233.981 | 25.726 / 237.182 |
+| genuine: guided shots | 0 | 4,470 | 0 |
+| P: threat recognised 150 steps before the loss | 33 of 57 | 33 of 57 | (no stances) |
+| P: last defenders ordered away by Sprint 34 kept | 18 of 18 | 18 of 18 | 0 of 18 |
+
+Both candidates passed all eleven gates; CM's model objective value is within 2% of CA's in both populations, so the
+registered rule selects **CM**. Frozen as `coalition.config.LIVE` (the only change to the compared code is the line that
+names it): identity `s35-coalition-coalition-mission-planner-2`, policy source
+`ea38c04216385a8aa119d624c9e437c118268a3a8caec682cf98f1834df8400c` (46 files: `baseline-v2`'s frozen sources, the frozen
+Sprint 34 package `integrated/` and `coalition/`).
+
+Ablations in the five live scenarios against `baseline-v2` in the model (10 games each; objective value of the agent's
+side): CM 2,220 and CA 2,220 against `S34-MO`'s 1,930; without coalition capture 1,880, without retention 1,960, without
+the reserve 1,990; without reinforcement, withdrawal, fire support, arrival fire, guided fire, safe transport or transport
+2,220. These are movement-race figures of a model without combat: they say which modules change where units go, not
+what they are worth in a fight.
+
+Limits stated before any engine result:
+
+* against the inert control the candidates held 21,130 of 22,480 model objective points: in 20 of the 80 scenario-sides an
+  objective was not taken because motionless inert units near it count as a threat, and no coalition reached the capture
+  ratio (`S34-MO` takes them all, because nothing contests them). None of the 20 is in the five live scenarios, where CM
+  held every objective against the inert control in both seats. Against a passive opponent with units near objectives
+  the candidate can therefore leave points that an aggressive agent takes; this is a real cost of the threat model;
+* the precursor population shows the decision-level intent only: on Sprint 34's recorded trajectories the candidate
+  recognised the threat in 33 of 57 episodes and would not have ordered away any of the 18 last defenders, but whether
+  that holds the objective is a combat question the replay cannot answer;
+* in 20 of the 57 episodes the candidate's stance 150 steps before the loss was delay: it would have kept a holder and
+  withdrawn the valuable units, trading the objective's points for the remaining-force score; the live games decide
+  whether that trade is worth it.
+
+## 13. Readiness: verification of the candidate and the live machinery
+
+| Check | Result |
+|---|---|
+| Sprint 35 tests | `tests/test_s35_coalition.py`, `test_s35_offline.py`, `test_s35_live.py`, `test_s35_card.py`, `test_s35_gaps.py`: 70 tests |
+| Mutation (`scripts/mutate_s35.py`, `evaluation/s35-coalition-agent/mutation.json`) | 50 of 50 planted defects killed; the first run killed 33 of 50: 15 test gaps closed by `tests/test_s35_gaps.py`, 2 equivalent mutants (a power floor no class weight reaches; places for a skip, which has none) replaced |
+| Stand-in rehearsal with the real references (positions 1 to 20, model world behind the engine interface, committed tree) | positions 1 to 19 exit 0; the A1 gate closed on severe harm at position 20 (short model games score far below real ones), exit 5; a replayed position refused; 0 reconstruction mismatches for both policies |
+| Stand-in rehearsal with permissive references (a temporary clone; all 48 positions) | gates A1, A2 and B1 open, B2 closed at the end of the schedule, exit 5; a replayed position refused; 0 reconstruction mismatches |
+| Card `evaluation/s35-coalition-live-1/manifest.json` | canonical SHA-256 `0b90ae2649f2d6416175495d0b885c04d26611b4842a6356f3d986b0e313d145`, rebuilds byte-identically; rules `b742afa9abb09e3aa2e4c28fa0a9a152026821bdc5e612059bc67645dcebfc45` |
+| Pinned policies | `baseline-v2` `7cbaf032...`, Sprint 34 control `b107d23e...` (refused if it differs), candidate `ea38c042...` |
+| Platform canary | rebuilt from this branch: `a3d3b0229118c0a389d379b315a620465624222f93fcf39de115e8e9dde59511`, smoke 62 steps; independent verifier 8 of 8 planted defects caught |
+| Engine | no session opened; ledger 2826 sessions, all closed, SHA-256 `2359e9cf...` unchanged |
+
+The full workstation suite, the clean-clone suite, the server's focused suite, the privacy scan of the published scope and
+the document check are run on the final commit; their figures are in the close-out note of the hand-over.
+
+## 14. Collaborator competitiveness benchmark (design only; not part of the 48 sessions)
+
+The owner wants the agent to compete credibly with the SDK demonstration agent and the collaborator's own agent. No such
+game is proposed now: the 48 proposed sessions are allocated to Stages A and B, and none of the prerequisites below holds
+yet.
+
+Prerequisites, each to be met before a benchmark card is drafted:
+
+1. **The executed package.** The collaborator supplies the exact package that played (a ZIP with its SHA-256 and the
+   date), not the earlier archive; it is archived under `local/references/teammate/` like the others and never committed.
+2. **The entry point.** The runner that played it, or a statement of which method the runner calls (`step` or `step2`),
+   confirmed by a fingerprint in a fresh game (the graphic markers of `step2`, the chat message of `step`).
+3. **Equal information.** In the SDK offline runner `setup_info["state"]` carries the all-seeing state; the benchmark
+   harness passes each agent only its own seat's state (the platform's behaviour must be checked, not assumed), so that
+   neither agent starts with the other side's strengths and passengers.
+4. **Isolation.** The third-party package runs from a private directory outside the repository, in its own process,
+   through a thin adapter that converts nothing but the action list; its randomness is seeded and recorded per game.
+5. **Design.** Each policy in each seat of the same scenarios, interleaved like Stage A; the collaborator's agent is
+   stochastic (two replays of the same seat split at step 1), so a game is one draw and several per configuration are
+   needed; outcomes attributed per game to the exact package digests.
+6. **Authorization.** A separate card and its own session budget, approved by the owner before the first game.
+
+Until then the only head-to-head evidence is the two owner-designated replays (section 2.3), one game per seat in one
+scenario against the owner's agent, not against this sprint's candidate.
+
+## 15. Status and the one question
+
+Disposition now: **`S35_LIVE_NOT_AUTHORIZED`**. Sessions opened in Sprint 35: none (the ledger still holds 2826). The
+candidate, the control, the schedule, the gates and the dispositions are frozen in the committed card; no rule may change
+after a session opens. Nothing was promoted, merged into `main` or uploaded, and `platform-compat2` is untouched.
+
+The one question for the owner: **Authorize up to 48 Sprint 35 engine sessions, 2827–2874, under the frozen gates?**
