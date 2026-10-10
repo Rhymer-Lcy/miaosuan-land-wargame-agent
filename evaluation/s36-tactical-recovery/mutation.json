@@ -1,0 +1,269 @@
+{
+ "killed": 47,
+ "mutations": [
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_refusals.py",
+   "mutation": "ErrorActionType not a contract refusal"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_refusals.py",
+   "mutation": "unlisted move classed as contract"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_refusals.py",
+   "mutation": "duplicate own shot classed as race"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_refusals.py",
+   "mutation": "echo mismatch ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_refusals.py",
+   "mutation": "unexplained per game not counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_refusals.py",
+   "mutation": "unexplained over the study not counted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_refusals.py",
+   "mutation": "systemic minimum ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_refusals.py",
+   "mutation": "small denominators use the tail"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_refusals.py",
+   "mutation": "tail threshold inverted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_refusals.py",
+   "mutation": "repeated actor ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_refusals.py",
+   "mutation": "race rate changed"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_refusals.py",
+   "mutation": "systemic alpha loosened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_study.py",
+   "mutation": "game stops ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_study.py",
+   "mutation": "batch gates ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_study.py",
+   "mutation": "games after a stop accepted"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_study.py",
+   "mutation": "incomplete study reported complete"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_study.py",
+   "mutation": "restatement skips batch gates"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_publish.py",
+   "mutation": "colliding literal left unchanged"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/assess.py",
+   "mutation": "static filter keeps every enemy"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/assess.py",
+   "mutation": "static enemies in a zone filtered too"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/assess.py",
+   "mutation": "opportunity ignores remembered enemies"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/assess.py",
+   "mutation": "race margin ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/assess.py",
+   "mutation": "valuable holder kept"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/assess.py",
+   "mutation": "withdrawal on memory alone"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/assess.py",
+   "mutation": "withdrawal under fire"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/assess.py",
+   "mutation": "end window ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/assess.py",
+   "mutation": "fallback hex not farther"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/assess.py",
+   "mutation": "fallback hex inside a zone"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/assess.py",
+   "mutation": "empty zone gets no delaying place"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/allocator.py",
+   "mutation": "delaying place open to valuable units"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/allocator.py",
+   "mutation": "counterattack window ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/policy.py",
+   "mutation": "guard drops nothing"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/policy.py",
+   "mutation": "guard retention off"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/policy.py",
+   "mutation": "guard cheap exemption off"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/policy.py",
+   "mutation": "guard withdrawals not added"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/memory.py",
+   "mutation": "posts never reset on a move"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/tactical/memory.py",
+   "mutation": "posts unbounded"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_live.py",
+   "mutation": "control failures count as agent failures"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_live.py",
+   "mutation": "harm read on control games"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_live.py",
+   "mutation": "A1 comparison reads every batch"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_live.py",
+   "mutation": "early futility ignored"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_live.py",
+   "mutation": "only suppressed waits read as deadlock"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_live.py",
+   "mutation": "share sd changed"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_offline.py",
+   "mutation": "least change not first"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_offline.py",
+   "mutation": "movement floor loosened"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_offline.py",
+   "mutation": "equivalence not required"
+  },
+  {
+   "killed": true,
+   "module": "src/miaosuan_agent/evaluation/s36_capture.py",
+   "mutation": "full hex threshold changed"
+  }
+ ],
+ "schema": "miaosuan-s36-mutation/1",
+ "sources": {
+  "src/miaosuan_agent/evaluation/s36_capture.py": "92a11dd4c8041bcb8f51e1dc86e1c3830c698a795496cae77bd1d927c423c239",
+  "src/miaosuan_agent/evaluation/s36_live.py": "f06d9eb51e70a2f5199c6addd947f600d533f30ace47cb35d7c211d7733e9f7b",
+  "src/miaosuan_agent/evaluation/s36_offline.py": "099decdb32f845b6e29b70d80d6094370a305940dcb30fea3e581c60dcaed934",
+  "src/miaosuan_agent/evaluation/s36_publish.py": "981001b5a98c54cbfc3a1f1c8c65cc872415cfa66645170f4963e1e6551b9fd7",
+  "src/miaosuan_agent/evaluation/s36_refusals.py": "6a5555779582675583a1c374e0e478efc62a5a4af7af88eec8c05ced63707dfb",
+  "src/miaosuan_agent/evaluation/s36_study.py": "6730a62b86e6768e24d2236a4ff3c89d1f3ce4bea690f21c7d7ad7f2d940c291",
+  "src/miaosuan_agent/tactical/allocator.py": "4c6ec9c4432e7f02bfd19032526ada6ce39c923a1911f37cb388857f007055c8",
+  "src/miaosuan_agent/tactical/assess.py": "68de1cd594d59c1ebd61053123988599c772dc31067fce9d03671715467bf815",
+  "src/miaosuan_agent/tactical/memory.py": "e1d1e5e749e1bd091edd9a65ec3a1668f4798c3f4f876dbcf2e9a047089015a8",
+  "src/miaosuan_agent/tactical/policy.py": "cb70d3282cc5a95728ed5fd2a2bdd2035124b652c67b82897c0937fdf97d9977",
+  "tests/test_s36_gaps.py": "1bbe4da166570a7fd50bdc9e69aaa0da7b29cff89b87e0e29f041844902f66aa",
+  "tests/test_s36_live.py": "d6a4e83d751e17c57474aa04717e0c1403ebb3aee649e94c9de3ee2337d12eb0",
+  "tests/test_s36_offline.py": "530a2bf6ed9107055c6d14bb7ca1a9c9f794dbc9d97153acf87cddca24096653",
+  "tests/test_s36_refusals.py": "7f66149ec580b973e10dc9983ccf619aee123c039150fd0a6de4247708d57b8b",
+  "tests/test_s36_study.py": "9f1a4c2ccd6c5d9c89c415ec050ced907980e66ce354cad73b9e3487657d6da3",
+  "tests/test_s36_tactical.py": "19ff7f07d8d947846173e2d3755c5580cac7c9bd99bd6fbe8bce0e251dffaf1f"
+ },
+ "tests": [
+  "tests.test_s36_refusals",
+  "tests.test_s36_study",
+  "tests.test_s36_tactical",
+  "tests.test_s36_offline",
+  "tests.test_s36_live",
+  "tests.test_s36_gaps"
+ ],
+ "total": 47,
+ "unmutated_tests_pass": true
+}
