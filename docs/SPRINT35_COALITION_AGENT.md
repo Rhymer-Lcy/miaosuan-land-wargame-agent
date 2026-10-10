@@ -305,3 +305,126 @@ every objective) was run once in the model world against `baseline-v2` in the fi
 every contested objective (as blue in 2130511121 it held 80 objective points where `S34-MO` held 440). Attribution and
 the reinforcement grace were introduced, and the same development run then showed the movement race restored. These
 development runs are not part of the registered comparison and are not evidence of tactical value.
+
+## 10. Revision 1: registered result, diagnosis and correction
+
+**Registered result.** The comparison of section 8 ran once, on the evaluation server (NUMA node 0, 16 workers), from the
+registration commit `0aa2c770055c261db6c0e97730efa38c4221ec5f`; its outputs are kept unchanged in
+`evaluation/s35-coalition-agent/revision-1/`. 580 model games, none crashed; 48 genuine games, 203,678 decisions re-decided
+per agent; the 57 loss episodes. The control's re-decisions reproduced its recorded actions at all 41,776 decisions.
+
+| Measure | CA (revision 1) | CM (revision 1) | `S34-MO` |
+|---|---|---|---|
+| M-inert: objective value (80 games; all objectives 22,480) | 21,130 | 21,130 | 22,480 |
+| M-v2: objective value of the agent's side (80 games) | 19,490 | 19,490 | 18,300 |
+| model: longest wait in front of a full hex (steps) | 40 | 40 | 19 |
+| genuine: rejected or independently illegal actions / fallbacks / contract errors | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 |
+| genuine: play decisions differing from `S34-MO` | 71,431 of 203,600 | 71,588 of 203,600 | 0 |
+| genuine: latency p99 / maximum (ms) | 36.507 / 235.105 | 36.491 / 235.041 | 35.419 / 238.676 |
+| genuine: guided shots | 0 | 4,470 | 0 |
+| P: threat recognised 150 steps before the loss | 26 of 57 | 26 of 57 | (no stances) |
+| P: last defenders ordered away by Sprint 34 kept | 17 of 18 | 17 of 18 | 0 of 18 |
+
+Both candidates passed G1 to G8, G10 and G11 and failed G9 (26 of 57 is below half). Registered rule: **no candidate
+selected**. By the rule this is `S35_ENGINEERING_BLOCKED` unless a corrected revision, documented as such, passes.
+
+**Diagnosis (post hoc).** At the decision 150 steps before the loss the stance was quiet in 22 episodes
+(`local/diagnostics/s35/posthoc_quiet.py`, private). In 4 no enemy ground unit was visible within 8 hexes. In the other
+18 the visible enemies within 8 hexes were all attributed to another objective: they stood at, or their path ended at,
+a neighbouring objective, which their side had usually just taken. Revision 1 counted an enemy against the objective it
+can reach first whoever holds it, so an enemy standing on its own objective was a threat only to that objective. But an
+objective is captured only by moving onto one the side does not hold, and `baseline-v2` sends idle units from its held
+objectives to the nearest one it does not hold: such an enemy threatens the next objective, often the one about to be
+lost.
+
+**Correction (revision 2).** `capability.attribute` now counts each enemy against an objective its own side does not hold:
+the one its visible path ends at if its side does not hold it, else the one of those it can reach first. Nothing else
+changed: the class weights, ratios, horizon, deadlines, dwell, places, fire, transport and every gate and threshold are
+the same. The correction was decided after revision 1's population `P` result was seen, and before its model population
+had finished; it is a defect correction of the threat model, documented here, not a tuning of a threshold. It carries a
+new identity (`s35-coalition-coalition-allocator-2`, `s35-coalition-coalition-mission-planner-2`); revision 1 stays
+reproducible as the ablations `ca-r1-attribution` and `cm-r1-attribution`. A test pins the corrected behaviour (an enemy
+standing on its side's objective is counted against the own objective six hexes away; revision 1 called that objective
+quiet).
+
+**Revision 2 comparison (registered before it ran).** The same driver, rules, populations, gates and selection rule as
+section 8, unchanged, applied to the revision 2 candidates; outputs in `evaluation/s35-coalition-agent/`. No revision 2
+agent was run on any of the registered populations before this registration. If revision 2 also fails, the disposition is
+`S35_ENGINEERING_BLOCKED` and no live card is proposed.
+
+## 11. Live design (a proposal for the owner's approval; registered before any session)
+
+No engine session is authorized. Proposed budget: at most 48 sessions, 2827 to 2874 inclusive, one game per exclusive
+session, serially, on NUMA node 0. Rules `src/miaosuan_agent/evaluation/s35_live.py` (`s35-coalition-live-rules-1`),
+observer `src/miaosuan_agent/evaluation/s35_capture.py`, card builder `scripts/build_s35_card.py`, runners
+`scripts/run_s35.py --position N` and `scripts/run_s35_game.py`, analysis `scripts/s35_analysis.py`, tests
+`tests/test_s35_live.py` and `tests/test_s35_card.py`. Position n opens session 2826 + n.
+
+| Batch | Positions | Sessions | Games |
+|---|---|---|---|
+| A1 | 1 to 20 | 2827 to 2846 | first repetition: in 2130511121, 2120531121, 1930331196, 1910631192, 2010431153, the candidate and the fresh Sprint 34 control each red against `baseline-v2` (H1) and blue against it (H2) |
+| A2 | 21 to 40 | 2847 to 2866 | the same twenty configurations, second repetition |
+| B1 | 41 to 44 | 2867 to 2870 | the candidate against the inert control: 2120531121 C2 (candidate red), C3 (candidate blue), 1930331196 C2, C3 |
+| B2 | 45 to 48 | 2871 to 2874 | the same four configurations, second repetition |
+
+Order inside a scenario's four Stage A games: candidate red, control red, control blue, candidate blue; or control red,
+candidate red, candidate blue, control blue; alternating by scenario, and the other way round in the second repetition,
+so that neither policy nor seat always comes first. The card's fixed global seed is set before every game as in every
+earlier card; it is not claimed to pair the engine's randomness across games (Sprint 26's prefix check failed on
+stochastic games), so the comparisons are between independent stochastic runs grouped by scenario and seat.
+
+**References** (`evaluation/s35-coalition-agent/references.json`, Sprint 34's rule plus 2010431153: `baseline-v2`'s own
+games of the same scenario, condition and seat, 15 per configuration; the opponent of every Stage A game is the same
+`baseline-v2`):
+
+| Configuration | Seat | Margin mean | SD | Min | Max | Objective score mean (min) | Remaining-force score mean (min) |
+|---|---|---|---|---|---|---|---|
+| 2130511121 C1 | red | -869.9 | 114.66 | -1,055 | -719 | 20.0 (0) | 43.7 (12) |
+| 2120531121 C1 | red | -245.0 | 586.60 | -871 | 489 | 112.7 (0) | 51.1 (0) |
+| 1930331196 C1 | red | 179.6 | 453.24 | -508 | 756 | 195.3 (0) | 98.9 (12) |
+| 1910631192 C1 | red | -85.9 | 233.89 | -334 | 236 | 52.0 (0) | 25.1 (16) |
+| 2010431153 C1 | red | -235.1 | 156.49 | -366 | 302 | 8.7 (0) | 9.6 (0) |
+| 2120531121 C2 | red | 357.0 | 50.14 | 297 | 457 | 310.0 (310) | 334.0 (334) |
+| 2120531121 C3 | blue | 588.3 | 14.86 | 559 | 599 | 310.0 (310) | 407.0 (407) |
+| 1930331196 C2 | red | 272.9 | 4.13 | 258 | 274 | 310.0 (310) | 323.0 (323) |
+| 1930331196 C3 | blue | 570.0 | 0.00 | 570 | 570 | 310.0 (310) | 407.0 (407) |
+
+In a C1 game the blue margin is the negative of the red one, so the blue reference is the mirror of the red row.
+Against the inert control `baseline-v2` never loses a unit, so a Stage B remaining-force score below the minimum means
+that the candidate lost a unit.
+
+**Structural stops** (either policy's game; any one closes the study at once; `S35_LIVE_INVALID`): S1 to S6 exactly as in
+Sprint 34 (incomplete game; ledger not exactly the schedule so far, closed with integrity ok and state and home unchanged;
+a tracked file, the SDK archive or a policy source changed; a contract, in-game replay or observer error; any
+reconstruction mismatch or more than 1% fallbacks; more than 2% refused unit actions or more than five refused non-shoot
+actions); S7 decision latency p99 above 200 ms or maximum above 3,000 ms (Sprint 34's live p99 at most 24.77 ms,
+maximum 988.354 ms; revision 1's offline genuine p99 at most 36.507 ms); S8 any damaging judged attack of the
+policy on its own units (Sprint 34: none in 24 games); S9 the policy's memory above 200,000 bytes of canonical JSON at any
+decision (bounded by design).
+
+**Severe harm** (candidate games only; closes the gate; `S35_INTEGRATED_REJECT`): after A1, a candidate margin more than
+three reference SDs below the reference minimum (Sprint 34's rule); after A2, a configuration whose two candidate margins
+are both below the reference minimum (about 1 in 256 per configuration under `baseline-v2`'s own distribution); at any
+batch, a candidate ground unit waiting 600 or more consecutive steps in front of a full hex (Sprint 34's candidate: 0 waits
+in 24 games; its `baseline-v2` opponents up to 1,798). The A2 gate also closes when `Dbar` is at or below -0.5; Stage B
+then does not run.
+
+**Comparison.** `z = (margin - reference mean) / reference SD`. For each of the ten Stage A configurations (scenario and
+seat), `d = mean z of the candidate's two games - mean z of the control's two games`; `Dbar` is the mean of the ten `d`,
+`d_s` the mean of a scenario's two `d`. A descriptive percentile bootstrap interval of `Dbar` over the ten configurations
+is reported.
+
+**Dispositions** (first match): `S35_LIVE_INVALID`; `S35_INTEGRATED_REJECT` (severe harm; `Dbar` at or below -0.5; a Stage
+B objective score below the reference minimum in three or more games; a Stage B remaining-force score below the
+reference minimum in three or more games); `S35_INTEGRATED_PROMISING` (both stages complete, `Dbar` at least +0.5, `d_s`
+positive in at least four of the five scenarios, no `d_s` at or below -1.0, the candidate's own mean `z` over its 20
+Stage A games at least +0.5, no Stage B objective score below the reference minimum, a Stage B margin at least the
+reference minimum minus 50 in at least seven of eight games); otherwise `S35_INTEGRATED_INCONCLUSIVE`. Before any session
+the disposition is `S35_LIVE_NOT_AUTHORIZED`, or `S35_ENGINEERING_BLOCKED` if no candidate could be frozen. Two games per
+configuration are exploratory: `PROMISING` means a larger confirmation is justified, never that the candidate is better,
+and nothing is promoted, merged or uploaded.
+
+**Measured per game** (descriptive): scores and margin, objectives first owned (and before the opponent), held value,
+losses and recaptures, force lost by class, waits, refusals by type and code, judged attacks and friendly damage, module
+and stance activity, decisions differing from a shadow `baseline-v2`, reconstruction checks, fallbacks, latency, memory
+size.
