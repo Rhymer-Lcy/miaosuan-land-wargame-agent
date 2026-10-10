@@ -174,6 +174,13 @@ re-verified and handed over for a manual test-slot upload, and a decision-level 
 controllable loss to held objectives that `baseline-v2` vacates itself; a keep-one holder is proposed as the next live
 exploratory candidate, for the owner's approval. Nothing was implemented, played or promoted.
 The canary's manual upload steps are in `docs/PLATFORM_CANARY.md`; no platform test has taken place.
+Sprint 34 (`docs/SPRINT34_INTEGRATED_AGENT.md`, branch `sprint34-integrated-agent`, 24 engine sessions) replaced the
+one-mechanism add-ons with an integrated agent (`src/miaosuan_agent/integrated/`): whole-force allocation of units to
+objective slots, traffic-capacity routing, retention, infantry transport, guarded indirect fire and independent
+validation. Two architectures were compared offline and one frozen before any game; in 24 registered games it never
+blocked its own columns and held every objective against the inert control, but against `baseline-v2` it won
+clearly in one scenario only and lost isolated holders elsewhere (disposition S34_INTEGRATED_INCONCLUSIVE). Nothing
+was promoted or packaged.
 
 ## Third-party material is not in this repository
 
