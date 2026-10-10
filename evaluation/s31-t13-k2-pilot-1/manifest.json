@@ -1,0 +1,414 @@
+{
+ "budget": {
+  "batch_sessions": 4,
+  "ledger_base_session": 2797,
+  "sprint_session_cap": 4
+ },
+ "candidate": "t13-keep-one-k2",
+ "caps": {
+  "steps": "max_time + 1 + 100",
+  "wall_seconds": 1800
+ },
+ "card_id": "s31-t13-k2-pilot-1",
+ "configurations": "2120531121 C3 (candidate blue against the inert control), 1930331196 C2 (candidate red against the inert control), then 2130511121 against frozen baseline-v2 with the candidate red, then blue",
+ "controls": "historical and descriptive: Sprint 30's committed baseline-v2 controls (fifteen games per configuration and seat); no new control game",
+ "eligible_for_promotion": false,
+ "evaluation_id": "s31-t13-k2-pilot-1",
+ "execution": {
+  "runtime": "baseline-v1-runtime-r2",
+  "workers": 1
+ },
+ "games": [
+  {
+   "blue": "t13-keep-one-k2",
+   "condition": "C3",
+   "game_id": "2120531121.C3.s31-t13-k2-pilot-1.p01",
+   "position": 1,
+   "red": "inert-v0",
+   "scenario_id": "2120531121",
+   "screen_position": 1
+  },
+  {
+   "blue": "inert-v0",
+   "condition": "C2",
+   "game_id": "1930331196.C2.s31-t13-k2-pilot-1.p02",
+   "position": 2,
+   "red": "t13-keep-one-k2",
+   "scenario_id": "1930331196",
+   "screen_position": 2
+  },
+  {
+   "blue": "baseline-v2-candidate-shoot-target-reservation",
+   "condition": "H1",
+   "game_id": "2130511121.H1.s31-t13-k2-pilot-1.p03",
+   "position": 3,
+   "red": "t13-keep-one-k2",
+   "scenario_id": "2130511121",
+   "screen_position": 3
+  },
+  {
+   "blue": "t13-keep-one-k2",
+   "condition": "H2",
+   "game_id": "2130511121.H2.s31-t13-k2-pilot-1.p04",
+   "position": 4,
+   "red": "baseline-v2-candidate-shoot-target-reservation",
+   "scenario_id": "2130511121",
+   "screen_position": 4
+  }
+ ],
+ "inputs": {
+  "shoot_manifest_sha256": "01c9c9675af4b0859fc55e54a5dc86513b624208bf13131e7b510b87a3122afd"
+ },
+ "intended_observations": [
+  "the exploratory capture and the Sprint 31 full-step timeline with the seat-local reconstruction of every policy seat and the independent check at every decision"
+ ],
+ "mechanism": "baseline-v2 plays the seat on its own observation at every decision; when every own ground unit on the centre of an objective the side holds departs and at least one by a new baseline-v2 MOVE, the rule withholds the MOVE of one eligible holder (longest free-flow time, then lower id); K2 admits a holder in the documented post-arrival stop transition",
+ "next_step_rule": "the registered gate after each game (s31_pilot.gate); after the last game the disposition",
+ "players": [
+  {
+   "faction": 0,
+   "role": 1,
+   "seat": 1,
+   "user_id": 0,
+   "user_name": "demo"
+  },
+  {
+   "faction": 1,
+   "role": 1,
+   "seat": 11,
+   "user_id": 0,
+   "user_name": "demo"
+  }
+ ],
+ "policies": {
+  "baseline-v2-candidate-shoot-target-reservation": {
+   "label": "baseline-v2 (frozen)",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ],
+    "sha256": "7cbaf0321131784839a25734eb37fcefb126e675cefecbb8be0a8dc531b3e3ae",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py"
+    ]
+   }
+  },
+  "t13-keep-one-k2": {
+   "label": "T13-K2 arrival-transition keep-one garrison (Sprint 31 exploratory candidate)",
+   "policy_source": {
+    "files": [
+     "agent.py",
+     "boundary/__init__.py",
+     "boundary/actions.py",
+     "boundary/checks.py",
+     "boundary/errors.py",
+     "boundary/keys.py",
+     "boundary/observation.py",
+     "boundary/profile.py",
+     "boundary/state.py",
+     "boundary/terrain.py",
+     "decision/__init__.py",
+     "decision/candidates.py",
+     "decision/context.py",
+     "decision/gate.py",
+     "decision/policy.py",
+     "decision/routing.py",
+     "decision/semantics.py",
+     "decision/trace.py",
+     "experiments/__init__.py",
+     "experiments/exploratory_addon.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py",
+     "experiments/t13_keep_one_k2.py",
+     "experiments/t9_batch.py"
+    ],
+    "sha256": "8544257fa894c25ba4b97c2abf641f59cf20e2bea79109dddc12e94ee448f3d7",
+    "sources": [
+     "agent.py",
+     "boundary",
+     "decision",
+     "experiments/__init__.py",
+     "experiments/occupy_reservation.py",
+     "experiments/routing_bounded.py",
+     "experiments/shoot_reservation.py",
+     "experiments/exploratory_addon.py",
+     "experiments/t9_batch.py",
+     "experiments/t13_keep_one_k2.py"
+    ]
+   }
+  }
+ },
+ "purpose": "exploratory",
+ "randomness": {
+  "global_seed": 20260929,
+  "procedure": "each game runs in a fresh process; the harness seeds Python's and NumPy's global generators with global_seed before the engine is constructed and records whether the engine consumes them; no undocumented engine interface is used",
+  "python_hash_seed": 0
+ },
+ "runtime_environment": {
+  "OPENBLAS_NUM_THREADS": "1"
+ },
+ "safety_checks": [
+  "structural stops after every game (S1, S2, S3, S4, S6, S7)",
+  "mechanism failures M1, M2, M3 and the harm stops, then the registered gate before every session",
+  "at most four sessions after closed session 2797, in schedule order, exclusive diagnostic sessions",
+  "every frozen implementation file pinned by digest; baseline-v2's policy source to 7cbaf032..."
+ ],
+ "scenarios": [
+  {
+   "alternates": [
+    "2120511121",
+    "2130511421",
+    "2230531121",
+    "2230531221",
+    "2130511321",
+    "2130511121",
+    "2130511221"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+    "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+    "scenario": "a4536a361ac9dd879ad326d8c5f40583433c3299f5184b4af06ddb110ab297cf",
+    "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "operators": 54,
+   "red": 28,
+   "rule": "S2 fewest operators on map 21",
+   "scenario_id": "2120531121"
+  },
+  {
+   "alternates": [
+    "2020331196",
+    "2120331196",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2140331196"
+   ],
+   "blue": 26,
+   "cities": 5,
+   "inputs_sha256": {
+    "basic": "206c437995216aed6dd14a310d3a2ada0f7148dd8d40e4ec52c900b224d06f15",
+    "cost": "b136cc86cae77d53482f2b2ff3df0087278d51628e1a4cf453307d8da008997f",
+    "scenario": "a15d3b3bf499694d93a981511c16b5c1c9247487ac1cf1d88b2bf1bd2c75c1b1",
+    "see": "e69b9e85d77cc8de4600c42b48939ea625236a7a3b705090fa9b3745775009e2"
+   },
+   "map_id": "96",
+   "max_time": 2880,
+   "operators": 52,
+   "red": 26,
+   "rule": "S2 fewest operators on map 96",
+   "scenario_id": "1930331196"
+  },
+  {
+   "alternates": [
+    "2130511221",
+    "2140131194",
+    "2140331196",
+    "2130511321",
+    "1930631192",
+    "2030331196",
+    "2030341296",
+    "2130331196",
+    "2130331296",
+    "2230331196",
+    "2230531221",
+    "2230631192",
+    "2030111194",
+    "2130511421",
+    "2230531121",
+    "2120131294",
+    "2120511121",
+    "2120131194",
+    "2120331196",
+    "2020331196",
+    "2110431753",
+    "2010441253",
+    "2110431153",
+    "2110431253",
+    "2110431353",
+    "2110431453",
+    "2110431553",
+    "2110431653",
+    "201033029601",
+    "201033039601",
+    "211033019601",
+    "2010141294"
+   ],
+   "blue": 44,
+   "cities": 7,
+   "inputs_sha256": {
+    "basic": "39beeb7570643dd6ed55d16783164705d983c909d0af725f2be1862484bfaa2d",
+    "cost": "11c5892c3bfe75132acbd7bb50ad2357d66adc91194d5ecb506ce1d611a02859",
+    "scenario": "9611e334d4fd6f2eda5957a26116bf8ec21c3e04754ed349d9a0fa0e9dc68070",
+    "see": "4fa4a4f1d435b913f6684fdcba17bb1a9c10c35c3b0d7f5fa75ea80bdd36bc81"
+   },
+   "map_id": "21",
+   "max_time": 2880,
+   "operators": 89,
+   "red": 45,
+   "rule": "S3 largest force",
+   "scenario_id": "2130511121"
+  }
+ ],
+ "schema": "miaosuan-exploratory-run-card/1",
+ "screen": {
+  "controls_sha256": "27dffdfdfa2f920a921cb68da389bed80bb7a6e01950de7ffaac54b34c186e93",
+  "dispositions": [
+   "K2_PILOT_INVALID",
+   "K2_PILOT_REJECT",
+   "K2_PILOT_INCONCLUSIVE",
+   "K2_PILOT_PROMISING"
+  ],
+  "expected_sessions": [
+   2798,
+   2799,
+   2800,
+   2801
+  ],
+  "frozen_files": {
+   "scripts/build_s31_card.py": "5dc67406bb6548d8c898167f3e212ff40fab4c961ac875a229c04f998f8c7aef",
+   "scripts/run_evaluation.py": "d920f8e35c71edc078a8b17256c12aa4fe45a871244db78783dc1513a048aab2",
+   "scripts/run_s12_stage.py": "c8f092f4dc7f56a51614309fead4f24eacdb2761f4edd06cf08a2bf6939645c4",
+   "scripts/run_s31_game.py": "283d27ee73ae5e8e29db3750263b4caf61be6b0649859bb211922aa04ef0d188",
+   "scripts/run_s31_pilot.py": "48f8450feb4f2dbf8112434239d523b9f35cb0661eed486669e33685dc8884c6",
+   "scripts/s31_analysis.py": "2e558e9b5a21824304b49c53c4187d7624e98ac5f890bf1c188e9a12de946ee4",
+   "src/miaosuan_agent/evaluation/exploratory.py": "5cbc6296314706a6f46f740f5e66e454385c9828f0dfbaa14f7db68503aad8d3",
+   "src/miaosuan_agent/evaluation/game.py": "50a1c5a2b672d418941cbfb90ac90c11625102c18ce00474e22c379114b025a2",
+   "src/miaosuan_agent/evaluation/residual516.py": "cb397781063722a67e34f98ef3130bf0adc6a34432666586ddfdd182de1ef437",
+   "src/miaosuan_agent/evaluation/s12_screen.py": "bb69cc96e4e35daade0ec9eca98dcaf84a3e0c5973f9d91a028781000570a67e",
+   "src/miaosuan_agent/evaluation/s12_timeline.py": "5e2ae9e1357b77d8baaeb639a7eac091dfa64d9164a6f6d4d447bc6d7c7f5632",
+   "src/miaosuan_agent/evaluation/s27_probe.py": "031d344e6584a5ca9342b2de8ac0a15f7d5d23fbac588197cd4a55d601113ec4",
+   "src/miaosuan_agent/evaluation/s30_preflight.py": "66f86cef5ee8d746ca88c997bc4b08429a9b0a7a989adad71e2ced46133d0a42",
+   "src/miaosuan_agent/evaluation/s31_capture.py": "c548e2ea5f2215c984492b609c49cbdc96791fb06d69bd802dc68da4907e655f",
+   "src/miaosuan_agent/evaluation/s31_pilot.py": "5e29fca54346fe800fb9ec1787ce14b32eef13802be967f0bc68c10b27b19c65",
+   "src/miaosuan_agent/evaluation/s31_preflight.py": "ec4bbc83d4382f901badb0ca2811e7a666063ad2250b7b06d1f14ec704d9a234",
+   "src/miaosuan_agent/experiments/exploratory_addon.py": "803f110696670adedb1531cf490dc331176abdfef8b665071ecd30d4168425f1",
+   "src/miaosuan_agent/experiments/t13_keep_one_k2.py": "782e4864f1e3dfe7a9108b11079df863f129794b07595f3a9acd71f4ded101ce",
+   "src/miaosuan_agent/experiments/t9_batch.py": "ba0e3fcd5e7b9c223b5d22129f37c06fb3bcb7ab071b0a825de6552f3edd7510",
+   "tests/fixtures/s31_engine.py": "ce6261fd3b708334e612a0a89dab9f44f693d6109a10e3a60540fb51de428484",
+   "tests/test_s31_pilot.py": "d7dd716329d595782b2015ac40ff64e47bafe258db5a39bee2de5aeb27cc8bad",
+   "tests/test_t13_keep_one_k2.py": "e0cf6d0937790103e4ea235ba5b2898ceee553b2ab5805504d227242a1cabdfd"
+  },
+  "id": "s31-t13-k2",
+  "mechanism_failures": [
+   "M1",
+   "M2",
+   "M3"
+  ],
+  "preflight_sha256": "59a38cead7f56c683e08009424c9a9fc1af94093c574061d0eae0490c1f861f1",
+  "rules": {
+   "controls": "evaluation/s30-t13-k1/controls.json (Sprint 30, SHA-256 27dffdfdfa2f920a921cb68da389bed80bb7a6e01950de7ffaac54b34c186e93): baseline-v2's group C games of the registered shoot-reservation experiment, fifteen per configuration and seat; margin = own total minus the opponent's total, equal to the engine's margin field",
+   "gate": "the next session opens only when every opened game completed with no structural stop, no mechanism failure and no harm stop",
+   "head_to_head_harm": {
+    "opening_objectives": "the objectives that both same-colour Sprint 12 head-to-head baseline-v2 seats first-owned at the same step (Sprint 27's registered references, evaluation/s27_probe.RULES p2): an opponent-independent opening capture",
+    "positions": {
+     "3": {
+      "margin_mean": "-13049/15",
+      "margin_minimum": -1055,
+      "occupy_maximum": 50,
+      "occupy_minimum": 0,
+      "opening_objectives": [
+       "50-point objective A",
+       "50-point objective B",
+       "50-point objective D",
+       "80-point objective B"
+      ],
+      "seat": "red"
+     },
+     "4": {
+      "margin_mean": "13049/15",
+      "margin_minimum": 719,
+      "occupy_maximum": 440,
+      "occupy_minimum": 390,
+      "opening_objectives": [
+       "50-point objective A",
+       "50-point objective B",
+       "50-point objective C",
+       "50-point objective D",
+       "80-point objective A",
+       "80-point objective B",
+       "80-point objective C"
+      ],
+      "seat": "blue"
+     }
+    },
+    "rule": "REJECT when the candidate's margin is below the minimum of the fifteen same-seat baseline-v2 mirror games (worse than every one of them), or its occupy score at the end is below their minimum, or an opening objective is never first-owned by the candidate's colour; the boundaries themselves pass"
+   },
+   "inert_harm": {
+    "positions": {
+     "1": {
+      "configuration": "2120531121 C3 baseline-v2 blue",
+      "margin_floor": 509,
+      "margin_minimum": 559,
+      "occupy": 310
+     },
+     "2": {
+      "configuration": "1930331196 C2 baseline-v2 red",
+      "margin_floor": 208,
+      "margin_minimum": 258,
+      "occupy": 310
+     }
+    },
+    "rule": "REJECT when the candidate's occupy score is below the configuration's baseline-v2 occupy score (constant over its fifteen games), or its margin is below the baseline-v2 margin minimum minus 50; the boundaries themselves pass"
+   },
+   "max_step": 2880,
+   "mechanism": {
+    "M1_departure_without_release": "after a withholding the holder is an own operator at the next decision but off the centre or with a non-empty move path, although the candidate emitted no MOVE for it",
+    "M2_no_executed_episode": "a game that completes without an executed garrison episode (the preflight verified an opportunity in all four configurations)",
+    "M3_persistent_interference": "own ground units waiting (non-empty move path, speed not positive) whose next hex is a centre with an active holder and four own ground units, during a run of consecutive steps of at least 300 (the registered hold limit of Sprint 25's garrison rule); shorter runs are reported",
+    "executed_episode": "a garrison episode with at least one retained withholding",
+    "interference_limit_steps": 300,
+    "retained": "a withholding after which, at the candidate's next decision, the holder is an own operator standing on the same centre with an empty move path",
+    "withholding": "a decision at which the candidate's list is baseline-v2's with the selected holder's MOVE removed"
+   },
+   "promising": "all four games completed with no stop, an executed garrison episode in both head-to-head games, the candidate red's occupy at the end above the red mirror maximum (50) and its margin at or above the red mirror mean (-13049/15)"
+  },
+  "rules_sha256": "8ccc8f9ed81d730a4cfd8358a056173853dafa11e22871e84a0d88215df01a97",
+  "stage": "pilot",
+  "structural_stops": [
+   "S1",
+   "S2",
+   "S3",
+   "S4",
+   "S6",
+   "S7"
+  ]
+ },
+ "status": "EXPLORATORY TRACK - REGISTERED FOUR-GAME PILOT - NOT A CONFIRMATION - NOT ELIGIBLE FOR PROMOTION",
+ "track": "EXPLORATORY",
+ "version": "t13-keep-one-k2, Sprint 31 arrival-transition garrison pilot (docs/SPRINT31_T13_K2_PILOT.md)"
+}
