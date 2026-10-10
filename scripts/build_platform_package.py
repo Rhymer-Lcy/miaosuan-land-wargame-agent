@@ -130,6 +130,178 @@ class Agent(BaseAgent):
         self._agent.reset()
         self._reported = set()
 '''
+#: Wrapper variants. ``canary`` is the frozen canary's entry point above (its archive bytes must not change);
+#: ``compat1`` wraps the same frozen policy in a transport-compatibility layer and changes no policy file.
+VARIANTS = ("canary", "compat1")
+VARIANT_NAMES = {"canary": "miaosuan-baseline-v2-canary", "compat1": "miaosuan-baseline-v2-compat1"}
+AGENT_COMPAT1 = '''"""Platform entry point: the frozen __IDENTITY__ policy (policy source __DIGEST__), wrapper compat1.
+
+The policy and every vendored module are the canary's, unchanged. This wrapper adapts only the form of the inputs and
+keeps a match able to leave its deployment stage:
+
+* JSON form. A transport through JSON turns every integer mapping key (the neighbour hexes of ``cost_data``, the seats
+  of ``role_and_grouping_info``, the unit ids and action types of ``valid_actions``) into a decimal string, which the
+  frozen policy rejects: ``setup`` raised, or every step failed its contract and deployment never ended. Mappings whose
+  keys are all canonical decimal strings are converted to integer keys, and a decimal-string ``seat`` or ``faction``
+  to an int. Input with no such mapping is passed on as the very same object, so on the engine's own form the actions
+  are exactly the canary's.
+* Start-up safety. An exception in ``setup`` is reported instead of raised. If the policy cannot act because of an
+  error (failed setup, a contract error or an exception in a step) while the stage is deployment and the seat has not
+  ended its deployment, the wrapper issues the end-of-deployment action (type 333) for the seat, which is what the
+  policy itself does at its first deployment step.
+* Diagnostics. Once per game, stderr receives the setup_info key names, the types of ``seat`` and ``faction``,
+  whether ``cost_data`` is present (without it no unit is ever ordered to move) and the input form; every distinct
+  error is reported once. Every line starts with ``[__IDENTITY__/compat1]``. No value of the inputs is printed.
+"""
+
+import re
+import sys
+from typing import Any, Dict, List, Mapping, Optional, Tuple
+
+from .base_agent import BaseAgent
+from .__PACKAGE__.experiments.shoot_reservation import __AGENT_CLASS__
+
+IDENTITY = "__IDENTITY__"
+WRAPPER = "compat1"
+POLICY_SOURCE_SHA256 = "__DIGEST__"
+END_DEPLOYMENT = 333
+DEPLOYMENT_STAGE = 1
+_DECIMAL = re.compile(r"0|-?[1-9][0-9]*")
+
+
+def _decimal(value: Any) -> bool:
+    return isinstance(value, str) and _DECIMAL.fullmatch(value) is not None
+
+
+def _int_keys(value: Any) -> Tuple[Any, bool]:
+    """``value`` with every all-decimal-string-keyed mapping re-keyed by int, and whether anything changed.
+
+    An unchanged value is returned as the same object.
+    """
+    if isinstance(value, Mapping):
+        items = list(value.items())
+        rekey = bool(items) and all(_decimal(key) for key, _ in items)
+        changed = rekey
+        converted = []
+        for key, item in items:
+            new, sub = _int_keys(item)
+            changed = changed or sub
+            converted.append((int(key) if rekey else key, new))
+        return (dict(converted), True) if changed else (value, False)
+    if isinstance(value, (list, tuple)):
+        converted = []
+        changed = False
+        for item in value:
+            new, sub = _int_keys(item)
+            changed = changed or sub
+            converted.append(new)
+        if not changed:
+            return value, False
+        return (converted if isinstance(value, list) else tuple(converted)), True
+    return value, False
+
+
+def _as_int(value: Any) -> Optional[int]:
+    if isinstance(value, int) and not isinstance(value, bool):
+        return value
+    if _decimal(value):
+        return int(value)
+    return None
+
+
+def _type_name(value: Any) -> str:
+    return "absent" if value is None else type(value).__name__
+
+
+class Agent(BaseAgent):
+    def __init__(self) -> None:
+        self._agent = __AGENT_CLASS__()
+        self._reported: set = set()
+        self._seat: Optional[int] = None
+        self._setup_error: Optional[str] = None
+        self._observed = False
+
+    def _report(self, message: str) -> None:
+        if message not in self._reported and len(self._reported) < 50:
+            self._reported.add(message)
+            print(f"[{IDENTITY}/{WRAPPER}] {message}", file=sys.stderr, flush=True)
+
+    def setup(self, setup_info: Dict[str, Any]) -> None:
+        self._setup_error = None
+        self._observed = False
+        self._seat = None
+        try:
+            keys = sorted(str(key) for key in setup_info) if isinstance(setup_info, Mapping) else []
+            get = setup_info.get if isinstance(setup_info, Mapping) else (lambda key: None)
+            self._report(f"setup: keys {keys}; seat {_type_name(get('seat'))}; faction {_type_name(get('faction'))}; "
+                         f"cost_data {'present' if get('cost_data') is not None else 'ABSENT (units will not move)'}")
+            self._seat = _as_int(get("seat"))
+            info = setup_info
+            changed: Dict[str, Any] = {}
+            for name in ("seat", "faction"):
+                if not isinstance(get(name), int) and _as_int(get(name)) is not None:
+                    changed[name] = _as_int(get(name))
+            costs, rekeyed = _int_keys(get("cost_data"))
+            if rekeyed:
+                changed["cost_data"] = costs
+            if changed:
+                info = dict(setup_info, **changed)
+                self._report(f"setup: converted to integer form: {sorted(changed)}")
+            self._agent.setup(info)
+        except Exception as exc:  # noqa: BLE001 - reported; the wrapper can still end the deployment
+            self._setup_error = f"{type(exc).__name__}: {exc}"[:500]
+            self._report(f"setup error: {self._setup_error}")
+
+    def _fallback(self, observation: Any) -> List[Dict[str, Any]]:
+        """End the seat's deployment while that is still possible; otherwise no action."""
+        try:
+            if self._seat is None or _as_int(observation["time"]["stage"]) != DEPLOYMENT_STAGE:
+                return []
+            seats = observation.get("role_and_grouping_info") or {}
+            entry = seats.get(self._seat, seats.get(str(self._seat))) if isinstance(seats, Mapping) else None
+            if isinstance(entry, Mapping) and entry.get("end_deployment") is True:
+                return []
+        except Exception:  # noqa: BLE001 - an unreadable stage means no action
+            return []
+        self._report("fallback: ending the deployment for the seat after an error")
+        return [{"actor": self._seat, "type": END_DEPLOYMENT}]
+
+    def step(self, observation: Dict[str, Any]) -> List[Dict[str, Any]]:
+        if not self._observed and isinstance(observation, Mapping):
+            self._observed = True
+            self._report(f"first observation: keys {sorted(str(key) for key in observation)}")
+        try:
+            converted, rekeyed = _int_keys(observation)
+        except Exception as exc:  # noqa: BLE001
+            self._report(f"input error: {type(exc).__name__}: {exc}"[:500])
+            converted, rekeyed = observation, False
+        if rekeyed:
+            self._report("observation: JSON form, integer keys converted")
+        if self._setup_error is not None:
+            return self._fallback(converted)
+        try:
+            actions = self._agent.step(converted)
+        except Exception as exc:  # noqa: BLE001 - reported, and the agent keeps playing
+            self._report(f"step error: {type(exc).__name__}: {exc}"[:500])
+            return self._fallback(converted)
+        trace = self._agent.last_trace
+        error = getattr(trace, "error", None)
+        if error:
+            self._report(f"contract error: {error}"[:500])
+            if not actions:
+                return self._fallback(converted)
+        return actions
+
+    def reset(self) -> None:
+        try:
+            self._agent.reset()
+        except Exception as exc:  # noqa: BLE001
+            self._report(f"reset error: {type(exc).__name__}: {exc}"[:500])
+        self._reported = set()
+        self._seat = None
+        self._setup_error = None
+        self._observed = False
+'''
 
 
 # ----------------------------------------------------------------------------------------------
@@ -221,21 +393,35 @@ def check_policy_source() -> None:
         raise SystemExit(f"the checkout's baseline-v2 policy source is {digest}, not the frozen {POLICY_SOURCE_SHA256}")
 
 
-def entries() -> Dict[str, bytes]:
+def agent_source(variant: str = "canary") -> str:
+    if variant == "canary":
+        return AGENT.format(identity=POLICY_IDENTITY, digest=POLICY_SOURCE_SHA256, package=PACKAGE,
+                            agent_class=AGENT_CLASS)
+    if variant == "compat1":
+        source = AGENT_COMPAT1
+        for marker, value in (("__IDENTITY__", POLICY_IDENTITY), ("__DIGEST__", POLICY_SOURCE_SHA256),
+                             ("__PACKAGE__", PACKAGE), ("__AGENT_CLASS__", AGENT_CLASS)):
+            source = source.replace(marker, value)
+        return source
+    raise SystemExit(f"unknown variant {variant!r}; known: {list(VARIANTS)}")
+
+
+def entries(variant: str = "canary") -> Dict[str, bytes]:
     check_policy_source()
     files, external = closure()
     check_external(external)
     payload: Dict[str, bytes] = {
         "ai/__init__.py": INIT.encode("utf-8"),
         "ai/base_agent.py": BASE.encode("utf-8"),
-        "ai/agent.py": AGENT.format(identity=POLICY_IDENTITY, digest=POLICY_SOURCE_SHA256, package=PACKAGE,
-                                    agent_class=AGENT_CLASS).encode("utf-8"),
+        "ai/agent.py": agent_source(variant).encode("utf-8"),
     }
     for relative in files:
         payload[f"ai/{relative}"] = (SRC / relative).read_bytes()
     manifest = {"package": "ai", "policy": POLICY_IDENTITY, "policy_source_sha256": POLICY_SOURCE_SHA256,
                 "agent_class": f"{PACKAGE}.experiments.shoot_reservation.{AGENT_CLASS}", "python": ">=3.10",
                 "third_party": [], "files": {name: hashlib.sha256(data).hexdigest() for name, data in sorted(payload.items())}}
+    if variant != "canary":
+        manifest["wrapper"] = variant
     payload["ai/PACKAGE.json"] = (json.dumps(manifest, indent=1, sort_keys=True) + "\n").encode("utf-8")
     return payload
 
@@ -375,6 +561,22 @@ def smoke(data: bytes, inputs: Dict[str, Any], python: str = sys.executable) -> 
         return json.loads(result.stdout.strip().splitlines()[-1])
 
 
+def _plain(value: Any) -> Any:
+    """JSON encoder fallback for the arrays in the setup data (``see_data``)."""
+    if hasattr(value, "tolist"):
+        return value.tolist()
+    raise TypeError(f"not JSON serialisable: {type(value).__name__}")
+
+
+def json_form(inputs: Dict[str, Any]) -> Dict[str, Any]:
+    """The same game as a JSON transport delivers it: setups and observations round-tripped through JSON (integer
+    mapping keys become decimal strings); the expected actions stay those of the engine-form inputs."""
+    def round_trip(value: Any) -> Any:
+        return json.loads(json.dumps(value, default=_plain))
+    return {"setups": {seat: round_trip(setup) for seat, setup in inputs["setups"].items()},
+            "steps": [(seat, round_trip(observation), expected) for seat, observation, expected in inputs["steps"]]}
+
+
 def corpus_inputs() -> List[Dict[str, Any]]:
     """Every recorded observation of the private replay corpus, with the repository agent's actions on it."""
     import gzip
@@ -407,35 +609,47 @@ def corpus_inputs() -> List[Dict[str, Any]]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--name", default="miaosuan-baseline-v2-canary")
+    parser.add_argument("--variant", choices=VARIANTS, default="canary", help="entry-point wrapper (default: the canary)")
+    parser.add_argument("--name", default=None, help="archive name (default: by variant)")
     parser.add_argument("--out-dir", type=Path, default=REPO_ROOT / "dist")
     parser.add_argument("--skip-smoke", action="store_true")
     parser.add_argument("--replay-corpus", action="store_true", help="also replay the private corpus (server)")
     parser.add_argument("--python", default=sys.executable, help="interpreter for the isolated smoke")
     args = parser.parse_args()
-    payload = entries()
+    args.name = args.name or VARIANT_NAMES[args.variant]
+    payload = entries(args.variant)
     problems = [p for name, content in payload.items() for p in forbidden(name, content)]
     data = write_zip(payload)
     problems += verify_zip(data)
     if problems:
         raise SystemExit("REFUSED:\n" + "\n".join(problems))
-    report: Dict[str, Any] = {"name": args.name, "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest(),
+    report: Dict[str, Any] = {"name": args.name, "variant": args.variant, "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest(),
                               "files": len(payload), "policy": POLICY_IDENTITY, "policy_source_sha256": POLICY_SOURCE_SHA256}
     if not args.skip_smoke:
         result = smoke(data, synthetic_inputs(), args.python)
         if result["mismatches"] or not result["steps"]:
             raise SystemExit(f"package smoke: {result}")
         report["smoke"] = result
+        if args.variant != "canary":
+            result = smoke(data, json_form(synthetic_inputs()), args.python)
+            if result["mismatches"] or not result["steps"]:
+                raise SystemExit(f"package smoke, JSON form: {result}")
+            report["smoke_json_form"] = result
     if args.replay_corpus:
-        totals = {"games": 0, "steps": 0, "mismatches": 0}
-        for game in corpus_inputs():
-            result = smoke(data, game, args.python)
-            totals["games"] += 1
-            totals["steps"] += result["steps"]
-            totals["mismatches"] += result["mismatches"]
-        report["replay_corpus"] = totals
-        if totals["mismatches"]:
-            raise SystemExit(f"replay corpus: {totals}")
+        forms = (("replay_corpus", lambda game: game),)
+        if args.variant != "canary":
+            forms += (("replay_corpus_json_form", json_form),)
+        games = corpus_inputs()
+        for label, form in forms:
+            totals = {"games": 0, "steps": 0, "mismatches": 0}
+            for game in games:
+                result = smoke(data, form(game), args.python)
+                totals["games"] += 1
+                totals["steps"] += result["steps"]
+                totals["mismatches"] += result["mismatches"]
+            report[label] = totals
+            if totals["mismatches"]:
+                raise SystemExit(f"{label}: {totals}")
     args.out_dir.mkdir(parents=True, exist_ok=True)
     (args.out_dir / f"{args.name}.zip").write_bytes(data)
     listing = {"report": report, "files": {name: {"bytes": len(content), "sha256": hashlib.sha256(content).hexdigest()}
