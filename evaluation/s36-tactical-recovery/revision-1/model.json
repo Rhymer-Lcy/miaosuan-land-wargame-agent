@@ -1,0 +1,919 @@
+{
+ "crash_examples": [],
+ "crashes": 0,
+ "evidence": "engine-free model world, no combat",
+ "m_inert_sides": {
+  "1910631192 blue": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "1910631192 red": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "1930331196 blue": {
+   "CM": 310,
+   "S34-MO": 310,
+   "TA": 310,
+   "TB": 310,
+   "TC": 310
+  },
+  "1930331196 red": {
+   "CM": 310,
+   "S34-MO": 310,
+   "TA": 310,
+   "TB": 310,
+   "TC": 310
+  },
+  "1930631192 blue": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "1930631192 red": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2010131194 blue": {
+   "CM": 0,
+   "S34-MO": 50,
+   "TA": 50,
+   "TB": 50,
+   "TC": 50
+  },
+  "2010131194 red": {
+   "CM": 0,
+   "S34-MO": 50,
+   "TA": 50,
+   "TB": 50,
+   "TC": 50
+  },
+  "2010141294 blue": {
+   "CM": 0,
+   "S34-MO": 50,
+   "TA": 50,
+   "TB": 50,
+   "TC": 50
+  },
+  "2010141294 red": {
+   "CM": 0,
+   "S34-MO": 50,
+   "TA": 50,
+   "TB": 50,
+   "TC": 50
+  },
+  "2010211129 blue": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2010211129 red": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "201033019601 blue": {
+   "CM": 0,
+   "S34-MO": 80,
+   "TA": 80,
+   "TB": 80,
+   "TC": 80
+  },
+  "201033019601 red": {
+   "CM": 0,
+   "S34-MO": 80,
+   "TA": 80,
+   "TB": 80,
+   "TC": 80
+  },
+  "201033029601 blue": {
+   "CM": 50,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "201033029601 red": {
+   "CM": 80,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "201033039601 blue": {
+   "CM": 50,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "201033039601 red": {
+   "CM": 80,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2010431153 blue": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2010431153 red": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2010441253 blue": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2010441253 red": {
+   "CM": 50,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2020331196 blue": {
+   "CM": 310,
+   "S34-MO": 310,
+   "TA": 310,
+   "TB": 310,
+   "TC": 310
+  },
+  "2020331196 red": {
+   "CM": 310,
+   "S34-MO": 310,
+   "TA": 310,
+   "TB": 310,
+   "TC": 310
+  },
+  "2030111194 blue": {
+   "CM": 360,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2030111194 red": {
+   "CM": 390,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2030331196 blue": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2030331196 red": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2030341296 blue": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2030341296 red": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "211033019601 blue": {
+   "CM": 50,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "211033019601 red": {
+   "CM": 80,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2110431153 blue": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2110431153 red": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2110431253 blue": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2110431253 red": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2110431353 blue": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2110431353 red": {
+   "CM": 0,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2110431453 blue": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2110431453 red": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2110431553 blue": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2110431553 red": {
+   "CM": 80,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2110431653 blue": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2110431653 red": {
+   "CM": 130,
+   "S34-MO": 130,
+   "TA": 130,
+   "TB": 130,
+   "TC": 130
+  },
+  "2110431753 blue": {
+   "CM": 160,
+   "S34-MO": 160,
+   "TA": 160,
+   "TB": 160,
+   "TC": 160
+  },
+  "2110431753 red": {
+   "CM": 160,
+   "S34-MO": 160,
+   "TA": 160,
+   "TB": 160,
+   "TC": 160
+  },
+  "2120131194 blue": {
+   "CM": 310,
+   "S34-MO": 310,
+   "TA": 310,
+   "TB": 310,
+   "TC": 310
+  },
+  "2120131194 red": {
+   "CM": 310,
+   "S34-MO": 310,
+   "TA": 310,
+   "TB": 310,
+   "TC": 310
+  },
+  "2120131294 blue": {
+   "CM": 310,
+   "S34-MO": 310,
+   "TA": 310,
+   "TB": 310,
+   "TC": 310
+  },
+  "2120131294 red": {
+   "CM": 310,
+   "S34-MO": 310,
+   "TA": 310,
+   "TB": 310,
+   "TC": 310
+  },
+  "2120331196 blue": {
+   "CM": 310,
+   "S34-MO": 310,
+   "TA": 310,
+   "TB": 310,
+   "TC": 310
+  },
+  "2120331196 red": {
+   "CM": 310,
+   "S34-MO": 310,
+   "TA": 310,
+   "TB": 310,
+   "TC": 310
+  },
+  "2120511121 blue": {
+   "CM": 230,
+   "S34-MO": 310,
+   "TA": 310,
+   "TB": 310,
+   "TC": 310
+  },
+  "2120511121 red": {
+   "CM": 310,
+   "S34-MO": 310,
+   "TA": 310,
+   "TB": 310,
+   "TC": 310
+  },
+  "2120531121 blue": {
+   "CM": 310,
+   "S34-MO": 310,
+   "TA": 310,
+   "TB": 310,
+   "TC": 310
+  },
+  "2120531121 red": {
+   "CM": 310,
+   "S34-MO": 310,
+   "TA": 310,
+   "TB": 310,
+   "TC": 310
+  },
+  "2130331196 blue": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2130331196 red": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2130331296 blue": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2130331296 red": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2130511121 blue": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2130511121 red": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2130511221 blue": {
+   "CM": 360,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2130511221 red": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2130511321 blue": {
+   "CM": 390,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2130511321 red": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2130511421 blue": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2130511421 red": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2140131194 blue": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2140131194 red": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2140331196 blue": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2140331196 red": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2230331196 blue": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2230331196 red": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2230531121 blue": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2230531121 red": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2230531221 blue": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2230531221 red": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2230631192 blue": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  },
+  "2230631192 red": {
+   "CM": 440,
+   "S34-MO": 440,
+   "TA": 440,
+   "TB": 440,
+   "TC": 440
+  }
+ },
+ "populations": {
+  "M-inert|CM": {
+   "fallbacks": 0,
+   "first_owned": 335,
+   "games": 80,
+   "latency_ms_max": 396.682,
+   "max_wait": 20,
+   "model_refusals": 0,
+   "objective_value": 21130,
+   "objective_value_max": 22480,
+   "rejections": 0,
+   "replay_checks": 1930,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 119
+  },
+  "M-inert|S34-MO": {
+   "fallbacks": 0,
+   "first_owned": 356,
+   "games": 80,
+   "latency_ms_max": 358.419,
+   "max_wait": 19,
+   "model_refusals": 0,
+   "objective_value": 22480,
+   "objective_value_max": 22480,
+   "rejections": 0,
+   "replay_checks": 1930,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 38
+  },
+  "M-inert|TA": {
+   "fallbacks": 0,
+   "first_owned": 356,
+   "games": 80,
+   "latency_ms_max": 392.417,
+   "max_wait": 19,
+   "model_refusals": 0,
+   "objective_value": 22480,
+   "objective_value_max": 22480,
+   "rejections": 0,
+   "replay_checks": 1930,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 62
+  },
+  "M-inert|TB": {
+   "fallbacks": 0,
+   "first_owned": 356,
+   "games": 80,
+   "latency_ms_max": 391.73,
+   "max_wait": 75,
+   "model_refusals": 0,
+   "objective_value": 22480,
+   "objective_value_max": 22480,
+   "rejections": 0,
+   "replay_checks": 1930,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 122
+  },
+  "M-inert|TC": {
+   "fallbacks": 0,
+   "first_owned": 356,
+   "games": 80,
+   "latency_ms_max": 361.958,
+   "max_wait": 19,
+   "model_refusals": 0,
+   "objective_value": 22480,
+   "objective_value_max": 22480,
+   "rejections": 0,
+   "replay_checks": 1930,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 38
+  },
+  "M-v2-ablation|ta-no-coalition-capture": {
+   "fallbacks": 0,
+   "first_owned": 23,
+   "games": 10,
+   "latency_ms_max": 234.713,
+   "max_wait": 18,
+   "model_refusals": 0,
+   "objective_value": 1880,
+   "objective_value_max": 2640,
+   "rejections": 0,
+   "replay_checks": 246,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 18
+  },
+  "M-v2-ablation|ta-no-delay-holder": {
+   "fallbacks": 0,
+   "first_owned": 23,
+   "games": 10,
+   "latency_ms_max": 236.002,
+   "max_wait": 20,
+   "model_refusals": 0,
+   "objective_value": 2090,
+   "objective_value_max": 2640,
+   "rejections": 0,
+   "replay_checks": 246,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 64
+  },
+  "M-v2-ablation|ta-no-end-window": {
+   "fallbacks": 0,
+   "first_owned": 23,
+   "games": 10,
+   "latency_ms_max": 244.327,
+   "max_wait": 39,
+   "model_refusals": 0,
+   "objective_value": 2220,
+   "objective_value_max": 2640,
+   "rejections": 0,
+   "replay_checks": 246,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 98
+  },
+  "M-v2-ablation|ta-no-opportunity-capture": {
+   "fallbacks": 0,
+   "first_owned": 21,
+   "games": 10,
+   "latency_ms_max": 216.289,
+   "max_wait": 21,
+   "model_refusals": 0,
+   "objective_value": 2220,
+   "objective_value_max": 2640,
+   "rejections": 0,
+   "replay_checks": 246,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 86
+  },
+  "M-v2-ablation|ta-no-static-filter": {
+   "fallbacks": 0,
+   "first_owned": 23,
+   "games": 10,
+   "latency_ms_max": 282.057,
+   "max_wait": 20,
+   "model_refusals": 0,
+   "objective_value": 2250,
+   "objective_value_max": 2640,
+   "rejections": 0,
+   "replay_checks": 246,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 39
+  },
+  "M-v2-ablation|ta-no-traffic-repair": {
+   "fallbacks": 0,
+   "first_owned": 23,
+   "games": 10,
+   "latency_ms_max": 247.414,
+   "max_wait": 39,
+   "model_refusals": 0,
+   "objective_value": 2220,
+   "objective_value_max": 2640,
+   "rejections": 0,
+   "replay_checks": 246,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 119
+  },
+  "M-v2-ablation|ta-no-withdrawal": {
+   "fallbacks": 0,
+   "first_owned": 23,
+   "games": 10,
+   "latency_ms_max": 241.996,
+   "max_wait": 20,
+   "model_refusals": 0,
+   "objective_value": 2140,
+   "objective_value_max": 2640,
+   "rejections": 0,
+   "replay_checks": 246,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 39
+  },
+  "M-v2-ablation|ta-r1-attribution": {
+   "fallbacks": 0,
+   "first_owned": 23,
+   "games": 10,
+   "latency_ms_max": 246.39,
+   "max_wait": 60,
+   "model_refusals": 0,
+   "objective_value": 2140,
+   "objective_value_max": 2640,
+   "rejections": 0,
+   "replay_checks": 246,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 79
+  },
+  "M-v2-ablation|tb-no-artillery": {
+   "fallbacks": 0,
+   "first_owned": 23,
+   "games": 10,
+   "latency_ms_max": 244.735,
+   "max_wait": 20,
+   "model_refusals": 0,
+   "objective_value": 2220,
+   "objective_value_max": 2640,
+   "rejections": 0,
+   "replay_checks": 246,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 39
+  },
+  "M-v2-ablation|tb-no-counterattack": {
+   "fallbacks": 0,
+   "first_owned": 23,
+   "games": 10,
+   "latency_ms_max": 243.781,
+   "max_wait": 20,
+   "model_refusals": 0,
+   "objective_value": 2220,
+   "objective_value_max": 2640,
+   "rejections": 0,
+   "replay_checks": 246,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 39
+  },
+  "M-v2-ablation|tb-no-guided-fire": {
+   "fallbacks": 0,
+   "first_owned": 23,
+   "games": 10,
+   "latency_ms_max": 246.796,
+   "max_wait": 20,
+   "model_refusals": 0,
+   "objective_value": 2220,
+   "objective_value_max": 2640,
+   "rejections": 0,
+   "replay_checks": 246,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 39
+  },
+  "M-v2-ablation|tb-no-reserve": {
+   "fallbacks": 0,
+   "first_owned": 23,
+   "games": 10,
+   "latency_ms_max": 245.674,
+   "max_wait": 20,
+   "model_refusals": 0,
+   "objective_value": 2220,
+   "objective_value_max": 2640,
+   "rejections": 0,
+   "replay_checks": 246,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 39
+  },
+  "M-v2-ablation|tb-no-transport": {
+   "fallbacks": 0,
+   "first_owned": 24,
+   "games": 10,
+   "latency_ms_max": 245.293,
+   "max_wait": 0,
+   "model_refusals": 0,
+   "objective_value": 2220,
+   "objective_value_max": 2640,
+   "rejections": 0,
+   "replay_checks": 246,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 0
+  },
+  "M-v2-ablation|tc-no-retention": {
+   "fallbacks": 0,
+   "first_owned": 23,
+   "games": 10,
+   "latency_ms_max": 254.454,
+   "max_wait": 19,
+   "model_refusals": 0,
+   "objective_value": 1930,
+   "objective_value_max": 2640,
+   "rejections": 0,
+   "replay_checks": 246,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 19
+  },
+  "M-v2-ablation|tc-no-withdrawal": {
+   "fallbacks": 0,
+   "first_owned": 23,
+   "games": 10,
+   "latency_ms_max": 255.991,
+   "max_wait": 19,
+   "model_refusals": 0,
+   "objective_value": 1930,
+   "objective_value_max": 2640,
+   "rejections": 0,
+   "replay_checks": 246,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 19
+  },
+  "M-v2|CM": {
+   "fallbacks": 0,
+   "first_owned": 194,
+   "games": 80,
+   "latency_ms_max": 397.222,
+   "max_wait": 38,
+   "model_refusals": 0,
+   "objective_value": 19730,
+   "objective_value_max": 22480,
+   "rejections": 0,
+   "replay_checks": 1930,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 302
+  },
+  "M-v2|S34-MO": {
+   "fallbacks": 0,
+   "first_owned": 198,
+   "games": 80,
+   "latency_ms_max": 362.933,
+   "max_wait": 19,
+   "model_refusals": 0,
+   "objective_value": 18300,
+   "objective_value_max": 22480,
+   "rejections": 0,
+   "replay_checks": 1930,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 37
+  },
+  "M-v2|TA": {
+   "fallbacks": 0,
+   "first_owned": 197,
+   "games": 80,
+   "latency_ms_max": 398.19,
+   "max_wait": 40,
+   "model_refusals": 0,
+   "objective_value": 19640,
+   "objective_value_max": 22480,
+   "rejections": 0,
+   "replay_checks": 1930,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 349
+  },
+  "M-v2|TB": {
+   "fallbacks": 0,
+   "first_owned": 195,
+   "games": 80,
+   "latency_ms_max": 390.38,
+   "max_wait": 31,
+   "model_refusals": 0,
+   "objective_value": 19770,
+   "objective_value_max": 22480,
+   "rejections": 0,
+   "replay_checks": 1930,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 187
+  },
+  "M-v2|TC": {
+   "fallbacks": 0,
+   "first_owned": 197,
+   "games": 80,
+   "latency_ms_max": 363.976,
+   "max_wait": 19,
+   "model_refusals": 0,
+   "objective_value": 18510,
+   "objective_value_max": 22480,
+   "rejections": 0,
+   "replay_checks": 1930,
+   "replay_mismatches": 0,
+   "wait_unit_steps": 38
+  }
+ }
+}
