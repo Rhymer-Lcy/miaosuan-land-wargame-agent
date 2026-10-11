@@ -197,8 +197,11 @@ disposition a function of its recorded games only, re-derived Sprint 35's dispos
 over-retention and passivity of the delay stance, over-conservative capture, and a wait metric that counted
 suppressed units. Three candidates in a new package (`src/miaosuan_agent/tactical/`) were compared offline; the first
 registered comparison was blocked by a configuration defect (corrected, re-registered), the second selected the
-guarded orchestrator (Sprint 34's agent with a survival guard). A 51-session live study is proposed, not authorized.
-Nothing was promoted, merged or uploaded.
+guarded orchestrator (Sprint 34's agent with a survival guard). The owner then authorized a 51-session live study
+(sessions 2846 to 2896); it stopped after 43 games (2846 to 2888) on a registered harm rule: as red in 1930331196 both
+candidate margins fell below `baseline-v2`'s reference minimum (disposition S36_SEVERE_HARM), while the paired
+comparison with the fresh control was close to zero. Post hoc, that rule would fire readily for a policy no better
+than the control, and the guard's withdrawals almost never fired. Nothing was promoted, merged or uploaded.
 
 ## Third-party material is not in this repository
 
