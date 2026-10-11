@@ -372,3 +372,127 @@ or selection rule changes.
 sections 12 to 14, unchanged, applied once to the revision 2 agents from the revision 2 registration commit. No revision
 2 agent has been run on a registered population before this registration. If revision 2 also selects nothing, the
 disposition is `S36_ENGINEERING_BLOCKED` and no live card is proposed.
+
+## 17. Revision 2: registered result
+
+The comparison ran once from the revision 2 registration commit `2822f1db2aea9f85cded2f9286105d80358ffada`,
+2026-10-11T11:10:13+08:00 to 12:50:35+08:00 (NUMA node 0, 16 workers): 950 model games, none crashed; 67 genuine games,
+297,920 play decisions re-decided per agent; 35 episode games, the frozen controls reproducing their recorded decisions
+at all 66,266 (S34 MO) and 22,689 (CM) decisions. Outputs: `evaluation/s36-tactical-recovery/{model,genuine,episodes,
+selection}.json`. The public summaries are written with the publication policy of section 4 (two model latencies
+collided with the scan's numeric pattern; the values are unchanged, checked against a plain rewrite, and revision 1's
+files are byte-identical either way).
+
+| Measure | TA | TB | TC | S34 MO | CM |
+|---|---|---|---|---|---|
+| model, against the inert control: objective value (80 games; all objectives 22,480) | 22,480 | 22,480 | 22,480 | 22,480 | 21,130 |
+| model, against `baseline-v2`: objective value of the agent's side (80 games) | 19,640 | 19,770 | 18,510 | 18,300 | 19,730 |
+| model: longest wait in front of a full hex (steps), against the inert control / `baseline-v2` | 19 / 40 | 75 / 31 | 19 / 19 | 19 / 19 | 20 / 38 |
+| genuine: rejected or independently illegal actions / fallbacks / contract errors | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 |
+| genuine: play decisions differing from S34 MO (of 297,920) | 58,791 | 63,266 | 19,111 | 0 | 96,355 |
+| genuine: latency, largest game p99 / maximum (ms) | 31.655 / 243.123 | 31.026 / 240.867 | 75.705 / 238.922 | 64.289 / 268.52 | 29.894 / 250.672 |
+| genuine: largest memory (bytes of canonical JSON) | 2,812 | 2,812 | 2,741 | 1,878 | 2,671 |
+| equivalence: `ta-as-ca` against CA / `tc-no-guard` against S34 MO | 0 / 0 | | | | |
+
+TC's guard dropped 25,662 moves (into zones assessed delay or skip, or taking a kept unit out of its zone) and added
+1,364 withdrawals over the genuine decisions. Every candidate passed all twelve gates.
+
+**Episodes** (historical descriptive, open loop: each agent's decisions on the recorded states, never an outcome; 117
+held-objective losses and 121 own ground units destroyed standing in a held zone, in the 35 recorded Stage A games of
+both frozen policies):
+
+| | TA | TB | TC | S34 MO | CM |
+|---|---|---|---|---|---|
+| threat recognised 150 steps before the loss (of 117) | 67 | 67 | 67 | - | 69 |
+| a unit kept or sent in the 300 steps before the loss (of 117) | 111 | 111 | 110 | 110 | 110 |
+| last defenders ordered away in the record, kept by the agent (of 31) | 25 | 25 | 26 | 3 | 25 |
+| valuable units later destroyed in the zone, ordered out in the 300 steps before (of 88) | 25 | 25 | 19 | 18 | 15 |
+| cheap units later destroyed in the zone, ordered out (of 33) | 0 | 0 | 3 | 11 | 0 |
+
+Reading: on the recorded states the Sprint 36 rules keep last defenders as Sprint 35 did (25 or 26 of 31 against S34
+MO's 3) and order out more of the valuable units that later died (TA 25 of 88 against CM's 15); TC, which acts only
+through its guard, orders out 19. Most valuable units that died were not ordered out by any agent; why, unit by unit
+(no visible threat, contact closer than the 40-step lead, no destination), is not measured here. Whether any of this
+saves units or objectives is a combat question these figures cannot answer.
+
+## 18. Selection and the frozen candidate
+
+The registered rule (section 14) selects **TC**, the first of TC, TA, TB to pass every gate (all three passed). Frozen as
+`tactical.config.LIVE` in a separate commit; identity `s36-tactical-guarded-orchestrator-2`, policy source
+`2f74e88f59654f2bef2719b98979212f83561279161c28f28d90e1c9c4210143` (53 files: `baseline-v2`'s frozen sources, the frozen
+packages `integrated/` and `coalition/`, and `tactical/`). TC is the Sprint 34 control's decision cycle unchanged, with
+a guard that (a) keeps the units its assessment keeps in a held zone (retention), (b) refuses moves of units that are not
+cheap into zones assessed untenable or not capturable, and (c) adds withdrawals of valuable defenders from untenable held
+zones before contact, all through the traffic ledger and validated again. Against the inert control it equals S34 MO
+in every model scenario-side; against `baseline-v2` in the model it holds 210 more objective points (18,510 against
+18,300); on genuine observations it decides differently from S34 MO at 6.4% of play decisions.
+
+What TC does not do: TA's and TB's stance-driven allocation (opportunity capture and the delaying place change where TA
+and TB send units, not where TC sends them, except through the guard's refusals) and TB's fire support, guided fire and
+safe transport. Those stay offline variants.
+
+## 19. Live study proposal (registered as a proposal; no session is authorized)
+
+Rules `src/miaosuan_agent/evaluation/s36_live.py` (`s36-tactical-live-rules-1`, file SHA-256 `f06d9eb5...`, rule-source
+digest `f986bbb7...`), derivation `evaluation.s36_study`, observer `evaluation.s36_capture`, card builder
+`scripts/build_s36_card.py`, runners `scripts/run_s36.py --position N` and `scripts/run_s36_game.py`, analysis
+`scripts/s36_analysis.py`, references `evaluation/s36-tactical-recovery/references.json` (Sprint 34's rule, plus the
+held-out and Stage B configurations), tests `tests/test_s36_live.py`, `tests/test_s36_card.py`. Card
+`evaluation/s36-tactical-live-1/manifest.json`, canonical SHA-256
+`73166e0ea51ca21e183cc11c38903ec4a6b1da05f82937673945bad868fbef26`, rebuilds byte-identically; it records
+`authorized: false`, and the runner refuses every position while it does.
+
+**Budget proposed**: at most 51 sessions, 2846 to 2896, one game per exclusive session, serially, on NUMA node 0. The
+next unopened session (2846) is not an authorization. Sprint 35's authorized but unopened 2846 to 2874 are not reused:
+they lapsed with Sprint 35; the numbers are simply the ledger's next ones, and a new authorization is required.
+
+| Batch | Positions | Games |
+|---|---|---|
+| A1 | 1 to 23 | five Stage A scenarios (2130511121, 2120531121, 1930331196, 1910631192, 2010431153): candidate and fresh Sprint 34 control, red and blue against `baseline-v2`, interleaved; the frozen Sprint 35 candidate once in each of its three blue regression configurations (replication, never compared) |
+| A2 | 24 to 43 | the twenty candidate and control games again, other order |
+| H1 | 44 to 47 | held-out scenario 2010211129 (never used to design or tune a Sprint 36 rule): candidate and control, both seats |
+| B1 | 48 to 51 | candidate against the inert control in 201033019601 and 2010131194, both seats (two coverage-regression scenarios) |
+
+**Comparison scale**: share of the stake (margin over objective total plus both sides' maximum remaining-force scores,
+read from each game's record). Sprint 35's z is reported beside it, never decided on (section 20).
+
+**Calibration** (`scripts/s36_calibration.py`, `evaluation/s36-tactical-recovery/live-calibration.json`, from the
+control's 26 recorded Stage A games, ten configurations, 16 degrees of freedom): pooled within-configuration SD of the
+share 0.4187; null SD of `Dbar` (two games per policy and configuration, ten configurations) 0.1324; of the A1 `Dbar`
+(one game each) 0.1872. Thresholds: unfavourable at or below -0.2595 (1.96 null SDs), promising at or above +0.2595,
+early futility after A1 at or below -0.4822 (2.576 null SDs). Severe-harm rule (a margin more than three reference SDs
+below the reference minimum): 0 of the control's 26 and 0 of the Sprint 35 candidate's 9 recorded games would have
+triggered it. The normal approximation with 16 degrees of freedom is an approximation, stated as such.
+
+**Stops** (per game, from every recorded game, by the same derivation the report uses):
+
+| Category | Disposition | Rule |
+|---|---|---|
+| invalid experiment | `S36_LIVE_INVALID` | incomplete game; ledger, file, archive or card change (runner); observer error; replay or reconstruction mismatch; refusal facts not retained; echo-count mismatch; any contract or quality finding of a frozen control |
+| systemic agent failure | `S36_AGENT_FAILURE` | candidate: contract error; fallbacks above 1%; latency p99 above 200 ms or maximum above 3,000 ms; memory above 200,000 bytes; a damaging attack on an own unit; a structural or systemic refusal finding (`s36-refusal-gate-1`); a wait of 600 or more consecutive steps in front of a full hex |
+| severe tactical harm | `S36_SEVERE_HARM` | candidate margin more than three reference SDs below the reference minimum (any game); after A2, a configuration with both candidate margins below the reference minimum; at the end, Stage B objective score below the reference minimum in two or more of four games |
+| unfavourable | `S36_UNFAVOURABLE` | after A1, `Dbar` at or below -0.4822; after A2, at or below -0.2595 (H1 and B1 are then not played) |
+
+At the end of the schedule: `S36_PROMISING` (`Dbar` at least +0.2595, `d_s` positive in at least four of five
+scenarios, held-out mean `d` at least 0, no Stage B coverage shortfall); `S36_INCONCLUSIVE_UNFAVOURABLE_DIRECTION`
+(`Dbar` below 0: ordinary unfavourable stochastic performance); otherwise `S36_INCONCLUSIVE`. A single routine refused
+shot never stops the study; a contract violation always does. Nothing is promoted, merged or uploaded whatever the
+result.
+
+**Stand-in rehearsals** (the model world behind the engine interface, temporary ledger, committed tree on the server,
+`local/diagnostics/s36/standin_rehearsal.py`): with the real references the study stopped at position 4 on severe harm
+(150-step model games without combat score far below a real game), exit 5, as designed; with permissive references all
+51 positions ran (50 exits 0, the last 5, schedule complete, `S36_INCONCLUSIVE`); in both, a replayed position and an
+unauthorized one were refused and every decision of all three policies was reconstructed (0 mismatches).
+
+## 20. Measurement findings outside the gates
+
+* **The z scale.** z against `baseline-v2`'s own games is dominated by configurations whose reference SD is small: one
+  Sprint 34 control game in 2130511121 as red scored z = 17.9 (`live-calibration.json`). Sprint 35's statement "mean z
+  0.189 against the control's 0.018" compared unpaired means over different configuration sets. Paired by configuration
+  (nine configurations, one game each, development data, not a registered comparison), the Sprint 35 candidate's mean
+  difference from the control was -0.399 in z and -0.113 in share of the stake.
+* **The wait metric** (section 8) and the **refusal share** (section 3) were measurement artefacts that the new
+  observer and gate replace.
+* **Corrections to earlier text**: Sprint 35's description of the code-203 refusal (section 2); this document's header
+  date, which should read 2026-10-11 (UTC+8): the registered text is left as written.
