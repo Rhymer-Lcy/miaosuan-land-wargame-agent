@@ -191,6 +191,15 @@ offline comparison rejected its first revision on one gate and selected the corr
 single refused shot in a small game (disposition S35_LIVE_INVALID). In those games retention worked mechanically but the
 kept defenders were destroyed with their objectives. Nothing was promoted, merged or uploaded.
 
+Sprint 36 (`docs/SPRINT36_TACTICAL_RECOVERY.md`, branch `sprint36-tactical-recovery`, offline, no engine session)
+replaced the refusal-share stop with a refusal taxonomy and gate calibrated on every recorded game, made a study's
+disposition a function of its recorded games only, re-derived Sprint 35's disposition, and traced its regressions:
+over-retention and passivity of the delay stance, over-conservative capture, and a wait metric that counted
+suppressed units. Three candidates in a new package (`src/miaosuan_agent/tactical/`) were compared offline; the first
+registered comparison was blocked by a configuration defect (corrected, re-registered), the second selected the
+guarded orchestrator (Sprint 34's agent with a survival guard). A 51-session live study is proposed, not authorized.
+Nothing was promoted, merged or uploaded.
+
 ## Third-party material is not in this repository
 
 The platform's community SDK (engine wheel, map and scenario data, demo code, documentation) carries
