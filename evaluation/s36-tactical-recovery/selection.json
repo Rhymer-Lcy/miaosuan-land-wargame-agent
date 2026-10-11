@@ -1,0 +1,372 @@
+{
+ "disposition": "candidate frozen for a live proposal",
+ "gates": {
+  "TA": {
+   "G1": {
+    "detail": {
+     "genuine_independent_illegal": 0,
+     "genuine_rejections": 0,
+     "model_refusals": [
+      0,
+      0
+     ],
+     "model_rejections": [
+      0,
+      0
+     ]
+    },
+    "pass": true
+   },
+   "G10": {
+    "detail": {
+     "CA vs ta-as-ca": 0,
+     "S34-MO vs tc-no-guard": 0
+    },
+    "pass": true
+   },
+   "G11": {
+    "detail": {
+     "CM decisions": 22689,
+     "CM differing": 0,
+     "S34-MO decisions": 66266,
+     "S34-MO differing": 0
+    },
+    "pass": true
+   },
+   "G12": {
+    "detail": {
+     "differing": 58791,
+     "play_decisions": 297920
+    },
+    "pass": true
+   },
+   "G2": {
+    "detail": {
+     "genuine_contract_errors": 0,
+     "genuine_fallbacks": 0,
+     "model_fallbacks": [
+      0,
+      0
+     ]
+    },
+    "pass": true
+   },
+   "G3": {
+    "detail": {
+     "crashes": 0,
+     "replay_checks": [
+      1930,
+      1930
+     ],
+     "replay_mismatches": [
+      0,
+      0
+     ]
+    },
+    "pass": true
+   },
+   "G4": {
+    "detail": {
+     "max_wait": [
+      19,
+      40
+     ]
+    },
+    "pass": true
+   },
+   "G5": {
+    "detail": {
+     "genuine_max": 243.123,
+     "genuine_p99_max_over_games": 31.655,
+     "model_max": [
+      391.671,
+      393.516
+     ]
+    },
+    "pass": true
+   },
+   "G6": {
+    "detail": {
+     "memory_bytes_max": 2812
+    },
+    "pass": true
+   },
+   "G7": {
+    "detail": {
+     "scenario_sides_below_s34_mo": []
+    },
+    "pass": true
+   },
+   "G8": {
+    "detail": {
+     "floor": 17385.0,
+     "objective_value": 19640,
+     "s34_mo": 18300
+    },
+    "pass": true
+   },
+   "G9": {
+    "detail": {
+     "episode_games": 35,
+     "expected_model": {
+      "M-inert": 80,
+      "M-v2": 80
+     },
+     "genuine_games": 67,
+     "model": [
+      80,
+      80
+     ]
+    },
+    "pass": true
+   }
+  },
+  "TB": {
+   "G1": {
+    "detail": {
+     "genuine_independent_illegal": 0,
+     "genuine_rejections": 0,
+     "model_refusals": [
+      0,
+      0
+     ],
+     "model_rejections": [
+      0,
+      0
+     ]
+    },
+    "pass": true
+   },
+   "G10": {
+    "detail": {
+     "CA vs ta-as-ca": 0,
+     "S34-MO vs tc-no-guard": 0
+    },
+    "pass": true
+   },
+   "G11": {
+    "detail": {
+     "CM decisions": 22689,
+     "CM differing": 0,
+     "S34-MO decisions": 66266,
+     "S34-MO differing": 0
+    },
+    "pass": true
+   },
+   "G12": {
+    "detail": {
+     "differing": 63266,
+     "play_decisions": 297920
+    },
+    "pass": true
+   },
+   "G2": {
+    "detail": {
+     "genuine_contract_errors": 0,
+     "genuine_fallbacks": 0,
+     "model_fallbacks": [
+      0,
+      0
+     ]
+    },
+    "pass": true
+   },
+   "G3": {
+    "detail": {
+     "crashes": 0,
+     "replay_checks": [
+      1930,
+      1930
+     ],
+     "replay_mismatches": [
+      0,
+      0
+     ]
+    },
+    "pass": true
+   },
+   "G4": {
+    "detail": {
+     "max_wait": [
+      75,
+      31
+     ]
+    },
+    "pass": true
+   },
+   "G5": {
+    "detail": {
+     "genuine_max": 240.867,
+     "genuine_p99_max_over_games": 31.026,
+     "model_max": [
+      3.89292e+02,
+      3.88128e+02
+     ]
+    },
+    "pass": true
+   },
+   "G6": {
+    "detail": {
+     "memory_bytes_max": 2812
+    },
+    "pass": true
+   },
+   "G7": {
+    "detail": {
+     "scenario_sides_below_s34_mo": []
+    },
+    "pass": true
+   },
+   "G8": {
+    "detail": {
+     "floor": 17385.0,
+     "objective_value": 19770,
+     "s34_mo": 18300
+    },
+    "pass": true
+   },
+   "G9": {
+    "detail": {
+     "episode_games": 35,
+     "expected_model": {
+      "M-inert": 80,
+      "M-v2": 80
+     },
+     "genuine_games": 67,
+     "model": [
+      80,
+      80
+     ]
+    },
+    "pass": true
+   }
+  },
+  "TC": {
+   "G1": {
+    "detail": {
+     "genuine_independent_illegal": 0,
+     "genuine_rejections": 0,
+     "model_refusals": [
+      0,
+      0
+     ],
+     "model_rejections": [
+      0,
+      0
+     ]
+    },
+    "pass": true
+   },
+   "G10": {
+    "detail": {
+     "CA vs ta-as-ca": 0,
+     "S34-MO vs tc-no-guard": 0
+    },
+    "pass": true
+   },
+   "G11": {
+    "detail": {
+     "CM decisions": 22689,
+     "CM differing": 0,
+     "S34-MO decisions": 66266,
+     "S34-MO differing": 0
+    },
+    "pass": true
+   },
+   "G12": {
+    "detail": {
+     "differing": 19111,
+     "play_decisions": 297920
+    },
+    "pass": true
+   },
+   "G2": {
+    "detail": {
+     "genuine_contract_errors": 0,
+     "genuine_fallbacks": 0,
+     "model_fallbacks": [
+      0,
+      0
+     ]
+    },
+    "pass": true
+   },
+   "G3": {
+    "detail": {
+     "crashes": 0,
+     "replay_checks": [
+      1930,
+      1930
+     ],
+     "replay_mismatches": [
+      0,
+      0
+     ]
+    },
+    "pass": true
+   },
+   "G4": {
+    "detail": {
+     "max_wait": [
+      19,
+      19
+     ]
+    },
+    "pass": true
+   },
+   "G5": {
+    "detail": {
+     "genuine_max": 238.922,
+     "genuine_p99_max_over_games": 75.705,
+     "model_max": [
+      391.412,
+      399.513
+     ]
+    },
+    "pass": true
+   },
+   "G6": {
+    "detail": {
+     "memory_bytes_max": 2741
+    },
+    "pass": true
+   },
+   "G7": {
+    "detail": {
+     "scenario_sides_below_s34_mo": []
+    },
+    "pass": true
+   },
+   "G8": {
+    "detail": {
+     "floor": 17385.0,
+     "objective_value": 18510,
+     "s34_mo": 18300
+    },
+    "pass": true
+   },
+   "G9": {
+    "detail": {
+     "episode_games": 35,
+     "expected_model": {
+      "M-inert": 80,
+      "M-v2": 80
+     },
+     "genuine_games": 67,
+     "model": [
+      80,
+      80
+     ]
+    },
+    "pass": true
+   }
+  }
+ },
+ "gates_passed": [
+  "TC",
+  "TA",
+  "TB"
+ ],
+ "rule": "among candidates passing every gate, the first of TC, TA, TB (least change from S34-MO first)",
+ "selected": "TC"
+}

@@ -1,0 +1,191 @@
+{
+ "agents": {
+  "CM": {
+   "departures": 31,
+   "departures_kept": 25,
+   "destroyed_cheap": 33,
+   "destroyed_cheap_ordered_out_before": 0,
+   "destroyed_valuable": 88,
+   "destroyed_valuable_ordered_out_before": 15,
+   "losses": 117,
+   "presence_in_last_300": 110,
+   "recognised_150_before": 69
+  },
+  "S34-MO": {
+   "departures": 31,
+   "departures_kept": 3,
+   "destroyed_cheap": 33,
+   "destroyed_cheap_ordered_out_before": 11,
+   "destroyed_valuable": 88,
+   "destroyed_valuable_ordered_out_before": 18,
+   "losses": 117,
+   "presence_in_last_300": 110,
+   "recognised_150_before": 0
+  },
+  "TA": {
+   "departures": 31,
+   "departures_kept": 25,
+   "destroyed_cheap": 33,
+   "destroyed_cheap_ordered_out_before": 0,
+   "destroyed_valuable": 88,
+   "destroyed_valuable_ordered_out_before": 25,
+   "losses": 117,
+   "presence_in_last_300": 111,
+   "recognised_150_before": 67
+  },
+  "TB": {
+   "departures": 31,
+   "departures_kept": 25,
+   "destroyed_cheap": 33,
+   "destroyed_cheap_ordered_out_before": 0,
+   "destroyed_valuable": 88,
+   "destroyed_valuable_ordered_out_before": 25,
+   "losses": 117,
+   "presence_in_last_300": 111,
+   "recognised_150_before": 67
+  },
+  "TC": {
+   "departures": 31,
+   "departures_kept": 26,
+   "destroyed_cheap": 33,
+   "destroyed_cheap_ordered_out_before": 3,
+   "destroyed_valuable": 88,
+   "destroyed_valuable_ordered_out_before": 19,
+   "losses": 117,
+   "presence_in_last_300": 110,
+   "recognised_150_before": 67
+  }
+ },
+ "by_recorded_policy": {
+  "CM": {
+   "CM": {
+    "departures": 5,
+    "departures_kept": 0,
+    "destroyed_cheap": 15,
+    "destroyed_cheap_ordered_out_before": 0,
+    "destroyed_valuable": 27,
+    "destroyed_valuable_ordered_out_before": 1,
+    "losses": 33,
+    "presence_in_last_300": 30,
+    "recognised_150_before": 22
+   },
+   "S34-MO": {
+    "departures": 5,
+    "departures_kept": 3,
+    "destroyed_cheap": 15,
+    "destroyed_cheap_ordered_out_before": 11,
+    "destroyed_valuable": 27,
+    "destroyed_valuable_ordered_out_before": 16,
+    "losses": 33,
+    "presence_in_last_300": 30,
+    "recognised_150_before": 0
+   },
+   "TA": {
+    "departures": 5,
+    "departures_kept": 0,
+    "destroyed_cheap": 15,
+    "destroyed_cheap_ordered_out_before": 0,
+    "destroyed_valuable": 27,
+    "destroyed_valuable_ordered_out_before": 7,
+    "losses": 33,
+    "presence_in_last_300": 31,
+    "recognised_150_before": 22
+   },
+   "TB": {
+    "departures": 5,
+    "departures_kept": 0,
+    "destroyed_cheap": 15,
+    "destroyed_cheap_ordered_out_before": 0,
+    "destroyed_valuable": 27,
+    "destroyed_valuable_ordered_out_before": 7,
+    "losses": 33,
+    "presence_in_last_300": 31,
+    "recognised_150_before": 22
+   },
+   "TC": {
+    "departures": 5,
+    "departures_kept": 3,
+    "destroyed_cheap": 15,
+    "destroyed_cheap_ordered_out_before": 3,
+    "destroyed_valuable": 27,
+    "destroyed_valuable_ordered_out_before": 8,
+    "losses": 33,
+    "presence_in_last_300": 30,
+    "recognised_150_before": 22
+   }
+  },
+  "S34-MO": {
+   "CM": {
+    "departures": 26,
+    "departures_kept": 25,
+    "destroyed_cheap": 18,
+    "destroyed_cheap_ordered_out_before": 0,
+    "destroyed_valuable": 61,
+    "destroyed_valuable_ordered_out_before": 14,
+    "losses": 84,
+    "presence_in_last_300": 80,
+    "recognised_150_before": 47
+   },
+   "S34-MO": {
+    "departures": 26,
+    "departures_kept": 0,
+    "destroyed_cheap": 18,
+    "destroyed_cheap_ordered_out_before": 0,
+    "destroyed_valuable": 61,
+    "destroyed_valuable_ordered_out_before": 2,
+    "losses": 84,
+    "presence_in_last_300": 80,
+    "recognised_150_before": 0
+   },
+   "TA": {
+    "departures": 26,
+    "departures_kept": 25,
+    "destroyed_cheap": 18,
+    "destroyed_cheap_ordered_out_before": 0,
+    "destroyed_valuable": 61,
+    "destroyed_valuable_ordered_out_before": 18,
+    "losses": 84,
+    "presence_in_last_300": 80,
+    "recognised_150_before": 45
+   },
+   "TB": {
+    "departures": 26,
+    "departures_kept": 25,
+    "destroyed_cheap": 18,
+    "destroyed_cheap_ordered_out_before": 0,
+    "destroyed_valuable": 61,
+    "destroyed_valuable_ordered_out_before": 18,
+    "losses": 84,
+    "presence_in_last_300": 80,
+    "recognised_150_before": 45
+   },
+   "TC": {
+    "departures": 26,
+    "departures_kept": 23,
+    "destroyed_cheap": 18,
+    "destroyed_cheap_ordered_out_before": 0,
+    "destroyed_valuable": 61,
+    "destroyed_valuable_ordered_out_before": 11,
+    "losses": 84,
+    "presence_in_last_300": 80,
+    "recognised_150_before": 45
+   }
+  }
+ },
+ "control_fidelity": {
+  "CM decisions": 22689,
+  "CM differing": 0,
+  "S34-MO decisions": 66266,
+  "S34-MO differing": 0
+ },
+ "episodes_by_recorded_policy": {
+  "CM departures": 5,
+  "CM destroyed_in_held_zone": 42,
+  "CM losses": 33,
+  "S34-MO departures": 26,
+  "S34-MO destroyed_in_held_zone": 79,
+  "S34-MO losses": 84
+ },
+ "evidence": "historical descriptive, decision-level, open loop (never an outcome)",
+ "games": 35
+}
