@@ -27,7 +27,7 @@ E = Path("src/miaosuan_agent/evaluation")
 OUT = REPO_ROOT / "evaluation" / "s36-tactical-recovery" / "mutation.json"
 CARD = Path("evaluation/s36-tactical-live-1/manifest.json")
 TESTS = ("tests.test_s36_refusals", "tests.test_s36_study", "tests.test_s36_tactical", "tests.test_s36_offline",
-         "tests.test_s36_live", "tests.test_s36_gaps")
+         "tests.test_s36_live", "tests.test_s36_gaps", "tests.test_s36_revision2")
 MUTATIONS = [
     # refusal taxonomy and gate
     (E / "s36_refusals.py", "ErrorActionType not a contract refusal", '    if message == "ErrorActionType":',
@@ -118,6 +118,8 @@ MUTATIONS = [
     (E / "s36_offline.py", "equivalence not required", '    gate("G10", all(v == 0 for v in eq.values()) and len(eq) == 2, dict(eq))',
      '    gate("G10", True, dict(eq))'),
     (E / "s36_capture.py", "full hex threshold changed", "    if next_own >= 4:", "    if next_own >= 3:"),
+    (T / "config.py", "counterattack bonus by default (revision 1)", "    counterattack_bonus: float = 0.0",
+     "    counterattack_bonus: float = 0.25"),
 ]
 
 
