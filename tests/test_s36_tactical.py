@@ -353,9 +353,9 @@ class ContractAndMemoryTests(unittest.TestCase):
         self.assertEqual(updated_losses(((303, 5),), (505, 909), (909,), 40), ((303, 5), (505, 40)))
 
     def test_identity(self):
-        self.assertEqual(candidate_id(TA), "s36-tactical-survival-capture-1")
-        self.assertEqual(candidate_id(TB), "s36-tactical-mission-coordinator-1")
-        self.assertEqual(candidate_id(TC), "s36-tactical-guarded-orchestrator-1")
+        self.assertEqual(candidate_id(TA), "s36-tactical-survival-capture-2")
+        self.assertEqual(candidate_id(TB), "s36-tactical-mission-coordinator-2")
+        self.assertEqual(candidate_id(TC), "s36-tactical-guarded-orchestrator-2")
 
     def test_counterattack_bonus_on_recent_losses(self):
         terrain = Terrain(MoveCosts.from_raw(S.costs()))
