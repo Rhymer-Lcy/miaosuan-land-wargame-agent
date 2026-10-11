@@ -112,5 +112,6 @@ ABLATIONS: Dict[str, TacticalConfig] = {
                         empty_holder=False, end_window=0),
 }
 VARIANTS: Dict[str, TacticalConfig] = {"TA": TA, "TB": TB, "TC": TC, **ABLATIONS}
-#: No candidate is frozen until the registered offline selection has run (section 15).
-LIVE = None
+#: The live candidate, frozen by the registered offline selection of revision 2
+#: (evaluation/s36-tactical-recovery/selection.json).
+LIVE = TC
