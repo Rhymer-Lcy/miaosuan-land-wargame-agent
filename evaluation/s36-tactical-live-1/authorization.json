@@ -1,0 +1,57 @@
+{
+ "allowed_paths": [
+  [
+   "screen",
+   "authorized"
+  ],
+  [
+   "status"
+  ],
+  [
+   "screen",
+   "frozen_files",
+   "scripts/build_s36_card.py"
+  ]
+ ],
+ "authorized": {
+  "builder_sha256_normalised": "4a9116645a6fbaa4a2014013cfb5eea848bc41da71e4fbc0788e51f9cc24ed67",
+  "card_sha256_canonical": "cf6b24bad0182665cabdda837bae4026520bf247e1a8be271c6f843ce469b523"
+ },
+ "builder_edits": 4,
+ "card": "s36-tactical-live-1",
+ "changes": [
+  {
+   "after": true,
+   "before": false,
+   "path": [
+    "screen",
+    "authorized"
+   ]
+  },
+  {
+   "after": "4a9116645a6fbaa4a2014013cfb5eea848bc41da71e4fbc0788e51f9cc24ed67",
+   "before": "dd7a99641c76d77cd349032a81d55ecb86495aba88abcbcad034d5a341955330",
+   "path": [
+    "screen",
+    "frozen_files",
+    "scripts/build_s36_card.py"
+   ]
+  },
+  {
+   "after": "EXPLORATORY TRACK - PROPOSED STAGED COMPARISON OF AN INTEGRATED AGENT WITH A FRESH CONTROL - NOT A CONFIRMATION - NOT ELIGIBLE FOR PROMOTION - SESSION BUDGET AUTHORIZED BY THE OWNER",
+   "before": "EXPLORATORY TRACK - PROPOSED STAGED COMPARISON OF AN INTEGRATED AGENT WITH A FRESH CONTROL - NOT A CONFIRMATION - NOT ELIGIBLE FOR PROMOTION - NO SESSION AUTHORIZED",
+   "path": [
+    "status"
+   ]
+  }
+ ],
+ "compared_paths": 1256,
+ "games": 51,
+ "original": {
+  "builder_sha256_normalised": "dd7a99641c76d77cd349032a81d55ecb86495aba88abcbcad034d5a341955330",
+  "card_sha256_canonical": "73166e0ea51ca21e183cc11c38903ec4a6b1da05f82937673945bad868fbef26",
+  "commit": "45e25220b0efa47f39f539b5bb474194bd3737b1"
+ },
+ "problems": [],
+ "schema": "miaosuan-s36-authorization/1"
+}

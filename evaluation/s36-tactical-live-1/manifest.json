@@ -1210,7 +1210,7 @@
  ],
  "schema": "miaosuan-exploratory-run-card/1",
  "screen": {
-  "authorized": false,
+  "authorized": true,
   "batches": {
    "A1": [
     1,
@@ -1342,7 +1342,7 @@
    "evaluation/s36-tactical-recovery/live-calibration.json": "e5945e93f0e24f4fbf1172f30145eb8cde8abbefce5c7eef25febef0d6420bf2",
    "evaluation/s36-tactical-recovery/references.json": "4c4c242f0a45544257ba35f5b6c0db38f5bb155ff2f54308656356d61e83a090",
    "evaluation/s36-tactical-recovery/selection.json": "c2c7e43dfc1099349dd8829a3100aa80a2cc27f4b637226190b2e9bedd0de282",
-   "scripts/build_s36_card.py": "dd7a99641c76d77cd349032a81d55ecb86495aba88abcbcad034d5a341955330",
+   "scripts/build_s36_card.py": "4a9116645a6fbaa4a2014013cfb5eea848bc41da71e4fbc0788e51f9cc24ed67",
    "scripts/run_s36.py": "10cfabc39014c6eef2184937213194b0f9775ae61dbce0573f952da9ff1497cc",
    "scripts/run_s36_game.py": "3ee6cf80c62f58cd4f7e6120d6fd7c76ef25a44be7dc34bcd1d2b8e3d34ccdf0",
    "scripts/s36_analysis.py": "d577bbe4d0787f7a2171884795f4194c4fe06764f8b439bffaea704bc7849a54",
@@ -1362,7 +1362,7 @@
   "rules_digest": "f986bbb7b163f28338a1017670eb28bb9c795227743672e0c0ffbf99f4494fde",
   "rules_sha256": "f06d9eb51e70a2f5199c6addd947f600d533f30ace47cb35d7c211d7733e9f7b"
  },
- "status": "EXPLORATORY TRACK - PROPOSED STAGED COMPARISON OF AN INTEGRATED AGENT WITH A FRESH CONTROL - NOT A CONFIRMATION - NOT ELIGIBLE FOR PROMOTION - NO SESSION AUTHORIZED",
+ "status": "EXPLORATORY TRACK - PROPOSED STAGED COMPARISON OF AN INTEGRATED AGENT WITH A FRESH CONTROL - NOT A CONFIRMATION - NOT ELIGIBLE FOR PROMOTION - SESSION BUDGET AUTHORIZED BY THE OWNER",
  "track": "EXPLORATORY",
  "version": "Sprint 36 tactical recovery (docs/SPRINT36_TACTICAL_RECOVERY.md)"
 }

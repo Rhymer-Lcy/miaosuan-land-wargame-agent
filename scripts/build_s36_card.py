@@ -1,4 +1,4 @@
-"""Build, or check, the Sprint 36 live card (``docs/SPRINT36_TACTICAL_RECOVERY.md`` section 19). A PROPOSAL.
+"""Build, or check, the Sprint 36 live card (``docs/SPRINT36_TACTICAL_RECOVERY.md`` section 19). AUTHORIZED.
 
     python scripts/build_s36_card.py [--check]
 
@@ -10,6 +10,10 @@ live infrastructure, the references, the calibration and the offline selection. 
 ``baseline-v2`` (``7cbaf032...``), the Sprint 34 control (``b107d23e...``), the Sprint 35 candidate (``ea38c042...``),
 each refused if it differs, and the Sprint 36 candidate. A card is never rewritten once it exists with other content;
 ``--check`` fails unless the committed card is byte-identical to a fresh build.
+
+Authorization (owner, 2026-10-11, UTC+8): at most 51 sessions after 2845, under this card's frozen schedule and
+rules. Only ``authorized``, the status text and, through this file's own frozen digest, the card's pin of this
+builder differ from the unauthorized card ``73166e0e...`` (``scripts/s36_authorization.py``).
 """
 
 from __future__ import annotations
@@ -56,7 +60,7 @@ FROZEN_FILES = (
 )
 TEXTS = {
     "status": "EXPLORATORY TRACK - PROPOSED STAGED COMPARISON OF AN INTEGRATED AGENT WITH A FRESH CONTROL - "
-              "NOT A CONFIRMATION - NOT ELIGIBLE FOR PROMOTION - NO SESSION AUTHORIZED",
+              "NOT A CONFIRMATION - NOT ELIGIBLE FOR PROMOTION - SESSION BUDGET AUTHORIZED BY THE OWNER",
     "version": "Sprint 36 tactical recovery (docs/SPRINT36_TACTICAL_RECOVERY.md)",
     "mechanism": "survival-aware defence (one cheap delaying holder, withdrawal of valuable defenders before contact), "
                  "opportunity-aware capture (static filter, first-arrival race) and retention, on the frozen "
@@ -115,7 +119,7 @@ def build(repo: Path = REPO_ROOT) -> Dict[str, Any]:
                       "live_config": LIVE.name, "control": sl.S34_CONTROL, "replication": sl.S35_CONTROL,
                       "batches": {b: list(r) for b, r in sl.BATCHES.items()},
                       "expected_sessions": [g["session"] for g in rows], "dispositions": list(sl.DISPOSITIONS),
-                      "authorized": False}
+                      "authorized": True}
     return card
 
 
