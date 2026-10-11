@@ -496,3 +496,31 @@ unauthorized one were refused and every decision of all three policies was recon
   observer and gate replace.
 * **Corrections to earlier text**: Sprint 35's description of the code-203 refusal (section 2); this document's header
   date, which should read 2026-10-11 (UTC+8): the registered text is left as written.
+
+## 21. Readiness, identities, privacy and the ledger
+
+| Check | Result |
+|---|---|
+| Sprint 36 tests | `tests/test_s36_refusals.py`, `test_s36_study.py`, `test_s36_tactical.py`, `test_s36_offline.py`, `test_s36_live.py`, `test_s36_gaps.py`, `test_s36_revision2.py`, `test_s36_card.py` |
+| Workstation suite (final commit) | 2,612 tests, 113 skipped, OK; a clean clone of the final commit: the same |
+| Evaluation server (Python 3.10, NUMA node 0) | Sprint 34, 35 and 36 suites: 224 tests OK; every public output regenerates byte-identically (refusal audit, Sprint 35 re-derivation, references, calibration, reconstruction, card) |
+| Mutation (`scripts/mutate_s36.py`, `mutation.json`) | 48 of 48 planted defects killed; the first run killed 40 of 47 (5 test gaps closed by `tests/test_s36_gaps.py`, 2 equivalent mutants replaced), the revision 1 counterattack default added as a mutant |
+| Per-commit check | every Sprint 36 commit of the registration imports and passes the Sprint 36 tests present at it |
+| Document check (private `local/diagnostics/s36/doc_check.py`) | 71 clauses bound to the committed result files; 22 of 22 planted one-figure changes caught |
+| Platform canary | rebuilt from the final commit: `a3d3b0229118c0a389d379b315a620465624222f93fcf39de115e8e9dde59511`, smoke 62 steps, independent verifier 8 of 8 planted defects caught |
+| Privacy | pre-push scan of the published scope (a bare clone, the other session's `platform-compat2` branch excluded as before): 1,444 blobs, 106 hits, identical to the accepted baseline; no metric dropped |
+| Engine | no session opened in Sprint 36; ledger 2,845 sessions, all closed, SHA-256 `f396b2a137100dedc1c912bffc412a2c92e77ed06fe85988db972feb0919a927` unchanged; no lock file |
+
+Identities: candidate `s36-tactical-guarded-orchestrator-2` (`2f74e88f...`, 53 files); controls `baseline-v2`
+(`7cbaf032...`), S34 MO (`b107d23e...`), S35 CM revision 2 (`ea38c042...`); card `73166e0e...` (unauthorized). Nothing
+was promoted, merged into `main` or uploaded; `main`, `platform-compat2` and every earlier branch are untouched.
+
+## 22. Status and the one question
+
+Sprint 35's registered disposition `S35_LIVE_INVALID` stands. Sprint 36 offline: revision 1 `S36_ENGINEERING_BLOCKED`
+(G10), revision 2 selected TC; live disposition now `S36_LIVE_NOT_AUTHORIZED`. Sessions opened in Sprint 36: none.
+
+The one question for the owner: **authorize up to 51 Sprint 36 engine sessions, 2846 to 2896, under the frozen card
+`73166e0e...` and rules `s36-tactical-live-rules-1`?** An authorization would be recorded by a new commit that sets
+`authorized` in the card builder and rebuilds the card (a new card digest, everything else unchanged); until then the
+runner refuses every position.
