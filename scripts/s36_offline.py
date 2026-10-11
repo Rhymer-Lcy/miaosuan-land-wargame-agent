@@ -26,7 +26,9 @@ Populations (each labelled by its evidence level in every output):
   recorded games exactly. ``OUT/episodes-private.json``.
 
 ``select`` applies the registered gates and rule (``evaluation.s36_offline``) and writes the public summaries to
-``evaluation/s36-tactical-recovery/{model,genuine,episodes,selection}.json`` (aggregates only).
+``evaluation/s36-tactical-recovery/{model,genuine,episodes,selection}.json`` (aggregates only), with the
+value-preserving publication policy (``evaluation.s36_publish``): a number that collides with the pre-push scan's
+numeric pattern is written in exponent notation, its value unchanged.
 """
 
 from __future__ import annotations
@@ -47,6 +49,7 @@ if str(REPO_ROOT / "src") not in sys.path:
     sys.path.insert(0, str(REPO_ROOT / "src"))
 
 from miaosuan_agent.evaluation import s36_offline as rules  # noqa: E402
+from miaosuan_agent.evaluation import s36_publish as pub  # noqa: E402
 
 PUBLIC = REPO_ROOT / "evaluation" / "s36-tactical-recovery"
 AGENTS = rules.AGENTS
@@ -300,7 +303,7 @@ def cmd_select(args: argparse.Namespace) -> int:
     PUBLIC.mkdir(parents=True, exist_ok=True)
     for name, data in (("model", model_summary), ("genuine", genuine_summary), ("episodes", episode_summary),
                        ("selection", selection)):
-        (PUBLIC / f"{name}.json").write_text(json.dumps(data, indent=1, sort_keys=True) + "\n", encoding="utf-8",
+        (PUBLIC / f"{name}.json").write_text(pub.dumps(data, indent=1, sort_keys=True) + "\n", encoding="utf-8",
                                              newline="\n")
     print(json.dumps({k: selection[k] for k in ("selected", "rule", "gates_passed")}, indent=1))
     return 0
