@@ -524,3 +524,137 @@ The one question for the owner: **authorize up to 51 Sprint 36 engine sessions, 
 `73166e0e...` and rules `s36-tactical-live-rules-1`?** An authorization would be recorded by a new commit that sets
 `authorized` in the card builder and rebuilds the card (a new card digest, everything else unchanged); until then the
 runner refuses every position.
+
+## 23. Authorization and live execution (2026-10-11, UTC+8)
+
+Sections 1 to 22 are the registered text and are left as written; sections 23 to 26 record what followed.
+
+**Authorization.** The owner authorized at most 51 sessions, 2846 to 2896, on 2026-10-11. Commit
+`929971c7dde967a618e9ea702c67d4b2cd0b49da` (tree `e9bb510b6f9bf54688e0217d7356e9c283aec21c`, parent `45e2522`) changes
+only the authorization: `scripts/build_s36_card.py` sets `authorized` and the status clause, the card is rebuilt
+(canonical SHA-256 `73166e0e...` before, `cf6b24bad0182665cabdda837bae4026520bf247e1a8be271c6f843ce469b523` after), and
+`scripts/s36_authorization.py` proves the difference: of 1,256 JSON paths of the two cards (the unauthorized one read
+from Git history) exactly three differ - `screen.authorized`, `status`, and the card's pin of the builder itself
+(`dd7a9964...` to `4a911664...`) - and the builder equals its registered version with four declared edits, each matching
+once (`evaluation/s36-tactical-live-1/authorization.json`). The 51 games, their order, sessions, policy digests, rules,
+references, calibration, thresholds and budget are unchanged. Tests: the runner refuses an unauthorized copy of the
+card, accepts the authorized one and still refuses a position out of order; six planted card changes and a planted
+builder change are detected (`tests/test_s36_card.py`). Workstation suite 2,614 tests (113 skipped) OK; a clean clone of
+GitHub the same; the evaluation server (Python 3.10, NUMA node 0) 239 Sprint 34 to 36 tests OK, the card, the proof and
+the builder byte-identical to the workstation; pre-push privacy scan of the published scope 1,452 blobs, 106 hits
+identical to the accepted baseline. The texts of the frozen runner and rules modules still say that no session is
+authorized: they are frozen files of the card and were not edited.
+
+**Pre-engine checks.** Ledger 2,845 sessions, every one closed, state continuous, SHA-256 `f396b2a1...`; no engine
+process and no held lock; the platform canary rebuilt from the authorized commit on the server, `a3d3b022...`, smoke 62
+steps, 0 mismatches; the stand-in rehearsal (`local/diagnostics/s36/live/standin_rehearsal_auth.py`, a copy of section
+19's rehearsal with the runner's authorization check on) with the real references stopped at position 4 on severe harm,
+exit 5, as section 19 records, and with permissive references ran all 51 positions (50 exits 0, the last 5,
+`S36_INCONCLUSIVE`); in both a replayed and a skipped position were refused, every decision of all three policies was
+reconstructed, and the real ledger was unchanged. Server: shared mode, the other user's job pinned to NUMA node 1; the
+study ran serially on NUMA node 0 (`taskset -c 0-15,32-47`), one exclusive session per game, from a server worktree of
+the authorized commit whose `local/` links to the main clone's private folders (one installation, one ledger).
+
+**Execution.** The registered runner (`scripts/run_s36.py`) played positions 1 to 43, sessions 2846 to 2888, host clock
+2026-10-11T15:08:34+08:00 to 16:37:39+08:00 (host-clock labels; its offset is described in `docs/ENGINE_INSTALL.md`). Positions
+1 to 42 returned exit 0; position 43, the last game of batch A2, completed and the registered A2 gate stopped the study
+(exit 5). Positions 44 to 51 (H1 and B1) were not played; sessions 2889 to 2896 were never opened. No game was retried
+or replaced.
+
+## 24. Registered result: `S36_SEVERE_HARM`
+
+**Stop.** After A2 the registered batch gate (`s36_live.batch_gate`, harm checked before the unfavourable `Dbar`) found
+one configuration whose two candidate margins are both below the reference minimum: **1930331196 as red** (condition
+H1), candidate margins -762 (position 10) and -520 (position 33) against `baseline-v2`'s reference minimum -508 (15
+reference games, mean 179.6, SD 453.245). No per-game stop fired in any of the 43 games; the A1 gate did not fire. The
+registered disposition is **`S36_SEVERE_HARM`**. The derivation and its independent restatement agree
+(`evaluation/s36-tactical-live-1/results.json`); an independent audit from the ledger and the records
+(`local/diagnostics/s36/live/audit_live.py`) found no problem.
+
+**Integrity of the 43 games.** Every game completed; the ledger holds 43 sessions after 2845, each opened and closed in
+order with integrity ok, no state or home change, harness identity equal to the authorized commit, card and policy
+digests; every decision of the policy under test was reconstructed (48,980 per policy for the candidate and the control,
+7,563 for the three replication games), 0 mismatches, 0 fallbacks, 0 contract errors, 0 damaging attacks on own units,
+no halted step in front of a full hex. Refusals: 9 in 43 games, all class D (same-step shooting races: 4 candidate, 3
+control, 2 replication); no A, B, C, R or E refusal, no structural or systemic refusal finding. Latency: candidate
+largest per-game p99 86.13 ms, maximum 375.194 ms; control 24.717 ms and 227.889 ms (limits 200 and 3,000); memory at
+most 2,684 bytes (limit 200,000).
+
+**Comparison (registered metric, share of the stake; descriptive where no gate read it).**
+
+| Configuration | d after A1 | d after A1 and A2 |
+|---|---|---|
+| 2130511121 red | -0.359327 | -0.268871 |
+| 2130511121 blue | -0.059888 | -0.001247 |
+| 2120531121 red | 0.005709 | 0.446242 |
+| 2120531121 blue | 0.106565 | 0.009515 |
+| 1930331196 red | -0.530769 | -0.206731 |
+| 1930331196 blue | -0.026923 | 0.001923 |
+| 1910631192 red | 1.464481 | 0.885246 |
+| 1910631192 blue | -1.786885 | -0.893443 |
+| 2010431153 red | 0.262295 | 0.131148 |
+| 2010431153 blue | -0.21858 | -0.202186 |
+| `Dbar` (bootstrap interval) | -0.114332 (-0.607384 to 0.360967) | -0.00984 (-0.285983 to 0.271139) |
+
+The A1 `Dbar` -0.114332 is above the early-futility line -0.4822 (registered, read by the A1 gate). The A1 and A2 `Dbar`
+-0.00984 lies inside the null band (-0.2595, 0.2595); the registered gate did not read it, because the harm check comes
+first. `d_s` after A2 is positive in one scenario of five (2120531121). Mean share over the 20 games of each policy:
+candidate 0.060897, control 0.070737; as red -0.3169 against -0.5143, as blue 0.4387 against 0.6558 (descriptive). The
+three replication games of the Sprint 35 candidate (blue; never compared): 2130511121 share 0.508422 (control's A1 game
+0.559576), 1930331196 -0.513462 (0.534615), 1910631192 -0.136612 (0.934426).
+
+**Descriptive outcomes over the 20 games of each policy** (candidate / control): final objectives owned 50 / 49;
+objectives lost 42 / 55; recaptured 17 / 27; own units lost 209 / 217 (value 1,119 / 1,133); enemy units destroyed 273 /
+283. Held-out (H1) and inert-control coverage (B1) were not reached: no result exists for them.
+
+## 25. Post-hoc analysis (not registered; hypotheses, not findings)
+
+All figures in this section were produced after the stop, from the recorded games, by re-deciding each policy under test
+from its recorded observations (`scripts/s36_reconstruct.py` unchanged, through the private wrapper
+`local/diagnostics/s36/live/posthoc_live.py`; 105,523 decisions of the 43 games, 0 differing from the recorded ones).
+
+* **The harm rule's base rate was not measured on the control.** Section 19 checked that no recorded control game fell
+  more than three reference SDs below the minimum, but not how often the A2 pair rule (both games of a configuration
+  below the minimum) would fire for a policy no worse than the control. In 1930331196 as red the control itself is below
+  `baseline-v2`'s minimum -508 in 3 of its 5 recorded games (-850 and -746 in its earlier recorded games, margins
+  recovered from the recorded shares and the scenario's stake; -642 here; -432 and -210 above it). If the candidate were
+  the control, the pair rule would fire there with probability about 0.36, and in at least one of the ten configurations
+  with probability about 0.39 (independence assumed; small samples). The rule compares the candidate with
+  `baseline-v2`'s own games, not with the fresh control. The registered disposition stands; this is the same defect
+  class as Sprint 35's S6 (a registered gate whose false-alarm rate against the control was not measured before
+  registration).
+* **What the candidate did differently in 1930331196 red.** In all four games of the configuration (candidate positions
+  10 and 33, control 11 and 32) the first decision difference between the candidate and S34 MO is at step 461, and in
+  the candidate's two games every decision that differs from S34 MO's is a guard decision. In positions 10, 32 and 33
+  the first three objectives fell at the same steps (541, 602 or 603, 683 or 684); in position 11 at 561, 622 and 701.
+  The control recaptured objective 3939 at step 876 in both of its games (and 3640 at 903 in one); the candidate
+  recaptured nothing, and every objective it lost was in a zone it assessed `skip`, `quiet` or `delay` 150 steps before.
+  Hypothesis, not tested: the guard's refusal of non-cheap moves into zones judged untenable also refuses
+  counterattacks; over all 20 candidate games recaptures were 17 against the control's 27.
+* **Guard activity.** Over the 20 candidate games the guard dropped a move at 19,250 unit-decisions (retention 15,281:
+  secure 8,678, delay 4,367, defend 2,236; untenable entry 3,969: skip 2,392, delay 1,577) and added 12 withdrawals.
+  Withdrawal before contact, the second half of the design, was almost inactive. In two games (2010431153 red, positions
+  20 and 41) the candidate decided exactly as S34 MO at every decision; their margins were -230 and -346, the control's
+  -326 and -346: in that configuration the spread of outcomes under identical decisions is as large as the difference
+  between the policies.
+* **Losses.** Candidate / control (20 games each): held objectives lost 42 / 55; at the loss the last standing defenders
+  were destroyed in 33 / 47 and had left in 9 / 8; own ground units destroyed standing in a zone 62 / 85, moving 71 / 47
+  (56 / 44 of those moving without a current plan), aboard a carrier 26 / 26. The candidate lost fewer units in zones
+  and more on the move; whether this is the guard's effect or combat variation is not established.
+
+## 26. Status and the one next action
+
+Registered disposition **`S36_SEVERE_HARM`** (stop after A2 at position 43). Sessions used: 43 of the 51 authorized
+(2846 to 2888); 2889 to 2896 lapse unopened and are not carried forward. Ledger after the study: 2,888 sessions, every
+one closed, state continuous, SHA-256 `f0f028328baed69c12332d676d95632b7c0daf7ced656a41780fcf55bade75f9`. The public
+results are written by the reporting-only `scripts/s36_publish_live.py`: `results.json` is exactly the object of the
+registered report, serialised compactly because the registered one-space indentation (101,518 bytes) would exceed the
+100,000-byte rule of the pre-push scan; it is checked to read back equal to the registered serialisation, and
+`summary.json` applies the registered functions (comparison, batch gates, replication) to the played games. Nothing was
+promoted, merged into `main` or uploaded; the candidate, the controls, the schedule, the rules and the thresholds were
+not changed after the authorization.
+
+Recommended next action (one): an offline calibration, without engine sessions, of every registered gate against the
+control's own recorded games (46 games of the S34 control in the five Stage A scenarios), replacing the comparison with
+`baseline-v2`'s minimum by a rule calibrated on the paired candidate-minus-control difference, before any new live
+budget is proposed.
