@@ -1,0 +1,583 @@
+{
+ "destroyed": {
+  "CM": {
+   "aboard": 11,
+   "all": 84,
+   "in zone": 43,
+   "in zone kept by the stance: defend": 4,
+   "in zone kept by the stance: delay": 33,
+   "in zone kept by the stance: secure": 1,
+   "moving": 30
+  },
+  "S34-MO": {
+   "aboard": 42,
+   "all": 230,
+   "in zone": 97,
+   "moving": 91
+  }
+ },
+ "evidence": "historical descriptive: recorded games re-decided with each policy's own memory chain",
+ "fidelity": {
+  "s34 p01": [
+   2881,
+   0
+  ],
+  "s34 p02": [
+   2881,
+   0
+  ],
+  "s34 p03": [
+   2881,
+   0
+  ],
+  "s34 p04": [
+   2881,
+   0
+  ],
+  "s34 p05": [
+   2881,
+   0
+  ],
+  "s34 p06": [
+   2881,
+   0
+  ],
+  "s34 p07": [
+   1801,
+   0
+  ],
+  "s34 p08": [
+   1801,
+   0
+  ],
+  "s34 p09": [
+   2881,
+   0
+  ],
+  "s34 p10": [
+   2881,
+   0
+  ],
+  "s34 p11": [
+   2881,
+   0
+  ],
+  "s34 p12": [
+   2881,
+   0
+  ],
+  "s34 p13": [
+   2881,
+   0
+  ],
+  "s34 p14": [
+   2881,
+   0
+  ],
+  "s34 p15": [
+   1801,
+   0
+  ],
+  "s34 p16": [
+   1801,
+   0
+  ],
+  "s34 p17": [
+   2881,
+   0
+  ],
+  "s34 p18": [
+   2881,
+   0
+  ],
+  "s34 p19": [
+   2881,
+   0
+  ],
+  "s34 p20": [
+   2881,
+   0
+  ],
+  "s34 p21": [
+   2881,
+   0
+  ],
+  "s34 p22": [
+   2881,
+   0
+  ],
+  "s34 p23": [
+   2881,
+   0
+  ],
+  "s34 p24": [
+   2881,
+   0
+  ],
+  "s35 p01": [
+   2881,
+   0
+  ],
+  "s35 p02": [
+   2881,
+   0
+  ],
+  "s35 p03": [
+   2881,
+   0
+  ],
+  "s35 p04": [
+   2881,
+   0
+  ],
+  "s35 p05": [
+   2881,
+   0
+  ],
+  "s35 p06": [
+   2881,
+   0
+  ],
+  "s35 p07": [
+   2881,
+   0
+  ],
+  "s35 p08": [
+   2881,
+   0
+  ],
+  "s35 p09": [
+   2881,
+   0
+  ],
+  "s35 p10": [
+   2881,
+   0
+  ],
+  "s35 p11": [
+   2881,
+   0
+  ],
+  "s35 p12": [
+   2881,
+   0
+  ],
+  "s35 p13": [
+   1801,
+   0
+  ],
+  "s35 p14": [
+   1801,
+   0
+  ],
+  "s35 p15": [
+   1801,
+   0
+  ],
+  "s35 p16": [
+   1801,
+   0
+  ],
+  "s35 p17": [
+   1801,
+   0
+  ],
+  "s35 p18": [
+   1801,
+   0
+  ],
+  "s35 p19": [
+   1801,
+   0
+  ]
+ },
+ "fidelity_total": {
+  "decisions": 112003,
+  "differing": 0,
+  "games": 43
+ },
+ "first_difference": {
+  "1910631192 H2 p15": {
+   "candidate_modules": [
+    "dispersal"
+   ],
+   "first_difference_step": 581,
+   "shadow_modules": [
+    "allocation"
+   ]
+  },
+  "1930331196 H2 p12": {
+   "candidate_modules": [
+    "coalition",
+    "support"
+   ],
+   "first_difference_step": 180,
+   "shadow_modules": [
+    "reserve",
+    "support"
+   ]
+  },
+  "2130511121 H2 p04": {
+   "candidate_modules": [
+    "transport"
+   ],
+   "first_difference_step": 75,
+   "shadow_modules": [
+    "transport"
+   ]
+  }
+ },
+ "guided": {
+  "s34 p01": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p02": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p03": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 1,
+   "units_listed": 2
+  },
+  "s34 p04": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p05": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p06": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p07": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p08": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p09": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p10": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p11": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p12": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p13": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p14": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p15": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p16": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p17": {
+   "condition": "C2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 2235,
+   "units_listed": 2235
+  },
+  "s34 p18": {
+   "condition": "C3",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p19": {
+   "condition": "C2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p20": {
+   "condition": "C3",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p21": {
+   "condition": "C2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 2235,
+   "units_listed": 2235
+  },
+  "s34 p22": {
+   "condition": "C3",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p23": {
+   "condition": "C2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s34 p24": {
+   "condition": "C3",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s35 p01": {
+   "condition": "H1",
+   "issued": 1,
+   "policy": "CM",
+   "steps_listed": 1,
+   "units_listed": 1
+  },
+  "s35 p02": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 1,
+   "units_listed": 1
+  },
+  "s35 p03": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s35 p04": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "CM",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s35 p05": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s35 p06": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "CM",
+   "steps_listed": 2,
+   "units_listed": 2
+  },
+  "s35 p07": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "CM",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s35 p08": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s35 p09": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "CM",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s35 p10": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s35 p11": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s35 p12": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "CM",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s35 p13": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s35 p14": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "CM",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s35 p15": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "CM",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s35 p16": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s35 p17": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "CM",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s35 p18": {
+   "condition": "H1",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  },
+  "s35 p19": {
+   "condition": "H2",
+   "issued": 0,
+   "policy": "S34-MO",
+   "steps_listed": 0,
+   "units_listed": 0
+  }
+ },
+ "halted_runs": [
+  {
+   "causes": {
+    "suppressed": 32,
+    "unexplained": 2
+   },
+   "game": "s35 p03",
+   "length": 34,
+   "policy": "S34-MO"
+  },
+  {
+   "causes": {
+    "enemy on next hex": 2,
+    "suppressed": 105
+   },
+   "game": "s35 p12",
+   "length": 107,
+   "policy": "CM"
+  }
+ ],
+ "losses": {
+  "CM": {
+   "enemy ground units in the zone at the loss: 1": 5,
+   "enemy ground units in the zone at the loss: 2": 10,
+   "enemy ground units in the zone at the loss: 3": 18,
+   "last defender left alive": 5,
+   "last defenders destroyed": 28,
+   "losses": 33,
+   "stance 150 steps before: capture": 1,
+   "stance 150 steps before: defend": 3,
+   "stance 150 steps before: delay": 18,
+   "stance 150 steps before: quiet": 5,
+   "stance 150 steps before: secure": 1,
+   "stance 150 steps before: skip": 5
+  },
+  "S34-MO": {
+   "enemy ground units in the zone at the loss: 1": 14,
+   "enemy ground units in the zone at the loss: 2": 22,
+   "enemy ground units in the zone at the loss: 3": 48,
+   "last defender left alive": 26,
+   "last defenders destroyed": 57,
+   "losses": 84,
+   "no standing defender within 1800 steps": 1
+  }
+ },
+ "schema": "miaosuan-s36-reconstruction/1",
+ "stage_a_games": {
+  "CM": 9,
+  "S34-MO": 26
+ }
+}
