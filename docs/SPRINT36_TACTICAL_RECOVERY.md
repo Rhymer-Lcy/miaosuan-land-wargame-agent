@@ -344,3 +344,31 @@ The protocol of sections 12 to 14 and the code it names are committed and pushed
 runs. Before this registration Sprint 36 agents were run only in the development runs of section 11 (two of the 43
 recorded games, and part of the model population); the registered populations are run once, from the registration
 commit.
+
+## 16. Revision 1: registered result, diagnosis and correction
+
+**Registered result.** The comparison of sections 12 to 14 ran once on the evaluation server (NUMA node 0, 16 workers)
+from the registration commit `fe6820ff2d489948c1612c87d4b82e2745225bdf`, 2026-10-11T02:50:13+08:00 to
+04:30:09+08:00: 950 model games (none crashed), 67 genuine games (297,920 play decisions re-decided per agent), 35
+episode games. Outputs, unchanged: `evaluation/s36-tactical-recovery/revision-1/{model,genuine,episodes,selection}.json`.
+Every candidate passed G1 to G9, G11 and G12 and failed **G10**: `ta-as-ca` differed from Sprint 35's CA at 5 genuine
+play decisions (`tc-no-guard` against S34 MO: 0). G10 is a property of the code required of every candidate, so the
+registered rule selected none: **revision 1 disposition `S36_ENGINEERING_BLOCKED`**, recorded as such.
+
+**Diagnosis.** The 5 decisions lie in three games (two replay-corpus games, one timeline). `TacticalConfig` declared
+`counterattack_bonus = 0.25` as its default, so TA and `ta-as-ca` carried the counterattack bonus that section 10 assigns
+to TB only; with the bonus set to 0 the same configuration decides as CA at all 5 (private probe
+`local/diagnostics/s36/g10_probe.py`). The synthetic tests never put a recently lost objective in memory, so they could
+not see it. TC's decisions are unaffected (its guard reads the assessment, not the coalition places); it failed only
+because G10 covers both pairs.
+
+**Correction (revision 2).** The default becomes 0.0 (TB keeps 0.25 explicitly); nothing else changes. Every variant
+carries revision 2 (identities `s36-tactical-<name>-2`). A test with a recently lost objective where the bonus changes
+the allocation (`tests/test_s36_revision2.py`) fails on revision 1 and passes on revision 2. The correction was decided
+after revision 1's result was seen; it corrects a declared design (section 10), and no threshold, rule, population, gate
+or selection rule changes.
+
+**Revision 2 comparison (registered before it runs).** The driver, rules, populations, gates and selection rule of
+sections 12 to 14, unchanged, applied once to the revision 2 agents from the revision 2 registration commit. No revision
+2 agent has been run on a registered population before this registration. If revision 2 also selects nothing, the
+disposition is `S36_ENGINEERING_BLOCKED` and no live card is proposed.
