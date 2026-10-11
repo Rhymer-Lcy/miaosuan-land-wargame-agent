@@ -31,7 +31,9 @@ class TacticalConfig:
     #: "stances" (TA, TB: the stance planner drives the allocation) or "guard" (TC: Sprint 34's allocation, guarded).
     architecture: str
     coalition: CoalitionConfig = CA
-    revision: int = 1
+    #: Revision of the identities: 1 registered first; 2 corrects the counterattack default after revision 1 failed
+    #: its registered gate G10 (docs/SPRINT36_TACTICAL_RECOVERY.md section 16).
+    revision: int = 2
     # -- threat reading (section 7.2) ------------------------------------------------------------------------------
     #: An enemy ground unit seen standing on the same hex without a move path for at least this many steps, outside
     #: the zone being assessed, is static: it neither blocks nor contests that zone (one 75-step arrival transition;
@@ -66,9 +68,10 @@ class TacticalConfig:
     #: In the last ``end_window`` steps every defender of a held objective stays (the final ownership is scored).
     end_window: int = 300
     # -- mission coordination (TB) -------------------------------------------------------------------------------------
-    #: Objectives lost within this many steps get a counterattack bonus on their coalition places.
+    #: Objectives lost within this many steps get a counterattack bonus on their coalition places (TB only; the
+    #: revision 1 default of 0.25 applied it to TA and to ta-as-ca as well, against the design).
     counterattack_window: int = 600
-    counterattack_bonus: float = 0.25
+    counterattack_bonus: float = 0.0
     # -- guard (TC) -------------------------------------------------------------------------------------------------
     guard: bool = True
     #: The guard keeps the units the assessment keeps in a held objective's zone (Sprint 35's retention, applied to
